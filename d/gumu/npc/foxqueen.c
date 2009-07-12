@@ -1,0 +1,164 @@
+// ALi by NewX
+ 
+// foxqueen.c 妲己
+
+/************************************************************/
+
+// declarations and variables
+
+#include <ansi.h>
+inherit NPC;
+inherit F_MASTER;
+
+string talk_chimeng();
+
+/************************************************************/
+void create()
+{
+    set_name("妲己", ({"daji","fox", "fox queen"}));
+    set("gender", "女性");
+    set("age", 16);
+    set("long", @LONG
+她就是千年狐狸精妲己。自从殷商灭亡后，她便在轩辕古墓中隐居。她
+乃是流传千古的绝世美人，一颦一笑，如海棠醉日，梨花带雨。
+LONG);
+    set("title", "九尾天狐");
+    set("combat_exp", 1000000);
+    set("attitude", "heroic");
+    create_family("轩辕古墓", 1, "祖师");
+    set("second_family_name", "月宫");
+    set("per", 50);
+    set("int", 30+random(10));
+    set("cor", 25+random(5));
+    set_skill("unarmed", 100);
+    set_skill("dodge", 150);
+    set_skill("parry", 150);
+    set_skill("spells", 150);
+    set_skill("force", 150);
+    set_skill("fox-force", 120);
+    set_skill("sword", 150);
+    set_skill("firesword", 100);
+    set_skill("whip", 150);
+    set_skill("fenqingbian", 150);
+    set_skill("moondance", 175);
+    set_skill("jingang-quan", 100);
+    set_skill("moonforce", 150);
+    set_skill("moonshentong", 150);
+    set_skill("fascination", 200);
+    map_skill("force", "fox-force");
+    map_skill("spells", "fox-force");
+    map_skill("unarmed", "jingang-quan");
+    map_skill("sword", "firesword");
+    map_skill("parry", "firesword");
+    map_skill("whip", "fenqingbian");
+    map_skill("dodge", "moondance");
+    map_skill("fascination", "moondance");
+    set("max_kee", 1050);
+    set("max_sen", 1200);
+    set("force", 2000);
+    set("max_force", 2000);
+    set("force_factor", 150);
+    set("mana", 2500);
+    set("max_mana", 2500);
+    set("mana_factor", 250);
+    set("inquiry", ([
+        "name": "本座乃大商王后！",
+        "here": "这里就是轩辕古墓！",
+        "rumors": "这群酒囊饭袋居然把大王骨灰弄丢了！若让老娘查出来，哼哼...",
+        "痴梦": "痴梦那小丫头自以为识破了本座的计谋，其实一切尽在本作的掌握。",
+        "嫦娥": "嫦娥？呵呵，她现在已经是本座的性奴了...",
+        "西王母": "西王母已经被本座亲手轰杀！",
+        "月宫": "如今的月宫已完全落入吾手，若有月宫弟子愿意投入本座的门下，本座也愿意收徒。",
+       ]));
+    setup();
+    carry_object("/d/obj/weapon/sword/fire_sword")->wield();
+    carry_object("/d/obj/cloth/huqiu")->wear();
+    carry_object("/d/obj/cloth/jingang")->wear();
+}
+
+/**************************************************************/
+int attempt_apprentice(object me)
+{
+    string myname = RANK_D->query_rude(me);
+    string myid = me->query("id");
+    command("look " + myid);
+    command("consider");
+
+    if (me->query("gender") != "女性") {
+        command("say 臭男人！滚一边去！");
+        return 1;
+    }
+
+    if (me->query("family/family_name") != "轩辕古墓" && me->query("family/family_name") != "月宫") {
+        command("say 你是谁啊？");
+        return 1;
+    }
+
+    if (me->query("combat_exp") < 200000) {
+        command("say 小妹妹，想拜我为师还得再修炼哦！");
+        return 1;
+    }
+
+    if (me->query("per") < 25) {
+        command("say 小妹妹，女人最重要的就是这肉体的姿色，长成你这副德性...");
+        command("grin");
+        command("say 还是赶紧投胎转世吧！");
+        command("kill " + myid);
+        return 1;
+    }
+
+    command("grin");
+    command("say 做得好，以后多多引诱男人。");
+    command("recruit " +myid);
+    return 1;
+}
+
+int recruit_apprentice(object ob)
+{
+    string family_name;
+    int gen;
+
+    if (ob->query("family/master_id") == query("id")) return 0;
+
+    if (ob->query("family/family_name") == "月宫") {
+        family_name = "月宫";
+        gen = 2;
+    } else {
+        family_name = query("family/family_name");
+        gen = (int)query("family/generation") + 1;
+    }
+
+    ob->set("family/master_id", query("id"));
+    ob->set("family/master_name", query("name"));
+    ob->set("family/family_name", family_name);
+    ob->set("family/generation", gen);
+    ob->set("family/enter_time", time());
+    ob->assign_apprentice("弟子", 0);
+}
+
+/************************************************************/
+int prevent_learn(object me, string skill)
+{
+    if (me->query("family/family_name") == "月宫") {
+        if (skill == "fox-force") {
+            command("shake");
+            command("say 你非狐类，学不了天狐心法。");
+            return 0;
+        }
+        return 1;
+    }
+
+    if (me->query("family/family_name") == "") {
+        if (skill == "moonforce" || skill == "moonshentong") {
+            command("shake");
+            command("say 本座的天狐心法不比月宫的粗浅功夫强多了，为何要学月宫的武功？");
+            return 0;
+        }
+        return 1;
+    }
+
+    return 0;
+}
+
+/*********************************************************************/
+
