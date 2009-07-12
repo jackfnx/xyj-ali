@@ -1,0 +1,24 @@
+include/net/ftpdconf.h line 95: Warning: redefinition of #define VALID_READ
+
+include/net/ftpdconf.h line 110: Warning: redefinition of #define VALID_WRITE
+
+include/net/ftpdconf.h line 95: Warning: redefinition of #define VALID_READ
+
+include/net/ftpdconf.h line 110: Warning: redefinition of #define VALID_WRITE
+
+include/net/ftpdconf.h line 95: Warning: redefinition of #define VALID_READ
+
+include/net/ftpdconf.h line 110: Warning: redefinition of #define VALID_WRITE
+
+include/net/ftpdconf.h line 95: Warning: redefinition of #define VALID_READ
+
+include/net/ftpdconf.h line 110: Warning: redefinition of #define VALID_WRITE
+
+include/net/ftpdconf.h line 95: Warning: redefinition of #define VALID_READ
+
+include/net/ftpdconf.h line 110: Warning: redefinition of #define VALID_WRITE
+
+include/net/ftpdconf.h line 95: Warning: redefinition of #define VALID_READ
+
+include/net/ftpdconf.h line 110: Warning: redefinition of #define VALID_WRITE
+
