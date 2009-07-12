@@ -143,8 +143,6 @@ int set_status(mixed ob, string status)
    string uid, *wiz, wizlist;
    int i;
 
-   return 1;
-
    if( geteuid(previous_object())!= ROOT_UID ) return 0;
 
    if( userp(ob) )        uid = getuid(ob);

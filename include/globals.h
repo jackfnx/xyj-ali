@@ -1,6 +1,5 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+// ALi by NewX
+
 //
 // file: globals.h
 //
@@ -39,6 +38,8 @@
 #define WEAPON_D     "/adm/daemons/weapond"
 #define BAN_D      "/adm/daemons/band.c"
 
+#define SEX_D       "/adm/daemons/sexd.c"
+
 // Auxil Daemons
 
 #define MONEY_D      "/adm/auxil/moneyd"
@@ -46,7 +47,8 @@
 
 #define QUEST_D(x)     ("/daemon/quest/qlist" + x)
 #define CLASS_D(x)     ("/daemon/class/" + x)
-#define SKILL_D(x)     ("/daemon/skill/" + x)
+//#define SKILL_D(x)     ("/daemon/skill/" + x)
+#define SKILL_D(x)      ("/daemon/skill_d"->find_skill(x))
 #define CONDITION_D(x)   ("/daemon/condition/" + x)
 
 // Clonable/Non-inheritable Standard Objects

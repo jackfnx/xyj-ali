@@ -325,7 +325,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
     dodge_skill = victim->query_skill_mapped("dodge");
    mod_val = 0;
    if( dodge_skill )  {
-       victim_action = SKILL_D(dodge_skill)->query_action();
+      victim_action = SKILL_D(dodge_skill)->query_action();
       if( victim_action && victim_action["dodge_power"] )
          mod_val = victim_action["dodge_power"];
    }
@@ -549,7 +549,15 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
    if( damage > 0 ) {
      report_status(victim, wounded);
      if( victim->is_busy() ) victim->interrupt_me(me);
-     if( (!me->is_killing(your["id"])) && (!victim->is_killing(my["id"])) ) {
+     if (me->is_fucking(your["id"])) {
+         if ( (victim->query("kee") < victim->query("max_kee") * 50 / 100)
+                 || (victim->query("sen") < victim->query("max_sen") * 50 / 100) ) {
+             victim->set_temp("no_move",1);
+             me->set_temp("sex/makelove_ob", victim);
+             message_vision("$n终于被$N制服，彻底丧失了抵抗能力。\n", me, victim);
+         }
+     }
+     else if( (!me->is_killing(your["id"])) && (!victim->is_killing(my["id"])) ) {
        // fight until one side's kee is < 50%
        if( victim->query("kee") < victim->query("max_kee") * 50 / 100)  {
          me->remove_enemy(victim);
@@ -618,7 +626,7 @@ void fight(object me, object victim)
      do_attack(me, victim, me->query_temp("weapon"), TYPE_QUICK);
 
    // Else, see if we are brave enough to make an aggressive action.
-   } else if( random( (int)victim->query("cps") * 3 ) < ((int)me->query("cor") + (int)me->query("bellicosity") / 50) ) {
+   } else if( random( (int)victim->query("cps") * 3 ) < ((int)me->query("dex") + (int)me->query("bellicosity") / 50) ) {
      me->set_temp("guarding", 0);
      if( !victim->is_fighting(me) ) victim->fight_ob(me);
      do_attack(me, victim, me->query_temp("weapon"), TYPE_REGULAR);

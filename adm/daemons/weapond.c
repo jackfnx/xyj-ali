@@ -1,6 +1,5 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+// ALI NewX
+
 // weapond.c
 
 #include <ansi.h>
@@ -47,12 +46,14 @@ mapping weapon_actions = ([
      "damage_type":   "鞭伤",
      "dodge":     -20,
      "parry":     30,
+     "post_action":   (: call_other, __FILE__, "wave_weapon" :),
      ]),
    "whip": ([
      "action":     "$N将$w一扬，往$n的$l抽去",
      "damage_type":   "鞭伤",
      "dodge":     -20,
      "parry":     30,
+     "post_action":   (: call_other, __FILE__, "wave_weapon" :),
      ]),
    "impale": ([
      "action":     "$N用$w往$n的$l直戳过去",
@@ -142,6 +143,37 @@ void throw_weapon(object me, object victim, object weapon, int damage)
    }
 }
 
+void wave_weapon(object me, object victim, object weapon, int damage)
+{
+   object ob;
+   int wap, wdp;
+
+   if( objectp(weapon)
+   &&   damage==RESULT_PARRY
+   &&   ob = victim->query_temp("weapon") ) {
+     wap = (int)me->query("dex") * 2
+        + (int)me->query_skill("whip")
+        + (int)me->query_skill("dodge")
+        + (int)weapon->query("wave");
+     wdp = (int)victim->query("str")
+        + (int)victim->query("dex")
+        + (int)victim->query_skill("dodge")
+        + (int)ob->query("anti_wave")
+        - (int)ob->weight() / 500;
+     wap = random(wap);
+     if (wizardp(me) && (string)me->query("env/combat")=="verbose") {
+         tell_object(me, GRN "WEAPON_D: wap:"+wap+", wdp:"+wdp+"\n"+NOR);
+     }
+     if( wap > 2 * wdp ) {
+        message_vision(HIW "$N手中" + weapon->name() + "一抖，卷住了$n手中的" + ob->name() + "，$n顿时把持不住手中的武器，脱手飞出！\n" NOR,
+          me, victim);
+        ob->unequip();
+        ob->move(environment(victim));
+        victim->reset_action();
+     }
+   }
+}
+
 void bash_weapon(object me, object victim, object weapon, int damage)
 {
    object ob;
@@ -157,6 +189,7 @@ void bash_weapon(object me, object victim, object weapon, int damage)
         + (int)ob->query("rigidity")
         + (int)victim->query("str");
      wap = random(wap);
+
      if( wap > 2 * wdp ) {
         message_vision(HIW "$N只觉得手中" + ob->name() + "把持不定，脱手飞出！\n" NOR,
           victim);

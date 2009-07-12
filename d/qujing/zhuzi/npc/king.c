@@ -224,3 +224,4 @@ object copy_yao ( object me )
    who -> move(this_object());
    
    return who;
+}

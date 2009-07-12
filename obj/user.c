@@ -129,6 +129,8 @@ void setup()
 
         newob->save();
             newob->move(this_object());
+            newob->wield();
+            newob->wear();
         }
     }
 }

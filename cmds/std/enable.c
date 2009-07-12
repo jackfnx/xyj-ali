@@ -29,6 +29,7 @@ mapping valid_types = ([
    "rake":     "îÙ·¨",
    "archery":   "¹­¼ı",
    "hammer":   "´¸·¨",
+   "fascination":   "ÃÄÊõ",
 ]);
 
 int main(object me, string arg)

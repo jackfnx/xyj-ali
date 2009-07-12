@@ -7,9 +7,9 @@ inherit F_MASTER;
 
 void create()
 {
-       set_name("痴梦仙姑",({"chi meng","dream", "fairy"}));
+       set_name("痴梦仙子",({"chi meng", "meng", "dream", "fairy"}));
        set("long",
-"此乃迷津痴梦仙姑也；不受金银之谢，但遇有缘者渡之！\n");
+"此乃迷津痴梦仙子也；不受金银之谢，但遇有缘者渡之！\n");
        set("title", "迷津渡者");
        set("gender", "女性");
        set("age", 18);
@@ -55,7 +55,7 @@ create_family("月宫", 2, "弟子");
 setup();
 
         carry_object("/d/obj/cloth/luoyi")->wear();
-   carry_object("/d/obj/weapon/whip/jueqingwhip")->wield();
+   carry_object("/d/obj/weapon/whip/jueqingbian")->wield();
 }
 
 void attempt_apprentice(object ob)

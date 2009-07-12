@@ -551,12 +551,12 @@ private void confirm_gift(string yn, object ob, object user)
    user->set("str", 10 + random(21));
    user->set("cps", 10 + random(21));
    user->set("int", 10 + random(21));
-   user->set("cor", 10 + random(21));
+   user->set("dex", 10 + random(21));
    user->set("con", 10 + random(21));
    user->set("spi", 10 + random(21));
    user->set("per", 10 + random(21));
         n = user->query("str") + user->query("cps") + user->query("int");
-        n = n + user->query("cor") +  user->query("con") +  user->query("spi") + user->query("per");
+        n = n + user->query("dex") +  user->query("con") +  user->query("spi") + user->query("per");
         if(n>168)
            user->set("kar",0);
            else
@@ -564,10 +564,10 @@ private void confirm_gift(string yn, object ob, object user)
         }
 
         write("\n");
-        printf(" 膂力：[%s]  胆识：[%s]  悟性：[%s]  灵性：[%s]\n"
+        printf(" 膂力：[%s]  敏捷：[%s]  悟性：[%s]  灵性：[%s]\n"
                " 定力：[%s]  容貌：[%s]  根骨：[%s]  福缘：[%s]\n\n",
                dis_attr(user->query_str()),
-               dis_attr(user->query_cor()),
+               dis_attr(user->query_dex()),
                dis_attr(user->query_int()),
                dis_attr(user->query_spi()),
                dis_attr(user->query_cps()),

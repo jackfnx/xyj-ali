@@ -3,6 +3,8 @@
  
 // natured.c
 
+#include <ansi.h>
+
 #define TIME_TICK (time()*60)
 
 static int current_day_phase;
@@ -70,7 +72,7 @@ void update_day_phase()
        i=1;
    }
 
-   message("outdoor:vision", day_phase[current_day_phase]["time_msg"] + "\n", users());
+   message("outdoor:vision", CYN + day_phase[current_day_phase]["time_msg"] + "\n" + NOR, users());
    if( !undefinedp(day_phase[current_day_phase]["event_fun"]) )
      call_other(this_object(), day_phase[current_day_phase]["event_fun"]);
 

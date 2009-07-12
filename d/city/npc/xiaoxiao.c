@@ -34,6 +34,7 @@ void create()
                 "spear": "/d/obj/weapon/spear/tieqiang",
                 "staff": "/d/obj/weapon/staff/chanzhang",
                 "hammer": "/d/obj/weapon/hammer/tongchui",
+                "whip": "/d/obj/weapon/whip/queenwhip",
         ]) );
 
         setup();
