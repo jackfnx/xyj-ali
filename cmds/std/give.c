@@ -112,28 +112,32 @@ int do_give(object me, object obj, object who)
         return 1;
    }
 
-   if( !userp(who) && obj->value() ) { // give money to npc
-     message_vision("$N拿出" + obj->short() + "给$n。\n", me, who);
-     destruct(obj);
-     return 2;
-   } else if( obj->move(who) ) {
-           string unit;
-     if(obj->query_temp("d_mana")>0)
-       unit=obj->query_temp("unit");
-                else
-       unit=obj->query("unit");
-                if(strlen(unit)<2) unit="个";
+    if( !userp(who) && obj->value() ) { // give money to npc
+        message_vision("$N拿出" + obj->short() + "给$n。\n", me, who);
+        destruct(obj);
+        return 2;
+    } else if( obj->move(who) ) {
+        string unit;
+        if(obj->query_temp("d_mana")>0)
+            unit=obj->query_temp("unit");
+        else
+            unit=obj->query("unit");
+        if(strlen(unit)<2) unit="个";
+        message_vision(sprintf("$N给$n一%s%s。\n", unit, obj->name()), me, who); 
+/*
      printf("你给%s一%s%s。\n", who->name(), unit,
         obj->name());
      message("vision", sprintf("%s给你一%s%s。\n", me->name(),
         unit, obj->name()), who );
      message("vision", sprintf("%s给%s一%s%s。\n", me->name(), who->name(),
-        unit, obj->name()), environment(me), ({me, who}) );
-     if(!userp(who) && !userp(obj)) destruct(obj); // mon 4/25/98
-     return 2;
-   }
-   else return 0;
+        unit, obj->name()), environment(me), ({me, who}) );*/
+        if(!userp(who) && !userp(obj)) destruct(obj); // mon 4/25/98
+        return 2;
+    }
+    else
+        return 0;
 }
+
 int help(object me)
 {
 write(@HELP
