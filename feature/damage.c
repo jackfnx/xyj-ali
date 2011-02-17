@@ -455,6 +455,8 @@ int sex_inspire(string type, int fire)
     val += fire;
     if (val > max) val = max;
     set(type, val);
+    
+    set_heart_beat(1);
     return val;
 }
 
