@@ -5,7 +5,7 @@ inherit NPC;
 
 void create()
 {
-       set_name("龙婆", ({"long po"}));
+       set_name("龙婆", ({"long po", "po"}));
 
 set("long","龙王的老婆，东海的太后．\n");
        set("gender", "女性");
