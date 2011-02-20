@@ -14,20 +14,14 @@ void create()
 宝的。一隔一隔，或有贮书处，或设鼎处，或安置笔砚处，或供花设瓶安
 放盆景处，其格各式各样，或天圆地方，或葵花蕉叶，或连环半壁，真是
 花团锦簇，剔透玲珑。
-
-不过，此时此处空无一人，只有浓浓的云雾(yunwu)笼罩着地面。
 LONG);
 
-    //set("objects", ([ /* sizeof() == 1 */
-    //    __DIR__"npc/xiwangmu.c" : 1,
-    //    ]));
+    set("objects", ([ /* sizeof() == 1 */
+        __DIR__"npc/xiwangmufake.c" : 1,
+        ]));
 
     set("exits", ([ /* sizeof() == 1 */
                 "east" : __DIR__"huilang1.c",
-                ]));
-
-    set("item_desc", ([ /* sizeof() == 1 */
-                "yunwu" : "遍地的云雾，看不见地面。\n"
                 ]));
 
     setup();

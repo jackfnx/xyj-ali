@@ -11,7 +11,7 @@ void create()
        set("long", "西华至妙生伊川，穆王八骑访昆仑。\n");
        set("title", "月宫祖师");
        set("gender", "女性");
-       set("age", 100);
+       set("age", 30);
        set("class","xian");
        set("attitude", "friendly");
        set("rank_info/respect", "老太太");

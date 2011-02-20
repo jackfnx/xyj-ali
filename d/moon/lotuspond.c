@@ -18,6 +18,7 @@ void create ()
 更助秋意。
 LONG);
 
+    set("outdoors", "moon");
   set("item_desc", ([ /* sizeof() == 1 */
   "lotus" : "荷花已经谢了，莲梗上孤零零的吊着莲蓬。
 ",
