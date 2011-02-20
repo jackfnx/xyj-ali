@@ -17,7 +17,6 @@ int  do_dispose(string arg);
 int  do_upgrade(string arg);
 int  do_list();
 int  do_cost(string arg);
-int  do_degrade(string arg);
 
 void get_type(string arg, object ob);
 void get_subtype(string arg, object ob);
@@ -42,7 +41,6 @@ void init()
     add_action("do_change_id", "change_id");
     add_action("do_change_desc", "change_desc");
     add_action("do_change_unit", "change_unit");
-    add_action("do_degrade", "degrade");
 
    seteuid(getuid());
 }
@@ -75,7 +73,6 @@ LONG);
              "change_id      给法宝改代号\n" +
              "change_desc    给法宝改描述\n" +
              "change_unit    给法宝改单位名称\n\n" +
-             HIM+"degrade"+NOR+"        法宝降级\n\n" +
              HIY+"升级暂行办法：\n"+NOR+
              "　　每五次升级加一个星，最高为五星。\n"+
              "　　代价以加一星为计算标准。比如升两星要\n" + 
@@ -1415,45 +1412,3 @@ int  do_change_unit(string arg)
    write("改动成功。\n");
    return 1;
 }
-
-int  do_degrade(string arg)
-{
-    string name, property;
-    object fabao_ob, me=this_player();
-    int   stars, upgraded;
-
-    if ( !arg || arg == "" ) {
-        write("请用 degrade 法宝名 for 降级特性 来升级。\n");
-        write("降级特性可用 cost 法宝名 来查看。\n");
-        return 1;
-    }
-
-    if ( sscanf(arg, "%s for %s", name, property) != 2 )  {
-        write("请用 degrade 法宝名 for 降级特性 来升级。\n");
-        write("降级特性可用 cost 法宝名 来查看。\n");
-        return 1;
-    }
-
-    if ( !objectp(fabao_ob = present(name, me)) )
-        return notify_fail("你身上没有这样东西啊。\n");
-
-    if ( !fabao_ob->query("owner_id") || !fabao_ob->query("series_no") ) 
-        return notify_fail("那个不是法宝耶！\n");
-
-    if ( fabao_ob->query("equipped") )
-        return notify_fail("你必须放下法宝才能降级。\n");
-
-    if ( fabao_ob->query("series_no") == "1" ) { // weapon
-        if ( property != "damage" )
-            return notify_fail("法宝没有这个降级特性。\n");
-
-        fabao_ob->set("weapon_prop/damage", 1);
-        fabao_ob->set("starts/"+property, 0);
-        fabao_ob->set("upgrade/"+property, 0);
-    } else
-        return notify_fail("法宝没有这个降级特性。\n");
-
-    write("法宝降级完毕。\n");
-    return 1;
-}
-
