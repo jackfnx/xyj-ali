@@ -583,6 +583,7 @@ int sex_refresh()
     if (my["libido"] > 0) { my["libido"] -= 1; update_flag++; }
     if (my["stamina"] < MAX_STAMINA) { my["stamina"] += 1; update_flag++; }
 
+    /*
     sex_per = my["per"] + query_temp("apply/personality");
     if (query_skill("fascination") > 20)
         sex_per += (query_skill("fascination")-20)/10;
@@ -605,6 +606,7 @@ int sex_refresh()
                 message_vision("$N的身上散发着不可抗拒的魅力，在场众人都不禁怦然心动。\n", this_object());
         }
     }
+    */
 
     return update_flag;
 }
