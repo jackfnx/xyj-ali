@@ -7,16 +7,27 @@
 
 int is_apprentice_of(object ob)
 {
-   mapping family;
-   
-   if( !mapp(family = query("family")) ) return 0;
-
-   if( family["master_id"] == (string)ob->query("id")
-   &&   family["master_name"] == (string)ob->query("name") 
-   &&   family["family_name"] == (string)ob->query("family/family_name") )
-     return 1;
-
-   return 0;   
+    mapping family;
+    mapping history;
+    int i;
+    
+    if ( !mapp(family = query("family")) ) return 0;
+    
+    if ( family["master_id"] == (string)ob->query("id")
+      && family["master_name"] == (string)ob->query("name") 
+      && family["family_name"] == (string)ob->query("family/family_name") )
+        return 1;
+    
+    if ( !arrayp(history = query("family/history")) ) return 0;
+    
+    for ( i = 0; i < sizeof(history); i++ ) {
+        if ( history[i]["master_id"] == (string)ob->query("id")
+          && history[i]["master_name"] == (string)ob->query("name") 
+          && family["family_name"] == (string)ob->query("family/family_name") )
+            return 1;
+    }
+    
+    return 0;   
 }
 
 void assign_apprentice(string title, int privs)
