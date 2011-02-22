@@ -57,22 +57,29 @@ int query_unique()  { return 1; }
 
 int init()
 {
-    add_action("do_seal", "seal");
-    add_action("do_unseal", "unseal");
+    if (query("series_no") == "1") {
+        add_action("do_seal", "seal");
+        add_action("do_unseal", "unseal");
+    }
 }
 
 int do_seal(string arg)
 {
+    int equipped = 0;
+    
+    if (!id(arg)) return 0;
     if (query("series_no") != "1") return 0;
-    if (query("equipped"))
-        return notify_fail("你必须放下法宝才能封印。\n");
     if (query("seal"))
         return notify_fail("法宝已经被封印了。\n");
+    if (equipped = query("equipped"))
+        unequip();
     set("seal", 1);
     set("short", short() + CYN + "『封印中』" + NOR);
     set("weapon_prop/damage", 1);
     tell_object(this_player(), this_object()->name() + "上泛起了一层淡淡的光，那种毁灭的气息消失了。\n");
     save();
+    if (equipped)
+        wield();
     return 1;
 }
 
@@ -81,11 +88,14 @@ int do_unseal(string arg)
     int damage = 10;
     int stars = query("stars/damage");
     int upgraded = query("upgraded/damage");
+    int equipped = 0;
+    
+    if (!id(arg)) return 0;
     if (query("series_no") != "1") return 0;
-    if (query("equipped"))
-        return notify_fail("你必须放下法宝才能解除封印。\n");
     if (!query("seal"))
-        return notify_fail("法宝没有被封印了。\n");
+        return notify_fail("法宝没有被封印啊。\n");
+    if (equipped = query("equipped"))
+        unequip();
     delete("seal");
     delete("short");
     switch (stars) {
@@ -114,5 +124,7 @@ int do_unseal(string arg)
     set("weapon_prop/damage", damage);
     tell_object(this_player(), this_object()->name() + "上放射出耀眼的光芒，一股毁灭的气息扑面而来。\n");
     save();
+    if (equipped)
+        wield();
     return 1;
 }
