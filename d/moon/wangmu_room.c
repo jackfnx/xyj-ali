@@ -17,7 +17,7 @@ void create()
 LONG);
 
     set("objects", ([ /* sizeof() == 1 */
-        __DIR__"npc/xiwangmufake.c" : 1,
+        __DIR__"npc/xiwangmudummy.c" : 1,
         ]));
 
     set("exits", ([ /* sizeof() == 1 */
