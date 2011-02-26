@@ -29,7 +29,6 @@ LONG);
   set("outdoors", 2);
   set("exits", ([ /* sizeof() == 3 */
   "east" : __DIR__"yltw",
-  "west" : __DIR__"fabao-road1",
   "north" : __DIR__"xiaoyuan",
   "southdown" : __DIR__"neartop",
 ]));

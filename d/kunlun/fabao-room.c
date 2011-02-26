@@ -81,7 +81,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 1 
-                "east" : __DIR__"fabao-road2",
+                "west" : __DIR__"fabao-road2",
         ]));
 
 
