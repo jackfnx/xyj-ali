@@ -7,6 +7,8 @@ string *pussy_names = ({ "ÓñÃÅ", "Èâ°ö", "Óñ¸ò", "ÃÜµÀ", "ÈâÐ·", "»¨·¿", "»¨¾¶",
 string *ass_names = ({ "¾Õ»¨", "¾ÕÑ¨", "¾Õ¸Ø", "¸Ø¾Õ", "ÍÎåê", "Ñ©ÍÎ", "ÓñÍÎ" });
 string *finger_names = ({ "ÊÖÖ¸", "ÓñÖ¸" });
 string *breast_names = ({ "Èé·¿", "ÓñÈé", "ËÖÈé", "½¿Èé", "Èé·å", "ºÀÈé", "±¬Èé", "ÈéÍ·", "ÈéµÙ" });
+string *sensitive_names_m = ({ "¶ú´¹", "ÈéÍ·" });
+string *sensitive_names_f = ({ "¶ú´¹", "´½°ê", "Óñ¾±", "Óñ±³", "ð©Íó", "¶ÇÆê", "ÏËÑü", "ÓñÍÈ", "Ïãõ×", "Óñ×ã" });
 
 void announce(object ob, string event)
 {
@@ -158,7 +160,7 @@ void draw_penis(object me, object ob)
 int do_makelove(object me, object victim, int is_fucking)
 {
     mapping action;
-    string actionstr, effectstr;
+    string actionstr, effectstr, sens;
 
     if (is_fucking) {
         if (me->query_temp("sufferer") != victim
@@ -168,8 +170,41 @@ int do_makelove(object me, object victim, int is_fucking)
     }
     else
         action = me->query("sex_actions");
+        
+    if (victim->query("gender")=="Å®ÐÔ") {
+        switch (random(4)) {
+            case 0:
+                sens = pussy_names[random(sizeof(pussy_names))];
+                break;
+            case 1:
+                sens = ass_names[random(sizeof(ass_names))];
+                break;
+            case 2:
+                sens = breast_names[random(sizeof(breast_names))];
+                break;
+            case 3:
+                sens = sensitive_names_f[random(sizeof(sensitive_names_f))];
+                break;
+            default:
+                sens = pussy_names[random(sizeof(pussy_names))];
+                break;
+        }
+    } else {
+        switch (random(2)) {
+            case 0:
+                sens = penis_names[random(sizeof(penis_names))];
+                break;
+            case 1:
+                sens = sensitive_names_m[random(sizeof(sensitive_names_m))];
+                break;
+            default:
+                sens = penis_names[random(sizeof(penis_names))];
+                break;
+        }
+    }
 
     actionstr = action["action"];
+    actionstr = replace_string(actionstr, "$s", sens);
     actionstr = replace_string(actionstr, "$L", penis_names[random(sizeof(penis_names))]);
     actionstr = replace_string(actionstr, "$l", pussy_names[random(sizeof(pussy_names))]);
     actionstr = replace_string(actionstr, "$b", breast_names[random(sizeof(breast_names))]);

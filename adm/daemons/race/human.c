@@ -27,16 +27,16 @@ mapping *combat_action = ({
 
 mapping *sex_action = ({
     ([
-     "action": "$N轻轻抚摸$n的$l。",
+     "action": "$N轻轻抚摸$n的$s。",
      "limb": "all",
-     "enjoy": 10,
+     "enjoy": 2,
      "self_enjoy": 1,
      "cost": 1,
      ]),
     ([
-     "action": "$N轻轻舔了一口$n的$l。",
+     "action": "$N轻轻舔了一口$n的$s。",
      "limb": "all",
-     "enjoy": 10,
+     "enjoy": 2,
      "self_enjoy": 1,
      "cost": 1,
      ]),
@@ -45,7 +45,7 @@ mapping *sex_action = ({
      "limb": "pussy",
      "min_enjoy": 50,
      "effect": "抹到了满手的蜜汁。",
-     "enjoy": 20,
+     "enjoy": 4,
      "self_enjoy": 2,
      "cost": 1,
      ]),
@@ -54,7 +54,7 @@ mapping *sex_action = ({
      "limb": "breast",
      "min_enjoy": 80,
      "effect": "竟挤出了大量香甜的乳汁。",
-     "enjoy": 30,
+     "enjoy": 8,
      "self_enjoy": 5,
      "cost": 2,
      ]),
@@ -171,13 +171,28 @@ mapping query_action()
     return combat_action[random(sizeof(combat_action))];
 }
 
-mapping query_sex_action()
+mapping query_sex_action(object me)
 {
-    return sex_action[random(sizeof(sex_action))];
+    object ob;
+    int female = 0;
+    mapping act;
+    if (objectp(me->query_temp("sex/fuck_ob"))) {
+        ob = me->query_temp("sex/fuck_ob");
+        female = ob->query("gender") == "女性";
+    }
+    else if (objectp(me->query_temp("sex/makelove_ob"))) {
+        ob = me->query_temp("sex/makelove_ob");
+        female = ob->query("gender") == "女性";
+    }
+    for (act = sex_action[random(sizeof(sex_action))];
+        !female && (act["limb"]=="pussy"||act["limb"]=="breast");
+        act = sex_action[random(sizeof(sex_action))])
+        ;
+    return act;
 }
 
-mapping query_fuck_action()
+mapping query_fuck_action(object me)
 {
-    if (random(2)) return sex_action[random(sizeof(sex_action))];
+    if (random(2)) return query_sex_action(me);
     else return sex_fuck_action[random(sizeof(sex_fuck_action))];
 }

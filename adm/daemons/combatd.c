@@ -554,7 +554,18 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
                  || (victim->query("sen") < victim->query("max_sen") * 50 / 100) ) {
              victim->set_temp("no_move",1);
              me->set_temp("sex/makelove_ob", victim);
-             message_vision("$n终于被$N制服，彻底丧失了抵抗能力。\n", me, victim);
+             if (me->query("max_mana") > 500)
+                message_vision(HIY + "\n\n$n面色苍白，跌倒在地，已然耗尽了体力。\n"
+                        + "$N见状大喜，连忙打出几道法诀，禁制了$n的活动能力，将$p彻底制服。\n\n" + NOR,
+                    me, victim);
+             else if (me->query("max_force") > 100)
+                message_vision(HIY + "\n\n$n面色苍白，跌倒在地，已然耗尽了体力。\n"
+                        + "$N见状大喜，连忙封住了$n的几处大穴，将$p彻底制服。\n\n" + NOR,
+                    me, victim);
+            else
+                message_vision(HIY + "\n\n$n面色苍白，跌倒在地，已然耗尽了体力。\n"
+                        + "$N见状大喜，连忙接下腰带将$n捆了个结结实实，将$p彻底制服。\n\n" + NOR,
+                    me, victim);
          }
      }
      else if( (!me->is_killing(your["id"])) && (!victim->is_killing(my["id"])) ) {
