@@ -7,22 +7,21 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "白虎大街");
+        set ("short", "歪柳巷");
         set ("long", @LONG
 
-这里已是白虎大街的西段，城门已经遥遥在望。北面是一座军营，远
-远就能感到一阵肃杀气氛。南面则是一条阴暗的小巷，其中行人都是
-低头快步而过，透出一阵诡异的气氛。
+巷子两边是成行的柳树，而柳树皆成扭曲状，故名歪柳巷。巷中有青
+石铺成的大路供人行走，两旁是青砖瓦房，来往人物恭而有礼，与城
+内的繁华热闹相比却多出几分闲情安逸。东南边有一家古董店。
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));
 
         set("exits", 
         ([ //sizeof() == 4
-                "south" : __DIR__"beiyin1",
-                "north" : "/d/jjf/yingzhai",
-                "west" : __DIR__"ximen",
-                "east" : __DIR__"baihu-w3",
+                "northeast" : __DIR__"wailiu4",
+                "west" : __DIR__"zhuque-s4",
+                "southeast" : __DIR__"gudongdian",
         ]));
 
         set("objects", 
@@ -32,9 +31,9 @@ LONG);
 
 
         set("outdoors", "changan");
-   set("no_clean_up", 0);
+    set("no_clean_up", 0);
         setup();
-   replace_program(ROOM);
+    replace_program(ROOM);
 }
 
 

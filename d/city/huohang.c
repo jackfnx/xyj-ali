@@ -17,7 +17,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-                "west" : __DIR__"wangnan1",
+                "northwest" : __DIR__"wailiu3",
         ]));
 
         set("objects", 

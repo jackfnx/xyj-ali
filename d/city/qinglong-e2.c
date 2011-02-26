@@ -19,7 +19,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : "/d/jjf/gate",
+                "south" : "/d/jjf/nogate",
                 "north" : __DIR__"biaoju",
                 "west" : __DIR__"qinglong-e1",
                 "east" : __DIR__"qinglong-e3",
@@ -30,10 +30,9 @@ LONG);
 //                __DIR__"npc/libai" : 1,
         ]));
 
-
         set("outdoors", "changan");
-   set("no_clean_up", 0);
+    set("no_clean_up", 0);
         setup();
-   replace_program(ROOM);
+    replace_program(ROOM);
 }
 

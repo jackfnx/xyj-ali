@@ -17,7 +17,7 @@ void create ()
 LONG);
 
   set("exits", ([
-        "out"      : __DIR__"ciensiw",
+        "west"      : __DIR__"ciensiw",
         "east"     : __DIR__"dyt",
       ]));
   set("objects", ([

@@ -17,7 +17,7 @@ void create ()
 LONG);
 
   set("exits", ([
-        "west" : __DIR__"east5",
+        "west" : "/d/eastway/east5",
         "east" : __DIR__"chen1",
       ]));
 

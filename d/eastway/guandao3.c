@@ -8,21 +8,21 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "官道");
-  set ("long", @LONG
+    set ("short", "官道");
+    set ("long", @LONG
 
-这是一条长长的官道，官道上马车并行，人来人往。官道一头伸向
-西南，一头伸向东北，东边有一座丘陵。
+这是一条长长的官道，官道上马车并行，人来人往。官道的西边通向
+进士场，远远看去似乎有一座高塔，东边则是雾濛濛的，看不清楚。
 LONG);
 
-  set("exits", ([
-        "southwest"  : __DIR__"guandao2",
-        "southeast"  : __DIR__"huaqing",
-        "east"       : __DIR__"shihuang",
-      ]));
-  set("outdoors", __DIR__);
-
-  setup();
+    set("exits", ([
+            "southwest"  : __DIR__"guandao2",
+            "east"       : __DIR__"huaqing",
+            "west"       : __DIR__"jinshi",
+        ]));
+    set("outdoors", __DIR__);
+    
+    setup();
 }
 
 

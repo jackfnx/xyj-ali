@@ -19,20 +19,20 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"wailiu2",
+            "south" : __DIR__"gulou",
         ]));
 
         set("objects", 
         ([ //sizeof() == 1
-                __DIR__"npc/keeper" : 1,
+            __DIR__"npc/keeper" : 1,
         ]));
-   set("no_fight", 1);
-   set("no_magic", 1);
+    set("no_fight", 1);
+    set("no_magic", 1);
 
 //        set("outdoors", "changan");
-   set("no_clean_up", 0);
+    set("no_clean_up", 0);
         setup();
-   replace_program(ROOM);
+    replace_program(ROOM);
 }
 
 

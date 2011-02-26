@@ -8,8 +8,8 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "始皇陵");
-  set ("long", @LONG
+    set ("short", "始皇陵");
+    set ("long", @LONG
 
 这是座落在官道以东的一个大丘陵，呈覆斗型。站在丘陵
 上极目远眺，不禁心旷神怡。旁边有一座高大的石碑：
@@ -17,18 +17,18 @@ void create ()
 
 LONG);
 
-  set("exits", ([
-        "east"       : __DIR__"bingma",
-        "west"       : __DIR__"guandao3",
-      ]));
-  set("objects", ([ /* sizeof() == 2 */
-         __DIR__"npc/wujiang" : 2,
-         __DIR__"npc/bing" : 3,
-      ]));
-
-  set("outdoors", __DIR__);
-
-  setup();
+    set("exits", ([
+            "east"       : __DIR__"bingma",
+            "northwest"  : __DIR__"guandao2",
+        ]));
+    set("objects", ([ /* sizeof() == 2 */
+            __DIR__"npc/wujiang" : 2,
+            __DIR__"npc/bing" : 3,
+        ]));
+    
+    set("outdoors", __DIR__);
+    
+    setup();
 }
 
 

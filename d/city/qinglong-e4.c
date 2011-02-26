@@ -19,7 +19,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : "/d/eastway/wangnan1",
+                "south" : __DIR__"wailiu1",
                 "north" : "/d/jjf/yingfang",
                 "west" : __DIR__"qinglong-e3",
                 "east" : __DIR__"dongmen",
@@ -27,13 +27,13 @@ LONG);
 
         set("objects", 
         ([ //sizeof() == 1
-//                __DIR__"npc/youxia" : 1,
+                __DIR__"npc/youxia" : 1,
         ]));
 
 
         set("outdoors", "changan");
-   set("no_clean_up", 0);
+    set("no_clean_up", 0);
         setup();
-   replace_program(ROOM);
+    replace_program(ROOM);
 }
 

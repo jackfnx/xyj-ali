@@ -19,7 +19,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-                "east" : __DIR__"wailiu1",
+                "east" : __DIR__"gulou",
         ]));
 
         set("objects", 
@@ -29,9 +29,9 @@ LONG);
 
 
 //        set("outdoors", "changan");
-   set("no_clean_up", 0);
+    set("no_clean_up", 0);
         setup();
-   replace_program(ROOM);
+    replace_program(ROOM);
 }
 
 
