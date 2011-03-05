@@ -716,7 +716,7 @@ int do_cost(string arg)
             write("★");
         for(i=damage_stars; i<5; i++)
             write("　");
-        write("    " + HIC+"内功攻击力      "+HIR);
+        write("    " + HIC+"内功攻击力    "+HIR);
         for(i=0; i<force_stars; i++)
             write("★");
         write(NOR + "\n");
