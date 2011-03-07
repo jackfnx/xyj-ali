@@ -106,7 +106,7 @@ void event_noon()
 
 string outdoor_room_description()
 {
-   return "    " + day_phase[current_day_phase]["desc_msg"] + "¡£\n";
+   return HIM + "    " + day_phase[current_day_phase]["desc_msg"] + "¡£\n" + NOR;
 }
 
 string game_time()

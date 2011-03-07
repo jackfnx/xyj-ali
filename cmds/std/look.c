@@ -130,11 +130,11 @@ int look_room(object me, object env)
           dirs[i] = 0;
      dirs -= ({ 0 });
      if( sizeof(dirs)==0 )
-        str += "    这里没有任何明显的出路。\n";
+        str += "  这里没有任何明显的出路。\n";
      else if( sizeof(dirs)==1 )
-        str += "    这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
+        str += "  这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
      else
-        str += sprintf("    这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
+        str += sprintf("  这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
           implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs)-1]);
    }
 //   str += env->door_description();
@@ -145,10 +145,10 @@ int look_room(object me, object env)
      if( !me->visible(inv[i]) ) continue;
      if( inv[i]==me ) continue;
      if (ridemsg = ride_suffix(inv[i]))
-        str1 = "  " + inv[i]->short() + " <"+ridemsg +
+        str1 = " " + inv[i]->short() + " <"+ridemsg +
           ">\n"+str1;
      else   
-        str1 = "  " + inv[i]->short() + "\n"+str1;
+        str1 = " " + inv[i]->short() + "\n"+str1;
    }
 
    write(str+str1);
