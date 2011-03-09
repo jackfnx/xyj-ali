@@ -114,6 +114,7 @@
 #define F_EQUIP        "/feature/equip.c"
 #define F_FINANCE     "/feature/finance.c"
 #define F_FOOD        "/feature/food.c"
+#define F_GREETING      "/feature/greeting.c"
 #define F_LIQUID     "/feature/liquid.c"
 #define F_MASTER     "/std/char/master.c"
 #define F_MESSAGE     "/feature/message.c"
