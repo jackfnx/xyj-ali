@@ -109,14 +109,16 @@ case "scholar":
          return GRN "【"+ob->query("added_title")+"学士】" NOR;
     }
     break;
-case "fighter":
+case "soldier":
     if ((int)ob->query("combat_exp")<1000)
         return GRN "【 女  兵 】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【 女参将 】" NOR;
+        return GRN "【 女校尉 】" NOR;
     else if ((int)ob->query("combat_exp")<100000)
         return GRN "【 女将军 】" NOR;
     else if ((int)ob->query("combat_exp")<500000)
+        return GRN "【"+ob->query("added_title")+"将军】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
         return GRN "【"+ob->query("added_title")+"大将军】" NOR;
     else
         return GRN "【"+ob->query("added_title")+"大元帅】" NOR;
@@ -242,7 +244,7 @@ case "scholar":
             return RED "【"+ob->query("added_title")+"学士】" NOR;
     }
     break;
-case "fighter":
+case "soldier":
     if ((int)ob->query("combat_exp")<1000)
         return RED "【 小  兵 】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
@@ -331,7 +333,7 @@ case "taoist":
    else if( age < 50 ) return "道兄";
    else return "道长";
    break;
-case "fighter":
+case "soldier":
    if( age < 18 ) return "小将军";
    else if( age < 50 ) return "大将军";
    else return "老将军";
