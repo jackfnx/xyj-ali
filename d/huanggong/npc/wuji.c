@@ -8,7 +8,7 @@ inherit NPC;
 
 #define DEBUG 0
 
-#define MYFILE "/d/huanggong/npc/pang.c"
+#define MYFILE "/d/huanggong/npc/wuji.c"
 
 #define MAXCATEGORY 5
 #define MAXPOSITION 3
@@ -45,7 +45,7 @@ string FST = 0;
 
 void create()
 {
-  set_name("房玄龄", ({ "pang xuanling", "pang", "xuanling" }));
+  set_name("长孙无忌", ({ "zhangsun wuji", "zhangsun", "wuji" }));
   set("title", "大宰相");
   set("gender", "男性");
   set("age", 60);
@@ -175,9 +175,9 @@ int do_exert(string arg)
   object who = this_player();
   object me = this_object();
 
-  if (arg != "sheqi pang xuenling" &&
-      arg != "sheqi pang" &&
-      arg != "sheqi xuenling")
+  if (arg != "sheqi zhangsun wuji" &&
+      arg != "sheqi zhangsun" &&
+      arg != "sheqi wuji")
     return 0;
 
   message_vision ("$N对$n慌忙示意: "+get_respect(who)+

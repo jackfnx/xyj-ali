@@ -98,7 +98,7 @@ void test_player (object who)
       }
       default:
       {
-        str = "xu maogong";     
+        str = "pang xuanling";     
         break;
       }
     }

@@ -518,9 +518,9 @@ int accept_fight(object ob)
 
   object me = this_object();
   object who = this_player();
-  object pang = present("pang xuanling",environment(me));
+  object wuji = present("zhangsun wuji",environment(me));
 
-  if (! pang)
+  if (! wuji)
   {
     command ("say 大宰相不在，如何比武也？\n");
     return notify_fail("还是请大宰相房玄龄来吧。\n");
@@ -545,7 +545,7 @@ int accept_fight(object ob)
     command ("say 进士失陪了！\n");
     return notify_fail("You are a NPC.\n");
   }
-  if (! pang->execute_approve_fight(who,me,get_position_int(),get_category_int()))
+  if (! wuji->execute_approve_fight(who,me,get_position_int(),get_category_int()))
   {
     return notify_fail("看来大宰相不允许你比武。\n");
   }
@@ -565,14 +565,14 @@ int accept_fight(object ob)
   return 1;
 }
 
-void pang_execute_fight_result (object pang, object me, object ob, int i)
+void wuji_execute_fight_result (object wuji, object me, object ob, int i)
 {
-  pang->execute_fight_result(me, ob, i);
+  wuji->execute_fight_result(me, ob, i);
 }
 
 int check_result(object me, object ob)
 {
-  object pang = present("pang xuanling",environment(me));
+  object wuji = present("zhangsun wuji",environment(me));
   int my_max_kee, his_max_kee;
 
   my_max_kee  = me->query("max_kee");
@@ -584,12 +584,12 @@ int check_result(object me, object ob)
     return 1;
   }
 
-  if (pang == 0)
-    pang = find_living ("pang xuanling");
+  if (wuji == 0)
+    wuji = find_living ("zhangsun wuji");
   if (!present(ob, environment()))
   {
-    remove_call_out ("pang_execute_fight_result");
-    call_out("pang_execute_fight_result",1,pang,me,ob,0);
+    remove_call_out ("wuji_execute_fight_result");
+    call_out("wuji_execute_fight_result",1,wuji,me,ob,0);
     return 1; 
   }
 
@@ -600,7 +600,7 @@ int check_result(object me, object ob)
     previous_position = remove_previous_position (ob,get_position_int());
     push_other_positions (me,get_position_int(),previous_position);
     me->set("new_player",1);
-    pang_execute_fight_result (pang,me,ob,1);
+    wuji_execute_fight_result (wuji,me,ob,1);
     convert_identity (me, ob);
     call_out("log_positions",1);
     return 1;
@@ -611,7 +611,7 @@ int check_result(object me, object ob)
     message_vision ("$N将$n扶起。\n",me,ob);
   }
 
-  call_out("pang_execute_fight_result",1,pang,me,ob,0);
+  call_out("wuji_execute_fight_result",1,wuji,me,ob,0);
   return 1;  
 }
 

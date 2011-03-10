@@ -42,7 +42,7 @@ LONG);
       ]));
 
   set("objects", ([
-         __DIR__"npc/pang"   : 1,
+         __DIR__"npc/wuji"   : 1,
       ]));
 
   remove_call_out ("reset_long");

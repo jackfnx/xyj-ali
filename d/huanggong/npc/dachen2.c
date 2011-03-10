@@ -9,7 +9,7 @@ inherit NPC;
 
 void create()
 {
-  set_name("徐茂功", ({ "xu maogong", "xu", "maogong", "da chen" }));
+  set_name("房玄龄", ({ "pang xuanling", "pang", "xuanling" }));
   set("title", "大臣");
   set("gender", "男性");
   set("age", 60);
