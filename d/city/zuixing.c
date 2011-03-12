@@ -23,6 +23,9 @@ LONG);
         "south" : __DIR__"qinglong-e4",
         "up" : __DIR__"zuixing2",
     ]));
+    set("objects", ([
+        "/d/obj/misc/chairs" : 4,
+    ]));
 
     setup();
 }

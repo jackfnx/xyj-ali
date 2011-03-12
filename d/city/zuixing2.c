@@ -16,6 +16,9 @@ LONG);
     set("exits", ([ /* sizeof() == 1 */
         "down" : __DIR__"zuixing",
     ]));
+    set("objects", ([
+        "/d/obj/misc/chairs" : 4,
+    ]));
     set("light_up", 1);
     setup();
 }

@@ -12,14 +12,14 @@ void create ()
 
 你走在一条宽阔的石板大街上，西面就快到城中心了，可以看到钟楼
 耸立于前。南北皆是规模不小的宅院，北面的院门的牌匾上写着斗大
-的“振远镖局”四字，南面的一所宅院是当朝将军秦叔宝的宅第。
+的“振远镖局”四字，南面是一片雾气沼沼的神秘所在。
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));
 
         set("exits", 
         ([ //sizeof() == 4
-                "south" : "/d/jjf/nogate",
+                "south" : __DIR__"jiejianchi",
                 "north" : __DIR__"biaoju",
                 "west" : __DIR__"qinglong-e1",
                 "east" : __DIR__"qinglong-e3",

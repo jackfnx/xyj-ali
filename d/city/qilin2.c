@@ -37,6 +37,9 @@ WALL,
     set("exits", ([ /* sizeof() == 1 */
         "down" : __DIR__"qilin",
     ]));
+    set("objects", ([
+        "/d/obj/misc/chairs" : 4,
+    ]));
 
     setup();
 }

@@ -25,7 +25,10 @@ LONG
     set("exits", ([ /* sizeof() == 2 */
         "up" : __DIR__"qilin2",
         "south" : __DIR__"baihu-w4",
-]));
+    ]));
+    set("objects", ([
+        "/d/obj/misc/chairs" : 4,
+    ]));
 
     setup();
     replace_program(ROOM);

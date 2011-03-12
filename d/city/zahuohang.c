@@ -19,7 +19,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"qinglong-e1",
+     "south" : __DIR__"qinglong-e3",
         ]));
 
         set("objects", 

@@ -19,7 +19,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"bank",
+                "south" : __DIR__"bank",
                 "north" : __DIR__"bookstore",
                 "west" : __DIR__"baihu-w2",
                 "east" : __DIR__"center",

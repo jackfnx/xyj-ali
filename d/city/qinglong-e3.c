@@ -11,16 +11,16 @@ void create ()
         set ("long", @LONG
 
 你走在一条宽阔的石板大街上，西面就快到城中心了，可以看到钟楼
-耸立于前。北面有家铁匠铺，传出钉钉铛铛的声音。南面是城中的清
-虚观，有些道士模样的人出入。
+耸立于前。北面有一家杂货行，时不是有马车出入送货。南面是城中
+的清虚观，有些道士模样的人出入。
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"qingxuguan",
-                "north" : __DIR__"tiejiangpu",
+                "south" : __DIR__"qingxuguan",
+                "north" : __DIR__"zahuohang",
                 "west" : __DIR__"qinglong-e2",
                 "east" : __DIR__"qinglong-e4",
         ]));
