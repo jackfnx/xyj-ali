@@ -17,3 +17,4 @@ void create()
         setup();
         carry_object("/obj/cloth")->wear();
         add_money("coin", 15+random(35));
+}
