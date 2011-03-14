@@ -57,7 +57,7 @@ set("inquiry", ([
         setup();
    add_money("silver", 15);
         carry_object("/d/obj/cloth/sengyi")->wear();
-   carry_object("/d/penglai/npc/obj/sengxie")->wear();
+   carry_object("/d/penglai/obj/sengxie")->wear();
    carry_object("/d/obj/weapon/staff/chanzhang")->wield();
         setup();
 }

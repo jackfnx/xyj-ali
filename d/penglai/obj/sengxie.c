@@ -31,7 +31,7 @@ int do_tear(string arg){
 
         me=this_player();
         if( !this_object()->id(arg) ) return 0;
-        ob=new("/d/penglai/npc/obj/ditu");
+        ob=new("/d/penglai/obj/ditu");
         ob->move(me);
    message_vision("$N拿起僧鞋使劲一扯，「啪」的一声从鞋底夹层中掉出张小纸片。\n", me);
         destruct(this_object());

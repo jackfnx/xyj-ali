@@ -24,7 +24,6 @@ LONG);
    set("objects", 
    ([ //sizeof() == 1
      __DIR__"npc/qingfeng" : 1,
-     __DIR__"npc/caoguojiu" : 1,
    ]));
 
    set("valid_startroom", 1);

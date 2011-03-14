@@ -17,7 +17,7 @@ LONG);
 ]));
 
   set("objects", ([ /* sizeof() == 1 */
-  "/d/qujing/wuzhuang/npc/ludongbin" : 1,
+  "/d/penglai/npc/ludongbin" : 1,
 ]));
 
   setup();

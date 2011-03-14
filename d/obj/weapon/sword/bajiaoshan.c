@@ -5,7 +5,7 @@
 
 #include <weapon.h>
 
-inherit BLADE;
+inherit SWORD;
 
 void create()
 {
@@ -21,6 +21,6 @@ void create()
      set("wield_msg", "$N拿出一把芭蕉扇扇了几扇。\n");
      set("unwield_msg", "$N扇了几扇，将$n插回腰间。\n");
    }
-   init_blade(10);
+   init_sword(10);
    setup();
 }

@@ -16,6 +16,7 @@ LONG);
   set("exits", ([ /* sizeof() == 3 */
   "south" : __DIR__"baiyun19",
   "north": __DIR__"yaxia",
+  "east": __DIR__"baxianting",
 ]));
   set("objects", ([ /* sizeof() == 2 */
   __DIR__"npc/baiyuan" : 1,

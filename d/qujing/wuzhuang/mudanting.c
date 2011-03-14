@@ -30,7 +30,7 @@ LONG);
    set("objects", 
    ([ //sizeof() == 1
      "/d/obj/misc/table" : 1,
-     __DIR__"npc/hanzhongli" : 1,
+     __DIR__"npc/xiaodaoshi" : 1,
    ]));
 
    create_door("down","×Àµ×°µÃÅ", "up", DOOR_CLOSED);

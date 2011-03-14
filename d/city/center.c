@@ -27,7 +27,7 @@ LONG);
     set("objects", 
         ([ //sizeof() == 1
                 __DIR__"npc/libai" : 1,
-                "/d/qujing/wuzhuang/npc/zhangguolao": 1,
+                "/d/penglai/npc/zhangguolao": 1,
         ]));
 
     set("outdoors", "changan");

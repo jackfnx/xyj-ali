@@ -25,7 +25,7 @@ LONG);
    set("objects", 
    ([ //sizeof() == 1
      //__DIR__"npc/qingfeng" : 1,
-     __DIR__"npc/tieguaili" : 1,
+     __DIR__"npc/xiaodaoshi" : 1,
    ]));
 
 
