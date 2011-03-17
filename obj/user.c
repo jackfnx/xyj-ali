@@ -73,11 +73,18 @@ int backup()
 // This function updates player's age, called by heart_beat()
 void update_age()
 {
-   // Update the time we spend on mudding, using method from TMI-2 mudlib.
-   if( !last_age_set ) last_age_set = time();
-   add("mud_age", time() - last_age_set);
-   last_age_set = time();
-   set("age", 14 + (int)query("age_modify")/86400 + (int)query("mud_age")/ 86400);
+    // Update the time we spend on mudding, using method from TMI-2 mudlib.
+    if (!last_age_set) last_age_set = time();
+    add("mud_age", time() - last_age_set);
+    last_age_set = time();
+    set("age", 14 + (int)query("age_modify")/86400 + (int)query("mud_age")/ 86400);
+    // fake_age is set as the age when player gets dao-xing:音狗態指。
+    // so later on, he/she always looks like the age of that time:)
+    // NewX move it from /cmds/std/look.c
+    if (!query("always_young") && query("combat_exp") > 729000) {
+        set("always_young", 1);
+        set("fake_age", query("age"));
+    }
 }
 
 void setup()

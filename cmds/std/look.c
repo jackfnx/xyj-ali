@@ -207,46 +207,28 @@ string per_status_msg(int age, int per, string gender)
 
 int look_living(object me, object obj)
 {
-   string str, limb_status, ridemsg, pro;
-   mixed *inv;
-   mapping my_fam, fam;
-// added for bian by mon.
-        mapping ofamily;
-   string ogender,orace;
-   int oage;
+    string str, limb_status, ridemsg, pro;
+    mixed *inv;
+    mapping my_fam, fam;
+    // added for bian by mon.
+    mapping ofamily;
+    string ogender,orace;
+    int oage;
  
-   if(obj->query_temp("d_mana")>0) {
-     ofamily=obj->query_temp("family");
-     ogender=obj->query_temp("gender");
-     orace=obj->query_temp("race");
-     oage=obj->query_temp("age");
-        } else {
-     ofamily=obj->query("family");
-     ogender=obj->query("gender");
-     orace=obj->query("race");
-     oage=obj->query("age");
-//fake_age is set as the age when player gets dao-xing:音狗態指。
-//so later on, he/she always looks like the age of that time:)
-//but need a "look" to activate all the relatived settings...weiqi
-//only when one is not in the status of "bian", check his/her
-//fake_age. mon 9/4/97
-     if(obj->query("always_young") ) { 
-        if(oage>obj->query("fake_age")) {
-        //if "age" is less than fake_age, reset fake_age.
-        //mon 9/4/97
-     oage=obj->query("fake_age");
-             } else {
-               obj->set("fake_age", oage);
+    if (obj->query_temp("d_mana") > 0) {
+        ofamily = obj->query_temp("family");
+        ogender = obj->query_temp("gender");
+        orace = obj->query_temp("race");
+        oage = obj->query_temp("age");
+    } else {
+        ofamily = obj->query("family");
+        ogender = obj->query("gender");
+        orace = obj->query("race");
+        oage = obj->query("age");
+        if (obj->query("always_young") && oage > obj->query("fake_age")) {
+            oage=obj->query("fake_age");
         }
-     }
-     else{
-     if(obj->query("combat_exp") > 729000){
-        obj->set("always_young", 1);
-        obj->set("fake_age", oage);
-     }     
-     }
-//done with fake_age.
-        }
+    }
 
 
    if( me!=obj && obj->visible(me) )
