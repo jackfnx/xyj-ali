@@ -39,7 +39,8 @@ void create()
    set_skill("literate", 180);
    set_skill("spells", 200);
    set_skill("taiyi", 200);
-   map_skill("spells", "taiyi");
+   set_skill("rootshentong", 200);
+   map_skill("spells", "rootshentong");
    map_skill("force", "zhenyuan-force");
    map_skill("unarmed", "wuxing-quan");
    map_skill("sword", "sanqing-jian");
