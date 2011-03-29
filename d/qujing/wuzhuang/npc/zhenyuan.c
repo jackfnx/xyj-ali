@@ -32,7 +32,7 @@ void create()
    set_skill("sanqing-jian", 190);
    set_skill("xiaofeng-sword", 190);
    set_skill("staff", 160);
-   set_skill("fumo-zhang", 190);
+   set_skill("qixing-zhang", 190);
    set_skill("hammer", 160);
    set_skill("kaishan-chui", 190);
    set_skill("force", 180);   
@@ -45,7 +45,7 @@ void create()
    map_skill("unarmed", "wuxing-quan");
    map_skill("sword", "sanqing-jian");
    map_skill("dodge", "baguazhen");
-   map_skill("staff", "fumo-zhang");
+   map_skill("staff", "qixing-zhang");
    map_skill("hammer", "kaishan-chui");
 
    set("max_kee", 4500);
