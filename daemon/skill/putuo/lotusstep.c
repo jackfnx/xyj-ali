@@ -23,7 +23,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
    if( (int)me->query("max_force") < 0 )
-     return notify_fail("你的内力不够，不能够学习莲花步。\n");
+     return notify_fail("你的内力不够，不能够学习莲华步法。\n");
 
    return 1;
 }
@@ -37,7 +37,7 @@ int practice_skill(object me)
 {
    if( (int)me->query("kee") < 30
    ||   (int)me->query("force") < 3 )
-     return notify_fail("你的气或内力不够，不能练莲花步。\n");
+     return notify_fail("你的气或内力不够，不能练莲华步法。\n");
    me->receive_damage("kee", 30);
    me->add("force", -3);
    return 1;
