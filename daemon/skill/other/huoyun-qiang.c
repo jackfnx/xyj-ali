@@ -113,9 +113,3 @@ notify_fail("你的体力不够练这门枪法，还是先休息休息吧。\n");
         write("你按着所学练了一遍火云枪。\n");
         return 1;
 }
-
-string perform_action_file(string func)
-{
-return CLASS_D("bonze") + "/huoyun-qiang/" + func;
-}
-

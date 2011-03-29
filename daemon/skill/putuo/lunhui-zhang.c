@@ -102,9 +102,3 @@ notify_fail("你的内力或气不够，没有办法练习轮回杖。\n");
 int valid_effect(object me, object weapon, string name, int skill)
 {
 }
-
-string perform_action_file(string func)
-{
-return CLASS_D("bonze") + "/lunhui-zhang/" + func;
-}
-
