@@ -30,7 +30,6 @@ void create()
    set_skill("parry", 180);
    set_skill("sword", 160);
    set_skill("sanqing-jian", 190);
-   set_skill("xiaofeng-sword", 190);
    set_skill("staff", 160);
    set_skill("qixing-zhang", 190);
    set_skill("hammer", 160);
