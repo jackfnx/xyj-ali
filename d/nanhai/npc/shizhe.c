@@ -36,13 +36,13 @@ LONG);
    set_skill("unarmed", 60);
    set_skill("jienan-zhi", 55);
    set_skill("dodge", 70);
-   set_skill("lotusmove", 70);
+   set_skill("lotusstep", 70);
    set_skill("parry", 80);
    set_skill("force", 70);
    set_skill("lotusforce", 60);
    map_skill("spells", "buddhism");
    map_skill("unarmed", "jienan-zhi");
-   map_skill("dodge", "lotusmove");
+   map_skill("dodge", "lotusstep");
    map_skill("force", "lotusforce");
 //   set("chat_chance_combat", 80);
 //   set("chat_msg_combat", ({
