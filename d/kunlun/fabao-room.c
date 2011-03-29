@@ -619,10 +619,211 @@ void build_armor(object ob)
     return;
 }
 
+
+string chinese_daoxing(int exp)
+{
+    int year, day, hour;
+    string ret;
+    year = exp / 1000; 
+    day = (exp % 1000) / 4;
+    hour = (exp % 4) * 3; 
+    ret = "";
+    if (year) ret += sprintf("%s年", chinese_number(year));
+    if (day) ret += sprintf("%s天", chinese_number(day));
+    if (hour) ret += sprintf("%s时辰", chinese_number(hour));
+    if (!year && !day && !hour) ret += "零";
+    return ret;
+}
+
+void dispose_gain(object fabao_ob, mapping m)
+{
+    int damage_stars, force_stars;
+    int  dodge_stars, armor_stars, vs_force_stars, spells_stars, vs_spells_stars;
+    int damage_upgraded, force_upgraded;
+    int  dodge_upgraded, armor_upgraded, vs_force_upgraded, spells_upgraded, vs_spells_upgraded;
+    int force_gain = 0, mana_gain = 0, exp_gain = 0;
+    
+    if (fabao_ob->query("series_no") == "1") {
+        damage_stars = fabao_ob->query("stars/damage");
+        damage_upgraded = fabao_ob->query("upgraded/damage");
+        
+        force_stars = fabao_ob->query("stars/force");
+        force_upgraded = fabao_ob->query("upgraded/force");
+
+        switch (damage_stars) {
+            case 1:
+                force_gain += damage_upgraded*10;
+                exp_gain += damage_upgraded*200;
+                break;
+            case 2:
+                force_gain += 5*10 + damage_upgraded*20;
+                exp_gain += 5*200 + damage_upgraded*2000;
+                break;
+            case 3:
+                force_gain += 5*10 + 5*20 + damage_upgraded*30;
+                exp_gain += 5*200 + 5*2000 + damage_upgraded*4000;
+                break;
+            case 4:
+                force_gain += 5*10 + 5*20 + 5*30 + damage_upgraded*40;
+                exp_gain += 5*200 + 5*2000 + 5*4000 + damage_upgraded*10000;
+                break;
+            case 5:
+            default:
+                force_gain += 5*10 + 5*20 + 5*30 + 5*40;
+                exp_gain += 5*200 + 5*2000 + 5*4000 + 5*10000;
+                break;
+        }
+        switch (force_stars) {
+            case 1:
+                force_gain += force_upgraded*10;
+                exp_gain += force_upgraded*1000;
+                break;
+            case 2:
+                force_gain += 5*10 + force_upgraded*20;
+                exp_gain += 5*1000 + force_upgraded*4000;
+                break;
+            case 3:
+                force_gain += 5*10 + 5*20 + force_upgraded*30;
+                exp_gain += 5*1000 + 5*4000 + force_upgraded*10000;
+                break;
+            case 4:
+                force_gain += 5*10 + 5*20 + 5*30 + force_upgraded*40;
+                exp_gain += 5*1000 + 5*4000 + 5*10000 + force_upgraded*20000;
+                break;
+            case 5:
+            default:
+                force_gain += 5*10 + 5*20 + 5*30 + 5*40;
+                exp_gain += 5*1000 + 5*4000 + 5*10000 + 5*20000;
+                break;
+        }
+    }
+    else {
+        dodge_stars = fabao_ob->query("stars/dodge");
+        dodge_upgraded = fabao_ob->query("upgraded/dodge");
+        
+        armor_stars = fabao_ob->query("stars/armor");
+        armor_upgraded = fabao_ob->query("upgraded/armor");
+        
+        vs_force_stars = fabao_ob->query("stars/armor_vs_force");
+        vs_force_upgraded = fabao_ob->query("upgraded/armor_vs_force");
+        
+        spells_stars = fabao_ob->query("stars/spells");
+        spells_upgraded = fabao_ob->query("upgraeded/spells");
+        
+        vs_spells_stars = fabao_ob->query("stars/armor_vs_spells");
+        vs_spells_upgraded = fabao_ob->query("upgraded/amror_vs_spells");
+        
+        switch (dodge_stars) {
+            case 1:
+                exp_gain += dodge_upgraded*1000;
+                break;
+            case 2:
+                exp_gain += 5*1000 + dodge_upgraded*4000;
+                break;
+            case 3:
+                exp_gain += 5*1000 + 5*4000 + dodge_upgraded*10000;
+                break;
+            case 4:
+                exp_gain += 5*1000 + 5*4000 + 5*10000 + dodge_upgraded*20000;
+                break;
+            case 5:
+            default:
+                exp_gain += 5*1000 + 5*4000 + 5*10000 + 5*20000;
+                break;
+        }
+        switch (armor_stars) {
+            case 1:
+                force_gain += armor_upgraded*10;
+                exp_gain += armor_upgraded*200;
+                break;
+            case 2:
+                force_gain += 5*10 + armor_upgraded*20;
+                exp_gain += 5*200 + armor_upgraded*1000;
+                break;
+            case 3:
+                force_gain += 5*10 + 5*20 + armor_upgraded*30;
+                exp_gain += 5*200 + 5*1000 + armor_upgraded*4000;
+                break;
+            case 4:
+                force_gain += 5*10 + 5*20 + 5*30 + armor_upgraded*40;
+                exp_gain += 5*200 + 5*1000 + 5*4000 + armor_upgraded*10000;
+                break;
+            case 5:
+            default:
+                force_gain += 5*10 + 5*20 + 5*30 + 5*40;
+                exp_gain += 5*200 + 5*1000 + 5*4000 + 5*10000;
+                break;
+        }
+        switch (vs_force_stars) {
+            case 1:
+                force_gain += vs_force_upgraded*20;
+                break;
+            case 2:
+                force_gain += 5*20 + vs_force_upgraded*30;
+                break;
+            case 3:
+                force_gain += 5*20 + 5*30 + vs_force_upgraded*50;
+                break;
+            case 4:
+                force_gain += 5*20 + 5*30 + 5*50 + vs_force_upgraded*80;
+                break;
+            case 5:
+            default:
+                force_gain += 5*20 + 5*30 + 5*50 + 5*80;
+                break;
+        }
+        switch (spells_stars) {
+            case 1:
+                mana_gain += spells_upgraded*10;
+                exp_gain += spells_upgraded*1000;
+                break;
+            case 2:
+                mana_gain += 5*10 + spells_upgraded*20;
+                exp_gain += 5*1000 + spells_upgraded*4000;
+                break;
+            case 3:
+                mana_gain += 5*10 + 5*20 + spells_upgraded*30;
+                exp_gain += 5*1000 + 5*4000 + spells_upgraded*10000;
+                break;
+            case 4:
+                mana_gain += 5*10 + 5*20 + 5*30 + spells_upgraded*40;
+                exp_gain += 5*1000 + 5*4000 + 5*10000 + spells_upgraded*20000;
+                break;
+            case 5:
+            default:
+                mana_gain += 5*10 + 5*20 + 5*30 + 5*40;
+                exp_gain += 5*1000 + 5*4000 + 5*10000 + 5*20000;
+                break;
+        }
+        switch (vs_spells_stars) {
+            case 1:
+                mana_gain += vs_spells_upgraded*20;
+                break;
+            case 2:
+                mana_gain += 5*20 + vs_spells_upgraded*30;
+                break;
+            case 3:
+                mana_gain += 5*20 + 5*30 + vs_spells_upgraded*60;
+                break;
+            case 4:
+                mana_gain += 5*20 + 5*30 + 5*60 + vs_spells_upgraded*100;
+                break;
+            case 5:
+            default:
+                mana_gain += 5*20 + 5*30 + 5*60 + 5*100;
+                break;
+        }
+    }
+    m["force_gain"] = force_gain;
+    m["mana_gain"] = mana_gain;
+    m["exp_gain"] = exp_gain;
+}
+
 int  do_dispose(string arg)
 {
     object ob = this_player();
     object fabao_ob;
+    mapping gain = ([]);
     
     if ( !arg || arg == "" )
         return notify_fail("你要消除什么法宝？\n");
@@ -632,8 +833,15 @@ int  do_dispose(string arg)
         
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
         return notify_fail("那个不是法宝耶！\n");
-        
-    write("你确定要毁灭该法宝吗？(y/n)");
+
+    dispose_gain(fabao_ob, gain);
+    
+    printf("如果摧毁%s，你可以回收：\n", fabao_ob->name());
+    printf("内力：" + HIG + "%d\n" + NOR, gain["force_gain"]);
+    printf("法力：" + HIG + "%d\n" + NOR, gain["mana_gain"]);
+    printf("道行：" + HIM + "%s\n" + NOR, chinese_daoxing(gain["exp_gain"]));
+    printf("黄金：" + HIY + "五十两\n" + NOR);
+    write("你确定要摧毁该法宝吗？(y/n)");
     input_to( (: confirm_dispose :), ob, fabao_ob); 
     return 1;
 }
@@ -643,6 +851,7 @@ void confirm_dispose(string arg, object ob, object fabao_ob)
     mapping  fabao_list;
     string*  names;
     int      i;
+    mapping  gain = ([]);
     
     if ( arg == "y" || arg == "Y" )  {
         fabao_list = ob->query("fabao");
@@ -652,6 +861,11 @@ void confirm_dispose(string arg, object ob, object fabao_ob)
             if ( fabao_list[names[i]] == fabao_ob->query("series_no") )  {
                 //seteuid(getuid(ob));
                 //rm( fabao_ob->query_save_file() + __SAVE_EXTENSION__ );
+                dispose_gain(fabao_ob, gain);
+                ob->add("max_force", gain["force_gain"]);
+                ob->add("max_mana", gain["mana_gain"]);
+                ob->add("combat_exp", gain["exp_gain"]);
+                ob->add("balance", 500000);
                 ob->delete("fabao/"+names[i]);
                 destruct( fabao_ob );
                 write("法宝被毁弃了。\n");
@@ -724,23 +938,23 @@ int do_cost(string arg)
         switch(damage_stars)  {
             case 1:  write("    道行一百年以上\n");
                     write("    内力五百以上\n");
-                    write("    消耗最大内力五十点\n");
-                    write("    消耗道行一年\n");
+                    write("    消耗最大内力十点\n");
+                    write("    消耗道行五十天\n");
                     break;
             case 2:  write("    道行五百年以上\n");
                     write("    内力一千以上\n");
-                    write("    消耗最大内力一百点\n");
-                    write("    消耗道行十年\n");
+                    write("    消耗最大内力二十点\n");
+                    write("    消耗道行二年\n");
                     break;
             case 3:  write("    道行一千年以上\n");
                     write("    内力一千五以上\n");
-                    write("    消耗最大内力一百五十点\n");
-                    write("    消耗道行二十年\n");
+                    write("    消耗最大内力三十点\n");
+                    write("    消耗道行四年\n");
                     break;
             case 4:  write("    道行一千五百年以上\n");
                     write("    内力两千以上\n");
-                    write("    消耗最大内力两百点\n");
-                    write("    消耗道行五十年\n");
+                    write("    消耗最大内力四十点\n");
+                    write("    消耗道行十年\n");
                     break;
             case 5:  write("你的法宝"+HIG+"伤害力"+NOR+"已经不能再升级了。\n");
         }
@@ -748,26 +962,26 @@ int do_cost(string arg)
             case 1:  write(HIC+"内功攻击力" + NOR+ "(force)升级需要：\n");
                     write("    道行两百年以上\n");
                     write("    内力五百以上\n");
-                    write("    消耗最大内力五十点\n");
-                    write("    消耗道行五年\n");
+                    write("    消耗最大内力十点\n");
+                    write("    消耗道行一年\n");
                     break;
             case 2:  write(HIC+"内功攻击力" + NOR+ "(force)升级需要：\n");
                     write("    道行五百年以上\n");
                     write("    内力一千以上\n");
-                    write("    消耗最大内力一百点\n");
-                    write("    消耗道行二十年\n");
+                    write("    消耗最大内力二十点\n");
+                    write("    消耗道行四年\n");
                     break;
             case 3:  write(HIC+"内功攻击力" + NOR+ "(force)升级需要：\n");
                     write("    道行一千年以上\n");
                     write("    内力一千五以上\n");
-                    write("    消耗最大内力一百五十点\n");
-                    write("    消耗道行五十年\n");
+                    write("    消耗最大内力三十点\n");
+                    write("    消耗道行十年\n");
                     break;
             case 4:  write(HIC+"内功攻击力" + NOR+ "(force)升级需要：\n");
                     write("    道行一千五百年以上\n");
                     write("    内力两千以上\n");
-                    write("    消耗最大内力两百点\n");
-                    write("    消耗道行一百年\n");
+                    write("    消耗最大内力四十点\n");
+                    write("    消耗道行二十年\n");
                     break;
             case 5:  write("你的法宝"+HIC+"内功攻击力"+NOR+"已经不能再升级了。\n");
         }
@@ -805,19 +1019,19 @@ int do_cost(string arg)
         switch( dodge_stars )   {
             case 1:  write(HIY+"防御力" + NOR+ "(dodge)升级需要：\n");
                     write("    道行两百年以上\n");
-                    write("    消耗道行五年\n");
+                    write("    消耗道行一年\n");
                     break;
             case 2:  write(HIY+"防御力" + NOR+ "(dodge)升级需要：\n");
                     write("    道行五百年以上\n");
-                    write("    消耗道行二十年\n");
+                    write("    消耗道行四年\n");
                     break;
             case 3:  write(HIY+"防御力" + NOR+ "(dodge)升级需要：\n");
                     write("    道行一千年以上\n");
-                    write("    消耗道行五十年\n");
+                    write("    消耗道行十年\n");
                     break;
             case 4:  write(HIY+"防御力" + NOR+ "(dodge)升级需要：\n");
                     write("    道行一千五百年以上\n");
-                    write("    消耗道行一百年\n");
+                    write("    消耗道行二十年\n");
                     break;
             case 5:  write("你的法宝"+HIY+"防御力"+NOR+"已经不能再升级了。\n");
         }
@@ -825,26 +1039,26 @@ int do_cost(string arg)
             case 1:  write(HIB+"抵抗力" + NOR+ "(armor)升级需要：\n");
                     write("    道行一百年以上\n");
                     write("    内力五百以上\n");
-                    write("    消耗最大内力五十点\n");
-                    write("    消耗道行一年\n");
+                    write("    消耗最大内力十点\n");
+                    write("    消耗道行五十天\n");
                     break;
             case 2:  write(HIB+"抵抗力" + NOR+ "(armor)升级需要：\n");
                     write("    道行五百年以上\n");
                     write("    内力一千以上\n");
-                    write("    消耗最大内力一百点\n");
-                    write("    消耗道行五年\n");
+                    write("    消耗最大内力二十点\n");
+                    write("    消耗道行一年\n");
                     break;
             case 3:  write(HIB+"抵抗力" + NOR+ "(armor)升级需要：\n");
                     write("    道行一千年以上\n");
                     write("    内力一千五以上\n");
-                    write("    消耗最大内力一百五十点\n");
-                    write("    消耗道行二十年\n");
+                    write("    消耗最大内力三十点\n");
+                    write("    消耗道行四年\n");
                     break;
             case 4:  write(HIB+"抵抗力" + NOR+ "(armor)升级需要：\n");
                     write("    道行一千五百年以上\n");
                     write("    内力两千以上\n");
-                    write("    消耗最大内力两百点\n");
-                    write("    消耗道行五十年\n");
+                    write("    消耗最大内力四十点\n");
+                    write("    消耗道行十年\n");
                     break;
             case 5:  write("你的法宝"+HIB+"抵抗力"+NOR+"已经不能再升级了。\n");
         } 
@@ -852,22 +1066,22 @@ int do_cost(string arg)
             case 1:  write(HIM+"内功抵抗力" + NOR+ "(armor_vs_force)升级需要：\n");
                     write("    道行一百年以上\n");
                     write("    内力五百以上\n");
-                    write("    消耗最大内力一百点\n");
+                    write("    消耗最大内力二十点\n");
                     break;
             case 2:  write(HIM+"内功抵抗力" + NOR+ "(armor_vs_force)升级需要：\n");
                     write("    道行五百年以上\n");
                     write("    内力一千以上\n");
-                    write("    消耗最大内力一百五十点\n");
+                    write("    消耗最大内力三十点\n");
                     break;
             case 3:  write(HIM+"内功抵抗力" + NOR+ "(armor_vs_force)升级需要：\n");
                     write("    道行一千年以上\n");
                     write("    内力一千五以上\n");
-                    write("    消耗最大内力两百五十点\n");
+                    write("    消耗最大内力五十点\n");
                     break;
             case 4:  write(HIM+"内功抵抗力" + NOR+ "(armor_vs_force)升级需要：\n");
                     write("    道行一千五百年以上\n");
                     write("    内力两千以上\n");
-                    write("    消耗最大内力四百点\n");
+                    write("    消耗最大内力八十点\n");
                     break;
             case 5:  write("你的法宝"+HIM+"内功抵抗力"+NOR+"已经不能再升级了。\n");
         }
@@ -875,26 +1089,26 @@ int do_cost(string arg)
             case 1:  write(HIC+"魔法攻击力" + NOR+ "(spells)升级需要：\n");
                     write("    道行两百年以上\n");
                     write("    法力五百以上\n");
-                    write("    消耗最大法力五十点\n");
-                    write("    消耗道行五年\n");
+                    write("    消耗最大法力十点\n");
+                    write("    消耗道行一年\n");
                     break;
             case 2:  write(HIC+"魔法攻击力" + NOR+ "(spells)升级需要：\n");
                     write("    道行五百年以上\n");
                     write("    法力一千以上\n");
-                    write("    消耗最大法力一百点\n");
-                    write("    消耗道行二十年\n");
+                    write("    消耗最大法力二十点\n");
+                    write("    消耗道行四年\n");
                     break;
             case 3:  write(HIC+"魔法攻击力" + NOR+ "(spells)升级需要：\n");
                     write("    道行一千年以上\n");
                     write("    法力一千五以上\n");
-                    write("    消耗最大法力一百五十点\n");
-                    write("    消耗道行五十年\n");
+                    write("    消耗最大法力三十点\n");
+                    write("    消耗道行十年\n");
                     break;
             case 4:  write(HIC+"魔法攻击力" + NOR+ "(spells)升级需要：\n");
                     write("    道行一千五百年以上\n");
                     write("    法力两千以上\n");
-                    write("    消耗最大法力两百点\n");
-                    write("    消耗道行一百年\n");
+                    write("    消耗最大法力四十点\n");
+                    write("    消耗道行二十年\n");
                     break;
             case 5:  write("你的法宝"+HIC+"魔法攻击力"+NOR+"已经不能再升级了。\n");
         }
@@ -902,22 +1116,22 @@ int do_cost(string arg)
             case 1:  write(HIW+"魔法抵抗力" + NOR+ "(armor_vs_spells)升级需要：\n");
                     write("    道行两百年以上\n");
                     write("    法力五百以上\n");
-                    write("    消耗最大法力一百点\n");
+                    write("    消耗最大法力二十点\n");
                     break;
             case 2:  write(HIW+"魔法抵抗力" + NOR+ "(armor_vs_spells)升级需要：\n");
                     write("    道行五百年以上\n");
                     write("    法力一千以上\n");
-                    write("    消耗最大法力一百五十点\n");
+                    write("    消耗最大法力三十点\n");
                     break;
             case 3:  write(HIW+"魔法抵抗力" + NOR+ "(armor_vs_spells)升级需要：\n");
                     write("    道行一千年以上\n");
                     write("    法力一千五以上\n");
-                    write("    消耗最大法力三百点\n");
+                    write("    消耗最大法力六十点\n");
                     break;
             case 4:  write(HIW+"魔法抵抗力" + NOR+ "(armor_vs_spells)升级需要：\n");
                     write("    道行一千五百年以上\n");
                     write("    法力两千以上\n");
-                    write("    消耗最大法力五百点\n");
+                    write("    消耗最大法力一百点\n");
                     break;
             case 5:  write("你的法宝"+HIW+"魔法抵抗力"+NOR+"已经不能再升级了。\n");
         }
