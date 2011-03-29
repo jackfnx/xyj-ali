@@ -10,6 +10,7 @@ int cast(object me, object target)
 {
     string msg;
     int damage, ap, dp;
+    int busy;
 
     if (!target) target = offensive_target(me);
 
@@ -90,7 +91,9 @@ int cast(object me, object target)
         me->kill_ob(target);
     }
 
-    me->start_busy(1+random(2));
+    busy = random(5 - (int)me->query_per() % 10);
+    if (busy < 1) busy = 1;
+    me->start_busy(busy);
     return 3+random(5);
 }
 
