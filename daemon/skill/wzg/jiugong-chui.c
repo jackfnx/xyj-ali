@@ -1,13 +1,11 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-
-//【开山锤】kaishan-chui.c, weiqi...980307
+//【九宫锤法】jiugong-chui.c, weiqi...980307
 inherit SKILL;
 
 /*
-开山锤    dodge  7    parry  -7    damage  27
-五庄观功夫。
+九宫锤法    dodge  7    parry  -7    damage  27
 */
 
 mapping *action = ({
@@ -54,13 +52,13 @@ int valid_learn(object me)
    object ob;
 
    if( (int)me->query("str") < 25 )
-     return notify_fail("开山锤要身强力壮才能发挥作用。\n");
+     return notify_fail("九宫锤要身强力壮才能发挥作用。\n");
 
    if( (int)me->query("max_force") < 100 )
-     return notify_fail("你的内力不够，没有办法学开山锤。\n");
+     return notify_fail("你的内力不够，没有办法学九宫锤。\n");
 
    if( !(ob = me->query_temp("weapon")) || (string)ob->query("skill_type") != "hammer" )
-     return notify_fail("你必须先找一把锤子才能学开山锤。\n");
+     return notify_fail("你必须先找一把锤子才能学九宫锤。\n");
 
    return 1;
 }
@@ -81,7 +79,7 @@ int practice_skill(object me)
      return notify_fail("你现在太累了，强练无益。\n");
    me->receive_damage("kee", 30);
    me->add("force", -5);
-   write("你按着所学练了一遍开山锤。\n");
+   write("你按着所学练了一遍九宫锤。\n");
    return 1;
 }
 

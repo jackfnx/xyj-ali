@@ -1,13 +1,11 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-
-//【伏魔杖】fumo-zhang.c, weiqi...980305
+//【七星杖法】qixing-zhang.c, weiqi...980305
 inherit SKILL;
 
 /*
-伏魔杖    dodge  2.5    parry  -6    damage  23
-五庄观功夫。
+七星杖法    dodge  2.5    parry  -6    damage  23
 */
 
 mapping *action = ({
@@ -54,10 +52,10 @@ int valid_learn(object me)
    object ob;
 
    if( (int)me->query("max_force") < 100 )
-     return notify_fail("你的内力不够，没有办法学伏魔杖。\n");
+     return notify_fail("你的内力不够，没有办法学七星杖。\n");
 
    if( !(ob = me->query_temp("weapon")) || (string)ob->query("skill_type") != "staff" )
-     return notify_fail("你必须先找一条禅杖才能学伏魔杖。\n");
+     return notify_fail("你必须先找一条禅杖才能学七星杖。\n");
 
    return 1;
 }
@@ -78,7 +76,7 @@ int practice_skill(object me)
      return notify_fail("你现在太累了，强练无益。\n");
    me->receive_damage("kee", 30);
    me->add("force", -5);
-   write("你按着所学练了一遍伏魔杖。\n");
+   write("你按着所学练了一遍七星杖。\n");
    return 1;
 }
 
