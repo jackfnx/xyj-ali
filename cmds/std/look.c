@@ -374,6 +374,7 @@ int look_room_item(object me, string arg)
 {
    object env;
    mapping item, exits;
+   string dir;
 
    if( !objectp(env = environment(me)) )
      return notify_fail("这里只有灰蒙蒙地一片，什么也没有。\n");
@@ -386,13 +387,34 @@ int look_room_item(object me, string arg)
         
      return 1;
    }
-   if( mapp(exits = env->query("exits")) && !undefinedp(exits[arg]) ) {
-     if( objectp(env = load_object(exits[arg])) )
+   
+   switch (arg) {
+        case "e": dir = "east"; break;
+        case "w": dir = "west"; break;
+        case "s": dir = "south"; break;
+        case "n": dir = "north"; break;
+        case "se": dir = "southeast"; break;
+        case "ne": dir = "northeast"; break;
+        case "sw": dir = "southwest"; break;
+        case "nw": dir = "northwest"; break;
+        case "u": dir = "up"; break;
+        case "d": dir = "down"; break;
+        case "eu": dir = "eastup"; break;
+        case "wu": dir = "westup"; break;
+        case "su": dir = "southup"; break;
+        case "nu": dir = "northup"; break;
+        case "ed": dir = "eastdown"; break;
+        case "wd": dir = "westdown"; break;
+        case "sd": dir = "southdown"; break;
+        case "nd": dir = "northdown"; break;
+        default: dir = arg; break;
+   }
+   if( mapp(exits = env->query("exits")) && !undefinedp(exits[dir]) ) {
+     if( objectp(env = load_object(exits[dir])) ) {
         look_room(me, env);
-     else {
+        return 1;
+     } else
        return notify_fail("你什么也看不见。\n");
-     }
-     return 1;
    }
    return notify_fail("你要看什么？\n");
 }
