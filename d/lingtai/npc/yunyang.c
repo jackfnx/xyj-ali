@@ -46,13 +46,13 @@ void create()
    set_skill("azoth-force", 120);
    set_skill("force", 120);
    set_skill("qianjun-bang", 120);
-   set_skill("jindouyun", 120);
+   set_skill("cloud-steps", 120);
    map_skill("spells", "taoism");
    map_skill("unarmed", "puti-zhi");
    map_skill("force", "azoth-force");
    map_skill("stick", "qianjun-bang");
    map_skill("parry", "qianjun-bang");
-   map_skill("dodge", "jindouyun");
+   map_skill("dodge", "cloud-steps");
         set("chat_chance_combat", 40);
         set("chat_msg_combat", ({
      (: cast_spell, "light" :),
