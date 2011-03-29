@@ -45,13 +45,13 @@ void create()
     set_skill("unarmed", 100);
     set_skill("wuxing-quan", 100);
     set_skill("sword",110);
-    set_skill("xiaofeng-sword",120);
+    set_skill("sanqing-jian",120);
     
     map_skill("spells", "taiyi");
     map_skill("force", "zhenyuan-force");
     map_skill("dodge", "baguazhen");
     map_skill("unarmed", "wuxing-quan");
-    map_skill("sword", "xiaofeng-sword");
+    map_skill("sword", "sanqing-jian");
 
     set("inquiry", ([
                 "碧藕"     : "我没那玩意，去问问老寿星吧！\n",

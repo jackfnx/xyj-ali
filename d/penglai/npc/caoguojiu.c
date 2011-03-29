@@ -22,7 +22,7 @@ void create()
     set_skill("baguazhen", 70);
     set_skill("parry", 80);
     set_skill("hammer", 90);
-    set_skill("kaishan-chui", 100);
+    set_skill("jiugong-chui", 100);
     set_skill("force", 70);   
     set_skill("zhenyuan-force", 70);
     set_skill("literate", 60);
@@ -31,7 +31,7 @@ void create()
     map_skill("spells", "taiyi");
     map_skill("force", "zhenyuan-force");
     map_skill("unarmed", "wuxing-quan");
-    map_skill("hammer", "kaishan-chui");
+    map_skill("hammer", "jiugong-chui");
     map_skill("dodge", "baguazhen");
     
     set("max_kee", 500);

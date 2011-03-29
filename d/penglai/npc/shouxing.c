@@ -45,14 +45,14 @@ void create()
     set_skill("unarmed", 120);
     set_skill("wuxing-quan", 120);
     set_skill("staff",110);
-    set_skill("fumo-zhang",120);
+    set_skill("qixing-zhang",120);
 
     map_skill("spells", "taiyi");
     map_skill("force", "zhenyuan-force");
     map_skill("dodge", "baguazhen");
     map_skill("unarmed", "wuxing-quan");
-    map_skill("staff", "fumo-zhang");
-    map_skill("parry", "fumo-zhang");
+    map_skill("staff", "qixing-zhang");
+    map_skill("parry", "qixing-zhang");
 
     set("inquiry", ([
                 "火枣"     : "我没那玩意，去问问老福星吧！\n",
