@@ -48,8 +48,8 @@ set("inquiry", ([
    set_skill("lotusforce", 50);
    set_skill("lunhui-zhang", 79);
    set_skill("jienan-zhi", 50);
-   set_skill("lotusmove", 79);
-   map_skill("dodge", "lotusmove");
+   set_skill("lotusstep", 79);
+   map_skill("dodge", "lotusstep");
    map_skill("unarmed", "jienan-zhi");
    map_skill("staff", "lunhui-zhang");
    map_skill("parry", "lunhui-zhang");

@@ -25,7 +25,7 @@ void create()
   set("mana_factor", 30);
   set("combat_exp", 450000);
   set_skill("spells", 50);
-  set_skill("dao", 50);
+  set_skill("taoism", 50);
   set_skill("unarmed", 45);
   set_skill("baihua-zhang", 45);
   set_skill("dodge", 80);
@@ -35,7 +35,7 @@ void create()
   set_skill("fork", 80);
   set_skill("moonforce", 70);
   set_skill("fengbo-cha", 80);
-  map_skill("spells", "dao");
+  map_skill("spells", "taoism");
   map_skill("unarmed", "baihua-zhang");
   map_skill("fork", "fengbo-cha");
   map_skill("parry", "fengbo-cha");
