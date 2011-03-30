@@ -48,7 +48,7 @@
 #define QUEST_D(x)     ("/daemon/quest/qlist" + x)
 #define CLASS_D(x)     ("/daemon/class/" + x)
 //#define SKILL_D(x)     ("/daemon/skill/" + x)
-#define SKILL_D(x)      ("/daemon/skill_d"->find_skill(x))
+#define SKILL_D(x)      ("/adm/daemons/skill_d"->find_skill(x))
 #define CONDITION_D(x)   ("/daemon/condition/" + x)
 
 // Clonable/Non-inheritable Standard Objects
