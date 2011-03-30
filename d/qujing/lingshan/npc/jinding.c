@@ -25,19 +25,19 @@ void create()
   set("mana_factor", 80);
   set("combat_exp", 1000000);
   set_skill("spells", 120);
-  set_skill("dao", 120);
+  set_skill("taoism", 120);
   set_skill("unarmed", 120);
   set_skill("puti-zhi", 120);
   set_skill("dodge", 120);
-  set_skill("jindouyun", 120);
+  set_skill("cloud-steps", 120);
   set_skill("parry", 120);
   set_skill("force", 120);
-  set_skill("wuxiangforce", 120);
+  set_skill("azoth-force", 120);
   set_skill("staff", 120);
-  map_skill("spells", "dao");
+  map_skill("spells", "taoism");
   map_skill("unarmed", "puti-zhi");
-  map_skill("dodge", "jindou-yun");
-  map_skill("force", "wuxiangforce");
+  map_skill("dodge", "cloud-steps");
+  map_skill("force", "azoth-force");
 
   setup();
   carry_object("/d/obj/cloth/daopao")->wear();

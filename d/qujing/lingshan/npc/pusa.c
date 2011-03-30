@@ -29,7 +29,7 @@ void create()
   set_skill("unarmed", 140);
   set_skill("jienan-zhi", 140);
   set_skill("dodge", 140);
-  set_skill("lotusmove", 140);
+  set_skill("lotusstep", 140);
   set_skill("parry", 140);
   set_skill("force", 140);
   set_skill("lotusforce", 140);
@@ -37,7 +37,7 @@ void create()
   set_skill("lunhui-zhang", 140);
   map_skill("spells", "buddhism");
   map_skill("unarmed", "jienan-zhi");
-  map_skill("dodge", "lotusmove");
+  map_skill("dodge", "lotusstep");
   map_skill("force", "lotusforce");
   map_skill("parry", "lunhui-zhang");
   map_skill("staff", "lunhui-zhang");
