@@ -94,6 +94,6 @@ int cast(object me, object target)
     busy = random(5 - (int)me->query_per() % 10);
     if (busy < 1) busy = 1;
     me->start_busy(busy);
-    return 3+random(5);
+    return 3+random(5 - (int)me->query_per() % 10);
 }
 
