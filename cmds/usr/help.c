@@ -14,68 +14,105 @@ int find_sub(mixed *filename);
 
 int main(object me, string arg)
 {
-   int i;
-   string file, *search;
-        string *default_search;
-   int wildcard;
-
-   // If no topic specified, give the topics.
-   if( !arg ) {
-     cat(HELP_DIR + "help/topics");
-     return 1;
-   }
-
-   // Else, try if a command name is specified.
-   seteuid(getuid());
-   if( stringp(file = me->find_command(arg)) ) {
-     notify_fail("有这个指令存在，但是并没有详细的说明文件。\n");
-     return file->help(me);
-   }
-   //Now see if it aliases to a command.
-   //mon 10/27/97
-   if( stringp(file =
-     me->find_command(ALIAS_D->process_global_alias(arg))) ) {
-     notify_fail("有这个指令存在，但是并没有详细的说明文件。\n");
-     return file->help(me);
-   }
-
-   // Search the individual search path first.
-   if( pointerp(search = me->query("help_search_path")) ) {
-     i = sizeof(search);
-     while(i--) if( file_size(search[i] + arg)>0 ) {
-        me->start_more( read_file(search[i] + arg) );
+    int i;
+    string file, *search;
+    string *default_search;
+    int wildcard;
+    string skill, verb;
+    
+    // If no topic specified, give the topics.
+    if( !arg ) {
+        cat(HELP_DIR + "help/topics");
         return 1;
-     }
-   }
+    }
 
-   // Support efun/lfun help with same name as other topics such as
-   // ed() and ed command.
-   // Using a "()" after the function name can prevent it being
-   // interpreted as a user command with the same name. -- mon
-   sscanf(arg, "%s()", arg);
-   arg=replace_string(arg, "/", "");
+    // Else, try if a command name is specified.
+    seteuid(getuid());
+    if( stringp(file = me->find_command(arg)) ) {
+        notify_fail("有这个指令存在，但是并没有详细的说明文件。\n");
+        return file->help(me);
+    }
+    //Now see if it aliases to a command.
+    //mon 10/27/97
+    if( stringp(file =
+        me->find_command(ALIAS_D->process_global_alias(arg))) ) {
+        notify_fail("有这个指令存在，但是并没有详细的说明文件。\n");
+        return file->help(me);
+    }
+    
+    // Search the individual search path first.
+    if( pointerp(search = me->query("help_search_path")) ) {
+        i = sizeof(search);
+        while(i--) if( file_size(search[i] + arg)>0 ) {
+            me->start_more( read_file(search[i] + arg) );
+            return 1;
+        }
+    }
+   
+    if (sscanf(arg, "%s.%s", verb, arg) == 2) {
+        if (verb == "skill") {
+            notify_fail("没有这个技能，或者这个技能没有定义帮助。\n");
+            return SKILL_D(arg)->help(me);
+        }
+        else if (verb == "perform" || verb == "exert" || verb == "cast") {
+            if (sscanf(arg, "%s.%s", skill, arg) == 2) {
+                string func, skfile;
+                switch (verb) {
+                    case "perform":
+                        func = "perform_action_file";
+                        break;
+                    case "exert":
+                        func = "exert_function_file";
+                        break;
+                    case "cast":
+                        func = "cast_spell_file";
+                        break;
+                    default: // can't reach
+                        func = "foo";
+                        break;
+                }
+                skfile = call_other(SKILL_D(skill), func, arg);
+                notify_fail("没有这个特殊攻击，或者这个特殊攻击没有定义帮助。\n");
+                if (stringp(skfile))
+                    return (int)call_other(skfile, "help", me);
+                else
+                    return 0;
+            }
+            else
+                return notify_fail("格式：help [perform|exert|cast].<技能>.<特殊攻击>\n");
+        }
+        else
+            return notify_fail("格式：help skill.<技能> | [perform|exert|cast].<技能>.<特殊攻击>\n");
+    }
 
-        if(strsrch(arg,"*")>=0 || strsrch(arg,"?")>=0) wildcard=1;
-   else wildcard=0;
+    // Support efun/lfun help with same name as other topics such as
+    // ed() and ed command.
+    // Using a "()" after the function name can prevent it being
+    // interpreted as a user command with the same name. -- mon
+    sscanf(arg, "%s()", arg);
+    arg=replace_string(arg, "/", "");
+    
+    if (strsrch(arg,"*")>=0 || strsrch(arg,"?")>=0) wildcard=1;
+    else wildcard=0;
+    
+    found=0;
+    write("\n");
+    
+    // Finally, search the default search paths.
+    // by snowcat feb 21 1998
+    if (wizardp(me))
+        default_search = DEFAULT_SEARCH_PATHS;
+    else
+        default_search = DEFAULT_PLAYER_SEARCH_PATHS;
+    if ( pointerp(default_search) ) {
+        if (search_dir(default_search, arg, me, wildcard, wizardp(me))>0) {
+            if(wildcard) write("找到"+chinese_number(found)+
+                "个相关主题。\n");
+            return 1;
+        }
+    }
 
-   found=0;
-   write("\n");
-
-   // Finally, search the default search paths.
-   // by snowcat feb 21 1998
-   if (wizardp(me))
-     default_search = DEFAULT_SEARCH_PATHS;
-   else
-     default_search = DEFAULT_PLAYER_SEARCH_PATHS;
-   if( pointerp(default_search) ) {
-     if(search_dir(default_search, arg, me, wildcard, wizardp(me))>0) {
-       if(wildcard) write("找到"+chinese_number(found)+
-         "个相关主题。\n");
-       return 1;
-          }
-   }
-
-   return notify_fail("没有针对这项主题的说明文件。\n");
+    return notify_fail("没有针对这项主题的说明文件。\n");
 }
 
 // recursively search the help dir.
