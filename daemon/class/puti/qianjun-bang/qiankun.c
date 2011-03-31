@@ -58,3 +58,15 @@ int perform(object me, object target)
         return 1;
 }
 
+
+int help(object me)
+{
+    write(@HELP
+°æ«¨¿§“ª∞Ù°ø
+
+°º÷∏¡Ó°Ω    perform qiankun
+HELP
+    );
+    return 1;
+}
+

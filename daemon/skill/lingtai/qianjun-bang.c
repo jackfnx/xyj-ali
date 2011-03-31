@@ -131,3 +131,18 @@ string perform_action_file(string func)
 return CLASS_D("puti") + "/qianjun-bang/" + func;
 }
 
+int help(object me)
+{
+    write(@HELP
+【千钧棒法】
+『金猴奋起千钧棒，玉宇澄清万里埃』，可说是为千钧棒定下了基调：
+大开大合，气势磅礴。此棒法并非菩提祖师所创，而是由其一杰出弟子
+带回师门。其特点是沉稳有力，破坏力强。使用千钧棒法需较强内力，
+需１５０点内力才可学习。
+
+〖特殊攻击〗
+①  霹雳三打     perform pili
+②  乾坤一棒     perform qiankun
+HELP);
+    return 1;
+}

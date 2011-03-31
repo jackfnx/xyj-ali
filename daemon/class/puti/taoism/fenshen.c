@@ -48,3 +48,15 @@ int cast(object me, object target)
 
    return 8+random(5);
 }
+
+int help(object me)
+{
+    write(@HELP
+【分身术】
+顾名思义，分身术。
+
+〖指令〗    cast fenshen
+HELP
+    );
+    return 1;
+}

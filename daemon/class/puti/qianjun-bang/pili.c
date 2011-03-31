@@ -62,3 +62,17 @@ message_vision(HIC"\n$N运足精神，身形一转，霹雳间连续向$n攻出了三招！\n"NOR,me,t
         return 1;
 }
 
+int help(object me)
+{
+    write(@HELP
+【霹雳三打】
+霹雳间连发三招，使敌人难于招降。
+
+〖指令〗    perform pili
+HELP
+
+    );
+    return 1;
+}
+
+
