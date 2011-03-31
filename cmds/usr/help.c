@@ -51,12 +51,19 @@ int main(object me, string arg)
    
     if (sscanf(arg, "%s.%s", verb, arg) == 2) {
         if (verb == "skill") {
-            notify_fail("没有这个技能，或者这个技能没有定义帮助。\n");
-            return SKILL_D(arg)->help(me);
+            string skill_file;
+            object skill_ob;
+            notify_fail("这个技能没有定义帮助。\n");
+            if (stringp(skill_file = SKILL_D(arg))
+                && objectp(skill_ob = load_object(skill_file)))
+                return (int)call_other(skill_ob, "help", me);
+            else
+                return notify_fail("没有这个技能。\n");;
         }
         else if (verb == "perform" || verb == "exert" || verb == "cast") {
             if (sscanf(arg, "%s.%s", skill, arg) == 2) {
-                string func, skfile;
+                string func, pfm_file;
+                object pfm_ob;
                 switch (verb) {
                     case "perform":
                         func = "perform_action_file";
@@ -71,12 +78,12 @@ int main(object me, string arg)
                         func = "foo";
                         break;
                 }
-                skfile = call_other(SKILL_D(skill), func, arg);
-                notify_fail("没有这个特殊攻击，或者这个特殊攻击没有定义帮助。\n");
-                if (stringp(skfile))
-                    return (int)call_other(skfile, "help", me);
+                notify_fail("这个" + verb + "没有定义帮助。\n");
+                if (stringp(pfm_file = call_other(SKILL_D(skill), func, arg))
+                    && objectp(pfm_ob = load_object(pfm_file)))
+                    return (int)call_other(pfm_ob, "help", me);
                 else
-                    return 0;
+                    return notify_fail("没有这个" + verb + "。\n");
             }
             else
                 return notify_fail("格式：help [perform|exert|cast].<技能>.<特殊攻击>\n");
