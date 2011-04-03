@@ -11,17 +11,16 @@ void create ()
         set ("long", @LONG
 
 你走在一条宽阔的石板大街上，东面就快到城中心了，可以看到钟楼
-耸立于前。南边有一座大府邸，高墙青瓦，一定是什么大官住的地方。
-有许多读书人出入。北面是长安城的总督衙门，飞檐挂角，显的极有
-气势。
+耸立于前。北边有一座大的酒楼，里面唏唏嚷嚷，热闹非凡。南边有
+一座大府邸，高墙青瓦，一定是什么大官住的地方。
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"zhongguan",
-                "north" : __DIR__"zhongdu",
+                "south" : __DIR__"zhongguan",
+                "north" : __DIR__"ziyanglou",
                 "west" : __DIR__"baihu-w3",
                 "east" : __DIR__"baihu-w1",
         ]));

@@ -22,7 +22,7 @@ set("item_desc",(["gaoshi":"
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"baihu-w2",
+                "south" : __DIR__"baihu-w3",
                 "north" : __DIR__"datang",
         ]));
 

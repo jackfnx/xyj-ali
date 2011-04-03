@@ -20,11 +20,12 @@ LONG);
     set("no_fight", 1);
     set("light_up", 1);
     set("exits", ([ /* sizeof() == 2 */
-        "south" : __DIR__"qinglong-e4",
+        "west" : __DIR__"xuanwu-n1",
         "up" : __DIR__"zuixing2",
     ]));
     set("objects", ([
         "/d/obj/misc/chairs" : 4,
+        "/d/obj/misc/tables" : 1,
     ]));
 
     setup();

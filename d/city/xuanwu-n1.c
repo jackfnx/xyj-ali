@@ -11,8 +11,8 @@ void create ()
         set ("long", @LONG
 
 这里的路相当的宽，能容好几匹马车并行，长长的道路通向北方。远
-远的能看到皇宫的朝阳门。南边是城中心，游人相当的多。西边是家
-铁匠铺，传出钉钉铛铛的声音。东边是家木器铺。
+远的能看到皇宫的朝阳门。路的两侧坐落着两座彩楼，雕梁画栋，宏
+伟壮丽，奇怪的是彩楼门前车马稀疏，显得冷冷清清。
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));
@@ -21,8 +21,8 @@ LONG);
         ([ //sizeof() == 4
                 "south" : __DIR__"center",
                 "north" : __DIR__"xuanwu-n2",
-                "west" : __DIR__"tiejiangpu",
-                "east" : __DIR__"muqi",
+                "east" : __DIR__"zuixing",
+                "west" : __DIR__"qilin",
         ]));
 
         set("objects", 

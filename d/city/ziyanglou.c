@@ -19,7 +19,7 @@ LONG);
 
         set("exits", 
         ([ //sizeof() == 4
-     "south" : __DIR__"baihu-w3",
+     "south" : __DIR__"baihu-w2",
      "up" : __DIR__"xifuhui",
         ]));
 

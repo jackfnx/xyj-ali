@@ -23,6 +23,7 @@ LONG);
         set("objects", 
         ([ //sizeof() == 1
                 __DIR__"npc/dai" : 1,
+                __DIR__"npc/huoji" : 3,
         ]));
 
 

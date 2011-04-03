@@ -24,10 +24,11 @@ LONG
     set("light_up", 1);
     set("exits", ([ /* sizeof() == 2 */
         "up" : __DIR__"qilin2",
-        "south" : __DIR__"baihu-w4",
+        "east" : __DIR__"xuanwu-n1",
     ]));
     set("objects", ([
         "/d/obj/misc/chairs" : 4,
+        "/d/obj/misc/tables" : 1,
     ]));
 
     setup();
