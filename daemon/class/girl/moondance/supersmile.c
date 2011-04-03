@@ -7,7 +7,7 @@ int exert(object me, object target)
 {
     object *ob;
     int i, skill, damage;
-    if (me->query("gender")=="男性")
+    if (me->query("gender")!="女性")
         return notify_fail("不是女人就不要瞎掺乎了。\n");
     if (!me->is_fighting())
         return notify_fail("不是在战斗中不要乱笑，小心误伤他人。\n");
@@ -58,5 +58,16 @@ int exert(object me, object target)
         else if(!ob[i]->is_killing(me)) ob[i]->kill_ob(me);
     }
 
+    return 1;
+}
+
+int help(object me)
+{
+    write(@HELP
+【销魂一笑】
+销魂一笑，英雄尽折腰。
+
+〖指令〗    perform supersmile on <object>
+HELP);
     return 1;
 }

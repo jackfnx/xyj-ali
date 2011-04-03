@@ -1,5 +1,5 @@
 //情丝
-//requirement: jueqingbian > 100, kee > 50%, sen > 50%
+//requirement: jueqingbian > 100, kee > 20%, sen > 50%
 
 #include <ansi.h>
 
@@ -100,6 +100,17 @@ int perform(object me, object target)
     me->start_busy(2+random(3));
 
     message_vision(msg, me, target);
+    return 1;
+}
+
+int help(object me)
+{
+    write(@HELP
+【情丝】
+情丝绵绵，夺人兵器。
+
+〖指令〗    perform qingsi on <object>
+HELP);
     return 1;
 }
 

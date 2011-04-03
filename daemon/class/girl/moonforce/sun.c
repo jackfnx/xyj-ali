@@ -1,49 +1,56 @@
 // …Òª∞ ¿ΩÁ°§Œ˜”Œº«°§∞Ê±æ£¥£Æ£µ£∞
 /* <SecCrypt CPL V3R05> */
  
-// lifeheal.c
+// sun.c
 
 #include <ansi.h>
 
 int exert(object me, object target)
 {
+    if (!target
+        || !userp(target)
+        || target->is_corpse()
+        || target==me)
+        return notify_fail("ƒ„œÎÃÊÀ≠Ω‚≥˝ ¥‘¬÷‰£ø\n");
+    if (!target->query_condition("moon_poison"))
+        return notify_fail("√ª÷– ¥‘¬÷‰œπΩ¡∫Õ ≤√¥£!\n");
+    if (me->is_fighting() || target->is_fighting())
+        return notify_fail("’Ω∂∑÷–Œﬁ∑®‘Àπ¶¡∆…À£°\n");
+    if ((int)me->query("force") - (int)me->query("max_force") <  600)
+        return notify_fail("ƒ„µƒ’Ê∆¯≤ªπª°£\n");
+    if ((int)me->query_skill("moonforce",1) < 120)
+        return notify_fail("ƒ„µƒƒ⁄π¶–ﬁŒ™≤ª◊„“‘ÃÊ»ÀΩ‚≥˝ ¥‘¬÷‰°£\n");
+    message_vision(
+        HIY "$N◊¯¡Àœ¬¿¥ƒ¨ƒ¨µƒƒÓ∆æ≠¿¥£¨$nÃ˝$N”Ô“Ù«Â¥‡£¨‘ΩƒÓ‘Ω «≥Â∫Õ∞≤æ≤£¨»´…Ì“˛“˛∑¢≥ˆ •Ω‡µƒπ‚ª‘°£\n\n"NOR,
+        me, target );
+    if (random(me->query_skill("moonforce", 1)-100)>10) {
+        target->apply_condition("moon_poison",0);
+        message_vision(
+            HIY "$NÀ–æ≠µƒ…˘“Ù‘Ω¿¥‘Ω»·∫Õ£¨$n–ƒ÷–º»∏–º§£¨”÷∞≤Œø£¨‘⁄ƒ«Œ¬»·ÚØ≥œµƒƒÓæ≠…˘÷–»Î¡ÀÀØœÁ°£\n"NOR,
+            me, target);
+        target->set_temp("force_sleep",1);
+        target->command_function("sleep");
+        target->delete_temp("force_sleep");
+    }
+    else {
+        message_vision(
+        HIY "$NÕª»ª¡≥…´≤‘∞◊£¨À∆∫ıÃÂ¡¶≤ª÷ß£¨æπ≈ª≥ˆ“ªø⁄—™¿¥°≠°≠\n"NOR,
+        me, target );
+    }
 
-   if ( !target
-      ||      !userp(target)
-      ||      target->is_corpse()
-      ||      target==me)
-     return notify_fail("ƒ„œÎÃÊÀ≠Ω‚≥˝ ¥‘¬÷‰£ø\n");
-   if (!target->query_condition("moon_poison"))
-     return notify_fail("√ª÷– ¥‘¬÷‰œπΩ¡∫Õ ≤√¥£!\n");
-   if( me->is_fighting() || target->is_fighting())
-     return notify_fail("’Ω∂∑÷–Œﬁ∑®‘Àπ¶¡∆…À£°\n");
+    target->receive_cuiring("kee", 10 + (int)me->query_skill("force")/3);
+    me->add("force", -150);
+    me->set("force_factor", 0);
+    return 1;
+}
 
-   if( (int)me->query("force") - (int)me->query("max_force") <  600 )
-     return notify_fail("ƒ„µƒ’Ê∆¯≤ªπª°£\n");
+int help(object me)
+{
+    write(@HELP
+°æ”≥»’÷‰°ø
+∞Ô÷˙±»ÀΩ‚≥˝°∫ ¥‘¬÷‰°ª
 
-   if ( (int)me->query_skill("moonforce",1) < 120)
-     return notify_fail("ƒ„µƒƒ⁄π¶–ﬁŒ™≤ª◊„“‘ÃÊ»ÀΩ‚≥˝ ¥‘¬÷‰°£\n");
-   
-   message_vision(
-     HIY "$N◊¯¡Àœ¬¿¥ƒ¨ƒ¨µƒƒÓ∆æ≠¿¥£¨$nÃ˝$N”Ô“Ù«Â¥‡£¨‘ΩƒÓ‘Ω «≥Â∫Õ∞≤æ≤£¨»´…Ì“˛“˛∑¢≥ˆ •Ω‡µƒπ‚ª‘°£\n\n"NOR,
-     me, target );
-   if (random(me->query_skill("moonforce", 1)-100)>10){
-     target->apply_condition("moon_poison",0);
-     message_vision(
-     HIY "$NÀ–æ≠µƒ…˘“Ù‘Ω¿¥‘Ω»·∫Õ£¨$n–ƒ÷–º»∏–º§£¨”÷∞≤Œø£¨‘⁄ƒ«Œ¬»·ÚØ≥œµƒƒÓæ≠…˘÷–»Î¡ÀÀØœÁ°£\n"NOR,
-     me, target );
-     target->set_temp("force_sleep",1);
-     target->command_function("sleep");
-
-     target->delete_temp("force_sleep");   }
-   else {
-     message_vision(
-     HIY "$NÕª»ª¡≥…´≤‘∞◊£¨À∆∫ıÃÂ¡¶≤ª÷ß£¨æπ≈ª≥ˆ“ªø⁄—™¿¥°≠°≠\n"NOR,
-      me, target );
-   }   
- 
-   target->receive_cuiring("kee", 10 + (int)me->query_skill("force")/3 );
-   me->add("force", -150);
-   me->set("force_factor", 0);
-   return 1;
+°º÷∏¡Ó°Ω    exert sun
+HELP);
+    return 1;
 }

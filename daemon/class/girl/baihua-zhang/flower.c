@@ -97,3 +97,14 @@ int perform(object me, object target)
         return 1;
 }
 
+int help(object me)
+{
+    write(@HELP
+【天女散花】
+姿势优美，威力强大。但如果对方武功太高，可能反弹所有伤害。
+
+〖指令〗    perform flower on <object>
+〖要求〗    百花掌８０级，身上有五朵以上鲜花
+HELP);
+    return 1;
+}

@@ -60,3 +60,14 @@ void remove_effect(object me, int dodge_amount,int attack_amount)
     message_vision(HIW"$N渐感气力不支，不得不放慢脚步，放缓剑招。\n"NOR,me);
 }
 
+
+int help(object me)
+{
+    write(@HELP
+【舞雪】
+雪在舞，剑在飞。
+
+〖指令〗    perform wuxue on <object>
+HELP);
+    return 1;
+}

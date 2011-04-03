@@ -70,3 +70,15 @@ int perform(object me, object target)
     return 1;
 }
 
+int help(object me)
+{
+    write(@HELP
+【回风】
+山穷水尽，雷霆一击。
+
+〖指令〗    perform huifeng on <object>
+HELP);
+    return 1;
+}
+
+
