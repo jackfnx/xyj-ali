@@ -54,40 +54,51 @@ mapping *action = ({
 
 int valid_learn(object me)
 {
-   
-   if( me->query_temp("weapon") || me->query_temp("secondary_weapon") )
-     return notify_fail("练劫难指必须空手。\n");
-   return 1;
+    if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+        return notify_fail("练劫难指必须空手。\n");
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-   return usage=="unarmed";
+    return usage=="unarmed";
 }
 
 mapping query_action(object me, object weapon)
 {
-   return action[random(sizeof(action))];
+    return action[random(sizeof(action))];
 }
 
 int practice_skill(object me)
 {
-   if( (int)me->query("sen") < 30)
-     return notify_fail("你的精神无法集中了，休息一下再练吧。\n");
-   if( (int)me->query("kee") < 30 )
-     return notify_fail("你现在手足酸软，休息一下再练吧。\n");
-   if( (int)me->query("force") < 10 )
-     return notify_fail("你的内力不够了。\n");
+    if ((int)me->query("sen") < 30)
+        return notify_fail("你的精神无法集中了，休息一下再练吧。\n");
+    if ((int)me->query("kee") < 30)
+        return notify_fail("你现在手足酸软，休息一下再练吧。\n");
+    if ((int)me->query("force") < 10)
+        return notify_fail("你的内力不够了。\n");
 
-   me->receive_damage("sen", 20);
-   me->receive_damage("kee", 20);
-   me->add("force", -10);
+    me->receive_damage("sen", 20);
+    me->receive_damage("kee", 20);
+    me->add("force", -10);
 
-   return 1;
+    return 1;
 }
 
 string perform_action_file(string func)
 {
-return CLASS_D("bonze") + "/jienan-zhi/" + func;
+    return CLASS_D("bonze") + "/jienan-zhi/" + func;
 }
 
+int help(object me)
+{
+    write(@HELP
+【劫难指】
+佛门武功，威力无穷
+
+〖特殊攻击〗
+①　暴风骤雨：perform storm on <target>
+
+HELP);
+    return 1;
+}

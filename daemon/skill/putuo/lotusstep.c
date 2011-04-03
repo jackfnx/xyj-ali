@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// lotusmove.c
+// lotusstep.c
 // By Dream Dec. 18, 1996
 
 inherit SKILL;
@@ -17,28 +17,40 @@ string *dodge_msg = ({
 
 int valid_enable(string usage)
 {
-   return (usage=="dodge") || (usage=="move");
+    return (usage=="dodge") || (usage=="move");
 }
 
 int valid_learn(object me)
 {
-   if( (int)me->query("max_force") < 0 )
-     return notify_fail("你的内力不够，不能够学习莲华步法。\n");
+    if ((int)me->query("max_force") < 0)
+        return notify_fail("你的内力不够，不能够学习莲华步法。\n");
 
-   return 1;
+    return 1;
 }
 
 string query_dodge_msg(string limb)
 {
-   return dodge_msg[random(sizeof(dodge_msg))];
+    return dodge_msg[random(sizeof(dodge_msg))];
 }
 
 int practice_skill(object me)
 {
-   if( (int)me->query("kee") < 30
-   ||   (int)me->query("force") < 3 )
-     return notify_fail("你的气或内力不够，不能练莲华步法。\n");
-   me->receive_damage("kee", 30);
-   me->add("force", -3);
-   return 1;
+    if ((int)me->query("kee") < 30
+        || (int)me->query("force") < 3)
+        return notify_fail("你的气或内力不够，不能练莲华步法。\n");
+    me->receive_damage("kee", 30);
+    me->add("force", -3);
+    return 1;
+}
+
+int help(object me)
+{
+    write(@HELP
+【莲华步法】
+        无尽碧莲  重重叠叠  
+        映日荷花  亭亭玉立
+        雨露滚莲  出淤泥而不染
+
+HELP);
+    return 1;
 }
