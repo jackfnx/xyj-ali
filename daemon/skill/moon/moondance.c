@@ -1,6 +1,6 @@
 // Ali by NewX
  
-//【玄阴凝香舞】 moondance.c
+//【冷月凝香舞】 moondance.c
 // cglaem...12/07/96.
 
 inherit SKILL;
@@ -84,5 +84,28 @@ int practice_skill(object me)
 
 string perform_action_file(string func)
 {
-    return CLASS_D("moon") + "/moondance/" + func;
+    return CLASS_D("girl") + "/moondance/" + func;
+}
+
+int help(object me)
+{
+    write(@HELP
+【冷月凝香舞】
+此舞本是嫦娥所创的一套舞蹈，后经过西王母的改造，将其改造成了
+一套上乘轻功。
+与妲己一战后，西王母对此舞进行了多次改造，更是将它改造成了一
+套拳法，舞姿也由高傲圣洁，竟变得极邪、极淫、极媚。这些改造的
+争议极大，有几个弟子表达了极其强烈的抗议；谁知，西王母的立场
+更是强硬，那些表达了抗议的弟子第二天就消失了。于是，大多数弟
+子只好低头，修炼起了这种全新的舞姿。
+
+招数名称：
+海上生明月                   我本将心付明月
+举杯邀明月                   事如春梦了无痕
+风月无边，刻骨铭心
+
+〖特殊法门〗
+①  销魂一笑：      perform supersmile on <object>
+HELP);
+    return 1;
 }
