@@ -1,20 +1,18 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-// shizhe.c 净瓶使者
-// By Dream Dec. 20, 1996
+
+// longnu.c 龙女
 
 inherit NPC;
 
 void create()
 {
-    set_name("净瓶使者", ({ "shizhe" }));
+    set_name("龙女", ({ "longnu" }));
     set("title", "南海观音侍从");   
     set("long", @LONG
-南海观音座前净瓶使者。
+南海观音座前龙女。
 LONG);
-    set("gender", "男性");
-    set("age", 20);
+    set("gender", "女性");
+    set("age", 18);
+    set("per", 25);
     set("attitude", "friendly");
     set("max_kee", 300);
     set("max_gin", 300);
@@ -32,18 +30,18 @@ LONG);
 
     set_skill("literate", 80);
     set_skill("spells", 70);
-    set_skill("buddhism", 70);
+    set_skill("seashentong", 70);
     set_skill("unarmed", 60);
-    set_skill("jienan-zhi", 55);
+    set_skill("dragonfight", 55);
     set_skill("dodge", 70);
-    set_skill("lotusstep", 70);
+    set_skill("dragonstep", 70);
     set_skill("parry", 80);
     set_skill("force", 70);
-    set_skill("lotusforce", 60);
-    map_skill("spells", "buddhism");
-    map_skill("unarmed", "jienan-zhi");
-    map_skill("dodge", "lotusstep");
-    map_skill("force", "lotusforce");
+    set_skill("dragonforce", 60);
+    map_skill("spells", "seashentong");
+    map_skill("unarmed", "dragonfight");
+    map_skill("dodge", "dragonstep");
+    map_skill("force", "dragonforce");
 //   set("chat_chance_combat", 80);
 //   set("chat_msg_combat", ({
 //     (: cast_spell, "thunder" :),
@@ -52,7 +50,11 @@ LONG);
     setup();
 //   carry_object("/obj/money/thousand-cash");
     carry_object("/obj/money/gold");
-    carry_object("/d/nanhai/obj/jingping");
-    carry_object("/obj/cloth")->wear();
+    carry_object("/obj/money/gold");
+    carry_object("/obj/money/gold");
+    carry_object("/obj/money/gold");
+    carry_object("/obj/money/gold");
+    carry_object("/obj/loginload/skirt")->wear();
+    carry_object("/obj/loginload/shoes")->wear();
 }
 

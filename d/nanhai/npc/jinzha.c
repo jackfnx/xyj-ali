@@ -1,18 +1,15 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-// huian.c 惠岸行者
-// By Dream Dec. 20, 1996
+
+// jinzha.c 金吒
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-    set_name("惠岸行者", ({ "huian xingzhe", "huian", "xingzhe" }));
-    set("title", "观音首徒");   
+    set_name("金吒", ({ "jinzha" }));
+    set("title", "文殊首徒");   
     set("long", @LONG
-李天王二公子木叉，本是普贤菩萨的弟子，后来转投观音菩萨门下。
+李天王大公子金吒，乃文殊菩萨首徒，来普陀山支援自己的弟弟。
 LONG);
     set("gender", "男性");
     set("age", 25);
@@ -28,7 +25,7 @@ LONG);
     set("max_mana", 250);
     set("mana", 300);
     set("mana_factor", 20);
-    set("combat_exp", 30000);
+    set("combat_exp", 40000);
 
     set("eff_dx", 150000);
     set("nkgain", 300);

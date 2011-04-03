@@ -9,72 +9,65 @@ inherit F_MASTER;
 
 void create()
 {
-   set_name("红孩儿", ({ "honghaier" }));
-   set("title", "南海观音之徒");   
-   set("long", @LONG
-他本是牛魔王之子，生性好斗；后被南海观音收服，脾气却不见有什么好转。
-他使得一手的好枪法，火云枪更是鲜有敌手，寻常人是不敢碰他的。
+    set_name("红孩儿", ({ "honghaier", "hong" }));
+    set("title", "圣婴大王");
+    set("long", @LONG
+他本是牛魔王之子，生性好斗；后被南海观音擒到这普陀山上做了个
+善财童子。可他仍然桀骜不驯，时刻想着反咬一口，幸好观音给他带
+上了金箍咒，才让他乖巧了许多。
 LONG);
-   set("gender", "男性");
-   set("age", 15);
-   set("attitude", "heroism");
-   set("max_kee", 750);
-   set("max_gin", 600);
-   set("max_sen", 750);
-   set("force", 450);
-   set("max_force", 300);
-   set("force_factor", 20);
-   set("max_mana", 350);
-   set("mana", 500);
-   set("mana_factor", 50);
-   set("combat_exp", 240000);
-   set_skill("literate", 80);
-   set_skill("spells", 100);
-   set_skill("buddhism", 100);
-   set_skill("unarmed", 60);
-   set_skill("jienan-zhi", 60);
-   set_skill("dodge", 80);
-   set_skill("lotusmove", 80);
-   set_skill("parry", 80);
-   set_skill("force", 80);
-   set_skill("lotusforce", 70);
-   set_skill("staff", 50);
-   set_skill("lunhui-zhang", 40);
-   set_skill("spear", 120);
-   set_skill("huoyun-qiang", 150);
-   map_skill("spells", "buddhism");
-   map_skill("unarmed", "jienan-zhi");
-   map_skill("dodge", "lotusmove");
-   map_skill("force", "lotusforce");
-   map_skill("parry", "huoyun-qiang");
-   map_skill("staff", "lunhui-zhang");
-   map_skill("spear", "huoyun-qiang");
-   set("chat_chance_combat", 40);
-   set("chat_msg_combat", ({
-     (: cast_spell, "bighammer" :),
-     (: cast_spell, "jingang" :),
-   }) );
+    set("gender", "男性");
+    set("age", 15);
+    set("attitude", "heroism");
+    set("max_kee", 1000);
+    set("max_gin", 600);
+    set("max_sen", 1000);
+    set("force", 2000);
+    set("max_force", 1000);
+    set("force_factor", 75);
+    set("max_mana", 1000);
+    set("mana", 2000);
+    set("mana_factor", 55);
+    set("combat_exp", 750000);
+    set_skill("literate", 80);
+    set_skill("spells", 100);
+    set_skill("taiyi", 100);
+    set_skill("unarmed", 100);
+    set_skill("moyun-shou", 100);
+    set_skill("dodge", 100);
+    set_skill("moshenbu", 100);
+    set_skill("parry", 100);
+    set_skill("force", 100);
+    set_skill("lengquan-force", 100);
+    set_skill("spear", 120);
+    set_skill("huoyun-qiang", 150);
+    map_skill("spells", "taiyi");
+    map_skill("unarmed", "moyun-shou");
+    map_skill("dodge", "moshenbu");
+    map_skill("force", "lengquan-force");
+    map_skill("parry", "huoyun-qiang");
+    map_skill("spear", "huoyun-qiang");
+    set("chat_chance_combat", 40);
+    set("chat_msg_combat", ({
+        (: cast_spell, "qiankun" :),
+        (: cast_spell, "zhenhuo" :),
+    }) );
 
-   create_family("南海普陀山", 2, "弟子");
+    create_family("火焰山", 2, "弟子");
 
-   setup();
-   carry_object("/obj/money/gold");
-   carry_object("/obj/money/gold");
-   carry_object("/obj/cloth")->wear();
-   carry_object("/d/nanhai/obj/jingu2");
-   carry_object("/d/nanhai/obj/huojianqiang")->wield();
+    setup();
+    carry_object("/obj/money/gold");
+    carry_object("/obj/money/gold");
+    carry_object("/obj/cloth")->wear();
+    carry_object("/d/nanhai/obj/jingu2");
+    carry_object("/d/nanhai/obj/huojianqiang")->wield();
 }
 
 void attempt_apprentice(object ob)
 {
-   if (((int)ob->query_skill("buddhism", 1) < 50 )) {
-     command("say " + RANK_D->query_respect(ob) + "的佛法修行还不精，还需多加努力才是！");
-     return;
-   }
-   command("smile");
-   command("say 很好，我就收下你，希望你多加努力，早成正果。\n");
-
-   command("recruit " + ob->query("id") );
-   return;
+    command("smile");
+    command("say 很好，本大王就收下你，希望你多加努力，能给本大王分忧。\n");
+    command("recruit " + ob->query("id") );
+    return;
 }
 
