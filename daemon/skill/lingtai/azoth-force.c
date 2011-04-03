@@ -20,8 +20,8 @@ string exert_function_file(string func)
 int help(object me)
 {
     write(@HELP
-【金丹大道】
-九转金丹直指，乃道家最精妙的修身之功，夺天地之造化，妙用无穷。
+【九转玄功】
+九转玄功，乃道家最精妙的修身之功，夺天地之造化，妙用无穷。
 
 〖应用法门〗
 ① 自疗    exert heal
