@@ -27,3 +27,14 @@ int exert(object me, object target)
 
    return 1;
 }
+
+int help(object me)
+{
+    write(@HELP
+¡¾×ÔÁÆ¡¿
+
+¡¼Ö¸Áî¡½    exert heal
+HELP
+    );
+    return 1;
+}

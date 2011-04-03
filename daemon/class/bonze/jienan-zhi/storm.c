@@ -98,3 +98,16 @@ int perform(object me, object target)
         return 1;
 }
 
+int help(object me)
+{
+    write(@HELP
+【暴风骤雨】
+攻击力强大，但若对手本领过高，可能反击一切攻势
+
+〖指令〗 perform storm on <target>
+〖要求〗 １００级劫难指
+
+HELP);
+    return 1;
+}
+

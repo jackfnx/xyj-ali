@@ -30,3 +30,14 @@ int exert(object me, object target)
 
    return 1;
 }
+
+int help(object me)
+{
+    write(@HELP
+¡¾ËûÁÆ¡¿
+
+¡¼Ö¸Áî¡½    exert lifeheal on <target>
+HELP
+    );
+    return 1;
+}

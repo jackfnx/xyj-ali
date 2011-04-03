@@ -28,9 +28,10 @@ int help(object me)
 大乘佛法，威力无边，妙用无穷
 
 〖应用法门〗
-①　金刚护法：cast jingang
-②　大力降魔杵：cast bighammer
-③　隐身术：cast yinshen
+①　金刚护法： cast jingang
+②　大力降魔杵： cast bighammer
+③　隐身术： cast yinshen
+④　紧箍咒： cast jinguzhou
 
 HELP);
     return 1;
