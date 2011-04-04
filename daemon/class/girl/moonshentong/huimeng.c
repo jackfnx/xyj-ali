@@ -54,7 +54,7 @@ int cast(object me, object target)
         target->set_temp("force_sleep",1);
         if (target->is_fighting())
             target->command_function("surrender");
-        if (!target->command("sleep"))
+        if (!target->command_function("sleep"))
             message_vision(HIM"\n$N晃了晃脑袋，似乎清醒了不少，又把眼睛睁开了。\n"NOR, target);
         target->delete_temp("force_sleep");
         me->start_busy(1+random(2)); 
