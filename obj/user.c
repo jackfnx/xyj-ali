@@ -91,9 +91,10 @@ void setup()
 {
    mapping   fabao_map;
    string  *fabao_list, *id_list, *t_list;
-   int     i;
+   int     i, j, k, ins_no, p_no;
    object   newob;
    string  fabao_id;
+   object  *fabao_buffer;
 
    // We want set age first before new player got initialized with
    // random age.
@@ -108,36 +109,60 @@ void setup()
      return;
 
    fabao_list = keys(fabao_map);
+   fabao_buffer = allocate(sizeof(fabao_list));
    for(i=0; i<sizeof(fabao_list); i++)  {
         newob = new("/obj/fabao");
         if( newob )   {
             newob->set("owner_id", query("id"));
             newob->set("series_no", fabao_map[fabao_list[i]]);
             if( !newob->restore() )   {
-          tell_object(this_object(), "不能 restore fabao. \n");
-          destruct(newob);
-          continue;
-        }
-        fabao_id = (string)newob->query("id");
-        fabao_id = replace_string(fabao_id, " ", "_");
-        newob->set("id", fabao_id);
-        seteuid(fabao_id);
-        export_uid(newob);
-        seteuid(getuid());
+                tell_object(this_object(), "不能 restore fabao. \n");
+                destruct(newob);
+                continue;
+            }
+            fabao_id = (string)newob->query("id");
+            fabao_id = replace_string(fabao_id, " ", "_");
+            newob->set("id", fabao_id);
+            seteuid(fabao_id);
+            export_uid(newob);
+            seteuid(getuid());
+    
+            id_list = ({ fabao_id });
+            t_list = explode(fabao_id, "_");
+            if( sizeof(t_list) > 1)   {
+                id_list += t_list;
+            }
+            newob->set_name(newob->query("name"), id_list);
+            if( stringp(newob->query("default_file")) )
+                newob->set_default_object( newob->query("default_file") );
 
-        id_list = ({ fabao_id });
-        t_list = explode(fabao_id, "_");
-        if( sizeof(t_list) > 1)   {
-          id_list += t_list;
+            sscanf(newob->query("series_no"), "%d", ins_no);
+            for (j = 0; j < sizeof(fabao_buffer); j++) {
+                if (!objectp(fabao_buffer[j])) {
+                    fabao_buffer[j] = newob;
+                    break;
+                }
+                else {
+                    sscanf(fabao_buffer[j]->query("series_no"), "%d", p_no);
+                    if (ins_no > p_no) {
+                        for (k = sizeof(fabao_buffer) - 1; k > j; k--) {
+                            if (objectp(fabao_buffer[k - 1]))
+                                fabao_buffer[k] = fabao_buffer[k - 1];
+                        }
+                        fabao_buffer[k] = newob;
+                        break;
+                    }
+                }
+            }
         }
-        newob->set_name(newob->query("name"), id_list);
-        if( stringp(newob->query("default_file")) )
-          newob->set_default_object( newob->query("default_file") );
+    }
 
-        newob->save();
-            newob->move(this_object());
-            newob->wield();
-            newob->wear();
+    for (i = 0; i < sizeof(fabao_buffer); i++) {
+        if (objectp(fabao_buffer[i])) {
+            fabao_buffer[i]->save();
+            fabao_buffer[i]->move(this_object());
+            fabao_buffer[i]->wield();
+            fabao_buffer[i]->wear();
         }
     }
 }
