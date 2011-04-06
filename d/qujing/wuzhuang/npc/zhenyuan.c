@@ -86,39 +86,9 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-   if( (string)ob->query("class")=="dao" )
-   {
-     command("say 好，好！道仙本一家。\n");
-   }
-
-   if( (string)ob->query("family/family_name")=="五庄观" )
-   {
-     if( (int)ob->query("family/generation") > 3   )
-     {
-        command("say 福禄寿他们正想多收几个弟子，你先到那边看看吧。\n");
-     }
-     else 
-     {
-        if( (int)ob->query("combat_exp") >= 300000 && (int)ob->query_skill("taiyi", 1) >= 120 )
-        {
-          command("nod ");
-          command("say 好，" + RANK_D->query_respect(ob) + "不愧是本门的人才！\n");
-          command("recruit " + ob->query("id") );
-        }
-        else
-        {
-          command("say 有心上进是不错，不过还是要循序渐进。\n");
-        }
-     }
-   }
-
-   else
-   {
-     command("nod");
-     command("say 这位" + RANK_D->query_respect(ob) + "，本门讲究长幼之礼，尊卑之分。一下让你成为二代弟子恐人心不服。\n");
-   }
-
-   return;
+    command("sigh ");
+    command("say 如今五庄观人才凋零，" + RANK_D->query_respect(ob) + "既然愿意投奔，贫道怎会不受？\n");
+    command("recruit " + ob->query("id") );
 }
 
 int recruit_apprentice(object ob)
