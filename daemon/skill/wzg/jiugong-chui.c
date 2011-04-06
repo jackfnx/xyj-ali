@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//【九宫锤法】jiugong-chui.c, weiqi...980307
+//【九宫锤法】jiugong-chui.c
 inherit SKILL;
 
 /*
@@ -33,7 +33,7 @@ mapping *action = ({
      "damage":     20,
      "damage_type":   "砸伤"
    ]),
-   ([   "action":     "$N使出了一招「五丁开山」，手中的$w举重若轻，势若疯虎地向$n$l连连砸去",
+   ([   "action":     "$N手中的$w举重若轻，势若疯虎地向$n$l连连砸去",
      "dodge":     5,
      "parry":     0,
      "damage":     20,
@@ -49,41 +49,49 @@ mapping *action = ({
 
 int valid_learn(object me)
 {
-   object ob;
+    object ob;
 
-   if( (int)me->query("str") < 25 )
-     return notify_fail("九宫锤要身强力壮才能发挥作用。\n");
+    if ((int)me->query("str") < 25)
+        return notify_fail("九宫锤要身强力壮才能发挥作用。\n");
 
-   if( (int)me->query("max_force") < 100 )
-     return notify_fail("你的内力不够，没有办法学九宫锤。\n");
+    if ((int)me->query("max_force") < 100)
+        return notify_fail("你的内力不够，没有办法学九宫锤。\n");
 
-   if( !(ob = me->query_temp("weapon")) || (string)ob->query("skill_type") != "hammer" )
-     return notify_fail("你必须先找一把锤子才能学九宫锤。\n");
+    if (!(ob = me->query_temp("weapon")) || (string)ob->query("skill_type") != "hammer")
+        return notify_fail("你必须先找一把锤子才能学九宫锤。\n");
 
-   return 1;
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-   return usage=="staff"||usage="parry";
+    return usage=="hammer"||usage="parry";
 }
 
 mapping query_action(object me, object weapon)
 {
-   return action[random(sizeof(action))];
+    return action[random(sizeof(action))];
 }
 
 int practice_skill(object me)
 {
-   if( (int)me->query("kee") < 30 || (int)me->query("force") < 5 )
-     return notify_fail("你现在太累了，强练无益。\n");
-   me->receive_damage("kee", 30);
-   me->add("force", -5);
-   write("你按着所学练了一遍九宫锤。\n");
-   return 1;
+    if ((int)me->query("kee") < 30 || (int)me->query("force") < 5)
+        return notify_fail("你现在太累了，强练无益。\n");
+    me->receive_damage("kee", 30);
+    me->add("force", -5);
+    write("你按着所学练了一遍九宫锤。\n");
+    return 1;
 }
 
 int valid_effect(object me, object weapon, string name, int skill)
 {
 }
 
+int help(object me)
+{
+    write(@HELP
+【九宫锤法】
+此锤法极为威猛，非身强力壮者不能修习。
+HELP);
+    return 1;
+}

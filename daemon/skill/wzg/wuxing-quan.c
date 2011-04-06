@@ -1,6 +1,5 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
- 
 
 //wuxing-quan.c【五行拳】, weiqi...980213
 
@@ -47,32 +46,41 @@ mapping *action =
 
 int valid_learn(object me)
 {
-   if( me->query_temp("weapon") || me->query_temp("secondary_weapon") )
-     return notify_fail("练五行拳必须空手。\n");
-   return 1;
+    if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+        return notify_fail("练五行拳必须空手。\n");
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-   return usage=="unarmed";
+    return usage=="unarmed";
 }
 
 mapping query_action(object me, object weapon)
 {
-   return action[random(sizeof(action))];
+    return action[random(sizeof(action))];
 }
 
 int practice_skill(object me)
 {
-   if( (int)me->query("sen") < 30)
-     return notify_fail("你的精神无法集中了，休息一下再练吧。\n");
-   if( (int)me->query("kee") < 30 )
-     return notify_fail("你现在手足酸软，休息一下再练吧。\n");
-   if( (int)me->query("force") < 10 )
-     return notify_fail("你的内力不够了。\n");
+    if ((int)me->query("sen") < 30)
+        return notify_fail("你的精神无法集中了，休息一下再练吧。\n");
+    if ((int)me->query("kee") < 30)
+        return notify_fail("你现在手足酸软，休息一下再练吧。\n");
+    if ((int)me->query("force") < 10)
+        return notify_fail("你的内力不够了。\n");
 
-   me->receive_damage("kee", 30);
-   me->add("force", -10);
+    me->receive_damage("kee", 30);
+    me->add("force", -10);
 
-   return 1;
+    return 1;
+}
+
+int help(object me)
+{
+    write(@HELP
+【五行拳】
+五行相生相克，五行拳中包含了宇宙的至理。
+HELP);
+    return 1;
 }

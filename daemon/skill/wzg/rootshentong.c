@@ -15,7 +15,17 @@ int valid_learn(object me)
 
 string cast_spell_file(string spell)
 {
-        return CLASS_D("zhenyuan") + "/rootshentong/" + spell;
+    return CLASS_D("zhenyuan") + "/rootshentong/" + spell;
 }
 
+int help(object me)
+{
+    write(@HELP
+〖天地灵根大法〗
+镇元子的本命神通，非天地灵根不能修炼
 
+〖特殊法门〗
+①  乾坤大袖：      cast qiankun
+HELP);
+    return 1;
+}

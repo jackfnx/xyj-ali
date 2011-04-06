@@ -161,3 +161,14 @@ int cast(object me, object target)
    return 3+random(5);
 }
 
+int help(object me)
+{
+    write(@HELP
+〖乾坤大袖〗
+镇元子的独门绝技
+
+指令：cast qiankun
+HELP);
+    return 1;
+}
+

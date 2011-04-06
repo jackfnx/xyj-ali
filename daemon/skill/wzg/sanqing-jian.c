@@ -60,36 +60,47 @@ mapping *action = ({
 
 int valid_learn(object me)
 {
-   object ob;
+    object ob;
 
-   if( (int)me->query("max_force") < 50 )
-     return notify_fail("你的内力不够，没有办法练三清剑法。\n");
+    if ((int)me->query("max_force") < 50)
+        return notify_fail("你的内力不够，没有办法练三清剑法。\n");
 
-   if( !(ob = me->query_temp("weapon"))
-   ||   (string)ob->query("skill_type") != "sword" )
-     return notify_fail("你必须先找一把剑才能练剑法。\n");
+    if (!(ob = me->query_temp("weapon"))
+    ||   (string)ob->query("skill_type") != "sword")
+        return notify_fail("你必须先找一把剑才能练剑法。\n");
 
-   return 1;
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-   return usage=="sword" || usage=="parry";
+    return usage=="sword" || usage=="parry";
 }
 
 mapping query_action(object me, object weapon)
 {
-   return action[random(sizeof(action))];
+    return action[random(sizeof(action))];
 }
 
 int practice_skill(object me)
 {
-   if( (int)me->query("kee") < 30
-   ||   (int)me->query("force") < 3 )
-     return notify_fail("你的内力或气不够，没有办法练习三清剑法。\n");
-   me->receive_damage("kee", 30);
-   me->add("force", -3);
-   write("你按着所学练了一遍三清剑法。\n");
-   return 1;
+    if ((int)me->query("kee") < 30
+    ||   (int)me->query("force") < 3)
+        return notify_fail("你的内力或气不够，没有办法练习三清剑法。\n");
+    me->receive_damage("kee", 30);
+    me->add("force", -3);
+    write("你按着所学练了一遍三清剑法。\n");
+    return 1;
+}
+
+int help(object me)
+{
+    write(@HELP
+【三清剑法】
+道家功夫，轻灵飘逸，不沾凡尘之气。但唯其太过讲究而不太实用。
+星河影动    一点灵犀    古道西风    沧海月明
+乘风归去    白云千载    曲径通幽
+HELP);
+    return 1;
 }
 
