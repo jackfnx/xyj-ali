@@ -53,20 +53,20 @@ int main(object me, string arg)
 
     line += sprintf(
             " 力量：[%s]  敏捷：[%s]  智力：[%s]  灵性：[%s]\n"
-            " 意志：[%s]  魅力：[%s]  根骨：[%s]  福缘：[%s]\n"
-            " 硬度: [%s]  敏感：[%s]  胆识：[%s]  心性：[%s]\n\n",
+            " 定力：[%s]  胆识：[%s]  魅力：[%s]  根骨：[%s]\n"
+            " 硬度: [%s]  敏感：[%s]  心性：[%s]  福缘：[%s]\n\n",
             display_attr(my["str"], ob->query_str()),
             display_attr(my["dex"], ob->query_dex()),
             display_attr(my["int"], ob->query_int()),
             display_attr(my["spi"], ob->query_spi()),
             display_attr(my["cps"], ob->query_cps()),
+            display_attr(my["cor"], ob->query_cor()),
             display_attr(my["per"], ob->query_per()),
             display_attr(my["con"], ob->query_con()),
-            display_attr(my["kar"], ob->query_kar()),
             display_attr(my["rig"], ob->query_rig()),
             display_attr(my["sns"], ob->query_sns()),
-            display_attr(my["cor"], ob->query_cor()),
             display_attr(my["met"], ob->query_met()),
+            display_attr(my["kar"], ob->query_kar()),
             );
 
 #if 0
@@ -120,7 +120,7 @@ int main(object me, string arg)
     }
 
     if (ob->query("obstacle/number"))
-        line += sprintf("你西行求取真经已过了"RED"%s关"NOR"。\n\n",
+        line += sprintf(" 你西行求取真经已过了"RED"%s关"NOR"。\n\n",
                 chinese_number(ob->query("obstacle/number")));
     else
         line += sprintf("\n");
