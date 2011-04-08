@@ -13,7 +13,7 @@ void create()
         set("long", "方寸山三星洞第二代弟子中的杰出人物．\n");
         set("combat_exp", 250000);
         set("attitude", "friendly");
-        create_family("方寸山三星洞", 2, "首徒");
+        create_family("方寸山三星洞", 2, "弟子");
    set("int", 25);
    set("class", "taoist");
 
@@ -24,22 +24,22 @@ void create()
         set_skill("dodge", 80);
         set_skill("parry", 80);
         set_skill("spells", 80);  
-        set_skill("dao", 80);
+        set_skill("taoism", 80);
         set_skill("literate", 70);
         set_skill("stick", 80);  
         set_skill("qianjun-bang", 80);
         set_skill("puti-zhi", 80);  
-        set_skill("jindouyun", 80);
+        set_skill("cloud-steps", 80);
         set_skill("dodge", 80);
         set_skill("force", 80);   
-        set_skill("wuxiangforce", 80);
+        set_skill("azoth", 80);
 
-        map_skill("spells", "dao");
+        map_skill("spells", "taoism");
         map_skill("unarmed", "puti-zhi");
-        map_skill("force", "wuxiangforce");
+        map_skill("force", "azoth");
         map_skill("stick", "qianjun-bang");
         map_skill("parry", "qianjun-bang");
-        map_skill("dodge", "jindouyun");
+        map_skill("dodge", "cloud-steps");
 
 
         set("per", 30);

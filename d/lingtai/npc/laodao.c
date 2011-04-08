@@ -19,9 +19,9 @@ void create()
         set_skill("literate", 40);
         set_skill("puti-zhi", 20);  
         set_skill("force", 60);   
-        set_skill("wuxiangforce", 60);
+        set_skill("azoth", 60);
         map_skill("unarmed", "puti-zhi");
-        map_skill("force", "wuxiangforce");
+        map_skill("force", "azoth");
 
         set("per", 30);
         set("max_kee", 300);

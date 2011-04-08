@@ -19,8 +19,8 @@ void create()
         set_skill("dodge", 50);
         set_skill("parry", 50);
         set_skill("force", 30);   
-        set_skill("wuxiangforce", 30);
-        map_skill("force", "wuxiangforce");
+        set_skill("azoth", 30);
+        map_skill("force", "azoth");
 
         set("per", 30);
         set("max_kee", 500);

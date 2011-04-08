@@ -32,11 +32,10 @@ void create()
    set_skill("dodge", 80);
    set_skill("parry", 80);
    set_skill("puti-zhi", 80);
-   set_skill("jindouyun", 80);
    set_skill("unarmed", 80);
-   set_skill("jindouyun", 80);
+   set_skill("cloud-steps", 80);
    set_skill("literate", 100);
-   map_skill("dodge", "jindouyun");
+   map_skill("dodge", "cloud-steps");
    map_skill("unarmed", "puti-zhi");
         set("per", 30);
    set("str", 25);

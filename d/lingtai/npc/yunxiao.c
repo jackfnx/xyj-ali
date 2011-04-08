@@ -22,19 +22,19 @@ void create()
         set_skill("dodge", 50);
         set_skill("parry", 50);
         set_skill("spells", 50);  
-        set_skill("dao", 50);
+        set_skill("taoism", 50);
         set_skill("literate", 30);
         set_skill("stick", 50);  
         set_skill("puti-zhi", 50);  
-        set_skill("jindouyun", 50);
+        set_skill("cloud-steps", 50);
         set_skill("dodge", 50);  
         set_skill("force", 50);   
-        set_skill("wuxiangforce", 50);
+        set_skill("azoth", 50);
 
-        map_skill("spells", "dao");
+        map_skill("spells", "taoism");
         map_skill("unarmed", "puti-zhi");
-        map_skill("force", "wuxiangforce");
-        map_skill("dodge", "jindouyun");
+        map_skill("force", "azoth");
+        map_skill("dodge", "cloud-steps");
 
    set("str", 30);
         set("per", 30);

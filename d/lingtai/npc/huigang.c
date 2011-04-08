@@ -22,11 +22,11 @@ void create()
         set_skill("literate", 40);
         set_skill("dodge", 30);  
         set_skill("force", 40);   
-        set_skill("wuxiangforce", 40);
-        map_skill("force", "wuxiangforce");
-   set_skill("dao", 20);
+        set_skill("azoth", 40);
+        map_skill("force", "azoth");
+   set_skill("taoism", 20);
    set_skill("spells", 20);
-   map_skill("spells", "dao");
+   map_skill("spells", "taoism");
         set("per", 30);
         set("max_kee", 300);
         set("max_gin", 200);
