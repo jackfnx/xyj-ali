@@ -637,7 +637,7 @@ void fight(object me, object victim)
      do_attack(me, victim, me->query_temp("weapon"), TYPE_QUICK);
 
    // Else, see if we are brave enough to make an aggressive action.
-   } else if( random( (int)victim->query("cps") * 3 ) < ((int)me->query("dex") + (int)me->query("bellicosity") / 50) ) {
+   } else if( random( (int)victim->query("cps") * 3 ) < ((int)me->query("cor") + (int)me->query("bellicosity") / 50) ) {
      me->set_temp("guarding", 0);
      if( !victim->is_fighting(me) ) victim->fight_ob(me);
      do_attack(me, victim, me->query_temp("weapon"), TYPE_REGULAR);
