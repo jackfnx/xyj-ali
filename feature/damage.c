@@ -526,11 +526,10 @@ void orgasm()
     string gender = query("gender");
 
     if (gender == "男性") {
-        message("system", HIR "\n你感到腰眼一麻，下体射出了一道又一道精阳！\n顿时一阵巨大的快感袭入了你的脑海，你不禁一阵眩晕。。。\n\n" NOR, this_object());
+        message("system", HIR "\n你感到腰眼一麻，下体射出了一道精阳！\n顿时一阵巨大的快感袭入了你的脑海，你不禁一阵眩晕。。。\n\n" NOR, this_object());
         this_object()->disable_player(HIC + " <射精中>" + NOR);
         SEX_D->announce(this_object(), "ejaculate");
         add_temp("ejaculate", random(query("libido") / 10));
-        set_temp("block_msg/all", 1);
         call_out("ejaculate", 2);
     } else if (gender == "女性") {
         string org;
@@ -541,7 +540,6 @@ void orgasm()
         this_object()->disable_player(HIM + " <高潮中>" + NOR);
         SEX_D->announce(this_object(), "orgasm");
         SEX_D->gain_enjoy(this_object(), "orgasm");
-        set_temp("block_msg/all", 1);
         call_out("no_orgasm", random(40 - this_object()->query_con()));
     } else
         error("F_DAMAGE: 未知的性别... " + gender + "\n");
@@ -551,12 +549,14 @@ void ejaculate()
 {
     remove_call_out("ejaculate");
     add_temp("ejaculate", -1);
+    sex_depress("libido", random(10));
     if ((int)query_temp("ejaculate") > 0) {
         SEX_D->gain_enjoy(this_object(), "ejaculate");
+        message("system", HIR "\n你的下体又射出了一道精阳！！！\n\n" NOR, this_object());
         call_out("ejaculate", 2);
     } else {
         set_temp("ejaculate", 0);
-        set_temp("block_msg/all", 0);
+        message("system", HIG "\n你的精阳终于射光了，你的精神也逐渐恢复了！！！\n\n" NOR, this_object());
         this_object()->enable_player();
         call_out("remove_heat", 1);
     }
@@ -566,7 +566,6 @@ void no_orgasm()
 {
     remove_call_out("no_orgasm");
     this_object()->enable_player();
-    set_temp("block_msg/all", 0);
     message("system", HIG "\n随着欲火的消退，你感到灵魂又回到了肉体中！\n\n" NOR, this_object());
 }
 

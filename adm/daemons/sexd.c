@@ -10,6 +10,42 @@ string *breast_names = ({ "乳房", "玉乳", "酥乳", "娇乳", "乳峰", "豪乳", "爆乳"
 string *sensitive_names_m = ({ "耳垂", "乳头" });
 string *sensitive_names_f = ({ "耳垂", "唇瓣", "玉颈", "玉背", "皓腕", "肚脐", "纤腰", "玉腿", "香踝", "玉足" });
 
+string male_status_msg(int ratio)
+{
+   if (ratio == 0) return HIG "目色清明，毫无欲望的色彩。" NOR;
+   if (ratio < 10) return HIG "目色迷离，气息有些散乱。" NOR;
+   if (ratio < 20) return HIY "呼吸有些粗重，体温微微有些升高。" NOR;
+   if (ratio < 40) return HIY "满脸通红，气喘如牛。" NOR;
+   if (ratio < 60) return RED "满身大汗，如同水里捞出来的一样。" NOR;
+   if (ratio < 80) return RED "已经完全堕入了欲望的深渊，意识有些不清了。" NOR;
+   if (ratio < 90) return HIR "浑身温度高得吓人，身体下意识的挺动着，喉咙深处隐隐传出声声咆哮。" NOR;
+   return HIR "已经进入无意识状态，下意识的作出迎合动作，呼吸都快要停止了。" NOR;
+}
+
+string female_status_msg(int ratio)
+{
+   if (ratio == 0) return HIG "目色清明，毫无欲望的色彩。" NOR;
+   if (ratio < 10) return HIG "目色迷离，气息有些散乱。" NOR;
+   if (ratio < 20) return HIY "呼吸有些粗重，体温微微有些升高。" NOR;
+   if (ratio < 40) return HIY "两颊绯红，呻吟娇喘，吐气如兰。" NOR;
+   if (ratio < 60) return RED "香汗淋漓，意识有些模糊。" NOR;
+   if (ratio < 80) return RED "已经完全迷乱在了欲望的深渊，不由自主的挺动着腰肢。" NOR;
+   if (ratio < 90) return HIR "浑身温度高得吓人，身体下意识的挺动着，口中呼喊着无意义的言语。" NOR;
+   return HIR "已经进入无意识状态，下意识的作出迎合动作，樱唇虽然翕动着却已经无法发出任何声音。" NOR;
+}
+
+void report_sex_status(object ob)
+{
+    if (ob->query("gender") == "女性")
+        message_vision("( $N" + female_status_msg(
+                (int)ob->query("libido")) 
+                + " )\n", ob);
+    else
+        message_vision("( $N" + male_status_msg(
+                (int)ob->query("libido")) 
+                + " )\n", ob);
+}
+
 void announce(object ob, string event)
 {
     object makelover = ob->query_temp("sex/makelove_ob");
@@ -73,7 +109,7 @@ object get_attacker(object me, object ob)
 object get_sufferer(object me, object ob)
 {
     if (me->query("gender") == ob->query("gender")) {
-        if (me->query("sex_attack") >= ob->query("sex_attack")) {
+        if (me->query("sex_initiative") >= ob->query("sex_initiative")) {
             return ob;
         } else {
             return me;
@@ -87,7 +123,7 @@ object get_sufferer(object me, object ob)
     }
 }
 
-void plug_penis(object me, object ob)
+void push_penis(object me, object ob)
 {
     object attacker, sufferer, penis_ob;
     string penis, pussy;
@@ -118,7 +154,7 @@ void plug_penis(object me, object ob)
     tell_object(sufferer, HIR + attacker->name() +"的"+penis+"已经插入了你的"+pussy+"！！！\n" + NOR);
 }
 
-void draw_penis(object me, object ob)
+void pull_penis(object me, object ob)
 {
     object attacker, sufferer, penis_ob;
     string penis, pussy;
@@ -161,10 +197,11 @@ int do_makelove(object me, object victim, int is_fucking)
 {
     mapping action;
     string actionstr, effectstr, sens;
+    int me_fascination, victim_fascination, hit, back;
 
     if (is_fucking) {
         if (me->query_temp("sufferer") != victim
-                || victim->query_temp("attacker") != me)
+        || victim->query_temp("attacker") != me)
             return 0;
         action = me->query("fuck_actions");
     }
@@ -209,16 +246,32 @@ int do_makelove(object me, object victim, int is_fucking)
     actionstr = replace_string(actionstr, "$l", pussy_names[random(sizeof(pussy_names))]);
     actionstr = replace_string(actionstr, "$b", breast_names[random(sizeof(breast_names))]);
 
-    if (undefinedp(action["effect"]))
-        effectstr = "给$n造成了巨大的快感。";
-    else
-        effectstr = action["effect"];
+    me_fascination = me->query_skill("fascination") / 10;
+    victim_fascination = victim->query_skill("fascination") / 10;
+    hit = me_fascination < random(victim_fascination + victim->query_cps() / 10 - 5);
+    back = me_fascination + me->query_cps() / 10 < random(victim_fascination + 10);
+    if (hit)
+        effectstr = "弄得$n浑身一颤，急忙深吸一口气，总算没有失控";
+    else {
+        if (undefinedp(action["effect"]))
+            effectstr = "弄得$n浑身一颤，似乎已经意乱情迷";
+        else
+            effectstr = action["effect"];
+    }
 
-    message_vision(actionstr + "\n", me, victim);
-    message_vision("结果" + effectstr + "\n\n", me, victim);
+    message_vision("\n" + actionstr + "！\n", me, victim);
+    message_vision("结果" + effectstr + "！\n", me, victim);
+    if (hit) {
+        report_sex_status(victim);
+        victim->sex_inspire("libido", action["enjoy"]);
+    }
+    if (back) {
+        message_vision("而$N也觉得精神一震，一种满足感油然而生！\n", me);
+        report_sex_status(me);
+        me->sex_inspire("libido", action["self_enjoy"]);
+    }
 
-    me->sex_inspire("libido", action["self_enjoy"]);
-    victim->sex_inspire("libido", action["enjoy"]);
+    me->sex_inspire("stamina", action["cost"]);
 
     if (me->query("libido")>=100)
         me->orgasm();
