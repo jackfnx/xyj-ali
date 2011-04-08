@@ -83,7 +83,7 @@ int accept_fight(object who)
 // to return its startroom.
 int return_home(object home)
 {
-   object* enemy_list;
+   object* enemy_list, ridee;
    int i, flag=0;
 
    // Are we at home already?
@@ -117,6 +117,9 @@ int return_home(object home)
    // Leave for home now.
    message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
      environment(), this_object());
+
+   if (ridee = ride())
+      ridee->move(home);
    return move(home);
 }
 
