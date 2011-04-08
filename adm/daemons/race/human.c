@@ -41,7 +41,7 @@ mapping *sex_action = ({
      "cost": 1,
      ]),
     ([
-     "action": "$N伸出手指，抹向了$n的$p。",
+     "action": "$N伸出手指，抹向了$n的$l。",
      "limb": "pussy",
      "min_enjoy": 50,
      "effect": "抹到了满手的蜜汁。",
