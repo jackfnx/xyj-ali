@@ -14,14 +14,14 @@ int practice_skill(object me)
 }
 string exert_function_file(string func)
 {
-    return CLASS_D("other") + "/azoth/" + func;
+    return CLASS_D("xian") + "/azoth/" + func;
 }
 
 int help(object me)
 {
     write(@HELP
-【金丹大道】
-丹道，乃道家修身之基础，为时间显传，三界之内修习者无数。
+【内丹术】
+丹道，乃道家修身之基础，为世间显传，三界之内修习者无数。
 
 〖应用法门〗
 ① 自疗    exert heal

@@ -24,7 +24,7 @@ throwing basic
 unarmed basic
 whip basic
 ###############################
-azoth-force lingtai
+nine-turn lingtai
 cloud-steps lingtai
 puti-zhi lingtai
 qianjun-bang lingtai
@@ -44,6 +44,14 @@ moonshentong moon
 snowsword moon
 ###############################
 baguazhen wzg
+jiugong-chui wzg
+qixing-zhang wzg
+rootshentong wzg
+sanqing-jian wzg
+wuxing-quan wzg
+zhenyuan-force wzg
+###############################
+azoth other
 baguazhou jjf
 bawang-qiang jjf
 bingpo-blade xueshan
@@ -67,7 +75,6 @@ huoyun-qiang other
 jingang-quan gumu
 jinghun-zhang hell
 jinglei-mace jjf
-jiugong-chui wzg
 kugu-blade dungeon
 kusang-bang hell
 lengquan-force jjf
@@ -75,18 +82,14 @@ lingfu-steps dungeon
 moshenbu other
 moyun-shou dungeon
 ningxie-force xueshan
-qixing-zhang wzg
 qixiu-jian hell
-rootshentong wzg
 sanban-axe jjf
-sanqing-jian wzg
 seashentong sea
 skyriver-rake other
 taiyi other
 tonsillit hell
 wuhu-blade other
 wusi-mace jjf
-wuxing-quan wzg
 xiaofeng-sword other
 xiaoyaoyou xueshan
 xuanyuan-archery other
@@ -96,5 +99,4 @@ yaofa dungeon
 yinfeng-zhua hell
 yingzhaogong xueshan
 yueya-chan other
-zhenyuan-force wzg
 zhuihun-sword hell

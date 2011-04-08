@@ -33,12 +33,12 @@ void create()
   set_skill("qianjun-bang", 70);
   set_skill("parry", 85);
   set_skill("force", 70);
-  set_skill("azoth-force", 70);
+  set_skill("azoth", 70);
   set_skill("staff", 50);
   map_skill("spells", "taoism");
   map_skill("unarmed", "dragonfight");
   map_skill("dodge", "cloud-steps");
-  map_skill("force", "azoth-force");
+  map_skill("force", "azoth");
   map_skill("parry", "qianjun-bang");
   set("heads", 9);
   setup();

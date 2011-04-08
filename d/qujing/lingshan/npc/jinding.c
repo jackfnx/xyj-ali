@@ -32,12 +32,12 @@ void create()
   set_skill("cloud-steps", 120);
   set_skill("parry", 120);
   set_skill("force", 120);
-  set_skill("azoth-force", 120);
+  set_skill("azoth", 120);
   set_skill("staff", 120);
   map_skill("spells", "taoism");
   map_skill("unarmed", "puti-zhi");
   map_skill("dodge", "cloud-steps");
-  map_skill("force", "azoth-force");
+  map_skill("force", "azoth");
 
   setup();
   carry_object("/d/obj/cloth/daopao")->wear();

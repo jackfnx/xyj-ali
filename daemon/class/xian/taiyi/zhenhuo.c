@@ -101,3 +101,14 @@ int cast(object me, object target)
    return 3+random(5);
 }
 
+int help(object me)
+{
+    write(@HELP
+【太乙真火】
+喷吐三昧真火以伤敌。
+
+〖指令〗    cast zhenhuo on <target>
+HELP
+    );
+    return 1;
+}
