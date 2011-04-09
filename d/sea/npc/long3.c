@@ -42,13 +42,13 @@ void create()
   set_skill("seashentong", 100);
   set_skill("dragonfight", 140);
   set_skill("dragonforce", 140);
-  set_skill("fengbo-cha", 150);
+  set_skill("fengbo-fork", 150);
   set_skill("dragonstep", 150);
   map_skill("spells", "seashentong");
   map_skill("unarmed", "dragonfight");
   map_skill("force", "dragonforce");
-  map_skill("fork","fengbo-cha");
-  map_skill("parry", "fengbo-cha");
+  map_skill("fork","fengbo-fork");
+  map_skill("parry", "fengbo-fork");
   map_skill("dodge", "dragonstep");
 
         set("nkgain", 400);

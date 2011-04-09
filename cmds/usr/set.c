@@ -19,7 +19,7 @@ int main(object me, string arg)
     wiz_only = ({"invisibility", "immortal"});
     allowed=({  "block_tell", "brief", "brief_message", "brief_all",
      "no_accept", "no_teach", "wimpy",
-     "fengbo-cha", "destination"});
+     "fengbo-fork", "destination"});
  
    if( me != this_player(1) ) return 0;
  
