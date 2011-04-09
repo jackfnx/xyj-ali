@@ -16,10 +16,10 @@ string male_status_msg(int ratio)
    if (ratio < 10) return HIG "目色迷离，气息有些散乱。" NOR;
    if (ratio < 20) return HIY "呼吸有些粗重，体温微微有些升高。" NOR;
    if (ratio < 40) return HIY "满脸通红，气喘如牛。" NOR;
-   if (ratio < 60) return RED "满身大汗，如同水里捞出来的一样。" NOR;
-   if (ratio < 80) return RED "已经完全堕入了欲望的深渊，意识有些不清了。" NOR;
-   if (ratio < 90) return HIR "浑身温度高得吓人，身体下意识的挺动着，喉咙深处隐隐传出声声咆哮。" NOR;
-   return HIR "已经进入无意识状态，下意识的作出迎合动作，呼吸都快要停止了。" NOR;
+   if (ratio < 60) return HIR "满身大汗，如同水里捞出来的一样。" NOR;
+   if (ratio < 80) return HIR "已经完全堕入了欲望的深渊，意识有些不清了。" NOR;
+   if (ratio < 90) return RED "浑身温度高得吓人，身体下意识的挺动着，喉咙深处隐隐传出声声咆哮。" NOR;
+   return RED "已经进入无意识状态，下意识的作出迎合动作，呼吸都快要停止了。" NOR;
 }
 
 string female_status_msg(int ratio)
@@ -28,10 +28,10 @@ string female_status_msg(int ratio)
    if (ratio < 10) return HIG "目色迷离，气息有些散乱。" NOR;
    if (ratio < 20) return HIY "呼吸有些粗重，体温微微有些升高。" NOR;
    if (ratio < 40) return HIY "两颊绯红，呻吟娇喘，吐气如兰。" NOR;
-   if (ratio < 60) return RED "香汗淋漓，意识有些模糊。" NOR;
-   if (ratio < 80) return RED "已经完全迷乱在了欲望的深渊，不由自主的挺动着腰肢。" NOR;
-   if (ratio < 90) return HIR "浑身温度高得吓人，身体下意识的挺动着，口中呼喊着无意义的言语。" NOR;
-   return HIR "已经进入无意识状态，下意识的作出迎合动作，樱唇虽然翕动着却已经无法发出任何声音。" NOR;
+   if (ratio < 60) return HIR "香汗淋漓，意识有些模糊。" NOR;
+   if (ratio < 80) return HIR "已经完全迷乱在了欲望的深渊，不由自主的挺动着腰肢。" NOR;
+   if (ratio < 90) return RED "浑身温度高得吓人，身体下意识的挺动着，口中呼喊着无意义的言语。" NOR;
+   return RED "已经进入无意识状态，下意识的作出迎合动作，樱唇虽然翕动着却已经无法发出任何声音。" NOR;
 }
 
 void report_sex_status(object ob)
@@ -250,7 +250,7 @@ int do_makelove(object me, object victim, int is_fucking)
     victim_fascination = victim->query_skill("fascination") / 10;
     hit = me_fascination < random(victim_fascination + victim->query_cps() / 10 - 5);
     back = me_fascination + me->query_cps() / 10 < random(victim_fascination + 10);
-    if (hit)
+    if (!hit)
         effectstr = "弄得$n浑身一颤，急忙深吸一口气，总算没有失控";
     else {
         if (undefinedp(action["effect"]))

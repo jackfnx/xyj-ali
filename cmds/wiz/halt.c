@@ -11,6 +11,7 @@ int main(object me, string arg)
    if( !me->is_fighting() )
      return notify_fail("你现在并没有在战斗。\n");
    me->remove_all_killer();
+   me->remove_all_fucker();
    message_vision("$N用巫师的神力停止了这场打斗。\n", me);
    write("Ok.\n");
    return 1;
