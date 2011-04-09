@@ -527,7 +527,7 @@ void orgasm()
 
     if (gender == "男性") {
         message("system", HIR "\n你感到腰眼一麻，下体射出了一道精阳！\n顿时一阵巨大的快感袭入了你的脑海，你不禁一阵眩晕。。。\n\n" NOR, this_object());
-        this_object()->disable_player(HIC + " <射精中>" + NOR);
+        set_temp("no_move", 1);
         SEX_D->announce(this_object(), "ejaculate");
         add_temp("ejaculate", random(query("libido") / 10));
         call_out("ejaculate", 2);
@@ -537,7 +537,7 @@ void orgasm()
         if ((int)query("orgasm") < 2) org = "高潮";
         else org = chinese_number((int)query("orgasm")) + "重高潮";
         message("system", HIR "\n你感到脑中轰的一声，仿佛灵魂已经被抽出了肉体！\n你达到了至高无上的" + org + "！\n\n" NOR, this_object());
-        this_object()->disable_player(HIM + " <高潮中>" + NOR);
+        set_temp("no_move", 1);
         SEX_D->announce(this_object(), "orgasm");
         SEX_D->gain_enjoy(this_object(), "orgasm");
         call_out("no_orgasm", random(40 - this_object()->query_con()));
@@ -552,12 +552,12 @@ void ejaculate()
     sex_depress("libido", random(10));
     if ((int)query_temp("ejaculate") > 0) {
         SEX_D->gain_enjoy(this_object(), "ejaculate");
-        message("system", HIR "\n你的下体又射出了一道精阳！！！\n\n" NOR, this_object());
+        SEX_D->announce(this_object(), "ejaculate");
         call_out("ejaculate", 2);
     } else {
         set_temp("ejaculate", 0);
-        message("system", HIG "\n你的精阳终于射光了，你的精神也逐渐恢复了！！！\n\n" NOR, this_object());
-        this_object()->enable_player();
+        message("system", HIG "\n你的射出了最后一道精阳，长出一口气！\n\n" NOR, this_object());
+        delete_temp("no_move");
         call_out("remove_heat", 1);
     }
 }
@@ -565,7 +565,8 @@ void ejaculate()
 void no_orgasm()
 {
     remove_call_out("no_orgasm");
-    this_object()->enable_player();
+    sex_depress("libido", random(query("libido")*2/3));
+    delete_temp("no_move");
     message("system", HIG "\n随着欲火的消退，你感到灵魂又回到了肉体中！\n\n" NOR, this_object());
 }
 

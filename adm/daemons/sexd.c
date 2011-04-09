@@ -65,7 +65,7 @@ void announce(object ob, string event)
             break;
         case "ejaculate":
             if (!objectp(fucker)) {
-                message_vision(HIR "\n$N的" + penis_names[random(sizeof(penis_names))] + "中射出了一道道真阳！\n\n" NOR, ob);
+                message_vision(HIR "\n$N的" + penis_names[random(sizeof(penis_names))] + "中射出了一道真阳！\n\n" NOR, ob);
             } else {
                 tell_object(fucker, "\n" + HIR + ob->name() + "射精了，强大的冲击力猛烈的冲击着你的花心！\n\n" NOR);
             }
