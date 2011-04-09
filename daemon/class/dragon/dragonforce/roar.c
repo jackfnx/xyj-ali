@@ -51,3 +51,13 @@ NOR, me);
         return 1;
 }
 
+int help(object me)
+{
+    write(@HELP
+¡¾±Ìº£ÁúÒ÷¡¿
+
+¡¼Ö¸Áî¡½    exert roar
+HELP);
+    return 1;
+}
+

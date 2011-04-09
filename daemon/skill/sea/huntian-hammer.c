@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//【混天锤】??
+//【混天锤】
 
 /*
   dodge  15    parry  -15    damage  30
@@ -57,41 +57,52 @@ mapping *action = ({
 
 int valid_learn(object me)
 {
-        object ob;
+    object ob;
 
-        if( (int)me->query("max_force") < 50 )
-                return notify_fail("你的内力不够，没有办法练混天锤。\n");
+    if ((int)me->query("max_force") < 50)
+        return notify_fail("你的内力不够，没有办法练混天锤。\n");
 
-        if( !(ob = me->query_temp("weapon"))
-        ||      (string)ob->query("skill_type") != "hammer" )
-                return notify_fail("你必须先找一柄大锤才能练混天锤。\n");
+    if (!(ob = me->query_temp("weapon"))
+    ||  (string)ob->query("skill_type") != "hammer")
+        return notify_fail("你必须先找一柄大锤才能练混天锤。\n");
 
-        return 1;
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-        return usage=="hammer" || usage=="parry";
+    return usage=="hammer" || usage=="parry";
 }
 
 mapping query_action(object me, object weapon)
 {
-        return action[random(sizeof(action))];
+    return action[random(sizeof(action))];
 }
 
 int practice_skill(object me)
 {
-        if( (int)me->query("kee") < 50
-        ||      (int)me->query("force") < 50 )
-                return
-notify_fail("你的内力或气不够，没有办法练习混天锤。\n");
-        me->receive_damage("kee", 30);
-        me->add("force", -5);
-        write("你按着所学练了一遍混天锤。\n");
-        return 1;
+    if ((int)me->query("kee") < 50
+    ||  (int)me->query("force") < 50)
+        return notify_fail("你的内力或气不够，没有办法练习混天锤。\n");
+    me->receive_damage("kee", 30);
+    me->add("force", -5);
+    write("你按着所学练了一遍混天锤。\n");
+    return 1;
 }
 
 int valid_effect(object me, object weapon, string name, int skill)
 {
 }
 
+int help(object me)
+{
+    write(@HELP
+【混天锤】
+其锤法直来直去，招招为实，势大力猛，招架抵挡
+甚为不易，一但碰上则伤害极大。但不足是不够轻
+盈。
+
+①  混天一破：    perform break
+HELP);
+    return 1;
+}

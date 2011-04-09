@@ -1,13 +1,13 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//【龙神身法】 dragonstep.c
+//【龙形步法】 dragonstep.c
 // cglaem...12/19/96.
 
 inherit SKILL;
 
 string *dodge_msg = ({
-   "但是$n身形一晃，从$N身边轻轻滑过。\n",
+            "但是$n身形一晃，从$N身边轻轻滑过。\n",
             "只见$n往后一退，隐入一团白雾中，$N这一招顿时没了目标。\n",
             "$n一转身，一团白雾冒起，隔断了$N的攻势。\n",
             "$n左脚轻轻在地上一点，如五爪金龙般腾在半空，避开了$N的攻势。\n",
@@ -16,19 +16,35 @@ string *dodge_msg = ({
 
 int valid_enable(string usage) { return (usage=="dodge"); }
 
+int valid_learn(object me)
+{
+    if (me->query("class") != "dragon")
+        return notify_fail("你非龙族怎能学龙形步法？\n");
+    return 1;
+}
+
 string query_dodge_msg(string limb)
 {
-   return dodge_msg[random(sizeof(dodge_msg))];
+    return dodge_msg[random(sizeof(dodge_msg))];
 }
 
 int practice_skill(object me)
 {
-   if (me->query("class") != "dragon")
-     return notify_fail("你非龙族怎能练龙神身法？\n");
-   if( (int)me->query("kee") < 30
-   ||   (int)me->query("force") < 3 )
-     return notify_fail("你的气或内力不够，不能练龙神身法。\n");
-   me->receive_damage("kee", 30);
-   me->add("force", -3);
-   return 1;
+    if (me->query("class") != "dragon")
+        return notify_fail("你非龙族怎能练龙形步法？\n");
+    if ((int)me->query("kee") < 30
+    ||   (int)me->query("force") < 3 )
+        return notify_fail("你的气或内力不够，不能练龙形步法。\n");
+    me->receive_damage("kee", 30);
+    me->add("force", -3);
+    return 1;
+}
+
+int help(object me)
+{
+    write(@HELP
+【龙形步法】
+龙形步法为龙族专属身法，非龙族不能习练。
+HELP);
+    return 1;
 }

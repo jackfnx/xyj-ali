@@ -52,3 +52,12 @@ void remove_effect(object me, int amount)
         tell_object(me, "你的龙神心法运行一周天完毕，龙鳞渐渐消去了。\n");
 }
 
+int help(object me)
+{
+    write(@HELP
+【真龙战体】
+
+〖指令〗    exert shield
+HELP);
+    return 1;
+}
