@@ -9,12 +9,12 @@ int valid_enable(string usage) { return usage=="force"; }
 int valid_learn(object me)
 {
     string mark;
-    if (!stringp(mark = me->query("marks/nine-turn"))) {
+    if (!stringp(mark = me->query("mark/nine-turn"))) {
         if (random(me->query_kar()) > 20)
             mark = "true";
         else
             mark = "false";
-        me->set("marks/nine-turn", mark);
+        me->set("mark/nine-turn", mark);
     }
     if (mark == "true") return 1;
     else return notify_fail("修习九转玄功须有缘分，你与此术无缘，还是算了吧。\n");
