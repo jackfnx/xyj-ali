@@ -36,7 +36,7 @@ string query_save_file()
    series = query("series_no");
    if( !id || !series) return 0;
 
-   return sprintf(DATA_DIR "fabao/%c/%s-%s", id[0], id, series);
+   return sprintf(DATA_DIR "fabao/%c/%s-%d", id[0], id, series);
 }
 
 int save()
@@ -55,87 +55,13 @@ void setup()
 
 int query_unique()  { return 1; }
 
-int init()
-{
-    if (query("series_no") == "1") {
-        add_action("do_seal", "seal");
-        add_action("do_unseal", "unseal");
-    }
-}
-
-int do_seal(string arg)
-{
-    int equipped = 0;
-    
-    if (!id(arg)) return 0;
-    if (query("series_no") != "1") return 0;
-    if (query("seal"))
-        return notify_fail("法宝已经被封印了。\n");
-    if (equipped = query("equipped"))
-        unequip();
-    set("seal", 1);
-    set("short", short() + CYN + "『封印中』" + NOR);
-    set("weapon_prop/damage", 1);
-    tell_object(this_player(), this_object()->name() + "上泛起了一层淡淡的光，那种毁灭的气息消失了。\n");
-    save();
-    if (equipped)
-        wield();
-    return 1;
-}
-
-int do_unseal(string arg)
-{
-    int damage = 10;
-    int stars = query("stars/damage");
-    int upgraded = query("upgraded/damage");
-    int equipped = 0;
-    
-    if (!id(arg)) return 0;
-    if (query("series_no") != "1") return 0;
-    if (!query("seal"))
-        return notify_fail("法宝没有被封印啊。\n");
-    if (equipped = query("equipped"))
-        unequip();
-    delete("seal");
-    delete("short");
-    switch (stars) {
-        case 1:
-            damage += 4 * upgraded;
-            break;
-        case 2:
-            damage += 4 * 5;
-            damage += 6 * upgraded;
-            break;
-        case 3:
-            damage += 4 * 5;
-            damage += 6 * (upgraded + 5);
-            break;
-        case 4:
-            damage += 4 * 5;
-            damage += 6 * (upgraded + 10);
-            break;
-        case 5:
-            damage += 4 * 5;
-            damage += 6 * 15;
-            break;
-        default:
-            break;
-        }
-    set("weapon_prop/damage", damage);
-    tell_object(this_player(), this_object()->name() + "上放射出耀眼的光芒，一股毁灭的气息扑面而来。\n");
-    save();
-    if (equipped)
-        wield();
-    return 1;
-}
-
 string extra_long()
 {
     string str = "\n自制法宝等级：\n";
     int series_no, damage_stars, force_stars, i;
     int dodge_stars, armor_stars, vs_force_stars, spells_stars, vs_spells_stars;
     
-    if (query("series_no") == "1")  {
+    if (query("fabao_type") == "weapon")  {
         damage_stars = query("stars/damage");
         force_stars = query("stars/force");
         str += "    " + HIG + "伤害力        " + HIR;
@@ -148,7 +74,7 @@ string extra_long()
             str += "★";
         str += NOR + "\n";
     }
-    else {
+    else if (query("fabao_type") == "armor"){
         dodge_stars = query("stars/dodge");
         armor_stars = query("stars/armor");
         vs_force_stars = query("stars/armor_vs_force");
