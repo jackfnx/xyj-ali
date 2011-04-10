@@ -1,20 +1,18 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+
 #include <armor.h>
 
-inherit CHEST;
+inherit CROTCH;
 
 void create()
 {
-    set_name( "皮背心", ({ "pi beixin", "beixin" }) );
+    set_name( "虎皮战裙", ({ "zhan qun", "qun" }) );
     set_weight(2000);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "一件水牛皮制的背心，虽不精致，但很结实．\n");
+        set("long", "一件虎皮缝制的战裙，虽不精致，但很结实．\n");
         set("unit", "件");
-        set("value", 400);
+        set("value", 500);
         set("material", "leather");
         set("armor_prop/armor", 6);
     }

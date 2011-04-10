@@ -571,7 +571,7 @@ void build_armor(object ob)
             ob_file = armor_dir + "cloth/belt";
             break;
         case 12:
-            ob_file = armor_dir + "cloth/shan";
+            ob_file = armor_dir + "cloth/beixin";
             break;
         case 13:
             ob_file = armor_dir = "cloth/zhanqun";

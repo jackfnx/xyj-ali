@@ -16,6 +16,8 @@
 #define FINGER     "/std/armor/finger"
 #define HANDS     "/std/armor/hands"
 #define BOOTS     "/std/armor/boots"
+#define CHEST     "/std/armor/chest"
+#define CROTCH     "/std/armor/crotch"
 
 // Standard armor types
 #define TYPE_HEAD     "head"
@@ -29,5 +31,7 @@
 #define TYPE_FINGER     "finger"
 #define TYPE_HANDS     "hands"
 #define TYPE_BOOTS     "boots"
+#define TYPE_CHEST     "chest"
+#define TYPE_CROTCH     "crotch"
 
 #endif
