@@ -48,7 +48,7 @@ int perform(object me, object target)
     if (me->query("force") < 200)
         return notify_fail("你内力不继，心有余而力不足。\n");
 
-    me->add("force", 200);
+    me->add("force", -200);
     me->receive_damage("kee", 20);
     me->receive_damage("sen", 20);
 
