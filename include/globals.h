@@ -45,7 +45,6 @@
 #define MONEY_D      "/adm/auxil/moneyd"
 #define PIG_D      "/adm/auxil/pigd"
 
-#define QUEST_D(x)     ("/daemon/quest/qlist" + x)
 #define CLASS_D(x)     ("/daemon/class/" + x)
 //#define SKILL_D(x)     ("/daemon/skill/" + x)
 #define SKILL_D(x)      ("/daemon/skill_d"->find_skill(x))
@@ -124,7 +123,6 @@
 #define F_ONEOWNER     "/feature/oneowner.c"
 #define F_PAWN                  "/feature/pawn.c"
 #define F_PAWNOWNER             "/feature/pawnowner.c"
-#define F_QUEST        "/feature/quest.c"
 #define F_SAVE        "/feature/save.c"
 #define F_BACKUP     "/feature/backup.c"
 #define F_SKILL        "/feature/skill.c"
