@@ -46,6 +46,6 @@ void create()
 setup();
 
         carry_object("/d/obj/armor/gujia")->wear();
-        carry_object("/obj/npc/obj/golden_sword")->wield();
+        carry_object("/d/obj/weapon/sword/golden_sword")->wield();
 }
 

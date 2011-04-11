@@ -41,8 +41,8 @@ void create()
 
    setup();
 
-   carry_object("/d/obj/armor/tianjia")->wear();
-   carry_object(__DIR__"obj/golden_sword")->wield();
+   carry_object("/d/obj/armor/golden_armor")->wear();
+   carry_object("/d/obj/weapon/sword/golden_sword")->wield();
 }
 
 int heal_up()

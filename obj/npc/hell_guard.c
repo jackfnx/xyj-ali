@@ -41,8 +41,8 @@ void create()
 
    setup();
 
-   carry_object(__DIR__"obj/steel_armor")->wear();
-   carry_object(__DIR__"obj/steel_fork")->wield();
+   carry_object("/d/obj/armor/steel_armor")->wear();
+   carry_object("/d/obj/weapon/fork/steel_fork")->wield();
 }
 
 int heal_up()
