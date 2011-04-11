@@ -3,7 +3,7 @@
  
 #include <armor.h>
 
-inherit CHEST;
+inherit CLOTH;
 
 void create()
 {

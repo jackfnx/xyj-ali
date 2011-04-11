@@ -8,7 +8,7 @@
 inherit ITEM;
 
 #define MAX_WEAPON  1
-#define MAX_ARMOR   5
+#define MAX_ARMOR   4
 
 void get_type(string arg, object ob);
 void get_subtype(string arg, object ob);
@@ -89,7 +89,7 @@ int count_fabao(object me, string type)
         return 0;
     num = 0;
     for (i = 0; i < sizeof(fabao_list); i++) {
-        if (type != "" && type == fabao_list[i]["type"])
+        if (type == "" || type == fabao_list[i]["type"])
             num++;
     }
     return num;
@@ -185,7 +185,7 @@ int do_make()
         return notify_fail("你的目前法力不足，不能炼制法宝。\n");
 
     if ( count_fabao(me, "") >= MAX_WEAPON+MAX_ARMOR )
-        return notify_fail("你不能再炼制法宝了，请用 dispose 注消不要的法宝。\n");
+        return notify_fail("你不能再炼制法宝了，请用 recycle 销毁不要的法宝。\n");
     
     write("您要炼造哪类法宝：\n");
     if ( count_fabao(me, "weapon") < MAX_WEAPON )
@@ -234,8 +234,7 @@ void get_type(string arg, object ob)
         write("\n");
         write("可选择防具种类：\n");
         write("1. 护甲\t2. 衣服\t3. 帽子\t4. 披风\t5. 盾\n");
-        write("6. 护腕\t7. 手套\t8. 靴子\t9. 指环\t10.项链\n");
-        write("11.腰带\t12.胸甲\t13.胯甲\n");
+        write("6. 护腕\t7. 手套\t8. 靴子\t9. 指环\t10.项链\t11.腰带\n");
         write("请选择：(q 键取消)");
     }
     input_to( (: get_subtype :), ob);
@@ -265,8 +264,7 @@ void get_subtype(string arg, object ob)
             write("\n");
             write("可选择防具种类：\n");
             write("1. 护甲\t2. 衣服\t3. 帽子\t4. 披风\t5. 盾\n");
-            write("6. 护腕\t7. 手套\t8. 靴子\t9. 指环\t10.项链\n");
-            write("11.腰带\t12.胸甲\t13.胯甲\n");
+       	    write("6. 护腕\t7. 手套\t8. 靴子\t9. 指环\t10.项链\t11.腰带\n");
             write("请选择：(q 键取消)");
         }
         ob->set_temp("fabao_type", fabao_type);
@@ -569,12 +567,6 @@ void build_armor(object ob)
             break;
         case 11:
             ob_file = armor_dir + "cloth/belt";
-            break;
-        case 12:
-            ob_file = armor_dir + "cloth/beixin";
-            break;
-        case 13:
-            ob_file = armor_dir = "cloth/zhanqun";
             break;
     }
     
@@ -905,8 +897,7 @@ int do_list()
     write("       杖  棒  剑  鞭\n\n");
     write("a. 护具类：\n");
     write("       护甲  衣服  帽子  披风  盾\n");
-    write("       护腕  手套  靴子  指环  项链\n");
-    write("       腰带  胸甲  胯甲\n\n");
+    write("       护腕  手套  靴子  指环  项链  腰带\n\n");
     write("目前法宝可升级种类：\n");
     write("w. 武器：\n");
     write("       加伤害力\n");

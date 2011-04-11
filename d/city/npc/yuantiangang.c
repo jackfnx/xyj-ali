@@ -100,7 +100,7 @@ string give_guide()
     if (me->query("combat_exp") <= 20000)
         return ("你问这干嘛，年轻人要脚踏实地，不要好高骛远。");
     else {
-        guide = new("/d/obj/magic/fabao-guide");
+        guide = new("/obj/fabao-guide");
         guide->move(me);
         message_vision("$N给$n一本"+ guide->name() + "。\n", this_object(), me);
         return ("拿去吧，免费发送。");
