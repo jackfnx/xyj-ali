@@ -36,10 +36,10 @@ int do_serve()
 
         room = environment(who);
 
-        obn = new("/obj/example/wineskin");
+        obn = new("/d/ourhome/obj/wineskin");
         obn->move(room);
 
-        obn = new("/obj/example/chicken_leg");
+        obn = new("/d/ourhome/obj/jitui");
         obn->move(room);
         message_vision("食物和水出现在$N眼前。\n", who);
 

@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// jiading.c
+// jiuke.c
 
 inherit NPC;
 
@@ -23,7 +23,7 @@ set("long","喝的满面通红，酒糟鼻子象一个西红柿．\n大概是喝的太多了，眼睛四处瞟着
    set("force_factor", 3);
    setup();
         add_money("silver", 1);
-        carry_object("/obj/example/dagger")->wield();
+        carry_object("/d/obj/weapon/dagger/dagger")->wield();
         carry_object("/obj/cloth")->wear();
 }
 int accept_fight(object me)

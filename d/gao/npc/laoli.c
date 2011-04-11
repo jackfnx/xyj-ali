@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// laoyu.c
+// laoli.c
 
 inherit F_VENDOR_SALE;
 void create()
@@ -25,7 +25,7 @@ name()+"对小学徒嚷道：教你多少次了！你怎么这么笨！\n",
         set("vendor_goods", ([
                 "blade": "/d/gao/obj/blade",
                 "sword": "/d/gao/obj/sword",
-     "dagger": "/obj/example/dagger",
+				"dagger": "/d/obj/weapon/dagger/dagger",
         ]) );
    setup();
        add_money("coin", 50+random(200));
