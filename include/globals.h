@@ -103,7 +103,6 @@
 #define F_COMMAND     "/feature/command.c"
 #define F_CONDITION     "/feature/condition.c"
 #define F_DAMAGE     "/feature/damage.c"
-#define F_DEALER        "/feature/dealer.c"
 #define F_DBASE        "/feature/dbase.c"
 #define F_EDIT        "/feature/edit.c"
 #define F_ENCODING     "/feature/encoding.c"
