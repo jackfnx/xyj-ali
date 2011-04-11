@@ -22,28 +22,8 @@ LONG);
 
     set("exits", ([ /* sizeof() == 1 */
                 "east" : __DIR__"huilang1.c",
-                ]));
+        ]));
 
     setup();
 }
 
-void init()
-{
-    add_action("do_search", "search");
-}
-
-int do_search(string arg)
-{
-    object me = this_player();
-
-    if (!arg || arg != "yunwu")
-        return notify_fail("你想找什么？");
-
-    message_vision("$N趴在地上乱摸了一通，忽然在地上发现了一颗铜钱。\n", me);
-    message_vision("财迷的$N欢天喜地的想把铜钱捡起来，谁知铜钱刚刚离地，地面上便显出了一个洞口，将$N的身影吞没了。\n\n\n", me);
-    tell_object(me, HIY "你掉进了一条长长地隧道，你不停的下坠，吓得半死，可是偏偏停不下来。。。\n\n\n" NOR);
-    me->move("/d/gumu/tianjing");
-    tell_object(me, CYN "\n\n你吧唧一声摔在地上，终于停了下来，却也摔了个半死。。。\n\n" NOR);
-
-    return 1;
-}
