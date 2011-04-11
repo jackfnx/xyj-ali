@@ -6,10 +6,6 @@
 #ifndef __OBJ__H
 #define __OBJ__H
 
-#define OBJ_PAPER_SEAL        "/obj/paper_seal"
-#define OBJ_MAGIC_SEAL        "/obj/magic_seal"
-#define OBJ_CINNABAR_BRUSH     "/obj/cinnabar_brush"
-
 #define NPC_DEMOGORGON        "/obj/npc/demogorgon"
 #define NPC_GARRISON        "/obj/npc/garrison"
 #define NPC_HEAVEN_SOLDIER     "/obj/npc/heaven_soldier"
