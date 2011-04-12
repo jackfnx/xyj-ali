@@ -64,3 +64,15 @@ int perform(object me, object target)
    me->start_busy(3);
    return 1;
 }
+
+int help(object me)
+{
+    write(@HELP
+【神·人·鬼】
+
+〖指令〗perform three on <target>
+〖要求〗    内力一千
+            烈火鞭，哭丧棒，惊魂掌均五十。
+HELP);
+    return 1;
+}

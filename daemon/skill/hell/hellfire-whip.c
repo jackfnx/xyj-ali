@@ -74,7 +74,8 @@ mapping *action = ({
                 "damage_type":  "刺伤"
         ]),
         ([      "name":        "秋坟鬼唱",
-     "action":     "$N左手虚晃，右掌飘飘，掌心呈碧绿，一招「秋坟鬼唱」击向$n$l",
+     "action":
+"$N左手虚晃，右掌飘飘，掌心呈碧绿，一招「秋坟鬼唱」击向$n$l",
                 "dodge":                -10,
                 "parry":                -10,
                 "damage":                30,
@@ -85,53 +86,65 @@ mapping *action = ({
 
 int valid_learn(object me)
 {
-        object ob;
+    object ob;
 
-        if( (int)me->query("max_force") < 150 )
-                return notify_fail("你的内力不够，没有办法练烈火鞭。\n");
+    if ((int)me->query("max_force") < 150)
+        return notify_fail("你的内力不够，没有办法练烈火鞭。\n");
 
-        if( !(ob = me->query_temp("weapon"))
-        ||      (string)ob->query("skill_type") != "whip" )
-                return notify_fail("你必须先找一根鞭子才能练烈火鞭。\n");
+    if (!(ob = me->query_temp("weapon"))
+    || (string)ob->query("skill_type") != "whip")
+        return notify_fail("你必须先找一根鞭子才能练烈火鞭。\n");
 
-        return 1;
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-        return usage=="whip" || usage=="parry";
+    return usage=="whip" || usage=="parry";
 }
 
 mapping query_action(object me, object weapon)
 {
-   int i;
-   i=me->query("HellZhen");
-   if( !me->query("HellZhen") ) {
+    int i;
+    i = me->query("HellZhen");
+    if (!me->query("HellZhen")) {
         return action[random(6)];
-   }else {
-   return action[i];
-   }
+    } else {
+        return action[i];
+    }
 }
-     
 
 int practice_skill(object me)
 {
-        if( (int)me->query("kee") < 25
-        ||      (int)me->query("force") < 5 )
-                return notify_fail("你的内力或气不够，没有办法练习烈火鞭。\n");
-        me->receive_damage("kee", 25);
-        me->add("force", -5);
-        write("你按着所学练了一遍烈火鞭。\n");
-        return 1;
+    if ((int)me->query("kee") < 25
+    || (int)me->query("force") < 5)
+        return notify_fail("你的内力或气不够，没有办法练习烈火鞭。\n");
+    me->receive_damage("kee", 25);
+    me->add("force", -5);
+    write("你按着所学练了一遍烈火鞭。\n");
+    return 1;
 }
 
 int valid_effect(object me, object weapon, string name, int skill)
 {
 }
 
-
 string perform_action_file(string func)
 {
-return CLASS_D("ghost") + "/hellfire-whip/" + func;
+    return CLASS_D("ghost") + "/hellfire-whip/" + func;
 }
 
+int help(object me)
+{
+    write(@HELP
+【烈火鞭】
+烈火鞭善缠绕攻敌，一旦被卷入其攻击范围则极难幸免，
+且此鞭曲折转拐，来去无踪，要招架抵挡也甚为不易。
+特点是杀伤不大。
+
+〖特殊法门〗
+①  神·人·鬼：perform three on <target>
+②  六道轮回：perform six on <target>（设计中）
+HELP);
+    return 1;
+}
