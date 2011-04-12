@@ -15,7 +15,8 @@ void create ()
 近现花色蓉蓉。
 LONG);
   set("exits", ([ /* sizeof() == 3 */
-  "northup" : __DIR__"undertree",
+		"northup" : __DIR__"undertree",
+		"southup" : __DIR__"hongyandong",
 ]));
    set("outdoors", 1);
   setup();
