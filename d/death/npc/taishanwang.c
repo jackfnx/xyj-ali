@@ -37,7 +37,7 @@ void create()
    map_skill("force", "tonsillit");
    map_skill("spells", "necromancy");
 
-create_family("阎罗地府", 1, "你好");
+create_family("阎罗地府", 2, "你好");
 setup();
 
         carry_object("/d/obj/cloth/mangpao")->wear();

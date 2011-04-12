@@ -33,7 +33,7 @@ void create()
    set_skill("force", 100);
    set_skill("tonsillit", 100);
    map_skill("force", "tonsillit");
-create_family("阎罗地府", 1, "你好");
+create_family("阎罗地府", 2, "你好");
 setup();
 
         carry_object("/d/obj/cloth/mangpao")->wear();

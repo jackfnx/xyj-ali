@@ -65,7 +65,7 @@ set("long","王方平本是山中道士，后在丰都山同阴长生同修炼成仙，御封(「鬼王」。\n"
    set_temp("apply/armor", 50);
 
 
-create_family("阎罗地府", 2, "你好");
+create_family("阎罗地府", 3, "你好");
 
         setup();
    carry_object("/d/obj/weapon/stick/wuchangbang")->wield();

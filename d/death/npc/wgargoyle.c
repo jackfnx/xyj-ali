@@ -60,7 +60,7 @@ set("chat_msg", ({
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");
    map_skill("unarmed", "jinghun-zhang");
-create_family("阎罗地府", 3, "你好");
+create_family("阎罗地府", 4, "你好");
 
         setup();
    carry_object("/d/obj/cloth/bai")->wear();

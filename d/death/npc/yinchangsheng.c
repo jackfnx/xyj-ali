@@ -62,7 +62,7 @@ void create()
    set_temp("apply/armor", 50);
 
 
-create_family("阎罗地府", 2, "你好");
+create_family("阎罗地府", 3, "你好");
 
         setup();
    carry_object("/d/obj/weapon/stick/wuchangbang")->wield();
