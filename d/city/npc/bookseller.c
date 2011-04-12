@@ -4,13 +4,12 @@
 // 孔方兄, bookseller.
 // 5-3-97, pickle
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("city_kongfang");
   set_name("孔方兄", ({ "kong fang", "kongfang", "kong", "fang", "bookseller", "seller", "vendor" }) );
-  set("shop_id",({"kongfang","kong","fang","bookseller","seller"}));
   set("gender", "男性" );
   set("age", 37);
   set("title", "书店老板");

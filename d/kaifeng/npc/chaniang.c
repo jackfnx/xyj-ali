@@ -3,11 +3,11 @@
  
 // by snowcat 12/8/1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("kaifeng_cha");
   set_name("²èÄï×Ó", ({"chaniang zi", "niang zi", "niang", "zi"}));
   set("gender", "Å®ÐÔ");
   set("combat_exp", 3000);

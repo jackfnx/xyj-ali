@@ -3,10 +3,10 @@
  
 // laoyu.c
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 void create()
 {
-    reload("pang_sao");
        set_name("胖嫂", ({"pang sao", "pang", "sao"}));
        set("long",
 "胖嫂原是裁缝，后在长安的儿子发了财，便自家开了布店．\n");

@@ -1,13 +1,13 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 string heal_me(object me);
 
 void create()
 {
-   reload("yangzhongshun");
         set_name("杨中顺", ({"yang zhongshun", "yang", "boss"}));
         set("title", "药铺掌柜");
         set("gender", "男性");

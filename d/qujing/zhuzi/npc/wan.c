@@ -4,15 +4,13 @@
 // by snowcat oct 15 1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("zhuzi_wan_koufu");
   set_name("万口福", ({"wan koufu", "wan"}));
-  set("shop_id", ({"wankoufu", "wan", "koufu"}));
   set("gender", "男性");
-  set("shop_title", "万口福");
   set("combat_exp", 10000);
   set("age", 50);
   set("per", 34);

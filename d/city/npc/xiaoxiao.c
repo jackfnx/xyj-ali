@@ -1,11 +1,11 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("xiaoxiao");
         set_name("萧萧", ({"xiao xiao", "xiao"}));
         set("title", "恶娘子");
         set("gender", "女性");

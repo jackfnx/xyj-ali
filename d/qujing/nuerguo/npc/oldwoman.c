@@ -4,14 +4,13 @@
 // created 4/4/1997 by snowcat
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
   string dir;
-  reload("nuerguo_old_woman");
   set_name("老婆婆", ({"old woman", "woman"}));
-  set("shop_id", ({"popo", "woman"}));
   set("gender", "女性" );
   set("age", 65);
   set("long", "一位白发苍苍，满面风霜的老婆婆。\n");

@@ -4,14 +4,12 @@
 // by snowcat 12/8/1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_zhang_ma");
   set_name("张妈", ({"zhang ma", "zhang", "ma"}));
-  set("shop_id", ({"laoban", "zhang ma", "zhang", "ma"}));
-  set("shop_title", "瓜果店老板");
   set("gender", "女性");
   set("combat_exp", 3000);
   set("age", 35);

@@ -1,14 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("jisaiguo_doctor_jsg");
   set_name("柳妙手", ({"liu miaoshou","liu"}));
-  set("shop_id", ({"doctor"}));
-  set("shop_title", "妙手回春");
   set("gender", "男性" );
   set("age", 62);
   set("per", 18);

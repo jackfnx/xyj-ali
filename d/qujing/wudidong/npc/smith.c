@@ -4,11 +4,11 @@
 // waiter.c
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-        reload("wudidong_blacksmith");
         set_name("ÕÅÌú±Û", ({ "blacksmith", "smith", "zhang", "zhang tiebi", "tiebi" }) );
         set("gender", "ÄĞĞÔ" );
         set("age", 42);

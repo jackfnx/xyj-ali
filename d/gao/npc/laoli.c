@@ -3,10 +3,10 @@
  
 // laoli.c
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 void create()
 {
-    reload("lao_li");
        set_name("老李头", ({"lao li", "li"}));
        set("long", "铁铺的主人．\n");
        set("gender", "男性");

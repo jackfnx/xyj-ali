@@ -4,11 +4,11 @@
 // by snowcat dec 15 1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tongtian_chen_sanxian");
   set_name("陈三鲜", ({"chen sanxian","chen"}));
   set("title", "水鲜贩子");
   set("gender", "男性");

@@ -1,18 +1,16 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-   reload("jin");
           set_name("金不换", ({"jin buhuan","jin","buhuan"}));
           set("gender", "男性");
         set("combat_exp", 10000);
           set("age", 26);
 //   set("title", "珠宝行老板");
-//   set("shop_title","珠宝行");
-   set("shop_id",({"laoban","jin","buhuan"}));
           set("per", 14);
           set("attitude", "friendly");
           set("shen_type", 1);

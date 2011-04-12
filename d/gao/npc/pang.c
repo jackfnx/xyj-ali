@@ -1,10 +1,10 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// laoyu.c
-
+// pang.c
 inherit NPC;
 inherit F_VENDOR;
+
 void create()
 {
        set_name("胖嫂", ({"pang sao", "pang", "sao"}));
@@ -21,7 +21,7 @@ void create()
        set("vendor_goods", ([
                 "hat": "/d/gao/obj/hat",
                 "shoes": "/d/gao/obj/shoes",
-     "magua": "/d/gao/obj/magua",
+				"magua": "/d/gao/obj/magua",
                 "pipao": "/d/gao/obj/piyi",
        ]) );
    setup();

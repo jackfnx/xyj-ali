@@ -2,10 +2,10 @@
 /* <SecCrypt CPL V3R05> */
  
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 void create()
 {
-    reload("yao_fugui");
        set_name("姚富贵", ({"yao fugui", "yao"}));
        set("long",
 "姚老板是高家集人，后来挣了钱，开了家布店。\n");

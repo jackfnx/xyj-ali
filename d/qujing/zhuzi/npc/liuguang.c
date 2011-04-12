@@ -3,15 +3,13 @@
  
 // by snowcat oct 15 1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("zhuzi_liu_guangtou");
   set_name("柳光头", ({"liu guangtou", "liu", "boss"}));
   
-  set("shop_title","光头柳");
-  set("shop_id", ({"guangtou", "liu"}));
   set("gender", "男性");
   set("long", "一位大脑袋面师傅，正顶着一大面团飞快地往滚锅里削面。\n");
   set("combat_exp", 5000);

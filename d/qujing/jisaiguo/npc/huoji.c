@@ -1,14 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("jisaiguo_huoji");
   set_name("伙计", ({"huoji"}));
-  set("shop_id", ({"huoji"}));
-  set("shop_title", "小伙计");
   set("gender", "男性" );
   set("age", 18);
   set("per", 25);

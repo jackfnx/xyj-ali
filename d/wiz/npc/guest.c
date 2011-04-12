@@ -40,7 +40,6 @@ void create()
    
    if( clonep() ) CHANNEL_D->register_relay_channel("sys");
    
-   reload("guest_room");
 }
 
 void init()

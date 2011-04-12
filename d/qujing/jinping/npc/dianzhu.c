@@ -3,13 +3,12 @@
  
 // by snowcat 12/8/1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("jinping_dian_zhu");
   set_name("µêÖ÷", ({"dian zhu", "zhu"}));
-  set("shop_id", ({"dianzhu", "zhu"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 5000);
   set("age", 30);

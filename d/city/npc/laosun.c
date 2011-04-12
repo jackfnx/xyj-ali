@@ -3,11 +3,11 @@
  
 // rewritten by snowcat on 5/23/1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("laosun");
   set_name("老孙", ({"lao sun", "sun"}));
   set("title","皮货店老板");
   set("gender", "男性");

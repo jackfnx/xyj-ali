@@ -3,14 +3,12 @@
  
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("wuji_ye_dasao");
   set_name("叶大嫂", ({"ye dasao", "ye", "dasao", "fruit vendor"}));
-  set("shop_id", ({"dasao"}));
-  set("shop_title", "水果店大嫂");
   set("gender", "女性");
   set("combat_exp", 1000);
   set("age", 26);

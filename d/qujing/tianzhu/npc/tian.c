@@ -4,13 +4,12 @@
 // by snowcat 12/8/1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_tian_niu");
   set_name("Ìðæ¤", ({"tian niu", "tian", "niu"}));
-  set("shop_id", ({"tianniu", "tian", "niu"}));
   set("gender", "Å®ÐÔ");
   set("combat_exp", 2000);
   set("age", 17);

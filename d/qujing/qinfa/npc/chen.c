@@ -4,14 +4,13 @@
 // by snowcat oct 15 1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("qinfa_chen_xiaoer");
   set_name("³ÂÐ¡¶þ", ({"chen xiaoer", "chen", "xiaoer", "xiao", "er"}));
   set("gender", "ÄÐÐÔ");
-  set("shop_id", ({"xiaoer", "xiao", "er"}));
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);

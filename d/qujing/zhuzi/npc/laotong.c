@@ -4,13 +4,12 @@
 // by snowcat oct 15 1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("zhuzi_hefa_laotong");
   set_name("º×·¢ÀÏÍ¯", ({"hefa laotong", "laotong"}));
-  set("shop_id", ({"laotong"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 5000);
   set("age", 60);

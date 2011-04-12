@@ -3,13 +3,12 @@
  
 // rewritten by snowcat on 4/12/1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("firemount_vendor");
   set_name("小贩", ({"vendor"}));
-  set("shop_id", ({"xiaofan", "vendor"}));
   set("gender", "男性");
   set("age", 18);
   set("long","一位少年男子，正推着一辆红车儿。\n");

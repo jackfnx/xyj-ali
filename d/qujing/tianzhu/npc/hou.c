@@ -3,14 +3,12 @@
  
 // by snowcat 12/8/1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_doctor_tianzhu");
   set_name("侯郎中", ({"hou langzhong", "hou", "langzhong"}));
-  set("shop_id", ({"langzhong", "hou"}));
-  set("shop_title", "老郎中");
   set("gender", "男性");
   set("combat_exp", 50000);
   set("age", 48);

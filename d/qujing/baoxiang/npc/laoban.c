@@ -3,14 +3,12 @@
  
 // by snowcat oct 15 1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("baoxiang_lao_ban");
   set_name("ÀÏ°å", ({"laoban"}));
-  set("shop_id", ({"laoban"}));
-  set("shop_title", "ÀÏ°å");
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 500);
   set("age", 30);

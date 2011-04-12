@@ -3,14 +3,12 @@
  
 // by snowcat oct 15 1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("biqiu_kusi_kusi");
   set_name("库司库司", ({"kusi kusi", "kusi", "boss"}));
-  set("shop_id", ({"kusi"}));
-  set("shop_title", "库司");
   set("gender", "男性");
   set("combat_exp", 5000);
   set("age", 30);

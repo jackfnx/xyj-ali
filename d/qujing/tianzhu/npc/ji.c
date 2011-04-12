@@ -4,13 +4,12 @@
 // by snowcat 12/8/1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_ji_meier");
   set_name("¼¾Ã·¶ù", ({"ji meier", "ji", "meier"}));
-  set("shop_id", ({"jimeier", "ji", "meier"}));
   set("gender", "Å®ÐÔ");
   set("combat_exp", 2000);
   set("age", 20);

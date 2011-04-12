@@ -4,7 +4,6 @@
 // keeper.c
 
 inherit NPC;
-inherit F_VENDOR;
 
 void create()
 {

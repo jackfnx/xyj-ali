@@ -2,11 +2,11 @@
 /* <SecCrypt CPL V3R05> */
  
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("jinbuhuan");
           set_name("½ð²»»»", ({"jin buhuan","jin","buhuan"}));
           set("gender", "ÄÐÐÔ");
         set("combat_exp", 10000);

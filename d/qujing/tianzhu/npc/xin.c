@@ -4,11 +4,11 @@
 // by snowcat 12/8/1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_xiner_niang");
   set_name("ÐÁ¶ùÄï", ({"xiner niang", "xiner", "niang"}));
   set("gender", "Å®ÐÔ");
   set("combat_exp", 2000);

@@ -3,13 +3,12 @@
  
 // by snowcat oct 15 1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("biqiu_kan_duli");
   set_name("¿²¶¼Á¦", ({"kan duli", "duli", "boss"}));
-  set("shop_id", ({"kanduli", "duli"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 5000);
   set("age", 30);

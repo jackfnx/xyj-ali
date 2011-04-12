@@ -4,13 +4,12 @@
 // by snowcat oct 15 1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("zhuzi_mi_laoban");
   set_name("Ã×ÀÏ°å", ({"mi laoban", "mi", "laoban"}));
-  set("shop_id", ({"laoban"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 5000);
   set("age", 50);

@@ -4,11 +4,11 @@
 // by snowcat 12/8/1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_ma_laoban");
   set_name("ÂíÀÏ°å", ({"ma laoban", "ma", "laoban"}));
   set("title_id", ({"laoban", "ma"}));
   set("gender", "ÄÐÐÔ");

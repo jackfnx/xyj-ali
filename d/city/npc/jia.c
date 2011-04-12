@@ -1,16 +1,14 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 void create()
 {
-    reload("city_jiaer");
         set_name("贾二", ({"jia er", "jia"}));
         set("age", 32);
         set("gender", "男性");
         set("long","包子铺的老板，笑眯眯的看着你。\n");
-   set("shop_title", "包子铺老板");
-   set("shop_id", ({"laoban"}));
         set("attitude", "friendly");
 
         set("combat_exp", 10000);

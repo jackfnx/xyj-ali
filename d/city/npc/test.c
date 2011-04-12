@@ -37,7 +37,6 @@ void create()
         setup();
         carry_object("/obj/cloth")->wear();
         add_money("silver", 40);
-          reload("test");
 }
 
 void init()

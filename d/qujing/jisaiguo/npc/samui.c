@@ -3,13 +3,12 @@
  
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("jisaoguo_uncle_samui");
   set_name("ÈøÃ×¶ù´óÊå", ({"uncle samui","samui"}));
-  set("shop_id", ({"uncle", "samui"}));
 
   set("gender", "ÄĞĞÔ" );
   set("age", 65);

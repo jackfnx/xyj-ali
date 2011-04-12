@@ -1,11 +1,11 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("lukeqiu");
         set_name("鲁可丘", ({"lu keqiu", "lu", "keqiu"}));
         set("title", "木器铺老板");
         set("gender", "男性");

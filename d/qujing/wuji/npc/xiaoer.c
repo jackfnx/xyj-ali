@@ -3,13 +3,12 @@
  
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("wuji_xiaoer_er");
   set_name("µêÐ¡¶þ", ({"xiao er","xiaoer","xiao","waiter","er"}));
-  set("shop_id", ({"xiaoer", "xiao", "er", "waiter","er"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 1000);
   set("age", 26);

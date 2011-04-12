@@ -3,10 +3,10 @@
  
 // waiter.c
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 void create()
 {
-        reload("wudidong_waiter");
         set_name("张小二", ({ "waiter", "xiao", "xiao er", "vendor" }) );
         set("title", "小店老板");
         set("gender", "男性" );

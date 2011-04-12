@@ -3,11 +3,11 @@
  
 // laoyu.c
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("wang_zhanggui");
        set_name("王掌柜", ({"wang zhanggui", "wang"}));
        set("long", "小酒馆的老板，吃的胖胖的．\n");
        set("gender", "男性");

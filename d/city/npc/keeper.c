@@ -2,7 +2,6 @@
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
-inherit F_VENDOR;
 
 void create()
 {

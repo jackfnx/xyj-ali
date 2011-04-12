@@ -1,7 +1,8 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 int base_price=100000;
 
@@ -9,7 +10,6 @@ int ask_party();
 int ask_money();
 void create()
 {
-   reload("xifuhui");
         set_name("老害虫", ({"xifuhui boss","boss" }));
    set("title", "喜福会老板娘");
    

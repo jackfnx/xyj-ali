@@ -1,9 +1,9 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-
 inherit NPC;
 inherit F_VENDOR;
+
 void create()
 {
        set_name("竹老大", ({"bamboo man", "man"}));

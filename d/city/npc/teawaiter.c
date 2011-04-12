@@ -1,16 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-
-//inherit NPC;
-//inherit F_VENDOR;
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-   reload("teawaiter");
        set_name("茶博士", ({"cha boshi","waiter"}));
-   set("shop_id", ({"boshi", "waiter"}));
        set("gender", "男性");
        set("class", "scholar");
         set("combat_exp", 1000);

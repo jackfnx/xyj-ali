@@ -4,13 +4,12 @@
 // by snowcat oct 15 1997
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("zhuzi_zui_fangxiu");
   set_name("×í·½ÐÝ", ({"zui fangxiu", "zui"}));
-  set("shop_id", ({"zuifangxiu", "fangxiu", "zui"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 5000);
   set("age", 40);

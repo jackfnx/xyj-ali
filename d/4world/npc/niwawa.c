@@ -3,7 +3,7 @@
  
 
 inherit NPC;
-inherit F_VENDOR;
+
 void create()
 {
        set_name("ÄàÍŞÍŞ", ({"mud baby", "baby"}));

@@ -3,13 +3,12 @@
  
 // by snowcat 12/8/1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload ("kaifeng_hai");
   set_name("º£ÀÏ°å", ({"hai laoban", "hai", "laoban"}));
-  set("shop_id",({"laoban","waiter"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 5000);
   set("age", 48);

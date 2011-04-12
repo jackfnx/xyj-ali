@@ -111,7 +111,7 @@
 #define F_FOOD        "/feature/food.c"
 #define F_GREETING      "/feature/greeting.c"
 #define F_LIQUID     "/feature/liquid.c"
-#define F_MASTER     "/std/char/master.c"
+#define F_MASTER     "/feature/master.c"
 #define F_MESSAGE     "/feature/message.c"
 #define F_MORE        "/feature/more.c"
 #define F_MOVE        "/feature/move.c"
@@ -124,7 +124,6 @@
 #define F_TREEMAP     "/feature/treemap.c"
 #define F_UNIQUE     "/feature/unique.c"
 #define F_VENDOR     "/feature/vendor.c"
-#define F_VENDOR_SALE     "/feature/vendor_sale.c"
 
 // Profiling switches
 //

@@ -1,14 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("aolai_xiaoer");
        set_name("店小二", ({"xiao er","xiaoer","xiao","waiter","er"}));
-       set("shop_id",({"waiter","xiaoer","xiao","er"}));
-       set("shop_title","店小二");
        set("gender", "男性");
         set("combat_exp", 1000);
        set("age", 26);

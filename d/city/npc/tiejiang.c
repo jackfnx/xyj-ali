@@ -3,11 +3,11 @@
  
 // waiter.c
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-    reload("zhoutiejiang");
         set_name("ÖÜÌú½³", ({ "zhou tiejiang", "zhou", "tiejiang", "smith"
 }) );
         set("gender", "ÄĞĞÔ" );

@@ -1,13 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("jisaoguo_a_yina");
   set_name("阿依娜", ({"a yina","yina"}));
-  set("shop_id",({"yina"}));
   set("gender", "女性" );
   set("age", 22);
   set("per", 25);

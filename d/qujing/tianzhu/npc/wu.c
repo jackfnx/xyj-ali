@@ -4,13 +4,12 @@
 #include <ansi.h>
 
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("tianzhu_wu_laoban");
   set_name("Œ‚¿œ∞Â", ({ "wu laoban", "wu", "laoban" }) );
-  set("shop_id", ({"laoban"}));
   set("gender", "ƒ––‘");
   set("age", 40);
   set("combat_exp", 10000+random(1000));

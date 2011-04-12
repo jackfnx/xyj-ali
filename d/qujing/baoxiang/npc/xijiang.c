@@ -3,13 +3,12 @@
  
 // by snowcat oct 15 1997
 
-inherit F_VENDOR_SALE;
+inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
-  reload("baoxiang_xi_jiang");
   set_name("Îý½³", ({"xi jiang","jiang"}));
-  set("shop_id", ({"xijiang"}));
   set("gender", "ÄÐÐÔ");
   set("combat_exp", 1000);
   set("age", 35);
