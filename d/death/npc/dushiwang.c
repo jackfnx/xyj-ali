@@ -31,10 +31,10 @@ void create()
        set_skill("parry", 140);
         set_skill("spells", 140);
         set_skill("force", 140);
-        set_skill("gouhunshu", 100);
+        set_skill("necromancy", 100);
         set_skill("tonsillit", 100);
         map_skill("force", "tonsillit");
-        map_skill("spells", "gouhunshu");
+        map_skill("spells", "necromancy");
 
 create_family("ÑÖÂŞµØ¸®", 1, "ÄãºÃ");
 setup();

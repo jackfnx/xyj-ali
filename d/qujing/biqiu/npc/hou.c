@@ -30,14 +30,14 @@ void create()
   set_skill("spells", 50);
   set_skill("unarmed", 50);
   set_skill("staff", 50);
-  set_skill("gouhunshu", 50);
+  set_skill("necromancy", 50);
   set_skill("tonsillit", 50);
   set_skill("ghost-steps", 50);
   set_skill("jienan-zhi", 50);
   set_skill("lunhui-zhang", 50);
   map_skill("unarmed", "jienan-zhi");
   map_skill("force", "tonsillit");
-  map_skill("spells", "gouhunshu");
+  map_skill("spells", "necromancy");
   map_skill("staff", "lunhui-zhang");
   setup();
   carry_object("/d/obj/cloth/gongpao")->wear();

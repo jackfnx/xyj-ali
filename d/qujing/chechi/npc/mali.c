@@ -20,7 +20,7 @@ void create()
   set_skill("force", 170);
   set_skill("spells", 170);
   set_skill("unarmed", 170);
-  set_skill("gouhunshu", 150);
+  set_skill("necromancy", 150);
   set_skill("tonsillit", 150);
   set_skill("ghost-steps", 140);
   set_skill("jienan-zhi", 140);
@@ -33,7 +33,7 @@ void create()
   map_skill("dodge", "ghost-steps");
   map_skill("unarmed", "jienan-zhi");
   map_skill("force", "tonsillit");
-  map_skill("spells", "gouhunshu");
+  map_skill("spells", "necromancy");
   set("eff_dx",-300000);
   set("nkgain",400);
 

@@ -70,7 +70,7 @@ int do_lian()
     return notify_fail("只有身在天魔台才可练功。\n");
   if((  (int)me->query_skill("dao", 1)>50
      || (int)me->query_skill("taiyi",1)>50
-     || (int)me->query_skill("gouhunshu", 1)>50
+     || (int)me->query_skill("necromancy", 1)>50
      || (int)me->query_skill("moonshentong", 1)>50
      || (int)me->query_skill("buddhism", 1)>50
      || (int)me->query_skill("dengxian-dafa", 1)>50

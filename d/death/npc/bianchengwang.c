@@ -26,7 +26,7 @@ void create()
        set("mana_factor", 20);
    set("combat_exp", 600000);
    set_skill("spells", 119);
-   set_skill("gouhunshu", 119);
+   set_skill("necromancy", 119);
           set_skill("unarmed", 119);
           set_skill("dodge", 119);
    set_skill("parry", 119);

@@ -41,14 +41,14 @@ void create()
   set_skill("force", 180);
   set_skill("tonsillit", 130);
   set_skill("ghost-steps", 180);
-  set_skill("gouhunshu", 150);
+  set_skill("necromancy", 150);
   set_skill("jinghun-zhang", 150);
   set_skill("kusang-bang", 180);
 
   map_skill("force", "tonsillit");
   map_skill("unarmed", "jinghun-zhang");
   map_skill("dodge", "ghost-steps");
-  map_skill("spells", "gouhunshu");
+  map_skill("spells", "necromancy");
   map_skill("parry", "hellfire-whip");
   map_skill("whip", "hellfire-whip");
         set("chat_chance_combat", 40);

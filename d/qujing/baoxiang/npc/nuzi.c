@@ -22,13 +22,13 @@ void create()
   set_skill("force", 50);
   set_skill("spells", 50);
   set_skill("unarmed", 50);
-  set_skill("gouhunshu", 50);
+  set_skill("necromancy", 50);
   set_skill("tonsillit", 50);
   set_skill("ghost-steps", 50);
   set_skill("jinghun-zhang", 50);
   map_skill("unarmed", "jinghun-zhang");
   map_skill("force", "tonsillit");
-  map_skill("spells", "gouhunshu");
+  map_skill("spells", "necromancy");
   set("max_gin", 700);
   set("max_kee", 700);
   set("max_sen", 700);

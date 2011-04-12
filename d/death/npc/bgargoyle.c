@@ -54,12 +54,12 @@ void create()
         set_skill("parry", 70);
      set_skill("kusang-bang", 70);
         set_skill("spells", 70);
-        set_skill("gouhunshu", 70);
+        set_skill("necromancy", 70);
         set_skill("force", 70);
         set_skill("stick", 70);
         set_skill("tonsillit", 70);
         set_skill("jinghun-zhang", 80);
-        map_skill("spells", "gouhunshu");
+        map_skill("spells", "necromancy");
         map_skill("dodge", "ghost-steps");
         map_skill("force", "tonsillit");
    map_skill("stick", "kusang-bang");

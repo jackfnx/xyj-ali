@@ -31,7 +31,7 @@ void create()
   set_skill("spells", 70);
   set_skill("force", 70);
   set_skill("staff",130);
-  set_skill("gouhunshu", 70);
+  set_skill("necromancy", 70);
   set_skill("tonsillit", 70);
   set_skill("ghost-steps", 100);
   set_skill("jinghun-zhang", 70);
@@ -41,7 +41,7 @@ void create()
   map_skill("staff", "lunhui-zhang");
   map_skill("parry", "lunhui-zhang");
   map_skill("force", "tonsillit");
-  map_skill("spells", "gouhunshu");
+  map_skill("spells", "necromancy");
   set("eff_dx",-80000);
   set("nkgain",100);
   

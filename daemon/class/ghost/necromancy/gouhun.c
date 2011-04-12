@@ -55,7 +55,7 @@ random((int)target->query("eff_sen") / 5);
                         target->receive_wound("sen", damage/2, me);
 //                        target->receive_damage("kee", damage, me);
 //                        target->receive_wound("kee", damage/4, me);
-                        me->improve_skill("gouhunshu", 1, 1);
+                        me->improve_skill("necromancy", 1, 1);
                 }
        else {
 //here, cast failed and the target's mana_factor will be added to the previous 
@@ -67,7 +67,7 @@ random((int)target->query("eff_sen") / 5);
                         me->receive_wound("sen", -damage/2, target);
 //                        me->receive_damage("kee", -damage, target);
 //                        me->receive_wound("kee", -damage/4, target);
-                        me->improve_skill("gouhunshu", 1, 1);
+                        me->improve_skill("necromancy", 1, 1);
        }
              } 
    else

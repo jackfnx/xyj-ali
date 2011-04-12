@@ -52,11 +52,11 @@ set("chat_msg", ({
         set_skill("unarmed", 50);
    set_skill("parry", 50);
    set_skill("spells", 50);
-   set_skill("gouhunshu", 50);
+   set_skill("necromancy", 50);
    set_skill("jinghun-zhang", 50);
    set_skill("force", 50);
    set_skill("tonsillit", 50);
-   map_skill("spells", "gouhunshu");
+   map_skill("spells", "necromancy");
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");
    map_skill("unarmed", "jinghun-zhang");

@@ -34,7 +34,7 @@ void create()
 
    set_skill("jinghun-zhang", 150);
    set_skill("tonsillit", 100);
-   set_skill("gouhunshu", 150);
+   set_skill("necromancy", 150);
        set_skill("unarmed", 150);
    set_skill("whip", 100);
    set_skill("sword", 150);
@@ -49,7 +49,7 @@ void create()
    map_skill("dodge", "ghost-steps");
    map_skill("unarmed", "jinghun-zhang");
    map_skill("force", "tonsillit");
-   map_skill("spells", "gouhunshu");
+   map_skill("spells", "necromancy");
 
    set("nk_gain", 500);
 

@@ -32,13 +32,13 @@ void create()
   set_skill("spells", 150);
   set_skill("jinghun-zhang", 120);
   set_skill("force", 150);
-  set_skill("gouhunshu", 100);
+  set_skill("necromancy", 100);
   set_skill("ghost-steps", 100);
   set_skill("tonsillit", 100);
   map_skill("dodge", "ghost-steps");
   map_skill("unarmed", "jinghun-zhang");
   map_skill("force", "tonsillit");
-  map_skill("spells", "gouhunshu");
+  map_skill("spells", "necromancy");
   
   create_family("ÑÖÂÞµØ¸®", 1, "ÄãºÃ");
   setup();

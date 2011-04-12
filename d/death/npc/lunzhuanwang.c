@@ -27,13 +27,13 @@ void create()
        set("mana_factor", 40);
        set("combat_exp", 660000);
    set_skill("spells", 100);
-   set_skill("gouhunshu", 100);
+   set_skill("necromancy", 100);
        set_skill("unarmed", 139);
        set_skill("dodge", 139);
        set_skill("parry", 130);
    set_skill("force", 100);
    set_skill("tonsillit", 100);
-   map_skill("spells", "gouhunshu");
+   map_skill("spells", "necromancy");
    map_skill("force", "tonsillit");
    create_family("ÑÖÂŞµØ¸®", 1, "ÄãºÃ");
 setup();
