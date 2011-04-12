@@ -19,7 +19,7 @@ LONG);
   "south" : __DIR__"walk3",
   "east" : __DIR__"room8",
   "west" : __DIR__"room7",
-  "north" : __DIR__"walk5",
+  "north" : __DIR__"room9",
 ]));
   set("hell", 1);
   set("objects", ([ /* sizeof() == 1 */

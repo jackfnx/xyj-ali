@@ -10,18 +10,20 @@ void create ()
   set ("short", "幽司");
   set ("long", @LONG
 
-这里便是阴曹地府之中，偶尔看到几个索命鬼，勾司人牵着些套着
-枷锁的人走来走去。周围是一座座的楼阁宫殿，看起来也相当的富
-丽堂皇，奇怪的是都有一扇钉着金钉的红木门和一条白玉门槛。
+这是一条长长的厢廊，没有什么人走动。周围也没有什么动静，一切
+都是静悄悄的。北面有一座青紫砖石的宫殿，笼在一股青烟之中。
 LONG);
 
-  set("exits", ([ /* sizeof() == 3 */
-  "south" : __DIR__"walk4",
-  "west" : __DIR__"room9",
-  "north" : __DIR__"walk6",
+  set("exits", ([ /* sizeof() == 2 */
+  "south" : __DIR__"room9",
+  "northup" : __DIR__"cuiyun",
 ]));
   set("hell", 1);
   set("out_doors", 1);
+  set("objects", ([ /* sizeof() == 2 */
+  __DIR__"npc/tong2" : 1,
+  __DIR__"npc/tong1" : 1,
+]));
 
   setup();
 }
