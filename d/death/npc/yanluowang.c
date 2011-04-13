@@ -15,7 +15,7 @@ void create()
        set("long", "身穿大红蟒袍，头戴黑绸软巾．
 面如锅底，须若钢针，这就是阎罗王．\n");
        set("title", "阴间十王之");
-   set("class", "youling");
+   set("class", "ghost");
        set("gender", "男性");
        set("age", 50);
        set("attitude", "peaceful");
@@ -104,7 +104,7 @@ void attempt_apprentice(object ob, object me)
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) )
-                ob->set("class", "youling");
+                ob->set("class", "ghost");
 }
 
 

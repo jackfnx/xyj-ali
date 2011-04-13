@@ -10,7 +10,7 @@ void create()
        set_name("都市王", ({"dushi wang", "wang", "dushi"}));
        set("title", "阴间十王之");
        set("gender", "男性");
-   set("class", "youling");
+   set("class", "ghost");
        set("age", 100);
        set("attitude", "friendly");
        set("shen_type", 1);

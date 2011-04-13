@@ -23,7 +23,7 @@ void create()
         set("max_gin", 1000);
         set("max_kee", 1000);
         set("max_sen", 1000);
-   set("class", "youling");
+   set("class", "ghost");
    set("force", 1500);
    set("max_force", 800);
    set("force_factor", 50);
@@ -70,7 +70,6 @@ void attempt_apprentice()
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) )
-                ob->set("class", "youling");
-//     ob->set("title", "µØ¸®ÕÐ»êË¾Òõ±ø");
+                ob->set("class", "ghost");
 }
 

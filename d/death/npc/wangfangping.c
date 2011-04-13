@@ -25,7 +25,7 @@ set("long","王方平本是山中道士，后在丰都山同阴长生同修炼成仙，御封(「鬼王」。\n"
         set("max_gin", 1400);
         set("max_kee", 1400);
         set("max_sen", 1400);
-   set("class", "youling");
+   set("class", "ghost");
    set("force", 2500);
    set("max_force", 1500);
    set("force_factor", 100);
@@ -84,12 +84,9 @@ void attempt_apprentice()
        command("recruit " + me->query("id") );
         return;
 }
-/*
+
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) )
-                ob->set("class", "youling");
-     ob->set("title", "地府招魂司阴兵");
+                ob->set("class", "ghost");
 }
-
-*/

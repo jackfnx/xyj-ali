@@ -40,7 +40,7 @@ set("chat_msg", ({
         set("max_gin", 600);
         set("max_kee", 700);
         set("max_sen", 600);
-   set("class", "youling");
+   set("class", "ghost");
    set("force", 400);
    set("max_force", 400);
    set("force_factor", 20);
@@ -118,6 +118,6 @@ void attempt_apprentice()
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) )
-                ob->set("class", "youling");
+                ob->set("class", "ghost");
 }
 

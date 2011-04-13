@@ -12,7 +12,7 @@ void create()
    set_name("酆都鬼使", ({"hell guard", "guard"}));
    set("long", "这是一位来自阴界的守护神，专门担任护法之责。\n");
    set("attitude", "friendly");
-   set("class", "youling");
+   set("class", "ghost");
    set("max_gin", 600);
    set("max_kee", 600);
    set("max_sen", 600);

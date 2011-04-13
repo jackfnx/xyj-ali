@@ -35,7 +35,7 @@ void create()
    set("str", 25);
    set("int", 20);
         set("age", 217);
-   set("class", "youling");
+   set("class", "ghost");
         set("combat_exp", 120000);
         set("max_kee", 800);
         set("max_sen", 800);
@@ -137,7 +137,7 @@ void attempt_apprentice()
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) )
-                ob->set("class", "youling");
+                ob->set("class", "ghost");
 }
 
 

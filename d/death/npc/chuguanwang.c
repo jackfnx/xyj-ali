@@ -11,7 +11,7 @@ void create()
   set("title", "阴间十王之");
   set("gender", "男性");
   set("age", 60);
-  set("class", "youling");
+  set("class", "ghost");
   set("attitude", "peaceful");
   set("shen_type", 1);
   set("per", 30);

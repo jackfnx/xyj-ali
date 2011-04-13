@@ -9,7 +9,7 @@ void create()
 {
        set_name("泰山王", ({"taishan wang", "wang", "taishan"}));
        set("title", "阴间十王之");
-   set("class", "youling");
+   set("class", "ghost");
        set("gender", "男性");
        set("age", 100);
        set("attitude", "friendly");

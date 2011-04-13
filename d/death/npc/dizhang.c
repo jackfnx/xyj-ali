@@ -11,7 +11,7 @@ void create()
   set("long", "面如朱玉，大耳垂肩，一脸肃静．
 他便是主管阴曹地府，天下鬼魂的地藏王菩萨．\n");
   set("gender", "男性");
-  set("class", "youling");
+  set("class", "ghost");
   set("age", 70);
   set("attitude", "friendly");
   set("shen_type", 1);
@@ -90,4 +90,9 @@ void attempt_apprentice(object ob, object me)
   return;
 }
 
+int recruit_apprentice(object ob)
+{
+        if( ::recruit_apprentice(ob) )
+                ob->set("class", "ghost");
+}
 

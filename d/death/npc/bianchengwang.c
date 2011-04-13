@@ -10,7 +10,7 @@ void create()
        set_name("卞城王", ({"biancheng wang", "wang"}));
        set("title", "阴间十王之");
        set("gender", "男性");
-   set("class", "youling");
+   set("class", "ghost");
        set("age", 50);
        set("attitude", "friendly");
        set("per", 30);

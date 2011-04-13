@@ -12,7 +12,7 @@ void create()
    set_name("黑无常", ({"black gargoyle", "gargoyle"}));
    set("long", "这是一位来自阴界的守护神，专门担任护法之责。\n");
    set("attitude", "friendly");
-   set("class", "youling");
+   set("class", "ghost");
    set("title", "拘魂使者");
    set("max_gin", 1000);
    set("max_kee", 1000);

@@ -16,7 +16,7 @@ void create()
    set("long", "这是一位来自阴界的守护神，专门担任护法之责。\n");
    set("attitude", "friendly");
    set("per", 10);
-   set("class", "youling");
+   set("class", "ghost");
    set("max_gin", 400);
    set("max_kee", 400);
    set("max_sen", 400);

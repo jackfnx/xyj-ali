@@ -123,7 +123,7 @@ case "soldier":
     else
         return GRN "【"+ob->query("added_title")+"大元帅】" NOR;
     break;
-case "youling":
+case "ghost":
     if ((int)ob->query("combat_exp")<1000)
         return GRN "【阴曹小鬼】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
@@ -258,7 +258,7 @@ case "soldier":
     else
         return RED "【"+ob->query("added_title")+"大元帅】" NOR;
     break;
-case "youling":
+case "ghost":
     if ((int)ob->query("combat_exp")<1000)
         return RED "【阴曹小鬼】" NOR;
     else if ((int)ob->query("combat_exp")<10000)

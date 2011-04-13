@@ -18,7 +18,7 @@ void create()
         set_name(name, ({"ghost"}));
         set("gender", "ÄÐÐÔ" );
    set("age", 30+random(20));
-   set("class", "youling");
+   set("class", "ghost");
    set("env/invisibility", 1);
    set("title", RED "(¹íÆø)" NOR);
         set("combat_exp", 3000);
