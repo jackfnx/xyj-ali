@@ -53,7 +53,7 @@ int query_per()
 {
     int final;
     final = (int)query("per") + query_temp("apply/personality");
-    if ((int)query_skill("fascination")>20) final += ((int)query_skill("fascination")-20)/10;
+    if ((int)query_skill("charm")>20) final += ((int)query_skill("charm")-20)/10;
     return final;
 }
 

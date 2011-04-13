@@ -582,10 +582,10 @@ int sex_refresh()
 
     /*
     sex_per = my["per"] + query_temp("apply/personality");
-    if (query_skill("fascination") > 20)
-        sex_per += (query_skill("fascination")-20)/10;
-    if (query_skill("fascination") > 100)
-        sex_per -= (query_skill("fascination")-80)/10;
+    if (query_skill("charm") > 20)
+        sex_per += (query_skill("charm")-20)/10;
+    if (query_skill("charm") > 100)
+        sex_per -= (query_skill("charm")-80)/10;
     if (sex_per > 40) {
         object env = environment();
         if (objectp(env)) {

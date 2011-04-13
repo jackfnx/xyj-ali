@@ -197,7 +197,7 @@ int do_makelove(object me, object victim, int is_fucking)
 {
     mapping action;
     string actionstr, effectstr, sens;
-    int me_fascination, victim_fascination, hit, back;
+    int me_charm, victim_charm, hit, back;
 
     if (is_fucking) {
         if (me->query_temp("sufferer") != victim
@@ -246,10 +246,10 @@ int do_makelove(object me, object victim, int is_fucking)
     actionstr = replace_string(actionstr, "$l", pussy_names[random(sizeof(pussy_names))]);
     actionstr = replace_string(actionstr, "$b", breast_names[random(sizeof(breast_names))]);
 
-    me_fascination = me->query_skill("fascination") / 10;
-    victim_fascination = victim->query_skill("fascination") / 10;
-    hit = me_fascination < random(victim_fascination + victim->query_cps() / 10 - 5);
-    back = me_fascination + me->query_cps() / 10 < random(victim_fascination + 10);
+    me_charm = me->query_skill("charm") / 10;
+    victim_charm = victim->query_skill("charm") / 10;
+    hit = me_charm < random(victim_charm + victim->query_cps() / 10 - 5);
+    back = me_charm + me->query_cps() / 10 < random(victim_charm + 10);
     if (!hit)
         effectstr = "弄得$n浑身一颤，急忙深吸一口气，总算没有失控";
     else {

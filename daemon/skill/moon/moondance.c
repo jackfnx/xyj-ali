@@ -52,7 +52,7 @@ string *dodge_msg = ({
 
 int valid_enable(string usage)
 {
-    return ( usage=="dodge" || usage=="fascination" || usage=="unarmed" );
+    return ( usage=="dodge" || usage=="charm" || usage=="unarmed" );
 }
 
 int valid_learn(object me)

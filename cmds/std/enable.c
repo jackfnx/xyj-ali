@@ -29,7 +29,7 @@ mapping valid_types = ([
    "rake":     "钯法",
    "archery":   "弓箭",
    "hammer":   "锤法",
-   "fascination":   "媚术",
+   "charm":   "媚术",
 ]);
 
 int main(object me, string arg)
