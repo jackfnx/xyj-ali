@@ -439,15 +439,13 @@ int heal_up()
     return update_flag;
 }
 
-int sex_inspire(string type, int fire)
+int sex_excite(string type, int fire)
 {
     int val, max;
 
     if (fire < 0) error("F_DAMAGE: SA为负值。\n");
-    if (type == "libido")
-        max = MAX_LIBIDO;
-    else if (type == "stamina")
-        max = MAX_STAMINA;
+    if (type == "lust")
+        max = MAX_LUST;
     else
         error("F_DAMAGE: 未知的SA种类。\n");
 
@@ -465,7 +463,7 @@ int sex_depress(string type, int water)
     int val;
 
     if (water < 0) error("F_DAMAGE: SD为负值。\n");
-    if (type != "libido" && type != "stamina")
+    if (type != "lust")
         error("F_DAMAGE: 未知的SD种类。\n");
 
     val = (int)query(type);
@@ -499,7 +497,7 @@ void remove_heat()
 
     remove_call_out("remove_heat");
 
-    if (query("libido") > EFF_LIBIDO) {
+    if (query("lust") > EFF_LUST) {
         call_out("remove_heat", 20);
         return;
     }
@@ -529,7 +527,7 @@ void orgasm()
         message("system", HIR "\n你感到腰眼一麻，下体射出了一道精阳！\n顿时一阵巨大的快感袭入了你的脑海，你不禁一阵眩晕。。。\n\n" NOR, this_object());
         set_temp("no_move", 1);
         SEX_D->announce(this_object(), "ejaculate");
-        add_temp("ejaculate", random(query("libido") / 10));
+        add_temp("ejaculate", random(query("lust") / 10));
         call_out("ejaculate", 2);
     } else if (gender == "女性") {
         string org;
@@ -549,7 +547,7 @@ void ejaculate()
 {
     remove_call_out("ejaculate");
     add_temp("ejaculate", -1);
-    sex_depress("libido", random(10));
+    sex_depress("lust", random(10));
     if ((int)query_temp("ejaculate") > 0) {
         SEX_D->gain_enjoy(this_object(), "ejaculate");
         SEX_D->announce(this_object(), "ejaculate");
@@ -565,7 +563,7 @@ void ejaculate()
 void no_orgasm()
 {
     remove_call_out("no_orgasm");
-    sex_depress("libido", random(query("libido")*2/3));
+    sex_depress("lust", random(query("lust")*2/3));
     delete_temp("no_move");
     message("system", HIG "\n随着欲火的消退，你感到灵魂又回到了肉体中！\n\n" NOR, this_object());
 }
@@ -580,8 +578,7 @@ int sex_refresh()
     my = query_entire_dbase();
     if (!mapp(my)) return 0;
 
-    if (my["libido"] > 0) { my["libido"] -= 1; update_flag++; }
-    if (my["stamina"] < MAX_STAMINA) { my["stamina"] += 1; update_flag++; }
+    if (my["lust"] > 0) { my["lust"] -= 1; update_flag++; }
 
     /*
     sex_per = my["per"] + query_temp("apply/personality");
@@ -596,7 +593,7 @@ int sex_refresh()
             object ob = first_inventory(env);
             while (ob) {
                 if (ob != this_object() && living(ob)) {
-                    ob->sex_inspire("libido", sex_per / 10);
+                    ob->sex_excite("lust", sex_per / 10);
                     update_flag++;
                     i++;
                 }

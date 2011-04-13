@@ -45,8 +45,6 @@ void setup_char(object ob)
     if ( undefinedp(my["eff_kee"]) ) my["eff_kee"] = my["max_kee"];
     if ( undefinedp(my["eff_sen"]) ) my["eff_sen"] = my["max_sen"];
 
-    if ( undefinedp(my["stamina"]) ) my["stamina"] = MAX_STAMINA;
-
     if ( !ob->query_max_encumbrance() )
         ob->set_max_encumbrance( my["str"]*5000
                + (int)ob->query_skill("force",1)*200 );

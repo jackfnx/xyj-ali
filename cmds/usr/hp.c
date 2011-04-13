@@ -77,11 +77,9 @@ int main(object me, string arg)
     }
 
     printf(" ¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô\n");
-    printf(" Óû»ð£º %s%4d/ %4d " NOR "%s(%3d%%)" NOR "    ¾«Á¦£º %s%4d/ %4d " NOR "%s(%3d%%)\n" NOR,
-            my["libido"] < EFF_LIBIDO ? HIG : HIR, my["libido"], EFF_LIBIDO,
-            sex_status_color(my["libido"], MAX_LIBIDO), my["libido"] * 100 / MAX_LIBIDO,
-            status_color(my["stamina"], EFF_STAMINA), my["stamina"], EFF_STAMINA,
-            status_color(my["stamina"], MAX_STAMINA), my["stamina"] * 100 / MAX_STAMINA
+    printf(" Óû»ð£º %s%4d/ %4d " NOR "%s(%3d%%)\n" NOR,
+            my["lust"] < EFF_LUST ? HIG : HIR, my["lust"], EFF_LUST,
+            sex_status_color(my["lust"], MAX_LUST), my["lust"] * 100 / MAX_LUST
             );
     return 1;
 }

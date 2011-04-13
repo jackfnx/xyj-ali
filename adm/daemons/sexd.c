@@ -38,11 +38,11 @@ void report_sex_status(object ob)
 {
     if (ob->query("gender") == "女性")
         message_vision("( $N" + female_status_msg(
-                (int)ob->query("libido")) 
+                (int)ob->query("lust")) 
                 + " )\n", ob);
     else
         message_vision("( $N" + male_status_msg(
-                (int)ob->query("libido")) 
+                (int)ob->query("lust")) 
                 + " )\n", ob);
 }
 
@@ -263,20 +263,20 @@ int do_makelove(object me, object victim, int is_fucking)
     message_vision("结果" + effectstr + "！\n", me, victim);
     if (hit) {
         report_sex_status(victim);
-        victim->sex_inspire("libido", action["enjoy"]);
+        victim->sex_excite("lust", action["enjoy"]);
     }
     if (back) {
         message_vision("而$N也觉得精神一震，一种满足感油然而生！\n", me);
         report_sex_status(me);
-        me->sex_inspire("libido", action["self_enjoy"]);
+        me->sex_excite("lust", action["self_enjoy"]);
     }
 
-    me->sex_inspire("stamina", action["cost"]);
+    me->add("atman", -action["cost"]);
 
-    if (me->query("libido")>=100)
+    if (me->query("lust")>=100)
         me->orgasm();
 
-    if (victim->query("libido")>=100)
+    if (victim->query("lust")>=100)
         victim->orgasm();
 
     return action["damage"];

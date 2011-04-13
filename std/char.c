@@ -87,7 +87,7 @@ void heart_beat()
         return;
     }
 
-    if (my["libido"] > EFF_LIBIDO && !this_object()->query_temp("sex_heat")) {
+    if (my["lust"] > EFF_LUST && !this_object()->query_temp("sex_heat")) {
         heat();
     }
 
