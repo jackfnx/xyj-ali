@@ -13,11 +13,17 @@ void create ()
 
 泾水东去，绿杨城郭。漫步于此，你不由得心旷神怡，长长
 地吸了一口气。而微风中一股清新气息，不知由何处飘来。
+北面靠城墙有一座小土丘。
 LONG);
 
-  set("exits", ([ /* sizeof() == 2 */
+  set("objects", ([ /* sizeof() == 2 */
+  __DIR__"npc/qiaofu" : 1,
+  __DIR__"npc/fisher" : 1,
+]));
+  set("exits", ([ /* sizeof() == 3 */
   "west" : __DIR__"wside3",
   "east" : __DIR__"wside1",
+  "northup" : __DIR__"xiaoqiu",
 ]));
   set("outdoors", 1);
 
