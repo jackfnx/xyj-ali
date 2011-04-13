@@ -19,8 +19,8 @@ string age_string(int time)
    time /= 24;
    day = time % 30;
    month = time / 30;
-   return (month?month + "m":"") + (day?day + "d":"") + 
-   (hour?hour + "h":"") + min + "m";
+   return (month?month + "月":"") + (day?day + "天":"") + 
+   (hour?hour + "小时":"") + min + "分";
 }
 
 string finger_all()

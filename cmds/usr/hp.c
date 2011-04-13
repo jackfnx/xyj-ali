@@ -1,6 +1,7 @@
 // ALI by NewX
 
 #include <ansi.h>
+#include <combat.h>
 #include <sex.h>
 
 inherit F_CLEAN_UP;
@@ -75,11 +76,37 @@ int main(object me, string arg)
         if(!year && !day && !hour)  printf("你还没有道行。");
         printf("\n"NOR);
     }
+    {
+        /* ap/dp calc */
+        string skill_type;
+        object weapon;
+        int attack_points, dodge_points, parry_points;
+
+        if (objectp(weapon = ob->query_temp("weapon")))
+            skill_type = weapon->query("skill_type");
+        else
+            skill_type = "unarmed";
+
+        attack_points = COMBAT_D->skill_power(ob, skill_type,
+            SKILL_USAGE_ATTACK);
+        parry_points = COMBAT_D->skill_power(ob, skill_type,
+            SKILL_USAGE_DEFENSE);
+        dodge_points = COMBAT_D->skill_power(ob, "dodge",
+            SKILL_USAGE_DEFENSE);
+    
+        printf(" 攻击： %s%10d"NOR" (%s%+4d"NOR")    防御： %s%10d "NOR"(%s%+4d"NOR")\n" NOR,
+            HIW, attack_points/100 + 1,
+            RED, ob->query_temp("apply/damage"),
+            HIW, (dodge_points + (weapon? parry_points:(parry_points/10)))/100 + 1,
+            HIY, ob->query_temp("apply/armor"));
+    }
 
     printf(" ≡─────────────────────────≡\n");
-    printf(" 欲望： %s%4d/ %4d " NOR "%s(%3d%%)\n" NOR,
+    printf(" 欲望： %s%4d/ %4d " NOR "%s(%3d%%)" NOR "    杀气： %s%d\n "NOR,
             my["lust"] < EFF_LUST ? HIG : HIR, my["lust"], EFF_LUST,
-            sex_status_color(my["lust"], MAX_LUST), my["lust"] * 100 / MAX_LUST
+            sex_status_color(my["lust"], MAX_LUST), my["lust"] * 100 / MAX_LUST,
+            RED,
+            my["bellicosity"]
             );
     return 1;
 }

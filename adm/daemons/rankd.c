@@ -514,7 +514,7 @@ case "bonze":
    else return "老和尚我";
    break;
 case "taoist":
-   return "本山人";
+   return "道爷我";
    break;
 case "scholar":
    if( age < 50 ) return "本相公";
@@ -529,4 +529,285 @@ default:
    }
 }
 
+//descriptions...
+
+//note, be careful with the size of this list, exp increases as n^3. 
+string *exp_level_desc = ({
+        BLU "新入道途" NOR, //in unit of year 
+        BLU "闻道则喜" NOR, //1x2=2   
+        BLU "初领妙道" NOR, //8x2=16
+        BLU "略通道行" NOR, //27x2=56    
+        HIB "渐入佳境" NOR, //64x2=128
+        HIB "元神初具" NOR, //125x2=250
+        HIB "道心稳固" NOR, //216x2=432    
+        HIB "一日千里" NOR, //343x2=686
+        CYN "道高德隆" NOR, //512x2=1024
+        CYN "脱胎换骨" NOR, //729x2=1458    
+        CYN "霞举飞升" NOR, //1000x2=2000
+        CYN "道满根归" NOR, //1331x2=2662    
+        HIC "不堕轮回" NOR, //1728x2=3456
+        HIC "已证大道" NOR, //2197x2=4394    
+        HIC "反璞归真" NOR, //2744x2=5688 
+        HIW "天人合一" NOR  //3375x2=6750
+});
+
+string *mana_level_desc = ({
+        BLU "初具法力" NOR, //    
+        BLU "略晓变化" NOR, //1x40=40
+        BLU "降龙伏虎" NOR, //4x40=160
+        HIB "腾云驾雾" NOR, //9x40=360   
+        HIB "神出鬼没" NOR, //16x40=640
+        HIB "预知祸福" NOR, //25x40=1000
+        HIB "妙领天机" NOR, //36x40=1440    
+        CYN "呼风唤雨" NOR, //49x40=1960
+        CYN "负海担山" NOR, //64x40=2560    
+        CYN "移星换斗" NOR, //81x40=3240
+        CYN "包罗万象" NOR, //100x40=4000
+        HIC "随心所欲" NOR, //121x40=4840    
+        HIC "变换莫测" NOR, //144x40=5760
+        HIW "法力无边" NOR  //169x40=6760
+});
+
+string *skill_level_desc = ({
+        BLU "初学乍练" NOR,
+        BLU "不知所以" NOR,
+        BLU "粗通皮毛" NOR,
+        HIB "略识之无" NOR,
+        HIB "渐有所悟" NOR,
+        HIB "半生不熟" NOR,
+        YEL "马马虎虎" NOR,
+        YEL "平淡无奇" NOR,
+        YEL "平平常常" NOR,
+        HIY "触类旁通" NOR,
+        HIY "心领神会" NOR,
+        HIY "深入浅出" NOR,
+        HIM "挥洒自如" NOR,
+        HIM "驾轻就熟" NOR,
+        HIM "出类拔萃" NOR,
+        HIR "初入佳境" NOR,
+        HIR "神乎其技" NOR,
+        HIR "威不可当" NOR,
+        MAG "出神入化" NOR,
+        MAG "豁然贯通" NOR,
+        MAG "超群绝伦" NOR,
+        CYN "登峰造极" NOR,
+        CYN "卓然大家" NOR,
+        CYN "一代宗师" NOR,
+        HIC "独步天下" NOR,
+        HIC "空前绝后" NOR,
+        HIC "旷古绝伦" NOR,
+        WHT "震古铄今" NOR,
+        WHT "超凡入圣" NOR,
+        WHT "返璞归真" NOR,
+        HIW "深不可测" NOR
+/* /cmds/std/check.c
+    BLU "初学乍练" NOR,   BLU "初窥门径" NOR,
+    HIB "粗通皮毛" NOR,   HIB "略知一二" NOR,
+    YEL "半生不熟" NOR,   YEL "马马虎虎" NOR,
+    HIY "已有小成" NOR,   HIY "渐入佳境" NOR,
+    HIM "驾轻就熟" NOR,   HIM "了然于胸" NOR,
+    HIR "出类拔萃" NOR,   HIR "心领神会" NOR,
+    MAG "神乎其技" NOR,   MAG "出神入化" NOR,
+    CYN "豁然贯通" NOR,   CYN "登峰造极" NOR,
+    HIC "举世无双" NOR,   HIC "一代宗师" NOR,
+    HIC "震古铄今" NOR,   HIW "深不可测" NOR
+*/
+/* /cmds/usr/skills.c
+    BLU "初学乍练" NOR,
+    BLU "初窥门径" NOR,
+    HIB "粗通皮毛" NOR,
+    HIB "略知一二" NOR,
+    YEL "半生不熟" NOR,
+    YEL "马马虎虎" NOR,
+    HIY "已有小成" NOR,
+    HIY "渐入佳境" NOR,
+    HIM "驾轻就熟" NOR,
+    HIM "了然于胸" NOR,
+    HIR "出类拔萃" NOR,
+    HIR "心领神会" NOR,
+    MAG "神乎其技" NOR,
+    MAG "出神入化" NOR,
+    CYN "豁然贯通" NOR,
+    CYN "登峰造极" NOR,
+    HIC "举世无双" NOR,
+    HIC "一代宗师" NOR,
+    HIC "震古铄今" NOR,
+    HIW "深不可测" NOR
+*/
+});
+
+string *knowledge_level_desc = ({
+        BLU "新学乍用" NOR,
+        BLU "不甚了了" NOR,
+        BLU "不知端倪" NOR,
+        HIB "平淡无奇" NOR,
+        HIB "司空见惯" NOR,
+        HIB "初窥门径" NOR,
+        YEL "略知一二" NOR,
+        YEL "茅塞顿开" NOR,
+        YEL "略识之无" NOR,
+        HIY "滚瓜烂熟" NOR,
+        HIY "马马虎虎" NOR,
+        HIY "轻车熟路" NOR,
+        HIM "运用自如" NOR,
+        HIM "触类旁通" NOR,
+        HIM "深入浅出" NOR,
+        HIR "已有小成" NOR,
+        HIR "心领神会" NOR,
+        HIR "了然于胸" NOR,
+        MAG "见多识广" NOR,
+        MAG "无所不通" NOR,
+        MAG "卓尔不群" NOR,
+        CYN "满腹经纶" NOR,
+        CYN "豁然贯通" NOR,
+        CYN "博古通今" NOR,
+        HIC "博大精深" NOR,
+        HIC "超群绝伦" NOR,
+        HIC "举世无双" NOR,
+        WHT "独步天下" NOR,
+        WHT "震古铄今" NOR,
+        WHT "超凡入圣" NOR,
+        HIW "深不可测" NOR
+/* /cmds/usr/skills.c
+        BLU "新学乍用" NOR,
+        HIB "初窥门径" NOR,
+        HIB "略知一二" NOR,
+        YEL "马马虎虎" NOR,
+        YEL "已有小成" NOR,
+        CYN "心领神会" NOR,
+        CYN "了然于胸" NOR,
+        CYN "豁然贯通" NOR,
+        HIC "举世无双" NOR,
+        HIC "震古铄今" NOR,
+        HIW "深不可测" NOR
+*/
+});
+
+string describe_exp(int value)
+{
+    int grade, two_year, n;
+    
+    two_year = value / 2000;
+    for (grade = 0; grade < sizeof(exp_level_desc); grade++) {
+        n = (grade+1) * (grade+1) * (grade+1);
+        if (two_year < n) break;
+    }
+    if (grade >= sizeof(exp_level_desc))
+        grade = sizeof(exp_level_desc) - 1;
+    return exp_level_desc[grade];
+}
+
+int grade_exp(string desc)
+{
+    int grade, n;
+
+    for (grade = 0; grade < sizeof(exp_level_desc); grade++) {
+        n = grade;
+        if (exp_level_desc[grade] == desc)
+            return n;
+    }
+    return 0;
+}
+
+string describe_skills(mapping skills)
+{
+    int grade, lvl, i;
+    string *sk;
+    if (!sizeof(skills)) return BLU "一窍不通" NOR;
+    sk = keys(skills);
+    for (i = 0; i < sizeof(sk); i++) {
+        if (SKILL_D(sk[i])->type() == "knowledge") continue;
+        if (lvl < skills[sk[i]]) lvl = skills[sk[i]];
+    }
+    grade = lvl / 10;
+    if (grade >= sizeof(skill_level_desc))
+        grade = sizeof(skill_level_desc) - 1;
+    return skill_level_desc[grade];
+}
+
+varargs string describe_skill(string skill, int lvl)
+{
+    int grade;
+    string *level_desc;
+    
+    if (SKILL_D(skill)->type() == "knowledge")
+        level_desc = knowledge_level_desc;
+    else
+        level_desc = skill_level_desc;
+
+    grade = lvl / 10;
+    if (grade >= sizeof(level_desc))
+        grade = sizeof(level_desc) - 1;
+    return level_desc[grade];
+}
+
+string describe_force(int value)
+{
+    int year, sixty, left;
+    string line;
+    
+    year = value / 100;
+    sixty = year / 60;
+    left = year % 60;
+
+    if (year <= 0) {
+        line = HIB "不到一年" NOR;
+        return line;
+    }
+    
+    if (sixty > 0)
+        if (left != 0)
+            line = HIW + chinese_number(sixty) + "甲子" + NOR + "又" +  HIR + chinese_number(left) + "年" + NOR;
+        else
+            line = HIW + chinese_number(sixty) + "甲子"  + NOR;
+    else 
+        line = HIR + chinese_number(year)+"年" + NOR;
+
+    return line;
+}
+
+string describe_mana(int value)
+{
+    int grade, lvl, n;
+
+    //in unit of 40, increase by n^2.
+    lvl = value / 40;
+    for (grade = 0; grade < sizeof(mana_level_desc); grade++) {
+        n = (grade+1) * (grade+1);
+        if (lvl < n) break;
+    }
+    if (grade >= sizeof(mana_level_desc))
+        grade = sizeof(mana_level_desc) - 1;
+    return mana_level_desc[grade];
+}
+ 
+int grade_mana(string desc)
+{
+    int grade;
+
+    for (grade = 0; grade < sizeof(mana_level_desc); grade++) {
+        if ((string)mana_level_desc[grade] == desc)
+            return grade;
+    }
+    return 0;
+}
+
+string query_description(int type)
+{
+    int i;
+    string *level_desc;
+    string line = "";
+    
+    if (type == 0) level_desc = exp_level_desc;
+    else if (type == 1) level_desc = skill_level_desc;
+    else if (type == 2) level_desc = knowledge_level_desc;
+    else level_desc = mana_level_desc;
+    
+    for (i = 0; i < sizeof(level_desc); i++) {
+        line += level_desc[i] + "    ";
+        if ((i%4) == 3) line += "\n";
+    }
+    
+    return line;
+}
 
