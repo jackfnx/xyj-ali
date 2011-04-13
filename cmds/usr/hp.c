@@ -94,7 +94,7 @@ int main(object me, string arg)
         dodge_points = COMBAT_D->skill_power(ob, "dodge",
             SKILL_USAGE_DEFENSE);
     
-        printf(" ¹¥»÷£º %s%10d"NOR" (%s%+4d"NOR")    ·ÀÓù£º %s%10d "NOR"(%s%+4d"NOR")\n" NOR,
+        printf(" ¹¥»÷£º %s%-10d"NOR" (%s%+4d"NOR")    ·ÀÓù£º %s%-10d "NOR"(%s%+4d"NOR")\n" NOR,
             HIW, attack_points/100 + 1,
             RED, ob->query_temp("apply/damage"),
             HIW, (dodge_points + (weapon? parry_points:(parry_points/10)))/100 + 1,
