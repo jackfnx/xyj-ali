@@ -38,7 +38,7 @@ int main(object me, string arg)
     
     my = ob->query_entire_dbase();
 
-    printf(" 精魂： %s%4d/ %4d %s(%3d%%)" NOR "    真元： %s%4d / %4d (+%d)\n" NOR,
+    printf(" 精元： %s%4d/ %4d %s(%3d%%)" NOR "    真元： %s%4d / %4d (+%d)\n" NOR,
         status_color(my["gin"], my["eff_gin"]),   my["gin"],   my["eff_gin"],
         status_color(my["eff_gin"], my["max_gin"]),   my["eff_gin"] * 100 / my["max_gin"],
         status_color(my["atman"], my["max_atman"]),   my["atman"], my["max_atman"],
@@ -77,7 +77,7 @@ int main(object me, string arg)
     }
 
     printf(" ≡─────────────────────────≡\n");
-    printf(" 欲火： %s%4d/ %4d " NOR "%s(%3d%%)\n" NOR,
+    printf(" 欲望： %s%4d/ %4d " NOR "%s(%3d%%)\n" NOR,
             my["lust"] < EFF_LUST ? HIG : HIR, my["lust"], EFF_LUST,
             sex_status_color(my["lust"], MAX_LUST), my["lust"] * 100 / MAX_LUST
             );
