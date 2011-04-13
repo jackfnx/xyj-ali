@@ -570,6 +570,38 @@ string *mana_level_desc = ({
 
 string *skill_level_desc = ({
         BLU "初学乍练" NOR,
+        BLU "初窥门径" NOR,
+        BLU "粗通皮毛" NOR,
+        HIB "略知一二" NOR,
+        HIB "略有所得" NOR,
+        HIB "半生不熟" NOR,
+        YEL "马马虎虎" NOR,
+        YEL "平淡无奇" NOR,
+        YEL "平平常常" NOR,
+        HIY "心领神会" NOR,
+        HIY "触类旁通" NOR,
+        HIY "深入浅出" NOR,
+        HIM "挥洒自如" NOR,
+        HIM "驾轻就熟" NOR,
+        HIM "了然于胸" NOR,
+        HIR "出类拔萃" NOR,
+        HIR "渐入佳境" NOR,
+        HIR "豁然贯通" NOR,
+        MAG "登峰造极" NOR,
+        MAG "出神入化" NOR,
+        MAG "神乎其技" NOR,
+        CYN "超群绝伦" NOR,
+        CYN "独步天下" NOR,
+        CYN "卓然大家" NOR,
+        HIC "一代宗师" NOR,
+        HIC "空前绝后" NOR,
+        HIC "旷古绝伦" NOR,
+        WHT "震古铄今" NOR,
+        WHT "超凡入圣" NOR,
+        WHT "返璞归真" NOR,
+        HIW "深不可测" NOR
+/* from xyj2000
+        BLU "初学乍练" NOR,
         BLU "不知所以" NOR,
         BLU "粗通皮毛" NOR,
         HIB "略识之无" NOR,
@@ -600,6 +632,7 @@ string *skill_level_desc = ({
         WHT "超凡入圣" NOR,
         WHT "返璞归真" NOR,
         HIW "深不可测" NOR
+*/
 /* /cmds/std/check.c
     BLU "初学乍练" NOR,   BLU "初窥门径" NOR,
     HIB "粗通皮毛" NOR,   HIB "略知一二" NOR,
@@ -639,6 +672,28 @@ string *skill_level_desc = ({
 string *knowledge_level_desc = ({
         BLU "新学乍用" NOR,
         BLU "不甚了了" NOR,
+        HIB "初识端倪" NOR,
+        HIB "初窥门径" NOR,
+        YEL "略知一二" NOR,
+        YEL "茅塞顿开" NOR,
+        HIY "马马虎虎" NOR,
+        HIY "滚瓜烂熟" NOR,
+        HIM "运用自如" NOR,
+        HIM "触类旁通" NOR,
+        HIR "深入浅出" NOR,
+        HIR "已有小成" NOR,
+        MAG "心领神会" NOR,
+        MAG "了然于胸" NOR,
+        CYN "卓尔不群" NOR,
+        CYN "满腹经纶" NOR,
+        HIC "豁然贯通" NOR,
+        HIC "博古通今" NOR,
+        WHT "举世无双" NOR,
+        WHT "震古铄今" NOR,
+        HIW "深不可测" NOR
+/* xyj2000
+        BLU "新学乍用" NOR,
+        BLU "不甚了了" NOR,
         BLU "不知端倪" NOR,
         HIB "平淡无奇" NOR,
         HIB "司空见惯" NOR,
@@ -668,6 +723,7 @@ string *knowledge_level_desc = ({
         WHT "震古铄今" NOR,
         WHT "超凡入圣" NOR,
         HIW "深不可测" NOR
+*/
 /* /cmds/usr/skills.c
         BLU "新学乍用" NOR,
         HIB "初窥门径" NOR,
