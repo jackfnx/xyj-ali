@@ -29,7 +29,6 @@ LONG);
  // set("valid_startroom", 1);
   set("exits", ([ /* sizeof() == 1 */
   "enter" : __DIR__"path1",
- // "lobby"  : "/d/changan/playerhomes/h_none.c",
 ]));
  // set("no_fight", 1);
 
