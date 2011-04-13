@@ -30,7 +30,7 @@ void reset()
 // This is used by F_SAVE to determine the filename to save our data.
 string query_save_file()
 {
-    string id
+    string id;
     int series;
 
     id = query("owner_id");
