@@ -87,11 +87,47 @@ void update_age()
     }
 }
 
+void load_fabao(string type, int i)
+{
+    int series_no = query("fabao/" + type + i);
+    object newob = new("/obj/fabao");
+    string fabao_id, *id_list, *t_list;
+    
+    if (!series_no || !newob)
+        return;
+
+    newob->set("owner_id", query("id"));
+    newob->set("series_no", series_no);
+    if (!newob->restore()) {
+        tell_object(this_object(), "不能 restore fabao. \n");
+        destruct(newob);
+        return;
+    }
+
+    fabao_id = (string)newob->query("id");
+    fabao_id = replace_string(fabao_id, " ", "_");
+    newob->set("id", fabao_id);
+    seteuid(fabao_id);
+    export_uid(newob);
+    seteuid(getuid());
+
+    id_list = ({ fabao_id });
+    t_list = explode(fabao_id, "_");
+    if (sizeof(t_list) > 1)   {
+        id_list += t_list;
+    }
+    newob->set_name(newob->query("name"), id_list);
+    if (stringp(newob->query("default_file")))
+        newob->set_default_object(newob->query("default_file"));
+
+    newob->save();
+    newob->move(this_object());
+    newob->wield();
+    newob->wear();
+}
+
 void setup()
 {
-    mapping* fabao_list;
-    int i;
-
     // We want set age first before new player got initialized with
     // random age.
     update_age();
@@ -99,43 +135,28 @@ void setup()
     ::setup();
     restore_autoload();
 
-    // here We restore the self-made fabao
-    fabao_list = query("fabao");
-    if (!arrayp(fabao_list))
-        return;
-    for (i=sizeof(fabao_list)-1; i>=0; i--) {
-        object newob = new("/obj/fabao");
-        if (newob) {
-            string fabao_id, *id_list, *t_list;
-            
-            newob->set("owner_id", query("id"));
-            newob->set("series_no", fabao_list[i]["series_no"]);
-            if (!newob->restore()) {
-                tell_object(this_object(), "不能 restore fabao. \n");
-                destruct(newob);
-                continue;
-            }
-            fabao_id = (string)newob->query("id");
-            fabao_id = replace_string(fabao_id, " ", "_");
-            newob->set("id", fabao_id);
-            seteuid(fabao_id);
-            export_uid(newob);
-            seteuid(getuid());
-
-            id_list = ({ fabao_id });
-            t_list = explode(fabao_id, "_");
-            if (sizeof(t_list) > 1)   {
-                id_list += t_list;
-            }
-            newob->set_name(newob->query("name"), id_list);
-            if (stringp(newob->query("default_file")))
-                newob->set_default_object( newob->query("default_file") );
-
-            newob->save();
-            newob->move(this_object());
-            newob->wield();
-            newob->wear();
+    if (!mapp(query("fabao"))) {
+        object cloth;
+        if (query("gender") == "女性") {
+            cloth = new("/obj/loginload/skirt");
+            cloth->move(this_object());
+            cloth->wear();
+            cloth = new("/obj/loginload/shoes");
+            cloth->move(this_object());
+            cloth->wear();
+        } else {
+            cloth = new("/obj/loginload/linen");
+            cloth->move(this_object());
+            cloth->wear();
         }
+    }
+    else {
+        // here We restore the self-made fabao
+        int i, count = sizeof(query("fabao"));
+        for (i = count - 1; i > 0; i--)
+            load_fabao("armor", i);
+        for (i = count - 1; i > 0; i--)
+            load_fabao("weapon", i);
     }
 }
 

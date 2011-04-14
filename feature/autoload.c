@@ -53,23 +53,6 @@ void restore_autoload()
         count += ob->wear();
         ob->autoload(param);
     }
-// Not sure how count works, it isn't initialized (to be 0?) Dream 8/24/97
-//    if (count==0) {
-    if (!arrayp(this_object()->query("fabao"))) {
-        object user,cloth;
-        user = this_object();
-        if (user->query("gender")=="ХЎад") {
-            cloth = new("/obj/loginload/skirt.c");
-            cloth->move(user);
-            cloth->wear();
-            cloth = new("/obj/loginload/shoes.c");
-            cloth->move(user);
-            cloth->wear();
-        } else {
-            cloth = new("/obj/loginload/linen.c");
-            cloth->move(user);
-            cloth->wear();
-        }
-    }
+
     clean_up_autoload();     // To save memory.
 }
