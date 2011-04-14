@@ -34,14 +34,14 @@ void create()
   set_skill("sword",145);
   set_skill("force",140);
         set_skill("spells", 100);
-        set_skill("dao", 50);
+        set_skill("taoism", 50);
         set_skill("moyun-shou", 145);
-        set_skill("wuxiangforce", 140);
+        set_skill("azoth", 140);
         set_skill("sanqing-jian", 145);
         set_skill("moshenbu", 145);
-        map_skill("spells", "dao");
+        map_skill("spells", "taoism");
         map_skill("unarmed", "moyun-shou");
-        map_skill("force", "wuxiangforce");
+        map_skill("force", "azoth");
         map_skill("sword", "sanqing-jian");
         map_skill("parry", "sanqing-jian");
         map_skill("dodge", "moshenbu");
