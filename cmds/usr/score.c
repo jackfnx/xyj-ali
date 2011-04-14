@@ -47,20 +47,10 @@ int main(object me, string arg)
 
     line += sprintf(
             " 力量：[%s]  | 敏捷：[%s]  | 定力：[%s]  | 胆识：[%s]\n\n",
-            //" 智力：[%s]  灵性：[%s]  魅力：[%s]  根骨：[%s]\n"
-            //" 硬度: [%s]  敏感：[%s]  心性：[%s]  福缘：[%s]\n\n",
             display_attr(my["str"], ob->query_str()),
             display_attr(my["dex"], ob->query_dex()),
             display_attr(my["cps"], ob->query_cps()),
             display_attr(my["cor"], ob->query_cor()),
-            //display_attr(my["int"], ob->query_int()),
-            //display_attr(my["spi"], ob->query_spi()),
-            //display_attr(my["per"], ob->query_per()),
-            //display_attr(my["con"], ob->query_con()),
-            //display_attr(my["rig"], ob->query_rig()),
-            //display_attr(my["sns"], ob->query_sns()),
-            //display_attr(my["met"], ob->query_met()),
-            //display_attr(my["kar"], ob->query_kar()),
             );
     
     if (my["eff_gin"] < my["max_gin"]) str = HIR + "生病";

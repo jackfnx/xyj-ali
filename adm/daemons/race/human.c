@@ -92,16 +92,13 @@ void setup_human(object ob)
 
     if ( undefinedp(my["str"]) ) my["str"] = random(21) + 10;
     if ( undefinedp(my["dex"]) ) my["dex"] = random(21) + 10;
-    if ( undefinedp(my["int"]) ) my["int"] = random(21) + 10;
-    if ( undefinedp(my["spi"]) ) my["spi"] = random(21) + 10;
     if ( undefinedp(my["cps"]) ) my["cps"] = random(21) + 10;
-    if ( undefinedp(my["per"]) ) my["per"] = random(21) + 10;
-    if ( undefinedp(my["con"]) ) my["con"] = random(21) + 10;
-    if ( undefinedp(my["kar"]) ) my["kar"] = random(21) + 10;
-    if ( undefinedp(my["rig"]) ) my["rig"] = random(21) + 10;
-    if ( undefinedp(my["sns"]) ) my["sns"] = random(21) + 10;
     if ( undefinedp(my["cor"]) ) my["cor"] = random(21) + 10;
-    if ( undefinedp(my["met"]) ) my["met"] = random(21) + 10;
+    if ( undefinedp(my["int"]) ) my["int"] = random(21) + 10;
+    if ( undefinedp(my["con"]) ) my["con"] = random(21) + 10;
+    if ( undefinedp(my["spi"]) ) my["spi"] = random(21) + 10;
+    if ( undefinedp(my["per"]) ) my["per"] = random(21) + 10;
+    if ( undefinedp(my["kar"]) ) my["kar"] = random(21) + 10;
 
     if ( userp(ob) || undefinedp(my["max_kee"]) ) {
         if ( my["age"] <= 14 ) my["max_kee"] = 100;
