@@ -3,6 +3,7 @@
 // score.c
 
 #include <ansi.h>
+#include <combat.h>
 
 inherit F_CLEAN_UP;
 
@@ -137,7 +138,7 @@ int main(object me, string arg)
     if (ob->query("balance"))
         line += " 财  富：" + MONEY_D->money_str((int)ob->query("balance"))+"\n\n";
     else
-        line+=" 财  富："HIW"没有任何存款"NOR"\n\n";
+        line += " 财  富："HIW"没有任何存款"NOR"\n\n";
 
     if (ob->query("obstacle/number"))
         line += sprintf(RED" 西天取经"NOR"：你已经历了"RED"%s"NOR"道劫难。\n",
@@ -145,8 +146,33 @@ int main(object me, string arg)
     else
         line += RED" 西天取经"NOR"：你还未曾踏上取经之路\n";
 
-    line += "\n";
+    line += NOR YEL"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
+
+    {
+        /* ap/dp calc */
+        string skill_type;
+        object weapon;
+        int attack_points, dodge_points, parry_points;
+
+        if (objectp(weapon = ob->query_temp("weapon")))
+            skill_type = weapon->query("skill_type");
+        else
+            skill_type = "unarmed";
+
+        attack_points = COMBAT_D->skill_power(ob, skill_type,
+            SKILL_USAGE_ATTACK);
+        parry_points = COMBAT_D->skill_power(ob, skill_type,
+            SKILL_USAGE_DEFENSE);
+        dodge_points = COMBAT_D->skill_power(ob, "dodge",
+            SKILL_USAGE_DEFENSE);
     
+        line += sprintf(" 攻击评价：%s%-10d%s(%s%+5d%s)  防御评价：%s%-10d%s(%s%+5d%s)\n",
+            HIW, attack_points/100 + 1, NOR,
+            HIR, ob->query_temp("apply/damage"), NOR,
+            HIW, (dodge_points + (weapon? parry_points:(parry_points/10)))/100 + 1, NOR,
+            HIY, ob->query_temp("apply/armor"), NOR);
+    }
+
     line += sprintf(" 道行境界：%s           武学境界：%s\n",
                 RANK_D->describe_exp(ob->query("combat_exp")),
                 RANK_D->describe_skills(ob->query_skills()));

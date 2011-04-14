@@ -1,7 +1,6 @@
 // ALI by NewX
 
 #include <ansi.h>
-#include <combat.h>
 #include <sex.h>
 
 inherit F_CLEAN_UP;
@@ -59,35 +58,11 @@ int main(object me, string arg)
         day = (my["combat_exp"] % 1000) / 4;
         hour = (my["combat_exp"] % 4) * 3; 
         printf("     道行： " HIM);
-        if(year) printf("%s年", chinese_number(year));
-        if(day) printf("%s天", chinese_number(day));
-        if(hour) printf("%s时辰", chinese_number(hour));
-        if(!year && !day && !hour)  printf("你还没有道行。");
+        if (year) printf("%s年", chinese_number(year));
+        if (day) printf("%s天", chinese_number(day));
+        if (hour) printf("%s时辰", chinese_number(hour));
+        if (!year && !day && !hour)  printf("你还没有道行。");
         printf("\n"NOR);
-    }
-    {
-        /* ap/dp calc */
-        string skill_type;
-        object weapon;
-        int attack_points, dodge_points, parry_points;
-
-        if (objectp(weapon = ob->query_temp("weapon")))
-            skill_type = weapon->query("skill_type");
-        else
-            skill_type = "unarmed";
-
-        attack_points = COMBAT_D->skill_power(ob, skill_type,
-            SKILL_USAGE_ATTACK);
-        parry_points = COMBAT_D->skill_power(ob, skill_type,
-            SKILL_USAGE_DEFENSE);
-        dodge_points = COMBAT_D->skill_power(ob, "dodge",
-            SKILL_USAGE_DEFENSE);
-    
-        printf(" 攻击： %s%-10d"NOR" (%s%+4d"NOR")    防御： %s%-10d "NOR"(%s%+4d"NOR")\n" NOR,
-            HIW, attack_points/100 + 1,
-            RED, ob->query_temp("apply/damage"),
-            HIW, (dodge_points + (weapon? parry_points:(parry_points/10)))/100 + 1,
-            HIY, ob->query_temp("apply/armor"));
     }
 
     printf(" ≡─────────────────────────≡\n");
