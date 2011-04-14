@@ -8,17 +8,6 @@ inherit F_CLEAN_UP;
 
 string status_color(int current, int max);
 string sex_status_color(int current, int max);
-#if 0
-string bar_string = "                    ";
-string rect_string = "■■■■■■■■■■";
-string star_string = "※※※※※※※※※※";
-string blank_string = "□□□□□□□□□□";
-
-string tribar_graph1(int val, int eff, int max);
-string tribar_graph2(int val, int max);
-string tribar_graph3(int val, int max, string color);
-string fgbg_replace(string fgcolor);
-#endif
 
 int main(object me, string arg)
 {
@@ -102,7 +91,7 @@ int main(object me, string arg)
     }
 
     printf(" ≡─────────────────────────≡\n");
-    printf(" 欲望： %s%4d/ %4d " NOR "%s(%3d%%)" NOR "    杀气： %s%d\n "NOR,
+    printf(" 欲望： %s%4d/ %4d " NOR "%s(%3d%%)" NOR "    杀气： %s%d\n"NOR,
             my["lust"] < EFF_LUST ? HIG : HIR, my["lust"], EFF_LUST,
             sex_status_color(my["lust"], MAX_LUST), my["lust"] * 100 / MAX_LUST,
             RED,
@@ -139,61 +128,6 @@ string sex_status_color(int current, int max)
    if (percent >= 10) return GRN;
    return CYN;
 }
-
-#if 0
-string tribar_graph1(int val, int eff, int max)
-{
-    string bar;
-
-    if (val < eff) {
-        bar = RED + rect_string[0..val*20/max-1] + NOR;
-        bar += YEL + blank_string[val*20/max..eff*20/max-1] + NOR;
-        bar += bar_string[eff*20/max..max];
-    } else if (val == eff) {
-        bar = RED + rect_string[0..val*20/max-1] + NOR;
-        bar += bar_string[val*20/max..max];
-    } else if (val > eff) {
-        bar = RED + rect_string[0..eff*20/max-1] + NOR;
-        bar += HIY + star_string[eff*20/max..val*20/max-1] + NOR;
-        bar += bar_string[val*20/max..max];
-    }
-
-    return bar;
-}
-
-string tribar_graph2(int val, int max)
-{
-    string bar;
-    bar = status_color(val, max);
-    bar += rect_string[0..val*20/max-1];
-    bar += blank_string[val*20/max..max];
-    bar += NOR;
-    return bar;
-}
-
-string tribar_graph3(int val, int max, string color)
-{
-    string bar;
-    bar = fgbg_replace(color);
-    bar += bar_string[0..val*20/max-1];
-    bar += NOR;
-    bar += bar_string[val*20/max-1..max];
-    return bar;
-}
-
-string fgbg_replace(string fgcolor)
-{
-    string bgcolor = fgcolor;
-    bgcolor = replace_string(bgcolor, BLK, BBLK);
-    bgcolor = replace_string(bgcolor, RED, BRED);
-    bgcolor = replace_string(bgcolor, GRN, BGRN);
-    bgcolor = replace_string(bgcolor, YEL, BYEL);
-    bgcolor = replace_string(bgcolor, BLU, BBLU);
-    bgcolor = replace_string(bgcolor, MAG, BMAG);
-    bgcolor = replace_string(bgcolor, CYN, BCYN);
-    return bgcolor;
-}
-#endif
 
 int help(object me)
 {
