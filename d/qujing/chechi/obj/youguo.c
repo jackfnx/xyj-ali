@@ -121,7 +121,7 @@ int do_put (string arg)
   object who = this_player();
   object where = environment (me);
 
-  if (sscanf(arg, "%s in %s", item, id)!=2)
+  if (sscanf(arg, "%s into %s", item, id)!=2)
     return 0;
   if (me != present(id,where))
     return 0;

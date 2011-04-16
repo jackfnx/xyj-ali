@@ -48,7 +48,7 @@ notify_fail("车把式对你说：我只装货行里的货柜！\n");
 }
 int put(string arg)
 {           
-   if( sscanf(arg, "%s in che"))
+   if( sscanf(arg, "%s into che"))
      return notify_fail("什么？\n");
    return 1;
 }

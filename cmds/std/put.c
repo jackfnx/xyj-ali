@@ -17,8 +17,8 @@ int main(object me, string arg)
 
    if(!arg) return notify_fail("你要将什么东西放进哪里？\n");
 
-   if( sscanf(arg, "%s in %s", item, target)!=2 )
-     return notify_fail("你要给谁什么东西？\n");
+   if( sscanf(arg, "%s into %s", item, target)!=2 )
+     return notify_fail("你要把什么东西放进哪里？\n");
 
    dest = present(target, me);
    if( !dest || living(dest) ) dest = present(target, environment(me));
@@ -100,7 +100,7 @@ int do_put(object me, object obj, object dest)
 int help(object me)
 {
 write(@HELP
-指令格式 : put <物品名称> in <某容器>
+指令格式 : put <物品名称> into <某容器>
  
 这个指令可以让你将某样物品放进一个容器，当然，首先你要拥有这样物品。
  
