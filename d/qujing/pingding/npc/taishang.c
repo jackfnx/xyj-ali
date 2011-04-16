@@ -17,12 +17,12 @@ void create()
   set_skill("force", 180);
   set_skill("parry", 180);
   set_skill("spells",180);
-  set_skill("dao", 180);
+  set_skill("taoism", 180);
   set_skill("puti-zhi", 180);
-  set_skill("jindouyun", 180);
+  set_skill("cloud-steps", 180);
   map_skill("unarmed", "puti-zhi");
-  map_skill("dodge", "jindouyun");
-  map_skill("spells", "dao");
+  map_skill("dodge", "cloud-steps");
+  map_skill("spells", "taoism");
   set("max_sen",1800);
   set("max_gee",1800);
   set("max_gin",1800);

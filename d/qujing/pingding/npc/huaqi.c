@@ -25,18 +25,18 @@ void create()
   set("mana_factor", 60);
   set("combat_exp", 650000);
   set_skill("spells", 70);
-  set_skill("dao", 70);
+  set_skill("taoism", 70);
   set_skill("unarmed", 75);
   set_skill("puti-zhi", 75);
   set_skill("dodge", 60);
-  set_skill("jindouyun", 60);
+  set_skill("cloud-steps", 60);
   set_skill("parry", 65);
   set_skill("force", 60);
-  set_skill("wuxiangforce", 60);
-  map_skill("spells", "dao");
+  set_skill("azoth", 60);
+  map_skill("spells", "taoism");
   map_skill("unarmed", "puti-zhi");
-  map_skill("dodge", "jindouyun");
-  map_skill("force", "wuxiangforce");
+  map_skill("dodge", "cloud-steps");
+  map_skill("force", "azoth");
   setup();
   carry_object("/d/obj/cloth/shoupipifeng")->wear();
   if ("/d/qujing/pingding/obj/shengreal"->in_mud())
