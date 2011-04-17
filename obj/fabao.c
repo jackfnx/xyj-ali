@@ -15,7 +15,6 @@ void create()
 {
     seteuid(0);   
     set_name("自制法宝物件", ({ "fabao object", "fabao", "object" }));
-    setup();
 }
 
 void reset()
@@ -51,59 +50,37 @@ int save()
 
 void setup()
 {
+    string *id_list, *t_list, id = query("id");
+    
     ::setup();
+    
+    seteuid(getuid());
+    set_weight(1000);
+    
+    id_list = ({ query("id") });
+    t_list = explode(query("id"), "_");
+    if (sizeof(t_list) > 1) {
+        id_list += t_list;
+    }
+    set_name(query("name"), id_list);
+    
+    switch (query("fabao_type")) {
+        case "weapon":
+            FABAO_D->build_weapon(this_object());
+            break;
+        case "armor":
+            FABAO_D->build_armor(this_object());
+            break;
+        default:
+            CHANNEL_D->do_channel(this_object(), "sys", name() + ": unknown fabao_type\n");
+            break;
+    }
 }
 
 int query_unique()  { return 1; }
 
 string extra_long()
 {
-    string str = "\n自制法宝等级：\n";
-    int series_no, damage_stars, force_stars, i;
-    int dodge_stars, armor_stars, vs_force_stars, spells_stars, vs_spells_stars;
-
-    if (query("fabao_type") == "weapon")  {
-        damage_stars = query("stars/damage");
-        force_stars = query("stars/force");
-        str += "    " + HIG + "伤害力        " + HIR;
-        for(i=0; i<damage_stars; i++)
-            str += "★";
-        for(i=damage_stars; i<5; i++)
-            str += "　";
-        str +="    " + HIC + "内功攻击力    " + HIR;
-        for(i=0; i<force_stars; i++)
-            str += "★";
-        str += NOR + "\n";
-    }
-    else if (query("fabao_type") == "armor"){
-        dodge_stars = query("stars/dodge");
-        armor_stars = query("stars/armor");
-        vs_force_stars = query("stars/armor_vs_force");
-        spells_stars = query("stars/spells");
-        vs_spells_stars = query("stars/armor_vs_spells");
-        str += "    " + HIY + "防御力        " + HIR;
-        for(i=0; i<dodge_stars; i++)
-            str += "★";
-        for(i=dodge_stars; i<5; i++)
-            str += "　";
-        str += "    " + HIB + "抵抗力        " + HIR;
-        for(i=0; i<armor_stars; i++)
-            str += "★";
-        str += "\n"; 
-        str += "    " + HIM + "内功抵抗力    " + HIR;
-        for(i=0; i<vs_force_stars; i++)
-            str += "★";
-        for(i=vs_force_stars; i<5; i++)
-            str += "　";
-        str += "    " + HIC + "魔法攻击力    " + HIR;
-        for(i=0; i<spells_stars; i++)
-            str += "★";
-        str += "\n"; 
-        str += "    " + HIW + "魔法抵抗力    " + HIR;
-        for(i=0; i<vs_spells_stars; i++)
-            str += "★";
-        str += NOR + "\n";
-    }
-
-    return str;
+    return "\n自制法宝等级：\n"
+        + FABAO_D->show_fabao_status(this_object());
 }

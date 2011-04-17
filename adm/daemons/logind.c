@@ -33,8 +33,8 @@ object make_body(object ob);
 varargs void enter_world(object ob, object user, int silent);
 varargs void reconnect(object ob, object user, int silent);
 object find_body(string name);
-int check_legal_id(string arg);
-int check_legal_name(string arg);
+varargs int check_legal_id(string id, int max_len, int allow_space);
+varargs int check_legal_name(string name, int max_len);
 string dis_attr(int value);
 private void confirm_gift(string yn,object ob,object user);
 
@@ -710,19 +710,21 @@ varargs void reconnect(object ob, object user, int silent)
    UPDATE_D->check_user(user);
 }
 
-int check_legal_id(string id)
+varargs int check_legal_id(string id, int max_len, int allow_space)
 {
    int i;
    string *legalid;
-
+   
    i = strlen(id);
    
-   if( (strlen(id) < 3) || (strlen(id) > 8 ) ) {
-     write("对不起，你的英文名字必须是 3 到 8 个英文字母。\n");
+   if (undefinedp(max_len)) max_len = 8;
+   
+   if( (strlen(id) < 3) || (strlen(id) > max_len ) ) {
+     printf("对不起，你的英文名字必须是 3 到 %d 个英文字母。\n", max_len);
      return 0;
    }
    while(i--)
-     if( id[i]<'a' || id[i]>'z' ) {
+     if( (id[i]<'a' || id[i]>'z') && (id[i] != ' ' || !allow_space) ) {
         write("对不起，你的英文名字只能用英文字母。\n");
         return 0;
      }
@@ -738,14 +740,16 @@ int check_legal_id(string id)
    return 1;
 }
 
-int check_legal_name(string name)
+varargs int check_legal_name(string name, int max_len)
 {
    int i;
 
    i = strlen(name);
    
-   if( (strlen(name) < 2) || (strlen(name) > 12 ) ) {
-     write("对不起，你的中文名字必须是 1 到 6 个中文字。\n");
+   if (undefinedp(max_len)) max_len = 12;
+   
+   if( (strlen(name) < 2) || (strlen(name) > max_len ) ) {
+     printf("对不起，你的中文名字必须是 1 到 %d 个中文字。\n", max_len / 2);
      return 0;
    }
    while(i--) {

@@ -1,9 +1,10 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+// ALi by NewX
+
+#include <ansi.h>
+
 inherit NPC;
 
-string give_guide();
+string give_smelter();
 
 void create()
 {
@@ -41,10 +42,10 @@ void create()
     set("mana_factor", 5);
 
     set("inquiry", ([
-        "fabao": (: give_guide :),
-        "make_fabao": (: give_guide :),
-        "法宝": (: give_guide :),
-        "炼制法宝": (: give_guide :)
+        "fabao": (: give_smelter :),
+        "make_fabao": (: give_smelter :),
+        "法宝": (: give_smelter :),
+        "炼制法宝": (: give_smelter :)
         ]));
 
     setup();
@@ -92,17 +93,33 @@ void destroy(object ob)
     return;
 }
 
-string give_guide()
+string give_smelter()
 {
     object me = this_player();
-    object guide;
+    object smelter;
     
     if (me->query("combat_exp") <= 20000)
         return ("你问这干嘛，年轻人要脚踏实地，不要好高骛远。");
+
+    command("say 炼制法宝需要法宝炼制炉。");
+    command("say 要说这炉子嘛。。。");
+    message_vision(CYN"$N对着$n上上下下，左左右右，好好的打量了一番。\n"NOR,
+        this_object(), me);
+    smelter = me->query_temp("smelter");
+    if (objectp(smelter)) {
+        if (environment(smelter) == me)
+            return ("不就在你怀里吗？还问？");
+        smelter->move(me);
+        command("hehe");
+        tell_object(me, "你的法宝炼制炉突然出现在怀里。\n");
+        return ("喏，那不就是吗？");
+    }
     else {
-        guide = new("/obj/fabao-guide");
-        guide->move(me);
-        message_vision("$N给$n一本"+ guide->name() + "。\n", this_object(), me);
+        smelter = new("/obj/smelter");
+        smelter->set_owner(me);
+        smelter->move(me);
+        message_vision("$N在身后的箱子翻啊翻啊，终于翻出了一个小巧的熔炉，交给了$n。\n",
+            this_object(), me);
         return ("拿去吧，免费发送。");
     }
 }

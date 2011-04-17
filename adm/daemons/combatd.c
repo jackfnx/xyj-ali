@@ -837,8 +837,8 @@ void killer_reward(object killer, object victim)
         log_file("death",victim->query("id")+
           " lost "+lose+" dx points and no skill lose.\n");
 
+             if (gain) {
              str=chinese_daoxing(gain);
-             if(strlen(str)>1) {
                str=killer->name(1)+"得到"+str+"道行！";
              } 
         str=victim->name(1)+"被"+killer->name(1)+
@@ -1056,6 +1056,7 @@ string chinese_daoxing(int gain)
              if(year) str=str+chinese_number(year)+"年";
              if(day) str=str+chinese_number(day)+"天";
              if(hour) str=str+chinese_number(hour)+"时辰";
+             if(str=="") str="零";
 
              return str;
 }

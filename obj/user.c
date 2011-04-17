@@ -91,7 +91,6 @@ void load_fabao(string type, int i)
 {
     int series_no = query("fabao/" + type + i);
     object newob = new("/obj/fabao");
-    string fabao_id, *id_list, *t_list;
     
     if (!series_no || !newob)
         return;
@@ -104,21 +103,11 @@ void load_fabao(string type, int i)
         return;
     }
 
-    fabao_id = (string)newob->query("id");
-    fabao_id = replace_string(fabao_id, " ", "_");
-    newob->set("id", fabao_id);
-    seteuid(fabao_id);
+    seteuid(query("id"));
     export_uid(newob);
     seteuid(getuid());
 
-    id_list = ({ fabao_id });
-    t_list = explode(fabao_id, "_");
-    if (sizeof(t_list) > 1)   {
-        id_list += t_list;
-    }
-    newob->set_name(newob->query("name"), id_list);
-    if (stringp(newob->query("default_file")))
-        newob->set_default_object(newob->query("default_file"));
+    newob->setup();
 
     newob->save();
     newob->move(this_object());

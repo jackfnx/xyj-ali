@@ -24,6 +24,7 @@
 #define COMMAND_D     "/adm/daemons/cmd_d"
 #define CONVERT_D     "/adm/daemons/convertd"
 #define EMOTE_D        "/adm/daemons/emoted"
+#define FABAO_D         "/adm/daemons/fabaod"
 #define FINGER_D     "/adm/daemons/fingerd"
 #define INQUIRY_D     "/adm/daemons/inquiryd"
 #define LOGIN_D        "/adm/daemons/logind"
