@@ -12,12 +12,12 @@ void create ()
   set ("long", @LONG
 
 往西而去路逐渐难行，青石路已开始变成土路了。前方好象
-有一个小镇，你不由得加快了步伐。
+就是传说中的灌江口，你不由得加快了步伐。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
-  "west" : "d/gao/lu1",
-  "east" : __DIR__"wroad2",
+  "southwest" : "d/meishan/guanjiang1",
+  "northeast" : __DIR__"wroad2",
 ]));
   set("outdoors", 1);
 

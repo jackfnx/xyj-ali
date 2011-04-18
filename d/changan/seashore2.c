@@ -1,29 +1,27 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-// Room: /changan/southseashore.c
-//cglaem...12/12/96.
+// ALi by NewX
+
 #include <ansi.h>
 
 inherit ROOM;
 
-void create ()
+void create()
 {
-  set ("short", "海滨");
-  set ("long", @LONG
+    set("short", "东海之滨");
+    set("long", @LONG
 
-这里没有明显的大道通往内地。而另一面是一片汪洋大海。你
-只好沿着海边行走，希望能找出一条大路来。
+面前便是东海，茫茫大海望不到边际。海面上波涛汹涌，几丈
+高的浪头此起彼伏，象是要吞灭一切敢于到海上的东西。你只
+能沿着海边行走，希望能找出一条大路来。
 LONG);
 
-  set("objects", ([ /* sizeof() == 1 */
-  "/d/sea/npc/long1.c" : 1,
-]));
-  set("outdoors", 1);
-  set("exits", ([ /* sizeof() == 2 */
-  "west" : __DIR__"seashore1",
-  "east" : __DIR__"eastseashore",
-]));
+    set("objects", ([ /* sizeof() == 1 */
+        "/d/sea/npc/long1.c" : 1,
+    ]));
+    set("outdoors", 1);
+    set("exits", ([ /* sizeof() == 2 */
+        "north" : __DIR__"seashore1",
+        "south" : __DIR__"seashore3",
+    ]));
 
-  setup();
+    setup();
 }

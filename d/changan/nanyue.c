@@ -20,7 +20,7 @@ LONG);
   set("exits", ([ /* sizeof() == 2 */
   "north" : __DIR__"broadway2",
   "south" : __DIR__"broadway3",
-  "southeast" : "/d/meishan/guanjiang1",
+  "southwest" : __DIR__"wroad1",
 ]));
 
   setup();

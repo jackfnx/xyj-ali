@@ -17,6 +17,7 @@ LONG);
 
   set("exits", ([ /* sizeof() == 1 */
   "west" : __DIR__"eside4",
+  "southeast" : __DIR__"seashore1",
 ]));
   set("outdoors", 1);
 

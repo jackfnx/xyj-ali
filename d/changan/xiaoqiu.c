@@ -17,7 +17,7 @@ void create ()
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
-  "southdown" : __DIR__"wside2",
+  "southdown" : __DIR__"eside2",
   "enter" : __DIR__"pinqiting",
 ]));
   set("outdoors", 1);

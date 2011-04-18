@@ -21,7 +21,7 @@ LONG);
 //]));
   set("outdoors", 1);
   set("exits", ([ /* sizeof() == 2 */
-  "northwest" : "/d/changan/nanyue",
+  "northeast" : "/d/changan/wroad3",
   "east" : __DIR__"guanjiang2",
 ]));
 

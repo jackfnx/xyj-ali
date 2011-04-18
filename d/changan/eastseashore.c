@@ -15,27 +15,24 @@ int do_dive();
 void reset();
 
 
-void create ()
+void create()
 {
-  set ("short", "东海之滨");
-  set ("long", @LONG
+    set("short", "东海之滨");
+    set("long", @LONG
 
-面前便是东海，茫茫大海望不到边际。海面上波涛汹涌，几丈
-高的浪头此起彼伏，象是要吞灭一切敢于到海上的东西。也许
-这里便是路的尽头，面前的大海对一个凡人来说是不可逾越的。
+这里似乎便是路的尽头，面前的大海对一个凡人来说是不可逾越的。
 离岸不远处漂着一只木筏(mufa)。
 LONG);
 
-  set("item_desc", ([ /* sizeof() == 1 */
-  "mufa" : "一只木筏，以几根大圆木捆成。你不禁想坐(zuo)上去试一试。
-",
-]));
-  set("exits", ([ /* sizeof() == 1 */
-  "west" : __DIR__"seashore2",
-]));
-  set("outdoors", 1);
+    set("item_desc", ([ /* sizeof() == 1 */
+        "mufa" : "一只木筏，以几根大圆木捆成。你不禁想坐(zuo)上去试一试。",
+    ]));
+    set("exits", ([ /* sizeof() == 1 */
+        "north" : __DIR__"seashore3",
+    ]));
+    set("outdoors", 1);
 
-  setup();
+    setup();
 }
 
 void init()
