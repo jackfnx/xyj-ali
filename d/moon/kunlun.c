@@ -20,8 +20,7 @@ LONG);
   set("exits", ([ /* sizeof() == 3 */
   "north" : "/d/xueshan/xueshan1",
   "southeast" : __DIR__"xiaolu1",
-  "west" : "/d/moon/yunu1",
-  "east" : __DIR__"fabao-road1",
+  "west" : __DIR__"yunu1",
 ]));
 
   setup();

@@ -29,7 +29,7 @@ LONG);
   set("outdoors", 1);
   set("exits", ([ /* sizeof() == 2 */
   "enter" : __DIR__"road1",
-  "down" : __DIR__"tree2",
+  "east" : __DIR__"ontop2",
 ]));
 
   setup();

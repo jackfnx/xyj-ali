@@ -17,7 +17,7 @@ LONG);
 
   set("outdoors", 2);
   set("exits", ([ /* sizeof() == 2 */
-  "east" : "/d/kunlun/kunlun",
+  "east" : __DIR__"kunlun",
   "westup" : __DIR__"yunu2",
 ]));
 

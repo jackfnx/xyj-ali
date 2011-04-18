@@ -21,7 +21,7 @@ LONG);
   set("exits", ([
         "west"      : __DIR__"dadao",
         "southeast" : __DIR__"west3",
-        "northeast" : "/d/kunlun/xiaolu3",
+        "northeast" : "/d/moon/xiaolu3",
       ]));
   set("outdoors", __DIR__);
 

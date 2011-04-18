@@ -76,7 +76,6 @@ notify_fail("你想飞起来，可是体力似乎有点不支。\n");
         else if(arg=="sky") loc="/d/sky/nantian";
    else if(arg=="wuzhuang") loc="/d/qujing/wuzhuang/gate";
    else if(arg=="meishan") loc="/d/meishan/erlangwai";
-   else if(arg=="kunlun") loc="/d/kunlun/kunlun";
 
    else if(arg=="penglai") {
      if(!(map=present("eastsea map", me)) && !wizardp(me)) {

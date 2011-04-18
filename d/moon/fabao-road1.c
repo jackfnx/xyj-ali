@@ -15,8 +15,8 @@ LONG);
 
     set("exits", 
     ([ //sizeof() == 2
-        "west" : __DIR__"kunlun",
-        "east" : __DIR__"fabao-road2",
+        "east" : __DIR__"ontop2",
+        "west" : __DIR__"fabao-road2",
     ]));
 
     set("outdoors", "1");

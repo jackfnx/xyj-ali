@@ -19,7 +19,7 @@ LONG);
   set("outdoors", "xueshan");
   set("exits", ([ /* sizeof() == 2 */
   "north" : __DIR__"xueshan2",
-  "south" : "/d/kunlun/kunlun",
+  "south" : "/d/moon/kunlun",
 ]));
 
   setup();

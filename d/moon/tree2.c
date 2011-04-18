@@ -14,7 +14,7 @@ void create ()
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
-  "up" : __DIR__"ontop.c",
+  //"up" : __DIR__"ontop.c",
   "down" : __DIR__"tree1.c",
 ]));
     set("objects", (["/d/obj/flower/guihua.c":2,]));
