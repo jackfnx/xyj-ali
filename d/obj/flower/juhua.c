@@ -7,8 +7,6 @@
 
 inherit NECK;
 
-#include "message.h"
-
 void create()
 {   
 switch (random(3))

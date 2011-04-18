@@ -7,8 +7,6 @@
 
 inherit NECK;
 
-#include "message.h"
-
 void create()
 {
   set_name(HIB "¹ð»¨" NOR, ({ "gui hua", "flower"}));

@@ -7,8 +7,6 @@
 
 inherit ITEM;
 
-#include "message.h"
-
 void create()
 {
   set_name("ЛЈзб", ({ "seed"}));
