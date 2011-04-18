@@ -179,10 +179,8 @@ void confirm_recycle(object ob, object fabao_ob, string arg)
         }
     }
     ob->save();
-    tell_room(environment(ob), "天色突然一暗，"
-        + ob->name() + "的身上散发出惊人的气势，原来竟是"
-        + gender_pronoun(ob->query("gender")) + "炼化了"
-        + fabao_ob->name() + "，一时间实力大增。\n", ({ ob }));
+    tell_room(environment(ob), "天色突然一暗，隐约中似乎传来鬼神的哭泣，原来竟是"
+        + ob->name() + "炼化了" + fabao_ob->name() + "，吸收了其中能量，实力大增。\n", ({ ob }));
     printf("你炼化了%s，获得了%d点内力，%d点法力，%s道行。\n",
         fabao_ob->name(),
         fabao_ob->query("power/force"),
