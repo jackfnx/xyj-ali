@@ -4,7 +4,6 @@
 // created by snowcat
 
 inherit ITEM;
-#include "message.h"
 
 void create()
 {

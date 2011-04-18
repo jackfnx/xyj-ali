@@ -21,7 +21,7 @@ LONG);
   set("outdoors", "/u/hkgroup");
   
   set("objects", ([
-   "/d/obj/misc/seed":1,
+   "/d/obj/flower/seed":1,
   ]));
 
   setup();

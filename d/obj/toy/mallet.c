@@ -8,8 +8,6 @@
 
 inherit HAMMER;
 
-#include "message.h"
-
 void create()
 {
   set_name("ÕòÑı´¸", ({ "mallet" }) );
