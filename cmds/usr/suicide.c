@@ -51,7 +51,7 @@ private int slow_suicide(object me)
 {
    object link_ob;
    int stage;
-   string myid, couple;
+   string myid;
 
    stage = me->query_temp("suicide_countdown");
    me->add_temp("suicide_countdown", -1);
@@ -77,13 +77,6 @@ private int slow_suicide(object me)
 
    // remove mailbox.
    rm( "/data/mail/"+myid[0..0]+"/"+myid+ __SAVE_EXTENSION__ );
-
-   // remove couple's home as well. (the home is registered by the 
-   // couple.)
-   couple=me->query("coupld/id");
-   if(couple)
-     rm("/data/mail/"+couple[0..0]+"/"+couple+__SAVE_EXTENSION__);
-
 
    write("ºÃ°É£¬ÓÀ±ðÁË:(\n");
    tell_room(environment(me), me->name() +

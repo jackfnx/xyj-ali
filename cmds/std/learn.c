@@ -48,8 +48,7 @@ int main(object me, string arg)
    if( !living(ob) )
      return notify_fail("嗯．．．你得先把" + ob->name() + "弄醒再说。\n");
 
-   if( !me->is_apprentice_of(ob) && getuid(ob)!=me->query("couple/id") 
-     && getuid(ob)!=me->query("bonze/dadangid") ) {
+   if( !me->is_apprentice_of(ob) ) {
 
      notify_fail( ob ->name() + reject_msg[random(sizeof(reject_msg))] );
      if( (string)me->query("family/family_name") != 

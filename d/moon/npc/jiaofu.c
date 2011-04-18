@@ -1,11 +1,8 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+// ALi by NewX
+
 // jiaofu.c 轿夫
 
 inherit NPC;
-
-int do_kill(string);
 
 void create()
 {
@@ -24,19 +21,4 @@ void create()
    set_skill("unarmed", 30);
    set_skill("parry", 30);
    setup();
-}
-
-void init()
-{
-   add_action("do_kill", "kill");
-   add_action("do_kill", "fight");
-}
-
-int do_kill(string arg)
-{
-   if (arg=="jiaofu" && environment()!=find_object("/d/moon/yltw")) {
-     write("你想坏人好事，太不道德了吧。\n");
-     return 1;
-    }
-   return 0;
 }

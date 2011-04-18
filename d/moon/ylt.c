@@ -1,8 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-// Room: ylt.c
-// AceP
+// ALi by NewX
 
 inherit ROOM;
 
@@ -23,7 +19,7 @@ LONG
    set("no_sleep_room", "1");
 
    set("item_desc", ([
-     "book" : "这簿子颜色很特别，封面书着《姻缘簿》，据说是记载天上地下\n所有姻缘的档案。你可用 read book 来查阅。\n"
+     "book" : "这簿子被涂抹的乱七八糟，勉强能辨认出封面上的几个字：《姻缘簿》\n"
      ]));
 
    set("exits", ([
@@ -35,20 +31,4 @@ LONG
    ]));
 
    setup();
-}
-
-void init()
-{
-        add_action("read_book","read");
-}
-
-int read_book(string arg)
-{
-   if (!arg) return 0;
-   if (arg!="book") return 0;
-   write("\n               ===  姻缘录  ===\n\n");
-   if(file_size("/log/yl.rc")>0)
-     this_player()->start_more( read_file("/log/yl.rc"));
-   write("\n");
-   return 1;
 }

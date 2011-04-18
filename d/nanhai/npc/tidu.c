@@ -110,8 +110,6 @@ string ask_for_join()
 
    me = this_player();
 
-   if (me->query("married"))
-     return "阿弥陀佛！施主有了家庭拖累，想必难以潜心向佛。\n";
    if( (string)me->query("bonze/class")=="bonze" )
      return "阿弥陀佛！你我同是出家人，何故跟老衲开这等玩笑？\n";
    if( me->query("bonze/justonetime"))

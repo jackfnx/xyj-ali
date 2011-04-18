@@ -6,7 +6,6 @@ inherit F_VENDOR;
 
 int base_price=100000;
 
-int ask_party();
 int ask_money();
 void create()
 {
@@ -25,13 +24,12 @@ void create()
    set("per", 20);
 
 set("inquiry", ([
-"name": "在下便是这里的老板。\n",
-"here": "这里是喜福会，城中大户人家结婚都要来这里摆喜宴哩。\n",
-"宴" : (: ask_party :),
-"喜宴" : (: ask_party :),
-"席" : (: ask_party :),
-"酒席" : (: ask_party :),
-"party" : (: ask_party :),
+"name": "在下便是这里的老板。",
+"here": "这里是喜福会，本来是摆喜宴的地方。可惜现在世风日下，人心不古，早就没人结婚了。",
+"喜宴" : "去！一边去！现在早就没人结婚了！哪还有什么喜宴？",
+"酒席" : "就算不是喜宴，只要你愿意花钱，一样可以为你操办一场宴会。",
+"宴会" : "就算不是喜宴，只要你愿意花钱，一样可以为你操办一场宴会。",
+"party" : "就算不是喜宴，只要你愿意花钱，一样可以为你操办一场宴会。",
 "money": (: ask_money :),
 ]) );
         setup();
@@ -54,94 +52,26 @@ void init()
    add_action("do_fight", "fight");
 
 }
-int ask_party()
-{   object me, who, wife;
-   me=this_object();
-   who=this_player();
-//   if( !who->query("married") ) {
-//     message_vision("$N看着$n大笑起来：你还没结婚呢，开什么喜宴！\n", me, who);
-//     return 1;
-//   }
-//   if( who->query("married_party") ) {
-//     message_vision("$N看着$n迟疑的问道：你不是已经开过喜宴了吗？\n", me, who);
-//     return 1;
-//   }
-   if( who->query_temp("host_of_party") ) {
-     message_vision("$N对$n说：这不是正开着喜宴呢吗？\n", me, who);
-     return 1;
-   }
-//   if( (string)who->query("gender")=="女性" ) {
-//     message_vision("$N皱了皱眉，对$n说道：还是叫你的丈夫来办这件事吧！\n", me,who);
-//     return 1;
-//   }
-//   if( !objectp(wife=present(who->query("couple/id"), environment(who))) ) {
-//     message_vision("$N对$n说：新娘子都没来，这喜宴怎么开？\n", me, who);
-//     return 1;
-//   }
-   if( me->query_temp("ready_to_party") ) {
-     message_vision("$N对$n不好意思的说：我这正开着一席呢，要不您明儿再来吧！\n", me, who);
-     return 1;
-   }
-   if( (string)environment(me)->query("short")!="喜福会" ) {
-     message_vision("$N对$n为难的说：现在这里也没准备，我是难以相助啊！\n", me, who);
-     return 1;
-   }
-   if( who->query_temp("ready_to_pay") ) {
-     message_vision("$N对$n不奈烦的说道：你怎么问个没完！\n", me, who);
-     return 1;
-   }
-   if( !who->query_temp("party_paid") ) {
-     message_vision("$N对$n说：这一次喜宴吗，可要花费"+
-        price_string(base_price*query_price()/10)+
-        "呢！\n", me, who);
-     who->set_temp("ready_to_pay", 1);
-     return 1;
-   }
-}
+
 int accept_object(object who, object ob)
 {
    object m;
    int value;
-   int price;
 
    value=ob->value();
-
-   if( !who->query_temp("ready_to_pay") )
-     return notify_fail(name()+"迟疑的看着你，不知道你想干什么！\n");
 
    if( !value )
      return notify_fail(name()+"奇怪的看着你说：给我这干什么？\n");
 
-   price=base_price*query_price()/10;
-
-   if( value < price )
-     return notify_fail(name()+"说：这些哪够呀，要"+
-        price_string(price)+"才行！\n");
-   if(!take_money(value, base_price))
-       return 0;
-   this_object()->save();
-   who->set_temp("host_of_party", 1);
-   who->delete_temp("ready_to_pay");
    call_out("destroy", 1, ob);
-
-   call_out("count_money", 2, who);
-   call_out("start_party", 5, who);
-   return 1;
-}
-
-int ask_money()
-{
-   object who=this_player();
-   int i;
-   i=(int)this_object()->query("money")+160;
-   if( who->query("id")!="bula"){ 
-     command("dunno");
-     return 1;
+   if( value >= base_price ) {
+	who->set_temp("host_of_party", 1);
+	call_out("count_money", 2, who);
+	call_out("start_party", 5, who);
    }
-   command("whisper bula 这个月生意不错，到现在共赚了"
-+chinese_number(i)+"两金子了。\n");
    return 1;
 }
+
 void destroy(object ob)
 {
         destruct(ob);
@@ -151,7 +81,6 @@ void count_money(object who)
 {
    message_vision("\n$N把$n给的钱仔细的清点了一遍。\n\n", this_object(), who);
    message_vision("$N痛快的说：开席！\n", this_object() );
-
 }
 
 void start_party(object who)
@@ -171,9 +100,9 @@ int do_start()
    object *list;
    object girla,girlb,girlc,girld,cup;
    if( !who->query_temp("host_of_party") )
-     return notify_fail(name()+"对你说：你又不是新郎官！\n");
+     return notify_fail(name()+"对你说：你又不是主人？\n");
    if( !me->query_temp("ready_to_party") )
-     return notify_fail(name()+"对你说：开始什么呀，现在又没人结婚！\n");
+     return notify_fail(name()+"对你说：开始什么呀，现在又没人办宴会！\n");
    if( me->query_temp("party_start_already") )
      return notify_fail(name()+"生气的对你说：这不是已经开始了嘛！\n");
 
@@ -181,7 +110,6 @@ int do_start()
    message_vision("$N大声喊着：开～～席～～喽～～\n\n", me);
    me->set_temp("party_start_already", 1);
    me->delete_temp("ready_to_party");
-   tell_room( environment(who), "旁边四个唢呐手大声的吹起了欢快的唢呐。\n");   
 
    list = all_inventory(environment(me));
    i = sizeof(list);
@@ -260,11 +188,9 @@ void finish_party(object who)
         object *list;
 
    message_vision("$N大声说道：宴席就此结束，多谢大家光临！\n", me);
-   command("gongxi " + who->query("id"));
 
    me->delete_temp("party_start_already");
    who->delete_temp("host_of_party");
-//   who->set_temp("married_party", 1);
    list=all_inventory(environment(me));
    i=sizeof(list);
    while (i--)
@@ -275,65 +201,3 @@ void finish_party(object who)
         destruct (list[i]);
    }
 }
-int do_fight(string arg)
-{
-        object who = this_player();
-        object me = this_object();
-        message_vision("$N脸色不大对，好象动了杀机！\n", who);
-        message_vision("$N对$n直摇头：这大喜的日子动什么刀枪啊！\n", me, who);
-        return 1;
-}
-
-int do_kill(string arg)
-{
-     object who = this_player();
-    object me = this_object();
-
-   if(!arg || present(arg,environment(me))!=me) return 0;
-
-   message_vision("$N脸色不大对，好象动了杀机！\n", who);
-   message_vision("$N对$n直摇头：这大喜的日子动什么刀枪啊！\n", me, who);
-   return 1;
-}
-int do_cast(string arg)
-{
-        object who = this_player();
-        object me = this_object(); 
-   message_vision("$N张开嘴，结结吧吧地念了几声咒语。\n", who);
-        message_vision ("$N对$n直摇头：这大喜的日子，你念哪门子咒啊！\n", me, who);
-        return 1;
-}        
-int do_exert(string arg)
-{               
-        object who = this_player();
-        object me = this_object();
-   message_vision("$N鬼鬼祟祟地一运气。\n",who);
-        message_vision("$N对$n吐吐舌头，说：刚吃过饭，不要乱用内功！\n", me, who);
-        return 1;
-}
-int do_perform(string arg)
-{
-        object who = this_player();
-        object me = this_object();
-   message_vision("$N脸色不大对，好象动了杀机！\n", who);
-        message_vision ("$N对$n直摇头：这大喜的日子动什么刀枪啊！\n", me, who);  
-        return 1;
-}        
-int do_steal(string arg)
-{       
-        object who = this_player();
-        object me = this_object();
-   message_vision("$N伸出手，想要偷点什么。\n", who);
-        message_vision ("$N对$n骂道：怎可随便光天化日施盗行窃！\n",me,who);
-     return 1;
-}
-
-int do_bian(string arg)
-{
-     object who = this_player();
-     object me = this_object();
-   message_vision("$N鬼鬼祟祟地想变成什么东西。\n",who);
-   message_vision("$N对$n说：这是喜宴，不可随意变化！\n",me,who);
-        return 1;
-}
-

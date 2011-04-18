@@ -257,15 +257,6 @@ int look_living(object me, object obj)
         str += sprintf("%s看起来约%s多岁。\n", pro, chinese_number(oage / 10 * 10));
      }
 
-   //check about wife and husband
-   if((obj->parse_command_id_list())[0]==me->query("couple/id") ) {
-     if( (string)me->query("gender")=="女性" ){
-     str += sprintf("%s是你的丈夫。\n", pro);
-     }
-     else{
-        str += sprintf("%s是你的妻子。\n", pro);
-     }
-   }
    // If we both has family, check if we have any relations.
    if( obj!=me
    &&   mapp(fam = ofamily)
