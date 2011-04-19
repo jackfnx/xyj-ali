@@ -19,9 +19,9 @@ void create()
   set_skill("spells",180);
   set_skill("buddhism", 180);
   set_skill("jienan-zhi", 180);
-  set_skill("lotusmove", 180);
+  set_skill("lotusstep", 180);
   map_skill("unarmed", "jienan-zhi");
-  map_skill("dodge", "lotusmove");
+  map_skill("dodge", "lotusstep");
   map_skill("spells", "buddhism");
   set("max_sen",1800);
   set("max_gee",1800);

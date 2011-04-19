@@ -29,13 +29,13 @@ void create()
   set_skill("unarmed", 150);
   set_skill("jienan-zhi", 150);
   set_skill("dodge", 40);
-  set_skill("lotusmove", 80);
+  set_skill("lotusstep", 80);
   set_skill("parry", 45);
   set_skill("force", 90);
   set_skill("lotusforce", 90);
   map_skill("spells", "buddhism");
   map_skill("unarmed", "jienan-zhi");
-  map_skill("dodge", "lotusmove");
+  map_skill("dodge", "lotusstep");
   map_skill("force", "lotusforce");
   set("nb_heads",10);
   setup();
