@@ -13,7 +13,7 @@ void create()
 {
   set_name("×Ï½ðºìºùÂ«",({"hu lu", "hu", "lu", "fabao"}));
   set_weight(5000);
-  set_max_encumbrance(10000000);
+  set_max_encumbrance(100000000000);
   if(clonep())
     set_default_object(__FILE__);
   else {
