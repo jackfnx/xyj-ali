@@ -5,7 +5,6 @@
 
 #include <ansi.h>
 #include <net/dns.h>
-#include "/cmds/std/block_tell.h";
 
 inherit F_CLEAN_UP;
 
@@ -17,7 +16,7 @@ int main(object me, string arg)
    string target, mud;
    object obj;
 
-        if(!block_tell(me)) return 1;
+        if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    if( !arg || arg=="" )
      return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n");

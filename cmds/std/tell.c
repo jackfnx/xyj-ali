@@ -5,7 +5,6 @@
 
 #include <ansi.h>
 #include <net/dns.h>
-#include "/cmds/std/block_tell.h";
 
 inherit F_CLEAN_UP;
 
@@ -26,7 +25,7 @@ int main(object me, string arg)
      return 1;
    }
 
-        if(!block_tell(me)) return 1;
+        if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    obj = find_player(target);
    if(!obj || !me->visible(obj)) return notify_fail("没有这个人。\n");

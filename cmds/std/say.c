@@ -4,13 +4,12 @@
 // say.c
 
 #include <ansi.h>
-#include "/cmds/std/block_tell.h";
 
 inherit F_CLEAN_UP;
 
 int main(object me, string arg)
 {
-        if(!block_tell(me)) return 1;
+        if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    if (!arg) {
      write("你自言自语不知道在说些什么。\n");

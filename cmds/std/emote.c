@@ -4,13 +4,12 @@
 // emote.c (Mon  09-04-95)
 
 #include <ansi.h>
-#include "/cmds/std/block_tell.h";
 
 inherit F_CLEAN_UP;
  
 int main(object me, string str)
 {
-    if(!block_tell(me)) return 1;
+    if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
     if (!str) {
         write(CYN"你看起来表情丰富。\n"NOR);

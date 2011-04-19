@@ -4,7 +4,6 @@
 // whisper.c
 
 #include <ansi.h>
-#include "/cmds/std/block_tell.h";
 
 inherit F_CLEAN_UP;
 
@@ -13,7 +12,7 @@ int main(object me, string arg)
    string dest, msg;
    object ob;
 
-        if(!block_tell(me)) return 1;
+        if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    if( !arg || sscanf(arg, "%s %s", dest, msg)!=2 )
      return notify_fail("你要对谁耳语些什么？\n");

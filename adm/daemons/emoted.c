@@ -8,8 +8,6 @@
 //          intermud emote.
 
 #include <ansi.h>
-#include "/cmds/std/block_tell.h"  //mon 9/15/97
-                                   //prevent flooding by emote.
 
 inherit F_SAVE;
 
@@ -111,7 +109,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
 
 //mon 9/15/97. for emote flooding.
         if(!channel_emote) {
-          if(!block_tell(me)) return 1;
+          if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
    }
 
    my_gender = me->query("gender");
