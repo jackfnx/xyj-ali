@@ -42,16 +42,16 @@ int main(object me, string arg)
     line += sprintf(" 性别：%s%-4s%s  年龄：%s%-4s岁%s%-6s       门派：%s%-6s%s\n\n",
             HIG, my["gender"], NOR,
             HIY, my["always_young"] ? chinese_number(my["fake_age"]) : chinese_number(my["age"]), NOR,
-            my["always_young"] ? "("CYN+chinese_number(my["age"])+"岁"NOR")" : "      ",
+            my["always_young"] ? "("CYN+chinese_number(my["age"])+"岁"NOR ")" : "      ",
             HIC, mapp(my["family"]) ? my["family"]["family_name"] : "无", NOR,
             );
 
     line += sprintf(
-            " 力量：[%s]  | 敏捷：[%s]  | 定力：[%s]  | 胆识：[%s]\n\n",
+            " 力量：[%s]  | 定力：[%s]  | 胆识：[%s]  | 福缘：[%s]\n\n",
             display_attr(my["str"], ob->query_str()),
-            display_attr(my["dex"], ob->query_dex()),
             display_attr(my["cps"], ob->query_cps()),
             display_attr(my["cor"], ob->query_cor()),
+            display_attr(my["kar"], ob->query_kar()),
             );
     
     if (my["eff_gin"] < my["max_gin"]) str = HIR + "生病";
@@ -94,8 +94,7 @@ int main(object me, string arg)
     else if (my["water"] * 100 / ob->max_water_capacity() > 60) str = HIG + "正常";
     else if (my["water"] * 100 / ob->max_water_capacity() > 30) str = HIR + "缺水";
     else str = HIB + "饥渴";
-    line += sprintf(" 福缘：[%s%3s%s]  | 〖%s饮水%s〗 %s [%4s%s]\n",
-                NOR, display_attr(my["kar"], ob->query_kar()), NOR,
+    line += sprintf("              | 〖%s饮水%s〗 %s [%4s%s]\n",
                 HIC, NOR, tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), NOR, HIC, HIR),
                 str, NOR);
 

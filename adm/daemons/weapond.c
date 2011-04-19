@@ -151,12 +151,12 @@ void wave_weapon(object me, object victim, object weapon, int damage)
    if( objectp(weapon)
    &&   damage==RESULT_PARRY
    &&   ob = victim->query_temp("weapon") ) {
-     wap = (int)me->query("dex") * 2
+     wap = (int)me->query("cps") * 2
         + (int)me->query_skill("whip")
         + (int)me->query_skill("dodge")
         + (int)weapon->query("wave");
      wdp = (int)victim->query("str")
-        + (int)victim->query("dex")
+        + (int)victim->query("cps")
         + (int)victim->query_skill("dodge")
         + (int)ob->query("anti_wave")
         - (int)ob->weight() / 500;
@@ -189,7 +189,6 @@ void bash_weapon(object me, object victim, object weapon, int damage)
         + (int)ob->query("rigidity")
         + (int)victim->query("str");
      wap = random(wap);
-
      if( wap > 2 * wdp ) {
         message_vision(HIW "$N只觉得手中" + ob->name() + "把持不定，脱手飞出！\n" NOR,
           victim);

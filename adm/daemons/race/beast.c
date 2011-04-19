@@ -56,13 +56,12 @@ void setup_beast(object ob)
    if( undefinedp(my["age"]) ) my["age"] = random(40) + 5;
 
    if( undefinedp(my["str"]) ) my["str"] = random(41) + 5;
-   if( undefinedp(my["dex"]) ) my["dex"] = random(31) + 5;
-   if( undefinedp(my["cps"]) ) my["cps"] = random(11) + 5;
    if( undefinedp(my["cor"]) ) my["cor"] = random(21) + 5;
    if( undefinedp(my["int"]) ) my["int"] = random(11) + 5;
-   if( undefinedp(my["con"]) ) my["con"] = random(41) + 5;
    if( undefinedp(my["spi"]) ) my["spi"] = 0;
+   if( undefinedp(my["cps"]) ) my["cps"] = random(11) + 5;
    if( undefinedp(my["per"]) ) my["per"] = random(31) + 5;
+   if( undefinedp(my["con"]) ) my["con"] = random(41) + 5;
 
    if( undefinedp(my["max_gin"]) ) {
      if( my["age"] <= 3 ) my["max_gin"] = 50;

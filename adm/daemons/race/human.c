@@ -87,27 +87,26 @@ void setup_human(object ob)
     ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
     ob->set("default_sex_actions", (: call_other, __FILE__, "query_sex_action" :));
     ob->set("default_fuck_actions", (: call_other, __FILE__, "query_fuck_action" :));
-
-    if ( undefinedp(my["age"]) ) my["age"] = random(30) + 15;
-
-    if ( undefinedp(my["str"]) ) my["str"] = random(21) + 10;
-    if ( undefinedp(my["dex"]) ) my["dex"] = random(21) + 10;
-    if ( undefinedp(my["cps"]) ) my["cps"] = random(21) + 10;
-    if ( undefinedp(my["cor"]) ) my["cor"] = random(21) + 10;
-    if ( undefinedp(my["int"]) ) my["int"] = random(21) + 10;
-    if ( undefinedp(my["con"]) ) my["con"] = random(21) + 10;
-    if ( undefinedp(my["spi"]) ) my["spi"] = random(21) + 10;
-    if ( undefinedp(my["per"]) ) my["per"] = random(21) + 10;
-    if ( undefinedp(my["kar"]) ) my["kar"] = random(21) + 10;
-
+    
+    if  ( undefinedp(my["age"]) ) my["age"] = random(30) + 15;
+    
+    if  ( undefinedp(my["str"]) ) my["str"] = random(21) + 10;
+    if  ( undefinedp(my["cor"]) ) my["cor"] = random(21) + 10;
+    if  ( undefinedp(my["int"]) ) my["int"] = random(21) + 10;
+    if  ( undefinedp(my["spi"]) ) my["spi"] = random(21) + 10;
+    if  ( undefinedp(my["cps"]) ) my["cps"] = random(21) + 10;
+    if  ( undefinedp(my["per"]) ) my["per"] = random(21) + 10;
+    if  ( undefinedp(my["con"]) ) my["con"] = random(21) + 10;
+    if  ( undefinedp(my["kar"]) ) my["kar"] = random(21) + 10;
+    
     if ( userp(ob) || undefinedp(my["max_kee"]) ) {
         if ( my["age"] <= 14 ) my["max_kee"] = 100;
         else if ( my["age"] <= 30 )
             my["max_kee"] = 100 + (my["age"] - 14) * my["con"];
         else my["max_kee"] = 100 + 16 * my["con"];
-
+    
         if ( my["max_force"] > 0 ) my["max_kee"] += my["max_force"] / 4;
-
+    
         if ( my["max_kee"] < 1 ) my["max_kee"] = 1; //mon 1/28/98
     }
 
