@@ -532,7 +532,7 @@ void orgasm()
     } else if (gender == "女性") {
         string org;
         add_temp("orgasm", 1);
-        if ((int)query("orgasm") < 2) org = "高潮";
+        if ((int)query_temp("orgasm") < 2) org = "高潮";
         else org = chinese_number((int)query("orgasm")) + "重高潮";
         message("system", HIR "\n你感到脑中轰的一声，仿佛灵魂已经被抽出了肉体！\n你达到了至高无上的" + org + "！\n\n" NOR, this_object());
         set_temp("no_move", 1);
