@@ -78,131 +78,135 @@ string *per_msg_kid4 = ({
 });
 
 // snowcat 12/20/97
-string ride_suffix (object me)
+string ride_suffix(object me)
 {
-  string ridemsg = 0;
-  object ridee = 0;
+    string ridemsg = 0;
+    object ridee = 0;
 
-  ridee = me->ride();
-  if (ridee)
-    ridemsg = ridee->query("ride/msg")+"在"+ridee->name()+"上";
-  return ridemsg;
+    ridee = me->ride();
+    if (ridee)
+        ridemsg = ridee->query("ride/msg")+"在"+ridee->name()+"上";
+    return ridemsg;
 }
 
 void create() { seteuid(getuid()); }
 
 int main(object me, string arg)
 {
-   object obj;
-   int result;
+    object obj;
+    int result;
 
-   if( !arg ) result = look_room(me, environment(me));
-   else if( (obj = present(arg, me)) || (obj = present(arg, environment(me)))) {
-     if( obj->is_character() ) result = look_living(me, obj);
-     else result = look_item(me, obj);
-   } else result = look_room_item(me, arg);
+    if (!arg) result = look_room(me, environment(me));
+    else if ((obj = present(arg, me)) || (obj = present(arg, environment(me)))) {
+        if (obj->is_character()) result = look_living(me, obj);
+        else result = look_item(me, obj);
+    }
+    else result = look_room_item(me, arg);
 
-   return result;
+    return result;
 }
 
 int look_room(object me, object env)
 {
-   int i;
-   object *inv;
-   mapping exits;
-   string str, str1="", *dirs;
-   string ridemsg = "";
+    int i;
+    object *inv;
+    mapping exits;
+    string str, str1="", *dirs;
+    string ridemsg = "";
 
-   if( !env ) {
-     write("你的四周灰蒙蒙地一片，什么也没有。\n");
-     return 1;
-   }
-   str = sprintf( "%s - %s\n    %s%s",
-     env->query("short")?env->query("short"): "",
-     wizardp(me)? file_name(env): "",
-     env->query("long")? env->query("long"): "\n",
-     env->query("outdoors")? NATURE_D->outdoor_room_description() : "" );
+    if (!env) {
+        write("你的四周灰蒙蒙地一片，什么也没有。\n");
+        return 1;
+    }
+    str = sprintf("%s - %s\n    %s%s",
+        env->query("short") ? env->query("short") : "",
+        wizardp(me) ? file_name(env) : "",
+        env->query("long") ? env->query("long") : "\n",
+        env->query("outdoors") ? NATURE_D->outdoor_room_description() : "");
 
-   if( mapp(exits = env->query("exits")) ) {
-     dirs = keys(exits);
-     for(i=0; i<sizeof(dirs); i++)
-        if( (int)env->query_door(dirs[i], "status") & DOOR_CLOSED )
-          dirs[i] = 0;
-     dirs -= ({ 0 });
-     if( sizeof(dirs)==0 )
-        str += "  这里没有任何明显的出路。\n";
-     else if( sizeof(dirs)==1 )
-        str += "  这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
-     else
-        str += sprintf("  这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
-          implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs)-1]);
-   }
-//   str += env->door_description();
+    if (mapp(exits = env->query("exits"))) {
+        dirs = keys(exits);
+        for (i = 0; i < sizeof(dirs); i++)
+            if ((int)env->query_door(dirs[i], "status") & DOOR_CLOSED)
+                dirs[i] = 0;
+        dirs -= ({ 0 });
+        if (sizeof(dirs) == 0)
+            str += "  这里没有任何明显的出路。\n";
+        else if (sizeof(dirs) == 1)
+            str += "  这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
+        else
+            str += sprintf("  这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
+                implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs)-1]);
+    }
+//    str += env->door_description();
 
-   inv = all_inventory(env);
-   i=sizeof(inv);
-   while(i--) {
-     if( !me->visible(inv[i]) ) continue;
-     if( inv[i]==me ) continue;
-     if (ridemsg = ride_suffix(inv[i]))
-        str1 = " " + inv[i]->short() + " <"+ridemsg +
-          ">\n"+str1;
-     else   
-        str1 = " " + inv[i]->short() + "\n"+str1;
-   }
+    inv = all_inventory(env);
+    i = sizeof(inv);
+    while (i--) {
+        if (!me->visible(inv[i])) continue;
+        if (inv[i] == me) continue;
+        if (ridemsg = ride_suffix(inv[i]))
+            str1 = " " + inv[i]->short() + " <"+ridemsg +">\n"+str1;
+        else   
+            str1 = " " + inv[i]->short() + "\n"+str1;
+    }
 
-   write(str+str1);
-   return 1;
+    write(str + str1);
+    return 1;
 }
 
 int look_item(object me, object obj)
 {
-   mixed *inv;
+    mixed *inv;
 
 //   write(obj->long());
-   me->start_more(obj->long());
-   inv = all_inventory(obj);
-   if( sizeof(inv) ) {
-     inv = map_array(inv, "inventory_look", this_object() );
-     message("vision", sprintf("里面有：\n  %s\n",
-        implode(inv, "\n  ") ), me);
-   }
-   return 1;
+    me->start_more(obj->long());
+    inv = all_inventory(obj);
+    if( sizeof(inv) ) {
+        inv = map_array(inv, "inventory_look", this_object() );
+        message("vision", sprintf("里面有：\n  %s\n",
+            implode(inv, "\n  ") ), me);
+    }
+    return 1;
 }
 string per_status_msg(int age, int per, string gender)
 {
-   // added by snowcat 
-   if (age < 14) {
-     if ( per>=25 )
-        return ( per_msg_kid1[random(sizeof(per_msg_kid1))]);
-     else if ( per>=20 )
-        return ( per_msg_kid2[random(sizeof(per_msg_kid2))]);
-     else if ( per>=15 )
-        return ( per_msg_kid3[random(sizeof(per_msg_kid3))]);
-     else    return ( per_msg_kid4[random(sizeof(per_msg_kid4))]);
-     }
-     
-   if ( gender == "男性" ) {
-     if ( per>=25 )
-        return ( per_msg_male1[random(sizeof(per_msg_male1))]);
-     else if ( per>=20 )
-        return ( per_msg_male2[random(sizeof(per_msg_male2))]);
-     else if ( per>=15 )
-        return ( per_msg_male3[random(sizeof(per_msg_male3))]);
-     else    return ( per_msg_male4[random(sizeof(per_msg_male4))]);
-     }
-     
-   if ( gender == "女性" ) {
-     if ( per>=25 )
-                        return ( per_msg_female1[random(sizeof(per_msg_female1))]);
-                else if ( per>=20 )
-                        return ( per_msg_female2[random(sizeof(per_msg_female2))]);
-                else if ( per>=15 )
-                        return ( per_msg_female3[random(sizeof(per_msg_female3))]);
-         else   return ( per_msg_female4[random(sizeof(per_msg_female4))]);
-                }
-   else return "";
-//   else return "长得怎样你没什么概念。\n";
+    // added by snowcat 
+    if (age < 14) {
+        if (per>=25)
+            return (per_msg_kid1[random(sizeof(per_msg_kid1))]);
+        else if (per>=20)
+            return (per_msg_kid2[random(sizeof(per_msg_kid2))]);
+        else if (per>=15)
+            return (per_msg_kid3[random(sizeof(per_msg_kid3))]);
+        else
+            return (per_msg_kid4[random(sizeof(per_msg_kid4))]);
+    }
+    
+    if (gender == "男性") {
+        if (per>=25)
+            return (per_msg_male1[random(sizeof(per_msg_male1))]);
+        else if (per>=20)
+            return (per_msg_male2[random(sizeof(per_msg_male2))]);
+        else if (per>=15)
+            return (per_msg_male3[random(sizeof(per_msg_male3))]);
+        else
+            return (per_msg_male4[random(sizeof(per_msg_male4))]);
+    }
+    
+    if (gender == "女性") {
+        if (per>=25)
+            return (per_msg_female1[random(sizeof(per_msg_female1))]);
+        else if (per>=20)
+            return (per_msg_female2[random(sizeof(per_msg_female2))]);
+        else if (per>=15)
+            return (per_msg_female3[random(sizeof(per_msg_female3))]);
+        else
+            return (per_msg_female4[random(sizeof(per_msg_female4))]);
+    }
+    
+    return "";
+//    else return "长得怎样你没什么概念。\n";
 }
 
 int look_living(object me, object obj)
@@ -210,7 +214,6 @@ int look_living(object me, object obj)
     string str, limb_status, ridemsg, pro;
     mixed *inv;
     mapping my_fam, fam;
-    // added for bian by mon.
     mapping ofamily;
     string ogender,orace;
     int oage;
@@ -226,160 +229,149 @@ int look_living(object me, object obj)
         orace = obj->query("race");
         oage = obj->query("age");
         if (obj->query("always_young") && oage > obj->query("fake_age")) {
-            oage=obj->query("fake_age");
+            oage = obj->query("fake_age");
         }
     }
 
+    if (me!=obj && obj->visible(me))
+        message("vision", me->name() + "正盯着你看，不知道打些什么主意。\n", obj);
 
-   if( me!=obj && obj->visible(me) )
-     message("vision", me->name() + "正盯着你看，不知道打些什么主意。\n", obj);
+    str = obj->long();
 
-   str = obj->long();
-
-   str = replace_string(str, "$n", me->name());
-   str = replace_string(str, "$N", obj->name());
+    str = replace_string(str, "$n", me->name());
+    str = replace_string(str, "$N", obj->name());
     str = replace_string(str, "$C", RANK_D->query_respect(obj));
     str = replace_string(str, "$c", RANK_D->query_rude(obj));
-   str = replace_string(str, "$R", RANK_D->query_respect(me));
-   str = replace_string(str, "$r", RANK_D->query_rude(me));
+    str = replace_string(str, "$R", RANK_D->query_respect(me));
+    str = replace_string(str, "$r", RANK_D->query_rude(me));
 
 
-   pro = (obj==me) ? gender_self(ogender) : gender_pronoun(ogender);
+    pro = (obj==me) ? gender_self(ogender) : gender_pronoun(ogender);
 
-        if(obj->query_temp("d_mana")==0 || obj->query_temp("is_character")) {
-   
-   if( orace=="人类"
-   &&   intp(oage) )
-     if(oage<10) {
-        str += sprintf("%s看起来显然还不到十岁。\n", pro);
-     }
-     else{
-        str += sprintf("%s看起来约%s多岁。\n", pro, chinese_number(oage / 10 * 10));
-     }
+    if (obj->query_temp("d_mana")==0 || obj->query_temp("is_character")) {
+        if (orace == "人类" && intp(oage)) {
+            if (oage < 10) {
+                str += sprintf("%s看起来显然还不到十岁。\n", pro);
+            }
+            else {
+                str += sprintf("%s看起来约%s多岁。\n", pro, chinese_number(oage / 10 * 10));
+            }
+        }
 
-   // If we both has family, check if we have any relations.
-   if( obj!=me
-   &&   mapp(fam = ofamily)
-   &&   mapp(my_fam = me->query("family")) 
-   &&   fam["family_name"] == my_fam["family_name"] ) {
-   
-     if( fam["generation"]==my_fam["generation"] ) {
-        if( ogender == "男性" )
-          str += sprintf( pro + "是你的%s%s。\n",
-             my_fam["master_id"] == fam["master_id"] ? "": "同门",
-             my_fam["enter_time"] > fam["enter_time"] ? "师兄": "师弟");
-        else
-          str += sprintf( pro + "是你的%s%s。\n",
-             my_fam["master_id"] == fam["master_id"] ? "": "同门",
-             my_fam["enter_time"] > fam["enter_time"] ? "师姐": "师妹");
-     } else if( fam["generation"] < my_fam["generation"] ) {
-        if( member_array(my_fam["master_id"],
-            obj->parse_command_id_list())>-1  )
-          str += pro + "是你的师父。\n";
-        else if( my_fam["generation"] - fam["generation"] > 1 )
-          str += pro + "是你的同门长辈。\n";
-        else if( fam["enter_time"] < my_fam["enter_time"] )
-          str += pro + "是你的师伯。\n";
-        else
-          str += pro + "是你的师叔。\n";
-     } else {
-        if( fam["generation"] - my_fam["generation"] > 1 )
-          str += pro + "是你的同门晚辈。\n";
-        else if( fam["master_id"] == me->query("id") )
-          str += pro + "是你的弟子。\n";
-        else
-          str += pro + "是你的师侄。\n";
-     }
-   }
-
-/*   if( obj->query("max_kee") )
-     str += pro + COMBAT_D->eff_status_msg((int)obj->query("eff_kee") * 100 / (int)obj->query("max_kee")) + "\n";
-*/
+        // If we both has family, check if we have any relations.
+        if (obj != me
+        &&  mapp(fam = ofamily)
+        &&  mapp(my_fam = me->query("family")) 
+        &&  fam["family_name"] == my_fam["family_name"]) {
+            if (fam["generation"] == my_fam["generation"]) {
+                if  (ogender == "男性")
+                    str += sprintf(pro + "是你的%s%s。\n",
+                        my_fam["master_id"] == fam["master_id"] ? "": "同门",
+                        my_fam["enter_time"] > fam["enter_time"] ? "师兄": "师弟");
+                else
+                    str += sprintf(pro + "是你的%s%s。\n",
+                        my_fam["master_id"] == fam["master_id"] ? "": "同门",
+                        my_fam["enter_time"] > fam["enter_time"] ? "师姐": "师妹");
+            }
+            else if (fam["generation"] < my_fam["generation"]) {
+                if (obj->id(my_fam["master_id"]))
+                    str += pro + "是你的师父。\n";
+                else if (my_fam["generation"] - fam["generation"] > 1)
+                    str += pro + "是你的同门长辈。\n";
+                else if (fam["enter_time"] < my_fam["enter_time"])
+                    str += pro + "是你的师伯。\n";
+                else
+                    str += pro + "是你的师叔。\n";
+            }
+            else {
+                if (fam["generation"] - my_fam["generation"] > 1)
+                    str += pro + "是你的同门晚辈。\n";
+                else if (fam["master_id"] == me->query("id"))
+                    str += pro + "是你的弟子。\n";
+                else
+                    str += pro + "是你的师侄。\n";
+            }
+        }
 
 //here, if per>=100, no rong-mao description, it'll be necessary sometimes.
 //return special looking first if he/she has one.
+        if (obj->query("looking")) {
+            str += pro + (string)obj->query("looking") + "\n";
+        } else {
+            string looking = per_status_msg(oage, (int)obj->query_per(), ogender);
+            if (strlen(looking) > 1 && obj->query("per") < 100)
+                str += pro + looking;
+        }
 
-   if( obj->query("looking") ){
-     str += pro + (string)obj->query("looking") + "\n";
-   } else {
-     string looking= per_status_msg((int)obj->query("age"),
-            (int)obj->query_per(), ogender);
-              if( strlen(looking)>1 && obj->query("per") < 100 )
-                    str += pro + looking;
-   }
-   
-   ridemsg = ride_suffix(obj);
-   if (ridemsg)
-     str += pro + "正" + ridemsg + "。\n";
-     
-   inv = all_inventory(obj);
-   if( sizeof(inv) ) {
-     inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse()? 0 : 1 );
-     inv -= ({ 0 });
-     if( sizeof(inv) )
-        str += sprintf( obj->is_corpse() ? "%s的遗物有：\n%s\n" : "%s身上带着：\n%s\n",
-          pro, implode(inv, "\n") );
-   }
-        
-   }
+        ridemsg = ride_suffix(obj);
+        if (ridemsg)
+            str += pro + "正" + ridemsg + "。\n";
+        inv = all_inventory(obj);
+        if (sizeof(inv)) {
+            inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse()? 0 : 1 );
+            inv -= ({ 0 });
+            if (sizeof(inv))
+                str += sprintf(obj->is_corpse() ? "%s的遗物有：\n%s\n" : "%s身上带着：\n%s\n",
+                    pro, implode(inv, "\n") );
+        }
+    }
 
-        me->start_more(str);
+    me->start_more(str);
 
-   if( obj!=me 
-   &&   living(obj)
-   &&   random((int)obj->query("bellicosity")/10) > (int)me->query_per() ) {
-     write( obj->name() + "突然转过头来瞪你一眼。\n");
-     COMBAT_D->auto_fight(obj, me, "berserk");
-     return 1;
-   }
+    if (obj != me
+    &&  living(obj)
+    &&  random((int)obj->query("bellicosity")/10) > (int)me->query_per()) {
+        write(obj->name() + "突然转过头来瞪你一眼。\n");
+        COMBAT_D->auto_fight(obj, me, "berserk");
+        return 1;
+    }
 
-//this part is  taken from attack.c
+//this part is taken from attack.c
 //mon 1/22/98
 /*
-   if( obj!=me 
-   && living(obj)
-   && userp(obj)
-        && random((int)obj->query("bellicosity")/40) > (int)obj->query("cps") ) 
-     COMBAT_D->auto_fight(obj, me, "berserk");
+    if (obj!=me 
+    &&  living(obj)
+    &&  userp(obj)
+    &&  random((int)obj->query("bellicosity")/40) > (int)obj->query("cps"))
+        COMBAT_D->auto_fight(obj, me, "berserk");
 */
 
-   return 1;
+    return 1;
 }
 
 string inventory_look(object obj, int flag)
 {
-   string str;
+    string str;
 
-   str = obj->short();
-   if( obj->query("equipped") )
-     str = HIC "  □" NOR + str;
-   else if( !flag )
-     str = "    " + str;
-   else
-     return 0;
+    str = obj->short();
+    if (obj->query("equipped"))
+        str = HIC "  □" NOR + str;
+    else if (!flag)
+        str = "    " + str;
+    else
+        return 0;
 
-   return str;
+    return str;
 }
 
 int look_room_item(object me, string arg)
 {
-   object env;
-   mapping item, exits;
-   string dir;
+    object env;
+    mapping item, exits;
+    string dir;
 
-   if( !objectp(env = environment(me)) )
-     return notify_fail("这里只有灰蒙蒙地一片，什么也没有。\n");
+    if (!objectp(env = environment(me)))
+        return notify_fail("这里只有灰蒙蒙地一片，什么也没有。\n");
 
-   if( mapp(item = env->query("item_desc")) && !undefinedp(item[arg]) ) {
-     if( stringp(item[arg]) )
-        write(item[arg]);
-     else if( functionp(item[arg]) )
-        write((string)(*item[arg])(me));
-        
-     return 1;
-   }
-   
-   switch (arg) {
+    if (mapp(item = env->query("item_desc")) && !undefinedp(item[arg])) {
+        if (stringp(item[arg]))
+            write(item[arg]);
+        else if (functionp(item[arg]))
+            write((string)(*item[arg])(me));
+        return 1;
+    }
+
+    switch (arg) {
         case "e": dir = "east"; break;
         case "w": dir = "west"; break;
         case "s": dir = "south"; break;
@@ -399,25 +391,25 @@ int look_room_item(object me, string arg)
         case "sd": dir = "southdown"; break;
         case "nd": dir = "northdown"; break;
         default: dir = arg; break;
-   }
-   if( mapp(exits = env->query("exits")) && !undefinedp(exits[dir]) ) {
-     if( objectp(env = load_object(exits[dir])) ) {
-        look_room(me, env);
-        return 1;
-     } else
-       return notify_fail("你什么也看不见。\n");
-   }
-   return notify_fail("你要看什么？\n");
+    }
+    if (mapp(exits = env->query("exits")) && !undefinedp(exits[dir])) {
+        if (objectp(env = load_object(exits[dir]))) {
+            look_room(me, env);
+            return 1;
+        } else
+            return notify_fail("你什么也看不见。\n");
+    }
+    return notify_fail("你要看什么？\n");
 }
 
 int help (object me)
 {
-   write(@HELP
+    write(@HELP
 指令格式: look [<物品>|<生物>|<方向>]
- 
+
 这个指令让你查看你所在的环境、某件物品、生物、或是方向。
- 
+
 HELP
 );
-   return 1;
+    return 1;
 }
