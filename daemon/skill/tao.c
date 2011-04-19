@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// taoism
+// tao
 inherit SKILL;
 
 int valid_enable(string usage) { return usage=="spells"; }
@@ -15,7 +15,7 @@ int valid_learn(object me)
 
 string cast_spell_file(string spell)
 {
-    return CLASS_D("puti") + "/taoism/" + spell;
+    return CLASS_D("puti") + "/tao/" + spell;
 }
 
 int help(object me)

@@ -25,7 +25,7 @@ void create()
   set("mana_factor", 80);
   set("combat_exp", 950000);
   set_skill("spells", 90);
-  set_skill("taoism", 90);
+  set_skill("tao", 90);
   set_skill("unarmed", 95);
   set_skill("puti-zhi", 95);
   set_skill("dodge", 80);
@@ -33,7 +33,7 @@ void create()
   set_skill("parry", 95);
   set_skill("force", 90);
   set_skill("azoth", 90);
-  map_skill("spells", "taoism");
+  map_skill("spells", "tao");
   map_skill("unarmed", "puti-zhi");
   map_skill("dodge", "cloud-steps");
   map_skill("force", "azoth");

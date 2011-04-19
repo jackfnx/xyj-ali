@@ -21,8 +21,8 @@ void create()
         set_skill("whip", 90);
    set_skill("force", 90);
    set_skill("spells", 80);
-   set_skill("taoism", 80);
-   map_skill("spells", "taoism");
+   set_skill("tao", 80);
+   map_skill("spells", "tao");
         set("force", 400);
    set("max_force", 400);
    set("force_factor", 10);

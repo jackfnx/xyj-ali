@@ -24,7 +24,7 @@ void create()
         set_skill("dodge", 80);
         set_skill("parry", 80);
         set_skill("spells", 80);  
-        set_skill("taoism", 80);
+        set_skill("tao", 80);
         set_skill("literate", 70);
         set_skill("stick", 80);  
         set_skill("qianjun-bang", 80);
@@ -34,7 +34,7 @@ void create()
         set_skill("force", 80);   
         set_skill("azoth", 80);
 
-        map_skill("spells", "taoism");
+        map_skill("spells", "tao");
         map_skill("unarmed", "puti-zhi");
         map_skill("force", "azoth");
         map_skill("stick", "qianjun-bang");

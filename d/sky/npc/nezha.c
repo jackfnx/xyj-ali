@@ -37,7 +37,7 @@ void create()
   set("mana_factor", 120);
   set("combat_exp", 1200000);
   set_skill("spells", 180);
-  set_skill("dao", 180);
+  set_skill("tao", 180);
   set_skill("unarmed", 170);
   set_skill("yinfeng-zhua", 170);
   set_skill("dodge", 180);
@@ -49,7 +49,7 @@ void create()
   set_skill("huoyun-qiang", 150);
   set_skill("blade", 170);
   set_skill("sword", 160);
-  map_skill("spells", "dao");
+  map_skill("spells", "tao");
   map_skill("unarmed", "yinfeng-zhua");
   map_skill("spear", "huoyun-qiang");
   map_skill("parry", "huoyun-qiang");
@@ -89,7 +89,7 @@ int prevent_learn(object me, string skill)
 {
   int myyaofa=me->query_skill("yaofa",1);
 
-  if (skill == "dao") {
+  if (skill == "tao") {
    if(myyaofa!=0) {
      command("sigh");
      command("say "+RANK_D->query_respect(me)+"妖气太重，不能学道家仙法。");

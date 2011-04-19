@@ -25,7 +25,7 @@ void create()
   set("mana_factor", 80);
   set("combat_exp", 750000);
   set_skill("spells", 50);
-  set_skill("taoism", 50);
+  set_skill("tao", 50);
   set_skill("unarmed", 90);
   set_skill("dragonfight", 85);
   set_skill("dodge", 10);
@@ -35,7 +35,7 @@ void create()
   set_skill("force", 70);
   set_skill("azoth", 70);
   set_skill("staff", 50);
-  map_skill("spells", "taoism");
+  map_skill("spells", "tao");
   map_skill("unarmed", "dragonfight");
   map_skill("dodge", "cloud-steps");
   map_skill("force", "azoth");

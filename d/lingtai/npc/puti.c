@@ -35,14 +35,14 @@ void create()
     set_skill("parry", 170);
     set_skill("stick", 150);
     set_skill("spells", 200);
-    set_skill("taoism", 180);
+    set_skill("tao", 180);
     set_skill("puti-zhi", 150);
     set_skill("azoth", 180);
     set_skill("force", 200);
     set_skill("nine-turn", 200);
     set_skill("qianjun-bang", 180);
     set_skill("cloud-steps", 180);
-    map_skill("spells", "taoism");
+    map_skill("spells", "tao");
     map_skill("unarmed", "puti-zhi");
     map_skill("force", "nine-turn");
     map_skill("stick", "qianjun-bang");
@@ -83,7 +83,7 @@ void attempt_apprentice(object ob)
             command("sigh");
             return;
         }
-        if ((int)ob->query_skill("taoism", 1) < 100) {
+        if ((int)ob->query_skill("tao", 1) < 100) {
             command("say 这位" + RANK_D->query_respect(ob) + "对道的领会还不够深，现在收你也是勉为其难，不如作罢！\n");
             command("sigh");
             return;

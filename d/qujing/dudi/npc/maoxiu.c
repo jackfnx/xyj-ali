@@ -17,13 +17,13 @@ void create()
   set_skill("force", 120);
   set_skill("parry", 120);
   set_skill("spells",160);
-  set_skill("dao", 120);
+  set_skill("tao", 120);
   set_skill("dragonforce", 120);
   set_skill("dragonstep", 120);
   set_skill("dragonfight", 120);
   map_skill("unarmed", "dragonfight");
   map_skill("dodge", "dragonstep");
-  map_skill("spells", "dao");
+  map_skill("spells", "tao");
   set("max_sen",1600);
   set("max_gee",1600);
   set("max_gin",1600);

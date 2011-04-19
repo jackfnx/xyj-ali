@@ -33,8 +33,8 @@ void create()
    set_skill("sword", 119);
    set_skill("force", 119);
    set_skill("spells", 119);
-    set_skill("dao", 50);
-   map_skill("spells", "dao");
+    set_skill("tao", 50);
+   map_skill("spells", "tao");
         set("chat_chance_combat", 40);
         set("chat_msg_combat", ({
                 (: cast_spell, "light" :),

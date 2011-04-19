@@ -32,14 +32,14 @@ void create()
   set_skill("parry", 75);
   set_skill("spells", 75);
   set_skill("force", 75);
-  set_skill("wuxiangforce", 75);
-  set_skill("dao", 75);
-  set_skill("jindouyun", 75);
+  set_skill("azoth", 75);
+  set_skill("tao", 75);
+  set_skill("cloud-steps", 75);
   set_skill("puti-zhi", 75);
   map_skill("unarmed", "puti-zhi");
-  map_skill("dodge", "jindouyun");
-  map_skill("force", "wuxiangforce");
-  map_skill("spells", "dao");
+  map_skill("dodge", "cloud-steps");
+  map_skill("force", "azoth");
+  map_skill("spells", "tao");
   set("eff_dx",-160000);
   set("nkgain",240);
   

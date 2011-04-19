@@ -35,13 +35,13 @@ void create()
        set_skill("parry", 135);
    set_skill("sword", 135);
    set_skill("spells", 135);
-   set_skill("taoism", 120);
+   set_skill("tao", 120);
    set_skill("changquan", 120);
    set_skill("azoth", 120);
    set_skill("force", 120);
    set_skill("sanqing-jian", 135);
    set_skill("chaos-steps", 135);
-   map_skill("spells", "taoism");
+   map_skill("spells", "tao");
    map_skill("unarmed", "changquan");
    map_skill("force", "azoth");
    map_skill("sword", "sanqing-jian");

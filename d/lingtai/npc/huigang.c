@@ -24,9 +24,9 @@ void create()
         set_skill("force", 40);   
         set_skill("azoth", 40);
         map_skill("force", "azoth");
-   set_skill("taoism", 20);
+   set_skill("tao", 20);
    set_skill("spells", 20);
-   map_skill("spells", "taoism");
+   map_skill("spells", "tao");
         set("per", 30);
         set("max_kee", 300);
         set("max_gin", 200);

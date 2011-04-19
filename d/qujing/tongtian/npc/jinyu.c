@@ -25,7 +25,7 @@ void create()
   set("mana_factor", 20);
   set("combat_exp", 1500000);
   set_skill("spells", 30);
-  set_skill("dao", 30);
+  set_skill("tao", 30);
   set_skill("unarmed", 85);
   set_skill("hammer", 85);
   set_skill("dragonfight", 85);
@@ -34,7 +34,7 @@ void create()
   set_skill("parry", 85);
   set_skill("force", 70);
   set_skill("dragonforce", 120);
-  map_skill("spells", "dao");
+  map_skill("spells", "tao");
   map_skill("unarmed", "dragon-step");
   map_skill("dodge", "dragonstep");
   map_skill("force", "dragonforce");

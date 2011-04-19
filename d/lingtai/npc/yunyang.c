@@ -41,13 +41,13 @@ void create()
     set_skill("parry", 120);
     set_skill("stick", 120);
     set_skill("spells", 120);
-    set_skill("taoism", 120);
+    set_skill("tao", 120);
     set_skill("puti-zhi", 120);
     set_skill("azoth", 120);
     set_skill("force", 120);
     set_skill("qianjun-bang", 120);
     set_skill("cloud-steps", 120);
-    map_skill("spells", "taoism");
+    map_skill("spells", "tao");
     map_skill("unarmed", "puti-zhi");
     map_skill("force", "azoth");
     map_skill("stick", "qianjun-bang");

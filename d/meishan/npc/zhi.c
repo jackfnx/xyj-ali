@@ -34,12 +34,12 @@ void create()
   set_skill("staff",145);
   set_skill("force",140);
         set_skill("spells", 100);
-        set_skill("taoism", 50);
+        set_skill("tao", 50);
         set_skill("moyun-shou", 145);
         set_skill("azoth", 140);
         set_skill("lunhui-zhang", 145);
         set_skill("moshenbu", 145);
-        map_skill("spells", "taoism");
+        map_skill("spells", "tao");
         map_skill("unarmed", "moyun-shou");
         map_skill("force", "azoth");
         map_skill("staff", "lunhui-zhang");
