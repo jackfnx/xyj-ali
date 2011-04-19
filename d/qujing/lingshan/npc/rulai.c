@@ -226,7 +226,7 @@ void rewarded2 (int size, object me, object who)
 void informing (object me, object who)
 {
   who->interrupt_me();
-  who->set_temp("no_move",0);
+  who->delete_temp("no_move");
   who->save();
   me->set("my_level",LEVEL_NONE);
   me->delete_temp("invite");

@@ -150,8 +150,8 @@ void push_penis(object me, object ob)
     sufferer->set_temp("sex/fuck_ob", attacker);
     attacker->fuck_ob(sufferer);
     sufferer->fuck_ob(attacker);
-    if (attacker->add_temp("no_move", -1) <= 0) attacker->delete_temp("no_move");
-    if (sufferer->add_temp("no_move", -1) <= 0) sufferer->delete_temp("no_move");
+    attacker->delete_temp("no_move");
+    sufferer->delete_temp("no_move");
     tell_object(attacker, HIR + "\n\n你的"+penis+"已经插入了"+sufferer->name()+"的"+pussy+"！！！\n" + NOR);
     tell_object(sufferer, HIR + "\n\n" + attacker->name() +"的"+penis+"已经插入了你的"+pussy+"！！！\n" + NOR);
 }

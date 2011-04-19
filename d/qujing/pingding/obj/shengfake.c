@@ -143,7 +143,7 @@ void releasing (object me, object who, object sheng)
   if (who)
   {
     who->set_temp("victim",0);
-    who->set_temp("no_move",0);
+    who->delete_temp("no_move");
     who->interrupt_me();
   }
   if (sheng)

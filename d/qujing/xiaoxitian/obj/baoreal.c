@@ -222,7 +222,7 @@ void releasing (object who)
   if (! who)
     return;
 
-  who->set_temp("no_move",0);
+  who->delete_temp("no_move");
   who->interrupt_me();
   if (! who ||
       interactive (who))
