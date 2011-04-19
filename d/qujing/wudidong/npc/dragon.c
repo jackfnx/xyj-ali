@@ -40,7 +40,7 @@ void create()
 void die()
 {
     object rope;
-    string rp="/d/obj/fabao/kunxian-suo.c";
+    string rp="/d/qujing/wudidong/npc/obj/kunxian-suo.c";
 
     if( rp->in_mud() )
     {

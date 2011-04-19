@@ -26,7 +26,7 @@ void create()
    set("unit","条");
    set("value",0);
    set("is_monitored", 1);
-   set("replace_file", "/d/qujing/wudidong/npc/obj/kunxian-fake");
+   set("replace_file", "/d/obj/fabao/kunxian-fake");
    set("long","一条暗红色的绳子，也不知道是什么做的。\n");
     }
     init_whip(20);
