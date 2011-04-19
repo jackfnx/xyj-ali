@@ -4,7 +4,6 @@
 // go.c
 
 inherit F_CLEAN_UP;
-#include "/cmds/std/valid_move.h";
 
 mapping default_dirs = ([
    "north":     "北",
@@ -42,7 +41,7 @@ int main(object me, string arg, int silent)
 
    if( !arg ) return notify_fail("你要往哪个方向走？\n");
 
-        if(!valid_move(me)) return 0;
+        if(!"/adm/daemons/tempd"->valid_move(me)) return 0;
 
 /*
    if( me->over_encumbranced() )
@@ -88,7 +87,7 @@ int main(object me, string arg, int silent)
         else  
           ridemsg = "";
 
-        if(ridee && !valid_move(ridee)) 
+        if(ridee && !"/adm/daemons/tempd"->valid_move(ridee)) 
            return notify_fail("你的座骑走动不了。\n");
 
    if( me->is_fighting() ) {

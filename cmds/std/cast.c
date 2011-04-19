@@ -4,7 +4,6 @@
 // cast.c
 
 #include <skill.h>
-#include "/cmds/std/valid_kill.h";
 
 inherit F_CLEAN_UP;
 
@@ -32,7 +31,7 @@ int main(object me, string arg)
      if( !target ) target = present(trg, me);
      if( !target ) return notify_fail("这里没有 " + trg + "。\n");
      
-     if(!valid_kill(me,target)) return 0;
+     if(!"/adm/daemons/tempd"->valid_kill(me,target)) return 0;
 
      if( userp(me) && userp(target) && 
          target->query_temp("netdead") )

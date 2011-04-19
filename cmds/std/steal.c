@@ -4,7 +4,6 @@
 // steal.c
 
 #include <ansi.h>
-#include "valid_kill.h";
 
 inherit F_CLEAN_UP;
 
@@ -25,7 +24,7 @@ int main(object me, string arg)
 
    victim = present(who, environment(me));
    if( !victim || victim==me) return notify_fail("你想行窃的对象不在这里。\n");
-        if(!valid_kill(me,victim)) return 0;
+        if(!"/adm/daemons/tempd"->valid_kill(me,victim)) return 0;
 
    if( !wizardp(me) && wizardp(victim) )
      return notify_fail("玩家不能偷巫师身上的东西。\n");

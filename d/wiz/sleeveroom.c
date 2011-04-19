@@ -4,7 +4,6 @@
 //mon. 1/11/98.
 
 inherit ROOM;
-#include "/cmds/std/valid_move.h";
 
 void create ()
 {

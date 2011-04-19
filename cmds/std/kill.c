@@ -4,7 +4,6 @@
 // kill.c
 
 #include <ansi.h>
-#include "valid_kill.h";
 
 inherit F_CLEAN_UP;
 void do_kill(object,object);
@@ -28,7 +27,7 @@ int main(object me, string arg)
    if(obj==me)
      return notify_fail("用 suicide 指令会比较快:P。\n");
 
-        if(!valid_kill(me,obj)) return 0;
+        if(!"/adm/daemons/tempd"->valid_kill(me,obj)) return 0;
 
    callname = RANK_D->query_rude(obj);
 
