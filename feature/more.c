@@ -40,5 +40,6 @@ varargs void start_more(string msg, int force)
         return;
     //11/13/97 try to prevent crash by mon.
 
+    write("\n");
     more("", explode(msg, "\n"), 0, force);
 }
