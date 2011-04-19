@@ -5,6 +5,15 @@
 
 #include <ansi.h>
 
+int query_age(object ob)
+{
+    if (ob->query("always_young")
+    &&  (int)ob->query("fake_age") < (int)ob->query("age"))
+        return (int)ob->query("fake_age");
+    else
+        return (int)ob->query("age");
+}
+
 string query_rank(object ob)
 {
     // need this default, otherwise looks too ugly sometimes.
@@ -288,9 +297,7 @@ string query_respect(object ob)
    if( stringp(str = ob->query("rank_info/respect")) )
      return str;
 
-   // added by snowcat
-   age = ob->query("fake_age");
-   if (age == 0) age = ob->query("age");
+   age = query_age(ob);
    switch(ob->query("gender")) 
    {
      case "女性":
@@ -365,9 +372,7 @@ string query_rude(object ob)
    if( stringp(str = ob->query("rank_info/rude")) )
      return str;
 
-   // added by snowcat
-   age = ob->query("fake_age");
-   if (age == 0) age = ob->query("age");
+   age = query_age(ob);
    switch(ob->query("gender")) 
    {
      case "女性":
@@ -440,9 +445,7 @@ string query_self(object ob)
    if( stringp(str = ob->query("rank_info/self")) )
      return str;
 
-   // added by snowcat
-   age = ob->query("fake_age");
-   if (age == 0) age = ob->query("age");
+   age = query_age(ob);
    switch(ob->query("gender")) 
    {
      case "女性":
@@ -488,9 +491,7 @@ string query_self_rude(object ob)
    if( stringp(str = ob->query("rank_info/self_rude")) )
      return str;
 
-   // added by snowcat
-   age = ob->query("fake_age");
-   if (age == 0) age = ob->query("age");
+   age = query_age(ob);
    switch(ob->query("gender")) 
    {
      case "女性":
