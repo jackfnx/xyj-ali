@@ -44,15 +44,3 @@ int cast(object me, object target)
     return 8+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-【金刚护法】
-召唤金刚护法
-
-〖指令〗 cast jingang
-
-HELP);
-    return 1;
-}
-

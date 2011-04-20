@@ -18,16 +18,3 @@ string exert_function_file(string func)
     return CLASS_D("bonze") + "/lotusforce/" + func;
 }
 
-int help(object me)
-{
-    write(@HELP
-【莲台心法】
-佛家的内功心法
-
-〖应用法门〗
-①自疗：exert heal
-②疗人：exert lifeheal on <target>
-
-HELP);
-    return 1;
-}

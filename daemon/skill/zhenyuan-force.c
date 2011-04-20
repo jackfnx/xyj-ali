@@ -24,17 +24,3 @@ string exert_function_file(string func)
     return CLASS_D("daxian") + "/zhenyuan-force/" + func;
 }
 
-int help(object me)
-{
-    write(@HELP
-〖镇元神功〗
-道家的修身功夫乃传统的内丹之术，此术乃世间显传，各门各派都有
-修习。然镇元子所传之内功心法却颇有独到之处，该法为五庄观弟子
-独有，就连退出门派三星与八仙也承诺绝不对外泄露此术。该法本无
-名，后以镇元子名讳记之，曰镇元神功。
-
-① 自疗
-　指令：exert heal
-HELP);
-    return 1;
-}

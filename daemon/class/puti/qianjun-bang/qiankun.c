@@ -59,14 +59,3 @@ int perform(object me, object target)
 }
 
 
-int help(object me)
-{
-    write(@HELP
-°æ«¨¿§“ª∞Ù°ø
-
-°º÷∏¡Ó°Ω    perform qiankun
-HELP
-    );
-    return 1;
-}
-

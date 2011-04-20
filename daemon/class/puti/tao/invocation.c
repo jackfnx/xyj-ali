@@ -45,14 +45,3 @@ environment(me));
         return 8+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-【天兵召唤】
-从天界召唤一位身穿金甲的天兵战士下凡护法。
-
-〖指令〗    cast invocation
-HELP
-    );
-    return 1;
-}

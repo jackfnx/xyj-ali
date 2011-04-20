@@ -92,15 +92,3 @@ int practice_skill(object me)
     write("你按着所学练了一遍三清剑法。\n");
     return 1;
 }
-
-int help(object me)
-{
-    write(@HELP
-【三清剑法】
-道家功夫，轻灵飘逸，不沾凡尘之气。但唯其太过讲究而不太实用。
-星河影动    一点灵犀    古道西风    沧海月明
-乘风归去    白云千载    曲径通幽
-HELP);
-    return 1;
-}
-

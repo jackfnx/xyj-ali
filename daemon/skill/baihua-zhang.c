@@ -80,18 +80,3 @@ string perform_action_file(string func)
     return CLASS_D("girl") + "/baihua-zhang/" + func;
 }
 
-int help(object me)
-{
-    write(@HELP
-【百花掌】
-百花掌乃百花仙子所创，同样意在唯美，不在伤人。
-
-招数名称：
-自在飞花轻似梦  一枝红杏出墙来  黄菊枝头生晓寒    
-人面桃花相映红  此花开尽更无花
-
-〖特殊法门〗
-①  天女散花         perform flower on <object>
-HELP);
-    return 1;
-}

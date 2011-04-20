@@ -22,14 +22,3 @@ string cast_spell_file(string spell)
     return CLASS_D("dragon") + "/seashentong/" + spell;
 }
 
-int help(object me)
-{
-    write(@HELP
-【碧海神通】
-碧海神通为龙族专属法术，非龙族不能习练。
-
-①  龙神护法：    cast hufa
-②  雪舞风灵：    cast freez
-HELP);
-    return 1;
-}

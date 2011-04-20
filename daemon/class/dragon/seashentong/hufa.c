@@ -47,13 +47,3 @@ environment(me));
         return 8+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-〖龙神护法〗
-战斗中召唤一条猛龙助阵。
-
-〖指令〗 cast hufa
-HELP);
-    return 1;
-}

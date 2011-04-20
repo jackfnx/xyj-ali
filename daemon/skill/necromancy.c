@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// 死灵术
+// 摄魂术
 
 inherit SKILL;
 
@@ -11,7 +11,7 @@ int valid_learn(object me)
 {
     if ((int)me->query_skill("spells", 1) < 10
     ||  (int)me->query_skill("spells", 1) <= (int)me->query_skill("necromancy", 1) )
-        return notify_fail("你的法术修为还不够高深，无法学习死灵术．\n");
+        return notify_fail("你的法术修为还不够高深，无法学习摄魂术．\n");
     return 1;
 }
 

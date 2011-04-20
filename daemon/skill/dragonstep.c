@@ -39,12 +39,3 @@ int practice_skill(object me)
     me->add("force", -3);
     return 1;
 }
-
-int help(object me)
-{
-    write(@HELP
-【龙形步法】
-龙形步法为龙族专属身法，非龙族不能习练。
-HELP);
-    return 1;
-}

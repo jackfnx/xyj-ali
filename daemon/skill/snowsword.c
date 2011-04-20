@@ -109,20 +109,3 @@ string perform_action_file(string func)
 {
     return CLASS_D("girl") + "/snowsword/" + func;
 }
-
-int help(object me)
-{
-    write(@HELP
-【风回雪舞剑法】
-此剑法迅急若风回，轻灵似雪舞，敌手极难躲闪招架，多为气短力弱
-之女子所喜。
-
-寒芳留照魂应驻  晚凝深翠拂平沙  暗香浮动月黄昏
-风波不信菱枝弱  攒花染出几霜痕  霜印传神梦也空
-
-〖特殊法门〗
-①  回风：      perform huifeng
-②  舞雪：      perform wuxue
-HELP);
-    return 1;
-}

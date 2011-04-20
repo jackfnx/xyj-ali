@@ -70,14 +70,3 @@ int cast(object me, object target)
     return 5+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-【回梦】
-将敌人送入梦乡。
-
-〖指令〗    cast huimeng on <object>
-〖要求〗    基本法术１８０级，太阴仙诀１２０级
-HELP);
-    return 1;
-}

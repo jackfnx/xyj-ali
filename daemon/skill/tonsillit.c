@@ -28,16 +28,3 @@ string exert_function_file(string func)
 {
     return CLASS_D("ghost") + "/tonsillit/" + func;
 }
-
-int help(object me)
-{
-    write(@HELP
-【摄气诀】
-鬼乃阴神，有形无体。鬼无气，所以需『摄气』。
-
-妖魔现形：exert powerup
-鬼影遁形：exert powerfade
-恶鬼摄气：exert sheqi
-HELP);
-    return 1;
-}

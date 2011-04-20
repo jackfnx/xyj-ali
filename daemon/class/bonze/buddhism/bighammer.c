@@ -91,15 +91,3 @@ int cast(object me, object target)
     return 3+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-【大力降魔杵】
-威力巨大的佛门法术。
-
-〖指令〗 cast bighammer
-
-HELP);
-    return 1;
-}
-

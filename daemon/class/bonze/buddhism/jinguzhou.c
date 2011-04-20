@@ -102,16 +102,3 @@ void free(object target)
         return;
 }
 
-int help(object me)
-{
-    write(@HELP
-【紧箍咒】
-使用紧箍咒、金箍咒或禁箍咒
-
-〖指令〗 cast jinguzhou on <target>
-〖要求〗 身上需要有紧箍咒、金箍咒或禁箍咒
-
-HELP);
-    return 1;
-}
-

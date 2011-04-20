@@ -48,13 +48,3 @@ int practice_skill(object me)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【八卦阵法】
-轻功，施展八仙大阵所必需。
-
-八卦：乾坎艮震巽离坤兑
-HELP);
-    return 1;
-}

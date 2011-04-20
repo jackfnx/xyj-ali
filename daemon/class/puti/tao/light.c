@@ -86,16 +86,3 @@ target->kill_ob(me);
         return 3+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-【苍灵箭】
-电母即司闪电之女神，又称闪电娘娘。姓赵名文英，貌秀雅，双
-手各持镜。言其能用符咒召役，以除妖匿。
-苍灵箭，用闪电攻击敌人。
-
-〖指令〗    cast light on <object>
-HELP
-    );
-    return 1;
-}

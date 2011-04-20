@@ -60,16 +60,3 @@ void free(object user, int howlong)
    message_vision(HIW"\n白光闪过之后，$N又现出了身形。\n\n"NOR, user);
    return;
 }
-
-int help(object me)
-{
-    write(@HELP
-【隐身术】
-顾名思义，隐身术。耗费法力甚巨。
-
-〖指令〗 cast yinshen
-〖要求〗 ２００级有效法术
-
-HELP);
-    return 1;
-}

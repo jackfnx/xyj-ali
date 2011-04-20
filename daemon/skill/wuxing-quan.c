@@ -75,12 +75,3 @@ int practice_skill(object me)
 
     return 1;
 }
-
-int help(object me)
-{
-    write(@HELP
-【五行拳】
-五行相生相克，五行拳中包含了宇宙的至理。
-HELP);
-    return 1;
-}

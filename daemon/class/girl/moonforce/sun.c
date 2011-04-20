@@ -13,7 +13,7 @@ int exert(object me, object target)
         || target==me)
         return notify_fail("ÄãÏëÌæË­½â³ýÊ´ÔÂÖä£¿\n");
     if (!target->query_condition("moon_poison"))
-        return notify_fail("Ã»ÖÐÊ´ÔÂÖäÏ¹½ÁºÍÊ²Ã´£!\n");
+        return notify_fail("Ã»ÖÐÊ´ÔÂÖäÏ¹½ÁºÍÊ²Ã´?\n");
     if (me->is_fighting() || target->is_fighting())
         return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË£¡\n");
     if ((int)me->query("force") - (int)me->query("max_force") <  600)
@@ -44,13 +44,3 @@ int exert(object me, object target)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-¡¾Ó³ÈÕÖä¡¿
-°ïÖú±ðÈË½â³ý¡ºÊ´ÔÂÖä¡»
-
-¡¼Ö¸Áî¡½    exert sun
-HELP);
-    return 1;
-}

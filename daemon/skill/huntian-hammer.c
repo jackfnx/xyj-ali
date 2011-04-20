@@ -94,15 +94,3 @@ int valid_effect(object me, object weapon, string name, int skill)
 {
 }
 
-int help(object me)
-{
-    write(@HELP
-【混天锤】
-其锤法直来直去，招招为实，势大力猛，招架抵挡
-甚为不易，一但碰上则伤害极大。但不足是不够轻
-盈。
-
-①  混天一破：    perform break
-HELP);
-    return 1;
-}

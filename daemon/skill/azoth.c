@@ -17,14 +17,3 @@ string exert_function_file(string func)
     return CLASS_D("xian") + "/azoth/" + func;
 }
 
-int help(object me)
-{
-    write(@HELP
-【内丹术】
-丹道，乃道家修身之基础，此术为世间显传，三界之内修习者无数。
-
-〖应用法门〗
-① 自疗    exert heal
-HELP);
-    return 1;
-}

@@ -133,18 +133,3 @@ string perform_action_file(string func)
 {
     return CLASS_D("ghost") + "/hellfire-whip/" + func;
 }
-
-int help(object me)
-{
-    write(@HELP
-【烈火鞭】
-烈火鞭善缠绕攻敌，一旦被卷入其攻击范围则极难幸免，
-且此鞭曲折转拐，来去无踪，要招架抵挡也甚为不易。
-特点是杀伤不大。
-
-〖特殊法门〗
-①  神·人·鬼：perform three on <target>
-②  六道轮回：perform six on <target>（设计中）
-HELP);
-    return 1;
-}

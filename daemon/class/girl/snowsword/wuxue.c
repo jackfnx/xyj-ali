@@ -61,13 +61,3 @@ void remove_effect(object me, int dodge_amount,int attack_amount)
 }
 
 
-int help(object me)
-{
-    write(@HELP
-¡¾ÎèÑ©¡¿
-Ñ©ÔÚÎè£¬½£ÔÚ·É¡£
-
-¡¼Ö¸Áî¡½    perform wuxue on <object>
-HELP);
-    return 1;
-}

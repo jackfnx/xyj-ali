@@ -86,12 +86,3 @@ int practice_skill(object me)
 int valid_effect(object me, object weapon, string name, int skill)
 {
 }
-
-int help(object me)
-{
-    write(@HELP
-【九宫锤法】
-此锤法极为威猛，非身强力壮者不能修习。
-HELP);
-    return 1;
-}

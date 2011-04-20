@@ -78,15 +78,3 @@ int cast(object me, object target)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【蚀月】
-月宫特有的一种诅咒。
-
-〖指令〗    cast shiyue on <object>
-〖要求〗    基本法术１２０级，太阴仙诀８０级，晚上
-HELP);
-    return 1;
-}
-

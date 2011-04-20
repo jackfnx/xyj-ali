@@ -156,14 +156,3 @@ int black_white_ness()
         return 0;
 }
 
-int help(object me)
-{
-    write(@HELP
-〖龙蛇合击〗
-男子如龙，佼佼天行；女子如蛇，在地奉迎。
-
-〖指令〗    perform longshe
-HELP);
-    return 1;
-}
-

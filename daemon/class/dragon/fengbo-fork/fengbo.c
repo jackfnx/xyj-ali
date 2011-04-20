@@ -75,14 +75,3 @@ int perform(object me, object target)
     return 1;
 } 
 
-int help(object me)
-{
-    write(@HELP
-〖无尽风波〗
-无尽风波，可以击落对方的兵器
-
-〖指令〗    perform fengbo
-HELP);
-    return 1;
-}
-

@@ -85,15 +85,3 @@ int practice_skill(object me)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【菩提指】
-这套指法为菩提祖师所创，似乎与劫难指有某种关系。但是正如菩提
-祖师的身份一样，这件事也隐藏在浓雾里，没什么人能说得清。
-
-〖特殊攻击〗
-①  无
-HELP);
-    return 1;
-}

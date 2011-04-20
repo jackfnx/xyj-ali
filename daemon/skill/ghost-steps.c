@@ -37,14 +37,3 @@ int practice_skill(object me)
     me->receive_damage("kee", 30);
     return 1;
 }
-
-
-int help(object me)
-{
-    write(@HELP
-【鬼影迷踪】
-躲避可以说是鬼的本能，这套轻功更是把鬼族的这一优点发挥到了极致。
-
-HELP);
-    return 1;
-}

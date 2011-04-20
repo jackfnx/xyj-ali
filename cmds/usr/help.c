@@ -48,49 +48,6 @@ int main(object me, string arg)
             return 1;
         }
     }
-   
-    if (sscanf(arg, "%s.%s", verb, arg) == 2) {
-        if (verb == "skill") {
-            string skill_file;
-            object skill_ob;
-            notify_fail("这个技能没有定义帮助。\n");
-            if (stringp(skill_file = SKILL_D(arg))
-                && objectp(skill_ob = load_object(skill_file)))
-                return (int)call_other(skill_ob, "help", me);
-            else
-                return notify_fail("没有这个技能。\n");;
-        }
-        else if (verb == "perform" || verb == "exert" || verb == "cast") {
-            if (sscanf(arg, "%s.%s", skill, arg) == 2) {
-                string func, pfm_file;
-                object pfm_ob;
-                switch (verb) {
-                    case "perform":
-                        func = "perform_action_file";
-                        break;
-                    case "exert":
-                        func = "exert_function_file";
-                        break;
-                    case "cast":
-                        func = "cast_spell_file";
-                        break;
-                    default: // can't reach
-                        func = "foo";
-                        break;
-                }
-                notify_fail("这个" + verb + "没有定义帮助。\n");
-                if (stringp(pfm_file = call_other(SKILL_D(skill), func, arg))
-                    && objectp(pfm_ob = load_object(pfm_file)))
-                    return (int)call_other(pfm_ob, "help", me);
-                else
-                    return notify_fail("没有这个" + verb + "。\n");
-            }
-            else
-                return notify_fail("格式：help [perform|exert|cast].<技能>.<特殊攻击>\n");
-        }
-        else
-            return notify_fail("格式：help skill.<技能> | [perform|exert|cast].<技能>.<特殊攻击>\n");
-    }
 
     // Support efun/lfun help with same name as other topics such as
     // ed() and ed command.

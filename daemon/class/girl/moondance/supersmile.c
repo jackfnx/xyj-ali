@@ -61,13 +61,3 @@ int exert(object me, object target)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【销魂一笑】
-销魂一笑，英雄尽折腰。
-
-〖指令〗    perform supersmile on <object>
-HELP);
-    return 1;
-}

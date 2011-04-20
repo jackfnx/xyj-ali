@@ -43,14 +43,3 @@ int practice_skill(object me)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【莲华步法】
-        无尽碧莲  重重叠叠  
-        映日荷花  亭亭玉立
-        雨露滚莲  出淤泥而不染
-
-HELP);
-    return 1;
-}

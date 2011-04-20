@@ -94,13 +94,3 @@ void free(object target)
         return;
 }
 
-int help(object me)
-{
-    write(@HELP
-〖雪舞风灵〗
-可以瞬时间使天降大雪攻击敌人，若成功的话可将敌人暂时冻住。
-
-〖指令〗 cast freez
-HELP);
-    return 1;
-}

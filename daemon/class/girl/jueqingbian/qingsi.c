@@ -103,14 +103,3 @@ int perform(object me, object target)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【情丝】
-情丝绵绵，夺人兵器。
-
-〖指令〗    perform qingsi on <object>
-HELP);
-    return 1;
-}
-

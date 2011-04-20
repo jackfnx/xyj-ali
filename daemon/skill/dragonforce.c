@@ -44,16 +44,3 @@ int practice_skill(object me)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【龙神心法】
-龙神心法为龙族专属心法，非龙族不能习练。
-
-①  自疗：      exert heal
-②  真龙战体：  exert shield
-③  碧海龙吟：  exert roar
-HELP);
-    return 1;
-}
-

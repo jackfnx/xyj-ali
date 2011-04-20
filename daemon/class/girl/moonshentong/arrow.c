@@ -98,13 +98,3 @@ int cast(object me, object target)
 }
 
 
-int help(object me)
-{
-    write(@HELP
-【落日神箭】
-激引太阴之力，凝聚成一支落日神箭，打击敌人。
-
-〖指令〗    cast arrow on <object>
-HELP);
-    return 1;
-}

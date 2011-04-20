@@ -55,14 +55,3 @@ int perform(object me, object target)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-〖混天一破〗
-混天一破，可以击破对方的兵器
-
-〖指令〗    perform break
-HELP);
-    return 1;
-}
-

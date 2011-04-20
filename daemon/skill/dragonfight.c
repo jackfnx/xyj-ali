@@ -109,13 +109,3 @@ int practice_skill(object me)
     return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【龙形搏击】
-龙形搏击为龙族专属战斗技，非龙族不能习练。
-
-①  龙蛇合击：    perform longshe
-HELP);
-    return 1;
-}

@@ -57,19 +57,3 @@ int cast(object me, object target)
   
   return 1;
 }
-int help(object me)
-{
-write(@HELP
-指令格式 : cast chuqiao
- 
-这个指令可以让你灵魂出壳，你的魂魄则会到地狱中。
-
-使用这个指令是会相当的危险，因为这时你的魂魄在地狱中会受到各
-方面的威胁，另一方面，你的真身在阳间也会处与无保护状态，若有
-人杀里你的真身，你便会成为一个无身可归的孤魂野鬼。
-
-HELP
-    );
-    return 1;
-}
-

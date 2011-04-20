@@ -87,18 +87,3 @@ target->kill_ob(me);
         return 3+random(5);
 }
 
-int help(object me)
-{
-    write(@HELP
-【五雷咒】
-雷公有兄弟五人，是谓五雷。五雷即天雷，地雷，水雷，神雷，
-社雷。其形为犬首，鬼形，白项，鹰鼻，左手持斧，右手持锥，
-运连鼓于火中，威震天下。民间则称雷公能击妖孽及大逆不孝
-之人。
-五雷咒，用雷声惊扰敌人心神。
-
-〖指令〗    cast thunder on <object>
-HELP
-    );
-    return 1;
-}

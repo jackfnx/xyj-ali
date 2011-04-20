@@ -42,14 +42,3 @@ int practice_skill(object me)
    return 1;
 }
 
-int help(object me)
-{
-    write(@HELP
-【腾云术】
-踏云步  流云步  穿云步  翻云式  追云式  倒骑云
-
-〖应用法门〗
-①  筋斗云     perform somersault(未实现)
-HELP);
-    return 1;
-}

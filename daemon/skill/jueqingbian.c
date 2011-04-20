@@ -170,25 +170,3 @@ string perform_action_file(string action)
     return CLASS_D("girl") + "/jueqingbian/" + action;
 }
 
-int help(object me)
-{
-    write(@HELP
-【绝情鞭】
-绝情鞭乃痴梦所创，鞭法缠绵如丝，如情爱般挥之不去，躲之不得，
-直叫生死相许。
-神奇的是，痴梦创出这套鞭法时竟只有十二岁，其时痴梦刚刚学武没
-多久，为何能创出如此高深的武学，到现在也一直是一个谜。据西王
-母推测，这套鞭法乃是痴梦前世所创，与痴梦前世的一段恋情有关，
-因这段恋情过于刻骨铭心，以至今生也未曾忘记。
-
-招数名称：
-天地双飞  几回寒暑  君应有语  只影向谁
-万里层云  千山暮雪  寂寞箫鼓  荒烟平楚
-莺燕黄土  千秋万古  情是何物  生死相许
-
-〖特殊法门〗
-①  情丝：      perform qingsi on <object>
-②  情网：      perform qingwang on <object>(未实现)
-HELP);
-    return 1;
-}

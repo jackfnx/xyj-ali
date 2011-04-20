@@ -237,19 +237,3 @@ string query_parry_msg(object weapon)
         return action[8+random(4)]["parry_msg"];
     return action[random(sizeof(action))]["parry_msg"];
 }
-
-int help(object me)
-{
-    write(@HELP
-【风波十二叉】
-昔人已乘黄鹤去，此地空余黄鹤楼
-黄鹤一去不复返，白云千载空悠悠
-晴川沥沥汉阳树，芳草凄凄鹦鹉洲
-日暮乡关何处去，烟波江上使人愁
-江上往来人，但爱鲈鱼美
-君看一叶舟，出没风波里
-
-①  无尽风波：    perform fengbo
-HELP);
-    return 1;
-}

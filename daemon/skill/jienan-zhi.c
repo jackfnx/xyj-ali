@@ -90,15 +90,3 @@ string perform_action_file(string func)
     return CLASS_D("bonze") + "/jienan-zhi/" + func;
 }
 
-int help(object me)
-{
-    write(@HELP
-【劫难指】
-佛门武功，威力无穷
-
-〖特殊攻击〗
-①　暴风骤雨：perform storm on <target>
-
-HELP);
-    return 1;
-}

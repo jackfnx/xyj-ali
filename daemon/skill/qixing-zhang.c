@@ -89,14 +89,3 @@ int practice_skill(object me)
 int valid_effect(object me, object weapon, string name, int skill)
 {
 }
-
-int help(object me)
-{
-    write(@HELP
-【七星杖法】
-此杖法的精髓其实不是手中的杖法，而是脚下的步法。
-
-七星：天枢、天璇、天玑、天权、玉衡、开阳、摇光
-HELP);
-    return 1;
-}

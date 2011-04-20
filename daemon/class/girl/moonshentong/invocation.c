@@ -46,16 +46,3 @@ environment(me));
 }
 
 
-int help(object me)
-{
-    write(@HELP
-【天兵护法】
-召唤天兵相助。
-
-〖指令〗    cast invocation on <object>
-HELP);
-    return 1;
-}
-
-
-

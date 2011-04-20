@@ -94,14 +94,3 @@ void free(object target)
    return;
 }
 
-int help(object me)
-{
-    write(@HELP
-【定身法】
-顾名思义，定身法。
-
-〖指令〗    cast dingshen on <object>
-HELP
-    );
-    return 1;
-}

@@ -83,15 +83,3 @@ void free(object target)
     }
 }
 
-int help(object me)
-{
-    write(@HELP
-【迷魂】
-施展你的魅力，迷住敌人。
-
-〖指令〗    cast mihun on <object>
-〖要求〗    基本法术１００级，太阴仙诀６０级
-HELP);
-    return 1;
-}
-

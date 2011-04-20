@@ -100,14 +100,3 @@ int valid_effect(object me, object weapon, string name, int skill)
 {
 }
 
-int help(object me)
-{
-    write(@HELP
-【轮回杖】
-佛门看家武功，用意于以杀止杀，杖沉力猛，杀伤不弱。
-        再堕轮回        大限将至        回头是岸
-        天网恢恢        报应不爽        在劫难逃
-
-HELP);
-    return 1;
-}
