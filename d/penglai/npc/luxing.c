@@ -47,14 +47,14 @@ void create()
     set_skill("sword",110);
     set_skill("sanqing-jian",120);
     set_skill("hammer", 110);
-    set_skill("jiugong-chui", 120);
+    set_skill("kaishan-chui", 120);
     
     map_skill("spells", "taiyi");
     map_skill("force", "zhenyuan-force");
     map_skill("dodge", "baguazhen");
     map_skill("unarmed", "wuxing-quan");
     map_skill("sword", "sanqing-jian");
-    map_skill("hammer", "jiugong-chui");
+    map_skill("hammer", "kaishan-chui");
     
     set("inquiry", ([
             "火枣"     : "我没那玩意，去问问老福星吧！\n",
