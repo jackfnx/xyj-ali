@@ -26,8 +26,6 @@ LONG);
     set("class", "yaomo");
     set("combat_exp", 1000000);
     set("attitude", "heroic");
-    create_family("轩辕古墓", 1, "祖师");
-    set("second_family_name", "月宫");
     set("per", 50);
     set("int", 30+random(10));
     set("cor", 25+random(5));
@@ -72,6 +70,7 @@ LONG);
         "月宫": "如今的月宫已完全落入吾手，若有月宫弟子愿意投入本座的门下，本座也愿意收徒。",
        ]));
     create_family("轩辕古墓", 1, "女王");
+    set("second_family_name", "月宫");
     setup();
     carry_object("/d/obj/weapon/sword/fire_sword")->wield();
     carry_object("/d/obj/cloth/huqiu")->wear();

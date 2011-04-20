@@ -12,8 +12,8 @@ varargs void more(string cmd, string *text, int line, int force)
     switch(cmd) {
         case "b":
             line = line - 46;
-            if (line <- 22 && !force) return;
-                write("\n"+ESC+"[1A"+ESC+"[100D"+ESC+"[K\n"+repeat_string("-",100)+"\n");
+            if (line < -22 && !force) return;
+            write("\n"+ESC+"[1A"+ESC+"[100D"+ESC+"[K\n"+repeat_string("-",100)+"\n");
             for (i = line + 23; line < i; line++)
                 write(text[line] + "\n");
             break;
@@ -40,5 +40,6 @@ varargs void start_more(string msg, int force)
         return;
     //11/13/97 try to prevent crash by mon.
 
+    write("\n");
     more("", explode(msg, "\n"), 0, force);
 }
