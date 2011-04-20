@@ -16,7 +16,7 @@ int valid_learn(object me)
 
 string cast_spell_file(string spell)
 {
-    return CLASS_D("xian") + "/taiyi/" + spell;
+    return CLASS_D("daxian") + "/taiyi/" + spell;
 }
 
 int help(object me)
@@ -26,7 +26,8 @@ int help(object me)
 太乙仙法，乃镇元大仙与一群朋友共创而成，在三界内流传甚广。
 
 〖应用法门〗
-① 自疗    exert heal
+①  乾坤大袖     cast qiankun
+②  太乙真火     cast zhenhuo
 HELP);
     return 1;
 }

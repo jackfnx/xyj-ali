@@ -21,7 +21,7 @@ int practice_skill(object me)
 
 string exert_function_file(string func)
 {
-    return CLASS_D("zhenyuan") + "/zhenyuan-force/" + func;
+    return CLASS_D("daxian") + "/zhenyuan-force/" + func;
 }
 
 int help(object me)

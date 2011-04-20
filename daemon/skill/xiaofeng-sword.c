@@ -99,39 +99,58 @@ mapping *action = ({
 });
 int valid_learn(object me)
 {
-   object ob;
+    object ob;
 
-   if( (int)me->query("max_force") < 50 )
-     return notify_fail("你的内力修为不够深，晓风残月剑学了也没用。\n");
-   if (!(ob = me->query_temp("weapon"))
-      || (string)ob->query("skill_type") != "sword" )
-     return notify_fail("你必须先找一柄剑才能练习剑法。\n");
-   return 1;
+    if ((int)me->query("max_force") < 50)
+        return notify_fail("你的内力修为不够深，晓风残月剑学了也没用。\n");
+    if (!(ob = me->query_temp("weapon"))
+    ||  (string)ob->query("skill_type") != "sword")
+        return notify_fail("你必须先找一柄剑才能练习剑法。\n");
+    return 1;
 }
 
 int practice_skill(object me)
 {
-   int dod=(int)me->query_skill("dodge");
-   int swo=(int)me->query_skill("xiaofeng-sword");
+   int dod = (int)me->query_skill("dodge");
+   int swo = (int)me->query_skill("xiaofeng-sword");
 
-   if (dod<swo/2)
-     return notify_fail("你的身法跟不上剑法，练下去很可能会伤到自己。\n");
-   if ((int)me->query("kee") < 30)
-     return notify_fail("你体质欠佳，强练晓风残月风剑有害无益。\n");
-   if ((int)me->query("force") < 5)
-     return notify_fail("你内力不足，强练晓风残月风剑有走火入魔的危险。\n");
-   me->receive_damage("kee", 30);
-   me->add("force", -5);
-   message_vision("$N默默回忆了一会儿，然后练了一遍晓风残月剑。\n", me);
-   return 1;
+    if (dod < swo / 2)
+        return notify_fail("你的身法跟不上剑法，练下去很可能会伤到自己。\n");
+    if ((int)me->query("kee") < 30)
+        return notify_fail("你体质欠佳，强练晓风残月风剑有害无益。\n");
+    if ((int)me->query("force") < 5)
+        return notify_fail("你内力不足，强练晓风残月风剑有走火入魔的危险。\n");
+    me->receive_damage("kee", 30);
+    me->add("force", -5);
+    message_vision("$N默默回忆了一会儿，然后练了一遍晓风残月剑。\n", me);
+    return 1;
 }
 
 int valid_enable(string usage)
 {
-   return usage=="sword"||usage=="parry";
+    return usage=="sword"||usage=="parry";
 }
 
 mapping query_action(object me, object weapon)
 {
-   return action[random(sizeof(action))];
+    return action[random(sizeof(action))];
+}
+
+int help(object me)
+{
+    write(@HELP
+【晓风残月剑】
+此剑法乃纯阳祖师吕洞宾所创。这吕洞宾乃是三界有名
+的风流神仙，风流韵事无数。这晓风残月剑传说就是他
+为了追求嫦娥，特意为了和嫦娥的风回雪舞剑双剑相合
+而特意创出来的。当然，这段风流往事的结果就不足为
+外人道也了。
+此剑法用意高妙，轻巧潇洒，剑中颇含诗意，多为江湖
+年少所喜。
+
+    皓月当空，水银泄地，花明月暗，清雨朦胧
+    飞花似梦，丝雨如愁，潇湘夜雨，月白风清
+    金波低转
+HELP);
+    return 1;
 }

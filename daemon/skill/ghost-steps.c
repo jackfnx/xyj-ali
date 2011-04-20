@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// ghost-dodge.c 鬼影迷踪步法
+// ghost-steps.c 鬼影迷踪
 #include <ansi.h>
 
 inherit SKILL;
@@ -27,14 +27,24 @@ int valid_learn(object me) { return 1; }
 
 string query_dodge_msg(string limb)
 {
-        return dodge_msg[random(sizeof(dodge_msg))];
+    return dodge_msg[random(sizeof(dodge_msg))];
 }
 
 int practice_skill(object me)
 {
-        if ((int)me->query("kee") < 40)
-                return notify_fail("你的体力太差了，不能练鬼影迷踪。\n");
-        me->receive_damage("kee", 30);
-        return 1;
+    if ((int)me->query("kee") < 40)
+        return notify_fail("你的体力太差了，不能练鬼影迷踪。\n");
+    me->receive_damage("kee", 30);
+    return 1;
 }
 
+
+int help(object me)
+{
+    write(@HELP
+【鬼影迷踪】
+躲避可以说是鬼的本能，这套轻功更是把鬼族的这一优点发挥到了极致。
+
+HELP);
+    return 1;
+}

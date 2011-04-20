@@ -26,7 +26,7 @@ int cast(object me, object target)
 			message_vision(HIC"$N口中喷出一股黑风，整个人也随着黑风散去。。。\n"NOR, me);
 			me->move("/d/death/gate");
 			tell_room(environment(me),
-HIC"一阵阴风过后，隐约现出"+me->query("name")+"的影子。\n"NOR, ({me, me}) );
+HIC"一阵阴风过后，隐约现出"+me->query("name")+"的影子。\n\n"NOR, ({me, me}) );
 
 		} else {
 			message_vision(HIC"$N转身想跑，却被$n一个箭步拦住。\n"NOR, me, target);
@@ -36,7 +36,7 @@ HIC"一阵阴风过后，隐约现出"+me->query("name")+"的影子。\n"NOR, ({me, me}) );
 		message_vision(HIC"$N口中喷出一股黑风，整个人也随着黑风散去。。。\n"NOR, me);
 		me->move("/d/death/gate");
                 tell_room(environment(me),
-HIC"一阵阴风过后，隐约现出"+me->query("name")+"的影子。\n"NOR, ({me, me}) );
+HIC"一阵阴风过后，隐约现出"+me->query("name")+"的影子。\n\n"NOR, ({me, me}) );
 
 	}
 

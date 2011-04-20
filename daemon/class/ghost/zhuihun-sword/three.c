@@ -50,17 +50,18 @@ int perform(object me, object target)
 
 	me->delete("env/brief_message");
 	target->delete("env/brief_message");
-        if (!present(target,environment(me))) return 1;
+
+	if (!present(target,environment(me))) return 1;
 	message_vision("\n$N双手划一大圆，猛然托天而举，伴着天上雷鸣电闪，祭出了「神·人·鬼」三招。\n", me);
     me->set("HellZhen", 7);
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	
 
-        if (!present(target,environment(me))) return 1;
+	if (!present(target,environment(me))) return 1;
 	me->set("HellZhen", 6);
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon")); 
 
-        if (!present(target,environment(me))) return 1;
+	if (!present(target,environment(me))) return 1;
 	me->set("HellZhen", 1);
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 

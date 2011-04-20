@@ -19,15 +19,3 @@ string cast_spell_file(string spell)
 {
     return CLASS_D("ghost") + "/necromancy/" + spell;
 }
-
-int help(object me)
-{
-    write(@HELP
-【勾魂术】
-鬼乃阴神，有灵有能。鬼即魂，所以能『摄魂』。
-
-小鬼勾魂：cast gouhun
-幽冥升天：cast miwu
-HELP);
-    return 1;
-}
