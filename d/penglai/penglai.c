@@ -6,38 +6,33 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÅîÀ³ÏÉµº");
-  set ("long", @LONG
+    set ("short", "ÅîÀ³ÏÉµº");
+    set ("long", @LONG
 
 ÅîÀ³µºÉÏ·ç¹âĞãÀö£¬µ±ÕæÊÇºÃÈ¥´¦£¡Ô¶Íûº£ÖĞ£¬±Ì²¨Èç¾µ£¬¸ßÉ½Ö®
 ÉÏ£¬Î¡¶ëÊÆËÊ¡£É½¼äÉÙÎÅÈËÓïÉù£¬µ«ÌıÔ³Ìäº×Ãù¡£¼¸Ê÷ÇÇËÉÆÜÒ°º×£¬
 ÊıÖê´äÁøÓïÉ½İº¡£Çú¾¶±ÌÂÜ´¹¹Ò£¬Ê¯ÌİÅî¸ğÅÊÁı¡£Ô¶É½¼û°×ÔÆ³öÓÔ£¬
 ½üÏÖ»¨É«ÈØÈØ¡£
 LONG);
-  set("exits", ([ /* sizeof() == 3 */
-		"northup" : __DIR__"undertree",
-		"southup" : __DIR__"hongyandong",
-]));
-   set("outdoors", 1);
-  setup();
+    set("exits", ([ /* sizeof() == 3 */
+            "northup" : __DIR__"undertree",
+            "southup" : __DIR__"hongyandong",
+    ));
+    set("outdoors", 1);
+    setup();
 }
+
 int valid_leave(object me, string dir)
-{       
-   object room;
+{
+    object room;
 
-   if (dir=="northup"){
-   
-//     if( !(room=find_object(__DIR__"yashang")))
-//     room=load_object(__DIR__"yashang");
-
-     if( room=load_object(__DIR__"yashang")) {
-        if( (int)room->query("grow_grass") ) {
-        return ::valid_leave(me, dir);
+    if (dir == "northup") {
+        if (room = load_object(__DIR__"yashang")) {
+            if (!(int)room->query("grow_grass")) {
+                room->grass_grow();
+                room->set("grow_grass",1);
+            }
         }
-        room->grass_grow();
-        room->set("grow_grass",1);
-     }
-   return ::valid_leave(me, dir);
-   }
-   return 1;
+    }
+    return ::valid_leave(me, dir);
 }
