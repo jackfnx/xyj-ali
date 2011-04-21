@@ -4,7 +4,7 @@
 
 #include <ansi.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
 
 int perform(object me, object target)
 {

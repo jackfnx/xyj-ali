@@ -82,7 +82,6 @@
 #define POWDER        "/std/medicine/powder"
 #define ROOM        "/std/room"
 #define SKILL        "/std/skill"
-#define SSERVER        "/std/sserver"
 
 // User IDs
 
@@ -118,6 +117,7 @@
 #define F_SAVE        "/feature/save.c"
 #define F_BACKUP     "/feature/backup.c"
 #define F_SKILL        "/feature/skill.c"
+#define F_SSERVER        "/feature/sserver"
 #define F_TEAM        "/feature/team.c"
 #define F_TREEMAP     "/feature/treemap.c"
 #define F_UNIQUE     "/feature/unique.c"

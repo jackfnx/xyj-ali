@@ -5,7 +5,7 @@
 
 #include <ansi.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
 
 int exert(object me, object target)
 {

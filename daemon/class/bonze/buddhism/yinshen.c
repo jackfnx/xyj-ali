@@ -3,7 +3,7 @@
  
 // yinshen.c ÒşÉíÊõ
 
-inherit SSERVER;
+inherit F_SSERVER;
 #include <ansi.h>
 
 

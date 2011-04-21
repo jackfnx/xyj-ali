@@ -3,7 +3,7 @@
  
 // refresh.c
 
-inherit SSERVER;
+inherit F_SSERVER;
 
 int exert(object me, object target)
 {

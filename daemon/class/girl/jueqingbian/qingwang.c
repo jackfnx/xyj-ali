@@ -2,7 +2,7 @@
 
 #include <ansi.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
 
 void free(object target);
 

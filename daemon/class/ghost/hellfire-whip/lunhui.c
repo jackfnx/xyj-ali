@@ -5,7 +5,7 @@
 #include <ansi.h>
  
 inherit F_DBASE;
-inherit SSERVER;
+inherit F_SSERVER;
  
 void delay_effect(object me, object target, object weapon,int power);
  

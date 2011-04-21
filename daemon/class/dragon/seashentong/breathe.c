@@ -3,7 +3,7 @@
  
 #include <ansi.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
 
 int cast(object me, object target)
 {

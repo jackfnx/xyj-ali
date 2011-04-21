@@ -2,7 +2,7 @@
 /* <SecCrypt CPL V3R05> */
  
 // Ê´ÔÂÖä
-inherit SSERVER;
+inherit F_SSERVER;
 #include <ansi.h>
 
 int cast(object me, object target)

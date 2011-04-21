@@ -5,7 +5,7 @@
 #include <weapon.h>
 #include <combat.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
 
 //int valid_enable(string usage) { return usage=="array"; }
 

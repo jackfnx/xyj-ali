@@ -1,7 +1,7 @@
 // ªÿ√Œ
 // requirement: spells 180,moonshentong 120, mana 400, sen 20
 
-inherit SSERVER;
+inherit F_SSERVER;
 #include <ansi.h>
 
 int cast(object me, object target)

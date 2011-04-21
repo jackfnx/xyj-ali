@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
 int check_damage(object me, object target, int time);
 int generate_msg(object me);
 

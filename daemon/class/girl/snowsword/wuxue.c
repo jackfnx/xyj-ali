@@ -4,7 +4,7 @@
 
 #include <ansi.h>
 
-inherit SSERVER;
+inherit F_SSERVER;
  
 void remove_effect(object me, object target, int amount);
  
