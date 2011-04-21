@@ -4,13 +4,15 @@
 //【混天锤】
 
 /*
-  dodge  15    parry  -15    damage  30
+混天锤  dodge  15    parry  -15    damage  30
 其锤法直来直去，招招为实，势大力猛，招架抵挡
 甚为不易，一但碰上则伤害极大。但不足是不够轻
 盈。
 */
 
 inherit SKILL;
+
+string name() { return "混天锤"; }
 
 mapping *action = ({
    ([   "action":   "$N手中$w一转，卷着一股强劲的风力挥向$n的$l，

@@ -4,3 +4,5 @@
 // rake.c
 
 inherit SKILL;
+
+string name() { return "»ù±¾°Ò·¨"; }

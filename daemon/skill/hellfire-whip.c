@@ -16,6 +16,8 @@ Attention: 烈火鞭只有前六招，而第七，八两招是苦丧棒
 
 inherit SKILL;
 
+string name() { return "烈火鞭"; }
+
 mapping *action = ({
         ([      "name":                 "地狱烈火",
                 "action":

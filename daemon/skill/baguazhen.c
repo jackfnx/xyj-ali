@@ -8,6 +8,8 @@
 
 inherit SKILL;
 
+string name() { return "八卦阵法"; }
+
 string *dodge_msg = ({
     "$n侧身一退，踏入左面的乾门，恰巧躲过了$N这一招。\n",
     "可是$n身形一晃，突然之间转到了坤门，出现在$N的身后。\n",

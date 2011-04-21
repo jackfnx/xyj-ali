@@ -7,6 +7,8 @@
 
 inherit SKILL;
 
+string name() { return "内功心法"; }
+
 int valid_learn(object me) { return 1; }
 
 string exert_function_file(string func)

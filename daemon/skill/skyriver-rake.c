@@ -4,7 +4,7 @@
 // skyriver.c 【天河钯法】 by snowcat
 
 /*
-天河法    dodge  -30    parry  -15    damage  25
+天河钯法    dodge  -30    parry  -15    damage  25
 此钯为天蓬水神－－猪八戒所创。与其攻守之术相比，其招架
 之力略胜一筹。
 */
@@ -14,6 +14,8 @@
 // 酒醉意沉  东撒西泼
 // 逞雄广寒  戏耍嫦娥
 inherit SKILL;
+
+string name() { return "天河钯法"; }
 
 mapping *action = ({
    ([   "action":

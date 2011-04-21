@@ -5,8 +5,8 @@
 // edited 4-16-97 pickle
 
 /*
-七修剑法    dodge  5    parry  -10    damage  25
-七修剑法为拼命剑法，只求伤敌，不顾自身安危，故其
+七修剑    dodge  5    parry  -10    damage  25
+七修剑为拼命剑法，只求伤敌，不顾自身安危，故其
 突防之力颇强。然则往往乱打一气，敌已逃而不觉。
 */
 
@@ -14,7 +14,11 @@
 // 八方风雨，九死一生，十面埋伏
 
 inherit SKILL;
+
 void set_busy();
+
+string name() { return "七修剑"; }
+
 mapping *action = ({
     ([
       "action":

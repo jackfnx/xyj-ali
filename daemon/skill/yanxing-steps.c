@@ -3,6 +3,8 @@
  
 inherit SKILL;
 
+string name() { return "雁行步法"; }
+
 string *dodge_msg = ({
         "$n一招「鸿雁双飞」，身影微动，避了开去。\n",
    "$n左足一点，一招「边秋飞雁」腾空而起，避了开去。\n",

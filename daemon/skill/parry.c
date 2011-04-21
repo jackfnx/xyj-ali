@@ -5,6 +5,8 @@
 
 inherit SKILL;
 
+string name() { return "拆招卸力之法"; }
+
 string *parry_msg = ({
    "只听见「锵」一声，被$p格开了。\n",
    "结果「当」地一声被$p挡开了。\n",

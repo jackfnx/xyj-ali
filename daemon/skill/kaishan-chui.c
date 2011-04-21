@@ -1,13 +1,14 @@
 
 //【开山锤】kaishan-chui.c, weiqi...980307
-inherit SKILL;
-
 /*
 开山锤    dodge  7    parry  -7    damage  27
 五庄观功夫。
 */
+inherit SKILL;
 
 void hitagain(object,object,object,int);
+
+string name() { return "开山锤"; }
 
 mapping *action = ({
         ([      "action":               "$N哪管三七二十一，举起$w朝着$n当头就是一家伙",

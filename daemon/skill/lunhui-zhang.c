@@ -9,6 +9,8 @@ inherit SKILL;
 佛门看家武功，用意于以杀止杀，杖沉力猛，杀伤不弱。
 */
 
+string name() { return "轮回杖"; }
+
 mapping *action = ({
         ([      "name":                 "报应不爽",
                 "action":

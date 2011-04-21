@@ -4,6 +4,8 @@
 // taiyi.c ¡¾Ì«ÒÒÏÉ·¨¡¿
 inherit SKILL;
 
+string name() { return "Ì«ÒÒÏÉ·¨"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)

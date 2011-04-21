@@ -7,6 +7,8 @@
 
 inherit SKILL;
 
+string name() { return "¶ÁÊéÊ¶×Ö"; }
+
 string type() { return "knowledge"; }
 
 

@@ -10,6 +10,8 @@
 // Ñô£ºÅü£¬¿³£¬´Ì£¬ÆË (dodge: -5, parry: -5, damage 20)
 inherit SKILL;
 
+string name() { return "Á½ÒÇ½£·¨"; }
+
 mapping *action = ({
 	([	"name":			"»Ã",
 		"action":

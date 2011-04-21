@@ -5,6 +5,8 @@
 
 inherit SKILL;
 
+string name() { return "冷月凝香舞"; }
+
 mapping *action = ({
     ([   "action":     "$N面色冷峻，如冰雪女神，背后更隐隐升起了一轮明月的虚影，\n「海上生明月」，竟是这一道『冷月凝香舞』中极富盛名的杀招",
      "dodge":     -5,

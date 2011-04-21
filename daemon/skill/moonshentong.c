@@ -4,6 +4,8 @@
 // moonshentong.c ¡¾Ì«ÒõÏÉ¾÷¡¿
 inherit SKILL;
 
+string name() { return "Ì«ÒõÏÉ¾÷"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)

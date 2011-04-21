@@ -21,6 +21,8 @@
 
 inherit SKILL;
 
+string name() { return "风波十二叉"; }
+
 mapping *action = ({
         ([      "name":                 "「昔人已乘黄鹤去」",
                 "action":

@@ -4,6 +4,8 @@
 // moonforce.c  【太阴心经】
 inherit FORCE;
 
+string name() { return "太阴心经"; }
+
 int valid_enable(string usage) { return usage=="force"; }
 
 int valid_learn(object me) { return 1; }

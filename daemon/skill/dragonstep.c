@@ -1,10 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//【龙形步法】 dragonstep.c
+//【龙形身法】 dragonstep.c
 // cglaem...12/19/96.
 
 inherit SKILL;
+
+string name() { return "龙形身法"; }
 
 string *dodge_msg = ({
             "但是$n身形一晃，从$N身边轻轻滑过。\n",
@@ -19,7 +21,7 @@ int valid_enable(string usage) { return (usage=="dodge"); }
 int valid_learn(object me)
 {
     if (me->query("class") != "dragon")
-        return notify_fail("你非龙族怎能学龙形步法？\n");
+        return notify_fail("你非龙族怎能学龙形身法？\n");
     return 1;
 }
 
@@ -31,10 +33,10 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
     if (me->query("class") != "dragon")
-        return notify_fail("你非龙族怎能练龙形步法？\n");
+        return notify_fail("你非龙族怎能练龙形身法？\n");
     if ((int)me->query("kee") < 30
     ||   (int)me->query("force") < 3 )
-        return notify_fail("你的气或内力不够，不能练龙形步法。\n");
+        return notify_fail("你的气或内力不够，不能练龙形身法。\n");
     me->receive_damage("kee", 30);
     me->add("force", -3);
     return 1;

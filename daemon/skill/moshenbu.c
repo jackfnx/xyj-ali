@@ -5,6 +5,8 @@
 
 inherit SKILL;
 
+string name() { return "魔神步法"; }
+
 string *dodge_msg = ({
    "$n不退反进，向前踏出一步，逼得$N中途撤招。\n",
    "$n左跨一步，右跨一步，一时间身影似乎变成了三个，把$N晃得眼花缭乱。\n",

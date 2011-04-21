@@ -13,6 +13,8 @@
 
 inherit SKILL;
 
+string name() { return "三清剑法"; }
+
 mapping *action = ({
    ([   "action":     "$N使出一招「星河影动」，剑光闪烁不定，若有若无地刺向$n$l",
      "dodge":     0,

@@ -5,6 +5,7 @@
 
 inherit SKILL;
 
+string name() { return "基本法术"; }
 
 string cast_spell_file(string spell)
 {

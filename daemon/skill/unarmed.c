@@ -7,4 +7,4 @@
 
 inherit SKILL;
 
-
+string name() { return "ÆË»÷¸ñ¶·Ö®¼¼"; }

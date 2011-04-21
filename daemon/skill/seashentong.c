@@ -4,6 +4,8 @@
 // seashentong.c 【碧海神通】
 inherit SKILL;
 
+string name() { return "碧海神通"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)

@@ -10,6 +10,9 @@
 因这段恋情过于刻骨铭心，以至今生也未曾忘记。
 */
 inherit SKILL;
+
+string name() { return "绝情鞭"; }
+
 mapping *action =
 ({
 ([

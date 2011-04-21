@@ -4,6 +4,8 @@
 // zhenyuan-force.c  【镇元神功】
 inherit FORCE;
 
+string name() { return "镇元神功"; }
+
 int valid_enable(string usage) { return usage=="force"; }
 
 int valid_learn(object me) 

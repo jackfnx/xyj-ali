@@ -5,3 +5,5 @@
 
 inherit SKILL;
 
+string name() { return "»ù±¾µ¶·¨"; }
+

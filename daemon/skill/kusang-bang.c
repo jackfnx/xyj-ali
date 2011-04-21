@@ -13,6 +13,8 @@
 
 inherit SKILL;
 
+string name() { return "¿ÞÉ¥°ô"; }
+
 mapping *action = ({
         ([      "name":                 "Æà·ç³¤ºÅ",
                 "action":

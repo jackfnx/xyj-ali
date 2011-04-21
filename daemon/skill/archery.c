@@ -4,3 +4,5 @@
 // axe.c
 
 inherit SKILL;
+
+string name() { return "»ù±¾¹­¼ý"; }

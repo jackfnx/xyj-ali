@@ -16,6 +16,8 @@
 
 inherit SKILL;
 
+string name() { return "晓风残月剑"; }
+
 mapping *action = ({
    ([   "name":        "皓月当空",
      "action":

@@ -6,6 +6,8 @@
 
 inherit SKILL;
 
+string name() { return "莲华步法"; }
+
 string *dodge_msg = ({
    "$n轻轻一纵，使个「出淤泥而不染」，毫不费力地躲开了$N这一招。\n",
    "$n几个错步，使出「映日荷花」，$N只觉得眼一花，顿失$n的踪影。\n",

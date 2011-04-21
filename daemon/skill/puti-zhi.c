@@ -7,6 +7,8 @@
 
 inherit SKILL;
 
+string name() { return "菩提指"; }
+
 mapping *action = ({
     ([   "action":     "$N“呼”地一指点出，这一招由中宫直进，\n指未到，指风已把$n压得揣不过气来",
         "dodge":     -5,

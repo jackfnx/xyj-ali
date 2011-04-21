@@ -3,6 +3,8 @@
 // fox-force.c  【天狐心法】
 inherit FORCE;
 
+string name() { return "天狐心法"; }
+
 int valid_enable(string usage) { return usage=="force" || usage=="spells"; }
 
 int valid_learn(object me)

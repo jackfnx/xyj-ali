@@ -6,6 +6,8 @@
 
 inherit SKILL;
 
+string name() { return "封山剑法"; }
+
 mapping *action = ({
    ([   "action":     "$N使一招「峰回路转」，手中$w如一条银蛇般刺向$n的$l",
      "dodge":     0,

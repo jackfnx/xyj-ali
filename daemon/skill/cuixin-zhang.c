@@ -6,6 +6,8 @@
 
 inherit SKILL;
 
+string name() { return "摧心掌"; }
+
 mapping *action = ({
         ([      "action":
 "只见$N凝神运气，左手护胸，右手掌心呈暗红，带着一股腥热之气拍向$n$l",

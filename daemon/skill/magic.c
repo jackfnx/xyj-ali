@@ -5,4 +5,6 @@
 
 inherit SKILL;
 
+string name() { return "»ù±¾Ä§·¨"; }
+
 string type() { return "knowledge"; }

@@ -7,6 +7,8 @@
 
 inherit SKILL;
 
+string name() { return "劫难指"; }
+
 mapping *action = ({
    ([   "action":     "$N右手食指和中指并拢，一前一后戳向$n的$l",
      "dodge":     -5,

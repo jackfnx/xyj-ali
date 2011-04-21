@@ -4,3 +4,5 @@
 // move.c
 
 inherit SKILL;
+
+string name() { return "»ù±¾Çá¹¦"; }

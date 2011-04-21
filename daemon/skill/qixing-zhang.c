@@ -8,6 +8,8 @@ inherit SKILL;
 七星杖法    dodge  2.5    parry  -6    damage  23
 */
 
+string name() { return "七星杖法"; }
+
 mapping *action = ({
    ([   "action":     "$N踏「天枢」位，运足力气将$w抡了几个大圆，呼！地一声向$n当头砸下",
      "dodge":     15,

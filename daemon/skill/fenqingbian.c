@@ -1,7 +1,10 @@
 // fenqingbian.c
-// Óû»ð·ÙÇé±Þ
+// ·ÙÇé±Þ
 
 inherit SKILL;
+
+string name() { return "·ÙÇé±Þ"; }
+
 mapping *action =
 ({
 ([

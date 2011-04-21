@@ -15,6 +15,8 @@
 // 风波不信菱枝弱
 inherit SKILL;
 
+string name() { return "风回雪舞剑法"; }
+
 mapping *action = ({
    ([   "action":
 "$N使一招「寒芳留照魂应驻」，手中$w化为一道疾光刺向$n的$l",

@@ -5,13 +5,16 @@
 // updated 6-16-97 pickle
  
 /*
-三板斧    dodge  20    parry  -15    damage  35
+宣花三斧    dodge  20    parry  -15    damage  35
 三板斧以奇见长，令人防不胜防，碰到使三板斧者以远距
 游斗为好。再者每斧用力甚巨，一旦砍中，杀伤巨大。
 */
 
 inherit SKILL;
 void takeforce();
+
+string name() { return "宣花三斧"; }
+
 mapping *action = ({
         ([      "action":
 "$N大喊一声「开瓜」，手中$w带着这一吼的威猛之势，朝$n当头劈下",

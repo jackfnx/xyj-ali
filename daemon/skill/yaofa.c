@@ -4,6 +4,8 @@
 // dao
 inherit SKILL;
 
+string name() { return "Ñý·¨"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)

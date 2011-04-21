@@ -4,6 +4,8 @@
 // dengxian-dafa.c 【登仙大法】
 inherit SKILL;
 
+string name() { return "登仙大法"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)

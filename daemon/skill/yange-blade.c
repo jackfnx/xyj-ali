@@ -11,6 +11,8 @@
 
 inherit SKILL;
 
+string name() { return "雁歌刀法"; }
+
 mapping *action = ({
         ([      "action":
 "$N一招「山川萧条」，手中$w卷起一股狂风，挥向$n的$l",

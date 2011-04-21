@@ -5,6 +5,8 @@
 
 inherit SKILL;
 
+string name() { return "基本轻功"; }
+
 string *dodge_msg = ({
    "但是和$p$l偏了几寸。\n",
    "但是被$p机灵地躲开了。\n",

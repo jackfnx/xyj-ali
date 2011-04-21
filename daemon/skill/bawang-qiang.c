@@ -12,6 +12,8 @@
 
 inherit SKILL;
 
+string name() { return "霸王枪法"; }
+
 mapping *action = ({
         ([      "action":
 "$N使一招「迎门三不过」，手中$w连续刺向$n面门，哽嗓，前心",

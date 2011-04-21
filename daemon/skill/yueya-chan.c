@@ -7,6 +7,8 @@ inherit SKILL;
 笨重异常。
 */
 
+string name() { return "月牙铲法"; }
+
 mapping *action = ({
         ([      "name":                 "",
                 "action":

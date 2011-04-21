@@ -6,6 +6,8 @@
 
 inherit SKILL;
 
+string name() { return "火云枪法"; }
+
 mapping *action = ({
         ([      "action":
 "$N大吼一声，手中$w微扬，一招「风起云涌」，霎时枪影如封墙，\n"

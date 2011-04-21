@@ -4,3 +4,5 @@
 // sword.c
 
 inherit SKILL;
+
+string name() { return "»ù±¾½£·¨"; }

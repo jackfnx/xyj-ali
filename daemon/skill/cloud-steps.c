@@ -5,6 +5,8 @@
 
 inherit SKILL;
 
+string name() { return "腾云术"; }
+
 string *dodge_msg = ({
    "$n轻轻一纵，使个「踏云步」，避开了这一招。\n",
    "$N眼一花，$n使出「翻云式」一个筋斗从$N头顶越过。\n",

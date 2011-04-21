@@ -6,6 +6,8 @@
 
 inherit SKILL;
 
+string name() { return "鬼影迷踪"; }
+
 string *dodge_msg = ({
 
 "$n身似鬼魅，足不动，腿不抬，竟然飘然飞起，居然轻描淡写避过了$N这招。\n\n",

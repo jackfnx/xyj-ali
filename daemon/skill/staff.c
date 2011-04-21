@@ -4,3 +4,6 @@
 // hammer.c
 
 inherit SKILL;
+
+string name() { return "»ù±¾ÕÈ·¨"; }
+

@@ -5,6 +5,8 @@
 
 inherit SKILL;
 
+string name() { return "Éã»êÊõ"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)

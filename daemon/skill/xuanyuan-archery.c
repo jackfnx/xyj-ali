@@ -11,6 +11,8 @@
 inherit SKILL;
 void throw_weapon(object,object,object,int);
 
+string name() { return "ÐùÔ¯¼ý"; }
+
 mapping *action = ({
   ([
     "action":

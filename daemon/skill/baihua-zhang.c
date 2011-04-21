@@ -7,6 +7,8 @@
 
 inherit SKILL;
 
+string name() { return "百花掌"; }
+
 mapping *action = ({
    ([   "action":     "$N浅浅一笑，一招「自在飞花轻似梦」若有若无地拍向$n的$l",
      "dodge":     -5,

@@ -6,6 +6,8 @@
 
 inherit SKILL;
 
+string name() { return "Ä§Å®½ğ¸ÕÈ­"; }
+
 mapping *action = ({
     ([
      "name":     "¡¸ÒùĞ°Ö®È­¡¹",

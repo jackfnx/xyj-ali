@@ -4,6 +4,8 @@
 // tao
 inherit SKILL;
 
+string name() { return "Õý×ÚµÀ·¨"; }
+
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)
