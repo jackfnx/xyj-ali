@@ -72,7 +72,7 @@ void heart_beat()
 
     // If we are dying because of mortal wounds?
     if (my["eff_kee"] < 0 || my["eff_sen"] < 0 || my["eff_gin"] < 0) {
-        QUEST->quest_kill(this_object());
+        QUEST_D->quest_kill(this_object());
         remove_all_enemy();
         die();
         return;
@@ -80,7 +80,7 @@ void heart_beat()
 
     // If we're dying or falling unconcious?
     if (my["kee"] < 0 || my["sen"] < 0 || my["gin"] < 0) {
-        QUEST->quest_kill(this_object());
+        QUEST_D->quest_kill(this_object());
         remove_all_enemy();
         if ( !living(this_object()) ) die();
         else unconcious();

@@ -100,7 +100,7 @@ int do_give(object me, object obj, object who)
 */
         // snowcat jan 23 1998
         if( !interactive(who)) {
-                if (QUEST->quest_give (me, who, obj)) {
+                if (QUEST_D->quest_give (me, who, obj)) {
         message_vision("$N给$n一"+obj->query("unit")+obj->name()+"。\n",me,who);
         message_vision("$N由衷地向$n道谢。\n",who,me);
         destruct(obj);

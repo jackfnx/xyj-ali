@@ -52,7 +52,7 @@ int main(object me, string arg)
    }
 
    // by snowcat jan 23 1998
-   if ( msg = QUEST->quest_ask (me, ob, topic) ) {
+   if ( msg = QUEST_D->quest_ask (me, ob, topic) ) {
      if( stringp(msg) ) {
         message_vision( CYN "$NËµµÀ£º" + msg + "\n" NOR, ob);
         return 1;
