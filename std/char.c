@@ -87,7 +87,7 @@ void heart_beat()
         return;
     }
 
-    if (my["lust"] > EFF_LUST && !this_object()->query_temp("sex_heat")) {
+    if (my["lust"] > EFF_LUST) {
         heat();
     }
 
@@ -128,10 +128,8 @@ void heart_beat()
     // If we are compeletely in peace, turn off heart beat.
     // heal_up() must be called prior to other two to make sure it is called
     // because the && operator is lazy :P
-    if ( ((cnd_flag & CND_NO_HEAL_UP) || !heal_up())
-            && !sex_refresh()
+    if ( (((cnd_flag & CND_NO_HEAL_UP) || !heal_up()) + !sex_refresh())
             && !is_fighting()
-            && !this_object()->query_temp("sex_heat")
             && !interactive(this_object()) ) {
         if ( environment() ) {
             ob = first_inventory(environment());

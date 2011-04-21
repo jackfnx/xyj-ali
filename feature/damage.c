@@ -478,6 +478,9 @@ void heat()
 {
     string gender = query("gender");
 
+    if (query_temp("sex_heat"))
+        return;
+
     set_temp("sex_heat", 1);
     if (gender == "ÄÐÐÔ") {
         set_temp("erect", 1);
