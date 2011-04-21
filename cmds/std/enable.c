@@ -64,7 +64,7 @@ int main(object me, string arg)
         modify = me->query_temp("apply/" + skill[i]);
         printf("  %-20s： %-20s  有效等级：%s%3d\n" NOR, 
           valid_types[skill[i]] + " (" + skill[i] + ")",
-          undefinedp(map[skill[i]]) ? "无" : to_chinese(map[skill[i]]),
+          undefinedp(map[skill[i]]) ? "无" : SKILL_D(map[skill[i]])->name(),
           (modify==0 ? "" : (modify>0 ? HIC : HIR)),
           me->query_skill(skill[i]));
      }
@@ -93,7 +93,7 @@ int main(object me, string arg)
      write("Ok.\n");
      return 1;
    } else if( map_to==ski ) {
-     write("「" + to_chinese(ski) + "」是所有" + valid_types[ski] + "的基础，不需要 enable。\n");
+     write("「" + SKILL_D(ski)->name() + "」是所有" + valid_types[ski] + "的基础，不需要 enable。\n");
      return 1;
    }
 
@@ -101,8 +101,8 @@ int main(object me, string arg)
      return notify_fail("你不会这种技能。\n");
 
 //   if( !me->query_skill(ski, 1) )
-//     return notify_fail("你连「" + to_chinese(ski) + "」都没学会，更别提"
-//        + to_chinese(map_to) + "了。\n");
+//     return notify_fail("你连「" + SKILL_D(ski)->name() + "」都没学会，更别提"
+//        + SKILL_D(map_to)->name() + "了。\n");
 
    if( !SKILL_D(map_to)->valid_enable(ski) )
      return notify_fail("这个技能不能当成这种用途。\n");

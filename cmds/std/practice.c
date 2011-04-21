@@ -40,16 +40,16 @@ int main(object me, string arg)
    notify_fail("你现在不能练习这项技能。\n");
    if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
-   notify_fail("你试着练习" + to_chinese(skillname) + "，但是并没有任何进步。\n");
+   notify_fail("你试着练习" + SKILL_D(skillname)->name() + "，但是并没有任何进步。\n");
 
         //added by mon. 7/24/97
    if(skill_basic <= skill && random(100)==0)
-     write("你的" + to_chinese(skillname)+ 
+     write("你的" + SKILL_D(skillname)->name() + 
             "很难提高了，还是向你师父请教请教吧！\n");
 
    if( SKILL_D(skillname)->practice_skill(me) ) {
      me->improve_skill(skillname, skill_basic/5 +1, skill_basic > skill? 0: 1);
-     write( HIY "你的" + to_chinese(skillname) + "进步了！\n" NOR);
+     write( HIY "你的" + SKILL_D(skillname)->name() + "进步了！\n" NOR);
      return 1;
    }
    else return 0;

@@ -109,7 +109,7 @@ int main(object me, string arg)
    sen_cost *= time;
 
    printf("你向%s请教有关「%s」的疑问。\n", ob->name(),
-     to_chinese(skill));
+     SKILL_D(skill)->name());
 
    if( ob->query("env/no_teach") )
      return notify_fail("但是" + ob->name() + "现在并不准备回答你的问题。\n");
@@ -121,7 +121,7 @@ int main(object me, string arg)
        ob->name()+"已经无力指导你进一步提高了。\n");
 
    tell_object(ob, sprintf("%s向你请教有关「%s」的问题。\n",
-     me->name(), to_chinese(skill)));
+     me->name(), SKILL_D(skill)->name()));
 
     sen1=(int)ob->query("sen");
     if(userp(ob) || sen1<50)
@@ -149,11 +149,11 @@ int main(object me, string arg)
                      } else {
         if(qlearned<me->query_int())
           message_vision("$N对$n说道："+
-            "你的「"+to_chinese(skill)+
+            "你的「"+SKILL_D(skill)->name()+
             "」已经不输为师了，咱们一起切磋切磋吧！"
                             +"\n",ob,me);
              printf("%s和你切磋了一会儿%s，你似乎有所领悟。\n",
-          ob->name(),to_chinese(skill));
+          ob->name(),SKILL_D(skill)->name());
                         me->improve_skill(skill, amount,
           (qlearned>4*qskill && !userp(ob)) ?0:1);
           //can't learn beyond a player master's level.

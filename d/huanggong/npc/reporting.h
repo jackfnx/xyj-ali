@@ -6,7 +6,7 @@
 
 void reporting (object who, string reason, int points, string name)
 {
-  string str = reason+"得到了"+to_chinese(points)+name+"。\n";
+  string str = reason+"得到了"+(points)+name+"。\n";
 
   if (DEBUG)
   {

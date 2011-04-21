@@ -56,30 +56,30 @@ int telling (object me, object who)
     return 1;
   }
 
-  write (name+"已经解了"+to_chinese(who->query("quest/number"))+"个迷。\n");
+  write (name+"已经解了"+(who->query("quest/number"))+"个迷。\n");
 
-  write ("    食物："+"解了"+to_chinese(who->query("quest/food/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/food/reward"))+"点品德。\n");
-  write ("    送物："+"解了"+to_chinese(who->query("quest/give/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/give/reward"))+"点品德。\n");
-  write ("    拜贤："+"解了"+to_chinese(who->query("quest/ask/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/ask/reward"))+"点品德。\n");
-  write ("    灭妖："+"解了"+to_chinese(who->query("quest/kill/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/kill/reward"))+"点品德。\n");
-  write ("    武器："+"解了"+to_chinese(who->query("quest/weapon/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/weapon/reward"))+"点品德。\n");
-  write ("    盔甲："+"解了"+to_chinese(who->query("quest/armor/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/armor/reward"))+"点品德。\n");
-  write ("    衣物："+"解了"+to_chinese(who->query("quest/cloth/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/cloth/reward"))+"点品德。\n");
-  write ("    首饰："+"解了"+to_chinese(who->query("quest/wearing/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/wearing/reward"))+"点品德。\n");
-  write ("    家什："+"解了"+to_chinese(who->query("quest/furniture/times"))+"次，"+
-         "获得"+to_chinese(who->query("quest/furniture/reward"))+"点品德。\n");
+  write ("    食物："+"解了"+(who->query("quest/food/times"))+"次，"+
+         "获得"+(who->query("quest/food/reward"))+"点品德。\n");
+  write ("    送物："+"解了"+(who->query("quest/give/times"))+"次，"+
+         "获得"+(who->query("quest/give/reward"))+"点品德。\n");
+  write ("    拜贤："+"解了"+(who->query("quest/ask/times"))+"次，"+
+         "获得"+(who->query("quest/ask/reward"))+"点品德。\n");
+  write ("    灭妖："+"解了"+(who->query("quest/kill/times"))+"次，"+
+         "获得"+(who->query("quest/kill/reward"))+"点品德。\n");
+  write ("    武器："+"解了"+(who->query("quest/weapon/times"))+"次，"+
+         "获得"+(who->query("quest/weapon/reward"))+"点品德。\n");
+  write ("    盔甲："+"解了"+(who->query("quest/armor/times"))+"次，"+
+         "获得"+(who->query("quest/armor/reward"))+"点品德。\n");
+  write ("    衣物："+"解了"+(who->query("quest/cloth/times"))+"次，"+
+         "获得"+(who->query("quest/cloth/reward"))+"点品德。\n");
+  write ("    首饰："+"解了"+(who->query("quest/wearing/times"))+"次，"+
+         "获得"+(who->query("quest/wearing/reward"))+"点品德。\n");
+  write ("    家什："+"解了"+(who->query("quest/furniture/times"))+"次，"+
+         "获得"+(who->query("quest/furniture/reward"))+"点品德。\n");
   write ("\n");
 
   write (name+"共获得：\n");
-  write ("    潜能："+to_chinese(who->query("quest/gain/potential"))+"点。\n");
+  write ("    潜能："+(who->query("quest/gain/potential"))+"点。\n");
   write ("    道行："+COMBAT_D->chinese_daoxing(who->query("quest/gain/combat_exp"))+"道行。\n");
   write ("    技能：\n");
   mapp = who->query("quest/gain/skills");
@@ -90,7 +90,7 @@ int telling (object me, object who)
 
     while (i--)
     {
-       write ("      "+to_chinese(my_keys[i])+to_chinese(mapp[my_keys[i]])
+       write ("      "+SKILL_D(my_keys[i])->name()+(mapp[my_keys[i]])
               +"点。\n");
     }
   }
@@ -103,11 +103,11 @@ int telling (object me, object who)
 
     while (i--)
     {
-       write ("      "+to_chinese(my_keys[i])+to_chinese(mapp[my_keys[i]])
+       write ("      "+(my_keys[i])+(mapp[my_keys[i]])
               +"点。\n");
     }
   }
-  write ("    银子："+to_chinese(who->query("quest/gain/silver"))+"两。\n");
+  write ("    银子："+(who->query("quest/gain/silver"))+"两。\n");
   write ("\n");
 
   write (name+"刚刚完成的迷是：\n");
@@ -116,7 +116,7 @@ int telling (object me, object who)
     write ("  “"+who->query("quest/reason")+"……”");
     if (who->query("quest/reward")) {
       if (wizardp(me)) 
-        write ("  即将有"+to_chinese(who->query("quest/reward"))+"点奖励。\n");
+        write ("  即将有"+(who->query("quest/reward"))+"点奖励。\n");
       else  
         write ("  即将有奖励。\n");
     }  
@@ -206,39 +206,39 @@ int telling (object me, object who)
   write (name+"解迷暂存使用统计：\n");
   if (mapp = who->query("quest/cache/food"))
   {
-    write ("  食物："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  食物："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/give"))
   {
-    write ("  送物："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  送物："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/ask"))
   {
-    write ("  拜贤："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  拜贤："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/kill"))
   {
-    write ("  灭妖："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  灭妖："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/weapon"))
   {
-    write ("  武器："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  武器："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/armor"))
   {
-    write ("  盔甲："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  盔甲："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/cloth"))
   {
-    write ("  衣物："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  衣物："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/wearing"))
   {
-    write ("  首饰："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  首饰："+(sizeof(mapp))+"。\n");
   }
   if (mapp = who->query("quest/cache/furniture"))
   {
-    write ("  家什："+to_chinese(sizeof(mapp))+"。\n");
+    write ("  家什："+(sizeof(mapp))+"。\n");
   }
   write ("\n");
   return 1;

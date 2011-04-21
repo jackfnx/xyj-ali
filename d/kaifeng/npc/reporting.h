@@ -18,7 +18,7 @@ void informing (object me, object who, string str)
 
 void reporting (object who, string reason, int points, string name)
 {
-  string str = reason+"得到了"+to_chinese(points)+"点"+name+"。\n";
+  string str = reason+"得到了"+(points)+"点"+name+"。\n";
 
 // if (! DEBUG) return;
 

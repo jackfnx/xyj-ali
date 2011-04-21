@@ -12,7 +12,7 @@ int main(object me, string arg)
    if( !me->delete_skill(arg) )
      return notify_fail("你并没有学过这项技能。\n");
 
-   write("你决定放弃继续学习" + to_chinese(arg) + "。\n");
+   write("你决定放弃继续学习" + SKILL_D(arg)->name() + "。\n");
    return 1;
 }
 

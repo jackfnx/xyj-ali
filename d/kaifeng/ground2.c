@@ -588,7 +588,7 @@ string report_events (mapping teams)
       name0 = "“"+team0["info"]["team_name"]+"”队";
       name1 = "“"+team1["info"]["team_name"]+"”队";
     }  
-    msg += "  "+to_chinese(i+1)+". ";
+    msg += "  "+(i+1)+". ";
     msg += name0+member0["name"]+"("+member0["id"]+")";
     if (win)
       msg += "战胜";
@@ -611,7 +611,7 @@ string report_events (mapping teams)
     win = item[4];
     name0 = "“"+team0["info"]["team_name"]+"”队";
     name1 = "“"+team1["info"]["team_name"]+"”队";
-    msg += "  "+to_chinese(i-index+1)+". ";
+    msg += "  "+(i-index+1)+". ";
     msg += name0+"选手"+member0["name"]+"("+member0["id"]+")";
     msg += "迎战";
     msg += name1+"选手"+member1["name"]+"("+member1["id"]+")\n";

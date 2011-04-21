@@ -82,7 +82,7 @@ void search_dir (int count, string *dir, int i, string address, object me)
   string info;
 
   if (i == sizeof(dir)) {
-     tell_object(me,"共有"+to_chinese(count)+"位使用者从这个地址上线。\n");
+     tell_object(me,"共有"+count+"位使用者从这个地址上线。\n");
   } else {
     ppls = get_dir(DATA_DIR + "login/" + dir[i] + "/");
     for(j=0; j<sizeof(ppls); j++) {

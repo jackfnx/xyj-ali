@@ -66,7 +66,7 @@ int main(object me, string arg)
    if( !me->query_skill(skill["name"], 1) )
      me->set_skill(skill["name"], 0);
    me->improve_skill(skill["name"], (int)me->query_skill("literate", 1)/5+1);
-   write("你研读有关" + to_chinese(skill["name"]) + "的技巧，似乎有点心得。\n");
+   write("你研读有关" + SKILL_D(skill["name"])->name() + "的技巧，似乎有点心得。\n");
    return 1;
 }
 

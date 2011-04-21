@@ -110,7 +110,7 @@ void display_result (int count, object *list, object me)
   string info;
 
   wizs = SECURITY_D->query_wizlist();
-  tell_object (me,"\n共有"+to_chinese(count)+"位使用者.\n");
+  tell_object (me,"\n共有"+(count)+"位使用者.\n");
   for(i=0; i<count; i++) {
     string wizstatus = " ";
     reset_eval_cost();

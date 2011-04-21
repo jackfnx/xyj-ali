@@ -51,7 +51,7 @@ int main(object me, string arg)
         printf("%s%s%-40s" NOR " - %-10s %3d/%5d\n", 
             (lrn[sname[i]] >= (skl[sname[i]]+1) * (skl[sname[i]]+1)) ? HIM : "",
             (member_array(sname[i], mapped)==-1 ? "  ": "¡õ"),
-            to_chinese(sname[i]) + " (" + sname[i] + ")",
+            SKILL_D(sname[i])->name() + " (" + sname[i] + ")",
             RANK_D->describe_skill(sname[i], skl[sname[i]]),
             skl[sname[i]], (int)lrn[sname[i]],
         );

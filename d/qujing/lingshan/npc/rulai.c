@@ -207,7 +207,7 @@ void rewarded1 (object me, object who)
 void rewarding2 (object me, object who, string str)
 {
   int i = who->query_skill(str,1);
-  string name = to_chinese(str);
+  string name = SKILL_D(str)->name();
 
   who->set_skill(str,i+1);
   message_vision ("\n$N说道：奖励一级"+name+"！\n",me,who);

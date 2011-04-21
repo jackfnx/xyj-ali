@@ -48,7 +48,7 @@ string report_teams()
       mapping team = teams[j];
       mapping team_info = team["info"];
 
-      msg += " " + to_chinese(j) + ". " + team_info["team_name"]+" ";
+      msg += " " + (j) + ". " + team_info["team_name"]+" ";
       k = team["number"];    
       for (l = 0; l < k; l++)
       {
@@ -101,9 +101,9 @@ int do_mode (string arg)
   msg = "比赛方式：";
   for (j = 0; j < i; j++)
   {
-    msg += "\n  " + to_chinese(j) + ". " + write_item(modes[j],mode==j);
+    msg += "\n  " + (j) + ". " + write_item(modes[j],mode==j);
     msg += "  " + mode_hints[j]+"。";
-    choices += to_chinese(j);
+    choices += (j);
     if (j < i-1)
       choices += "/";
   }
@@ -148,9 +148,9 @@ int do_mode (string arg)
   msg = "比赛方式：";
   for (j = 0; j < i; j++)
   {
-    msg += "\n  " + to_chinese(j) + ". " + write_item(modes[j],mode==j);
+    msg += "\n  " + (j) + ". " + write_item(modes[j],mode==j);
     msg += " " + mode_hints[j]+"。";
-    choices += to_chinese(j);
+    choices += (j);
     if (j < i-1)
       choices += "/";
   }
@@ -349,7 +349,7 @@ int do_team(string arg)
       mapping team_info = team["info"];
 
       existing_families[team_info["family_name"]]++;
-      msg2 += "  " + to_chinese(j) + ". "+ team_info["team_name"]+" ";
+      msg2 += "  " + (j) + ". "+ team_info["team_name"]+" ";
 
       for (k = 0; k < team["number"]; k++)
       {
@@ -400,7 +400,7 @@ int do_team(string arg)
     mapping team = teams[j];
     mapping team_info = team["info"];
 
-    msg += "  " + to_chinese(j) + ". "+ team_info["team_name"]+" ";
+    msg += "  " + (j) + ". "+ team_info["team_name"]+" ";
 
     for (k = 0; k < team["number"]; k++)
     {
@@ -450,7 +450,7 @@ int do_teammember(string arg)
     {
       team = teams[j];
       team_info = team["info"];
-      msg += "  " + to_chinese(j) + ". "+ team_info["team_name"]+" ";
+      msg += "  " + (j) + ". "+ team_info["team_name"]+" ";
       for (k = 0; k < team["number"]; k++)
       {
         mapping member = team[k];
@@ -472,7 +472,7 @@ int do_teammember(string arg)
   team = teams[j];
   if (! team)
   {
-    msg += "队伍"+to_chinese(j)+"？没有这个参赛队伍。\n";
+    msg += "队伍"+(j)+"？没有这个参赛队伍。\n";
     who->start_more(msg+"[使用 teammember/tm <team nb> +/- id 增减队员]\n\n");
     return 1;
   }

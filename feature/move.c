@@ -185,7 +185,7 @@ varargs int _move(mixed dest, int silently)
        place_ob = (where2->short()?where2->short():where2->query("short"))+"["+file_name(where2)+"]";
       if (where1 != ob)
        MONITOR_D->report_system_object_msg (ob,"（在"+place_ob+"）自"+
-           place_me+"处得到了价值为"+to_chinese(this_object()->value()/10000)+"gold的巨款。");
+           place_me+"处得到了价值为"+ this_object()->value()/10000 +"gold的巨款。");
   }
 
   move_object(ob);

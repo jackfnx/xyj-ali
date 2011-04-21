@@ -163,7 +163,7 @@ int do_learn(string arg)
         return notify_fail("你的潜能已经发挥到极限了，没有办法再成长了。\n");
 
     printf("你向%s请教有关「%s」的疑问。\n", ob->name(),
-        to_chinese(skill));
+        SKILL_D(skill)->name());
 
     if ((int)ob->query("sen") > sen_cost/5 + 1) {
         if (userp(ob)) ob->receive_damage("sen", sen_cost/5 + 1);

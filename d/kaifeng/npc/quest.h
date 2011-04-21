@@ -151,7 +151,7 @@ int quest_random_index (int *quest_keys, int i, object who, string cache_name)
     
     reset_eval_cost();
     k = lower + random (upper-lower);  
-    str = cache_name+"/"+to_chinese(k);
+    str = cache_name+"/"+(k);
     if (! who->query(str))
     {
       who->set(str,who->query("quest/number"));

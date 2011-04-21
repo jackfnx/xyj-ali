@@ -32,7 +32,7 @@ int main(object me, string arg)
 	me->add("learned_points",pot);
         me->receive_damage("gin", gin_cost );
 	me->research_skill(arg,amount);
-	write("你对"+to_chinese(arg)+"作了一番彻底的研究！\n");
+	write("你对"+SKILL_D(arg)->name()+"作了一番彻底的研究！\n");
         return 1;
 }
 int help(object me)
