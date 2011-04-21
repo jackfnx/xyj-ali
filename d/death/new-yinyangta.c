@@ -17,6 +17,7 @@ LONG);
 
   set("exits", ([ /* sizeof() == 4 */
   "east" : __DIR__"new-walk4",
+  "west" : "/d/xuehai/styxside",
 ]));
   set("hell", 1);
 
