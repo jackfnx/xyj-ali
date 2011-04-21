@@ -38,6 +38,12 @@ STONE,
         "east" : "/d/death/new-yinyangta",
         "down" : __DIR__"styxwater1",
     ]));
+    
+    set("resource/poison", ([
+        "name" : "Ú¤ºÓË®",
+        "condition" : "styx_water",
+        "effect" : 100,
+    ]));
 
     set("objects", ([ //sizeof() == 1
         __DIR__"npc/minghe" : 1,
@@ -45,6 +51,3 @@ STONE,
     
     setup();
 }
-
-
-

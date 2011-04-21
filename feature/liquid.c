@@ -99,6 +99,9 @@ int do_fill(string arg)
 {
     string liquid_name;
     string liquid_type;
+    mapping poison;
+    function f;
+    
     if (!living(this_player()))
         return 1;
     if (!this_object()->id(arg)) return 0;
@@ -106,10 +109,18 @@ int do_fill(string arg)
         return notify_fail("你上一个动作还没有完成。\n");
     // the following spring is added by snowcat jul 17 1997
     if (!environment(this_player())->query("resource/water") &&
-        !environment(this_player())->query("resource/spring"))
+        !environment(this_player())->query("resource/spring") &&
+        !mapp(environment(this_player())->query("resource/poison")))
         return notify_fail("这里没有地方可以装水。\n");
     
-    if (environment(this_player())->query("resource/spring")) {
+    if (mapp(poison = environment(this_player())->query("resource/poison"))) {
+        f = (: call_other, __FILE__, "drink_poison" :);
+        liquid_name = poison["name"];
+        liquid_type = "poison";
+        set("liquid/poison_condition", poison["condition"]);
+        set("liquid/poison_effect", poison["effect"]);
+    }
+    else if (environment(this_player())->query("resource/spring")) {
         liquid_name = "泉水";
         liquid_type = "spring";
     }
@@ -120,13 +131,24 @@ int do_fill(string arg)
     if (query("liquid/remaining"))
         message_vision("$N将" + name() + "里剩下的" + query("liquid/name") + "倒掉。", this_player());
     message_vision("$N将" + name() + "装满"+liquid_name+"。\n", this_player());
-    
+
     if (this_player()->is_fighting()) this_player()->start_busy(2);
-    
+
     set("liquid/type", liquid_type);
     set("liquid/name", liquid_name);
     set("liquid/remaining", query("max_liquid"));
-    set("liquid/drink_func", 0);
-    
+    if (!functionp(f))
+        set("liquid/drink_func", 0);
+    else
+        set("liquid/drink_func", bind(f, this_object()));
+
     return 1;
+}
+
+int drink_poison(object ob)
+{
+    this_player()->apply_condition(ob->query("liquid/poison_condition"),
+        (int)this_player()->query_condition(ob->query("liquid/poison_condition"))
+        + (int)ob->query("liquid/poison_effect"));
+    return 0;
 }
