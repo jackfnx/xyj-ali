@@ -1,6 +1,6 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
- 
+
 // give.c
 
 inherit F_CLEAN_UP;
@@ -91,9 +91,9 @@ int do_give(object me, object obj, object who)
     if (no_give=obj->query("no_give"))
         return notify_fail(stringp(no_give) ? no_give : "这样东西不能随意丢弃。\n");
 /*
-   inv = all_inventory(who);
-   if( sizeof(inv) > 30 )
-      return notify_fail("对方身上再也装不下任何东西了。\n");
+    inv = all_inventory(who);
+    if (sizeof(inv) > 30 
+        return notify_fail("对方身上再也装不下任何东西了。\n");
 */
     if (!userp(who) && QUEST_D->quest_give(me, who, obj)) {
         message_vision("$N给$n一"+obj->query("unit")+obj->name()+"。\n", me, who);
