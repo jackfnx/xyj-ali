@@ -66,7 +66,7 @@ LONG);
         "here": "本座也不知这是哪里啊。。。",
     ]));
 
-    set("no_get", 1);
+    set("no_get", "西王母被锁链牢牢的固定着，根本解不下来。\n");
     set_temp("no_move", 1);
     
     create_family("月宫", 1, "红");
@@ -85,4 +85,16 @@ int accept_fight(object me)
     command("say " + RANK_D->query_respect(me)
         + "可真能开玩笑，本座已经落入这步田地了，哪里还能与人交手？\n");
     return 0;
+}
+
+mixed set_temp(string prop, mixed data)
+{
+    if (prop == "no_move") return ::set_temp("no_move", 1);
+    else return ::set_temp(prop, data);
+}
+
+int delete_temp(string prop)
+{
+    if (prop == "no_move") return ::set_temp("no_move", 1);
+    else return ::delete_temp(prop);
 }
