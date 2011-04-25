@@ -10,8 +10,6 @@
 inherit NPC;
 inherit F_MASTER;
 
-string talk_chimeng();
-
 /************************************************************/
 void create()
 {
