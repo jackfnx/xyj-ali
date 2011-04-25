@@ -1,8 +1,6 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// sixue
-
 // create by snowcat.c 4/20/1997
 // room: /d/eastway/bingma.c
 
@@ -30,18 +28,8 @@ LONG);
   setup();
 }
 
-void init()
-{
-    add_action("do_dig", "dig");
-}
 
-int do_dig(string arg)
-{
-    object me;
-    me = this_player();
-    if ((arg!="ground") && (arg!="地"))
-        return notify_fail("你想挖什么？\n");
-    message_vision("$N在地上挖开一个洞，钻了进去。\n", me);
-    me->move("/d/gumu/door");
-    return 1;
-}
+
+
+
+
