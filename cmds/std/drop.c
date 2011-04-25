@@ -14,7 +14,6 @@ int main(object me, string arg)
     object obj, *inv, obj2;
     int i, amount;
     string item;
-    mixed no_drop;
 
     if (me->is_busy())
         return notify_fail("你正忙着呢．．．\n");
@@ -22,8 +21,8 @@ int main(object me, string arg)
     if (sscanf(arg, "%d %s", amount, item)==2) {
         if (!objectp(obj = present(item, me)))
             return notify_fail("你身上没有这样东西。\n");
-        if (no_drop=obj->query("no_drop"))
-            return notify_fail(stringp(no_drop) ? no_drop : "这样东西不能随意丢弃。\n");
+        if (obj->query("no_drop"))
+            return notify_fail(stringp(obj->query("no_drop")) ? obj->query("no_drop") : "这样东西不能随意丢弃。\n");
         if (!obj->query_amount())
             return notify_fail(obj->name() + "不能被分开丢弃。\n");
         if (amount < 1)
@@ -55,8 +54,8 @@ int main(object me, string arg)
 
     if (!objectp(obj = present(arg, me)))
         return notify_fail("你身上没有这样东西。\n");
-    if (no_drop=obj->query("no_drop"))
-        return notify_fail(stringp(no_drop) ? no_drop : "这样东西不能随意丢弃。\n");
+    if (obj->query("no_drop"))
+        return notify_fail(stringp(obj->query("no_drop")) ? obj->query("no_drop") : "这样东西不能随意丢弃。\n");
     return do_drop(me, obj);
 }
 

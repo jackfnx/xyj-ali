@@ -16,7 +16,6 @@ int main(object me, string arg)
     string from, item;
     object obj, *inv, env, obj2,old_env;
     int i, amount;
-    mixed no_get;
 
     if (!arg) return notify_fail("你要捡起什么东西？\n");
     if (me->is_busy())
@@ -36,9 +35,9 @@ int main(object me, string arg)
     if (sscanf(arg, "%d %s", amount, item)==2) {
         if (!objectp(obj = present(item, env)))
             return notify_fail("这里没有这样东西。\n");
-        if (no_get = obj->query("no_get")
+        if (obj->query("no_get")
         &&  !(wizardp(me) && me->query("env/override")))
-            return notify_fail(stringp(no_get) ? no_get : "这个东西拿不起来。\n");
+            return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "这个东西拿不起来。\n");
         if (!obj->query_amount())
             return notify_fail(obj->name() + "不能被分开拿走。\n");
         if (amount < 1)
@@ -88,9 +87,9 @@ int main(object me, string arg)
             else {
                 if (obj->query_temp("hide") == 1)
                     return notify_fail("你附近没有这样东西。\n");
-                if (no_get = obj->query("no_get")
+                if (obj->query("no_get")
                 &&  !(wizardp(me) && me->query("env/override")))
-                    return notify_fail(stringp(no_get) ? no_get : "这个东西拿不起来。\n");
+                    return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "这个东西拿不起来。\n");
                 old_env = environment(obj);
                 if (obj->move(me)) {
                     if(me->is_fighting()) me->start_busy(1);
@@ -109,9 +108,9 @@ int main(object me, string arg)
         }
     }
 
-    if (no_get = obj->query("no_get")
+    if (obj->query("no_get")
     &&  !(wizardp(me) && me->query("env/override")))
-        return notify_fail(stringp(no_get) ? no_get : "这个东西拿不起来。\n");
+        return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "这个东西拿不起来。\n");
 
     return do_get(me, obj, 0);
 }
@@ -122,9 +121,9 @@ int do_get(object me, object obj, object old_env)
     int equipped;
     object* inv;
 /*
-      inv = all_inventory(me);
-      if (sizeof(inv) > 30)
-          return notify_fail("你身上再也装不下任何东西了。\n");
+    inv = all_inventory(me);
+    if (sizeof(inv) > 30)
+        return notify_fail("你身上再也装不下任何东西了。\n");
 */
     if (!obj) return 0;
     if (!old_env) old_env = environment(obj);

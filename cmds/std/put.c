@@ -32,7 +32,7 @@ int main(object me, string arg)
         if (obj->query("no_give")
         ||  obj->query("no_drop")
         ||  obj->query("no_get"))
-            return notify_fail("Ok.\n");
+            return notify_fail("这件东西不能离手。\n");
         if (!obj->query_amount())
             return notify_fail(obj->name() + "不能被分开。\n");
         if (amount < 1)
@@ -70,14 +70,14 @@ int main(object me, string arg)
     if (obj->query("no_give")
     ||  obj->query("no_drop")
     ||  obj->query("no_get"))
-        return notify_fail("Ok.\n");
+        return notify_fail("这件东西不能离手。\n");
     return do_put(me, obj, dest);
 }
 
 int do_put(object me, object obj, object dest)
 {
-    object*   inv;
-    int     amount;
+    object* inv;
+    int amount;
 /*
     if (userp(dest)) {
         inv = all_inventory(dest);

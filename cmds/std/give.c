@@ -14,7 +14,6 @@ int main(object me, string arg)
     string target, item;
     object obj, who, *inv, obj2;
     int i, amount, rev_val;
-    mixed no_give;
 
     if (me->is_busy())
         return notify_fail("你正忙着呢．．．\n");
@@ -79,7 +78,6 @@ int do_give(object me, object obj, object who)
 {
     int is_accept;
     object *inv;
-    mixed no_give;
 
     if (me->is_busy())
         return notify_fail("你正忙着呢．．．\n");
@@ -88,8 +86,8 @@ int do_give(object me, object obj, object who)
     // no_accept should be in do_give Bula
     if (who->query("env/no_accept"))
         return notify_fail("对方好象不愿意收下你的东西。\n");
-    if (no_give=obj->query("no_give"))
-        return notify_fail(stringp(no_give) ? no_give : "这样东西不能随意丢弃。\n");
+    if (obj->query("no_give"))
+        return notify_fail(stringp(obj->query("no_give")) ? obj->query("no_give") : "这样东西不能送人。\n");
 /*
     inv = all_inventory(who);
     if (sizeof(inv) > 30 
