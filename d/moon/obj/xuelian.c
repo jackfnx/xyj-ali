@@ -37,7 +37,8 @@ int do_chi(string arg)
 
    if(!arg) return notify_fail("你要吃什么？\n");
 
-   if ( (int)this_player()->query("max_atman")>0)
+    if (this_player()->query("sex/first_semen_lost")
+    ||  this_player()->query("sex/hymen_broken"))
    {
          message_vision(RED "$N吃下一朵雪莲花，忽觉一阵反胃，又尽数吐了出来。\n" NOR, this_player());
    } 

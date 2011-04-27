@@ -108,15 +108,17 @@ int main(object me, string arg)
     line += sprintf(" 战  绩：杀 %d 人，其中NPC %d 人，其他玩家 %d 人\n",
         my["MKS"] + my["PKS"], my["MKS"], my["PKS"]);
 
-    if (mapp(my["makelove"]) && sizeof(my["makelove"]) > 0) {
-        int gender = my["gender"] == "男性";
-        int lover = sizeof(my["makelove"]);
-        lover = lover > 30 ? 30 : lover;
-        line += " 性经验：" HIY + sex_ranking[(lover/10)*2+gender] + NOR;
-    } else {
-        string gender = my["gender"];
-        line += " 性经验：" HIB "处" + gender[0..1] + NOR;
+    line += " 性经验：";
+    if (mapp(my["sex"]) && mapp(my["sex"]["lovers"])) {
+        line += HIY + sex_ranking[sizeof(my["sex"]["lovers"])/10*2+(int)(my["gender"]=="男性")] + NOR;
+        if (my["gender"] == "男性" && !my["sex"]["first_semen_lost"])
+            line += "，但仍保持" HIB "童子之身" NOR;
+        else if (my["gender"] == "女性" && !my["sex"]["hymen_broken"])
+            line += "，但仍保持" HIB "处子之身" NOR;
     }
+    else
+        line += HIB + (my["gender"]=="男性"?"童":"处") + "子之身" NOR;
+    
     if (undefinedp(my["sex_leaning"]))
         line += "\n";
     else if (my["sex_leaning"] == "both")
@@ -135,7 +137,7 @@ int main(object me, string arg)
         line += "\n";
 
     if (ob->query("balance"))
-        line += " 财  富：" + MONEY_D->money_str((int)ob->query("balance"))+"\n\n";
+        line += " 财  富：" + MONEY_D->money_str((int)ob->query("balance"))+"存款\n\n";
     else
         line += " 财  富："HIW"没有任何存款"NOR"\n\n";
 
