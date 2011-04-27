@@ -474,7 +474,7 @@ varargs int varify_player(string prop, object me, object smelter)
     me->delete_temp("fabaod");
     me->set_temp("fabaod/max_force", costs[stars]["force"]);
     me->set_temp("fabaod/max_mana", costs[stars]["mana"]);
-    me->set_temp("fabaod/combat_exp", costs[stars]["combat_exp"]);
+    me->set_temp("fabaod/combat_exp", costs[stars]["exp"]);
     smelter->set_temp("upgraded_prop", p_info["name"]);
     return 1;
 }
