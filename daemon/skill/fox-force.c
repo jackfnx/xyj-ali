@@ -5,7 +5,7 @@ inherit FORCE;
 
 string name() { return "ÌìºüĞÄ·¨"; }
 
-int valid_enable(string usage) { return usage=="force" || usage=="spells"; }
+int valid_enable(string usage) { return usage=="force" || usage=="spells" || usage=="magic"; }
 
 int valid_learn(object me)
 {
