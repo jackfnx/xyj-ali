@@ -14,7 +14,7 @@ mapping valid_types = ([
     "force":   "内功",
     "parry":   "招架",
     "dodge":   "轻功",
-    "magic":   "秘术",
+    "magic":   "神通",
     "spells":   "法术",
 //    "move":   "行动",
 //    "array":   "阵法",
@@ -109,7 +109,7 @@ int main(object me, string arg)
     write("Ok.\n");
 
     if (ski == "magic") {
-        write("你改用另一种秘术，真元必须重新积累。\n");
+        write("你改用另一种神通，真元必须重新积累。\n");
         me->set("atman", 0);
         me->receive_damage("gin", 0);
     } else if (ski == "force") {
