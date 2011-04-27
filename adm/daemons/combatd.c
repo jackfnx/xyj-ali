@@ -564,7 +564,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
                     me, victim);
             else
                 message_vision(HIY + "\n\n$n面色苍白，跌倒在地，已然耗尽了体力。\n"
-                        + "$N见状大喜，连忙接下腰带将$n捆了个结结实实，将$p彻底制服。\n\n" + NOR,
+                        + "$N见状大喜，连忙解下腰带将$n捆了个结结实实，将$p彻底制服。\n\n" + NOR,
                     me, victim);
          }
      }
