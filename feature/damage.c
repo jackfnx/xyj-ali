@@ -235,8 +235,6 @@ void die()
     object *inv;
     int i;
     string last_fainted_from;
-//    mapping quest;
-//    int exp, pot, score;
 
     if (environment() && environment()->query("alternative_die")) {
         environment()->alternative_die(this_object());
@@ -299,33 +297,6 @@ void die()
     }
 
     remove_ride();
-
-#if 0
-    if (killer && objectp(killer)) {
-      if (!(quest = killer->query("fy_quest")) ||
-          userp(this_object()) ||
-          this_object()->query("name") != quest["quest"] ||
-          "杀" != quest["quest_type"]) {
-      } else if ((int) killer->query("task_time") < time() ) {
-        tell_object(killer,"真可惜！你没有在指定的时间内完成！\n");
-      } else {
-        tell_object(killer,"恭喜你！你又完成了一项任务！\n");      
-        exp = quest["exp_bonus"]/2 + random(quest["exp_bonus"]/2)+1;
-        if(exp > 150) exp = 150;
-        exp = exp * (int) killer->query_temp("quest_number");
-        pot = exp / 5 + 1;
-        score = 1;
-        killer->add("combat_exp",exp);
-        killer->add("potential",pot);
-        killer->add("score",score);
-        tell_object(killer,HIW"你被奖励了：\n" +
-        chinese_number(exp) + "点实战经验\n"+
-        chinese_number(pot) + "点潜能\n" +
-        chinese_number(score)+"点综合评价\n"NOR);
-        killer->set("fy_quest", 0 );
-      }
-    }
-#endif
 
     if ( objectp(corpse = CHAR_D->make_corpse(this_object(), killer)) )
         corpse->move(environment());
