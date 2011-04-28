@@ -20,10 +20,10 @@ int perform(object me, object target)
         return notify_fail(HIW"「无尽风波」"NOR+"只能对战斗中的对手使用。\n");
 
     if (!objectp(weapon = me->query_temp("weapon"))
-    ||  (string)weapon->query("skill_type") != "fork")    
+    ||  (string)weapon->query("skill_type") != "fork")
         return notify_fail("你使用的武器不对。\n");
 
-    skill = me->query_skill("fengbo-fork",1);
+    skill = me->query_skill("fengbo-cha",1);
     if (skill < 100)
         return notify_fail("你的风波十二叉等级不够, 不能使用「无尽风波」！\n");
 

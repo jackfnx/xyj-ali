@@ -55,13 +55,13 @@ LONG);
     set_skill("seashentong", 100);
     set_skill("dragonfight", 100);
     set_skill("dragonforce", 120);
-    set_skill("fengbo-fork", 110);
+    set_skill("fengbo-cha", 110);
     set_skill("dragonstep", 120);
     map_skill("spells", "seashentong");
     map_skill("unarmed", "dragonfight");
     map_skill("force", "dragonforce");
-    map_skill("fork", "fengbo-fork");
-    map_skill("parry", "fengbo-fork");
+    map_skill("fork", "fengbo-cha");
+    map_skill("parry", "fengbo-cha");
     map_skill("dodge", "dragonstep");
 
     set("inquiry", ([

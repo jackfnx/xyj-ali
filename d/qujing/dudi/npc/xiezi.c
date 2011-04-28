@@ -34,11 +34,11 @@ void create()
   set_skill("force", 70);
   set_skill("fork", 80);
   set_skill("moonforce", 70);
-  set_skill("fengbo-fork", 80);
+  set_skill("fengbo-cha", 80);
   map_skill("spells", "tao");
   map_skill("unarmed", "baihua-zhang");
-  map_skill("fork", "fengbo-fork");
-  map_skill("parry", "fengbo-fork");
+  map_skill("fork", "fengbo-cha");
+  map_skill("parry", "fengbo-cha");
   map_skill("dodge", "moondance");
   map_skill("force", "moonforce");
   setup();

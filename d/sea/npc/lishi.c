@@ -25,12 +25,12 @@ void create()
         set_skill("dodge", 70);
    set_skill("unarmed", 70);
    set_skill("fork", 70);
-   set_skill("fengbo-fork", 70);
+   set_skill("fengbo-cha", 70);
    set_skill("dragonstep", 70);
    set_skill("force", 50);
    set_skill("spells", 50);
-   map_skill("fork", "fengbo-fork");
-   map_skill("parry", "fengbo-fork");
+   map_skill("fork", "fengbo-cha");
+   map_skill("parry", "fengbo-cha");
    map_skill("dodge", "dragonstep");
    set("force", 200);
    set("max_force", 200);

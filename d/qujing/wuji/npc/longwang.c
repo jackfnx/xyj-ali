@@ -39,13 +39,13 @@ void create()
   set_skill("seashentong", 80);
   set_skill("dragonfight", 80);
   set_skill("dragonforce", 80);
-  set_skill("fengbo-fork", 80);
+  set_skill("fengbo-cha", 80);
   set_skill("dragonstep", 80);
   map_skill("spells", "seashentong");
   map_skill("unarmed", "dragonfight");
   map_skill("force", "dragonforce");
-  map_skill("fork", "fengbo-fork");
-  map_skill("parry", "fengbo-fork");
+  map_skill("fork", "fengbo-cha");
+  map_skill("parry", "fengbo-cha");
   map_skill("dodge", "dragonstep");
 
   set("inquiry", ([ "±¦±´": (: show_king :),

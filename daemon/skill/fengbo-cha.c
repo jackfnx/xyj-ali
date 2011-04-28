@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//风波十二叉 fengbo-fork.c
+//风波十二叉 fengbo-cha.c
 //9-17-97 pickle
 
 /*
@@ -179,7 +179,7 @@ int valid_learn(object me)
     if ((int)me->query("max_force") < 100)
         return notify_fail("你的内力不够，无法领会风波十二叉的精妙之处。\n");
 
-    if (me->query_skill("dragonforce", 1) < me->query_skill("fengbo-fork", 1)/2)
+    if (me->query_skill("dragonforce", 1) < me->query_skill("fengbo-cha", 1)/2)
         return notify_fail("你的龙神心法修为太低。\n");
 
     if (!(ob = me->query_temp("weapon"))
@@ -190,26 +190,27 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-    int knowledge=me->query("longgong/风波十二叉");
-    int mylev=me->query("fengbo-fork", 1);
     string msg;
 
     if (me->query("class") != "dragon")
         return notify_fail("你非龙族，怎能习惯这水中出没的叉法？\n");
-    if(me->query_skill_mapped("force") !="dragonforce")
+    if (me->query_skill_mapped("force") != "dragonforce")
         return notify_fail("风波十二叉必须配合龙神心法才能发挥威力。\n");
-    if(me->query("kee") < 50) return notify_fail("你的体力太弱，先休息一会儿吧。\n");
-    if(me->query("sen") < 50) return notify_fail("你的神智不清，就算练了也什么都学不到的。\n");
-    if(me->query("force") < 20) return notify_fail("你的内力不足，无法照路数舞叉。\n");
+    if (me->query("kee") < 50) return notify_fail("你的体力太弱，先休息一会儿吧。\n");
+    if (me->query("sen") < 50) return notify_fail("你的神智不清，就算练了也什么都学不到的。\n");
+    if (me->query("force") < 20) return notify_fail("你的内力不足，无法照路数舞叉。\n");
 
     me->add("kee", -40);
     me->add("force", -10);
     msg="$N来来回回练习着风波十二叉，似乎有些长进。\n";
-/*    if (knowledge != 1 && knowledge !=2) knowledge = 0;
+/*
+    int knowledge=me->query("longgong/风波十二叉");
+    int mylev=me->query("fengbo-cha", 1);
+    if (knowledge != 1 && knowledge !=2) knowledge = 0;
     if (knowledge==1 || !knowledge)
         msg+=action[mylev/20]["name"];
     if (knowledge==2)
-   msg+=action[mylev/15]["name"];
+        msg+=action[mylev/15]["name"];
     msg+="这一招。\n";
     msg+="mylev is "+mylev;
 */
@@ -231,7 +232,7 @@ string query_parry_msg(object weapon)
 {
     object me=this_player();
     int knowledge=me->query("longgong/风波十二叉");
-    int condition=me->query("env/fengbo-fork");
+    int condition=me->query("env/fengbo-cha");
 
     if (knowledge==1 || !knowledge || condition==1)
         return action[random(8)]["parry_msg"];
