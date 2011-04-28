@@ -1,13 +1,8 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+
 //【混天锤】
 
 /*
-混天锤  dodge  15    parry  -15    damage  30
-其锤法直来直去，招招为实，势大力猛，招架抵挡
-甚为不易，一但碰上则伤害极大。但不足是不够轻
-盈。
+混天锤  dodge  7    parry  -7    damage  27
 */
 
 inherit SKILL;
@@ -15,46 +10,42 @@ inherit SKILL;
 string name() { return "混天锤"; }
 
 mapping *action = ({
-   ([   "action":   "$N手中$w一转，卷着一股强劲的风力挥向$n的$l，
-这一下又急又猛，势大力狠，眼见就到了$n身前",
-     "dodge":   10,
-     "parry":   -10,
-     "damage":   30,
-     "damage_type":   "砸伤",
-   ]),
-   ([   "action":   "$N双手一震，手中$w夹带着闷雷般的响声，劈头盖脸地就向$n砸了过去",
-     "dodge":   15,
-     "parry":   -15,
-     "damage":   30,
-     "damage_type":   "砸伤",
-   ]),
-   ([   "action":   "$N将$w高举过肩，蓄紧力发，对准$n的$l发出雷霆一击",
-     "dodge":   20,
-     "parry":   -20,
-     "damage":   35,
-     "damage_type":   "砸伤",
-   ]),
-   ([   "action":   "$N身走轻灵，手中$w忽上忽下，令人捉摸不清去路，
-就在$n一恍惚间，“唰”地砸向$n的$l",
-     "dodge":   0,
-     "parry":   -10,
-     "damage":   25,
-     "damage_type":   "砸伤",
-   ]),
-   ([   "action":   "$N趁与$n错身之机，倒转$w，锤把戳向了$n，
-这一下如白蛇吐芯，悄无声息的点上了$n的$l",
-     "dodge":   10,
-     "parry":   -10,
-     "damage":   20,
-     "damage_type":   "戳伤",
-   ]),
-   ([   "action":   "$N紧握$w猛挥了个大圆，卷的周身长内沙土尘扬，
-趁$n不能辨物之记，手中$w斜斜地砸向$n的$l",
-     "dodge":   20,
-     "parry":   -25,
-     "damage":   30,
-     "damage_type":   "砸伤",
-   ]),
+    ([      "action":           "$N哪管三七二十一，举起$w朝着$n当头就是一家伙",
+        "dodge":        15,
+        "parry":        -10,
+        "damage":       35,
+        "damage_type":  "砸伤",
+    ]),
+    ([      "action":           "只见$N眼冒凶光，青筋凸起，抄起$w就朝$n的$l狠命扫了过去",
+        "dodge":        10,
+        "parry":        -15,
+        "damage":       25,
+        "damage_type":  "砸伤",
+    ]),
+    ([      "action":           "只听轰！地一声$N的$w在地上砸得尘土飞扬！紧接着$N就势翻了个跟头，又是一下向$n砸了过去",
+        "dodge":        5,
+        "parry":        -10,
+        "damage":       35,
+        "damage_type":  "砸伤",
+    ]),
+    ([      "action":           "只见$N稍一运气，手中的$w上中下连扫三圈，逼得$n连退不迭",
+        "dodge":        5,
+        "parry":        0,
+        "damage":       20,
+        "damage_type":  "砸伤",
+    ]),
+    ([      "action":           "$N大喝一声，手中的$w举重若轻，势若疯虎地向$n$l连连砸去",
+        "dodge":        5,
+        "parry":        0,
+        "damage":       20,
+        "damage_type":  "砸伤",
+    ]),
+    ([      "action":           "但见$N一个转身，手中$w由下而上一荡，$n只听一阵风声擦耳而过！\n$n正在暗叫侥幸之时，$N的$w就势一转，又砸了回来",
+        "dodge":        5,
+        "parry":        -10,
+        "damage":       25,
+        "damage_type":  "砸伤",
+    ]),
 });
 
 int valid_learn(object me)
