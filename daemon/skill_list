@@ -63,8 +63,8 @@
   <skill>dragonfight</skill>
   <skill>dragonforce</skill>
   <skill>dragonstep</skill>
-  <skill todo="todo">fengbo-cha</skill>
-  <skill todo="todo">kaishan-chui</skill>
+  <skill>fengbo-cha</skill>
+  <skill>kaishan-chui</skill>
   <skill>seashentong</skill>
 </sea>
 <hell class="ghost">
