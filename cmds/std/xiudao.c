@@ -8,13 +8,10 @@
 
 inherit F_CLEAN_UP;
 
-#include <obstacle.h>
-
 void finish(object me, int pot_gain);
 
 int main(object me, string arg)
 {
-   int obstacle_size = sizeof(obstacles);
    int busy_time, pot_gain;
    int xiudao_lvl;
    mapping fam;
@@ -48,7 +45,7 @@ int main(object me, string arg)
    busy_time = random(7200)/pot_gain/100;
    pot_gain = 1 + random(pot_gain*2);
    busy_time *= pot_gain;
-   pot_gain += (int)me->query("obstacle/number")*pot_gain/2/obstacle_size;
+   pot_gain = OBSTACLES_D->xiudao_accelerate(me, pot_gain);
    if (me->query("food") + me->query("water") < 20) busy_time *= 2;
    message_vision(HIY "$N闭上眼睛，盘膝坐下，嘴里默默念念不知在说些什么。\n" NOR, me);
    me->start_busy(busy_time);

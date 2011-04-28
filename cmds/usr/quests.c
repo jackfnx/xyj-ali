@@ -4,7 +4,6 @@
 inherit F_CLEAN_UP;
 
 #include <ansi.h>
-#include <obstacle.h>
 
 int telling (object me, object who);
 

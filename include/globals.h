@@ -31,6 +31,7 @@
 // added by snowcat 6/20/1997
 #define MONITOR_D     "/adm/daemons/monitord"
 #define NATURE_D     "/adm/daemons/natured"
+#define OBSTACLES_D     "/adm/daemons/obstaclesd"
 #define PROFILE_D     "/adm/daemons/profiled"
 #define QUEST_D            "/adm/daemons/questd"
 #define RANK_D        "/adm/daemons/rankd"

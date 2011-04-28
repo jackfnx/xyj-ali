@@ -1,129 +1,48 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-
 inherit F_CLEAN_UP;
 
 #include <ansi.h>
-#include <obstacle.h>
-
-int telling1 (object who);
-int telling2 (object who);
-
-string name;
 
 int main(object me, string arg)
 {
-   object ob;
+    object ob;
+    string opt;
 
-   if( !arg ) {
-     ob = me;
-     name = "你";
-   } else if (wizardp (me)) {
-     ob = find_player(arg);
-     if(!ob) ob = find_living(arg);
-   
-     if(!ob) ob = LOGIN_D->find_body(arg);
+    if (!arg || arg == "-qujing") {
+        ob = me;
+        opt = "qujing";
+    } else if (arg == "-dntg") {
+        ob = me;
+        opt = "dntg";
+    } else if (wizardp(me)) {
+        if (sscanf(arg, "-dntg %s", arg))
+            opt = "dntg";
+        else if (sscanf(arg, "-qujing %s", arg))
+            opt = "qujing";
+        else
+            opt = "qujing";
+        ob = find_player(arg);
+        if (!ob) ob = find_living(arg);
+        if (!ob) ob = LOGIN_D->find_body(arg);
+        if (!ob || !me->visible(ob)) return notify_fail("没有这个人。\n");
+    } else
+        return 0;
 
-     if(!ob || !me->visible(ob)) return notify_fail("没有这个人。\n");
+    write(OBSTACLES_D->check_obstacles_detail(ob, 0, ob != me, opt));
 
-     name = ob->query("name");
-   } else
-     return 0;
-
-   telling1(ob);
-   telling2(ob);
-
-   return 1;
+    return 1;
 }
 
 int help()
 {
-   write(@TEXT
-指令格式：obstacles <某人>
+    write(@TEXT
+指令格式：obstacles [-dntg] <某人>
 
-显示某人西行求取真经的资料。 
+显示某人的过关记录。
+默认显示西行求取真经的记录，加[-dntg]参数则显示大闹天宫的记录。
 
 请见：help qujing
 TEXT
-   );
-   return 1;
-}
-
-int telling1 (object who)
-{
-  int size = sizeof(obstacles);
-  string *names = keys(obstacles);
-  string *strs = allocate (size);
-  int nb = 0;
-  int i;
-
-  for (i = 0; i < size; i++)
-  {
-    strs[i] = "none";
-  }
-
-  for (i = 0; i < size; i++)
-  {
-    if (who->query("obstacle/"+names[i])=="done")
-    {
-      strs[nb] = obstacles[names[i]];
-      nb++;
-    }
-  }
-
-  if (nb == 0)
-  {
-    write (name+"尚未西行求取真经。\n");
-  }
-  else
-  {
-    write (name+"西行求取真经已过了"+chinese_number(nb)+"关：\n");
-    who->set("obstacle/number",nb);
-    strs = (string *)sort_array (strs, 1);
-    for (i = 0; i < nb; i++)
-    {
-      write ("    "+strs[i]+"\n");
-    }
-  }
-  return 1;
-}
-
-int telling2 (object who)
-{
-  int size = sizeof(obstacles);
-  string *names = keys(obstacles);
-  string *strs = allocate (size);
-  int nb = 0;
-  int i;
-
-  for (i = 0; i < size; i++)
-  {
-    strs[i] = "none";
-  }
-
-  for (i = 0; i < size; i++)
-  {
-    if (who->query("obstacle/"+names[i])!="done")
-    {
-      strs[nb] = obstacles[names[i]];
-      nb++;
-    }
-  }
-
-  if (nb == 0)
-  {
-    write (name+"西行求取真经已历尽了所有的难关。\n");
-  }
-  else
-  {
-    write (name+"西行求取真经还须过"+chinese_number(nb)+"关：\n");
-    strs = (string *)sort_array (strs, 1);
-    for (i = 0; i < nb; i++)
-    {
-      write ("    "+strs[i]+"\n");
-    }
-  }
-  return 1;
+    );
+    return 1;
 }
 

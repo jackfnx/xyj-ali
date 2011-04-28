@@ -34,6 +34,8 @@ mapping global_alias = ([
     "dazuo":   "exercise", // ´ò×ø
     "mingsi":   "meditate", // Ú¤Ë¼
     "tuna" :   "respirate", // ÍÂÄÉ
+    "qujing" :   "obstacles",
+    "dntg" : "obstacles -dntg",
 ]);
 
 string process_global_alias(string arg)

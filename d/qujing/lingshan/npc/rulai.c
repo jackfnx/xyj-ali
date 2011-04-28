@@ -5,8 +5,6 @@
 
 inherit NPC;
 
-#include <obstacle.h>
-
 #define DEBUG 0
 
 #define LEVEL_NONE 0
@@ -141,6 +139,7 @@ int recover_death()
 void do_reward (object who)
 {
   object me = this_object();
+  mapping obstacles = OBSTACLES_D->query_obstacle_levels();
   int size1 = sizeof(obstacles);
   int size2;
   string *strs = values(obstacles);
@@ -240,7 +239,6 @@ int reward_player ()
   object me = this_object();
   object who = this_player();
   object *all, *list;
-  int size1 = sizeof(obstacles);
   int i, j;
 
   if (me->query("my_level") == LEVEL_ASKED)
@@ -261,7 +259,7 @@ int reward_player ()
     return 1;
   }
 
-  if (who->query("obstacle/number") < size1)
+  if (!OBSTACLES_D->check_obstacles(who))
   {
     message_vision ("$N对$n摇头说道：你尚未历尽难关。\n",me,who);
     return 1;
