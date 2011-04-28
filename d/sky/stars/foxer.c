@@ -41,7 +41,7 @@ void create()
    set_skill("force", 201);
    set_skill("hammer", 51);
    set_skill("hellfire-whip", 102);
-   set_skill("huntian-hammer", 2);
+   set_skill("kaishan-chui", 2);
    set_skill("literate", 142);
    set_skill("moondance", 205);
    set_skill("moonforce", 167);
