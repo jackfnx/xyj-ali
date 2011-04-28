@@ -35,9 +35,9 @@ void create()
     set_skill("literate", 50);
     set_skill("dragonfight", 50);
     map_skill("unarmed", "dragonfight");
-    set_skill("huntian-hammer", 150);
-    map_skill("hammer", "huntian-hammer");
-    map_skill("parry", "huntian-hammer");
+    set_skill("kaishan-chui", 150);
+    map_skill("hammer", "kaishan-chui");
+    map_skill("parry", "kaishan-chui");
     map_skill("force", "dragonforce");
     map_skill("dodge", "dragonstep");
     map_skill("spells", "seashentong");
