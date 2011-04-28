@@ -51,8 +51,8 @@
 </moon>
 <wzg class="daxian">
   <skill>baguazhen</skill>
-  <skill todo="todo">jiugong-chui</skill>
   <skill>qixing-zhang</skill>
+  <skill todo="todo">huntian-hammer</skill>
   <skill share="share">sanqing-jian</skill>
   <skill share="share">taiyi</skill>
   <skill>wuxing-quan</skill>
@@ -64,7 +64,7 @@
   <skill>dragonforce</skill>
   <skill>dragonstep</skill>
   <skill todo="todo">fengbo-fork</skill>
-  <skill todo="todo">huntian-hammer</skill>
+  <skill todo="todo">kaishan-chui</skill>
   <skill>seashentong</skill>
 </sea>
 <hell class="ghost">
