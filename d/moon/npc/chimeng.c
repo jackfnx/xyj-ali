@@ -41,21 +41,21 @@ void create()
        set_skill("spells", 120);
        set_skill("baihua-zhang", 120);
         set_skill("moonshentong",140);
-        set_skill("jueqingbian", 180);
+        set_skill("loveless-whip", 180);
         set_skill("moonforce", 120);
         set_skill("moondance", 100);
         map_skill("spells", "moonshentong");
         map_skill("unarmed", "baihua-zhang");
         map_skill("force", "moonforce");
-        map_skill("whip", "jueqingbian");
-        map_skill("parry", "jueqingbian");
+        map_skill("whip", "loveless-whip");
+        map_skill("parry", "loveless-whip");
         map_skill("dodge", "moondance");
 
 create_family("ÔÂ¹¬", 2, "µÜ×Ó");
 setup();
 
         carry_object("/d/obj/cloth/luoyi")->wear();
-   carry_object("/d/obj/weapon/whip/jueqingbian")->wield();
+   carry_object("/d/obj/weapon/whip/loveless-whip")->wield();
 }
 
 void attempt_apprentice(object ob)

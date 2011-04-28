@@ -1,5 +1,5 @@
 //情丝
-//requirement: jueqingbian > 100, kee > 20%, sen > 50%
+//requirement: loveless-whip > 100, kee > 20%, sen > 50%
 
 #include <ansi.h>
 
@@ -24,7 +24,7 @@ int perform(object me, object target)
     if (!weapon = target->query_temp("weapon"))
         return notify_fail("对方没拿兵器，你怎么夺取？\n");
 
-    if ((int)me->query_skill("jueqingbian", 1) < 100)
+    if ((int)me->query_skill("loveless-whip", 1) < 100)
         return notify_fail("你的绝情鞭火候还不够！\n");
     if (me->query_skill_mapped("force") != "moonforce")
         return notify_fail("绝情鞭必须配合玉女心经才能使用。\n");
@@ -56,7 +56,7 @@ int perform(object me, object target)
         + HIC "若虚若实，转眼间竟已缠上了$n手中的" + weapon->query("name")
         + HIC "。\n" NOR;
 
-    ap = me->query_skill("jueqingbian", 1) + me->query_str() * 10;
+    ap = me->query_skill("loveless-whip", 1) + me->query_str() * 10;
     dp = target->query_str() * 10;
     my_exp = me->query("combat_exp");
     your_exp = target->query("combat_exp");

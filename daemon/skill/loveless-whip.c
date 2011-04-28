@@ -1,4 +1,4 @@
-// jueqing-bian.c
+// loveless-whip.c
 // ¾øÇé±Þ·¨
 // Juney: 07/04/97: Genesis.
 /*
@@ -170,6 +170,6 @@ int practice_skill(object me)
 
 string perform_action_file(string action)
 {
-    return CLASS_D("girl") + "/jueqingbian/" + action;
+    return CLASS_D("girl") + "/loveless-whip/" + action;
 }
 
