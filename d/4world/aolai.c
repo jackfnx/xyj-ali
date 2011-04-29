@@ -17,7 +17,7 @@ LONG);
   set("exits", ([ /* sizeof() == 3 */
   "south" : __DIR__"northgate.c",
   "west" : "d/changan/aolaiws",
-  "east" : __DIR__"flowerfruit",
+  "east" : "/d/hgs/flowerfruit",
 ]));
   set("outdoors", 1);
 

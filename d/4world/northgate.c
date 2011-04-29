@@ -21,6 +21,7 @@ LONG);
     set("exits", ([ /* sizeof() == 2 */
         "south" : __DIR__"north2.c",
         "north" : __DIR__"aolai",
+        "east"  : __DIR__"drillent",
     ]));
     set("no_fight", 1);
 
