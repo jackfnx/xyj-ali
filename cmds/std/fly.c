@@ -56,7 +56,7 @@ int main(object me, string arg)
 
     me->add("mana", mana_cost);
 
-    if (arg=="stone") loc="/d/4world/entrance";
+    if (arg=="stone") loc="/d/hgs/entrance";
     else if (arg=="kaifeng") loc="/d/kaifeng/tieta";
     else if (arg=="moon") loc="/d/moon/ontop2";
     else if (arg=="lingtai") loc="/d/lingtai/gate";
