@@ -4,8 +4,8 @@
 
 string *penis_names = ({ "肉棒", "阳根", "肉杵", "分身", "龙根", "淫枪", "龙枪", "淫兽" });
 string *pussy_names = ({ "玉门", "肉蚌", "玉蛤", "密道", "肉蟹", "花房", "花径", "花穴", "肉穴", "淫穴", "蜜壶" });
-string *ass_names = ({ "菊花", "菊穴", "菊肛", "肛菊", "臀尻", "雪臀", "玉臀" });
-string *finger_names = ({ "手指", "玉指" });
+string *ass_names = ({ "菊花", "菊穴", "菊肛", "菊蕾" });
+string *finger_names = ({ "手指", "玉指", "纤指", "素指" });
 string *breast_names = ({ "乳房", "玉乳", "酥乳", "娇乳", "乳峰", "豪乳", "爆乳", "乳头", "乳蒂" });
 string *sensitive_names_m = ({ "耳垂", "乳头" });
 string *sensitive_names_f = ({ "耳垂", "唇瓣", "玉颈", "玉背", "皓腕", "肚脐", "纤腰", "玉腿", "香踝", "玉足" });
@@ -47,13 +47,14 @@ void report_sex_status(object ob)
 void announce(object ob, string event)
 {
     object makelover = ob->query_temp("sex/makelove_ob");
-    object fucker = ob->query_temp("sex/fuck_ob");
+    object sufferer = ob->query_temp("sex/sufferer");
+    object attacker = ob->query_temp("sex/attacker");
     switch (event) {
         case "erect":
-            message_vision(HIR "\n$N的" + penis_names[random(sizeof(penis_names))] + "倔强的挺立了起来！\n\n" NOR, ob);
+            message_vision(HIG "\n$N的" + penis_names[random(sizeof(penis_names))] + "倔强的挺立了起来！\n\n" NOR, ob);
             break;
         case "wet":
-            message_vision(HIR "\n一股蜜汁从$N的" + pussy_names[random(sizeof(pussy_names))] + "中喷涌而出，$P显然已经动情！\n\n" NOR, ob);
+            message_vision(HIG "\n一股蜜汁从$N的" + pussy_names[random(sizeof(pussy_names))] + "中喷涌而出，$P显然已经动情！\n\n" NOR, ob);
             break;
         case "no_erect":
             message_vision(HIC "\n随着欲火逐渐消退，$N的" + penis_names[random(sizeof(penis_names))] + "也逐渐恢复了常态！\n\n" NOR, ob);
@@ -62,27 +63,17 @@ void announce(object ob, string event)
             message_vision(HIC "\n随着欲火逐渐消退，$N也逐渐恢复了常态！\n\n" NOR, ob);
             break;
         case "ejaculate":
-            if (!objectp(fucker)) {
-                message_vision(HIR "\n$N的" + penis_names[random(sizeof(penis_names))] + "中射出了一道真阳！\n\n" NOR, ob);
+            if (!objectp(sufferer)) {
+                message_vision(HIY "\n$N的" + penis_names[random(sizeof(penis_names))] + "中射出了一道真阳！\n\n" NOR, ob);
             } else {
-                tell_object(fucker, "\n" + HIR + ob->name() + "射精了，强大的冲击力猛烈的冲击着你的花心！\n\n" NOR);
+                tell_object(sufferer, "\n" + HIY + ob->name() + "射精了，强大的冲击力猛烈的冲击着你的花心！\n\n" NOR);
             }
             break;
         case "orgasm":
-            tell_room(environment(ob), HIR "\n" + ob->name() + "的浑身剧烈的颤抖，口中发出无意义的尖叫，肌肤上盛开起一道道绯红的花斑...\n她已经达到了快感的巅峰！\n\n" NOR, ({ob}));
-            if (objectp(fucker)) {
-                tell_object(fucker, HIR + "你感到" + ob->name() + "的" + pussy_names[random(sizeof(pussy_names))] + "一阵阵剧烈的收缩，一股阴精从花房中喷涌而出，正好淋在你的"+penis_names[random(sizeof(penis_names))]+"上！\n\b" NOR);
+            tell_room(environment(ob), HIY "\n" + ob->name() + "的浑身剧烈的颤抖，口中发出无意义的尖叫，肌肤上盛开起一道道绯红的花斑...\n她已经达到了快感的巅峰！\n\n" NOR, ({ob}));
+            if (objectp(attacker)) {
+                tell_object(attacker, HIY + "你感到" + ob->name() + "的" + pussy_names[random(sizeof(pussy_names))] + "一阵阵剧烈的收缩，一股阴精从花房中喷涌而出，正好淋在你的"+penis_names[random(sizeof(penis_names))]+"上！\n\b" NOR);
             }
-            break;
-    }
-}
-
-void gain_enjoy(object ob, string event)
-{
-    switch (event) {
-        case "ejaculate":
-            break;
-        case "orgasm":
             break;
     }
 }
@@ -121,13 +112,24 @@ object get_sufferer(object me, object ob)
     }
 }
 
+string get_loverid(object ob)
+{
+    return userp(ob) ? "(" + getuid(ob) + ")" : ob->query("id");
+}
+
 void push_penis(object me, object ob)
 {
     object attacker, sufferer, penis_ob;
     string penis, pussy;
+    string attacker_id, attacker_name;
+    string sufferer_id, sufferer_name;
 
     attacker = get_attacker(me, ob);
     sufferer = get_sufferer(me, ob);
+    attacker_id = get_loverid(attacker);
+    attacker_name = attacker->query("name");
+    sufferer_id = get_loverid(sufferer);
+    sufferer_name = sufferer->query("name");
 
     if (attacker->query("gender") == "男性") {
             penis = penis_names[random(sizeof(penis_names))];;
@@ -146,14 +148,18 @@ void push_penis(object me, object ob)
         pussy = ass_names[random(sizeof(ass_names))];
     }
 
-    attacker->set_temp("sex/fuck_ob", sufferer);
-    sufferer->set_temp("sex/fuck_ob", attacker);
-    attacker->fuck_ob(sufferer);
-    sufferer->fuck_ob(attacker);
+    attacker->set_temp("sex/sufferer", sufferer);
+    sufferer->set_temp("sex/attacker", attacker);
     attacker->delete_temp("no_move");
     sufferer->delete_temp("no_move");
-    tell_object(attacker, HIR + "\n\n你的"+penis+"已经插入了"+sufferer->name()+"的"+pussy+"！！！\n" + NOR);
-    tell_object(sufferer, HIR + "\n\n" + attacker->name() +"的"+penis+"已经插入了你的"+pussy+"！！！\n" + NOR);
+    attacker->fuck_ob(sufferer);
+    sufferer->fuck_ob(attacker);
+    attacker->add("sex/lovers/" + sufferer_id, sufferer_name);
+    sufferer->add("sex/lovers/" + attacker_id, attacker_name);
+    if (sufferer->query("gender") == "女性")
+        sufferer->set("sex/hymen_broken", 1);
+    tell_object(attacker, HIM + "\n\n你的"+penis+"已经插入了"+sufferer->name()+"的"+pussy+"！！！\n\n" + NOR);
+    tell_object(sufferer, HIM + "\n\n" + attacker->name() +"的"+penis+"已经插入了你的"+pussy+"！！！\n\n" + NOR);
 }
 
 void pull_penis(object me, object ob)
@@ -161,19 +167,19 @@ void pull_penis(object me, object ob)
     object attacker, sufferer, penis_ob;
     string penis, pussy;
 
-    if ( me->query_temp("sufferer") == ob
-       || ob->query_temp("attacker") == me ) {
+    if (me->query_temp("sex/sufferer") == ob
+    ||  ob->query_temp("sex/attacker") == me) {
         attacker = me;
         sufferer = ob;
-    } else if ( me->query_temp("attacker") == ob
-            || ob->query_temp("sufferer") == me ) {
+    } else if (me->query_temp("sex/attacker") == ob
+            ||  ob->query_temp("sex/sufferer") == me) {
         attacker = ob;
         sufferer = me;
     } else
         return;
 
     if (attacker->query("gender") == "男性") {
-            penis = penis_names[random(sizeof(penis_names))];;
+        penis = penis_names[random(sizeof(penis_names))];;
     } else {
         penis_ob = attacker->query_temp("penis");
         if (objectp(penis_ob)) {
@@ -189,15 +195,45 @@ void pull_penis(object me, object ob)
         pussy = ass_names[random(sizeof(ass_names))];
     }
 
-    attacker->delete_temp("sex/fuck_ob");
-    sufferer->delete_temp("sex/fuck_ob");
-    tell_object(attacker, HIB + "\n\n你将"+penis+"拔出了"+sufferer->name()+"的"+pussy+"！！！\n" + NOR);
-    tell_object(sufferer, HIB + "\n\n" + attacker->name() +"将"+penis+"拔出了你的"+pussy+"！！！\n" + NOR);
+    attacker->delete_temp("sex/sufferer");
+    sufferer->delete_temp("sex/attacker");
+    attacker->delete_temp("no_move");
+    sufferer->delete_temp("no_move");
+    attacker->remove_fucker(sufferer);
+    sufferer->remove_fucker(attacker);
+    tell_object(attacker, HIB + "\n\n你将"+penis+"拔出了"+sufferer->name()+"的"+pussy+"！！！\n\n" + NOR);
+    tell_object(sufferer, HIB + "\n\n" + attacker->name() +"将"+penis+"拔出了你的"+pussy+"！！！\n\n" + NOR);
 }
 
 int is_fucking(object ob1, object ob2)
 {
-    return ob1->query_temp("sex/fuck_ob") == ob2 &&  ob2->query_temp("sex/fuck_ob") == ob1;
+    return (ob1->query_temp("sex/sufferer") == ob2 && ob2->query_temp("sex/attacker") == ob1)
+        || (ob2->query_temp("sex/sufferer") == ob1 && ob1->query_temp("sex/attacker") == ob2);
+}
+
+void r_w_p_l(object winner, object victim)
+{
+    winner->add("sex/win/" + get_loverid(victim), 1);
+    tell_object(winner, HIG "\n\n" + victim->query("name") + HIG "被你在床上征服了！！！\n\n" NOR);
+
+    victim->add("sex/lose/" + get_loverid(winner), 1);
+    tell_object(victim, HIG "\n\n你被" + winner->query("name") + HIG "在床上征服了！！！\n\n" NOR);
+}
+
+void stop_makelove(object victim)
+{
+    object winner;
+    
+    if (objectp(winner = victim->query_temp("sex/attacker"))
+    ||  objectp(winner = victim->query_temp("sex/sufferer")))
+        pull_penis(winner, victim);
+    if (!objectp(winner))
+        winner = victim->query_temp("sex/makelove_ob");
+    victim->remove_all_fucker();
+    victim->delete_temp("sex");
+    winner->delete_temp("sex");
+    victim->delete_temp("no_move");
+    winner->delete_temp("no_move");
 }
 
 int do_makelove(object me, object victim, int is_fucking)
@@ -207,10 +243,6 @@ int do_makelove(object me, object victim, int is_fucking)
     int me_ap, victim_ap, me_dp, victim_dp, hit, back;
 
     if (is_fucking) {
-        if (!is_fucking(me, victim)) {
-            push_penis(me, victim);
-            return 0;
-        }
         action = me->query("fuck_actions");
     }
     else {
@@ -223,7 +255,7 @@ int do_makelove(object me, object victim, int is_fucking)
         }
         action = me->query("sex_actions");
     }
-        
+
     if (victim->query("gender")=="女性") {
         switch (random(4)) {
             case 0:
@@ -266,8 +298,8 @@ int do_makelove(object me, object victim, int is_fucking)
     victim_ap = victim->query_per();
     me_dp = me->query_cps();
     victim_dp = victim->query_cps();
-    hit = me_ap > random(victim_dp * 3 / 4);
-    back = me_dp < random((victim_dp + victim_ap) * 1 / 2);
+    hit = random(me_ap + victim_dp) > victim_dp;
+    back = random(me_ap + me_dp + victim_dp) < victim_ap + victim_dp;
     if (!hit)
         effectstr = "弄得$n浑身一颤，急忙深吸一口气，总算没有失控";
     else {
@@ -294,18 +326,20 @@ int do_makelove(object me, object victim, int is_fucking)
 
     //me->add("atman", -action["cost"]);
 
-    if (me->query("lust")>=100)
-        me->orgasm();
-
-    if (victim->query("lust")>=100)
+    if (victim->query("lust")>=100) {
         victim->orgasm();
+        r_w_p_l(me, victim);
+    } else if (me->query("lust")>=100) {
+        me->orgasm();
+        r_w_p_l(victim, me);
+    }
 
-    return action["damage"];
+    return action["enjoy"];
 }
 
 void makelove(object me, object victim)
 {
-    if (me->query_temp("sex/fuck_ob") == victim) {
+    if (is_fucking(me, victim)) {
         do_makelove(me, victim, 1);
     } else {
         do_makelove(me, victim, 0);

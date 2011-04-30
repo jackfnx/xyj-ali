@@ -199,6 +199,8 @@ void remove_all_fucker()
     for (int i=0; i<sizeof(enemy); i++)
         if (enemy[i]->remove_fucker(this_object()))
             enemy[i] = 0;
+
+    enemy -= ({ 0 });
 }
 
 // reset_action()

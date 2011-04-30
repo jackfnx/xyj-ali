@@ -9,8 +9,6 @@
 #include <skill.h>
 #include <sex.h>
 
-void remove_faint(object me);
-
 int ghost = 0;
 
 int is_ghost() { return ghost; }
@@ -414,11 +412,11 @@ int sex_excite(string type, int fire)
 {
     int val, max;
 
-    if (fire < 0) error("F_DAMAGE: SA为负值。\n");
+    if (fire < 0) error("F_DAMAGE: SE为负值。\n");
     if (type == "lust")
         max = MAX_LUST;
     else
-        error("F_DAMAGE: 未知的SA种类。\n");
+        error("F_DAMAGE: 未知的SE种类。\n");
 
     val = (int)query(type);
     val += fire;
@@ -497,6 +495,8 @@ void orgasm()
 {
     string gender = query("gender");
 
+    this_object()->remove_all_fucker();
+
     if (gender == "男性") {
         message("system", HIR "\n你感到腰眼一麻，下体射出了一道精阳！\n顿时一阵巨大的快感袭入了你的脑海，你不禁一阵眩晕。。。\n\n" NOR, this_object());
         set_temp("no_move", 1);
@@ -511,7 +511,6 @@ void orgasm()
         message("system", HIR "\n你感到脑中轰的一声，仿佛灵魂已经被抽出了肉体！\n你达到了至高无上的" + org + "！\n\n" NOR, this_object());
         set_temp("no_move", 1);
         SEX_D->announce(this_object(), "orgasm");
-        SEX_D->gain_enjoy(this_object(), "orgasm");
         call_out("no_orgasm", random(40 - this_object()->query_con()));
     } else
         error("F_DAMAGE: 未知的性别... " + gender + "\n");
@@ -520,16 +519,17 @@ void orgasm()
 void ejaculate()
 {
     remove_call_out("ejaculate");
+    set("sex/first_semen_lost", 1);
     add_temp("ejaculate", -1);
     sex_depress("lust", random(10));
     if ((int)query_temp("ejaculate") > 0) {
-        SEX_D->gain_enjoy(this_object(), "ejaculate");
         SEX_D->announce(this_object(), "ejaculate");
         call_out("ejaculate", 2);
     } else {
         set_temp("ejaculate", 0);
         message("system", HIG "\n你的射出了最后一道精阳，长出一口气！\n\n" NOR, this_object());
         delete_temp("no_move");
+        SEX_D->stop_makelove(this_object());
         call_out("remove_heat", 1);
     }
 }
@@ -538,8 +538,10 @@ void no_orgasm()
 {
     remove_call_out("no_orgasm");
     sex_depress("lust", random(query("lust")*2/3));
+    set_temp("orgasm", 0);
     delete_temp("no_move");
     message("system", HIG "\n随着欲火的消退，你感到灵魂又回到了肉体中！\n\n" NOR, this_object());
+    SEX_D->stop_makelove(this_object());
 }
 
 int sex_refresh()
