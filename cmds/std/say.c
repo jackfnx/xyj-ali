@@ -22,7 +22,7 @@ int main(object me, string arg)
    }
 
    write( CYN "你说道：" + arg + "\n" NOR);
-   tell_room(environment(me), CYN + me->name() + "说道：" +  arg + "\n" NOR,
+   tell_room(environment(me), CYN + me->name() + CYN "说道：" +  arg + "\n" NOR,
              me);
 
    // The mudlib interface of say

@@ -15,19 +15,23 @@ mapping channels = ([
    "sys":   ([   "msg_speak": HIG "【系统】%s：%s\n" NOR, "wiz_only": 1 ]),
    "wiz":   ([   "msg_speak": HIY "【巫师】%s：%s\n" NOR,
           "msg_emote": HIY "【巫师】%s\n" NOR,
+          "color": HIY,
           "wiz_only": 1
         ]),
    "gwiz":   ([   "msg_speak": BGRN "【网际巫师】%s：%s\n" NOR,
           "msg_emote": BGRN "【网际巫师】%s\n" NOR,
+          "color": BGRN,
           "wiz_only": 1, "intermud": GWIZ, "channel": "CREATOR",
           "filter": 1,
           "intermud_emote": 1 ]),
    "xyj":   ([   "msg_speak": HIR "【西游记】%s：%s\n" NOR,
           "msg_emote": HIR "【西游记】%s\n" NOR,
+          "color": HIR,
           "intermud": GCHANNEL, "channel": "xyj",
           "filter": (:$1["MUDLIB"]=="A Journey to the West" :) ]),
    "es":   ([   "msg_speak": HIR "【网际闲聊】%s：%s\n" NOR,
           "msg_emote": HIR "【网际闲聊】%s\n" NOR,
+          "color": HIR,
           "intermud": GCHANNEL, "channel": "es",
           "filter": 1 ]), //keep the channel name
           //as "es" to be compatible with other
@@ -47,9 +51,11 @@ mapping channels = ([
 */
    "chat":   ([   "msg_speak": HIC "【闲聊】%s：%s\n" NOR,
           "msg_emote": HIC "【闲聊】%s\n" NOR,
+          "color": HIC,
          ]),
    "rumor":([   "msg_speak": HIM "【谣言】%s：%s\n" NOR,
           "msg_emote": HIM "【谣言】%s\n" NOR,
+          "color": HIM,
           "anonymous": "某人"
         ]),
 /*   "music":([   "msg_speak": WHT "【心笙乐府】%s唱着：%s\n" NOR,
@@ -140,6 +146,7 @@ varargs int do_channel(object me, string verb, string arg, int emote)
                 }
 
      if( !arg ) return 0;
+      arg = replace_string(arg, "$E_CLR$", channels[verb]["color"]);
      }
    }
 

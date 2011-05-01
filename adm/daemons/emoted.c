@@ -13,6 +13,8 @@ inherit F_SAVE;
 
 mapping emote;
 
+#define E_CLR CYN
+
 //   The emote mapping contains the data base of emote definitions. Each emote
 //   is defined in a sub-mapping with the following structure:
 //
@@ -79,7 +81,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
         user_emote = "某人" + verb + "\n";
                 else {
                   if(!channel_emote || ! intermud)
-          user_emote = me->name() + verb + "\n";
+          user_emote = me->name() + "$E_CLR$" + verb + "\n";
                   else
           user_emote = "$N" + verb + "\n";
                 }
@@ -120,7 +122,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
      if(rumor_emote)
         str = replace_string(str, "$N", "某人");
         else
-        str = replace_string(str, "$N", me->name());
+        str = replace_string(str, "$N", me->name() + "$E_CLR$");
      str = replace_string(str, "$P", gender_self(my_gender));
                 str = replace_string(str, "$S", RANK_D->query_self(me));
                 str = replace_string(str, "$s", RANK_D->query_self_rude(me));
@@ -129,10 +131,10 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
                         str = replace_string(str, "$c", RANK_D->query_rude(me));
                         str = replace_string(str, "$R", RANK_D->query_respect(target));
                         str = replace_string(str, "$r", RANK_D->query_rude(target));
-        str = replace_string(str, "$n", target->name());
+        str = replace_string(str, "$n", target->name() + "$E_CLR$");
         str = replace_string(str, "$p", gender_pronoun(target_gender));
      }
-     if( !channel_emote ) message("emote", CYN + str + NOR, me);
+     if( !channel_emote ) message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR, me);
    }
   
    if( objectp(target) && stringp(str = emote[verb]["target"]) ) {
@@ -140,7 +142,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
      if(rumor_emote)
         str = replace_string(str, "$N", "某人");
         else
-        str = replace_string(str, "$N", me->name());
+        str = replace_string(str, "$N", me->name() + "$E_CLR$");
      str = replace_string(str, "$P", gender_pronoun(my_gender));
                 str = replace_string(str, "$S", RANK_D->query_self(me));
                 str = replace_string(str, "$s", RANK_D->query_self_rude(me));
@@ -148,10 +150,10 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
                 str = replace_string(str, "$c", RANK_D->query_rude(me));
                 str = replace_string(str, "$R", RANK_D->query_respect(target));
                 str = replace_string(str, "$r", RANK_D->query_rude(target));
-     str = replace_string(str, "$n", target->name());
+     str = replace_string(str, "$n", target->name() + "$E_CLR$");
      str = replace_string(str, "$p", gender_self(target_gender));
 
-     if( !channel_emote ) message("emote", CYN + str + NOR, target);
+     if( !channel_emote ) message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR, target);
    }
 
    if( stringp(str = emote[verb]["others"+msg_postfix]) ) {
@@ -159,7 +161,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
      if(rumor_emote)
         str = replace_string(str, "$N", "某人");
         else if(!channel_emote || !intermud)
-        str = replace_string(str, "$N", me->name());
+        str = replace_string(str, "$N", me->name() + "$E_CLR$");
      str = replace_string(str, "$P", gender_pronoun(my_gender));
                 str = replace_string(str, "$S", RANK_D->query_self(me));
                 str = replace_string(str, "$s", RANK_D->query_self_rude(me));
@@ -168,13 +170,13 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
                         str = replace_string(str, "$c", RANK_D->query_rude(me));
                         str = replace_string(str, "$R", RANK_D->query_respect(target));
                         str = replace_string(str, "$r", RANK_D->query_rude(target));
-        str = replace_string(str, "$n", target->name());
+        str = replace_string(str, "$n", target->name() + "$E_CLR$");
         str = replace_string(str, "$p", gender_pronoun(target_gender));
      }
      if( !channel_emote ) {
-         message("emote", CYN + str + NOR, environment(me), ({me, target}));
+         message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR, environment(me), ({me, target}));
          if (environment(me)->query("broadcast"))
-           environment(me)->broadcast(CYN + str + NOR);
+           environment(me)->broadcast(E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR);
      } else return str;
    }
 

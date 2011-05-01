@@ -54,14 +54,14 @@ int main(object me, string arg)
    // by snowcat jan 23 1998
    if ( msg = QUEST_D->quest_ask (me, ob, topic) ) {
      if( stringp(msg) ) {
-        message_vision( CYN "$N说道：" + msg + "\n" NOR, ob);
+        message_vision( CYN "$N" CYN "说道：" + msg + "\n" NOR, ob);
         return 1;
      }
    }
 
    if( msg = ob->query("inquiry/" + topic) ) {
      if( stringp(msg) ) {
-        message_vision( CYN "$N说道：" + msg + "\n" NOR, ob);
+        message_vision( CYN "$N" CYN "说道：" + msg + "\n" NOR, ob);
         return 1;
      }
    } else
