@@ -13,6 +13,7 @@
 // This must be after gender.c
 #include "/adm/simul_efun/message.c"
 #include "/adm/simul_efun/file.c"
+#include "/adm/simul_efun/string.c"
 
 void create()
 {
