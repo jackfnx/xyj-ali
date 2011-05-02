@@ -27,6 +27,3 @@ void create()
 
     setup();
 }
-
-
-ÿÿ

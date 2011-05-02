@@ -44,13 +44,33 @@ int do_expand(string arg)
         message("vission", HIR "\n只听得轰的一声，一大块石壁塌了下来。\n\n" NOR, environment(me));
     }
 
-    if ("/d/dntg/master"->in_mud()) {
+    if ("/d/dntg/helper"->in_mud()) {
         message("vission", HIR "你看见石块之中空空如也。\n" NOR, me);
         return 1;
     }
 
-    ob = new("/d/dntg/master");
+    ob = new("/d/dntg/helper");
     ob->move(environment(me));
     message("vission", HIR "你看见石块之中露出一把金箍棒。\n" NOR, me);
     return 1;
+}
+
+void open_door()
+{
+    object room;
+
+    if (!query("exits/up")) {
+        if (!(room = find_object(__DIR__"entrance")))
+            room = load_object(__DIR__"entrance");
+        if (room = find_object(__DIR__"entrance")) {
+            message("vision", "仙石忽然发出轧轧的声音，露出一个向上的阶梯。\n",
+                this_object());
+            set("exits/up", __DIR__"entrance");
+            room->set("exits/down", __FILE__);
+            message("vision", "仙石忽然发出轧轧的声音，露出一个向下的阶梯。\n",
+                room);
+
+            call_out((: call_other,  __DIR__"entrance", "close_passage" :), 10);
+        }
+    }
 }
