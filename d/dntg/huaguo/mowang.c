@@ -53,31 +53,14 @@ LONG );
 
 void init()
 {
-    object ob = this_player();
-
-    ::init();
-    remove_call_out("greeting");
-    call_out("greeting", 1, ob);
-}
-
-void greeting(object ob)
-{
-    object me = this_object();
-    message_vision("$N喝道：这地盘老子占了，来找死嘛！\n", me);
-    command("kill " + ob->query("id"));
-}
-
-int accept_fight(object ob)
-{
-    ob->apply_condition("killer", 100);
-    kill_ob(ob);
-    return 1;
+    add_action("override_move", ({ "go", "west", "east", "south", "north" }));
 }
 
 void kill_ob(object ob)
 {
-    set_temp("no_return", 1);
+    object me = this_object();
     set_temp("my_killer", ob);
+    message_vision("$N喝道：这地盘老子占了，来找死嘛！\n", me);
     ::kill_ob(ob);
 }
 
@@ -85,18 +68,51 @@ void die()
 {
     object ob = query_temp("my_killer");
     object me = this_object();
-    object announcer;
-    object panzi;
 
     if (ob) {
         message_vision("\n$N惨叫一声，被砍为两段。\n",me);
-        announcer = new(__DIR__"announcer");
-        message_vision("\n猴子头领"+ announcer->query("name") +"领着几只猴子跑了过来，看到$N被斩，高兴的跳了起来。\n",me);
-        if (ob->query("dntg/huaguo") != "done" && userp(ob)) {
-            announcer->announce_success(ob);
-        }
-        message_vision("\n"+ announcer->query("name") +"带着众猴子七手八脚的把$N的尸体拖了出去。\n",me);
-        destruct(announcer);
+        call_out("announcer_appearing", 1, ob);
+        load_object("/obj/empty");
+        move("/obj/empty");
+        return;
     }
     destruct(me);
+}
+
+void announcer_appearing(object me)
+{
+    object announcer;
+    object panzi;
+    int i = 0;
+    
+    message_vision("\n众猴子看到看到$n被斩，高兴的跳了起来。\n", me, this_object());
+    announcer = new(__DIR__"announcer");
+    message_vision("\n猴子头领"+ announcer->name() +"从猴子群中跑了出来。\n", me);
+    if (me->query("dntg/huaguo") != "done" && userp(me)) {
+        announcer->announce_success(me);
+    }
+    message_vision("\n"+ announcer->name() +"带着众猴子七手八脚的把魔王和妖精们的尸体拖了出去。\n", me);
+    foreach (object ob in all_inventory(environment(me)))
+        if (ob->is_corpse()) destruct(ob);
+    destruct(announcer);
+    for (i = 1; i <= me->query_temp("people_num"); i++) {
+        object hou = me->query_temp("people/" + i);
+        if (objectp(hou)) destruct(hou);
+    }
+    me->delete_temp("people");
+    me->delete_temp("people_num");
+    destruct(this_object());
+}
+
+int override_move(string dir)
+{
+    string verb = query_verb();
+    object killer = query_temp("my_killer");
+    
+    if (verb != "go") dir = verb;
+    if (killer != this_player()) return 0;
+    if (!environment()->query("exits/" + dir)) return 0;
+
+    tell_object(killer, name() + "冲着你冷笑到：“想走？没那么容易吧！”\n");
+    return 1;
 }

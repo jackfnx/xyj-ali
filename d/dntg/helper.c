@@ -6,6 +6,7 @@ inherit F_UNIQUE;
 #define DNTG_START_ROOM "/d/hgs/inner"
 #define HUAG_GETFLAG_ROOM "/d/hgs/shifang"
 #define HUAG_WAVE_ROOM "/d/hgs/fall"
+#define HUAG_VOTE_ROOM "/d/hgs/throne"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -148,13 +149,21 @@ void die()
     unconcious();
 }
 
-void report_progress(object ob)
+void report_progress(int co)
+{
+    call_out("do_report_progress", co);
+}
+
+void do_report_progress()
 {
     string prog = "";
+    object ob = query_temp("chosen");
+    
+    if (!ob) return;
     if (ob->query("dntg/huaguo") != "done")
         prog = "第一件事，你要首先成为花果山水帘洞的群猴之王";
     else if (ob->query("dntg/donghai") != "done")
-        prog = "第二件事，你现在已经是花果山水帘洞的群猴之王了，你要操练手下的群猴，将花果山建设成铜墙铁壁";
+        prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山建设成铜墙铁壁";
     else {
         if (OBSTACLES_D->check_obstacles(ob, "dntg")) {
             tell_object(ob, name() + CYN "惊奇的说道：咦？"
@@ -189,7 +198,7 @@ int do_swear(string arg)
     move(ob);
     environment(ob)->open_door();
     
-    call_out("report_progress", 3, ob);
+    report_progress(3);
     return 1;
 }
 
@@ -221,20 +230,30 @@ int do_ba(string arg)
     if (random(10) < 5)
         message_vision("$N使尽吃奶的力气也没将大旗拔出来。\n", me);
     else {
-        qi = new("/d/dntg/huaguo/flag");
+        qi = new(__DIR__"huaguo/flag");
         qi->move(me);
         message_vision("$N大喝一声，将大旗拔了下来。\n", me);
         env->set("getflag", 1);
-        call_out((: call_other, HUAG_GETFLAG_ROOM, "delete" :), 1200, "getflag");
+        env->start_call_out("delete", 1200, "getflag");
     }
     return 1;
 }
 
-int check_huaguo_waveroom()
+int check_room(string room)
 {
     object chosen = query_temp("chosen");
     if (!chosen) return 0;
-    return file_name(environment(chosen)) == HUAG_WAVE_ROOM;
+    return file_name(environment(chosen)) == room;
+}
+
+int check_huaguo_waveroom()
+{
+    return check_room(HUAG_WAVE_ROOM);
+}
+
+int check_huaguo_voteroom()
+{
+    return check_room(HUAG_VOTE_ROOM);
 }
 
 int override_move(string dir)
@@ -247,11 +266,6 @@ int override_move(string dir)
     
     switch (file_name(environment(chosen))) {
         case HUAG_GETFLAG_ROOM:
-            if (dir == "east" && chosen->query("dntg/huaguo") != "allow") {
-                tell_object(chosen, "几只小猴子跑过来冲你喊到：＂我们正在选猴王，没事别来捣乱。＂\n");
-                tell_object(chosen, "小猴子又急匆匆的走了。\n");
-                return 1;
-            }
             break;
         default:
             break;

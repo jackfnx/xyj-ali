@@ -1,5 +1,7 @@
 // flag.c
 
+#include <ansi.h>
+
 inherit ITEM;
 
 void create()
@@ -53,7 +55,7 @@ int do_wave(string arg)
         return notify_fail("你挥起手中的"+name()+"，想起了当年在此称王的快乐时光。\n");
     message_vision("$N挥舞着起旗子，大喝一声：“大造化！大造化！下面没水！原来是一座铁板桥。桥那边是一座天造地设的家当。兄弟们快去呀！”\n", me);
     call_out("monkeys_jump", 2, environment(me));
-    me->set("dntg/huaguo", "allow");
+    call_out("monkeys_follow", 1, me);
     load_object("/obj/empty");
     move("/obj/empty");
     return 1;
@@ -70,5 +72,47 @@ void monkeys_jump(object where)
     if (who3) destruct(who3);
     if (who4) destruct(who4);
     message("vision", "猴子们听罢争先恐后的跳下瀑布。\n", where);
+    set("monkeys_jumped", 1);
+}
+
+void monkeys_follow(object me)
+{
+    object hb;
+    object houzi;
+    object where = environment(me);
+    
+    if (!(hb = me->query_temp("dntg_helper"))) {
+        destruct(this_object());
+        return;
+    }
+    
+    if (!query("monkeys_jumped") || !hb->check_huaguo_voteroom()) {
+        remove_call_out("monkeys_follow");
+        call_out("monkeys_follow", 2, me);
+        return;
+    }
+    
+    message_vision("一群猴子跟着$N蹦蹦跳跳的跑了过来。\n", me);
+    while (!present("hou zi 4", where)) {
+        houzi = new(__DIR__"hou");
+        houzi->set("king", me);
+        houzi->move(where);
+        me->set_temp("people/" + me->add_temp("people_num", 1), houzi);
+    }
+    me->start_busy(25);
+    call_out("jing_appearing", 25, me);
+}
+
+void jing_appearing(object me)
+{
+    object jing;
+    object where = environment(me);
+    
+    message("vision", HIR "\n黑暗中突然窜出一群狼虫虎豹！！！\n\n" NOR, where);
+    while (!present("jing 3", where)) {
+        jing = new(__DIR__"jing");
+        jing->move(where);
+        jing->kill_ob(me);
+    }
     destruct(this_object());
 }

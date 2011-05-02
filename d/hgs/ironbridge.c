@@ -46,7 +46,7 @@ void init ()
 int do_jump(string arg)
 {
     object me = this_player();
-    if (!arg || arg != "bridge")
+    if (!arg || (arg != "bridge" && arg != "qiao"))
         return notify_fail("ÄãÍùÄÄ¶ùÌø£¿\n");
 
     if (random(30) + me->query("kar") < 30) {

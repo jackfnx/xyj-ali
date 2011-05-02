@@ -29,6 +29,7 @@ void announce_success(object who)
 {
     int dx = 3000 + random(500);
     object panzi;
+    object hb = who->query_temp("dntg_helper");
 
     who->add("dntg/number",1);
     who->set("dntg/huaguo", "done");
@@ -42,15 +43,5 @@ void announce_success(object who)
     message_vision(HIY NAME+"ตใอทนþัüตฤถิ$NหตตฝฃบีโสวฮารวึฺะึตÜตฤาปตใถ๙ะกาโหผฃฌฒปณษพดาโกฃ\n" NOR,who);
     tell_object(who, "ยํิชหงธ๘ฤใาปธ๖สฏอทลฬืำกฃ\n");
     who->save();
+    if (hb) hb->report_progress(10);
 }
-
-void refuse_player(object who)
-{
-    string name;
-    name = who->name();
-
-    message_vision(HIY NAME+"อปศปลÜมหนýภด$Nากากอทฃบฮารวีýิฺักบ๏อ๕ฃฌรปสยฑ๐ภดตทยากฃ\n" NOR,who);
-    message_vision(HIY "หตฐี"+NAME+"ผฑดาดาตฤภ๋ฟชมหกฃ\n" NOR,who);
-}
-
-ÿÿ
