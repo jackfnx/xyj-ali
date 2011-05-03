@@ -2,7 +2,7 @@
 
 #include <dbase.h>
 
-int is_apprentice_of(object ob)
+varargs int is_apprentice_of(object ob, int raw)
 {
     mapping family;
     string hist_id;
@@ -13,6 +13,8 @@ int is_apprentice_of(object ob)
     &&  family["master_name"] == (string)ob->query("name")
     &&  family["family_name"] == (string)ob->query("family/family_name"))
         return 1;
+    
+    if (raw) return 0;
     
     hist_id = "family_history/";
     hist_id +=  (string)ob->query("family/family_name");
@@ -65,7 +67,7 @@ int recruit_apprentice(object ob)
     string second_family_name = query("second_family_name");
     int speciel_mode = 0;
     
-    if (ob->is_apprentice_of(this_object())) return 0;
+    if (ob->is_apprentice_of(this_object(), 1)) return 0;
     if (!mapp(my_family = query("family"))) return 0;
     
     if (mapp(old_family = ob->query("family"))) {

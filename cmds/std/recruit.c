@@ -29,7 +29,7 @@ int main(object me, string arg)
 
     if (ob == me) return notify_fail("收自己为弟子？好主意．．．不过没有用。\n");
 
-    if (ob->is_apprentice_of(me)) {
+    if (ob->is_apprentice_of(me, 1)) {
         message_vision("$N拍拍$n的头，说道：「好徒儿！」\n", me, ob);
         return 1;
     }

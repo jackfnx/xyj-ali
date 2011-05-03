@@ -30,7 +30,7 @@ int main(object me, string arg)
         + me->query("family/family_name") + "的弟子了，你走吧！\n\n",
         me, ob);
      tell_object(ob, "\n你被" + me->query("family/title") + "开革出师门了！\n\n");
-   } else if( ob->is_apprentice_of(me) ) {
+   } else if( ob->is_apprentice_of(me, 1) ) {
      message_vision("$N对着$n说道：从今天起，你我师徒恩断情绝，你走吧！\n", me, ob);
      message_vision("$N对着$n说道：江湖风波，善恶无形，好自为之。。。\n\n", me, ob);
      tell_object(ob, "\n你被师父开革出师门了！\n\n");

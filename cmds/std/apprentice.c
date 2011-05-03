@@ -34,7 +34,7 @@ int main(object me, string arg)
     if (ob == me)
         return notify_fail("拜自己为师？好主意．．．不过没有用。\n");
 
-    if (me->is_apprentice_of(ob)) {
+    if (me->is_apprentice_of(ob, 1)) {
         message_vision("$N恭恭敬敬地向$n磕头请安，叫道：「师父！」\n", me, ob);
         return 1;
     }
