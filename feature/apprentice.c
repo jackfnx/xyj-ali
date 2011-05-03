@@ -18,6 +18,7 @@ int is_apprentice_of(object ob)
     hist_id +=  (string)ob->query("family/family_name");
     hist_id += "/";
     hist_id += (string)ob->query("id");
+    hist_id += "/master_name";
     if (query(hist_id) == (string)ob->query("name")) return 1;
     
     return 0;
