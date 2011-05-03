@@ -1,13 +1,9 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
 inherit ROOM;
-#include <room.h>
 
-void create ()
+void create()
 {
-    set ("short", "蓬莱仙岛");
-    set ("long", @LONG
+    set("short", "蓬莱仙岛");
+    set("long", @LONG
 
 蓬莱岛上风光秀丽，当真是好去处！远望海中，碧波如镜，高山之
 上，巍峨势耸。山间少闻人语声，但听猿啼鹤鸣。几树乔松栖野鹤，
@@ -16,7 +12,7 @@ void create ()
 LONG);
     set("exits", ([ /* sizeof() == 3 */
             "northup" : __DIR__"undertree",
-            "southup" : __DIR__"hongyandong",
+            "southdown" : __DIR__"hongyandong",
     ]));
     set("outdoors", 1);
     setup();
