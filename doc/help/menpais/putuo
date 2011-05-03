@@ -65,11 +65,13 @@
 佛门武功，威力无穷
 
 〖特殊攻击〗
-①　暴风骤雨：perform storm on <target>
+①　暴风骤雨
+　　指令：perform storm on <target>
+　　要求：劫难指大于100级
 
 
 【莲花步】
-	无尽碧莲  重重叠叠  
+	无尽碧莲  重重叠叠
 	映日荷花  亭亭玉立
 	雨露滚莲  出淤泥而不染
 
@@ -93,5 +95,3 @@
 ①　金刚护法： cast jingang
 ②　大力降魔杵： cast bighammer
 ③　隐身术： cast yinshen
-④　紧箍咒： cast jinguzhou
-
