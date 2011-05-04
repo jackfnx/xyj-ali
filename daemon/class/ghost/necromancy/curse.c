@@ -1,62 +1,82 @@
-// gouhun.c
+// curse.c
 #include <ansi.h>
 
-inherit F_SSERVER;
+inherit SSERVER;
 
 int cast(object me, object target)
 {
-	int success_adj, damage_adj;
+    string msg;
+    int damage, ap, dp;
 
-	success_adj = 120;
-	damage_adj = 90;
+    if (!target) target = offensive_target(me);
+    if (!target
+    ||  !target->is_character()
+    ||  target->is_corpse()
+    ||  target==me)
+        return notify_fail("你要勾自己的魂？\n");
+    if ((int)me->query("mana") < 25+(int)me->query("mana_factor"))
+        return notify_fail("你的法力不够了！\n");
+    if ((int)me->query("sen") < 50)
+        return notify_fail("现在你自己就魂不守舍！\n");
 
-        if( !target ) target = offensive_target(me);
+    me->add("mana", -25-(int)me->query("mana_factor"));
+    me->receive_damage("sen", 50);
 
-        if( !target
-        ||      !target->is_character()
-        ||      target->is_corpse()
-        ||      target==me)
-                return notify_fail("你要勾自己的魂？\n");
+    if (random(me->query("max_mana")) < 50) {
+        write("你失败了！\n");
+        return 1;
+    }
 
-        if((int)me->query("mana") < 25+2*(int)me->query("mana_factor") )
-                return notify_fail("你的法力不够了！\n");
+    msg = HIC "$N对$n阴阴地笑着：阎王叫你三更死，不敢留你到五更。去吧，去吧...\n" NOR;
 
-        if((int)me->query("sen") < 50 )
-                return notify_fail("现在你自己就魂不守舍！\n");
-
-        me->add("mana", -25-2*(int)me->query("mana_factor"));
-        me->receive_damage("sen", 50);
-
-        if( random(me->query("max_mana")) < 50 ) {
-                write("这次是鬼见鬼了！\n");
-                return 1;
+    ap = me->query_skill("spells");
+    ap = (ap * ap * ap / (4 * 400)) * (int)me->query("sen");
+    ap += (int)me->query("combat_exp");
+    dp = target->query("combat_exp");
+    if (random(ap + dp) > dp) {
+        damage = (int)me->query("max_mana") / 10 + random((int)me->query("eff_sen") / 5);
+        damage -= (int)target->query("max_mana") / 10 + random((int)target->query("eff_sen") / 5);
+        damage += (int)me->query("mana_factor") - random((int)target->query("mana_factor"));
+        //here we can see if 2 players are at same status, the attacker has higher chance.
+        if (damage > 0) {
+            //finally damage also depends on enabled spells level.
+            damage +=random((damage*(int)me->query_skill("spells"))/100);
+            msg += HIC "$n受到$N影响，显然有点魂不守舍了！\n" NOR;
+            target->receive_damage("sen", damage, me);
+            target->receive_wound("sen", damage/2, me);
+//            target->receive_damage("kee", damage, me);
+//            target->receive_wound("kee", damage/4, me);
+            me->improve_skill("necromancy", 1, 1);
+        } else {
+            //here, cast failed and the target's mana_factor will be added to the previous 
+            //damage to hurt yourself:(...note, damage<0.
+            msg += HIC "结果$n眼一瞪，$N反而有点魂不守舍了！\n" NOR;
+            damage -= (int)target->query("mana_factor");
+            damage -= random((-damage*(int)target->query_skill("spells"))/100);
+            me->receive_damage("sen", -damage, target);
+            me->receive_wound("sen", -damage/2, target);
+//            me->receive_damage("kee", -damage, target);
+//            me->receive_wound("kee", -damage/4, target);
+            me->improve_skill("necromancy", 1, 1);
         }
+    } else
+        msg += "但是$n神情专注，对$N理都不理。\n";
 
-	SPELL_D->attacking_cast(
-		me, 
-			//attacker 
-		target, 
-			//target
-		success_adj, 	
-			//success adjustment
-		damage_adj, 	
-			//damage adjustment
-		"shen", 		
-			//damage type: could be "qi"/"kee", "shen"/"sen", ...default "both"
-		HIC "$N对$n阴阴地笑着：阎王叫你三更死，不敢留你到五更。。。\n" NOR,
-			//initial message
-		HIC "$n受到$N影响，显然有点魂不守舍了！\n" NOR, 
-			//success message
-		HIC "但是$n神情专注，对$N理都不理。\n" NOR, 
-			//fail message
-		HIC "但是$n眼一瞪：光天化日之下，岂由恶鬼横行！\n" NOR, 
-			//backfire initial message
-		HIC "结果$n反而有点魂不守舍了！\n" NOR
-			//backfire hit message. note here $N and $n!!!
-	);
+    message_vision(msg, me, target);
+    if (damage > 0) COMBAT_D->report_sen_status(target);
+    else if (damage < 0) COMBAT_D->report_sen_status(me);
+//cuz here only sen damage, we report sen_status.
+//damage=0 corresponding to "对$N理都不理。\n"--no report.   
 
-	me->start_busy(1+random(2));
-	return 3+random(5);
+    if (!target->is_fighting(me)) {
+        if (living(target)) {
+            if (userp(target)) target->fight_ob(me);
+            else target->kill_ob(me);
+        }
+        me->kill_ob(target);
+    }
 
+    me->start_busy(3);
+    return 3+random(5);
 }
 
