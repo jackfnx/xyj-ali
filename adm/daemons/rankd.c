@@ -5,15 +5,6 @@
 
 #include <ansi.h>
 
-int query_age(object ob)
-{
-    if (ob->query("always_young")
-    &&  (int)ob->query("fake_age") < (int)ob->query("age"))
-        return (int)ob->query("fake_age");
-    else
-        return (int)ob->query("age");
-}
-
 string query_rank(object ob)
 {
     // need this default, otherwise looks too ugly sometimes.
@@ -171,11 +162,11 @@ case "xian":
         return RED "【 仙  童 】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
         return RED "【 散  仙 】" NOR;
-    else if((int)ob->query("combat_exp")<100000)
+    else if ((int)ob->query("combat_exp")<100000)
         return RED "【 大  仙 】" NOR;
-    else if((int)ob->query("combat_exp")<500000)
+    else if ((int)ob->query("combat_exp")<500000)
         return RED "【"+ob->query("added_title")+"大仙】" NOR;
-    else if((int)ob->query("combat_exp")<1000000)
+    else if ((int)ob->query("combat_exp")<1000000)
         return RED "【"+ob->query("added_title")+"大仙】" NOR;
     else
         return RED "【"+ob->query("added_title")+"天尊】" NOR;
@@ -289,245 +280,254 @@ default:
     }
 }
 
+int query_age(object ob)
+{
+    if (ob->query("always_young")
+    &&  (int)ob->query("fake_age") < (int)ob->query("age"))
+        return (int)ob->query("fake_age");
+    else
+        return (int)ob->query("age");
+}
+
 string query_respect(object ob)
 {
-   int age;
-   string str;
+    int age;
+    string str;
 
-   if( stringp(str = ob->query("rank_info/respect")) )
-     return str;
+    if (stringp(str = ob->query("rank_info/respect")))
+        return str;
 
-   age = query_age(ob);
-   switch(ob->query("gender")) 
-   {
-     case "女性":
-        switch(ob->query("class")) 
+    age = query_age(ob);
+    switch (ob->query("gender"))
+    {
+        case "女性":
+        switch (ob->query("class"))
         {
 case "bonze":
-   if( age < 18 ) return "小师太";
-   else return "师太";
-   break;
+    if (age < 18) return "小师太";
+    else return "师太";
+    break;
 case "taoist":
-   if( age < 18 ) return "小仙姑";
-   else return "仙姑";
-   break;
+    if (age < 18) return "小仙姑";
+    else return "仙姑";
+    break;
 case "xian":
-   if( age < 18 ) return "小仙姑";
-   else return "仙姑";
-   break;
+    if (age < 18) return "小仙姑";
+    else return "仙姑";
+    break;
 default:
-   if( age < 18 ) return "小姑娘";
-   else if( age < 50 ) return "姑娘";
-   else return "婆婆";
-   break;
+    if (age < 18) return "小姑娘";
+    else if (age < 50) return "姑娘";
+    else return "婆婆";
+    break;
         }
-     case "男性":
-     default:
-        switch(ob->query("class")) 
+        case "男性":
+        default:
+        switch (ob->query("class"))
         {
 case "xian":
-   if( age < 18 ) return "小神仙";
-   else if( age < 50 ) return "仙兄";
-   else return "老神仙";
-   break;
+    if (age < 18) return "小神仙";
+    else if (age < 50) return "仙兄";
+    else return "老神仙";
+    break;
 case "bonze":
-   if( age < 18 ) return "小师父";
-   else if( age < 50 ) return "大师";
-   else return "长老";
-   break;
+    if (age < 18) return "小师父";
+    else if (age < 50) return "大师";
+    else return "长老";
+    break;
 case "taoist":
-   if( age < 18 ) return "小道爷";
-   else if( age < 50 ) return "道兄";
-   else return "道长";
-   break;
+    if (age < 18) return "小道爷";
+    else if (age < 50) return "道兄";
+    else return "道长";
+    break;
 case "soldier":
-   if( age < 18 ) return "小将军";
-   else if( age < 50 ) return "大将军";
-   else return "老将军";
-   break;
+    if (age < 18) return "小将军";
+    else if (age < 50) return "大将军";
+    else return "老将军";
+    break;
 case "scholar":
-   if( age < 18 ) return "小相公";
-   else if( age < 50 ) return "相公";
-   else return "老先生";
-   break;
+    if (age < 18) return "小相公";
+    else if (age < 50) return "相公";
+    else return "老先生";
+    break;
 case "swordsman":
-   if( age < 18 ) return "小老弟";
-   else if( age < 50 ) return "壮士";
-   else return "老前辈";
-   break;
+    if (age < 18) return "小老弟";
+    else if (age < 50) return "壮士";
+    else return "老前辈";
+    break;
 default:
-   if( age < 18 ) return "小兄弟";
-   else if( age < 50 ) return "壮士";
-   else return "老爷子";
-   break;
+    if (age < 18) return "小兄弟";
+    else if (age < 50) return "壮士";
+    else return "老爷子";
+    break;
         }
-   }
+    }
 }
 
 string query_rude(object ob)
 {
-   int age;
-   string str;
+    int age;
+    string str;
 
-   if( stringp(str = ob->query("rank_info/rude")) )
-     return str;
+    if (stringp(str = ob->query("rank_info/rude")))
+        return str;
 
-   age = query_age(ob);
-   switch(ob->query("gender")) 
-   {
-     case "女性":
-        switch(ob->query("class")) 
+    age = query_age(ob);
+    switch (ob->query("gender"))
+    {
+        case "女性":
+        switch (ob->query("class"))
         {
 case "xian":
-   if(age < 30) return "小妖精";
-   else if(age < 50) return "妖女";
-   else return "老妖婆";
-   break;
+    if (age < 30) return "小妖精";
+    else if (age < 50) return "妖女";
+    else return "老妖婆";
+    break;
 case "yaomo":
-   if(age < 30) return "小妖女";
-   else if(age < 50) return "妖女";
-   else return "老妖婆";
-   break;
+    if (age < 30) return "小妖女";
+    else if (age < 50) return "妖女";
+    else return "老妖婆";
+    break;
 case "bonze":
-   if(age < 30) return "小贼尼";
-   else if(age < 50) return "贼尼";
-   else return "老贼尼";
-   break;
+    if (age < 30) return "小贼尼";
+    else if (age < 50) return "贼尼";
+    else return "老贼尼";
+    break;
 case "taoist":
-   if(age < 30) return "小妖女";
-   else if(age < 50) return "妖女";
-   else return "老妖婆";
-   break;
+    if (age < 30) return "小妖女";
+    else if (age < 50) return "妖女";
+    else return "老妖婆";
+    break;
 default:
-   if( age < 30 ) return "小贱人";
-   else if(age < 50) return "贱人";
-   else return "死老太婆";
-   break;
+    if (age < 30) return "小贱人";
+    else if (age < 50) return "贱人";
+    else return "死老太婆";
+    break;
         }
-     case "男性":
-     default:
-        switch(ob->query("class")) 
+        case "男性":
+        default:
+        switch (ob->query("class"))
         {
 case "xian":
-   if( age < 50 ) return "死妖怪";
-   else return "老妖怪";
-   break;
+    if (age < 50) return "死妖怪";
+    else return "老妖怪";
+    break;
 case "yaomo":
-   if( age < 50 ) return "死妖怪";
-   else return "老妖怪";
-   break;
+    if (age < 50) return "死妖怪";
+    else return "老妖怪";
+    break;
 case "bonze":
-   if( age < 50 ) return "死秃驴";
-   else return "老秃驴";
-   break;
+    if (age < 50) return "死秃驴";
+    else return "老秃驴";
+    break;
 case "taoist":
-   return "死牛鼻子";
-   break;
+    return "死牛鼻子";
+    break;
 case "scholar":
-   if( age < 18 ) return "小书呆子";
-   else if( age < 50 ) return "臭书呆子";
-   else return "老童生";
-   break;
+    if (age < 18) return "小书呆子";
+    else if (age < 50) return "臭书呆子";
+    else return "老童生";
+    break;
 default:
-   if( age < 18 ) return "小王八蛋";
-   else if( age < 50 ) return "臭贼";
-   else return "老匹夫";
-   break;
+    if (age < 18) return "小王八蛋";
+    else if (age < 50) return "臭贼";
+    else return "老匹夫";
+    break;
         }
-   }
+    }
 }
 
 string query_self(object ob)
 {
-   int age;
-   string str;
+    int age;
+    string str;
 
-   if( stringp(str = ob->query("rank_info/self")) )
-     return str;
+    if (stringp(str = ob->query("rank_info/self")))
+        return str;
 
-   age = query_age(ob);
-   switch(ob->query("gender")) 
-   {
-     case "女性":
-        switch(ob->query("class")) 
+    age = query_age(ob);
+    switch (ob->query("gender"))
+    {
+        case "女性":
+        switch (ob->query("class"))
         {
 case "bonze":
-   if( age < 50 ) return "贫尼";
-   else return "老尼";
-   break;
+    if (age < 50) return "贫尼";
+    else return "老尼";
+    break;
 default:
-   if( age < 30 ) return "小女子";
-   else return "妾身";
-   break;
+    if (age < 30) return "小女子";
+    else return "妾身";
+    break;
         }
-     case "男性":
-     default:
-        switch(ob->query("class")) 
+        case "男性":
+        default:
+        switch (ob->query("class"))
         {
 case "bonze":
-   if( age < 50 ) return "贫僧";
-   else return "老纳";
-   break;
+    if (age < 50) return "贫僧";
+    else return "老纳";
+    break;
 case "taoist":
-   return "贫道";
-   break;
+    return "贫道";
+    break;
 case "scholar":
-   if( age < 30 ) return "晚生";
-   else return "不才";
-   break;
+    if (age < 30) return "晚生";
+    else return "不才";
+    break;
 default:
-   if( age < 50 ) return "在下";
-   else return "老头子";
-   break;
+    if (age < 50) return "在下";
+    else return "老头子";
+    break;
         }
-   }
+    }
 }
 
 string query_self_rude(object ob)
 {
-   int age;
-   string str;
+    int age;
+    string str;
 
-   if( stringp(str = ob->query("rank_info/self_rude")) )
-     return str;
+    if (stringp(str = ob->query("rank_info/self_rude")))
+        return str;
 
-   age = query_age(ob);
-   switch(ob->query("gender")) 
-   {
-     case "女性":
-        switch(ob->query("class")) 
+    age = query_age(ob);
+    switch (ob->query("gender"))
+    {
+        case "女性":
+        switch (ob->query("class"))
         {
 case "bonze":
-   if( age < 50 ) return "贫尼";
-   else return "老尼";
-   break;
+    if (age < 50) return "贫尼";
+    else return "老尼";
+    break;
 default:
-   if( age < 50 ) return "本姑娘";
-   else return "老娘";
-   break;
+    if (age < 50) return "本姑娘";
+    else return "老娘";
+    break;
         }
-     case "男性":
-     default:
-        switch(ob->query("class")) 
+        case "男性":
+        default:
+        switch (ob->query("class"))
         {
 case "bonze":
-   if( age < 50 ) return "大和尚我";
-   else return "老和尚我";
-   break;
+    if (age < 50) return "大和尚我";
+    else return "老和尚我";
+    break;
 case "taoist":
-   return "道爷我";
-   break;
+    return "道爷我";
+    break;
 case "scholar":
-   if( age < 50 ) return "本相公";
-   else return "老夫子我";
-   break;
+    if (age < 50) return "本相公";
+    else return "老夫子我";
+    break;
 default:
-   if( age < 18 ) return "你家小爷我";
-   else if( age < 50 ) return "大爷我";
-   else return "你爷爷我";
-   break;
+    if (age < 18) return "你家小爷我";
+    else if (age < 50) return "大爷我";
+    else return "你爷爷我";
+    break;
         }
-   }
+    }
 }
 
 //descriptions...
