@@ -10,48 +10,48 @@ string name() { return "追魂剑"; }
 mapping *action = ({
         ([      "name":                 "群魔乱舞",
                 "action":
-"$N手中$w一抖，晃出几个虚影，狂风骤雨般地向$n的$l连攻数剑",
-                "parry":     0,
+"$N使出一招「群魔乱舞」，手中$w一抖，晃出几个虚影，狂风骤雨般地向$n的$l连攻数剑",
+                "parry":                0,
                 "dodge":                0,
                 "damage":               20,
                 "damage_type":  "刺伤"
         ]),
         ([      "name":                 "厉鬼缠身",
                 "action":
-"$N身形一转，暴喝一声，手中$w如一条银蛇般刺向$n的$l",
-                "parry":     -10,
+"$N使出一招「厉鬼缠身」，身形一转，暴喝一声，手中$w如一条银蛇般刺向$n的$l",
+                "parry":                -10,
                 "dodge":                0,
                 "damage":               25,
                 "damage_type":  "刺伤"
         ]),
         ([      "name":                 "百鬼夜行",
                 "action":
-"$N舞动$w，突然一个疾冲，$w挟着闪闪剑光刺向$n的$l",
-                "parry":     5,
+"$N使出一招「百鬼夜行」，舞动$w，突然一个疾冲，$w挟着闪闪剑光刺向$n的$l",
+                "parry":                5,
                 "dodge":                0,
                 "damage":               20,
                 "damage_type":  "刺伤"
         ]),
         ([      "name":                 "饿鬼拦路",
                 "action":
-"$N手中$w一抖，幻出几许银光，就在一恍惚间，$w已斜斜地点上了$n的$l",
-                "parry":     -10,
+"$N使出一招「饿鬼拦路」，手中$w一抖，幻出几许银光，就在一恍惚间，$w已斜斜地点上了$n的$l",
+                "parry":                -10,
                 "dodge":                0,
                 "damage":               30,
                 "damage_type":  "刺伤"
         ]),
         ([      "name":                 "鬼影幢幢",
                 "action":
-"$N手中$w剑光暴长，又急又快地往$n$l刺去",
-                "parry":     10,
+"$N使出一招「鬼影幢幢」，手中$w剑光暴长，又急又快地往$n$l刺去",
+                "parry":                10,
                 "dodge":                0,
                 "damage":               25,
                 "damage_type":  "刺伤"
         ]),
         ([      "name":                 "秋坟鬼唱",
                 "action":
-"$N猛然间身形一展，手中$w突发几尺剑芒，唰地刺向了$n的$l",
-                "parry":     0,
+"$N使出一招「秋坟鬼唱」，猛然间身形一展，手中$w突发几尺剑芒，唰地刺向了$n的$l",
+                "parry":                0,
                 "dodge":                -10,
                 "damage":               30,
                 "damage_type":  "刺伤"
@@ -79,7 +79,13 @@ int valid_enable(string usage)
 
 mapping query_action(object me, object weapon)
 {
-    return action[random(sizeof(action))];
+    int i;
+    i = me->query("HellZhen");
+    if (!me->query("HellZhen")) {
+        return action[random(6)];
+    } else {
+        return action[i];
+    }
 }
 
 int practice_skill(object me)
@@ -89,7 +95,7 @@ int practice_skill(object me)
         return notify_fail("你的内力或气不够，没有办法练习追魂剑。\n");
     me->receive_damage("kee", 30);
     me->add("force", -5);
-    write("你按着所学练了一遍追魂剑法。\n");
+    write("你按着所学练了一遍追魂剑。\n");
     return 1;
 }
 
