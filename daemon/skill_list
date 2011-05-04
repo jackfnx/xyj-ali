@@ -69,12 +69,12 @@
 </sea>
 <hell class="ghost">
   <skill>ghost-steps</skill>
-  <skill>necromancy</skill>
   <skill>hellfire-whip</skill>
+  <skill>huntdown-sword</skill>
   <skill>jinghun-zhang</skill>
-  <skill>kusang-bang</skill>
+  <skill>keening-stick</skill>
+  <skill>necromancy</skill>
   <skill>tonsillit</skill>
-  <skill>zhuihun-sword</skill>
 </hell>
 <xueshan class="dapeng">
   <skill>bingpo-blade</skill>

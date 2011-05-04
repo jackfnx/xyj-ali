@@ -43,13 +43,13 @@ void create()
   set_skill("seashentong", 130);
   set_skill("dragonfight", 100);
   set_skill("dragonforce", 130);
-  set_skill("kusang-bang", 150);
+  set_skill("keening-stick", 150);
   set_skill("dragonstep", 150);
   map_skill("spells", "seashentong");
   map_skill("unarmed", "dragonfight");
   map_skill("force", "dragonforce");
-  map_skill("stick","kusang-bang");
-  map_skill("parry", "kusang-bang");
+  map_skill("stick","keening-stick");
+  map_skill("parry", "keening-stick");
   map_skill("dodge", "dragonstep");
 
         set("nkgain", 400);

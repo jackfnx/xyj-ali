@@ -43,7 +43,7 @@ void create()
   set_skill("ghost-steps", 180);
   set_skill("necromancy", 150);
   set_skill("jinghun-zhang", 150);
-  set_skill("kusang-bang", 180);
+  set_skill("keening-stick", 180);
 
   map_skill("force", "tonsillit");
   map_skill("unarmed", "jinghun-zhang");

@@ -36,11 +36,11 @@ void create()
         set_skill("stick",120);
         set_skill("dodge",120);
         set_skill("parry",120);
-   set_skill("kusang-bang", 120);
+   set_skill("keening-stick", 120);
    set_skill("ghost-steps",120);
    map_skill("dodge","ghost-steps");
-   map_skill("parry", "kusang-bang");
-   map_skill("stick", "kusang-bang");
+   map_skill("parry", "keening-stick");
+   map_skill("stick", "keening-stick");
    set("HellZhen", 4);
         setup();
         carry_object("/d/obj/armor/shoupi")->wear();

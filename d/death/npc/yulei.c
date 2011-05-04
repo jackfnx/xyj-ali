@@ -36,12 +36,12 @@ void create()
         set_skill("force", 100);
    set_skill("spells", 100);
    set_skill("moshenbu", 120);
-   set_skill("zhuihun-sword", 120);
+   set_skill("huntdown-sword", 120);
    set_skill("changquan", 100);
    map_skill("unarmed", "changquan");
    map_skill("dodge", "moshenbu");
-   map_skill("sword", "zhuihun-sword");
-   map_skill("parry", "zhuihun-sword");
+   map_skill("sword", "huntdown-sword");
+   map_skill("parry", "huntdown-sword");
 
 setup();
 

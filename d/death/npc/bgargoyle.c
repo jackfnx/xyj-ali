@@ -52,7 +52,7 @@ void create()
         set_skill("dodge", 70);
         set_skill("unarmed", 80);
         set_skill("parry", 70);
-     set_skill("kusang-bang", 70);
+     set_skill("keening-stick", 70);
         set_skill("spells", 70);
         set_skill("necromancy", 70);
         set_skill("force", 70);
@@ -62,8 +62,8 @@ void create()
         map_skill("spells", "necromancy");
         map_skill("dodge", "ghost-steps");
         map_skill("force", "tonsillit");
-   map_skill("stick", "kusang-bang");
-   map_skill("parry", "kusang-bang");
+   map_skill("stick", "keening-stick");
+   map_skill("parry", "keening-stick");
         map_skill("unarmed", "jinghun-zhang");
    create_family("ÑÖÂŞµØ¸®", 4, "ÄãºÃ");
         setup();

@@ -26,10 +26,10 @@ int perform(object me, object target)
         if((int)me->query("kee") < 300 )
                 return notify_fail("你的气血不足，没法子施用外功！\n");
 
-        if((int)me->query_skill("zhuihun-sword", 1) < 50)
+        if((int)me->query_skill("huntdown-sword", 1) < 50)
                 return notify_fail("你的追魂剑级别还不够，使用这一招会有困难！\n");
 
-        if((int)me->query_skill("kusang-bang", 1) < 50)
+        if((int)me->query_skill("keening-stick", 1) < 50)
                 return notify_fail("你的苦丧棒级别还不够，使用这一招会有困难！\n");
 
         if((int)me->query_skill("hellfire-whip", 1) < 50)

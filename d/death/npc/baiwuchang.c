@@ -41,9 +41,9 @@ void create()
    set_skill("tonsillit", 60);
 /*
    set_skill("stick", 100);
-   set_skill("kusang-bang", 100);
-   map_skill("stick", "kusang-bang");
-   map_skill("parry", "kusang-bang");
+   set_skill("keening-stick", 100);
+   map_skill("stick", "keening-stick");
+   map_skill("parry", "keening-stick");
 */
    map_skill("spells", "necromancy");
    map_skill("dodge", "ghost-steps");

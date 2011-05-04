@@ -44,9 +44,9 @@ set("long","王方平本是山中道士，后在丰都山同阴长生同修炼成仙，御封(「鬼王」。\n"
    set_skill("tonsillit", 90);
    set_skill("sword", 90);
    set_skill("stick", 140);
-   set_skill("kusang-bang", 140);
-   map_skill("stick","kusang-bang");
-   map_skill("parry", "kusang-bang");
+   set_skill("keening-stick", 140);
+   map_skill("stick","keening-stick");
+   map_skill("parry", "keening-stick");
    map_skill("spells", "necromancy");
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");

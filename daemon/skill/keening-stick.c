@@ -1,7 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//【哭丧棒】kusang-bang.c
+//【哭丧棒】keening-stick.c
 
 /*
 哭丧棒    dodge  0    parry  -10    damage  25
@@ -113,7 +110,7 @@ int valid_effect(object me, object weapon, string name, int skill)
 
 void skill_improved(object me)
 {
-        if( (int)me->query_skill("kusang-bang", 1)  % 10 == 0 ) {
+        if( (int)me->query_skill("keening-stick", 1)  % 10 == 0 ) {
                 tell_object(me,
                         RED "\n你突然觉得一股恶气冲上心头，只觉得想杀人....\n\n" NOR);
                 me->add("bellicosity", 100);

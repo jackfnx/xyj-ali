@@ -39,14 +39,14 @@ void create()
         set_skill("parry",120);
         set_skill("dodge",110);
         set_skill("stick",110);
-        set_skill("kusang-bang",110);
+        set_skill("keening-stick",110);
    set_skill("moshenbu", 110);
         set_skill("force",120);
         set_skill("jinghun-zhang",100);
    map_skill("dodge", "moshenbu");
    map_skill("unarmed", "jinghun-zhang");
-        map_skill("parry","kusang-bang");
-   map_skill("stick", "kusang-bang");
+        map_skill("parry","keening-stick");
+   map_skill("stick", "keening-stick");
         set("inquiry", ([
                 "name" : "在下就是日值功曹，乃托塔天王帐前大将。",
                 "here" : "这里就是天宫。下官奉天王将令，在此巡查。",

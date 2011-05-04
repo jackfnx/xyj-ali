@@ -44,9 +44,9 @@ void create()
     set_skill("necromancy", 150);
     set_skill("jinghun-zhang", 150);
     set_skill("stick", 180);
-    set_skill("kusang-bang", 180);
+    set_skill("keening-stick", 180);
     set_skill("sword", 180);
-    set_skill("zhuihun-sword", 180);
+    set_skill("huntdown-sword", 180);
 
     map_skill("force", "tonsillit");
     map_skill("unarmed", "jinghun-zhang");
@@ -54,8 +54,8 @@ void create()
     map_skill("spells", "necromancy");
     map_skill("parry", "hellfire-whip");
     map_skill("whip", "hellfire-whip");
-    map_skill("stick", "kusang-bang");
-    map_skill("sword", "zhuihun-sword");
+    map_skill("stick", "keening-stick");
+    map_skill("sword", "huntdown-sword");
 
     set("chat_chance_combat", 40);
     set("chat_msg_combat", ({
