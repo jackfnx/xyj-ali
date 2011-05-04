@@ -46,3 +46,12 @@ int practice_skill(object me)
     return 1;
 }
 
+void skill_improved(object me)
+{
+    string *names = ({"青龙","苍龙","赤龙","黄龙","黑龙","金龙","银龙","雪龙","火龙"});
+    if ((int)me->query_skill("dragonforce", 1) >= 25 && me->query("class") != "dragon") {
+        message_vision("$N身上忽然散发出一股惊人的气势，背后一条" + names[random(sizeof(names))]+ "的虚影浮现，周围的人不仅看得呆了。\n", me);
+        tell_object(me, "恭喜！你获得了龙族的本质！\n");
+        me->set("class", "dragon");
+    }
+}
