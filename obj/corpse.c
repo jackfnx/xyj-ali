@@ -25,7 +25,7 @@ void decay(int phase)
     decayed = phase;
     switch (phase) {
         case 1:
-            say(query("name") + "开始腐烂了，发出一股难闻的恶臭。\n");
+            message_vision("$N开始腐烂了，发出一股难闻的恶臭。\n", this_object());
             switch(query("gender")) {
                 case "男性":
                     set_name("腐烂的男尸", ({ "corpse", "尸体" }));
@@ -38,13 +38,13 @@ void decay(int phase)
             call_out("decay", 120, phase + 1);
             break;
         case 2:
-            say(query("name") + "被风吹干了，变成一具骸骨。\n");
+            message_vision("$N被风吹干了，变成一具骸骨。\n", this_object());
             set_name("一具枯干的骸骨", ({ "skeleton", "骸骨" }));
             set("long", "这副骸骨已经躺在这里很久了。\n");
             call_out("decay", 60, phase + 1);
             break;
         case 3:
-            say("一阵风吹过，把" + query("name") + "化成骨灰吹散了。\n");
+            message_vision("一阵风吹过，把$N化成骨灰吹散了。\n", this_object());
             if (environment()) {
                 object *inv;
                 int i;
