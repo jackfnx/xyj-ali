@@ -13,9 +13,9 @@ int cast(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail(HIR"你要对谁使用黑雾？\n"NOR);
+        return notify_fail(HIR "你要对谁使用黑雾？\n" NOR);
     if ((int)me->query_skill("necromancy", 1) < 30)
-        return notify_fail("你的摄魂术火候不够，哪里用得出这招！\n");
+        return notify_fail("你的勾魂术火候不够，哪里用得出这招！\n");
     if ((int)me->query("mana") < 40 + (int)me->query("mana_factor"))
         return notify_fail("你的法力不够！\n");
     if ((int)me->query("force") < 200)

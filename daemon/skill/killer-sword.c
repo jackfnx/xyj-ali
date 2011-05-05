@@ -1,5 +1,9 @@
 // killer-sword.c
 // reference from six-chaos-sword.c
+/*
+Attention: 追魂剑只有前六招，而第七，八两招是烈火鞭
+和哭丧棒中，用来 Perform 的，而玩家平常并不会用到。
+*/
 
 #include <ansi.h>
 
@@ -20,7 +24,7 @@ mapping *action = ({
                 "action":
 "$N使出一招「厉鬼缠身」，身形一转，暴喝一声，手中$w如一条银蛇般刺向$n的$l",
                 "parry":                -10,
-                "dodge":                0,
+                "dodge":                -10,
                 "damage":               25,
                 "damage_type":  "刺伤"
         ]),
@@ -50,9 +54,25 @@ mapping *action = ({
         ]),
         ([      "name":                 "秋坟鬼唱",
                 "action":
-"$N使出一招「秋坟鬼唱」，猛然间身形一展，手中$w突发几尺剑芒，唰地刺向了$n的$l",
+"$N使出一招「秋坟鬼唱」，猛然间身形一展，手中$w突发几尺毫芒，唰地刺向了$n的$l",
                 "parry":                0,
                 "dodge":                -10,
+                "damage":               30,
+                "damage_type":  "刺伤"
+        ]),
+        ([      "name":                 "地狱烈火",
+                "action":               
+"$N大喝一声，手中$w宛若矫龙飞在半空，大有「横空出世」的气概。\n$n只觉得全身俱在$w笼罩之下",
+                "dodge":                -20,
+                "parry":                -20,
+                "damage":               30,
+                "damage_type":  "抽伤"
+        ]),
+        ([      "name":                 "小楼夜哭",
+                "action":
+"$N喉咙里发出几声嚎叫，高举$w，不顾一切地冲向$n，几乎与$n贴脸而立！\n手中$w却悄无声息地刺向$n的$l，好厉害的「小楼夜哭」",
+                "dodge":                -15,
+                "parry":                -15,
                 "damage":               30,
                 "damage_type":  "刺伤"
         ]),
@@ -111,5 +131,10 @@ void skill_improved(object me)
         me->add("bellicosity", 100);
     } else
         me->add("bellicosity", 10);
+}
+
+string perform_action_file(string func)
+{
+    return CLASS_D("ghost") + "/killer-sword/" + func;
 }
 

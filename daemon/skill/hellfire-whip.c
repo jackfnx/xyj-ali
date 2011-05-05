@@ -1,6 +1,3 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
 //【烈火鞭】hellfire-whip.c
 
 /*
@@ -10,7 +7,7 @@
 特点是杀伤不大。
 
 Attention: 烈火鞭只有前六招，而第七，八两招是苦丧棒
-和惊魂掌中，用来 Perform 的，而玩家平常并不会用到。
+和追魂剑中，用来 Perform 的，而玩家平常并不会用到。
 */
 
 
@@ -75,15 +72,14 @@ mapping *action = ({
                 "damage":               30,
                 "damage_type":  "刺伤"
         ]),
-        ([      "name":        "秋坟鬼唱",
-     "action":
-"$N左手虚晃，右掌飘飘，掌心呈碧绿，一招「秋坟鬼唱」击向$n$l",
+        ([      "name":                 "秋坟鬼唱",
+                "action":
+"$N使出一招「秋坟鬼唱」，猛然间身形一展，手中$w突发几尺毫芒，唰地刺向了$n的$l",
                 "dodge":                -10,
                 "parry":                -10,
-                "damage":                30,
-                "damage_type":  "瘀伤"
+                "damage":               30,
+                "damage_type":  "刺伤"
         ]),
-
 });
 
 int valid_learn(object me)

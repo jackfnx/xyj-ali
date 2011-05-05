@@ -4,6 +4,9 @@
 哭丧棒    dodge  0    parry  -10    damage  25
 哭丧棒诡异绝伦，棒势多走偏锋，令人防不胜防，而此棒以
 致人死地为主，下手绝不留情。
+
+Attention: 哭丧棒只有前六招，而第七，八两招是烈火鞭
+和追魂剑中，用来 Perform 的，而玩家平常并不会用到。
 */
 
 #include <ansi.h>
@@ -61,6 +64,22 @@ mapping *action = ({
                 "damage":               30,
                 "damage_type":  "刺伤"
         ]),
+        ([      "name":                 "地狱烈火",
+                "action":               
+"$N大喝一声，手中$w宛若矫龙飞在半空，大有「横空出世」的气概。\n$n只觉得全身俱在$w笼罩之下",
+                "dodge":                -20,
+                "parry":                -20,
+                "damage":               30,
+                "damage_type":  "抽伤"
+        ]),
+        ([      "name":                 "秋坟鬼唱",
+                "action":
+"$N使出一招「秋坟鬼唱」，猛然间身形一展，手中$w突发几尺毫芒，唰地刺向了$n的$l",
+                "dodge":                -10,
+                "parry":                -10,
+                "damage":               30,
+                "damage_type":  "刺伤"
+        ]),
 });
 
 int valid_learn(object me)
@@ -110,11 +129,16 @@ int valid_effect(object me, object weapon, string name, int skill)
 
 void skill_improved(object me)
 {
-    if ((int)me->query_skill("keening-stick", 1)  % 10 == 0) {
+    if ((int)me->query_skill("keening-stick", 1) % 10 == 0) {
         tell_object(me,
             RED "\n你突然觉得一股恶气冲上心头，只觉得想杀人....\n\n" NOR);
         me->add("bellicosity", 100);
     } else
         me->add("bellicosity", 10);
+}
+
+string perform_action_file(string func)
+{
+    return CLASS_D("ghost") + "/kenning-stick/" + func;
 }
 
