@@ -1,4 +1,4 @@
-// huntdown-sword.c
+// killer-sword.c
 // reference from six-chaos-sword.c
 
 #include <ansi.h>
