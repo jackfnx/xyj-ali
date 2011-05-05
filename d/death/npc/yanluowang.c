@@ -38,14 +38,14 @@ void create()
        set_skill("unarmed", 150);
    set_skill("whip", 100);
    set_skill("sword", 150);
-   set_skill("huntdown-sword", 150);
+   set_skill("killer-sword", 150);
        set_skill("dodge", 120);
    set_skill("ghost-steps", 150);
        set_skill("parry", 150);
         set_skill("spells", 150);
         set_skill("force", 150);
-   map_skill("sword", "huntdown-sword");
-   map_skill("parry", "huntdown-sword");
+   map_skill("sword", "killer-sword");
+   map_skill("parry", "killer-sword");
    map_skill("dodge", "ghost-steps");
    map_skill("unarmed", "jinghun-zhang");
    map_skill("force", "tonsillit");

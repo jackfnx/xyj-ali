@@ -46,7 +46,7 @@ void create()
     set_skill("stick", 180);
     set_skill("keening-stick", 180);
     set_skill("sword", 180);
-    set_skill("huntdown-sword", 180);
+    set_skill("killer-sword", 180);
 
     map_skill("force", "tonsillit");
     map_skill("unarmed", "jinghun-zhang");
@@ -55,7 +55,7 @@ void create()
     map_skill("parry", "hellfire-whip");
     map_skill("whip", "hellfire-whip");
     map_skill("stick", "keening-stick");
-    map_skill("sword", "huntdown-sword");
+    map_skill("sword", "killer-sword");
 
     set("chat_chance_combat", 40);
     set("chat_msg_combat", ({
