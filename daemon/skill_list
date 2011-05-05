@@ -76,16 +76,17 @@
   <skill>necromancy</skill>
   <skill>tonsillit</skill>
 </hell>
-<xueshan class="dapeng">
-  <skill>bingpo-blade</skill>
-  <skill>cuixin-zhang</skill>
+<xueshan class="avian">
+  <skill>avian-sword</skill>
+  <skill>ice-blade</skill>
   <skill>dengxian-dafa</skill>
-  <skill>huntian-qigong</skill>
-  <skill>ningxie-force</skill>
-  <skill>yingzhaogong</skill>
-  <skill>xiaoyaoyou</skill>
+  <skill>ice-force</skill>
+  <skill>raptor-talon</skill>
+  <skill>wreck-heart</skill>
+  <skill>peripateticism</skill>
 </xueshan>
 <wudidong class="mouse">
+  <skill>huntian-qigong</skill>
   <skill>kugu-blade</skill>
   <skill>lingfu-steps</skill>
   <skill>moyun-shou</skill>
