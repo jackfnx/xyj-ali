@@ -1,6 +1,3 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
 //standroom.c used by weiqi...others may hate this format:D
 //xueshan1.c
 
@@ -16,24 +13,13 @@ void create ()
 出大雪山是成功在望了。
 LONG);
 
-  set("outdoors", "xueshan");
   set("exits", ([ /* sizeof() == 2 */
-  "north" : __DIR__"xueshan2",
-  "south" : "/d/moon/kunlun",
-]));
+    "south" : "/d/moon/kunlun",
+    "north" : __DIR__"xueshan2",
+  ]));
 
+  set("outdoors", "xueshan");
   setup();
 }
-
-//void init()
-//{
-   //add_action("do_jump", "jump");
-//}
-
-//int do_jump(string arg)
-//{
-       
-//}
-
 
 
