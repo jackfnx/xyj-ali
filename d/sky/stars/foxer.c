@@ -34,7 +34,7 @@ void create()
 
    set_skill("baguazhou", 102);
    set_skill("flower-hand", 204);
-   set_skill("bingpo-blade", 22);
+   set_skill("ice-blade", 22);
    set_skill("blade", 22);
    set_skill("buddhism", 42);
    set_skill("dodge", 76);
@@ -46,7 +46,7 @@ void create()
    set_skill("moondance", 205);
    set_skill("moonforce", 167);
    set_skill("moonshentong", 131);
-   set_skill("ningxie-force", 29);
+   set_skill("ice-force", 29);
    set_skill("parry", 143);
    set_skill("qianjun-bang", 102);
    set_skill("snowsword", 218);

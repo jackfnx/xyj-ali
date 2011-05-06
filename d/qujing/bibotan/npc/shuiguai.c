@@ -34,8 +34,8 @@ void create()
         set_skill("spells", 20);
         set_skill("dodge", 20);
    set_skill("parry", 20);
-   set_skill("cuixin-zhang", 20);
-   map_skill("unarmed", "cuixin-zhang");
+   set_skill("pressheart-hand", 20);
+   map_skill("unarmed", "pressheart-hand");
         setup();
 }
 int heal_up()

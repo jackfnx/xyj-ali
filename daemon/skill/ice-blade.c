@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//bingpo-blade.c 【冰魄寒刀】weiqi...97.09.13.
+//ice-blade.c 【冰魄寒刀】weiqi...97.09.13.
 //need ice blade to learn or practice this skill, want check out how 
 //to force the use of a ice blade even when use this skill.
 

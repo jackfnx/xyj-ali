@@ -78,12 +78,12 @@
 </hell>
 <xueshan class="avian">
   <skill>avian-sword</skill>
-  <skill>ice-blade</skill>
   <skill>dengxian-dafa</skill>
+  <skill>ice-blade</skill>
   <skill>ice-force</skill>
-  <skill>raptor-talon</skill>
-  <skill>wreck-heart</skill>
   <skill>peripateticism</skill>
+  <skill>pressheart-hand</skill>
+  <skill>raptor-talon</skill>
 </xueshan>
 <wudidong class="mouse">
   <skill>huntian-qigong</skill>

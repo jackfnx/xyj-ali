@@ -19,13 +19,13 @@ void create()
    set_skill("dodge", 30);
    set_skill("parry", 30);
    set_skill("blade", 30);
-   set_skill("bingpo-blade", 30);
-   set_skill("xiaoyaoyou", 30);
+   set_skill("ice-blade", 30);
+   set_skill("peripateticism", 30);
    set_skill("force", 30);   
    set_skill("ningxue", 30);
    map_skill("force", "ningxue");
-   map_skill("blade", "bingpo-blade");
-   map_skill("dodge", "xiaoyaoyou");
+   map_skill("blade", "ice-blade");
+   map_skill("dodge", "peripateticism");
 
 
    set("per", 21);

@@ -40,7 +40,7 @@ LONG );
     set_skill("parry",  250);
     set_skill("stick",  250);
     set_skill("qianjun-bang",  250);
-    map_skill("force", "ningxie-force");
+    map_skill("force", "nine-turn");
     map_skill("stick", "qianjun-bang");
     map_skill("parry", "qianjun-bang");
     set("max_gin", 1000);

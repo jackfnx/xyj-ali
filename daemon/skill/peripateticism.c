@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// xiaoyaoyou.c
+// peripateticism.c
 //【逍遥游】weiqi... 97.09.13
 
 inherit SKILL;

@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//cuixin-zhang.c 【摧心掌】weiqi
+//pressheart-hand.c 【摧心掌】weiqi
 //menpai skill(non manpai NPCs can also use it)
 
 inherit SKILL;

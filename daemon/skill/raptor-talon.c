@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//yingzhaogong.c【鹰爪功】
+//raptor-talon.c【鹰爪功】
 //not a main menpai skill(can be used by NPCs)
 
 inherit SKILL;

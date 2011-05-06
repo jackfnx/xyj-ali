@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//ningxie-force--heal.c
+//ice-force--heal.c
 
 #include <ansi.h>
 

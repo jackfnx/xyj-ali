@@ -35,7 +35,7 @@ void create()
         set("nkgain", 500);
 
    set_skill("unarmed",150);
-   set_skill("yingzhaogong", 150);
+   set_skill("raptor-talon", 150);
    set_skill("parry",150);
    set_skill("dodge",150);
    set_skill("spear",150);
@@ -46,7 +46,7 @@ void create()
    map_skill("dodge", "moshenbu");
    map_skill("parry", "bawang-qiang");
    map_skill("spear","bawang-qiang");
-   map_skill("unarmed", "yingzhaogong");
+   map_skill("unarmed", "raptor-talon");
    set("inquiry", ([
      "name" : "在下增长天王魔礼青，奉圣谕把守南天门。",
      "here" : "这里就是南天门, 入内就是天界了。",

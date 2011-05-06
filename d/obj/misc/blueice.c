@@ -35,7 +35,7 @@ void melt(int count)
 
    if( env->is_character() )
    {//a player or a NPC.
-     if( (int)env->query_skill("ningxie-force", 1) < 20 )
+     if( (int)env->query_skill("ice-force", 1) < 20 )
      {
         message_vision("$N觉得身上凉凉的，湿湿的，原来是冰块化了。\n", env);
         env->apply_condition("ice_poison", 10);
@@ -77,7 +77,7 @@ int do_make(string arg)
    if( arg == "sword" || arg =="jian" )
      return notify_fail("这片冰是弯的，做不了剑。\n");
 
-   if( (int)me->query("force") < 200 || (int)me->query_skill("ningxie-force", 1) < 20 )
+   if( (int)me->query("force") < 200 || (int)me->query_skill("ice-force", 1) < 20 )
    {
      message_vision("$N拿起冰块捏来捏去，结果冰块很快就化掉了。\n", me);
      me->apply_condition("ice_poison", 10);
@@ -109,7 +109,7 @@ int do_chi(string arg)
      this_player()->add("kee", -20);
    else this_player()->unconcious();
 
-   if( (int)this_player()->query("force") < 200 || (int)this_player()->query_skill("ningxie-force", 1) < 20 )
+   if( (int)this_player()->query("force") < 200 || (int)this_player()->query_skill("ice-force", 1) < 20 )
      this_player()->apply_condition("ice_poison", 5);
 
    return 1;
