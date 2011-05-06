@@ -144,7 +144,7 @@ int do_yes(string arg)
         message_vision("乌鸦先生说道：好！那我给你一张地图吧！\n", me);
         me->set_temp("need_map", 0);
 
-        carry_object("/d/obj/misc/xueshan-map");
+        carry_object(__DIR__"obj/xueshan-map");
         command("give xueshan map to " + me->query("id"));
         set("no_map", 1);
         call_out("regenerate", 480);

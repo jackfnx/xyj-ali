@@ -32,7 +32,7 @@ LONG);
    
    set("objects", 
    ([ //sizeof() == 1
-     "/d/obj/misc/ice" : 2,
+     __DIR__"obj/ice" : 2,
      //__DIR__"npc/yingwu-guai" : 1,
    ]));
 

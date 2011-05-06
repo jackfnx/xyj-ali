@@ -32,7 +32,7 @@ LONG);
    
    set("objects", 
    ([ //sizeof() == 1
-     "/d/obj/misc/ice" : 2,
+     __DIR__"obj/ice" : 2,
    ]));
 
 
@@ -65,7 +65,7 @@ int do_dig(string arg)
    if (query("no_xiaocao"))
      return notify_fail("没几棵了，再挖孔雀公主非宰了你不可。\n");
 
-   ob=new("/d/obj/misc/xiaocao");
+   ob=new(__DIR__"obj/xiaocao");
            ob->move(me);
    message_vision("$N挖出一颗蓝色小草，小心翼翼地藏到了怀里。\n", me);
    set("no_xiaocao", 1);

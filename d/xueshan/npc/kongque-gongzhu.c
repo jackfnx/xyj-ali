@@ -26,8 +26,9 @@ void create()
    set_skill("dodge", 90);
    set_skill("peripateticism", 120);
    set_skill("parry", 70);
-   set_skill("blade", 90);
-   set_skill("ice-blade", 120);
+   set_skill("throwing", 100);
+   set_skill("sword", 90);
+   set_skill("avian-sword", 120);
    set_skill("force", 90);   
    set_skill("ice-force", 90);
    set_skill("literate", 90);
@@ -36,7 +37,7 @@ void create()
    map_skill("spells", "dengxian-dafa");
    map_skill("force", "ice-force");
    map_skill("unarmed", "pressheart-hand");
-   map_skill("blade", "ice-blade");
+   map_skill("sword", "avian-sword");
    map_skill("dodge", "peripateticism");
 
    set("max_kee", 1000);
@@ -52,9 +53,9 @@ void create()
         set("nkgain", 400);
 
    setup();
-   carry_object("/d/obj/cloth/skirt")->wear();
+   carry_object("/d/obj/cloth/nihong-yuyi")->wear();
    carry_object("/d/obj/cloth/shoes")->wear();
-   carry_object("/d/obj/weapon/blade/iceblade")->wield();
+   carry_object("/d/obj/weapon/sword/fenghuang-qin")->wield();
 }
 
 void attempt_apprentice(object ob)

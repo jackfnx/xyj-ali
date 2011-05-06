@@ -34,7 +34,7 @@ LONG);
    ([ //sizeof() == 1
      __DIR__"npc/xunshi" : 2,
      __DIR__"npc/yingwu-guai" : 1,
-     "/d/obj/misc/ice.c" : 1,
+     __DIR__"obj/ice.c" : 1,
    ]));
 
 

@@ -73,9 +73,9 @@ int do_mix(string arg)
    message_vision("然后将汁水滴到了冰块上，结果汁水很快被冰块吸了进去。\n", me);
 
    destruct(ice);
-   if ( type == 1 ) ice=new("/d/obj/misc/blueice");
-   else if( type == 2 ) ice=new("/d/obj/misc/redblueice");
-   else ice=new("/d/obj/misc/ice");
+   if ( type == 1 ) ice=new(__DIR__"blueice");
+   else if( type == 2 ) ice=new(__DIR__"redblueice");
+   else ice=new(__DIR__"ice");
            ice->move(me);
    //now ice becomes blueice...
    //anyone who has >100 force can make blueice, however those who have
