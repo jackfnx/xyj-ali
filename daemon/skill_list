@@ -50,7 +50,7 @@
   <skill>snowsword</skill>
 </moon>
 <wzg class="daxian">
-  <skill>baguazhen</skill>
+  <skill todo="todo">baguazhen</skill>
   <skill>liuhe-chui</skill>
   <skill>qixing-zhang</skill>
   <skill share="share">sanqing-jian</skill>
@@ -70,7 +70,7 @@
 <hell class="ghost">
   <skill>ghost-steps</skill>
   <skill>hellfire-whip</skill>
-  <skill>jinghun-zhang</skill>
+  <skill>dread-hand</skill>
   <skill>killer-sword</skill>
   <skill>keening-stick</skill>
   <skill>necromancy</skill>

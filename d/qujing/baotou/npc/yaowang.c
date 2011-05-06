@@ -34,9 +34,9 @@ void create()
   set_skill("necromancy", 70);
   set_skill("tonsillit", 70);
   set_skill("ghost-steps", 100);
-  set_skill("jinghun-zhang", 70);
+  set_skill("dread-hand", 70);
   set_skill("lunhui-zhang", 130);
-  map_skill("unarmed", "jinghun-zhang");
+  map_skill("unarmed", "dread-hand");
   map_skill("dodge", "ghost-steps");
   map_skill("staff", "lunhui-zhang");
   map_skill("parry", "lunhui-zhang");

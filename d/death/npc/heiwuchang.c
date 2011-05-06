@@ -36,7 +36,7 @@ void create()
    set_skill("parry", 70);
    set_skill("spells", 70);
    set_skill("necromancy", 60);
-   set_skill("jinghun-zhang", 70);
+   set_skill("dread-hand", 70);
    set_skill("force", 70);
    set_skill("tonsillit", 60);
 /*
@@ -48,7 +48,7 @@ void create()
    map_skill("spells", "necromancy");
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");
-   map_skill("unarmed", "jinghun-zhang");
+   map_skill("unarmed", "dread-hand");
 create_family("ÑÖÂŞµØ¸®", 4, "ÄãºÃ");
 
         setup();

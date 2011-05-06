@@ -36,8 +36,8 @@ void create()
         set_skill("unarmed",120);
         set_skill("dodge",120);
         set_skill("parry",120);
-   set_skill("jinghun-zhang", 120);
-   map_skill("unarmed", "jinghun-zhang"); 
+   set_skill("dread-hand", 120);
+   map_skill("unarmed", "dread-hand"); 
 
    set("HellZhen", 4);
         setup();

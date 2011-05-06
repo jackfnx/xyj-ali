@@ -24,8 +24,8 @@ void create()
         set("combat_exp", 3000);
    set("attitude", "heroism");
    set_skill("unarmed", 10);
-   set_skill("jinghun-zhang", 10);
-   map_skill("unarmed", "jinghun-zhang");
+   set_skill("dread-hand", 10);
+   map_skill("unarmed", "dread-hand");
    set_skill("dodge", 10);
    set_skill("ghost-steps", 10);
    map_skill("dodge", "ghost-steps");

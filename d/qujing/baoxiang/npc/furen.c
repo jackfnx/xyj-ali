@@ -25,8 +25,8 @@ void create()
   set_skill("necromancy", 50);
   set_skill("tonsillit", 50);
   set_skill("ghost-steps", 50);
-  set_skill("jinghun-zhang", 50);
-  map_skill("unarmed", "jinghun-zhang");
+  set_skill("dread-hand", 50);
+  map_skill("unarmed", "dread-hand");
   map_skill("force", "tonsillit");
   map_skill("spells", "necromancy");
   set("max_gin", 700);

@@ -58,13 +58,13 @@ void create()
         set_skill("force", 70);
         set_skill("stick", 70);
         set_skill("tonsillit", 70);
-        set_skill("jinghun-zhang", 80);
+        set_skill("dread-hand", 80);
         map_skill("spells", "necromancy");
         map_skill("dodge", "ghost-steps");
         map_skill("force", "tonsillit");
    map_skill("stick", "keening-stick");
    map_skill("parry", "keening-stick");
-        map_skill("unarmed", "jinghun-zhang");
+        map_skill("unarmed", "dread-hand");
    create_family("ÑÖÂŞµØ¸®", 4, "ÄãºÃ");
         setup();
    carry_object("/d/obj/cloth/hei")->wear();

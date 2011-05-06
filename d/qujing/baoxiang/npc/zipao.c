@@ -29,8 +29,8 @@ void create()
   set_skill("necromancy", 180);
   set_skill("tonsillit", 180);
   set_skill("ghost-steps", 180);
-  set_skill("jinghun-zhang", 180);
-  map_skill("unarmed", "jinghun-zhang");
+  set_skill("dread-hand", 180);
+  map_skill("unarmed", "dread-hand");
   map_skill("force", "tonsillit");
   map_skill("spells", "necromancy");
   set("eff_dx",-90000);

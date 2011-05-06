@@ -39,7 +39,7 @@ set("long","王方平本是山中道士，后在丰都山同阴长生同修炼成仙，御封(「鬼王」。\n"
    set_skill("parry", 120);
    set_skill("spells", 120);
    set_skill("necromancy", 90);
-   set_skill("jinghun-zhang", 120);
+   set_skill("dread-hand", 120);
    set_skill("force", 120);
    set_skill("tonsillit", 90);
    set_skill("sword", 90);
@@ -50,7 +50,7 @@ set("long","王方平本是山中道士，后在丰都山同阴长生同修炼成仙，御封(「鬼王」。\n"
    map_skill("spells", "necromancy");
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");
-   map_skill("unarmed", "jinghun-zhang");
+   map_skill("unarmed", "dread-hand");
         set("chat_chance_combat", 40);
         set("chat_msg_combat", ({
 //                (: exert_function, "powerup" :),

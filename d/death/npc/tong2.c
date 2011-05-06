@@ -16,8 +16,8 @@ void create()
    set_skill("unarmed", 40);
    set_skill("dodge", 50);
    set_skill("parry", 50);
-   set_skill("jinghun-zhang", 30);
-   map_skill("unarmed", "jinghun-zhang");
+   set_skill("dread-hand", 30);
+   map_skill("unarmed", "dread-hand");
    set("max_kee", 300);
    set("max_sen", 300);
    set("max_force", 300);

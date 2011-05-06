@@ -53,13 +53,13 @@ set("chat_msg", ({
    set_skill("parry", 50);
    set_skill("spells", 50);
    set_skill("necromancy", 50);
-   set_skill("jinghun-zhang", 50);
+   set_skill("dread-hand", 50);
    set_skill("force", 50);
    set_skill("tonsillit", 50);
    map_skill("spells", "necromancy");
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");
-   map_skill("unarmed", "jinghun-zhang");
+   map_skill("unarmed", "dread-hand");
 create_family("ÑÖÂŞµØ¸®", 4, "ÄãºÃ");
 
         setup();

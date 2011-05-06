@@ -32,7 +32,7 @@ void create()
        set("mana_factor", 50);
        set("combat_exp", 1000000);
 
-   set_skill("jinghun-zhang", 150);
+   set_skill("dread-hand", 150);
    set_skill("tonsillit", 100);
    set_skill("necromancy", 150);
        set_skill("unarmed", 150);
@@ -47,7 +47,7 @@ void create()
    map_skill("sword", "killer-sword");
    map_skill("parry", "killer-sword");
    map_skill("dodge", "ghost-steps");
-   map_skill("unarmed", "jinghun-zhang");
+   map_skill("unarmed", "dread-hand");
    map_skill("force", "tonsillit");
    map_skill("spells", "necromancy");
 

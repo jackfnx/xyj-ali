@@ -42,9 +42,9 @@ void create()
         set_skill("keening-stick",110);
    set_skill("moshenbu", 110);
         set_skill("force",120);
-        set_skill("jinghun-zhang",100);
+        set_skill("dread-hand",100);
    map_skill("dodge", "moshenbu");
-   map_skill("unarmed", "jinghun-zhang");
+   map_skill("unarmed", "dread-hand");
         map_skill("parry","keening-stick");
    map_skill("stick", "keening-stick");
         set("inquiry", ([
