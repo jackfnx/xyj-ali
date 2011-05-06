@@ -30,7 +30,7 @@ void create()
     set_skill("unarmed", 180);
     set_skill("wuxing-quan", 200);
     set_skill("dodge", 150);
-    set_skill("bagua-array", 160);
+    set_skill("bagua-zhen", 160);
     set_skill("parry", 180);
     set_skill("sword", 160);
     set_skill("sanqing-jian", 190);
@@ -48,7 +48,7 @@ void create()
     map_skill("force", "zhenyuan-force");
     map_skill("unarmed", "wuxing-quan");
     map_skill("sword", "sanqing-jian");
-    map_skill("dodge", "bagua-array");
+    map_skill("dodge", "bagua-zhen");
     map_skill("staff", "qixing-zhang");
     map_skill("hammer", "liuhe-chui");
 
