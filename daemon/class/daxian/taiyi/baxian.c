@@ -24,7 +24,7 @@ int cast(object me, object target)
         return notify_fail("只有在战斗中才能召唤八仙！\n");
     if ((int)me->query_skill("taiyi", 1) < 20)
         return notify_fail("你的太乙仙法修为不深，请不动八仙。\n");
-    if ((int)me->query_skill("baguazhen", 1) < 30)
+    if ((int)me->query_skill("bagua-array", 1) < 30)
         return notify_fail("你的八卦阵水平不够，没法使动八仙。\n");
     if ((int)me->query("mana") < 200)
         return notify_fail("你的法力不够，没办法知会八仙。\n");
@@ -76,7 +76,7 @@ void npc_attack(object invoker, object target, string npc, object where)
     seteuid(getuid());
     attacker = new(npc);
     attacker->move(environment(invoker));
-    attacker->add_temp("apply/attack", (int)invoker->query_skill("baguazhen", 1));
+    attacker->add_temp("apply/attack", (int)invoker->query_skill("bagua-array", 1));
 
     //do not attack too weak ppls...
     if ((int)target->query("combat_exp") < 10000) {

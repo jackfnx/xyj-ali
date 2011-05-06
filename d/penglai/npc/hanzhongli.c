@@ -19,7 +19,7 @@ void create()
     set_skill("unarmed", 60);
     set_skill("wuxing-quan", 60);
     set_skill("dodge", 80);
-    set_skill("baguazhen", 70);
+    set_skill("bagua-array", 70);
     set_skill("parry", 80);
     set_skill("sword", 90);
     set_skill("xiaofeng-sword", 100);
@@ -32,7 +32,7 @@ void create()
     map_skill("force", "zhenyuan-force");
     map_skill("unarmed", "wuxing-quan");
     map_skill("sword", "xiaofeng-sword");
-    map_skill("dodge", "baguazhen");
+    map_skill("dodge", "bagua-array");
     
     set("max_kee", 500);
     set("max_sen", 500);

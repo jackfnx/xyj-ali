@@ -42,7 +42,7 @@
   <skill>lunhui-zhang</skill>
 </putuo>
 <moon class="girl">
-  <skill todo="todo">flower-hand</skill>
+  <skill>flower-hand</skill>
   <skill>loveless-whip</skill>
   <skill>moondance</skill>
   <skill>moonforce</skill>
@@ -50,7 +50,7 @@
   <skill>snowsword</skill>
 </moon>
 <wzg class="daxian">
-  <skill todo="todo">baguazhen</skill>
+  <skill>bagua-array</skill>
   <skill>liuhe-chui</skill>
   <skill>qixing-zhang</skill>
   <skill share="share">sanqing-jian</skill>
