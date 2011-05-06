@@ -1,13 +1,14 @@
-//huanhua.c
+//xueyan-shier.c
 //hehe, this npc is interesting:D...weiqi, 97.09.15
 
 inherit NPC;
 void create()
 {
-    set_name("浣花", ({"huan hua", "huanhua", "hua"}));
-    set("gender", "女性" );
+    set_name("雪雁侍儿", ({"xueyan shier", "shier", "xueyan"}));
+    set("gender", "女性");
+    set("title", "丫鬟");
     set("age", 16);
-    set("long", "雪山门下女弟子。\n");
+    set("long", "孔雀公主的贴身丫鬟，与孔雀公主关系亲密，雪山上下都要让她三分。\n");
     set("class", "avian");
     set("combat_exp", 25000);
     set("attitude", "peaceful");
@@ -59,11 +60,8 @@ void greeting(object ob)
 
     switch (random(1)) {
         case 0:
-            command("chat* 只听浣花高声叫道：" + ob->query("name") + "，你这个臭流氓！居然闯到女弟子卧房来了！\n");
+            command("chat* 只听雪雁高声叫道：" + ob->query("name") + "，你这个臭流氓！居然闯到女弟子卧房来了！\n");
             command("kick " + ob->query("id"));
             break;
     }
 }
-
-
-

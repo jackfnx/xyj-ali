@@ -7,11 +7,11 @@ inherit NPC;
 // from drooler file, some global variables
 
 string *rnd_say = ({
-   "我雪山派弟子各个神勇无比，天下无敌！",
-   "「嘎～～嘎～～」",
-   "杀入大雷音寺，抢了他的莲花宝座！",
-   "你们都要好好练功！不要辜负了明王的一片苦心！",
-   "大家好！",
+    "我雪山派弟子各个神勇无比，天下无敌！",
+    "「嘎～～嘎～～」",
+    "杀入大雷音寺，抢了他的莲花宝座！",
+    "你们都要好好练功！不要辜负了明王的一片苦心！",
+    "大家好！",
 });
 
 varargs void drool(string msg, string who);
@@ -38,7 +38,7 @@ void create()
     set_skill("parry", 50);
     set_skill("blade", 50);
     set_skill("ice-blade", 50);
-    set_skill("force", 50);   
+    set_skill("force", 50);
     set_skill("ice-force", 50);
     set_skill("literate", 80);
     set_skill("spells", 50);
@@ -54,7 +54,7 @@ void create()
     set("force", 400);
     set("max_force", 400);
     set("mana", 300);
-    set("max_mana", 300);   
+    set("max_mana", 300);
     set("force_factor", 10);
     set("mana_factor", 15);
 
@@ -139,8 +139,8 @@ void relay_channel(object ob, string channel, string msg)
     // Don't process our own speech.
     if (ob==this_object()) return;
 
-    if (add_phrase(who, msg) && random(10) > 4)
-        drool(msg, ob->query("name"));
+    if (add_phrase(who, filter_color(msg)) && random(10) > 4)
+        drool(filter_color(msg), ob->query("name"));
 }
 
 void relay_say(object ob, string msg)

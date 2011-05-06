@@ -31,7 +31,7 @@ LONG);
    
    set("objects", 
    ([ //sizeof() == 1
-     __DIR__"npc/xunshi" : 1,
+     __DIR__"npc/shier" : 2,
    ]));
 
 
@@ -52,12 +52,16 @@ LONG);
 
 int valid_leave(object me, string dir)
 {
-   object xunshi;
-   if (dir == "south" ) {
-     if(objectp(xunshi=present("xunshi", environment(me))) && living(xunshi) )
-        return notify_fail("冰谷巡使把你一拦道：公主有令，任何人不得入内打搅！\n");
-   }
+    object shier;
+    if (dir == "south") {
+        if (objectp(shier = present("shi er", environment(me))) && living(shier)) {
+            if (me->query("family/family_name") == "大雪山" && (int)me->query("family/generation") <= 3)
+                message_vision("$N低眉顺目向$n行礼。\n", shier, this_player());
+            else 
+                return notify_fail("侍儿把你一拦道：公主有令，任何人不得入内打搅！\n");
+        }
+    }
 
-   return ::valid_leave(me, dir);
+    return ::valid_leave(me, dir);
 }
 

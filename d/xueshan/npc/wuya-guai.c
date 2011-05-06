@@ -27,7 +27,7 @@ void create()
     set_skill("parry", 50);
     set_skill("blade", 50);
     set_skill("ice-blade", 50);
-    set_skill("force", 50);   
+    set_skill("force", 50);
     set_skill("ice-force", 50);
     set_skill("literate", 30);
     set_skill("spells", 50);
@@ -43,7 +43,7 @@ void create()
     set("force", 400);
     set("max_force", 400);
     set("mana", 500);
-    set("max_mana", 400);   
+    set("max_mana", 400);
     set("force_factor", 35);
     set("mana_factor", 20);
 
@@ -55,7 +55,7 @@ void create()
         "here" : "管它呢！反正比不上我们大雪山。\n",
         "怎么去" : "飞过去最快，走也能到。\n",
         "怎么走" : "好像是从昆仑山往北走。\n",
-        "怎么飞" : (: help_fly :),      
+        "怎么飞" : (: help_fly :),
         "大雪山" : (: give_map :),
     ]) );
 
@@ -78,7 +78,7 @@ void attempt_apprentice(object ob)
             command("say 你这个" + RANK_D->query_rude(ob) + "早就该来拜我为师！你那个破师父什么都不懂...\n");
             command("recruit " + ob->query("id"));
         }
-    } else{
+    } else {
         command(":D ");
         command("say 好，到我们大雪山来学艺，又找了个好师父，只要能活下来，" + RANK_D->query_respect(ob) + "可以说是前途无量啊！\n");
         command("recruit " + ob->query("id"));
@@ -104,7 +104,7 @@ string help_fly(object me)
         tell_room(environment(me),"只听劈啪！一声，一个人从空中飞过来，死猪般地摔在地上。\n", ({me}));
         return "嘿嘿！\n";
 */
-    return "赶紧学吧！\n";
+        return "赶紧学吧！\n";
     } else {
         return "你现在头脑不清醒，别摔死了！\n";
     }
@@ -114,6 +114,7 @@ string give_map(object me)
 {
     me=this_player();
     me->set_temp("need_map", 1);
+    me->start_call_out((: call_other, me, "set_temp", "need_map", 0 :), 10);
     return "大雪山，那可是个好地方，你想去吗(yes)？\n";
 }
 

@@ -1,6 +1,7 @@
 //xiaozuanfeng.c
 
 inherit NPC;
+inherit F_VENDOR;
 
 void create()
 {
@@ -20,6 +21,14 @@ void create()
 
     set("per", 11);
     set("max_kee", 150);
+
+    set("vendor_goods", ([
+        "jiudou": "/d/xueshan/obj/jiudou",
+        "peijian": "/d/obj/weapon/sword/peijian",
+        "yinzhen": "/d/obj/weapon/throwing/yinzhen",
+        "kongqueling": "/d/obj/weapon/throwing/kongque-ling",
+    ]));
+
     setup();
     carry_object("/d/obj/armor/shoupi")->wear();
 }
@@ -30,9 +39,6 @@ void init()
     object me=this_object();
 
     ::init();
-    if (((string)ob->query("family/family_name") == "大雪山") && ((string)environment(me)->query("short")=="厨房")) {
-        command("say 还没到吃饭时间呢！一天到晚就知道吃，吃...\n");
-        command("kick ");
-    }
+    add_action("do_vendor_list", "list");
 }
 

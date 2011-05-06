@@ -32,7 +32,7 @@ LONG);
    set("objects", 
    ([ //sizeof() == 1
      //__DIR__"npc/xunshi" : 2,
-     __DIR__"npc/huanhua" : 1,
+     __DIR__"npc/xueyan-shier" : 1,
    ]));
 
 
