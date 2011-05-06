@@ -234,7 +234,7 @@ int do_ba(string arg)
         qi->move(me);
         message_vision("$N大喝一声，将大旗拔了下来。\n", me);
         env->set("getflag", 1);
-        env->start_call_out("delete", 1200, "getflag");
+        env->start_call_out((: call_other, env, "delete", "getflag" :), 1200);
     }
     return 1;
 }
