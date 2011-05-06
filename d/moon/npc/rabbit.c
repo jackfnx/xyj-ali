@@ -40,11 +40,11 @@ void create()
        set_skill("sword", 80);
        set_skill("spells", 50);
         set_skill("moonshentong", 50);
-        set_skill("baihua-zhang", 50);
+        set_skill("flower-hand", 50);
         set_skill("moonforce", 80);
         set_skill("moondance", 100);
         map_skill("spells", "moonshentong");
-        map_skill("unarmed", "baihua-zhang");
+        map_skill("unarmed", "flower-hand");
         map_skill("force", "moonforce");
         map_skill("dodge", "moondance");
 

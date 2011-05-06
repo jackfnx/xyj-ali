@@ -39,13 +39,13 @@ void create()
        set_skill("whip", 180);
        set_skill("unarmed", 80);
        set_skill("spells", 120);
-       set_skill("baihua-zhang", 120);
+       set_skill("flower-hand", 120);
         set_skill("moonshentong",140);
         set_skill("loveless-whip", 180);
         set_skill("moonforce", 120);
         set_skill("moondance", 100);
         map_skill("spells", "moonshentong");
-        map_skill("unarmed", "baihua-zhang");
+        map_skill("unarmed", "flower-hand");
         map_skill("force", "moonforce");
         map_skill("whip", "loveless-whip");
         map_skill("parry", "loveless-whip");

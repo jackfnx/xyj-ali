@@ -27,7 +27,7 @@ void create()
   set_skill("spells", 50);
   set_skill("tao", 50);
   set_skill("unarmed", 45);
-  set_skill("baihua-zhang", 45);
+  set_skill("flower-hand", 45);
   set_skill("dodge", 80);
   set_skill("moondance", 70);
   set_skill("parry", 85);
@@ -36,7 +36,7 @@ void create()
   set_skill("moonforce", 70);
   set_skill("fengbo-cha", 80);
   map_skill("spells", "tao");
-  map_skill("unarmed", "baihua-zhang");
+  map_skill("unarmed", "flower-hand");
   map_skill("fork", "fengbo-cha");
   map_skill("parry", "fengbo-cha");
   map_skill("dodge", "moondance");

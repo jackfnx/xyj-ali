@@ -77,7 +77,7 @@ LONG);
     set("combat_exp", 10000);
 
     set_skill("unarmed", 80);
-    set_skill("baihua-zhang",180);
+    set_skill("flower-hand",180);
     set_skill("parry", 80);
     set_skill("dodge", 80);
     set_skill("moondance",80);
@@ -86,7 +86,7 @@ LONG);
     set_skill("moonshentong", 180);
     map_skill("spells", "moonshentong");
     map_skill("dodge", "moondance");
-    map_skill("unarmed", "baihua-zhang");
+    map_skill("unarmed", "flower-hand");
     set("max_kee", 1000);
     set("max_sen", 1000);
     set("mana", 4000);
@@ -219,7 +219,7 @@ void set_skills(object me)
     set("combat_exp", me->query("combat_exp"));
     set("force", query("max_force"));
     set_skill("unarmed", max_value);
-    set_skill("baihua-zhang", max_value);
+    set_skill("flower-hand", max_value);
     set_skill("parry", random(max_value));
     set_skill("dodge", random(max_value)/3);
     set_skill("moondance", random(max_value)/3);

@@ -33,7 +33,7 @@ void create()
    set("nkgain", 800);
 
    set_skill("baguazhou", 102);
-   set_skill("baihua-zhang", 204);
+   set_skill("flower-hand", 204);
    set_skill("bingpo-blade", 22);
    set_skill("blade", 22);
    set_skill("buddhism", 42);
@@ -59,7 +59,7 @@ void create()
    set_skill("yaofa", 19);
 
    map_skill("spells", "moonshentong");
-   map_skill("unarmed", "baihua-zhang");
+   map_skill("unarmed", "flower-hand");
    map_skill("force", "moonforce");
    map_skill("sword", "snowsword");
    map_skill("parry", "snowsword");

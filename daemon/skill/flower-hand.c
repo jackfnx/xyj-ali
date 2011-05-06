@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//【百花掌】baihua-zhang.c
+//【百花掌】flower-hand.c
 // cglaem...12/08/96.
 //menpai skill
 
@@ -21,7 +21,7 @@ mapping *action = ({
      "parry":     -10,
      "force":     120,
      "damage_type":   "刺伤",
-                        "weapon":     "右手掌",
+     "weapon":     "右手掌",
    ]),
    ([   "action":     "只见$N嫣然一笑，双掌翻飞，一招「人面桃花相映红」当真是妙到毫巅",
      "dodge":     -20,
@@ -79,6 +79,6 @@ int practice_skill(object me)
 
 string perform_action_file(string func)
 {
-    return CLASS_D("girl") + "/baihua-zhang/" + func;
+    return CLASS_D("girl") + "/flower-hand/" + func;
 }
 

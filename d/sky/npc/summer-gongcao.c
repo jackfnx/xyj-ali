@@ -41,9 +41,9 @@ void create()
         set_skill("snowsword",115);
         set_skill("force",100);
    set_skill("moshenbu", 110);
-   set_skill("baihua-zhang", 90);
+   set_skill("flower-hand", 90);
    set_skill("spells", 100);
-   map_skill("unarmed", "baihua-zhang");
+   map_skill("unarmed", "flower-hand");
    map_skill("dodge", "moshenbu");
         map_skill("parry","snowsword");
    map_skill("sword", "snowsword");

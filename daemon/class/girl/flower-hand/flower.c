@@ -28,7 +28,7 @@ int perform(object me, object target)
         if((int)me->query("kee") < 100 )
                 return notify_fail("你的气血不足，没法子施用外功！\n");
 
-   if((int)me->query_skill("baihua-zhang", 1) <80)
+   if((int)me->query_skill("flower-hand", 1) <80)
      return notify_fail("你的百花掌级别还不够！\n");
 
    tar=all_inventory(me);
@@ -51,7 +51,7 @@ int perform(object me, object target)
 "\n$N微微一笑，身子凌空而起，洒下漫天花雨，一时花香缭绕\n"
 "$n只觉周身都被花影罩住了，一时竟然不知如何招架，更不用说躲闪了！\n" NOR;
 
-        ap = me->query_skill("baihua-zhang", 1);
+        ap = me->query_skill("flower-hand", 1);
 // + me->query_skill("parry");
         ap = ( ap * ap * ap / (4 * 400) );
 // + (int)me->query("kee");
@@ -64,7 +64,7 @@ int perform(object me, object target)
      msg += HIC "谁知$n竟险中求胜，长袖一摆，已将所有花瓣打落！\n\n"NOR;
            message_vision(msg, me, target);
    } else {
-                damage = (int)me->query_skill("baihua-zhang",1) / 10 +
+                damage = (int)me->query_skill("flower-hand",1) / 10 +
         (int)me->query("sen") / 400 + random((int)me->query("sen") / 200 ) +
         (int)me->query("kee") / 400 + random((int)me->query("kee") / 200 );
      msg += HIC "这些花瓣看似柔弱无力，却如疾风骤雨般射向$n,深深的嵌入肉里！\n" NOR;
@@ -72,7 +72,7 @@ int perform(object me, object target)
      else damage +=random(10);
                         target->receive_damage("sen", me->query("eff_sen")*damage/100, me);
                         target->receive_damage("kee", me->query("eff_kee")*damage/70, me);
-                        me->improve_skill("baihua-zhang", 1, 1);
+                        me->improve_skill("flower-hand", 1, 1);
            message_vision(msg, me, target);
                 COMBAT_D->report_status(target);
     }

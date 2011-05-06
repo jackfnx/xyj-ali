@@ -36,12 +36,12 @@ void create()
        set_skill("sword", 100);
        set_skill("spells", 100);
         set_skill("moonshentong",130);
-        set_skill("baihua-zhang", 70);
+        set_skill("flower-hand", 70);
         set_skill("moonforce", 60);
         set_skill("snowsword", 100);
         set_skill("moondance", 100);
         map_skill("spells", "moonshentong");
-        map_skill("unarmed", "baihua-zhang");
+        map_skill("unarmed", "flower-hand");
         map_skill("force", "moonforce");
         map_skill("sword", "snowsword");
         map_skill("parry", "snowsword");

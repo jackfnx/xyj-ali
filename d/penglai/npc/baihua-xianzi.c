@@ -49,13 +49,13 @@ LONG);
     set_skill("parry", 80);
     set_skill("spells", 80);
     set_skill("moonshentong", 80);
-    set_skill("baihua-zhang", 200);
+    set_skill("flower-hand", 200);
     set_skill("moonforce", 80);
     set_skill("moondance", 70);
     set_skill("sword", 80);
     set_skill("snowsword", 80);
     map_skill("spells", "moonshentong");
-    map_skill("unarmed", "baihua-zhang");
+    map_skill("unarmed", "flower-hand");
     map_skill("force", "moonforce");
     map_skill("dodge", "moondance");
     

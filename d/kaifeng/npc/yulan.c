@@ -24,11 +24,11 @@ void create()
   set_skill("parry", 40);
   set_skill("force", 40);
   set_skill("spells", 40);
-  set_skill("baihua-zhang", 40);
+  set_skill("flower-hand", 40);
   set_skill("moondance", 40);
   set_skill("moonshentong", 40);
   map_skill("spells", "moonshentong");
-  map_skill("unarmed", "baihua-zhang");
+  map_skill("unarmed", "flower-hand");
   map_skill("force", "moonforce");
   map_skill("spells", "moonshentong");
   set("max_gin",400);

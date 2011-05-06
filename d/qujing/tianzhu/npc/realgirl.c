@@ -23,8 +23,8 @@ void create()
   set_skill("moonshentong", 10);
   set_skill("moonforce", 10);
   set_skill("moondance", 10);
-  set_skill("baihua-zhang", 10);
-  map_skill("unarmed", "baihua-zhang");
+  set_skill("flower-hand", 10);
+  map_skill("unarmed", "flower-hand");
   map_skill("force", "moonforce");
   map_skill("spells", "moondance");
 

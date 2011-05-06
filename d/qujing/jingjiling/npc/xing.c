@@ -37,12 +37,12 @@ void create()
    set_skill("parry", 100);
    set_skill("snowsword", 80);
    set_skill("moondance", 80);
-   set_skill("baihua-zhang", 80);
+   set_skill("flower-hand", 80);
    set_skill("spells", 100);
    map_skill("sword", "snowsword");
    map_skill("parry", "snowsword");
    map_skill("dodge", "moondance");
-   map_skill("unarmed", "baihua-zhang");
+   map_skill("unarmed", "flower-hand");
         setup();
 
    carry_object("/d/qujing/jingjiling/obj/xingzhi")->wield();
