@@ -27,7 +27,7 @@ void create()
     set_skill("throwing", 100);
     set_skill("sword", 90);
     set_skill("avian-sword", 120);
-    set_skill("force", 90);   
+    set_skill("force", 90);
     set_skill("ice-force", 90);
     set_skill("literate", 90);
     set_skill("spells", 80);
@@ -43,7 +43,7 @@ void create()
     set("force", 1600);
     set("max_force", 800);
     set("mana", 1000);
-    set("max_mana", 500);   
+    set("max_mana", 500);
     set("force_factor", 60);
     set("mana_factor", 25);
 
@@ -61,11 +61,9 @@ void attempt_apprentice(object ob)
     if ((string)ob->query("family/family_name") == "大雪山") {
         if ((int)ob->query("family/generation") < 3) {
             command("say 不敢，不敢。我该拜" + RANK_D->query_respect(ob) + "您为师才是。\n");
-        }
-        else if ((int)ob->query("family/generation") == 3) {
-            command("say 你这个" + RANK_D->query_respect(ob) + "别来消遣小女子了！\n");
-        }
-        else {
+        } else if ((int)ob->query("family/generation") == 3) {
+            command("say 你这个" + RANK_D->query_respect(ob) + "就别来消遣小女子了！\n");
+        } else {
             if ((int)ob->query("combat_exp") >= 50000) {
                 command(":) ");
                 command("say 好，" + RANK_D->query_respect(ob) + "既然看得起小女子，小女子定然用心传授！\n");
