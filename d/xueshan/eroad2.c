@@ -1,7 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//standroom.c used by weiqi...others may hate this format:D
+
 //eroad2.c
 
 inherit ROOM;
@@ -12,43 +9,23 @@ void create ()
    set ("long", @LONG
 
 很难想象这些木头是从哪里来的。但是这里的确是一间小木屋。
-周围是一道冰制的围墙，也不过半人来高。围墙入口出站着一
-位身披白袍，腰跨弯刀的男子。
+周围是一道冰制的围墙，也不过半人来高。
 LONG);
 
-   //set("item_desc", ([" *** " : " *** ", ]));
-   //for look something.
-
-   set("exits", 
-   ([ //sizeof() == 4
+   set("exits", ([ //sizeof() == 3
      "south" : __DIR__"xiaomuwu",
-     //"north" : __DIR__"icegate",
      "west" : __DIR__"eroad1",
      "east" : __DIR__"eroad3",
-     //"up" : __DIR__"***",
-     //"down" : __DIR__"***",
    ]));
-   
-   set("objects", 
-   ([ //sizeof() == 1
+
+   set("objects", ([ //sizeof() == 1
      __DIR__"npc/shier" : 2,
    ]));
 
-
-   set("outdoors", "xuesan");
+   set("outdoors", "xueshan");
 
    setup();
 }
-
-//void init()
-//{
-   //add_action("do_jump", "jump");
-//}
-
-//int do_jump(string arg)
-//{
-       
-//}
 
 int valid_leave(object me, string dir)
 {

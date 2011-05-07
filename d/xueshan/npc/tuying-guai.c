@@ -7,12 +7,12 @@ string expell_me(object me);
 void create()
 {
     set_name("秃鹰尊者", ({"tuying zunzhe", "tuying", "zunzhe"}));
-    set("title", "雪山管家");
+    set("title", "雪山总管");
     set("gender", "男性" );
     set("age", 53);
     set("per", 112);//no rongmao description.
 
-    set("long", "大雪山的大管家，诸般杂事都由他负责。\n");
+    set("long", "秃鹰是大鹏的大弟子，也是大雪山的大管家，诸般杂事都由他负责。\n");
     set("class", "avian");
     set("combat_exp", 500000);
     set("attitude", "peaceful");

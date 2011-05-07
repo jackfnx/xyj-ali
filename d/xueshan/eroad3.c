@@ -1,7 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//standroom.c used by weiqi...others may hate this format:D
+
 //eroad3.c
 
 inherit ROOM;
@@ -12,30 +9,14 @@ void create ()
    set ("long", @LONG
 
 冰崖底的拐角处。两段冰崖在此交会，望上看去崖势不是那么
-险峻了。再向北走就到雪山派的厨房了，炊烟中仿佛飘来一股
-诱人的香味。
+险峻了。
 LONG);
 
-   //set("item_desc", ([" *** " : " *** ", ]));
-   //for look something.
-
-   set("exits", 
-   ([ //sizeof() == 4
-     //"south" : __DIR__"xiaomuwu",
-     "north" : __DIR__"chufang",
+   set("exits", ([ //sizeof() == 1
      "west" : __DIR__"eroad2",
-     //"east" : __DIR__"eroad3",
-     //"up" : __DIR__"***",
-     //"down" : __DIR__"***",
-   ]));
-   
-   set("objects", 
-   ([ //sizeof() == 1
-     //__DIR__"npc/xunshi" : 1,
    ]));
 
-
-   set("outdoors", "xuesan");
+   set("outdoors", "xueshan");
 
    setup();
 }

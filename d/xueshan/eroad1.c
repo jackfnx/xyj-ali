@@ -1,7 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//standroom.c used by weiqi...others may hate this format:D
+
 //eroad1.c
 
 inherit ROOM;
@@ -17,24 +14,18 @@ void create ()
 大的小木房。北面则见冰宫在冰雪映照下奕奕生光。
 LONG);
 
-   set("item_desc", (["xiaocao" : "这种草叶尖圆润，色泽幽蓝，的确好看。 \n", ]));
-   //for look something.
+   set("item_desc", ([
+        "xiaocao" : "这种草叶尖圆润，色泽幽蓝，的确好看。 \n",
+   ]));
 
-   set("exits", 
-   ([ //sizeof() == 4
-     //"south" : __DIR__"***",
-     //"north" : __DIR__"icegate",
+   set("exits", ([ //sizeof() == 4
      "west" : __DIR__"binggu",
      "east" : __DIR__"eroad2",
-     //"up" : __DIR__"***",
-     //"down" : __DIR__"***",
    ]));
    
-   set("objects", 
-   ([ //sizeof() == 1
+   set("objects", ([ //sizeof() == 1
      __DIR__"obj/ice" : 2,
    ]));
-
 
    set("outdoors", "xueshan");
 
@@ -51,7 +42,6 @@ void init()
 
 int do_dig(string arg)
 {
-
    object ob, me;
    
    me=this_player();

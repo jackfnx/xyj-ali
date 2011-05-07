@@ -1,7 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//standroom.c used by weiqi...others may hate this format:D
+
 //wroad1.c
 
 inherit ROOM;
@@ -15,37 +12,11 @@ void create ()
 醒目的大字写着：“冰谷禁地，擅闯者死！”。
 LONG);
 
-   //set("item_desc", ([" *** " : " *** ", ]));
-   //for look something.
-
-   set("exits", 
-   ([ //sizeof() == 4
-     //"south" : __DIR__"***",
-     //"north" : __DIR__"icegate",
-     //"west" : __DIR__"binggu",
+   set("exits", ([ //sizeof() == 1
      "east" : __DIR__"binggu",
-     //"up" : __DIR__"***",
-     //"down" : __DIR__"***",
-   ]));
-   
-   set("objects", 
-   ([ //sizeof() == 1
-     //__DIR__"npc/***" : 1,
    ]));
 
-
-   set("outdoors", "xuesan");
+   set("outdoors", "xueshan");
 
    setup();
 }
-
-//void init()
-//{
-   //add_action("do_jump", "jump");
-//}
-
-//int do_jump(string arg)
-//{
-       
-//}
-
