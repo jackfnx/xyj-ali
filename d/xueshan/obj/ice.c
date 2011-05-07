@@ -35,7 +35,7 @@ void melt()
 
    if( env->is_character() )
    {//a player or a NPC.
-     if( (int)env->query_skill("ice-force", 1) < 20 )
+     if( (int)env->query_skill("iceblood-force", 1) < 20 )
      {
         message_vision("$N觉得身上凉凉的，湿湿的，原来是冰块化了。\n", env);
         destruct(this_object());
@@ -76,7 +76,7 @@ int do_make(string arg)
    if( arg == "sword" || arg =="jian" )
      return notify_fail("这片冰是弯的，做不了剑。\n");
 
-   if( (int)me->query("force") < 200 || (int)me->query_skill("ice-force", 1) < 20 )
+   if( (int)me->query("force") < 200 || (int)me->query_skill("iceblood-force", 1) < 20 )
    {
      message_vision("$N拿起冰块捏来捏去，结果冰块很快就化掉了。\n", me);
      destruct(this_object());

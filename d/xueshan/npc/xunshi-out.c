@@ -22,9 +22,9 @@ void create()
     set_skill("spells", 40);
     set_skill("dengxian-dafa", 40);
     set_skill("force", 40);   
-    set_skill("ice-force", 40);
+    set_skill("iceblood-force", 40);
     map_skill("spells", "dengxian-dafa");
-    map_skill("force", "ice-force");
+    map_skill("force", "iceblood-force");
     map_skill("blade", "ice-blade");
     map_skill("dodge", "peripateticism");
     map_skill("unarmed", "raptor-talon");

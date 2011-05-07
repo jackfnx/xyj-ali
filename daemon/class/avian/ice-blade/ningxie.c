@@ -27,7 +27,7 @@ int perform(object me, object target)
         return notify_fail("你要对谁施展「凝血」？\n");
     if (!me->is_fighting())
            return notify_fail("「凝血」只能在战斗中使用！\n");
-    skill = me->query_skill("ice-force", 1);
+    skill = me->query_skill("iceblood-force", 1);
     if (skill > 250) skill = 250;
     if (skill < 100)
         return notify_fail("你的冰谷凝血功修为不够。\n");
@@ -72,7 +72,7 @@ void check(object me,object target, int dodge_amount,int attack_amount)
             ||  !me->is_fighting())
         remove_effect(me, target, dodge_amount, attack_amount);
 
-    else if (me->query_skill_mapped("force") != "ice-force"
+    else if (me->query_skill_mapped("force") != "iceblood-force"
             ||  !objectp(weapon=me->query_temp("weapon"))
             ||  (weapon->query("apply/skill_type") != "blade"
                 && weapon->query("skill_type") != "blade")

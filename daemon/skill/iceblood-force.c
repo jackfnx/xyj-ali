@@ -1,7 +1,5 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-// ice-force.c  【冰谷凝血功】
+
+// iceblood-force.c  【冰谷凝血功】
 inherit FORCE;
 
 string name() { return "冰谷凝血功"; }
@@ -16,6 +14,6 @@ int practice_skill(object me)
 }
 string exert_function_file(string func)
 {
-    return CLASS_D("avian") + "/ice-force/" + func;
+    return CLASS_D("avian") + "/iceblood-force/" + func;
 }
 

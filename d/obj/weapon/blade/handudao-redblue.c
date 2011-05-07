@@ -54,7 +54,7 @@ void melt()
 
    if( env->is_character() )
    {//a player or a NPC.
-     if( (int)env->query_skill("ice-force", 1) < 50 )
+     if( (int)env->query_skill("iceblood-force", 1) < 50 )
      {
         message_vision("$N觉得身上凉凉的，湿湿的，原来是冰刀化了。\n", env);
         env->apply_condition("double_ice_poison", 10);

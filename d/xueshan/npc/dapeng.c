@@ -30,12 +30,12 @@ void create()
     set_skill("blade", 180);
     set_skill("ice-blade", 200);
     set_skill("force", 150);
-    set_skill("ice-force", 180);
+    set_skill("iceblood-force", 180);
     set_skill("literate", 150);
     set_skill("spells", 160);
     set_skill("dengxian-dafa", 180);
     map_skill("spells", "dengxian-dafa");
-    map_skill("force", "ice-force");
+    map_skill("force", "iceblood-force");
     map_skill("unarmed", "pressheart-hand");
     map_skill("sword", "avian-sword");
     map_skill("blade", "ice-blade");

@@ -35,9 +35,9 @@ void create()
     set_skill("spells", 100);
     set_skill("yaofa", 100);
     set_skill("force", 100);
-    set_skill("ice-force", 100);
+    set_skill("iceblood-force", 100);
 
-    map_skill("force", "ice-force");
+    map_skill("force", "iceblood-force");
     map_skill("spells", "yaofa");
 
     setup();

@@ -79,7 +79,7 @@ int do_mix(string arg)
            ice->move(me);
    //now ice becomes blueice...
    //anyone who has >100 force can make blueice, however those who have
-   //no ice-force > 20 will ÖÐ¶¾ if this blueice melts...hehe:)
+   //no iceblood-force > 20 will ÖÐ¶¾ if this blueice melts...hehe:)
 
      destruct(mixob);
    destruct(this_object());

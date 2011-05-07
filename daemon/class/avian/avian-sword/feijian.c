@@ -27,7 +27,7 @@ int perform(object me, object target)
         return notify_fail("你们没有在打架！\n");
     if (me->query_temp("no_feijian"))
         return notify_fail("你现在状态不佳，不能使用飞剑。\n");      
-    if (me->query_skill("ice-force", 1) < 50)
+    if (me->query_skill("iceblood-force", 1) < 50)
         return notify_fail("你的内功太差，剑飞出去肯定飞不回来。\n");
     if (me->query_skill("avian-sword", 1) < 50) 
         return notify_fail("你的百鸟剑法那么烂，当心把剑插自己身上。\n");

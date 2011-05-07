@@ -27,8 +27,8 @@ void create()
     set_skill("avian-sword", 10);
     set_skill("peripateticism", 20);
     set_skill("force", 20);   
-    set_skill("ice-force", 20);
-    map_skill("force", "ice-force");
+    set_skill("iceblood-force", 20);
+    map_skill("force", "iceblood-force");
     map_skill("sword", "avian-sword");
     map_skill("dodge", "peripateticism");
 

@@ -46,7 +46,7 @@ void create()
    set_skill("moondance", 205);
    set_skill("moonforce", 167);
    set_skill("moonshentong", 131);
-   set_skill("ice-force", 29);
+   set_skill("iceblood-force", 29);
    set_skill("parry", 143);
    set_skill("qianjun-bang", 102);
    set_skill("snowsword", 218);

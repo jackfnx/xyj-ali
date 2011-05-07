@@ -44,7 +44,7 @@ int perform(object me, object target)
         else num_anqi = weapon->query("anqi/now");
     }
 
-    if (me->query_skill_mapped("force") != "ice-force")
+    if (me->query_skill_mapped("force") != "iceblood-force")
         return notify_fail("百鸟朝凤必须配合冰谷凝血功才能使用。\n");
     if (req < 80)
         return notify_fail("你剑中打暗器的功夫还不到火候！\n");

@@ -22,8 +22,8 @@ void create()
     set_skill("ice-blade", 30);
     set_skill("peripateticism", 30);
     set_skill("force", 30);   
-    set_skill("ice-force", 30);
-    map_skill("force", "ice-force");
+    set_skill("iceblood-force", 30);
+    map_skill("force", "iceblood-force");
     map_skill("blade", "ice-blade");
     map_skill("dodge", "peripateticism");
     map_skill("unarmed", "raptor-talon");
