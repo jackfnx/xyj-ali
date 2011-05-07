@@ -4,8 +4,10 @@ void init();
 void reset_path(object);
 int check_out(object);
 
-void create()
+void setup()
 {
+    mixed points;
+
     set("short", "Ñ©º£¹ÂÂÃ");
     set("long", @LONG
 
@@ -17,21 +19,32 @@ LONG);
 
     set("outdoors", "xueshan");
 
-    setup();
+    if (arrayp(points = query("points"))) {
+        set("exits/north", __DIR__"snowmaze" + (string )points[0]);
+        set("exits/south", __DIR__"snowmaze" +(string )points[1]);
+        set("exits/west", __DIR__"snowmaze" +(string )points[2]);
+        set("exits/east", __DIR__"snowmaze" +(string )points[3]);
+    }
+
+    ::setup();
 }
 
 void init()
 {
     object me = this_player();
     string xmaze = this_object()->query("xmaze");
-    string exit = this_object()->query("exit");
+    mixed exit = this_object()->query("maze_exit");
 
     if (me->query_temp(xmaze) == 0)
         me->set_temp(xmaze, 1);
     else if (me->query_temp(xmaze) == 1)
         reset_path(me);
 
-    if (check_out(me)) me->move(exit);
+    if (check_out(me)) {
+        if (stringp(exit)) me->move(exit);
+        else if (arrayp(exit)) me->move(exit[random(sizeof(exit))]);
+        else error("undef maze_exit : " + (string)exit);
+    }
 }
 
 void reset_path(object me)
