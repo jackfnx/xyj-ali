@@ -1,4 +1,4 @@
-// tuying-zunzhe.c...weiqi, 97.09.15.
+// tuying-guai.c...weiqi, 97.09.15.
 
 #include <ansi.h>
 
@@ -6,13 +6,13 @@ inherit NPC;
 string expell_me(object me);
 void create()
 {
-    set_name("秃鹰大将", ({"tuying zunzhe", "tuying", "zunzhe"}));
-    set("title", "雪山大管家");
+    set_name("秃鹰尊者", ({"tuying zunzhe", "tuying", "zunzhe"}));
+    set("title", "雪山管家");
     set("gender", "男性" );
     set("age", 53);
     set("per", 112);//no rongmao description.
 
-    set("long", "大雪山的当家人，主板杂事都由他负责。\n");
+    set("long", "大雪山的大管家，诸般杂事都由他负责。\n");
     set("class", "avian");
     set("combat_exp", 500000);
     set("attitude", "peaceful");

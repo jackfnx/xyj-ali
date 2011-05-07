@@ -1,6 +1,7 @@
 // qingshi-laomo.c...weiqi, 97.09.15.
 
 inherit NPC;
+
 void create()
 {
     set_name("ÇàÊ¨ÀÏÄ§", ({"qingshi laomo", "qingshi", "laomo"}));
@@ -46,6 +47,12 @@ void create()
 
    set("eff_dx", -200000);
    set("nkgain", 400);
+
+   set("cast_tuntian", -1);
+   set("chat_chance_combat", 50);
+   set("chat_msg_combat", ({
+            (: cast_spell, "tuntian" :),
+   }));
 
    setup();
    carry_object("/d/obj/armor/jinjia")->wear();

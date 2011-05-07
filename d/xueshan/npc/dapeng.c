@@ -6,7 +6,7 @@ inherit F_MASTER;
 void create()
 {
     set_name("大鹏明王", ({"dapeng mingwang", "dapeng", "mingwang", "wang"}));
-    set("title", "雪山之祖");
+    set("title", "云程万里");
     set("gender", "男性" );
     set("age", 45);
     set("per", 30);
@@ -53,6 +53,15 @@ void create()
     set_temp("apply/damage", 50);
     set_temp("spply/armor", 50);
     set_temp("apply/dodge", 50);
+
+    set("cast_tuntian", 1);
+    set("cast_juanbi", 1);
+    set("chat_chance_combat", 50);
+    set("chat_msg_combat", ({
+                (: cast_spell, "juanbi" :),
+                (: cast_spell, "tuntian" :),
+                (: perform_action, "sword", "chaofeng" :),
+    }));
 
     setup();
     carry_object("/d/obj/cloth/choupao")->wear();
