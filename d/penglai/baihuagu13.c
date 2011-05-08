@@ -1,3 +1,7 @@
-// cracked by vikee 2/09/2002   vikee@263.net
-#define POS 13
-#include <baihuagu.h>
+inherit __DIR__"baihuagu";
+
+void create()
+{
+    set("pos", 13);
+    setup();
+}

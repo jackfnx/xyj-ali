@@ -118,7 +118,7 @@ void cast_shiyue()
     if (query_condition("moon_poison")) return;
 
     command("cast shiyue");
-    if (target->query_condition("moon_posion")) score*=2;
+    if (target->query_condition("moon_poison")) score*=2;
 }
 
 void unconcious() { die(); }
