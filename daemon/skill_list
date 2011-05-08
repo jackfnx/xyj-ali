@@ -89,10 +89,9 @@
   <skill>huntian-qigong</skill>
   <skill>kugu-blade</skill>
   <skill>lingfu-steps</skill>
-  <skill>moyun-shou</skill>
-  <skill>qixiu-jian</skill>
-  <skill>yaofa</skill>
-  <skill>yinfeng-zhua</skill>
+  <skill todo="todo">qixiu-sword</skill>
+  <skill share="share">yaofa</skill>
+  <skill todo="todo">yinfeng-claw</skill>
 </wudidong>
 <gumu class="fox">
   <skill>fenqingbian</skill>
@@ -107,7 +106,7 @@
   <skill>skyriver-rake</skill>
   <skill>yueya-chan</skill>
 </hys>
-<jjf class="office">
+<jjf class="fighter">
   <skill share="share">baguazhou</skill>
   <skill>bawang-qiang</skill>
   <skill share="share">changquan</skill>
