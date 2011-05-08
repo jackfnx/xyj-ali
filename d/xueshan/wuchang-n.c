@@ -15,7 +15,7 @@ LONG);
 
    set("exits", ([ //sizeof() == 4
      "south" : __DIR__"wuchang-c",
-     "north" : __DIR__"shanpo",
+     "north" : __DIR__"xuelu",
      "west" : __DIR__"wuchang-nw",
      "east" : __DIR__"wuchang-ne",
    ]));

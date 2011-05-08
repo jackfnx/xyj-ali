@@ -1,7 +1,4 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//standroom.c used by weiqi...others may hate this format:D
+
 //restroom.c
 
 inherit ROOM;
@@ -23,10 +20,7 @@ LONG);
    ([ //sizeof() == 4
      "south" : __DIR__"girlroom",
      "north" : __DIR__"boyroom",
-     //"west" : __DIR__"restroom",
-     "east" : __DIR__"wuchang-w",
-     //"up" : __DIR__"***",
-     //"down" : __DIR__"***",
+     "east" : __DIR__"xuejie-1",
    ]));
    
    set("objects", 
