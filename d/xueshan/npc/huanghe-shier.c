@@ -10,8 +10,7 @@ void create()
 
     set("long", "孔雀公主的贴身侍卫头领。\n");
     set("class", "avian");
-    set("combat_exp", 35000);
-    set("daoxing", 35000);
+    set("combat_exp", 85000);
 
     set("attitude", "heroism");
     create_family("大雪山", 3, "弟子");
@@ -24,7 +23,7 @@ void create()
     set_skill("sword", 60);
     set_skill("avian-sword", 60);
     set_skill("throwing", 80);
-    set_skill("force", 61);
+    set_skill("force", 60);
     set_skill("iceblood-force", 60);
     set_skill("literate", 80);
     set_skill("spells", 70);
