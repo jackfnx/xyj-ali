@@ -15,7 +15,7 @@ LONG);
   __DIR__"obj/daoyaochu" : 1,
   __DIR__"obj/bigaxe" : 2,
   "/d/obj/weapon/whip/wuchou":2,
-  __DIR__"obj/snow_sword" : 2,
+  "/d/obj/weapon/sword/snow_sword" : 2,
 ]));
   set("exits", ([ /* sizeof() == 2 */
   "northwest" : __DIR__"courtyard.c",
