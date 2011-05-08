@@ -98,27 +98,29 @@
   <skill>firesword</skill>
   <skill>fox-force</skill>
   <skill>jingang-quan</skill>
+  <skill>xuanyuan-archery</skill>
 </gumu>
 <hys class="bull">
-  <skill>huoyun-qiang</skill>
-  <skill>moshenbu</skill>
-  <skill>moyunshou</skill>
-  <skill>skyriver-rake</skill>
+  <skill>blaze-force</skill>
+  <skill>blaze-spear</skill>
+  <skill>devil-hands</skill>
+  <skill>devil-steps</skill>
+  <skill>pingtian-dafa</skill>
   <skill>yueya-chan</skill>
 </hys>
 <jjf class="fighter">
   <skill share="share">baguazhou</skill>
   <skill>bawang-qiang</skill>
   <skill share="share">changquan</skill>
-  <skill share="share">fonxansword</skill>
   <skill>jinglei-mace</skill>
   <skill>lengquan-force</skill>
   <skill>sanban-axe</skill>
   <skill>wusi-mace</skill>
-  <skill>xuanyuan-archery</skill>
-  <skill>yange-blade</skill>
   <skill>yanxing-steps</skill>
 </jjf>
 <other class="other">
+  <skill>fonxansword</skill>
+  <skill>skyriver-rake</skill>
   <skill>wuhu-blade</skill>
+  <skill>yange-blade</skill>
 </other>
