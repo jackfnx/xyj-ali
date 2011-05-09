@@ -118,7 +118,7 @@ void init()
         remove_call_out("greeting1");
         call_out("greeting1", 1, ob);
     }
-    else if ((string)ob->query("class") == "mouse" && random(3) > 1) {
+    else if ((string)ob->query("family/family_name") == "ÏÝ¿ÕÉ½ÎÞµ×¶´" && random(3) > 1) {
         remove_call_out("greeting2");
         call_out("greeting2", 1, ob);
     }
