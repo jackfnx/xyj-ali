@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// qixiu-jian.c, 【七修剑】
+// qixiu-sword.c, 【七修剑】
 // edited 4-16-97 pickle
 
 /*

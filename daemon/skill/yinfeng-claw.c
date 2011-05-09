@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// yinfeng-zhua.c, 【阴风爪】
+// yinfeng-claw.c, 【阴风爪】
 // created 9-5-97 pickle
 //menpai skill(can be used by some yaomo NPCs)
 

@@ -43,12 +43,12 @@ void create()
   set_skill("stealing", 50);
   set_skill("spells", 80);
   set_skill("sword", 80);
-  set_skill("qixiu-jian", 30);
-  set_skill("yinfeng-zhua", 30);
+  set_skill("qixiu-sword", 30);
+  set_skill("yinfeng-claw", 30);
   set_skill("lingfu-steps", 80);
   set_skill("force", 80);
   set_skill("yaofa", 30);
-  set_skill("huntian-qigong", 30);
+  set_skill("huntian-force", 30);
 
   set("str", 20);
   set("cor", 100);
@@ -146,11 +146,11 @@ void transform()
   weapon=new("/d/obj/weapon/sword/changjian");
   weapon->move(this_object());
   command("wield sword");
-  command("enable force huntian-qigong");
-  command("enable unarmed yinfeng-zhua");
+  command("enable force huntian-force");
+  command("enable unarmed yinfeng-claw");
   command("enable spells yaofa");
-  command("enable sword qixiu-jian");
-  command("enable parry qixiu-jian");
+  command("enable sword qixiu-sword");
+  command("enable parry qixiu-sword");
   command("enable dodge lingfu-steps");
   set("wudidong_state", 1);
   message_vision(HIY"穷汉摇身一变，现了原形。原来是只蝙蝠！\n"NOR, this_object());

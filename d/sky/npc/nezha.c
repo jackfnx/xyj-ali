@@ -39,22 +39,22 @@ void create()
   set_skill("spells", 180);
   set_skill("tao", 180);
   set_skill("unarmed", 170);
-  set_skill("yinfeng-zhua", 170);
+  set_skill("yinfeng-claw", 170);
   set_skill("dodge", 180);
   set_skill("lingfu-steps", 170);
   set_skill("parry", 190);
   set_skill("force", 180);
-  set_skill("huntian-qigong", 170);
+  set_skill("huntian-force", 170);
   set_skill("spear", 170);
   set_skill("huoyun-qiang", 150);
   set_skill("blade", 170);
   set_skill("sword", 160);
   map_skill("spells", "tao");
-  map_skill("unarmed", "yinfeng-zhua");
+  map_skill("unarmed", "yinfeng-claw");
   map_skill("spear", "huoyun-qiang");
   map_skill("parry", "huoyun-qiang");
   map_skill("dodge", "lingfu-steps");
-  map_skill("force", "huntian-qigong");
+  map_skill("force", "huntian-force");
   set("inquiry", ([
    "name": "我乃托塔天王三太子哪吒是也。",
    "here": "这里是托塔天王府。",

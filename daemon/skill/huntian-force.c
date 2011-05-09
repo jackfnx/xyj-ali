@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// wuxiangforce.c
+// huntian-force.c
 inherit FORCE;
 
 string name() { return "混天气功"; }
@@ -17,6 +17,6 @@ notify_fail("混天气功只能用学的，或是从运用(exert)中增加熟练度。\n");
 }
 string exert_function_file(string func)
 {
-        return CLASS_D("yaomo") + "/huntian-qigong/" + func;
+        return CLASS_D("yushu") + "/huntian-force/" + func;
 }
 

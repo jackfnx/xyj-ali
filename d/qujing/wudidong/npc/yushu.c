@@ -39,17 +39,17 @@ void create()
   set_skill("spells", 150); 
   set_skill("yaofa", 120);
   set_skill("sword", 150);
-  set_skill("qixiu-jian", 100);
+  set_skill("qixiu-sword", 100);
   set_skill("blade", 150);
   set_skill("kugu-blade", 150);
   set_skill("lingfu-steps", 100);
-  set_skill("yinfeng-zhua", 100);
+  set_skill("yinfeng-claw", 100);
   set_skill("force", 150);   
-  set_skill("huntian-qigong", 150);
-  map_skill("force", "huntian-qigong");
+  set_skill("huntian-force", 150);
+  map_skill("force", "huntian-force");
   map_skill("spells", "yaofa");
-  map_skill("unarmed", "yinfeng-zhua");
-  map_skill("sword", "qixiu-jian");
+  map_skill("unarmed", "yinfeng-claw");
+  map_skill("sword", "qixiu-sword");
   map_skill("parry", "kugu-blade");
   map_skill("blade", "kugu-blade");
   map_skill("dodge", "lingfu-steps");
@@ -95,7 +95,7 @@ int attempt_apprentice(object me)
     command("say "+myname+"要想入我门下，先多去弄些人肉来，老娘看你心诚，这拜师就好商量了。");
     return 1;
   }
-  if (me->query_skill("huntian-qigong", 1) < 50 && me->query("combat_exp") < 200000)
+  if (me->query_skill("huntian-force", 1) < 50 && me->query("combat_exp") < 200000)
   {
     command("say "+me->name()+"你个废物！就凭那点本事还不配！");
     return 1;

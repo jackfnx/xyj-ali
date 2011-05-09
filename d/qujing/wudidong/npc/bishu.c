@@ -38,20 +38,20 @@ void create()
   set_skill("stealing", 150);
   set_skill("spells", 100);
   set_skill("sword", 30);
-  set_skill("qixiu-jian", 30);
-  set_skill("yinfeng-zhua", 30);
+  set_skill("qixiu-sword", 30);
+  set_skill("yinfeng-claw", 30);
   set_skill("lingfu-steps", 100);
   set_skill("force", 100);
   set_skill("blade", 100);
   set_skill("kugu-blade", 100);
   set_skill("yaofa", 30);
-  set_skill("huntian-qigong", 30);
-  map_skill("force", "huntian-qigong");
+  set_skill("huntian-force", 30);
+  map_skill("force", "huntian-force");
   map_skill("blade", "kugu-blade");
-  map_skill("unarmed", "yinfeng-zhua");
+  map_skill("unarmed", "yinfeng-claw");
   map_skill("spells", "yaofa");
-  map_skill("sword", "qixiu-jian");
-  map_skill("parry", "qixiu-jian");
+  map_skill("sword", "qixiu-sword");
+  map_skill("parry", "qixiu-sword");
   map_skill("dodge", "lingfu-steps");
   
   set("cor", 50);

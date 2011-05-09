@@ -18,11 +18,11 @@ void create()
   set_skill("parry", 70);
   set_skill("dodge", 70);
   set_skill("sword", 70);
-  set_skill("qixiu-jian", 70);
+  set_skill("qixiu-sword", 70);
   set_skill("lingfu-steps", 75);
-  map_skill("sword", "qixiu-jian");
+  map_skill("sword", "qixiu-sword");
   map_skill("dodge", "lingfu-steps");
-  map_skill("parry", "qixiu-jian");
+  map_skill("parry", "qixiu-sword");
   set("max_kee", 550);
   
   setup();

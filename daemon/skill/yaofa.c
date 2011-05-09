@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// dao
+// yaofa
 inherit SKILL;
 
 string name() { return "妖法"; }
@@ -17,7 +17,7 @@ int valid_learn(object me)
 
 string cast_spell_file(string spell)
 {
-        return CLASS_D("yaomo") + "/yaofa/"+spell;
+        return CLASS_D("yushu") + "/yaofa/"+spell;
 }
 
 
