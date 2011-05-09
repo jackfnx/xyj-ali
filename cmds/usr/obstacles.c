@@ -27,7 +27,7 @@ int main(object me, string arg)
     } else
         return 0;
 
-    write(OBSTACLES_D->check_obstacles_detail(ob, 0, ob != me, opt));
+    write(OBSTACLES_D->check_obstacles_long(ob, 0, ob != me, opt));
 
     return 1;
 }

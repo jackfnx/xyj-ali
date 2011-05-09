@@ -70,7 +70,7 @@ varargs int check_obstacles(object who, string opt)
 // mode 0: all
 // mode 1: only done
 // mode 2: only todo
-varargs string check_obstacles_detail(object who, int mode, int not_self, string opt)
+varargs string check_obstacles_long(object who, int mode, int not_self, string opt)
 {
     string name = not_self ? who->query("name") : "Äã";
     mapping def = opt == "dntg" ? dntg : obstacles;
@@ -119,6 +119,25 @@ varargs string check_obstacles_detail(object who, int mode, int not_self, string
         }
     }
     return str;
+}
+
+varargs string check_obstacles_short(object who, string opt)
+{
+    mapping def = opt == "dntg" ? dntg : obstacles;
+    int size = sizeof(def["levels"]);
+    string *names = keys(def["levels"]);
+    int nb = 0, sb = 0;
+    int i;
+    string str = "";
+
+    for (i = 0; i < size; i++) {
+        if (who->query(def["rec"] + "/" + names[i]) == "done") nb++;
+        else sb++;
+    }
+
+    if (nb == 0) return def["zero_msg"];
+    else if (sb == 0) return def["over_msg"];
+    else return sprintf(def["done_fmt"], "", chinese_number(nb));
 }
 
 int xiudao_accelerate(object me, int pot_gain)

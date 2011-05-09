@@ -39,21 +39,27 @@ int main(object me, string arg)
     line = sprintf(BOLD "%s" NOR "%s\n", RANK_D->query_rank(ob), ob->short(1));
     line += NOR YEL"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
 
-    line += sprintf(" 性别：%s%-4s%s  年龄：%s%-4s岁%s%-6s       门派：%s%-6s%s\n\n",
+    line += sprintf(" 性别：%s%-4s%s  年龄：%s%-4s岁%s%-6s\n\n",
             HIG, my["gender"], NOR,
             HIY, my["always_young"] ? chinese_number(my["fake_age"]) : chinese_number(my["age"]), NOR,
             my["always_young"] ? "("CYN+chinese_number(my["age"])+"岁"NOR ")" : "      ",
-            HIC, mapp(my["family"]) ? my["family"]["family_name"] : "无", NOR,
             );
 
     line += sprintf(
-            " 力量：[%s]  | 定力：[%s]  | 胆识：[%s]  | 福缘：[%s]\n\n",
+            " 力量：[%s]  | 定力：[%s]  | 胆识：[%s]  | 容貌：[%s]\n",
             display_attr(my["str"], ob->query_str()),
             display_attr(my["cps"], ob->query_cps()),
             display_attr(my["cor"], ob->query_cor()),
+            display_attr(my["per"], ob->query_per()),
+            );
+    line += sprintf(
+            " 悟性：[%s]  | 灵性：[%s]  | 根骨：[%s]  | 福缘：[%s]\n\n",
+            display_attr(my["int"], ob->query_int()),
+            display_attr(my["spi"], ob->query_spi()),
+            display_attr(my["con"], ob->query_con()),
             display_attr(my["kar"], ob->query_kar()),
             );
-    
+/*
     if (my["eff_gin"] < my["max_gin"]) str = HIR + "生病";
     else if (my["gin"]*100 / my["max_gin"]>=70) str = HIG + "充盈";
     else if (my["gin"]*100 / my["max_gin"]>=40) str = HIR + "虚耗";
@@ -99,11 +105,15 @@ int main(object me, string arg)
                 str, NOR);
 
     line += "\n";
-
-    if (mapp(my["family"]) && my["family"]["master_name"])
-        line += sprintf(" 师  父：" YEL "%s\n" NOR, my["family"]["master_name"]);
+*/
+    if (mapp(my["family"]))
+        line += sprintf(" 门  派：" HIC "%-6s" NOR, my["family"]["family_name"]);
     else
-        line += sprintf(" 师  父：" YEL "无\n" NOR);
+        line += sprintf(" 门  派：" HIC "无" NOR);
+    if (mapp(my["family"]) && my["family"]["master_name"])
+        line += sprintf("  师  父：" YEL "%s\n" NOR, my["family"]["master_name"]);
+    else
+        line += sprintf("  师  父：" YEL "无\n" NOR);
 
     line += sprintf(" 战  绩：杀 %d 人，其中NPC %d 人，其他玩家 %d 人\n",
         my["MKS"] + my["PKS"], my["MKS"], my["PKS"]);
@@ -122,30 +132,27 @@ int main(object me, string arg)
     if (undefinedp(my["sex_leaning"]))
         line += "\n";
     else if (my["sex_leaning"] == "both")
-        line += " 性倾向："HIY"男性"NOR"／"HIY"女性"NOR"\n";
+        line += " 性倾向：" HIY "男性" NOR "／" HIY "女性" NOR "\n";
     else if (my["sex_leaning"]=="same") {
         if (my["gender"]=="女性")
-            line += " 性倾向："HIY"女性"NOR"\n";
+            line += " 性倾向：" HIY "女性" NOR "\n";
         else
-            line += " 性倾向："HIY"男性"NOR"\n";
+            line += " 性倾向：" HIY "男性" NOR "\n";
     } else if (my["sex_leaning"]=="diff") {
         if (my["gender"]=="女性")
-            line += " 性倾向："HIY"男性"NOR"\n";
+            line += " 性倾向：" HIY "男性" NOR "\n";
         else
-            line += " 性倾向："HIY"女性"NOR"\n";
+            line += " 性倾向：" HIY "女性" NOR "\n";
     } else
         line += "\n";
 
     if (ob->query("balance"))
-        line += " 财  富：" + MONEY_D->money_str((int)ob->query("balance"))+"存款\n\n";
+        line += " 存  款：" + MONEY_D->money_str((int)ob->query("balance"))+"存款\n\n";
     else
-        line += " 财  富："HIW"没有任何存款"NOR"\n\n";
+        line += " 存  款：" HIW "没有任何存款" NOR "\n\n";
 
-    if (ob->query("obstacle/number"))
-        line += sprintf(RED" 西天取经"NOR"：你已经历了"RED"%s"NOR"道劫难。\n",
-            chinese_number(ob->query("obstacle/number")));
-    else
-        line += RED" 西天取经"NOR"：你还未曾踏上取经之路\n";
+    line += RED " 西天取经" NOR "：" + OBSTACLES_D->check_obstacles_short(ob) + "\n";
+    line += RED " 大闹天宫" NOR "：" + OBSTACLES_D->check_obstacles_short(ob, "dntg") + "\n";
 
     line += NOR YEL"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
 
@@ -181,8 +188,8 @@ int main(object me, string arg)
                 RANK_D->describe_mana(ob->query("max_mana")),
                 RANK_D->describe_force(ob->query("max_force")));
 
-    line += YEL"≡≡≡≡≡≡≡≡≡≡ "GRN"西游记"HIY"·"HIG"阿里世界"NOR YEL" ≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
-    line += sprintf(" 为了三界和平%s已经历了 %s 的岁月 \n\n",
+    line += YEL"≡≡≡≡≡≡≡≡≡≡ "GRN"西游记" HIY "·"HIG"阿里世界"NOR YEL" ≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
+    line += sprintf(" 为了三界和平%s已经历了 %s 的岁月 \n",
         ob == me ? "你" : ob->name(1),
         HIR + FINGER_D->age_string( (int)ob->query("mud_age")) + NOR);
     write(line);

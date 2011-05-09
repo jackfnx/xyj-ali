@@ -78,7 +78,7 @@ int telling(object who)
     object me = this_object();
 
     tell_object(who, me->query("name")+"¸æËßÄã£º"
-        + OBSTACLES_D->check_obstacles_detail(who, 1)
+        + OBSTACLES_D->check_obstacles_long(who, 1)
         + "\n");
     if (OBSTACLES_D->check_obstacles(who)) {
         who->set_temp("obstacle/lingshan_enter", 1);
