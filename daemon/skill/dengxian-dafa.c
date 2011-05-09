@@ -15,7 +15,7 @@ int valid_learn(object me)
 
 string cast_spell_file(string spell)
 {
-    return CLASS_D("avian") + "/dengxian-dafa/" + spell;
+    return CLASS_D("dapeng") + "/dengxian-dafa/" + spell;
 }
 
 

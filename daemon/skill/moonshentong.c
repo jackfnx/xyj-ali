@@ -19,6 +19,6 @@ int valid_learn(object me)
 
 string cast_spell_file(string spell)
 {
-    return CLASS_D("girl") + "/moonshentong/" + spell;
+    return CLASS_D("moon") + "/moonshentong/" + spell;
 }
 

@@ -11,6 +11,7 @@
 
 inherit SKILL;
 
+string name() { return "∞ŸƒÒΩ£∑®"; }
 
 mapping *action = ({
     ([    "name":        "¥Û≈Ù’π≥·",
@@ -114,6 +115,7 @@ mapping *action = ({
         "damage_type":   "¥Ã…À"
     ]),
 });
+
 int valid_learn(object me)
 {
     object ob;
@@ -155,6 +157,6 @@ mapping query_action(object me, object weapon)
 
 string perform_action_file(string func)
 {
-    return CLASS_D("avian") + "/avian-sword/"+func;
+    return CLASS_D("dapeng") + "/avian-sword/"+func;
 }
-ˇˇ
+

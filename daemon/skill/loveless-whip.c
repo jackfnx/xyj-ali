@@ -170,6 +170,6 @@ int practice_skill(object me)
 
 string perform_action_file(string action)
 {
-    return CLASS_D("girl") + "/loveless-whip/" + action;
+    return CLASS_D("moon") + "/loveless-whip/" + action;
 }
 

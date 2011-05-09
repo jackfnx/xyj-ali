@@ -109,5 +109,5 @@ int practice_skill(object me)
 
 string perform_action_file(string func)
 {
-    return CLASS_D("girl") + "/snowsword/" + func;
+    return CLASS_D("moon") + "/snowsword/" + func;
 }

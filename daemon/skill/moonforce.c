@@ -16,6 +16,6 @@ int practice_skill(object me)
 }
 string exert_function_file(string func)
 {
-    return CLASS_D("girl") + "/moonforce/" + func;
+    return CLASS_D("moon") + "/moonforce/" + func;
 }
 

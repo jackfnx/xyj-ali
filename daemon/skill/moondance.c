@@ -86,6 +86,6 @@ int practice_skill(object me)
 
 string perform_action_file(string func)
 {
-    return CLASS_D("girl") + "/moondance/" + func;
+    return CLASS_D("moon") + "/moondance/" + func;
 }
 

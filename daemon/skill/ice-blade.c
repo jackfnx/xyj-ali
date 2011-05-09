@@ -126,7 +126,7 @@ int valid_effect(object me, object weapon, string name, int skill)
 
 string perform_action_file(string action)
 {
-    return CLASS_D("avian")+"/ice-blade/"+action;
+    return CLASS_D("dapeng")+"/ice-blade/"+action;
 }
 
 mixed hit_ob(object me, object victim, int damage_bonus)
