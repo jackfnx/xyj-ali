@@ -120,7 +120,7 @@ int do_give(object me, object obj, object who)
                     unit=obj->query("unit");
                 if (strlen(unit)<2) unit="¸ö";
                 message_vision(sprintf("$N¸ø$nÒ»%s%s¡£\n", unit, obj->name()), me, who);
-                //if (!userp(who) && !userp(obj)) destruct(obj);
+                if (!userp(who) && !userp(obj)) destruct(obj);
                 who->receive_object(me, obj);
                 return 2;
             }

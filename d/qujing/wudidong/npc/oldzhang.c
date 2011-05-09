@@ -58,19 +58,14 @@ int accept_object(object me, object ob)
     if ((string)ob->query("id") != "li tou") {
         command("say 这怎么可以？折杀老汉了。");
         return 0;
-    }
-    else {
+    } else {
         if (query_temp("received_litou") == 1) {
             command("thank "+ me->query("id"));
             command("say 多谢了。刚才有位善士施给老汉一把犁头，这一把我就不敢要了。");
             command("say 老汉生来穷命，不敢有这许多奢侈。这把犁头老汉实实在在生受不起。");
-            command("say "+RANK_D->query_respect(me) +"这份善心，老汉领了。");
-            command("say 这封信是我断犁头那天晚上在桌上发现的，对" +RANK_D->query_respect(me) + "或许有用，拿去看看吧。");
-            carry_object("/d/qujing/wudidong/obj/skin");
-            command("give skin to "+ me->query("id"));
-            command("say 信里好像还有秘密，"+RANK_D->query_respect(me)+ "不妨仔细找找。");
-            command("sigh");
-            command("say "+ RANK_D->query_respect(me) + "莫嫌老汉多嘴。前途险恶，可要保重了。");
+            command("say "+RANK_D->query_respect(me) +"这份善心，老汉感激不已，请稍等。");
+            me->start_busy(1);
+            call_out("give_skin", 1, me);
             add_temp("received_litou", 1);
             return 0;
         }
@@ -87,9 +82,22 @@ int accept_object(object me, object ob)
                 command("say "+ RANK_D->query_respect(me) + "莫嫌老汉多嘴。前途险恶，可要保重了。");
                 add_temp("received_litou", 1);
                 return 1;
+            } else {
+                command("say 多谢"+RANK_D->query_respect(me)+"的好意，不过老汉已经有一把新犁头了。");
+                return 0;
             }
-            command("say 多谢"+RANK_D->query_respect(me)+"的好意，不过老汉已经有一把新犁头了。");
-            return 0;
         }
     }
 }
+
+void give_skin(object me)
+{
+    if (!me || environment(me) != environment()) return;
+    command("say 这封信是我断犁头那天晚上在桌上发现的，对" +RANK_D->query_respect(me) + "或许有用，拿去看看吧。");
+    carry_object("/d/qujing/wudidong/obj/skin");
+    command("give skin to "+ me->query("id"));
+    command("say 信里好像还有秘密，"+RANK_D->query_respect(me)+ "不妨仔细找找。");
+    command("sigh");
+    command("say "+ RANK_D->query_respect(me) + "莫嫌老汉多嘴。前途险恶，可要保重了。");
+}
+
