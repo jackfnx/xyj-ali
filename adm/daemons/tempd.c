@@ -38,6 +38,8 @@ int block_tell(object me)
 {
     int time, count, last_tell;
 
+    if (!interactive(me)) return 1;
+
     // temporary block tell flooding.
     time = time();
     if ( me->query("channel/tell_block") &&
