@@ -83,3 +83,8 @@ int practice_skill(object me)
 
    return 1;
 }
+
+string perform_action_file(string action)
+{
+    return CLASS_D("yushu") + "/yinfeng-claw/" + action;
+}

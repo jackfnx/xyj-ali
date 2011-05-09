@@ -64,8 +64,8 @@ mapping *action = ({
       ]),
     ([
       "action":
-"$N连人带剑猛扑向$n的$l。若是这招「九死一生」
-击不中$n，$N本人就空门大开，任人宰割了",
+"$N连人带剑猛扑向$n的$l。若是这招「九死一生」\n"
+"击不中$n，$N本人就空门大开，任人宰割了",
       "dodge":     10,
       "parry":           -10,
       "damage":     35,
@@ -84,6 +84,17 @@ mapping *action = ({
       "damage_type":   "刺伤",
       "name":      "「十面埋伏」",
       ]),
+  ([
+     "action":
+MAG"$N身化万千,手中的$w"+MAG"亦幻出千条黑影,直罩$n全身,使$n难辨直假!!\n"
+"$n正手忙脚乱间,一道墨光无声无息地直取脑后玉枕穴,$n却木然不觉!"NOR,
+     "dodge":   -100,
+     "parry":   -100,
+     "damage":  120,
+     "force":   250,
+     "damage_type": "刺伤",
+     "name": "「妖雾冲天」",
+      ]),
 });
 
 int valid_learn(object me)
@@ -91,14 +102,12 @@ int valid_learn(object me)
     object ob;
     
     if (me->query("family/family_name") != "陷空山无底洞")
-   return notify_fail("你还未习惯血腥，无法学七修剑。\n");
+        return notify_fail("你还未习惯血腥，无法学七修剑。\n");
     if ((int)me->query("max_force") < 100)
-   return notify_fail("你的真气不足，难以领悟剑法的精妙之处。\n");
-    
+        return notify_fail("你的真气不足，难以领悟剑法的精妙之处。\n");
     if (!(ob = me->query_temp("weapon"))
-   ||   (string)ob->query("skill_type") != "sword" )
-   return notify_fail("你必须先找一把剑才能练剑法。\n");
-    
+    ||  (string)ob->query("skill_type") != "sword")
+        return notify_fail("你必须先找一把剑才能练剑法。\n");
     return 1;
 }
 
@@ -109,19 +118,21 @@ int valid_enable(string usage)
 
 mapping query_action(object me, object weapon)
 {
-    return action[random(sizeof(action))];
+    int i = me->query_temp("QXJ_perform");
+    if (i) return action[i - 1];
+    return action[random(sizeof(action) - 1)];
 }
 
 int practice_skill(object me)
 {
     if (me->query("family/family_name") != "陷空山无底洞")
-   return notify_fail("你还未习惯血腥，无法练七修剑。\n");
+        return notify_fail("你还未习惯血腥，无法练七修剑。\n");
     if ((int)me->query("kee") < 30)
-   return notify_fail("你的气太低，再练下去会有危险的！\n");
+        return notify_fail("你的气太低，再练下去会有危险的！\n");
     if ((int)me->query("force") < 5)
-   return notify_fail("你的内力不够，没有办法运用七修剑。\n");
+        return notify_fail("你的内力不够，没有办法运用七修剑。\n");
     me->receive_damage("kee", 30);
-   me->add("force", -5);
+    me->add("force", -5);
     write("你按著所学练了一遍七修剑。\n");
     return 1;
 }
@@ -129,4 +140,9 @@ void set_busy()
 {
     object me=this_player();
     me->start_busy(1);
+}
+
+string perform_action_file(string action)
+{
+    return CLASS_D("yushu") + "/qixiu-sword/" + action;
 }

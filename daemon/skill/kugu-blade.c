@@ -176,3 +176,8 @@ void skill_improved(object me)
      me->add("max_force", -2);
    }
 }
+
+string perform_action_file(string action)
+{
+    return CLASS_D("yushu") + "/kugu-blade/" + action;
+}
