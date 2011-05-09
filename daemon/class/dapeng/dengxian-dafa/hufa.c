@@ -5,7 +5,7 @@ int cast(object me, object target)
     int invocation_time;
     object hufa;
 
-    if (me->query("class") != "avian")
+    if (!me->query("cast_xueshan_hufa"))
         return notify_fail("汝非飞鸟，如何能招百鸟相助？！\n");
     if (!me->is_fighting())
         return notify_fail("只有战斗中才能召唤护法。\n");

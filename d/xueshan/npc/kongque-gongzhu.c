@@ -15,7 +15,7 @@ void create()
 
     set("long", "孔雀公主乃孔雀明王的女儿。孔雀明王被佛祖如来押至灵山后，\n"
         "她由大鹏明王一手带大。说是侄女，与大鹏明王实则有父女之情。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 800000);
     set("attitude", "peaceful");
     create_family("大雪山", 3, "弟子");
@@ -83,7 +83,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 void init()

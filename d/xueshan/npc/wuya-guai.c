@@ -15,7 +15,7 @@ void create()
 
     set("long", "这位乌鸦先生来自遥远的大雪山。乃是大鹏明王座下有名的高手之一。\n"
         "他远看还不错，走近了才发现他长着长长的一张乌鸦嘴。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 100000);
     set("attitude", "peaceful");
     create_family("大雪山", 3, "弟子");
@@ -90,7 +90,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 string help_fly(object me)

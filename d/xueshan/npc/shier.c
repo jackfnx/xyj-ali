@@ -15,7 +15,7 @@ void create()
     set("title", "侍卫");
     set("age", 16);
     set("long", "孔雀公主门下侍卫。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 25000);
 
     set("attitude", "peaceful");

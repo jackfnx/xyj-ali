@@ -26,7 +26,7 @@ void create()
 
     set("long", "雪山门下有名的高手之一鹦鹉将军。\n"
         "他远看还不错，走近了才发现他长着长长的一张鸟嘴。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 100000);
     set("attitude", "peaceful");
     create_family("大雪山", 3, "弟子");
@@ -99,7 +99,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 /************************************************************/

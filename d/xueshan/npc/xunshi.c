@@ -10,7 +10,7 @@ void create()
         "在谷内的巡使大多武功不高，至于大雪山的法术则基本上不会。\n"
         "这位巡使身披白袍，腰跨弯刀。白袍当胸绣着一只飞扬欲脱的大鹏鸟。\n"
         "弯刀看起来晶莹透明，好像是以寒冰制成。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 25000);
     set("attitude", "peaceful");
     create_family("大雪山", 4, "弟子");

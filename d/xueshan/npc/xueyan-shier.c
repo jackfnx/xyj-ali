@@ -9,7 +9,7 @@ void create()
     set("title", "丫鬟");
     set("age", 16);
     set("long", "孔雀公主的贴身丫鬟，与孔雀公主关系亲密，雪山上下都要让她三分。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 25000);
     set("attitude", "peaceful");
     create_family("大雪山", 4, "弟子");

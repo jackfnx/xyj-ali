@@ -11,7 +11,7 @@ void create()
     set("long", "小钻风原是狮驼山的巡山小妖。\n"
         "跟着青狮老魔到大雪山后改当厨师了。\n"
         "不过他好个吃喝，在这里近水楼台先得月，倒也逍遥快活。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 5000);
     set("attitude", "peaceful");
     set("title", "小妖");

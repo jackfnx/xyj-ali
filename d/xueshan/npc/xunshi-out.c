@@ -8,7 +8,7 @@ void create()
     set("age", 33);
     set("long", "这位巡使来自遥远的大雪山。他身披白袍，腰跨弯刀。\n"
         "白袍当胸绣着一只飞扬欲脱的大鹏鸟。弯刀看起来晶莹透明，好像是以寒冰制成。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 50000);
     set("attitude", "peaceful");
     create_family("大雪山", 4, "弟子");

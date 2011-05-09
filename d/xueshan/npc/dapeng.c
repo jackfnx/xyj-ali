@@ -14,7 +14,7 @@ void create()
     set("long", "据说大鹏明王与其兄孔雀明王是凤凰之子，有号令百鸟之能。\n"
         "鲲鹏祖师自称是他们兄弟二人之父，不过他与孔雀明王都没有承认。\n"
         "因为孔雀明王的缘故，大鹏明王与佛门结下深仇，生平最恨的就是和尚。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 1800000);
     set("attitude", "peaceful");
     create_family("大雪山", 2, "明王");
@@ -104,7 +104,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 void init()

@@ -13,7 +13,7 @@ void create()
     set("per", 112);//no rongmao description.
 
     set("long", "秃鹰是大鹏的大弟子，也是大雪山的大管家，诸般杂事都由他负责。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 500000);
     set("attitude", "peaceful");
     create_family("大雪山", 3, "弟子");
@@ -88,7 +88,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 string expell_me(object me)

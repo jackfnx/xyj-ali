@@ -19,7 +19,7 @@ void create()
         "白象小王看准时机，转而向孔雀明王效忠，进一步提升了地位。\n"
         "他觉得自己原本『二大王』称号过于僭越，因此主动改名为『白象小王』。\n"
         "他生平最怕老鼠，因此看到尖嘴猴腮的人就讨厌。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 800000);
     set("attitude", "peaceful");
     create_family("大雪山", 2, "弟子");
@@ -106,7 +106,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 void init()

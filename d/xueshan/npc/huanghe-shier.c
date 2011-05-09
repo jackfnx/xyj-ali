@@ -9,7 +9,7 @@ void create()
     set("age", 22);
 
     set("long", "孔雀公主的贴身侍卫头领。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 85000);
 
     set("attitude", "heroism");
@@ -82,7 +82,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob)) {
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
         ob->set("title", "大雪山孔雀公主贴身侍卫");
     }
 }

@@ -14,7 +14,7 @@ void create()
         "后来狮驼山被方寸山三星洞的一位得道高人剿灭，\n"
         "老魔就投奔大鹏明王做了护法尊者。一个跟和尚有仇，\n"
         "一个跟道士有仇，也算是知交好友。\n");
-    set("class", "avian");
+    set("class", "yaomo");
     set("combat_exp", 800000);
     set("attitude", "peaceful");
     create_family("大雪山", 2, "弟子");
@@ -97,7 +97,7 @@ void attempt_apprentice(object ob)
 int recruit_apprentice(object ob)
 {
     if (::recruit_apprentice(ob))
-        ob->set("class", "avian");
+        ob->set("class", "yaomo");
 }
 
 void init()
