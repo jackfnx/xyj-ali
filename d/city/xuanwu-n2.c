@@ -27,9 +27,6 @@ LONG);
 
         set("objects", 
         ([ //sizeof() == 1
-//      __DIR__"npc/japan":2,
-//      __DIR__"npc/japan2":2,
-//                __DIR__"npc/libai" : 1,
         ]));
 
 
