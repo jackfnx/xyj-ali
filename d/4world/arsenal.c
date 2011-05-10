@@ -4,6 +4,12 @@ inherit ROOM;
 void create()
 {
     set("short", "兵器库");
+#if 1
+    set("long", @LONG
+
+这里是傲来国的兵器库，不过目前是空的。
+LONG);
+#else
     set("long", @LONG
 
 这里是傲来国的兵器库，里面各种兵器(bingqi)：刀、枪、
@@ -11,17 +17,13 @@ void create()
 矛，件件俱备。整整齐齐的堆放着，几个威武的武士在这
 里保守着。
 LONG );
-
     set("item_desc",([
         "bingqi":"各种各样的兵器，看来想拿走不方便，得捆(kun)一下才好拿。\n"
     ]));
+#endif
 
     set("exits", ([
         "north"   : __DIR__"drill",
-    ]));
-
-    set("objects", ([
-        __DIR__"npc/pianjiang" : 4,
     ]));
 
     set("no_magic", 1);
