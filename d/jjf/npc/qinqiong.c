@@ -76,18 +76,6 @@ int recruit_apprentice(object ob)
   if( ::recruit_apprentice(ob) )
     ob->set("class", "fighter");
 }
-int prevent_learn(object me, string skill)
-{
-  string myname=RANK_D->query_respect(me);
-
-  if (me->query("combat_exp") < 100000)
-    {
-      command("emote 皱了皱眉头，说道："+myname+"还欠修练，老夫所教"+myname+"恐怕难以理解。");
-//      return notify_fail("还是等道行高点再来试试吧！\n");
-      return 1;
-    }
-  return 0;
-}
 
 string expell_me(object me)
 {
