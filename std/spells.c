@@ -22,8 +22,8 @@ int valid_learn(object me)
                 skill = load_object(SKILL_D(name));
             skill = find_object(SKILL_D(name));
             if (skill == this_object()) {
-                if (!this_object()->override_basic_level() && skills[name] <= basic_level)
-                    return notify_fail("你的法术修为还不够高深，无法学习「" + this_object()->name() + "」1。\n");
+                if (!this_object()->override_basic_level() && basic_level <= skills[name])
+                    return notify_fail("你的法术修为还不够高深，无法学习「" + this_object()->name() + "」。\n");
             }
             else if (skill->valid_enable("spells")) {
                 if (this_object()->is_exclusive())
@@ -34,4 +34,9 @@ int valid_learn(object me)
         }
     }
     return 1;
+}
+
+int practice_skill(object me)
+{
+    return notify_fail(this_object()->name() + "只能用学的，或是从运用(cast)中增加熟练度。\n");
 }

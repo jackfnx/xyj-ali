@@ -92,20 +92,6 @@ void attempt_apprentice(object ob)
   }
 }
 
-int prevent_learn(object me, string skill)
-{
-  int myyaofa=me->query_skill("yaofa",1);
-
-  if (skill == "tao") {
-   if(myyaofa!=0) {
-     command("sigh");
-     command("say "+RANK_D->query_respect(me)+"妖气太重，不能学道家仙法。");
-     return 1;
-   }
-  }
-  return 0;
-}
-
 void die()
 {
   int i;
