@@ -80,6 +80,8 @@ void init()
     add_action("do_swear", "swear");
     add_action("do_ba", "ba");
     add_action("override_move", ({ "go", "west", "east", "south", "north" }));
+    add_action("dntg_ask", "ask");
+    add_action("dntg_give", "give");
 }
 
 void greeting(object ob)
@@ -270,5 +272,36 @@ int override_move(string dir)
         default:
             break;
     }
+    return 0;
+}
+
+int dntg_ask(string arg)
+{
+    string name, inquiry;
+    object chosen = query_temp("chosen");
+    object who;
+
+    if (sscanf(arg, "%s about %s", name, inquiry) != 2) return 0;
+    if (chosen != this_player()) return 0;
+    
+    if (!objectp(who = present(name, environment(chosen)))) return 0;
+    
+    switch (who->query("id")) {
+        case "beng jiangjun":
+            if (inquiry != "weapon" && inquiry != "bingqi" && inquiry != "兵器") return 0;
+            if (!living(who)) return 0;
+            message_vision(CYN "$N说道：我们花果山正缺这玩艺，要能搞点来多好！\n" NOR, who);
+            return 1;
+        case "ba jiangjun":
+            if (inquiry != "weapon" && inquiry != "bingqi" && inquiry != "兵器") return 0;
+            if (!living(who)) return 0;
+            message_vision(CYN "大家的兵器，可去傲来国偷些，我家大王的兵器嘛，看来要找些阔气的邻居讨了。\n" NOR, who);
+            return 1;
+    }
+    return 0;
+}
+
+int dntg_give(string arg)
+{
     return 0;
 }
