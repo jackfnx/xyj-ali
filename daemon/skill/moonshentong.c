@@ -2,20 +2,13 @@
 /* <SecCrypt CPL V3R05> */
  
 // moonshentong.c 【太阴仙诀】
-inherit SKILL;
+inherit SPELLS;
 
 string name() { return "太阴仙诀"; }
 
-int valid_enable(string usage) { return usage=="spells"; }
+int query_basic_limit() { return 10; }
 
-int valid_learn(object me)
-{
-    if ((int)me->query_skill("spells", 1) < 10
-        || (int)me->query_skill("spells", 1) <=
-            (int)me->query_skill("moonshentong", 1))
-        return notify_fail("你的法术修为还不够高深，无法学习太阴仙诀。\n");
-    return 1;
-}
+int valid_enable(string usage) { return usage=="spells"; }
 
 string cast_spell_file(string spell)
 {

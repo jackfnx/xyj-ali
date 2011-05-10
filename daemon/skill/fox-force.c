@@ -5,14 +5,7 @@ inherit FORCE;
 
 string name() { return "天狐心法"; }
 
-int valid_enable(string usage) { return usage=="force" || usage=="spells" || usage=="magic"; }
-
-int valid_learn(object me)
-{
-    if ((int)me->query_skill("spells") <= (int)me->query_skill("fox-dao"))
-        return notify_fail("你的法术修为还不够高深，无法学习天狐道。\n");
-    return 1;
-}
+int valid_enable(string usage) { return usage=="force"; }
 
 int practice_skill(object me)
 {

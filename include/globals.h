@@ -83,6 +83,7 @@
 #define POWDER        "/std/medicine/powder"
 #define ROOM        "/std/room"
 #define SKILL        "/std/skill"
+#define SPELLS        "/std/spells"
 
 // User IDs
 

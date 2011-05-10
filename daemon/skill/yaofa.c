@@ -2,9 +2,11 @@
 /* <SecCrypt CPL V3R05> */
  
 // yaofa
-inherit SKILL;
+inherit SPELLS;
 
 string name() { return "Ñý·¨"; }
+
+int is_exclusive() { return 1; }
 
 int valid_enable(string usage) { return usage=="spells"; }
 

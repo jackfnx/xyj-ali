@@ -2,9 +2,11 @@
 /* <SecCrypt CPL V3R05> */
  
 // seashentong.c 【碧海神通】
-inherit SKILL;
+inherit SPELLS;
 
 string name() { return "碧海神通"; }
+
+int query_basic_limit() { return 10; }
 
 int valid_enable(string usage) { return usage=="spells"; }
 
@@ -12,11 +14,7 @@ int valid_learn(object me)
 {
     if (me->query("class") != "dragon")
         return notify_fail("你非龙族怎能学碧海神通？\n");
-    if ((int)me->query_skill("spells", 1) < 10
-    || (int)me->query_skill("spells", 1) <=
-            (int)me->query_skill("seashentong", 1))
-        return notify_fail("你的法术修为还不够高深，无法学习碧海神通。\n");
-    return 1;
+    return ::valid_learn(me);
 }
 
 string cast_spell_file(string spell)

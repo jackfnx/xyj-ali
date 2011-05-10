@@ -2,18 +2,15 @@
 /* <SecCrypt CPL V3R05> */
  
 // tao
-inherit SKILL;
+inherit SPELLS;
 
 string name() { return "正宗道法"; }
 
-int valid_enable(string usage) { return usage=="spells"; }
+int query_basic_limit() { return 20; }
 
-int valid_learn(object me)
-{
-    if ((int)me->query_skill("spells", 1) < 20)
-        return notify_fail("道可道，非常道，你的法术修为还不够高深。\n");
-    return 1;
-}
+int override_basic_level() { return 1; }
+
+int valid_enable(string usage) { return usage=="spells"; }
 
 string cast_spell_file(string spell)
 {
