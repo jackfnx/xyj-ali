@@ -9,9 +9,9 @@ int valid_learn(object me)
     string *names, name;
     int i, basic_level, limit_level;
     
-    basic_level = me->query("spells", 1);
+    basic_level = me->query_skill("spells", 1);
     limit_level = this_object()->query_basic_limit();
-    if (limit_level <= basic_level)
+    if (basic_level < limit_level)
         return notify_fail("你的法术修为还不够高深，无法学习「" + this_object()->name() + "」。\n");
 
     if (mapp(skills = me->query_skills())) {
@@ -22,8 +22,8 @@ int valid_learn(object me)
                 skill = load_object(SKILL_D(name));
             skill = find_object(SKILL_D(name));
             if (skill == this_object()) {
-                if (!this_object()->override_basic_level() && skills[name] < basic_level)
-                    return notify_fail("你的法术修为还不够高深，无法学习「" + this_object()->name() + "」。\n");
+                if (!this_object()->override_basic_level() && skills[name] <= basic_level)
+                    return notify_fail("你的法术修为还不够高深，无法学习「" + this_object()->name() + "」1。\n");
             }
             else if (skill->valid_enable("spells")) {
                 if (this_object()->is_exclusive())
