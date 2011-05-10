@@ -82,11 +82,6 @@ int attempt_apprentice(object me)
   command("recruit "+myid);
   return 1;
 }
-int prevent_learn(object me, string skill)
-{
-  string myname=RANK_D->query_rude(me);
-
-}
 string expell_me(object me)
 {
   me=this_player();

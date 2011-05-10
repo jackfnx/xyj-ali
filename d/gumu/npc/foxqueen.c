@@ -141,18 +141,15 @@ int prevent_learn(object me, string skill)
         if (skill == "fox-force") {
             command("shake");
             command("say 你非狐类，学不了天狐心法。");
-            return 0;
+            return 1;
         }
-        return 1;
     }
-
-    if (me->query("family/family_name") == "") {
+    else if (me->query("family/family_name") == "轩辕古墓") {
         if (skill == "moonforce" || skill == "moonshentong") {
             command("shake");
             command("say 本座的天狐心法不比月宫的粗浅功夫强多了，为何要学月宫的武功？");
-            return 0;
+            return 1;
         }
-        return 1;
     }
 
     return 0;
