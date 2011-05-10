@@ -7,7 +7,6 @@
 /************************************************************/
 
 #include <ansi.h>
-inherit F_MASTER;
 inherit NPC;
 string try_me();
 int total=random(20);

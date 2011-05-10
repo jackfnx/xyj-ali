@@ -5,7 +5,6 @@
 #include <ansi.h>
 #define NAME "ÌúÉÈ¹«Ö÷"
 inherit NPC;
-inherit F_MASTER;
 
 int test_player (object who);
 

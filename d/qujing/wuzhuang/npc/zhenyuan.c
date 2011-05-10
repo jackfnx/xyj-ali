@@ -7,7 +7,6 @@
 #define DEBUG 0
 
 inherit NPC;
-inherit F_MASTER;
 
 string expell_me();
 string keyword();

@@ -2,7 +2,6 @@
 // jinzha.c ½ğß¸
 
 inherit NPC;
-inherit F_MASTER;
 
 void create()
 {

@@ -4,7 +4,6 @@
 // Changed by sjmao  09-11-97
 
 inherit NPC;
-inherit F_MASTER;
 string expell_me(object me);
 
 void create()

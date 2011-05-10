@@ -5,7 +5,6 @@
 //ÂÞ³É luocheng.c
 
 inherit NPC;
-inherit F_MASTER;
 #include <ansi.h>
 
 int handle_kill(object me);

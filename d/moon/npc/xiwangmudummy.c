@@ -3,7 +3,6 @@
  
 //xiwangmufake.c
 inherit NPC;
-inherit F_MASTER;
 
 string miekou();
 

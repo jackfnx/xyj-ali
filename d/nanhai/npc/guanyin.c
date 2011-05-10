@@ -5,7 +5,6 @@
 // By Dream Dec. 19, 1996
 
 inherit NPC;
-inherit F_MASTER;
 
 int do_drop(object, object);
 

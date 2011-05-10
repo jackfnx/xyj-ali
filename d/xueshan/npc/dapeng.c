@@ -1,7 +1,6 @@
 // dapeng.c...weiqi, 97.09.27.
 
 inherit NPC;
-inherit F_MASTER;
 
 void create()
 {

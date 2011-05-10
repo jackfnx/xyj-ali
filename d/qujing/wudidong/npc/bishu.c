@@ -6,7 +6,6 @@
 
 #include <ansi.h>
 inherit NPC;
-inherit F_MASTER;
 
 /************************************************************/
 
@@ -28,7 +27,7 @@ void create()
 "虽然她看起来弱不禁风，但听说她天赋及佳，是块修仙的好料子。\n"
 "自从入无底洞以来，她的武功进步及快，颇有赶过玉鼠的架式。\n");
   set("title", "无底洞大弟子");
-  set("nickname", HIR"九死一生"NOR);
+  set("nickname", HIR "九死一生" NOR);
   set("combat_exp", 800000);
   set("attitude", "heroic");
   create_family("陷空山无底洞", 2, "弟子");

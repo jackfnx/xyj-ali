@@ -3,7 +3,6 @@
  
 
 inherit NPC;
-inherit F_MASTER;
 
 void create()
 {

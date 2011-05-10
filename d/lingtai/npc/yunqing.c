@@ -4,7 +4,6 @@
 // worker.c
 
 inherit NPC;
-inherit F_MASTER;
 void create()
 {
         set_name("ÔÆÇå", ({"yun qing", "yun"}));

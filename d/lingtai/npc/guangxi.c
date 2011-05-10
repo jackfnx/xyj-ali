@@ -4,7 +4,6 @@
 // guang.c
 
 inherit NPC;
-inherit F_MASTER;
 int borrow_me(object ob);
 int borr_me(object ob);
 void create()

@@ -109,7 +109,6 @@
 #define F_FOOD        "/feature/food.c"
 #define F_GREETING      "/feature/greeting.c"
 #define F_LIQUID     "/feature/liquid.c"
-#define F_MASTER     "/feature/master.c"
 #define F_MESSAGE     "/feature/message.c"
 #define F_MORE        "/feature/more.c"
 #define F_MOVE        "/feature/move.c"

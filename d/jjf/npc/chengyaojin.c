@@ -4,7 +4,6 @@
 //cheng yaojin, updated 5/7/97, pickle
 
 inherit NPC;
-inherit F_MASTER;
 
 string gloat();
 string ask_me();

@@ -4,7 +4,6 @@
 //created 5-20-97 pickle
  
 inherit NPC;
-inherit F_MASTER;
 
 void create()
 {

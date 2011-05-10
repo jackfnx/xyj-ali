@@ -4,7 +4,6 @@
 //qinping.c
 //created 5-10-97 pickle
 
-inherit F_MASTER;
 inherit NPC;
 string try_me(object me);
 

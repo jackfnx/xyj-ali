@@ -7,7 +7,6 @@
 #include <login.h>
 
 inherit NPC;
-inherit F_MASTER;
 inherit F_CLEAN_UP;
 
 string *death_msg = ({

@@ -5,7 +5,6 @@
 #include <skill.h>
 
 inherit NPC;
-inherit F_MASTER;
 
 string expell_me(object me);
 

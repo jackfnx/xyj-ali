@@ -5,7 +5,6 @@
 // 9-2-97 pickle
 
 inherit NPC;
-inherit F_MASTER;
 string expell_me(object me);
 void create()
 {

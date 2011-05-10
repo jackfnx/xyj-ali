@@ -5,7 +5,6 @@
 // By Dream Dec. 20, 1996
 
 inherit NPC;
-inherit F_MASTER;
 
 void create()
 {

@@ -7,7 +7,6 @@
 #include <login.h>
 
 inherit NPC;
-inherit F_MASTER;
 string *death_msg = ({
         HIB "黑无常说道：喂！新来的，你叫什么名字？\n\n" NOR,
         HIB "黑无常用奇异的眼光盯着你，好像要看穿你的一切似的。\n\n" NOR,

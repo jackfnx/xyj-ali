@@ -11,7 +11,6 @@
 
 #include <ansi.h>
 inherit NPC;
-inherit F_MASTER;
 
 string say_key();
 void punish_player(object me);

@@ -7,8 +7,7 @@
 #include <skill.h>
 
 inherit NPC;
-//inherit F_MASTER;
-
+//
 void create()
 {
   set_name("тјту",({"gong fu","gong","fu","long","gongfu","dragon"}));

@@ -5,7 +5,6 @@
 #include <ansi.h>
 
 inherit NPC;
-inherit F_MASTER;
 int send_me();
 int work_me();
 string expell_me(object me);
