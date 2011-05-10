@@ -13,11 +13,6 @@ int practice_skill(object me)
         notify_fail("天狐心法只能向师父学，或是从运用(exert/cast)中增加熟练度。\n");
 }
 
-string exert_function_file(string func)
-{
-    return CLASS_D("gumu") + "/fox-force/" + func;
-}
-
 string cast_spell_file(string spell)
 {
     return CLASS_D("gumu") + "/fox-force/" + spell;

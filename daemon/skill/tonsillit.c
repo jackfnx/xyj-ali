@@ -21,11 +21,6 @@ int valid_learn(object me)
     return 1;
 }
 
-int practice_skill(object me)
-{
-    return notify_fail("摄气诀只能用学习或应用中提高！\n");
-}
-
 string exert_function_file(string func)
 {
     return CLASS_D("ghost") + "/tonsillit/" + func;

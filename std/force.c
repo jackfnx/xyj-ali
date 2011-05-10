@@ -33,3 +33,8 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
    if( random(me->query_skill("force")) < damage )
      return damage;
 }
+
+int practice_skill(object me)
+{
+    return notify_fail(this_object()->name() + "只能用学的，或是从运用(exert)中增加熟练度。\n");
+}
