@@ -41,13 +41,3 @@ void create()
         carry_object("/d/qujing/bibotan/obj/zhanpao")->wear();
 }
 
-
-int recognize_apprentice(object who)
-{   who= this_player();
-   if( who->query("family/family_name")=="ÂÒÊ¯É½±Ì²¨Ì¶" 
-     && who->query("can_learn_staff") ) { 
-           return 1;
-   }
-   return 0;
-}
-

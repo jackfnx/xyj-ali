@@ -51,16 +51,6 @@ void create()
         carry_object("/d/obj/cloth/pinkskirt")->wear();
 }
 
-
-int recognize_apprentice(object who)
-{   who= this_player();
-   if( who->query("family/family_name")=="ÂÒÊ¯É½±Ì²¨Ì¶" 
-     && who->query("can_learn_stealing") ) { 
-           return 1;
-   }
-   return 0;
-}
-
 string say_position()
 {   object me =this_object();
    object who=this_player();
