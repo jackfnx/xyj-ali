@@ -133,8 +133,9 @@ int main(object me, string arg)
                             "」已经不输为师了，咱们一起切磋切磋吧！\n", ob, me);
                     printf("%s和你切磋了一会儿%s，你似乎有所领悟。\n",
                         ob->name(), SKILL_D(skill)->name());
-                me->improve_skill(skill, amount, (qlearned>4*qskill && !userp(ob)) ? 0 : 1);
-                //can't learn beyond a player master's level.
+                    me->improve_skill(skill, amount, (qlearned>4*qskill && !userp(ob)) ? 0 : 1);
+                    //can't learn beyond a player master's level.
+                }
             }
         }
     } else {
