@@ -139,20 +139,3 @@ int array_kill(object leader, object enemy)
         return 1;
 }
 
-
-
-int effective_level() { return 10;}
-
-int learn_bonus()
-{
-        return 0;
-}
-int practice_bonus()
-{
-        return 0;
-}
-int black_white_ness()
-{
-        return 0;
-}
-
