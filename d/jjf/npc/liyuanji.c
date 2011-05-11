@@ -11,12 +11,12 @@ void create()
 {
   set_name("李元吉", ({"li yuanji", "li", "yuanji", "liyuanji", "jianwang", "jian wang", "wang", "jian"}));
   set ("long", @LONG
-李元吉乃是唐高祖李渊的三子，受封建王。三子中以李元吉最
+李元吉乃是唐高祖李渊的三子，受封齐王。三子中以李元吉最
 为无用。他空有一身蛮力，但无恶不作，毫不以领地百姓为重。
 且在作战时屡失重要据点，实在令高祖大为头痛。
 LONG);
  
-  set("title", "建王");
+  set("title", "齐王");
   set("gender", "男性");
   set("age", 22);
   set("str", 40);

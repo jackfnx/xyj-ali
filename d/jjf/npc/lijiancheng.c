@@ -11,12 +11,12 @@ void create()
 {
   set_name("李建成", ({"li jiancheng", "li", "jiancheng", "lijiancheng", "qiwang", "qi wang", "wang", "qi"}));
   set ("long", @LONG
-李建成乃是唐高祖李渊的大儿子，受封齐王，随高祖南征北战
+李建成乃是唐高祖李渊的大儿子，受封太子，随高祖南征北战
 时颇立战功。虽无二弟李世民显赫，但也非老三李元吉一般屡
 吃败仗。
 LONG);
  
-  set("title", "齐王");
+  set("title", "太子");
   set("gender", "男性");
   set("age", 36);
   set("str", 25);

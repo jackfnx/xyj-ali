@@ -1,24 +1,24 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
+
 inherit ROOM;
 
-void create ()
+void create()
 {
-    set ("short", "东营房");
-    set ("long", @LONG
+    set("short", "营房");
+    set("long", @LONG
 
-这里是兵营，到处都是官兵走来走去，有的在武将的指挥下列队操
-练，有的独自在练功，有的坐着、躺着正在休息。大柳树下树阴里
-坐着主帅，不动声色地寻视着四周。
+秦琼隐居后，除了他的家将以外，还有一些老部下也愿意追随他。
+他便将这些老兄弟安置在府邸对面的一处营房内。大家都是过惯了
+军旅生涯的铁血汉子，实在是闲不住，所以经常喜欢集合起来操练
+一番。大柳树下躺着一个大汉，半眯着眼睛休息，看样子似乎是主
+帅。
 LONG);
 
     set("exits", ([ /* sizeof() == 1 */
-        "south" : "/d/city/qinglong-e4",
+        "southwest" : __DIR__"center",
     ]));
     set("objects", ([ /* sizeof() == 3 */
-        "/d/jjf/npc/fujiang" : 2,
-        "/d/jjf/npc/chengyaojin" : 1,
+        __DIR__"npc/fujiang" : 2,
+        __DIR__"npc/chengyaojin" : 1,
     ]));
     
     setup();
