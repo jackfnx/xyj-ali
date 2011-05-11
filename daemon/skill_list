@@ -93,6 +93,16 @@
   <skill share="share">yaofa</skill>
   <skill>yinfeng-claw</skill>
 </wudidong>
+<jjf class="fighter">
+  <skill share="share">baguazhou</skill>
+  <skill>bawang-qiang</skill>
+  <skill share="share">changquan</skill>
+  <skill>jinglei-mace</skill>
+  <skill>lengquan-force</skill>
+  <skill>sanban-axe</skill>
+  <skill>wusi-mace</skill>
+  <skill>yanxing-steps</skill>
+</jjf>
 <gumu class="fox">
   <skill>fenqingbian</skill>
   <skill>firesword</skill>
@@ -108,16 +118,6 @@
   <skill>pingtian-dafa</skill>
   <skill>yueya-chan</skill>
 </hys>
-<jjf class="fighter">
-  <skill share="share">baguazhou</skill>
-  <skill>bawang-qiang</skill>
-  <skill share="share">changquan</skill>
-  <skill>jinglei-mace</skill>
-  <skill>lengquan-force</skill>
-  <skill>sanban-axe</skill>
-  <skill>wusi-mace</skill>
-  <skill>yanxing-steps</skill>
-</jjf>
 <other class="other">
   <skill>fonxansword</skill>
   <skill>skyriver-rake</skill>
