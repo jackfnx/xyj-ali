@@ -36,9 +36,9 @@ void create()
         set_skill("dodge", 90);
    set_skill("parry", 90);
    set_skill("blade", 90);
-   set_skill("wuhu-blade", 90);
-   map_skill("blade", "wuhu-blade");
-   map_skill("parry", "wuhu-blade");
+   set_skill("yange-blade", 90);
+   map_skill("blade", "yange-blade");
+   map_skill("parry", "yange-blade");
    set_weight(5000000);
         setup();
    carry_object("/d/obj/weapon/blade/blade")->wield();

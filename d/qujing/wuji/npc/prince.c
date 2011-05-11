@@ -18,13 +18,13 @@ void create()
   set_skill("unarmed", 90);
   set_skill("force", 90);
   set_skill("changquan", 90);
-  set_skill("wuhu-blade", 90);
+  set_skill("yange-blade", 90);
   set_skill("lengquan-force", 90);
   set_skill("yanxing-steps", 90);
-  map_skill("blade", "wuhu-blade");
+  map_skill("blade", "yange-blade");
   map_skill("unarmed", "changquan");
   map_skill("dodge", "yanxing-steps");
-  map_skill("parry", "wuhu-blade");
+  map_skill("parry", "yange-blade");
   set("max_sen", 400);
   set("max_kee", 700);
   set("max_force", 800);

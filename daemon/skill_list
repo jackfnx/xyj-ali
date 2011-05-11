@@ -101,6 +101,7 @@
   <skill>lengquan-force</skill>
   <skill>sanban-axe</skill>
   <skill>wusi-mace</skill>
+  <skill share="share">yange-blade</skill>
   <skill>yanxing-steps</skill>
 </jjf>
 <gumu class="fox">
@@ -121,6 +122,4 @@
 <other class="other">
   <skill>fonxansword</skill>
   <skill>skyriver-rake</skill>
-  <skill>wuhu-blade</skill>
-  <skill>yange-blade</skill>
 </other>

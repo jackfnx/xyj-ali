@@ -19,8 +19,8 @@ LONG);
   set_skill("blade", 80);
   set_skill("dodge", 80);
   set_skill("parry", 80);
-  set_skill("wuhu-blade", 60);
-  map_skill("blade", "wuhu-blade");
+  set_skill("yange-blade", 60);
+  map_skill("blade", "yange-blade");
   set("max_sen", 200);
   set("max_kee", 300);
   set("inquiry", ([

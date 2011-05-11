@@ -27,7 +27,7 @@ void determine_data()
         {
        weapon_file="blade/blade";
        skill="blade";
-       special_skill="wuhu-blade";
+       special_skill="yange-blade";
        break;
         }
         case 2:

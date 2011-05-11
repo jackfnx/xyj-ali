@@ -35,9 +35,9 @@ void create()
         set_skill("dodge", 40);
    set_skill("parry", 40);
    set_skill("blade", 40);
-   set_skill("wuhu-blade", 40);
-   map_skill("blade", "wuhu-blade");
-   map_skill("parry", "wuhu-blade");
+   set_skill("yange-blade", 40);
+   map_skill("blade", "yange-blade");
+   map_skill("parry", "yange-blade");
         setup();
         carry_object("/d/obj/armor/shoupi")->wear();
    carry_object("/d/obj/weapon/blade/kandao")->wield();
