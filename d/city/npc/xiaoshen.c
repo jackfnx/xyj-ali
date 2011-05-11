@@ -20,10 +20,10 @@ void create()
         set_skill("dodge", 70);
         set_skill("parry", 70);
    set("max_kee", 700);
-   set_skill("fonxansword", 50);
+   set_skill("xiaofeng-sword", 50);
    set_skill("yanxing-steps", 50);
-   map_skill("sword", "fonxansword");
-   map_skill("parry", "fonxansword");
+   map_skill("sword", "xiaofeng-sword");
+   map_skill("parry", "xiaofeng-sword");
    map_skill("dodge", "yanxing-steps");
    set("force", 300);
    set("max_force", 300);

@@ -7,7 +7,7 @@ void consider();
 void create()
 {
         set_name("林冠雨", ({"lin guanyu", "lin"}));
-        set("age", 42);
+        set("age", 22);
         set("gender", "男性");
         set("long",
 "古董店的老板，笑眯眯的看着你。\n但笑容的后面好象又有一丝．．．\n");
@@ -24,12 +24,12 @@ void create()
         set_skill("unarmed", 40);
    set_skill("changquan", 40);
    set_skill("sword", 50);
-   set_skill("fonxansword", 60);
+   set_skill("xiaofeng-sword", 60);
         set_skill("dodge", 60);
         set_skill("parry", 40);
    map_skill("unarmed", "changquan");
-        map_skill("sword", "fonxansword");
-        map_skill("parry", "fonxansword");
+        map_skill("sword", "xiaofeng-sword");
+        map_skill("parry", "xiaofeng-sword");
         set("chat_chance_combat", 40);
         set("chat_msg_combat", ({
                 (: consider :)

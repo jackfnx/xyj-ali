@@ -113,13 +113,12 @@
 </gumu>
 <hys class="bull">
   <skill>blaze-force</skill>
-  <skill>blaze-spear</skill>
-  <skill>devil-hands</skill>
-  <skill>devil-steps</skill>
+  <skill todo="todo">huoyun-qiang</skill>
+  <skill todo="todo">devil-touch</skill>
+  <skill todo="todo">devil-steps</skill>
   <skill>pingtian-dafa</skill>
   <skill>yueya-chan</skill>
 </hys>
 <other class="other">
-  <skill>fonxansword</skill>
   <skill>skyriver-rake</skill>
 </other>

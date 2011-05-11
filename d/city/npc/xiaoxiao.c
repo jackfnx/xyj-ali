@@ -14,15 +14,15 @@ void create()
 由于凶蛮狠毒，江湖人称＂恶娘子＂。\n");
 
         set("combat_exp", 70000);
-   set_skill("fonxansword", 30);
+   set_skill("xiaofeng-sword", 30);
         set_skill("sword", 50);
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_skill("parry", 50);
    set_skill("moondance", 50);
    map_skill("dodge", "moondance");
-   map_skill("sword", "fonxansword");
-   map_skill("parry", "fonxansword");
+   map_skill("sword", "xiaofeng-sword");
+   map_skill("parry", "xiaofeng-sword");
    set("force", 200);
    set("max_force", 200);
    set("force_factor", 5);

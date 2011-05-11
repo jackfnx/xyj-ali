@@ -42,13 +42,13 @@ void create()
   set_skill("seashentong", 120);
   set_skill("dragonfight", 140);
   set_skill("dragonforce", 140);
-  set_skill("sanqing-jian", 150);
+  set_skill("xiaofeng-sword", 150);
   set_skill("dragonstep", 150);
   map_skill("spells", "seashentong");
   map_skill("unarmed", "dragonfight");
   map_skill("force", "dragonforce");
-  map_skill("sword","sanqing-jian");
-  map_skill("parry", "sanqing-jian");
+  map_skill("sword", "xiaofeng-sword");
+  map_skill("parry", "xiaofeng-sword");
   map_skill("dodge", "dragonstep");
 
         set("nkgain", 400);

@@ -37,13 +37,13 @@ void create()
         set_skill("tao", 50);
         set_skill("moyun-shou", 145);
         set_skill("azoth", 140);
-        set_skill("sanqing-jian", 145);
+        set_skill("xiaofeng-sword", 145);
         set_skill("moshenbu", 145);
         map_skill("spells", "tao");
         map_skill("unarmed", "moyun-shou");
         map_skill("force", "azoth");
-        map_skill("sword", "sanqing-jian");
-        map_skill("parry", "sanqing-jian");
+        map_skill("sword", "xiaofeng-sword");
+        map_skill("parry", "xiaofeng-sword");
         map_skill("dodge", "moshenbu");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
