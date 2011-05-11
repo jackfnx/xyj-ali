@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// 李建成 npc: /d/jjf/npc/lijiancheng.c
+// 李元吉 npc: /d/jjf/npc/liyuanji.c
 // created 5-20-97 pickle
  
 inherit NPC;
@@ -30,14 +30,14 @@ LONG);
   set_skill("dodge", 50);
   set_skill("parry", 50);
   set_skill("yanxing-steps", 50);
-  set_skill("wuhu-blade", 100);
+  set_skill("yange-blade", 100);
   set_skill("lengquan-force", 50);
   set_skill("unarmed", 50);
   set_skill("changquan", 100);
   map_skill("force", "lengquan-force");
   map_skill("unarmed", "changquan");
-  map_skill("blade", "wuhu-blade");
-  map_skill("parry", "wuhu-blade");
+  map_skill("blade", "yange-blade");
+  map_skill("parry", "yange-blade");
   map_skill("dodge", "yanxing-steps");
   set("max_sen", 150);
   set("max_kee", 700);
@@ -46,7 +46,7 @@ LONG);
   set("force_factor", 50);
 
   setup();
-  carry_object("/d/jjf/obj/lingjian-jian.c"); 
+  carry_object("/d/jjf/obj/lingjian-qi.c"); 
   carry_object("/d/obj/weapon/blade/yanblade")->wield();
   carry_object("/d/obj/armor/tiejia")->wear();
 }

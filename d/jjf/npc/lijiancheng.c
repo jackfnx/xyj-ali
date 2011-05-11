@@ -44,7 +44,7 @@ LONG);
   set("force_factor", 30);
 
   setup();
-  carry_object("/d/jjf/obj/lingjian-qi.c"); 
+  carry_object("/d/jjf/obj/lingjian-jian.c"); 
   carry_object("/d/obj/weapon/spear/tiespear")->wield();
   carry_object("/d/obj/armor/tiejia")->wear();
 }
