@@ -22,7 +22,7 @@ string short()
 {
     object owner = query("owner");
     if (!owner) return "條ん殤";
-    else return sprintf("條ん標 (owner:%s)", geteuid(owner));
+    else return sprintf("條ん殤(owner: %s)", geteuid(owner));
 }
 
 int check_in_aolai(object ob, object helper)
