@@ -27,7 +27,7 @@ string short()
 
 int check_in_aolai(object ob, object helper)
 {
-    if (file_name(environment(ob))[0..(sizeof("/d/4world/")-1)] == "/d/4world/") {
+    if (sscanf(file_name(environment(ob)), "/d/4world/%*s") == 1) {
         helper->speak(({ CYN "说道：咦？你怎么回来了？我不是告诉你离傲来国远点吗？怎么不听我的话啊！" NOR }));
         call_out((: call_other, helper, "disappear" :), 3);
         return 1;

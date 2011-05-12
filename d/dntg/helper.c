@@ -314,7 +314,7 @@ int override_move(string dir)
                     CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
                 }));
             // rack
-            ob = new (__DIR__"donghai/rack");
+            ob = new(__DIR__"donghai/rack");
             ob->move(DONH_ASNL_ROOM);
             ob->set("owner", chosen);
             chosen->set_temp("rack", ob);
