@@ -28,9 +28,7 @@ string short()
 int check_in_aolai(object ob, object helper)
 {
     if (file_name(environment(ob))[0..(sizeof("/d/4world/")-1)] == "/d/4world/") {
-        call_out((: call_other, helper, "speak", ob, ({
-                CYN "说道：咦？你怎么回来了？我不是告诉你离傲来国远点吗？怎么不听我的话啊！" NOR,
-            }) :), 1, 0);
+        helper->speak(({ CYN "说道：咦？你怎么回来了？我不是告诉你离傲来国远点吗？怎么不听我的话啊！" NOR }));
         call_out((: call_other, helper, "disappear" :), 3);
         return 1;
     }
@@ -184,7 +182,7 @@ void finish_exercise()
         tell_object(room, "听他们闲谈的意思，似乎是想把这些兵器卖掉还钱。\n");
         tell_object(room, "你终于明白这里平时为什么没有兵器了。\n");
         foreach (object ob in all_inventory(room)) {
-            if (!userp(ob)) destruct(ob);
+            if (!userp(ob) && ob != this_object()) destruct(ob);
         }
     }
     
@@ -194,7 +192,7 @@ void finish_exercise()
         tell_object(room, "演习似乎结束了，军士们陆续都离开了，文臣武将们更是早就溜了。\n");
         tell_object(room, "军士们临走前还打扫了一下卫生，把周围的垃圾都清理掉了。\n");
         foreach (object ob in all_inventory(room)) {
-            if (!userp(ob)) destruct(ob);
+            if (!userp(ob) && ob != this_object()) destruct(ob);
         }
     }
     
@@ -203,7 +201,7 @@ void finish_exercise()
         room->delete("o_long");
         tell_object(room, "演习似乎结束了，一队队军士纷纷离开了演武场，这里又恢复了往日的宁静。\n");
         foreach (object ob in all_inventory(room)) {
-            if (!userp(ob)) destruct(ob);
+            if (!userp(ob) && ob != this_object()) destruct(ob);
         }
     }
     
