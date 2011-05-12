@@ -7,6 +7,9 @@ inherit F_UNIQUE;
 #define HUAG_GETFLAG_ROOM "/d/hgs/shifang"
 #define HUAG_WAVE_ROOM "/d/hgs/fall"
 #define HUAG_VOTE_ROOM "/d/hgs/throne"
+#define DONH_ASNL_ROOM "/d/4world/arsenal"
+#define DONH_DRILL_ROOM "/d/4world/drill"
+#define DONH_DRILLENT_ROOM "/d/4world/drillent"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -81,7 +84,6 @@ void init()
     add_action("do_ba", "ba");
     add_action("override_move", ({ "go", "west", "east", "south", "north" }));
     add_action("dntg_ask", "ask");
-    add_action("dntg_give", "give");
 }
 
 void greeting(object ob)
@@ -140,10 +142,19 @@ void one_hit_to_die(object me, object victim, object weapon, int damage)
     }
 }
 
-void unconcious()
+void disappear()
 {
+    object chosen = query_temp("chosen");
+    if (chosen)
+        tell_object(chosen, name() + CYN "喝到：" + chosen->name(1) + CYN "！你太让我失望了，你就不是个能做大事的人！\n" NOR);
     message_vision("\n$N突然化作一道金光飞向天际，不见了。\n", this_object());
     destruct(this_object());
+}
+
+void unconcious()
+{
+    set_temp("chosen", 0);
+    disappear();
 }
 
 void die()
@@ -258,16 +269,56 @@ int check_huaguo_voteroom()
     return check_room(HUAG_VOTE_ROOM);
 }
 
+void speak_one(int i)
+{
+    object ob = query_temp("chosen");
+    string* msgs = query_temp("speak_msgs");
+
+    remove_call_out("speak_one");
+    if (!ob || !msgs || i >= sizeof(msgs)) return;
+    tell_object(ob, name() + msgs[i] + "\n");
+    call_out("speak_one", 1, i + 1);
+}
+
+void speak(string* msgs)
+{
+    set_temp("speak_msgs", msgs);
+    call_out("speak_one", 1, 0);
+}
+
 int override_move(string dir)
 {
     string verb = query_verb();
     object chosen = query_temp("chosen");
+    object env;
+    string dest;
+    object ob;
     
     if (verb != "go") dir = verb;
     if (chosen != this_player()) return 0;
+    if (!(env = environment(chosen))) return 0;
+    if (!(dest = env->query("exits/" + dir))) return 0;
+    if (!find_object(dest)) load_object(dest);
+    if (!find_object(dest)) return 0;
     
-    switch (file_name(environment(chosen))) {
-        case HUAG_GETFLAG_ROOM:
+    switch (file_name(env)) {
+        case DONH_ASNL_ROOM:
+            if (chosen->query("dntg/huaguo") != "done") return 0;
+            if (chosen->query("dntg/donghai")) return 0;
+            if (env->query("exercising")) return 0;
+            speak(({
+                    CYN "说道：嘿嘿嘿嘿，没办法了吧，找不到兵器吧？" NOR,
+                    CYN "说道：大爷我有办法！" NOR,
+                    CYN "说道：你家金箍棒大爷会作法让傲来国国王心血来潮，搞一次演习。" NOR,
+                    CYN "说道：不过在这个期间，你可得离傲来国远点。" NOR,
+                    CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
+                }));
+            // rack
+            ob = new (__DIR__"donghai/rack");
+            ob->move(DONH_ASNL_ROOM);
+            ob->set("owner", chosen);
+            chosen->set_temp("rack", ob);
+            call_out((: call_other, ob, "organize_exercise" :), 10, 0);
             break;
         default:
             break;
@@ -286,13 +337,30 @@ int dntg_ask(string arg)
     
     if (!objectp(who = present(name, environment(chosen)))) return 0;
     
-    switch (who->query("id")) {
+    //switch (who->query("id")) {
 
-    }
+    //}
     return 0;
 }
 
-int dntg_give(string arg)
+object get_object(string fname)
 {
-    return 0;
+    if (!(find_object(fname)))
+        load_object(fname);
+    return find_object(fname);
+}
+
+object get_drillent_room()
+{
+    return get_object(DONH_DRILLENT_ROOM);
+}
+
+object get_drill_room()
+{
+    return get_object(DONH_DRILL_ROOM);
+}
+
+object get_arsenal_room()
+{
+    return get_object(DONH_ASNL_ROOM);
 }

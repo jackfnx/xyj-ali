@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-    set_name("偏将",({"pian jiang","jiang"}));
+    set_name("武士",({"wu shi","shi"}));
     set("gender", "男性");
     set("title", "傲来国");
     set("age", 25);
-    set("long", "一名傲来国的偏将，正在认真的站岗。\n");
+    set("long", "一名傲来国的武士，正在认真的操练。\n");
 
     set("attitude", "heroism");
     set("combat_exp", 25000);
@@ -28,27 +28,15 @@ void create()
     set_skill("parry", 50);
     set_skill("spear", 30);
 
+    set("chat_chance", 5);
+    set("chat_msg", ({
+        "一名武士在场地中央把大枪耍得花里胡哨，引来周围一片喝彩。",
+        "武士们聚精会神的操练着队列，可惜始终对不成直线。",
+        "两名武士在场地中央叮叮当当的对打，兵器虽然不中，却累得满头大汗。",
+    }));
+
     setup();
 
     carry_object("/d/obj/weapon/spear/tieqiang")->wield();
     carry_object("/d/obj/cloth/bingfu")->wear();
-}
-
-
-void unconcious()
-{
-    object ob;
-    object me = this_object();
-    object where = environment(me);
-
-    message_vision("\n$N喊到：＂快来人哪！有人劫兵器库啦！＂说罢撒腿跑了出去。\n", me);
-    message_vision("\n另一个$N急急忙忙的赶来。\n", me);
-    ob = new(__FILE__);
-    ob->move(where);
-    destruct(me);
-}
-
-void die()
-{
-    unconcious();  
 }
