@@ -44,34 +44,3 @@ void create()
 
     setup();
 }
-
-int accept_object(object who, object ob)
-{
-    object me = this_object();
-
-    if ((string)ob->query("id") != "bing qi") {
-        command("say 这玩艺有什么用？");
-        command("shake");
-        return 0;
-    } else if (who->query("dntg/donghai") == "begin"
-            ||  who->query("dntg/donghai") == "allow"
-            ||  who->query("dntg/donghai") == "done") {
-        command("say 兵器已经够用了，不劳大王操心了。\n");
-        return 0;
-    } else if (random(10) != 1) {
-        message_vision("\n$N兴奋的叫道：太好了！要是再多一点儿就更好了。\n",me);
-        call_out("destruct_ob", 1, ob);
-        return 1;
-    } else {
-        command("jump");
-        command("say 大王，我们的兵器是够用了，您自己也挑一样称手的家伙吧！\n");
-        who->set("dntg/donghai", "begin");
-        call_out("destruct_ob", 1, ob);
-        return 1;
-    }
-}
-
-void destruct_ob(object ob)
-{
-    if (ob) destruct(ob);
-}

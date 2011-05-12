@@ -10,6 +10,7 @@ inherit F_UNIQUE;
 #define DONH_ASNL_ROOM "/d/4world/arsenal"
 #define DONH_DRILL_ROOM "/d/4world/drill"
 #define DONH_DRILLENT_ROOM "/d/4world/drillent"
+#define DONH_GATE_ROOM "/d/sea/under1"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -171,12 +172,18 @@ void do_report_progress()
 {
     string prog = "";
     object ob = query_temp("chosen");
+    object foo;
     
     if (!ob) return;
     if (ob->query("dntg/huaguo") != "done")
         prog = "第一件事，你要首先成为花果山水帘洞的群猴之王";
-    else if (ob->query("dntg/donghai") != "done")
+    else if (ob->query("dntg/donghai") == 0)
         prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山建设成铜墙铁壁";
+    else if (ob->query("dntg/donghai") == "begin") {
+        prog = "走！走！走！去东海！去拿金箍棒！";
+        foo = new(__DIR__"donghai/patrol");
+        foo->move(DONH_GATE_ROOM);
+    }
     else {
         if (OBSTACLES_D->check_obstacles(ob, "dntg")) {
             tell_object(ob, name() + CYN "惊奇的说道：咦？"
@@ -345,7 +352,7 @@ int dntg_ask(string arg)
 
 object get_object(string fname)
 {
-    if (!(find_object(fname)))
+    if (!find_object(fname))
         load_object(fname);
     return find_object(fname);
 }

@@ -1,5 +1,6 @@
 // bingqi.c
 
+#include <ansi.h>
 inherit ITEM;
 
 void create()
@@ -26,8 +27,7 @@ void init()
         else if (ob->query("owner") != where)
             call_out("destruct_me", 5, ob);
     }
-    if (this_player() == ob->query("owner"))
-        add_action("quest_give", "give");
+    add_action("quest_give", "give");
 }
 
 void destruct_me(object ob)
@@ -68,13 +68,13 @@ int quest_give(string arg)
         message_vision(CYN "$N" CYN "说道：兵器已经够用了，不劳大王操心了。\n" NOR, who);
         return 1;
     } else if (random(10) != 1) {
-        message_vision(CYN "$N" CYN "兴奋的叫道：太好了！要是再多一点儿就更好了。\n", who);
+        message_vision(CYN "$N" CYN "兴奋的叫道：太好了！要是再多一点儿就更好了。\n" NOR, who);
         destruct(this_object());
         return 1;
     } else {
-        message_vision(CYN "$N" CYN "高兴得跳了起来。\n", who);
-        message_vision(CYN "$N" CYN "说道：太好了！大王，我们的兵器是够用了，您自己也挑一样称手的家伙吧！\n", who);
-        who->set("dntg/donghai", "begin");
+        message_vision(CYN "$N" CYN "高兴得跳了起来。\n" NOR, who);
+        message_vision(CYN "$N" CYN "说道：太好了！大王，我们的兵器是够用了，您自己也挑一样称手的家伙吧！\n" NOR, who);
+        me->set("dntg/donghai", "begin");
         helper->report_progress(10);
         destruct(this_object());
         return 1;
