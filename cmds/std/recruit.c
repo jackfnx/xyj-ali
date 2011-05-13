@@ -43,7 +43,7 @@ int main(object me, string arg)
     if ((ob->query("family")) && (me->query("family/family_name") != ob->query("family/family_name")) && (me->query("second_family_name") != ob->query("family/family_name")))
         return notify_fail(ob->name()+"乃"+ob->query("family/family_name") +"弟子，未经其师尊同意就挖人家墙角不太好吧。\n\n");
 
-    if (me->query("family/master_id") == ob->query("id"))
+    if (me->is_apprentice_of(ob))
         return notify_fail("开什么玩笑？人家是你师父，还有什么要从你这里学的？\n");
 /*
    if( ob->query("family")){
@@ -61,19 +61,10 @@ int main(object me, string arg)
             return 1;
         }
 
-        // follow modified by elon 09-10-95 to fix a bug in 1st time recruit
-        if((ob->query("family")) && ((string)me->query("family/family_name") != (string)ob->query("family/family_name"))) {
-            message_vision(
-                    "$N决定投入$n门下！！\n\n"
-                    "$N跪了下来向$n恭恭敬敬地磕了四个响头，叫道：「师父！」\n\n",
-                    ob, me);
-            ob->set("score", 0);
-            ob->add("betrayer", 1);
-        } else
-            message_vision(
-                    "$N决定收$n为弟子。\n\n"
-                    "$n跪了下来向$N恭恭敬敬地磕了四个响头，叫道：「师父！」\n",
-                    me, ob);
+        message_vision(
+                "$N决定收$n为弟子。\n\n"
+                "$n跪了下来向$N恭恭敬敬地磕了四个响头，叫道：「师父！」\n",
+                me, ob);
 
         me->recruit_apprentice(ob);
         ob->delete_temp("pending/apprentice");
