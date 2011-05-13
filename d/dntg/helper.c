@@ -11,6 +11,7 @@ inherit F_UNIQUE;
 #define DONH_DRILL_ROOM "/d/4world/drill"
 #define DONH_DRILLENT_ROOM "/d/4world/drillent"
 #define DONH_GATE_ROOM "/d/sea/under1"
+#define DONH_PALACE_ROOM "/d/sea/inside3"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -182,6 +183,7 @@ void do_report_progress()
     else if (ob->query("dntg/donghai") == "begin") {
         prog = "走！走！走！去东海！去拿金箍棒！";
         foo = new(__DIR__"donghai/patrol");
+        foo->set("target", ob);
         foo->move(DONH_GATE_ROOM);
     }
     else {
@@ -370,4 +372,9 @@ object get_drill_room()
 object get_arsenal_room()
 {
     return get_object(DONH_ASNL_ROOM);
+}
+
+object get_palace_room()
+{
+    return get_object(DONH_PALACE_ROOM);
 }
