@@ -101,3 +101,24 @@ int recruit_apprentice(object ob)
     return 1;
 }
 
+int expell_apprentice(object ob)
+{
+    object me = this_object();
+    string myfamily = (string)me->query("family/family_name");
+
+    if (me->query("family/privs") == -1
+    &&  myfamily ==(string)ob->query("family/family_name")) {
+        message_vision("$N对着$n说道：从今天起，你再也不是我" + myfamily + "的弟子了，你走吧！\n\n", me, ob);
+        tell_object(ob, "\n你被" + me->query("family/title") + "开革出师门了！\n\n");
+    } else if (ob->is_apprentice_of(me, 1)) {
+        message_vision("$N对着$n说道：从今天起，你我师徒恩断情绝，你走吧！\n", me, ob);
+        message_vision("$N对着$n说道：江湖风波，善恶无形，好自为之。。。\n\n", me, ob);
+        tell_object(ob, "\n你被师父开革出师门了！\n\n");
+    } else
+        return notify_fail("这个人不是你的弟子。\n");
+    
+    ob->delete("family/master_name");
+    ob->delete("family/master_id");
+    ob->set("title", ob->query("family/family_name") + "弃徒");
+    return 1;
+}
