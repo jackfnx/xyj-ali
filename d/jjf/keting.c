@@ -38,8 +38,8 @@ int valid_leave(object me, string dir)
 {
   if ((dir == "east") || (dir == "south") || (dir == "west") )
     {
-      if (!(  ((string)me->query("family/master_name") == "罗成")
-     ||  ((string)me->query("family/master_name") == "秦琼"))
+      if (!(  ((string)me->query("family/master_id") == "luo cheng")
+     ||  ((string)me->query("family/master_id") == "qin qiong"))
      &&  objectp(present("qin qiong", environment(me)))
 )
    return notify_fail("将军府内堂，企可随便出入？\n");

@@ -81,8 +81,7 @@ void attempt_apprentice(object ob)
         return;
     }
     
-    if (ob->query("family/master_name") == "嫦娥"
-    ||  ob->query("family_history/月宫/chang e/master_name") == "嫦娥") {
+    if (ob->query("family/master_id") == "chang e") {
         command("sneer");
         command("say "+ RANK_D->query_respect(ob)
             + "既然有嫦娥指点，又何必来找我？\n");

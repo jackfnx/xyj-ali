@@ -1,9 +1,3 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-// Room: some place in 西牛贺洲
-// inside2.c
-
 inherit ROOM;
 
 void create ()
@@ -37,7 +31,7 @@ int valid_leave(object me, string dir)
         me->set("family/generation", 2);
         me->set("title", "方寸山三星洞第二代弟子");
      }
-   if((string)me->query("family/master_name")=="菩提祖师") {
+   if((string)me->query("family/master_id")=="master puti") {
      me->set("pending/kick_out",1);
    }
    return ::valid_leave(me, dir);

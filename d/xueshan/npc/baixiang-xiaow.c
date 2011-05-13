@@ -78,7 +78,7 @@ void attempt_apprentice(object ob)
         } else if ((int)ob->query("family/generation") == 2) {
             command("say 你这个" + RANK_D->query_rude(ob) + "别来消遣你爷爷我了！\n");
         } else if ((int)ob->query("family/generation") == 3) {
-            if ((string)ob->query("family/master_name") == "大鹏明王") {
+            if ((string)ob->query("family/master_id") == "dapeng mingwang") {
                 command("shake");
                 command("say 我怎么能抢明王陛下的徒弟呢。\n");
             } else {

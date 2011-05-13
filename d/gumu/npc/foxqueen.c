@@ -113,25 +113,8 @@ int attempt_apprentice(object me)
 
 int recruit_apprentice(object ob)
 {
-    string family_name;
-    int gen;
-
-    if (ob->query("family/master_id") == query("id")) return 0;
-
-    if (ob->query("family/family_name") == "ÔÂ¹¬") {
-        family_name = "ÔÂ¹¬";
-        gen = 2;
-    } else {
-        family_name = query("family/family_name");
-        gen = (int)query("family/generation") + 1;
-    }
-
-    ob->set("family/master_id", query("id"));
-    ob->set("family/master_name", query("name"));
-    ob->set("family/family_name", family_name);
-    ob->set("family/generation", gen);
-    ob->set("family/enter_time", time());
-    ob->assign_apprentice("µÜ×Ó", 0);
+    if (::recruit_apprentice(ob))
+        ob->set("class", "yaomo");
 }
 
 /************************************************************/

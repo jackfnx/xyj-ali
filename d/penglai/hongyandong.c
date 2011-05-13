@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
         return ::valid_leave(me, dir);
     if (me->query("family/family_name") != "月宫")
         return notify_fail("百花仙子一把揪住你：“不是月宫的人不许进！”\n");
-    if (me->query("family/master_name") == "嫦娥")
+    if (me->query("family/master_id") == "chang e")
         return notify_fail("百花仙子拦在你面前，冷冷地说：“是你师父派你来扰我清修的？”\n");
     if (dir == "east" && random(2)) {
         me->start_busy(random(2));
