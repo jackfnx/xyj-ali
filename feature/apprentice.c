@@ -75,5 +75,6 @@ void expell_apprentice(object ob)
    family = ob->query("family/family_name");
    ob->delete("family/master_name");
    ob->delete("family/master_id");
+   ob->delete("family/generation");
    ob->set("title", family+"ÆúÍ½");
 }

@@ -40,7 +40,7 @@ int main(object me, string arg)
     if (!me->query("family/generation"))
         return notify_fail("你乃弃徒，先求哪一位本门师父将你重列门墙再说吧。\n");
 
-    if ((ob->query("family")) && (me->query("family/family_name") != ob->query("family/family_name")) && (me->query("second_family_name") != ob->query("family/family_name")))
+    if (ob->query("family") && me->query("family/family_name") != ob->query("family/family_name"))
         return notify_fail(ob->name()+"乃"+ob->query("family/family_name") +"弟子，未经其师尊同意就挖人家墙角不太好吧。\n\n");
 
     if (me->is_apprentice_of(ob))
