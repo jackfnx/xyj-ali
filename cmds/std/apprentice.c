@@ -34,16 +34,16 @@ int main(object me, string arg)
     if (ob == me)
         return notify_fail("拜自己为师？好主意．．．不过没有用。\n");
 
-    if (me->is_apprentice_of(ob, 1)) {
-        message_vision("$N恭恭敬敬地向$n磕头请安，叫道：「师父！」\n", me, ob);
-        return 1;
-    }
-
     if (!mapp(ob->query("family")))
         return notify_fail(ob->name() + "既不属于任何门派，也没有开山立派，不能拜师。\n");
 
     if (me->query("family") && me->query("family/family_name") != ob->query("family/family_name"))
         return notify_fail(ob->name()+"是"+ob->query("family/family_name")+"师傅，未经本派师门同意不能改换门派！\n\n");
+
+    if (me->is_apprentice_of(ob)) {
+        message_vision("$N恭恭敬敬地向$n磕头请安，叫道：「师父！」\n", me, ob);
+        return 1;
+    }
 
     if (ob->is_apprentice_of(me))
         return notify_fail("开什么玩笑？拜自己的徒弟为师？\n");

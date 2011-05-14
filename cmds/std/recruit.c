@@ -29,22 +29,23 @@ int main(object me, string arg)
 
     if (ob == me) return notify_fail("收自己为弟子？好主意．．．不过没有用。\n");
 
-    if (ob->is_apprentice_of(me, 1)) {
-        message_vision("$N拍拍$n的头，说道：「好徒儿！」\n", me, ob);
-        return 1;
-    }
-
     if (!me->query("family"))
         return notify_fail("你并不属于任何门派，你必须先加入一个门派，或自己创一个才能收徒。\n");
 
     if (!me->query("family/generation"))
         return notify_fail("你乃弃徒，先求哪一位本门师父将你重列门墙再说吧。\n");
 
-    if (ob->query("family") && me->query("family/family_name") != ob->query("family/family_name"))
-        return notify_fail(ob->name()+"乃"+ob->query("family/family_name") +"弟子，未经其师尊同意就挖人家墙角不太好吧。\n\n");
+    if (ob->is_apprentice_of(me)) {
+        message_vision("$N拍拍$n的头，说道：「好徒儿！」\n", me, ob);
+        return 1;
+    }
 
     if (me->is_apprentice_of(ob))
         return notify_fail("开什么玩笑？人家是你师父，还有什么要从你这里学的？\n");
+
+    if (ob->query("family") && me->query("family/family_name") != ob->query("family/family_name"))
+        return notify_fail(ob->name()+"乃"+ob->query("family/family_name") +"弟子，未经其师尊同意就挖人家墙角不太好吧。\n\n");
+
 /*
    if( ob->query("family")){
    if ((int)me->query("family/generation") >= (int)ob->query("family/generation"))
