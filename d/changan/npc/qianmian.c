@@ -9,7 +9,7 @@ inherit NPC;
 object curr_user, new_user, curr_env;
 object last_steal;
 int steal_time=0, fresh=1;
-int MAX_MANA=4000, SPELLS=200, DAOXING=300000;
+int MAX_MANA=4000, SP_LEVEL=200, DAOXING=300000;
 int just_bianed=0, no_player=0, just_steal=0;
 
 void copy_status(object me, object ob);
@@ -57,7 +57,7 @@ void create()
 
    set("combat_exp", DAOXING);
 
-   set_skill("spells",SPELLS);
+   set_skill("spells",SP_LEVEL);
    set_skill("force", 140); 
    set_skill("unarmed", 140);
    set_skill("dodge", 140);
@@ -284,8 +284,8 @@ void find_obj()
       me->parse_command_id_list())!=-1) continue;
     me->set("max_mana",MAX_MANA);
     me->set("mana",MAX_MANA);
-    if(me->query_skill("spells")<SPELLS/2) 
-      me->set_skill("spells",SPELLS);
+    if(me->query_skill("spells")<SP_LEVEL/2) 
+      me->set_skill("spells",SP_LEVEL);
     if(!command("bian "+obj[i]->parse_command_id_list()[0]))
       continue;
          just_bianed=1;
