@@ -29,20 +29,8 @@ LONG);
   set("outdoors", 1);
   set("exits", ([ /* sizeof() == 2 */
   "enter" : __DIR__"road1",
-  "east" : __DIR__"ontop2",
+  "down" : __DIR__"tree2",
 ]));
 
   setup();
-}
-
-
-int valid_leave(object me, string dir)
-{
-   object wugang;
-   
-    if (me->query("gender") == "男性" && dir == "north" ) {
-        if(objectp(wugang=present("wu gang", environment(me))) && living(wugang) )
-            return notify_fail("桂花树后转出吴刚，伸出一把大板斧拦住你道：\n慢着...院子里住的全是女人，你跑进去想干什么？\n");
-    }
-    return ::valid_leave(me, dir);
 }
