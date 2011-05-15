@@ -10,6 +10,7 @@
 #include <dbase.h>
 #include <room.h>
 #include <ansi.h>
+#include <command.h>
 
 static int weight = 0;
 static int encumb = 0, max_encumb = 0;
@@ -65,17 +66,6 @@ nomask void set_weight(int w)
 // This is the "current" weight of an object, which is used on weight
 // checking in move().
 nomask int weight() { return weight + encumb; }
-
-string ride_suffix (object me)
-{
- string ridemsg = 0;
- object ridee = 0;
-
- ridee = me->ride();
- if (ridee)
-  ridemsg = ridee->query("ride/msg")+"在"+ridee->name()+"上";
- return ridemsg;
-}
 
 // silently=1: no look.
 // silently=2: only room name. (for follow)
@@ -197,39 +187,8 @@ varargs int _move(mixed dest, int silently)
   &&  silently!=1 ) 
   if (silently==2 || this_object() -> query("env/brief_all"))
    tell_object(this_object(), environment()->query("short") ? environment()->query("short")+"\n": "\n");
-  else {
-   str = sprintf( "%s - %s\n  %s%s",
-    environment()->query("short") ? environment()->query("short"): "",
-    wizardp(me)? file_name(environment()): "",
-    ( (!this_object() -> query("env/brief")) && (environment()->query("long")) ) ? environment()->query("long"): "",
-    ( (!this_object() -> query("env/brief")) && (environment()->query("outdoors")) ) ? NATURE_D->outdoor_room_description(): "");
-
-      if( mapp(exits = environment()->query("exits")) ) {
-          dirs = keys(exits);
-          for(i=0; i<sizeof(dirs); i++)
-              if( (int)environment()->query_door(dirs[i], "status") & DOOR_CLOSED )
-                  dirs[i] = 0;
-        dirs -= ({ 0 });
-          if( sizeof(dirs)==0 )
-              str += "  这里没有任何明显的出路。\n";
-          else if( sizeof(dirs)==1 )
-              str += "  这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
-          else
-              str += sprintf("  这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
-          implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs)-1]);
-      }
-      inv = all_inventory(environment());
-      i=sizeof(inv);
-      while(i--) {
-          if( !me->visible(inv[i]) ) continue;
-          if( inv[i]==me ) continue;
-          if (ridemsg = ride_suffix(inv[i]))
-              str1 = " " + inv[i]->short() + " <"+ridemsg +">\n"+str1;
-          else
-              str1 = " " + inv[i]->short() + "\n"+str1;
-      }
-   tell_object(this_object(), str+str1);
-  }
+  else
+    LOOK_CMD->look_room(this_object(), ob, this_object()->query("env/brief"));
 
     // the following is made by snowcat on 6/20/1997
   // modified by mon 8/29/97
@@ -276,24 +235,34 @@ int move_or_destruct( object dest )
   }
 }
 
-object ride ()
+object ride()
 {
- object me = this_object();
- string ridemsg = "";
- object ridee;
+    object me = this_object();
+    string ridemsg = "";
+    object ridee;
+    
+    if (ridee = me->query_temp("ridee")) { 
+        if ((environment(ridee) != environment(me) && environment(ridee) != me)
+        ||  (ridee->is_character() && !living(ridee))) {
+            me->set_temp("ridee", 0);
+            ridee->set_temp("rider", 0);
+            ridee = 0;
+        }
+    }
+    if (!ridee) {
+        me->add_temp("apply/dodge", -me->query_temp("ride/dodge"));
+        me->set_temp("ride/dodge", 0);
+    }
+    return ridee;
+}
 
- if (ridee = me->query_temp("ridee")) { 
-  if ((environment(ridee) != environment(me) &&
-     environment(ridee) != me) ||
-    (ridee->is_character() && ! living(ridee))) {
-   me->set_temp("ridee",0);
-   ridee->set_temp("rider",0);
-   ridee = 0;
-  }
- }
- if (! ridee) {
-  me->add_temp("apply/dodge",-me->query_temp("ride/dodge"));
-  me->set_temp("ride/dodge",0);
- }
- return ridee;
+string ride_suffix()
+{
+    string ridemsg = 0;
+    object ridee = 0;
+    
+    ridee = ride();
+    if (ridee)
+        ridemsg = ridee->query("ride/msg")+"在"+ridee->name()+"上";
+    return ridemsg;
 }

@@ -9,7 +9,7 @@
 
 inherit F_CLEAN_UP;
 
-int look_room(object me, object env);
+varargs int look_room(object me, object env, int mode);
 int look_item(object me, object obj);
 int look_living(object me, object obj);
 int look_room_item(object me, string arg);
@@ -77,18 +77,6 @@ string *per_msg_kid4 = ({
         CYN "五官不整，四肢不洁。\n" NOR,
 });
 
-// snowcat 12/20/97
-string ride_suffix(object me)
-{
-    string ridemsg = 0;
-    object ridee = 0;
-
-    ridee = me->ride();
-    if (ridee)
-        ridemsg = ridee->query("ride/msg")+"在"+ridee->name()+"上";
-    return ridemsg;
-}
-
 void create() { seteuid(getuid()); }
 
 int main(object me, string arg)
@@ -106,7 +94,7 @@ int main(object me, string arg)
     return result;
 }
 
-int look_room(object me, object env)
+varargs int look_room(object me, object env, int mode)
 {
     int i;
     object *inv;
@@ -121,8 +109,8 @@ int look_room(object me, object env)
     str = sprintf("%s - %s\n    %s%s",
         env->query("short") ? env->query("short") : "",
         wizardp(me) ? file_name(env) : "",
-        env->query("long") ? env->query("long") : "\n",
-        env->query("outdoors") ? NATURE_D->outdoor_room_description() : "");
+        !mode && env->query("long") ? env->query("long") : "\n",
+        !mode && env->query("outdoors") ? NATURE_D->outdoor_room_description() : "");
 
     if (mapp(exits = env->query("exits"))) {
         dirs = keys(exits);
@@ -145,7 +133,7 @@ int look_room(object me, object env)
     while (i--) {
         if (!me->visible(inv[i])) continue;
         if (inv[i] == me) continue;
-        if (ridemsg = ride_suffix(inv[i]))
+        if (ridemsg = inv[i]->ride_suffix())
             str1 = " " + inv[i]->short() + " <"+ridemsg +">\n"+str1;
         else   
             str1 = " " + inv[i]->short() + "\n"+str1;
@@ -303,7 +291,7 @@ int look_living(object me, object obj)
                 str += pro + looking;
         }
 
-        ridemsg = ride_suffix(obj);
+        ridemsg = obj->ride_suffix();
         if (ridemsg)
             str += pro + "正" + ridemsg + "。\n";
         inv = all_inventory(obj);
