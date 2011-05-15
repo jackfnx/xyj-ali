@@ -109,7 +109,7 @@ varargs int look_room(object me, object env, int mode)
     str = sprintf("%s - %s\n    %s%s",
         env->query("short") ? env->query("short") : "",
         wizardp(me) ? file_name(env) : "",
-        !mode && env->query("long") ? env->query("long") : "\n",
+        !mode && env->query("long") ? env->query("long") : "",
         !mode && env->query("outdoors") ? NATURE_D->outdoor_room_description() : "");
 
     if (mapp(exits = env->query("exits"))) {
@@ -150,10 +150,10 @@ int look_item(object me, object obj)
 //   write(obj->long());
     me->start_more(obj->long());
     inv = all_inventory(obj);
-    if( sizeof(inv) ) {
-        inv = map_array(inv, "inventory_look", this_object() );
+    if (sizeof(inv)) {
+        inv = map_array(inv, "inventory_look", this_object());
         message("vision", sprintf("里面有：\n  %s\n",
-            implode(inv, "\n  ") ), me);
+            implode(inv, "\n  ")), me);
     }
     return 1;
 }
@@ -205,7 +205,7 @@ int look_living(object me, object obj)
     mapping ofamily;
     string ogender,orace;
     int oage;
- 
+
     if (obj->query_temp("d_mana") > 0) {
         ofamily = obj->query_temp("family");
         ogender = obj->query_temp("gender");
@@ -221,7 +221,7 @@ int look_living(object me, object obj)
         }
     }
 
-    if (me!=obj && obj->visible(me))
+    if (me != obj && obj->visible(me))
         message("vision", me->name() + "正盯着你看，不知道打些什么主意。\n", obj);
 
     str = obj->long();
@@ -232,7 +232,6 @@ int look_living(object me, object obj)
     str = replace_string(str, "$c", RANK_D->query_rude(obj));
     str = replace_string(str, "$R", RANK_D->query_respect(me));
     str = replace_string(str, "$r", RANK_D->query_rude(me));
-
 
     pro = (obj==me) ? gender_self(ogender) : gender_pronoun(ogender);
 
@@ -296,11 +295,11 @@ int look_living(object me, object obj)
             str += pro + "正" + ridemsg + "。\n";
         inv = all_inventory(obj);
         if (sizeof(inv)) {
-            inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse()? 0 : 1 );
+            inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse() ? 0 : 1);
             inv -= ({ 0 });
             if (sizeof(inv))
                 str += sprintf(obj->is_corpse() ? "%s的遗物有：\n%s\n" : "%s身上带着：\n%s\n",
-                    pro, implode(inv, "\n") );
+                    pro, implode(inv, "\n"));
         }
     }
 
