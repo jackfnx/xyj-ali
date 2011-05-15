@@ -246,7 +246,9 @@ int look_living(object me, object obj)
         }
 
         // If we both has family, check if we have any relations.
-        if (obj != me
+        if (obj->id(me->query("secret_master_id"))) str += pro + "是你的师父。\n";
+        else if (me->id(obj->query("secret_master_id"))) str += pro + "是你的弟子。\n";
+        else if (obj != me
         &&  mapp(fam = ofamily)
         &&  mapp(my_fam = me->query("family")) 
         &&  fam["family_name"] == my_fam["family_name"]) {
