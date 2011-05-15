@@ -111,9 +111,13 @@ int main(object me, string arg)
     else
         line += sprintf(" 门  派：" HIC "无" NOR);
     if (mapp(my["family"]) && my["family"]["master_name"])
-        line += sprintf("  师  父：" YEL "%s\n" NOR, my["family"]["master_name"]);
+        line += sprintf("  师  父：" YEL "%s" NOR, my["family"]["master_name"]);
     else
-        line += sprintf("  师  父：" YEL "无\n" NOR);
+        line += sprintf("  师  父：" YEL "无" NOR);
+    if (stringp(my["secret_master_name"]))
+        line += sprintf("  秘密师父：" MAG "%s\n" NOR, my["secret_master_name"]);
+    else
+        line += "\n";
 
     line += sprintf(" 战  绩：杀 %d 人，其中NPC %d 人，其他玩家 %d 人\n",
         my["MKS"] + my["PKS"], my["MKS"], my["PKS"]);
