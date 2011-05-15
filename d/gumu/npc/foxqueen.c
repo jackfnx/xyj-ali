@@ -75,7 +75,7 @@ LONG);
 }
 
 /**************************************************************/
-int attempt_apprentice(object me)
+void attempt_apprentice(object me)
 {
     string myname = RANK_D->query_rude(me);
     string myid = me->query("id");
@@ -84,17 +84,19 @@ int attempt_apprentice(object me)
 
     if (me->query("gender") != "女性") {
         command("say 臭男人！滚一边去！");
-        return 1;
+        return;
     }
 
     if (me->query("family/family_name") != "轩辕古墓" && me->query("family/family_name") != "月宫") {
+        command("look " + myid);
         command("say 你是谁啊？");
-        return 1;
+        return;
     }
 
     if (me->query("combat_exp") < 200000) {
-        command("say 小妹妹，想拜我为师还得再修炼哦！");
-        return 1;
+        command("touch " + myid);
+        command("say 小妹妹，你还嫩了点，想拜本座为师还得再修炼哦！");
+        return;
     }
 
     if (me->query("per") < 25) {
