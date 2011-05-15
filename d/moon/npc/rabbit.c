@@ -95,6 +95,78 @@ int recruit_apprentice(object ob)
         ob->set("class", "xian");
 }
 
+void welcome(object ob)
+{
+    command("xixi " + ob->query("id"));
+    message_vision(CYN "$N歪着脑袋说道：你是谁啊？干嘛来月宫啊？\n" NOR, this_object());
+    tell_object(ob, GRN "你可以回答(answer): 1.玩 2.拜师 3.走亲戚\n" NOR);
+    ob->set_temp("wait_answer/yutu", 1);
+}
+
+int do_answer(string arg)
+{
+    object ob = this_player();
+    object me = this_object();
+    string str;
+    if (!ob || !ob->query_temp("wait_answer/yutu")) return 0;
+    if (arg == "1") {
+        ob->set_temp("wait_answer/yutu", 0);
+        message_vision(CYN "$N答道：我来玩！\n\n" NOR, ob);
+        command("wink " + ob->query("id"));
+        message_vision("$N迷惑的望着$n，自言自语道：月宫有什么好玩的？冷冷清清的。\n", me, ob);
+        command("say 好吧，你接着玩吧。");
+        call_out("disappearing", 3);
+        return 1;
+    }
+    else if (arg == "2") {
+        ob->set_temp("wait_answer/yutu", 0);
+        message_vision(CYN "$N答道：我来拜师！\n\n" NOR, ob);
+        command("look " + ob->query("id"));
+        if (ob->query("gender") != "女性") {
+            command("shake");
+            command("say 月宫里都是女孩子，" + RANK_D->query_respect(ob) + "一个大男人来拜什么师啊？\n");
+            command("sigh");
+            command("say 不愿说就算了");
+            call_out("disappearing", 3);
+            return 1;
+        } else if (ob->query_skill("dodge", 1) > 120 || ob->query_skill("moondance", 1) > 120) {
+            command("jump");
+            command("say " + RANK_D->query_respect(ob) + "，你好厉害啊！有你这样的人才加入，我们月宫一定可以打败轩辕古墓的。");
+            call_out("disappearing", 3);
+            return 1;
+        } else {
+            command("jump");
+            command("say 以后又有新伙伴了。");
+            command("say 嗯，我看你上去恐怕挺费劲的，不如帮你一把吧。\n");
+            message_vision("$N身形突然飞起，钻进了枝叶间。\n", ob);
+            ob->move("/d/moon/ontop");
+            message_vision("$N突然从桂树枝叶间飞出，轻飘飘的落在地上。\n", ob);
+            call_out("disappearing", 3);
+            return 1;
+        }
+    }
+    else if (arg == "3") {
+        ob->set_temp("wait_answer/yutu", 0);
+        message_vision(CYN "$N答道：我来走亲戚！\n\n" NOR, ob);
+        command("wink " + ob->query("id"));
+        message_vision("$N迷惑的望着$n，自言自语道：走亲戚？没听说过月宫上谁还有亲戚啊？\n", me, ob);
+        command("say 该不会。。。是那个人的亲戚吧？");
+        message_vision("$N好像突然想起什么似的，脸上露出恐惧的神情，急忙闭嘴不说话了。\n", me);
+        call_out("disappearing", 1);
+        return 1;
+    } else
+        return 0;
+}
+
+void disappearing()
+{
+    if (!is_fighting()) {
+        message_vision("$N蹦蹦跳跳的离开了。\n", this_object());
+        destruct(this_object());
+    }
+    remove_call_out("disappearing");
+    call_out("disappearing", 120);
+}
 
 void endfight()
 {
@@ -116,6 +188,7 @@ void init()
     remove_enemy(this_player());
 
     ::init();
+    add_action("do_answer", "answer");
 }
 
 int accept_fight(object me)
