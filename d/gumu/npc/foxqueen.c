@@ -104,13 +104,13 @@ void attempt_apprentice(object me)
         command("grin");
         command("say 还是赶紧投胎转世吧！");
         command("kill " + myid);
-        return 1;
+        return;
     }
 
     command("grin");
     command("say 做得好，以后多多引诱男人。");
     command("recruit " +myid);
-    return 1;
+    return;
 }
 
 int recruit_apprentice(object ob)
