@@ -43,7 +43,9 @@ int main(object me, string arg)
     if (me->is_apprentice_of(ob))
         return notify_fail("开什么玩笑？人家是你师父，还有什么要从你这里学的？\n");
 
-    if (ob->query("family") && me->query("family/family_name") != ob->query("family/family_name"))
+    if (ob->query("family")
+    &&  me->query("family/family_name") != ob->query("family/family_name")
+    &&  me->query("secret_family_name") != ob->query("family/family_name"))
         return notify_fail(ob->name()+"乃"+ob->query("family/family_name") +"弟子，未经其师尊同意就挖人家墙角不太好吧。\n\n");
 
 /*

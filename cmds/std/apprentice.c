@@ -37,7 +37,9 @@ int main(object me, string arg)
     if (!mapp(ob->query("family")))
         return notify_fail(ob->name() + "既不属于任何门派，也没有开山立派，不能拜师。\n");
 
-    if (me->query("family") && me->query("family/family_name") != ob->query("family/family_name"))
+    if (me->query("family")
+    &&  me->query("family/family_name") != ob->query("family/family_name")
+    &&  me->query("family/family_name") != ob->query("secret_family_name"))
         return notify_fail(ob->name()+"是"+ob->query("family/family_name")+"师傅，未经本派师门同意不能改换门派！\n\n");
 
     if (me->is_apprentice_of(ob)) {

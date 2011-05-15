@@ -13,6 +13,11 @@ int is_apprentice_of(object ob)
     &&  family["family_name"] == (string)ob->query("family/family_name"))
         return 1;
 
+    if (query("secret_master_id"] == (string)ob->query("id")
+    &&  query("secret_master_name"] == (string)ob->query("name")
+    &&  family["family_name"] == (string)ob->query("secret_family_name"))
+        return 1;
+
     return 0;
 }
 
@@ -56,6 +61,12 @@ int recruit_apprentice(object ob)
 
     if (ob->is_apprentice_of(this_object())) return 0;
     if (!mapp(my_family = query("family"))) return 0;
+
+    if (query("secret_family_name") == ob->query("family/family_name")) {
+        ob->set("secret_master_id", query("id"));
+        ob->set("secret_master_name", query("name"));
+        return 1;
+    }
 
     family = allocate_mapping(sizeof(my_family));
     family["master_id"] = query("id");
