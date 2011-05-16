@@ -30,15 +30,63 @@ string query_rank(object ob)
 //------------------rank for girls--------------------
 case "xian":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "【 玉  女 】" NOR;
+        return GRN "【 女仙童 】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【 小仙姑 】" NOR;
+        return GRN "【 小仙女 】" NOR;
     else if ((int)ob->query("combat_exp")<100000)
         return GRN "【 仙  女 】" NOR;
     else if ((int)ob->query("combat_exp")<500000)
         return GRN "【"+ob->query("added_title")+"仙子】" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
         return GRN "【"+ob->query("added_title")+"圣女】" NOR;
+    else
+        return GRN "【"+ob->query("added_title")+"女神】" NOR;
+    break;
+case "taoist":
+    if ((int)ob->query("combat_exp")<1000)
+        return GRN "【 女道童 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return GRN "【 女道士 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return GRN "【 玄  女 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return GRN "【"+ob->query("added_title")+"玄女】" NOR;
+    else
+        return GRN "【"+ob->query("added_title")+"天女】" NOR;
+    break;
+case "bonze":
+    if ((int)ob->query("combat_exp")<1000)
+        return GRN "【 小尼姑 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return GRN "【 尼  姑 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return GRN "【 比丘尼 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return GRN "【"+ob->query("added_title")+"神尼】" NOR;
+    else
+        return GRN "【"+ob->query("added_title")+"菩萨】" NOR;
+    break;
+case "dragon":
+    if ((int)ob->query("combat_exp")<1000)
+        return GRN "【 小宫娥 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return GRN "【 宫  女 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return GRN "【 小龙女 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return GRN "【"+ob->query("added_title")+"龙女】" NOR;
+    else
+        return GRN "【"+ob->query("added_title")+"公主】" NOR;
+    break;
+case "ghost":
+    if ((int)ob->query("combat_exp")<1000)
+        return GRN "【 小  鬼 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return GRN "【 女  鬼 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return GRN "【 女判官 】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
+        return GRN "【"+ob->query("added_title")+"天鬼】" NOR;
     else
         return GRN "【"+ob->query("added_title")+"女王】" NOR;
     break;
@@ -56,41 +104,19 @@ case "yaomo":
     else
         return GRN "【"+ob->query("added_title")+"女王】" NOR;
     break;
-case "bonze":
+case "fighter":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "【 小尼姑 】" NOR;
+        return GRN "【 女  兵 】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【 小师太 】" NOR;
+        return GRN "【 女校尉 】" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "【 师  太 】" NOR;
+        return GRN "【 女将军 】" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "【"+ob->query("added_title")+"神尼】" NOR;
+        return GRN "【"+ob->query("added_title")+"将军】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
+        return GRN "【"+ob->query("added_title")+"大将军】" NOR;
     else
-        return GRN "【"+ob->query("added_title")+"菩萨】" NOR;
-    break;
-case "taoist":
-    if ((int)ob->query("combat_exp")<1000)
-        return GRN "【 女道童 】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【 小道姑 】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return GRN "【 玄  女 】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return GRN "【"+ob->query("added_title")+"玄女】" NOR;
-    else
-        return GRN "【"+ob->query("added_title")+"圣母】" NOR;
-    break;
-case "dragon":
-    if ((int)ob->query("combat_exp")<1000)
-        return GRN "【 小宫娥 】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【 宫  女 】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return GRN "【 小龙女 】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return GRN "【"+ob->query("added_title")+"龙女】" NOR;
-    else
-        return GRN "【"+ob->query("added_title")+"公主】" NOR;
+        return GRN "【"+ob->query("added_title")+"大元帅】" NOR;
     break;
 case "scholar":
     if ((string)ob->query("added_title")=="未设") {
@@ -109,32 +135,6 @@ case "scholar":
          return GRN "【"+ob->query("added_title")+"学士】" NOR;
     }
     break;
-case "fighter":
-    if ((int)ob->query("combat_exp")<1000)
-        return GRN "【 女  兵 】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【 女校尉 】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return GRN "【 女将军 】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return GRN "【"+ob->query("added_title")+"将军】" NOR;
-    else if ((int)ob->query("combat_exp")<1000000)
-        return GRN "【"+ob->query("added_title")+"大将军】" NOR;
-    else
-        return GRN "【"+ob->query("added_title")+"大元帅】" NOR;
-    break;
-case "ghost":
-    if ((int)ob->query("combat_exp")<1000)
-        return GRN "【阴曹小鬼】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return GRN "【迷魂女鬼】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return GRN "【幽冥女使】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return GRN "【"+ob->query("added_title")+"无常】" NOR;
-    else
-        return GRN "【"+ob->query("added_title")+"女王】" NOR;
-    break;   
 case "dancer":
     return GRN "【 舞  妓 】" NOR;
     break;
@@ -171,37 +171,9 @@ case "xian":
     else
         return RED "【"+ob->query("added_title")+"天尊】" NOR;
     break;
-case "yaomo":
-    if ((int)ob->query("combat_exp")<1000)
-        return RED "【 小  妖 】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return RED "【 妖  怪 】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return RED "【 妖  仙 】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return RED "【 "+ob->query("added_title")+"怪 】" NOR;
-    else if ((int)ob->query("combat_exp")<1000000)
-        return RED "【"+ob->query("added_title")+"老魔】" NOR;
-    else
-        return RED "【"+ob->query("added_title")+"魔王】" NOR;
-    break;
-case "bonze":
-    if ((int)ob->query("combat_exp")<1000)
-        return RED "【 小和尚 】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return RED "【 和  尚 】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return RED "【 圣  僧 】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return RED "【"+ob->query("added_title")+"尊者】" NOR;
-    else if ((int)ob->query("combat_exp")<1000000)
-        return RED "【"+ob->query("added_title")+"罗汉】" NOR;
-    else
-        return RED "【"+ob->query("added_title")+"菩萨】" NOR;
-    break;
 case "taoist":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "【 小道士 】" NOR;
+        return RED "【 道  童 】" NOR;
     else if ((int)ob->query("combat_exp")<10000)
         return RED "【 道  士 】" NOR;
     else if ((int)ob->query("combat_exp")<100000)
@@ -213,6 +185,20 @@ case "taoist":
     else
         return RED "【"+ob->query("added_title")+"天尊】" NOR;
     break;
+case "bonze":
+    if ((int)ob->query("combat_exp")<1000)
+        return RED "【 小沙弥 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return RED "【 和  尚 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return RED "【 圣  僧 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return RED "【"+ob->query("added_title")+"尊者】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
+        return RED "【"+ob->query("added_title")+"罗汉】" NOR;
+    else
+        return RED "【"+ob->query("added_title")+"菩萨】" NOR;
+    break;
 case "dragon":
     if ((int)ob->query("combat_exp")<1000)
         return RED "【 虾  兵 】" NOR;
@@ -221,11 +207,53 @@ case "dragon":
     else if ((int)ob->query("combat_exp")<100000)
         return RED "【巡海夜叉】" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "【"+ob->query("added_title")+"夜叉】" NOR;
+        return RED "【"+ob->query("added_title")+"蛟龙】" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
         return RED "【"+ob->query("added_title")+"龙】" NOR;
     else
         return RED "【"+ob->query("added_title")+"龙王】" NOR;
+    break;
+case "ghost":
+    if ((int)ob->query("combat_exp")<1000)
+        return RED "【 小  鬼 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return RED "【   鬼   】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return RED "【 判  官 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return RED "【"+ob->query("added_title")+"无常】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
+        return RED "【"+ob->query("added_title")+"鬼王】" NOR;
+    else
+        return RED "【"+ob->query("added_title")+"王】" NOR;
+    break;
+case "yaomo":
+    if ((int)ob->query("combat_exp")<1000)
+        return RED "【 小  妖 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return RED "【 妖  怪 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return RED "【 妖  仙 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return RED "【 "+ob->query("added_title")+"老魔 】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
+        return RED "【"+ob->query("added_title")+"魔王】" NOR;
+    else
+        return RED "【"+ob->query("added_title")+"大圣】" NOR;
+    break;
+case "fighter":
+    if ((int)ob->query("combat_exp")<1000)
+        return RED "【 小  兵 】" NOR;
+    else if ((int)ob->query("combat_exp")<10000)
+        return RED "【 小  校 】" NOR;
+    else if ((int)ob->query("combat_exp")<100000)
+        return RED "【 参  将 】" NOR;
+    else if ((int)ob->query("combat_exp")<500000)
+        return RED "【"+ob->query("added_title")+"将军】" NOR;
+    else if ((int)ob->query("combat_exp")<1000000)
+        return RED "【"+ob->query("added_title")+"大将军】" NOR;
+    else
+        return RED "【"+ob->query("added_title")+"大元帅】" NOR;
     break;
 case "scholar":
     if ((string)ob->query("added_title")=="未设") {
@@ -243,34 +271,6 @@ case "scholar":
         else
             return RED "【"+ob->query("added_title")+"学士】" NOR;
     }
-    break;
-case "fighter":
-    if ((int)ob->query("combat_exp")<1000)
-        return RED "【 小  兵 】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return RED "【 小  校 】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return RED "【 参  将 】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return RED "【"+ob->query("added_title")+"将军】" NOR;
-    else if ((int)ob->query("combat_exp")<1000000)
-        return RED "【"+ob->query("added_title")+"大将军】" NOR;
-    else
-        return RED "【"+ob->query("added_title")+"大元帅】" NOR;
-    break;
-case "ghost":
-    if ((int)ob->query("combat_exp")<1000)
-        return RED "【阴曹小鬼】" NOR;
-    else if ((int)ob->query("combat_exp")<10000)
-        return RED "【勾魂使者】" NOR;
-    else if ((int)ob->query("combat_exp")<100000)
-        return RED "【地府判官】" NOR;
-    else if ((int)ob->query("combat_exp")<500000)
-        return RED "【"+ob->query("added_title")+"无常】" NOR;
-    else if ((int)ob->query("combat_exp")<1000000)
-        return RED "【"+ob->query("added_title")+"鬼王】" NOR;
-    else
-        return RED "【"+ob->query("added_title")+"王】" NOR;
     break;
 default:
     return "【 平  民 】";
@@ -308,12 +308,12 @@ case "bonze":
     else return "师太";
     break;
 case "taoist":
-    if (age < 18) return "小仙姑";
-    else return "仙姑";
+    if (age < 18) return "小仙女";
+    else return "仙子";
     break;
 case "xian":
-    if (age < 18) return "小仙姑";
-    else return "仙姑";
+    if (age < 18) return "小仙女";
+    else return "仙子";
     break;
 default:
     if (age < 18) return "小姑娘";
@@ -456,6 +456,9 @@ string query_self(object ob)
 case "bonze":
     if (age < 50) return "贫尼";
     else return "老尼";
+    break;
+case "taoist":
+    return "贫道";
     break;
 default:
     if (age < 30) return "小女子";
