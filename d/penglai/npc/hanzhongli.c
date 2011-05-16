@@ -7,8 +7,7 @@ inherit NPC;
 void create()
 {
     set_name("ººÖÓÀë", ({"han zhongli", "han", "zhongli"}));
-    //set("title", "");
-    set("nickname", "°ËÏÉÖ®Ò»");
+    set("title", "°ËÏÉÖ®");
     set("gender", "ÄĞĞÔ" );
     set("age", 50);
     set("per", 20);

@@ -7,8 +7,7 @@ inherit NPC;
 void create()
 {
     set_name("铁拐李", ({"tieguai li", "tieguai", "li"}));
-    //set("title", "");
-    set("nickname", "八仙之一");
+    set("title", "八仙之");
     set("gender", "男性" );
     set("age", 42);
     set("per", 12);

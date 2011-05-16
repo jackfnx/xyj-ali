@@ -7,8 +7,7 @@ inherit NPC;
 void create()
 {
     set_name("韩湘子", ({"han xiangzi", "han", "xiangzi"}));
-    //set("title", "");
-    set("nickname", "八仙之一");
+    set("title", "八仙之");
     set("gender", "男性" );
     set("age", 22);
     set("per", 30);

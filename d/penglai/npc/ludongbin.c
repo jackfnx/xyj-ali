@@ -10,8 +10,8 @@ inherit NPC;
 void create()
 {
     set_name("吕洞宾", ({"lu dongbin", "lu", "dongbin"}));
-    set("title", "纯阳子");
-    set("nickname", "八仙之一");
+    set("title", "八仙之");
+    set("nickname", "纯阳子");
     set("gender", "男性" );
     set("age", 35);
     set("per", 30);

@@ -7,8 +7,7 @@ inherit NPC;
 void create()
 {
     set_name("何仙姑", ({"he xiangu", "he", "xiangu"}));
-    //set("title", "");
-    set("nickname", "八仙之一");
+    set("title", "八仙之");
     set("gender", "女性" );
     set("age", 25);
     set("per", 20);
