@@ -4,8 +4,7 @@
 
 /*
 ÁÒÑæ·ÉÌÚ½£·¨    dodge  -20    parry  -10    damage  15
-´Ë½£·¨Ñ¸¼±Èô·ç»Ø£¬ÇáÁéËÆÑ©Îè£¬µÐÊÖ¼«ÄÑ¶ãÉÁÕÐ¼Ü£¬¶àÎª
-Æø¶ÌÁ¦ÈõÖ®Å®×ÓËùÏ²¡£
+
 */
 
 // º®·¼ÁôÕÕ»êÓ¦×¤£¬ÍëÄýÉî´ä·÷Æ½É³
@@ -75,10 +74,8 @@ int valid_enable(string usage)
 }
 
 int valid_learn(object me) {
-    if ((int)me->query_skill("fox-force",1) < 40 )
+    if ((int)me->query_skill("foxforce",1) < 40 )
         return notify_fail("ÄãµÄÌìºüÐÄ·¨ÐÞÎªÉÐÇ³£¬Ã»·¨Ñ§ÁÒÑæ½££¡\n");
-    if ((int)me->query_skill("moondance", 1) < 50)
-        return notify_fail("ÄãµÄÓû»ðÄýÏãÎèÐÞÎªÉÐÇ³£¬Ã»·¨Ñ§ÁÒÑæ½££¡\n");
     return 1;
 }
 
@@ -101,6 +98,6 @@ int practice_skill(object me)
 
 string perform_action_file(string action)
 {
-    return CLASS_D("gumu") + "/firesword/" + action;
+    return CLASS_D("fox") + "/firesword/" + action;
 }
 

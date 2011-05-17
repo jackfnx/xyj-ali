@@ -105,10 +105,11 @@
   <skill>yanxing-steps</skill>
 </jjf>
 <gumu class="fox">
-  <skill>fenqingbian</skill>
   <skill>firesword</skill>
-  <skill>fox-force</skill>
+  <skill>foxforce</skill>
+  <skill>foxphantom</skill>
   <skill>jingang-quan</skill>
+  <skill>lovefire-whip</skill>
   <skill>xuanyuan-archery</skill>
 </gumu>
 <hys class="bull">
