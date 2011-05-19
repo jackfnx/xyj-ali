@@ -37,11 +37,11 @@ void create()
     set_skill("sword", 110);
     set_skill("xiaofeng-sword", 115);
     set_skill("force", 100);
-    set_skill("moshenbu", 110);
+    set_skill("moshenstep", 110);
     set_skill("wuxing-quan", 90);
     set_skill("spells", 100);
     map_skill("unarmed", "wuxing-quan");
-    map_skill("dodge", "moshenbu");
+    map_skill("dodge", "moshenstep");
     map_skill("parry", "xiaofeng-sword");
     map_skill("sword", "xiaofeng-sword");
     set("inquiry", ([

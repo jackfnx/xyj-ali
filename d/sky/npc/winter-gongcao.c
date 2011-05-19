@@ -35,12 +35,12 @@ void create()
     set_skill("dodge", 100);
     set_skill("spear", 100);
     set_skill("bawang-qiang", 100);
-    set_skill("moshenbu", 100);
+    set_skill("moshenstep", 100);
     set_skill("force", 100);
     set_skill("spells", 100);
     set_skill("dragonfight", 90);
     map_skill("unarmed", "dragonfight");
-    map_skill("dodge", "moshenbu");
+    map_skill("dodge", "moshenstep");
     map_skill("spear", "bawang-qiang");
     map_skill("parry","bawang-qiang");
     set("inquiry", ([

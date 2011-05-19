@@ -23,11 +23,11 @@ void create()
         set_skill("parry", 75);
    set_skill("force", 75);
    set_skill("spells", 75);
-   set_skill("moshenbu", 75);
+   set_skill("moshenstep", 75);
    set_skill("pressheart-hand", 75);
    map_skill("unarmed", "pressheart-hand");
    map_skill("parry", "pressheart-hand");
-   map_skill("dodge", "moshenbu");
+   map_skill("dodge", "moshenstep");
         set("force", 700);
         set("max_force", 700);
         set("force_factor", 30);

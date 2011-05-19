@@ -42,8 +42,8 @@ void create()
     set_skill("bawang-qiang", 200);
     set_skill("force", 200);
     set_skill("spells", 200);
-    set_skill("moshenbu", 200);
-    map_skill("dodge", "moshenbu");
+    set_skill("moshenstep", 200);
+    map_skill("dodge", "moshenstep");
     map_skill("parry", "bawang-qiang");
     map_skill("spear", "bawang-qiang");
     map_skill("unarmed", "raptor-talon");

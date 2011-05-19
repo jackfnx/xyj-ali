@@ -35,11 +35,11 @@ void create()
    set_skill("staff", 120);
         set_skill("force", 100);
    set_skill("spells", 100);
-   set_skill("moshenbu", 120);
+   set_skill("moshenstep", 120);
    set_skill("lunhui-zhang", 120);
    set_skill("changquan", 100);
    map_skill("unarmed", "changquan");
-   map_skill("dodge", "moshenbu");
+   map_skill("dodge", "moshenstep");
    map_skill("staff", "lunhui-zhang");
    map_skill("parry", "lunhui-zhang");
 

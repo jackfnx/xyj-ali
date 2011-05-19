@@ -35,8 +35,8 @@ void create()
     set_skill("keening-stick", 150);
     set_skill("force", 150);
     set_skill("spells", 150);
-    set_skill("moshenbu", 150);
-    map_skill("dodge", "moshenbu");
+    set_skill("moshenstep", 150);
+    map_skill("dodge", "moshenstep");
     map_skill("parry", "keening-stick");
     map_skill("spear", "keening-stick");
     map_skill("unarmed", "raptor-talon");

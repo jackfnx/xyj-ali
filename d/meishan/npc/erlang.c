@@ -37,10 +37,10 @@ void create()
         set_skill("dodge", 180);
         set_skill("spear", 180);
    set_skill("changquan", 200);
-   set_skill("moshenbu", 200);
+   set_skill("moshenstep", 200);
         set_skill("bawang-qiang", 200);
    map_skill("unarmed", "changquan");
-   map_skill("dodge", "moshenbu");
+   map_skill("dodge", "moshenstep");
         map_skill("spear","bawang-qiang");
         map_skill("parry", "bawang-qiang");
         setup();

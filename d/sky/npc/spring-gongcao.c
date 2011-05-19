@@ -37,10 +37,10 @@ void create()
     set_skill("qianjun-bang", 100);
     set_skill("force", 120);
     set_skill("puti-zhi", 100);
-    set_skill("moshenbu", 110);
+    set_skill("moshenstep", 110);
     set_skill("spells", 100);
     map_skill("unarmed", "puti-zhi");
-    map_skill("dodge", "moshenbu");
+    map_skill("dodge", "moshenstep");
     map_skill("stick", "qianjun-bang");
     map_skill("parry", "qianjun-bang");
     set("inquiry", ([

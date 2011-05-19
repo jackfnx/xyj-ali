@@ -42,8 +42,8 @@ void create()
     set_skill("spells", 200);
     set_skill("wusi-mace", 200);
     set_skill("force", 200);
-    set_skill("moshenbu", 200);
-    map_skill("dodge", "moshenbu");
+    set_skill("moshenstep", 200);
+    map_skill("dodge", "moshenstep");
     map_skill("mace", "wusi-mace");
     map_skill("parry", "lunhui-zhang");
     map_skill("unarmed", "changquan");

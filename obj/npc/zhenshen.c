@@ -16,8 +16,8 @@ void create()
    set("combat_exp",1000);
         set("attitude", "friendly");
    set_skill("dodge",10);
-   set_skill("moshenbu",10);
-   map_skill("dodge","moshenbu");
+   set_skill("moshenstep",10);
+   map_skill("dodge","moshenstep");
 
    setup();
 }

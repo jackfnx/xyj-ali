@@ -38,13 +38,13 @@ void create()
         set_skill("changquan", 145);
         set_skill("azoth", 140);
         set_skill("xiaofeng-sword", 145);
-        set_skill("moshenbu", 145);
+        set_skill("moshenstep", 145);
         map_skill("spells", "tao");
         map_skill("unarmed", "changquan");
         map_skill("force", "azoth");
         map_skill("sword", "xiaofeng-sword");
         map_skill("parry", "xiaofeng-sword");
-        map_skill("dodge", "moshenbu");
+        map_skill("dodge", "moshenstep");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: consider :)

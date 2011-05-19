@@ -40,8 +40,8 @@ void create()
     set_skill("iceblood-force", 200);
     set_skill("force", 200);
     set_skill("spells", 200);
-    set_skill("moshenbu", 200);
-    map_skill("dodge", "moshenbu");
+    set_skill("moshenstep", 200);
+    map_skill("dodge", "moshenstep");
     map_skill("parry", "avian-sword");
     map_skill("sword", "avian-sword");
     map_skill("force", "iceblood-force");

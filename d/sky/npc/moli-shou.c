@@ -37,8 +37,8 @@ void create()
     set_skill("spells", 140);
     set_skill("wusi-mace", 150);
     set_skill("force", 140);
-    set_skill("moshenbu", 150);
-    map_skill("dodge", "moshenbu");
+    set_skill("moshenstep", 150);
+    map_skill("dodge", "moshenstep");
     map_skill("mace", "wusi-mace");
     map_skill("parry", "wusi-mace");
     map_skill("unarmed", "raptor-talon");
