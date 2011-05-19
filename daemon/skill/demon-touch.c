@@ -1,12 +1,12 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-//摩云手
+//魔云手
 
 
 inherit SKILL;
 
-string name() { return "摩云手"; }
+string name() { return "魔云手"; }
 
 mapping *action = ({
    ([   "action":     "$N一招『螳螂捕蝉式』，左手抓向$n的丹田，就在$n回身自防的一瞬间，右手却已掐上了$n的$l",
@@ -57,7 +57,7 @@ int valid_learn(object me)
 {
    
    if( me->query_temp("weapon") || me->query_temp("secondary_weapon") )
-     return notify_fail("练摩云手必须空手。\n");
+     return notify_fail("练魔云手必须空手。\n");
    return 1;
 }
 
@@ -74,7 +74,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
    if( (int)me->query("mud_age") > 100 )
-     return notify_fail("摩云手只能学，不能练。\n");
+     return notify_fail("魔云手只能学，不能练。\n");
    
    return 1;
 }

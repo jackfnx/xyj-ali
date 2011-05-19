@@ -35,12 +35,12 @@ void create()
   set_skill("force",140);
         set_skill("spells", 100);
         set_skill("tao", 50);
-        set_skill("moyun-shou", 145);
+        set_skill("changquan", 145);
         set_skill("azoth", 140);
         set_skill("lunhui-zhang", 145);
         set_skill("moshenbu", 145);
         map_skill("spells", "tao");
-        map_skill("unarmed", "moyun-shou");
+        map_skill("unarmed", "changquan");
         map_skill("force", "azoth");
         map_skill("staff", "lunhui-zhang");
         map_skill("parry", "lunhui-zhang");
@@ -67,7 +67,7 @@ int accept_fight(object me)
                         }
                 command("nod");
                 command("wield staff");
-                command("enable unarmed moyun-shou");
+                command("enable unarmed changquan");
                 return 1;
         }
         command("say 吾有公务在身，恕不奉陪！\n");
@@ -87,7 +87,7 @@ void consider()
                 if(     !query_temp("weapon") ) {
                 command("say 阁下功夫超群，在下便也不客气了！\n");
                         command("wield staff");
-                        command("enable unarmed moyun-shou");
+                        command("enable unarmed changquan");
                         break;
                 }
         }

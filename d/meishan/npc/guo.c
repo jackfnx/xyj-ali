@@ -35,12 +35,12 @@ void create()
   set_skill("force",140);
         set_skill("spells", 100);
         set_skill("tao", 50);
-        set_skill("moyun-shou", 145);
+        set_skill("changquan", 145);
         set_skill("azoth", 140);
         set_skill("xiaofeng-sword", 145);
         set_skill("moshenbu", 145);
         map_skill("spells", "tao");
-        map_skill("unarmed", "moyun-shou");
+        map_skill("unarmed", "changquan");
         map_skill("force", "azoth");
         map_skill("sword", "xiaofeng-sword");
         map_skill("parry", "xiaofeng-sword");
