@@ -100,7 +100,7 @@
   <skill>jinglei-mace</skill>
   <skill>lengquan-force</skill>
   <skill>sanban-axe</skill>
-  <skill>wusi-mace</skill>
+  <skill share="share">wusi-mace</skill>
   <skill share="share">yange-blade</skill>
   <skill>yanxing-steps</skill>
 </jjf>
@@ -113,11 +113,11 @@
   <skill>xuanyuan-archery</skill>
 </gumu>
 <hys class="bull">
-  <skill todo="todo">firelord-force</skill>
-  <skill todo="todo">huoyun-qiang</skill>
-  <skill todo="todo">demon-touch</skill>
-  <skill todo="todo">moshenstep</skill>
-  <skill todo="todo">pingtian-dafa</skill>
+  <skill>demon-touch</skill>
+  <skill>firelord</skill>
+  <skill>huoyun-qiang</skill>
+  <skill share="share">moshenstep</skill>
+  <skill>pingtian-dafa</skill>
   <skill>yueya-chan</skill>
 </hys>
 <other class="other">
