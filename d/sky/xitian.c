@@ -1,53 +1,32 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//xitian.c
-//created 4-8-97, pickle
 
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 
-int valid_leave();
-
-void create ()
+void create()
 {
-  set ("short", "西天门");
-  set ("long", @LONG
+    set("short", "西天门");
+    set("long", @LONG
 
-    西门靠近天宫的平乐殿，是玉帝大宴群臣的地方。墙里传来阵阵
-仙乐，大概是仙女们在跳舞吧。你听着美妙的音乐，不由得陶醉了。
-唉，天上一日，人间一年。你到现在才知道为什么在天宫里时间过得
-那么快。
+这里是天宫的东门。由四大天王之一的魔礼海负责保守。比起
+南天门来，北边可就冷清多了。虽然如此，东天门造的可丝毫
+不含糊。鲜红的大门上镶着闪闪发光的铜钉，显得威武非凡。
+大力天丁和众天兵，一丝不苟的巡逻着。
 
 LONG);
 
-  set("item_desc", ([ /* sizeof() == 1 */
-  "east" : (: look_door,     "east" :),
-]));
-  set("objects", ([ /* sizeof() == 3 */
-  __DIR__"npc/tian-ding2" : 1,
-  __DIR__"npc/tian-ding1" : 1,
-//  __DIR__"npc/tian-bing" : 4,
-]));
-  set("outdoors", 1);
-  set("exits", ([ /* sizeof() == 3 */
-  "north" : __DIR__"wn1",
-  "south" : __DIR__"ws1",
-  "east" : __DIR__"ximenting",
-]));
-create_door("east", "西天门", "west", DOOR_CLOSED);
-  set("no_clean_up", 2);
+    set("exits", ([ /* sizeof() == 3 */
+        "east"      : __DIR__"yunluw4",
+        "south"      : __DIR__"tgqw4",
+        "north"      : __DIR__"tgqw5",
+    ]));
 
-  setup();
+    create_door("east", "西天门", "west", DOOR_CLOSED);
+
+    set("objects", ([
+        __DIR__"npc/moli-hai"   : 1,
+        __DIR__"npc/tian-bing"   : 4,
+    ]));
+    setup();
 }
 
-int valid_leave(object me, string dir)
-{
- 
-        if (dir != "east") {
-                return ::valid_leave(me,dir);
-        }
- 
-if (::valid_leave(me,dir)) return notify_fail("贵宾才能从西门出入，尊驾还是从南门进吧！\n");
-}

@@ -1,60 +1,32 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-//dongtian.c
-//created 4-8-97, pickle
 
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 
-int valid_leave();
-
-void create ()
+void create()
 {
-  set ("short", "东天门");
-  set ("long", @LONG
+    set("short", "东天门");
+    set("long", @LONG
 
-   东门就在马厩之侧，御马纵声长嘶，声传数里。这些千里良驹成
-天养尊处优，饮食不愁，为何还要长鸣呢？是不是因为不能一展骏足
-而仰天长叹？
+这里是天宫的东门。由四大天王之一的魔礼红负责保守。比起
+南天门来，北边可就冷清多了。虽然如此，东天门造的可丝毫
+不含糊。鲜红的大门上镶着闪闪发光的铜钉，显得威武非凡。
+大力天丁和众天兵，一丝不苟的巡逻着。
 
 LONG);
 
-  set("item_desc", ([ /* sizeof() == 1 */
-  "west" : (: look_door,     "west" :),
-]));
-  set("objects", ([ /* sizeof() == 3 */
-  __DIR__"npc/tian-ding2" : 1,
-  __DIR__"npc/tian-ding1" : 1,
-//  __DIR__"npc/tian-bing" : 4,
-]));
-  set("outdoors", 1);
-  set("exits", ([ /* sizeof() == 3 */
-  "west" : __DIR__"dongmenting",
-  "north" : __DIR__"en1",
-  "south" : __DIR__"es1",
-  "east": __DIR__"yun1",
-]));
+    set("exits", ([ /* sizeof() == 3 */
+        "west"      : __DIR__"yunlue4",
+        "south"      : __DIR__"tgqe4",
+        "north"      : __DIR__"tgqe5",
+    ]));
 
-create_door("west", "东天门", "east", DOOR_CLOSED);
-  setup();
-}
+    create_door("west", "东天门", "east", DOOR_CLOSED);
 
-int valid_leave(object me, string dir)
-{
- 
-        if (dir == "west") {
-     if(member_array("zengzhang tianwang", me->parse_command_id_list())==-1
-     && member_array("huguo tianwang", me->parse_command_id_list())==-1 ){
-        if(present("tian ding", environment(me) ))
-          return notify_fail("大力天丁对你一挥手，嚷道：闲人免进！\n");
-     }
-
-
-
-                return ::valid_leave(me,dir);
-        }
-   return ::valid_leave(me,dir);
+    set("objects", ([
+        __DIR__"npc/moli-hong"   : 1,
+        __DIR__"npc/tian-bing"   : 4,
+    ]));
+    setup();
 }
 
