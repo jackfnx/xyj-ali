@@ -41,7 +41,7 @@
   <skill>lotusstep</skill>
   <skill>lunhui-zhang</skill>
 </putuo>
-<moon class="xuannv">
+<moon class="moon">
   <skill>flower-hand</skill>
   <skill>loveless-whip</skill>
   <skill>moondance</skill>
@@ -110,7 +110,7 @@
   <skill>foxphantom</skill>
   <skill>jingang-quan</skill>
   <skill>lovefire-whip</skill>
-  <skill>xuanyuan-archery</skill>
+  <skill>xuanyuan</skill>
 </gumu>
 <hys class="bull">
   <skill>demon-touch</skill>
@@ -118,8 +118,8 @@
   <skill>huoyun-qiang</skill>
   <skill share="share">moshenstep</skill>
   <skill>pingtian-dafa</skill>
-  <skill>yueya-chan</skill>
 </hys>
-<other class="other">
+<bbt class="hydra">
   <skill>skyriver-rake</skill>
-</other>
+  <skill>yueya-chan</skill>
+</bbt>

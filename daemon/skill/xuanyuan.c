@@ -1,7 +1,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// 轩辕箭
+// 轩辕神射
 // updated 5-30-97 pickle
 
 // 犀牛望月，箭似流星，百步穿杨，声东击西
@@ -11,7 +11,7 @@
 inherit SKILL;
 void throw_weapon(object,object,object,int);
 
-string name() { return "轩辕箭"; }
+string name() { return "轩辕神射"; }
 
 mapping *action = ({
   ([
