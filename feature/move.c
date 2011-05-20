@@ -198,6 +198,8 @@ varargs int _move(mixed dest, int silently)
       MONITOR_D->report_system_object_msg (ob,"µÃµ½ÁË"+
        this_object()->query("name")
     +"("+file_name(this_object())+")¡£");
+    
+    this_object()->start_fate(ob);
   return 1;
 }
 

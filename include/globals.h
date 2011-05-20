@@ -51,6 +51,7 @@
 #define CLASS_D(x)     ("/daemon/class/" + x)
 #define SKILL_D(x)     ("/daemon/skill/" + x)
 #define CONDITION_D(x)   ("/daemon/condition/" + x)
+#define FATE_D(x)     ("/daemon/fate/" + x)
 
 // Clonable/Non-inheritable Standard Objects
 
@@ -106,6 +107,7 @@
 #define F_EDIT        "/feature/edit.c"
 #define F_ENCODING     "/feature/encoding.c"
 #define F_EQUIP        "/feature/equip.c"
+#define F_FATE        "/feature/fate.c"
 #define F_FINANCE     "/feature/finance.c"
 #define F_FOOD        "/feature/food.c"
 #define F_GREETING      "/feature/greeting.c"

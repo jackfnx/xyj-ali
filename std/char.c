@@ -27,6 +27,7 @@ inherit F_CONDITION;
 inherit F_DAMAGE;
 inherit F_DBASE;
 inherit F_EDIT;
+inherit F_FATE;
 inherit F_FINANCE;
 inherit F_MESSAGE;
 inherit F_MORE;
