@@ -187,6 +187,19 @@ void navigator_move()
     message_vision("$N原地转了几个圈，却没动地方，可能是迷路了。\n", this_object());
 }
 
+void start_testing(object ob)
+{
+    object puller;
+
+    puller = new(__DIR__"wire-puller");
+    puller->set("owner", ob);
+    ob->move(environment());
+    ob->start_testing();
+
+    message_vision("$N缓缓退下。\n", this_object());
+    destruct(this_object());
+}
+
 void lead_the_way(int step)
 {
     object me = this_object();
@@ -211,8 +224,8 @@ void lead_the_way(int step)
     if (ao = present("ao guang", environment())) {
         command("say 这就是我们龙王。");
         message_vision("$N给$n的耳边说了些什么。\n", me, ao);
-        message_vision("$N缓缓退下。\n", me, ao);
-        destruct(me);
+        message_vision("$N缓缓退下。\n", me);
+        start_testing(ob);
         return;
     }
     if (step > 20) {
@@ -242,7 +255,5 @@ void goto_aoguang(object ob)
     tell_room(environment(me), "周围的水波一阵扭曲，" + ob->name() + "和" + name() + "不见了。\n");
     me->move(helper->get_palace_room());
     tell_room(environment(me), "周围的水波一阵扭曲，" + name() + "领着" + ob->name() + "出现在这里。\n", ({ ob, me }));
-    message_vision("$N缓缓退下。\n", me);
-    destruct(me);
+    start_testing(ob);
 }
-
