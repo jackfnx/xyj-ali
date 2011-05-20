@@ -239,7 +239,7 @@ int do_ba(string arg)
         return notify_fail("你要拔什么？\n");
     if (present("flag", me))
         return notify_fail("你不是已经有旗子了吗？\n");
-    else if (env->query("getflag"))
+    else if (!env->query("have_flag"))
         return notify_fail("大旗已经被别人拔走了，这里只留下一截旗杆。\n");
     else if (me->query("dntg/huaguo") == "done")
         return notify_fail("你手握大旗，不禁想起自己当年在此称王的快乐时光。\n");
@@ -255,8 +255,8 @@ int do_ba(string arg)
         qi = new(__DIR__"huaguo/flag");
         qi->move(me);
         message_vision("$N大喝一声，将大旗拔了下来。\n", me);
-        env->set("getflag", 1);
-        env->start_call_out((: call_other, env, "delete", "getflag" :), 1200);
+        env->reset_flag_desc(0);
+        env->start_call_out((: call_other, env, "reset_flag_desc", 1 :), 1200);
     }
     return 1;
 }
