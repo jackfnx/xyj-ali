@@ -5,17 +5,16 @@ inherit ITEM;
 
 void create()
 {
-     set_name("±øÆ÷¼Ü",({"rack"}));
-     set("short", "±øÆ÷¼Ü");
-     set("env/invisibility",1);
-     set_max_encumbrance(50000000);
-     set_max_items(10000);
-     set_weight(100);
-     set("no_get",1);
-     set("no_magic", 1);
-     set("no_fight", 1);
-     seteuid(getuid());
-     setup();
+    set_name("±øÆ÷¼Ü",({"rack"}));
+    set("env/invisibility",1);
+    set_max_encumbrance(50000000);
+    set_max_items(10000);
+    set_weight(100);
+    set("no_get",1);
+    set("no_magic", 1);
+    set("no_fight", 1);
+    seteuid(getuid());
+    setup();
 }
 
 string short()
