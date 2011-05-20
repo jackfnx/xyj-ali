@@ -178,8 +178,10 @@ void do_report_progress()
     if (!ob) return;
     if (ob->query("dntg/huaguo") != "done")
         prog = "第一件事，你要首先成为花果山水帘洞的群猴之王";
-    else if (ob->query("dntg/donghai") == 0)
+    else if (ob->query("dntg/donghai") == 0) {
         prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山建设成铜墙铁壁";
+        ob->add_fate(DONH_ASNL_ROOM, (: call_other, this_object(), "arrive_asnl_room" :));
+    }
     else if (ob->query("dntg/donghai") == "begin") {
         prog = "走！走！走！去东海！去拿金箍棒！";
         foo = new(__DIR__"donghai/patrol");
@@ -295,6 +297,40 @@ void speak(string* msgs)
     call_out("speak_one", 1, 0);
 }
 
+void arrive_asnl_room()
+{
+    object chosen = query_temp("chosen");
+    object env;
+    object ob;
+
+    if (!chosen) return;
+    if (!(env = environment(chosen))) return;
+    if (file_name(env) != DONH_ASNL_ROOM) return;
+    if (chosen->query("dntg/huaguo") != "done") return;
+    if (chosen->query("dntg/donghai")) return;
+    if (env->query("exercising")) return;
+    call_out("create_rack", 10, chosen);
+    chosen->remove_fate(DONH_ASNL_ROOM);
+}
+
+void create_rack(object chosen)
+{
+    // rack
+    object ob;
+    ob = new(__DIR__"donghai/rack");
+    ob->move(DONH_ASNL_ROOM);
+    ob->set("owner", chosen);
+    chosen->set_temp("rack", ob);
+    speak(({
+            CYN "说道：嘿嘿嘿嘿，没办法了吧，找不到兵器吧？" NOR,
+            CYN "说道：大爷我有办法！" NOR,
+            CYN "说道：你家金箍棒大爷会作法让傲来国国王心血来潮，搞一次演习。" NOR,
+            CYN "说道：不过在这个期间，你可得离傲来国远点。" NOR,
+            CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
+    }));
+    call_out((: call_other, ob, "organize_exercise" :), 10, 0);
+}
+
 int override_move(string dir)
 {
     string verb = query_verb();
@@ -311,24 +347,6 @@ int override_move(string dir)
     if (!find_object(dest)) return 0;
     
     switch (file_name(env)) {
-        case DONH_ASNL_ROOM:
-            if (chosen->query("dntg/huaguo") != "done") return 0;
-            if (chosen->query("dntg/donghai")) return 0;
-            if (env->query("exercising")) return 0;
-            speak(({
-                    CYN "说道：嘿嘿嘿嘿，没办法了吧，找不到兵器吧？" NOR,
-                    CYN "说道：大爷我有办法！" NOR,
-                    CYN "说道：你家金箍棒大爷会作法让傲来国国王心血来潮，搞一次演习。" NOR,
-                    CYN "说道：不过在这个期间，你可得离傲来国远点。" NOR,
-                    CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
-                }));
-            // rack
-            ob = new(__DIR__"donghai/rack");
-            ob->move(DONH_ASNL_ROOM);
-            ob->set("owner", chosen);
-            chosen->set_temp("rack", ob);
-            call_out((: call_other, ob, "organize_exercise" :), 10, 0);
-            break;
         default:
             break;
     }
