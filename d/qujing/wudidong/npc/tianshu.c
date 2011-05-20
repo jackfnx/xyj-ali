@@ -115,7 +115,7 @@ int do_accept(string arg)
     }
     if (me->query_skill("huntian-force"))
     {
-   me->set_skill("huntian-qiong", me->query_skill("huntian-force")/2);
+   me->set_skill("huntian-force", me->query_skill("huntian-force")/2);
    if (me->query_skill("huntian-force")>30) me->set_skill("huntian-force", 30);
     }
     me->save();

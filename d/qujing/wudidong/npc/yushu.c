@@ -23,9 +23,10 @@ void create()
   set("gender", "女性" );
   set("age", 23);
   set("long", 
-"她就是这无底洞的洞主了。她从修道成人行以来，吃人无数，\n"
-"也不知为什么玉皇还未曾派兵来围剿。听说她在天宫有亲，也\n"
-"不知真假。\n");
+"她就是这无底洞的洞主了。她样貌端庄，姿容秀丽，真难以想象\n"
+"她竟是成道以来吃人无数的魔女。不过，若是真的仔细观察就会\n"
+"她的眼角隐含戾气，玉体满泛春情，提笔一闻更是可以闻到一股\n"
+"刺鼻的血腥气。这一切都显示，她并不像她表现的那么无害。\n");
   set("title", "地涌夫人");
   set("combat_exp", 800000);
   set("attitude", "heroic");
@@ -35,7 +36,7 @@ void create()
   set_skill("unarmed", 100);
   set_skill("dodge", 150);
   set_skill("parry", 150);
-  set_skill("spells", 150); 
+  set_skill("spells", 150);
   set_skill("yaofa", 120);
   set_skill("sword", 150);
   set_skill("qixiu-sword", 100);
@@ -43,7 +44,7 @@ void create()
   set_skill("kugu-blade", 150);
   set_skill("lingfu-steps", 100);
   set_skill("yinfeng-claw", 100);
-  set_skill("force", 150);   
+  set_skill("force", 150);
   set_skill("huntian-force", 150);
   map_skill("force", "huntian-force");
   map_skill("spells", "yaofa");
