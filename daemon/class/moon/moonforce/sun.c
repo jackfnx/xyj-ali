@@ -7,10 +7,10 @@
 
 int exert(object me, object target)
 {
-    if (!target
-        || !userp(target)
-        || target->is_corpse()
-        || target==me)
+    if (!target) target == me;
+    if (!userp(target)
+    ||  !target->is_character()
+    ||  target->is_corpse())
         return notify_fail("你想替谁解除蚀月咒？\n");
     if (!target->query_condition("moon_poison"))
         return notify_fail("没中蚀月咒瞎搅和什么?\n");
@@ -22,7 +22,7 @@ int exert(object me, object target)
         return notify_fail("你的内功修为不足以替人解除蚀月咒。\n");
     message_vision(
         HIY "$N坐了下来默默的念起经来，$n听$N语音清脆，越念越是冲和安静，全身隐隐发出圣洁的光辉。\n\n"NOR,
-        me, target );
+        me, target);
     if (random(me->query_skill("moonforce", 1)-100)>10) {
         target->apply_condition("moon_poison",0);
         message_vision(
@@ -35,7 +35,7 @@ int exert(object me, object target)
     else {
         message_vision(
         HIY "$N突然脸色苍白，似乎体力不支，竟呕出一口血来……\n"NOR,
-        me, target );
+        me, target);
     }
 
     target->receive_cuiring("kee", 10 + (int)me->query_skill("force")/3);
