@@ -11,6 +11,7 @@ inherit F_UNIQUE;
 #define DONH_DRILL_ROOM "/d/4world/drill"
 #define DONH_DRILLENT_ROOM "/d/4world/drillent"
 #define DONH_GATE_ROOM "/d/sea/under1"
+#define DONH_PLAYG_ROOM "/d/hgs/playground"
 #define DONH_PALACE_ROOM "/d/sea/inside3"
 
 string ask_for_dntg();
@@ -347,6 +348,8 @@ int override_move(string dir)
     if (!find_object(dest)) return 0;
     
     switch (file_name(env)) {
+        case "":
+            break;
         default:
             break;
     }
@@ -390,6 +393,11 @@ object get_drill_room()
 object get_arsenal_room()
 {
     return get_object(DONH_ASNL_ROOM);
+}
+
+object get_playg_room()
+{
+    return get_object(DONH_PLAYG_ROOM);
 }
 
 object get_palace_room()

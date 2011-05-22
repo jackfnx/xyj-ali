@@ -18,66 +18,73 @@ void create()
 
 void init()
 {
-    object ob = this_object();
-    object where = environment();
+    object where, owner;
 
-    if (userp(where)) {
-        if (!ob->query("owner"))
-            ob->set("owner", where);
-        else if (ob->query("owner") != where)
-            call_out("destruct_me", 5, ob);
+    if (userp(where = environment())) {
+        if (!(owner = query("owner")))
+            set("owner", where);
+        if (query("owner") != where)
+            call_out("destruct_me", 5);
     }
-    add_action("quest_give", "give");
+    
+    add_action("do_dist", "distribute");
+    add_action("do_dist", "distrib");
+    add_action("do_dist", "fenfa");
 }
 
-void destruct_me(object ob)
+void destruct_me()
 {
-    if (ob) {
-        tell_object(environment(ob), "兵器唏哩哇啦撒了一地。\n");
-        destruct(ob);
-    }
+    tell_object(environment(), "兵器唏哩哇啦撒了一地。\n");
+    destruct(this_object());
 }
 
-int quest_give(string arg)
+int do_dist(string arg)
 {
-    string name;
-    object me = this_player(), who, helper;
+    object me, helper, where, who;
 
+    me = this_player();
     if (me != query("owner"))
         return 0;
 
-    if (!(helper = me->query_temp("dntg_helper")))
+    helper = me->query_temp("dntg_helper");
+    if (!helper)
         return 0;
 
-    if (sscanf(arg, "bing qi to %s", name) != 1
-    &&  sscanf(arg, "%s bing qi", name) != 1)
+    where = environment(me);
+    if (!where)
         return 0;
 
-    if (!(who = present(name, environment(me)))
-    ||  !living(who)
-    ||  !who->is_character()
-    ||  who->is_corpse())
+    who = present("beng jiangjun", where);
+    if (!who) {
+        if (where != helper->get_playg_room())
+            return 0;
+        where->reset();
+        who = present("beng jiangjun", where);
+    }
+    if (!who || !living(who))
         return 0;
 
-    if (who->query("id") != "beng jiangjun") return 0;
+    if (!arg || !id(arg))
+        return notify_fail("你要分发什么？\n");
 
+    message_vision("$N拿出一捆兵器，叫道：＂孩儿们，过来取兵器啦啊！＂\n\n", me);
     if (me->query("dntg/huaguo") != "done") {
-        message_vision(CYN "$N" CYN "说道：你是谁啊？\n" NOR, who);
+        message_vision("$N疑惑的看着$n，道：你是何许人也，为何在此喧哗？\n", who, me);
         return 1;
     } else if (me->query("dntg/donghai")) {
-        message_vision(CYN "$N" CYN "说道：兵器已经够用了，不劳大王操心了。\n" NOR, who);
+        message_vision("$N跑过来说：兵器已经够用了，不劳大王操心了。\n", who);
         return 1;
     } else if (random(10) != 1) {
-        message_vision(CYN "$N" CYN "兴奋的叫道：太好了！要是再多一点儿就更好了。\n" NOR, who);
+        message_vision("群猴兴高采烈的围拢过来，你挑我捡，从兵器堆里各自拿了一件兵器。\n", who);
+        message_vision("不一会，一捆兵器被抢拾一空。有些动手慢的，没抢到趁手兵器，急得抓耳挠腮，上窜下跳。\n", who);
         destruct(this_object());
         return 1;
     } else {
-        message_vision(CYN "$N" CYN "高兴得跳了起来。\n" NOR, who);
-        message_vision(CYN "$N" CYN "说道：太好了！大王，我们的兵器是够用了，您自己也挑一样称手的家伙吧！\n" NOR, who);
+        message_vision("群猴兴高采烈的围拢过来，你挑我捡，从兵器堆里各自抽了一条兵器。\n", who);
+        message_vision("$N在一旁叫道：太好了！大王，我们的兵器是够用了，您自己也挑一样称手的家伙吧！\n", who);
         me->set("dntg/donghai", "begin");
         helper->report_progress(10);
         destruct(this_object());
         return 1;
     }
 }
-
