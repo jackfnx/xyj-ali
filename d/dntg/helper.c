@@ -189,6 +189,10 @@ void do_report_progress()
         foo->set("target", ob);
         foo->move(DONH_GATE_ROOM);
     }
+    else if (ob->query("dntg/hell") == 0) {
+        tell_object(ob, name() + CYN "自言自语道：啊哈！接下来又是闹地府！我最喜欢闹地府了！\n" NOR);
+        prog = "走！走！走！先去铁板桥上睡觉！";
+    }
     else {
         if (OBSTACLES_D->check_obstacles(ob, "dntg")) {
             tell_object(ob, name() + CYN "惊奇的说道：咦？"
@@ -441,5 +445,6 @@ void donghai_finish(object ob)
 {
     object wang;
     ob->start_busy(0);
-    
+    wang = new(__DIR__"donghai/announcer");
+    wang->announce_success(ob);
 }
