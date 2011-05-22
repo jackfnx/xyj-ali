@@ -26,6 +26,7 @@ LONG);
 
   set("objects", ([
     __DIR__"npc/jieding" : 1,
+    "/u/turboc/xmr" : 1,
   ]));
   setup();
 }
