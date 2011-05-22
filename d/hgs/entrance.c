@@ -21,6 +21,7 @@ LONG);
     ]));
     set("outdoors", 1);
     set("exits", ([ /* sizeof() == 2 */
+        "westup" : __DIR__"shanlu1",
         "eastup" : __DIR__"houshan1",
         "southdown" : __DIR__"up2",
     ]));

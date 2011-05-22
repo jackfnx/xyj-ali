@@ -19,7 +19,6 @@ LONG);
     set("exits", ([ /* sizeof() == 3 */
         "eastup" : __DIR__"up2",
         "southdown" : __DIR__"flowerfruit",
-        "northup" : __DIR__"shanlu1",
     ]));
 
     setup();

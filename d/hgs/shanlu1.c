@@ -17,7 +17,7 @@ LONG
 
     set("exits", ([
         "northup"   : __DIR__"shanlu2",
-        "southdown"   : __DIR__"up1",
+        "eastdown"   : __DIR__"entrance",
     ]));
     set("outdoors", __DIR__);
     set("grass_number", 5);
