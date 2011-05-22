@@ -67,7 +67,7 @@ int do_dist(string arg)
     if (!arg || !id(arg))
         return notify_fail("你要分发什么？\n");
 
-    message_vision("$N拿出一捆兵器，叫道：＂孩儿们，过来取兵器啦啊！＂\n\n", me);
+    message_vision("$N拿出一捆兵器，堆在山前，叫道：＂小的们！都来领兵器！＂\n\n", me);
     if (me->query("dntg/huaguo") != "done") {
         message_vision("$N疑惑的看着$n，道：你是何许人也，为何在此喧哗？\n", who, me);
         return 1;
