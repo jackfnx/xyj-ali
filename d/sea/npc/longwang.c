@@ -36,13 +36,13 @@ LONG);
     set("max_mana", 800);
     set("mana", 1600);
     set("mana_factor", 40);
-    set("chat_msg", ({
-        "敖广气愤地说道：该死的孙猴子，把我们东海龙宫的定海神针给抢走了。\n",
-        "敖广长叹一声：不知何时才能将镇宫之宝收回啊！\n",
-        "敖广悄悄对你说：听说孙猴子把它藏在花果山的石洞里，不知是否属实。\n",
-        "敖广叹道：若有人能将其送还，龙宫上下定将感激不尽！\n",
-    }));
-    set("chat_chance", 5);
+    //set("chat_msg", ({
+    //    "敖广气愤地说道：该死的孙猴子，把我们东海龙宫的定海神针给抢走了。\n",
+    //    "敖广长叹一声：不知何时才能将镇宫之宝收回啊！\n",
+    //    "敖广悄悄对你说：听说孙猴子把它藏在花果山的石洞里，不知是否属实。\n",
+    //    "敖广叹道：若有人能将其送还，龙宫上下定将感激不尽！\n",
+    //}));
+    //set("chat_chance", 5);
 
     set("combat_exp", 500000);
     set_skill("unarmed", 100);
@@ -68,7 +68,7 @@ LONG);
         "敖鸾": "敖鸾？敖鸾是谁？没听说过。\n",
         "离宫": (: expell_me :),
         "leave": (: expell_me :),
-        ]) );
+        ]));
 
     create_family("东海龙宫", 2, "水族");
     set_temp("apply/armor",50);
@@ -82,7 +82,6 @@ void init()
 {
     ::init();
     add_action("do_agree", "agree");
-    add_action("do_learn", "xuexi");
 }
 
 int accept_object(object who, object ob)
@@ -96,7 +95,7 @@ int accept_object(object who, object ob)
             return 1;
         }
         command("say 虽然不是真的宝物，" + RANK_D->query_respect(who) + "也算是有心人了。\n");
-        command("say 我可以传授一些基本拳脚功夫，" + RANK_D->query_respect(who) + "还要抓紧学(xuexi)才是！\n");
+        command("say 我可以传授一些基本拳脚功夫，" + RANK_D->query_respect(who) + "还要抓紧学才是！\n");
         who->set_temp("temp/learn", 1);
         call_out("unsetlearn", 1200, who);
         return 1;
@@ -118,81 +117,27 @@ void unsetlearn(object ob)
     }
 }
 
-string *reject_msg = ({
-    "说道：您太客气了，这怎么敢当？\n",
-    "像是受宠若惊一样，说道：请教？这怎么敢当？\n",
-    "笑著说道：您见笑了，我这点雕虫小技怎够资格「指点」您什么？\n",
-});
-
-int do_learn(string arg)
+int recognize_apprentice(object me)
 {
-    string skill, teacher, master;
-    object me= this_player(), ob;
-    int master_skill, my_skill, sen_cost;
+    string *reject_msg = ({
+        "说道：您太客气了，这怎么敢当？\n",
+        "像是受宠若惊一样，说道：请教？这怎么敢当？\n",
+        "笑著说道：您见笑了，我这点雕虫小技怎够资格「指点」您什么？\n",
+    });
 
-    if (!arg || sscanf(arg, "%s from %s", skill, teacher)!=2 )
-        return notify_fail("指令格式：xuexi <技能> from <某人>\n");
+    if (me->query_temp("temp/learn"))
+        return 1;
+    return notify_fail(name() + reject_msg[random(sizeof(reject_msg))]);
+}
 
-    if (me->is_fighting())
-        return notify_fail("临阵磨枪？来不及啦。\n");
-
-    if (!(ob = present(teacher, environment(me))) || !ob->is_character())
-        return notify_fail("你要向谁求教？\n");
-
-    if (!living(ob))
-        return notify_fail("嗯．．．你得先把" + ob->name() + "弄醒再说。\n");
-
-    if (!master_skill = ob->query_skill(skill, 1))
-        return notify_fail("这项技能你恐怕必须找别人学了。\n");
-
-    if (skill != "unarmed" || !me->query_temp("temp/learn")) 
-        return notify_fail( ob ->name() + reject_msg[random(sizeof(reject_msg))] );
-
-    notify_fail("依你目前的能力，没有办法学习这种技能。\n");
-    if (!SKILL_D(skill)->valid_learn(me)) return 0;
-
-    sen_cost = 250 / (int)me->query_int();
-    my_skill = me->query_skill(skill, 1);
-    if (!my_skill) {
-        sen_cost *= 2;
-        me->set_skill(skill,0);
-    }
-
-    if ((int)me->query("learned_points") >= (int)me->query("potential"))
-        return notify_fail("你的潜能已经发挥到极限了，没有办法再成长了。\n");
-
-    printf("你向%s请教有关「%s」的疑问。\n", ob->name(),
-        SKILL_D(skill)->name());
-
-    if ((int)ob->query("sen") > sen_cost/5 + 1) {
-        if (userp(ob)) ob->receive_damage("sen", sen_cost/5 + 1);
-    } else {
-        write("但是" + ob->name() + "显然太累了，没有办法教你什么。\n");
+int prevent_learn(object me, string skill)
+{
+    if (me->query("family/family_name") != "东海龙宫" && skill != "unarmed") {
+        command("shake");
+        command("say 不是说好了只能指点一些基本拳脚吗？");
         return 1;
     }
-
-    if ((int)me->query("sen") > sen_cost) {
-        if ((string)SKILL_D(skill)->type()=="martial"
-        &&  my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp")) {
-            printf("也许是道行不够，你对%s的回答总是无法领会。\n", ob->name());
-        } else {
-            if (my_skill >= master_skill)
-                printf("很明显，这项技能你的程度已经不输%s了。\n"
-                    "然而奇异的是，%s的讲解偏偏对你非常有启发。\n",
-                    ob->name(), ob->name());
-            else
-                printf("你听了%s的指导，似乎有些心得。\n", ob->name());
-            me->add("learned_points", 1);
-            me->improve_skill(skill, random(me->query_int()));
-        }
-    } else {
-        sen_cost = me->query("sen");
-        write("你今天太累了，结果什么也没有学到。\n");
-    }
-
-    me->receive_damage("sen", sen_cost );
-
-    return 1;
+    return 0;
 }
 
 void attempt_apprentice(object ob)
