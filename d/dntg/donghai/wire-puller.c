@@ -146,9 +146,11 @@ void send_maze()
     }
 
     message_vision("说着，$N把$n送到了一个地方。\n", ao, who);
-    who->move(__DIR__"maze/haidimigong");
+    who->move(__DIR__"maze/hdmg");
+    ao->move(__DIR__"maze/hdmg");
     message_vision("$N一拱手道："+RANK_D->query_respect(who)+"向前走即可看到那神铁，恕老夫不奉陪了。\n", ao, who);
     message_vision("说罢，$N转身回宫了。\n", ao);
+    ao->move(environment());
     destruct(this_object());
 }
 

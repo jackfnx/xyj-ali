@@ -284,15 +284,16 @@ int check_huaguo_voteroom()
 void speak_one(int i)
 {
     object ob = query_temp("chosen");
-    string* msgs = query_temp("speak_msgs");
+    mixed* msgs = query_temp("speak_msgs");
 
     remove_call_out("speak_one");
     if (!ob || !msgs || i >= sizeof(msgs)) return;
-    tell_object(ob, name() + msgs[i] + "\n");
+    if (stringp(msgs[i])) tell_object(ob, name() + msgs[i] + "\n");
+    else if (functionp(msgs[i])) evaluate(msgs[i], ob);
     call_out("speak_one", 1, i + 1);
 }
 
-void speak(string* msgs)
+void speak(mixed* msgs)
 {
     set_temp("speak_msgs", msgs);
     call_out("speak_one", 1, 0);
@@ -403,4 +404,42 @@ object get_playg_room()
 object get_palace_room()
 {
     return get_object(DONH_PALACE_ROOM);
+}
+
+void make_shentie()
+{
+    object shentie;
+    object chosen = query_temp("chosen");
+    
+    if (!(shentie = present("shen tie", environment(chosen)))) {
+        shentie = new(__DIR__"donghai/shentie");
+        shentie->move(environment(chosen));
+    }
+}
+
+void donghai_summary()
+{
+    object chosen = query_temp("chosen");
+    chosen->start_busy(50);
+    speak(({
+            CYN "说道：嘿嘿嘿嘿，大概你也已经猜到了。" NOR,
+            CYN "说道：这里根本就没有金箍棒！" NOR,
+            CYN "说道：自从当年大圣爷爷从这里把我抢走，那敖广便疯了。" NOR,
+            CYN "说道：整天以为金箍棒还在这，整天担惊受怕有人会来抢。" NOR,
+            CYN "说道：时间长了，这里竟然被他凭空观想出了一条定海神针的虚影。" NOR,
+            CYN "说道：这玩意在这戳着，对我成道大大不利，所以我才让你帮我演这么一出戏。" NOR,
+            CYN "说道：不过你小子帮了我大忙，我也不会亏待你。" NOR,
+            CYN "说道：我会传你一套如意变化之道，只要你有自制法宝兵器，我可以让它拥有第二种形态。" NOR,
+            CYN "说道：虽然不如金箍棒变化多端，但也别有一番妙用。" NOR,
+            CYN "说道：就算你暂时没有自制法宝兵器也没关系，本大爷最守信用，将来等你有了再来找我，本大爷随时恭候。" NOR,
+            CYN "说道：好了好了，废话说完了，现在该离开了。" NOR,
+            (: call_other, this_object(), "donghai_finish" :),
+    }));
+}
+
+void donghai_finish(object ob)
+{
+    object wang;
+    ob->start_busy(0);
+    
 }
