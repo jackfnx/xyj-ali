@@ -30,8 +30,8 @@ void create()
   set_skill("dodge", 55);
   set_skill("force", 55);
   set_skill("yaofa", 55);
-  set_skill("huntian-force", 55);
-  map_skill("force", "huntian-force");
+  set_skill("huntian-qigong", 55);
+  map_skill("force", "huntian-qigong");
   map_skill("unarmed", "yinfeng-claw");
   map_skill("spells", "yaofa");
   map_skill("sword", "qixiu-sword");
@@ -113,10 +113,10 @@ int do_accept(string arg)
    me->set_skill("yaofa", me->query_skill("yaofa")/2);
    if (me->query_skill("yaofa")>30) me->set_skill("yaofa", 30);
     }
-    if (me->query_skill("huntian-force"))
+    if (me->query_skill("huntian-qigong"))
     {
-   me->set_skill("huntian-force", me->query_skill("huntian-force")/2);
-   if (me->query_skill("huntian-force")>30) me->set_skill("huntian-force", 30);
+   me->set_skill("huntian-qigong", me->query_skill("huntian-qigong")/2);
+   if (me->query_skill("huntian-qigong")>30) me->set_skill("huntian-qigong", 30);
     }
     me->save();
     return 1;

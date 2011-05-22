@@ -20,10 +20,10 @@ int perform(object me)
         return 1;
     }
 
-    if (me->query_skill_mapped("force") != "huntian-force")
+    if (me->query_skill_mapped("force") != "huntian-qigong")
         return notify_fail("「追腥逐血」必须配合混天气功才能使用。\n");
 
-    skill = me->query_skill("huntian-force", 1);
+    skill = me->query_skill("huntian-qigong", 1);
     if (skill > 250) skill = 250;
     sword_skill = me->query_skill("sword", 1);
     qixiu_skill = me->query_skill("qixiu-sword", 1);
@@ -55,7 +55,7 @@ void check(object me)
     
     if(!me) return;
 
-    if (me->query_skill_mapped("force") != "huntian-force"
+    if (me->query_skill_mapped("force") != "huntian-qigong"
     ||  !objectp(weapon=me->query_temp("weapon"))
     ||  (weapon->query("apply/skill_type") != "sword"
             && weapon->query("skill_type") != "sword")

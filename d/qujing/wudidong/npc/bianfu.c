@@ -47,7 +47,7 @@ void create()
   set_skill("lingfu-steps", 80);
   set_skill("force", 80);
   set_skill("yaofa", 30);
-  set_skill("huntian-force", 30);
+  set_skill("huntian-qigong", 30);
 
   set("str", 20);
   set("cor", 100);
@@ -145,7 +145,7 @@ void transform()
   weapon=new("/d/obj/weapon/sword/changjian");
   weapon->move(this_object());
   command("wield sword");
-  command("enable force huntian-force");
+  command("enable force huntian-qigong");
   command("enable unarmed yinfeng-claw");
   command("enable spells yaofa");
   command("enable sword qixiu-sword");

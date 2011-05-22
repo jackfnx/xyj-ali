@@ -44,8 +44,8 @@ void create()
   set_skill("blade", 100);
   set_skill("kugu-blade", 100);
   set_skill("yaofa", 30);
-  set_skill("huntian-force", 30);
-  map_skill("force", "huntian-force");
+  set_skill("huntian-qigong", 30);
+  map_skill("force", "huntian-qigong");
   map_skill("blade", "kugu-blade");
   map_skill("unarmed", "yinfeng-claw");
   map_skill("spells", "yaofa");
