@@ -183,7 +183,7 @@ void do_report_progress()
         prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山建设成铜墙铁壁";
         ob->add_fate(DONH_ASNL_ROOM, (: call_other, this_object(), "arrive_asnl_room" :));
     }
-    else if (ob->query("dntg/donghai") == "begin") {
+    else if (ob->query("dntg/donghai") != "done") {
         prog = "走！走！走！去东海！去拿金箍棒！";
         foo = new(__DIR__"donghai/patrol");
         foo->set("target", ob);

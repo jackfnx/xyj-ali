@@ -193,8 +193,8 @@ void start_testing(object ob)
 
     puller = new(__DIR__"wire-puller");
     puller->set("owner", ob);
-    ob->move(environment());
-    ob->start_testing();
+    puller->move(environment());
+    puller->start_testing();
 
     message_vision("$N缓缓退下。\n", this_object());
     destruct(this_object());
@@ -224,7 +224,6 @@ void lead_the_way(int step)
     if (ao = present("ao guang", environment())) {
         command("say 这就是我们龙王。");
         message_vision("$N给$n的耳边说了些什么。\n", me, ao);
-        message_vision("$N缓缓退下。\n", me);
         start_testing(ob);
         return;
     }

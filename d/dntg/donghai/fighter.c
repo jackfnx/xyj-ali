@@ -30,12 +30,12 @@ void create()
     set_skill("force", 60);
     set_skill("dragonforce", 60);
     set_skill("fork", 60);
-    set_skill("fengbo-fork", 60);
+    set_skill("fengbo-cha", 60);
     set_skill("dodge", 100);
 
 map_skill("spells", "seashentong");
 map_skill("force", "dragonforce");
-map_skill("fork", "fengbo-fork");
+map_skill("fork", "fengbo-cha");
 
 setup();
 
