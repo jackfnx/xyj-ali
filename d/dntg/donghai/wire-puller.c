@@ -151,7 +151,22 @@ void send_maze()
     message_vision("$N一拱手道："+RANK_D->query_respect(who)+"向前走即可看到那神铁，恕老夫不奉陪了。\n", ao, who);
     message_vision("说罢，$N转身回宫了。\n", ao);
     ao->move(environment());
-    destruct(this_object());
+    call_out("make_shentie", 1);
+}
+
+void make_shentie()
+{
+    object shentie, room;
+
+    room = find_object(__DIR__"maze/mazeend");
+    if (!room) load_object(__DIR__"maze/mazeend");
+    if (room = find_object(__DIR__"maze/mazeend")) {
+        if (!(shentie = present("shen tie", room))) {
+            shentie = new(__DIR__"shentie");
+            shentie->move(room);
+        }
+    }
+    call_out("destruct_me", 1);
 }
 
 void remove()

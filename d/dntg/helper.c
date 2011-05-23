@@ -74,58 +74,6 @@ LONG );
     setup();
 }
 
-void init()
-{
-    object ob = this_player();
-    
-    if (environment() == environment(ob)
-    &&  !OBSTACLES_D->check_obstacles(ob, "dntg")) {
-        remove_call_out("greeting");
-        call_out("greeting", 1, ob);
-    }
-
-    add_action("do_swear", "swear");
-}
-
-void greeting(object ob)
-{
-    object me = this_object();
-    if (environment() != environment(ob)) return;
-    
-    command("say hi, " + RANK_D->query_respect(ob) + "想不想办两件大事出出名啊？\n");
-    set("inquiry", ([
-        "大事" : "要说这大事嘛，当然是首推大闹天宫啦！\n",
-        "大闹天宫" : (: ask_for_dntg :),
-        "dntg" : (: ask_for_dntg :),
-        "除非什么" : (: ask_for_detail :),
-    ]));
-}
-
-string ask_for_dntg()
-{
-    object ob = this_player();
-    if (OBSTACLES_D->check_obstacles(ob, "dntg"))
-        return "你不是自己也曾经做过吗，还问我？";
-    command("say 要说这大闹天宫，乃是当初齐天大圣孙悟空的壮举。");
-    command("say 如今天时地利不再，恐怕没有人能复制");
-    ob->set_temp("pending/ask_for_detail", 1);
-    return "除非。。。";
-}
-
-string ask_for_detail()
-{
-    object ob = this_player();
-    if (!ob->query_temp("pending/ask_for_detail")) {
-        command("?");
-        return "你这人说话怎么前言不搭后语的？";
-    }
-    command("say 除非接受本老人家的指点。");
-    command("hehe");
-    command("say " + RANK_D->query_respect(ob) + "要是愿意，就发一个誓(swear)，说你要“大闹天宫”！");
-    ob->delete_temp("pending/ask_for_detail");
-    return "本老人家若是心情好，说不定会指点与你。";
-}
-
 void reset_action()
 {
     set("actions", ([
@@ -141,26 +89,6 @@ void one_hit_to_die(object me, object victim, object weapon, int damage)
         message_vision("$N身上放射出一道毁灭的红光！！！\n", me);
         victim->die();
     }
-}
-
-void disappear()
-{
-    object chosen = query_temp("chosen");
-    if (chosen)
-        tell_object(chosen, name() + CYN "喝到：" + chosen->name(1) + CYN "！你太让我失望了，你就不是个能做大事的人！\n" NOR);
-    message_vision("\n$N突然化作一道金光飞向天际，不见了。\n", this_object());
-    destruct(this_object());
-}
-
-void unconcious()
-{
-    set_temp("chosen", 0);
-    disappear();
-}
-
-void die()
-{
-    unconcious();
 }
 
 void report_progress(int co)
@@ -232,6 +160,58 @@ void speak(mixed* msgs)
     call_out("speak_one", 1, 0);
 }
 
+void init()
+{
+    object ob = this_player();
+    
+    if (environment() == environment(ob)
+    &&  !OBSTACLES_D->check_obstacles(ob, "dntg")) {
+        remove_call_out("greeting");
+        call_out("greeting", 1, ob);
+    }
+
+    add_action("do_swear", "swear");
+}
+
+void greeting(object ob)
+{
+    object me = this_object();
+    if (environment() != environment(ob)) return;
+    
+    command("say hi, " + RANK_D->query_respect(ob) + "想不想办两件大事出出名啊？\n");
+    set("inquiry", ([
+        "大事" : "要说这大事嘛，当然是首推大闹天宫啦！\n",
+        "大闹天宫" : (: ask_for_dntg :),
+        "dntg" : (: ask_for_dntg :),
+        "除非什么" : (: ask_for_detail :),
+    ]));
+}
+
+string ask_for_dntg()
+{
+    object ob = this_player();
+    if (OBSTACLES_D->check_obstacles(ob, "dntg"))
+        return "你不是自己也曾经做过吗，还问我？";
+    command("say 要说这大闹天宫，乃是当初齐天大圣孙悟空的壮举。");
+    command("say 如今天时地利不再，恐怕没有人能复制");
+    ob->set_temp("pending/ask_for_detail", 1);
+    return "除非。。。";
+}
+
+string ask_for_detail()
+{
+    object ob = this_player();
+    if (!ob->query_temp("pending/ask_for_detail")) {
+        command("?");
+        return "你这人说话怎么前言不搭后语的？";
+    }
+    command("say 除非接受本老人家的指点。");
+    command("hehe");
+    command("say " + RANK_D->query_respect(ob) + "要是愿意，就发一个誓(swear)，说你要“大闹天宫”！");
+    ob->delete_temp("pending/ask_for_detail");
+    return "本老人家若是心情好，说不定会指点与你。";
+}
+
 int do_swear(string arg)
 {
     object ob = this_player();
@@ -254,6 +234,26 @@ int do_swear(string arg)
     
     report_progress(3);
     return 1;
+}
+
+void disappear()
+{
+    object chosen = query_temp("chosen");
+    if (chosen)
+        tell_object(chosen, name() + CYN "喝到：" + chosen->name(1) + CYN "！你太让我失望了，你就不是个能做大事的人！\n" NOR);
+    message_vision("\n$N突然化作一道金光飞向天际，不见了。\n", this_object());
+    destruct(this_object());
+}
+
+void unconcious()
+{
+    set_temp("chosen", 0);
+    disappear();
+}
+
+void die()
+{
+    unconcious();
 }
 
 int check_room(string room)
@@ -303,43 +303,4 @@ object get_playg_room()
 object get_palace_room()
 {
     return get_object(DONH_PALACE_ROOM);
-}
-
-void make_shentie()
-{
-    object shentie;
-    object chosen = query_temp("chosen");
-    
-    if (!(shentie = present("shen tie", environment(chosen)))) {
-        shentie = new(__DIR__"donghai/shentie");
-        shentie->move(environment(chosen));
-    }
-}
-
-void donghai_summary()
-{
-    object chosen = query_temp("chosen");
-    chosen->start_busy(50);
-    speak(({
-            CYN "说道：嘿嘿嘿嘿，大概你也已经猜到了。" NOR,
-            CYN "说道：这里根本就没有金箍棒！" NOR,
-            CYN "说道：自从当年大圣爷爷从这里把我抢走，那敖广便疯了。" NOR,
-            CYN "说道：整天以为金箍棒还在这，整天担惊受怕有人会来抢。" NOR,
-            CYN "说道：时间长了，这里竟然被他凭空观想出了一条定海神针的虚影。" NOR,
-            CYN "说道：这玩意在这戳着，对我成道大大不利，所以我才让你帮我演这么一出戏。" NOR,
-            CYN "说道：不过你小子帮了我大忙，我也不会亏待你。" NOR,
-            CYN "说道：我会传你一套如意变化之道，只要你有自制法宝兵器，我可以让它拥有第二种形态。" NOR,
-            CYN "说道：虽然不如金箍棒变化多端，但也别有一番妙用。" NOR,
-            CYN "说道：就算你暂时没有自制法宝兵器也没关系，本大爷最守信用，将来等你有了再来找我，本大爷随时恭候。" NOR,
-            CYN "说道：好了好了，废话说完了，现在该离开了。" NOR,
-            (: call_other, this_object(), "donghai_finish" :),
-    }));
-}
-
-void donghai_finish(object ob)
-{
-    object wang;
-    ob->start_busy(0);
-    wang = new(__DIR__"donghai/announcer");
-    wang->announce_success(ob);
 }
