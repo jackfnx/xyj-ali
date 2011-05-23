@@ -182,8 +182,10 @@ void do_report_progress()
         foo->place_room(HUAG_GETFLAG_ROOM);
     }
     else if (ob->query("dntg/donghai") == 0) {
-        prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山建设成铜墙铁壁";
-        ob->add_fate(DONH_ASNL_ROOM, (: call_other, this_object(), "arrive_asnl_room" :));
+        prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山打造成铜墙铁壁";
+        foo = new(__DIR__"donghai/rack");
+        foo->set("owner", ob);
+        foo->move(DONH_ASNL_ROOM);
     }
     else if (ob->query("dntg/donghai") != "done") {
         prog = "走！走！走！去东海！去拿金箍棒！";
@@ -269,40 +271,6 @@ int check_huaguo_waveroom()
 int check_huaguo_voteroom()
 {
     return check_room(HUAG_VOTE_ROOM);
-}
-
-void arrive_asnl_room()
-{
-    object chosen = query_temp("chosen");
-    object env;
-    object ob;
-
-    if (!chosen) return;
-    if (!(env = environment(chosen))) return;
-    if (file_name(env) != DONH_ASNL_ROOM) return;
-    if (chosen->query("dntg/huaguo") != "done") return;
-    if (chosen->query("dntg/donghai")) return;
-    if (env->query("exercising")) return;
-    call_out("create_rack", 10, chosen);
-    chosen->remove_fate(DONH_ASNL_ROOM);
-}
-
-void create_rack(object chosen)
-{
-    // rack
-    object ob;
-    ob = new(__DIR__"donghai/rack");
-    ob->move(DONH_ASNL_ROOM);
-    ob->set("owner", chosen);
-    chosen->set_temp("rack", ob);
-    speak(({
-            CYN "说道：嘿嘿嘿嘿，没办法了吧，找不到兵器吧？" NOR,
-            CYN "说道：大爷我有办法！" NOR,
-            CYN "说道：你家金箍棒大爷会作法让傲来国国王心血来潮，搞一次演习。" NOR,
-            CYN "说道：不过在这个期间，你可得离傲来国远点。" NOR,
-            CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
-    }));
-    call_out((: call_other, ob, "organize_exercise" :), 10, 0);
 }
 
 object get_object(string fname)

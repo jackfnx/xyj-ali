@@ -24,6 +24,12 @@ string short()
     else return sprintf("兵器架(owner: %s)", geteuid(owner));
 }
 
+void init()
+{
+    add_action("do_kun", "kun");
+    call_out("start_organize", 5, this_player());
+}
+
 int check_in_aolai(object ob, object helper)
 {
     if (sscanf(file_name(environment(ob)), "/d/4world/%*s") == 1) {
@@ -32,6 +38,31 @@ int check_in_aolai(object ob, object helper)
         return 1;
     }
     return 0;
+}
+
+void start_organize(object me)
+{
+    object owner;
+    object helper;
+
+    if (!(owner = query("owner")) || me != owner) return;
+    if (!(helper = owner->query_temp("dntg_helper"))) return;
+    if (owner->query("dntg/huaguo") != "done") return;
+    if (owner->query("dntg/donghai")) return;
+    if (environment(owner)->query("exercising")) return;
+    if (query("organizing")) return;
+
+    helper->speak(({
+            CYN "说道：嘿嘿嘿嘿，没办法了吧，找不到兵器吧？" NOR,
+            CYN "说道：大爷我有办法！" NOR,
+            CYN "说道：你家金箍棒大爷会作法让傲来国国王心血来潮，搞一次演习。" NOR,
+            CYN "说道：不过在这个期间，你可得离傲来国远点。" NOR,
+            CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
+            0,
+            0,
+            0,
+            (: call_other, this_object(), "organize_exercise", 0 :),
+    }));
 }
 
 void organize_exercise(int prog)
@@ -242,11 +273,6 @@ void go_back(object who)
     who1->move(where);
     who2->move(where);
     tell_object(where, "偏将们揉着眼睛走回兵器库。\n");
-}
-
-void init()
-{
-    add_action("do_kun", "kun");
 }
 
 int do_kun(string arg)
