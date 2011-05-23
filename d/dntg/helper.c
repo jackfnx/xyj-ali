@@ -85,8 +85,6 @@ void init()
     }
 
     add_action("do_swear", "swear");
-    add_action("override_move", ({ "go", "west", "east", "south", "north" }));
-    add_action("dntg_ask", "ask");
 }
 
 void greeting(object ob)
@@ -238,23 +236,6 @@ int do_swear(string arg)
     return 1;
 }
 
-int check_room(string room)
-{
-    object chosen = query_temp("chosen");
-    if (!chosen) return 0;
-    return file_name(environment(chosen)) == room;
-}
-
-int check_huaguo_waveroom()
-{
-    return check_room(HUAG_WAVE_ROOM);
-}
-
-int check_huaguo_voteroom()
-{
-    return check_room(HUAG_VOTE_ROOM);
-}
-
 void speak_one(int i)
 {
     object ob = query_temp("chosen");
@@ -271,6 +252,23 @@ void speak(mixed* msgs)
 {
     set_temp("speak_msgs", msgs);
     call_out("speak_one", 1, 0);
+}
+
+int check_room(string room)
+{
+    object chosen = query_temp("chosen");
+    if (!chosen) return 0;
+    return file_name(environment(chosen)) == room;
+}
+
+int check_huaguo_waveroom()
+{
+    return check_room(HUAG_WAVE_ROOM);
+}
+
+int check_huaguo_voteroom()
+{
+    return check_room(HUAG_VOTE_ROOM);
 }
 
 void arrive_asnl_room()
@@ -305,47 +303,6 @@ void create_rack(object chosen)
             CYN "说道：万一刺激了傲来国，让演习取消了，那可就不好办了。" NOR,
     }));
     call_out((: call_other, ob, "organize_exercise" :), 10, 0);
-}
-
-int override_move(string dir)
-{
-    string verb = query_verb();
-    object chosen = query_temp("chosen");
-    object env;
-    string dest;
-    object ob;
-    
-    if (verb != "go") dir = verb;
-    if (chosen != this_player()) return 0;
-    if (!(env = environment(chosen))) return 0;
-    if (!(dest = env->query("exits/" + dir))) return 0;
-    if (!find_object(dest)) load_object(dest);
-    if (!find_object(dest)) return 0;
-    
-    switch (file_name(env)) {
-        case "":
-            break;
-        default:
-            break;
-    }
-    return 0;
-}
-
-int dntg_ask(string arg)
-{
-    string name, inquiry;
-    object chosen = query_temp("chosen");
-    object who;
-
-    if (sscanf(arg, "%s about %s", name, inquiry) != 2) return 0;
-    if (chosen != this_player()) return 0;
-    
-    if (!objectp(who = present(name, environment(chosen)))) return 0;
-    
-    //switch (who->query("id")) {
-
-    //}
-    return 0;
 }
 
 object get_object(string fname)
