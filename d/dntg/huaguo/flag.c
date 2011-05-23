@@ -14,6 +14,33 @@ void create()
         **      得此旗者可为仙灵福地水帘洞之洞主     **
         ***********************************************
 LONG);
+    set("env/invisibility", 1);
+    set("no_get", 1);
+    seteuid(getuid());
+    setup();
+}
+
+string short()
+{
+    object owner = query("owner");
+    int inv = (int)query("env/invisibility");
+    
+    if (!owner || !inv) return ::short();
+    else return sprintf("%s[owner: %s]", ::short(), geteuid(owner));
+}
+
+void place_room(string room)
+{
+    room->set("long", @LONG
+
+一座宽大的石房，房内有石窝、石灶、石碗、石盆、石床(bed)、
+石凳，各种家当样样俱全。好一座天造地设的安身之所。正中间插着
+一杆大旗(flag)。
+LONG);
+    room->set("item_desc/flag",
+            "一面迎风招展的三色大旗，在空旷之处迎风挥舞(wave)起来一定煞是好看，但似乎很难拔(ba)动。\n");
+    this_object()->set("home", room);
+    this_object()->move(room);
 }
 
 void init()
@@ -21,13 +48,10 @@ void init()
     object who = environment();
     
     if (userp(who)) {
-        if (query("owned")) {
-            if (query("owned") != who->query("id"))
-                call_out("destruct_me", 1, who, this_object());
-        } else {
-            set("owned", who->query("id"));
-        }
+        if (query("owner") != who)
+            call_out("destruct_me", 1, who, this_object());
     }
+    add_action("do_ba", "ba");
     add_action("do_wave", "wave");
 }
 
@@ -37,12 +61,49 @@ void destruct_me(object who, object me)
     destruct(me);
 }
 
+int do_ba(string arg)
+{
+    object me = this_player();
+    object env = environment();
+
+    if (file_name(env) != query("home")) return 0;
+
+    if (!arg || !id(arg)) return notify_fail("你要拔什么？\n");
+
+    if (me->query("dntg/huaguo") == "done")
+        return notify_fail("你手握"+name()+"，不禁想起自己当年在此称王的快乐时光。\n");
+
+    if (me != query("owner"))
+        return notify_fail("你使尽吃奶的力气也没将"+name()+"拔出来。\n");
+
+    if (me->query("kee") <= 200) {
+        me->unconcious();
+        return 1;
+    }
+    me->receive_damage("kee", 200);
+    if (random(10) < 5)
+        message_vision("$N使尽吃奶的力气也没将"+name()+"拔出来。\n", me);
+    else {
+        env->set("long", @LONG
+
+一座宽大的石房，房内有石窝、石灶、石碗、石盆、石床(bed)、
+石凳，各种家当样样俱全。好一座天造地设的安身之所。
+LONG);
+        env->delete("item_desc/flag");
+        this_object()->delete("env/invisibility");
+        this_object()->delete("no_get");
+        this_object()->move(me);
+        message_vision("$N大喝一声，将"+name()+"拔了下来。\n", me);
+    }
+    return 1;
+}
+
 int do_wave(string arg)
 {
     object me = this_player();
     object hb;
 
-    if (me->query("id") != query("owned") || me != environment()) return 0;
+    if (me != query("owner") || me != environment()) return 0;
     if (!arg || !id(arg)) return notify_fail("你想挥舞什么？\n");
 
     if (!(hb = me->query_temp("dntg_helper"))) {

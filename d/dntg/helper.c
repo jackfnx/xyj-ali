@@ -85,7 +85,6 @@ void init()
     }
 
     add_action("do_swear", "swear");
-    add_action("do_ba", "ba");
     add_action("override_move", ({ "go", "west", "east", "south", "north" }));
     add_action("dntg_ask", "ask");
 }
@@ -178,8 +177,12 @@ void do_report_progress()
     object foo;
     
     if (!ob) return;
-    if (ob->query("dntg/huaguo") != "done")
-        prog = "第一件事，你要首先成为花果山水帘洞的群猴之王";
+    if (ob->query("dntg/huaguo") != "done") {
+        prog = "首先，你要成为花果山水帘洞的群猴之王";
+        foo = new(__DIR__"huaguo/flag");
+        foo->set("owner", ob);
+        foo->place_room(HUAG_GETFLAG_ROOM);
+    }
     else if (ob->query("dntg/donghai") == 0) {
         prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山建设成铜墙铁壁";
         ob->add_fate(DONH_ASNL_ROOM, (: call_other, this_object(), "arrive_asnl_room" :));
@@ -232,43 +235,6 @@ int do_swear(string arg)
     environment(ob)->open_door();
     
     report_progress(3);
-    return 1;
-}
-
-int do_ba(string arg)
-{
-    object me;
-    object env;
-    object qi;
-
-    if ((me = query_temp("chosen")) != this_player())
-        return 0;
-    if (file_name(env = environment(me)) != HUAG_GETFLAG_ROOM)
-        return 0;
-
-    if (!arg || arg != "flag")
-        return notify_fail("你要拔什么？\n");
-    if (present("flag", me))
-        return notify_fail("你不是已经有旗子了吗？\n");
-    else if (!env->query("have_flag"))
-        return notify_fail("大旗已经被别人拔走了，这里只留下一截旗杆。\n");
-    else if (me->query("dntg/huaguo") == "done")
-        return notify_fail("你手握大旗，不禁想起自己当年在此称王的快乐时光。\n");
-
-    if (me->query("kee") <= 200) {
-        me->unconcious();
-        return 1;
-    }
-    me->receive_damage("kee", 200);
-    if (random(10) < 5)
-        message_vision("$N使尽吃奶的力气也没将大旗拔出来。\n", me);
-    else {
-        qi = new(__DIR__"huaguo/flag");
-        qi->move(me);
-        message_vision("$N大喝一声，将大旗拔了下来。\n", me);
-        env->reset_flag_desc(0);
-        env->start_call_out((: call_other, env, "reset_flag_desc", 1 :), 1200);
-    }
     return 1;
 }
 
