@@ -13,6 +13,7 @@ inherit F_UNIQUE;
 #define DONH_GATE_ROOM "/d/sea/under1"
 #define DONH_PLAYG_ROOM "/d/hgs/playground"
 #define DONH_PALACE_ROOM "/d/sea/inside3"
+#define HELL_BED_ROOM "/d/hgs/ironbridge"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -192,6 +193,9 @@ void do_report_progress()
     else if (ob->query("dntg/hell") == 0) {
         tell_object(ob, name() + CYN "自言自语道：啊哈！接下来又是闹地府！我最喜欢闹地府了！\n" NOR);
         prog = "走！走！走！先去铁板桥上睡觉！";
+        foo = new(__DIR__"hell/bed");
+        foo->set("owner", ob);
+        foo->move(HELL_BED_ROOM);
     }
     else {
         if (OBSTACLES_D->check_obstacles(ob, "dntg")) {
