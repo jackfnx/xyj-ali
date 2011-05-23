@@ -214,6 +214,24 @@ void do_report_progress()
     tell_object(ob, name() + CYN "对着你耳朵大叫道：" + prog + "！\n" NOR);
 }
 
+void speak_one(int i)
+{
+    object ob = query_temp("chosen");
+    mixed* msgs = query_temp("speak_msgs");
+
+    remove_call_out("speak_one");
+    if (!ob || !msgs || i >= sizeof(msgs)) return;
+    if (stringp(msgs[i])) tell_object(ob, name() + msgs[i] + "\n");
+    else if (functionp(msgs[i])) evaluate(msgs[i], ob);
+    call_out("speak_one", 1, i + 1);
+}
+
+void speak(mixed* msgs)
+{
+    set_temp("speak_msgs", msgs);
+    call_out("speak_one", 1, 0);
+}
+
 int do_swear(string arg)
 {
     object ob = this_player();
@@ -236,24 +254,6 @@ int do_swear(string arg)
     
     report_progress(3);
     return 1;
-}
-
-void speak_one(int i)
-{
-    object ob = query_temp("chosen");
-    mixed* msgs = query_temp("speak_msgs");
-
-    remove_call_out("speak_one");
-    if (!ob || !msgs || i >= sizeof(msgs)) return;
-    if (stringp(msgs[i])) tell_object(ob, name() + msgs[i] + "\n");
-    else if (functionp(msgs[i])) evaluate(msgs[i], ob);
-    call_out("speak_one", 1, i + 1);
-}
-
-void speak(mixed* msgs)
-{
-    set_temp("speak_msgs", msgs);
-    call_out("speak_one", 1, 0);
 }
 
 int check_room(string room)
