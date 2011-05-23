@@ -9,24 +9,17 @@ string query_rank(object ob)
 {
     // need this default, otherwise looks too ugly sometimes.
     if (strlen(ob->query("added_title"))<1)
-        ob->set("added_title", "未设");
+        ob->set("added_title", "某某");
 
     if (ob->is_ghost()) return HIB "【 鬼  魂 】" NOR;
+    if (wizardp(ob)) return HIW "【 巫  师 】" NOR;
 
     switch (ob->query("gender"))
     {
 // begin 女性：
         case "女性":
-            switch (wizhood(ob)) {
-                case "(admin)":         return GRN "【 巫  女 】" NOR;
-                case "(arch)":          return GRN "【 巫  女 】" NOR;
-                case "(wizard)":        return GRN "【 巫  女 】" NOR;
-                case "(apprentice)":    return GRN "【客座巫女】" NOR;
-                case "(immortal)":      return GRN "【 小巫女 】" NOR;
-                case "(elder)":         return GRN "【荣誉玩家】" NOR;
-                default:
-                switch (ob->query("class"))
-                {
+            switch (ob->query("class"))
+            {
 //------------------rank for girls--------------------
 case "xian":
     if ((int)ob->query("combat_exp")<1000)
@@ -119,7 +112,7 @@ case "fighter":
         return GRN "【"+ob->query("added_title")+"大元帅】" NOR;
     break;
 case "scholar":
-    if ((string)ob->query("added_title")=="未设") {
+    if ((string)ob->query("added_title")=="某某") {
         if ((int)ob->query_skill("literate", 1)<20)
             return GRN "【 女学童 】" NOR;
         else if ((int)ob->query_skill("literate", 1)<100)
@@ -141,21 +134,11 @@ case "dancer":
 default:
     return MAG "【 平  民 】" NOR;
 //------------------end rank for girls--------------------
-                }
             }
 // begin 男性：
         default:
-        switch (wizhood(ob))
+        switch (ob->query("class"))
         {
-            case "(admin)":             return HIW "【 巫  师 】" NOR;
-            case "(arch)":              return HIW "【 巫  师 】" NOR;
-            case "(wizard)":            return HIW "【 巫  师 】" NOR;
-            case "(apprentice)":        return HIW "【客座巫师】" NOR;
-            case "(immortal)":          return HIW "【 小巫师 】" NOR;
-            case "(elder)":             return HIW "【荣誉玩家】" NOR;
-            default:
-            switch (ob->query("class"))
-            {
 //------------------rank for men--------------------
 case "xian":
     if ((int)ob->query("combat_exp")<1000)
@@ -256,7 +239,7 @@ case "fighter":
         return RED "【"+ob->query("added_title")+"大元帅】" NOR;
     break;
 case "scholar":
-    if ((string)ob->query("added_title")=="未设") {
+    if ((string)ob->query("added_title")=="某某") {
         if ((int)ob->query_skill("literate", 1)<20)
             return RED "【 童  生 】" NOR;
         else if ((int)ob->query_skill("literate", 1)<100)
@@ -275,7 +258,6 @@ case "scholar":
 default:
     return "【 平  民 】";
 //------------------end rank for men--------------------
-            }
         }
     }
 }
