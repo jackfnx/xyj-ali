@@ -36,12 +36,15 @@ void wc_lootme(object me)
 int do_look(string arg)
 {
     object me = this_player();
+    object helper = me->query_temp("dntg_helper");
 
     if (!arg || !id(arg)) return 0;
+    if (!helper) return 0;
     write(this_object()->long());
     if (query("target") != me->query("name")) return 1;
     me->set_temp("dntg_hell/next", query("wang"));
     message_vision(HIR "$N看罢批文，勃然大怒，把批文撕了个粉碎，大叫：“待我去找这个昏王评理！”\n" NOR, me);
+    __DIR__"trouble"->install(me, helper->get_palace_rooms());
     destruct(this_object());
     return 1;
 }

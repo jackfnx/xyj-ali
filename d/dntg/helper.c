@@ -15,9 +15,18 @@ inherit F_UNIQUE;
 #define DONH_PALACE_ROOM "/d/sea/inside3"
 #define HELL_BED_ROOM "/d/hgs/ironbridge"
 #define HELL_ENT_ROOM "/d/death/new-zhaopo"
-
 #define NPC_BAIWC "/d/death/npc/baiwuchang"
 #define NPC_HEIWC "/d/death/npc/heiwuchang"
+#define HELL_PALACE_ROOM0 "/d/death/zhengtang"
+#define HELL_PALACE_ROOM1 "/d/death/room1"
+#define HELL_PALACE_ROOM2 "/d/death/room2"
+#define HELL_PALACE_ROOM3 "/d/death/room3"
+#define HELL_PALACE_ROOM4 "/d/death/room4"
+#define HELL_PALACE_ROOM5 "/d/death/room5"
+#define HELL_PALACE_ROOM6 "/d/death/room6"
+#define HELL_PALACE_ROOM7 "/d/death/room7"
+#define HELL_PALACE_ROOM8 "/d/death/room8"
+#define HELL_PALACE_ROOM9 "/d/death/room9"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -310,4 +319,20 @@ object get_playg_room()
 object get_palace_room()
 {
     return get_object(DONH_PALACE_ROOM);
+}
+
+string* get_palace_rooms()
+{
+    return ({
+        HELL_PALACE_ROOM0,
+        HELL_PALACE_ROOM1,
+        HELL_PALACE_ROOM2,
+        HELL_PALACE_ROOM3,
+        HELL_PALACE_ROOM4,
+        HELL_PALACE_ROOM5,
+        HELL_PALACE_ROOM6,
+        HELL_PALACE_ROOM7,
+        HELL_PALACE_ROOM8,
+        HELL_PALACE_ROOM9,
+    });
 }

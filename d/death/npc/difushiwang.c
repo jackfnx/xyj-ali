@@ -2,6 +2,13 @@
 
 inherit NPC;
 
+void kill_ob(object ob)
+{
+    object target = query_temp("target");
+    if (target != ob) delete_temp("target");
+    ::kill_ob(ob);
+}
+
 void fully_recover()
 {
     set("kee",1000);
@@ -16,6 +23,7 @@ void fully_recover()
     set("mana",4000);
     set("max_mana",2000);
     set("force_factor",120);
+    clear_condition();
 }
 
 void die()
