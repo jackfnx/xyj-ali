@@ -1,67 +1,63 @@
-// 神话世界·西游记·版本４．５０
-/* <SecCrypt CPL V3R05> */
- 
-
 #include <ansi.h>
 
-inherit NPC;
+inherit __DIR__"difushiwang.c";
 int send_me();
 int work_me();
 string expell_me(object me);
 void create()
 {
-       set_name("阎罗王", ({"yanluo wang","wang", "master", "yanluo"}));
-       set("long", "身穿大红蟒袍，头戴黑绸软巾．
+    set_name("阎罗王", ({"yanluo wang","wang", "master", "yanluo"}));
+    set("long", "身穿大红蟒袍，头戴黑绸软巾．
 面如锅底，须若钢针，这就是阎罗王．\n");
-       set("title", "阴间十王之");
-   set("class", "ghost");
-       set("gender", "男性");
-       set("age", 50);
-       set("attitude", "peaceful");
-       set("shen_type", 1);
-       set("per", 10);
-       set("max_kee", 1100);
-       set("max_gin", 1100);
-       set("max_sen", 1100);
-       set("force", 1150);
-       set("max_force", 1000);
-       set("force_factor", 60);
-       set("max_mana", 1500);
-       set("mana", 1500);
-       set("mana_factor", 50);
-       set("combat_exp", 1000000);
+    set("title", "阴间十王之");
+    set("class", "ghost");
+    set("gender", "男性");
+    set("age", 50);
+    set("attitude", "peaceful");
+    set("shen_type", 1);
+    set("per", 10);
+    set("max_kee", 1100);
+    set("max_gin", 1100);
+    set("max_sen", 1100);
+    set("force", 1150);
+    set("max_force", 1000);
+    set("force_factor", 60);
+    set("max_mana", 1500);
+    set("mana", 1500);
+    set("mana_factor", 50);
+    set("combat_exp", 1000000);
 
-   set_skill("dread-hand", 150);
-   set_skill("tonsillit", 100);
-   set_skill("necromancy", 150);
-       set_skill("unarmed", 150);
-   set_skill("whip", 100);
-   set_skill("sword", 150);
-   set_skill("killer-sword", 150);
-       set_skill("dodge", 120);
-   set_skill("ghost-steps", 150);
-       set_skill("parry", 150);
-        set_skill("spells", 150);
-        set_skill("force", 150);
-   map_skill("sword", "killer-sword");
-   map_skill("parry", "killer-sword");
-   map_skill("dodge", "ghost-steps");
-   map_skill("unarmed", "dread-hand");
-   map_skill("force", "tonsillit");
-   map_skill("spells", "necromancy");
+    set_skill("dread-hand", 150);
+    set_skill("tonsillit", 100);
+    set_skill("necromancy", 150);
+    set_skill("unarmed", 150);
+    set_skill("whip", 100);
+    set_skill("sword", 150);
+    set_skill("killer-sword", 150);
+    set_skill("dodge", 120);
+    set_skill("ghost-steps", 150);
+    set_skill("parry", 150);
+    set_skill("spells", 150);
+    set_skill("force", 150);
+    map_skill("sword", "killer-sword");
+    map_skill("parry", "killer-sword");
+    map_skill("dodge", "ghost-steps");
+    map_skill("unarmed", "dread-hand");
+    map_skill("force", "tonsillit");
+    map_skill("spells", "necromancy");
 
-   set("nk_gain", 500);
+    set("nk_gain", 500);
 
-   set_temp("apply/armor", 50);
-   set_temp("apply/dodge", 50);
+    set_temp("apply/armor", 50);
+    set_temp("apply/dodge", 50);
 
-        set("chat_chance_combat", 40);
-        set("chat_msg_combat", ({
+    set("chat_chance_combat", 40);
+    set("chat_msg_combat", ({
      (: exert_function, "sheqi" :),
                 (: exert_function, "powerup" :),
                 (: exert_function, "recover" :),
      (: cast_spell, "gouhun" :)
-        }) );
+    }) );
 
 set("inquiry", ([
 "还阳": (: expell_me :),
@@ -79,8 +75,8 @@ set("inquiry", ([
 create_family("阎罗地府", 2, "你好");
 setup();
 
-        carry_object("/d/obj/cloth/mangpao")->wear();
-   carry_object("/d/obj/weapon/sword/qinghong")->wield();
+    carry_object("/d/obj/cloth/mangpao")->wear();
+    carry_object("/d/obj/weapon/sword/qinghong")->wield();
 }
 void attempt_apprentice(object ob, object me)
 {
