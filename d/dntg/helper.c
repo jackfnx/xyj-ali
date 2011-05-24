@@ -14,6 +14,10 @@ inherit F_UNIQUE;
 #define DONH_PLAYG_ROOM "/d/hgs/playground"
 #define DONH_PALACE_ROOM "/d/sea/inside3"
 #define HELL_BED_ROOM "/d/hgs/ironbridge"
+#define HELL_ENT_ROOM "/d/death/new-zhaopo"
+
+#define NPC_BAIWC "/d/death/npc/baiwuchang"
+#define NPC_HEIWC "/d/death/npc/heiwuchang"
 
 string ask_for_dntg();
 string ask_for_detail();
@@ -126,6 +130,9 @@ void do_report_progress()
         prog = "走！走！走！先去铁板桥上睡觉！";
         foo = new(__DIR__"hell/bed");
         foo->set("owner", ob);
+        foo->set("hell_ent_room", HELL_ENT_ROOM);
+        foo->set("npc_baiwc", NPC_BAIWC);
+        foo->set("npc_heiwc", NPC_HEIWC);
         foo->move(HELL_BED_ROOM);
     }
     else {
