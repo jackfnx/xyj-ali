@@ -241,7 +241,7 @@ int do_swear(string arg)
     }
     command("haha");
     command("say 好！好！好！");
-    command("say " + RANK_D->query_respect(ob) + "既然由此雄心壮志，本老人家就送你一场造化。");
+    command("say " + RANK_D->query_respect(ob) + "既然有此雄心壮志，本老人家就送你一场造化。");
     message_vision("倏的一声，$n自动飞进了$P的怀里。\n", ob, this_object());
     set_temp("chosen", ob);
     ob->set_temp("dntg_helper", this_object());
