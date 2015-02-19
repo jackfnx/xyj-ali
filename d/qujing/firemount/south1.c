@@ -17,7 +17,7 @@ void create ()
 LONG);
 
   set("objects", ([
-       __DIR__"npc/bajiaoq" : 1,
+       __DIR__"npc/bajiaow" : 1,
       ]));
 
   set("exits", ([
