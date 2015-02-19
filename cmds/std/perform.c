@@ -39,8 +39,9 @@ int main(object me, string arg)
         martial = "unarmed";
 
 
-    if (stringp(skill = me->query_skill_mapped(martial))) {
-        notify_fail("你所使用的外功中没有这种功能。\n");
+    if (!stringp(skill = me->query_skill_mapped(martial)))
+		return notify_fail("你请先用 enable 指令选择你要使用的外功。\n");
+	else {
         if (SKILL_D(skill)->perform_action(me, arg)) {
             if (random(120) < (int)me->query_skill(skill))
                 me->improve_skill(skill, 1, 1);
@@ -49,11 +50,9 @@ int main(object me, string arg)
             if (random(120) < (int)me->query_skill(martial, 1))
                 me->improve_skill(martial, 1, 1);
             return 1;
-        }
-        return 0;
+        } else
+			return notify_fail("你所使用的外功中没有这种功能。\n");
     }
-
-    return notify_fail("你请先用 enable 指令选择你要使用的外功。\n");
 }
 
 int help (object me)
