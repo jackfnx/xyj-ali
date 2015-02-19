@@ -100,6 +100,7 @@ varargs int look_room(object me, object env, int mode)
     object *inv;
     mapping exits;
     string str, str1="", *dirs;
+	string status;
     string ridemsg = "";
 
     if (!env) {
@@ -133,10 +134,13 @@ varargs int look_room(object me, object env, int mode)
     while (i--) {
         if (!me->visible(inv[i])) continue;
         if (inv[i] == me) continue;
+		status = "";
+		if (inv[i]->is_fighting(me)) status = HIR + " (正在跟你战斗)" + NOR;
+		if (inv[i]->is_killing(me->query("id"))) status = RED + " (正想杀了你)" + NOR;
         if (ridemsg = inv[i]->ride_suffix())
-            str1 = " " + inv[i]->short() + " <"+ridemsg +">\n"+str1;
+            str1 = " " + inv[i]->short() + status + " <"+ridemsg +">\n"+str1;
         else   
-            str1 = " " + inv[i]->short() + "\n"+str1;
+            str1 = " " + inv[i]->short() + status + "\n"+str1;
     }
 
     write(str + str1);
