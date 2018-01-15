@@ -1,38 +1,38 @@
-¡õ F_DBASE Îï¼ş×ÊÁÏÌØĞÔ
+â–¡ F_DBASE ç‰©ä»¶èµ„æ–™ç‰¹æ€§
  
 mixed set(string prop, mixed data)
-½«ÊôĞÔ prop µÄÄÚÈİÉèÎª data ²¢´æÈë dbase mapping ÖĞ, Èç¹û dbase
-²»´æÔÚµÄ»°Ôò»á½¨Á¢Ò»¸öĞÂµÄ dbase.
+å°†å±æ€§ prop çš„å†…å®¹è®¾ä¸º data å¹¶å­˜å…¥ dbase mapping ä¸­, å¦‚æœ dbase
+ä¸å­˜åœ¨çš„è¯åˆ™ä¼šå»ºç«‹ä¸€ä¸ªæ–°çš„ dbase.
  
 varargs mixed query(string prop, int raw)
-´«»ØÊôĞÔ prop µÄÄÚÈİ, Èç¹û¸ÃÊôĞÔ²»´æÔÚ»òÊÇ dbase ²»´æÔÚÔò´«»Ø 0.
-µÚ¶ş¸ö´«ÈëÖµ¿ÉÓĞ¿ÉÎŞ, Èç¹û raw ÖµÎª 1, Ôò´«»ØÖµÎª prop Ëùºô½ĞµÄ
-º¯Ê½Ãû³Æ, ·ñÔò´«»Ø¸Ãº¯Ê½µÄ´«»ØÖµ.
+ä¼ å›å±æ€§ prop çš„å†…å®¹, å¦‚æœè¯¥å±æ€§ä¸å­˜åœ¨æˆ–æ˜¯ dbase ä¸å­˜åœ¨åˆ™ä¼ å› 0.
+ç¬¬äºŒä¸ªä¼ å…¥å€¼å¯æœ‰å¯æ— , å¦‚æœ raw å€¼ä¸º 1, åˆ™ä¼ å›å€¼ä¸º prop æ‰€å‘¼å«çš„
+å‡½å¼åç§°, å¦åˆ™ä¼ å›è¯¥å‡½å¼çš„ä¼ å›å€¼.
  
 int delete(string prop)
-½«ÊôĞÔ prop ´Ó dbase ÖĞÉ¾³ı.
+å°†å±æ€§ prop ä» dbase ä¸­åˆ é™¤.
  
 mixed add(string prop, mixed data)
-½« data ¼ÓÈëÊôĞÔ prop µÄÄÚÈİ, Èç¹û¸ÃÊôĞÔ²»´æÔÚ, Ôòºô½ĞÓë
-set(prop, data) ÏàÍ¬.
+å°† data åŠ å…¥å±æ€§ prop çš„å†…å®¹, å¦‚æœè¯¥å±æ€§ä¸å­˜åœ¨, åˆ™å‘¼å«ä¸
+set(prop, data) ç›¸åŒ.
  
 int set_temp(string prop, mixed data)
-½«ÁÙÊ±ÊôĞÔ prop µÄÄÚÈİÉèÎª data ²¢´æÈë tmp_dbase mapping ÖĞ, Èç¹û
-tmp_dbase ²»´æÔÚµÄ»°Ôò»á½¨Á¢Ò»¸öĞÂµÄ tmp_dbase.
-tmp_dbase ÎªÁÙÊ±ĞÔµÄ×ÊÁÏ¿â.
+å°†ä¸´æ—¶å±æ€§ prop çš„å†…å®¹è®¾ä¸º data å¹¶å­˜å…¥ tmp_dbase mapping ä¸­, å¦‚æœ
+tmp_dbase ä¸å­˜åœ¨çš„è¯åˆ™ä¼šå»ºç«‹ä¸€ä¸ªæ–°çš„ tmp_dbase.
+tmp_dbase ä¸ºä¸´æ—¶æ€§çš„èµ„æ–™åº“.
  
  mixed query_temp(string prop)
-´«»ØÁÙÊ±ÊôĞÔ prop µÄÄÚÈİ.
+ä¼ å›ä¸´æ—¶å±æ€§ prop çš„å†…å®¹.
  
 int delete_temp(string prop)
-½«ÁÙÊ±ÊôĞÔ prop ´Ó tmp_dbase ÖĞÉ¾³ı.
+å°†ä¸´æ—¶å±æ€§ prop ä» tmp_dbase ä¸­åˆ é™¤.
  
 mixed add_temp(string prop, mixed data)
-½« data ¼ÓÈëÁÙÊ±ÊôĞÔ prop µÄÄÚÈİ, Èç¹û¸ÃÊôĞÔ²»´æÔÚ, ÔòÓëºô½Ğ
-set(prop, data) ÏàÍ¬.
+å°† data åŠ å…¥ä¸´æ—¶å±æ€§ prop çš„å†…å®¹, å¦‚æœè¯¥å±æ€§ä¸å­˜åœ¨, åˆ™ä¸å‘¼å«
+set(prop, data) ç›¸åŒ.
  
 mapping query_entire_dbase()
-´«»ØÕû¸ö dbase µÄÄÚÈİ.
+ä¼ å›æ•´ä¸ª dbase çš„å†…å®¹.
  
 void set_default_object(mixed ob)
  

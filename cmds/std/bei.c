@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // buy.c
@@ -22,7 +22,7 @@ int main(object me, string arg)
    ob->set("equipped", "second_wield");
    
                    if( !stringp(str = ob->query("wield_msg")) )
-                        str = "$N×°±¸$n×÷ÎäÆ÷¡£\n";
+                        str = "$Nè£…å¤‡$nä½œæ­¦å™¨ã€‚\n";
                    message_vision(str, me, ob);
 
    return 1;
@@ -31,9 +31,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write( @HELP
-Ö¸Áî¸ñÊ½: buy <something> from <someone>
+æŒ‡ä»¤æ ¼å¼: buy <something> from <someone>
 
-ÕâÒ»Ö¸ÁîÈÃÄã¿ÉÒÔ´ÓÄ³Ğ©ÈËÉíÉÏÂòµ½ÎïÆ·¡£
+è¿™ä¸€æŒ‡ä»¤è®©ä½ å¯ä»¥ä»æŸäº›äººèº«ä¸Šä¹°åˆ°ç‰©å“ã€‚
 HELP
    );
    return 1;

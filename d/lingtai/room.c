@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // inside2.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "��̨");
+  set ("short", "瑶台");
   set ("long", @LONG
 
-һ����̨�߸����ϣ�����������ʦ������̨�ϣ���������ʮ��С
-������̨�¡���Χ����ȫ���ɼ����ߣ���һ��˵��������ͣ���
-͸��ׯ�ϡ�
+一座瑶台高高在上，见那菩提祖师端坐在台上，两边有三十个小
+仙侍立台下。周围摆设全是仙家器具，有一种说不出的祥和，又
+透着庄严。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "out": __DIR__"houlang5",

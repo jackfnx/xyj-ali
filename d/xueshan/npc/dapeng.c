@@ -4,20 +4,20 @@ inherit NPC;
 
 void create()
 {
-    set_name("´óÅôÃ÷Íõ", ({"dapeng mingwang", "dapeng", "mingwang", "wang"}));
-    set("title", "ÔÆ³ÌÍòÀï");
-    set("gender", "ÄĞĞÔ" );
+    set_name("å¤§é¹æ˜ç‹", ({"dapeng mingwang", "dapeng", "mingwang", "wang"}));
+    set("title", "äº‘ç¨‹ä¸‡é‡Œ");
+    set("gender", "ç”·æ€§" );
     set("age", 45);
     set("per", 30);
     set("str", 30);
-    set("long", "¾İËµ´óÅôÃ÷ÍõÓëÆäĞÖ¿×È¸Ã÷ÍõÊÇ·ï»ËÖ®×Ó£¬ÓĞºÅÁî°ÙÄñÖ®ÄÜ¡£\n"
-        "öïÅô×æÊ¦×Ô³ÆÊÇËûÃÇĞÖµÜ¶şÈËÖ®¸¸£¬²»¹ıËûÓë¿×È¸Ã÷Íõ¶¼Ã»ÓĞ³ĞÈÏ¡£\n"
-        "ÒòÎª¿×È¸Ã÷ÍõµÄÔµ¹Ê£¬´óÅôÃ÷ÍõÓë·ğÃÅ½áÏÂÉî³ğ£¬ÉúÆ½×îºŞµÄ¾ÍÊÇºÍÉĞ¡£\n");
+    set("long", "æ®è¯´å¤§é¹æ˜ç‹ä¸å…¶å…„å­”é›€æ˜ç‹æ˜¯å‡¤å‡°ä¹‹å­ï¼Œæœ‰å·ä»¤ç™¾é¸Ÿä¹‹èƒ½ã€‚\n"
+        "é²²é¹ç¥–å¸ˆè‡ªç§°æ˜¯ä»–ä»¬å…„å¼ŸäºŒäººä¹‹çˆ¶ï¼Œä¸è¿‡ä»–ä¸å­”é›€æ˜ç‹éƒ½æ²¡æœ‰æ‰¿è®¤ã€‚\n"
+        "å› ä¸ºå­”é›€æ˜ç‹çš„ç¼˜æ•…ï¼Œå¤§é¹æ˜ç‹ä¸ä½›é—¨ç»“ä¸‹æ·±ä»‡ï¼Œç”Ÿå¹³æœ€æ¨çš„å°±æ˜¯å’Œå°šã€‚\n");
     set("class", "yaomo");
     set("combat_exp", 1800000);
     set("attitude", "peaceful");
-    create_family("´óÑ©É½", 2, "Ã÷Íõ");
-    set("rank_info/respect", "Ã÷Íõ");
+    create_family("å¤§é›ªå±±", 2, "æ˜ç‹");
+    set("rank_info/respect", "æ˜ç‹");
     set_skill("unarmed", 150);
     set_skill("pressheart-hand", 150);
     set_skill("dodge", 190);
@@ -69,32 +69,32 @@ void create()
 
 int check_heshang(object ob)
 {
-    return (string)ob->query("class") == "bonze" && (string)ob->query("gender") == "ÄĞĞÔ";
+    return (string)ob->query("class") == "bonze" && (string)ob->query("gender") == "ç”·æ€§";
 }
 
 void attempt_apprentice(object ob)
 {
     if (check_heshang(ob)) {
         command("kick " + ob->query("id"));
-        command("say ¿ì×ß£¬¿ì×ß£¡ÎÒÒ»¿´µ½ºÍÉĞ¾ÍÓĞÆø¡£\n");
+        command("say å¿«èµ°ï¼Œå¿«èµ°ï¼æˆ‘ä¸€çœ‹åˆ°å’Œå°šå°±æœ‰æ°”ã€‚\n");
         return;
     }
 
-    if ((string)ob->query("family/family_name") == "´óÑ©É½"){
+    if ((string)ob->query("family/family_name") == "å¤§é›ªå±±"){
         if ((int)ob->query("family/generation") > 4) {
-            command("say Ã»ÓĞËÄ´ó»¤·¨µÄÍÆ¼ö£¬±¾Íõ²»»á¿¼ÂÇµÄ¡£\n");
+            command("say æ²¡æœ‰å››å¤§æŠ¤æ³•çš„æ¨èï¼Œæœ¬ç‹ä¸ä¼šè€ƒè™‘çš„ã€‚\n");
         } else {
             if ((int)ob->query("combat_exp") >= 150000) {
                 command("nod ");
-                command("say ºÃ£¬" + RANK_D->query_respect(ob) + "ºÃºÃ¸úÎÒ¸É£¬½«À´´óÓĞ¿ÉÎª£¡\n");
+                command("say å¥½ï¼Œ" + RANK_D->query_respect(ob) + "å¥½å¥½è·Ÿæˆ‘å¹²ï¼Œå°†æ¥å¤§æœ‰å¯ä¸ºï¼\n");
                 command("recruit " + ob->query("id"));
             } else {
-                command("say Äã»¹ÊÇÕÒÇàÊ¨£¬°×ÏóËûÃÇÏÈÁ·×Å°É¡£\n");
+                command("say ä½ è¿˜æ˜¯æ‰¾é’ç‹®ï¼Œç™½è±¡ä»–ä»¬å…ˆç»ƒç€å§ã€‚\n");
             }
         }
     } else {
         command("hmm");
-        command("say ÕâÎ»" + RANK_D->query_respect(ob) + "£¬ÔÚ±¾ÃÅ¿ÉÃ»ÓĞÒ»²½µÇÌìµÄÊÂ¡£\n");
+        command("say è¿™ä½" + RANK_D->query_respect(ob) + "ï¼Œåœ¨æœ¬é—¨å¯æ²¡æœ‰ä¸€æ­¥ç™»å¤©çš„äº‹ã€‚\n");
     }
 
     return;
@@ -124,7 +124,7 @@ void greeting(object ob)
     switch (random(1)) {
         case 0:
             command("kick " + ob->query("id"));
-            command("say ËÀÔôÍº£¡");
+            command("say æ­»è´¼ç§ƒï¼");
             break;
     }
 }

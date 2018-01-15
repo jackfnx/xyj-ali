@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //  fabao_status.c
@@ -21,15 +21,15 @@ int main(object me, string arg)
     else  {
        ob = find_player(arg);
        if( !ob )  ob = find_living(arg);
-       if( !ob )  return notify_fail("ÄãÒª²ì¿´Ë­µÄ·¨±¦×´Ì¬£¿\n");
+       if( !ob )  return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„æ³•å®çŠ¶æ€ï¼Ÿ\n");
     }
     
     if( ob!=me && !wizardp(me) )
-       return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´ËûÈËµÄ·¨±¦×´Ì¬¡£\n"); 
+       return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹ä»–äººçš„æ³•å®çŠ¶æ€ã€‚\n"); 
 
     fabao = ob->query("fabao");
     if( !mapp(fabao) )
-       return notify_fail(ob->query("name")+"Ä¿Ç°Ã»ÓĞÈÎºÎ·¨±¦¡£\n");           
+       return notify_fail(ob->query("name")+"ç›®å‰æ²¡æœ‰ä»»ä½•æ³•å®ã€‚\n");           
  
     inv = all_inventory(ob);
     ob_id = getuid(ob);
@@ -37,19 +37,19 @@ int main(object me, string arg)
        if( (series_no=inv[i]->query("series_no")) &&
         inv[i]->query("owner_id") == ob_id ) {
         if( series_no == "1" )  {
-              write(sprintf("%sÉËº¦Á¦Îª %d¡£\n", inv[i]->query("name"),
+              write(sprintf("%sä¼¤å®³åŠ›ä¸º %dã€‚\n", inv[i]->query("name"),
                  inv[i]->query("weapon_prop/damage") ));
            }
         else if( series_no == "2" || series_no == "3" )  {
-              write(sprintf("%s·ÀÓùÁ¦Îª %d¡£\n", inv[i]->query("name"),
+              write(sprintf("%sé˜²å¾¡åŠ›ä¸º %dã€‚\n", inv[i]->query("name"),
                   inv[i]->query("armor_prop/dodge") ));
-              write(sprintf("%sµÖ¿¹Á¦Îª %d¡£\n", inv[i]->query("name"),
+              write(sprintf("%sæŠµæŠ—åŠ›ä¸º %dã€‚\n", inv[i]->query("name"),
                   inv[i]->query("armor_prop/armor") ));
-              write(sprintf("%sÄÚ¹¦µÖ¿¹Á¦Îª %d¡£\n", inv[i]->query("name"),
+              write(sprintf("%så†…åŠŸæŠµæŠ—åŠ›ä¸º %dã€‚\n", inv[i]->query("name"),
                   inv[i]->query("armor_prop/armor_vs_force") ));
-              write(sprintf("%sÄ§·¨¹¥»÷Á¦Îª %d¡£\n", inv[i]->query("name"),
+              write(sprintf("%sé­”æ³•æ”»å‡»åŠ›ä¸º %dã€‚\n", inv[i]->query("name"),
                   inv[i]->query("armor_prop/spells") ));
-              write(sprintf("%sÄ§·¨µÖ¿¹Á¦Îª %d¡£\n", inv[i]->query("name"),
+              write(sprintf("%sé­”æ³•æŠµæŠ—åŠ›ä¸º %dã€‚\n", inv[i]->query("name"),
                   inv[i]->query("armor_prop/armor_vs_spells") ));
           } 
        }
@@ -61,11 +61,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : fabao_status [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : fabao_status [<æŸäºº>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã²éÑ¯·¨±¦×´Ì¬¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æŸ¥è¯¢æ³•å®çŠ¶æ€ã€‚
 
-Î×Ê¦¿ÉÒÔ²éÑ¯ÈÎºÎÈËµÄ·¨±¦×´¿ö¡£
+å·«å¸ˆå¯ä»¥æŸ¥è¯¢ä»»ä½•äººçš„æ³•å®çŠ¶å†µã€‚
 
 HELP
     );

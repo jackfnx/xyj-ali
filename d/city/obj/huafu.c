@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hammer.c
@@ -9,19 +9,19 @@ inherit AXE;
 
 void create()
 {
-        set_name("Ğû»¨¸«", ({"xuanhua fu", "fu", "axe"}));
+        set_name("å®£èŠ±æ–§", ({"xuanhua fu", "fu", "axe"}));
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("long",
-"ÕâÊÇ°Ñ³ÁÖØµÄ´ó¸«£¬ÓĞ°Ë³ß¶à³¤£¬·æÀûÎŞ±È£®\n");
+"è¿™æ˜¯æŠŠæ²‰é‡çš„å¤§æ–§ï¼Œæœ‰å…«å°ºå¤šé•¿ï¼Œé”‹åˆ©æ— æ¯”ï¼\n");
                 set("value", 50000);
                 set("material", "iron");
                 set("wield_msg",
-"$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬ÑÛÇ°ÉÁ¹ıÒ»µÀº®¹â£®\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+"$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œçœ¼å‰é—ªè¿‡ä¸€é“å¯’å…‰ï¼\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_axe(60);

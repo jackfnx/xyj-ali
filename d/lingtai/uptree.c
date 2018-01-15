@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in Î÷Å£ºØÖÞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // uptree.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "´óËÉÊ÷¶¥");
+  set ("short", "å¤§æ¾æ ‘é¡¶");
   set ("long", @LONG
 
-Õ¾ÔÚ´óËÉÊ÷µÄ¶¥¶Ë£¬É½·çÕóÕó£¬¿ÕÆøÇåÐÂ£®ÏòÉ½¶¥ÑöÍû£¬Òþ
-Ô¼¿´µ½Ò»Æ¬·¿ÎÝÔÚÒ»¹Éµ­µ­µÄ×ÏÆøÁýÕÖÖ®ÏÂ£®
+ç«™åœ¨å¤§æ¾æ ‘çš„é¡¶ç«¯ï¼Œå±±é£Žé˜µé˜µï¼Œç©ºæ°”æ¸…æ–°ï¼Žå‘å±±é¡¶ä»°æœ›ï¼Œéš
+çº¦çœ‹åˆ°ä¸€ç‰‡æˆ¿å±‹åœ¨ä¸€è‚¡æ·¡æ·¡çš„ç´«æ°”ç¬¼ç½©ä¹‹ä¸‹ï¼Ž
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "down": __DIR__"uphill2"

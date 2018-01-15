@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // dagger.c : an example weapon
@@ -9,13 +9,13 @@ inherit DAGGER;
 
 void create()
 {
-   set_name("Ø°Ê×", ({"bi shou", "bishou", "dagger" }) );
+   set_name("åŒ•é¦–", ({"bi shou", "bishou", "dagger" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
-     set("long", "ÕâÊÇÒ»°Ñ¿´ÆğÏàµ±ÆÕÍ¨µÄØ°Ê×¡£\n");
+     set("unit", "æŠŠ");
+     set("long", "è¿™æ˜¯ä¸€æŠŠçœ‹èµ·ç›¸å½“æ™®é€šçš„åŒ•é¦–ã€‚\n");
      set("value", 50);
      set("material", "steel");
    }
@@ -24,8 +24,8 @@ void create()
 // These properties are optional, if you don't set them, it will use the
 // default values.
 
-   set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-   set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");
+   set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+   set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nè—å…¥æ€€ä¸­ã€‚\n");
 
 // The setup() is required.
 

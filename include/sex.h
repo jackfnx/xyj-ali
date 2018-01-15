@@ -8,7 +8,7 @@
 #define EFF_LUST  40
 #define MAX_LUST  100
 
-#define SEX_MALE    "ÄÐÐÔ"
-#define SEX_FEMALE  "Å®ÐÔ"
+#define SEX_MALE    "ç”·æ€§"
+#define SEX_FEMALE  "å¥³æ€§"
 
 #endif

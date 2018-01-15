@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // jinqiang.c
@@ -10,17 +10,17 @@ inherit SPEAR;
 
 void create()
 {
-        set_name(HIY "µã½ğÇ¹" NOR, ({ "jin qiang","qiang","jinqiang" }) );
+        set_name(HIY "ç‚¹é‡‘æª" NOR, ({ "jin qiang","qiang","jinqiang" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
+                set("unit", "æ†");
                 set("value", 10000);
                 set("material", "gold");
-                set("long", "´ËÇ¹ÒÔ»Æ½ğÎªÍ·Í­Îª¸Ë¡£\n");
-                set("wield_msg", "$N³­ÆğÒ»¸Ë$n£¬Ë³ÊÖ¶¶ÁË¸öÇ¹»¨¡£\n");
-        //      set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+                set("long", "æ­¤æªä»¥é»„é‡‘ä¸ºå¤´é“œä¸ºæ†ã€‚\n");
+                set("wield_msg", "$NæŠ„èµ·ä¸€æ†$nï¼Œé¡ºæ‰‹æŠ–äº†ä¸ªæªèŠ±ã€‚\n");
+        //      set("unwield_msg", "$Nå“¼äº†ä¸€å£°ï¼Œå°†$næ’å›åè…°ã€‚\n");
         }
         init_spear(50);
         setup();

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -7,22 +7,22 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���׿�");
+  set ("short", "盔甲库");
   set ("long", @LONG
 
-���׿���һ������̴ľ���Ϸ��Ŵ��СС�ı�׼���׻��ߣ���
-���������������ʦ��ȡ���ʵĿ��׻��ߡ���ʦ�ɴ�̴ľ����
-����(take)���߷ַ����μӴ������֡������Ϸ��У�
-  ���ף�      armor
-  ���ƣ�      shield
-  ѥ�ӣ�      boots
-  ָ�ף�      finger
-  ���ף�      hands
-  ͷ����      head
-  Χ����      neck
-  ���磺      surcoat
-  ������      waist
-  ����      wrists
+盔甲库里一排镶银檀木架上放着大大小小的标准盔甲护具，比
+武的人来这里向巫师领取合适的盔甲护具。巫师可从檀木架子
+上拿(take)护具分发给参加大会的赛手。架子上放有：
+  铠甲：      armor
+  盾牌：      shield
+  靴子：      boots
+  指套：      finger
+  手套：      hands
+  头盔：      head
+  围脖：      neck
+  披风：      surcoat
+  腰带：      waist
+  护腕：      wrists
 
 LONG);
 
@@ -45,10 +45,10 @@ int do_take (string arg)
   object ob;
 
   if (! wizardp(who))
-    return notify_fail ("�Բ���������ʦ�������ö�����\n");
+    return notify_fail ("对不起，请让巫师替您来拿东西。\n");
 
   if (! arg)
-    return notify_fail ("��Ҫ��ʲô��\n");
+    return notify_fail ("您要拿什么？\n");
   if (arg == "armor")
     ob = new ("/d/obj/armor/standard/armor");    
   else if (arg == "shield")
@@ -70,8 +70,8 @@ int do_take (string arg)
   else if (arg == "wrists")
     ob = new ("/d/obj/armor/standard/wrists");    
   else
-    return notify_fail ("��Ҫ��ʲô��\n");
-  message_vision ("$N�Ӽ���������$n��\n",who,ob);
+    return notify_fail ("您要拿什么？\n");
+  message_vision ("$N从架子上拿起$n。\n",who,ob);
   ob->move(who);
   return 1;
 }

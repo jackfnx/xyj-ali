@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // mv.c
@@ -11,7 +11,7 @@ int main(object me, string arg)
  
         seteuid(geteuid(me));
         if (!arg || sscanf(arg, "%s %s", src, dst)!=2 ) return
-        notify_fail("Ö¸Áî¸ñÊ½: mv <Ô­µµÃû> <Ä¿±êµµÃû> \n");
+        notify_fail("æŒ‡ä»¤æ ¼å¼: mv <åŸæ¡£å> <ç›®æ ‡æ¡£å> \n");
  
         src = resolve_path(me->query("cwd"), src);
         dst = resolve_path(me->query("cwd"), dst);
@@ -19,16 +19,16 @@ int main(object me, string arg)
         if( !rename(src, dst) )
                 write("Ok.\n");
         else
-                write("ÄãÃ»ÓĞ×ã¹»µÄ¶ÁĞ´È¨Àû¡£\n");
+                write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„è¯»å†™æƒåˆ©ã€‚\n");
         return 1;
 }
  
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : mv <Ô­µµÃû> <Ä¿±êµµÃû>
+æŒ‡ä»¤æ ¼å¼ : mv <åŸæ¡£å> <ç›®æ ‡æ¡£å>
  
-´ËÖ¸Áî¿ÉÈÃÄãĞŞ¸ÄÄ³¸öµµ°¸»òÄ¿Â¼Ãû³Æ¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ ä¿®æ”¹æŸä¸ªæ¡£æ¡ˆæˆ–ç›®å½•åç§°ã€‚
 HELP
     );
     return 1;

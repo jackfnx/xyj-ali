@@ -6,16 +6,16 @@ inherit NPC;
 #include "huoyannpc2.h"
 void create()
 {
-    set_name("Ä§ÀñÊÙ", ({ "moli shou", "chiguo tianwang", "shou", "tianwang", "wang" }));
-    set("gender", "ÄÐÐÔ");
+    set_name("é­”ç¤¼å¯¿", ({ "moli shou", "chiguo tianwang", "shou", "tianwang", "wang" }));
+    set("gender", "ç”·æ€§");
     set("long", "
-ËÄ´óÌìÍõÖ®Ò»£¬Éíµ£×Å±£»¤ºó¹¬°²È«µÄÖØµ££¬·ÇÍ¬Ð¡¿É¡£Ëû
-µÄÎä¹¦ËÆºõÊô·ðÃÅÒ»ÅÉ£¬»¤¹úÌìÍõ»¹ÓÐÁíÍâµÄÉ±ÊÖ¾øÕÐ£¬µ«
-Ã»ÓÐÈËÖªµÀÊÇÊ²Ã´¡£Ò²ÐíÕýÒòÎªÈç´Ë£¬Óñ»Ê²Å·ÅÐÄÈÃËû¶Àµ£
-ÖØÈÎ¡£\n"
+å››å¤§å¤©çŽ‹ä¹‹ä¸€ï¼Œèº«æ‹…ç€ä¿æŠ¤åŽå®«å®‰å…¨çš„é‡æ‹…ï¼ŒéžåŒå°å¯ã€‚ä»–
+çš„æ­¦åŠŸä¼¼ä¹Žå±žä½›é—¨ä¸€æ´¾ï¼ŒæŠ¤å›½å¤©çŽ‹è¿˜æœ‰å¦å¤–çš„æ€æ‰‹ç»æ‹›ï¼Œä½†
+æ²¡æœ‰äººçŸ¥é“æ˜¯ä»€ä¹ˆã€‚ä¹Ÿè®¸æ­£å› ä¸ºå¦‚æ­¤ï¼ŒçŽ‰çš‡æ‰æ”¾å¿ƒè®©ä»–ç‹¬æ‹…
+é‡ä»»ã€‚\n"
         );
     set("class", "xian");
-    set("title", "³Ö¹úÌìÍõ");
+    set("title", "æŒå›½å¤©çŽ‹");
     set("age", 43);
     set("str", 30);
     set("int", 37);
@@ -48,8 +48,8 @@ void create()
     map_skill("parry", "lunhui-zhang");
     map_skill("unarmed", "changquan");
     set("inquiry", ([
-        "name" : "ÔÚÏÂ¾ÍÊÇ³Ö¹úÌìÍõ£¬·îÊ¥ÚÍ°ÑÊØ±±ÌìÃÅ¡£",
-        "here" : "ÕâÀï¾ÍÊÇ±±ÌìÃÅ£¬ÀïÃæÊÇºó¹¬½ûµØ¡£",
+        "name" : "åœ¨ä¸‹å°±æ˜¯æŒå›½å¤©çŽ‹ï¼Œå¥‰åœ£è°•æŠŠå®ˆåŒ—å¤©é—¨ã€‚",
+        "here" : "è¿™é‡Œå°±æ˜¯åŒ—å¤©é—¨ï¼Œé‡Œé¢æ˜¯åŽå®«ç¦åœ°ã€‚",
     ]));
     setup();
     carry_object("/d/obj/fabao/biyu-pipa");
@@ -67,16 +67,16 @@ void hurting(object me, object ob)
       call_out("hurting", 9+random(6),me,ob);
       return;
    }
-   message_vision(HIW"$n´ÓÄÒÖÐÈ¡³ö»¨ºüõõ£¬¼ÀÔÚ¿ÕÖÐ£¬»¯×÷Ò»Ö»°×Ïó£»¿ÚËÆÑªÅè£¬ÑÀÈçÀûµ¶£¬Ïò$NÒ§À´£¡\n"NOR,ob,me);
+   message_vision(HIW"$nä»Žå›Šä¸­å–å‡ºèŠ±ç‹è²‚ï¼Œç¥­åœ¨ç©ºä¸­ï¼ŒåŒ–ä½œä¸€åªç™½è±¡ï¼›å£ä¼¼è¡€ç›†ï¼Œç‰™å¦‚åˆ©åˆ€ï¼Œå‘$Nå’¬æ¥ï¼\n"NOR,ob,me);
    n = 2;
    n += ob->query("combat_exp")/ (me->query("combat_exp")+1);
   if (random(n)) {
-      message_vision("$N´óºÈÒ»Éù£º´óµ¨£¡\n»¨ºüõõÏÅµÄÁ¬Ã¦×ê»ØÄ§ÀñÊÙµÄÄÒÖÐ¡£\n",ob);
+      message_vision("$Nå¤§å–ä¸€å£°ï¼šå¤§èƒ†ï¼\nèŠ±ç‹è²‚å“çš„è¿žå¿™é’»å›žé­”ç¤¼å¯¿çš„å›Šä¸­ã€‚\n",ob);
       me->start_busy(2);
    }
    else {
       parts = ob->query("limbs");
-      message_vision("½á¹û$N"+parts[random(sizeof(parts))]+"±»Ò»¿ÚÒ§µÃÑªÈâÄ£ºý£¡\n",ob);
+      message_vision("ç»“æžœ$N"+parts[random(sizeof(parts))]+"è¢«ä¸€å£å’¬å¾—è¡€è‚‰æ¨¡ç³Šï¼\n",ob);
       ob->receive_wound("kee",ob->query("max_kee")/5,me);
    }
    call_out("hurting", random(6)+9,me, ob);

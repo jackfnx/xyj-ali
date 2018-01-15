@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("С��å", ({"xiao liumang", "liumang", "punk"}) );
-        set("gender", "����" );
+        set_name("小流氓", ({"xiao liumang", "liumang", "punk"}) );
+        set("gender", "男性" );
         set("age", 18+random(10));
         set("long",
-"���ǳ�������һ�����ֺ��е�С��å��һ˫�۾�������ġ�\n");
+"这是长安城里一个游手好闲的小流氓，一双眼睛贼溜溜的。\n");
 
         set_temp("apply/defense", 15);
         set("combat_exp", 3500);
@@ -19,8 +19,8 @@ void create()
         set("chat_chance",10);
         set("chat_msg",
         ({
-                "С��å���ﲻ�ɲ���������š�\n",
-                "С��åЦ�����أ���������ش������㡣\n",
+                "小流氓嘴里不干不净地嘟囔着。\n",
+                "小流氓笑嘻嘻地，不怀好意地打量着你。\n",
                 (: random_move :),
         }));
 
@@ -46,9 +46,9 @@ void greeting(object ob)
 
         switch( random(6) ) {
                 case 0:
-                        say( "С��å���������˵����λ" +
+                        say( "小流氓贼塌兮兮地说：这位" +
 RANK_D->query_respect(ob)
-                                + "��Ҫ�Ҹ������һЩ��Ȥ��ȥ����\n");
+                                + "，要我给你介绍一些有趣的去处吗？\n");
                         break;
                 case 1:
                         command ("hehe " + ob->query("id") );

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -17,16 +17,16 @@ void init()
 
 void create ()
 {
-  set ("short", "ÍÁµØÃí");
+  set ("short", "åœŸåœ°åº™");
   set ("long", @LONG
 
-ÍÁµØÃíÀïÓĞÁ½×ğÄàÏñ£¬ËÜÏñ°şÂä²»¿°£¬¿´À´ºÜÉÙÓĞÈËÀ´Õâ½øÏãÉÏ¹©¡£Î÷±±
-É½ÆÂµ²×¡ÁË»ğÑæÉ½µÄÈÈÀË£¬Õâ¶ù±ã³ÉÁËĞĞÂ·ÈËĞª½ÅµÄºÃÈ¥´¦£¬¼¸¸öĞĞÈËÕı
-ÔÚÕâ´ò¼âĞª½Å¡£
+åœŸåœ°åº™é‡Œæœ‰ä¸¤å°Šæ³¥åƒï¼Œå¡‘åƒå‰¥è½ä¸å ªï¼Œçœ‹æ¥å¾ˆå°‘æœ‰äººæ¥è¿™è¿›é¦™ä¸Šä¾›ã€‚è¥¿åŒ—
+å±±å¡æŒ¡ä½äº†ç«ç„°å±±çš„çƒ­æµªï¼Œè¿™å„¿ä¾¿æˆäº†è¡Œè·¯äººæ­‡è„šçš„å¥½å»å¤„ï¼Œå‡ ä¸ªè¡Œäººæ­£
+åœ¨è¿™æ‰“å°–æ­‡è„šã€‚
 
 LONG);
   set("item_desc", ([ /* sizeof() == 1 */
-  "ÄàÏñ" : "ÄàÏñ°şÂä²»¿°£¬¿´ÆğÀ´ËÆºõÄÜ¹»ÍÆ¶¯(push)¡£\n",
+  "æ³¥åƒ" : "æ³¥åƒå‰¥è½ä¸å ªï¼Œçœ‹èµ·æ¥ä¼¼ä¹èƒ½å¤Ÿæ¨åŠ¨(push)ã€‚\n",
 ]));
 
   set("exits", ([
@@ -49,25 +49,25 @@ int do_push(string arg)
   where = environment(me);
 
   if(me->is_busy())
-    return notify_fail("Äã²»ÕıÃ¦×ÅÂğ£¿\n");
+    return notify_fail("ä½ ä¸æ­£å¿™ç€å—ï¼Ÿ\n");
 
   if(!arg)
-    return notify_fail("Ê²Ã´£¿\n");
+    return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-  if(arg != "nixiang" && arg != "ÄàÏñ")
-    return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+  if(arg != "nixiang" && arg != "æ³¥åƒ")
+    return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
   if(me->query("combat_exp") < 20000)
-      return notify_fail("ÄãÕÇºìÁËÁ³£¬ËÀÃüµØ°âÁËÄàÏñ°ëÌì£¬Ò»µã¶¯¾²Ò²Ã»ÓĞ¡£\n");
+      return notify_fail("ä½ æ¶¨çº¢äº†è„¸ï¼Œæ­»å‘½åœ°æ‰³äº†æ³¥åƒåŠå¤©ï¼Œä¸€ç‚¹åŠ¨é™ä¹Ÿæ²¡æœ‰ã€‚\n");
   if(tudi = present("tudi",where))
   {
     if(!me->query_temp("push_nixiang") || me->query_temp("push_nixiang")==0)
-      return notify_fail("ÍÁµØ¾ÍÔÚÑÛÇ°£¬ÍÆÄàÏñ¸ÉÂğ£¿\n");
-    message_vision(HIY"$NÖ»ÊÇ×Ô¹Ë×ÔµØÍÆÄÇÆĞÈøÏñ£¬Ğ¡ÃíÀï³¾°£·ÉÑî¡£\n" NOR,me);
+      return notify_fail("åœŸåœ°å°±åœ¨çœ¼å‰ï¼Œæ¨æ³¥åƒå¹²å—ï¼Ÿ\n");
+    message_vision(HIY"$Nåªæ˜¯è‡ªé¡¾è‡ªåœ°æ¨é‚£è©è¨åƒï¼Œå°åº™é‡Œå°˜åŸƒé£æ¨ã€‚\n" NOR,me);
     me->add_temp("push_nixiang", 1);
     if((me->query_temp("push_nixiang")) > j)
     {
-      message_vision("ÍÁµØ¶Ô$N¿àĞ¦ÁËÒ»Éù£¬ÉíĞÎÒ»¶¯ÉÁÈëÄàÏñºó£¬²»¼ûÁË¡£\n",me);
+      message_vision("åœŸåœ°å¯¹$Nè‹¦ç¬‘äº†ä¸€å£°ï¼Œèº«å½¢ä¸€åŠ¨é—ªå…¥æ³¥åƒåï¼Œä¸è§äº†ã€‚\n",me);
       destruct(tudi);
       me->set_temp("qi_zou_tu_di",1);
     }
@@ -76,16 +76,16 @@ int do_push(string arg)
   else
   {
     if(me->query_temp("qi_zou_tu_di"))
-      return notify_fail("Äã¼ÌĞøÈ¥ÍÆÄÇÄàÏñ£¬ÄàÏñÔÙÃ»¶¯¹ı¡£\n");
+      return notify_fail("ä½ ç»§ç»­å»æ¨é‚£æ³¥åƒï¼Œæ³¥åƒå†æ²¡åŠ¨è¿‡ã€‚\n");
     me->add_temp("push_nixiang", 1);
     if(me->query_temp("push_nixiang") < i)
     {
-      message_vision("\n$NÍÆÁËÍÆÄàÏñ£¬ÄàÏñ¾¹ËÆ»ÎÁË»Î¡£\n"NOR,me);
+      message_vision("\n$Næ¨äº†æ¨æ³¥åƒï¼Œæ³¥åƒç«Ÿä¼¼æ™ƒäº†æ™ƒã€‚\n"NOR,me);
       return 1;
     } 
     if(!me->query_temp("called_tudi"))
     {
-      message_vision(HIR"ÄàÏñºöÈ»ÃÍÁÒµØÒ¡ÁËÒ¡£¬ÍÁµØÉñ²üÎ¡Î¡µØ´ÓºóÃæ×ßÁË³öÀ´¡£\n"NOR,me);
+      message_vision(HIR"æ³¥åƒå¿½ç„¶çŒ›çƒˆåœ°æ‘‡äº†æ‘‡ï¼ŒåœŸåœ°ç¥é¢¤å·å·åœ°ä»åé¢èµ°äº†å‡ºæ¥ã€‚\n"NOR,me);
       tudi = new (__DIR__"npc/tudi");
       tudi->move(where);
       me->set_temp("called_tudi");

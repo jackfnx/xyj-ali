@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // monster.c
@@ -11,9 +11,9 @@ void setup_monster(object ob)
 
    my = ob->query_entire_dbase();
 
-   my["unit"] = "Ö»";
+   my["unit"] = "åª";
    
-   if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+   if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
    if( undefinedp(my["age"]) ) my["age"] = random(80) + 5;
 
    if( undefinedp(my["str"]) ) my["str"] = random(41) + 10;

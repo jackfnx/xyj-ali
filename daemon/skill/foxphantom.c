@@ -1,9 +1,9 @@
 // ALi
 
-// foxphantom.c  ¡¾Ç§»ÃÌìºüµÀ¡¿
+// foxphantom.c  ã€åƒå¹»å¤©ç‹é“ã€‘
 inherit SPELLS;
 
-string name() { return "Ç§»ÃÌìºüµÀ"; }
+string name() { return "åƒå¹»å¤©ç‹é“"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 

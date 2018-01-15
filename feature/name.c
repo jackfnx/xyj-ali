@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // name.c
@@ -81,7 +81,7 @@ varargs string short(int raw)
    str = (string)mask[sizeof(mask)-1];
   else {
    if( stringp(nick = query("nickname")) )
-    str = sprintf("¡¸%s¡¹%s", nick, str);
+    str = sprintf("ã€Œ%sã€%s", nick, str);
 
         if( !raw && sizeof(mask = query_temp("apply/title")) )
             title = (string)mask[sizeof(mask)-1];
@@ -92,12 +92,12 @@ varargs string short(int raw)
   }
 
   if( !raw ) {
-   if( this_object()->is_ghost() ) str = HIB "(¹íÆø) " NOR + str;
-   if( query_temp("netdead") ) str += HIG " <¶ÏÏßÖĞ>" NOR;
-   if( in_input() ) str += HIC " <ÊäÈëÎÄ×ÖÖĞ>" NOR;
-   if( in_edit() ) str += HIY " <±à¼­µµ°¸ÖĞ>" NOR;
+   if( this_object()->is_ghost() ) str = HIB "(é¬¼æ°”) " NOR + str;
+   if( query_temp("netdead") ) str += HIG " <æ–­çº¿ä¸­>" NOR;
+   if( in_input() ) str += HIC " <è¾“å…¥æ–‡å­—ä¸­>" NOR;
+   if( in_edit() ) str += HIY " <ç¼–è¾‘æ¡£æ¡ˆä¸­>" NOR;
    if( interactive(this_object())
-   &&  query_idle( this_object() ) > 240 ) str += HIM " <·¢´ôÖĞ>" NOR;
+   &&  query_idle( this_object() ) > 240 ) str += HIM " <å‘å‘†ä¸­>" NOR;
    if( !living(this_object()) ) str += HIR + query("disable_type") + NOR;
   }
 
@@ -111,7 +111,7 @@ varargs string long(int raw)
   if( !raw && sizeof(mask = query_temp("apply/long")) )
    str = mask[sizeof(mask)-1];
   else if( !stringp(str = query("long")) )
-   str = short(raw) + "¡£\n";
+   str = short(raw) + "ã€‚\n";
 
   if( stringp(extra = this_object()->extra_long()) )
    str += extra;

@@ -6,7 +6,7 @@ int  check_legal_name(string name);
 int main(object me, string str)
 {
     if (!str) {
-        write(CYN"Äã¿´ÆğÀ´±íÇé·á¸»¡£\n"NOR);
+        write(CYN"ä½ çœ‹èµ·æ¥è¡¨æƒ…ä¸°å¯Œã€‚\n"NOR);
         return 1;
     }
         str = replace_string(str, "$BLK$", BLK);
@@ -26,11 +26,11 @@ int main(object me, string str)
         str = replace_string(str, "$HIW$", HIW);
         str = replace_string(str, "$NOR$", NOR);
 	if( strsrch(str, "$ME$") == -1 )
-	write("ÄãÊäÈëµÄ×Ö´®ÖĞ±ØĞèº¬ÓĞ$ME$\n");
+	write("ä½ è¾“å…¥çš„å­—ä¸²ä¸­å¿…éœ€å«æœ‰$ME$\n");
 	else{
 	str = replace_string(str, "$ME$", me->name());
 	if(check_legal_name(str))
-	message("channel:chat", GRN +"¡¾ÏĞÁÄ¡¿"+ str + "\n" + NOR, users());
+	message("channel:chat", GRN +"ã€é—²èŠã€‘"+ str + "\n" + NOR, users());
 	}
 
     return 1;
@@ -39,17 +39,17 @@ int main(object me, string str)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: cemote <¶¯×÷´Ê>
+æŒ‡ä»¤æ ¼å¼: cemote <åŠ¨ä½œè¯>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã±í´ïÒ»¸öÏµÍ³Ã»ÓĞÔ¤ÉèµÄ¶¯×÷´Ê, ÏµÍ³»á½«ÄãËùÊäÈë
-µÄÎÄ×Ö¼ÓÉÏÄãµÄĞÕÃûááÏÔÊ¾¸øËùÓĞÔÚ·çÔÆµÄÈË¿´£®
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ è¡¨è¾¾ä¸€ä¸ªç³»ç»Ÿæ²¡æœ‰é¢„è®¾çš„åŠ¨ä½œè¯, ç³»ç»Ÿä¼šå°†ä½ æ‰€è¾“å…¥
+çš„æ–‡å­—åŠ ä¸Šä½ çš„å§“åå¾Œæ˜¾ç¤ºç»™æ‰€æœ‰åœ¨é£äº‘çš„äººçœ‹ï¼
 
-¡õÀı: cemote $ME$×øÁËÏÂÀ´¡£
+â–¡ä¾‹: cemote $ME$åäº†ä¸‹æ¥ã€‚
 
-¡¾ÏĞÁÄ¡¿°¢Í­×øÁËÏÂÀ´¡£
-ÆäÖĞ, °¢Í­¾ÍÊÇÄãµÄÃû×Ö.
+ã€é—²èŠã€‘é˜¿é“œåäº†ä¸‹æ¥ã€‚
+å…¶ä¸­, é˜¿é“œå°±æ˜¯ä½ çš„åå­—.
 
-Ïà¹ØÖ¸Áî: semote,cfy
+ç›¸å…³æŒ‡ä»¤: semote,cfy
 HELP
 	);
         return 1;
@@ -61,7 +61,7 @@ int check_legal_name(string name)
         i = strlen(name);
         while(i--) {
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬ÇëÄúÓÃÖĞÎÄ¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œè¯·æ‚¨ç”¨ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }

@@ -1,17 +1,17 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 inherit NPC;
 
 void create()
 {
-        set_name("±ß¹ØÊØ½«", ({ "wu jiang", "wu", "jiang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("è¾¹å…³å®ˆå°†", ({ "wu jiang", "wu", "jiang" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 35);
         set("str", 30);
-        set("long", "ËûÍş·çÁİÁİ£¬É±ÆøÌÚÌÚ£¬ËäÈ»Ö»ÊÇ¸öÊØ³ÇÃÅµÄĞ¡¹Ù£¬µ±ÄêÒ²ÊÇ´ò¹ı´óÕÌµÄ¡£\n");
+        set("long", "ä»–å¨é£å‡›å‡›ï¼Œæ€æ°”è…¾è…¾ï¼Œè™½ç„¶åªæ˜¯ä¸ªå®ˆåŸé—¨çš„å°å®˜ï¼Œå½“å¹´ä¹Ÿæ˜¯æ‰“è¿‡å¤§ä»—çš„ã€‚\n");
         set("combat_exp", 200000+random(30000));
         set("attitude", "peaceful");
         set_skill("unarmed", 110);
@@ -32,6 +32,6 @@ void create()
 
 int accept_fight(object me)
 {
-        message_vision("±ß¹ØÊØ½«¹ªÉíµÀ£ºÄ©½«¹«ÎñÔÚÉí£¬Ë¡²»·îÅã£¡\n\n", me);
+        message_vision("è¾¹å…³å®ˆå°†èº¬èº«é“ï¼šæœ«å°†å…¬åŠ¡åœ¨èº«ï¼Œæ•ä¸å¥‰é™ªï¼\n\n", me);
         return 0;
 }

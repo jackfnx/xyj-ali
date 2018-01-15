@@ -12,7 +12,7 @@ int main(object me, string arg)
         ob = find_player(arg);
         if (!ob) ob = find_living(arg);
         if (!ob) ob = LOGIN_D->find_body(arg);
-        if (!ob || !me->visible(ob)) return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+        if (!ob || !me->visible(ob)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
     } else
        return 0;
 
@@ -24,11 +24,11 @@ int main(object me, string arg)
 int help()
 {
     write(@TEXT
-Ö¸Áî¸ñÊ½£ºquests <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ï¼šquests <æŸäºº>
 
-ÏÔÊ¾Ä³ÈËµÄ½âÃÕ¼ÇÂ¼¡£ 
+æ˜¾ç¤ºæŸäººçš„è§£è°œè®°å½•ã€‚ 
 
-Çë¼û£ºhelp jiemi
+è¯·è§ï¼šhelp jiemi
 TEXT
     );
     return 1;

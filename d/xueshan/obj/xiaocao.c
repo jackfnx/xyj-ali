@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xiaocao.c...weiqi, 970926
@@ -11,13 +11,13 @@ void init();
 
 void create()
 {
-   set_name(HIB "À¶É«Ğ¡²İ" NOR,({"xiao cao", "xiaocao", "cao"}));
+   set_name(HIB "è“è‰²å°è‰" NOR,({"xiao cao", "xiaocao", "cao"}));
    set_weight(20);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "ÕâÖÖ²İÒ¶¼âÔ²Èó£¬É«ÔóÓÄÀ¶£¬µÄÈ·ºÃ¿´¡£ \n");
-     set("unit", "¶ä");
+     set("long", "è¿™ç§è‰å¶å°–åœ†æ¶¦ï¼Œè‰²æ³½å¹½è“ï¼Œçš„ç¡®å¥½çœ‹ã€‚ \n");
+     set("unit", "æœµ");
      set("value", 300);
    }
    
@@ -35,9 +35,9 @@ int do_chi(string arg)
 {   
    if( !this_object()->id(arg) ) return 0;
 
-   if(!arg) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+   if(!arg) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-   return notify_fail("±ğ¶¾ËÀÁË...\n");
+   return notify_fail("åˆ«æ¯’æ­»äº†...\n");
 }
 
 int do_mix(string arg)
@@ -48,29 +48,29 @@ int do_mix(string arg)
    me=this_player();
 
    if(!arg || !(mixob=present(arg, me)) ) 
-     return notify_fail("ÄãÒª¸úÊ²Ã´»ìºÏ£¿\n");
+     return notify_fail("ä½ è¦è·Ÿä»€ä¹ˆæ··åˆï¼Ÿ\n");
 
    if( arg == "xue lian" ) type = 1;
    else if( arg == "qiong cao" ) type = 2;
-   else return notify_fail("ËüÃÇ²»ÏóÄÜ»ìºÏµÄÑù×Ó¡£\n");
+   else return notify_fail("å®ƒä»¬ä¸è±¡èƒ½æ··åˆçš„æ ·å­ã€‚\n");
 
    //now I have a xue lian...
    if( (int)me->query("force") < 100 )
-     return notify_fail("ÄãµÃÓĞ×ã¹»µÄÄÚÁ¦²ÅÄÜ°ÑËüÃÇÈÚºÏÆğÀ´¡£\n");
+     return notify_fail("ä½ å¾—æœ‰è¶³å¤Ÿçš„å†…åŠ›æ‰èƒ½æŠŠå®ƒä»¬èåˆèµ·æ¥ã€‚\n");
    me->add("force", -100);
 
-   message_vision("$N°Ñ"+mixob->query("name")+"ºÍ"+this_object()->query("name")+"·Åµ½Ò»¿é£¬ÔËÆøÊ¹¾¢Ò»¼·...\n", me);
+   message_vision("$NæŠŠ"+mixob->query("name")+"å’Œ"+this_object()->query("name")+"æ”¾åˆ°ä¸€å—ï¼Œè¿æ°”ä½¿åŠ²ä¸€æŒ¤...\n", me);
 
    if( !(ice=present("bing kuai", me)) )
    {
-     message_vision("½á¹û¼·µÃÂúÊÖ¶¼ÊÇÖ­¡£\n", me);
+     message_vision("ç»“æœæŒ¤å¾—æ»¡æ‰‹éƒ½æ˜¯æ±ã€‚\n", me);
      destruct(mixob);
      destruct(this_object());
      return 1;   
    }
    
    //if I have an ice...
-   message_vision("È»ºó½«Ö­Ë®µÎµ½ÁË±ù¿éÉÏ£¬½á¹ûÖ­Ë®ºÜ¿ì±»±ù¿éÎüÁË½øÈ¥¡£\n", me);
+   message_vision("ç„¶åå°†æ±æ°´æ»´åˆ°äº†å†°å—ä¸Šï¼Œç»“æœæ±æ°´å¾ˆå¿«è¢«å†°å—å¸äº†è¿›å»ã€‚\n", me);
 
    destruct(ice);
    if ( type == 1 ) ice=new(__DIR__"blueice");
@@ -79,7 +79,7 @@ int do_mix(string arg)
            ice->move(me);
    //now ice becomes blueice...
    //anyone who has >100 force can make blueice, however those who have
-   //no iceblood-force > 20 will ÖĞ¶¾ if this blueice melts...hehe:)
+   //no iceblood-force > 20 will ä¸­æ¯’ if this blueice melts...hehe:)
 
      destruct(mixob);
    destruct(this_object());

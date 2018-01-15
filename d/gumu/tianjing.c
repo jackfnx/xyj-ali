@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-    set("short", "�ݾ�");
+    set("short", "枯井");
     set("long", @LONG
 
-�����ƺ���һ���ݾ���̧ͷ��ȥ�����Կ���һСƬ��ա�
+这里似乎是一个枯井。抬头望去，可以看到一小片天空。
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */

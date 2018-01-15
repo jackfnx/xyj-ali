@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,10 +6,10 @@ inherit F_GREETING;
 
 void create()
 {
-    set_name("Ğ¡±ø", ({ "xiao bing", "bing" }));
+    set_name("å°å…µ", ({ "xiao bing", "bing" }));
     set("age", 18+random(10));
-    set("gender", "ÄĞĞÔ");
-    set("long","ÕâĞ©±øÊ¿¶¼ÊÇÇØÊå±¦£¬³ÌÒ§½ğµÈ´Ó²¿ÏÂÖĞÌô³öÀ´µÄ¾«Èñ¡£\n");
+    set("gender", "ç”·æ€§");
+    set("long","è¿™äº›å…µå£«éƒ½æ˜¯ç§¦å”å®ï¼Œç¨‹å’¬é‡‘ç­‰ä»éƒ¨ä¸‹ä¸­æŒ‘å‡ºæ¥çš„ç²¾é”ã€‚\n");
     set("attitude", "peaceful");
     set("str", 20);
     set("combat_exp", 20000);
@@ -43,7 +43,7 @@ void init()
 
 int accept_fight(object me)
 {
-    message_vision("Ğ¡±ø¶Ô$NºÈµÀ£º´óµ¨µóÃñ£¬»îµÃ²»ÄÍ·³ÁË£¿\n", me);
+    message_vision("å°å…µå¯¹$Nå–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œæ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿ\n", me);
     me->apply_condition("killer", 100);
     kill_ob(me);
     return 1;

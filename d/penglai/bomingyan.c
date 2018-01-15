@@ -2,14 +2,14 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "±¡ÃüÑÒ");
+    set("short", "è–„å‘½å²©");
     set("long", @LONG
 
-Ò»×ùÉ½ÑÂØ£Á¢¸ßËÊ£¬Ù®Ù®²»Èº¡£ÑÂ±ßÒ»¿ÃÇàËÉ£¬
-²Ô¾¢Í¦°Î£¬Ö±²å°×ÔÆÖ®¼ä¡£ÕâÀï¾ÍÊÇ°Ù»¨ÏÉ×ÓÒş
-¾ÓµÄËùÔÚ¡£ÑÂÏÂÊÇ°Ù»¨¹È£¬±éµØÊÇÆæ»¨Òì²İ£¬¿É
-Ï§É½ÊÆ¶¸ÇÍ£¬ÇáÉí¹¦·ò²»¼ÑµÄÈç¹ûÃ³È»Ô¾(jump)
-ÏÂ(down)£¬²»ÃâË¤µÃ¹Ç¶Ï½îÕÛ¡£
+ä¸€åº§å±±å´–å…€ç«‹é«˜è€¸ï¼Œä½¼ä½¼ä¸ç¾¤ã€‚å´–è¾¹ä¸€æ£µé’æ¾ï¼Œ
+è‹åŠ²æŒºæ‹”ï¼Œç›´æ’ç™½äº‘ä¹‹é—´ã€‚è¿™é‡Œå°±æ˜¯ç™¾èŠ±ä»™å­éš
+å±…çš„æ‰€åœ¨ã€‚å´–ä¸‹æ˜¯ç™¾èŠ±è°·ï¼Œéåœ°æ˜¯å¥‡èŠ±å¼‚è‰ï¼Œå¯
+æƒœå±±åŠ¿é™¡å³­ï¼Œè½»èº«åŠŸå¤«ä¸ä½³çš„å¦‚æœè´¸ç„¶è·ƒ(jump)
+ä¸‹(down)ï¼Œä¸å…æ‘”å¾—éª¨æ–­ç­‹æŠ˜ã€‚
 LONG);
     set("exits", ([ /* sizeof() == 3 */
         "northup": __DIR__"hongyandong",
@@ -31,11 +31,11 @@ int do_jump(string arg)
     object me = this_player(), ridee = me->ride();
     
     if (!arg) return 0;
-    if (arg != "down") return notify_fail("ÍùÄÄ¶ùÌø£¿\n");
+    if (arg != "down") return notify_fail("å¾€å“ªå„¿è·³ï¼Ÿ\n");
 
     msg = "$N";
-    if (ridee) msg = msg + "Æï×Å" + ridee->query("name");
-    msg += "×İÉíÍù¹Èµ×Ô¾ÏÂ¡£\n";
+    if (ridee) msg = msg + "éª‘ç€" + ridee->query("name");
+    msg += "çºµèº«å¾€è°·åº•è·ƒä¸‹ã€‚\n";
     message_vision(msg, me);
 
     damage = random(300 - me->query_skill("dodge"));
@@ -44,13 +44,13 @@ int do_jump(string arg)
     me->receive_wound("kee", damage);
     me->move(dest);
     if (ridee) ridee->move(dest);
-    if (!damage) message_vision("$N´ÓĞüÑÂÉÏÌøÁËÏÂÀ´£¬ÇáÇáÇÉÇÉµØÂäÔÚµØÉÏ£¬ºÁ·¢Î´Ëğ¡£\n", me);
+    if (!damage) message_vision("$Nä»æ‚¬å´–ä¸Šè·³äº†ä¸‹æ¥ï¼Œè½»è½»å·§å·§åœ°è½åœ¨åœ°ä¸Šï¼Œæ¯«å‘æœªæŸã€‚\n", me);
     else {
-        message_vision("\n$N´ÓĞüÑÂÉÏÌøÁËÏÂÀ´£¬µøÁË¸ö´ó¸ú¶·¡£\n", me);
+        message_vision("\n$Nä»æ‚¬å´–ä¸Šè·³äº†ä¸‹æ¥ï¼Œè·Œäº†ä¸ªå¤§è·Ÿæ–—ã€‚\n", me);
         COMBAT_D->report_status(me); 
     }
     if (ridee) {
-        message_vision("\n$NÆï×ÅµÄ"+ ridee->query("name") +"Ë¤³ÉÁËÒ»ÍÅÈâ±ı¡£",me);
+        message_vision("\n$Néª‘ç€çš„"+ ridee->query("name") +"æ‘”æˆäº†ä¸€å›¢è‚‰é¥¼ã€‚",me);
         ridee->die();
     }
     me->start_busy(1+random(2));

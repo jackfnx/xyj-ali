@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // skill.c
@@ -210,7 +210,7 @@ varargs void improve_skill(string skill, int amount, int weak_mode)
   &&  learned[skill] > (skills[skill] + 1) * (skills[skill] + 1) ) {
    skills[skill]++;
    learned[skill] = 0;
-   tell_object(this_object(), HIC "ÄãµÄ¡¸" + SKILL_D(skill)->name() + "¡¹½ø²½ÁË£¡\n" NOR);
+   tell_object(this_object(), HIC "ä½ çš„ã€Œ" + SKILL_D(skill)->name() + "ã€è¿›æ­¥äº†ï¼\n" NOR);
    SKILL_D(skill)->skill_improved(this_object());
   }
 }

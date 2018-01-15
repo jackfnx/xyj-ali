@@ -1,4 +1,4 @@
-// ring.c ¶©»é½äÖ¸
+// ring.c è®¢å©šæˆ’æŒ‡
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,15 +7,15 @@ inherit FINGER;
 
 void create()
 {
-	set_name(HIC "¶©»é½äÖ¸" NOR, ({ "diamand ring", "diamand", "ring" }));
-       	set("long", "ÕâÊÇ·ç¶ùËÍ¸øÁè¶ùµÄ¶©»é½äÖ¸£¬³Ä×ÅËıÏËÏËÈáÜè£¬Òæ·¢¹â²ÊÕÕÈË¡£\n");
+	set_name(HIC "è®¢å©šæˆ’æŒ‡" NOR, ({ "diamand ring", "diamand", "ring" }));
+       	set("long", "è¿™æ˜¯é£å„¿é€ç»™å‡Œå„¿çš„è®¢å©šæˆ’æŒ‡ï¼Œè¡¬ç€å¥¹çº¤çº¤æŸ”è‘ï¼Œç›Šå‘å…‰å½©ç…§äººã€‚\n");
 	set("weight", 200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ã¶");
+		set("unit", "æš");
 		set("value", 100000);
-		set("material", "×êÊ¯");
+		set("material", "é’»çŸ³");
 		set("armor_prop/armor", 2);
 		set("armor_prop/personality", 3);
 		set("female_only", 1);

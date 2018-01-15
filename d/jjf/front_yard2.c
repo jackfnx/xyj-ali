@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/front_yard2.c
@@ -7,19 +7,19 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Á·Îä³¡");
+  set ("short", "ç»ƒæ­¦åœº");
   set ("long", @LONG
-¿ÕÀ«µÄ³¡µØÉÏÆÌÂúÁËÏ¸Ï¸µÄ»ÆÍÁ£¬ÕıºÃÊÊºÏÑİÎä¡£ËÄÃæÓĞ¼¸¸ö
-ÇØ¸®¼Ò½«ÕıÔÚÁ·Îä¡£³¡µØËÄ±ßÊú×Å¼¸¸ùÄ¾×®(logs)£¬»¹ÍÚÁËÈô¸É¸ö
-´óÉ³¿Ó(pits)¡£Î÷ÃæÊÇÒ»¼äÏá·¿£¬ÇØ¸®µÄ¼Î±ö¿ÉÒÔÈ¥ĞİÏ¢¡£³¡µØ¶«
-±ßÓĞ¸ö±øÆ÷¼Ü¡£
+ç©ºé˜”çš„åœºåœ°ä¸Šé“ºæ»¡äº†ç»†ç»†çš„é»„åœŸï¼Œæ­£å¥½é€‚åˆæ¼”æ­¦ã€‚å››é¢æœ‰å‡ ä¸ª
+ç§¦åºœå®¶å°†æ­£åœ¨ç»ƒæ­¦ã€‚åœºåœ°å››è¾¹ç«–ç€å‡ æ ¹æœ¨æ¡©(logs)ï¼Œè¿˜æŒ–äº†è‹¥å¹²ä¸ª
+å¤§æ²™å‘(pits)ã€‚è¥¿é¢æ˜¯ä¸€é—´å¢æˆ¿ï¼Œç§¦åºœçš„å˜‰å®¾å¯ä»¥å»ä¼‘æ¯ã€‚åœºåœ°ä¸œ
+è¾¹æœ‰ä¸ªå…µå™¨æ¶ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 3 */
   "pits" :
-"É³¿ÓÀïÓĞĞ©¼Ò½«ÔÚÁ·Ï°Çá¹¦£¬ÄãÒ²¿ÉÒÔÌø(tiao)ÏÂÈ¥ÊÔÊÔ¡£\n",
+"æ²™å‘é‡Œæœ‰äº›å®¶å°†åœ¨ç»ƒä¹ è½»åŠŸï¼Œä½ ä¹Ÿå¯ä»¥è·³(tiao)ä¸‹å»è¯•è¯•ã€‚\n",
   "logs" :
-"¼¸¸ùÄ¾×®ÉÏÓĞ²»ÉÙ±øÆ÷´ò¹ıµÄºÛ¼£(da)¡£\n",
+"å‡ æ ¹æœ¨æ¡©ä¸Šæœ‰ä¸å°‘å…µå™¨æ‰“è¿‡çš„ç—•è¿¹(da)ã€‚\n",
 ]));
   set("outdoors", 1);
   set("exits", ([ /* sizeof() == 4 */
@@ -49,13 +49,13 @@ int do_da(string arg)
   string skll;
   int weaponskll, exp=(int)me->query("combat_exp");
  
-  if( (!arg) || !((arg == "logs") || (arg == "Ä¾×®")))
-    return notify_fail("ÄãÒª´òÊ²Ã´£¿\n");
+  if( (!arg) || !((arg == "logs") || (arg == "æœ¨æ¡©")))
+    return notify_fail("ä½ è¦æ‰“ä»€ä¹ˆï¼Ÿ\n");
   if( (me->query("kee") < me->query("eff_kee")/5) || (me->query("eff_kee") < me->query("max_kee")/5))
-    return notify_fail("ÄãÀÛµÃ¸ì²²¶¼Ì§²»ÆğÀ´ÁË£¬»¹ÊÇÏÈĞİÏ¢Ò»»á¶ù°É£¡\n");
+    return notify_fail("ä½ ç´¯å¾—èƒ³è†Šéƒ½æŠ¬ä¸èµ·æ¥äº†ï¼Œè¿˜æ˜¯å…ˆä¼‘æ¯ä¸€ä¼šå„¿å§ï¼\n");
   if(! (me->query_temp("weapon")) && ! (me->query_temp("secondary_weapon")) )
     {
-      message_vision("$N»ÓÈ­ÏòÄ¾×®´òÈ¥£¬½á¹û°ÑÈ­Í·´òµÃÏÊÑªÁÜÀì¡£\n", me);
+      message_vision("$NæŒ¥æ‹³å‘æœ¨æ¡©æ‰“å»ï¼Œç»“æœæŠŠæ‹³å¤´æ‰“å¾—é²œè¡€æ·‹æ¼“ã€‚\n", me);
       me->receive_wound("kee", me->query("eff_kee")/10);
       return 1;   
  }
@@ -66,26 +66,26 @@ int do_da(string arg)
   skll = (string)weapn->query("skill_type");
   weaponskll=(int)me->query_skill(skll,1)/2;
 
-  if (!((string)me->query("family/family_name")=="½«¾ü¸®"))
+  if (!((string)me->query("family/family_name")=="å°†å†›åºœ"))
     {
-      message_vision("$N»ÓÎèÊÖÖĞ±øÆ÷ÔÚÄ¾×®ÖÜÎ§ÂÒÁ·ÁËÒ»»á¶ù¡£\n", me);
+      message_vision("$NæŒ¥èˆæ‰‹ä¸­å…µå™¨åœ¨æœ¨æ¡©å‘¨å›´ä¹±ç»ƒäº†ä¸€ä¼šå„¿ã€‚\n", me);
     }
   else
     {
-      message_vision("$NÒÔÄ¾×®×ö¶ÔÊÖÁ·ÁËÒ»Â·±øÆ÷¡£\n", me);
+      message_vision("$Nä»¥æœ¨æ¡©åšå¯¹æ‰‹ç»ƒäº†ä¸€è·¯å…µå™¨ã€‚\n", me);
       if (exp*10 <= (weaponskll*weaponskll*weaponskll))
    {
      me->receive_damage("kee", (int)me->query("max_kee")/10);
-     return notify_fail("ÄãµÄµÀĞĞ²»¹»¸ß£¬²»ÄÜ´Ó´òÄ¾×®ÖĞÑ§µ½ĞÂÖª¡£\n");
+     return notify_fail("ä½ çš„é“è¡Œä¸å¤Ÿé«˜ï¼Œä¸èƒ½ä»æ‰“æœ¨æ¡©ä¸­å­¦åˆ°æ–°çŸ¥ã€‚\n");
    }
       if (weaponskll*2<((int)me->query("con")+(int)me->query("str"))/2)
    {
      me->improve_skill(skll, random((int)(me->query("con")+me->query("str"))/2));
-     tell_object(me, "ÄãÁìÎò³öÒ»Ğ©»ù±¾±øÆ÷µÄÇÏÃÅ¡£\n");
+     tell_object(me, "ä½ é¢†æ‚Ÿå‡ºä¸€äº›åŸºæœ¬å…µå™¨çš„çªé—¨ã€‚\n");
    }
       else
    {
-     tell_object(me, "ÄãÃ¦ºõÁË°ëÌì£¬ÊÖ¶¼Ä¥³ö¼ëÁË£¬»¹ÊÇÊ²Ã´¶¼Ã»Ñ§µ½¡£\n");
+     tell_object(me, "ä½ å¿™ä¹äº†åŠå¤©ï¼Œæ‰‹éƒ½ç£¨å‡ºèŒ§äº†ï¼Œè¿˜æ˜¯ä»€ä¹ˆéƒ½æ²¡å­¦åˆ°ã€‚\n");
    }
     }
   me->receive_damage("kee", (int)me->query("max_kee")/10);
@@ -98,30 +98,30 @@ int do_tiao(string arg)
   int dodgeskll=(int)me->query_skill("dodge", 1)/2;
   int exp=(int)me->query("combat_exp");
  
-  if( (!arg) || !((arg == "pits") || (arg == "É³¿Ó")))
-    return notify_fail("ÄãÒªÍùÄÄÀïÌø£¿\n");
+  if( (!arg) || !((arg == "pits") || (arg == "æ²™å‘")))
+    return notify_fail("ä½ è¦å¾€å“ªé‡Œè·³ï¼Ÿ\n");
   if( me->query("kee") < (int)(me->query("max_kee")/5))
-    return notify_fail("ÔÙÌøÏÂÈ¥½Å°å¶¼ÒªÄ¥ÆÆÁË£¡\n");
-  if (!((string)me->query("family/family_name")=="½«¾ü¸®"))
+    return notify_fail("å†è·³ä¸‹å»è„šæ¿éƒ½è¦ç£¨ç ´äº†ï¼\n");
+  if (!((string)me->query("family/family_name")=="å°†å†›åºœ"))
     {
-      message_vision("$N×İÉíÌøÏÂÉ³¿Ó£¬½á¹ûÌø²»»ØÀ´ÁË£¬Ö»ºÃÂıÂıÅÀ»ØÀ´¡£\n", me);
+      message_vision("$Nçºµèº«è·³ä¸‹æ²™å‘ï¼Œç»“æœè·³ä¸å›æ¥äº†ï¼Œåªå¥½æ…¢æ…¢çˆ¬å›æ¥ã€‚\n", me);
     }
   else
     {
-      message_vision("$N×İÉíÌøÏÂÉ³¿Ó£¬ÓÖ·ÜÁ¦ÌøÁË»ØÀ´¡£\n", me);
+      message_vision("$Nçºµèº«è·³ä¸‹æ²™å‘ï¼Œåˆå¥‹åŠ›è·³äº†å›æ¥ã€‚\n", me);
       if (exp*10 <= (dodgeskll*dodgeskll*dodgeskll))
    {
      me->receive_damage("kee", (int)me->query("max_kee")/10);
-     return notify_fail("ÄãµÄµÀĞĞ²»¹»¸ß£¬²»ÄÜ´ÓÌøÉ³¿ÓÖĞÑ§µ½ĞÂÖª¡£\n");
+     return notify_fail("ä½ çš„é“è¡Œä¸å¤Ÿé«˜ï¼Œä¸èƒ½ä»è·³æ²™å‘ä¸­å­¦åˆ°æ–°çŸ¥ã€‚\n");
    }
       if (dodgeskll*2<((int)me->query("con")+(int)me->query("str"))/2)
    {
      me->improve_skill("dodge", random(40-(int)(me->query("str")+me->query("con"))/2));
-     tell_object(me, "ÄãÁìÎò³öÒ»Ğ©»ù±¾Çá¹¦·½ÃæµÄÇÏÃÅ¡£\n");
+     tell_object(me, "ä½ é¢†æ‚Ÿå‡ºä¸€äº›åŸºæœ¬è½»åŠŸæ–¹é¢çš„çªé—¨ã€‚\n");
    }
       else
    {
-     tell_object(me, "ÄãÌøÉÏÔ¾ÏÂ£¬ÄÖÁË¸ö»ÒÍ·ÍÁÁ³£¬¿ÉÊÇÊ²Ã´Ò²Ã»ÓĞÑ§µ½¡£\n");
+     tell_object(me, "ä½ è·³ä¸Šè·ƒä¸‹ï¼Œé—¹äº†ä¸ªç°å¤´åœŸè„¸ï¼Œå¯æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å­¦åˆ°ã€‚\n");
    }
     }
   me->receive_damage("kee", (int)me->query("max_kee")/10);

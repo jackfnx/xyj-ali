@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ժ");
+  set ("short", "大院");
   set ("long", @LONG
 
-Ժ�е��ƿ�����ǽ�ߵĹ������죬֦��Ҷ�ܡ�����һ����ש�̳�
-��С·ֱͨ�����Ĵ��۱����ϡ���Կ������յ�������
+院中地势开阔，墙边的古树参天，枝繁叶密、正中一条青砖铺成
+的小路直通向后面的大雄宝殿，依稀可以看出往日的兴旺。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 
@@ -21,7 +21,7 @@ LONG);
   "north" : __DIR__"inner2",
   "south" : __DIR__"gate",
 ]));
-  create_door("south", "ƫ��", "north", DOOR_CLOSED);
+  create_door("south", "偏门", "north", DOOR_CLOSED);
 
   setup();
 }

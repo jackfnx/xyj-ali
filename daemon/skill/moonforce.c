@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// moonforce.c  ¡¾Ì«ÒõĞÄ¾­¡¿
+// moonforce.c  ã€å¤ªé˜´å¿ƒç»ã€‘
 inherit FORCE;
 
-string name() { return "Ì«ÒõĞÄ¾­"; }
+string name() { return "å¤ªé˜´å¿ƒç»"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 

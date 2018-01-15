@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("»ğÁú", ({ "huo long", "dragon", "long" }));
-    set("race", "Ò°ÊŞ");
+    set_name("ç«é¾™", ({ "huo long", "dragon", "long" }));
+    set("race", "é‡å…½");
     set("age", 500);
-    set("long", "Ì«ÉÏÀÏ¾ıµÄ»ğ²¿Éñ±øÖ®»ğÁú.\n");
+    set("long", "å¤ªä¸Šè€å›çš„ç«éƒ¨ç¥å…µä¹‹ç«é¾™.\n");
    
     set("str", 40);
     set("per", 400);
@@ -21,7 +21,7 @@ void create()
     set("mana", 2000);
     set("max_kee", 1600);
     set("max_sen", 1800);
-    set("title", "»ğ²¿Éñ±øÖ®");
+    set("title", "ç«éƒ¨ç¥å…µä¹‹");
     set("attitude", "aggressive");
     set_skill("dodge", 140);
     set_skill("dragonstep", 40);
@@ -33,7 +33,7 @@ void create()
     map_skill("unarmed", "dragonfight");
     map_skill("parry", "dragonfight");
     map_skill("dodge", "dragonstep");
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "ÍÈ", "Î²°Í",}));
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è…¿", "å°¾å·´",}));
     set("verbs", ({ "bite", "claw" }));
     set("chat_chance_combat", 50);
     set("chat_msg_combat", ({
@@ -47,7 +47,7 @@ void create()
 void die()
 {
             if (environment()) 
-        message("sound", ""HIY"»ğÁúÏûÊ§ÔÚ»ğ¹âÖ®ÖĞ¡£"NOR"\n", environment());        
+        message("sound", ""HIY"ç«é¾™æ¶ˆå¤±åœ¨ç«å…‰ä¹‹ä¸­ã€‚"NOR"\n", environment());        
                 destruct(this_object());
 }
 

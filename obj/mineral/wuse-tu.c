@@ -4,13 +4,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("ÎåÉ«ÍÁ", ({ "wuse tu", "mud" }));
+    set_name("äº”è‰²åœŸ", ({ "wuse tu", "mud" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Å®æ´ÄïÄï²¹ÌìÊ±Á¶ÖÆµÄÎåÉ«ÉñÊ¯£¬¾­¹ıÂş³¤µÄËêÔÂ·ç»¯³ÉÁËÕâÖÖÎåÉ«ÍÁ¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "å¥³å¨²å¨˜å¨˜è¡¥å¤©æ—¶ç‚¼åˆ¶çš„äº”è‰²ç¥çŸ³ï¼Œç»è¿‡æ¼«é•¿çš„å²æœˆé£åŒ–æˆäº†è¿™ç§äº”è‰²åœŸã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
     }

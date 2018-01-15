@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -12,13 +12,13 @@ inherit HEAD;
 
 void create()
 {
-  set_name("ç­É«ºÁÃ«", ({ "magenta hair", "magentahair", "hair" }) );
+  set_name("ç»›è‰²æ¯«æ¯›", ({ "magenta hair", "magentahair", "hair" }) );
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°Ñç­ºìÉ«µÄºÁÃ«£¬¿ÉÒÔÓÃÀ´±ä³ÉÃ±×Ó£¨transform£©¡£\n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠç»›çº¢è‰²çš„æ¯«æ¯›ï¼Œå¯ä»¥ç”¨æ¥å˜æˆå¸½å­ï¼ˆtransformï¼‰ã€‚\n");
+    set("unit", "æŠŠ");
     set("value",10000);
     set("material","hair");
     set("armor_prop/armor",1);
@@ -31,12 +31,12 @@ void create()
 
 string name_suffix()
 {
-  return "Ã±";
+  return "å¸½";
 }
 
 string new_unit()
 {
-  return "¶¥";
+  return "é¡¶";
 }
 
 int init ()  
@@ -54,7 +54,7 @@ int do_wear (string arg)
   if (!arg || present (arg,environment(ob))!=ob)
     return 0; // to invoke standard function
   if (!ob->query("has_transformed")) {
-    tell_object (me,"ÇëÏÈ½«Ëü±ä³ÉÄãËùĞèÒªµÄÃ±×Ó¡£\n");
+    tell_object (me,"è¯·å…ˆå°†å®ƒå˜æˆä½ æ‰€éœ€è¦çš„å¸½å­ã€‚\n");
     return 1;
   }
   return 0; // to invoke standard function

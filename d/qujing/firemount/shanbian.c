@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-    set("short", "ɽ��");
+    set("short", "山边");
     set("long", @LONG
 
-Խ����Խ���������̣����߱�������ɫ��Ļ���ɽ����ҰһƬ���
-ɫ�Ļ����������ǿ��÷������ʯ��ɰ����
+越往西越是燥热难忍，西边便是令人色变的火焰山。四野一片红黄
+色的荒凉，到处是烤得发红的碎石和砂土。
 
 LONG);
 

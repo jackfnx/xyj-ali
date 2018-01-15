@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // honglou.c by none at 96/11/10
@@ -7,7 +7,7 @@
 #include <login.h>
 
 #define NL "/log/NAMELIST"
-#define GROUP_NAME "±¾°ï"
+#define GROUP_NAME "æœ¬å¸®"
 
 string get_status(mixed ob);
 int get_member_level(object ob);

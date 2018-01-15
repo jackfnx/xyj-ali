@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // niu.c
@@ -15,18 +15,18 @@ int set_status(mixed ob, string status);
 
 void create()
 {
-   set_name("·çÑ©»Êºó", ({ "queen" }) );
-   set("gender", "Å®ĞÔ" );
+   set_name("é£é›ªçš‡å", ({ "queen" }) );
+   set("gender", "å¥³æ€§" );
    set("age", 18);
    set("long",
-     "ÆäËØÈôºÎ£º´ºÃ·ÕÀÑ©¡£Æä½àÈôºÎ£ºÇïÀ¼ÅûËª¡£
-Æä¾²ÈôºÎ£ºËÉÉú¿Õ¹È¡£ÆäÑŞÈôºÎ£¿Ï¼Ó³³ÎÌÁ¡£
-ÆäÎÄÈôºÎ£ºÁúÓÎÇúÕÓ¡£ÆäÉñÈôºÎ£ºÔÂÉäº®½­¡£\n");
+     "å…¶ç´ è‹¥ä½•ï¼šæ˜¥æ¢…ç»½é›ªã€‚å…¶æ´è‹¥ä½•ï¼šç§‹å…°æŠ«éœœã€‚
+å…¶é™è‹¥ä½•ï¼šæ¾ç”Ÿç©ºè°·ã€‚å…¶è‰³è‹¥ä½•ï¼Ÿéœæ˜ æ¾„å¡˜ã€‚
+å…¶æ–‡è‹¥ä½•ï¼šé¾™æ¸¸æ›²æ²¼ã€‚å…¶ç¥è‹¥ä½•ï¼šæœˆå°„å¯’æ±Ÿã€‚\n");
    set("combat_exp", 200000);
    set("attitude", "friendly");
    set("inquiry", ([
-     "name" : "·çÑ©ÌìµØ»ÊºóÊÇÒ²¡£",
-     "here" : "·çÑ©Ö®ÉÏ£¬ÌìµØÖ®ÖĞ¡£",
+     "name" : "é£é›ªå¤©åœ°çš‡åæ˜¯ä¹Ÿã€‚",
+     "here" : "é£é›ªä¹‹ä¸Šï¼Œå¤©åœ°ä¹‹ä¸­ã€‚",
    ]) );
    set_skill("literate", 500);
    set_skill("dodge", 500);
@@ -93,25 +93,25 @@ int do_addlist(string arg)
 //        if( me!=this_player(1) ) return 0;
 
         if( !arg || sscanf(arg, "%s %s", arg, new_status)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºaddlist <Ê¹ÓÃÕß> <µÈ¼¶>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šaddlist <ä½¿ç”¨è€…> <ç­‰çº§>\n");
 
-        if( member_level(new_status) < 0 ) return notify_fail("Ã»ÓĞÕâÖÖµÈ¼¶¡£\n");
+        if( member_level(new_status) < 0 ) return notify_fail("æ²¡æœ‰è¿™ç§ç­‰çº§ã€‚\n");
 
         if( !objectp(ob = present(arg, environment(me))) 
         ||      !userp(ob) )
-                return notify_fail("ÄãÖ»ÄÜ¸Ä±äÊ¹ÓÃÕßµÄÈ¨ÏŞ¡£\n");
+                return notify_fail("ä½ åªèƒ½æ”¹å˜ä½¿ç”¨è€…çš„æƒé™ã€‚\n");
 
         if( member_level(me) < member_level(new_status) ||
      member_level(me) < member_level(ob) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 
         old_status = memberhood(ob);
 
         seteuid(getuid());
         if( !(set_status(ob, new_status)) )
-                return notify_fail("ĞŞ¸ÄÊ§°Ü¡£\n");
+                return notify_fail("ä¿®æ”¹å¤±è´¥ã€‚\n");
 
-        message_vision("$N½«$nµÄÈ¨ÏŞ´Ó " + old_status + " ¸ÄÎª " + new_status + " ¡£\n", me, ob);
+        message_vision("$Nå°†$nçš„æƒé™ä» " + old_status + " æ”¹ä¸º " + new_status + " ã€‚\n", me, ob);
         seteuid(getuid());
         ob->setup();
 
@@ -141,14 +141,14 @@ int do_getlist()
    object me = this_player();
 
    if(memberhood(me)!="(NotMember)") {
-        write(GROUP_NAME + "Ä¿Ç°µÄ³ÉÔ±ÓĞ£º\n");
+        write(GROUP_NAME + "ç›®å‰çš„æˆå‘˜æœ‰ï¼š\n");
         list = sort_array(query_memberlist(), 1);
         for(int i=0; i<sizeof(list); i++)
                 printf("%-15s%c", list[i],  (i%5==4) ? '\n' : ' ');
         write("\n");
    }
    else {
-   message_vision("¾¯»ÃÏÉ¹ÃĞ¦×ÅÎÊ$N:ÄúÓĞÒâ²Î¼Ó±¾°ï£¿\n", me);
+   message_vision("è­¦å¹»ä»™å§‘ç¬‘ç€é—®$N:æ‚¨æœ‰æ„å‚åŠ æœ¬å¸®ï¼Ÿ\n", me);
    }
    return 1;
 }

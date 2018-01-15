@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,19 +7,19 @@ inherit HAMMER;
 
 void create()
 {
-  set_name("ÇàÊ¯»¨Æ¿", ({ "hua ping","huaping","ping","vase"}) );
+  set_name("é’çŸ³èŠ±ç“¶", ({ "hua ping","huaping","ping","vase"}) );
   set_weight(600);
   set_max_encumbrance(6000);
   set_max_items(12);
   if( clonep() ){
     set_default_object(__FILE__);
   } else {
-    set("unit", "Ö»");
-    set("long", "ÕâÊÇÒ»Ö»»æ×Å·ÛºìĞ¡»¨µÄÇàÊ¯»¨Æ¿¡£\n");
+    set("unit", "åª");
+    set("long", "è¿™æ˜¯ä¸€åªç»˜ç€ç²‰çº¢å°èŠ±çš„é’çŸ³èŠ±ç“¶ã€‚\n");
     set("value", 2000);
   }
-  set("wield_msg", "$NÅõÆğÇàÊ¯»¨Æ¿£¬Ğ¡ĞÄµØ±§ÔÚĞØ¿Ú¡£\n");
-  set("unwield_msg", "$N½«ÇàÊ¯»¨Æ¿ÇáÇáµØ·ÅÏÂ¡£\n");
+  set("wield_msg", "$Næ§èµ·é’çŸ³èŠ±ç“¶ï¼Œå°å¿ƒåœ°æŠ±åœ¨èƒ¸å£ã€‚\n");
+  set("unwield_msg", "$Nå°†é’çŸ³èŠ±ç“¶è½»è½»åœ°æ”¾ä¸‹ã€‚\n");
   init_hammer(1);
 }
 

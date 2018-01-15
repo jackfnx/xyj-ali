@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÇàÒÂĞ¡Í¯", ({"xiao tong", "xiao", "tong"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("é’è¡£å°ç«¥", ({"xiao tong", "xiao", "tong"}));
+       set("gender", "ç”·æ€§");
        set("age", 10);
        set("attitude", "peaceful");
        set("shen_type", 1);

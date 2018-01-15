@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // monitord.c
@@ -13,7 +13,7 @@ inherit F_DBASE;
 void create()
 {
    seteuid(getuid());
-   set("name", "¼à¿Ø¾«Áé");
+   set("name", "ç›‘æ§ç²¾çµ");
    set("id", "monitord");
 }
 

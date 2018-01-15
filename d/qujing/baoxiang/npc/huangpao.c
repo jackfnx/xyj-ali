@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat 10/16/1997
@@ -9,9 +9,9 @@ int give_dan ();
 
 void create()
 {
-  set_name("»ÆÅÛ¹Ö", ({"huangpao guai", "guai" }));
-  set("title","¿üÄ¾ÀÇ");
-  set("gender", "ÄĞĞÔ");
+  set_name("é»„è¢æ€ª", ({"huangpao guai", "guai" }));
+  set("title","å¥æœ¨ç‹¼");
+  set("gender", "ç”·æ€§");
   set("age", 120);
   set("attitude", "peaceful");
   set("shen_type", 1);
@@ -43,10 +43,10 @@ void create()
   set("eff_dx",-150000);
   set("nkgain",200);
   set("inquiry", ([
-       "µ¤": (: give_dan :),
-       "ÄÚµ¤": (: give_dan :),
-       "ÉáÀû×Ó": (: give_dan :),
-       "ÉáÀû×ÓÄÚµ¤": (: give_dan :),
+       "ä¸¹": (: give_dan :),
+       "å†…ä¸¹": (: give_dan :),
+       "èˆåˆ©å­": (: give_dan :),
+       "èˆåˆ©å­å†…ä¸¹": (: give_dan :),
       ]));
   
   setup();
@@ -62,33 +62,33 @@ int give_dan ()
   
   if (! names ||
       sizeof(names)==0 ||
-      names[0]!="°Ù»¨Ğß")
+      names[0]!="ç™¾èŠ±ç¾")
   {
-    message_vision ("$NËµµÀ£ºÄãÊÇºÎĞíÈËÒ²£¿\n",me);
+    message_vision ("$Nè¯´é“ï¼šä½ æ˜¯ä½•è®¸äººä¹Ÿï¼Ÿ\n",me);
     return 1;
   }
   if (me->query("has_given"))
   {
-    message_vision ("$NËµµÀ£º»ë¼Ò£¬ÉáÀû×ÓÄÚµ¤²»ÊÇÒÑÔÚÄã´¦£¿\n",me);
+    message_vision ("$Nè¯´é“ï¼šæµ‘å®¶ï¼Œèˆåˆ©å­å†…ä¸¹ä¸æ˜¯å·²åœ¨ä½ å¤„ï¼Ÿ\n",me);
     return 1;
   }
   if (me->query("has_refused"))
   {
-    message_vision ("$NËµµÀ£º»ë¼ÒºÃÎŞÀí£¬ÉáÀû×ÓÄÚµ¤²»¸ø¾ÍÊÇ²»¸ø£¬ÔõºÃÎŞÀñÇ¿Çó£¿\n",me);
+    message_vision ("$Nè¯´é“ï¼šæµ‘å®¶å¥½æ— ç†ï¼Œèˆåˆ©å­å†…ä¸¹ä¸ç»™å°±æ˜¯ä¸ç»™ï¼Œæ€å¥½æ— ç¤¼å¼ºæ±‚ï¼Ÿ\n",me);
     return 1;
   }
   if (random(3))
   {
     me->set("has_refused",1);
-    message_vision ("$NËµµÀ£º»ë¼Ò£¬ÉáÀû×ÓÄÚµ¤»¹ÊÇ·ÅÔÚÎÒÉí±ßÎªºÃ¡£\n",me);
+    message_vision ("$Nè¯´é“ï¼šæµ‘å®¶ï¼Œèˆåˆ©å­å†…ä¸¹è¿˜æ˜¯æ”¾åœ¨æˆ‘èº«è¾¹ä¸ºå¥½ã€‚\n",me);
     return 1;
   }
   else
   {
     object dan = new ("/d/qujing/baoxiang/obj/dan");
     me->set("has_given",1);
-    message_vision ("$NËµµÀ£º»ë¼Ò£¬ÎÒÕâ¾Í¸ø¡£\n",me);
-    message_vision ("$Nµİ¸ø$nÒ»¿ÅÉáÀû×ÓÄÚµ¤¡£\n",me,who);
+    message_vision ("$Nè¯´é“ï¼šæµ‘å®¶ï¼Œæˆ‘è¿™å°±ç»™ã€‚\n",me);
+    message_vision ("$Né€’ç»™$nä¸€é¢—èˆåˆ©å­å†…ä¸¹ã€‚\n",me,who);
     dan->move(who);
     return 1;
   }
@@ -103,7 +103,7 @@ void init ()
   if (wife)
     this_object()->set_leader(wife);
 
-  if (where && where->query("short") != "²¨ÔÂ¶´" && wife)
+  if (where && where->query("short") != "æ³¢æœˆæ´" && wife)
     this_object()->kill_ob(wife);
 }
 
@@ -125,6 +125,6 @@ void kill_ob (object ob)
 void die()
 {
   if( environment() )
-    message("sound", "\n\n¿üÄ¾ÀÇĞÇà²µØÏòÌì¿Õ·ÉÈ¥¡­¡­\n\n", environment());
+    message("sound", "\n\nå¥æœ¨ç‹¼æ˜Ÿå—–åœ°å‘å¤©ç©ºé£å»â€¦â€¦\n\n", environment());
   destruct (this_object());
 }

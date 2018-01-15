@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -7,13 +7,13 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("ÂÌ²è", ({"lu cha", "cha"}));
+  set_name("ç»¿èŒ¶", ({"lu cha", "cha"}));
   set_weight(900);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»´óÍëĞÂÅİµÄÂÌ²è¡£\n");
-    set("unit", "´óÍë");
+    set("long", "ä¸€å¤§ç¢—æ–°æ³¡çš„ç»¿èŒ¶ã€‚\n");
+    set("unit", "å¤§ç¢—");
     set("value", 30);
     set("max_liquid", 5);
   }
@@ -22,7 +22,7 @@ void create()
   // we set it to contain water at the beginning
   set("liquid", ([
     "type": "water",
-    "name": "ÂÌ²è",
+    "name": "ç»¿èŒ¶",
     "remaining": 5,
   ]));
 }

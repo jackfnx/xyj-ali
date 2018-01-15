@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat on 11/5/1997 
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("и╫╪╖", ({ "shan ji", "ji" }) );
-  set("gender", "е╝пт");
+  set_name("Е╠╠Е╖╛", ({ "shan ji", "ji" }) );
+  set("gender", "Е╔ЁФ─╖");
   set("combat_exp", 10000);
-  set("long","р╩н╩╫©ячцтхк╣др╟е╝вс║ё\n");
+  set("long","Д╦─Д╫█Е╗┤Х┴ЁХ©╥Д╨╨Г └И┤▌Е╔ЁЕ╜░Ц─┌\n");
   set("age", 20);
   set("per", 20);
   set("attitude", "friendly");
@@ -40,7 +40,7 @@ void init ()
   call_out ("emoting",random(9)+1,me,who);
   if (! interactive(who))
     return;
-  if (where->query("short")!="и╫б╥")
+  if (where->query("short")!="Е╠╠Х╥╞")
   {
     me->set_leader(0);
     return;
@@ -87,7 +87,7 @@ void die ()
 {
   object me = this_object();
   object ji = new (__DIR__"ji");
-  message_vision ("\n$NиМвср╩хМожакт╜пнё╛╬╧йгр╩ж╩д╦и╫╪╕ё╛фк╢РвеЁА╟Р║ё\n",me);
+  message_vision ("\n$NХ╨╚Е╜░Д╦─Х╫╞Г▌╟Д╨├Е▌÷Е╫╒О╪▄Г╚÷Ф≤╞Д╦─Е▐╙Ф╞█Е╠╠И╦║О╪▄Ф┴▒Ф┴⌠Г²─Г©┘Х├─Ц─┌\n",me);
   ji->move(environment(me));
   destruct (me);
 }

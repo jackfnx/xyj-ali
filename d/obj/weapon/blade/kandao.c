@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,14 +9,14 @@ inherit BLADE;
 
 void create()
 {
-        set_name("¿³µ¶", ({ "blade" }) );
+        set_name("ç åˆ€", ({ "blade" }) );
    set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long",
-"Ò»°Ñ´ó¿³µ¶£®\n");
-                set("unit", "°Ñ");
+"ä¸€æŠŠå¤§ç åˆ€ï¼\n");
+                set("unit", "æŠŠ");
                 set("value", 1000);
                 set("material","wood");
         }

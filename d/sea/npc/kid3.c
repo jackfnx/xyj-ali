@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-       set_name("Ğ¡Ë®Ä¸", ({"kid"}));
+       set_name("å°æ°´æ¯", ({"kid"}));
 
-set("long","Ò»¸öÆ¯ÁÁµÄĞ¡Ë®Ä¸£®\n");
-       set("gender", "Å®ĞÔ");
+set("long","ä¸€ä¸ªæ¼‚äº®çš„å°æ°´æ¯ï¼\n");
+       set("gender", "å¥³æ€§");
        set("age", 6);
    set("per", 10);
        set("attitude", "peaceful");

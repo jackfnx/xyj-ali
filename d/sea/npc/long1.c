@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <skill.h>
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÆÑÀÎ",({"pu lao","pu","lao","long","pulao","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓĞËùºÃ£ºÆÑÀÎÄËµÚÒ»×Ó£¬Æ½ÉúºÃÃù¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("è’²ç‰¢",({"pu lao","pu","lao","long","pulao","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šè’²ç‰¢ä¹ƒç¬¬ä¸€å­ï¼Œå¹³ç”Ÿå¥½é¸£ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 41);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™ç‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);
@@ -68,7 +68,7 @@ void create()
 int accept_fight(object me)
 {
   command("jump");
-  command("say ÎÒ×îÏ²»¶´ò¼ÜÁË¡£ÔÛÃÇ±È»®±È»®£¡");
+  command("say æˆ‘æœ€å–œæ¬¢æ‰“æ¶äº†ã€‚å’±ä»¬æ¯”åˆ’æ¯”åˆ’ï¼");
   return 1;
 }
 

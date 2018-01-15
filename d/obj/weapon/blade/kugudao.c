@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -10,12 +10,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-   set_name(YEL"¿İ¹Çµ¶"NOR, ({"kugu dao", "kugudao", "kugu", "dao", "blade", }) );
+   set_name(YEL"æ¯éª¨åˆ€"NOR, ({"kugu dao", "kugudao", "kugu", "dao", "blade", }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 0);
      set("is_monitored", 1);
      set("no_sell", 1);
@@ -23,10 +23,10 @@ void create()
      set("no_drop", 1);
      set("no_put", 1);
      set("material", "bone");
-     set("name_recognized", "¿İ¹Çµ¶");
-     set("long", "ÕâÊÇÒ»±ú°µ»ÆÉ«µÄµ¥µ¶£¬·İÁ¿ºÜÇá¡£\n");
-     set("wield_msg", "$NµÄÁ³ÉÏÍ»È»ÂÓ¹ıÒ»Ä¨°µºìÉ«£¬ÔÙ¿´Ê±£¬ÊÖÖĞ¶àÁËÒ»±ú$n¡£\n");
-     set("unequip_msg", "$N·´ÊÖ½«$n²å»áÇÊÖĞ£¬Á³É«Ò²ËæÖ®Ò»ÁÁ¡£\n");
+     set("name_recognized", "æ¯éª¨åˆ€");
+     set("long", "è¿™æ˜¯ä¸€æŸ„æš—é»„è‰²çš„å•åˆ€ï¼Œä»½é‡å¾ˆè½»ã€‚\n");
+     set("wield_msg", "$Nçš„è„¸ä¸Šçªç„¶æ è¿‡ä¸€æŠ¹æš—çº¢è‰²ï¼Œå†çœ‹æ—¶ï¼Œæ‰‹ä¸­å¤šäº†ä¸€æŸ„$nã€‚\n");
+     set("unequip_msg", "$Nåæ‰‹å°†$næ’ä¼šé˜ä¸­ï¼Œè„¸è‰²ä¹Ÿéšä¹‹ä¸€äº®ã€‚\n");
    }
    init_blade(80);
    setup();

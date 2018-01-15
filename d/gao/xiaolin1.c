@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xiaolin1.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "Ð¡Ê÷ÁÖ");
+  set ("short", "å°æ ‘æž—");
   set ("long", @LONG
 
-ÁÖÖÐ¹âÏß°µµ­£¬ÒþÔ¼¿´µ½¼¸¸öÈËÎ§×÷Ò»ÍÅËµ×ÅÊ²Ã´¡£´«À´Ò»¹É
-¿¾ÈâµÄÎ¶µÀ£¬ÁîÄã²»½ûÑÊÁË¿ÚÍÙÄ­¡£
+æž—ä¸­å…‰çº¿æš—æ·¡ï¼Œéšçº¦çœ‹åˆ°å‡ ä¸ªäººå›´ä½œä¸€å›¢è¯´ç€ä»€ä¹ˆã€‚ä¼ æ¥ä¸€è‚¡
+çƒ¤è‚‰çš„å‘³é“ï¼Œä»¤ä½ ä¸ç¦å’½äº†å£å”¾æ²«ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "east" : __DIR__"shanlu",

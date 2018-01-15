@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-    set_name("�쾦���", ({"bing chan", "hama"}));
-    set("race", "Ұ��");
+    set_name("朱睛冰蟾", ({"bing chan", "hama"}));
+    set("race", "野兽");
     set("age", 33);
 
-    set("long", "һֻ����ܣ�ͨ��ѩ�ף�����ȴѪҲ��죬ģ�����ǿɰ���ȴҲ�����к�����֮����\n");
+    set("long", "一只大蟾蜍，通体雪白，眼珠却血也般红，模样甚是可爱，却也不见有何珍异之处。\n");
 
     set("attitude", "aggressive");
     set("class", "yaomo");
     set("combat_exp", (random(5)*100000+50000));
-    set("limbs", ({ "ͷ��", "����", "ǰ��", "���", "β��" }));
+    set("limbs", ({ "头部", "身体", "前脚", "後脚", "尾巴" }));
     set("verbs", ({ "bite" }));
 
     set("kee", 800);
@@ -62,7 +62,7 @@ void unconcious()
     ob->set("cook/type", "hama");
     ob->set("cook/value",5);
     ob->move(where);
-    message_vision("\n$N����һ�ţ����ٶ��ˡ�\n",me);
+    message_vision("\n$N缩成一团，不再动了。\n",me);
     destruct(me);
 }
 

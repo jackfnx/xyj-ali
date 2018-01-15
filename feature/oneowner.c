@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // oneowner.c
@@ -54,13 +54,13 @@ void self_destroy()
 
   if(env) {
     if(env->is_character()) { // npc or player
-      tell_object(env,"лЛио╨Жх╩╢╚ю╢р╩иЫ╤о╨хё╨╩╧нр"+
-        this_object()->query("name")+"ю╢ё║\n");
-      tell_object(env,"ж╩╪Ш"+this_object()->query("name")
-        +"аХ©у╤Ьх╔ё╛Ж╝й╠╪Д╡╩╪Шаквыс╟║ё\n");  
+      tell_object(env,"Е╓╘Д╦┼Е©╫Г└╤Д╪═Ф²╔Д╦─Её╟Ф√╜Е√²О╪ Х©≤Ф┬▒"+
+        this_object()->query("name")+"Ф²╔О╪│\n");
+      tell_object(env,"Е▐╙Х╖│"+this_object()->query("name")
+        +"Е┤▄Г╘╨Х─▄Е▌╩О╪▄И°▌Ф≈╤И≈╢Д╦█Х╖│Д╨├Х╦╙Е╫╠Ц─┌\n");  
     } else {
       tell_object(env,this_object()->query("name")+
-        "вЙ╫Ь╣ьюОё╛Ж╝й╠╪Д╡╩╪Шаквыс╟║ё\n");
+        "И▓╩Х©⌡Е°╟И┤▄О╪▄И°▌Ф≈╤И≈╢Д╦█Х╖│Д╨├Х╦╙Е╫╠Ц─┌\n");
     }
   }
   

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "±ùÑÂµ×");
+   set ("short", "å†°å´–åº•");
    set ("long", @LONG
 
-±ùÑÂµ×µÄ¹Õ½Ç´¦¡£Á½¶Î±ùÑÂÔÚ´Ë½»»á£¬ÍûÉÏ¿´È¥ÑÂÊÆ²»ÊÇÄÇÃ´
-ÏÕ¾şÁË¡£
+å†°å´–åº•çš„æ‹è§’å¤„ã€‚ä¸¤æ®µå†°å´–åœ¨æ­¤äº¤ä¼šï¼Œæœ›ä¸Šçœ‹å»å´–åŠ¿ä¸æ˜¯é‚£ä¹ˆ
+é™©å³»äº†ã€‚
 LONG);
 
    set("exits", ([ //sizeof() == 1
@@ -34,11 +34,11 @@ int do_climb(string arg)
    me=this_player();
 
    if( !arg || arg != "up" ){
-     return notify_fail("ÄãÒªÅÀµ½ÄÄÀïÈ¥£¿\n");
+     return notify_fail("ä½ è¦çˆ¬åˆ°å“ªé‡Œå»ï¼Ÿ\n");
    }
-   message_vision("$NÊÖ×ã²¢ÓÃ£¬ÅÊ×¡±ùÑÂÏòÉÏÅÀÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Næ‰‹è¶³å¹¶ç”¨ï¼Œæ”€ä½å†°å´–å‘ä¸Šçˆ¬äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"bingya-up1");
-   message_vision("$NÆø´­ºôºôµØ´ÓÏÂÃæÅÀÁË¹ıÀ´¡£\n", me);   
+   message_vision("$Næ°”å–˜å‘¼å‘¼åœ°ä»ä¸‹é¢çˆ¬äº†è¿‡æ¥ã€‚\n", me);   
    return 1;    
 }
 

@@ -1,17 +1,17 @@
-// ²Ï¶¹ 
+// èš•è±† 
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-    set_name("¾Æ½ş¹ıµÄ²Ï¶¹", ({"jiu dou", "dou"}));
+    set_name("é…’æµ¸è¿‡çš„èš•è±†", ({"jiu dou", "dou"}));
     set_weight(40);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»¿ÅÓÃÒ©¾Æ½ş¹ıµÄ²Ï¶¹£¬¾İËµ¶¾ÉßÌØ±ğÏ²»¶³Ô¡£\n");
-        set("unit", "¿Å");
+        set("long", "ä¸€é¢—ç”¨è¯é…’æµ¸è¿‡çš„èš•è±†ï¼Œæ®è¯´æ¯’è›‡ç‰¹åˆ«å–œæ¬¢åƒã€‚\n");
+        set("unit", "é¢—");
         set("value", 20000);
         set("food_remaining", 1);
         set("food_supply", 1);

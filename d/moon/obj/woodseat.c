@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ğ¡Ä¾µÊ", ({ "seat","deng" }));
+        set_name("å°æœ¨å‡³", ({ "seat","deng" }));
         set_weight(200);
-   set("long", "Ò»Ö»ÓÉÊ÷¸ÉÇĞ³ÉµÄĞ¡Ä¾µÊ¡£\n" );
+   set("long", "ä¸€åªç”±æ ‘å¹²åˆ‡æˆçš„å°æœ¨å‡³ã€‚\n" );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("material", "wood");
      set("value", 20);
      set("no_get", 1);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/sbridge.c
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ãþË®ÇÅÄÏ");
+  set ("short", "æ³¾æ°´æ¡¥å—");
   set ("long", @LONG
 
-ÒÑ¾­µ½ÁËãþË®ÇÅÄÏ¡£ÍùÄÏÊÇÒ»Ìõ¿íÀ«±ÊÖ±µÄ¹ÙµÀ£¬×ã¿ÉÈÝµÃ
-ÏÂÊ®Âí²¢³Û¡£Íù±±Ôò¼û¹¬³ÇÎ¡¶ë£¬ÕýÊÇ´óÌÆ¹ú¶¼³¤°²³Ç¡£³¤
-°²ÄËÀú´ú½¨¶¼Ö®Ëù£¬ËØÓÐ¡°ÈýÖÝ»¨ËÆ½õ£¬°ËË®ÈÆ³ÇÁ÷¡±Ö®³Æ¡£
+å·²ç»åˆ°äº†æ³¾æ°´æ¡¥å—ã€‚å¾€å—æ˜¯ä¸€æ¡å®½é˜”ç¬”ç›´çš„å®˜é“ï¼Œè¶³å¯å®¹å¾—
+ä¸‹åé©¬å¹¶é©°ã€‚å¾€åŒ—åˆ™è§å®«åŸŽå·å³¨ï¼Œæ­£æ˜¯å¤§å”å›½éƒ½é•¿å®‰åŸŽã€‚é•¿
+å®‰ä¹ƒåŽ†ä»£å»ºéƒ½ä¹‹æ‰€ï¼Œç´ æœ‰â€œä¸‰å·žèŠ±ä¼¼é”¦ï¼Œå…«æ°´ç»•åŸŽæµâ€ä¹‹ç§°ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

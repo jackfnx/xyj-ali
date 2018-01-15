@@ -1,4 +1,4 @@
-//·ç»Ø
+//é£Žå›ž
 //requirement: snowsword >120, being killed by target, 
 //max_qixue under 50%
 
@@ -16,27 +16,27 @@ int perform(object me, object target)
         || !target->is_character()
         || target->is_corpse()
         || target==me)
-        return notify_fail("ÄãÒª´òË­£¿\n");
+        return notify_fail("ä½ è¦æ‰“è°ï¼Ÿ\n");
 
     if ((int)me->query_skill("snowsword", 1) < 120)
-        return notify_fail("ÄãµÄ·ç»ØÑ©Îè½£·¨»ðºò»¹²»¹»£¡\n");
+        return notify_fail("ä½ çš„é£Žå›žé›ªèˆžå‰‘æ³•ç«å€™è¿˜ä¸å¤Ÿï¼\n");
     if (me->query_skill_mapped("force") != "moonforce")
-        return notify_fail("»Ø·ç½£±ØÐëÅäºÏÌ«ÒõÐÄ¾­²ÅÄÜÊ¹ÓÃ¡£\n");
+        return notify_fail("å›žé£Žå‰‘å¿…é¡»é…åˆå¤ªé˜´å¿ƒç»æ‰èƒ½ä½¿ç”¨ã€‚\n");
     if (me->query_skill("moonforce",1)<120) 
-        return notify_fail("ÄãµÄÌ«ÒõÐÄ¾­²»¹»´¿Êì¡£\n");
+        return notify_fail("ä½ çš„å¤ªé˜´å¿ƒç»ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
     if (!target->is_fighting(me))
-        return notify_fail("ÄãÃÇÃ»ÓÐÔÚ´ò¼Ü£¡\n");
+        return notify_fail("ä½ ä»¬æ²¡æœ‰åœ¨æ‰“æž¶ï¼\n");
     if (!target->is_killing(me->query("id")))
-        return notify_fail("ºÃ¶Ë¶ËµÄ±ÈÎä£¬ºÎ±ØÐÔÃüÏà²«£¿\n");
+        return notify_fail("å¥½ç«¯ç«¯çš„æ¯”æ­¦ï¼Œä½•å¿…æ€§å‘½ç›¸æï¼Ÿ\n");
     eff_qi=me->query("eff_kee");
     max_qi=me->query("max_kee");
     qi_pcg=eff_qi*100/max_qi;
     if (qi_pcg>=50) 
-        return notify_fail("»¹Î´µ½É½ÇîË®¾¡µÄµØ²½£¬²»ÒªºúÂÒ³öÊÖ¡£\n");
+        return notify_fail("è¿˜æœªåˆ°å±±ç©·æ°´å°½çš„åœ°æ­¥ï¼Œä¸è¦èƒ¡ä¹±å‡ºæ‰‹ã€‚\n");
     if (target!=me->query_temp("last_damage_from"))
-        return notify_fail("´ËÈËºÍÄãÎÞÔ¹ÎÞ³ð£¬ºÎ¿àÏÂ´ËºÝÊÖ¡£\n");
+        return notify_fail("æ­¤äººå’Œä½ æ— æ€¨æ— ä»‡ï¼Œä½•è‹¦ä¸‹æ­¤ç‹ æ‰‹ã€‚\n");
     if (me->query("force")<200)
-        return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÐÄÓÐÓà¶øÁ¦²»×ã¡£\n");
+        return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚\n");
 
     me->set("kee", 0);
     me->set("eff_kee",eff_qi*random(10)/100);
@@ -45,8 +45,8 @@ int perform(object me, object target)
     me->set("force",0);
     me->set("mana",0);
 
-    msg = HIW "\n$NÑÛ¼û²»µÐ£¬ÒøÑÀÒ»Ò§£¬Í»È»¸ß¸ß×ÝÆð£¬Äý¾ÛÈ«Éí¹¦Á¦£¬ÈË½£ºÏÒ»£¬"
-             + "»¯×öÒ»µÀ°×¹â£¬¼²·ç°ãÆËÏò$n£¡\n" NOR;
+    msg = HIW "\n$Nçœ¼è§ä¸æ•Œï¼Œé“¶ç‰™ä¸€å’¬ï¼Œçªç„¶é«˜é«˜çºµèµ·ï¼Œå‡èšå…¨èº«åŠŸåŠ›ï¼Œäººå‰‘åˆä¸€ï¼Œ"
+             + "åŒ–åšä¸€é“ç™½å…‰ï¼Œç–¾é£Žèˆ¬æ‰‘å‘$nï¼\n" NOR;
     ap = me->query_skill("snowsword", 1);
     ap = ap * ap * ap /10;
     ap = ap + (int)me->query("combat_exp");
@@ -55,13 +55,13 @@ int perform(object me, object target)
     dp = dp + target->query("combat_exp");
     dp = dp*qi_pcg/60;  //more badly you're hurt, more chance you will succeed
     if (random(ap + dp) <  dp) {
-        msg += HIW "$nÒ»¼ûÇéÊÆ²»Ãî£¬Á¬Ã¦¾ÍµØÒ»¹ö£¬ËäÓÚÇ§¾ûÒ»·¢Ö®¼Ê¶ã¹ýÀ×öªÒ»»÷£¬È´Ò²ÀÇ±·²»¿°£¬ÏÅµÃ»ê·ÉÆÇÉ¢£¬Ò»Ê±¼ä¶¯µ¯²»µÃ¡£\n"NOR;
+        msg += HIW "$nä¸€è§æƒ…åŠ¿ä¸å¦™ï¼Œè¿žå¿™å°±åœ°ä¸€æ»šï¼Œè™½äºŽåƒé’§ä¸€å‘ä¹‹é™…èº²è¿‡é›·éœ†ä¸€å‡»ï¼Œå´ä¹Ÿç‹¼ç‹ˆä¸å ªï¼Œå“å¾—é­‚é£žé­„æ•£ï¼Œä¸€æ—¶é—´åŠ¨å¼¹ä¸å¾—ã€‚\n"NOR;
         message_vision(msg, me, target);
     } else {
 //      target->set("kee",-1)
         target->receive_damage("kee",target->query("kee")*2,me);
-        msg += HIW "$n²»ÁÏ$NÈç´Ë¾ö¾ø£¬Îª´ËÆøÊÆËùÉå£¬¾¹È»ÀãÔÚµ±µØ£¬ÍüÁËÕÐ¼Ü¡£\n\n"
-                  + "ËµÊ±³Ù£¬ÄÇÊ±¿ì£¬ÕâµÀ°×¹âÒÑÔÚ$nÉíÉÏµ±ÐØ´©¹ý£¡\n"NOR;
+        msg += HIW "$nä¸æ–™$Nå¦‚æ­¤å†³ç»ï¼Œä¸ºæ­¤æ°”åŠ¿æ‰€æ…‘ï¼Œç«Ÿç„¶æ¥žåœ¨å½“åœ°ï¼Œå¿˜äº†æ‹›æž¶ã€‚\n\n"
+                  + "è¯´æ—¶è¿Ÿï¼Œé‚£æ—¶å¿«ï¼Œè¿™é“ç™½å…‰å·²åœ¨$nèº«ä¸Šå½“èƒ¸ç©¿è¿‡ï¼\n"NOR;
         message_vision(msg, me, target);
         COMBAT_D->report_status(target); 
     }

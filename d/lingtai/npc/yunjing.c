@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // worker.c
@@ -6,15 +6,15 @@
 inherit NPC;
 void create()
 {
-        set_name("�ƾ�", ({"yun jing", "yun"}));
-        set("gender", "����" );
+        set_name("云静", ({"yun jing", "yun"}));
+        set("gender", "男性" );
         set("age", 33);
-        set("long", "����ɽ���Ƕ������������еĽܳ����\n");
+        set("long", "方寸山三星洞第三代弟子中的杰出人物．\n");
         set("combat_exp", 70000);
         set("attitude", "peaceful");
    set("int", 25);
    set("class", "taoist");
-        create_family("����ɽ���Ƕ�", 3, "����");
+        create_family("方寸山三星洞", 3, "弟子");
    
         set("eff_dx", 30000);
         set("nkgain", 200);
@@ -59,8 +59,8 @@ void create()
 }
 void attempt_apprentice(object ob, object me)
 {
-        command("say �ܺã�" + RANK_D->query_respect(ob) +
-"���Ŭ�������ձض��гɡ�\n");
+        command("say 很好，" + RANK_D->query_respect(ob) +
+"多加努力，他日必定有成。\n");
         command("recruit " + ob->query("id") );
    return;
 }     

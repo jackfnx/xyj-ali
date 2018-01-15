@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// bagua.c Ìú°ËØÔ
+// bagua.c é“å…«å¦
 // 9-26-97 pickle
 
 /************************************************************/
@@ -16,16 +16,16 @@ int determine_success(object me, object victim);
 
 void create()
 {
-    set_name(BLU "Ìú°ËØÔ" NOR,({"tie bagua", "bagua", "tie", "tiebagua", }));
+    set_name(BLU "é“å…«å¦" NOR,({"tie bagua", "bagua", "tie", "tiebagua", }));
     set_weight(15000);
     if(clonep())
    set_default_object(__FILE__);
     else {
-   set("unit","¿é");
+   set("unit","å—");
    set("value",10000);
    set("is_monitored", 1);
    set("no_busy", 1);
-   set("long","Ò»¿é°Ë½ÇĞÎµÄÉúÌú£¬ÉÏÃæ¿Ì×Å°ËØÔÍ¼ĞÎ£¬ÖĞ¼ä¿Ì×ÅĞ©ÍáÍáÅ¤Å¤µÄ·ûºÅ£¬²»ÖªÊ²Ã´ÒâË¼¡£\n");
+   set("long","ä¸€å—å…«è§’å½¢çš„ç”Ÿé“ï¼Œä¸Šé¢åˆ»ç€å…«å¦å›¾å½¢ï¼Œä¸­é—´åˆ»ç€äº›æ­ªæ­ªæ‰­æ‰­çš„ç¬¦å·ï¼Œä¸çŸ¥ä»€ä¹ˆæ„æ€ã€‚\n");
    set("material", "iron");
     }
     setup();
@@ -41,30 +41,30 @@ int ji(string target)
     
     if (!target) victim=me;
     else if(!victim=present(target,environment(me)))
-   return notify_fail("ÕâÀïÃ»ÓĞ "+target+"¡£\n");
+   return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
     if(!living(victim))
-   return notify_fail("ÄãµÄÄ¿±ê²»ÊÇ»îÎï£¡\n");
+   return notify_fail("ä½ çš„ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
     if(!victim->is_fighting())
-   return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜ¼À"+objname+"¡£\n");  
+   return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+objname+"ã€‚\n");  
     if( (int)me->query("mana") < 100)
-   return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
-    msg=BLU+me->name()+"ÓÚ°ÙÃ¦Ö®ÖĞ´Ó»³ÖĞÌÍ³öÒ»¿é"+objname+BLU"£¬ÄîÁË¼¸¾äÖäÓï£¬";
-    if (victim != me) msg+="Ö¸×Å$N";
-    msg+="´óºÈÒ»Éù¡¸È¥£¡¡¹\n";
+   return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
+    msg=BLU+me->name()+"äºç™¾å¿™ä¹‹ä¸­ä»æ€€ä¸­æå‡ºä¸€å—"+objname+BLU"ï¼Œå¿µäº†å‡ å¥å’’è¯­ï¼Œ";
+    if (victim != me) msg+="æŒ‡ç€$N";
+    msg+="å¤§å–ä¸€å£°ã€Œå»ï¼ã€\n";
     condition=determine_success(me,victim);
     switch(condition)
     {
       case 1:
-   msg+=BLU"Ö»¼û"+objname+BLU"»¯×÷Ò»¹ÉºÚÑÌ£¬Ïò$N"
-     "¹üÈ¥¡£´ıºÚÑÌÉ¢¾¡Ê±£¬$NÒÑ¾­²»¼ûÁË¡£\n"NOR;
+   msg+=BLU"åªè§"+objname+BLU"åŒ–ä½œä¸€è‚¡é»‘çƒŸï¼Œå‘$N"
+     "è£¹å»ã€‚å¾…é»‘çƒŸæ•£å°½æ—¶ï¼Œ$Nå·²ç»ä¸è§äº†ã€‚\n"NOR;
    message_vision(msg, victim);
    if (userp(victim)) victim->move(victim->query("startroom"));
    else victim->move("/d/city/kezhan");
-   tell_room(environment(victim), victim->name()+"µÄÉíÓ°Í»È»³öÏÖÔÚÒ»ÕóÑÌÎíÖĞ¡£\n");
+   tell_room(environment(victim), victim->name()+"çš„èº«å½±çªç„¶å‡ºç°åœ¨ä¸€é˜µçƒŸé›¾ä¸­ã€‚\n");
    me->start_busy(5);
    break;
       case 0:
-   msg+=MAG"µ«"+objname+MAG"»¯×÷Ò»ÕóÇàÑÌÉ¢È¥ÁË¡£\n"NOR;
+   msg+=MAG"ä½†"+objname+MAG"åŒ–ä½œä¸€é˜µé’çƒŸæ•£å»äº†ã€‚\n"NOR;
    message_vision(msg, victim);
    break;
     }

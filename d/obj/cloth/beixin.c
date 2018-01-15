@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-    set_name( "Æ¤±³ĞÄ", ({ "pi beixin", "beixin" }) );
+    set_name( "çš®èƒŒå¿ƒ", ({ "pi beixin", "beixin" }) );
     set_weight(2000);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»¼şË®Å£Æ¤ÖÆµÄ±³ĞÄ£¬Ëä²»¾«ÖÂ£¬µ«ºÜ½áÊµ£®\n");
-        set("unit", "¼ş");
+        set("long", "ä¸€ä»¶æ°´ç‰›çš®åˆ¶çš„èƒŒå¿ƒï¼Œè™½ä¸ç²¾è‡´ï¼Œä½†å¾ˆç»“å®ï¼\n");
+        set("unit", "ä»¶");
         set("value", 400);
         set("material", "leather");
         set("armor_prop/armor", 6);

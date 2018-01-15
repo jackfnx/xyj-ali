@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/22/1997
@@ -8,15 +8,15 @@ inherit BLADE;
 
 void create()
 {
-  set_name("Ìêµ¶", ({"ti dao", "dao", "blade"}));
+  set_name("å‰ƒåˆ€", ({"ti dao", "dao", "blade"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "°Ñ");
-    set("long", "Ò»°ÑÌêÍ·ÓÃµÄ±¡ÈĞµ¶¡£\n");
-    set("wield_msg", "$N³é³öÒ»°Ñ±¡ÈĞÌêµ¶£¬ÄóÔÚÊÖÀï¡£\n");
-    set("unwield_msg", "$N½«Ìêµ¶ÊÕÆğ£¬Íù¶µÀïÒ»×°¡£\n");
+    set("unit", "æŠŠ");
+    set("long", "ä¸€æŠŠå‰ƒå¤´ç”¨çš„è–„åˆƒåˆ€ã€‚\n");
+    set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠè–„åˆƒå‰ƒåˆ€ï¼Œæåœ¨æ‰‹é‡Œã€‚\n");
+    set("unwield_msg", "$Nå°†å‰ƒåˆ€æ”¶èµ·ï¼Œå¾€å…œé‡Œä¸€è£…ã€‚\n");
   }
   init_blade(2);
   setup();
@@ -34,25 +34,25 @@ int do_cut(string arg)
   object ob;
 
   if (! arg)
-    return notify_fail ("ÄãÒªÄÃÌêµ¶×öÊ²Ã´£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿å‰ƒåˆ€åšä»€ä¹ˆï¼Ÿ\n");
 
   ob = present (arg,environment(me));
   if (! ob)
-    return notify_fail ("ÄãÒªÄÃÌêµ¶¸øË­ÌêÍ·£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿å‰ƒåˆ€ç»™è°å‰ƒå¤´ï¼Ÿ\n");
   
   if (! ob->is_character())
-    return notify_fail ("ÄãÒªÄÃÌêµ¶¸øË­ÌêÍ·£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿å‰ƒåˆ€ç»™è°å‰ƒå¤´ï¼Ÿ\n");
   
   if (me == ob)
-    return notify_fail ("ÄãÒª¸ø×Ô¼ºÌêÍ·£¿\n");
+    return notify_fail ("ä½ è¦ç»™è‡ªå·±å‰ƒå¤´ï¼Ÿ\n");
 
   if (me->is_busy())
-    return notify_fail ("ÄãÕıÔÚÃ¦×ÅÄØ¡£\n");
+    return notify_fail ("ä½ æ­£åœ¨å¿™ç€å‘¢ã€‚\n");
 
   if (ob->query_temp("no_hair"))
-    return notify_fail ("ÈË¼ÒÍ·ÉÏÔçÃ»Ã«ÁË¡£\n");
+    return notify_fail ("äººå®¶å¤´ä¸Šæ—©æ²¡æ¯›äº†ã€‚\n");
 
-  message_vision ("$N²ÙÆğÌêµ¶£¬¸ø$nÌêÆğÍ·À´¡£\n",me,ob);
+  message_vision ("$Næ“èµ·å‰ƒåˆ€ï¼Œç»™$nå‰ƒèµ·å¤´æ¥ã€‚\n",me,ob);
   me->start_busy(5,5);
   call_out ("cutting",5,me,ob);
   return 1;
@@ -62,10 +62,10 @@ void cutting (object me, object ob)
 {
   me->interrupt_me();
 
-  message_vision ("à§à§à§£¬$NµÄÍ··¢ÂäÏÂÒ»Æ¬¡£\n",ob);
+  message_vision ("å”°å”°å”°ï¼Œ$Nçš„å¤´å‘è½ä¸‹ä¸€ç‰‡ã€‚\n",ob);
   if (living (ob))
   {
-    message_vision ("$NÌø½«ÆğÀ´£¬µÉÔ²Ë«ÑÛ´óºÈÒ»Éù£ºÄã£¬×¡ÊÖ£¡\n",ob);
+    message_vision ("$Nè·³å°†èµ·æ¥ï¼Œçªåœ†åŒçœ¼å¤§å–ä¸€å£°ï¼šä½ ï¼Œä½æ‰‹ï¼\n",ob);
 
     if (environment(ob)->query("no_fight"))
       return;
@@ -74,7 +74,7 @@ void cutting (object me, object ob)
         ! ob->query("can_sleep"))
       return;
 
-    message_vision ("ÔãÁË£¡¿´À´ÌêÍ·ÒªÌê³öÈËÃüÁË£¡\n",ob);
+    message_vision ("ç³Ÿäº†ï¼çœ‹æ¥å‰ƒå¤´è¦å‰ƒå‡ºäººå‘½äº†ï¼\n",ob);
     ob->kill_ob(me);
     return;
   }
@@ -82,13 +82,13 @@ void cutting (object me, object ob)
   if (interactive(ob))
     return;
 
-  if (ob->query("disable_type") != "<Ë¯ÃÎÖĞ>" ||
+  if (ob->query("disable_type") != "<ç¡æ¢¦ä¸­>" ||
       ! ob->query_temp("disabled"))
     return;
 
   if (random(7))
     return;
-  message_vision ("$NµÄÍ··¢¸øÌê¹âÁË¡£\n",ob);
+  message_vision ("$Nçš„å¤´å‘ç»™å‰ƒå…‰äº†ã€‚\n",ob);
   ob->set_temp("no_hair",1);
   me->add_temp("obstacle/qinfa_cut_times",1);
   ob->check_hair();

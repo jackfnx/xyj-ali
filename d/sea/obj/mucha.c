@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gangcha.c
@@ -9,12 +9,12 @@ inherit FORK;
 
 void create()
 {
-        set_name("Ä¾²æ", ({ "fork", "cha"}) );
+        set_name("æœ¨å‰", ({ "fork", "cha"}) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 100);
                 set("material", "iron");
         }

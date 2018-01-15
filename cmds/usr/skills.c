@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // skills.c
@@ -23,21 +23,21 @@ int main(object me, string arg)
 //       if (ob->query("SPSKILLS", 1)) return ob->skills();      
         if (!ob) ob = find_player(arg);
         if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ¼¼ÄÜ£¿\n");
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„æŠ€èƒ½ï¼Ÿ\n");
     }
     if (ob != me && ob->query("env/invisibility") && !wizardp(me))
-        return notify_fail("ÄãÒª²ì¿´Ë­µÄ¼¼ÄÜ£¿\n");
+        return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„æŠ€èƒ½ï¼Ÿ\n");
     if (ob != me && !wizardp(me)
     &&  !ob->is_apprentice_of(me)
     &&  !me->is_apprentice_of(ob))
-        return notify_fail("Ö»ÓĞÎ×Ê¦»òÓĞÊ¦Í½¹ØÏµµÄÈËÄÜ²ì¿´ËûÈËµÄ¼¼ÄÜ¡£\n");
+        return notify_fail("åªæœ‰å·«å¸ˆæˆ–æœ‰å¸ˆå¾’å…³ç³»çš„äººèƒ½å¯Ÿçœ‹ä»–äººçš„æŠ€èƒ½ã€‚\n");
 
     skl = ob->query_skills();
     if (!sizeof(skl)) {
-        write((ob == me ? "Äã" : ob->name()) + "Ä¿Ç°²¢Ã»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ¡£\n");
+        write((ob == me ? "ä½ " : ob->name()) + "ç›®å‰å¹¶æ²¡æœ‰å­¦ä¼šä»»ä½•æŠ€èƒ½ã€‚\n");
         return 1;
     }
-    write ((ob == me ? "Äã" : ob->name()) + "Ä¿Ç°ËùÕÆÎÕµÄ¼¼ÄÜ£º\n\n");
+    write ((ob == me ? "ä½ " : ob->name()) + "ç›®å‰æ‰€æŒæ¡çš„æŠ€èƒ½ï¼š\n\n");
     sname = sort_array( keys(skl), (: strcmp :) );
 
     map = ob->query_skill_map();
@@ -50,7 +50,7 @@ int main(object me, string arg)
     for (i = 0; i < sizeof(skl); i++) {
         printf("%s%s%-40s" NOR " - %-10s %3d/%5d\n", 
             (lrn[sname[i]] >= (skl[sname[i]]+1) * (skl[sname[i]]+1)) ? HIM : "",
-            (member_array(sname[i], mapped)==-1 ? "  ": "¡õ"),
+            (member_array(sname[i], mapped)==-1 ? "  ": "â–¡"),
             SKILL_D(sname[i])->name() + " (" + sname[i] + ")",
             RANK_D->describe_skill(sname[i], skl[sname[i]]),
             skl[sname[i]], (int)lrn[sname[i]],
@@ -63,13 +63,13 @@ int main(object me, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : skills|jineng [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : skills|jineng [<æŸäºº>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã²éÑ¯ËùÑ§¹ıµÄ¼¼ÄÜ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æŸ¥è¯¢æ‰€å­¦è¿‡çš„æŠ€èƒ½ã€‚
 
-ÄãÒ²¿ÉÒÔÖ¸¶¨Ò»¸öºÍÄãÓĞÊ¦Í½¹ØÏµµÄ¶ÔÏó£¬ÓÃ skills ¿ÉÒÔ²éÖª¶Ô·½µÄ¼¼ÄÜ×´¿ö¡£
+ä½ ä¹Ÿå¯ä»¥æŒ‡å®šä¸€ä¸ªå’Œä½ æœ‰å¸ˆå¾’å…³ç³»çš„å¯¹è±¡ï¼Œç”¨ skills å¯ä»¥æŸ¥çŸ¥å¯¹æ–¹çš„æŠ€èƒ½çŠ¶å†µã€‚
 
-Î×Ê¦¿ÉÒÔ²éÑ¯ÈÎºÎÈË»ò NPC µÄ¼¼ÄÜ×´¿ö¡£
+å·«å¸ˆå¯ä»¥æŸ¥è¯¢ä»»ä½•äººæˆ– NPC çš„æŠ€èƒ½çŠ¶å†µã€‚
 
 HELP
     );

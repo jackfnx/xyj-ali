@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ËÂÇ°");
+  set ("short", "å¯ºå‰");
   set ("long", @LONG
 
-Ö»¼ûÍòÄêÀ×ÒôËÂÇ°ÎªÒ»¹ã³¡£¬Ò»Â·ÆÌ×ÅÃ÷ÁÁµÄÂêè§»¨×©£¬¹ã³¡
-µÄÕýÃæ¿É¼ûÎÞÊýµîÓîÈï¹¬ÖéãÚ×ÏÆøÈðÈð¡£¶«±ßÓÐÏÉÔ³Õª¹ûÈëÌÒ
-ÁÖ£¬Î÷±ßÓÐ°×º×ÆÜËÉÁ¢Ö¦Í·£»³¡ÄÏÓÐ²Ê·ïË«Ë«£¬ÏòÈÕÒ»ÃùÌìÏÂ
-Èð£¬³¡±±ÊÇÇàð½¶Ô¶Ô£¬Ó­·çÒ«ÎèÊÀ¼äÏ¡¡£
+åªè§ä¸‡å¹´é›·éŸ³å¯ºå‰ä¸ºä¸€å¹¿åœºï¼Œä¸€è·¯é“ºç€æ˜Žäº®çš„çŽ›ç‘™èŠ±ç –ï¼Œå¹¿åœº
+çš„æ­£é¢å¯è§æ— æ•°æ®¿å®‡è•Šå®«ç é˜™ç´«æ°”ç‘žç‘žã€‚ä¸œè¾¹æœ‰ä»™çŒ¿æ‘˜æžœå…¥æ¡ƒ
+æž—ï¼Œè¥¿è¾¹æœ‰ç™½é¹¤æ –æ¾ç«‹æžå¤´ï¼›åœºå—æœ‰å½©å‡¤åŒåŒï¼Œå‘æ—¥ä¸€é¸£å¤©ä¸‹
+ç‘žï¼ŒåœºåŒ—æ˜¯é’é¸¾å¯¹å¯¹ï¼Œè¿Žé£Žè€€èˆžä¸–é—´ç¨€ã€‚
 
 LONG);
 
@@ -43,9 +43,9 @@ int valid_leave (object who, string dir)
     return ::valid_leave (who, dir);
 
   if (anuo)
-    return notify_fail ("°¢ÙÐ½«ÄãÇáÀ¹£ºÎÒ·ð×æÔÝ²»´ý¿ÍÒ²¡£\n");
+    return notify_fail ("é˜¿å‚©å°†ä½ è½»æ‹¦ï¼šæˆ‘ä½›ç¥–æš‚ä¸å¾…å®¢ä¹Ÿã€‚\n");
   if (jiaye)
-    return notify_fail ("åÈÒ¶½«ÄãÇáÀ¹£ºÎÒ·ð×æÔÝ²»´ý¿ÍÒ²¡£\n");
+    return notify_fail ("è¿¦å¶å°†ä½ è½»æ‹¦ï¼šæˆ‘ä½›ç¥–æš‚ä¸å¾…å®¢ä¹Ÿã€‚\n");
   return ::valid_leave (who, dir);
 }
 

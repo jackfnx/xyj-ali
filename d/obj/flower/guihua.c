@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -9,11 +9,11 @@ inherit NECK;
 
 void create()
 {
-  set_name(HIB "¹ğ»¨" NOR, ({ "gui hua", "flower"}));
+  set_name(HIB "æ¡‚èŠ±" NOR, ({ "gui hua", "flower"}));
   set_weight(100);
   set("material", "flower");
-  set("long","Ò»¶ä½ğ»ÆµÄ¹ğ»¨£¬É¢·¢×ÅÒ»Ë¿Ë¿ÌğÏã¡£\n");
-  set("unit", "¶ä");
+  set("long","ä¸€æœµé‡‘é»„çš„æ¡‚èŠ±ï¼Œæ•£å‘ç€ä¸€ä¸ä¸ç”œé¦™ã€‚\n");
+  set("unit", "æœµ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 1);
   setup();
@@ -37,7 +37,7 @@ int do_wear (string arg)
 
   if (arg != "flower" && arg != "gui hua")
     return 0;
-  msg = "$N´÷ÉÏÒ»¶ä"+name+"£¬²»½ûÏëÆğÄêÉÙÊ±Ôø¾­µÄÃÎÖĞÈË¡£\n"; 
+  msg = "$Næˆ´ä¸Šä¸€æœµ"+name+"ï¼Œä¸ç¦æƒ³èµ·å¹´å°‘æ—¶æ›¾ç»çš„æ¢¦ä¸­äººã€‚\n"; 
   flower->set("wear_msg",msg);
   return 0;
 }
@@ -52,7 +52,7 @@ int do_remove (string arg)
   if (arg != "flower" && arg != "gui hua")
     return 0;
 
-  msg = "$N½«"+name+"ÇáÇáµØÕªÏÂÀ´¡­¡­\n"; 
+  msg = "$Nå°†"+name+"è½»è½»åœ°æ‘˜ä¸‹æ¥â€¦â€¦\n"; 
   flower->set("unequip_msg",msg);
   return 0;
 }
@@ -67,7 +67,7 @@ int do_smell (string arg)
   if (arg != "flower"&& arg != "gui hua")
     return 0;
 
-  msg = "$N½«"+name+"ÅõÆğÎÅÁËÎÅ£¬ÓÖµë¼ÇÆğ×òÌìµÄ¹ÊÈË¡£\n"; 
+  msg = "$Nå°†"+name+"æ§èµ·é—»äº†é—»ï¼Œåˆæƒ¦è®°èµ·æ˜¨å¤©çš„æ•…äººã€‚\n"; 
   message_vision (msg,me);
   return 1;
 }

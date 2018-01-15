@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-    set ("short", "Ñ©½×");
+    set ("short", "é›ªé˜¶");
     set ("long", @LONG
 
-ÕâÊÇÒ»ÌõÂúÊÇ»ıÑ©µÄ½×Ìİ£¬²»¹ıÒÑ¾­µ½´ïÁË¾¡Í·£¬ÃæÇ°Ö»ÓĞÒ»µÀ
-»ıÑ©µÄÊ¯±Ú(shibi)¡£
+è¿™æ˜¯ä¸€æ¡æ»¡æ˜¯ç§¯é›ªçš„é˜¶æ¢¯ï¼Œä¸è¿‡å·²ç»åˆ°è¾¾äº†å°½å¤´ï¼Œé¢å‰åªæœ‰ä¸€é“
+ç§¯é›ªçš„çŸ³å£(shibi)ã€‚
 LONG);
 
     set("exits", ([ //sizeof() == 4
@@ -30,10 +30,10 @@ int do_climb(string arg)
 {
     object me = this_player();
 
-    if (!arg || arg != "shibi") return notify_fail("ÄãÒªÍùÄÄÅÀ£¿\n");
-    if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+    if (!arg || arg != "shibi") return notify_fail("ä½ è¦å¾€å“ªçˆ¬ï¼Ÿ\n");
+    if (me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
-    message_vision("$NÊÖ¿Ù×ÅÊ¯·ì£¬ÏòÊ¯±ÚÉÏÅÀÈ¥¡£\n", me);
+    message_vision("$Næ‰‹æŠ ç€çŸ³ç¼ï¼Œå‘çŸ³å£ä¸Šçˆ¬å»ã€‚\n", me);
     me->start_busy(2);
     call_out("climb_to", 2, me);
     return 1;
@@ -42,17 +42,17 @@ int do_climb(string arg)
 void climb_to(object me)
 {
     if (me->query("kee") < 50) {
-        message_vision("Ë­Öª£¬$NÒ»½ÅµÅ¿Õ£¬´ÓÊ¯±ÚÉÏ´óÍ·³åÏÂÔØÁËÏÂÀ´£¬ÄÔ¹Ï×ÓàÛµÄÒ»ÉùÔÒÔÚÑ©µØÉÏ¡£\n", me);
-        message_vision("ĞÒºÃÊÇÑ©µØ£¬·ñÔò¿Ï¶¨Ã»ÃüÁË¡£\n", me);
+        message_vision("è°çŸ¥ï¼Œ$Nä¸€è„šè¹¬ç©ºï¼Œä»çŸ³å£ä¸Šå¤§å¤´å†²ä¸‹è½½äº†ä¸‹æ¥ï¼Œè„‘ç“œå­å™—çš„ä¸€å£°ç ¸åœ¨é›ªåœ°ä¸Šã€‚\n", me);
+        message_vision("å¹¸å¥½æ˜¯é›ªåœ°ï¼Œå¦åˆ™è‚¯å®šæ²¡å‘½äº†ã€‚\n", me);
         me->unconcious();
     } else if ((int)me->query_skill("dodge", 1) < 20) {
-        message_vision("Ë­Öª£¬$NÒ»½ÅµÅ¿Õ£¬´ÓÊ¯±ÚÉÏ´óÍ·³åÏÂÔØÁËÏÂÀ´£¬À´ÁË¸öÆ¨¹ÉÏòºóÆ½É³ÂäÑãÊ½¡£\n", me);
-        message_vision("ËäÈ»ÊÇÑ©µØ£¬Ò²°Ñ$PË¤µÃ²»Çá¡£\n", me);
+        message_vision("è°çŸ¥ï¼Œ$Nä¸€è„šè¹¬ç©ºï¼Œä»çŸ³å£ä¸Šå¤§å¤´å†²ä¸‹è½½äº†ä¸‹æ¥ï¼Œæ¥äº†ä¸ªå±è‚¡å‘åå¹³æ²™è½é›å¼ã€‚\n", me);
+        message_vision("è™½ç„¶æ˜¯é›ªåœ°ï¼Œä¹ŸæŠŠ$Pæ‘”å¾—ä¸è½»ã€‚\n", me);
         me->receive_damage("kee", 20);
     } else {
         me->receive_damage("kee", 50);
-        tell_room(environment(me), "×ªÑÛÖ®¼ä£¬"+me->name()+"µÄÉíÓ°±ã¿´²»¼ûÁË¡£\n", me);
+        tell_room(environment(me), "è½¬çœ¼ä¹‹é—´ï¼Œ"+me->name()+"çš„èº«å½±ä¾¿çœ‹ä¸è§äº†ã€‚\n", me);
         me->move(__DIR__"no4-enter");
-        tell_room(environment(me), "Ö»¼û"+me->name()+"·ÉÉíÔ¾ÁËÉÏÀ´¡£\n", me);
+        tell_room(environment(me), "åªè§"+me->name()+"é£èº«è·ƒäº†ä¸Šæ¥ã€‚\n", me);
     }
 }

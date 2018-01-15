@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -7,15 +7,15 @@ string expell_me(object me);
 
 void create()
 {
-    set_name("ÔÆÑôÕæÈË", ({"master yunyang", "master", "yunyang"}));
-    set("long", "ÔÆÑôµ£ÈÎÕÆÃÅÈËÒÔÀ´£¬½µÑı·üÄ§ÎŞÊı£¬ÈË³Æ¡¸Ğ¡ÌìÊ¦¡¹¡££®\n");
-    set("gender", "ÄĞĞÔ");
-    set("title", "Ğ¡ÌìÊ¦");
+    set_name("äº‘é˜³çœŸäºº", ({"master yunyang", "master", "yunyang"}));
+    set("long", "äº‘é˜³æ‹…ä»»æŒé—¨äººä»¥æ¥ï¼Œé™å¦–ä¼é­”æ— æ•°ï¼Œäººç§°ã€Œå°å¤©å¸ˆã€ã€‚ï¼\n");
+    set("gender", "ç”·æ€§");
+    set("title", "å°å¤©å¸ˆ");
     set("class", "taoist");
     set("age", 70);
     set("attitude", "friendly");
     set("shen_type", 1);
-    set("rank_info/respect", "ÀÏµÀ³¤");
+    set("rank_info/respect", "è€é“é•¿");
     set("per", 30);
     set("int", 30);
     set("str", 30);
@@ -60,11 +60,11 @@ void create()
         }) );
 
     set("inquiry", ([
-                "ÏÂÉ½": (: expell_me :),
+                "ä¸‹å±±": (: expell_me :),
                 "leave": (: expell_me :),
         ]) );
 
-    create_family("·½´çÉ½ÈıĞÇ¶´", 2, "Ğ¡ÌìÊ¦");
+    create_family("æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´", 2, "å°å¤©å¸ˆ");
     setup();
 
     carry_object("/d/lingtai/obj/xiangpao")->wear();
@@ -73,33 +73,33 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-    if ((string)ob->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+    if ((string)ob->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
         if (((int)ob->query("combat_exp") < 100000)) {
-            command("say ÎÒÃÇĞŞÕæÖ®Ê¿×îÖØµÄ¾ÍÊÇµÀĞĞ£¬" + RANK_D->query_respect(ob) + "»¹Ğè¶à¼ÓÅ¬Á¦²ÅÊÇ¡£\n");
+            command("say æˆ‘ä»¬ä¿®çœŸä¹‹å£«æœ€é‡çš„å°±æ˜¯é“è¡Œï¼Œ" + RANK_D->query_respect(ob) + "è¿˜éœ€å¤šåŠ åŠªåŠ›æ‰æ˜¯ã€‚\n");
             return;
         }
         command("smile");
-        command("say ºÃ¼«£¬ºÃ¼«£¬Ê±ÏÂÑıÄ§µ±µÀ£¬¹í¹ÖºáĞĞ¡£Ïó"
-            + RANK_D->query_respect(ob) + "ÕâÑùµÄÕıÒåÖ®Ê¿È´ÊÇÉÙ¼û£¡\n");
-        command("say ºÜºÃ£¬" + RANK_D->query_respect(ob) + "¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£\n");
+        command("say å¥½æï¼Œå¥½æï¼Œæ—¶ä¸‹å¦–é­”å½“é“ï¼Œé¬¼æ€ªæ¨ªè¡Œã€‚è±¡"
+            + RANK_D->query_respect(ob) + "è¿™æ ·çš„æ­£ä¹‰ä¹‹å£«å´æ˜¯å°‘è§ï¼\n");
+        command("say å¾ˆå¥½ï¼Œ" + RANK_D->query_respect(ob) + "å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚\n");
         command("recruit " + ob->query("id") );
         return;
     }
     command("shake");
-    command("say ÀÏ·ò²»ÊÕÍâÃÅµÜ×Ó£¬" + RANK_D->query_respect(ob) + "»¹ÊÇÁíÑ°ËûÈË°É£¡\n");
+    command("say è€å¤«ä¸æ”¶å¤–é—¨å¼Ÿå­ï¼Œ" + RANK_D->query_respect(ob) + "è¿˜æ˜¯å¦å¯»ä»–äººå§ï¼\n");
     return;
 }
 
 string expell_me(object me)
 {
     me = this_player();
-    if ((string)me->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
-        command("say Äã¼ÈÊÇÖ´ÒâÏÂÉ½£¬ÎªÊ¦È´ÓĞ¼¸¾ä»°Ëµ¡£");
+    if ((string)me->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
+        command("say ä½ æ—¢æ˜¯æ‰§æ„ä¸‹å±±ï¼Œä¸ºå¸ˆå´æœ‰å‡ å¥è¯è¯´ã€‚");
         me->set_temp("betray", 1);
-        command("say ÎÒ·½´çÉ½Ò²ÊÇÃûÃÅÕıÅÉ£¬µÀ¼ÒÕı×Ú¡£¹úÓĞ¹ú·¨£¬É½ÓĞÉ½¹æ£¡");
-        return ("¼ÈÊÇÒª³öÉ½£¬È´ĞèÊÜÉ½¹æ³Í·££¬Äã¿ÉÔ¸Òâ(agree)?");
+        command("say æˆ‘æ–¹å¯¸å±±ä¹Ÿæ˜¯åé—¨æ­£æ´¾ï¼Œé“å®¶æ­£å®—ã€‚å›½æœ‰å›½æ³•ï¼Œå±±æœ‰å±±è§„ï¼");
+        return ("æ—¢æ˜¯è¦å‡ºå±±ï¼Œå´éœ€å—å±±è§„æƒ©ç½šï¼Œä½ å¯æ„¿æ„(agree)?");
     }
-    return ("Æ¶µÀ²»Öª¡£");
+    return ("è´«é“ä¸çŸ¥ã€‚");
 }
 
 void init()
@@ -111,16 +111,16 @@ void init()
 int do_agree(string arg)
 {
     if (this_player()->query_temp("betray")) {
-        message_vision("$N´ğµÀ£ºµÜ×ÓÔ¸Òâ¡£\n\n", this_player());
+        message_vision("$Nç­”é“ï¼šå¼Ÿå­æ„¿æ„ã€‚\n\n", this_player());
         this_player()->add("betray/count", 1);
         this_player()->add("betray/fangcun", 1);
-        command("say ¼ÈÊÇÎÒ·½´çÉ½³ØÇ³Èİ²»ÏÂòÔÁú£¬Äã±ãÏÂÉ½È¥°É£¡");
+        command("say æ—¢æ˜¯æˆ‘æ–¹å¯¸å±±æ± æµ…å®¹ä¸ä¸‹è›Ÿé¾™ï¼Œä½ ä¾¿ä¸‹å±±å»å§ï¼");
         this_player()->set("combat_exp", this_player()->query("combat_exp")*95/100);
         this_player()->delete("family");
         this_player()->delete("class");
-        this_player()->set("title", "ÆÕÍ¨°ÙĞÕ");
+        this_player()->set("title", "æ™®é€šç™¾å§“");
         this_player()->save();
-        command("say ½­ºş·ç²¨£¬ÉÆ¶ñÎŞĞÎ£¬ºÃ×ÔÎªÖ®¡£¡£¡£\n");
+        command("say æ±Ÿæ¹–é£æ³¢ï¼Œå–„æ¶æ— å½¢ï¼Œå¥½è‡ªä¸ºä¹‹ã€‚ã€‚ã€‚\n");
         return 1;
     }
     return 0;

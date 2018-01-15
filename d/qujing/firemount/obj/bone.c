@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("°Å½¶¹Ç", ({ "palm bone", "bone"}) );
+  set_name("èŠ­è•‰éª¨", ({ "palm bone", "bone"}) );
   set_weight(150);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»¸ùÏ¸ÊµµÄ°Å½¶¹Ç£¬²»ÖªÓĞÊ²Ã´ÓÃ¡£\n");
-    set("unit", "¸ù");
+    set("long", "ä¸€æ ¹ç»†å®çš„èŠ­è•‰éª¨ï¼Œä¸çŸ¥æœ‰ä»€ä¹ˆç”¨ã€‚\n");
+    set("unit", "æ ¹");
   }
   setup();
 }

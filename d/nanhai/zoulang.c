@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/nanhai/zoulang
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-    set ("short", "×ßÀÈ");
+    set ("short", "èµ°å»Š");
     set ("long", @LONG
 
-ÕâÀïÊÇÍ¨ÍùÆÕÍÓÉ½ÊéÔººÍìø·¿µÄ×ßÀÈ¡£ÆÕÍÓÉ½ÊéÔº²ØÓĞ´óÁ¿·ğ
-¾­£¬¹©ÃÅÈËµÜ×ÓÃÇ²ÎìøĞŞĞĞÊ±Ê¹ÓÃ£¬²»¹ıÍâÈËÒ»°ãËµÀ´ÊÇ²»ÔÊ
-Ğí½øÈëÊéÔºµÄ¡£
+è¿™é‡Œæ˜¯é€šå¾€æ™®é™€å±±ä¹¦é™¢å’Œç¦…æˆ¿çš„èµ°å»Šã€‚æ™®é™€å±±ä¹¦é™¢è—æœ‰å¤§é‡ä½›
+ç»ï¼Œä¾›é—¨äººå¼Ÿå­ä»¬å‚ç¦…ä¿®è¡Œæ—¶ä½¿ç”¨ï¼Œä¸è¿‡å¤–äººä¸€èˆ¬è¯´æ¥æ˜¯ä¸å…
+è®¸è¿›å…¥ä¹¦é™¢çš„ã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 3 */
@@ -30,10 +30,10 @@ LONG);
 int valid_leave(object me, string dir)
 {
     object ob=present("jinzha", environment(me));
-    if (me->query("family/family_name") != "ÄÏº£ÆÕÍÓÉ½" && dir == "west")
+    if (me->query("family/family_name") != "å—æµ·æ™®é™€å±±" && dir == "west")
         if (objectp(ob) && living(ob))
-            return notify_fail("\n½ğß¸ÉìÊÖÀ¹×¡Äã£¬±ò±òÓĞÀñµØ¶ÔÄãËµµÀ£º´ËµØÄËÆÕÍÓÊéÔº£¬"
-                    + RANK_D->query_respect(ob) + "Çë²»ÒªÂÒ´³¡£\n");
+            return notify_fail("\né‡‘å’ä¼¸æ‰‹æ‹¦ä½ä½ ï¼Œå½¬å½¬æœ‰ç¤¼åœ°å¯¹ä½ è¯´é“ï¼šæ­¤åœ°ä¹ƒæ™®é™€ä¹¦é™¢ï¼Œ"
+                    + RANK_D->query_respect(ob) + "è¯·ä¸è¦ä¹±é—¯ã€‚\n");
 
     return ::valid_leave(me, dir);
 }

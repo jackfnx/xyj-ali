@@ -1,14 +1,14 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create()
 {
-        set("short", "�͵�˯��");
+        set("short", "客店睡房");
         set("long", @LONG
 
-��ջ��һ��˯��������ɸɾ�����һ�Ŵ󴲣�����������Ϣ˯����
+客栈的一间睡房，房间干干净净，一排大床，供客人们休息睡觉。
 LONG
         );
 

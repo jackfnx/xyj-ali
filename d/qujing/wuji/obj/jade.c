@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,16 +7,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name("½ğÏá°×Óñ¹ç", ({"yu gui", "yu", "jade"}));
+  set_name("é‡‘å¢ç™½ç‰åœ­", ({"yu gui", "yu", "jade"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("value", 100000);
-    set("no_sell", "ÌìÏÂÃ»ÈË¸ÒÈÏÂò½ğÏá°×Óñ¹ç¡£\n");
-    set("no_drop", "Ë­¸ÒÂÒÈÓ½ğÏá°×Óñ¹ç£¿\n");
-    set("unit", "±ú");
-    set("long", "Ò»±ú½ğÏá°×Óñ¹ç£¬ÄËÎÚ¼¦¹úÖ®¹ú±¦¡£\n");
+    set("no_sell", "å¤©ä¸‹æ²¡äººæ•¢è®¤ä¹°é‡‘å¢ç™½ç‰åœ­ã€‚\n");
+    set("no_drop", "è°æ•¢ä¹±æ‰”é‡‘å¢ç™½ç‰åœ­ï¼Ÿ\n");
+    set("unit", "æŸ„");
+    set("long", "ä¸€æŸ„é‡‘å¢ç™½ç‰åœ­ï¼Œä¹ƒä¹Œé¸¡å›½ä¹‹å›½å®ã€‚\n");
   }
   set("is_monitored",1);
   setup();
@@ -24,7 +24,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$nÇà¹âÒ»ÉÁ£¬»¯³ÉÒ»µÀÑÌÈ¥ÁË¡­¡­\n",where,me);
+  message_vision("$né’å…‰ä¸€é—ªï¼ŒåŒ–æˆä¸€é“çƒŸå»äº†â€¦â€¦\n",where,me);
   destruct (me);
 }
 

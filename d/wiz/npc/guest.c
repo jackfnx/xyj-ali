@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // mon 1/29/98
@@ -23,9 +23,9 @@ void relay_channel(object ob, string channel, string msg);
 
 void create()
 {
-        set_name("ÏÉÍ¯", ({ "xian tong","tong" }));
+        set_name("ä»™ç«¥", ({ "xian tong","tong" }));
         set("long", "");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 15);
         set("attitude", "friendly");
         set("str", 30);
@@ -79,14 +79,14 @@ void init()
           }   
           
           write(ob->query("name")+
-            "£¬ÇëµÈºòÎ×Ê¦Åú×¼Äú½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
+            "ï¼Œè¯·ç­‰å€™å·«å¸ˆæ‰¹å‡†æ‚¨è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
             
           if(approve>0)  
-            write("Èç¹ûÃ»ÓĞÎ×Ê¦ÔÚÏß£¬Äú½«ÔÚ"+
+            write("å¦‚æœæ²¡æœ‰å·«å¸ˆåœ¨çº¿ï¼Œæ‚¨å°†åœ¨"+
               chinese_number(remain_time(approve))+
-              "Ğ¡Ê±ºó×Ô¶¯»ñµÃĞí¿É¡£\n");  
+              "å°æ—¶åè‡ªåŠ¨è·å¾—è®¸å¯ã€‚\n");  
               
-          write("ÇëÄÍĞÄµÈºò£¬Ğ»Ğ»£¡\n");
+          write("è¯·è€å¿ƒç­‰å€™ï¼Œè°¢è°¢ï¼\n");
              
           if(approve==-1) return;
           
@@ -113,17 +113,17 @@ int do_help(string arg)
   if(arg) return 0;
   
   write("\n");
-  write("Äã¿ÉÒÔÔÚÕâÀï´¦ÀíÓÉbanned_sitesÁ¬ÏßÍæ¼ÒµÄ½øÈëÇëÇó£¬²»\n");
-  write("¹ÜÍæ¼ÒÄ¿Ç°ÕıÔÚÓ­¿ÍÌü»òÒÑ¾­ÍË³ö¾ù¿ÉÒÔ¡£Èç¹û²»×÷´¦Àí£¬\n");
-  write("Ôò¸ÃÍæ¼Ò½«ÔÚËÄÊ®°ËĞ¡Ê±ºó×Ô¶¯»ñ×¼½øÈëÓÎÏ·¡£\n\n");
-  write("approve id      ×¼ĞíÖ¸¶¨Íæ¼Ò½øÈëÓÎÏ·¡£(¼´Ê¹²»ÔÚlist\n");
-  write("                ÖĞÒ²¿ÉÒÔ)\n");
-  write("approve -all    ×¼ĞíËùÓĞÉêÇëÖĞÍæ¼Ò½øÈëÓÎÏ·¡£\n");
-  write("decline id      ²»×¼Ö¸¶¨Íæ¼Ò½øÈëÓÎÏ·¡£Èç¹û¸ÃÍæ¼ÒÊÇ\n");
-  write("                newbie£¬½«¿ÉÄÜ±»purge£»·ñÔò½«±»½û\n");
-  write("                ±ÕÓÚÓ­¿ÍÌü£¬Ö±µ½ÓĞÎ×Ê¦approveÎªÖ¹¡£\n");
-  write("decline -all    Í¬ÉÏ£¬²»×¼ËùÓĞÉêÇëÖĞÍæ¼Ò½øÈëÓÎÏ·¡£\n");
-  write("list            ÁĞ³öËùÓĞÕıÔÚÉêÇëÖĞµÄÍæ¼Ò¡£\n");
+  write("ä½ å¯ä»¥åœ¨è¿™é‡Œå¤„ç†ç”±banned_sitesè¿çº¿ç©å®¶çš„è¿›å…¥è¯·æ±‚ï¼Œä¸\n");
+  write("ç®¡ç©å®¶ç›®å‰æ­£åœ¨è¿å®¢å…æˆ–å·²ç»é€€å‡ºå‡å¯ä»¥ã€‚å¦‚æœä¸ä½œå¤„ç†ï¼Œ\n");
+  write("åˆ™è¯¥ç©å®¶å°†åœ¨å››åå…«å°æ—¶åè‡ªåŠ¨è·å‡†è¿›å…¥æ¸¸æˆã€‚\n\n");
+  write("approve id      å‡†è®¸æŒ‡å®šç©å®¶è¿›å…¥æ¸¸æˆã€‚(å³ä½¿ä¸åœ¨list\n");
+  write("                ä¸­ä¹Ÿå¯ä»¥)\n");
+  write("approve -all    å‡†è®¸æ‰€æœ‰ç”³è¯·ä¸­ç©å®¶è¿›å…¥æ¸¸æˆã€‚\n");
+  write("decline id      ä¸å‡†æŒ‡å®šç©å®¶è¿›å…¥æ¸¸æˆã€‚å¦‚æœè¯¥ç©å®¶æ˜¯\n");
+  write("                newbieï¼Œå°†å¯èƒ½è¢«purgeï¼›å¦åˆ™å°†è¢«ç¦\n");
+  write("                é—­äºè¿å®¢å…ï¼Œç›´åˆ°æœ‰å·«å¸ˆapproveä¸ºæ­¢ã€‚\n");
+  write("decline -all    åŒä¸Šï¼Œä¸å‡†æ‰€æœ‰ç”³è¯·ä¸­ç©å®¶è¿›å…¥æ¸¸æˆã€‚\n");
+  write("list            åˆ—å‡ºæ‰€æœ‰æ­£åœ¨ç”³è¯·ä¸­çš„ç©å®¶ã€‚\n");
   write("\n");
   return 1;
 }
@@ -138,7 +138,7 @@ void clear_enter(string id)
     who=find_player(id);
     if(who) { //player online now.
       if(!present(who)) {
-        if(objp) write(id+"Ä¿Ç°²»ÔÚÓ­¿ÍÌü¡£\n");
+        if(objp) write(id+"ç›®å‰ä¸åœ¨è¿å®¢å…ã€‚\n");
         return;
       }  
       online=1;
@@ -146,7 +146,7 @@ void clear_enter(string id)
       who=new(USER_OB);
       who->set("id",id);
       if(!who->restore()) {
-        if(objp) write("Ã»ÓĞ"+id+"Õâ¸öÍæ¼Ò»òÎÄ¼ş³ö´í¡£\n");
+        if(objp) write("æ²¡æœ‰"+id+"è¿™ä¸ªç©å®¶æˆ–æ–‡ä»¶å‡ºé”™ã€‚\n");
    destruct(who);
 
   if(!undefinedp(list[id])) {
@@ -162,7 +162,7 @@ void clear_enter(string id)
     who->set("banned_approved",-1);
     who->save();
     if(objp)
-      tell_object(this_player(),"Äú²»Åú×¼"+who->query("name")+"½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
+      tell_object(this_player(),"æ‚¨ä¸æ‰¹å‡†"+who->query("name")+"è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
     if(objp)
       log_file("banned_approve","["+ctime(time())+"]"+
         this_player()->query("id")+" declines "+who->query("id")+
@@ -173,7 +173,7 @@ void clear_enter(string id)
    " is declined to enter.\n");
    
   } else {
-    if(objp) write("Íæ¼Ò"+id+"²»ÔÚ´ıÅú×¼Ö®ÁĞ¡£\n");
+    if(objp) write("ç©å®¶"+id+"ä¸åœ¨å¾…æ‰¹å‡†ä¹‹åˆ—ã€‚\n");
   }    
   
   if(online==1) {
@@ -197,7 +197,7 @@ void allow_enter(string id)
     who=find_player(id);
     if(who) { //player online now.
       if(!present(who)) {
-        if(objp) write(id+"ÏÖÔÚ²»ÔÚÓ­¿ÍÌü¡£\n");
+        if(objp) write(id+"ç°åœ¨ä¸åœ¨è¿å®¢å…ã€‚\n");
         return;
       }  
       online=1;
@@ -205,7 +205,7 @@ void allow_enter(string id)
       who=new(USER_OB);
       who->set("id",id);
       if(!who->restore()) {
-        if(objp) write("Ã»ÓĞ"+id+"Õâ¸öÍæ¼Ò»òÎÄ¼ş³ö´í¡£\n");
+        if(objp) write("æ²¡æœ‰"+id+"è¿™ä¸ªç©å®¶æˆ–æ–‡ä»¶å‡ºé”™ã€‚\n");
    destruct(who);
 
   if(!undefinedp(list[id])) {
@@ -222,7 +222,7 @@ void allow_enter(string id)
     who->set("startroom","/d/city/kezhan");
     who->save();
     if(objp)
-      tell_object (this_player(),"ÄúÅú×¼"+who->query("name")+"½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
+      tell_object (this_player(),"æ‚¨æ‰¹å‡†"+who->query("name")+"è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
     if(objp)
       log_file("banned_approve","["+ctime(time())+"]"+
         this_player()->query("id")+" allows "+who->query("id")+
@@ -232,12 +232,12 @@ void allow_enter(string id)
         who->query("id")+
    " is allowed to enter.\n");
   } else {
-    if(objp) write("Íæ¼Ò"+id+"²»ÔÚ´ıÅú×¼Ö®ÁĞ¡£\n");
+    if(objp) write("ç©å®¶"+id+"ä¸åœ¨å¾…æ‰¹å‡†ä¹‹åˆ—ã€‚\n");
   }    
   
   if(online==1) {
     who->move("/d/city/kezhan");
-    tell_object (who,"»¶Ó­Äú½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
+    tell_object (who,"æ¬¢è¿æ‚¨è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
   } else {
     destruct(who);
   } 
@@ -263,7 +263,7 @@ int remain_time(int approve)
 void inform_wiz (object who)
 {
   tell_object (who,who->query("name")+
-    "£¬Äã¿ÉÒÔÊ¹ÓÃhelpÀ´²é¿´¿ÉÓÃÖ¸Áî¡£\n");
+    "ï¼Œä½ å¯ä»¥ä½¿ç”¨helpæ¥æŸ¥çœ‹å¯ç”¨æŒ‡ä»¤ã€‚\n");
 }
 
 //do not auto permission entry of a player.
@@ -277,7 +277,7 @@ int do_clear(string arg)
   int size, i;
 
   if (!arg)
-    return notify_fail ("²»Åú×¼Ë­£¿\n");
+    return notify_fail ("ä¸æ‰¹å‡†è°ï¼Ÿ\n");
     
   if(arg=="-all") { //decline all pending players.
     key=keys(list);
@@ -288,7 +288,7 @@ int do_clear(string arg)
     }
   } else {  //decline only one player. 
     if (arg == me->query("id")) {
-      write("²»Åú×¼Äú×Ô¼º£¿\n");
+      write("ä¸æ‰¹å‡†æ‚¨è‡ªå·±ï¼Ÿ\n");
       return 1;
     }
     clear_enter(arg);
@@ -306,24 +306,24 @@ int do_list()
    key=keys(list);
    size=sizeof(key);
    if(size>0) {
-     write("µÈ´ıÅú×¼½øÈëÓÎÏ·µÄÍæ¼ÒÓĞ£º\n");
+     write("ç­‰å¾…æ‰¹å‡†è¿›å…¥æ¸¸æˆçš„ç©å®¶æœ‰ï¼š\n");
      for(i=0;i<size;i++) {
        int j=remain_time(list[key[i]]["time"]);
        
        write(list[key[i]]["name"]+"("+
-         key[i]+")ÓÉ"+
+         key[i]+")ç”±"+
          list[key[i]]["ip"]+
-         "Á¬Ïß£¬");
+         "è¿çº¿ï¼Œ");
        if(j>0)
-         write("½«ÓÚ"+j+"Ğ¡Ê±ºó×Ô¶¯»ñ×¼½øÈëÓÎÏ·¡£\n");
+         write("å°†äº"+j+"å°æ—¶åè‡ªåŠ¨è·å‡†è¿›å…¥æ¸¸æˆã€‚\n");
        else if(j==0) {//should not happen.           
-         write("×Ô¶¯»ñ×¼½øÈëÓÎÏ·¡£\n");
+         write("è‡ªåŠ¨è·å‡†è¿›å…¥æ¸¸æˆã€‚\n");
          allow_enter(key[i]);
        } else //j<0
-         write("±ØĞë¾­Î×Ê¦Åú×¼²ÅÄÜ½øÈëÓÎÏ·¡£\n");
+         write("å¿…é¡»ç»å·«å¸ˆæ‰¹å‡†æ‰èƒ½è¿›å…¥æ¸¸æˆã€‚\n");
      }
    } else
-     write("Ä¿Ç°Ã»ÓĞµÈ´ıÅú×¼½øÈëÓÎÏ·µÄÍæ¼Ò¡£\n");
+     write("ç›®å‰æ²¡æœ‰ç­‰å¾…æ‰¹å‡†è¿›å…¥æ¸¸æˆçš„ç©å®¶ã€‚\n");
      
    return 1;
 }
@@ -337,7 +337,7 @@ int do_approve (string arg)
   int size, i;
 
   if (!arg)
-    return notify_fail ("Åú×¼Ë­£¿\n");
+    return notify_fail ("æ‰¹å‡†è°ï¼Ÿ\n");
     
   if(arg=="-all") { //allow all pending players.
     key=keys(list);
@@ -348,7 +348,7 @@ int do_approve (string arg)
     }
   } else {  //allow only one player. 
     if (arg == me->query("id")) {
-      write("Åú×¼Äú×Ô¼º£¿\n");
+      write("æ‰¹å‡†æ‚¨è‡ªå·±ï¼Ÿ\n");
       return 1;
     }
     allow_enter(arg);
@@ -374,7 +374,7 @@ void relay_channel(object ob, string channel, string msg)
    // Don't process our own speech.
    if( ob==this_object() ) return;
    
-   if(sscanf(msg,"%*s(%s)ÓÉ%*sÁ¬Ïß½øÈë¡£",wizid)!=3) return;
+   if(sscanf(msg,"%*s(%s)ç”±%*sè¿çº¿è¿›å…¥ã€‚",wizid)!=3) return;
    
    wizid=lower_case(wizid);
    if(!(wiz=find_player(wizid))) return;
@@ -382,8 +382,8 @@ void relay_channel(object ob, string channel, string msg)
    
    if(member_array(wizid,notified)==-1) { //not notified yet.
      //notify login wiz about pending players in the guest room.
-     tell_object(wiz,"ÏÖÔÚÓĞ"+chinese_number(size)+
-       "Î»Íæ¼ÒÔÚÓ­¿ÍÌüµÈºòÅú×¼£¬ÇëÄú´¦Àí¡£(/d/wiz/guest)\n");
+     tell_object(wiz,"ç°åœ¨æœ‰"+chinese_number(size)+
+       "ä½ç©å®¶åœ¨è¿å®¢å…ç­‰å€™æ‰¹å‡†ï¼Œè¯·æ‚¨å¤„ç†ã€‚(/d/wiz/guest)\n");
           notified+=({wizid});
         } //each wiz will only be notified once.
 }

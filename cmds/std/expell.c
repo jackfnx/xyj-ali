@@ -14,26 +14,26 @@ int main(object me, string arg)
     mapping skills;
     int i;
     if (!arg || !ob = present(arg, environment(me)))
-        return notify_fail("ÄãÒª½«Ë­Öð³öÊ¦ÃÅ£¿\n");
+        return notify_fail("ä½ è¦å°†è°é€å‡ºå¸ˆé—¨ï¼Ÿ\n");
 
     if (!ob->is_character())
-        return notify_fail("ÄãÒª¿ª¸ï¡¸Ë­¡¹£¿\n");
+        return notify_fail("ä½ è¦å¼€é©ã€Œè°ã€ï¼Ÿ\n");
 
     if (!userp(ob))
-        return notify_fail("ÄãÖ»ÄÜ¿ª¸ïÍæ¼ÒËù°çÑÝµÄÈËÎï¡£\n");
+        return notify_fail("ä½ åªèƒ½å¼€é©çŽ©å®¶æ‰€æ‰®æ¼”çš„äººç‰©ã€‚\n");
 
     if (me->query("family/privs")==-1
     &&  (string)me->query("family/family_name")==(string)ob->query("family/family_name")) {
-        message_vision("$N¶Ô×Å$nËµµÀ£º´Ó½ñÌìÆð£¬ÄãÔÙÒ²²»ÊÇÎÒ"
-            + me->query("family/family_name") + "µÄµÜ×ÓÁË£¬Äã×ß°É£¡\n\n",
+        message_vision("$Nå¯¹ç€$nè¯´é“ï¼šä»Žä»Šå¤©èµ·ï¼Œä½ å†ä¹Ÿä¸æ˜¯æˆ‘"
+            + me->query("family/family_name") + "çš„å¼Ÿå­äº†ï¼Œä½ èµ°å§ï¼\n\n",
             me, ob);
-        tell_object(ob, "\nÄã±»" + me->query("family/title") + "¿ª¸ï³öÊ¦ÃÅÁË£¡\n\n");
+        tell_object(ob, "\nä½ è¢«" + me->query("family/title") + "å¼€é©å‡ºå¸ˆé—¨äº†ï¼\n\n");
     } else if (ob->is_apprentice_of(me)) {
-        message_vision("$N¶Ô×Å$nËµµÀ£º´Ó½ñÌìÆð£¬ÄãÎÒÊ¦Í½¶÷¶ÏÇé¾ø£¬Äã×ß°É£¡\n", me, ob);
-        message_vision("$N¶Ô×Å$nËµµÀ£º½­ºþ·ç²¨£¬ÉÆ¶ñÎÞÐÎ£¬ºÃ×ÔÎªÖ®¡£¡£¡£\n\n", me, ob);
-        tell_object(ob, "\nÄã±»Ê¦¸¸¿ª¸ï³öÊ¦ÃÅÁË£¡\n\n");
+        message_vision("$Nå¯¹ç€$nè¯´é“ï¼šä»Žä»Šå¤©èµ·ï¼Œä½ æˆ‘å¸ˆå¾’æ©æ–­æƒ…ç»ï¼Œä½ èµ°å§ï¼\n", me, ob);
+        message_vision("$Nå¯¹ç€$nè¯´é“ï¼šæ±Ÿæ¹–é£Žæ³¢ï¼Œå–„æ¶æ— å½¢ï¼Œå¥½è‡ªä¸ºä¹‹ã€‚ã€‚ã€‚\n\n", me, ob);
+        tell_object(ob, "\nä½ è¢«å¸ˆçˆ¶å¼€é©å‡ºå¸ˆé—¨äº†ï¼\n\n");
     } else
-        return notify_fail("Õâ¸öÈË²»ÊÇÄãµÄµÜ×Ó¡£\n");
+        return notify_fail("è¿™ä¸ªäººä¸æ˜¯ä½ çš„å¼Ÿå­ã€‚\n");
 
     me->expell_apprentice(ob);
     ob->save();
@@ -43,11 +43,11 @@ int main(object me, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : expell <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : expell <æŸäºº>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¿ª³ý²»³É²ÅµÄµÜ×Ó£¬Èç¹ûÄãÊÇÕÆÃÅÈË£¬±»¿ª³ýµÄµÜ×Ó½«³¹µ×
-Àë¿ªÃÅÅÉ£»·ñÔòËûËäÀë¿ªÄãµÄÃÅÏÂ£¬µ«ÈÔÊôÓÚÕâ¸öÃÅÅÉ£¬¿ÉÒÔËæ±ã´«Í¶±¾ÅÉÆä
-ËûÊ¦¸¸¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å¼€é™¤ä¸æˆæ‰çš„å¼Ÿå­ï¼Œå¦‚æžœä½ æ˜¯æŽŒé—¨äººï¼Œè¢«å¼€é™¤çš„å¼Ÿå­å°†å½»åº•
+ç¦»å¼€é—¨æ´¾ï¼›å¦åˆ™ä»–è™½ç¦»å¼€ä½ çš„é—¨ä¸‹ï¼Œä½†ä»å±žäºŽè¿™ä¸ªé—¨æ´¾ï¼Œå¯ä»¥éšä¾¿ä¼ æŠ•æœ¬æ´¾å…¶
+ä»–å¸ˆçˆ¶ã€‚
 
 HELP
     );

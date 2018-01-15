@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -21,18 +21,18 @@ int main(object me, string arg)
 
 /*
    if (!wizardp(me))
-     return notify_fail("²âÊÔÖĞ£¬Ä¿Ç°Ö»ÓĞÎ×Ê¦ÄÜÓÃ¡£\n");
+     return notify_fail("æµ‹è¯•ä¸­ï¼Œç›®å‰åªæœ‰å·«å¸ˆèƒ½ç”¨ã€‚\n");
 */
 
    if( arg == "find" )
    {//let wiz find all qinbing copies.
      if (!wizardp(me))
-        return notify_fail("Ö»ÓĞÎ×Ê¦²ÅÄÜÓÃÕâ¸öÑ¡Ïî¡£\n");
+        return notify_fail("åªæœ‰å·«å¸ˆæ‰èƒ½ç”¨è¿™ä¸ªé€‰é¡¹ã€‚\n");
      else return find_allbing(QINBING_FILE);
    }   
 
-   if( (string)me->query("family/family_name") != "½«¾ü¸®" )
-         return notify_fail("Äã²¢·Ç³¯Í¢Îä½«£¬ÄÄÓĞ×Ê¸ñÁìÇ×±ø¡£\n");
+   if( (string)me->query("family/family_name") != "å°†å†›åºœ" )
+         return notify_fail("ä½ å¹¶éæœå»·æ­¦å°†ï¼Œå“ªæœ‰èµ„æ ¼é¢†äº²å…µã€‚\n");
    
    if(me->query("combat_exp") >= 500000)
    {
@@ -49,7 +49,7 @@ int main(object me, string arg)
    else max_bing = 0;
 
    if( max_bing < 1 ) 
-         return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞ×Ê¸ñÁìÇ×±ø¡£\n");
+         return notify_fail("ä½ ç›®å‰è¿˜æ²¡æœ‰èµ„æ ¼é¢†äº²å…µã€‚\n");
 
    current_bing = find_mybing(me, QINBING_FILE, 0);
    //last 0 means do not show position.
@@ -57,20 +57,20 @@ int main(object me, string arg)
    me->set_temp("jjf_current_bing", current_bing+1);
 
    if( (int)me-> query_temp("jjf_current_bing") > max_bing )
-     return notify_fail("°´ÄãµÄ¼¶±ğ£¬ÁìÇ×±øµÄ¹æ¸ñ²»ÄÜÔÙ¸ßÁË¡£\n");
+     return notify_fail("æŒ‰ä½ çš„çº§åˆ«ï¼Œé¢†äº²å…µçš„è§„æ ¼ä¸èƒ½å†é«˜äº†ã€‚\n");
 
    //ready to get qin bing out...btw, let the player pay first.
    //1 gold each qin bing.
    if( (int)me->query("balance") < 10000)
    {
-     return notify_fail("ÄãÏÖÔÚÒÑ¾­·¢²»³ö±øâÃÁË£¬Ë­»¹¸úÄã£¿\n");
+     return notify_fail("ä½ ç°åœ¨å·²ç»å‘ä¸å‡ºå…µé¥·äº†ï¼Œè°è¿˜è·Ÿä½ ï¼Ÿ\n");
    }
    //ok, the player has enough money...
    me->set("balance",  (int)me->query("balance")-10000);
    me->save();
 
    //now let's get the qing bing out.
-   message_vision("Ö»Ìı$N´óºÈÒ»Éù£ºÀ´ÈËÀ²£¡\n", me);
+   message_vision("åªå¬$Nå¤§å–ä¸€å£°ï¼šæ¥äººå•¦ï¼\n", me);
    qinbing = new(QINBING_FILE);
    qinbing->move(environment(me));
    qinbing->show(me);
@@ -121,7 +121,7 @@ int find_allbing(string str)
    }
    
    count = number;
-   write("\n¹²ÓĞ" + count + "¸öÇ×±ø¡£\n");
+   write("\nå…±æœ‰" + count + "ä¸ªäº²å…µã€‚\n");
    return count;
 }
 
@@ -149,7 +149,7 @@ int find_mybing(object me, string str, int show_position)
         if(!show_position) continue;
 
         //now also show position.
-        write(list[i]->query("name")+"ÔÚ");
+        write(list[i]->query("name")+"åœ¨");
         where=environment(list[i]);
         if(where) 
         {
@@ -165,7 +165,7 @@ int find_mybing(object me, string str, int show_position)
         } 
         else 
         {
-          write("£¿£¿£¿");
+          write("ï¼Ÿï¼Ÿï¼Ÿ");
           write("\n");
         }
      }
@@ -178,12 +178,12 @@ int find_mybing(object me, string str, int show_position)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½: jjf_bing (Î×Ê¦¿ÉÓÃjjf_bing find) 
+æŒ‡ä»¤æ ¼å¼: jjf_bing (å·«å¸ˆå¯ç”¨jjf_bing find) 
  
-³¯Í¢Îä½«¿ÉÁìÇ×±ø×÷Îª»¤ÎÀ»ò°ÚÍş·ç£¬Æä¹æ¸ñ¾ö¶¨ÓÚ¸ÃÎä½«Ö®¼¶±ğ¡£
-µ±È»ËùÎ½¡°±øÎŞâÃ²»ĞĞ¡±£¬Ã»ÓĞÇ®Ç×±øÒ²²»Ç×ÁË¡£
-¿ÉÓÃwhisper¶ÔÇ×±øÏÂÃüÁî¡£ÀıÈç£¬Èç¹ûÄãµÄÇ×±ø½Ğttt-jia£¬ÓÃ
-whisper ttt-jia kill xiao er¼´¿ÉÃüÁîËûÉ±µêĞ¡¶ş¡£
+æœå»·æ­¦å°†å¯é¢†äº²å…µä½œä¸ºæŠ¤å«æˆ–æ‘†å¨é£ï¼Œå…¶è§„æ ¼å†³å®šäºè¯¥æ­¦å°†ä¹‹çº§åˆ«ã€‚
+å½“ç„¶æ‰€è°“â€œå…µæ— é¥·ä¸è¡Œâ€ï¼Œæ²¡æœ‰é’±äº²å…µä¹Ÿä¸äº²äº†ã€‚
+å¯ç”¨whisperå¯¹äº²å…µä¸‹å‘½ä»¤ã€‚ä¾‹å¦‚ï¼Œå¦‚æœä½ çš„äº²å…µå«ttt-jiaï¼Œç”¨
+whisper ttt-jia kill xiao erå³å¯å‘½ä»¤ä»–æ€åº—å°äºŒã€‚
 
 HELP
     );

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // force.c
@@ -7,7 +7,7 @@
 
 inherit SKILL;
 
-string name() { return "ÄÚ¹¦ĞÄ·¨"; }
+string name() { return "å†…åŠŸå¿ƒæ³•"; }
 
 int valid_learn(object me) { return 1; }
 

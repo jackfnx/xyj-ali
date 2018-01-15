@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/monk.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "狱中");
   set ("long", @LONG
 
-����ȼ��յ��С���͵ƣ�΢���Ļƹ���ֻ�����ϵĸɲݶ������Ÿ���
-���У��������ã�ȫ��Ѫ���߰ߣ��ѱ���ĥ�ò��������ˣ���ϲ��û
-���������͡�
+狱里燃着盏极小的油灯，微弱的黄光中只见地上的干草堆里躺着个老
+和尚，衣衫破烂，全身血迹斑斑，已被折磨得不成人形了，幸喜还没
+戴手铐脚镣。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

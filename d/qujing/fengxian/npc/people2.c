@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat  11/22/1997
@@ -6,14 +6,14 @@
 inherit NPC;
 
 string *names = ({
-  "¼¢Ãñ",
-  "¹ÙÈË",
-  "¸¾ÈË",
-  "ÆòØ¤",
-  "Êİ×Ó",
-  "ÇîÈË",
-  "ºÍÉĞ",
-  "µÀÊ¿",
+  "é¥¥æ°‘",
+  "å®˜äºº",
+  "å¦‡äºº",
+  "ä¹ä¸",
+  "ç˜¦å­",
+  "ç©·äºº",
+  "å’Œå°š",
+  "é“å£«",
 });
 
 string *ids = ({
@@ -28,14 +28,14 @@ string *ids = ({
 });
 
 string *genders = ({
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "Å®ĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
-  "ÄĞĞÔ",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "å¥³æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
+  "ç”·æ€§",
 });
 
 void create()
@@ -71,17 +71,17 @@ int random_move ()
 
   if (! where)
     return 1;
-  if (where->query("short") == "ÏãÃí")
+  if (where->query("short") == "é¦™åº™")
   {
     command ("ketou");
     return 1;
   }
-  if (where->query("short") == "µÀ³¡")
+  if (where->query("short") == "é“åœº")
   {
     command ("zhanbai");
     return 1;
   }
-  if (where->query("short") == "¼ÀÌ³")
+  if (where->query("short") == "ç¥­å›")
   {
     command ("nianxiang");
     return 1;

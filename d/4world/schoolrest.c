@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/schoolrest.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ͷ�");
+  set ("short", "客房");
   set ("long", @LONG
 
-������һ�䲼�õ��൱���µ��᷿���Ӵ��ӿ��Կ������ߵ��쾮��
-ͥ԰�и�ʽ�������滨��ݡ��᷿���м��Ŵ�ľ����������ס�ģ�
-���߾ͻص��쾮��
+这里是一间布置得相当雅致的厢房，从窗子可以看到北边的天井跟
+庭园中各式各样的奇花异草。厢房里有几张大木床，是来客住的，
+北边就回到天井。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

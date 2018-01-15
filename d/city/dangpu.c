@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit HOCKSHOP;
 
 void create ()
 {
-  set ("short", "¶­¼Çµ±ÆÌ");
+  set ("short", "è‘£è®°å½“é“º");
   set ("long", @LONG
 
-ÕâÊÇ³¤°²³ÇÀï×î´óµÄÒ»¼Òµ±ÆÌÁË¡£ËØÀ´ÒÔÂòÂô¹«Æ½×Å³Æ¡£ÃÅ¿Ú¹ÒÁËÒ»
-¿éÅÆ×Ó (paizi)¡£¶­ÀÏ°åÊÇ¸öºÜ¾«Ã÷µÄÉúÒâÈË£¬¼ûÄã×ßÁË½øÀ´£¬ºÜ¿Í
-ÆøµØºÍÄãº®êÑ£¬µ«ÑÛ¾¦ÀïÈ´Ã»ÓÐÊ²Ã´Ð¦Òâ£¬ºÜÉóÉ÷µØ´òÁ¿×ÅÄã¡£
+è¿™æ˜¯é•¿å®‰åŸŽé‡Œæœ€å¤§çš„ä¸€å®¶å½“é“ºäº†ã€‚ç´ æ¥ä»¥ä¹°å–å…¬å¹³ç€ç§°ã€‚é—¨å£æŒ‚äº†ä¸€
+å—ç‰Œå­ (paizi)ã€‚è‘£è€æ¿æ˜¯ä¸ªå¾ˆç²¾æ˜Žçš„ç”Ÿæ„äººï¼Œè§ä½ èµ°äº†è¿›æ¥ï¼Œå¾ˆå®¢
+æ°”åœ°å’Œä½ å¯’æš„ï¼Œä½†çœ¼ç›é‡Œå´æ²¡æœ‰ä»€ä¹ˆç¬‘æ„ï¼Œå¾ˆå®¡æ…Žåœ°æ‰“é‡ç€ä½ ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -19,16 +19,16 @@ LONG);
 ]));
   set("item_desc", ([ /* sizeof() == 1 */
   "paizi" : "
-±¾µ±ÆÌ²ÆÁ¦ÐÛºñ£¬Í¯ÛÅÎÞÆÛ£¬»¶Ó­»Ý¹Ë£¬¾ø¶Ô±£ÃÜ¡£
-¿Í¹Ù¿ÉÒÔÔÚÕâÀï£º
-    £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª
-    £ª   µäµ±(pawn)     £ª
-    £ª   Âô¶Ï(sell)     £ª
-    £ª   ¹À¼Û(value)     £ª
-    £ª   Êê»Ø(retrieve stamp)   £ª
-    £ª   ¹ºÂò(buy) ÓÃlist²é¿´¡£   £ª
-    £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª
-¸÷ÖÖ»õÎï£¬Í­Ç®¡¢ÒøÁ½¡¢»Æ½ð¡¢ÒøÆ±Ò»¸ÅÍ¨ÓÃ¡£
+æœ¬å½“é“ºè´¢åŠ›é›„åŽšï¼Œç«¥åŸæ— æ¬ºï¼Œæ¬¢è¿Žæƒ é¡¾ï¼Œç»å¯¹ä¿å¯†ã€‚
+å®¢å®˜å¯ä»¥åœ¨è¿™é‡Œï¼š
+    ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
+    ï¼Š   å…¸å½“(pawn)     ï¼Š
+    ï¼Š   å–æ–­(sell)     ï¼Š
+    ï¼Š   ä¼°ä»·(value)     ï¼Š
+    ï¼Š   èµŽå›ž(retrieve stamp)   ï¼Š
+    ï¼Š   è´­ä¹°(buy) ç”¨listæŸ¥çœ‹ã€‚   ï¼Š
+    ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
+å„ç§è´§ç‰©ï¼Œé“œé’±ã€é“¶ä¸¤ã€é»„é‡‘ã€é“¶ç¥¨ä¸€æ¦‚é€šç”¨ã€‚
 
 "]));
   set("objects", ([ /* sizeof() == 1 */

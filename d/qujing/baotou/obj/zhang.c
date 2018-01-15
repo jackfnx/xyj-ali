@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -9,21 +9,21 @@ inherit STAFF;
 
 void create()
 {
-  set_name("Ğ¡½µÑıÕÈ", ({"xiao xiangyao zhang", "xiangyaozhang", "zhang", "staff"}));
+  set_name("å°é™å¦–æ–", ({"xiao xiangyao zhang", "xiangyaozhang", "zhang", "staff"}));
   set_weight(10000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸Ë");
+    set("unit", "æ†");
     set("value", 2000);
     set("material", "iron");
     set("no_sell", 1);
     set("no_drop", 1);
     set("is_monitored", 1);
     set("replace_file", "/d/obj/weapon/staff/gangzhang");
-    set("long", "ÕâÊÇÒ»¸ËÎÚÌú½µÑıÕÈ£¬Á½Í·ÎªÒøÖı³É¡£\n");
-    set("wield_msg", "$N·´ÊÖ³é³öÒ»¸Ë$n£¬ÔÚÊÖÖĞïÏµØÒ»ÂÕ¡£\n");
-    set("unequip_msg", "$N½«ÊÖÖĞµÄ$nïÏµØ·ÅÏÂ¡£\n");
+    set("long", "è¿™æ˜¯ä¸€æ†ä¹Œé“é™å¦–æ–ï¼Œä¸¤å¤´ä¸ºé“¶é“¸æˆã€‚\n");
+    set("wield_msg", "$Nåæ‰‹æŠ½å‡ºä¸€æ†$nï¼Œåœ¨æ‰‹ä¸­é”µåœ°ä¸€æŠ¡ã€‚\n");
+    set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$né”µåœ°æ”¾ä¸‹ã€‚\n");
   }
   init_staff(65);
   setup();
@@ -31,7 +31,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("Ò»µÀ×ÏÆøÉÁ¹ı£¬$n±»Í»ÈçÆäÀ´µÄÏ¼¹âÊÕ×ßÁË£¡\n",where,me);
+  message_vision("ä¸€é“ç´«æ°”é—ªè¿‡ï¼Œ$nè¢«çªå¦‚å…¶æ¥çš„éœå…‰æ”¶èµ°äº†ï¼\n",where,me);
   destruct (me);
 }
 

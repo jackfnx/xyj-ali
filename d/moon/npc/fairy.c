@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //change.c
@@ -6,17 +6,17 @@ inherit NPC;
 
 void create()
 {
-       set_name("����",({"butterfly","die yi", "fairy"}));
+       set_name("蝶衣",({"butterfly","die yi", "fairy"}));
        set("long",
-"������էƮ�⣬������֮������ɻ������⣬������֮��ϡ���Ц��
-���⣬���ٶѴ䣻����ӣ���⣬��ݺ��㡣����֮���⣬�����ѩ��
+"其仙袂乍飘兮，闻麝兰之馥郁；荷花欲动兮，听环佩之铿锵。靥笑春
+桃兮，云髻堆翠；唇绽樱颗兮，榴齿含香。纤腰之楚兮，若风回雪舞
 \n");
-       set("title", "�¹�����");
-       set("gender", "Ů��");
+       set("title", "月宫舞仙");
+       set("gender", "女性");
        set("age", 18);
        set("class", "xian");
        set("attitude", "friendly");
-       set("rank_info/respect", "�ɹ�");
+       set("rank_info/respect", "仙姑");
        set("per", 30);
    set("int", 30);
        set("max_kee", 800);
@@ -48,7 +48,7 @@ void create()
         map_skill("parry", "snowsword");
         map_skill("dodge", "moondance");
 
-create_family("�¹�", 2, "����");
+create_family("月宫", 2, "弟子");
 setup();
 
         carry_object("/d/obj/cloth/luoyi")->wear();

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -10,13 +10,13 @@ inherit HAMMER;
 
 void create()
 {
-  set_name("ÕòÑı´¸", ({ "mallet" }) );
+  set_name("é•‡å¦–é”¤", ({ "mallet" }) );
   set_weight(350);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ÑÕòÑı´¸¡£\n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠé•‡å¦–é”¤ã€‚\n");
+    set("unit", "æŠŠ");
   }
   set("value",100000);
   set("no_get",1);
@@ -57,10 +57,10 @@ object is_present (string arg, object room)
 int do_hammer (string arg)
 {
   string *hits = ({
-    "\n$NÉì³öÊÖ×¥ÁË×¥¿ÕÆø£¬È»ºóµ¹ÏÂ¡£\n\n",
-    "\n$N·­·­°×ÑÛ£¬ÂıÂıµØ·ö×Å¿ÕÆøµ¹ÏÂ¡£\n\n",
-    "\n$NÆ´ÃüµØÏë·ö×¡¿ÕÆø£¬È»ºó£¬ÀÃÄàÒ»°ãÌ±ÔÚµØ¡£\n\n",
-    "\n$NÏó×í¹íÒ»Ñù½ßÁ¦ÏëÂ§×¡¿ÕÆø£¬È»ºó²ü¶¶×Å»º»ºµ¹ÔÚµØÉÏ¡£\n\n",
+    "\n$Nä¼¸å‡ºæ‰‹æŠ“äº†æŠ“ç©ºæ°”ï¼Œç„¶åå€’ä¸‹ã€‚\n\n",
+    "\n$Nç¿»ç¿»ç™½çœ¼ï¼Œæ…¢æ…¢åœ°æ‰¶ç€ç©ºæ°”å€’ä¸‹ã€‚\n\n",
+    "\n$Næ‹¼å‘½åœ°æƒ³æ‰¶ä½ç©ºæ°”ï¼Œç„¶åï¼Œçƒ‚æ³¥ä¸€èˆ¬ç˜«åœ¨åœ°ã€‚\n\n",
+    "\n$Nè±¡é†‰é¬¼ä¸€æ ·ç«­åŠ›æƒ³æ‚ä½ç©ºæ°”ï¼Œç„¶åé¢¤æŠ–ç€ç¼“ç¼“å€’åœ¨åœ°ä¸Šã€‚\n\n",
   });
 
   object me = this_player();
@@ -68,11 +68,11 @@ int do_hammer (string arg)
   string name = this_object()->query("name");
 
   if (!arg) {
-    return notify_fail ("ÒªÔÒÄÄÒ»Î»Ñı¾«£¿\n"); 
+    return notify_fail ("è¦ç ¸å“ªä¸€ä½å¦–ç²¾ï¼Ÿ\n"); 
   }
   ob = is_present (arg,environment(me));
   if (! ob) {
-    return notify_fail ("ÕâÎ»Ñı¾«²»ÔÚÕâÀï¡£\n");
+    return notify_fail ("è¿™ä½å¦–ç²¾ä¸åœ¨è¿™é‡Œã€‚\n");
   }
 
   set("value",0);
@@ -87,10 +87,10 @@ int do_hammer (string arg)
   }
 
   if (ob->query("env/invisibility") > 0)
-    message_vision ("$N¸ß¸ß¾ÙÆğÒ»°Ñ¾Ş´óµÄÕòÑı´¸£¬¶Ô$n´óºÈÒ»Éù£º³ôÑı¾«£¬ÄÄÀï²Ø£¡\n",me,ob);
+    message_vision ("$Né«˜é«˜ä¸¾èµ·ä¸€æŠŠå·¨å¤§çš„é•‡å¦–é”¤ï¼Œå¯¹$nå¤§å–ä¸€å£°ï¼šè‡­å¦–ç²¾ï¼Œå“ªé‡Œè—ï¼\n",me,ob);
   else
-    message_vision ("$N¸ß¸ß¾ÙÆğÒ»°Ñ¾Ş´óµÄÕòÑı´¸£¬¶Ô$n´óºÈÒ»Éù£º³ôÑı¾«£¬¿´ÕĞ£¡\n",me,ob);
-  message_vision ("\nÖ»Ìı£ººä£¡ºä£¡ºä£¡\n\n¼¸Éù¾ªÌì¶¯µØµÄ¾ŞÏì¡­¡­\n",ob);
+    message_vision ("$Né«˜é«˜ä¸¾èµ·ä¸€æŠŠå·¨å¤§çš„é•‡å¦–é”¤ï¼Œå¯¹$nå¤§å–ä¸€å£°ï¼šè‡­å¦–ç²¾ï¼Œçœ‹æ‹›ï¼\n",me,ob);
+  message_vision ("\nåªå¬ï¼šè½°ï¼è½°ï¼è½°ï¼\n\nå‡ å£°æƒŠå¤©åŠ¨åœ°çš„å·¨å“â€¦â€¦\n",ob);
   message_vision (hits[random(sizeof(hits))],ob);
   ob->set("env/immortal",0);
   ob->set("env/invisibility",0);
@@ -146,15 +146,15 @@ void get_maxfainted (object ob)
 {
   string short = ob->query("name")+"("+capitalize(ob->query("id"))+")";
   if (ob->query("nickname"))
-    short = "¡¸"+ob->query("nickname")+"¡¹"+short;
+    short = "ã€Œ"+ob->query("nickname")+"ã€"+short;
   if (ob->query("title"))
     short = ob->query("title")+short;
-  message_vision(HIR "\n$NÑÛÃ°½ğĞÇ£¬Ò»¸öõÔõÄÆËµ¹ÔÚµØ....\n\n" NOR,
+  message_vision(HIR "\n$Nçœ¼å†’é‡‘æ˜Ÿï¼Œä¸€ä¸ªè¸‰è·„æ‰‘å€’åœ¨åœ°....\n\n" NOR,
           ob);
   // ob->set_temp("no_move",1);
-  // //ob->disable_player(" <ÔÒÔÎÁË>");
+  // //ob->disable_player(" <ç ¸æ™•äº†>");
   //ob->set_temp("block_msg/all", 1);
-  ob->set_temp("apply/short",({short+" <ÔÒÔÎÁË>"}));
+  ob->set_temp("apply/short",({short+" <ç ¸æ™•äº†>"}));
   //ob->set("gin", 0);
   //ob->set("kee", 0);
   //ob->set("sen", 0);
@@ -168,7 +168,7 @@ void get_revived (object ob, string short)
   if (! ob->query_temp("mallet_fainted"))
     return;
 
-  message_vision(HIR "\n$N¶«µ¹Î÷ÍáµØÂıÂıÕ¾ÆğÀ´¡£\n" NOR,
+  message_vision(HIR "\n$Nä¸œå€’è¥¿æ­ªåœ°æ…¢æ…¢ç«™èµ·æ¥ã€‚\n" NOR,
           ob);
   // ob->delete_temp("no_move");
   // //ob->revive();
@@ -180,14 +180,14 @@ void get_revived (object ob, string short)
 void display_fainted (object ob)
 {
   string *msgs = ({
-    "$N»Î»ÎÓÆÓÆÅÀÆğÀ´ÍÈÒ»ÈíÓÖÌ±ÏÂÈ¥¡£\n",
-    "$NÌÉÔÚµØÉÏ·­·­°×ÑÛ¡£\n",
-    "$NÂıÂı×øÆğÀ´£¬Éí×ÓÒ»ÍáÓÖµ¹ÏÂÈ¥¡£\n",
-    "$NÕö¿ªÑÛ£¬Í·Ò»ÍáÓÖÔÎÁË¹ıÈ¥¡£\n",
-    "$NÅ¬Á¦ÕÅÁËÕÅ×ì£¬Ê²Ã´Ò²Ëµ²»³öÀ´¡£\n",
-    "$NÕõÔúÁËÒ»ÏÂ¡£\n",
-    "$NºßÁËÒ»Éù¡£\n",
-    "$NÎŞÁ¦µØÉì³öÊÖ£¬ÔÚ¿ÕÖĞ×¥ÁËÒ»ÏÂ¡£\n",
+    "$Næ™ƒæ™ƒæ‚ æ‚ çˆ¬èµ·æ¥è…¿ä¸€è½¯åˆç˜«ä¸‹å»ã€‚\n",
+    "$Nèººåœ¨åœ°ä¸Šç¿»ç¿»ç™½çœ¼ã€‚\n",
+    "$Næ…¢æ…¢åèµ·æ¥ï¼Œèº«å­ä¸€æ­ªåˆå€’ä¸‹å»ã€‚\n",
+    "$Nçå¼€çœ¼ï¼Œå¤´ä¸€æ­ªåˆæ™•äº†è¿‡å»ã€‚\n",
+    "$NåŠªåŠ›å¼ äº†å¼ å˜´ï¼Œä»€ä¹ˆä¹Ÿè¯´ä¸å‡ºæ¥ã€‚\n",
+    "$NæŒ£æ‰äº†ä¸€ä¸‹ã€‚\n",
+    "$Nå“¼äº†ä¸€å£°ã€‚\n",
+    "$Næ— åŠ›åœ°ä¼¸å‡ºæ‰‹ï¼Œåœ¨ç©ºä¸­æŠ“äº†ä¸€ä¸‹ã€‚\n",
   });
 
   if (! ob->query_temp("mallet_fainted"))

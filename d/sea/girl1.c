@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // girl1.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "���ƹ�");
+  set ("short", "紫云宫");
   set ("long", @LONG
 
-���ƹ��ǹ�����Ůס�ĵط�����Ȼ���ﲻ�����ӳ��롣�����װ��
-�����˼��ѵ�һ�����䱦������һ������ɵ���¯���۵�ð��һ
-�ɵ���ɫ�ı��̣�������������������
+紫云宫是公主龙女住的地方，当然这里不许男子出入。屋里的装饰
+多是人间难得一见的珍宝。正中一块浑玉雕成的香炉苒苒的冒着一
+股淡紫色的薄烟，整个屋中漫着香气。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "northwest" : __DIR__"inside1",

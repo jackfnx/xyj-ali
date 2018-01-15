@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // worker.c
@@ -6,16 +6,16 @@
 inherit NPC;
 void create()
 {
-        set_name("ÔÆÇå", ({"yun qing", "yun"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("äº‘æ¸…", ({"yun qing", "yun"}));
+        set("gender", "ç”·æ€§" );
         set("age", 33);
         set("long",
-"·½´çÉ½ÈıĞÇ¶´µÚÈı´úµÜ×ÓÖĞµÄ½Ü³öÈËÎï£®\nËä²»ÊÇºÜ´ÏÃ÷£¬µ«Ê¦×æÈ´ºÜ¿´ÖØËû£®\n");
+"æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„æ°å‡ºäººç‰©ï¼\nè™½ä¸æ˜¯å¾ˆèªæ˜ï¼Œä½†å¸ˆç¥–å´å¾ˆçœ‹é‡ä»–ï¼\n");
    set("int", 25);
    set("class", "taoist");
         set("combat_exp", 80000);
         set("attitude", "peaceful");
-        create_family("·½´çÉ½ÈıĞÇ¶´", 3, "µÜ×Ó");
+        create_family("æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´", 3, "å¼Ÿå­");
 
         set("eff_dx", 30000);
         set("nkgain", 200);
@@ -60,8 +60,8 @@ void create()
 }
 void attempt_apprentice(object ob, object me)
 {
-        command("say ºÜºÃ£¬" + RANK_D->query_respect(ob) +
-"¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£\n");
+        command("say å¾ˆå¥½ï¼Œ" + RANK_D->query_respect(ob) +
+"å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚\n");
         command("recruit " + ob->query("id") );
 }
 int recruit_apprentice(object ob)

@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ë«Î²Ğ«", ({ "xiezi jing", "xiezi", "jing" }));
-    set("long", "Ò»Ö»Ë«Î²Ğ«¡£\n");
-    //set("race", "Ò°ÊŞ");
-    set("gender", "Å®ĞÔ");
+    set_name("åŒå°¾è", ({ "xiezi jing", "xiezi", "jing" }));
+    set("long", "ä¸€åªåŒå°¾èã€‚\n");
+    //set("race", "é‡å…½");
+    set("gender", "å¥³æ€§");
     set("age", 26);
     set("attitude", "heroism");
     set("max_kee", 1500);
@@ -52,7 +52,7 @@ void unconcious()
     ob->set("cook/type", "xie");
     ob->set("cook/value", 5);
     ob->move(where);
-    message_vision("\n$NËõ³ÉÒ»ÍÅ£¬²»ÔÙ¶¯ÁË¡£\n",me);
+    message_vision("\n$Nç¼©æˆä¸€å›¢ï¼Œä¸å†åŠ¨äº†ã€‚\n",me);
     destruct(me);
 }
 
@@ -76,7 +76,7 @@ int test_player(object who)
     name = names[0];
     len = strlen(name);
     if (len < 1) return 0;
-    if (name[len-2..len-1] != "¼¦") return 0;
+    if (name[len-2..len-1] != "é¸¡") return 0;
     
     return 1;
 }
@@ -101,14 +101,14 @@ void kill_ob(object ob)
 void hurting(object me, object ob)
 {
     string *msgs =({
-        "$N»ÓÆğ¶¾´Ì£¬Ïò$nÒ»Ôú£¡\n",
-        "$NÒ»×ªÉí£¬Ò»¸öµ¹Âí×®Ïò$n´ÌÈ¥£¡\n",
-        "$NÌøÆğÍù$nµÄÍ·ÉÏÒ»Ôú£¡\n",
+        "$NæŒ¥èµ·æ¯’åˆºï¼Œå‘$nä¸€æ‰ï¼\n",
+        "$Nä¸€è½¬èº«ï¼Œä¸€ä¸ªå€’é©¬æ¡©å‘$nåˆºå»ï¼\n",
+        "$Nè·³èµ·å¾€$nçš„å¤´ä¸Šä¸€æ‰ï¼\n",
     });
     string *strs =({
-        "( $N´ó½ĞÒ»Éù£ººÃÍ´£¡ )\n",
-        "( $N±§ÆğÖ×ÆğµÄÍ·ÈÌ²»×¡²Ò½ĞÒ»Éù£¡ )\n",
-        "( $NµÄÍ·ÉÏÁ¢¿ÌÖ×ÆğÒ»´ó¿éºìºìµÄÄÔÃÅÓ¸£¡ )\n",
+        "( $Nå¤§å«ä¸€å£°ï¼šå¥½ç—›ï¼ )\n",
+        "( $NæŠ±èµ·è‚¿èµ·çš„å¤´å¿ä¸ä½æƒ¨å«ä¸€å£°ï¼ )\n",
+        "( $Nçš„å¤´ä¸Šç«‹åˆ»è‚¿èµ·ä¸€å¤§å—çº¢çº¢çš„è„‘é—¨ç—ˆï¼ )\n",
     });
     int damage;
 
@@ -126,8 +126,8 @@ void hurting(object me, object ob)
         ob->receive_damage("sen", damage);
         ob->receive_wound("sen", damage);
     } else {
-        message_vision("Ö»¼û$N·¢³öÒ»Éù¼¦½Ğ£¬"+
-                        "$n¶ÙÊ±»ÅÂÒ×ªÉíÊÕÆğµ¹Âí×®£¡\n",ob,me);
+        message_vision("åªè§$Nå‘å‡ºä¸€å£°é¸¡å«ï¼Œ"+
+                        "$né¡¿æ—¶æ…Œä¹±è½¬èº«æ”¶èµ·å€’é©¬æ¡©ï¼\n",ob,me);
     }
     remove_call_out("hurting");
     call_out("hurting", random(10)+10, me, ob);

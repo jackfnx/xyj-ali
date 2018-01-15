@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat 10/16/1997
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹úÍõ", ({"guo wang", "king" }));
-  set("title","±¦Ïó¹ú");
-  set("gender", "ÄÐÐÔ");
-  set("rank_info/respect", "±ÝÏÂ");
+  set_name("å›½çŽ‹", ({"guo wang", "king" }));
+  set("title","å®è±¡å›½");
+  set("gender", "ç”·æ€§");
+  set("rank_info/respect", "é™›ä¸‹");
   set("age", 80);
   set("attitude", "peaceful");
   set("shen_type", 1);
@@ -60,7 +60,7 @@ int accept_object (object who, object ob)
   object me = this_object();
   object room = environment(me);
 
-  if (room->query("short")!="ÌìµØ¸ó")
+  if (room->query("short")!="å¤©åœ°é˜")
     return 0;
 
   if (ob->query("id")=="mi xin" &&
@@ -80,15 +80,15 @@ void read_letter (object me, object who, object ob)
   // first time get letter from player
   if (who->query("obstacle/baoxiang")=="got_letter")
   {
-    message_vision("$N¶Á°ÕÃØÐÅ£¬²»½ûÌéÀá¾ãÏÂ¡£\n",me);
-    message_vision("$NµÀ£ºÎá¶ù²»ÐÒ£¬±»ÑýÒÐÇ¿°ÕÕ¼ÎªÆÞ£¬ÒÑÓÐÊ®ÈýÄêÖ®¾Ã£¡\n\n",me);
-    message_vision("´Ë¿ÌÈý¹¬µÎÀá£¬ÎÄÎäÉËÇé£¬¹¬ÖÐÒ»Æ¬¿ÞÉù¡£\n",me);
+    message_vision("$Nè¯»ç½¢ç§˜ä¿¡ï¼Œä¸ç¦æ¶•æ³ªä¿±ä¸‹ã€‚\n",me);
+    message_vision("$Né“ï¼šå¾å„¿ä¸å¹¸ï¼Œè¢«å¦–å€šå¼ºç½¢å ä¸ºå¦»ï¼Œå·²æœ‰åä¸‰å¹´ä¹‹ä¹…ï¼\n\n",me);
+    message_vision("æ­¤åˆ»ä¸‰å®«æ»´æ³ªï¼Œæ–‡æ­¦ä¼¤æƒ…ï¼Œå®«ä¸­ä¸€ç‰‡å“­å£°ã€‚\n",me);
   }
   // already given letter before
   else
   {
-    message_vision("$N¶Ô$nµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                   "£¬ÓÖÀ´ÏàÖú£¬½Ì¹ÑÈË½ñÉúÈçºÎÏà±¨¡£\n",me,who);
+    message_vision("$Nå¯¹$né“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                   "ï¼Œåˆæ¥ç›¸åŠ©ï¼Œæ•™å¯¡äººä»Šç”Ÿå¦‚ä½•ç›¸æŠ¥ã€‚\n",me,who);
   }
   remove_call_out("send_to_fight");
   call_out("send_to_fight",3,me,who);
@@ -98,9 +98,9 @@ void send_to_fight (object me, object who)
 {
   object ling = new ("/d/qujing/baoxiang/obj/ling");
   ling->move(who);
-  message_vision("$N´óÉùËµµÀ£ºÁî$nÐË±øÁì½«£¬Óë¹ÑÈË×½É±ÑýÄ§£¬¾ÈÎÒ°Ù»¨¹«Ö÷£¡\n\n",
+  message_vision("$Nå¤§å£°è¯´é“ï¼šä»¤$nå…´å…µé¢†å°†ï¼Œä¸Žå¯¡äººæ‰æ€å¦–é­”ï¼Œæ•‘æˆ‘ç™¾èŠ±å…¬ä¸»ï¼\n\n",
                  me,who);
-  message_vision("ÅÔ±ßÔçÓÐ¾ü»ú´ó³¼ÉÏÇ°µÝ¸ø$nÒ»Ö§¾üÁîÅÆ¡£\n",me,who);
+  message_vision("æ—è¾¹æ—©æœ‰å†›æœºå¤§è‡£ä¸Šå‰é€’ç»™$nä¸€æ”¯å†›ä»¤ç‰Œã€‚\n",me,who);
   who->set("obstacle/baoxiang","given_letter");
   who->set_temp("obstacle/baoxiang","given_letter");
   who->save();
@@ -114,7 +114,7 @@ void check_princess(object me)
   object ling;
 
   reset_eval_cost();
-  if (room->query("short")!="ÌìµØ¸ó")
+  if (room->query("short")!="å¤©åœ°é˜")
     return;
   if (baihua == 0)
     return;
@@ -140,7 +140,7 @@ void check_princess(object me)
 
 void cry_princess (object me, object baihua)
 {
-  message_vision("$N¼ûÁË$nÒ»ã¶£¬È»ºóÀÏÀá×ÝºáµØ½«$nÀ­¹ýÈ¥¡£\n",me,baihua);
+  message_vision("$Nè§äº†$nä¸€æ„£ï¼Œç„¶åŽè€æ³ªçºµæ¨ªåœ°å°†$næ‹‰è¿‡åŽ»ã€‚\n",me,baihua);
 }
 
 void announce_success (object me, object who)
@@ -151,11 +151,11 @@ void announce_success (object me, object who)
   who->set_temp("obstacle/baoxiang","done");
   i = random(800);
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"ÐË±øÁì½«£¬Ìæ±¦Ïó´ó¹ú×½É±ÑýÄ§£¬½â¾È°Ù»¨¹«Ö÷£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ýÎ÷ÐÐÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀÐÐ£¡\n");
+  command("chat "+who->query("name")+"å…´å…µé¢†å°†ï¼Œæ›¿å®è±¡å¤§å›½æ‰æ€å¦–é­”ï¼Œè§£æ•‘ç™¾èŠ±å…¬ä¸»ï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }
 

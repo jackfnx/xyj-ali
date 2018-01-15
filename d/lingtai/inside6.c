@@ -1,18 +1,18 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // inside2.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "�᷿");
+  set ("short", "厢房");
   set ("long", @LONG
 
-������һ�䲼�õ��൱���µ��᷿���Ӵ��ӿ��Կ���Ժ�еĺ��ġ�
-����ǽ�Ϲ���̫�����ԡ����һ��ľ齣�һ����ʿ���ڴ���������
+这里是一间布置得相当雅致的厢房，从窗子可以看到院中的海棠。
+正中墙上挂着太极八卦。左边一个木榻，一个道士正在打坐练功。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north": __DIR__"houyuan",

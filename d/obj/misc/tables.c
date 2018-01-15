@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //
@@ -8,26 +8,26 @@
 inherit ITEM;
 
 string *prefixs = ({
-  "´ó",
-  "Ğ¡",
-  "ºÚ",
-  "·½",
-  "Ô²",
-  "°×Æá",
-  "ÇàÆá",
-  "×ÏÆá",
+  "å¤§",
+  "å°",
+  "é»‘",
+  "æ–¹",
+  "åœ†",
+  "ç™½æ¼†",
+  "é’æ¼†",
+  "ç´«æ¼†",
 });
 
 string *names = ({
-  "Ä¾",
-  "ÏÉ",
-  "ÏâÓñ",
-  "ÊŞ½Å",
+  "æœ¨",
+  "ä»™",
+  "é•¶ç‰",
+  "å…½è„š",
 });
 
 string *suffixs = ({
-  "×À",
-  "°¸",
+  "æ¡Œ",
+  "æ¡ˆ",
 });
 
 void create()
@@ -35,11 +35,11 @@ void create()
   set_name(prefixs[random(sizeof(prefixs))]+names[random(sizeof(names))]+
            suffixs[random(sizeof(suffixs))], ({ "table" }));
   set_weight(30000);
-  set("long", "ÕâÊÇÒ»ÕÅ×À×Ó¡£\n" );
+  set("long", "è¿™æ˜¯ä¸€å¼ æ¡Œå­ã€‚\n" );
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "ÕÅ");
+    set("unit", "å¼ ");
     set("material", "stone");
     set("value", 2000);
     set("no_sell", 1);

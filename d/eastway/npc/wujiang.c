@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 inherit NPC;
 
 void create()
 {
-        set_name("Îä½«", ({ "wu jiang", "wu", "jiang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ­¦å°†", ({ "wu jiang", "wu", "jiang" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
         set("combat_exp", 80000);
@@ -45,7 +45,7 @@ void init()
 
 int accept_fight(object me)
 {
-        message_vision("ÊØ³ÇÎä½«¶Ô$N°ÑÑÛÒ»µÉ£¬ºÈµÀ£ºß¾£¬´óµ¨£¬»¹²»ÍËÏÂ£¡\n\n", me);
+        message_vision("å®ˆåŸæ­¦å°†å¯¹$NæŠŠçœ¼ä¸€çªï¼Œå–é“ï¼šå‘”ï¼Œå¤§èƒ†ï¼Œè¿˜ä¸é€€ä¸‹ï¼\n\n", me);
         return 0;
 }
 

@@ -1,9 +1,9 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //handudao-redblue.c
 //this blade has ice_poison with it...weiqi, 970926.
-//add duandao¶Ïµ¶ÉäÈË...weiqi, 980203.
+//add duandaoæ–­åˆ€å°„äºº...weiqi, 980203.
 
 #include <ansi.h>
 #include <weapon.h>
@@ -12,16 +12,16 @@ inherit BLADE;
 
 void create()
 {
-   set_name(RED "Ë«" NOR + HIB "É«" NOR + HIW "±ùµ¶" NOR, ({"ice blade", "blade", "dao"}));
+   set_name(RED "åŒ" NOR + HIB "è‰²" NOR + HIW "å†°åˆ€" NOR, ({"ice blade", "blade", "dao"}));
    set_weight(5000);
-   set("unit", "°Ñ");
-   set("long", "Ò»°Ñ¾§Ó¨Í¸Ã÷µÄÍäµ¶£¬ÒÔ´óÑ©É½ÖĞÇ§Äê²»»¯µÄº®±ùÖÆ³É¡£ÑÕÉ«±ä»Ã²»Í££¬ÏóºìÓÖÏóÀ¶¡£\n");
+   set("unit", "æŠŠ");
+   set("long", "ä¸€æŠŠæ™¶è¹é€æ˜çš„å¼¯åˆ€ï¼Œä»¥å¤§é›ªå±±ä¸­åƒå¹´ä¸åŒ–çš„å¯’å†°åˆ¶æˆã€‚é¢œè‰²å˜å¹»ä¸åœï¼Œè±¡çº¢åˆè±¡è“ã€‚\n");
    set("value", 8000);
    set("material", "ice");
    set("wield_msg",
-"$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬ÑÛÖĞÉä³öÒ»µÀº®Òâ£¡\n");
+"$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œçœ¼ä¸­å°„å‡ºä¸€é“å¯’æ„ï¼\n");
    set("unwield_msg",
-"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä£¬×ìÀïÇáÇáµØÊæÁË¿ÚÆø¡£\n");
+"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ï¼Œå˜´é‡Œè½»è½»åœ°èˆ’äº†å£æ°”ã€‚\n");
 
    init_blade(20);
 
@@ -56,9 +56,9 @@ void melt()
    {//a player or a NPC.
      if( (int)env->query_skill("iceblood-force", 1) < 50 )
      {
-        message_vision("$N¾õµÃÉíÉÏÁ¹Á¹µÄ£¬ÊªÊªµÄ£¬Ô­À´ÊÇ±ùµ¶»¯ÁË¡£\n", env);
+        message_vision("$Nè§‰å¾—èº«ä¸Šå‡‰å‡‰çš„ï¼Œæ¹¿æ¹¿çš„ï¼ŒåŸæ¥æ˜¯å†°åˆ€åŒ–äº†ã€‚\n", env);
         env->apply_condition("double_ice_poison", 10);
-        //note, ÖĞ¶¾ÁË¡£
+        //note, ä¸­æ¯’äº†ã€‚
         destruct(this_object());
         return;
      }
@@ -68,7 +68,7 @@ void melt()
    {//a room.
      if( (string)env->query("outdoors") != "xueshan" )
      {
-        tell_object(env,"±ùµ¶ÖÕÓÚ»¯³ÉÁËÒ»Ì²Ë®£¬Á÷µÃµ½´¦¶¼ÊÇ¡£\n");
+        tell_object(env,"å†°åˆ€ç»ˆäºåŒ–æˆäº†ä¸€æ»©æ°´ï¼Œæµå¾—åˆ°å¤„éƒ½æ˜¯ã€‚\n");
         destruct(this_object());
         return;
      }
@@ -88,16 +88,16 @@ mixed hit_ob(object me, object victim, int damage_bonus)
    if(diff > 0)
    {
      victim->apply_condition("double_ice_poison", diff + (int)victim->query_condition("double_ice_poison") );
-     message_vision("$NÉí×ÓÒ»²ü£¬ÖĞÁËµ¶ÉÏµÄº®¶¾£¡\n", victim);
+     message_vision("$Nèº«å­ä¸€é¢¤ï¼Œä¸­äº†åˆ€ä¸Šçš„å¯’æ¯’ï¼\n", victim);
    }
    else if(diff < -3)
    {//for very weak ppl or npc, also possible to "force back", this
     //is to ensure it'll not happen.
      me->apply_condition("double_ice_poison", -diff + me->query_condition("double_ice_poison") );
-     message_vision("$NÉí×ÓÒ»²ü£¬Ô­À´ÊÇµ¶ÉÏº®¶¾±»$n±ÆÁË»ØÀ´£¬ÉËÈË²»³É·´º¦¼º£¡\n", me, victim);
+     message_vision("$Nèº«å­ä¸€é¢¤ï¼ŒåŸæ¥æ˜¯åˆ€ä¸Šå¯’æ¯’è¢«$né€¼äº†å›æ¥ï¼Œä¼¤äººä¸æˆåå®³å·±ï¼\n", me, victim);
    }
    else 
-     message_vision("$N¾õµÃÒ»Õóº®ÒâÏ®À´£¬²îµãÖĞÁËµ¶ÉÏµÄº®¶¾£¡\n", victim);
+     message_vision("$Nè§‰å¾—ä¸€é˜µå¯’æ„è¢­æ¥ï¼Œå·®ç‚¹ä¸­äº†åˆ€ä¸Šçš„å¯’æ¯’ï¼\n", victim);
 }
 
 int do_duandao(string arg)
@@ -109,13 +109,13 @@ int do_duandao(string arg)
    me = this_player();
    
    if( this_player()->is_busy() )
-     return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÄÄÓĞ¿ÕÔËÁ¦¶Ïµ¶¡£\n");
+     return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œå“ªæœ‰ç©ºè¿åŠ›æ–­åˆ€ã€‚\n");
 
-   if( me->query("force") < 300 ) return notify_fail("ÕâÒª¿¿ÄÚÁ¦¶ø²»ÊÇÂù¾¢¡£\n");
+   if( me->query("force") < 300 ) return notify_fail("è¿™è¦é å†…åŠ›è€Œä¸æ˜¯è›®åŠ²ã€‚\n");
 
    if( ! arg )
    {
-     message_vision(HIW "$NÔËÁ¦Ò»Õğ£¬Ö»¼û±ù»¨ËÄ½¦£¡Ò»°Ñ±ùµ¶¶ÙÊ±»¯ÎªÎŞÊıËéÆ¬¡£\n" NOR, me);
+     message_vision(HIW "$Nè¿åŠ›ä¸€éœ‡ï¼Œåªè§å†°èŠ±å››æº…ï¼ä¸€æŠŠå†°åˆ€é¡¿æ—¶åŒ–ä¸ºæ— æ•°ç¢ç‰‡ã€‚\n" NOR, me);
      me->start_busy(3);
 
      me->add("force", -100);
@@ -125,21 +125,21 @@ int do_duandao(string arg)
 
    //now find the target...
    if( !objectp( target = present(arg, environment(me)) ) )
-     return notify_fail("ÄãÏëÓÃ±ùµ¶ÉäË­£¿\n");
+     return notify_fail("ä½ æƒ³ç”¨å†°åˆ€å°„è°ï¼Ÿ\n");
 
    if( !target->is_character() )
-     return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+     return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
    if( !living(target) )
-     return notify_fail(target->name() + "ÒÑÎŞ»¹ÊÖÖ®Á¦£¬Ò»µ¶¿³ÏÂÈ¥¼´¿É£¬ºÎ±ØìÅÒ«¹¦·ò¡£\n"); 
+     return notify_fail(target->name() + "å·²æ— è¿˜æ‰‹ä¹‹åŠ›ï¼Œä¸€åˆ€ç ä¸‹å»å³å¯ï¼Œä½•å¿…ç‚«è€€åŠŸå¤«ã€‚\n"); 
 
-   if(target==me)     return notify_fail("Ïë×ÔÉ±£¿\n");
+   if(target==me)     return notify_fail("æƒ³è‡ªæ€ï¼Ÿ\n");
 
    if( !wizardp(me) && environment(me)->query("no_fight") )
-     return notify_fail("Äã²»ÄÜÔÚÕâÀïÍµÏ®±ğÈË¡£\n");
+     return notify_fail("ä½ ä¸èƒ½åœ¨è¿™é‡Œå·è¢­åˆ«äººã€‚\n");
 
    msg = HIW
-"$NÔËÁ¦Ò»Õğ£¬Ö»¼û±ù»¨ËÄ½¦£¡Ò»°Ñ±ùµ¶¶ÙÊ±»¯ÎªÎŞÊıËéÆ¬Ïò$n¼¤Éä¶øÈ¥£¡\n" NOR;
+"$Nè¿åŠ›ä¸€éœ‡ï¼Œåªè§å†°èŠ±å››æº…ï¼ä¸€æŠŠå†°åˆ€é¡¿æ—¶åŒ–ä¸ºæ— æ•°ç¢ç‰‡å‘$næ¿€å°„è€Œå»ï¼\n" NOR;
    //produce kill here...
    target->kill_ob(me);
 
@@ -165,7 +165,7 @@ int do_duandao(string arg)
         if( target->query("force")/40 > (10+me->query("force_factor")) )
         //btw, target still have chance...
         {     
-          msg +=  HIW "½á¹û$nËäÈ»¶¯µ¯²»µÃ£¬ÔË¹¦Ó²µ²Ö®ÏÂ£¬µ¹Ò²ÎŞÉõ´óº¦¡£\n" NOR;
+          msg +=  HIW "ç»“æœ$nè™½ç„¶åŠ¨å¼¹ä¸å¾—ï¼Œè¿åŠŸç¡¬æŒ¡ä¹‹ä¸‹ï¼Œå€’ä¹Ÿæ— ç”šå¤§å®³ã€‚\n" NOR;
           message_vision(msg, me, target);   
           me->start_busy(3);
 
@@ -175,11 +175,11 @@ int do_duandao(string arg)
         }
         else success = 1; 
      }
-   }//end of check ¶¯µ¯²»µÃ¡£
+   }//end of check åŠ¨å¼¹ä¸å¾—ã€‚
 
    if(success == 1 )
    {
-     msg +=  HIW "½á¹ûÇ§ÍòÆ¬±ù¿éÃ»Ìå¶øÈë£¬$n¶ÙÊ±·¢³öÒ»Éù²Ò½Ğ£¡\n" NOR;
+     msg +=  HIW "ç»“æœåƒä¸‡ç‰‡å†°å—æ²¡ä½“è€Œå…¥ï¼Œ$né¡¿æ—¶å‘å‡ºä¸€å£°æƒ¨å«ï¼\n" NOR;
      message_vision(msg, me, target);
 
      //here also apply poison..
@@ -190,7 +190,7 @@ int do_duandao(string arg)
    }    
    else
     {
-     msg +=  HIW "½á¹û$nÇáÇáÒ»Ìø£¬¶ãÁË¿ªÈ¥¡£\n" NOR;
+     msg +=  HIW "ç»“æœ$nè½»è½»ä¸€è·³ï¼Œèº²äº†å¼€å»ã€‚\n" NOR;
      message_vision(msg, me, target);     
    }
    

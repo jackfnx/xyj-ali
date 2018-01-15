@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
@@ -7,13 +7,13 @@ void kick();
 
 void create()
 {
-        set_name("ÍçÊ¯",({"stone"}));
+        set_name("é¡½çŸ³",({"stone"}));
         set_weight(500000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-     set("long", "Ò»¿éÕÉÓà¸ßµÄÍçÊ¯¡£\n");
-                set("unit", "¿é");
+     set("long", "ä¸€å—ä¸ˆä½™é«˜çš„é¡½çŸ³ã€‚\n");
+                set("unit", "å—");
     }
 
         setup();
@@ -30,12 +30,12 @@ int do_kick(string arg)
    object ob;
    
    if(arg=="stone") {
-     message_vision("$NÒ»½ÅÌßµ½´óÊ¯Í·ÉÏ£¬Í´µÄÍÛÍÛÂÒ½Ğ£¡\n\n", this_player());
-     message("vision", "ÍçÊ¯¶¯ÁË¶¯£¬¾¹Õ¾ÁËÆğÀ´£¡\n\n", environment());
+     message_vision("$Nä¸€è„šè¸¢åˆ°å¤§çŸ³å¤´ä¸Šï¼Œç—›çš„å“‡å“‡ä¹±å«ï¼\n\n", this_player());
+     message("vision", "é¡½çŸ³åŠ¨äº†åŠ¨ï¼Œç«Ÿç«™äº†èµ·æ¥ï¼\n\n", environment());
      seteuid(getuid());
      if(ob=new("/d/qujing/bibotan/npc/shitoujing"))
      ob->move(environment(this_object()));
-     message_vision("Ê¯Í·¾«µÉÁË$NÒ»ÑÛ£¬Ëµµ½£ºÄãÔõÃ´ÕâÃ´Ğ¡µÄ¾¢£¬»¹²»¹»¸øÎÒÄÓÑ÷Ñ÷µÄÄØ£¡\n",this_player());
+     message_vision("çŸ³å¤´ç²¾çªäº†$Nä¸€çœ¼ï¼Œè¯´åˆ°ï¼šä½ æ€ä¹ˆè¿™ä¹ˆå°çš„åŠ²ï¼Œè¿˜ä¸å¤Ÿç»™æˆ‘æŒ ç—’ç—’çš„å‘¢ï¼\n",this_player());
      call_out("destroy", 1, this_object());
      return 1;
    }

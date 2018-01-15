@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,17 +7,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼·üôË°ËØÔÍ¼¡½", ({"bagua tu", "tu", "book"}));
+        set_name("ã€–ä¼ç¾²å…«å¦å›¾ã€—", ({"bagua tu", "tu", "book"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
      set("value", 0);
      set("no_sell", 1);
      set("no_put", 1);
      set("no_give", 1);
-   set("long","Ò»ÕÅ»­ÓĞ·üôË°ËØÔµÄ½õÂÚ¡£\n");
+   set("long","ä¸€å¼ ç”»æœ‰ä¼ç¾²å…«å¦çš„é”¦çº¶ã€‚\n");
         set("material", "paper");
         set("skill", ([
                         "name": "baguazhou",

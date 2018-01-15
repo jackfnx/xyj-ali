@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // nancheng_b.c
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-   set_name("´äÏã¿ÍÕ»ÁôÑÔ°å", ({ "board" }) );
+   set_name("ç¿ é¦™å®¢æ ˆç•™è¨€æ¿", ({ "board" }) );
    set("location", "/d/4world/cuixiang");
    set("board_id", "aolai_b");
-   set("long",   "ÕâÊÇÒ»¸ö¹©ÈËÁôÑÔ¼ÇÊÂµÄÁôÑÔ°å¡£\n" );
+   set("long",   "è¿™æ˜¯ä¸€ä¸ªä¾›äººç•™è¨€è®°äº‹çš„ç•™è¨€æ¿ã€‚\n" );
    setup();
    set("capacity", 100);
    replace_program(BULLETIN_BOARD);

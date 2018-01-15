@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // shoes.c
@@ -11,14 +11,14 @@ inherit BOOTS;
 
 void create()
 {
-   set_name(YEL "Ğå»¨Ğ¡Ğ¬" NOR, ({ "shoes" }) );
+   set_name(YEL "ç»£èŠ±å°é‹" NOR, ({ "shoes" }) );
    set_weight(900);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-                set("long", "Ò»Ë«Ğ¡ÇÉ¾«ÖÂµÄĞå»¨Ğ¬¡£  \n");
+                set("long", "ä¸€åŒå°å·§ç²¾è‡´çš„ç»£èŠ±é‹ã€‚  \n");
      set("material", "cloth");
-     set("unit", "Ë«");
+     set("unit", "åŒ");
 //     set("value", 300);
      set("armor_prop/armor", 1 );
      set("female_only", 1);

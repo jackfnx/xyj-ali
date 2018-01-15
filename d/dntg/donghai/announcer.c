@@ -1,6 +1,6 @@
 // sgzl
 #include <ansi.h>
-#define NAME "°½¹ã"
+#define NAME "æ•–å¹¿"
 #define ID "ao guang"
 
 inherit NPC;
@@ -8,9 +8,9 @@ inherit NPC;
 void create()
 {
     set_name(NAME, ({ ID }));
-    set("gender", "ÄÐÐÔ");
+    set("gender", "ç”·æ€§");
     set("age", 53);
-    set("long", "Ò»ÌõÀÏÄàöú¡£\n");
+    set("long", "ä¸€æ¡è€æ³¥é³…ã€‚\n");
     
     setup();
 }
@@ -23,10 +23,9 @@ void announce_success(object who)
     who->add("dntg/number", 1);
     who->set("dntg/donghai", "done");
     who->add("combat_exp", dx);
-    command("chat "+who->query("name")+"Äã¾¹¸ÒÄÃ×ßÎÒÁú¹¬µÄ¶¨º£ÉñÕëÌú£¬¿´ÎÒ²»È¥ÓñµÛÃæÇ°¸æÄã£¡");
-    tell_object(who,"ÄãÓ®µÃÁË"+ COMBAT_D->chinese_daoxing(dx) +"µÄµÀÐÐ£¡\n");
+    command("chat "+who->query("name")+"ä½ ç«Ÿæ•¢æ‹¿èµ°æˆ‘é¾™å®«çš„å®šæµ·ç¥žé’ˆé“ï¼Œçœ‹æˆ‘ä¸åŽ»çŽ‰å¸é¢å‰å‘Šä½ ï¼");
+    tell_object(who,"ä½ èµ¢å¾—äº†"+ COMBAT_D->chinese_daoxing(dx) +"çš„é“è¡Œï¼\n");
     who->save();
     if (hb) hb->report_progress(10);
 }
 
-ÿÿ

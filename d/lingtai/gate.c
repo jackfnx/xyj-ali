@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // gate.c
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-  set ("short", "ɽ��");
+  set ("short", "山门");
   set ("long", @LONG
 
-�ſ���һʯ����Լ�������Ÿߣ��˳�����������һ��ʮ�����֣�
-���ǡ���̨����ɽ��б�����Ƕ�����ɽ������һ��ͯ���������
-Ӣΰ����ò���棬��Ѱ�����Ӳ�ͬ��
+门口立一石碑，约有三丈馀高，八尺馀阔，上有一行十个大字，
+乃是“灵台方寸山，斜月三星洞”。山门旁立一仙童，真个丰姿
+英伟，像貌清奇，比寻常俗子不同。
 LONG);
 set("exits", ([ /* sizeof() == 2 */
 "north" : __DIR__"gate1",
@@ -22,7 +22,7 @@ set("exits", ([ /* sizeof() == 2 */
 
 set("objects", ([
                 __DIR__"npc/yingke": 1 ]) );
-        create_door("north", "ʯ��", "south", DOOR_CLOSED);
+        create_door("north", "石门", "south", DOOR_CLOSED);
          set("outdoors", 1);
         set("no_clean_up", 0);
 

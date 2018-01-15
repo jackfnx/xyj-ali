@@ -1,12 +1,12 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-       set_name("�ⱾǮ", ({"wu benqian","wu","nomoney"}));
-       set("gender", "����");
+       set_name("吴本钱", ({"wu benqian","wu","nomoney"}));
+       set("gender", "男性");
         set("combat_exp", 8000);
        set("age", 36);
        set("per", 18);
@@ -35,9 +35,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "�ⱾǮЦ�����˵������λ" +
+                        say( "吴本钱笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "��������㿴����\n");
+                                + "，进来随便看看。\n");
                         break;
         }
 }

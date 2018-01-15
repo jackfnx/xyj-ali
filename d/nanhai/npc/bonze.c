@@ -1,15 +1,15 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
-// bonze.c ╨мип
+// bonze.c Е▓▄Е╟ 
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-    set_name("╨мип", ({ "heshang", "bonze" }));
-    set("gender", "дппт");
+    set_name("Е▓▄Е╟ ", ({ "heshang", "bonze" }));
+    set("gender", "Г■╥Ф─╖");
     set("age", 30);
     set("attitude", "peaceful");
     set("class", "bonze");
@@ -55,7 +55,7 @@ void create()
         (: random_move :)
     }) );
 
-    create_family("до╨ёфумси╫", 3, "╣эвс");
+    create_family("Е█≈Ф╣╥Ф≥╝И≥─Е╠╠", 3, "Е╪÷Е╜░");
 
     setup();
     carry_object("/obj/money/gold");
@@ -65,7 +65,7 @@ void create()
 void attempt_apprentice(object ob)
 {
     command("smile");
-    command("say ╨э╨цё╛ф╤и╝╬мйуобдЦё╛оёмШдЦ╤Ю╪се╛а╕ё╛тГЁиуЩ╧Ш║ё\n");
+    command("say Е╬┬Е╔╫О╪▄Х╢╚Е┐╖Е╟╠Ф■╤Д╦▀Д╫═О╪▄Е╦▄Ф°⌡Д╫═Е╓ Е┼═Е┼╙Е┼⌡О╪▄Ф≈╘Ф┬░Ф╜ёФ·°Ц─┌\n");
 
     command("recruit " + ob->query("id") );
     return;

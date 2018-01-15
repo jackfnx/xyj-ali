@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-    set("short", "��Ĺ���");
+    set("short", "古墓入口");
     set("long", @LONG
 
-�ض������Ȼ��ı��ж��죬����һ��ʯͷ������д�š���ԯ��Ĺ��
-�ĸ��֡��ѵ�������ԯ�Ƶ�֮Ĺ������ɣ��Ƶ��겻Ӧ�������ﰡ��
+坟堆下面居然真的别有洞天，洞口一块石头，上面写着『轩辕古墓』
+四个字。难道这是轩辕黄帝之墓？不会吧，黄帝陵不应该在这里啊？
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // lumber_axe.c
@@ -9,17 +9,17 @@ inherit AXE;
 
 void create()
 {
-        set_name("Ìú¸«", ({ "lumber axe", "axe" }) );
+        set_name("é“æ–§", ({ "lumber axe", "axe" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÉòÖØµÄÌú¸«£¬ÓÃÀ´¿³²ñ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæ²ˆé‡çš„é“æ–§ï¼Œç”¨æ¥ç æŸ´ã€‚\n");
                 set("value", 200);
                 set("wield_msg",
-"$NÄÃ³öÒ»°Ñ¿³²ñÓÃµÄ$n£¬ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+"$Næ‹¿å‡ºä¸€æŠŠç æŸ´ç”¨çš„$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“ä½œæ­¦å™¨ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_axe(15, TWO_HANDED);
         setup();

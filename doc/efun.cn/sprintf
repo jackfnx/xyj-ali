@@ -1,15 +1,15 @@
 
         sprintf(3)                LP MudOSv21c7                (7 Jul 1996)
 
-        º¯ÊıÃû³Æ:
-                printf, sprintf - ×ª»»³ÉÖ¸¶¨¸ñÊ½µÄÊä³ö½á¹û.
-        º¯ÊıÓï·¨:
+        å‡½æ•°åç§°:
+                printf, sprintf - è½¬æ¢æˆæŒ‡å®šæ ¼å¼çš„è¾“å‡ºç»“æœ.
+        å‡½æ•°è¯­æ³•:
                 void printf( string format, ... );
                 string sprintf( string format, ... );
 
-                ÎŞ´«»ØÖµ printf( ×Ö´® format, ... );
-                ×Ö´® sprintf( ×Ö´® format, ... );
-        º¯ÊıÓÃ·¨:
-                ÒÔÏÂÎª LPC (s)printf() µÄ¸ñÊ½ÓÃ·¨, Lynscar
-                (Sean A Reith) ¼ÓÈëÁËÒ»Ğ©À©³äÓÃ·¨.
+                æ— ä¼ å›å€¼ printf( å­—ä¸² format, ... );
+                å­—ä¸² sprintf( å­—ä¸² format, ... );
+        å‡½æ•°ç”¨æ³•:
+                ä»¥ä¸‹ä¸º LPC (s)printf() çš„æ ¼å¼ç”¨æ³•, Lynscar
+                (Sean A Reith) åŠ å…¥äº†ä¸€äº›æ‰©å……ç”¨æ³•.
 

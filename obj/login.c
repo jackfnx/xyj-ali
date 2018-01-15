@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <login.h>
@@ -30,7 +30,7 @@ void time_out()
    int i;
    if( objectp(query_temp("body_ob")) ) return;
    if( interactive(this_object()) )
-     write("Äú»¨ÔÚÁ¬Ïß½øÈëÊÖĞøµÄÊ±¼äÌ«¾ÃÁË£¬ÏÂ´ÎÏëºÃÔÙÀ´°É¡£\n");
+     write("æ‚¨èŠ±åœ¨è¿çº¿è¿›å…¥æ‰‹ç»­çš„æ—¶é—´å¤ªä¹…äº†ï¼Œä¸‹æ¬¡æƒ³å¥½å†æ¥å§ã€‚\n");
 //added by mon 3/12/97
         body=children(USER_OB);
    name=getuid(this_object());

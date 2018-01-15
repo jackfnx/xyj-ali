@@ -1,11 +1,11 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // lotusforce.c
 
 inherit FORCE;
 
-string name() { return "Á«Ì¨ĞÄ·¨"; }
+string name() { return "è²å°å¿ƒæ³•"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 int valid_learn(object me) { return 1;}

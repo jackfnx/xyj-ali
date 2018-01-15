@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create()
 {
-        set("short", "���������");
+        set("short", "牙玉软榻上");
         set("long", @LONG
 
-һ������ɫ����齣�����ܵ�����Ҷ�񣬿���ȥ��Ϊ���£�ɴ
-��ԧ��֮��ɢ����һ˿˿���㣮
+一张牙玉色的软榻，榻四周雕着竹叶格，看上去极为精致，纱
+衾鸳枕之间散发出一丝丝幽香．
 LONG
         );
         

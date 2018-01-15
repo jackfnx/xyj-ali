@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 4/12/1997
@@ -8,14 +8,14 @@ inherit HAMMER;
 
 void create()
 {
-  set_name("Ê¯Í·", ({"stone", "shi tou"}));
+  set_name("çŸ³å¤´", ({"stone", "shi tou"}));
   set_weight(4000);
   if (clonep())
     set_default_object(__FILE__);
   else
   {
-    set("unit", "¿é");
-    set("long", "Ò»¿éÓĞÀâÓĞ½ÇµÄÊ¯¿é¡£\n");
+    set("unit", "å—");
+    set("long", "ä¸€å—æœ‰æ£±æœ‰è§’çš„çŸ³å—ã€‚\n");
     set("material", "stone");
   }
   init_hammer(1);

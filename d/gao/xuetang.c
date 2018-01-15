@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create()
 {
-  set ("short", "����");
+  set ("short", "书堂");
   set ("long", @LONG
 
-һ��СС�ķ��ӡ�����ǽ�Ϲ���һ�����ӵĻ���һ��������
-������һȺ������֮����Ҳ������
+一间小小的房子。正中墙上挂着一幅孔子的画像。一个老先生
+正教着一群孩子念之乎者也。。。
 LONG);
 
 set("exits", ([ /* sizeof() == 4 */

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat on 7/5/1997 
@@ -11,11 +11,11 @@ int random2 (int i)
 
 void create()
 {
-  set_name("¶·¼¦", ({ "dou ji", "ji" }) );
-  set("race", "Ò°ÊŞ");
-  set("gender", "ĞÛĞÔ");
+  set_name("æ–—é¸¡", ({ "dou ji", "ji" }) );
+  set("race", "é‡å…½");
+  set("gender", "é›„æ€§");
   set("age", 2);
-  set("long", "Ò»Ö»ĞÛôñôñµÄ¶·¼¦¡£\n");
+  set("long", "ä¸€åªé›„èµ³èµ³çš„æ–—é¸¡ã€‚\n");
   set("attitude", "friendly");
   set("max_kee",200+random2(2));
   set("str", 40+random2(2));
@@ -27,7 +27,7 @@ void create()
   set_skill("unarmed", random2(2)+10);
   set_skill("dodge", random2(2)+10);
   set_skill("parry", random2(2)+10);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
   set("verbs", ({ "bite"}) );
 
   setup();

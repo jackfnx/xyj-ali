@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // room.c
@@ -85,11 +85,11 @@ void reset()
 string look_door(string dir)
 {
    if( !mapp(doors) || undefinedp(doors[dir]) )
-     return "ÄãÒª¿´Ê²Ã´£¿\n";
+     return "ä½ è¦çœ‹ä»€ä¹ˆï¼Ÿ\n";
    if( doors[dir]["status"] & DOOR_CLOSED )
-     return "Õâ¸ö" + doors[dir]["name"] + "ÊÇ¹Ø×ÅµÄ¡£\n";
+     return "è¿™ä¸ª" + doors[dir]["name"] + "æ˜¯å…³ç€çš„ã€‚\n";
    else
-     return "Õâ¸ö" + doors[dir]["name"] + "ÊÇ¿ª×ÅµÄ¡£\n";
+     return "è¿™ä¸ª" + doors[dir]["name"] + "æ˜¯å¼€ç€çš„ã€‚\n";
 }
 
 varargs int open_door(string dir, int from_other_side)
@@ -98,17 +98,17 @@ varargs int open_door(string dir, int from_other_side)
    object ob;
 
    if( !mapp(doors) || undefinedp(doors[dir]) )
-     return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞÃÅ¡£\n");
+     return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰é—¨ã€‚\n");
 
    if( !(doors[dir]["status"] & DOOR_CLOSED) )
-     return notify_fail( doors[dir]["name"] + "ÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+     return notify_fail( doors[dir]["name"] + "å·²ç»æ˜¯å¼€ç€çš„äº†ã€‚\n");
 
    exits = query("exits");
    if( !mapp(exits) || undefinedp(exits[dir]) )
      error("Room: open_door: attempt to open a door with out an exit.\n");
 
    if( from_other_side )
-     message("vision", "ÓĞÈË´ÓÁíÒ»±ß½«" + doors[dir]["name"] + "´ò¿ªÁË¡£\n", this_object());
+     message("vision", "æœ‰äººä»å¦ä¸€è¾¹å°†" + doors[dir]["name"] + "æ‰“å¼€äº†ã€‚\n", this_object());
    else if( objectp(ob = find_object(exits[dir])) ) {
      if( !ob->open_door(doors[dir]["other_side_dir"], 1) ) return 0;
    }
@@ -123,17 +123,17 @@ varargs int close_door(string dir, int from_other_side)
    object ob;
 
    if( !mapp(doors) || undefinedp(doors[dir]) )
-     return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞÃÅ¡£\n");
+     return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰é—¨ã€‚\n");
 
    if( (doors[dir]["status"] & DOOR_CLOSED) )
-     return notify_fail( doors[dir]["name"] + "ÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+     return notify_fail( doors[dir]["name"] + "å·²ç»æ˜¯å…³ç€çš„äº†ã€‚\n");
 
    exits = query("exits");
    if( !mapp(exits) || undefinedp(exits[dir]) )
      error("Room: close_door: attempt to open a door with out an exit.\n");
 
    if( from_other_side )
-     message("vision", "ÓĞÈË´ÓÁíÒ»±ß½«" + doors[dir]["name"] + "¹ØÉÏÁË¡£\n", this_object());
+     message("vision", "æœ‰äººä»å¦ä¸€è¾¹å°†" + doors[dir]["name"] + "å…³ä¸Šäº†ã€‚\n", this_object());
    else if( objectp(ob = find_object(exits[dir])) ) {
      if( !ob->close_door(doors[dir]["other_side_dir"], 1) ) return 0;
    }
@@ -195,7 +195,7 @@ int valid_leave(object me, string dir)
 {
    if( mapp(doors) && !undefinedp(doors[dir]) ) {
      if( doors[dir]["status"] & DOOR_CLOSED )
-        return notify_fail("Äã±ØĞëÏÈ°Ñ" + doors[dir]["name"] + "´ò¿ª£¡\n");
+        return notify_fail("ä½ å¿…é¡»å…ˆæŠŠ" + doors[dir]["name"] + "æ‰“å¼€ï¼\n");
      // if ( door[dir]["status"] & DOOR_HAS_TRAP ) ....
    }
    return 1;

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // who.c
@@ -30,31 +30,31 @@ mixed main(object me, string arg, int remote)
           default:
              if(option[i][0]=='@' ) {
                  rwho=option[i][1..sizeof(option[i])];
-                                   } else return notify_fail("Ö¸Áî¸ñÊ½£ºwho [-l|-i|-w]\n");
+                                   } else return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwho [-l|-i|-w]\n");
                         }
                 if(strlen(rwho)>0) {
         RWHO_Q->send_rwho_q(rwho, me, verbose);
-        write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬ÇëÉÔºò¡£\n");
+        write("ç½‘è·¯è®¯æ¯å·²é€å‡ºï¼Œè¯·ç¨å€™ã€‚\n");
          return 1;
      }
    }
 
    if( opt_long && !remote ) {
      if( (int)me->query("sen") < 20 )
-        return notify_fail("ÄãµÄ¾«ÉñÌ«²îÁË£¬Ã»ÓĞ°ì·¨µÃÖªÆäËûÍæ¼ÒµÄÏêÏ¸×ÊÁÏ¡£\n");
+        return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®äº†ï¼Œæ²¡æœ‰åŠæ³•å¾—çŸ¥å…¶ä»–ç©å®¶çš„è¯¦ç»†èµ„æ–™ã€‚\n");
      me->receive_damage("sen", 1);
    }
 
    if(remote) {
 #ifdef INTERMUD_NAME
-       str = "¡ö " + INTERMUD_NAME + "\n";
+       str = "â–  " + INTERMUD_NAME + "\n";
 #else
-       str = "¡ö " + MUD_NAME + "\n";
+       str = "â–  " + MUD_NAME + "\n";
 #endif
    } else
-       str = "¡ö " + MUD_NAME + "\n";
+       str = "â–  " + MUD_NAME + "\n";
 
-   str += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+   str += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
    
         list = users();
 
@@ -98,8 +98,8 @@ mixed main(object me, string arg, int remote)
    if(!remote || strlen(str)<1024) {
    //don't add last two lines for remote who if it is too long.
    //small packets maybe arrived to remote machine out of order.
-     str += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
-     str = sprintf("%s¹²ÓĞ %d Î»Ê¹ÓÃÕßÁ¬ÏßÖĞ£¬ÏµÍ³¸ºµ££º%s\n", str, ppl_cnt,
+     str += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
+     str = sprintf("%så…±æœ‰ %d ä½ä½¿ç”¨è€…è¿çº¿ä¸­ï¼Œç³»ç»Ÿè´Ÿæ‹…ï¼š%s\n", str, ppl_cnt,
      query_load_average() + "\n");
         }
 
@@ -125,17 +125,17 @@ int sort_user(object ob1, object ob2)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : who [-l|-i|-w] »ò
+æŒ‡ä»¤æ ¼å¼ : who [-l|-i|-w] æˆ–
            who [-l|-i|-w] @mud_name
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁĞ³öËùÓĞÔÚÏßÉÏµÄÍæ¼Ò¼°ÆäµÈ¼¶¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åˆ—å‡ºæ‰€æœ‰åœ¨çº¿ä¸Šçš„ç©å®¶åŠå…¶ç­‰çº§ã€‚
 
--l        Ñ¡ÏîÁĞ³ö½Ï³¤µÄÑ¶Ï¢¡£
--i        Ö»ÁĞ³öÍæ¼ÒµÄÓ¢ÎÄ´úºÅ¡£
--w        Ö»ÁĞ³öÏßÉÏËùÓĞµÄÎ×Ê¦¡£
-@mud_name ÁĞ³öÆäËüÕ¾µãµÄÍæ¼ÒÑ¶Ï¢£¬¿ÉÓÃmudlist²é¿´ÁªÏßÕ¾µã¡£
+-l        é€‰é¡¹åˆ—å‡ºè¾ƒé•¿çš„è®¯æ¯ã€‚
+-i        åªåˆ—å‡ºç©å®¶çš„è‹±æ–‡ä»£å·ã€‚
+-w        åªåˆ—å‡ºçº¿ä¸Šæ‰€æœ‰çš„å·«å¸ˆã€‚
+@mud_name åˆ—å‡ºå…¶å®ƒç«™ç‚¹çš„ç©å®¶è®¯æ¯ï¼Œå¯ç”¨mudlistæŸ¥çœ‹è”çº¿ç«™ç‚¹ã€‚
 
-Ïà¹ØÖ¸Áî£º finger, mudlist
+ç›¸å…³æŒ‡ä»¤ï¼š finger, mudlist
 HELP
     );
     return 1;

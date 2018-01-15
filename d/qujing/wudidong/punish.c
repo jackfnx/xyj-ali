@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/punish
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºÚ°µÖĞ");
+  set ("short", "é»‘æš—ä¸­");
   set ("long", @LONG
 
-ÕâÀïÊÇÒ»Æ¬ºÚ°µ£¬ÉìÊÖ²»¼ûÎåÖ¸¡£ËÄ´¦ËÀ³Á³ÁµØºÁÎŞÉùÏ¢£¬Ô½·¢ÏÔµÃ
-ÒõÉ­¿Ö²À¡£Í»È»¼äÒ»ÕóÀä·ç´µÀ´£¬´øÀ´Ò»¹ÉÆË±ÇµÄÃ¹Æø¡£½¥½¥µÄ£¬Äã
-¸Ğµ½ºôÎüÀ§ÄÑÆğÀ´£¬¿´À´ÕâÀï²¢²»Í¸·ç¡£
+è¿™é‡Œæ˜¯ä¸€ç‰‡é»‘æš—ï¼Œä¼¸æ‰‹ä¸è§äº”æŒ‡ã€‚å››å¤„æ­»æ²‰æ²‰åœ°æ¯«æ— å£°æ¯ï¼Œè¶Šå‘æ˜¾å¾—
+é˜´æ£®ææ€–ã€‚çªç„¶é—´ä¸€é˜µå†·é£å¹æ¥ï¼Œå¸¦æ¥ä¸€è‚¡æ‰‘é¼»çš„éœ‰æ°”ã€‚æ¸æ¸çš„ï¼Œä½ 
+æ„Ÿåˆ°å‘¼å¸å›°éš¾èµ·æ¥ï¼Œçœ‹æ¥è¿™é‡Œå¹¶ä¸é€é£ã€‚
 LONG);
   setup();
 }
@@ -30,12 +30,12 @@ void init()
 int do_search(string arg)
 {
     object me=this_player();
-    if (arg) return notify_fail("ÕâÀïÃ»ÓĞ "+arg+"¡£\n");
+    if (arg) return notify_fail("è¿™é‡Œæ²¡æœ‰ "+arg+"ã€‚\n");
     if (me->query("kee")/me->query("max_kee")*100 < 30
      || me->query("sen")/me->query("max_sen")*100 < 30)
-        return notify_fail("¶¼¿ìÀÛËÀÁË£¬»¹ÊÇÀÏÀÏÊµÊµµØ×ø×Å°É£¡\n");
+        return notify_fail("éƒ½å¿«ç´¯æ­»äº†ï¼Œè¿˜æ˜¯è€è€å®å®åœ°åç€å§ï¼\n");
     me->start_busy(random(40-me->query_kar()));
-    tell_object(me, "Äã×óÓÒ¿´ÁË¿´£¬´ÁÁË¼¸ÏÂ£¬·¢¾õ¶«±ßµÄ³¾ÍÁÓĞĞ©ËÉ¶¯¡£\n");
+    tell_object(me, "ä½ å·¦å³çœ‹äº†çœ‹ï¼Œæˆ³äº†å‡ ä¸‹ï¼Œå‘è§‰ä¸œè¾¹çš„å°˜åœŸæœ‰äº›æ¾åŠ¨ã€‚\n");
     me->set_temp("mark/wudidong_know_about_punishroom", 1);
     return 1;
 }
@@ -44,16 +44,16 @@ int do_dig(string arg)
     object me=this_player();
 
 //    if (me->query_skill("tianmo", 1)<30)
-//        return notify_fail("Äã»¹Ã»Ñ§»áÎŞµ×¶´µÄ¿´¼Ò±¾Áì£¡\n");
+//        return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šæ— åº•æ´çš„çœ‹å®¶æœ¬é¢†ï¼\n");
     if (!me->query_temp("mark/wudidong_know_about_punishroom"))
-        return notify_fail("ÍÚÊ²Ã´£¿\n");
-    tell_object(me, "ÄãÉì³öË«ÊÖ£¬´µÒ»¿ÚÆø£¬µÀ£º±ä£¡Ö»¼ûË«ÊÖ±ä³ÉÒ»¶ÔÌú×¦£¡\n");
-    tell_object(me, "ÄãÎè¶¯Ìú×¦£¬Ë²Ê±¼ä½«ËÉ¶¯µÄ³¾ÍÁÍÚ¿ªÁË£¡\n");
-    tell_object(me, "ÄãÉì³öÌú×¦Ò»¶¶£¬±ä»ØÁËË«ÊÖ£¬´ÓÈİ²»ÆÈµØ´Ó¶´¿ÚÅÀÁË³öÈ¥¡£\n");
-    message_vision("Ö»ÌıÒ»ÕóßñàÂÉù¹ıºó£¬$N²»¼ûÁË£¡\n", me);
+        return notify_fail("æŒ–ä»€ä¹ˆï¼Ÿ\n");
+    tell_object(me, "ä½ ä¼¸å‡ºåŒæ‰‹ï¼Œå¹ä¸€å£æ°”ï¼Œé“ï¼šå˜ï¼åªè§åŒæ‰‹å˜æˆä¸€å¯¹é“çˆªï¼\n");
+    tell_object(me, "ä½ èˆåŠ¨é“çˆªï¼Œç¬æ—¶é—´å°†æ¾åŠ¨çš„å°˜åœŸæŒ–å¼€äº†ï¼\n");
+    tell_object(me, "ä½ ä¼¸å‡ºé“çˆªä¸€æŠ–ï¼Œå˜å›äº†åŒæ‰‹ï¼Œä»å®¹ä¸è¿«åœ°ä»æ´å£çˆ¬äº†å‡ºå»ã€‚\n");
+    message_vision("åªå¬ä¸€é˜µå”å—¦å£°è¿‡åï¼Œ$Nä¸è§äº†ï¼\n", me);
     me->move(__DIR__"gongshi");
     me->set("startroom", me->query("startroom_old"));
     me->delete_temp("mark/wudidong_know_about_punishroom");
-    message("vision", "Î÷±ßÊ¯±ÚÍ»È»Â¶³ö¸ö´ó¶´£¬"+me->name()+"´ÓÀïÃæ×êÁË³öÀ´¡£\n", me);
+    message("vision", "è¥¿è¾¹çŸ³å£çªç„¶éœ²å‡ºä¸ªå¤§æ´ï¼Œ"+me->name()+"ä»é‡Œé¢é’»äº†å‡ºæ¥ã€‚\n", me);
     return 1;
 }

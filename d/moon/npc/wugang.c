@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // wugang.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Îâ¸Õ", ({"wu gang","wugang","wu","gang"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("å´åˆš", ({"wu gang","wugang","wu","gang"}));
+        set("gender", "ç”·æ€§" );
         set("age", 35);
-        set("long", "Ò»¸öÆøÓî²»·²µÄ´óºº£®");
+        set("long", "ä¸€ä¸ªæ°”å®‡ä¸å‡¡çš„å¤§æ±‰ï¼");
         set("combat_exp", 100000);
         set("attitude", "peaceful");
 
@@ -38,7 +38,7 @@ void create()
 int accept_fight(object me)
 {
         command("jump");     
-        command("say ÕıºÃ£¡ÎÒ¿³ÁË°ëÌìÊ÷£¬Ò²¸Ã»»»»ÁË¡£");
+        command("say æ­£å¥½ï¼æˆ‘ç äº†åŠå¤©æ ‘ï¼Œä¹Ÿè¯¥æ¢æ¢äº†ã€‚");
         return 1;
 }
 

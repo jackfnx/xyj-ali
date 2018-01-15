@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,12 +7,12 @@ inherit CLOTH;
 
 void create()
 {
-  set_name("ºñÅ£Æ¤¶Ü", ({"houniu pidun", "pidun", "dun"}));
+  set_name("åšç‰›çš®ç›¾", ({"houniu pidun", "pidun", "dun"}));
   set_weight(4500);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¼ş");
+    set("unit", "ä»¶");
     set("value", 2000);
     set("material", "leather");
     set("armor_prop/armor", 20);

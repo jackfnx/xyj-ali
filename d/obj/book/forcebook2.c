@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // forcebook2, level 100-140
@@ -8,13 +8,13 @@ void init();
 
 void create()
 {
-  set_name("¡¼·üÄ§É½ĞÄ¾­¡½", ({"fumo book", "fumo", "book", "forcebook", "shu", "xinjing"}));
+  set_name("ã€–ä¼é­”å±±å¿ƒç»ã€—", ({"fumo book", "fumo", "book", "forcebook", "shu", "xinjing"}));
   set_weight(1000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±¾");
-    set("long", "Ò»¸öÓÍ²¼Æ¤µÄĞ¡²á×Ó£¬Ç°Ò»°ëÈ´²»ÖªÊ²Ã´Ô­Òò±»³¶µôÁË¡£\n");
+    set("unit", "æœ¬");
+    set("long", "ä¸€ä¸ªæ²¹å¸ƒçš®çš„å°å†Œå­ï¼Œå‰ä¸€åŠå´ä¸çŸ¥ä»€ä¹ˆåŸå› è¢«æ‰¯æ‰äº†ã€‚\n");
     set("material", "cloth");
     set("value", 0);
   }
@@ -36,20 +36,20 @@ int do_read(string arg)
   object me=this_player(),book=this_object();
   int sen_cost, gain,forcelev,exp;
 
-  if( !book->id(arg) ) return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
-  if(me->is_busy()) return notify_fail("ÄãÏÖÔÚÃ¦×ÅÄØ£¬»¹ÊÇµÈ¾²ÏÂĞÄÀ´ÔÙ¶ÁÊé°É£¡\n");
-  if(me->is_fighting()) return notify_fail("ÁÙÕóÄ¥Ç¹¿ÉÀ´²»¼°À²£¡\n");
+  if( !book->id(arg) ) return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
+  if(me->is_busy()) return notify_fail("ä½ ç°åœ¨å¿™ç€å‘¢ï¼Œè¿˜æ˜¯ç­‰é™ä¸‹å¿ƒæ¥å†è¯»ä¹¦å§ï¼\n");
+  if(me->is_fighting()) return notify_fail("ä¸´é˜µç£¨æªå¯æ¥ä¸åŠå•¦ï¼\n");
   if( (int)me->query_skill("force",1)<100 )
-    return notify_fail("ÄãÄÃÆğÊé×ĞÏ¸¶ÁÁË°ëÌì£¬µ«ÔõÃ´Ò²¶Á²»¶®¡£\n");
+    return notify_fail("ä½ æ‹¿èµ·ä¹¦ä»”ç»†è¯»äº†åŠå¤©ï¼Œä½†æ€ä¹ˆä¹Ÿè¯»ä¸æ‡‚ã€‚\n");
   if( (int)me->query_skill("force",1)>140 )
-    return notify_fail("ÄãÔÚÕâ·½ÃæÒÑ¾­ºÜÓĞÔìÒè£¬Õâ±¾Êé²»»áÈÃÄã³¤½ø¶àÉÙ¡£\n");
+    return notify_fail("ä½ åœ¨è¿™æ–¹é¢å·²ç»å¾ˆæœ‰é€ è¯£ï¼Œè¿™æœ¬ä¹¦ä¸ä¼šè®©ä½ é•¿è¿›å¤šå°‘ã€‚\n");
   exp=(int)me->query("combat_exp");
   forcelev=(int)me->query_skill("force", 1);
   if(exp*10 < forcelev*forcelev*forcelev)
-    return notify_fail("ÄãµÄµÀĞĞ²»¹»£¬ÔÙÔõÃ´¶ÁÒ²Ã»ÓÃ¡£\n");
+    return notify_fail("ä½ çš„é“è¡Œä¸å¤Ÿï¼Œå†æ€ä¹ˆè¯»ä¹Ÿæ²¡ç”¨ã€‚\n");
   sen_cost=20+(40-(int)me->query_int())+(35-(int)me->query_kar());
   if( (int)me->query("sen")<sen_cost )
-    return notify_fail("ÄãÏÖÔÚÍ·ÔÎÄÔÕÍ£¬¸ÃĞİÏ¢ĞİÏ¢ÁË¡£\n");   
+    return notify_fail("ä½ ç°åœ¨å¤´æ™•è„‘èƒ€ï¼Œè¯¥ä¼‘æ¯ä¼‘æ¯äº†ã€‚\n");   
    me->receive_damage("sen", sen_cost);
   
   gain = (int)me->query_skill("literate", 1)/5;
@@ -58,8 +58,8 @@ int do_read(string arg)
   if (gain <= 0) gain = 1;
   me->improve_skill("force", gain);
 
-  message_vision("$NÕı×¨ĞÄµØÑĞ¶Á"+book->query("name")+"¡£\n", me);
-  tell_object(me, "ÄãÑĞ¶ÁÓĞ¹ØÄÚ¹¦ĞÄ·¨µÄ¼¼ÇÉ£¬ËÆºõÓĞµãĞÄµÃ¡£\n");
+  message_vision("$Næ­£ä¸“å¿ƒåœ°ç ”è¯»"+book->query("name")+"ã€‚\n", me);
+  tell_object(me, "ä½ ç ”è¯»æœ‰å…³å†…åŠŸå¿ƒæ³•çš„æŠ€å·§ï¼Œä¼¼ä¹æœ‰ç‚¹å¿ƒå¾—ã€‚\n");
 
   return 1;
 }

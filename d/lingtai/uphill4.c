@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // uphill4.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "������");
+  set ("short", "碧萝岭");
   set ("long", @LONG
 
-����ĵ��Ʊ��ƽ̹��һƬ���̵Ĳ�ƺ�п��Ŷ��С������ɽ��
-��ȥ�������һ������֪��������������ô���ˡ�ң��Զ����ǧ
-�忪ꪣ�����������ӳ᰹������䣬������ɫ�京�ࡣ
+这里的地势变的平坦，一片碧绿的草坪中开着朵朵小花。往山下
+望去，你吃了一惊，不知不觉中已上了这么高了。遥望远处，千
+峰开戟，万仞开屏。日映岚光轻锁翠，雨收黛色冷含青。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "east": __DIR__"guanjin",

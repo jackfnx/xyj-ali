@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -10,11 +10,11 @@ object copy_yao(object ob);
 
 void create()
 {
-  set_name("¹úÍõ", ({"guo wang", "wang", "king"}));
-  set("long", "Öì×Ï¹úµÄ¹úÍõ£¬Í·´÷Öì½ğ¹Ú£¬ÊÖÖ´×Ï½ğÕÈ¡£\n");
-  set("title", "Öì×Ï¹ú");
-  set("gender", "ÄĞĞÔ");
-  set("rank_info/respect", "±İÏÂ");
+  set_name("å›½ç‹", ({"guo wang", "wang", "king"}));
+  set("long", "æœ±ç´«å›½çš„å›½ç‹ï¼Œå¤´æˆ´æœ±é‡‘å† ï¼Œæ‰‹æ‰§ç´«é‡‘æ–ã€‚\n");
+  set("title", "æœ±ç´«å›½");
+  set("gender", "ç”·æ€§");
+  set("rank_info/respect", "é™›ä¸‹");
   set("age", 46);
   set("per", 30);
   set("attitude", "peaceful");
@@ -32,16 +32,16 @@ void create()
   set("eff_dx",15000);
   set("nkgain",90);
   set("inquiry", ([
-        "name":   "ëŞÄËÖì×Ï¹ú¹úÍõÒ²£¬½üÀ´ÉíÌå²»ÊÊ£¬¾ÃÒ½ÄÑÓú¡£",
-        "Íõºó":   "ëŞÖ®ºó£¬Î¨½ğÊ¥¹¬ºóÒÑ±ğÈıÄêÒÓ¡£",
-        "½ğÊ¥¹¬": "½ğÊ¥¹¬²»ÔÚÒÑÈıÄêÒÓ¡£",
-        "²»ÊÊ":   (: test_player :),
-        "²¡":     (: test_player :),
-        "Ò½":     (: test_player :),
-        "Ò½ÖÎ":   (: test_player :),
-        "Ò½ÁÆ":   (: test_player :),
-        "Ò©":     (: test_player :),
-        "³ÔÒ©":   (: test_player :),
+        "name":   "æœ•ä¹ƒæœ±ç´«å›½å›½ç‹ä¹Ÿï¼Œè¿‘æ¥èº«ä½“ä¸é€‚ï¼Œä¹…åŒ»éš¾æ„ˆã€‚",
+        "ç‹å":   "æœ•ä¹‹åï¼Œå”¯é‡‘åœ£å®«åå·²åˆ«ä¸‰å¹´çŸ£ã€‚",
+        "é‡‘åœ£å®«": "é‡‘åœ£å®«ä¸åœ¨å·²ä¸‰å¹´çŸ£ã€‚",
+        "ä¸é€‚":   (: test_player :),
+        "ç—…":     (: test_player :),
+        "åŒ»":     (: test_player :),
+        "åŒ»æ²»":   (: test_player :),
+        "åŒ»ç–—":   (: test_player :),
+        "è¯":     (: test_player :),
+        "åƒè¯":   (: test_player :),
       ]));
 
   setup();
@@ -52,8 +52,8 @@ void throw_player (object who)
 {
   object me = this_object();
 
-  message_vision ("$NºÈÁËÒ»Éù£ºËÍ¿Í£¡\n", me, who);
-  message_vision ("¼¸Î»Ì«¼à×ßÀ´¶ş»°²»Ëµ¼ÜÆğ$N¾Í×ß¡£\n", who);
+  message_vision ("$Nå–äº†ä¸€å£°ï¼šé€å®¢ï¼\n", me, who);
+  message_vision ("å‡ ä½å¤ªç›‘èµ°æ¥äºŒè¯ä¸è¯´æ¶èµ·$Nå°±èµ°ã€‚\n", who);
   who->move("/d/qujing/zhuzi/hugong1");
   call_out ("in_river",1,who);
   me->start_busy(1,1);
@@ -61,7 +61,7 @@ void throw_player (object who)
 
 void in_river (object who)
 {
-  message_vision ("$N»º¹ıÉñÀ´£¬·¢ÏÖ×Ô¼º±»ÈÓÔÚ±ùÀäµÄ»¤¹¬ºÓË®Àï¡£\n", who);
+  message_vision ("$Nç¼“è¿‡ç¥æ¥ï¼Œå‘ç°è‡ªå·±è¢«æ‰”åœ¨å†°å†·çš„æŠ¤å®«æ²³æ°´é‡Œã€‚\n", who);
 }
 
 void inform_player (string msg, object who)
@@ -74,11 +74,11 @@ void inform_player (string msg, object who)
 int test_player (object me)
 {
   object who = this_player();
-  string msg = "$NËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who);
+  string msg = "$Nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who);
 
   if (who->query("combat_exp")<10000)
   {
-    inform_player (msg+"µÀĞĞ²»¹»£¬ÅÂÊÇÓ¹Ò½Ò²£¡\n",who);
+    inform_player (msg+"é“è¡Œä¸å¤Ÿï¼Œæ€•æ˜¯åº¸åŒ»ä¹Ÿï¼\n",who);
     call_out("throw_player",1,who);
     return 1;
   }  
@@ -86,17 +86,17 @@ int test_player (object me)
   if (who->query("obstacle/zhuzi") == "done" ||
       who->query_temp("obstacle/zhuzi_cured"))
   {
-    inform_player (msg+"£¬¶àĞ»¶àĞ»£¬ëŞÔÙ°İ¶ÙÊ×£¡\n",who);
+    inform_player (msg+"ï¼Œå¤šè°¢å¤šè°¢ï¼Œæœ•å†æ‹œé¡¿é¦–ï¼\n",who);
     return 1;
   }  
 
   if (this_object()->query_temp("cured"))
   {
-    inform_player (msg+"²»±Ø¶àÂÇ£¬ëŞÒÑ¿µ¸´£¡\n",who);
+    inform_player (msg+"ä¸å¿…å¤šè™‘ï¼Œæœ•å·²åº·å¤ï¼\n",who);
     return 1;
   }  
 
-  inform_player (msg+"£¬¿É·ñÎªëŞÑ°µÃÎÚ½ğµ¤£¿\n",who);
+  inform_player (msg+"ï¼Œå¯å¦ä¸ºæœ•å¯»å¾—ä¹Œé‡‘ä¸¹ï¼Ÿ\n",who);
   who->set_temp("obstacle/zhuzi_asked",1);
   call_out ("wait_player",300,who);
   return 1;
@@ -112,11 +112,11 @@ int accept_object (object who, object ob)
 {
   object me = this_object();
   object ob2;
-  string msg = "$NËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who);
+  string msg = "$Nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who);
 
   if (ob->query("id") != "yao")
   {
-    inform_player (msg+"£¬ëŞÒÑÓµÓĞ½­É½Éçğ¢£¬Æñ¿ÉÓÃÕâĞ¡¶÷»İ´ò¶¯ëŞĞÄ£¡\n",who);
+    inform_player (msg+"ï¼Œæœ•å·²æ‹¥æœ‰æ±Ÿå±±ç¤¾ç¨·ï¼Œå²‚å¯ç”¨è¿™å°æ©æƒ æ‰“åŠ¨æœ•å¿ƒï¼\n",who);
     call_out("throw_player",1,who);
     call_out("destroy_object",1,ob);
     return 1;    
@@ -124,7 +124,7 @@ int accept_object (object who, object ob)
 
   if (who->query("combat_exp")<10000)
   {
-    inform_player (msg+"µÀĞĞ²»¹»£¬ÅÂÊÇ¼ÙÒ©Ò²£¡\n",who);
+    inform_player (msg+"é“è¡Œä¸å¤Ÿï¼Œæ€•æ˜¯å‡è¯ä¹Ÿï¼\n",who);
     call_out("throw_player",1,who);
     call_out("destroy_object",1,ob);
     return 1;
@@ -133,29 +133,29 @@ int accept_object (object who, object ob)
   if (who->query("obstacle/zhuzi") == "done" ||
       who->query_temp("obstacle/zhuzi_cured"))
   {
-    inform_player (msg+"£¬¶àĞ»¶àĞ»£¬ëŞÔÙ°İ¶ÙÊ×£¡\n",who);
+    inform_player (msg+"ï¼Œå¤šè°¢å¤šè°¢ï¼Œæœ•å†æ‹œé¡¿é¦–ï¼\n",who);
     call_out("destroy_object",1,ob);
     return 1;
   }  
 
   if (this_object()->query_temp("cured"))
   {
-    inform_player (msg+"²»±Ø¶àÂÇ£¬ëŞÒÑ¿µ¸´£¡\n",who);
+    inform_player (msg+"ä¸å¿…å¤šè™‘ï¼Œæœ•å·²åº·å¤ï¼\n",who);
     call_out("destroy_object",1,ob);
     return 1;
   }  
 
   if (! who->query_temp("obstacle/zhuzi_waited"))
   {
-    inform_player (msg+"£¬ÎÚ½ğµ¤ÄË¹óÖØÖ®Ò©£¬¾ÃÑ°²Å¿ÉµÃ£¬ÕâÒ©ÅÂÊÇÓĞ¼Ù£¡\n",who);
-    call_out("delayed_vision",1,"$N½«Ò©ÍùÅÔ±ßÓñÍ°ÀïÒ»ÈÓ¡£\n",me);
+    inform_player (msg+"ï¼Œä¹Œé‡‘ä¸¹ä¹ƒè´µé‡ä¹‹è¯ï¼Œä¹…å¯»æ‰å¯å¾—ï¼Œè¿™è¯æ€•æ˜¯æœ‰å‡ï¼\n",who);
+    call_out("delayed_vision",1,"$Nå°†è¯å¾€æ—è¾¹ç‰æ¡¶é‡Œä¸€æ‰”ã€‚\n",me);
     call_out("destroy_object",1,ob);
     return 1;
   }  
 
-  message_vision ("$N½ÓÏÂÒ©£¬¶Ô$nÁ¬ÉùµÀĞ»¡£\n",me,who);
+  message_vision ("$Næ¥ä¸‹è¯ï¼Œå¯¹$nè¿å£°é“è°¢ã€‚\n",me,who);
   call_out("delayed_vision",3,
-           "ÔçÓĞ¼¸Î»¹¬Å®½øÀ´£¬ËÅºò×Å$N½«Ò©ÓÃÎŞ¸ùË®·şÏÂ¡£\n",me); 
+           "æ—©æœ‰å‡ ä½å®«å¥³è¿›æ¥ï¼Œä¼ºå€™ç€$Nå°†è¯ç”¨æ— æ ¹æ°´æœä¸‹ã€‚\n",me); 
   ob2 = copy_yao(ob);
   call_out("eat_drug",1,me,ob2,who);
   return 1;
@@ -177,21 +177,21 @@ void eat_drug (object me, object ob, object who)
 
   if (! ob->query_temp("is_ready"))
   {
-    message_vision ("$NÍ»È»Ò»Õó×Ó¸¹Í´£¬²»½û´óÉùÉëÒ÷ÆğÀ´¡£\n",me,who);
-    message_vision ("$NËµµÀ£º¼ÙÒ©£¬¼ÙÒ©Ò²£¡\n",me,who);
+    message_vision ("$Nçªç„¶ä¸€é˜µå­è…¹ç—›ï¼Œä¸ç¦å¤§å£°å‘»åŸèµ·æ¥ã€‚\n",me,who);
+    message_vision ("$Nè¯´é“ï¼šå‡è¯ï¼Œå‡è¯ä¹Ÿï¼\n",me,who);
     call_out("throw_player",1,who);
     destruct (ob);
     return;
   }
   if (i < 2)
   {
-    message_vision ("ÉÙÇê£¬$N½¥¾õĞÄĞØ¿íÌ©£¬ÆøÑªµ÷ºÍÒ»Ğ©ÁË¡£\n",me);
+    message_vision ("å°‘é¡·ï¼Œ$Næ¸è§‰å¿ƒèƒ¸å®½æ³°ï¼Œæ°”è¡€è°ƒå’Œä¸€äº›äº†ã€‚\n",me);
     me->command_function("thank "+who->query("id"));
   }
   else
   {
-    message_vision ("$NÖÕÓÚÍÂ³öÒ»Ğ©»àÎï£¬¾«Éñ¶¶ËÓÆğÀ´£¬Á³É«Ò²»Ö¸´ÁË¡£\n",me);
-    message_vision ("\n$N¶Ô$nËµµÀ£º¶÷ÈËÇéÖØÈçÉ½£¬¹ÑÈË³êĞ»²»¾¡£¡\n",me,who);
+    message_vision ("$Nç»ˆäºåå‡ºä¸€äº›ç§½ç‰©ï¼Œç²¾ç¥æŠ–æ“èµ·æ¥ï¼Œè„¸è‰²ä¹Ÿæ¢å¤äº†ã€‚\n",me);
+    message_vision ("\n$Nå¯¹$nè¯´é“ï¼šæ©äººæƒ…é‡å¦‚å±±ï¼Œå¯¡äººé…¬è°¢ä¸å°½ï¼\n",me,who);
     me->set_temp("cured",1);
     who->set_temp("obstacle/zhuzi_cured",1);
     call_out("say_more",5,me,who);
@@ -202,14 +202,14 @@ void eat_drug (object me, object ob, object who)
 
 void say_more (object me, object who)
 {
-  message_vision ("\n$NËµµÀ£º·½²ÅÍÂ³öµÄ»àÎï£¬ÄËÈıÄêÖ®»ıÖÍÒ²¡£\n",me);
-  message_vision ("$NÓÖËµµÀ£ºÈıÄêÁË£¬ëŞÎŞÖçÎŞÒ¹µØË¼Äî½ğÊ¥¹¬¡£\n",me);
+  message_vision ("\n$Nè¯´é“ï¼šæ–¹æ‰åå‡ºçš„ç§½ç‰©ï¼Œä¹ƒä¸‰å¹´ä¹‹ç§¯æ»ä¹Ÿã€‚\n",me);
+  message_vision ("$Nåˆè¯´é“ï¼šä¸‰å¹´äº†ï¼Œæœ•æ— æ˜¼æ— å¤œåœ°æ€å¿µé‡‘åœ£å®«ã€‚\n",me);
   call_out("say_more2",3,me,who);
 }
 
 void say_more2 (object me, object who)
 {
-  message_vision ("\n$NÏëÏë¶Ô$nËµµÀ£º¶÷ÈË¿É·ñÌæëŞ¾È½ğÊ¥Íõºó»Ø¹¬£¿\n",me,who);
+  message_vision ("\n$Næƒ³æƒ³å¯¹$nè¯´é“ï¼šæ©äººå¯å¦æ›¿æœ•æ•‘é‡‘åœ£ç‹åå›å®«ï¼Ÿ\n",me,who);
 }
 
 // by wuliao.

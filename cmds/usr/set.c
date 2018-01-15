@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // set.c
@@ -26,9 +26,9 @@ int main(object me, string arg)
    env = me->query("env");
  
    if( !arg || arg=="" ) {
-     write("ÄãÄ¿Ç°Éè¶¨µÄ»·¾³±äÊıÓĞ£º\n");
+     write("ä½ ç›®å‰è®¾å®šçš„ç¯å¢ƒå˜æ•°æœ‰ï¼š\n");
      if( !mapp(env) || !sizeof(env) )
-        write("\tÃ»ÓĞÉè¶¨ÈÎºÎ»·¾³±äÊı¡£\n");
+        write("\tæ²¡æœ‰è®¾å®šä»»ä½•ç¯å¢ƒå˜æ•°ã€‚\n");
      else {
         terms = keys(env);
         for(i=0; i<sizeof(terms); i++)
@@ -44,7 +44,7 @@ int main(object me, string arg)
  
    if( term && term!="" ) {
      if( mapp(env) && undefinedp(env[term]) && sizeof(env) >= MAX_ENV_VARS )
-        return notify_fail("ÄãÉèµÄ»·¾³±äÊıÌ«¶àÁË£¬ÇëÏÈÓÃ unset É¾µô¼¸¸ö°É¡£\n");
+        return notify_fail("ä½ è®¾çš„ç¯å¢ƒå˜æ•°å¤ªå¤šäº†ï¼Œè¯·å…ˆç”¨ unset åˆ æ‰å‡ ä¸ªå§ã€‚\n");
      sscanf(data, "%d", data);
 
    // added by pickle to prevent people from taking advantage of
@@ -52,15 +52,15 @@ int main(object me, string arg)
    // 9-27-97.
    if(!wizardp(me)
    && (member_array(term, allowed) == -1))
-     return notify_fail("ÄãÖ»ÄÜÉè¶¨ help settings ÖĞ¶¨Òå¹ıµÄ»·¾³±äÊı¡£\n");
+     return notify_fail("ä½ åªèƒ½è®¾å®š help settings ä¸­å®šä¹‰è¿‡çš„ç¯å¢ƒå˜æ•°ã€‚\n");
         if((wiz_level(me) == 0) && (member_array(term, wiz_only) != -1))
-            return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜÓÃÕâ¸öÉè¶¨¡£\n");
+            return notify_fail("åªæœ‰å·«å¸ˆèƒ½ç”¨è¿™ä¸ªè®¾å®šã€‚\n");
 
    if(term == "wimpy" && (intp(data) < 0 || intp(data) > 80))  {
       return COMMAND_DIR"usr/wimpy"->help(me);
      }
         me->set("env/" + term, data);
-     printf("Éè¶¨»·¾³±äÊı£º%s = %O\n", term, data);
+     printf("è®¾å®šç¯å¢ƒå˜æ•°ï¼š%s = %O\n", term, data);
    return 1;
    }
    return help();
@@ -69,14 +69,14 @@ int main(object me, string arg)
 int help()
 {
    write(@TEXT
-Ö¸Áî¸ñÊ½£ºset <±äÊıÃû> [<±äÊıÖµ>]
+æŒ‡ä»¤æ ¼å¼ï¼šset <å˜æ•°å> [<å˜æ•°å€¼>]
  
-Õâ¸öÖ¸ÁîÈÃÄãÉè¶¨Ò»Ğ©»·¾³±äÊı£¬²»¼Ó²ÎÊıÊ±»áÏÔÊ¾ÄãÄ¿Ç°Éè¶¨µÄ»·¾³±äÊı£¬²»Ö¸¶¨
-±äÊıÖµ£¬ÔòÄÚ¶¨ÖµÎª "YES"¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è®¾å®šä¸€äº›ç¯å¢ƒå˜æ•°ï¼Œä¸åŠ å‚æ•°æ—¶ä¼šæ˜¾ç¤ºä½ ç›®å‰è®¾å®šçš„ç¯å¢ƒå˜æ•°ï¼Œä¸æŒ‡å®š
+å˜æ•°å€¼ï¼Œåˆ™å†…å®šå€¼ä¸º "YES"ã€‚
  
-È¡Ïû±äÊıÉè¶¨ÇëÓÃ unset Ö¸Áî¡£
+å–æ¶ˆå˜æ•°è®¾å®šè¯·ç”¨ unset æŒ‡ä»¤ã€‚
  
-ÖÁÓÚÓĞÄÄĞ©»·¾³±äÊı¿ÉÒÔÉè¶¨£¬Çë¼û help settings¡£
+è‡³äºæœ‰å“ªäº›ç¯å¢ƒå˜æ•°å¯ä»¥è®¾å®šï¼Œè¯·è§ help settingsã€‚
 TEXT
    );
    return 1;

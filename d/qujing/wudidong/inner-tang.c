@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/inner-tang.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���");
+  set ("short", "大殿");
   set ("long", @LONG
 
-���������С�����ر��ߣ�����׼������ϯ��һ��Ů�����и�����
-���ٵʹ������ΰ����Ц������ָ������С����ȫ�����Լ��㺹��
-�졣������Ⱥ��һ�죬һʱ��Ҳ���˷�����
+大殿里无数小妖来回奔走，正在准备大开筵席。一个女子正中高坐，
+云髻低垂，金钗半溜，正笑吟吟地指挥着众小妖，全不顾自己香汗淋
+漓。你往人群中一混，一时倒也无人发觉。
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

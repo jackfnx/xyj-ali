@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 24 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ğ¡¹Ü¼Ò", ({"guan jia", "jia"}) );
-  set("gender", "ÄĞĞÔ" );
+  set_name("å°ç®¡å®¶", ({"guan jia", "jia"}) );
+  set("gender", "ç”·æ€§" );
   set("age", 35);
 
   set("combat_exp", 9500);

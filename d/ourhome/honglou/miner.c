@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/ourhome/honglou/miner
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "À¶ÇÅ");
+  set ("short", "è“æ¡¥");
   set ("long", @LONG
 
-    ¡¡¡¡ÕÚ²»×¡µÄÇàÉ½ÒþÒþ£¬Á÷²»¶ÏµÄÂÌË®ÓÆÓÆ¡£
+    ã€€ã€€é®ä¸ä½çš„é’å±±éšéšï¼Œæµä¸æ–­çš„ç»¿æ°´æ‚ æ‚ ã€‚
 
 LONG);
 

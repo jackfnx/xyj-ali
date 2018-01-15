@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // waiter.c
@@ -7,14 +7,14 @@ inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-        set_name("ÕÅĞ¡¶ş", ({ "waiter", "xiao", "xiao er", "vendor" }) );
-        set("title", "Ğ¡µêÀÏ°å");
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¼ å°äºŒ", ({ "waiter", "xiao", "xiao er", "vendor" }) );
+        set("title", "å°åº—è€æ¿");
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-        set("long", "ÕÅĞ¡¶şÊÇ¸öºÃ¶¯µÄÖ÷¶ù¡£Õâµ±¶ùËûÕıÔÚ²»ÑáÆä·³µØÕûÀíËûµÄĞ¡µê¡£\n");
+        set("long", "å¼ å°äºŒæ˜¯ä¸ªå¥½åŠ¨çš„ä¸»å„¿ã€‚è¿™å½“å„¿ä»–æ­£åœ¨ä¸åŒå…¶çƒ¦åœ°æ•´ç†ä»–çš„å°åº—ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
-        set("rank_info/respect", "ÕÅ¶ş¸ç");
+        set("rank_info/respect", "å¼ äºŒå“¥");
         set("per",25);
         set("vendor_goods", ([
      "jiudai": "/d/moon/obj/jiudai",
@@ -37,14 +37,14 @@ void init()
 void greeting(object ob)
 {
    if( !ob || environment(ob) != environment() ) return;
-   say("ÕÅĞ¡¶şËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-     +"£¬ÇëËæ±ã¿´£¬Ëæ±ã¿´¡£\n");
+   say("å¼ å°äºŒè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+     +"ï¼Œè¯·éšä¾¿çœ‹ï¼Œéšä¾¿çœ‹ã€‚\n");
 }
 int accept_object(object who, object ob)
 {
         if (ob->query("money_id") && ob->value() >= 200) 
         {
-                tell_object(who, "ÕÅĞ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬ÄúÀï±ßÇë¡£\n
+                tell_object(who, "å¼ å°äºŒä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œæ‚¨é‡Œè¾¹è¯·ã€‚\n
 ");
                 who->set_temp("rent_paid",1);
                 return 1;

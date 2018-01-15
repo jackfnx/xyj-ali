@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,15 +6,15 @@ inherit NPC;
 void consider();
 void create()
 {
-       set_name("ÕÅµÀÁê", ({"zhang daoling", "zhang", "daoling"}));
-       set("long", "ÕÅµÀÁêÄËÊÇÌìÉÏµÄÌìÊ¦£¬´Ë¿ÌÍµÏĞÔÚÉ½±ß¹Û¹Û¾°É«¡£\n");
-       set("title", "ÌìÊ¦");
-       set("gender", "ÄĞĞÔ");
+       set_name("å¼ é“é™µ", ({"zhang daoling", "zhang", "daoling"}));
+       set("long", "å¼ é“é™µä¹ƒæ˜¯å¤©ä¸Šçš„å¤©å¸ˆï¼Œæ­¤åˆ»å·é—²åœ¨å±±è¾¹è§‚è§‚æ™¯è‰²ã€‚\n");
+       set("title", "å¤©å¸ˆ");
+       set("gender", "ç”·æ€§");
    set("class", "taoist");
        set("age", 60);
        set("attitude", "peaceful");
        set("shen_type", 1);
-       set("rank_info/respect", "ÀÏÉñÏÉ");
+       set("rank_info/respect", "è€ç¥ä»™");
        set("per", 30);
    set("int", 30);
    set("str", 25);
@@ -53,7 +53,7 @@ void create()
 
 
 
-create_family("åĞÒ£ÅÉ", 1, "À¶");
+create_family("é€é¥æ´¾", 1, "è“");
 setup();
 
         carry_object("/d/lingtai/obj/heao")->wear();
@@ -63,12 +63,12 @@ setup();
 
 void attempt_apprentice(object ob)
 {
-   if ( (string)ob->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
-   command("say RANK_D->query_respect(ob) + ÒÑÊÇÉí´¦ÃûÃÅ£¬»¹Ğè¶à¼ÓÅ¬Á¦²ÅÊÇ£¬Ôõ¿ÉÓÖÍ¶ÎÒÃÅÏÂ£¿\n");
+   if ( (string)ob->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
+   command("say RANK_D->query_respect(ob) + å·²æ˜¯èº«å¤„åé—¨ï¼Œè¿˜éœ€å¤šåŠ åŠªåŠ›æ‰æ˜¯ï¼Œæ€å¯åˆæŠ•æˆ‘é—¨ä¸‹ï¼Ÿ\n");
    return;
    }
    command("shake");
-   command("say ÀÏ·ò²»ÊÕÍâÃÅµÜ×Ó£¬È´¿ÉÖ¸µãÄãÒ»ÌõÃ÷Â·£¬ÕâÉ½ÉÏÓĞ¸öÀÏÉñÏÉ£¬·¨Á¦ÎŞ±ß£¬ÄãÍ¶±¼ËûÈ¥°É£¡\n");
+   command("say è€å¤«ä¸æ”¶å¤–é—¨å¼Ÿå­ï¼Œå´å¯æŒ‡ç‚¹ä½ ä¸€æ¡æ˜è·¯ï¼Œè¿™å±±ä¸Šæœ‰ä¸ªè€ç¥ä»™ï¼Œæ³•åŠ›æ— è¾¹ï¼Œä½ æŠ•å¥”ä»–å»å§ï¼\n");
         return;
 }
 
@@ -76,9 +76,9 @@ void die()
 {
 
         if( environment() ) {
-        message("sound", "\n\nÕÅµÀÁêÁ³É«Í»±ä£¬µÀ£ºÌìÉÏµãÃ®£¬Ë¡²»·îÅã£¡\n\n", environment());
+        message("sound", "\n\nå¼ é“é™µè„¸è‰²çªå˜ï¼Œé“ï¼šå¤©ä¸Šç‚¹å¯ï¼Œæ•ä¸å¥‰é™ªï¼\n\n", environment());
    command("drop all");
-   message("sound", "\nÕÅµÀÁê»¯³ÉÒ»¹É×ÏÑÌ³åÉÏÌìÈ¥¡£¡£¡£\n\n", environment());
+   message("sound", "\nå¼ é“é™µåŒ–æˆä¸€è‚¡ç´«çƒŸå†²ä¸Šå¤©å»ã€‚ã€‚ã€‚\n\n", environment());
         }
 
         destruct(this_object());
@@ -89,17 +89,17 @@ int accept_fight(object me)
    if( (int)me->query("kee")*100/(int)me->query("max_kee") >= 50 ) {
      if( (int)me->query("kee")*100/(int)me->query("max_kee") >= 90 ) {
      
-        command("say ºÃ°É£¬²»¹ıÀÏ·òÂíÉÏ¾ÍÒª×ßÁË£¬Ö»¶·Æ¬¿Ì£¡\n");
+        command("say å¥½å§ï¼Œä¸è¿‡è€å¤«é©¬ä¸Šå°±è¦èµ°äº†ï¼Œåªæ–—ç‰‡åˆ»ï¼\n");
              command("unwield sword");
              command("enable unarmed none");
         return 1;
         }
-     command("say ºÃ°É£¬²»¹ıÀÏ·òÂíÉÏ¾ÍÒª×ßÁË£¬Ö»¶·Æ¬¿Ì£¡\n");
+     command("say å¥½å§ï¼Œä¸è¿‡è€å¤«é©¬ä¸Šå°±è¦èµ°äº†ï¼Œåªæ–—ç‰‡åˆ»ï¼\n");
                   command("wield sword");
                 command("enable unarmed changquan");
                   return 1;
    }
-        command("say Á¼¾°ÈçË¹£¬ÎŞĞÄ¶·¶ø¡£\n");
+        command("say è‰¯æ™¯å¦‚æ–¯ï¼Œæ— å¿ƒæ–—è€Œã€‚\n");
         return 0;
 }
 
@@ -114,7 +114,7 @@ void consider()
                 if( !living(enemy[i]) ) continue;
                         flag++;
                 if(     !query_temp("weapon") ) {
-                command("say ¸óÏÂ¹¦·ò³¬Èº£¬ÀÏµÀÖ»ºÃ¶¯´ÖÁË£¡\n");
+                command("say é˜ä¸‹åŠŸå¤«è¶…ç¾¤ï¼Œè€é“åªå¥½åŠ¨ç²—äº†ï¼\n");
                         command("wield sword");
         command("enable unarmed changquan");
                         break;

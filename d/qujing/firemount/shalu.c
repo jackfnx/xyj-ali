@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɰ����");
+  set ("short", "砂砾径");
   set ("long", @LONG
 
-С�����˷ֲ�������ͨ�����ɽ�����ϵ�С���������ۣ���֪ͨ��
-�δ���ɽ�ϵ�����һ�����ӿ����
+小径至此分岔，往西通向火焰山，西南的小道蜿蜒曲折，不知通向
+何处。山上的热浪一阵阵的涌来。
 
 LONG);
 

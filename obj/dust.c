@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // dust.c
@@ -7,12 +7,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-   set_name("��ʬ��", ({"dust"}));
+   set_name("化尸粉", ({"dust"}));
    set("long",
-     "����һ���û�ʬ�𼣵Ļ�ʬ�ۣ�ֻҪһ����Ϳ���\n"
-     "��ȥ(dissolve)һ��ʬ�壡\n");
-   set("unit", "��");
-   set("base_unit", "��");
+     "这是一包用毁尸灭迹的化尸粉，只要一丁点就可以\n"
+     "化去(dissolve)一具尸体！\n");
+   set("unit", "包");
+   set("base_unit", "份");
    set("base_weight", 1);
    set_amount(1);
 }
@@ -27,14 +27,14 @@ int do_dissolve(string arg)
 {
    object ob;
 
-   if( !arg ) return notify_fail("��Ҫ�û�ʬ���ܽ�ʲô������\n");
+   if( !arg ) return notify_fail("你要用化尸粉溶解什么东西？\n");
    if( !objectp(ob = present(arg, environment(this_player()))) )
-     return notify_fail("����û������������\n");
+     return notify_fail("这里没有这样东西。\n");
    if( living(ob) || !ob->id("corpse") )
-     return notify_fail("��ʬ��ֻ�������ܽ�ʬ�塣\n");
+     return notify_fail("化尸粉只能用来溶解尸体。\n");
    message_vision(
-     "$N��ָ������һ�㻯ʬ����$n�ϣ�ֻ����һ�����͡��������\n"
-     "һ�ɿ��µĶ����$nֻʣ��һ̲��ˮ��\n", this_player(), ob);
+     "$N用指甲挑了一点化尸粉在$n上，只听见一阵「嗤嗤」声响带着\n"
+     "一股可怕的恶臭，$n只剩下一滩黄水。\n", this_player(), ob);
    destruct(ob);
    add_amount(-1);
    return 1;

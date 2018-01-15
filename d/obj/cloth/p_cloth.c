@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // pink_cloth.c
@@ -9,13 +9,13 @@ inherit CLOTH;
 
 void create()
 {
-   set_name("·Ûºì³ñÉÀ", ({ "pink cloth", "cloth" }) );
+   set_name("ç²‰çº¢ç»¸è¡«", ({ "pink cloth", "cloth" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long", "Õâ¼ş·ÛºìÉ«µÄ³ñÉÀÉÏÃæĞå×Å¼¸Ö»»ÆÈµ£¬ÎÅÆğÀ´»¹ÓĞÒ»¹Éµ­Ïã¡£\n");
-     set("unit", "¼ş");
+     set("long", "è¿™ä»¶ç²‰çº¢è‰²çš„ç»¸è¡«ä¸Šé¢ç»£ç€å‡ åªé»„é¹Šï¼Œé—»èµ·æ¥è¿˜æœ‰ä¸€è‚¡æ·¡é¦™ã€‚\n");
+     set("unit", "ä»¶");
      set("value", 600);
      set("material", "cloth");
      set("armor_prop/armor", 1);

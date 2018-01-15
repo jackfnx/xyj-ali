@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // child.c
@@ -12,14 +12,14 @@ int main(object me, string str)
      int i, number;
 
      if (!str) str = me->query("cwf");
-     if(!str) return notify_fail("��Ҫ�鿴�ĸ��ļ���\n");
+     if(!str) return notify_fail("你要查看哪个文件？\n");
  
      str = resolve_path(me->query("cwd"), str);
         if( sscanf(str, "%*s.c") != 1 ) str += ".c";
         me->set("cwf", str);
    
      if( file_size(str) < 0 )
-                return notify_fail("û������ļ���" + str + ")\n");
+                return notify_fail("没有这个文件：" + str + ")\n");
 
      list=children(str);
      number=sizeof(list);
@@ -48,7 +48,7 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : child filename
+指令格式 : child filename
 
 List information about all copies (master and cloned)
 of a given file in the mud.

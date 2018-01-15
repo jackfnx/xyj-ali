@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 14 1997
@@ -9,9 +9,9 @@ int give_book ();
 
 void create()
 {
-  set_name("ȼ�ƹŷ�", ({ "randeng gufo", "randeng", "gufo" }));
-  set("title", "��ɽ");
-  set("gender", "����");
+  set_name("燃灯古佛", ({ "randeng gufo", "randeng", "gufo" }));
+  set("title", "灵山");
+  set("gender", "男性");
   set("age", 1000);
   set("attitude", "peaceful");
   set("str",40);
@@ -52,9 +52,9 @@ void create()
     "book" : (: give_book :),
     "jing" : (: give_book :),
     "qujing" : (: give_book :),
-    "��" : (: give_book :),
-    "ȡ��" : (: give_book :),
-    "����" : (: give_book :),
+    "经" : (: give_book :),
+    "取经" : (: give_book :),
+    "经书" : (: give_book :),
   ]) );
 
   setup();
@@ -69,17 +69,17 @@ int give_book()
 
   if (! who->query("obstacle/reward"))
   {
-    message_vision ("$N��$nҡ��ҡͷ�����Ȼ�ȥ���úù���������ȡ����\n",me,who);
+    message_vision ("$N对$n摇了摇头：你先回去，好好过西域再来取经。\n",me,who);
     return 1;
   }
   if (me->query_temp("given_book"))
   {
-    message_vision ("$N��$nҡ��ҡͷ�������Ѹ����ˣ��ȵ������ɡ�\n",me,who);
+    message_vision ("$N对$n摇了摇头：经书已给过了，等等再来吧。\n",me,who);
     return 1;
   }
   book = new ("/d/obj/book/qujing");
   command ("nod");
-  message_vision("$N��$nһ��"+book->query("name")+"��\n",me,who);
+  message_vision("$N给$n一本"+book->query("name")+"。\n",me,who);
   book->move(who);
 //  command ("give "+who->query("id")+" book");
   me->set_temp("given_book",1);

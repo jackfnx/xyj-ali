@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ʯ����");
+  set ("short", "石洞门");
   set ("long", @LONG
 
-�����������ʯ����ɽ�����ݶ��ɡ�����һ����ʯ(stone)������
-Ϊ���϶���ʱ׼���ġ�
+洞门由两块大石板依山势修葺而成。旁有一堆乱石(stone)，似是
+为封严洞门时准备的。
 
 LONG);
 
@@ -22,7 +22,7 @@ LONG);
         "west" : __DIR__"dongkou",
       ]));
   set("item_desc", ([
-        "stone" : "һ��ʯͷ��������Щʯͷ�������š�\n",
+        "stone" : "一堆石头，不妨拿些石头来砸砸门。\n",
       ]));
 
   setup();
@@ -44,7 +44,7 @@ int do_get (string arg)
 
   stone = new (__DIR__"obj/stone");
   stone->move(me);
-  message_vision("$N��ʯ�����ó�һ��ʯͷ��\n",me);
+  message_vision("$N从石堆里拿出一块石头。\n",me);
   return 1;
 }
 
@@ -60,10 +60,10 @@ int do_hit (string arg)
        arg != "door") ||
       me->query_temp("obstacle/firemount_hit_door") > 10)
   {
-    message_vision("$N����ʯͷ��һ��С�������Լ����ϡ�\n",me);
+    message_vision("$N拿起石头，一不小心砸在自己脚上。\n",me);
     return 1;
   }
-  message_vision("$N����ʯͷ������������ʯ�š�\n",me);
+  message_vision("$N拿起石头，用力地砸起石门。\n",me);
   call_out("cloud_or_fog_appear",random(5)+5,me);
   return 1;
 }
@@ -80,7 +80,7 @@ void cloud_or_fog_appear(object me)
   {
     cloud = new (__DIR__"npc/cloud");
     cloud->move(environment(me));
-    message_vision("һ����ƽ��٣�$N��������֡�\n",cloud);
+    message_vision("一阵红云降临，$N在云里出现。\n",cloud);
   }
 
   if (! present("fog cloud",this_object()) &&
@@ -88,6 +88,6 @@ void cloud_or_fog_appear(object me)
   {
     fog = new (__DIR__"npc/fog");
     fog->move(environment(me));
-    message_vision("һ��������٣�$N��������֡�\n",fog);
+    message_vision("一阵红雾降临，$N在雾里出现。\n",fog);
   }
 }

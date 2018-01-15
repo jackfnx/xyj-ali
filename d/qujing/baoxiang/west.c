@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/baoxiang/west
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ǬԪ��");
+  set ("short", "乾元街");
   set ("long", @LONG
-������ǬԪ���жΣ�·���Լ������������С����������һ�Ҳ���
-�꣬�ϱ���һ�ҿ͵ꡣ
+这里是乾元街中段，路两旁挤满了做生意的小贩。北边有一家裁衣
+店，南边是一家客店。
 LONG);
 
   set("outdoors", "/u/mimi/zhuziguo/");

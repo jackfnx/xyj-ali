@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -13,12 +13,12 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) 
-                return notify_fail("ÄãÖ»ÄÜÓÃÁúÉñÐÄ·¨±£»¤×Ô¼º¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨é¾™ç¥žå¿ƒæ³•ä¿æŠ¤è‡ªå·±ã€‚\n");
 
         if( (int)me->query("force") < 100 )     
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("powerup") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("dragonforce",1);
 
@@ -27,7 +27,7 @@ int exert(object me, object target)
 
         message_vision(
                 HIR
-"$NÎ¢Ò»ÄýÉñ£¬ÔËÆðÁúÉñÐÄ·¨£¬»ëÉíÉÏÏÂ¶ÙÊ±½á³öÁËÇàÉ«µÄÁúÁÛ£¬ÉíÐÎ±äµÄÒì³£¸ß´ó£¬Õ¾ÔÚÄÇÀï¿´ÆðÀ´Íþ·çÁÝÁÝ¡£\n" NOR, me);
+"$Nå¾®ä¸€å‡ç¥žï¼Œè¿èµ·é¾™ç¥žå¿ƒæ³•ï¼Œæµ‘èº«ä¸Šä¸‹é¡¿æ—¶ç»“å‡ºäº†é’è‰²çš„é¾™é³žï¼Œèº«å½¢å˜çš„å¼‚å¸¸é«˜å¤§ï¼Œç«™åœ¨é‚£é‡Œçœ‹èµ·æ¥å¨é£Žå‡›å‡›ã€‚\n" NOR, me);
 
         me->add_temp("apply/armor", skill/3);
    me->add_temp("apply/damage",skill/6);
@@ -49,6 +49,6 @@ void remove_effect(object me, int amount)
         me->add_temp("apply/unarmed", -amount/2);
 //      me->add_temp("apply/strength", -amount/2);
         me->delete_temp("powerup");
-        tell_object(me, "ÄãµÄÁúÉñÐÄ·¨ÔËÐÐÒ»ÖÜÌìÍê±Ï£¬ÁúÁÛ½¥½¥ÏûÈ¥ÁË¡£\n");
+        tell_object(me, "ä½ çš„é¾™ç¥žå¿ƒæ³•è¿è¡Œä¸€å‘¨å¤©å®Œæ¯•ï¼Œé¾™é³žæ¸æ¸æ¶ˆåŽ»äº†ã€‚\n");
 }
 

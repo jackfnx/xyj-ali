@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("·¿ÐþÁä", ({ "pang xuanling", "pang", "xuanling" }));
-  set("title", "´ó³¼");
-  set("gender", "ÄÐÐÔ");
+  set_name("æˆ¿çŽ„é¾„", ({ "pang xuanling", "pang", "xuanling" }));
+  set("title", "å¤§è‡£");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -60,14 +60,14 @@ void reward (object who)
     points = 750+random(50);
   }
 
-  message_vision ("$N¶Ô$nÒ»°Ý£º±ÝÏÂÓÐÖ¼£¬´Í"+RANK_D->query_respect(who)+
-                  COMBAT_D->chinese_daoxing(points)+"µÀÐÐ£¡\n",me,who);
+  message_vision ("$Nå¯¹$nä¸€æ‹œï¼šé™›ä¸‹æœ‰æ—¨ï¼Œèµ"+RANK_D->query_respect(who)+
+                  COMBAT_D->chinese_daoxing(points)+"é“è¡Œï¼\n",me,who);
 /*
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"±ÝÏÂÓÐÖ¼£¬´Í"+
-           COMBAT_D->chinese_daoxing(points)+"µÀÐÐ£¡");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"é™›ä¸‹æœ‰æ—¨ï¼Œèµ"+
+           COMBAT_D->chinese_daoxing(points)+"é“è¡Œï¼");
 */                  
   who->add("quest/gain/combat_exp",points);
-  reporting (who, who->query("quest/reason"), points, "µãµÀÐÐ");
+  reporting (who, who->query("quest/reason"), points, "ç‚¹é“è¡Œ");
   who->add("combat_exp",points);
 }
 

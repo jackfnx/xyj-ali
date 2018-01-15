@@ -1,17 +1,17 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 
 void create()
 {
-        set_name("Í­ÅÆ", ({"tong pai", "pai"}));
+        set_name("é“œç‰Œ", ({"tong pai", "pai"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
     else  {
-           set("unit", "¸ö");
-           set("long", "Ò»¸öĞ¡Í­ÅÆ£¬ÉÏÃæ»¹µñ×Å»¨£¬Ğ´×Å×Ö£®\n");
+           set("unit", "ä¸ª");
+           set("long", "ä¸€ä¸ªå°é“œç‰Œï¼Œä¸Šé¢è¿˜é›•ç€èŠ±ï¼Œå†™ç€å­—ï¼\n");
    set("player", "bula"); 
           set("no_sell", 1);
         }
@@ -25,8 +25,8 @@ string long()
    if(!query_temp("long_1") )
           return query("long");
 
-   msg = "Ò»Ã¶Í­ÅÆ\n",
-   msg += "ÉÏĞ´£º" + query_temp("long_1") + "\n";
+   msg = "ä¸€æšé“œç‰Œ\n",
+   msg += "ä¸Šå†™ï¼š" + query_temp("long_1") + "\n";
 
    return msg;
 }

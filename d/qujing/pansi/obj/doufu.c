@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/20/1997
@@ -8,13 +8,13 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("¼å¶¹¸¯", ({"jian doufu", "doufu", "fu"}));
+  set_name("ç…è±†è…", ({"jian doufu", "doufu", "fu"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»Íë¼åµÃÁ½Ãæ»ÆµÄ¶¹¸¯£¬É¢·¢×ÅÆæ¹ÖµÄĞÈÎ¶¡£\n");
-    set("unit", "Íë");
+    set("long", "ä¸€ç¢—ç…å¾—ä¸¤é¢é»„çš„è±†è…ï¼Œæ•£å‘ç€å¥‡æ€ªçš„è…¥å‘³ã€‚\n");
+    set("unit", "ç¢—");
     set("value", 300);
     set("food_remaining", 4);
     set("food_supply", 50);
@@ -45,5 +45,5 @@ void reacting (object who)
   if (! who)
     return;
 
-  message_vision("$NÒ»Õó×Ó¶ñĞÄ£¬²îµã¶ùÍÂ³öÀ´¡£\n",who);
+  message_vision("$Nä¸€é˜µå­æ¶å¿ƒï¼Œå·®ç‚¹å„¿åå‡ºæ¥ã€‚\n",who);
 }

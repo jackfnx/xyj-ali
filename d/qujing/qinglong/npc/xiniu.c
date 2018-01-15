@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 12/5/1997
@@ -8,10 +8,10 @@ inherit NPC;
 void create()
 {
   int i = random(9)+1;
-  set_name("ÊØÃÅÅ£¾«", ({"shoumen niujing", "niujing", "jing"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å®ˆé—¨ç‰›ç²¾", ({"shoumen niujing", "niujing", "jing"}));
+  set("gender", "ç”·æ€§");
   set("age", 20*i);
-  set("long","Ò»¸öÊØÎÀÄÚ¹¬µÄÑı¾«¡£\n");
+  set("long","ä¸€ä¸ªå®ˆå«å†…å®«çš„å¦–ç²¾ã€‚\n");
   set("combat_exp", 20000*i);
   set("per", 15);
   set_skill("parry", 20*i);
@@ -40,12 +40,12 @@ void die ()
     bone->move(where);
   }
 
-  message_vision ("\n$Nµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»¶ÑÊŞ¹Ç¡£\n",me);  
+  message_vision ("\n$Nå€’äº†ä¸‹å»ï¼ŒåŒ–ä¸ºä¸€å †å…½éª¨ã€‚\n",me);  
   if (! present("shoumen niujing 4",where))
   {
     object ob = new ("/d/qujing/qinglong/npc/xiniu");
     ob->move(where);
-    message_vision ("\n´ÓÀïÃæÓÖ´Ú³öÒ»Î»$N£¡\n",me);   
+    message_vision ("\nä»é‡Œé¢åˆè¹¿å‡ºä¸€ä½$Nï¼\n",me);   
   }
   destruct (me);  
 }
@@ -70,19 +70,19 @@ int accept_object (object who, object ob)
 {
   object me = this_object();
 
-  if (ob->query("name") != "ÓÍºùÂ«")
+  if (ob->query("name") != "æ²¹è‘«èŠ¦")
   {
-    message_vision ("$NÒ¡ÁËÒ»ÏÂÍ·£¬ËµµÀ£º²»Òª¡£\n",me);
+    message_vision ("$Næ‘‡äº†ä¸€ä¸‹å¤´ï¼Œè¯´é“ï¼šä¸è¦ã€‚\n",me);
     call_out ("return_ob",1,ob,who);
     return 1;
   }
   if (ob->query("liquid/remaining") == 0)
   {
-    message_vision ("$NÒ¡ÁËÒ»ÏÂÍ·£¬ËµµÀ£ºÓÍºùÂ«ÊÇ¿ÕµÄ¡£\n",me);
+    message_vision ("$Næ‘‡äº†ä¸€ä¸‹å¤´ï¼Œè¯´é“ï¼šæ²¹è‘«èŠ¦æ˜¯ç©ºçš„ã€‚\n",me);
     call_out ("return_ob",1,ob,who);
     return 1;
   }
-  message_vision ("$NËµµÀ£ºĞ»Ğ»£¡\n",me);
+  message_vision ("$Nè¯´é“ï¼šè°¢è°¢ï¼\n",me);
   who->set_temp("obstacle/jinping_give_hulu",1);
   call_out ("destruct_me",1,ob);
   return 1;

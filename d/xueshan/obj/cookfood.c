@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create() 
   {
-   set_name("ÇàÉß",({"duwu"}));
+   set_name("é’è›‡",({"duwu"}));
    set_weight(10);
-   set("unit","Ö»");
+   set("unit","åª");
    set("cook/allow",1);
    set("cook/value",1);
    set("cook/type","she");

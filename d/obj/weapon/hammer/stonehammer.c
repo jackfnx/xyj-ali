@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,13 +9,13 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Ê¯Ëø", ({"stone hammer","stone", "hammer"}));
+        set_name("çŸ³é”", ({"stone hammer","stone", "hammer"}));
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-     set("long", "Ò»°Ñ³ÁÖØµÄÊ¯Ëø¡£\n");
+                set("unit", "ä¸ª");
+     set("long", "ä¸€æŠŠæ²‰é‡çš„çŸ³é”ã€‚\n");
         }
         init_hammer(25);
         setup();

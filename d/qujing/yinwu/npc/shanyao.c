@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 12/5/1997
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("и╫яЩ", ({"shan yao","yao"}));
-  set("gender", "дппт");
+  set_name("Е╠╠Е╕√", ({"shan yao","yao"}));
+  set("gender", "Г■╥Ф─╖");
   set("age", 40);
-  set("long","р╩╦ЖпвоЮ╠об╤╣ди╫яЩ║ё\n");
+  set("long","Д╦─Д╦╙Е┤╤Г⌡╦Ф╞∙И°╡Г └Е╠╠Е╕√Ц─┌\n");
   set("attitude", "aggressive");
   set("combat_exp", 500000);
   set("per", 15);
@@ -52,13 +52,13 @@ void die ()
     bone->move(where);
   }
 
-  message_vision ("\n$N╣╧акобх╔ё╛╩╞н╙р╩╤яйч╧г║ё\n",me);  
+  message_vision ("\n$NЕ─▓Д╨├Д╦▀Е▌╩О╪▄Е▄√Д╦╨Д╦─Е═├Е┘╫И╙╗Ц─┌\n",me);  
   if (! present("shan yao 4",where) &&
-      where->query("short")=="б╥©з")
+      where->query("short")=="Х╥╞Е▐ё")
   {
     object ob = new ("/d/qujing/yinwu/npc/shanyao");
     ob->move(where);
-    message_vision ("\nм╩х╩ё╛и╫яриосж╠добю╢р╩╦ЖъзяюъжвЛ╣ди╫яЩё║\n",me);   
+    message_vision ("\nГ╙│Г└╤О╪▄Е╠╠Е╡╘Д╦┼Е▐┬Х╧╕Д╦▀Ф²╔Д╦─Д╦╙Е▒╡Г┴≥Е▓╖Е≤╢Г └Е╠╠Е╕√О╪│\n",me);   
   }
   destruct (me);  
 }

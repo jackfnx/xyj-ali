@@ -2,14 +2,14 @@
 
 inherit SPELLS;
 
-string name() { return "平天大法"; }
+string name() { return "骞冲ぉ澶ф硶"; }
 
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)
 {
     if ((int)me->query_skill("spells", 1) < 20)
-        return notify_fail("你的法术修为还不够高深，无法学习平天大法。\n");
+        return notify_fail("浣犵殑娉曟湳淇负杩樹笉澶熼珮娣憋紝鏃犳硶瀛︿範骞冲ぉ澶ф硶銆俓n");
     return 1;
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/22/1997 by snowcat
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹«Ö÷", ({"gong zhu", "zhu", "princess"}));
-  set("title", "ÌìóÃ¹ú");
-  set("gender", "Å®ĞÔ");
+  set_name("å…¬ä¸»", ({"gong zhu", "zhu", "princess"}));
+  set("title", "å¤©ç«ºå›½");
+  set("gender", "å¥³æ€§");
   set("age", 30);
   set("attitude", "peaceful");
   set("combat_exp", 30000);
@@ -62,15 +62,15 @@ void check_king ()
 
   me->set("seen_king",1);
   call_out ("reset_seen_king",600); 
-  message_vision ("$N¼ûµ½$n£¬¼±Ã¦ÆË¹ıÈ¥´ó¿ŞÆğÀ´¡£\n",me,king);
-  message_vision ("$N¶ÙÊ±ÀÏÀá×İºá£¬½û²»×¡½ĞµÀ£ºÎÒ¶ùÊÜ¿àÁËÍÛ£¡\n",king);
+  message_vision ("$Nè§åˆ°$nï¼Œæ€¥å¿™æ‰‘è¿‡å»å¤§å“­èµ·æ¥ã€‚\n",me,king);
+  message_vision ("$Né¡¿æ—¶è€æ³ªçºµæ¨ªï¼Œç¦ä¸ä½å«é“ï¼šæˆ‘å„¿å—è‹¦äº†å“‡ï¼\n",king);
   call_out ("crying",5,me,king); 
 }
 
 void crying (object me, object king)
 {
-  message_vision ("\n¸¸Å®Á©¿Ş³ÉÒ»ÍÅ£¡\n",king);
-  message_vision ("±ßÉÏËùÓĞµÄÈË¶¼Á÷ÏÂÁË±¯Ï²µÄÑÛÀá¡£\n",king);
+  message_vision ("\nçˆ¶å¥³ä¿©å“­æˆä¸€å›¢ï¼\n",king);
+  message_vision ("è¾¹ä¸Šæ‰€æœ‰çš„äººéƒ½æµä¸‹äº†æ‚²å–œçš„çœ¼æ³ªã€‚\n",king);
   call_out ("finishing",5,me,king); 
 }
 
@@ -93,13 +93,13 @@ void finishing (object me, object king)
   if (king)
   {
     king->announce_success (who);
-    message_vision ("$NÏò$nµÀĞ»¡£\n",king,who);
+    message_vision ("$Nå‘$né“è°¢ã€‚\n",king,who);
     destruct (king);
   }
   if (me)
   {
-    message_vision ("$NÏò$nµÀĞ»¡£\n",me,who);
-    message_vision ("Ò»ĞĞÈËÍùÍâ×ßÈ¥¡£\n",who);
+    message_vision ("$Nå‘$né“è°¢ã€‚\n",me,who);
+    message_vision ("ä¸€è¡Œäººå¾€å¤–èµ°å»ã€‚\n",who);
     destruct (me);
   }
 }

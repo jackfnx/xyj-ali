@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rake.c
@@ -9,16 +9,16 @@ inherit RAKE;
 
 void create()
 {
-        set_name("¸Ö°Ò", ({ "gang pa", "pa","rake" }) );
+        set_name("é’¢è€™", ({ "gang pa", "pa","rake" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 1000);
                 set("material", "iron");
-                set("long", "Ò»±ú³¤³¤µÄÆß³İ¸Ö°Ò¡£\n");
-                set("wield_msg", "$N³­ÆğÒ»±ú$n£¬ÔÚÍ·ÉÏ»ÓÎèÁËÒ»È¦¡£\n");
+                set("long", "ä¸€æŸ„é•¿é•¿çš„ä¸ƒé½¿é’¢è€™ã€‚\n");
+                set("wield_msg", "$NæŠ„èµ·ä¸€æŸ„$nï¼Œåœ¨å¤´ä¸ŠæŒ¥èˆäº†ä¸€åœˆã€‚\n");
         }
         init_rake(25);
         setup();

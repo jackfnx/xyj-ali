@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,20 +8,20 @@ inherit ITEM;
 
 void create()
 {
-  set_name( HIG "ÉáÀû×ÓÄÚµ¤" NOR , ({"shelizi neidan", "neidan", "dan"}));
+  set_name( HIG "èˆåˆ©å­å†…ä¸¹" NOR , ({"shelizi neidan", "neidan", "dan"}));
   set_weight(100);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿Å¼¦µ°´óµÄÉáÀû×ÓÄÚµ¤£¬ÒÔÊıÄê´ò×ø¹¦Ö®Ä¥ÄÑ£¬ÅäÁË¼¸×ª´ÆĞÛÁ¶¾Í¶ø³É¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—é¸¡è›‹å¤§çš„èˆåˆ©å­å†…ä¸¹ï¼Œä»¥æ•°å¹´æ‰“ååŠŸä¹‹ç£¨éš¾ï¼Œé…äº†å‡ è½¬é›Œé›„ç‚¼å°±è€Œæˆã€‚\n");
     set("value", 0);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
-  set("no_get","ÉáÀû×ÓÄÚµ¤ÆñÄÜ´¹ÊÖ¶øµÃ£¡\n");
-  set("no_give","ÉáÀû×ÓÄÚµ¤²»¿ÉÍâ´«Ò²£¡\n");
-  set("no_drop","ÉáÀû×ÓÄÚµ¤²»¿ÉÒÅÊ§Ò²£¡\n");
-  set("no_sell","ÉáÀû×ÓÄÚµ¤ÎŞ¼ÛÖ®±¦Ò²¡£\n");
+  set("no_get","èˆåˆ©å­å†…ä¸¹å²‚èƒ½å‚æ‰‹è€Œå¾—ï¼\n");
+  set("no_give","èˆåˆ©å­å†…ä¸¹ä¸å¯å¤–ä¼ ä¹Ÿï¼\n");
+  set("no_drop","èˆåˆ©å­å†…ä¸¹ä¸å¯é—å¤±ä¹Ÿï¼\n");
+  set("no_sell","èˆåˆ©å­å†…ä¸¹æ— ä»·ä¹‹å®ä¹Ÿã€‚\n");
   set("is_monitored",1);
   setup();
 }
@@ -50,7 +50,7 @@ int do_eat(string arg)
   me->set("force", (int)me->query("max_force"));
   me->set("food", (int)me->max_food_capacity());
   me->set("water", (int)me->max_water_capacity());
-  message_vision(HIG "$N½«ÉáÀû×ÓÄÚµ¤º¬Èë×ìÖĞÑÊÏÂ£¬Ò»¹ÉÏÉÆø×Ôµ¤Ìï»º»º±é²¼È«ÉíÁË£¡\n" NOR, me);
+  message_vision(HIG "$Nå°†èˆåˆ©å­å†…ä¸¹å«å…¥å˜´ä¸­å’½ä¸‹ï¼Œä¸€è‚¡ä»™æ°”è‡ªä¸¹ç”°ç¼“ç¼“éå¸ƒå…¨èº«äº†ï¼\n" NOR, me);
   me->start_busy(5);
   destruct(dan);
   return 1;
@@ -58,6 +58,6 @@ int do_eat(string arg)
 
 void destruct_me ()
 {
-  message_vision("ÉáÀû×ÓÄÚµ¤±ä³É·ÛÄ©ÔÚ·çÖĞ´µÉ¢ÁË£¡\n", this_object());
+  message_vision("èˆåˆ©å­å†…ä¸¹å˜æˆç²‰æœ«åœ¨é£ä¸­å¹æ•£äº†ï¼\n", this_object());
   destruct (this_object());
 }

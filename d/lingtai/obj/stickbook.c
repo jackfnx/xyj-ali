@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("°ô·¨¸ÙÒª", ({"stick book", "book"}));
+        set_name("æ£’æ³•çº²è¦", ({"stick book", "book"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-   set("long", "Ò»·ùÒ»³ß¼û·½µÄÈ¾²¼£¬Ç°ºó»­×ÅĞ©»ù´¡°ô·¨µÄÍ¼½â£®\n");
+                set("unit", "æœ¬");
+   set("long", "ä¸€å¹…ä¸€å°ºè§æ–¹çš„æŸ“å¸ƒï¼Œå‰åç”»ç€äº›åŸºç¡€æ£’æ³•çš„å›¾è§£ï¼\n");
         set("material", "paper");
         set("skill", ([
                         "name": "literate",

@@ -3,16 +3,16 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ÏÉÊ¯");
+    set("short", "ä»™çŸ³");
     set("long", @LONG
 
-ÕâÀïÊÇ»¨¹ûÉ½ÑüµÄÒ»¿éÆ½µØ¡£Ò»µÀÆÙ²¼´ÓÉ½¶¥·ÉÁ÷Ö±ÏÂ£¬
-ĞºÈëÒ»ÑÛÉîÌ¶£¬µ±ÕæÊÇ£º¡°Ò»ÅÉ°×ºçÆğ£¬Ç§Ñ°Ñ©ÀË·É¡±¡£
-ÆÙ²¼±ßÉÏÓĞÒ»¿é´óÊ¯Í·£¬Ïà´«ÎªÌìµØÁéÆøËù»¯¡£²»ÖªÊÇË­ÔÚ
-ÉÏÃæ¿ÌÁËÒ»Ê×Ê«£º
+è¿™é‡Œæ˜¯èŠ±æœå±±è…°çš„ä¸€å—å¹³åœ°ã€‚ä¸€é“ç€‘å¸ƒä»å±±é¡¶é£æµç›´ä¸‹ï¼Œ
+æ³»å…¥ä¸€çœ¼æ·±æ½­ï¼Œå½“çœŸæ˜¯ï¼šâ€œä¸€æ´¾ç™½è™¹èµ·ï¼Œåƒå¯»é›ªæµªé£â€ã€‚
+ç€‘å¸ƒè¾¹ä¸Šæœ‰ä¸€å—å¤§çŸ³å¤´ï¼Œç›¸ä¼ ä¸ºå¤©åœ°çµæ°”æ‰€åŒ–ã€‚ä¸çŸ¥æ˜¯è°åœ¨
+ä¸Šé¢åˆ»äº†ä¸€é¦–è¯—ï¼š
 
-¡¡¡¡¡¡¡¡»ìãçÎ´·ÖÌìµØÂÒ£¬Ã£Ã£ÃìÃìÎŞÈË¼û¡£
-¡¡¡¡¡¡¡¡×Ô´ÓÅÌ¹ÅÆÆºèÃÉ£¬¿ª±Ù´Ó×ÈÇå×Ç±æ¡£
+ã€€ã€€ã€€ã€€æ··æ²Œæœªåˆ†å¤©åœ°ä¹±ï¼ŒèŒ«èŒ«æ¸ºæ¸ºæ— äººè§ã€‚
+ã€€ã€€ã€€ã€€è‡ªä»ç›˜å¤ç ´é¸¿è’™ï¼Œå¼€è¾Ÿä»å…¹æ¸…æµŠè¾¨ã€‚
 
 LONG);
 
@@ -39,7 +39,7 @@ int valid_leave(object me, string dir)
     object mbox;
 
     if (mbox = me->query_temp("mbox_ob")) {
-        tell_object(me, "Äã½«ĞÅÏä½»»Ø¸øÓÊ²î¡£\n");
+        tell_object(me, "ä½ å°†ä¿¡ç®±äº¤å›ç»™é‚®å·®ã€‚\n");
         destruct(mbox);
     }
     return 1;
@@ -52,14 +52,14 @@ void check_trigger()
     if ((int)query("left_trigger")==3
     &&  (int)query("right_trigger")==5
     &&  !query("exits/down")) {
-        message("vision", "ÏÉÊ¯ºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÏÂµÄ½×Ìİ¡£\n",
+        message("vision", "ä»™çŸ³å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸‹çš„é˜¶æ¢¯ã€‚\n",
             this_object());
         if (!(room = find_object(__DIR__"inner")))
             room = load_object(__DIR__"inner");
         if (room = find_object(__DIR__"inner")) {
             set("exits/down", __DIR__"inner");
             room->set("exits/up", __FILE__);
-            message("vision", "ÏÉÊ¯ºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÉÏµÄ½×Ìİ¡£\n",
+            message("vision", "ä»™çŸ³å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸Šçš„é˜¶æ¢¯ã€‚\n",
                 room);
         }
         delete("left_trigger");
@@ -74,11 +74,11 @@ void close_passage()
 
     if (!query("exits/down")) return;
 
-    message("vision", "ÏÉÊ¯ºöÈ»·¢³öÔşÔşµÄÉùÒô£¬½«ÏòÏÂµÄÍ¨µÀ¸Ç×¡ÁË¡£\n",
+    message("vision", "ä»™çŸ³å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œå°†å‘ä¸‹çš„é€šé“ç›–ä½äº†ã€‚\n",
         this_object());
     if (room = find_object(__DIR__"inner")) {
         room->delete("exits/up");
-        message("vision", "ÏÉÊ¯ºöÈ»·¢³öÔşÔşµÄÉùÒô£¬ÏòÉÏµÄÍ¨µÀÓÖ»º»ºµØ±»¸Ç×¡ÁË¡£\n",
+        message("vision", "ä»™çŸ³å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œå‘ä¸Šçš„é€šé“åˆç¼“ç¼“åœ°è¢«ç›–ä½äº†ã€‚\n",
             room);
     }
     delete("exits/down");
@@ -94,26 +94,26 @@ int do_push(string arg)
     if (!arg || arg == "") return 0;
 
     if (arg == "stone") {
-        write("ÄãÊÔ×ÅÍÆ¶¯ÏÉÊ¯£¬ËÆºõ¿ÉÒÔ×óÓÒ»¬¶¯....\n");
+        write("ä½ è¯•ç€æ¨åŠ¨ä»™çŸ³ï¼Œä¼¼ä¹å¯ä»¥å·¦å³æ»‘åŠ¨....\n");
         delete("left_trigger");
         delete("right_trigger");
         return 1;
     }
     else if (sscanf(arg, "stone %s", dir)==1) {
         if (dir=="right") {
-            if (query("exits/down")) return notify_fail("ÏÉÊ¯ÒÑ¾­±»ÍÆ¿ªÁË¡£\n");
-            message_vision("$N½«ÏÉÊ¯ÍùÓÒÍÆ...£¬ºöÈ»¡¸¿¦¡¹Ò»ÉùÏÉÊ¯ÓÖÒÆ»ØÔ­Î»¡£\n", me);
+            if (query("exits/down")) return notify_fail("ä»™çŸ³å·²ç»è¢«æ¨å¼€äº†ã€‚\n");
+            message_vision("$Nå°†ä»™çŸ³å¾€å³æ¨...ï¼Œå¿½ç„¶ã€Œå–€ã€ä¸€å£°ä»™çŸ³åˆç§»å›åŸä½ã€‚\n", me);
             add("right_trigger", 1);
             check_trigger();
             return 1;
         } else if (dir=="left") {
-            if (query("exits/down")) return notify_fail("ÏÉÊ¯ÒÑ¾­±»ÍÆ¿ªÁË¡£\n");
-            message_vision("$N½«ÏÉÊ¯Íù×óÍÆ...£¬ºöÈ»¡¸¿¦¡¹Ò»ÉùÏÉÊ¯ÓÖÒÆ»ØÔ­Î»¡£\n", me);
+            if (query("exits/down")) return notify_fail("ä»™çŸ³å·²ç»è¢«æ¨å¼€äº†ã€‚\n");
+            message_vision("$Nå°†ä»™çŸ³å¾€å·¦æ¨...ï¼Œå¿½ç„¶ã€Œå–€ã€ä¸€å£°ä»™çŸ³åˆç§»å›åŸä½ã€‚\n", me);
             add("left_trigger", 1);
             check_trigger();
             return 1;
         } else {
-            return notify_fail("ÄãÒª½«ÏÉÊ¯ÍùÄÄ±ßÍÆ£¿\n");
+            return notify_fail("ä½ è¦å°†ä»™çŸ³å¾€å“ªè¾¹æ¨ï¼Ÿ\n");
         }
     }
     else return 0;

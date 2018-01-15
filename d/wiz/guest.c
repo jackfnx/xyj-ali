@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/wiz/guest.c    snowcat
@@ -9,11 +9,11 @@ int clean_up();
 
 void create()
 {
-  set("short", "Ó­¿ÍÌü");
+  set("short", "è¿Žå®¢åŽ…");
   set("long", @LONG
 
-¶Ô²»Æð£¬ÄúµÄµØÖ·ÔÚÎ÷ÓÎ¼ÇµÄÐÅÓþ±»ÈËÆÆ»µÁË£¬ÇëÄúÔÚ¿ÍÌüÉÔºò¡£
-Äú¿ÉÒÔÔÄ¶Á°ïÖúÎÄ¼þ(help)»òÓÎÏ·¹ÊÊÂ(story)¡£
+å¯¹ä¸èµ·ï¼Œæ‚¨çš„åœ°å€åœ¨è¥¿æ¸¸è®°çš„ä¿¡èª‰è¢«äººç ´åäº†ï¼Œè¯·æ‚¨åœ¨å®¢åŽ…ç¨å€™ã€‚
+æ‚¨å¯ä»¥é˜…è¯»å¸®åŠ©æ–‡ä»¶(help)æˆ–æ¸¸æˆæ•…äº‹(story)ã€‚
 
 LONG
 );
@@ -51,20 +51,20 @@ void init()
   {
     if (who->query("banned_approved")==1)
     {
-      tell_object (who,"»¶Ó­Äú½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
+      tell_object (who,"æ¬¢è¿Žæ‚¨è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
       who->move(who->query("startroom"));
       MONITOR_D->report_system_object_msg (who,  
-        "ÓÉ±»½ûµÄIP½øÈë£¬ÒÑ±»Åú×¼Ö±ÈëÎ÷ÓÎ¼ÇÊÀ½ç¡£"); 
+        "ç”±è¢«ç¦çš„IPè¿›å…¥ï¼Œå·²è¢«æ‰¹å‡†ç›´å…¥è¥¿æ¸¸è®°ä¸–ç•Œã€‚"); 
       return; 
     }
     who->set("startroom","/d/wiz/guest");
     who->save();
     add_action("block_cmd","",1);  
     MONITOR_D->report_system_object_msg (who,  
-      "µÄIP±»½û£¬ÏÖ±»ÒýÈëÎ÷ÓÎ¼ÇÓ­¿ÍÌü(/d/wiz/guest.c)¡£");  
+      "çš„IPè¢«ç¦ï¼ŒçŽ°è¢«å¼•å…¥è¥¿æ¸¸è®°è¿Žå®¢åŽ…(/d/wiz/guest.c)ã€‚");  
     if (nb_guests(where) > 10)
     {
-      tell_object ("¶Ô²»Æð£¬Ó­¿ÍÌüÀï¿ÍÈËÌ«¶à£¬ÇëÏÂ´ÎÔÙÀ´¡£\n",who);
+      tell_object ("å¯¹ä¸èµ·ï¼Œè¿Žå®¢åŽ…é‡Œå®¢äººå¤ªå¤šï¼Œè¯·ä¸‹æ¬¡å†æ¥ã€‚\n",who);
       who->command_function("quit");
       return;
     }
@@ -84,7 +84,7 @@ int clean_up()
 
 void inform_wiz (object who)
 {
-  tell_object (who,"Äã¿ÉÒÔÊ¹ÓÃapproveÀ´Åú×¼Íæ¼Ò½øÈëÎ÷ÓÎ¼ÇÊÀ½ç¡£\n");
+  tell_object (who,"ä½ å¯ä»¥ä½¿ç”¨approveæ¥æ‰¹å‡†çŽ©å®¶è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œã€‚\n");
 }
 
 int block_cmd()
@@ -106,12 +106,12 @@ int do_approve (string arg)
   object where = this_object ();
 
   if (! arg)
-    return notify_fail ("Åú×¼Ë­£¿\n");
+    return notify_fail ("æ‰¹å‡†è°ï¼Ÿ\n");
   who = present (arg);
   if (who == me)
-    return notify_fail ("Åú×¼Äú×Ô¼º£¿\n");
-  tell_object (me,"ÄúÅú×¼"+who->query("name")+"½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
-  tell_object (who,"»¶Ó­Äú½øÈëÎ÷ÓÎ¼ÇÊÀ½ç£¡\n");
+    return notify_fail ("æ‰¹å‡†æ‚¨è‡ªå·±ï¼Ÿ\n");
+  tell_object (me,"æ‚¨æ‰¹å‡†"+who->query("name")+"è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
+  tell_object (who,"æ¬¢è¿Žæ‚¨è¿›å…¥è¥¿æ¸¸è®°ä¸–ç•Œï¼\n");
   who->set("banned_approved",1);
   who->set("startroom","/d/city/kezhan");
   who->move("/d/city/kezhan");

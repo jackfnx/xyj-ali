@@ -1,20 +1,20 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// tiejia.c Ìú¼×
+// tiejia.c é“ç”²
 #include <armor.h>
 
 inherit CLOTH;
 
 void create()
 {
-        set_name("½ğ»·Ëø×Ó¼×", ({"jin jia", "jia", "armor"}));
+        set_name("é‡‘ç¯é”å­ç”²", ({"jin jia", "jia", "armor"}));
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-     set("long", "Ò»¼ş½ğÏßÖ¯¾ÍµÄ±¦¼×£®\n");
+                set("unit", "ä»¶");
+     set("long", "ä¸€ä»¶é‡‘çº¿ç»‡å°±çš„å®ç”²ï¼\n");
                 set("material", "steel");
                 set("value", 10000);
                 set("armor_prop/armor", 50);

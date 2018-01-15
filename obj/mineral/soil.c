@@ -4,13 +4,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("ÎìÍÁÖ®Áé", ({ "wutu zhiling", "soil" }));
+    set_name("æˆŠåœŸä¹‹çµ", ({ "wutu zhiling", "soil" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "ÍÁĞĞÔªËØµÄ¾«»ª£¬Éú·¢Ò»ÇĞµÄÍÁÈÀ¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "åœŸè¡Œå…ƒç´ çš„ç²¾åï¼Œç”Ÿå‘ä¸€åˆ‡çš„åœŸå£¤ã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
         set("elements/soil", 100);

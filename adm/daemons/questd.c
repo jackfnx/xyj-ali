@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -59,138 +59,138 @@ void quest_kill (object me)
 
 string check_quests_detail(object who, object checker)
 {
-    string name = checker == who ? "Äã" : who->query("name");
+    string name = checker == who ? "ä½ " : who->query("name");
     string str = "";
     mapping mapp;
 
     if (who->query("quest") == 0) {
-        str += (name+"Ã»ÓĞ½âÈÎºÎÃÔ¡£\n");
+        str += (name+"æ²¡æœ‰è§£ä»»ä½•è¿·ã€‚\n");
         return str;
     }
 
-    str += (name+"ÒÑ¾­½âÁË"+(who->query("quest/number"))+"¸öÃÔ¡£\n");
+    str += (name+"å·²ç»è§£äº†"+(who->query("quest/number"))+"ä¸ªè¿·ã€‚\n");
 
-    str += ("    Ê³Îï£º"+"½âÁË"+(who->query("quest/food/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/food/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    ËÍÎï£º"+"½âÁË"+(who->query("quest/give/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/give/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    °İÏÍ£º"+"½âÁË"+(who->query("quest/ask/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/ask/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    ÃğÑı£º"+"½âÁË"+(who->query("quest/kill/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/kill/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    ÎäÆ÷£º"+"½âÁË"+(who->query("quest/weapon/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/weapon/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    ¿ø¼×£º"+"½âÁË"+(who->query("quest/armor/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/armor/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    ÒÂÎï£º"+"½âÁË"+(who->query("quest/cloth/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/cloth/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    Ê×ÊÎ£º"+"½âÁË"+(who->query("quest/wearing/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/wearing/reward"))+"µãÆ·µÂ¡£\n");
-    str += ("    ¼ÒÊ²£º"+"½âÁË"+(who->query("quest/furniture/times"))+"´Î£¬"+
-        "»ñµÃ"+(who->query("quest/furniture/reward"))+"µãÆ·µÂ¡£\n");
+    str += ("    é£Ÿç‰©ï¼š"+"è§£äº†"+(who->query("quest/food/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/food/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    é€ç‰©ï¼š"+"è§£äº†"+(who->query("quest/give/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/give/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    æ‹œè´¤ï¼š"+"è§£äº†"+(who->query("quest/ask/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/ask/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    ç­å¦–ï¼š"+"è§£äº†"+(who->query("quest/kill/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/kill/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    æ­¦å™¨ï¼š"+"è§£äº†"+(who->query("quest/weapon/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/weapon/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    ç›”ç”²ï¼š"+"è§£äº†"+(who->query("quest/armor/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/armor/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    è¡£ç‰©ï¼š"+"è§£äº†"+(who->query("quest/cloth/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/cloth/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    é¦–é¥°ï¼š"+"è§£äº†"+(who->query("quest/wearing/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/wearing/reward"))+"ç‚¹å“å¾·ã€‚\n");
+    str += ("    å®¶ä»€ï¼š"+"è§£äº†"+(who->query("quest/furniture/times"))+"æ¬¡ï¼Œ"+
+        "è·å¾—"+(who->query("quest/furniture/reward"))+"ç‚¹å“å¾·ã€‚\n");
     str += ("\n");
 
-    str += (name+"¹²»ñµÃ£º\n");
-    str += ("    Ç±ÄÜ£º"+(who->query("quest/gain/potential"))+"µã¡£\n");
-    str += ("    µÀĞĞ£º"+COMBAT_D->chinese_daoxing(who->query("quest/gain/combat_exp"))+"µÀĞĞ¡£\n");
-    str += ("    ¼¼ÄÜ£º\n");
+    str += (name+"å…±è·å¾—ï¼š\n");
+    str += ("    æ½œèƒ½ï¼š"+(who->query("quest/gain/potential"))+"ç‚¹ã€‚\n");
+    str += ("    é“è¡Œï¼š"+COMBAT_D->chinese_daoxing(who->query("quest/gain/combat_exp"))+"é“è¡Œã€‚\n");
+    str += ("    æŠ€èƒ½ï¼š\n");
     mapp = who->query("quest/gain/skills");
     if (mapp) {
         string *my_keys = keys(mapp);
         int i = sizeof(my_keys);
         while (i--) {
             str += ("      "+SKILL_D(my_keys[i])->name()+(mapp[my_keys[i]])
-                +"µã¡£\n");
+                +"ç‚¹ã€‚\n");
         }
     }
-    str += ("    ÊôĞÔ£¨ÁÙÊ±¸ÄÉÆ£©£º\n");
+    str += ("    å±æ€§ï¼ˆä¸´æ—¶æ”¹å–„ï¼‰ï¼š\n");
     mapp = who->query("quest/gain/apply");
     if (mapp) {
         string *my_keys = keys(mapp);
         int i = sizeof(my_keys);
         while (i--) {
             str += ("      "+(my_keys[i])+(mapp[my_keys[i]])
-                +"µã¡£\n");
+                +"ç‚¹ã€‚\n");
         }
     }
-    str += ("    Òø×Ó£º"+(who->query("quest/gain/silver"))+"Á½¡£\n");
+    str += ("    é“¶å­ï¼š"+(who->query("quest/gain/silver"))+"ä¸¤ã€‚\n");
     str += ("\n");
 
-    str += (name+"¸Õ¸ÕÍê³ÉµÄÃÔÊÇ£º\n");
+    str += (name+"åˆšåˆšå®Œæˆçš„è¿·æ˜¯ï¼š\n");
     if (who->query("quest/reason")) {
-        str += ("  ¡°"+who->query("quest/reason")+"¡­¡­¡±");
+        str += ("  â€œ"+who->query("quest/reason")+"â€¦â€¦â€");
         if (who->query("quest/reward")) {
             if (wizardp(checker)) 
-                str += ("  ¼´½«ÓĞ"+(who->query("quest/reward"))+"µã½±Àø¡£\n");
+                str += ("  å³å°†æœ‰"+(who->query("quest/reward"))+"ç‚¹å¥–åŠ±ã€‚\n");
             else  
-                str += ("  ¼´½«ÓĞ½±Àø¡£\n");
+                str += ("  å³å°†æœ‰å¥–åŠ±ã€‚\n");
             }  
         else
             str += ("\n");
     }
     str += ("\n");
 
-    str += (name+"»¹ÓĞÈçÏÂ¼¸¸öÕıÔÚ½âµÄÃÔ£º\n");
+    str += (name+"è¿˜æœ‰å¦‚ä¸‹å‡ ä¸ªæ­£åœ¨è§£çš„è¿·ï¼š\n");
     if (mapp = who->query("quest/pending/food")) {
-        str += ("  Ê³Îï£º"+mapp["name"]);
+        str += ("  é£Ÿç‰©ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/give")) {
-        str += ("  ËÍÎï£º"+mapp["name"] + " " + mapp["objectname"]);
+        str += ("  é€ç‰©ï¼š"+mapp["name"] + " " + mapp["objectname"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/ask")) {
-        str += ("  °İÏÍ£º"+mapp["name"]);
+        str += ("  æ‹œè´¤ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/kill")) {
-        str += ("  ÃğÑı£º"+mapp["name"]);
+        str += ("  ç­å¦–ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/weapon")) {
-        str += ("  ÎäÆ÷£º"+mapp["name"]);
+        str += ("  æ­¦å™¨ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/armor")) {
-        str += ("  ¿ø¼×£º"+mapp["name"]);
+        str += ("  ç›”ç”²ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/cloth")) {
-        str += ("  ÒÂÎï£º"+mapp["name"]);
+        str += ("  è¡£ç‰©ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/wearing")) {
-        str += ("  Ê×ÊÎ£º"+mapp["name"]);
+        str += ("  é¦–é¥°ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
     if (mapp = who->query("quest/pending/furniture")) {
-        str += ("  ¼ÒÊ²£º"+mapp["name"]);
+        str += ("  å®¶ä»€ï¼š"+mapp["name"]);
         if (wizardp(checker))
-            str += (" ²Î¿¼ÏµÊı£º"+mapp["index"]+"/"+mapp["daoxing"]+"¡£\n");
+            str += (" å‚è€ƒç³»æ•°ï¼š"+mapp["index"]+"/"+mapp["daoxing"]+"ã€‚\n");
         else 
             str += ("\n");
     }
@@ -199,25 +199,25 @@ string check_quests_detail(object who, object checker)
     if (!wizardp(checker))
         return str;
 
-    str += (name+"½âÃÔÔİ´æÊ¹ÓÃÍ³¼Æ£º\n");
+    str += (name+"è§£è¿·æš‚å­˜ä½¿ç”¨ç»Ÿè®¡ï¼š\n");
     if (mapp = who->query("quest/cache/food"))
-        str += ("  Ê³Îï£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  é£Ÿç‰©ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/give"))
-        str += ("  ËÍÎï£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  é€ç‰©ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/ask"))
-        str += ("  °İÏÍ£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  æ‹œè´¤ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/kill"))
-        str += ("  ÃğÑı£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  ç­å¦–ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/weapon"))
-        str += ("  ÎäÆ÷£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  æ­¦å™¨ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/armor"))
-        str += ("  ¿ø¼×£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  ç›”ç”²ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/cloth"))
-        str += ("  ÒÂÎï£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  è¡£ç‰©ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/wearing"))
-        str += ("  Ê×ÊÎ£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  é¦–é¥°ï¼š"+(sizeof(mapp))+"ã€‚\n");
     if (mapp = who->query("quest/cache/furniture"))
-        str += ("  ¼ÒÊ²£º"+(sizeof(mapp))+"¡£\n");
+        str += ("  å®¶ä»€ï¼š"+(sizeof(mapp))+"ã€‚\n");
     str += ("\n");
 
     return str;

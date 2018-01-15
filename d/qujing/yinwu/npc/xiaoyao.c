@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 12/5/1997
@@ -9,10 +9,10 @@ void create()
 {
   string str;
   int i = random(5)+1;
-  set_name("Ğ¡Ñı", ({"xiao yao","yao"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å°å¦–", ({"xiao yao","yao"}));
+  set("gender", "ç”·æ€§");
   set("age", 20*i);
-  set("long","Ò»¸ö¹íÍ·¹íÄÔµÄĞ¡Ñı¡£\n");
+  set("long","ä¸€ä¸ªé¬¼å¤´é¬¼è„‘çš„å°å¦–ã€‚\n");
   set("combat_exp", 10000*i);
   set("per", 15);
   set_skill("parry", 20*i);

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // laoli.c
@@ -7,10 +7,10 @@ inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-       set_name("����ͷ", ({"lao li", "li"}));
-       set("long", "���̵����ˣ�\n");
-       set("gender", "����");
-   set("title", "����");
+       set_name("老李头", ({"lao li", "li"}));
+       set("long", "铁铺的主人．\n");
+       set("gender", "男性");
+   set("title", "铁匠");
    set("per", 15);
    set("combat_exp", 6800);
        set("age", 56);
@@ -19,8 +19,8 @@ void create()
        set_skill("unarmed", 15);
 set("chat_chance", 5);
 set("chat_msg", ({
-name()+"һ������Сѧͽ��ƨ���ϣ��µ�������͵����\n",
-name()+"��Сѧͽ�µ���������ٴ��ˣ�����ô��ô����\n",
+name()+"一脚踢在小学徒的屁股上，嚷道：不许偷懒！\n",
+name()+"对小学徒嚷道：教你多少次了！你怎么这么笨！\n",
 }) );
         set("vendor_goods", ([
                 "blade": "/d/gao/obj/blade",
@@ -50,9 +50,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"����˵������λ" +
+                        say( name()+"大声说道：这位" +
 RANK_D->query_respect(ob)
-                                + "��Ҫ��������\n");
+                                + "，要买铁器吗？\n");
                         break;
         }
 }

@@ -2,15 +2,15 @@ inherit NPC;
 
 void create()
 {
-    set_name("°Ù×ãòÚò¼", ({ "baizu wugong", "wugong" }));
-    set("race", "Ò°ÊŞ");
+    set_name("ç™¾è¶³èœˆèš£", ({ "baizu wugong", "wugong" }));
+    set("race", "é‡å…½");
     set("age", 100);
 
     set_skill("dodge", 60);
     set_skill("parry", 60);
     set_skill("unarmed", 60);
     set("combat_exp", 100);
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "ÍÈ","ÍÈ","ÍÈ","ÍÈ","ÍÈ","ÍÈ","ÍÈ", "Î²°Í" }));
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è…¿","è…¿","è…¿","è…¿","è…¿","è…¿","è…¿", "å°¾å·´" }));
     set("verbs", ({ "bite" }));
 
     setup();
@@ -27,7 +27,7 @@ void unconcious()
     ob->set("cook/type", "wugong");
     ob->set("cook/value", 5);
     ob->move(where);
-    message_vision("\n$NËõ³ÉÒ»ÍÅ£¬²»ÔÙ¶¯ÁË¡£\n", me);
+    message_vision("\n$Nç¼©æˆä¸€å›¢ï¼Œä¸å†åŠ¨äº†ã€‚\n", me);
     destruct(me);
 }
 

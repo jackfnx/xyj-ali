@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // hulu.c 
@@ -8,19 +8,19 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("�ͺ�«", ({"you hulu", "hulu", "hu", "lu"}));
+  set_name("油葫芦", ({"you hulu", "hulu", "hu", "lu"}));
   set_weight(700);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "һ���ú�«�Ƴɵ��ͺ�������������ϻ���\n");
-    set("unit", "��");
+    set("long", "一个用葫芦制成的油壶，上面绘着醉笙花。\n");
+    set("unit", "个");
     set("value", 1000);
     set("max_liquid", 10);
   }
   set("liquid", ([
     "type": "oil",
-    "name": "�ֺ�����",
+    "name": "酥合香油",
     "remaining": 0,
   ]));
   set("no_get",1);
@@ -30,7 +30,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$n���ȡ���һ��ˤ�ڵ��ϣ����˸����飡\n",where,me);
+  message_vision("$n“叭”地一声摔在地上，砸了个粉碎！\n",where,me);
   destruct (me);
 }
 
@@ -67,30 +67,30 @@ int do_fill (string arg)
   object ob;
 
   if (! arg)
-    return notify_fail ("��Ҫ��ʲô��\n");    
+    return notify_fail ("你要灌什么？\n");    
   ob = present (arg,who);
   if (! ob)
-    return notify_fail ("����Ҫ��ʲô��\n");    
+    return notify_fail ("你想要灌什么？\n");    
 
   if (! where->query("has_oil"))
   {
     if (where->query("has_oil_pot"))
-      return notify_fail ("��������û���ֺ������ˡ�\n");    
+      return notify_fail ("罐子里已没有酥合香油了。\n");    
     else
-      return notify_fail ("����û���ֺ����Ϳɹࡣ\n");    
+      return notify_fail ("这里没有酥合香油可灌。\n");    
   }
  
   if (query("liquid/remaining") > 0)
   {
-    //message_vision ("$N��$n��ʣ�µ�"+query("liquid/name")+"������\n",who,me);
-    return notify_fail ("��«����װ���ֺ������ˡ�\n");
+    //message_vision ("$N将$n里剩下的"+query("liquid/name")+"倒掉。\n",who,me);
+    return notify_fail ("葫芦里已装有酥合香油了。\n");
   }
-  message_vision ("$N��$n�����ֺ����͡�\n",who,me);
+  message_vision ("$N将$n灌满酥合香油。\n",who,me);
   where->set("has_oil",0);
   where->regenerate_oil();
   set("liquid", ([
     "type": "oil",
-    "name": "�ֺ�����",
+    "name": "酥合香油",
     "remaining": 10,
   ]));
   return 1;
@@ -105,21 +105,21 @@ int do_pour (string arg)
   object ob;
 
   if (! arg)
-    return notify_fail ("���뵹ʲô��\n");
+    return notify_fail ("你想倒什么？\n");
   ob = present (arg,where);
   if (! ob)
-    return notify_fail ("��������������ﵹ��\n");
-  if (ob->query("name")!="��Ƹ�")
-    return notify_fail ("��������������ﵹ��\n");
+    return notify_fail ("你想把酥油往哪里倒？\n");
+  if (ob->query("name")!="金灯缸")
+    return notify_fail ("你想把酥油往哪里倒？\n");
   if (! query("liquid/remaining"))
-    return notify_fail ("�ͺ�«��û���͡�\n");
-  if (query("liquid/name") != "�ֺ�����")
-    return notify_fail ("�ͺ�«��װ�Ĳ����ֺ����͡�\n");
+    return notify_fail ("油葫芦里没有油。\n");
+  if (query("liquid/name") != "酥合香油")
+    return notify_fail ("油葫芦里装的不是酥合香油。\n");
 
-  message_vision ("$N��$n���"+query("liquid/name")+"������Ƹס�\n",who,me);
+  message_vision ("$N将$n里的"+query("liquid/name")+"倒进金灯缸。\n",who,me);
   set("liquid", ([
     "type": "oil",
-    "name": "�ֺ�����",
+    "name": "酥合香油",
     "remaining": 0,
   ]));
 
@@ -133,11 +133,11 @@ int do_pour (string arg)
     i -= who->query_temp("obstacle/jinping_oil");
     
     if (i > 0)
-      message_vision ("$N����$n���ٵ�"+chinese_number(i)+"�α�ɡ�\n",
+      message_vision ("$N告诉$n：再倒"+chinese_number(i)+"次便可。\n",
                       guan,who);
     else     
     {
-      message_vision ("$N����$n����үҪ���ˣ�\n",guan,who);
+      message_vision ("$N告诉$n：佛爷要来了！\n",guan,who);
       call_out ("coming",random(3)+3,who);
     }
   }  
@@ -150,7 +150,7 @@ void coming (object who)
   object *obs = all_inventory (who);
   int i = sizeof(obs);
 
-  message_vision ("һ���紵������ү���֣�\n",who);
+  message_vision ("一阵狂风吹来，佛爷出现！\n",who);
   while (i--)
   {
     object ob = obs[i];
@@ -162,15 +162,15 @@ void coming (object who)
     if (ob->query("no_drop"))
       continue;
 
-    message_vision ("��ү��$N�����ѳ�$n��\n",who,ob);
+    message_vision ("佛爷从$N身上搜出$n！\n",who,ob);
     if (! interactive(ob))
       destruct (ob);
     else
       ob->move(environment(who));
   }  
-  message_vision ("\n��үЯ��$N������գ�\n",who);
+  message_vision ("\n佛爷携着$N飞上天空！\n",who);
   who->move("/d/qujing/qinglong/shantou");
-  message_vision ("\n��үͻȻͣ������˳�㽫$N������һ�ӣ�\n",who);
+  message_vision ("\n佛爷突然停下来，顺便将$N往地上一扔！\n",who);
   who->unconcious();
 }
 

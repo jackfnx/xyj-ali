@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // laoyu.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÀÏÓàÍ·", ({"laoyu"}));
-       set("long", "ÀÏ¸ß¼ÒµÄ¿´ÃÅÈË£¬ÕıÔÚ´òî§Ë¯£®\n");
-       set("title", "¿´ÃÅ´óÒ¯");
-       set("gender", "ÄĞĞÔ");
+       set_name("è€ä½™å¤´", ({"laoyu"}));
+       set("long", "è€é«˜å®¶çš„çœ‹é—¨äººï¼Œæ­£åœ¨æ‰“çŒç¡ï¼\n");
+       set("title", "çœ‹é—¨å¤§çˆ·");
+       set("gender", "ç”·æ€§");
    set("combat_exp", 100);
        set("age", 56);
        set("attitude", "friendly");

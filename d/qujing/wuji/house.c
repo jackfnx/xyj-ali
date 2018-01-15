@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/princehouse.c
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "̫�Ӹ�");
+  set ("short", "太子府");
   set ("long", @LONG
 
-�˴�����̫�ӵ��й�������ǰ��������Ϊ̫���Ѿ����ˣ���Ϊ����
-�칬�ϰ�����䣬û��گ�����˽�Խ�����������ġ�
+此处乃是太子的行宫。三年前，国王认为太子已经成人，故为其另
+造宫殿，习文练武，没有诏令，不得私自进宫，以免分心。
 
 LONG);
 

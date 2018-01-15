@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("Âí¹Ù", ({"ma guan","guan"}));
-       set("gender", "ÄÐÐÔ");
+       set_name("é©¬å®˜", ({"ma guan","guan"}));
+       set("gender", "ç”·æ€§");
         set("combat_exp", 2000);
        set("age", 36);
        set("per", 34);
@@ -38,8 +38,8 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( "Âí¹ÙÒ»¾Ï¹ªËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "Çë½ø£¡\n");
+                        say( "é©¬å®˜ä¸€éž èº¬è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "è¯·è¿›ï¼\n");
                         break;
         }
 }

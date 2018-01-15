@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // invocation.c
@@ -11,26 +11,26 @@ int cast(object me, object target)
         object soldier;
 
         if( !me->is_fighting() )
-                return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜÕÙ»½Ìì½«£¡\n");
+                return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½å¬å”¤å¤©å°†ï¼\n");
    
         invocation_time=60+(200-(int)me->query_skill("spells"));
         if(invocation_time<30) invocation_time=30;
         if((time()-me->query("last_invocation"))<invocation_time)
-       return notify_fail("Äã¸Õ½Ğ¹ıÌì½«£¬ËûÃÇ¶¼±»Äã½Ğ·³ÁË£¡\n");
+       return notify_fail("ä½ åˆšå«è¿‡å¤©å°†ï¼Œä»–ä»¬éƒ½è¢«ä½ å«çƒ¦äº†ï¼\n");
 
         if( (int)me->query("mana") < 150 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
         if( (int)me->query("sen") < 80 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ï¼\n");
 
-        message_vision("$Nà«à«µØÄîÁË¼¸¾äÖäÓï¡£\n", me);
+        message_vision("$Nå–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n", me);
 
         me->add("mana", -150);
         me->receive_damage("sen", 80);
 
         if( random(me->query("max_mana")) < 250 ) {
-                message("vision", "µ«ÊÇÊ²Ã´Ò²Ã»ÓĞ·¢Éú¡£\n",
+                message("vision", "ä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚\n",
 environment(me));
                 return 1;
         }

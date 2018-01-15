@@ -1,12 +1,12 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // edit.c
 
 int edit(function callback)
 {
-  write("½áÊøÀë¿ªÓÃ '.'£¬È¡ÏûÊäÈëÓÃ '~q'¡£\n"); // £¬Ê¹ÓÃÄÚ½¨ÁÐ±à¼­Æ÷ÓÃ '~e'¡£\n");
-  write("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n");
+  write("ç»“æŸç¦»å¼€ç”¨ '.'ï¼Œå–æ¶ˆè¾“å…¥ç”¨ '~q'ã€‚\n"); // ï¼Œä½¿ç”¨å†…å»ºåˆ—ç¼–è¾‘å™¨ç”¨ '~e'ã€‚\n");
+  write("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”\n");
   input_to("input_line", "", 0, callback);
   return 1;
 }
@@ -17,7 +17,7 @@ int edit(function callback)
 void input_line(string line, string text, int lines, function callback)
 {
   if(strlen(line) > MAXCOL) {
-   write("Ò»ÐÐÖ»ÄÜ°üº¬ "+MAXCOL+" ¸ö×Ö·û£¬¶àÓà²¿·Ö±»ºöÂÔ¡£\n");
+   write("ä¸€è¡Œåªèƒ½åŒ…å« "+MAXCOL+" ä¸ªå­—ç¬¦ï¼Œå¤šä½™éƒ¨åˆ†è¢«å¿½ç•¥ã€‚\n");
    line = line[0..MAXCOL-1];
   }
 
@@ -25,13 +25,13 @@ void input_line(string line, string text, int lines, function callback)
    (*callback)(text);
    return;
   } else if( line=="~q" ) {
-   write("ÊäÈëÈ¡Ïû¡£\n");
+   write("è¾“å…¥å–æ¶ˆã€‚\n");
    return;
 //  } else if( line=="~e" ) {
   }
 
   if (lines >= MAXLINES) {
-   write("ÕýÎÄ³¬¹ý "+MAXLINES+" ÐÐ£¬¶àÓà²¿·Ö±»ºöÂÔ¡£\n");
+   write("æ­£æ–‡è¶…è¿‡ "+MAXLINES+" è¡Œï¼Œå¤šä½™éƒ¨åˆ†è¢«å¿½ç•¥ã€‚\n");
   } else {
    text += line + "\n";
    lines ++;

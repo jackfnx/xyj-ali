@@ -1,4 +1,4 @@
-//ÇéË¿
+//æƒ…ä¸
 //requirement: loveless-whip > 100, kee > 20%, sen > 50%
 
 #include <ansi.h>
@@ -17,44 +17,44 @@ int perform(object me, object target)
     if (!target || !target->is_character()
             || target->is_corpse()
             || target == me)
-        return notify_fail("ÄãÒª´òË­£¿\n");
+        return notify_fail("ä½ è¦æ‰“è°ï¼Ÿ\n");
 
     if (!whip = me->query_temp("weapon"))
-        return notify_fail("ÄãÃ»ÄÃ±Þ×Ó£¬ÔõÃ´¶áÈ¡±ðÈËµÄ±øÆ÷£¿\n");
+        return notify_fail("ä½ æ²¡æ‹¿éž­å­ï¼Œæ€Žä¹ˆå¤ºå–åˆ«äººçš„å…µå™¨ï¼Ÿ\n");
     if (!weapon = target->query_temp("weapon"))
-        return notify_fail("¶Ô·½Ã»ÄÃ±øÆ÷£¬ÄãÔõÃ´¶áÈ¡£¿\n");
+        return notify_fail("å¯¹æ–¹æ²¡æ‹¿å…µå™¨ï¼Œä½ æ€Žä¹ˆå¤ºå–ï¼Ÿ\n");
 
     if ((int)me->query_skill("loveless-whip", 1) < 100)
-        return notify_fail("ÄãµÄ¾øÇé±Þ»ðºò»¹²»¹»£¡\n");
+        return notify_fail("ä½ çš„ç»æƒ…éž­ç«å€™è¿˜ä¸å¤Ÿï¼\n");
     if (me->query_skill_mapped("force") != "moonforce")
-        return notify_fail("¾øÇé±Þ±ØÐëÅäºÏÓñÅ®ÐÄ¾­²ÅÄÜÊ¹ÓÃ¡£\n");
+        return notify_fail("ç»æƒ…éž­å¿…é¡»é…åˆçŽ‰å¥³å¿ƒç»æ‰èƒ½ä½¿ç”¨ã€‚\n");
     if (me->query_skill("moonforce", 1) < 100)
-        return notify_fail("ÄãµÄÓñÅ®ÐÄ¾­²»¹»´¿Êì¡£\n");
+        return notify_fail("ä½ çš„çŽ‰å¥³å¿ƒç»ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
     if (!target->is_fighting(me))
-        return notify_fail("ÄãÃÇÃ»ÓÐÔÚ´ò¼Ü£¡\n");
+        return notify_fail("ä½ ä»¬æ²¡æœ‰åœ¨æ‰“æž¶ï¼\n");
 
     qi = me->query("kee");
     max_qi = me->query("max_kee");
     qi_pcg = qi*100/max_qi;
     if (qi < 20 || qi_pcg < 50)
-        return notify_fail("ÄãÆøÁ¦²»¼Ã£¬ÐÄÓÐÓà¶øÁ¦²»×ã¡£\n");
+        return notify_fail("ä½ æ°”åŠ›ä¸æµŽï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚\n");
 
     shen = me->query("sen");
     max_shen = me->query("max_sen");
     shen_pcg = shen*100/max_shen;
     if (shen < 20 || shen_pcg < 50)
-        return notify_fail("ÄãÉñÖ¾²»Çå£¬ÐÄÓÐÓà¶øÁ¦²»×ã¡£\n");
+        return notify_fail("ä½ ç¥žå¿—ä¸æ¸…ï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚\n");
 
     if (me->query("force") < 200)
-        return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÐÄÓÐÓà¶øÁ¦²»×ã¡£\n");
+        return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚\n");
 
     me->add("force", -200);
     me->receive_damage("kee", 20);
     me->receive_damage("sen", 20);
 
-    msg = HIC "$NµÄË«ÑÛºöÈ»±äµÃ¿Õ¶´£¬ÊÖÖÐµÄ" + whip->query("name")
-        + HIC "ÈôÐéÈôÊµ£¬×ªÑÛ¼ä¾¹ÒÑ²øÉÏÁË$nÊÖÖÐµÄ" + weapon->query("name")
-        + HIC "¡£\n" NOR;
+    msg = HIC "$Nçš„åŒçœ¼å¿½ç„¶å˜å¾—ç©ºæ´žï¼Œæ‰‹ä¸­çš„" + whip->query("name")
+        + HIC "è‹¥è™šè‹¥å®žï¼Œè½¬çœ¼é—´ç«Ÿå·²ç¼ ä¸Šäº†$næ‰‹ä¸­çš„" + weapon->query("name")
+        + HIC "ã€‚\n" NOR;
 
     ap = me->query_skill("loveless-whip", 1) + me->query_str() * 10;
     dp = target->query_str() * 10;
@@ -72,29 +72,29 @@ int perform(object me, object target)
     if (random(ap + dp + bonus) > dp)
     {
         weapon->unequip();
-        msg += HIC "$n´ó¾ª£¬Á¬Ã¦·ÜÁ¦»Ø¶á£¬Ë­Öª" + whip->query("name")
-            + HIC "ÉÏ¾­´«À´ÕóÕóÇ±Á¦£¬Ë¿Ë¿ÂÆÂÆ»¯½âÁË$nµÄÁ¦Á¿¡£\n" NOR;
+        msg += HIC "$nå¤§æƒŠï¼Œè¿žå¿™å¥‹åŠ›å›žå¤ºï¼Œè°çŸ¥" + whip->query("name")
+            + HIC "ä¸Šç»ä¼ æ¥é˜µé˜µæ½œåŠ›ï¼Œä¸ä¸ç¼•ç¼•åŒ–è§£äº†$nçš„åŠ›é‡ã€‚\n" NOR;
         if ((int)me->query_encumbrance() + weapon->weight()
                 < (int)me->query_max_encumbrance())
         {
             weapon->move(me);
-            msg += HIC "$NÍ»È»½«ÊÖÖÐ" + whip->query("name")
-                + HIC "Ò»¶¶£¬$nÔÙÒ²ÄÃÄó²»×¡ÊÖÖÐµÄ" + weapon->query("name")
-                + HIC "£¬±»$NÓ²¶áÁË¹ýÈ¥¡£\n" NOR;
+            msg += HIC "$Nçªç„¶å°†æ‰‹ä¸­" + whip->query("name")
+                + HIC "ä¸€æŠ–ï¼Œ$nå†ä¹Ÿæ‹¿æä¸ä½æ‰‹ä¸­çš„" + weapon->query("name")
+                + HIC "ï¼Œè¢«$Nç¡¬å¤ºäº†è¿‡åŽ»ã€‚\n" NOR;
         }
         else
         {
             weapon->move(environment(me));
-            msg += HIC "$NÍ»È»½«ÊÖÖÐ" + whip->query("name")
-                + HIC "Ò»¶¶£¬$nÔÙÒ²ÄÃÄó²»×¡ÊÖÖÐµÄ" + weapon->query("name")
-                + HIC "£¬Ô¶Ô¶µÄ·ÉÁË³öÈ¥¡£\n" NOR;
+            msg += HIC "$Nçªç„¶å°†æ‰‹ä¸­" + whip->query("name")
+                + HIC "ä¸€æŠ–ï¼Œ$nå†ä¹Ÿæ‹¿æä¸ä½æ‰‹ä¸­çš„" + weapon->query("name")
+                + HIC "ï¼Œè¿œè¿œçš„é£žäº†å‡ºåŽ»ã€‚\n" NOR;
         }
     }
     else
     {
-        msg += HIC "$n²¢²»¾ª»Å£¬ÊÖÖÐ" + weapon->query("name")
-            + HIC "Á¬Ðø¶¶¶¯£¬ºÜ¿ì¾Í½«ÉÏÃæ" + whip->query("name")
-            + HIC "µÄ²øÈÆÕõÍÑÁË¡£\n" NOR;
+        msg += HIC "$nå¹¶ä¸æƒŠæ…Œï¼Œæ‰‹ä¸­" + weapon->query("name")
+            + HIC "è¿žç»­æŠ–åŠ¨ï¼Œå¾ˆå¿«å°±å°†ä¸Šé¢" + whip->query("name")
+            + HIC "çš„ç¼ ç»•æŒ£è„±äº†ã€‚\n" NOR;
     }
 
     me->start_busy(2+random(3));

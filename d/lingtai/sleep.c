@@ -1,17 +1,17 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // inside2.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "ÎÔÊÒ");
+  set ("short", "å§å®¤");
   set ("long", @LONG
 
-ÀÏÉñÏÉÒ²ÒªË¯¾õ£®ÔÚÕâÄã¾Í¾¡ÇéµÄË¯°É£®
+è€ç¥ä»™ä¹Ÿè¦ç¡è§‰ï¼åœ¨è¿™ä½ å°±å°½æƒ…çš„ç¡å§ï¼
 
 LONG);
 set("exits", ([ /* sizeof() == 4 */

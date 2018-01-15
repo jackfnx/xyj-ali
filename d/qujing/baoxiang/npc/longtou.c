@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // staff.c
@@ -10,13 +10,13 @@ inherit STAFF;
 
 void create()
 {
-  set_name( "ÁúÍ·¹Õ", ({ "long tou guai", "long tou", "guai", "staff" }) );
+  set_name( "é¾™å¤´æ‹", ({ "long tou guai", "long tou", "guai", "staff" }) );
   set_weight(800); 
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
-    set("long", "Ò»¸ù³¤³¤µÄÁúÍ·¹ÕÕÈ¡£\n");
+    set("unit", "æ ¹");
+    set("long", "ä¸€æ ¹é•¿é•¿çš„é¾™å¤´æ‹æ–ã€‚\n");
     set("value", 100);
     set("material", "bamboo");
   }

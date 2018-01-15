@@ -9,21 +9,21 @@
 
 inherit NPC;
 
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ","ÕÅ","³Â",
-	"Áõ","ÁÖ" });
-string *name_words = ({ "Ë³","²ı","Õñ","·¢","²Æ","¿¡","Ñå","Á¼","Ö¾","ÖÒ",
-	"Ğ¢","ĞÛ","Òæ","Ìí","½ğ","»Ô","³¤","Ê¢","Ê¤","½ø","°²","¸£","Í¬","Âú",
-	"¸»","Íò","Áú","Â¡","Ïé","¶°","¹ú","ÒÚ","ÊÙ" });
+string *first_name = ({ "èµµ","é’±","å­™","æ","å‘¨","å´","éƒ‘","ç‹","å¼ ","é™ˆ",
+	"åˆ˜","æ—" });
+string *name_words = ({ "é¡º","æ˜Œ","æŒ¯","å‘","è´¢","ä¿Š","å½¦","è‰¯","å¿—","å¿ ",
+	"å­","é›„","ç›Š","æ·»","é‡‘","è¾‰","é•¿","ç››","èƒœ","è¿›","å®‰","ç¦","åŒ","æ»¡",
+	"å¯Œ","ä¸‡","é¾™","éš†","ç¥¥","æ ‹","å›½","äº¿","å¯¿" });
 
 string *rnd_id = ({"ra","ma","ta","pu","gu","du","so","po","lo","phi","tri","ne","she"});
 string *rnd_id_tail = ({"ng","gh","ss","h","le","d","ck","m","tte"});
 
 string *rnd_say = ({
-	"ÎÒÊÇĞÂÊÖ£¬Çë¸æËßÎÒÈçºÎÍæÕâ¸öÓÎÏ·¡£",
-	"ÎªÊ²÷áÎÒµÄ¾«ÆøÉñ¶¼²»»á»Ö¸´£¿",
-	"ÓĞË­¿ÉÒÔ¸øÎÒÒ»Ğ©Ç®£¿",
-	"ÕâÀïµÄÈË¶¼²»ÀíÎÒ£¡",
-	"¿É²»¿ÉÒÔ¸æËßÎÒÄÄÀï¿ÉÒÔÁ·¹¦ £¿",
+	"æˆ‘æ˜¯æ–°æ‰‹ï¼Œè¯·å‘Šè¯‰æˆ‘å¦‚ä½•ç©è¿™ä¸ªæ¸¸æˆã€‚",
+	"ä¸ºä»€éº½æˆ‘çš„ç²¾æ°”ç¥éƒ½ä¸ä¼šæ¢å¤ï¼Ÿ",
+	"æœ‰è°å¯ä»¥ç»™æˆ‘ä¸€äº›é’±ï¼Ÿ",
+	"è¿™é‡Œçš„äººéƒ½ä¸ç†æˆ‘ï¼",
+	"å¯ä¸å¯ä»¥å‘Šè¯‰æˆ‘å“ªé‡Œå¯ä»¥ç»ƒåŠŸ ï¼Ÿ",
 	"hi",
 	"hello",
 	"hmm",
@@ -50,8 +50,8 @@ void create()
 	id += rnd_id_tail[random(sizeof(rnd_id_tail))];
 
 	set_name(name, ({ id, "drooler" }) );
-	set("title", "ÆÕÍ¨°ÙĞÕ");
-	set("gender", "ÄĞĞÔ");
+	set("title", "æ™®é€šç™¾å§“");
+	set("gender", "ç”·æ€§");
 	set("age", 14);
 	set("attitude", "friendly");
 	set("combat_exp", 100);
@@ -74,14 +74,14 @@ void create()
 int add_phrase(string who, string msg)
 {
 	msg = replace_string(msg, "?", "");
-	msg = replace_string(msg, "£¿", "");
-	msg = replace_string(msg, "£¿", "");
+	msg = replace_string(msg, "ï¼Ÿ", "");
+	msg = replace_string(msg, "ï¼Ÿ", "");
 	msg = replace_string(msg, "!", "");
-	msg = replace_string(msg, "£¡", "");
-	msg = replace_string(msg, "°¡", "");
-	msg = replace_string(msg, "Âğ", "");
-	msg = replace_string(msg, "Ò®", "");
-	msg = replace_string(msg, "°É", "");
+	msg = replace_string(msg, "ï¼", "");
+	msg = replace_string(msg, "å•Š", "");
+	msg = replace_string(msg, "å—", "");
+	msg = replace_string(msg, "è€¶", "");
+	msg = replace_string(msg, "å§", "");
 
 	if( msg!="" ) {
 		add("memory/" + who, ({ msg }));
@@ -128,7 +128,7 @@ void relay_emote(object ob, string verb)
 	switch(verb) {
 	case "kick":
 		if( random(10)<5 ) {
-			command("chat ÎªÊ²÷áÌßÎÒ£¿»áÍ´Ò®£¡");
+			command("chat ä¸ºä»€éº½è¸¢æˆ‘ï¼Ÿä¼šç—›è€¶ï¼");
 			break;
 		}
 	default:
@@ -153,70 +153,70 @@ varargs void drool(string msg, string who)
 		msg = mem[who][random(sizeof(mem[who]))];
 	}
 
-	if( (strsrch(msg, "ÎªÊ²÷á") >= 0) ) {
-		if( sscanf(msg, "%*sÎªÊ²÷á%s", msg)==2 ) msg = "ÎªÊ²÷á" + msg;
+	if( (strsrch(msg, "ä¸ºä»€éº½") >= 0) ) {
+		if( sscanf(msg, "%*sä¸ºä»€éº½%s", msg)==2 ) msg = "ä¸ºä»€éº½" + msg;
 		switch(random(8)) {
-		case 0: command("chat " + who + "£¬ÄãÊÇÔÚÎÊÎÒÂğ£¿"); break;
-		case 1: command("chat ¹Øì¶" + msg + " ... "); break;
-		case 2: command("chat ßÀ ... "); drool(); break;
-		case 3: command("chat Õâ¸öÎÊÌâÂï ...."); break;
-		case 4: command("chat " + who + "£¬ÖªµÀÕâ¸öÎÊÌâµÄ´ğ°¸¶ÔÄãÄÇ÷áÖØÒªÂğ£¿"); break;
-		case 5: command("chat " + msg + "£¿"); break;
-		case 6: command("chat " + who + "ÄãÄÜ²»ÄÜËµÇå³şÒ»µã£¿"); break;
-		case 7: command("chat " + who + "£¬ÎÒ²»¶®ÄãÎÊµÄÎÊÌâ"); break;
+		case 0: command("chat " + who + "ï¼Œä½ æ˜¯åœ¨é—®æˆ‘å—ï¼Ÿ"); break;
+		case 1: command("chat å…³æ–¼" + msg + " ... "); break;
+		case 2: command("chat å‘ƒ ... "); drool(); break;
+		case 3: command("chat è¿™ä¸ªé—®é¢˜å˜› ...."); break;
+		case 4: command("chat " + who + "ï¼ŒçŸ¥é“è¿™ä¸ªé—®é¢˜çš„ç­”æ¡ˆå¯¹ä½ é‚£éº½é‡è¦å—ï¼Ÿ"); break;
+		case 5: command("chat " + msg + "ï¼Ÿ"); break;
+		case 6: command("chat " + who + "ä½ èƒ½ä¸èƒ½è¯´æ¸…æ¥šä¸€ç‚¹ï¼Ÿ"); break;
+		case 7: command("chat " + who + "ï¼Œæˆ‘ä¸æ‡‚ä½ é—®çš„é—®é¢˜"); break;
 		}
 	}
-	else if( (strsrch(msg, "Äã") >= 0)
-	||	(strsrch(msg, "¡õ") >= 0)
+	else if( (strsrch(msg, "ä½ ") >= 0)
+	||	(strsrch(msg, "â–¡") >= 0)
 	||	(strsrch(msg, "drooler") >= 0)
 	||	(strsrch(msg, "Drooler") >= 0)) {
-		if( sscanf(msg, "%*sÄã%s", msg) == 2 ) msg = "Äã" + msg;
-		msg = replace_string(msg, "Äã", "ÎÒ");
-		msg = replace_string(msg, "¡õ", "ÎÒ");
+		if( sscanf(msg, "%*sä½ %s", msg) == 2 ) msg = "ä½ " + msg;
+		msg = replace_string(msg, "ä½ ", "æˆ‘");
+		msg = replace_string(msg, "â–¡", "æˆ‘");
 		switch(random(10)) {
-		case 0:	command("chat " + who + "£¬ÄãÊÇËµ" + msg + "Âğ£¿");	break;
-		case 1:	command("chat ÄãÈ·¶¨" + msg + "£¿");	break;
-		case 2:	command("chat " + msg + "¸úÄãÓĞÊ²÷á¹ØÏµ£¿");	break;
-		case 3:	command("chat àÅ ... " + who + "ËµµÃºÃ"); break;
-		case 4:	command("chat " + who + "ÄãÎªÊ²÷á¶Ô" + msg + "Õâ÷áÓĞĞËÈ¤£¿"); break;
-		case 5:	command("chat ÎªÊ²÷áÄãÈÏÎª" + msg + "£¿"); break;
-		case 6:	command("chat »»¸ö»°Ìâ°É"); drool(); break;
-		case 7:	command("chat ²Å¹Ö"); break;
-		case 8:	command("chat ²»Ò»¶¨°É£¿"); break;
-		case 9:	command("chat ÓĞÕâ¸ö¿ÉÄÜ ...."); break;
+		case 0:	command("chat " + who + "ï¼Œä½ æ˜¯è¯´" + msg + "å—ï¼Ÿ");	break;
+		case 1:	command("chat ä½ ç¡®å®š" + msg + "ï¼Ÿ");	break;
+		case 2:	command("chat " + msg + "è·Ÿä½ æœ‰ä»€éº½å…³ç³»ï¼Ÿ");	break;
+		case 3:	command("chat å—¯ ... " + who + "è¯´å¾—å¥½"); break;
+		case 4:	command("chat " + who + "ä½ ä¸ºä»€éº½å¯¹" + msg + "è¿™éº½æœ‰å…´è¶£ï¼Ÿ"); break;
+		case 5:	command("chat ä¸ºä»€éº½ä½ è®¤ä¸º" + msg + "ï¼Ÿ"); break;
+		case 6:	command("chat æ¢ä¸ªè¯é¢˜å§"); drool(); break;
+		case 7:	command("chat æ‰æ€ª"); break;
+		case 8:	command("chat ä¸ä¸€å®šå§ï¼Ÿ"); break;
+		case 9:	command("chat æœ‰è¿™ä¸ªå¯èƒ½ ...."); break;
 		}
 	}
-	else if( (strsrch(msg, "ÎÒ") >= 0)) {
-		if( sscanf(msg, "%*sÎÒ%s", msg) == 2 ) msg = "ÎÒ" + msg;
-		msg = replace_string(msg, "ÎÒ", "Äã");
+	else if( (strsrch(msg, "æˆ‘") >= 0)) {
+		if( sscanf(msg, "%*sæˆ‘%s", msg) == 2 ) msg = "æˆ‘" + msg;
+		msg = replace_string(msg, "æˆ‘", "ä½ ");
 		msg = replace_string(msg, "?", "");
 		switch(random(8)) {
-		case 0:	command("chat ÄãÊÇËµ" + msg + "Âğ£¿"); break;
-		case 1:	command("chat ÕæµÄ£¿" + msg + "£¿");	break;
-		case 2:	command("chat Èç¹û" + msg + "£¬ÎÒÄÜ°ïÄãÊ²÷áÃ¦Âğ£¿");	break;
+		case 0:	command("chat ä½ æ˜¯è¯´" + msg + "å—ï¼Ÿ"); break;
+		case 1:	command("chat çœŸçš„ï¼Ÿ" + msg + "ï¼Ÿ");	break;
+		case 2:	command("chat å¦‚æœ" + msg + "ï¼Œæˆ‘èƒ½å¸®ä½ ä»€éº½å¿™å—ï¼Ÿ");	break;
 		case 3:	command("chat* hmm");	break;
-		case 4:	command("chat ÄãÈÏÎª" + msg + "£¿"); break;
-		case 5:	command("chat ÎÒÓĞÍ¬¸Ğ"); break;
-		case 6:	command("chat ÄãËµµÄ¡¸" + msg + "¡¹ÎÒ²»ÄÜ¹¶Í¬"); break;
-		case 7:	command("chat ÓĞ¹Ø¡¸" + msg + "¡¹µÄ»°Ìâµ½´ËÎªÖ¹ºÃÂğ£¿"); break;
+		case 4:	command("chat ä½ è®¤ä¸º" + msg + "ï¼Ÿ"); break;
+		case 5:	command("chat æˆ‘æœ‰åŒæ„Ÿ"); break;
+		case 6:	command("chat ä½ è¯´çš„ã€Œ" + msg + "ã€æˆ‘ä¸èƒ½è‹ŸåŒ"); break;
+		case 7:	command("chat æœ‰å…³ã€Œ" + msg + "ã€çš„è¯é¢˜åˆ°æ­¤ä¸ºæ­¢å¥½å—ï¼Ÿ"); break;
 		}
 	} else {
 		switch(random(20)) {
-			case 0: command("chat ÎªÊ²÷áËµ" + msg + "?"); break;
-			case 1: command("chat ¡¸" + msg + "¡¹ÊÇÊ²÷áÒâË¼£¿"); break;
-			case 2: command("chat " + msg + "£¿"); break;
+			case 0: command("chat ä¸ºä»€éº½è¯´" + msg + "?"); break;
+			case 1: command("chat ã€Œ" + msg + "ã€æ˜¯ä»€éº½æ„æ€ï¼Ÿ"); break;
+			case 2: command("chat " + msg + "ï¼Ÿ"); break;
 			case 3: command("chat* grin"); break;
 			case 4: command("chat* smile"); break;
 			case 5: command("chat* ?"); break;
 			case 6: command("chat ...."); break;
 			case 7: command("chat* hmm"); break;
 			case 8: command("chat " + rnd_say[random(sizeof(rnd_say))]); break;
-			case 9: command("chat ÄãÔõ÷áÖªµÀ" + msg + "?"); break;
-			case 10: command("chat ¸Õ¸Õ" + who + "²»ÊÇËµÁË£¬" + msg); break;
-			case 11: command("chat ÎÒµ±È»ÖªµÀ£¬" + msg); break;
-			case 12: command("chat È»ááÄØ£¿"); break;
-			case 13: command("chat ÕæµÄÂğ£¿"); break;
-			case 14: command("chat ÎÒ²»Õâ÷áÈÏÎª¡£"); break;
+			case 9: command("chat ä½ æ€éº½çŸ¥é“" + msg + "?"); break;
+			case 10: command("chat åˆšåˆš" + who + "ä¸æ˜¯è¯´äº†ï¼Œ" + msg); break;
+			case 11: command("chat æˆ‘å½“ç„¶çŸ¥é“ï¼Œ" + msg); break;
+			case 12: command("chat ç„¶å¾Œå‘¢ï¼Ÿ"); break;
+			case 13: command("chat çœŸçš„å—ï¼Ÿ"); break;
+			case 14: command("chat æˆ‘ä¸è¿™éº½è®¤ä¸ºã€‚"); break;
 			default:
 				break;
 		}

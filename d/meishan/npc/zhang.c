@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,10 +6,10 @@ inherit NPC;
 void create()
 {
 
-  set_name("ÕÅ²®Ê±", ({ "zhang boshi", "zhang", "taiwei" }) );
-  set("gender", "ÄĞĞÔ" );
-  set("long", "ÕÅ²®Ê±ÊÇÃ·É½ÆßĞÖµÜÖĞµÄÀÏÎå¡£\n");
-  set("title", "Ã·É½Ì«Î¾");
+  set_name("å¼ ä¼¯æ—¶", ({ "zhang boshi", "zhang", "taiwei" }) );
+  set("gender", "ç”·æ€§" );
+  set("long", "å¼ ä¼¯æ—¶æ˜¯æ¢…å±±ä¸ƒå…„å¼Ÿä¸­çš„è€äº”ã€‚\n");
+  set("title", "æ¢…å±±å¤ªå°‰");
   set("age", 35);
   set("attitude", "peaceful");
   set("str", 25);

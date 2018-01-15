@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "Óñ½×");
+  set ("short", "ç‰é˜¶");
   set ("long", @LONG
 
-ÓÉ´ËÏòÉÏÊÇÁú¹¬Õıµî£¬¶«º£ÁúÍõ¾Í×¡ÔÚÀïÃæ¡£Ò»¼¶¼¶µÄÌ¨½×¶¼ÊÇÓÃ¡¡¡¡¡¡
-ÓñÆö³É£¬½×ÉÏÁ½±ßÁ¢×ÅÎäÊ¿£¬Òø¿øÒø¼×£¬É·ÊÇÍş·ç¡£
+ç”±æ­¤å‘ä¸Šæ˜¯é¾™å®«æ­£æ®¿ï¼Œä¸œæµ·é¾™ç‹å°±ä½åœ¨é‡Œé¢ã€‚ä¸€çº§çº§çš„å°é˜¶éƒ½æ˜¯ç”¨ã€€ã€€ã€€
+ç‰ç Œæˆï¼Œé˜¶ä¸Šä¸¤è¾¹ç«‹ç€æ­¦å£«ï¼Œé“¶ç›”é“¶ç”²ï¼Œç…æ˜¯å¨é£ã€‚
 LONG);
 
           set("objects", ([ /* sizeof() == 1 */
@@ -26,8 +26,8 @@ LONG);
 }
 int valid_leave(object me, string dir)
 {
-        if( (string)me->query("family/family_name")=="¶«º£Áú¹¬" ) return 1;
-   if( (string)me->query("family/family_name")=="Áú¹¬" ) return 1;
+        if( (string)me->query("family/family_name")=="ä¸œæµ·é¾™å®«" ) return 1;
+   if( (string)me->query("family/family_name")=="é¾™å®«" ) return 1;
         if( wizardp(me)) return 1;
         if( present("yao pai", me) ) return 1;
 
@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
    || dir=="south" 
    || dir=="north") {
         if (objectp(present("li shi", environment(me))))
-        return notify_fail("¹¬Ç°»¤ÎÀÉìÊÖµ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+        return notify_fail("å®«å‰æŠ¤å«ä¼¸æ‰‹æŒ¡ä½äº†ä½ çš„å»è·¯ã€‚\n");
         }   
         return ::valid_leave(me, dir);
 }

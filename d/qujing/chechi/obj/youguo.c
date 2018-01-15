@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("´óÓÍ¹ø", ({"da youguo", "youguo"}));
+  set_name("å¤§æ²¹é”…", ({"da youguo", "youguo"}));
   set_weight(6000000);
   set_max_encumbrance(100000000000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Ú");
-    set("long", "Ò»¿Ú¾Ş´óµÄÓÍ¹ø£¬ÀïÃæÈÈÓÍ¹ö¹ö¡£\n"),
+    set("unit", "å£");
+    set("long", "ä¸€å£å·¨å¤§çš„æ²¹é”…ï¼Œé‡Œé¢çƒ­æ²¹æ»šæ»šã€‚\n"),
     set("value", 50000);
   }
   setup();
@@ -38,15 +38,15 @@ void init()
 void disturbed (object me, object who)
 {
   string *msgs = ({
-    "$NÔÚ¹öÓÍÀïÕõÔúÁËÒ»ÏÂ¡£\n",
-    "$N´ÓÓÍÀËÀïÃãÇ¿Ã°³öÍ·À´£¬ÓÖ³ÁÏÂÈ¥¡£\n",
-    "$NÆË´ò×ÅË«ÊÖ¡£\n",
-    "$N¸¡³öÓÍÃæ£¬ÓÖ±»ÓÍÀËÑ¹ÁËÏÂÈ¥¡£\n",
-    "$NÌ½³öÍ·À´£¬´ó¿Ú´­Æø¡£\n",
-    "$N´ÓÓÍÃæÉÏÉì³öÊÖÂÒ×¥ÁËÒ»ÏÂ¡£\n",
-    "$NËæ×ÅÓÍÀË·­¾í²»Ö¹¡£\n",
-    "$NµÄÍ·ÃãÇ¿Éì³ö¹öÌÌµÄÓÍÃæ£¬Ğı¼´³ÁÏÂ¡£\n",
-    "$NÆ´Ãü´Ú³öÓÍÃæ´­×ÅÆø¡£\n",
+    "$Nåœ¨æ»šæ²¹é‡ŒæŒ£æ‰äº†ä¸€ä¸‹ã€‚\n",
+    "$Nä»æ²¹æµªé‡Œå‹‰å¼ºå†’å‡ºå¤´æ¥ï¼Œåˆæ²‰ä¸‹å»ã€‚\n",
+    "$Næ‰‘æ‰“ç€åŒæ‰‹ã€‚\n",
+    "$Næµ®å‡ºæ²¹é¢ï¼Œåˆè¢«æ²¹æµªå‹äº†ä¸‹å»ã€‚\n",
+    "$Næ¢å‡ºå¤´æ¥ï¼Œå¤§å£å–˜æ°”ã€‚\n",
+    "$Nä»æ²¹é¢ä¸Šä¼¸å‡ºæ‰‹ä¹±æŠ“äº†ä¸€ä¸‹ã€‚\n",
+    "$Néšç€æ²¹æµªç¿»å·ä¸æ­¢ã€‚\n",
+    "$Nçš„å¤´å‹‰å¼ºä¼¸å‡ºæ»šçƒ«çš„æ²¹é¢ï¼Œæ—‹å³æ²‰ä¸‹ã€‚\n",
+    "$Næ‹¼å‘½è¹¿å‡ºæ²¹é¢å–˜ç€æ°”ã€‚\n",
   });
   string msg = msgs[random(sizeof(msgs))];
   object where = environment(me);
@@ -60,7 +60,7 @@ void disturbed (object me, object who)
     return;
   message_vision (msg,who);
   msg = replace_string (msg,"$N",who->name());
-  tell_room(where,"ÓÍ¹øÖĞ"+msg,who);    
+  tell_room(where,"æ²¹é”…ä¸­"+msg,who);    
   call_out("disturbed",5+random(20),me,who);
 }
 
@@ -78,7 +78,7 @@ void autoleave (object me, object who, int i)
     return;
   }
   who->move(environment(me));
-  message_vision ("¼¸¸öÄÚ¹ÙÉÏÀ´ÓÃÌú×¦ÀéÀÌ³ö$N¡£\n",who);
+  message_vision ("å‡ ä¸ªå†…å®˜ä¸Šæ¥ç”¨é“çˆªç¯±æå‡º$Nã€‚\n",who);
   if (interactive(who))
     who->unconcious(); 
 }
@@ -104,7 +104,7 @@ int do_look (string arg)
   i = sizeof(inv);
   if (i)
   {
-    tell_object(who,"·­¹öµÄÈÈÓÍÀïÓĞ£º\n");
+    tell_object(who,"ç¿»æ»šçš„çƒ­æ²¹é‡Œæœ‰ï¼š\n");
     while (i--)
     {
       tell_object(who,"  "+inv[i]->short()+"\n");
@@ -126,7 +126,7 @@ int do_put (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }
 
@@ -143,6 +143,6 @@ int do_get (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }

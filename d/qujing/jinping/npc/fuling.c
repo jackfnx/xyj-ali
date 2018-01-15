@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¸®Áî", ({ "fu ling", "ling" }) );
-  set("gender", "ÄÐÐÔ");
+  set_name("åºœä»¤", ({ "fu ling", "ling" }) );
+  set("gender", "ç”·æ€§");
   set("age", 50);
   set("combat_exp", 120000);
   set("attitude", "heroism");
@@ -48,10 +48,10 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/jinping","done");
   who->add("combat_exp",i+4000);
-  command("chat "+who->query("name")+"½ðÆ½¸®µÆ»á½âÄÑ£¬ÇàÁúÉ½³ýÏ¬Å£¾«£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ýÎ÷ÐÐÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(4)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀÐÐ£¡\n");
+  command("chat "+who->query("name")+"é‡‘å¹³åºœç¯ä¼šè§£éš¾ï¼Œé’é¾™å±±é™¤çŠ€ç‰›ç²¾ï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(4)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }

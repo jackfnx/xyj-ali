@@ -1,22 +1,22 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("»¨°ß±ª", ({ "jaguar" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("èŠ±æ–‘è±¹", ({ "jaguar" }) );
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»»¨°ß´ó±ª£¬Ò»Ë«ÑÛ¾¦Õı¶ñºİºİµØµÉÖøÄã¡£\n");
-   set("looking", "¿´ÆğÀ´Íş·çÁİÁİ¡£");
+        set("long", "ä¸€åªèŠ±æ–‘å¤§è±¹ï¼Œä¸€åŒçœ¼ç›æ­£æ¶ç‹ ç‹ åœ°çªè‘—ä½ ã€‚\n");
+   set("looking", "çœ‹èµ·æ¥å¨é£å‡›å‡›ã€‚");
         set("attitude", "aggressive");
         set("bellicosity", 20000);
         set("str", 50);
         set("cor", 30);
         set("max_kee", 1000);
         set("max_sen", 500);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å"}) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š"}) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 100000);

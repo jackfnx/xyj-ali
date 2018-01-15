@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // tail.c
@@ -14,7 +14,7 @@ int main(object me, string arg)
    seteuid(geteuid(me));
     if (!arg) return help(me);
    file = resolve_path(me->query("cwd"), arg);
-   if( file_size(file)<0 ) return notify_fail("û�����������\n");
+   if( file_size(file)<0 ) return notify_fail("没有这个档案。\n");
    tail(file);
    return 1;
 }
@@ -22,9 +22,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : tail <����>
+指令格式 : tail <档案>
 
-��ָ�������ֱ�Ӷ�ȡĳ������ĩβ�ļ��С�
+此指令可让你直接读取某档案最末尾的几行。
 HELP
     );
     return 1;

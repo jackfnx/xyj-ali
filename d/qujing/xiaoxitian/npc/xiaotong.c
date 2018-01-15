@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 12/16/1997
@@ -6,22 +6,22 @@
 inherit NPC;
 
 string *names = ({
-  "ºÚÊó¹Ö",
-  "»Æáì¹Ö",
-  "»Òáõ¹Ö",
-  "°×áû¹Ö",
-  "³àâ¡¹Ö",
-  "ÍÁâ¬¹Ö",
-  "Ê¯â¥¹Ö",
-  "Ä¾â®¹Ö",
-  "Ë®âµ¹Ö",
+  "é»‘é¼ æ€ª",
+  "é»„çŠ°æ€ª",
+  "ç°ç‹¨æ€ª",
+  "ç™½çŒæ€ª",
+  "èµ¤ç‹»æ€ª",
+  "åœŸçŒ¬æ€ª",
+  "çŸ³çŒŠæ€ª",
+  "æœ¨çŒ±æ€ª",
+  "æ°´ç¾æ€ª",
 });
 
 void create()
 {
   string str;
-  set_name("Ğ¡Í¯", ({"xiao tong", "tong"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å°ç«¥", ({"xiao tong", "tong"}));
+  set("gender", "ç”·æ€§");
   set("age", 13);
   set("combat_exp", 150000+random(70000));
   set("per", 10);
@@ -56,7 +56,7 @@ void kill_ob (object ob)
 
   if (me->query("id")!="yao guai")
   {
-    message_vision ("$N¶ÙÊ±±äÁËÑÕÉ«£¬ÏÖÁËÑı¾«µÄ±¾Ïà£¡\n",me);
+    message_vision ("$Né¡¿æ—¶å˜äº†é¢œè‰²ï¼Œç°äº†å¦–ç²¾çš„æœ¬ç›¸ï¼\n",me);
     me->set_name(names[random(sizeof(names))], ({"yao guai", "yao", "guai", "xiao tong", "tong"}));
     command("wear dun");
     command("wield all");

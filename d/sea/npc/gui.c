@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,12 +6,12 @@ int give_me(object ob);
 
 void create()
 {
-    set_name("¹ê°Ë¶·", ({"gui badou", "gui"}));
+    set_name("é¾Ÿå…«æ–—", ({"gui badou", "gui"}));
 
-    set("long","º£µ×µÄ´ó²Å×Ó£¬ÒÔ²ÅÖÇ¹ıÈËÖø³Æ£¬²¢ÇÒ»á»­½ğÁú·û¡£\n");
-    set("gender", "ÄĞĞÔ");
+    set("long","æµ·åº•çš„å¤§æ‰å­ï¼Œä»¥æ‰æ™ºè¿‡äººè‘—ç§°ï¼Œå¹¶ä¸”ä¼šç”»é‡‘é¾™ç¬¦ã€‚\n");
+    set("gender", "ç”·æ€§");
     set("age", 56);
-    set("title", "¾üÊ¦");
+    set("title", "å†›å¸ˆ");
     set("per", 10);
     set("max_kee", 1000);
     set("max_sen",700);
@@ -30,9 +30,9 @@ void create()
     set("max_mana", 400);
     set("mana_factor", 20);
     set("inquiry", ([
-                "×æÁú": "ÕâÊÂÎÒ¿É²»ÖªµÀ£¬Äã¿É±ğÎÊÎÒ¡£\n",
-                "°½ğ½": "ÕâÊÂÎÒ¿É²»ÖªµÀ£¬Äã¿É±ğÎÊÎÒ¡£\n",
-                "½ğÁú·û": (: give_me :),
+                "ç¥–é¾™": "è¿™äº‹æˆ‘å¯ä¸çŸ¥é“ï¼Œä½ å¯åˆ«é—®æˆ‘ã€‚\n",
+                "æ•–é¸¾": "è¿™äº‹æˆ‘å¯ä¸çŸ¥é“ï¼Œä½ å¯åˆ«é—®æˆ‘ã€‚\n",
+                "é‡‘é¾™ç¬¦": (: give_me :),
                 "fu": (: give_me :),
     ]) );
 
@@ -47,18 +47,18 @@ int give_me(object ob)
     who = this_player();
     me = this_object();
 
-    if ((string)who->query("family/family_name")!="¶«º£Áú¹¬") {
-        message_vision("$NĞ±Ğ±µØî©ÁË$nÒ»ÑÛ£¬Ëµ£º´Ë²»×ãÎªÍâÈËµÀÒ²£¡\n", me, who);
+    if ((string)who->query("family/family_name")!="ä¸œæµ·é¾™å®«") {
+        message_vision("$Næ–œæ–œåœ°çŸäº†$nä¸€çœ¼ï¼Œè¯´ï¼šæ­¤ä¸è¶³ä¸ºå¤–äººé“ä¹Ÿï¼\n", me, who);
         return 1;
     }
     if ((int)me->query("number") >= 10)
-        return notify_fail("¹ê°Ë¶·°ÑÊÖÒ»Éì£¬½ñÌìĞ´Ì«¶àÁË£¬Ã÷¶ù¸öÔÙËµ°É£¡\n");
+        return notify_fail("é¾Ÿå…«æ–—æŠŠæ‰‹ä¸€ä¼¸ï¼Œä»Šå¤©å†™å¤ªå¤šäº†ï¼Œæ˜å„¿ä¸ªå†è¯´å§ï¼\n");
 
     ob=new("/d/sea/obj/fu");
     ob->move(who);
     me->add("number",1);
 
-    message_vision("$NÄÃ³öÕÅ·ûÖ½À´£¬»­³ö½ğÁú£¬µİ¸øÁË$n¡£\n", me, who);
+    message_vision("$Næ‹¿å‡ºå¼ ç¬¦çº¸æ¥ï¼Œç”»å‡ºé‡‘é¾™ï¼Œé€’ç»™äº†$nã€‚\n", me, who);
     return 1;
 }
 

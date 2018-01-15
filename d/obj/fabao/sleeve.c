@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // magic sleeve for holding stuffs.
@@ -12,10 +12,10 @@ int do_quit();
 
 void create()
 {
-     set_name("ÒÂĞäÖĞ",({"in sleeve","sleeve"}));     
-     set("short","ÒÂĞäÖĞ");
+     set_name("è¡£è¢–ä¸­",({"in sleeve","sleeve"}));     
+     set("short","è¡£è¢–ä¸­");
      set("long", @LONG
-ÕâÀïÆáºÚÒ»Æ¬£®£®£®
+è¿™é‡Œæ¼†é»‘ä¸€ç‰‡ï¼ï¼ï¼
 LONG
      );
      set_max_encumbrance(300000);

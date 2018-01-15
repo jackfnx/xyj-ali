@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "̶��С·");
+  set ("short", "潭边小路");
   set ("long", @LONG
 
-С·��Ϊ��������߶��Ĺ�ϵ���ѱ��ݻƵ���Ҷ�����ˡ�·�ߵ�
-�Ĳݼ����˸ߣ���紵��������һƬƬ�Ŀ�Ҷ���ݴ���Ҳ������
-�죬�������޷����ĺ�����
+小路因为年久无人走动的关系，已被枯黄的树叶覆盖了。路边的
+荒草几有人高，阵风吹过，卷起一片片的枯叶。草从中也呼呼做
+响，象是猛兽发出的吼声。
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 
@@ -41,8 +41,8 @@ void greeting(object me)
    seteuid(getuid());
    if(jing=new("/d/qujing/bibotan/npc/shujing"))
      jing->move(this_object());
-     message("vision", "\nһ���ʷ紵�������������¸���������\n\n", this_object() );
-     message_vision("����������$N��Ц�����ŵ�������������\n\n", me);
+     message("vision", "\n一阵惺风吹来，从树上跳下个妖怪来。\n\n", this_object() );
+     message_vision("柳树精看着$N大笑：上门的买卖，哈哈。\n\n", me);
    jing->kill_ob(me);
    me->fight_ob(jing);
 

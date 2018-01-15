@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // remove.c
@@ -14,7 +14,7 @@ int main(object me, string arg)
    object ob, *inv;
    int i;
 
-   if( !arg ) return notify_fail("ÄãÒªÍÑµôÊ²Ã´£¿\n");
+   if( !arg ) return notify_fail("ä½ è¦è„±æ‰ä»€ä¹ˆï¼Ÿ\n");
 
    if(arg=="all") {
      inv = all_inventory(me);
@@ -25,7 +25,7 @@ int main(object me, string arg)
    }
 
    if( !objectp(ob = present(arg, me)) )
-     return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+     return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
    return do_remove(me, ob);
 }
 
@@ -34,7 +34,7 @@ int do_remove(object me, object ob)
    string str;
 
    if( (string)ob->query("equipped")!="worn" )
-     return notify_fail("Äã²¢Ã»ÓĞ×°±¸ÕâÑù¶«Î÷¡£\n");
+     return notify_fail("ä½ å¹¶æ²¡æœ‰è£…å¤‡è¿™æ ·ä¸œè¥¿ã€‚\n");
 
    if( ob->unequip() ) {
      if( !stringp(str = ob->query("unequip_msg")) )
@@ -43,13 +43,13 @@ int do_remove(object me, object ob)
           case "armor":
           case "surcoat":
           case "boots":
-             str = YEL "$N½«$nÍÑÁËÏÂÀ´¡£\n" NOR;
+             str = YEL "$Nå°†$nè„±äº†ä¸‹æ¥ã€‚\n" NOR;
              break;
           case "bandage":
-             str = YEL "$N½«$n´ÓÉË¿Ú´¦²ğÁËÏÂÀ´¡£\n" NOR;
+             str = YEL "$Nå°†$nä»ä¼¤å£å¤„æ‹†äº†ä¸‹æ¥ã€‚\n" NOR;
              break;
           default:
-             str = YEL "$NĞ¶³ı$nµÄ×°±¸¡£\n" NOR;
+             str = YEL "$Nå¸é™¤$nçš„è£…å¤‡ã€‚\n" NOR;
         }
      message_vision(str, me, ob);
      return 1;
@@ -60,9 +60,9 @@ int do_remove(object me, object ob)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : remove all | <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : remove all | <ç‰©å“åç§°>
  
-Õâ¸öÖ¸ÁîÈÃÄãÍÑµôÉíÉÏÄ³¼ş·À¾ß.
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è„±æ‰èº«ä¸ŠæŸä»¶é˜²å…·.
  
 HELP
     );

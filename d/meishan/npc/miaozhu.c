@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 inherit NPC;
 void create()
 {
-       set_name("Ãí×£", ({"miao zhu", "keeper"}));
-   set("long", "¶şÀÉÃíÀïµÄÃí×£¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("åº™ç¥", ({"miao zhu", "keeper"}));
+   set("long", "äºŒéƒåº™é‡Œçš„åº™ç¥ã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 46);
        set("attitude", "peaceful");
        set("shen_type", 1);
@@ -16,8 +16,8 @@ void create()
         set_skill("dodge", 30);
         set_skill("parry", 15);
 set("inquiry", ([
-"¹©·î": "Ê±ÏÂĞèÒªÒ»Í·Öí¡£\n",
-"here": "¶şÀÉÃíÊÇÒ²£¬Èç³ÏĞÄ¹©·î£¬¶şÀÉÕæ¾ı¶¨»á±£ÓÓÄã¡£\n",
+"ä¾›å¥‰": "æ—¶ä¸‹éœ€è¦ä¸€å¤´çŒªã€‚\n",
+"here": "äºŒéƒåº™æ˜¯ä¹Ÿï¼Œå¦‚è¯šå¿ƒä¾›å¥‰ï¼ŒäºŒéƒçœŸå›å®šä¼šä¿ä½‘ä½ ã€‚\n",
 ]) );
 
         setup();
@@ -39,7 +39,7 @@ void greeting(object ob)
 
         switch( random(1) ) {
                 case 0:
-                message_vision("$NËµµÀ£ºÖ»Òª³ÏĞÄ¹©·î£¬¶şÀÉÕæ¾ı¶¨»á±£ÓÓÄã¡£\n",
+                message_vision("$Nè¯´é“ï¼šåªè¦è¯šå¿ƒä¾›å¥‰ï¼ŒäºŒéƒçœŸå›å®šä¼šä¿ä½‘ä½ ã€‚\n",
 this_object());
                 break;
         }
@@ -49,8 +49,8 @@ int accept_object(object who,object ob)
 {
         object m;
         if (ob->query("id")=="old pig") {
-                say("Ãí×£Ğ¦µÀ£º¶àĞ»"  + RANK_D->query_respect(who) +
-"£¬¶şÀÉÕæ¾ı¶¨»á±£ÓÓÄã¡£\n");
+                say("åº™ç¥ç¬‘é“ï¼šå¤šè°¢"  + RANK_D->query_respect(who) +
+"ï¼ŒäºŒéƒçœŸå›å®šä¼šä¿ä½‘ä½ ã€‚\n");
    who->set_temp("erlangpass", 1);
         call_out("destroy", 1, ob);
         return 1;

@@ -12,9 +12,9 @@ int main(object me)
 int help(object me)
 {
     write(@HELP
-指令格式 : clrer
+鎸囦护鏍煎紡 : clrer
 
-等价于call me->delete("error")
+绛変环浜巆all me->delete("error")
 HELP
     );
     return 1;

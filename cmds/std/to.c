@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // to.c
@@ -22,38 +22,38 @@ void do_to(object me, string arg, string str)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : to <ָ��>
+指令格式 : to <指令>
 
-����һ������������ϵ�����, <ָ��>ͨ�������ѶϢ��ָ����
-say��tell��describe��chat�������ȡ�
-���磺 
+可以一次输出多行以上的文字, <指令>通常是输出讯息的指令如
+say，tell，describe，chat。。。等。
+例如： 
 >to say
-�����뿪�� '.'��ȡ�������� '~q'��ʹ���ڽ��б༭���� '~e'��
-����������������������������������������������������������
+结束离开用 '.'，取消输入用 '~q'，使用内建列编辑器用 '~e'。
+—————————————————————————————
 
-          �ԡԡԡԡԡԡԷ����ԡԡԡԡԡԡ�
-            �����Ǿ� С��ͯ kuer             
-            �����Ǿ� ������� miner          
-            �����Ǿ� ��ʯ san                
-            ľ���Ǿ� ɽˮ wen                
-            ˮ���Ǿ� С¥ pxl                
-            �����Ǿ� �׸���� hengha         
-            �����Ǿ� СӢ nonn               
-          �ԡԡԡԡԡԡԡԡԡԡԡԡԡԡԡԡ�
+          ≡≡≡≡≡≡≡封神榜≡≡≡≡≡≡≡
+            日曜星君 小道童 kuer             
+            月曜星君 魂断兰桥 miner          
+            金曜星君 三石 san                
+            木曜星君 山水 wen                
+            水曜星君 小楼 pxl                
+            火曜星君 宰父多多 hengha         
+            土曜星君 小英 nonn               
+          ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 .
 
-�����ӫĻ�ϵĽ������ :
+输出到荧幕上的结果则是 :
 
-��˵����
-          �ԡԡԡԡԡԡԷ����ԡԡԡԡԡԡ�
-            �����Ǿ� С��ͯ kuer             
-            �����Ǿ� ������� miner          
-            �����Ǿ� ��ʯ san                
-            ľ���Ǿ� ɽˮ wen                
-            ˮ���Ǿ� С¥ pxl                
-            �����Ǿ� �׸���� hengha         
-            �����Ǿ� СӢ nonn               
-          �ԡԡԡԡԡԡԡԡԡԡԡԡԡԡԡԡ�
+你说道：
+          ≡≡≡≡≡≡≡封神榜≡≡≡≡≡≡≡
+            日曜星君 小道童 kuer             
+            月曜星君 魂断兰桥 miner          
+            金曜星君 三石 san                
+            木曜星君 山水 wen                
+            水曜星君 小楼 pxl                
+            火曜星君 宰父多多 hengha         
+            土曜星君 小英 nonn               
+          ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 
 HELP
     );

@@ -1,27 +1,27 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// bear-monster.c ºÚĞÜ¹Ö
+// bear-monster.c é»‘ç†Šæ€ª
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-    set_name("ºÚĞÜ¹Ö", ({ "bear monster", "bear", "monster" }));
-    set("title", "ÊØÉ½´óÉñ");   
+    set_name("é»‘ç†Šæ€ª", ({ "bear monster", "bear", "monster" }));
+    set("title", "å®ˆå±±å¤§ç¥");   
     set("long", @LONG
 
-ºÚĞÜ¹Ö±¾ÊÇÉ½Ò°¼äµÄÒ»Î»ÑıÍõ£¬ÒòÎªµÃ×ïÁËĞÄÔ³Îò¿Õ²îµã±»´òËÀ¡£
-ĞÒºÃ£¬¹ÛÒôÆĞÈø´È±¯Îª»³¾ÈÏÂÁËËû¡£
-Ëû¸Ğ¼¤ÆĞÈø¾ÈÃüÖ®¶÷£¬×öÁËÆÕÍÓÉ½µÄÊØÉ½´óÉñ¡£
+é»‘ç†Šæ€ªæœ¬æ˜¯å±±é‡é—´çš„ä¸€ä½å¦–ç‹ï¼Œå› ä¸ºå¾—ç½ªäº†å¿ƒçŒ¿æ‚Ÿç©ºå·®ç‚¹è¢«æ‰“æ­»ã€‚
+å¹¸å¥½ï¼Œè§‚éŸ³è©è¨æ…ˆæ‚²ä¸ºæ€€æ•‘ä¸‹äº†ä»–ã€‚
+ä»–æ„Ÿæ¿€è©è¨æ•‘å‘½ä¹‹æ©ï¼Œåšäº†æ™®é™€å±±çš„å®ˆå±±å¤§ç¥ã€‚
 LONG);
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("age", 30);
     set("attitude", "heroism");
     set("per", 9);
-    set("rank_info/self", "ºÚĞÜ");
-    set("rank_info/rude", "ĞÜ¹Ö");
+    set("rank_info/self", "é»‘ç†Š");
+    set("rank_info/rude", "ç†Šæ€ª");
     set("max_kee", 1000);
     set("max_gin", 600);
     set("max_sen", 1000);
@@ -57,7 +57,7 @@ LONG);
         (: cast_spell, "bighammer" :),
         (: cast_spell, "jingang" :),
     }) );
-    create_family("ÄÏº£ÆÕÍÓÉ½", 2, "µÜ×Ó");
+    create_family("å—æµ·æ™®é™€å±±", 2, "å¼Ÿå­");
 
     setup();
     carry_object("/obj/cloth")->wear();
@@ -67,15 +67,15 @@ LONG);
 
 void attempt_apprentice(object ob)
 {
-    if ((string)ob->query("family/family_name")=="ÄÏº£ÆÕÍÓÉ½") {
+    if ((string)ob->query("family/family_name")=="å—æµ·æ™®é™€å±±") {
         command("smile");
-        command("say ºÜºÃ£¬ÎÒ¾ÍÊÕÏÂÄã£¬Ï£ÍûÄã¶à¼ÓÅ¬Á¦£¬Ôç³ÉÕı¹û¡£\n");
+        command("say å¾ˆå¥½ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ ï¼Œå¸Œæœ›ä½ å¤šåŠ åŠªåŠ›ï¼Œæ—©æˆæ­£æœã€‚\n");
         command("recruit " + ob->query("id") );
         return;
     }
 
     command("shake");
-    command("say " + "ÆĞÈø²»ÈÃÎÒËæ±ãÊÕÍâÈËÎªÍ½¡£\n");
+    command("say " + "è©è¨ä¸è®©æˆ‘éšä¾¿æ”¶å¤–äººä¸ºå¾’ã€‚\n");
     return;
 }
 

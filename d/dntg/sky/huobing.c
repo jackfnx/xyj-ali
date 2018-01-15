@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("»ğ²¿Éñ±ø", ({ "huo bing", "bing"}));
-    set("race", "ÈËÀà");
+    set_name("ç«éƒ¨ç¥å…µ", ({ "huo bing", "bing"}));
+    set("race", "äººç±»");
     set("age", 500);
-    set("long", "Ì«ÉÏÀÏ¾ıµÄ»ğ²¿Éñ±ø.\n");
+    set("long", "å¤ªä¸Šè€å›çš„ç«éƒ¨ç¥å…µ.\n");
    
     set("str", 40);
     set("per", 400);
@@ -30,14 +30,14 @@ void create()
     map_skill("spear", "huoyun-qiang");
     map_skill("parry", "huoyun-qiang");
     map_skill("dodge", "dragonstep");
-    set("limbs", ({ "Í·", "ÉíÌå", "ÍÈ", "½Å",})); 
+    set("limbs", ({ "å¤´", "èº«ä½“", "è…¿", "è„š",})); 
     setup();
 }
 
 void die()
 {
             if (environment()) 
-        message("sound", ""HIY"»ğ²¿Éñ±øÏûÊ§ÔÚ»ğº£Ö®ÖĞ¡£"NOR"\n", environment());        
+        message("sound", ""HIY"ç«éƒ¨ç¥å…µæ¶ˆå¤±åœ¨ç«æµ·ä¹‹ä¸­ã€‚"NOR"\n", environment());        
                 destruct(this_object());
 }
 

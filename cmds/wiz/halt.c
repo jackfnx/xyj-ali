@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // halt.c
@@ -9,10 +9,10 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
    if( !me->is_fighting() )
-     return notify_fail("ÄãÏÖÔÚ²¢Ã»ÓĞÔÚÕ½¶·¡£\n");
+     return notify_fail("ä½ ç°åœ¨å¹¶æ²¡æœ‰åœ¨æˆ˜æ–—ã€‚\n");
    me->remove_all_killer();
    me->remove_all_fucker();
-   message_vision("$NÓÃÎ×Ê¦µÄÉñÁ¦Í£Ö¹ÁËÕâ³¡´ò¶·¡£\n", me);
+   message_vision("$Nç”¨å·«å¸ˆçš„ç¥åŠ›åœæ­¢äº†è¿™åœºæ‰“æ–—ã€‚\n", me);
    write("Ok.\n");
    return 1;
 }
@@ -20,9 +20,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½: halt
+æŒ‡ä»¤æ ¼å¼: halt
 
-¿ÉÒÔÍ£Ö¹ËùÓĞÓëÄãÓĞ¹ØµÄÕ½¶·¡£
+å¯ä»¥åœæ­¢æ‰€æœ‰ä¸ä½ æœ‰å…³çš„æˆ˜æ–—ã€‚
 HELP
    );
    return 1;

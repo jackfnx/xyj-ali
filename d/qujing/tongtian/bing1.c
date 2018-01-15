@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/15/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "冰道");
   set ("long", @LONG
 
-���涳�ý��ʵʵ������һ����Ѿ������߳�һ�������ı�
-����Ҳ�д���˻������µĺۼ���������ش������ϣ��̹ǵ�
-���䡣
+河面冻得结结实实，厚厚的一层冰已经被人走出一条长长的冰
+道，也有大冰撬滑过留下的痕迹。风呼呼地打在脸上，刺骨地
+寒冷。
 
 LONG);
 
@@ -40,7 +40,7 @@ void init ()
 
 void cracking (object where)
 {
-  tell_room (where, "�������ǵ�һ�����졣\n");
+  tell_room (where, "冰发出咔地一声轻响。\n");
 }
 
 int test_player (object who)
@@ -60,7 +60,7 @@ int test_player (object who)
 
   name = names[0];
 
-  if (name != "Сͯ")
+  if (name != "小童")
     return 0;
 
   if (present ("bishui zhou",who))
@@ -74,17 +74,17 @@ void testing (object who, object where)
 
   if (status==0)
   {
-    tell_room (where, "���������졣\n");
+    tell_room (where, "冰咔咔作响。\n");
     return;
   }
 
   if (environment (who) != where)
     return;
 
-  message_vision ("�������ѿ�һ���ѷ죬$Nһ��������������ˤ��ˮ�У�\n",who);
+  message_vision ("冰面上裂开一道裂缝，$N一个趔趄不由自主地摔进水中！\n",who);
   if (status == 1)
   {
-    message_vision ("���˸�������æ��$N����һ���ϳ���ˮ��\n",who);
+    message_vision ("众人赶来，连忙将$N冰棍一般拖出冰水。\n",who);
     who->unconcious();
     return;
   }

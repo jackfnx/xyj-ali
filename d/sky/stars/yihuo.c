@@ -1,5 +1,5 @@
 
-//Òí»ğĞÇ¹Ù
+//ç¿¼ç«æ˜Ÿå®˜
 inherit NPC;
 
 void create()
@@ -8,14 +8,14 @@ void create()
     gd=random(2);
     sk=random(10);
 
-    set_name("Òí»ğĞÇ¹Ù", ({ "xing guan", "huan", "star" }));
+    set_name("ç¿¼ç«æ˜Ÿå®˜", ({ "xing guan", "huan", "star" }));
     set("long", @LONG
-¶şÊ®°ËÎ»ĞÇ¹ÙÖ®Ò»£¬ÕıÔÚµîÖĞËÄ´¦Ñ²ÓÎ¡£
+äºŒåå…«ä½æ˜Ÿå®˜ä¹‹ä¸€ï¼Œæ­£åœ¨æ®¿ä¸­å››å¤„å·¡æ¸¸ã€‚
 LONG);
-    set("title", "ĞÇËŞ");
+    set("title", "æ˜Ÿå®¿");
 
-    if (gd==1) set("gender", "ÄĞĞÔ");
-    else set("gender", "Å®ĞÔ");
+    if (gd==1) set("gender", "ç”·æ€§");
+    else set("gender", "å¥³æ€§");
     set("age", 60);
     set("class", "taoist");
     set("attitude", "friendly");

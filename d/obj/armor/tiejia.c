@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tiejia.c
@@ -8,13 +8,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("Ìú¼×", ({"iron armor","tiejia","jia","armor"}));
+        set_name("é“ç”²", ({"iron armor","tiejia","jia","armor"}));
         set_weight(40000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-       set("long", "Ò»¼ş³ÁµéµéµÄÌú¼×¡£\n");
+                set("unit", "ä»¶");
+       set("long", "ä¸€ä»¶æ²‰ç”¸ç”¸çš„é“ç”²ã€‚\n");
                 set("value", 3000);
                 set("material", "steel");
                 set("armor_prop/armor", 40);

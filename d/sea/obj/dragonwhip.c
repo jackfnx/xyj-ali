@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,18 +7,18 @@ inherit WHIP;
 
 void create()
 {
-        set_name("ÈíÁú½î", ({"dragon whip", "whip"}));
+        set_name("è½¯é¾™ç­‹", ({"dragon whip", "whip"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 
-set("long","Ò»Ìõ³¤Ô¼Áù³ß£¬ÇàºìÁú½î²ø³ÉµÄ³¤±Ş¡£\n");
-                set("unit", "Ìõ");
+set("long","ä¸€æ¡é•¿çº¦å…­å°ºï¼Œé’çº¢é¾™ç­‹ç¼ æˆçš„é•¿é­ã€‚\n");
+                set("unit", "æ¡");
                 set("value", 5000);
                 set("wield_msg",
-"Ö»Ìı¡¸Å¾¡¹µÄÒ»ÉùÏì£¬$NµÄÊÖÖĞÉÁ³öÒ»ÌõÇàºìÉ«µÄ³¤±Ş£®\n");
-                set("unwield_msg", "$N°ÑÊÖÖĞ$n²ø»ØÑü¼ä£®\n");
+"åªå¬ã€Œå•ªã€çš„ä¸€å£°å“ï¼Œ$Nçš„æ‰‹ä¸­é—ªå‡ºä¸€æ¡é’çº¢è‰²çš„é•¿é­ï¼\n");
+                set("unwield_msg", "$NæŠŠæ‰‹ä¸­$nç¼ å›è…°é—´ï¼\n");
         }
         init_whip(50);
         setup();

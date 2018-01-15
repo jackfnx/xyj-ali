@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// dingshen.c ¶¨Éí·¨
+// dingshen.c å®šèº«æ³•
 #include <ansi.h>
 
 inherit F_SSERVER;
@@ -16,28 +16,28 @@ int cast(object me, object target)
    if( !target ) target = offensive_target(me);
 
    if((int)me->query_skill("spells") < 100)
-     return notify_fail("Äã»¹Ã»Ñ§»á¶¨Éí·¨¡£¡£¡£\n");
+     return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šå®šèº«æ³•ã€‚ã€‚ã€‚\n");
 
    if( !target
    ||      !target->is_character()
    ||      target->is_corpse()
    ||      target==me)
-     return notify_fail("ÄãÏë°ÑË­¶¨×¡£¿\n");
+     return notify_fail("ä½ æƒ³æŠŠè°å®šä½ï¼Ÿ\n");
 
    if(target->query_temp("no_move"))
-     return notify_fail(target->query("name")+"ÒÑ¾­¶¯µ¯²»µÃÁË£¡\n");
+     return notify_fail(target->query("name")+"å·²ç»åŠ¨å¼¹ä¸å¾—äº†ï¼\n");
 
    if((int)me->query("mana") < 500 )
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
    if((int)me->query("sen") < 10 )
-     return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦£¡\n");
+     return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
    me->add("mana", -500);
    me->receive_damage("sen", 10);
 
    msg = HIC
-"$N¿ÚÖĞÄîÁË¾äÖäÎÄ£¬³¯$nÒ»Ö¸£¬´óºÈÒ»Éù£º¶¨£¡\n" 
+"$Nå£ä¸­å¿µäº†å¥å’’æ–‡ï¼Œæœ$nä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°ï¼šå®šï¼\n" 
 NOR;
 
    success = 1;
@@ -61,7 +61,7 @@ NOR;
 
    howlong = 0;        
    if(success == 1 ){
-     msg +=  HIR "½á¹û$nÊÖ×ã½©Ó²£¬¹ûÈ»¶¯µ¯²»µÃ£¡\n" NOR;
+     msg +=  HIR "ç»“æœ$næ‰‹è¶³åƒµç¡¬ï¼Œæœç„¶åŠ¨å¼¹ä¸å¾—ï¼\n" NOR;
      target->set_temp("no_move", 1);
    
      howlong = 15 + random((me->query_skill("spells") -100));
@@ -69,7 +69,7 @@ NOR;
 //a typical level is 100+100 ->enabled 150, so will "ding" about 1 minute in the best case.
    }       
    else {
-     msg +=  HIR "½á¹û$n±»ÏÅÁËÒ»Ìø£¡\n" NOR;   
+     msg +=  HIR "ç»“æœ$nè¢«å“äº†ä¸€è·³ï¼\n" NOR;   
    } 
 
    message_vision(msg, me, target);

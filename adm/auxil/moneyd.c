@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 string money_str(int amount)
@@ -7,17 +7,17 @@ string money_str(int amount)
         string output;
 
         if (amount / 10000) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ğ";
+                output = chinese_number(amount / 10000) + "ä¸¤é»„é‡‘";
                 amount %= 10000;
         }
         else
                 output = "";
         if (amount / 100) {
-                output = output + chinese_number(amount / 100) + "Á½°×Òø";
+                output = output + chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
                 amount %= 100;
         }
         if (amount)
-                return output + chinese_number(amount) + "ÎÄÍ­°å";
+                return output + chinese_number(amount) + "æ–‡é“œæ¿";
         return output;
 }
 
@@ -30,23 +30,23 @@ string price_str(int amount)
                 amount = 1;
 
         if (amount / 10000) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ğ";
+                output = chinese_number(amount / 10000) + "ä¸¤é»„é‡‘";
                 amount %= 10000;
         }
         else
                 output = "";
         if (amount / 100) {
 		if (output != "")
-                	output += "ÓÖ" + chinese_number(amount / 100) + "Á½°×Òø";
+                	output += "åˆ" + chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
 		else
-			output = chinese_number(amount / 100) + "Á½°×Òø";
+			output = chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
                 amount %= 100;
         }
         if (amount)
 		if (output != "")
-                	return output + "ÓÖ" + chinese_number(amount) + "ÎÄÍ­°å";
+                	return output + "åˆ" + chinese_number(amount) + "æ–‡é“œæ¿";
 		else
-			return chinese_number(amount) + "ÎÄÍ­°å";
+			return chinese_number(amount) + "æ–‡é“œæ¿";
         return output;
 }
 

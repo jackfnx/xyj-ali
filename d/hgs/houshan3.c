@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /4world/houshan3
@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºóÉ½");
+  set ("short", "åå±±");
   set ("long", @LONG
 
-»¨¹ûÉ½ºóÉ½ÖĞµÄÒ»Ğ¡¿éÆ½µØ¡£ÒªÏÂÉ½µÃ´©¹ıÄÏÃæÒ»Æ¬Ê÷´Ô¡£¶«
-ÃæÃæÊÇÒ»Æ¬ÌÒÊ÷ÁÖ£¬»Æ³Î³ÎµÄâ¨ºïÌÒÏÔÈ»ÒÑ¾­ÊìÍ¸£¬Ò»Õó¹ûÏã
-Æ®À´£¬Äã¿ÚË®¶¼Á÷ÁË³öÀ´¡£²»¹ıÌÒÁÖ±ßÉÏÓĞÁ½Ö»´óÂíºï£¬Âú»³
-µĞÒâµØ×¢ÊÓ×ÅÄã¡£
+èŠ±æœå±±åå±±ä¸­çš„ä¸€å°å—å¹³åœ°ã€‚è¦ä¸‹å±±å¾—ç©¿è¿‡å—é¢ä¸€ç‰‡æ ‘ä¸›ã€‚ä¸œ
+é¢é¢æ˜¯ä¸€ç‰‡æ¡ƒæ ‘æ—ï¼Œé»„æ¾„æ¾„çš„çŒ•çŒ´æ¡ƒæ˜¾ç„¶å·²ç»ç†Ÿé€ï¼Œä¸€é˜µæœé¦™
+é£˜æ¥ï¼Œä½ å£æ°´éƒ½æµäº†å‡ºæ¥ã€‚ä¸è¿‡æ¡ƒæ—è¾¹ä¸Šæœ‰ä¸¤åªå¤§é©¬çŒ´ï¼Œæ»¡æ€€
+æ•Œæ„åœ°æ³¨è§†ç€ä½ ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 2 */
@@ -36,11 +36,11 @@ int valid_leave(object me, string dir)
         if(objectp(mys=present("ma yuanshuai", environment(me)))&&
            objectp(lys=present("liu yuanshuai", environment(me)))
            && living(mys) && living(lys) )
-   return notify_fail("ÂíÁ÷¶şÔªË§×ìÀïÒ»ÕóÖ¨Ö¨ÂÒ½Ğ£¬¶ñºİºİµØ°ÑÄãÀ¹×¡ÁË¡£\n");
+   return notify_fail("é©¬æµäºŒå…ƒå¸…å˜´é‡Œä¸€é˜µå±å±ä¹±å«ï¼Œæ¶ç‹ ç‹ åœ°æŠŠä½ æ‹¦ä½äº†ã€‚\n");
         if(objectp(mys=present("ma yuanshuai", environment(me)))&&living(mys))
-   return notify_fail("ÂíÔªË§×ìÀïÒ»ÕóÖ¨Ö¨ÂÒ½Ğ£¬¶ñºİºİµØ°ÑÄãÀ¹×¡ÁË¡£\n");
+   return notify_fail("é©¬å…ƒå¸…å˜´é‡Œä¸€é˜µå±å±ä¹±å«ï¼Œæ¶ç‹ ç‹ åœ°æŠŠä½ æ‹¦ä½äº†ã€‚\n");
         if(objectp(lys=present("liu yuanshuai", environment(me)))&&living(lys))
-            return notify_fail("Á÷ÔªË§×ìÀïÒ»ÕóÖ¨Ö¨ÂÒ½Ğ£¬¶ñºİºİµØ°ÑÄãÀ¹×¡ÁË¡£\n");
+            return notify_fail("æµå…ƒå¸…å˜´é‡Œä¸€é˜µå±å±ä¹±å«ï¼Œæ¶ç‹ ç‹ åœ°æŠŠä½ æ‹¦ä½äº†ã€‚\n");
     }
     return ::valid_leave(me, dir);
 }

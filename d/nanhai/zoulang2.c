@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/nanhai/fanting
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×ßÀÈ");
+  set ("short", "èµ°å»Š");
   set ("long", @LONG
 
-ÕâÀïÊÇÍ¨ÍùÕ«·¿µÄ×ßÀÈ£¬ÆÕÍÓÉ½ÃÅÈËµÜ×ÓÃÇÓÃÕ«Ç°ÍùÍùÔÚ´Ë
-Ğ¡í¬Æ¬¿Ì£¬ÓĞÈË³Ë»úÑ°µÃÒ»Ğ©Ò©Æ·Áéµ¤À´ÁÆÉËÑø¾«¡£½ÇÂäÉÏ
-ËÆºõÓĞÒ»ÉÈĞ¡ÃÅÍ¨ÍùÀïÎİ¡£
+è¿™é‡Œæ˜¯é€šå¾€æ–‹æˆ¿çš„èµ°å»Šï¼Œæ™®é™€å±±é—¨äººå¼Ÿå­ä»¬ç”¨æ–‹å‰å¾€å¾€åœ¨æ­¤
+å°æ†©ç‰‡åˆ»ï¼Œæœ‰äººä¹˜æœºå¯»å¾—ä¸€äº›è¯å“çµä¸¹æ¥ç–—ä¼¤å…»ç²¾ã€‚è§’è½ä¸Š
+ä¼¼ä¹æœ‰ä¸€æ‰‡å°é—¨é€šå¾€é‡Œå±‹ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
@@ -27,14 +27,14 @@ LONG);
   set("objects", ([ /* sizeof() == 1 */
   __DIR__"npc/zhangchu" : 1,
 ]));
-create_door("south", "Ğ¡ÃÅ", "north", DOOR_CLOSED);
+create_door("south", "å°é—¨", "north", DOOR_CLOSED);
 
   setup();
 }
 int valid_leave(object me, string dir)
 {
-if (me->query("family/family_name") != "ÄÏº£ÆÕÍÓÉ½" && dir == "east")
+if (me->query("family/family_name") != "å—æµ·æ™®é™€å±±" && dir == "east")
 if(objectp(present("zhangchu seng", environment(me))))
-return notify_fail("ÕÆ³øÉ®ÉìÊÖÀ¹×¡Äã£ºÀïÃæÊÇ±¾ÅÉ³ø·¿£¬" + RANK_D->query_respect(me) + "ÇëÁô²½£¡\n");   
+return notify_fail("æŒå¨åƒ§ä¼¸æ‰‹æ‹¦ä½ä½ ï¼šé‡Œé¢æ˜¯æœ¬æ´¾å¨æˆ¿ï¼Œ" + RANK_D->query_respect(me) + "è¯·ç•™æ­¥ï¼\n");   
 return ::valid_leave(me, dir);
 }

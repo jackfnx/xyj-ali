@@ -5,19 +5,19 @@ inherit NPC;
 
 void create()
 {
-  set_name("³þ³þ",({"star yixue","yixue","star"}));
-  set("gender", "Å®ÐÔ");
-  set("title", "ÐÄÔÂÐÇ¹Ù");
+  set_name("æ¥šæ¥š",({"star yixue","yixue","star"}));
+  set("gender", "å¥³æ€§");
+  set("title", "å¿ƒæœˆæ˜Ÿå®˜");
   set("age", 43);
   set ("long", @LONG
-·çÑ©½£ÅÉÕÆÃÅ´óÊ¦½ã ¡¸³þ³þ½£ -- ³þ³þ¡¹
-   ·çÓê·×·×·çÖÐ´³½­ºþ·çÓêÐÄÏàÆÝ
-½£   
-Ïµ   µ´Ä§½£--Ð¡Áîºü
-·ç   ÌìÑÄ½£--ÀË¼£ÌìÑÄ
-Ñ©   ¹ÂÐÇ½£--Á÷ÐÇºûµû½£
-Çé
-   Ñ©Ô­Ã§Ã§Ñ©ÏÂÒäÉñÖÝÑ©Ô­Ó³µ¤ÐÄ
+é£Žé›ªå‰‘æ´¾æŽŒé—¨å¤§å¸ˆå§ ã€Œæ¥šæ¥šå‰‘ -- æ¥šæ¥šã€
+   é£Žé›¨çº·çº·é£Žä¸­é—¯æ±Ÿæ¹–é£Žé›¨å¿ƒç›¸æˆš
+å‰‘   
+ç³»   è¡é­”å‰‘--å°ä»¤ç‹
+é£Ž   å¤©æ¶¯å‰‘--æµªè¿¹å¤©æ¶¯
+é›ª   å­¤æ˜Ÿå‰‘--æµæ˜Ÿè´è¶å‰‘
+æƒ…
+   é›ªåŽŸèŽ½èŽ½é›ªä¸‹å¿†ç¥žå·žé›ªåŽŸæ˜ ä¸¹å¿ƒ
 LONG);
 
   set("attitude", "heroism");
@@ -52,10 +52,10 @@ void init()
   string armor1_id="waist",armor2_id="pifeng";
   ::init();
   if (my_weapon=present(weapon_id, me))
-       my_weapon->set("name",HIB"³þ³þ¶¯ÈË½£"NOR);
+       my_weapon->set("name",HIB"æ¥šæ¥šåŠ¨äººå‰‘"NOR);
   if (my_armor1=present(armor1_id, me))
-       my_armor1->set("name",HIC"ÀäÔÂ¹ÂÚ£´ø"NOR);
+       my_armor1->set("name",HIC"å†·æœˆå­¤å†¢å¸¦"NOR);
   if (my_armor2=present(armor2_id, me))
-       my_armor2->set("name",HIW"ÌììøÑ©ÎèÒÂ"NOR);
+       my_armor2->set("name",HIW"å¤©ç¦…é›ªèˆžè¡£"NOR);
 }
 

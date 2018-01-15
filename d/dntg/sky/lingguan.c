@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-    set_name("Áé¹Ù",({"ling guan", "guan", "xian",}));
-    set("long", "ÓÓÊ¥Õæ¾ıÊÖÏÂµÄÁé¹Ù£¬æçÓÂÎŞ±È¡£.\n");
+    set_name("çµå®˜",({"ling guan", "guan", "xian",}));
+    set("long", "ä½‘åœ£çœŸå›æ‰‹ä¸‹çš„çµå®˜ï¼Œéªå‹‡æ— æ¯”ã€‚.\n");
     set("per", 23);
     set("str", 30);
     set_skill("force", 100);

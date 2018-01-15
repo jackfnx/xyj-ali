@@ -15,26 +15,26 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕÐ¡¸¼ÀÇ¹¡¹£¿\n");
-    if (me->query("family/family_name")!="»ðÔÆ¶´")
-        return notify_fail("¡°¼ÀÇ¹¡±Ö»ÓÐ»ðÔÆ¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œç¥­æžªã€ï¼Ÿ\n");
+    if (me->query("family/family_name")!="ç«äº‘æ´ž")
+        return notify_fail("â€œç¥­æžªâ€åªæœ‰ç«äº‘æ´žé—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
     if (!me->is_fighting())
-        return notify_fail("¡¸¼ÀÇ¹¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ£¡\n");
+        return notify_fail("ã€Œç¥­æžªã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
     if ((int)me->query("max_force") < 1000)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query("force") < 1000)
-        return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
     if ((int)me->query("sen") < 500)
-        return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+        return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
     if (me->query_skill_mapped("force")!="firelord")
-        return notify_fail("¼ÀÇ¹±ØÐëÅäºÏ»ðÄ§ÐÄ·¨²ÅÄÜÊ¹ÓÃ¡£\n");
+        return notify_fail("ç¥­æžªå¿…é¡»é…åˆç«é­”å¿ƒæ³•æ‰èƒ½ä½¿ç”¨ã€‚\n");
 
     i = (int)me->query_skill("huoyun-qiang", 1) + (int)me->query_kar();
 
     if (i < 100)
-        return notify_fail("ÄãµÄ»ðÔÆÇ¹¼¶±ð»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕÐ»áÓÐÀ§ÄÑ£¡\n");
+        return notify_fail("ä½ çš„ç«äº‘æžªçº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
 
-    message_vision(HIR "\nÖ»¼û$NÏò"+weapon->query("name")+HIR "ÉÏÍÂÁË¿ÚÏÊÑª,´óºÈÒ»Éù:¼ÀÇ¹£¡\n" NOR,me);
+    message_vision(HIR "\nåªè§$Nå‘"+weapon->query("name")+HIR "ä¸Šåäº†å£é²œè¡€,å¤§å–ä¸€å£°:ç¥­æžªï¼\n" NOR,me);
 
     me->delete("env/brief_message");
     target->delete("env/brief_message");

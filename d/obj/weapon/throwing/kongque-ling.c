@@ -6,13 +6,13 @@ inherit THROWING;
 
 void create()
 {
-    set_name("¿×È¸ôá", ({"kongque ling","ling"}));
+    set_name("å­”é›€ç¿Ž", ({"kongque ling","ling"}));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "¼¸Ö§¿×È¸ÉíÉÏµÄÓðÃ«¡£\n");
-        set("unit", "°Ñ");
-        set("base_unit", "Ö§");
+        set("long", "å‡ æ”¯å­”é›€èº«ä¸Šçš„ç¾½æ¯›ã€‚\n");
+        set("unit", "æŠŠ");
+        set("base_unit", "æ”¯");
         set("base_weight", 5);
         set("value", 3);
     }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat feb 4 1998
@@ -18,7 +18,7 @@ int main(object who, string arg)
       ! where ||
       ! (me = present(arg,where)) ||
       ! me->query("ride/msg"))
-    return notify_fail ("ÄãÏëÆïÊ²Ã´£¿\n");
+    return notify_fail ("ä½ æƒ³éª‘ä»€ä¹ˆï¼Ÿ\n");
 
   ridee = who->query_temp("ridee");
   if (ridee &&
@@ -26,7 +26,7 @@ int main(object who, string arg)
    ridee = 0;
 
   if (ridee)
-    return notify_fail ("ÄãÒÑ¾­"+ridee->query("ride/msg")+"ÔÚ"+ridee->name()+"ÉÏÁË£¡\n");
+    return notify_fail ("ä½ å·²ç»"+ridee->query("ride/msg")+"åœ¨"+ridee->name()+"ä¸Šäº†ï¼\n");
 
   rider = me->query_temp("rider");
   if (rider &&
@@ -34,9 +34,9 @@ int main(object who, string arg)
    rider = 0;
 
   if (rider)
-    return notify_fail (me->name()+"ÉÏÒÑÓĞÈËÁË£¡\n");
+    return notify_fail (me->name()+"ä¸Šå·²æœ‰äººäº†ï¼\n");
 
-  message_vision ("$NäìÈ÷µØÒ»¸ö×İÉí£¬ÎÈÎÈµØ"+me->query("ride/msg")+"ÔÚ$nÉÏ£¡\n",who,me);
+  message_vision ("$Næ½‡æ´’åœ°ä¸€ä¸ªçºµèº«ï¼Œç¨³ç¨³åœ°"+me->query("ride/msg")+"åœ¨$nä¸Šï¼\n",who,me);
   me->set_temp("no_return",1);
   me->set_temp("rider",who);
   who->set_temp("ridee",me);
@@ -49,9 +49,9 @@ int main(object who, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : mount <×øÆïÃû³Æ>
+æŒ‡ä»¤æ ¼å¼ : mount <åéª‘åç§°>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÆïµ½×øÆïÉíÉÏ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ éª‘åˆ°åéª‘èº«ä¸Šã€‚
 
 HELP
 );

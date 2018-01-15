@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/5/1997 by snowcat
@@ -10,8 +10,8 @@ void create()
 {
   string dir;
 
-  set_name("±·Á¦´óÏÉ", ({"beili daxian", "daxian"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("ç‹ˆåŠ›å¤§ä»™", ({"beili daxian", "daxian"}));
+  set("gender", "ç”·æ€§");
   set("age", 40);
   set("attitude", "peaceful");
   set("combat_exp", 1100000);
@@ -56,7 +56,7 @@ void unconcious()
   object bone = new ("/d/obj/misc/bone");
 
   bone->move(environment(this_object()));
-  message_vision ("\n$N»ëÉíÒ»ÈíÌ±ÔÚµØÉÏ£¬»¯×öÒ»¶ÑÁãÉ¢µÄÊŞ¹Ç¡£\n",
+  message_vision ("\n$Næµ‘èº«ä¸€è½¯ç˜«åœ¨åœ°ä¸Šï¼ŒåŒ–åšä¸€å †é›¶æ•£çš„å…½éª¨ã€‚\n",
                   this_object());
   destruct(this_object());
 }
@@ -66,7 +66,7 @@ void die()
   object bone = new ("/d/obj/misc/bone");
 
   bone->move(environment(this_object()));
-  message_vision ("\n$N»ëÉíÒ»ÈíÌ±ÔÚµØÉÏ£¬»¯×öÒ»¶ÑÁãÉ¢µÄÊŞ¹Ç¡£\n",
+  message_vision ("\n$Næµ‘èº«ä¸€è½¯ç˜«åœ¨åœ°ä¸Šï¼ŒåŒ–åšä¸€å †é›¶æ•£çš„å…½éª¨ã€‚\n",
                   this_object());
   destruct(this_object());
 }

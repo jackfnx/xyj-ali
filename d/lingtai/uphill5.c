@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in Î÷Å£ºØÖÞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // uphill5.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "ÇàÊ¯½×");
+  set ("short", "é’çŸ³é˜¶");
   set ("long", @LONG
 
-Ò»Ìõ³¤³¤µÄÊ¯½×Á¬ÏòÉ½¶¥µÄ£¬Ê¯Ãæ¹â»¬£¬ËÆºõ³£ÄêÓÐÈË×ß¹ý¡£Á½±ß
-ËÉÊ÷´íÂäÓÐÖÂ£¬ÏóÊÇÓÐÈË±£Ñø£¬È´¿´²»µ½Ò»¸öÈËÓ°¡£
+ä¸€æ¡é•¿é•¿çš„çŸ³é˜¶è¿žå‘å±±é¡¶çš„ï¼ŒçŸ³é¢å…‰æ»‘ï¼Œä¼¼ä¹Žå¸¸å¹´æœ‰äººèµ°è¿‡ã€‚ä¸¤è¾¹
+æ¾æ ‘é”™è½æœ‰è‡´ï¼Œè±¡æ˜¯æœ‰äººä¿å…»ï¼Œå´çœ‹ä¸åˆ°ä¸€ä¸ªäººå½±ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "northup" : __DIR__"uphill6",

@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// ÇàÓñºùÂ«, created by mes
+// é’ç‰è‘«èŠ¦, created by mes
 // updated 6-9-97 pickle
  
 #include <ansi.h>
@@ -11,16 +11,16 @@ inherit ITEM;
  
 void create()
 {
-    set_name(HIC "ÇàÓñºùÂ«" NOR,({"qingyu hulu", "qingyu", "hulu", "qingyuhulu", "fabao"}));
+    set_name(HIC "é’ç‰è‘«èŠ¦" NOR,({"qingyu hulu", "qingyu", "hulu", "qingyuhulu", "fabao"}));
     set_weight(5000);
     set_max_encumbrance (50000);
     if(clonep())
    set_default_object(__FILE__);
     else {
-   set("unit","Ö»");
+   set("unit","åª");
    set("value",100);
    set("material","jade");
-   set("long","Ò»Ö»°µÇàÉ«µÄºùÂ«£¬²»ÖªÊÇÄÃÊ²Ã´×öµÄ£¬´¥ÊÖÉúÎÂ¡£\n");
+   set("long","ä¸€åªæš—é’è‰²çš„è‘«èŠ¦ï¼Œä¸çŸ¥æ˜¯æ‹¿ä»€ä¹ˆåšçš„ï¼Œè§¦æ‰‹ç”Ÿæ¸©ã€‚\n");
     }
 }
 int ji(string target)
@@ -28,14 +28,14 @@ int ji(string target)
     string objname=this_object()->name();
     object me=this_player(), victim, weapon;
 
-    if(!target) return notify_fail("ÄãÏëÓÃ¶ÔË­ÓÃ"+objname+"£¿\n");
+    if(!target) return notify_fail("ä½ æƒ³ç”¨å¯¹è°ç”¨"+objname+"ï¼Ÿ\n");
     victim=present(target,environment(me));
-    if(!victim) return notify_fail("ÕâÀïÃ»ÓĞ "+target+"¡£\n");
-    if(!living(victim)) return notify_fail("ËÀÈËµÄ±øÆ÷»¹ĞèÒªÓÃ·¨±¦È¥ÄÃ£¿\n");
-    if(!me->is_fighting()) return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜ¼À"+objname+"¡£\n");
-    if( (int)me->query("mana") < 300 ) return notify_fail("ÕâÃ´Ò»µãµã·¨Á¦Ò²ÏëÇı¶¯·¨±¦£¿\n");
-    if( (int)me->query("sen") < 100 ) return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«ÉñÄîÖäÓï¡£\n");
+    if(!victim) return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
+    if(!living(victim)) return notify_fail("æ­»äººçš„å…µå™¨è¿˜éœ€è¦ç”¨æ³•å®å»æ‹¿ï¼Ÿ\n");
+    if(!me->is_fighting()) return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+objname+"ã€‚\n");
+    if( (int)me->query("mana") < 300 ) return notify_fail("è¿™ä¹ˆä¸€ç‚¹ç‚¹æ³•åŠ›ä¹Ÿæƒ³é©±åŠ¨æ³•å®ï¼Ÿ\n");
+    if( (int)me->query("sen") < 100 ) return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾ç¥å¿µå’’è¯­ã€‚\n");
     weapon = victim->query_temp("weapon"); 
-    if(!weapon) return notify_fail("ÄãµÄµĞÈË²¢Ã»ÓĞÊ¹ÓÃÎäÆ÷¡£\n");
-    return notify_fail("ÎŞÂÛÄãÔõÃ´ÄîÖä£¬"+objname+"¾ÍÊÇ²»¶¯¡£\n");
+    if(!weapon) return notify_fail("ä½ çš„æ•Œäººå¹¶æ²¡æœ‰ä½¿ç”¨æ­¦å™¨ã€‚\n");
+    return notify_fail("æ— è®ºä½ æ€ä¹ˆå¿µå’’ï¼Œ"+objname+"å°±æ˜¯ä¸åŠ¨ã€‚\n");
 }

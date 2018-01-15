@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // long8.c
@@ -10,11 +10,11 @@ inherit NPC;
 //
 void create()
 {
-  set_name("½ğâ¥",({"jin ni","jin","ni","long","jinni","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓĞËùºÃ£º½ğâ¥ÄËµÚ°Ë×Ó£¬Æ½ÉúºÃÑÌ»ğ¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("é‡‘çŒŠ",({"jin ni","jin","ni","long","jinni","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šé‡‘çŒŠä¹ƒç¬¬å…«å­ï¼Œå¹³ç”Ÿå¥½çƒŸç«ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 22);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™ç‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);

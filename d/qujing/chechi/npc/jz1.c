@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 22 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("��ն��", ({"jianzhan guan", "guan"}));
-  set("gender", "����");
+  set_name("监斩官", ({"jianzhan guan", "guan"}));
+  set("gender", "男性");
   set("combat_exp", 200000);
   set("age", 30);
   set("per", 25);
@@ -47,7 +47,7 @@ int check_valid_player (object who)
     return 0;
   if (! where)
     return 0;
-  if (where->query("short") != "��ˮ��")
+  if (where->query("short") != "祭水场")
     return 0;  
 
   yangli = present("yangli daxian",where);  
@@ -80,7 +80,7 @@ void greet_player (object who)
   {
     who->set_temp("obstacle/chechi_greeted",1);
     me->command_function("hi "+who->query("id"));
-    message_vision ("$N��$n˵�������������ݣ���̨��������ʥ����\n",me,who);
+    message_vision ("$N对$n说道：“请上云梯，于台顶坐禅显圣。”\n",me,who);
   }
 }
 
@@ -139,13 +139,13 @@ void display_climb (object me, object who,
     return;
   if (huli)
   {
-    message_vision ("$N˳��һָ��\n",me);
-    message_vision ("$N����һϯ���ƣ�����������̨�����̶�����ʼ������\n\n",
+    message_vision ("$N顺手一指。\n",me);
+    message_vision ("$N招来一席彩云，慢慢飞上禅台顶座盘定，开始打坐。\n\n",
                     huli);
     huli->move(chantai1);
   }
-  message_vision ("$N˳��һָ��\n",me);
-  message_vision ("$N����һϯ���ƣ�����������̨�����̶�����ʼ������\n\n",
+  message_vision ("$N顺手一指。\n",me);
+  message_vision ("$N招来一席彩云，慢慢飞上禅台顶座盘定，开始打坐。\n\n",
                   who);
   who->move(chantai2);
 }
@@ -164,27 +164,27 @@ void failing (object me,object who, object where, object huli)
     return;
   if (! who)
     return;
-  if (environment(who)->query("name")!="����̨")
+  if (environment(who)->query("name")!="云禅台")
     return;
   who->move(where);
-  message_vision ("ֻ��$N���Դ�һ��ˤ��������������ڵ��ϡ�\n",who);
+  message_vision ("只见$N倒栽葱一般摔将下来，梆地砸在地上。\n",who);
   i = who->query_skill("dodge",1);
   if (((i>0) && (i<75)) || (wizardp(who) && i>0))
   {
-    tell_object(who,"��Ļ����Ṧ������ˤ����һ����\n");
+    tell_object(who,"你的基本轻功给活活地摔掉了一级！\n");
     who->set_skill("dodge",i-1);
   }
   i = who->query_skill("parry",1);
   if (((i>0) && (i<75)) || (wizardp(who) && i>0))
   {
-    tell_object(who,"��Ĳ���ж��֮��������ˤ����һ����\n");
+    tell_object(who,"你的拆招卸力之法给活活地摔掉了一级！\n");
     who->set_skill("parry",i-1);
   }
   who->unconcious();
   if (! huli)
     return;
   huli->move(where);
-  message_vision ("$N̤���Ʋʣ�����������ء�\n",huli);
+  message_vision ("$N踏着云彩，轻身稳稳落地。\n",huli);
 }
 
 void success_climb (object me,object who, object where,
@@ -201,16 +201,16 @@ void success (object me,object who, object where, object huli)
   if (! who)
     return;
 
-  if (environment(who)->query("name")!="����̨")
+  if (environment(who)->query("name")!="云禅台")
     return;
   who->move(where);
   if (huli)
   {
     huli->move(where);
-    message_vision ("$N�����һ���ȵ����ڵ��ϣ�ˤ�ñ������ס�\n\n",huli);
+    message_vision ("$N像秤砣一样叭地砸在地上，摔得鼻青脸肿。\n\n",huli);
   }
-  message_vision ("ֻ��$NЯ��������������Ծֱ�£����ȵ����ڵ��ϡ�\n",who);
+  message_vision ("只见$N携云纵身，健步飞跃直下，稳稳地落在地上。\n",who);
   who->set("obstacle/chechi","chantai");
   who->save();
-  message_vision ("$N�˷ܵص��ͷ����$n�ݵ������룡��\n",me,who);
+  message_vision ("$N兴奋地点点头，向$n拜道：“请！”\n",me,who);
 }

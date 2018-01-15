@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bigaxe.c
@@ -9,16 +9,16 @@ inherit AXE;
 
 void create()
 {
-   set_name("³úÍ·", ({ "pickaxe", "axe", "chutou", "chu" }) );
+   set_name("é”„å¤´", ({ "pickaxe", "axe", "chutou", "chu" }) );
    set_weight(20000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
-     set("long", "Ò»°Ñ³ÁÖØµÄ³úÍ·£¬¿´ÉÏÈ¥ºÜ½áÊµ¡£\n");
+     set("unit", "æŠŠ");
+     set("long", "ä¸€æŠŠæ²‰é‡çš„é”„å¤´ï¼Œçœ‹ä¸Šå»å¾ˆç»“å®ã€‚\n");
      set("value", 2000);
-     set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬Ò»¸öÃ»ÄÃÎÈ£¬²îµãÔÒÔÚ×Ô¼º½ÅÉÏ¡£\n");
-     set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n£¬Æø´­ÓõÓõµØ²ÁÁË²Áº¹¡£\n");
+     set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œä¸€ä¸ªæ²¡æ‹¿ç¨³ï¼Œå·®ç‚¹ç ¸åœ¨è‡ªå·±è„šä¸Šã€‚\n");
+     set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nï¼Œæ°”å–˜åååœ°æ“¦äº†æ“¦æ±—ã€‚\n");
    }
    init_axe(20, TWO_HANDED);
    setup();

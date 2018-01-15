@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // enchant.c
@@ -10,12 +10,12 @@ int main(object me, string arg)
    int pts;
 
    if( !arg || !sscanf(arg, "%d", pts) ) 
-     return notify_fail("Ö¸Áî¸ñÊ½£ºenchant <·¨Á¦µãÊı>\n");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenchant <æ³•åŠ›ç‚¹æ•°>\n");
 
    if( pts > ((int)me->query("max_mana")/20+1) )
-     return notify_fail("ÄãµÄ·¨Á¦²»×ã£¬·¢²»³öÄÇÃ´Ç¿µÄÍşÁ¦¡£\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼Œå‘ä¸å‡ºé‚£ä¹ˆå¼ºçš„å¨åŠ›ã€‚\n");
 
-   if( pts < 0 ) return notify_fail("·¨Á¦µãÊı±ØĞëÊÇÕıÊı¡£\n");   
+   if( pts < 0 ) return notify_fail("æ³•åŠ›ç‚¹æ•°å¿…é¡»æ˜¯æ­£æ•°ã€‚\n");   
    me->set("mana_factor", pts);
    write("Ok.\n");
    return 1;
@@ -24,10 +24,10 @@ int main(object me, string arg)
 int help (object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½: enchant <·¨Á¦µãÊı>
+æŒ‡ä»¤æ ¼å¼: enchant <æ³•åŠ›ç‚¹æ•°>
  
-Õâ¸öÖ¸ÁîÈÃÄãÉè¶¨Ê¹ÓÃÄ§·¨ÎäÆ÷Ê±ÒªÓÃÀ´µ¼ÒıÎäÆ÷Ä§Á¦ËùÓÃµÄ·¨Á¦Ç¿¶È¡£
-·¨Á¦µãÊıÔ½¸ß£¬Ä§·¨ÎäÆ÷µÄÉ±ÉËÁ¦Ò²Ô½Ç¿¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è®¾å®šä½¿ç”¨é­”æ³•æ­¦å™¨æ—¶è¦ç”¨æ¥å¯¼å¼•æ­¦å™¨é­”åŠ›æ‰€ç”¨çš„æ³•åŠ›å¼ºåº¦ã€‚
+æ³•åŠ›ç‚¹æ•°è¶Šé«˜ï¼Œé­”æ³•æ­¦å™¨çš„æ€ä¼¤åŠ›ä¹Ÿè¶Šå¼ºã€‚
 
 HELP
    );

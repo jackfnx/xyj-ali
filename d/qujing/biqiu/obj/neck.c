@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/22/1997
@@ -9,12 +9,12 @@ inherit NECK;
 
 void create()
 {
-  set_name("°×½ğÏîÈ¦", ({ "baijin xiangquan", "xiangquan", "neck" }));
+  set_name("ç™½é‡‘é¡¹åœˆ", ({ "baijin xiangquan", "xiangquan", "neck" }));
   set("weight", 200);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ö");
+    set("unit", "ä¸ª");
     set("value", 3500);
     set("material", "gold");
     set("armor_prop/armor", 1);

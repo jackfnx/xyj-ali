@@ -3,17 +3,17 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÌúÉÙ", ({ "tieshao", "master","master tieshao" }) );
-	set("gender", "ÄÐÐÔ" );
-        set("title", "¶àÇéµ¶¿Í");
+	set_name("é“å°‘", ({ "tieshao", "master","master tieshao" }) );
+	set("gender", "ç”·æ€§" );
+        set("title", "å¤šæƒ…åˆ€å®¢");
 	set("age", 25);
 	set("int", 30);
 	set("per", 30);
         set("apprentice_available", 50);
-        create_family("·çÔÆ", 0, "×¯Ö÷");
+        create_family("é£Žäº‘", 0, "åº„ä¸»");
 	set("long",
-		"ÌúÉÙ´ÓÊ®ÎåËê¿ªÊ¼¾ÍºÍ°®ÆÞÑ©Èï¶ùÐÐÏÀ½­ºþ£¬Á©ÈËµ¶½£ºÏ±Ú£¬\n"
-		"ÌìÏÂÎÞµÐ¡£Õýµ±Á©ÈËÃûÉù¶¥Ê¢Ö®Ê±£¬ÓÖºöÈ»ÍË³ö½­ºþ£¬Òþ¾ÓÓÚ´Ë¡£\n"
+		"é“å°‘ä»Žåäº”å²å¼€å§‹å°±å’Œçˆ±å¦»é›ªè•Šå„¿è¡Œä¾ æ±Ÿæ¹–ï¼Œä¿©äººåˆ€å‰‘åˆå£ï¼Œ\n"
+		"å¤©ä¸‹æ— æ•Œã€‚æ­£å½“ä¿©äººåå£°é¡¶ç››ä¹‹æ—¶ï¼Œåˆå¿½ç„¶é€€å‡ºæ±Ÿæ¹–ï¼Œéšå±…äºŽæ­¤ã€‚\n"
 		);
         set("force_factor", 200);
         set("max_gin", 3000);
@@ -63,22 +63,22 @@ void attempt_apprentice(object ob)
 {
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say ÂýÖø£¬Ò»¸öÒ»¸öÀ´¡£");
+                        command("say æ…¢è‘—ï¼Œä¸€ä¸ªä¸€ä¸ªæ¥ã€‚");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say ±¾×¯Ö÷½ñÌìÒÑ¾­ÊÕÁË¶þÊ®¸öµÜ×Ó£¬²»ÏëÔÙÊÕÍ½ÁË¡£");
+                command("say æœ¬åº„ä¸»ä»Šå¤©å·²ç»æ”¶äº†äºŒåä¸ªå¼Ÿå­ï¼Œä¸æƒ³å†æ”¶å¾’äº†ã€‚");
         }
 }
 void do_recruit(object ob)
 {
-        if( (string)ob->query("gender") != "ÄÐÐÔ" )
-          {      command("say ÎÒÖ»ÊÕÄÐµÜ×Ó£¬Äã»¹ÊÇÈ¥°ÝÎÒµÄÄÚÈË°É£¡");
+        if( (string)ob->query("gender") != "ç”·æ€§" )
+          {      command("say æˆ‘åªæ”¶ç”·å¼Ÿå­ï¼Œä½ è¿˜æ˜¯åŽ»æ‹œæˆ‘çš„å†…äººå§ï¼");
           }
         else {
 
                 command("smile");
-                command("say ÄãÈÕºó±ØÓÐ´ó³É£¡");
+                command("say ä½ æ—¥åŽå¿…æœ‰å¤§æˆï¼");
                 command("smile");
                 command("recruit " + ob->query("id") );
 	}
@@ -96,14 +96,14 @@ int accept_fight(object me)
 	if( objectp(xiaocui = present("cui", environment(this_object()))) && living(xiaocui))
 	{	
         command("smile");
-        command("say »¹ÊÇÈÃÐ¡´äÀ´°É¡£");
+        command("say è¿˜æ˜¯è®©å°ç¿ æ¥å§ã€‚");
         return 0;
 	}
 	else
 		command("sigh");
-		command("ÌúÉÙÂýÂýµÄ´Ó´äÖñµÊÉÏÕ¾ÆðÀ´£¬·ÅÏÂÁËÊÖÖÐµÄ×ÏÉ°±­¡£");
+		command("é“å°‘æ…¢æ…¢çš„ä»Žç¿ ç«¹å‡³ä¸Šç«™èµ·æ¥ï¼Œæ”¾ä¸‹äº†æ‰‹ä¸­çš„ç´«ç ‚æ¯ã€‚");
 		command("wield wangblade");
-		command("say Çë£¡");
+		command("say è¯·ï¼");
 		call_out("do_unwie", 3);
 		return 1;
 }
@@ -112,7 +112,7 @@ int do_unwie()
         if( !this_object()->is_fighting())
         {
                 command("unwield wangblade");
-                message_vision("$NÄÃÆð²è±­Ç³à¢Ò»¿Ú£¬º¬ÇéÂöÂöµÄÍûÁËÑ©Èï¶ùÒ»ÑÛ£¬ÓÖ×øÔÚÖñµÊÉÏ¡£\n", this_object());
+                message_vision("$Næ‹¿èµ·èŒ¶æ¯æµ…å•–ä¸€å£ï¼Œå«æƒ…è„‰è„‰çš„æœ›äº†é›ªè•Šå„¿ä¸€çœ¼ï¼Œåˆååœ¨ç«¹å‡³ä¸Šã€‚\n", this_object());
 		command("smile");
                 return 1;
         }
@@ -134,10 +134,10 @@ int do_killing(string arg)
 	if( objectp(victim = present(arg, environment(this_object()))) && living(victim))
 	{
 		name = victim->name();
-		if( name == "Ñ©Èï¶ù")
+		if( name == "é›ªè•Šå„¿")
 		{
-		message_vision("$NÖåÖåÃ¼Í·¡£\n", this_object());
-		message_vision("$N´ÓÎÚÆ¤µ¶ÇÊÖÐ³é³öÒ»°ÑÉ±Æø±ÆÈËµÄÛòÏÂµ¶ÎÕÔÚÊÖÖÐ¡£\n", this_object());
+		message_vision("$Nçš±çš±çœ‰å¤´ã€‚\n", this_object());
+		message_vision("$Nä»Žä¹Œçš®åˆ€éž˜ä¸­æŠ½å‡ºä¸€æŠŠæ€æ°”é€¼äººçš„åž“ä¸‹åˆ€æ¡åœ¨æ‰‹ä¸­ã€‚\n", this_object());
 		weapon = present("wangblade", this_object());
 		weapon->wield();
 		this_object()->kill_ob(player);
@@ -145,10 +145,10 @@ int do_killing(string arg)
 		call_out("do_unwie", 3);
 		return 0;
 		}
-		if( name == "ÌúÉÙ")
+		if( name == "é“å°‘")
 		{
-		message_vision("$NÖåÖåÃ¼Í·¡£\n", this_object());
-                message_vision("$N´ÓÎÚÆ¤µ¶ÇÊÖÐ³é³öÒ»°ÑÉ±Æø±ÆÈËµÄÛòÏÂµ¶ÎÕÔÚÊÖÖÐ¡£\n", this_object());
+		message_vision("$Nçš±çš±çœ‰å¤´ã€‚\n", this_object());
+                message_vision("$Nä»Žä¹Œçš®åˆ€éž˜ä¸­æŠ½å‡ºä¸€æŠŠæ€æ°”é€¼äººçš„åž“ä¸‹åˆ€æ¡åœ¨æ‰‹ä¸­ã€‚\n", this_object());
                 weapon = present("wangblade", this_object());
                 weapon->wield();
                 call_out("do_unwie", 3);

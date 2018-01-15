@@ -9,13 +9,13 @@ int exert(object me, object target)
     int skill;
 
     if (target != me)
-        return notify_fail("ÄãÖ»ÄÜÓÃ·´ÎåÐÐÉãÆø¾÷Ñ¹ÖÆ×Ô¼ºµÄÉ±Æø¡£\n");
+        return notify_fail("ä½ åªèƒ½ç”¨åäº”è¡Œæ‘„æ°”è¯€åŽ‹åˆ¶è‡ªå·±çš„æ€æ°”ã€‚\n");
     if ((int)me->query("force") < 100)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     if (me->query_temp("powerup"))
-        return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+        return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
     if ((int)me->query("bellicosity") <= 0)
-        return notify_fail("ÄãÏÖÔÚºÁÎÞÉ±Æø¡£\n");
+        return notify_fail("ä½ çŽ°åœ¨æ¯«æ— æ€æ°”ã€‚\n");
 
 //    skill = me->query_skill("force");
     skill = me->query_skill("tonsillit", 1);
@@ -26,7 +26,7 @@ int exert(object me, object target)
     me->receive_damage("sen", 100);
 
     message_vision(
-        HIC "$NÅÌÏ¥×øÏÂ£¬Ë«ÑÛÎ¢±Õ£¬ÔËÆð·´ÎåÐÐÉãÆø¾÷Ñ¹ÖÆÐÄÖÐµÄÉ±Æø¡£¡£¡£\n" NOR, me);
+        HIC "$Nç›˜è†åä¸‹ï¼ŒåŒçœ¼å¾®é—­ï¼Œè¿èµ·åäº”è¡Œæ‘„æ°”è¯€åŽ‹åˆ¶å¿ƒä¸­çš„æ€æ°”ã€‚ã€‚ã€‚\n" NOR, me);
 
     if (me->is_fighting()
     &&  (random(skill) < (int)me->query("cps")))

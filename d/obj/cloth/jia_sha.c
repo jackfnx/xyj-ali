@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // jiasha.c
@@ -11,13 +11,13 @@ inherit CLOTH;
 
 void create()
 {
-  set_name(HIY"ôÂôÄ"NOR, ({ "jia sha", "sha" }) );
-  set("long", "Ò»¼ş¹â²ÊÕÕÈËµÄôÂôÄ¡£\n");
+  set_name(HIY"è¢ˆè£Ÿ"NOR, ({ "jia sha", "sha" }) );
+  set("long", "ä¸€ä»¶å…‰å½©ç…§äººçš„è¢ˆè£Ÿã€‚\n");
   set_weight(2000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¼ş");
+    set("unit", "ä»¶");
     set("material", "cloth");
     set("armor_prop/armor", 15);
     set("armor_prop/spells", 10);

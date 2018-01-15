@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 22 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¼àÕ¶¹Ù", ({"jianzhan guan", "guan"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("ç›‘æ–©å®˜", ({"jianzhan guan", "guan"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 200000);
   set("age", 30);
   set("per", 25);
@@ -46,7 +46,7 @@ int check_valid_player (object who)
     return 0;
   if (! where)
     return 0;
-  if (where->query("short") != "ÆíÓê³¡")
+  if (where->query("short") != "ç¥ˆé›¨åœº")
     return 0;  
 
   yangli = present("yangli daxian",where);  
@@ -78,9 +78,9 @@ void greet_player (object who)
   {
     who->set_temp("obstacle/chechi_greeted3",1);
     me->command_function("hi "+who->query("id"));
-    message_vision ("$N¶Ô³¡ÍâºÈµÀ£º¡°Ìí²ñ¡£¡±ÔçÓĞÄÚ¹ÙÉÏÇ°½«´ó»ğÌôÍú¡£\n",me);
-    message_vision ("ÄÚ¹ÙÍËÏÂ¡£\n\n",me);
-    message_vision ("$N¶Ô$nËµµÀ£º¡°ÇëÏÂÓÍ¹ø£¬Óë¹úÊ¦Ë«ÎäÏ´¡£¡±\n",me,who);
+    message_vision ("$Nå¯¹åœºå¤–å–é“ï¼šâ€œæ·»æŸ´ã€‚â€æ—©æœ‰å†…å®˜ä¸Šå‰å°†å¤§ç«æŒ‘æ—ºã€‚\n",me);
+    message_vision ("å†…å®˜é€€ä¸‹ã€‚\n\n",me);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šâ€œè¯·ä¸‹æ²¹é”…ï¼Œä¸å›½å¸ˆåŒæ­¦æ´—ã€‚â€\n",me,who);
   }
 }
 
@@ -141,10 +141,10 @@ void display_enter (object me, object who,
     return;
   if (yangli)
   {
-    message_vision ("$NÒ»¸öÆğÉí£¬×İÈëÈÈÀË·­¹öµÄ´óÓÍ¹ø¡£\n\n",yangli);
+    message_vision ("$Nä¸€ä¸ªèµ·èº«ï¼Œçºµå…¥çƒ­æµªç¿»æ»šçš„å¤§æ²¹é”…ã€‚\n\n",yangli);
     yangli->move(youguo);
   }
-  message_vision ("$NÒ»¸öÆğÉí£¬×İÈëÈÈÀË·­¹öµÄ´óÓÍ¹ø¡£\n\n",who);
+  message_vision ("$Nä¸€ä¸ªèµ·èº«ï¼Œçºµå…¥çƒ­æµªç¿»æ»šçš„å¤§æ²¹é”…ã€‚\n\n",who);
   who->move(youguo);
 }
  
@@ -162,17 +162,17 @@ void failing (object me,object who, object where, object yangli)
     return;
   if (! who)
     return;
-  if (environment(who)->query("name")!="´óÓÍ¹ø")
+  if (environment(who)->query("name")!="å¤§æ²¹é”…")
     return;
-  message_vision ("$NÔÚÓÍÃæÉÏ¾øÍûµØ×¥ÁËÒ»°Ñ¡£\n\n",who);
-  message_vision ("Ö»¼û"+who->name()+"ÔÚÓÍÃæÉÏ¾øÍûµØ×¥ÁËÒ»°Ñ¡£\n\n",me);
-  message_vision ("$N¼û¿ö²»Ãî£¬´óº°£º¡°À´ÈË£¡¡±¡£\n",me);
-  message_vision ("ÔçÒÑ´ÓºóÃæ³åÉÏ¼¸¸öÄÚ¹ÙÓÃÌú×¦ÀéÀÌ³ö$n¡£\n",me,who);
+  message_vision ("$Nåœ¨æ²¹é¢ä¸Šç»æœ›åœ°æŠ“äº†ä¸€æŠŠã€‚\n\n",who);
+  message_vision ("åªè§"+who->name()+"åœ¨æ²¹é¢ä¸Šç»æœ›åœ°æŠ“äº†ä¸€æŠŠã€‚\n\n",me);
+  message_vision ("$Nè§å†µä¸å¦™ï¼Œå¤§å–Šï¼šâ€œæ¥äººï¼â€ã€‚\n",me);
+  message_vision ("æ—©å·²ä»åé¢å†²ä¸Šå‡ ä¸ªå†…å®˜ç”¨é“çˆªç¯±æå‡º$nã€‚\n",me,who);
   who->move(where);
   if (yangli)
   {
     yangli->move(where);
-    message_vision ("$N·ÑÁ¦µØ·­Éí³ö¹øÂäµØ¡£\n",yangli);
+    message_vision ("$Nè´¹åŠ›åœ°ç¿»èº«å‡ºé”…è½åœ°ã€‚\n",yangli);
   }
   who->unconcious();
   i = who->query("combat_exp");
@@ -181,7 +181,7 @@ void failing (object me,object who, object where, object yangli)
     if (random(3) || who->query_temp("obstacle/chechi_invalid_enter")==0)
       return;
     who->delete_temp("last_damage_from");
-    who->set_temp("death_msg","±»¹öÓÍÅëËÀÁË¡£\n");
+    who->set_temp("death_msg","è¢«æ»šæ²¹çƒ¹æ­»äº†ã€‚\n");
     who->die();
     who->save();
   }
@@ -200,20 +200,20 @@ void success (object me,object who, object where, object yangli)
     return;
   if (! who)
     return;
-  if (environment(who)->query("name")!="´óÓÍ¹ø")
+  if (environment(who)->query("name")!="å¤§æ²¹é”…")
     return;
 
   who->move(where);
   if (yangli)
   {
-    message_vision ("$NÔÚÓÍÃæÉÏ¾øÍûµØÌ½³öÍ·À´¡£\n\n",yangli);
-    message_vision ("$N¼±Ã¦´óº°£º¡°À´ÈË£¬¹úÊ¦ÍêÒ²£¡¡±¡£\n",me);
-    message_vision ("¼¸¸öÄÚ¹Ù¸ÏÀ´ÓÃÌú×¦ÀéÀÌ³ö$n¡£\n",me,yangli);
+    message_vision ("$Nåœ¨æ²¹é¢ä¸Šç»æœ›åœ°æ¢å‡ºå¤´æ¥ã€‚\n\n",yangli);
+    message_vision ("$Næ€¥å¿™å¤§å–Šï¼šâ€œæ¥äººï¼Œå›½å¸ˆå®Œä¹Ÿï¼â€ã€‚\n",me);
+    message_vision ("å‡ ä¸ªå†…å®˜èµ¶æ¥ç”¨é“çˆªç¯±æå‡º$nã€‚\n",me,yangli);
     yangli->move(where);
-    message_vision ("$NÆ¤½¹ÈâÀÃ£¬ÒÑ²»³ÉĞÎ¡£\n\n",yangli);
+    message_vision ("$Nçš®ç„¦è‚‰çƒ‚ï¼Œå·²ä¸æˆå½¢ã€‚\n\n",yangli);
     yangli->die();
   }
-  message_vision ("$NĞË·ÜµØµãµãÍ·£¬Ïò$n°İµÀ£º¡°Çë£¡¡±\n",me,who);
+  message_vision ("$Nå…´å¥‹åœ°ç‚¹ç‚¹å¤´ï¼Œå‘$næ‹œé“ï¼šâ€œè¯·ï¼â€\n",me,who);
   remove_call_out("king_announce_success");
   call_out("king_announce_success",2,where,who);
 }
@@ -230,9 +230,9 @@ void king_announce_success(object where, object who)
   if (! king)
     king = new ("/d/qujing/chechi/npc/king");
   tell_room (where,king->name()+
-             "´óÎòµÀ£º¡°¹ûÈ»ÊÇÊŞ¾«£¡¡±\n\n");
+             "å¤§æ‚Ÿé“ï¼šâ€œæœç„¶æ˜¯å…½ç²¾ï¼â€\n\n");
   tell_room (where,king->name()+
-             "ÓÖµÀ£º¡°¹ÑÈËºıÍ¿£¬¾¹×ğÆäÎª¹úÊ¦£¬Æñ²»ÑêÃñ»ö¹ú£¡¡±\n");
+             "åˆé“ï¼šâ€œå¯¡äººç³Šæ¶‚ï¼Œç«Ÿå°Šå…¶ä¸ºå›½å¸ˆï¼Œå²‚ä¸æ®ƒæ°‘ç¥¸å›½ï¼â€\n");
   king->announce_success (who);
   call_out("daxians_die",5,where);
 }

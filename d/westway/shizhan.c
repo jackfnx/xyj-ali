@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 4/8/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ʯջ��");
+  set ("short", "石栈道");
   set ("long", @LONG
 
-����һ���������ô�ʯ���̳ɵ�ջ����Զ��ջ�����ʯ�£���
-�ò����еĵط���ʯ��·��·����˵������Զһ�����������
-�������ˣ�������ȥ��Ȫ�ķ���
+这是一条极长的用大石块铺成的栈道，远处栈道伸进石坡，不
+得不在有的地方凿石辟路架路。据说西面再远一点就是著名的
+嘉峪关了，往东是去酒泉的方向。
 
 LONG);
 
@@ -42,7 +42,7 @@ int greeting(object me)
    object *list, ob;
    int i;
    if( !me || environment(me) != this_object() ) return 1;
-   tell_room(this_object(), "���Ȼ���ý��µ�ʯ���ɶ��ˡ�����\n");
+   tell_room(this_object(), "你忽然觉得脚下的石板松动了………\n");
 
    list=all_inventory(this_object());
    i=sizeof(list);
@@ -50,7 +50,7 @@ int greeting(object me)
    {
      ob=list[i];
      ob->move("/d/westway/tielong");
-     message_vision("���ˡ���һ����$N�ӻ��ص����������С�����\n", ob);
+     message_vision("「咚」的一声，$N从机关掉到了铁笼中………\n", ob);
    }
    this_object()->set("done");
    call_out("reg", 300);

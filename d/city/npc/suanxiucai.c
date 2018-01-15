@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("ËáĞã²Å", ({"suan xiucai","xiucai"}));
+        set_name("é…¸ç§€æ‰", ({"suan xiucai","xiucai"}));
         set("age", 22);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Âä°ñĞã²Å£¬ÆÄ¾õµÃÓĞĞ©»³²Å²»Óö¡£\n");
+"è½æ¦œç§€æ‰ï¼Œé¢‡è§‰å¾—æœ‰äº›æ€€æ‰ä¸é‡ã€‚\n");
         set("attitude", "peaceful");
    set("per", 22);
         set("combat_exp", 8000);

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ñ©Áë");
+    set("short", "é›ªå²­");
     set("long", @LONG
 
-Ñ©ÁëÉÏÓÐ¼¸´¦µÄÑ©±»ÈË·­¿ªÁË£¬²»ÖªÂñ(mai)ÁËÊ²Ã´¶«Î÷½øÈ¥¡£
-´«ËµÕâ¸½½üÓÐ°Ù×ãòÚò¼³öÃ»£¬¿´À´ÒªÐ¡ÐÄÐ©¡£
+é›ªå²­ä¸Šæœ‰å‡ å¤„çš„é›ªè¢«äººç¿»å¼€äº†ï¼Œä¸çŸ¥åŸ‹(mai)äº†ä»€ä¹ˆä¸œè¥¿è¿›åŽ»ã€‚
+ä¼ è¯´è¿™é™„è¿‘æœ‰ç™¾è¶³èœˆèš£å‡ºæ²¡ï¼Œçœ‹æ¥è¦å°å¿ƒäº›ã€‚
 LONG);
 
     set("exits", ([ //sizeof() == 2
@@ -34,14 +34,14 @@ int do_mai(string arg)
     object ji;
 
     if (!arg && arg != "gong ji"  && arg != "ji")
-        return notify_fail("ÄãÒªÂñÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åŸ‹ä»€ä¹ˆï¼Ÿ\n");
     if(!(ji = present(arg, who)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¶«Î÷¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
     if (me->query("have_ji"))
-        return notify_fail("ÕâÒÑ¾­ÂñÁËÒ»´ó¶ÑÂÒÆß°ËÔãµÄ¶«Î÷ÁË£¬±ðÔÙÎÛÈ¾Ñ©É½µÄ·ç¾°ÁË¡£\n");
+        return notify_fail("è¿™å·²ç»åŸ‹äº†ä¸€å¤§å †ä¹±ä¸ƒå…«ç³Ÿçš„ä¸œè¥¿äº†ï¼Œåˆ«å†æ±¡æŸ“é›ªå±±çš„é£Žæ™¯äº†ã€‚\n");
 
     me->set("have_ji", 1);
-    message_vision("$N½«Ò»Ö»¹«¼¦Âñ½øÁËÑ©Àï¡£\n",who);
+    message_vision("$Nå°†ä¸€åªå…¬é¸¡åŸ‹è¿›äº†é›ªé‡Œã€‚\n",who);
     destruct(ji);
     call_out("wugong",10+random(10),who);
     return 1;
@@ -50,7 +50,7 @@ int do_mai(string arg)
 void wugong(object who)
 {
     object wugong;
-    message_vision("Ò»Ö»°Ù×ãòÚò¼ÅÀµ½ÁË¹ýÀ´¡£\n",who);
+    message_vision("ä¸€åªç™¾è¶³èœˆèš£çˆ¬åˆ°äº†è¿‡æ¥ã€‚\n",who);
     wugong = new(__DIR__"npc/wugong");
     wugong->move(this_object());
 }

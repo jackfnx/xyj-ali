@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // gate.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "����");
+  set ("short", "稻田");
   set ("long", @LONG
 
-��������������ڸ����ţ�һƬһƬ��ũ�����������С��С��
-�ܲ����У�
+稻田里村民们正在耕种着．一片一片的农田连结成网，小沟小渠
+密布其中．
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "south" : __DIR__"road4",

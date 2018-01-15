@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit BULLETIN_BOARD;
 
 void create()
 {
-set_name("ÁôÑÔ±Ú", ({"wall"}) );
+set_name("ç•™è¨€å£", ({"wall"}) );
 set("location", "/d/nanhai/gate");
 set("board_id", "wall_b");
 set("capacity", 100);
-set("long", "Ò»¿éÁôÑÔ±Ú£¬ÉÏÃæÌâÂúÁËÀ´·ÃÕßµÄÁôÑÔ¡£\n");
+set("long", "ä¸€å—ç•™è¨€å£ï¼Œä¸Šé¢é¢˜æ»¡äº†æ¥è®¿è€…çš„ç•™è¨€ã€‚\n");
         setup();
         replace_program(BULLETIN_BOARD);
 }

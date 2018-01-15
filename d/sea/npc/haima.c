@@ -1,25 +1,25 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("½ğ±³º£Âí", ({"hai ma", "ma"}));
-        set("race", "Ò°ÊŞ");
+        set_name("é‡‘èƒŒæµ·é©¬", ({"hai ma", "ma"}));
+        set("race", "é‡å…½");
         set("age", 25);
-        set("long", "Ò»Ö»½ğ±³µÄ´óº£Âí£¬ÊÇÁúÉÙÒ¯µÄ×ùÆï¡£\n");
+        set("long", "ä¸€åªé‡‘èƒŒçš„å¤§æµ·é©¬ï¼Œæ˜¯é¾™å°‘çˆ·çš„åº§éª‘ã€‚\n");
         set("attitude", "friendly");
 
         set("str", 26);
         set("cor", 30);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 10000);
 
-   set("ride/msg", "Æï");
+   set("ride/msg", "éª‘");
      set("ride/dodge", 15);
         set_temp("apply/damage", 5);
         set_temp("apply/armor", 20);

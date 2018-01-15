@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,15 +9,15 @@ inherit STICK;
 
 void create()
 {
-        set_name("ÎŞ³£°ô", ({"wuchang bang", "bang"}));
+        set_name("æ— å¸¸æ£’", ({"wuchang bang", "bang"}));
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°Ñ¾«ÇÉµÄ¶Ì°ô£¬Ò»Í·ÊÇ°×É«£¬Ò»Í·ÊÇºÚÉ«¡£\n");
-                set("unit", "¸ù");
+                set("long", "ä¸€æŠŠç²¾å·§çš„çŸ­æ£’ï¼Œä¸€å¤´æ˜¯ç™½è‰²ï¼Œä¸€å¤´æ˜¯é»‘è‰²ã€‚\n");
+                set("unit", "æ ¹");
      set("material", "steel");
-     set("wield_msg", "$NÒõĞ¦Ò»Éù£¬ÊÖÀïÒÑ¶àÁËÒ»°Ñ$n¡£\n");
+     set("wield_msg", "$Né˜´ç¬‘ä¸€å£°ï¼Œæ‰‹é‡Œå·²å¤šäº†ä¸€æŠŠ$nã€‚\n");
                 set("value", 3000);
         }
         init_stick(40);

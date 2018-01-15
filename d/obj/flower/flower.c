@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
@@ -15,37 +15,37 @@ void create()
   switch (random(14))
   {
     case 0:
-      { set_name(HIB "À¶Ãµ¹å" NOR, ({ "flower"})); break; }
+      { set_name(HIB "è“ç«ç‘°" NOR, ({ "flower"})); break; }
     case 1:
-      { set_name(HIB "ºÚÓô½ğÏã" NOR, ({ "flower"})); break; }
+      { set_name(HIB "é»‘éƒé‡‘é¦™" NOR, ({ "flower"})); break; }
     case 2:
-      { set_name(HIB "±¡Ñ©»¨" NOR, ({ "flower"})); break; }
+      { set_name(HIB "è–„é›ªèŠ±" NOR, ({ "flower"})); break; }
     case 3:
-      { set_name(HIB "Ò°·çĞÅ×Ó" NOR, ({ "flower"})); break; }
+      { set_name(HIB "é‡é£ä¿¡å­" NOR, ({ "flower"})); break; }
     case 4:
-      { set_name(HIB "Óñ°×Â¶" NOR, ({ "flower"})); break; }
+      { set_name(HIB "ç‰ç™½éœ²" NOR, ({ "flower"})); break; }
     case 5:
-      { set_name(HIB "Ë¯Ü½ÈØ" NOR, ({ "flower"})); break; }
+      { set_name(HIB "ç¡èŠ™è“‰" NOR, ({ "flower"})); break; }
     case 6:
-      { set_name(HIB "×ÏÇ¾Ş±" NOR, ({ "flower"})); break; }
+      { set_name(HIB "ç´«è”·è–‡" NOR, ({ "flower"})); break; }
     case 7:
-      { set_name(HIB "´óÀö»¨" NOR, ({ "flower"})); break; }
+      { set_name(HIB "å¤§ä¸½èŠ±" NOR, ({ "flower"})); break; }
     case 8:
-      { set_name(HIB "ÎğÍüÎÒ" NOR, ({ "flower"})); break; }
+      { set_name(HIB "å‹¿å¿˜æˆ‘" NOR, ({ "flower"})); break; }
     case 9:
-      { set_name(HIB "°×Ãµ¹å" NOR, ({ "flower"})); break; }
+      { set_name(HIB "ç™½ç«ç‘°" NOR, ({ "flower"})); break; }
     case 10:
-      { set_name(HIB "ôä´äÂÌ" NOR, ({ "flower"})); break; }
+      { set_name(HIB "ç¿¡ç¿ ç»¿" NOR, ({ "flower"})); break; }
     case 11:
-      { set_name(HIB "Ñ©À°Ã·" NOR, ({ "flower"})); break; }
+      { set_name(HIB "é›ªè…Šæ¢…" NOR, ({ "flower"})); break; }
     case 12:
-      { set_name(HIB "ÂüÍÓÂŞ" NOR, ({ "flower"})); break; }
+      { set_name(HIB "æ›¼é™€ç½—" NOR, ({ "flower"})); break; }
     case 13:
-      { set_name(HIB "Ë¯Á«" NOR, ({ "flower"})); break; }
+      { set_name(HIB "ç¡è²" NOR, ({ "flower"})); break; }
   }
   set_weight(100);
-  set("long","Ò»¶äÉ«²ÊÑŞÀöµÄ"+query("name")+"¡£\n");
-  set("unit", "¶ä");
+  set("long","ä¸€æœµè‰²å½©è‰³ä¸½çš„"+query("name")+"ã€‚\n");
+  set("unit", "æœµ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 10);
   setup();
@@ -77,23 +77,23 @@ int do_wear (string arg)
   switch (random(9))
   {
     case 0:
-      { msg = "$N´÷ÉÏÒ»¶ä"+name+"£¬²»½ûÏëÆğÄêÉÙÊ±Ôø¾­µÄÃÎÖĞÈË¡£\n"; break; }
+      { msg = "$Næˆ´ä¸Šä¸€æœµ"+name+"ï¼Œä¸ç¦æƒ³èµ·å¹´å°‘æ—¶æ›¾ç»çš„æ¢¦ä¸­äººã€‚\n"; break; }
     case 1:
-      { msg = "$N´÷ÉÏ"+name+"£¬³ÁÄ¬¼¸Ğí¡­¡­µÍÊ×ÍùÊÂÈçÑÌ¡£\n"; break; }
+      { msg = "$Næˆ´ä¸Š"+name+"ï¼Œæ²‰é»˜å‡ è®¸â€¦â€¦ä½é¦–å¾€äº‹å¦‚çƒŸã€‚\n"; break; }
     case 2:
-      { msg = "$NÄÃÆğ"+name+"²åÔÚ·¢¼Ê£¬Íñ¶ûÒ»Ğ¦¡£\n"; break; }
+      { msg = "$Næ‹¿èµ·"+name+"æ’åœ¨å‘é™…ï¼Œå©‰å°”ä¸€ç¬‘ã€‚\n"; break; }
     case 3:
-      { msg = "$N½«Ò»¶ä"+name+"±ğÔÚĞØÇ°£¬½û²»×¡ÀáÈçÓêÏÂ¡£\n"; break; }
+      { msg = "$Nå°†ä¸€æœµ"+name+"åˆ«åœ¨èƒ¸å‰ï¼Œç¦ä¸ä½æ³ªå¦‚é›¨ä¸‹ã€‚\n"; break; }
     case 4:
-      { msg = "$N½«"+name+"±ğÔÚĞØÇ°£¬ÄÇ¸öÊìÏ¤µÄÃû×ÖÍÑ¿Ú¶ø³ö¡£\n"; break; }
+      { msg = "$Nå°†"+name+"åˆ«åœ¨èƒ¸å‰ï¼Œé‚£ä¸ªç†Ÿæ‚‰çš„åå­—è„±å£è€Œå‡ºã€‚\n"; break; }
     case 5:
-      { msg = "$N½«"+name+"²åÔÚĞØÇ°£¬ĞÄÀï²»½ûÒ»ÈÈ¡£\n"; break; }
+      { msg = "$Nå°†"+name+"æ’åœ¨èƒ¸å‰ï¼Œå¿ƒé‡Œä¸ç¦ä¸€çƒ­ã€‚\n"; break; }
     case 6:
-      { msg = "$N½«"+name+"ÄÃÆğÀ´£¬ÍüÇéµØÒ»ÎÇ£¬È»ºó²åÔÚĞØÇ°¡£\n"; break; }
+      { msg = "$Nå°†"+name+"æ‹¿èµ·æ¥ï¼Œå¿˜æƒ…åœ°ä¸€å»ï¼Œç„¶åæ’åœ¨èƒ¸å‰ã€‚\n"; break; }
     case 7:
-      { msg = "$NĞ¡ĞÄµØ°Ñ"+name+"±ğÔÚ·¢÷İÉÏ¡£\n"; break; }
+      { msg = "$Nå°å¿ƒåœ°æŠŠ"+name+"åˆ«åœ¨å‘é¬ä¸Šã€‚\n"; break; }
     case 8:
-      { msg = "$N½«³¤·¢ÇáÇáÒ»Ë¦£¬½«"+name+"±ğÔÚÉÏÃæ¡£\n"; break; }
+      { msg = "$Nå°†é•¿å‘è½»è½»ä¸€ç”©ï¼Œå°†"+name+"åˆ«åœ¨ä¸Šé¢ã€‚\n"; break; }
   }
   //message_vision (msg,me);
   flower->set("wear_msg",msg);
@@ -110,7 +110,7 @@ int do_remove (string arg)
   if (arg != "flower")
     return 0;
 
-  msg = "$N½«"+name+"ÇáÇáµØÕªÏÂÀ´¡­¡­\n"; 
+  msg = "$Nå°†"+name+"è½»è½»åœ°æ‘˜ä¸‹æ¥â€¦â€¦\n"; 
   //message_vision (msg,me);
   flower->set("unequip_msg",msg);
   return 0;
@@ -129,23 +129,23 @@ int do_smell (string arg)
   switch (random(9))
   {
     case 0:
-      { msg = "$NÎÅÁËÎÅ"+name+"£¬ÏëÆğµ±ÄêÄÇºÃÊìÏ¤µÄÇåÏãÎ¶¡£\n"; break; }
+      { msg = "$Né—»äº†é—»"+name+"ï¼Œæƒ³èµ·å½“å¹´é‚£å¥½ç†Ÿæ‚‰çš„æ¸…é¦™å‘³ã€‚\n"; break; }
     case 1:
-      { msg = "$NµÍÍ·ĞáÁËÒ»ÏÂ"+name+"£¬Å¤¹ıÍ·È¥´òÁËÒ»¸öÏãÏãÅç¡£\n"; break; }
+      { msg = "$Nä½å¤´å—…äº†ä¸€ä¸‹"+name+"ï¼Œæ‰­è¿‡å¤´å»æ‰“äº†ä¸€ä¸ªé¦™é¦™å–·ã€‚\n"; break; }
     case 2:
-      { msg = "$NÅõ×Å"+name+"Ò»Ğá£¬ÀáË®µÎÔÚ»¨°êÉÏ¡£\n"; break; }
+      { msg = "$Næ§ç€"+name+"ä¸€å—…ï¼Œæ³ªæ°´æ»´åœ¨èŠ±ç“£ä¸Šã€‚\n"; break; }
     case 3:
-      { msg = "$N½«Ò»¶ä"+name+"·ÅÔÚ±Ç×ÓÏÂ£¬Ïë°¡Ïë°¡¡­¡­\n"; break; }
+      { msg = "$Nå°†ä¸€æœµ"+name+"æ”¾åœ¨é¼»å­ä¸‹ï¼Œæƒ³å•Šæƒ³å•Šâ€¦â€¦\n"; break; }
     case 4:
-      { msg = "$NÅõ×Å"+name+"ÎÅÁËÒ»ÏÂ£º°¦£¬½ñÏ¦ÊÇºÎÏ¦¡£\n"; break; }
+      { msg = "$Næ§ç€"+name+"é—»äº†ä¸€ä¸‹ï¼šå”‰ï¼Œä»Šå¤•æ˜¯ä½•å¤•ã€‚\n"; break; }
     case 5:
-      { msg = "$N½«"+name+"ÅõÆğÎÅÁËÎÅ£¬ÓÖµë¼ÇÆğ×òÌìµÄ¹ÊÈË¡£\n"; break; }
+      { msg = "$Nå°†"+name+"æ§èµ·é—»äº†é—»ï¼Œåˆæƒ¦è®°èµ·æ˜¨å¤©çš„æ•…äººã€‚\n"; break; }
     case 6:
-      { msg = "$N²»½û½«"+name+"ÇáÇáÒ»ÎÅ£¬Ë¼Ğ÷ÃàÃàÈç´°ÍâµÄÏ¸Óê¡£\n"; break; }
+      { msg = "$Nä¸ç¦å°†"+name+"è½»è½»ä¸€é—»ï¼Œæ€ç»ªç»µç»µå¦‚çª—å¤–çš„ç»†é›¨ã€‚\n"; break; }
     case 7:
-      { msg = "$NÎÅÁËÎÅ"+name+"£¬³Õ³ÕµØÌı×Å´°ÍâÆ®¹ıµÄĞ¡Óê¡£\n"; break; }
+      { msg = "$Né—»äº†é—»"+name+"ï¼Œç—´ç—´åœ°å¬ç€çª—å¤–é£˜è¿‡çš„å°é›¨ã€‚\n"; break; }
     case 8:
-      { msg = "$N½«"+name+"ÇáÇáÒ»Ğá£¬²»½ûÄîµÀ£ºÃ÷ÈÕÌìÑÄºÎ´¦¡­¡­\n"; break; }
+      { msg = "$Nå°†"+name+"è½»è½»ä¸€å—…ï¼Œä¸ç¦å¿µé“ï¼šæ˜æ—¥å¤©æ¶¯ä½•å¤„â€¦â€¦\n"; break; }
   }
   message_vision (msg,me);
   return 1;
@@ -161,7 +161,7 @@ int do_fix (string arg)
   if (arg != "flower")
     return 0;
 
-  msg = "$N½«"+name+"Ğ¡ĞÄµØÓÃÊªÈóµÄË¿¾î°üºÃ¡£\n";
+  msg = "$Nå°†"+name+"å°å¿ƒåœ°ç”¨æ¹¿æ¶¦çš„ä¸ç»¢åŒ…å¥½ã€‚\n";
   flower->set("fixed",1);
   message_vision (msg,me);
   return 1;
@@ -184,23 +184,23 @@ void need_water (object where)
   switch (flower->query("water"))
   {
     case 0:
-      { msg = "·ç´µ¹ı£¬"+name+"ÔÚ$NµÄÑÛÇ°Çá»ÎÁËÒ»ÏÂ¡£\n"; break; }
+      { msg = "é£å¹è¿‡ï¼Œ"+name+"åœ¨$Nçš„çœ¼å‰è½»æ™ƒäº†ä¸€ä¸‹ã€‚\n"; break; }
     case 1:
-      { msg = name+"ÓĞµã¸ÉÁË£¬Å¶£¬¸ÃÁÜÒ»µãË®ÁË¡£\n"; break; }
+      { msg = name+"æœ‰ç‚¹å¹²äº†ï¼Œå“¦ï¼Œè¯¥æ·‹ä¸€ç‚¹æ°´äº†ã€‚\n"; break; }
     case 2:
-      { msg = name+"ÂıÂıµÍÏÂÍ·¡£\n"; break; }
+      { msg = name+"æ…¢æ…¢ä½ä¸‹å¤´ã€‚\n"; break; }
     case 3:
-      { msg = name+"Ì§ÆğÍ·£¬ÎŞÉùµØ¿´×Å$N¡£\n"; break; }
+      { msg = name+"æŠ¬èµ·å¤´ï¼Œæ— å£°åœ°çœ‹ç€$Nã€‚\n"; break; }
     case 4:
-      { msg = name+"¼èÄÑµØÖØĞÂÉìÖ±Ñü¸Ë£º¡°Ë®¡±¡­¡­\n"; break; }
+      { msg = name+"è‰°éš¾åœ°é‡æ–°ä¼¸ç›´è…°æ†ï¼šâ€œæ°´â€â€¦â€¦\n"; break; }
     case 5:
-      { msg = name+"ÖÕÓÚ¸É¿İÁË¡£\n"; flower->set("name","¸É"+name); break; }
+      { msg = name+"ç»ˆäºå¹²æ¯äº†ã€‚\n"; flower->set("name","å¹²"+name); break; }
     default:   //added by mon 8/31/97
       {  
         if(flower->query("water")>10 && random(10)==0) {
           message_vision(name+
-     "Ëæ·ç¶øÆğ£¬»¯×÷ÁËÆ¬Æ¬»¨Óê£®£®£®\n"+
-     "ÔÙ¿´Ê±£¬Ö»ÓĞÒ»Á£ÎÚºÚµÄ»¨×Ñ»¹ÁôÔÚ$NÊÖÉÏ¡£\n"
+     "éšé£è€Œèµ·ï¼ŒåŒ–ä½œäº†ç‰‡ç‰‡èŠ±é›¨ï¼ï¼ï¼\n"+
+     "å†çœ‹æ—¶ï¼Œåªæœ‰ä¸€ç²’ä¹Œé»‘çš„èŠ±ç±½è¿˜ç•™åœ¨$Næ‰‹ä¸Šã€‚\n"
      ,who);
      seed = new (__DIR__"seed");
           seed->move(who);
@@ -226,33 +226,33 @@ int do_water (string arg)
 
   if (flower->query("water") >= 5)
   {
-    message_vision ("$NµÄÀáË®Ò»µÎµÎÁ÷ÔÚ"+name+"ÉÏ¡£\n",who);
+    message_vision ("$Nçš„æ³ªæ°´ä¸€æ»´æ»´æµåœ¨"+name+"ä¸Šã€‚\n",who);
     return 1;
   }
 
   switch (random(9))
   {
     case 0:
-      { msg = "$N¿Úº¬ÇåË®£¬ÅçÔÚ"+name+"µÄ»¨°êÉÏ¡£\n"; break; }
+      { msg = "$Nå£å«æ¸…æ°´ï¼Œå–·åœ¨"+name+"çš„èŠ±ç“£ä¸Šã€‚\n"; break; }
     case 1:
-      { msg = "$N½«Ò»µãÇåË®È÷ÔÚ"+name+"ÉÏ¡£\n"; break; }
+      { msg = "$Nå°†ä¸€ç‚¹æ¸…æ°´æ´’åœ¨"+name+"ä¸Šã€‚\n"; break; }
     case 2:
-      { msg = "$NÉì³öÊÖ×¥×¡Ï¸Ï¸µÄĞ¡Óê£¬ÁÜÔÚ"+name+"ÉÏ¡£\n"; break; }
+      { msg = "$Nä¼¸å‡ºæ‰‹æŠ“ä½ç»†ç»†çš„å°é›¨ï¼Œæ·‹åœ¨"+name+"ä¸Šã€‚\n"; break; }
     case 3:
-      { msg = "$NĞ¡ĞÄµØÅõÆğÒ»µãµãÂ¶Ë®£¬µÎÔÚ"+name+"µÄ»¨ÀÙÉÏ¡£\n"; break; }
+      { msg = "$Nå°å¿ƒåœ°æ§èµ·ä¸€ç‚¹ç‚¹éœ²æ°´ï¼Œæ»´åœ¨"+name+"çš„èŠ±è•¾ä¸Šã€‚\n"; break; }
     case 4:
-      { msg = "$NÒ»ÕóĞÄÍ´£¬ÀáË®Á÷ÔÚ"+name+"µÄ»¨°êÉÏ¡£\n";break; }
+      { msg = "$Nä¸€é˜µå¿ƒç—›ï¼Œæ³ªæ°´æµåœ¨"+name+"çš„èŠ±ç“£ä¸Šã€‚\n";break; }
     case 5:
-      { msg = "$NË«ÊÖÅõ×Å"+name+"£¬Éìµ½´°ÍâµÄĞ¡ÓêÖĞ¡­¡­\n";break; }
+      { msg = "$NåŒæ‰‹æ§ç€"+name+"ï¼Œä¼¸åˆ°çª—å¤–çš„å°é›¨ä¸­â€¦â€¦\n";break; }
     case 6:
-      { msg = "$N×ĞÏ¸µØÄÃÆğÒ»Ö»Ğ¡±­×Ó£¬½«Ë®µÎÔÚ"+name+"ÉÏ¡£\n";break; }
+      { msg = "$Nä»”ç»†åœ°æ‹¿èµ·ä¸€åªå°æ¯å­ï¼Œå°†æ°´æ»´åœ¨"+name+"ä¸Šã€‚\n";break; }
     case 7:
-      { msg = "$NÅõÆğ´ÓÒ°Íâ²ÉÀ´µÄ³¿Â¶£¬È÷ÔÚ"+name+"µÄ»¨°êÉÏ¡£\n";break; }
+      { msg = "$Næ§èµ·ä»é‡å¤–é‡‡æ¥çš„æ™¨éœ²ï¼Œæ´’åœ¨"+name+"çš„èŠ±ç“£ä¸Šã€‚\n";break; }
     case 8:
-      { msg = "$NÓÃÊÖÖ¸Õº×ÅÇåË®£¬Ò»µãµãµÎÔÚ"+name+"µÄ»¨°êÉÏ¡£\n";break; }
+      { msg = "$Nç”¨æ‰‹æŒ‡è˜¸ç€æ¸…æ°´ï¼Œä¸€ç‚¹ç‚¹æ»´åœ¨"+name+"çš„èŠ±ç“£ä¸Šã€‚\n";break; }
   }
   message_vision (msg,who);
-  message_vision (name+"ÖØĞÂÂ¶³öÁËÌìÕæµÄĞ¦Èİ¡£\n",who);
+  message_vision (name+"é‡æ–°éœ²å‡ºäº†å¤©çœŸçš„ç¬‘å®¹ã€‚\n",who);
   flower->set("water",0);
   return 1;
 }

@@ -1,4 +1,4 @@
-// ╔ё╗░╩└╜чбд╬ў╙╬╝╟бд░ц▒╛г┤гог╡г░
+// чеЮшпЭф╕ЦчХМ┬╖ше┐ц╕╕шо░┬╖чЙИцЬмя╝Фя╝Оя╝Хя╝Р
 /* <SecCrypt CPL V3R05> */
  
 // message.c
@@ -19,7 +19,7 @@ void receive_message(string msgclass, string msg)
   //added by mon 11/13/97 trying to prevent crash.
 
   if(len>8000) 
-   msg=msg[0..8000]+"\n\nгогого\n";
+   msg=msg[0..8000]+"\n\nя╝Оя╝Оя╝О\n";
    //added by mon 11/13/97 trying to prevent crash.
 
   msg = CONVERT_D->output(msg,this_object());
@@ -57,7 +57,7 @@ void receive_message(string msgclass, string msg)
 
 void write_prompt()
 {
-    string msg = "[╩ф╚ы╩▒╘▌┤ц╤╢╧в]\n" ;
+    string msg = "[ш╛УхЕецЧ╢цЪВхнШшопцБп]\n" ;
 
   msg = CONVERT_D->output(msg,this_object());
 

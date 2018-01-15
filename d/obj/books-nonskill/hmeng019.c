@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// ºìÂ¥ÃÎ
+// çº¢æ¥¼æ¢¦
 // created 7/7/1997 snowcat
 
 inherit ITEM;
 #include <ansi.h>
 
-string name = "¡¶ºìÂ¥ÃÎ¡·µÚÊ®¾Å»Ø";
+string name = "ã€Šçº¢æ¥¼æ¢¦ã€‹ç¬¬åä¹å›";
 string number = "019";
 
 void init();
@@ -20,8 +20,8 @@ void create()
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±¾");
-    set("long", " Ç¬Â¡³­±¾°ÙØ¥»ØºìÂ¥ÃÎ¸åĞ£¶¨±¾ "+name+" ÇëÓÃ read ÔÄ¶Á¡£");
+    set("unit", "æœ¬");
+    set("long", " ä¹¾éš†æŠ„æœ¬ç™¾å»¿å›çº¢æ¥¼æ¢¦ç¨¿æ ¡å®šæœ¬ "+name+" è¯·ç”¨ read é˜…è¯»ã€‚");
     set("material", "paper");
   }
 }
@@ -37,7 +37,7 @@ int read_book(string arg)
   object ob = this_object();
     
   if (!ob->id(arg))
-      return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+      return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
   write("\n");
   me->start_more(read_file("/d/obj/books-nonskill/text/hmeng"+number));
   write("\n");

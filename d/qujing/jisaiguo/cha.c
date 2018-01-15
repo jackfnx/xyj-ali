@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "²èÊÒ");
+  set ("short", "èŒ¶å®¤");
   set ("long", @LONG
 
-·¿ÖÐµÄ°ÚÉèËäÒÑÆÆ¾É£¬µ«»¹¸É¾»£¬ºÃÏóÓÐÈË³£À´³£ÍùµÄÑù×Ó¡£ÎÝ
-ÀïÇ½ÉÏ»¹¹Ò×Å¼¸·ù×Ö»­£¬¿´ÆðÀ´»¹ÂùÓÐÇéÈ¤¡£ÎÝºó¼¸ÖêÂÌÖñËæ·ç
-Ò¡°Ú£¬Ò¶×Ó·¢³ö»©»©µÄÉùÒô¡£
+æˆ¿ä¸­çš„æ‘†è®¾è™½å·²ç ´æ—§ï¼Œä½†è¿˜å¹²å‡€ï¼Œå¥½è±¡æœ‰äººå¸¸æ¥å¸¸å¾€çš„æ ·å­ã€‚å±‹
+é‡Œå¢™ä¸Šè¿˜æŒ‚ç€å‡ å¹…å­—ç”»ï¼Œçœ‹èµ·æ¥è¿˜è›®æœ‰æƒ…è¶£ã€‚å±‹åŽå‡ æ ªç»¿ç«¹éšé£Ž
+æ‘‡æ‘†ï¼Œå¶å­å‘å‡ºå“—å“—çš„å£°éŸ³ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

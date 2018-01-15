@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //chunyang.c
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-   set_name("¡¾´¿ÑôĞÄµÃ¡¿", ({"chunyang xinde","xinde","book", "shu"}));
+   set_name("ã€çº¯é˜³å¿ƒå¾—ã€‘", ({"chunyang xinde","xinde","book", "shu"}));
    set_weight(1000);
    if( clonep() ) 
      set_default_object(__FILE__);
    else 
    {
-     set("unit", "±¾");
-     set("long", "Ò»±¾Ğ¡²á×Ó¡£¼¸¸öÁú·É·ïÎèµÄ´ó×Ö¡¾´¿ÑôĞÄµÃ¡¿ÏÂ»¹ÓĞÒ»ĞĞĞ¡×Ö£ºÂÀ¶´±öÖø¡£\n");
+     set("unit", "æœ¬");
+     set("long", "ä¸€æœ¬å°å†Œå­ã€‚å‡ ä¸ªé¾™é£å‡¤èˆçš„å¤§å­—ã€çº¯é˜³å¿ƒå¾—ã€‘ä¸‹è¿˜æœ‰ä¸€è¡Œå°å­—ï¼šå•æ´å®¾è‘—ã€‚\n");
      set("material", "paper");
      set("value", 1000);
      set("skill", ([

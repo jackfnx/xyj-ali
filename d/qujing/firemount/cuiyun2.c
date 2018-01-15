@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,13 +8,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "´äÔÆÉ½");
+  set ("short", "ç¿ äº‘å±±");
   set ("long", @LONG
 
-É½ÖÐÁÖÄ¾´Ð´Ð£¬Çà²ÝÓôÓô¡£Ò»ÅÉÄñÓï»¨ÏãµÄ¾°Ïó¡£É½ÊÆÎ¡¶ë¸ßËÊ£¬
-É½Ñü°×ÔÆôÁÈÆ£¬ÕæËÆÄÇÊÀÍâÌÒÔ´£¬º£ÉÏÅîÀ³¡£ÁÖÖÐÒþÒþ´«À´¶¡¶¡¶¡
-·¥Ä¾Ö®Éù¡£Â·±ßÊÇÒ»¶ÑÒ»¶ÑÂÒÆß°ËÔãµÄÊ÷Ö¦£¬¿´ÉÏÈ¥ºÃÏóÔø±»ÈË·­
-¶¯¹ý¡£
+å±±ä¸­æž—æœ¨è‘±è‘±ï¼Œé’è‰éƒéƒã€‚ä¸€æ´¾é¸Ÿè¯­èŠ±é¦™çš„æ™¯è±¡ã€‚å±±åŠ¿å·å³¨é«˜è€¸ï¼Œ
+å±±è…°ç™½äº‘è¢…ç»•ï¼ŒçœŸä¼¼é‚£ä¸–å¤–æ¡ƒæºï¼Œæµ·ä¸Šè“¬èŽ±ã€‚æž—ä¸­éšéšä¼ æ¥ä¸ä¸ä¸
+ä¼æœ¨ä¹‹å£°ã€‚è·¯è¾¹æ˜¯ä¸€å †ä¸€å †ä¹±ä¸ƒå…«ç³Ÿçš„æ ‘æžï¼Œçœ‹ä¸ŠåŽ»å¥½è±¡æ›¾è¢«äººç¿»
+åŠ¨è¿‡ã€‚
 
 LONG);
 
@@ -40,10 +40,10 @@ int do_search (string arg)
 
   if (!arg || arg != "bone")
   {
-    message_vision ("$N¶×ÏÂÈ¥Ñ°ÕÒÊ²Ã´¡£\n",me);
+    message_vision ("$Nè¹²ä¸‹åŽ»å¯»æ‰¾ä»€ä¹ˆã€‚\n",me);
     return 1;
   }
 
-  message_vision ("$N¶×ÏÂÈ¥ÔÚ¿ÝÊ÷Ö¦ÀïºúÂÒ·­ÁËÆðÀ´¡£\n",me);
+  message_vision ("$Nè¹²ä¸‹åŽ»åœ¨æž¯æ ‘æžé‡Œèƒ¡ä¹±ç¿»äº†èµ·æ¥ã€‚\n",me);
   return 1;
 }

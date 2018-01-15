@@ -1,14 +1,14 @@
 
-Õ½Ê¿Ïµ£ºÉÃ³¤Ê¹ÓÃÎäÆ÷(ÖØÎäÆ÷)×÷Õ½£¬Ê¹ÓÃËùÓĞ»¤¾ß¡£
+æˆ˜å£«ç³»ï¼šæ“…é•¿ä½¿ç”¨æ­¦å™¨(é‡æ­¦å™¨)ä½œæˆ˜ï¼Œä½¿ç”¨æ‰€æœ‰æŠ¤å…·ã€‚
 
-Õ½Ê¿(warrior) ¡ª©Ğ ÆïÊ¿(knight) ¡ª©Ğ ÍõÕß(lord)                kni/mag
-                ©¦                ©¸ Ê¥ÆïÊ¿(paladin)           kni/cle
-                ©À ÓÂÊ¿(valour) ¡ª©Ğ Ó¢ĞÛ(hero)                war+/mag
-                ©¦                ©¸ ³¬Õ½Ê¿(champion)          war++
-                ©À ÎäÊ¿(samurai) ¡ª©Ğ ´óÃû(daimyo)             sam+
-                ©¦                 ©¸ ÀÎÈË(ronin)              sam/mag
-                ©¸ ½£Ê¿(swordman) ¡ª©Ğ ½£Êõ¼Ò(fencer)          swd+
-                                    ©¸ ¡õ±ø(mercenary)         swd/mag
+æˆ˜å£«(warrior) â€”â”¬ éª‘å£«(knight) â€”â”¬ ç‹è€…(lord)                kni/mag
+                â”‚                â”” åœ£éª‘å£«(paladin)           kni/cle
+                â”œ å‹‡å£«(valour) â€”â”¬ è‹±é›„(hero)                war+/mag
+                â”‚                â”” è¶…æˆ˜å£«(champion)          war++
+                â”œ æ­¦å£«(samurai) â€”â”¬ å¤§å(daimyo)             sam+
+                â”‚                 â”” ç‰¢äºº(ronin)              sam/mag
+                â”” å‰‘å£«(swordman) â€”â”¬ å‰‘æœ¯å®¶(fencer)          swd+
+                                    â”” â–¡å…µ(mercenary)         swd/mag
 
   war   - parry, block, disarm, estimate
   kni   - holy bonus, quest bonus
@@ -20,12 +20,12 @@
   swd+  - counter attack, multiple attack
 
 -----------------------------------------------------------------------------
-Ğ¡ÍµÏµ£ºÉÃ³¤ÉÁ¶ã¡¢ÍµÇÔ¡¢¿ªËø£¬Ê¹ÓÃÆ¤¸ï¡¢²¼Àà»¤¾ß¡£
+å°å·ç³»ï¼šæ“…é•¿é—ªèº²ã€å·çªƒã€å¼€é”ï¼Œä½¿ç”¨çš®é©ã€å¸ƒç±»æŠ¤å…·ã€‚
 
-Ğ¡Íµ(thief) ¡ª©Ğ Ç¿µÁ(brigand) ¡ª©Ğ ¹ô×ÓÊÖ(executioner)        asn/war
-              ©¦                 ©¸ É±ÊÖ(assassin)             asn+
-              ©¸ Æ­×Ó(trickster) ¡ª©Ğ ÀÉÖĞ(charlatan)          tri/cle
-                                   ©¸ »ÃÊõÊ¦(illusionist)      tri/mag
+å°å·(thief) â€”â”¬ å¼ºç›—(brigand) â€”â”¬ åˆ½å­æ‰‹(executioner)        asn/war
+              â”‚                 â”” æ€æ‰‹(assassin)             asn+
+              â”” éª—å­(trickster) â€”â”¬ éƒä¸­(charlatan)          tri/cle
+                                   â”” å¹»æœ¯å¸ˆ(illusionist)      tri/mag
 
   thi   - dodge, steal, pick lock, hide, sneak
   brg   - plunder, horrify
@@ -34,47 +34,47 @@
   tri   - disguise, charm
 
 -----------------------------------------------------------------------------
-Ä§·¨Ê¦Ïµ£ºÉÃ³¤¹¥»÷·¨Êõ£¬Ê¹ÓÃ²¼¡¢Ä§·¨Àà»¤¾ß¡£
+é­”æ³•å¸ˆç³»ï¼šæ“…é•¿æ”»å‡»æ³•æœ¯ï¼Œä½¿ç”¨å¸ƒã€é­”æ³•ç±»æŠ¤å…·ã€‚
 
-Ä§ÊõÊ¦(mage) ¡ª©Ğ ·¨Ê¦(sorcerer) ¡ª©Ğ ´ó·¨Ê¦(archmage)         mag++
-               ©¦                  ©¸ ÏÍÕß(sage)               mag+/cle
-               ©¸ ÖäÊõÊ¦(conjurer) ¡ª©Ğ ÕÙ»½Ê¦(summoner)       sum
-                                     ©¸ Ä§µ¼Ê¿(warlock)        mag+/war
+é­”æœ¯å¸ˆ(mage) â€”â”¬ æ³•å¸ˆ(sorcerer) â€”â”¬ å¤§æ³•å¸ˆ(archmage)         mag++
+               â”‚                  â”” è´¤è€…(sage)               mag+/cle
+               â”” å’’æœ¯å¸ˆ(conjurer) â€”â”¬ å¬å”¤å¸ˆ(summoner)       sum
+                                     â”” é­”å¯¼å£«(warlock)        mag+/war
 
   mag   - scribe, concentrate, magical defense
   mag+  - meditate, spellmaster
   mag++ - forbiden power
   sum   - spellmaster
 -----------------------------------------------------------------------------
-ÄÁÊ¦Ïµ£ºÉÃ³¤¸¨Öú¡¢»Ø¸´·¨Êõ£¬Ê¹ÓÃÇá½ğÊô¡¢ÉñÊ¥Àà»¤¾ß¡£
+ç‰§å¸ˆç³»ï¼šæ“…é•¿è¾…åŠ©ã€å›å¤æ³•æœ¯ï¼Œä½¿ç”¨è½»é‡‘å±ã€ç¥åœ£ç±»æŠ¤å…·ã€‚
 
-ÄÁÊ¦(cleric) ¡ª©Ğ Ö÷½Ì(bishop) ¡ª©Ğ ´óÖ÷½Ì(archbishop)         cle++
-               ©¦                ©¸ Ê¥Í½(saint)                cle+/mag
-               ©¸ ÉñÊÚÕ½Ê¿(crusader) ¡ª©Ğ ÇıÄ§Ê¦(exorcist)     cle+/war
-                                       ©¸ Ê¥Õß(avatar)         cle/war/mag
+ç‰§å¸ˆ(cleric) â€”â”¬ ä¸»æ•™(bishop) â€”â”¬ å¤§ä¸»æ•™(archbishop)         cle++
+               â”‚                â”” åœ£å¾’(saint)                cle+/mag
+               â”” ç¥æˆæˆ˜å£«(crusader) â€”â”¬ é©±é­”å¸ˆ(exorcist)     cle+/war
+                                       â”” åœ£è€…(avatar)         cle/war/mag
 
   cle   - turn undead, prayer
   cle+  - holy bonus, magical defense, meditate
   cle++ - spellmaster, divine bonus
 -----------------------------------------------------------------------------
-Âù×åÏµ£ºÌåÁ¦¡¢ÄÍÁ¦¡¢¹¥»÷Á¦¸ß£¬Ê¹ÓÃÃ«Æ¤¡¢Ê¯ÖÆ»¤¾ß¡£
+è›®æ—ç³»ï¼šä½“åŠ›ã€è€åŠ›ã€æ”»å‡»åŠ›é«˜ï¼Œä½¿ç”¨æ¯›çš®ã€çŸ³åˆ¶æŠ¤å…·ã€‚
 
-Âù×å(barbarian) ¡ª©Ğ ¿ñÕ½Ê¿(berserker) ¡ª©Ğ ÁÔÍ·ÈË(headhunter) bar+/war
-                  ©¦                     ©¸ º´ÎÀÕß(guardian)   bar/war/cle
-                  ©¸ Î×Ò½(shaman) ¡ª©Ğ ½µÍ·Ê¦(necromancer)     nec
-                                    ©¸ Î×¶¾Ê¦(voodooist)       sha/mag
+è›®æ—(barbarian) â€”â”¬ ç‹‚æˆ˜å£«(berserker) â€”â”¬ çŒå¤´äºº(headhunter) bar+/war
+                  â”‚                     â”” æå«è€…(guardian)   bar/war/cle
+                  â”” å·«åŒ»(shaman) â€”â”¬ é™å¤´å¸ˆ(necromancer)     nec
+                                    â”” å·«æ¯’å¸ˆ(voodooist)       sha/mag
 
   bar   - melee bonus, berserk, war cry
   bar+  - power strike, assault
   sha   - magical defense, concentrate, spellmaster
   nec   - necromancy
 -----------------------------------------------------------------------------
-Ê¿±øÏµ£ºÉÃ³¤Õ½Êõ¡¢ÈºÌå×÷Õ½¡¢ÌØÊâµØĞÎ×÷Õ½£¬Ê¹ÓÃ¾Ö²¿Ç¿»¯»¤¾ß¡£
+å£«å…µç³»ï¼šæ“…é•¿æˆ˜æœ¯ã€ç¾¤ä½“ä½œæˆ˜ã€ç‰¹æ®Šåœ°å½¢ä½œæˆ˜ï¼Œä½¿ç”¨å±€éƒ¨å¼ºåŒ–æŠ¤å…·ã€‚
 
-ÒåÓÂ¾ü(militia) ¡ª©Ğ Ê¿±ø(soldier) ¡ª©Ğ Æï±ø(cavalry)          mil+/cav
-                  ©¦                 ©¸ ÌØÖÖ²¿¶Ó(combatant)    mil++
-                  ©¸ ¹­¼ıÊÖ(archer) ¡ª©Ğ ÓÎÆï±ø(ranger)        arc/cav
-                                      ©¸ ¾Ñ»÷ÊÖ(sniper)        arc/asn
+ä¹‰å‹‡å†›(militia) â€”â”¬ å£«å…µ(soldier) â€”â”¬ éª‘å…µ(cavalry)          mil+/cav
+                  â”‚                 â”” ç‰¹ç§éƒ¨é˜Ÿ(combatant)    mil++
+                  â”” å¼“ç®­æ‰‹(archer) â€”â”¬ æ¸¸éª‘å…µ(ranger)        arc/cav
+                                      â”” ç‹™å‡»æ‰‹(sniper)        arc/asn
 
   mil   - sneak, hide, block, estimate
   mil+  - assault, tactical assist

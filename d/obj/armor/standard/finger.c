@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // shoupi.c
@@ -9,13 +9,13 @@ inherit FINGER;
 
 void create()
 {
-        set_name("Ö¸Ì×", ({"finger"}));
+        set_name("æŒ‡å¥—", ({"finger"}));
    set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "iron");
-                set("unit", "Ì×");
+                set("unit", "å¥—");
      set("armor_prop/armor", 1);
         }
         setup();

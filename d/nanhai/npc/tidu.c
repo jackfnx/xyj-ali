@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tidu.c
@@ -13,9 +13,9 @@ string ask_for_huansu();
 
 void create()
 {
-    set_name("Ìê¶ÈÉ®", ({ "tidu seng", "seng" }) );
+    set_name("å‰ƒåº¦åƒ§", ({ "tidu seng", "seng" }) );
 
-    set("gender", "ÄÐÐÔ");
+    set("gender", "ç”·æ€§");
     set("age", 50);
     set("attitude", "peaceful");
     set("class", "bonze");
@@ -38,10 +38,10 @@ void create()
     set("score", 9000);
 
     set("inquiry", ([
-        "Ìê¶È" : (: ask_for_join :),
-        "³ö¼Ò" : (: ask_for_join :),
-        "»¹Ë×" : (: ask_for_huansu :),
-        "ÍÑÀë" : (: ask_for_leave :),
+        "å‰ƒåº¦" : (: ask_for_join :),
+        "å‡ºå®¶" : (: ask_for_join :),
+        "è¿˜ä¿—" : (: ask_for_huansu :),
+        "è„±ç¦»" : (: ask_for_leave :),
         "leave" : (: ask_for_leave :),
     ]));
 
@@ -59,7 +59,7 @@ void create()
     map_skill("force", "lotusforce");
     map_skill("spells", "buddhism");
 
-    create_family("ÄÏº£ÆÕÍÓÉ½", 4, "µÜ×Ó");
+    create_family("å—æµ·æ™®é™€å±±", 4, "å¼Ÿå­");
 
     setup();
 
@@ -80,23 +80,23 @@ string ask_for_huansu()
     me = this_player();
 
     if ((string)me->query("bonze/class") != "bonze")
-        return "°¢ÃÖÍÓ·ð£¡Äã¼ÈÒÑÉíÏµ³¾ÊÀ£¬ºÎ±Ø´ÕÕâ¸öÈÈÄÖ£¿\n";
+        return "é˜¿å¼¥é™€ä½›ï¼ä½ æ—¢å·²èº«ç³»å°˜ä¸–ï¼Œä½•å¿…å‡‘è¿™ä¸ªçƒ­é—¹ï¼Ÿ\n";
     me->set_temp("pending/leave_bonze", 1);
-    command("say °¢ÃÖÍÓ·ð£¡Ò»Èëºì³¾£¬Íò½Ù²»¸´£¬"
-        +RANK_D->query_respect(me)+"Ò»Éí´ó³Ë·ð·¨Ò²½«ËæÖ®¸¶Öî¶«Á÷¡£»¹Íû"
-        +RANK_D->query_respect(me)+"ÈýË¼¡£");
-    return RANK_D->query_respect(me)+"ÈôÒÑ¾ö¶¨£¬±ãÇëÍÑÅÛ»¹Ë×(huansu)¡£\n";
+    command("say é˜¿å¼¥é™€ä½›ï¼ä¸€å…¥çº¢å°˜ï¼Œä¸‡åŠ«ä¸å¤ï¼Œ"
+        +RANK_D->query_respect(me)+"ä¸€èº«å¤§ä¹˜ä½›æ³•ä¹Ÿå°†éšä¹‹ä»˜è¯¸ä¸œæµã€‚è¿˜æœ›"
+        +RANK_D->query_respect(me)+"ä¸‰æ€ã€‚");
+    return RANK_D->query_respect(me)+"è‹¥å·²å†³å®šï¼Œä¾¿è¯·è„±è¢è¿˜ä¿—(huansu)ã€‚\n";
 }
 
 int do_huansu()
 {
     if (!this_player()->query_temp("pending/leave_bonze")) return 0;
-    message_vision(HIC "$NÍÑÏÂÉíÉÏµÄôÂôÄ£¬¹§¹§¾´¾´µØ¹òÏÂÀ´¿ÄÁË¼¸¸öÏìÍ·£¬´Ó´Ë»Ö¸´ÁË×ÔÓÉÉí¡£\n\n" NOR,
+    message_vision(HIC "$Nè„±ä¸‹èº«ä¸Šçš„è¢ˆè£Ÿï¼Œæ­æ­æ•¬æ•¬åœ°è·ªä¸‹æ¥ç£•äº†å‡ ä¸ªå“å¤´ï¼Œä»Žæ­¤æ¢å¤äº†è‡ªç”±èº«ã€‚\n\n" NOR,
         this_player(), this_object());
     this_player()->delete("class");
     this_player()->delete("bonze/class");
     this_player()->delete_skill("buddhism");
-    command("say ´Ó½ñÒÔááÄã»Ö¸´³ö¼ÒÇ°µÄË×Ãû" +this_player()->query("bonze/old_name")+"¡£");
+    command("say ä»Žä»Šä»¥å¾Œä½ æ¢å¤å‡ºå®¶å‰çš„ä¿—å" +this_player()->query("bonze/old_name")+"ã€‚");
     this_player()->set("name", this_player()->query("bonze/old_name"));
     command("sigh");
     this_player()->delete_temp("pending/leave_bonze");
@@ -111,30 +111,30 @@ string ask_for_join()
     me = this_player();
 
     if ((string)me->query("bonze/class")=="bonze")
-        return "°¢ÃÖÍÓ·ð£¡ÄãÎÒÍ¬ÊÇ³ö¼ÒÈË£¬ºÎ¹Ê¸úÀÏñÄ¿ªÕâµÈÍæÐ¦£¿\n";
+        return "é˜¿å¼¥é™€ä½›ï¼ä½ æˆ‘åŒæ˜¯å‡ºå®¶äººï¼Œä½•æ•…è·Ÿè€è¡²å¼€è¿™ç­‰çŽ©ç¬‘ï¼Ÿ\n";
     if (me->query("bonze/justonetime"))
-        return "Ê©Ö÷¼ÈÒÑ»¹Ë×£¬ÓÖºÎ¿àÔÙ´Î³ö¼Ò£¿\n";
+        return "æ–½ä¸»æ—¢å·²è¿˜ä¿—ï¼Œåˆä½•è‹¦å†æ¬¡å‡ºå®¶ï¼Ÿ\n";
     me->set_temp("pending/join_bonze", 1);
-    return "°¢ÃÖÍÓ·ð£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Ê©Ö÷ÈôÕæÐÄð§ÒÀÎÒ·ð£¬Çë¹òÏÂ(kneel)ÊÜ½ä¡£\n";
+    return "é˜¿å¼¥é™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼æ–½ä¸»è‹¥çœŸå¿ƒçšˆä¾æˆ‘ä½›ï¼Œè¯·è·ªä¸‹(kneel)å—æˆ’ã€‚\n";
 }
 
 int do_kneel()
 {
     string *prename1 =
-        ({ "¿Õ", "Ã÷", "Ðé", "·¨" });
+        ({ "ç©º", "æ˜Ž", "è™š", "æ³•" });
     string *prename2 =
-        ({ "ÎÄ", "¾»", "·½", "»Û" });
+        ({ "æ–‡", "å‡€", "æ–¹", "æ…§" });
     string name, new_name;
 
     if (!this_player()->query_temp("pending/join_bonze")) return 0;
-    message_vision(HIC "$NË«ÊÖºÏÊ®£¬¹§¹§¾´¾´µØ¹òÁËÏÂÀ´¡£\n\n"
-            +"$nÉì³öÊÖÕÆ£¬ÔÚ$NÍ·¶¥ÇáÇáµØÄ¦êýÁË¼¸ÏÂ£¬½«$NµÄÍ··¢¾¡ÊýÌêÈ¥¡£\n\n" NOR,
+    message_vision(HIC "$NåŒæ‰‹åˆåï¼Œæ­æ­æ•¬æ•¬åœ°è·ªäº†ä¸‹æ¥ã€‚\n\n"
+            +"$nä¼¸å‡ºæ‰‹æŽŒï¼Œåœ¨$Nå¤´é¡¶è½»è½»åœ°æ‘©æŒ²äº†å‡ ä¸‹ï¼Œå°†$Nçš„å¤´å‘å°½æ•°å‰ƒåŽ»ã€‚\n\n" NOR,
         this_player(), this_object());
     name = this_player()->query("name");
-    new_name = ((string)this_player()->query("gender") == "ÄÐÐÔ")
+    new_name = ((string)this_player()->query("gender") == "ç”·æ€§")
         ? prename1[random(sizeof(prename1))] + name[0..1]
         : prename2[random(sizeof(prename2))] + name[0..1];
-    command("say ´Ó½ñÒÔááÄãµÄ·¨Ãû½Ð×ö" + new_name + "¡£");
+    command("say ä»Žä»Šä»¥å¾Œä½ çš„æ³•åå«åš" + new_name + "ã€‚");
     command("smile");
     this_player()->delete_temp("pending/join_bonze");
     this_player()->set("name", new_name);
@@ -150,28 +150,28 @@ string ask_for_leave()
 {
     object me=this_player();
 
-    if (me->query("family/family_name") == "ÄÏº£ÆÕÍÓÉ½" ) {
-        command("say Äã¼ÈÊÇÖ´ÒâÏÂÉ½£¬Æ¶É®È´ÓÐ¼¸¾ä»°Ëµ¡£");
+    if (me->query("family/family_name") == "å—æµ·æ™®é™€å±±" ) {
+        command("say ä½ æ—¢æ˜¯æ‰§æ„ä¸‹å±±ï¼Œè´«åƒ§å´æœ‰å‡ å¥è¯è¯´ã€‚");
         me->set_temp("betray", 1);
-        return ("ÍÑÀëÊ¦ÃÅÒªÐèÒªÓÐÒ»¶¨³Í·££¬Äã¿ÉÔ¸Òâ(agree)?\n");
+        return ("è„±ç¦»å¸ˆé—¨è¦éœ€è¦æœ‰ä¸€å®šæƒ©ç½šï¼Œä½ å¯æ„¿æ„(agree)?\n");
     }
 
-    return ("Æ¶É®²»Öª¡£\n");
+    return ("è´«åƒ§ä¸çŸ¥ã€‚\n");
 }
 
 int do_agree(string arg)
 {
     if (this_player()->query_temp("betray")) {
-        message_vision("$N´ðµÀ£ºµÜ×ÓÔ¸Òâ¡£\n\n", this_player());
+        message_vision("$Nç­”é“ï¼šå¼Ÿå­æ„¿æ„ã€‚\n\n", this_player());
         this_player()->add("betray/putuo", 1);
         this_player()->add("betray/count", 1);
-        command("say ¼ÈÊÇÄãÓë·ðÃÅÎÞÔµ£¬Äã±ãÏÂÉ½È¥°É£¡\n");
+        command("say æ—¢æ˜¯ä½ ä¸Žä½›é—¨æ— ç¼˜ï¼Œä½ ä¾¿ä¸‹å±±åŽ»å§ï¼\n");
         this_player()->set("combat_exp", this_player()->query("combat_exp")*95/100);
         this_player()->delete("family");
         this_player()->delete("class");
-        this_player()->set("title", "ÆÕÍ¨°ÙÐÕ");
+        this_player()->set("title", "æ™®é€šç™¾å§“");
         this_player()->set_temp("betray", 0);
-        command("say ½­ºþ·ç²¨£¬ÉÆ¶ñÎÞÐÎ£¬ºÃ×ÔÎªÖ®¡£¡£¡£\n");
+        command("say æ±Ÿæ¹–é£Žæ³¢ï¼Œå–„æ¶æ— å½¢ï¼Œå¥½è‡ªä¸ºä¹‹ã€‚ã€‚ã€‚\n");
         this_player()->save();
         return 1;
     }

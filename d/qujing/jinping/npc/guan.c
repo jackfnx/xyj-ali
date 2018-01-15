@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¸®¹Ù", ({ "fu guan", "guan" }) );
-  set("gender", "ÄĞĞÔ");
+  set_name("åºœå®˜", ({ "fu guan", "guan" }) );
+  set("gender", "ç”·æ€§");
   set("age", 40);
   set("combat_exp", 90000);
   set("attitude", "heroism");

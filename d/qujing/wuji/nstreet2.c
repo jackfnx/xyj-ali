@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/northstreet2.c  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ǬԪ��");
+  set ("short", "乾元街");
   set ("long", @LONG
 
-ǬԪ�ֱ��ζ�Ϊ���ڹ�Ա�ĸ�ۡ��������̫�Ӹ�����������ʦ����
-�����������ڼ����Ļʹ��ˡ�
+乾元街北段多为国内官员的府邸。东边是太子府，西边是天师府。
+再往北就是乌鸡国的皇宫了。
 
 LONG);
 

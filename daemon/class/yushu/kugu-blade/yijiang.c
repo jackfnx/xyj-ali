@@ -14,28 +14,28 @@ int perform(object me, object target)
     if (!target
     ||  !target->is_character()
     ||  !me->is_fighting(target))
-        return notify_fail("¡ºÒ»½«¹¦³É¡»Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
-    if (me->query("family/family_name") != "ÏÝ¿ÕÉ½ÎÞµ×¶´")
-        return notify_fail("¡ºÒ»½«¹¦³É¡»Ö»ÓÐÎÞµ×¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+        return notify_fail("ã€Žä¸€å°†åŠŸæˆã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
+    if (me->query("family/family_name") != "é™·ç©ºå±±æ— åº•æ´ž")
+        return notify_fail("ã€Žä¸€å°†åŠŸæˆã€åªæœ‰æ— åº•æ´žé—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
     weapon = me->query_temp("weapon");
     if ((string)weapon->query("skill_type") != "blade")
-        return notify_fail("ÄãÊÖÉÏÎÞµ¶£¬²»ÄÜÊ¹ÓÃ¡ºÒ»½«¹¦³É¡»£¡\n");
+        return notify_fail("ä½ æ‰‹ä¸Šæ— åˆ€ï¼Œä¸èƒ½ä½¿ç”¨ã€Žä¸€å°†åŠŸæˆã€ï¼\n");
     if ((int)me->query("force") <= 1000)
-        return notify_fail("ÄãÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃ¡ºÒ»½«¹¦³É¡»£¡\n");
+        return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Žä¸€å°†åŠŸæˆã€ï¼\n");
 
     extra = me->query_skill("kugu-blade", 1) / 4;
     me->add_temp("apply/attack", extra);
     me->add_temp("apply/damage", extra);
-    msg = HIR "$NÊ¹³ö£Û¿Ý¹Çµ¶·¨£ÝµÄ¡ºÒ»½«¹¦³É¡»£¬ÊÖÖÐµÄ"+ weapon->name() +"Ð±Ð±Åü³ö£¬$n¶Ù¾õºôÎüÒ»ÖÏ£¡" NOR;
+    msg = HIR "$Nä½¿å‡ºï¼»æž¯éª¨åˆ€æ³•ï¼½çš„ã€Žä¸€å°†åŠŸæˆã€ï¼Œæ‰‹ä¸­çš„"+ weapon->name() +"æ–œæ–œåŠˆå‡ºï¼Œ$né¡¿è§‰å‘¼å¸ä¸€çª’ï¼" NOR;
     message_vision(msg, me, target);
     COMBAT_D->do_attack(me, target, weapon, TYPE_REGULAR);
-    msg = HIW "Ò»½«¹¦³ÉÍò¹Ç¿Ý£¡£¡£¡\n" NOR;
+    msg = HIW "ä¸€å°†åŠŸæˆä¸‡éª¨æž¯ï¼ï¼ï¼\n" NOR;
     message_vision(msg, me, target);
     lvl = extra/10;
     if (lvl>8) lvl = 8;
     for (i=0; i<=lvl; i++) {
         if (!target) return 1;
-        msg = HIY "$NÅü³öÒ»µ¶£¡\n" NOR;
+        msg = HIY "$NåŠˆå‡ºä¸€åˆ€ï¼\n" NOR;
         COMBAT_D->do_attack(me, target, weapon, TYPE_REGULAR);
         message_vision(msg, me, target);
     }

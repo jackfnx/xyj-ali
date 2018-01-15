@@ -21,35 +21,35 @@ int main(object me, string arg)
         ob = present(arg, environment(me));
         if (!ob) ob = find_player(arg);
         if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
     } else
-      return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
+      return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹åˆ«äººçš„çŠ¶æ€ã€‚\n");
     
     my = ob->query_entire_dbase();
 
-    printf(" ¾«Ôª£º %s%4d/ %4d %s(%3d%%)" NOR "    ÕæÔª£º %s%4d / %4d (+%d)\n" NOR,
+    printf(" ç²¾å…ƒï¼š %s%4d/ %4d %s(%3d%%)" NOR "    çœŸå…ƒï¼š %s%4d / %4d (+%d)\n" NOR,
         status_color(my["gin"], my["eff_gin"]),   my["gin"],   my["eff_gin"],
         status_color(my["eff_gin"], my["max_gin"]),   my["eff_gin"] * 100 / my["max_gin"],
         status_color(my["atman"], my["max_atman"]),   my["atman"], my["max_atman"],
         my["atman_factor"] );
-    printf(" ÆøÑª£º %s%4d/ %4d %s(%3d%%)" NOR "    ÄÚÁ¦£º %s%4d / %4d (+%d)\n" NOR,
+    printf(" æ°”è¡€ï¼š %s%4d/ %4d %s(%3d%%)" NOR "    å†…åŠ›ï¼š %s%4d / %4d (+%d)\n" NOR,
         status_color(my["kee"], my["eff_kee"]),   my["kee"], my["eff_kee"],
         status_color(my["eff_kee"], my["max_kee"]),   my["eff_kee"] * 100 / my["max_kee"],
         status_color(my["force"], my["max_force"]),   my["force"], my["max_force"],
         my["force_factor"] );
-    printf(" ¾«Éñ£º %s%4d/ %4d %s(%3d%%)" NOR "    ·¨Á¦£º %s%4d / %4d (+%d)\n" NOR,
+    printf(" ç²¾ç¥ï¼š %s%4d/ %4d %s(%3d%%)" NOR "    æ³•åŠ›ï¼š %s%4d / %4d (+%d)\n" NOR,
         status_color(my["sen"], my["eff_sen"]),   my["sen"], my["eff_sen"],
         status_color(my["eff_sen"], my["max_sen"]),   my["eff_sen"] * 100 / my["max_sen"],
         status_color(my["mana"], my["max_mana"]), my["mana"], my["max_mana"],
         my["mana_factor"] );
 
-    printf(" Ê³Îï£º %s%4d/ %4d      " NOR "     Ç±ÄÜ£º %s%d\n" NOR,
+    printf(" é£Ÿç‰©ï¼š %s%4d/ %4d      " NOR "     æ½œèƒ½ï¼š %s%d\n" NOR,
         status_color(my["food"], ob->max_food_capacity()),
         my["food"], ob->max_food_capacity(),
         HIY,
         (int)ob->query("potential") - (int)ob->query("learned_points"));
 
-    printf(" ÒûË®£º %s%4d/ %4d      " NOR,
+    printf(" é¥®æ°´ï¼š %s%4d/ %4d      " NOR,
         status_color(my["water"], ob->max_water_capacity()),
         my["water"], ob->max_water_capacity());
     {
@@ -57,16 +57,16 @@ int main(object me, string arg)
         year = my["combat_exp"] / 1000; 
         day = (my["combat_exp"] % 1000) / 4;
         hour = (my["combat_exp"] % 4) * 3; 
-        printf("     µÀĞĞ£º " HIM);
-        if (year) printf("%sÄê", chinese_number(year));
-        if (day) printf("%sÌì", chinese_number(day));
-        if (hour) printf("%sÊ±³½", chinese_number(hour));
-        if (!year && !day && !hour)  printf("Äã»¹Ã»ÓĞµÀĞĞ¡£");
+        printf("     é“è¡Œï¼š " HIM);
+        if (year) printf("%så¹´", chinese_number(year));
+        if (day) printf("%så¤©", chinese_number(day));
+        if (hour) printf("%sæ—¶è¾°", chinese_number(hour));
+        if (!year && !day && !hour)  printf("ä½ è¿˜æ²¡æœ‰é“è¡Œã€‚");
         printf("\n"NOR);
     }
 
-    printf(" ¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô\n");
-    printf(" ÓûÍû£º %s%4d/ %4d " NOR "%s(%3d%%)" NOR "    É±Æø£º %s%d\n"NOR,
+    printf(" â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡\n");
+    printf(" æ¬²æœ›ï¼š %s%4d/ %4d " NOR "%s(%3d%%)" NOR "    æ€æ°”ï¼š %s%d\n"NOR,
             my["lust"] < EFF_LUST ? HIG : HIR, my["lust"], EFF_LUST,
             sex_status_color(my["lust"], MAX_LUST), my["lust"] * 100 / MAX_LUST,
             RED,
@@ -107,10 +107,10 @@ string sex_status_color(int current, int max)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : hp
-           hp <¶ÔÏóÃû³Æ>                   (Î×Ê¦×¨ÓÃ)
+æŒ‡ä»¤æ ¼å¼ : hp
+           hp <å¯¹è±¡åç§°>                   (å·«å¸ˆä¸“ç”¨)
 
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã»òÖ¸¶¨¶ÔÏó(º¬¹ÖÎï)µÄ¾«, Æø, ÉñÊıÖµ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºä½ æˆ–æŒ‡å®šå¯¹è±¡(å«æ€ªç‰©)çš„ç²¾, æ°”, ç¥æ•°å€¼ã€‚
 
 see also : score
 HELP

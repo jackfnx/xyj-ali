@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -18,10 +18,10 @@ int main(object me, string arg)
   string *dir, *ppls, name, address;
 
   if (!wizardp(me))
-    return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+    return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 
   if (!arg)
-       return notify_fail("Ö¸Áî¸ñÊ½£ºsameip <Ê¹ÓÃÕßĞÕÃû> | <IP µØÖ·>\n");
+       return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šsameip <ä½¿ç”¨è€…å§“å> | <IP åœ°å€>\n");
 
   count = strlen(arg);
   while(count--)
@@ -34,21 +34,21 @@ int main(object me, string arg)
 if (name != arg) {
   name=arg;
   if( file_size(DATA_DIR + "login/" + name[0..0] + "/" + name + __SAVE_EXTENSION__)<0 )
-    return notify_fail("Ã»ÓĞÕâÎ»Ê¹ÓÃÕß¡£\n");
+    return notify_fail("æ²¡æœ‰è¿™ä½ä½¿ç”¨è€…ã€‚\n");
 
   who = new(LOGIN_OB);
   who->set("id", name);
   if (! who->restore())
-    return notify_fail("Ã»ÓĞÕâÎ»Ê¹ÓÃÕß¡£\n");
+    return notify_fail("æ²¡æœ‰è¿™ä½ä½¿ç”¨è€…ã€‚\n");
 
-  write(who->query("name")+"ÉÏ´Î´Ó "+who->query("last_from")+" ÉÏÏß¡£\n");
+  write(who->query("name")+"ä¸Šæ¬¡ä» "+who->query("last_from")+" ä¸Šçº¿ã€‚\n");
   if (! who->query("last_from"))
     return notify_fail("");
   address = ip2add((string)who->query("last_from"));
 }
 else address = arg;
 
-  write("Ñ°ÕÒ´Ó "+address+" ÉÏÏßµÄÊ¹ÓÃÕß£º\n");
+  write("å¯»æ‰¾ä» "+address+" ä¸Šçº¿çš„ä½¿ç”¨è€…ï¼š\n");
   count = 0;
   dir = get_dir(DATA_DIR + "login/");
   i = 0;
@@ -82,7 +82,7 @@ void search_dir (int count, string *dir, int i, string address, object me)
   string info;
 
   if (i == sizeof(dir)) {
-     tell_object(me,"¹²ÓĞ"+count+"Î»Ê¹ÓÃÕß´ÓÕâ¸öµØÖ·ÉÏÏß¡£\n");
+     tell_object(me,"å…±æœ‰"+count+"ä½ä½¿ç”¨è€…ä»è¿™ä¸ªåœ°å€ä¸Šçº¿ã€‚\n");
   } else {
     ppls = get_dir(DATA_DIR + "login/" + dir[i] + "/");
     for(j=0; j<sizeof(ppls); j++) {
@@ -127,9 +127,9 @@ void search_dir (int count, string *dir, int i, string address, object me)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£º sameip <Ê¹ÓÃÕßĞÕÃû> | <IP µØÖ·>
+æŒ‡ä»¤æ ¼å¼ï¼š sameip <ä½¿ç”¨è€…å§“å> | <IP åœ°å€>
 
-²éÕÒËùÓĞÓëÊ¹ÓÃÕßÓÃÍ¬Ò»µØÖ·ÉÏÏßµÄÊ¹ÓÃÕß¡£
+æŸ¥æ‰¾æ‰€æœ‰ä¸ä½¿ç”¨è€…ç”¨åŒä¸€åœ°å€ä¸Šçº¿çš„ä½¿ç”¨è€…ã€‚
 HELP
   );
     return 1;

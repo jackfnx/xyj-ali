@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "暗道");
   set ("long", @LONG
 
-�������ƺ�ʲôҲ���������ֻ���ð�����ʪ���쬣�������
-̽��ǰ���ĳ�·����
+……你似乎什么也看不清楚，只觉得暗道里湿气飕飕，但难以
+探到前方的出路……
 
 LONG);
 
@@ -40,11 +40,11 @@ int do_go (string dir)
   {
     if (random(5))
     {
-      message_vision ("$N�ںڰ��а��ײ����ʯǽ�ϡ�\n",who);
+      message_vision ("$N在黑暗中梆地撞到了石墙上。\n",who);
     }
     else
     {
-      message_vision ("$N�ںڰ����ҵ�һ���ڣ����˳�ȥ��\n",who);
+      message_vision ("$N在黑暗中找到一出口，挤了出去。\n",who);
       who->move(__DIR__"shanpo3");
     }
     return 1;

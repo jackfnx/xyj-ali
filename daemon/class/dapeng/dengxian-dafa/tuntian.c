@@ -13,28 +13,28 @@ int cast(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹Ä§ÊÞÍÌÌì£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•é­”å…½åžå¤©ï¼Ÿ\n");
     if (!me->query("cast_tuntian"))
-        return notify_fail("¡¸Ä§ÊÞÍÌÌì¡¹ÊÇÇàÊ¨ÀÏÄ§µÄ¾ø»î£¬Ã»ÓÐËûµÄÇ×´«Ë­Ò²ÓÃ²»ÁË£¡\n");
+        return notify_fail("ã€Œé­”å…½åžå¤©ã€æ˜¯é’ç‹®è€é­”çš„ç»æ´»ï¼Œæ²¡æœ‰ä»–çš„äº²ä¼ è°ä¹Ÿç”¨ä¸äº†ï¼\n");
     if ((int)me->query("mana") < 100+2*(int)me->query("mana_factor"))
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query("sen") < 100)
-        return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+        return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
     me->add("mana", -25 - 2*(int)me->query("mana_factor"));
     me->receive_damage("sen", 50);
 
     if (random(me->query("max_mana")) < 50) {
-        write("»µÁË£¬ÇàÃæÊ¨×Ó²»ÖªÅÜÄÄÈ¥ÁË£¡\n");
+        write("åäº†ï¼Œé’é¢ç‹®å­ä¸çŸ¥è·‘å“ªåŽ»äº†ï¼\n");
         return 1;
     }
 
     if (me->query("cast_tuntian") > 0)
-        msg = HIC "\n$N¿ÚÖÐÄîÁË¾äÖäÎÄ£¬°ë¿ÕÉÁ³öÒ»Ö»ÇàÃæâ²ÑÀµÄÊ¨×Ó£¬"
-                +"ÕÅ¿ªÑªÅè´ó¿ÚÏò$nÒ§È¥£¡\n" NOR;
+        msg = HIC "\n$Nå£ä¸­å¿µäº†å¥å’’æ–‡ï¼ŒåŠç©ºé—ªå‡ºä¸€åªé’é¢ç ç‰™çš„ç‹®å­ï¼Œ"
+                +"å¼ å¼€è¡€ç›†å¤§å£å‘$nå’¬åŽ»ï¼\n" NOR;
     else // cast_tuntian == -1, it's qingshi-laomo himself
-        msg = HIC "\n$N¿ÚÖÐÄîÁË¾äÖäÎÄ£¬ÏÖ³öÇàÉ«Ê¨×ÓÔ­ÐÍ£¬"
-                +"ÕÅ¿ªÑªÅè´ó¿ÚÏò$nÒ§È¥£¡\n" NOR;
+        msg = HIC "\n$Nå£ä¸­å¿µäº†å¥å’’æ–‡ï¼ŒçŽ°å‡ºé’è‰²ç‹®å­åŽŸåž‹ï¼Œ"
+                +"å¼ å¼€è¡€ç›†å¤§å£å‘$nå’¬åŽ»ï¼\n" NOR;
 
     message_vision(msg, me, target);
 
@@ -47,7 +47,7 @@ int cast(object me, object target)
     dp = (int)target->query("combat_exp");
 
     if (random(ap+dp) < dp) {
-        msg = HIC "\n$nÁ¬Ã¦Ò»²àÉíÉÁÔÚÒ»ÅÔ¡£\n" NOR;
+        msg = HIC "\n$nè¿žå¿™ä¸€ä¾§èº«é—ªåœ¨ä¸€æ—ã€‚\n" NOR;
         message_vision(msg, me, target);
     }
     else {
@@ -67,13 +67,13 @@ int cast(object me, object target)
             damage += damage*damage_bonus;
             if (damage > 3000) damage = 3000;
             
-            msg = HIR "\n½á¹û$n±»Ò§ÁË¸öÕý×Å£¡\n" NOR;
+            msg = HIR "\nç»“æžœ$nè¢«å’¬äº†ä¸ªæ­£ç€ï¼\n" NOR;
             message_vision(msg, me, target);
             target->receive_damage("kee", damage*3/5, me);
             target->receive_wound("kee", damage/2, me);
             COMBAT_D->report_status(target);
         } else if (a_damage < d_damage) {
-            msg = HIC "Ö»Ìý$nÒ»ÉùÅ­ºð£¬ÇàÃ«Ê¨×Ó±»ÕðµÃ±æ²»Çå·½Ïò£¬·´¶øÒ§ÏòÁË$N£¡\n" NOR;
+            msg = HIC "åªå¬$nä¸€å£°æ€’å¼ï¼Œé’æ¯›ç‹®å­è¢«éœ‡å¾—è¾¨ä¸æ¸…æ–¹å‘ï¼Œåè€Œå’¬å‘äº†$Nï¼\n" NOR;
             message_vision(msg, me, target);
             
             damage = d_damage;
@@ -85,13 +85,13 @@ int cast(object me, object target)
             if (damage_bonus > 10) damage_bonus = 10;
             damage += damage/damage_bonus;
             
-            msg = HIR "\n½á¹û$N±»Ò§ÁË¸öÕý×Å£¡\n" NOR;
+            msg = HIR "\nç»“æžœ$Nè¢«å’¬äº†ä¸ªæ­£ç€ï¼\n" NOR;
             message_vision(msg, me, target);
             me->receive_damage("kee", damage*3/5, target);
             me->receive_wound("kee", damage/2, target);
             COMBAT_D->report_status(me);
         } else
-            message_vision(HIB "½á¹ûÕýºÃ±»$NÒÔ·¨Á¦±Æ×¡£¬Ë­Ò²Ã»ÓÐ³Ô¿÷¡£\n" NOR, target);
+            message_vision(HIB "ç»“æžœæ­£å¥½è¢«$Nä»¥æ³•åŠ›é€¼ä½ï¼Œè°ä¹Ÿæ²¡æœ‰åƒäºã€‚\n" NOR, target);
     }
 
     me->start_busy(1+random(2));

@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ú¼Ê¥Õæ¾ı",({"xusheng zhenjun", "zhenjun", "xianguan", "xian",}));
-    set("long", "¸ºÔğ±£»¤Óñ»Ê´óµÛµÄÌìÉñ£¬ÊÖÏÂ¼¸¸öÌìÍõæçÓÂÎŞ±È¡£.\n");
+    set_name("è¯©åœ£çœŸå›",({"xusheng zhenjun", "zhenjun", "xianguan", "xian",}));
+    set("long", "è´Ÿè´£ä¿æŠ¤ç‰çš‡å¤§å¸çš„å¤©ç¥ï¼Œæ‰‹ä¸‹å‡ ä¸ªå¤©ç‹éªå‹‡æ— æ¯”ã€‚.\n");
     set("per", 23);
     set("str", 30);
     set_skill("force", 160);

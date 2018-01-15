@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // kunxian suo
@@ -13,16 +13,16 @@ inherit WHIP;
 
 void create()
 {
-    set_name(RED "À¦ÏÉË÷" NOR,({"kunxian suo", "suo", "rope", "kunxiansuo", "kunxian", "fabao"}));
+    set_name(RED "æ†ä»™ç´¢" NOR,({"kunxian suo", "suo", "rope", "kunxiansuo", "kunxian", "fabao"}));
     set_weight(5000);
     if(clonep())
    set_default_object(__FILE__);
     else {
-   set("unit","Ìõ");
+   set("unit","æ¡");
    set("value",0);
    set("is_monitored", 1);
    set("replace_file", "/d/qujing/wudidong/npc/obj/kunxian-fake");
-   set("long","Ò»Ìõ°µºìÉ«µÄÉş×Ó£¬Ò²²»ÖªµÀÊÇÊ²Ã´×öµÄ¡£\n");
+   set("long","ä¸€æ¡æš—çº¢è‰²çš„ç»³å­ï¼Œä¹Ÿä¸çŸ¥é“æ˜¯ä»€ä¹ˆåšçš„ã€‚\n");
     }
     init_whip(20);
     setup();
@@ -33,8 +33,8 @@ void init()
   ::init();
   if (!wizardp(this_player()))
   {
-//      set("no_drop","ÕâÃ´ºÃµÄ±¦Îï£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-//      set("no_give","ÕâÃ´ºÃµÄ±¦Îï£¬Áô×Å×Ô¼ºÓÃ°É£¡\n");
+//      set("no_drop","è¿™ä¹ˆå¥½çš„å®ç‰©ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+//      set("no_give","è¿™ä¹ˆå¥½çš„å®ç‰©ï¼Œç•™ç€è‡ªå·±ç”¨å§ï¼\n");
       set("no_sell", 1);
   }
 }
@@ -46,21 +46,21 @@ int ji(string target)
     int myspells, myexp, victimspells, victimexp, mana_cost, sen_cost;
     string msg, objname=this_object()->name(), obj;
     
-    if (this_object()->query("in_use")) return notify_fail("òÔÁúÒÑ¾­ÀëË÷¶øÈ¥£¬ÏÖÔÚµÄ"+objname+"²»¹ıÊÇÒ»ÌõÆÕÍ¨µÄÉşË÷°ÕÁË¡£\n");
-    if (!target) return notify_fail("ÄãÏëÓÃ¶ÔË­ÓÃ"+objname+"£¿\n");
+    if (this_object()->query("in_use")) return notify_fail("è›Ÿé¾™å·²ç»ç¦»ç´¢è€Œå»ï¼Œç°åœ¨çš„"+objname+"ä¸è¿‡æ˜¯ä¸€æ¡æ™®é€šçš„ç»³ç´¢ç½¢äº†ã€‚\n");
+    if (!target) return notify_fail("ä½ æƒ³ç”¨å¯¹è°ç”¨"+objname+"ï¼Ÿ\n");
     victim=present(target,environment(me));
-    if(!victim) return notify_fail("ÕâÀïÃ»ÓĞ "+target+"¡£\n");
-    if(!living(victim)) return notify_fail("ÄãµÄÄ¿±ê²»ÊÇ»îÎï£¡\n");
-    if(!me->is_fighting()) return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜ¼À"+objname+"¡£\n");  
-    if(victim->query("no_move")) return notify_fail("¶Ô·½ÒÑ¾­ÎŞÏ¾×Ô¹ËÁË£¬ÓĞ±ØÒªÓÃ"+objname+"Ã´£¿\n");
+    if(!victim) return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
+    if(!living(victim)) return notify_fail("ä½ çš„ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
+    if(!me->is_fighting()) return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+objname+"ã€‚\n");  
+    if(victim->query("no_move")) return notify_fail("å¯¹æ–¹å·²ç»æ— æš‡è‡ªé¡¾äº†ï¼Œæœ‰å¿…è¦ç”¨"+objname+"ä¹ˆï¼Ÿ\n");
     //    if (member_array( victim, query_enemy()) != -1 )
-    //         return notify_fail("ÈË¼ÒÓÖÃ»ÈÇÄã£¡\n");
+    //         return notify_fail("äººå®¶åˆæ²¡æƒ¹ä½ ï¼\n");
     if( (int)me->query("mana") < 250)
-   return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+   return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if( (int)me->query("sen") < 100)
-   return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
-    msg="$N´Ó±³ºó³é³öÒ»Ìõ"+objname+"£¬Ïò¿ÕÅ×Æğ£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬\n";
-    msg+="ºì¹âÒ»ÉÁ£¬ÉñË÷ÖĞ·É³öÒ»ÌõòÔÁú£¬Ïò$nÆËÈ¥¡£\n";
+   return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ï¼\n");
+    msg="$Nä»èƒŒåæŠ½å‡ºä¸€æ¡"+objname+"ï¼Œå‘ç©ºæŠ›èµ·ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œ\n";
+    msg+="çº¢å…‰ä¸€é—ªï¼Œç¥ç´¢ä¸­é£å‡ºä¸€æ¡è›Ÿé¾™ï¼Œå‘$næ‰‘å»ã€‚\n";
     myspells=me->query_skill("spells")/10;
     myexp=me->query("combat_exp")/1000;
     victimspells=victim->query_skill("spells")/10;
@@ -71,24 +71,24 @@ int ji(string target)
     dp=dp*victim->query_kar()/1000;
     attackfactor=random(ap+dp);
     if (wizardp(me) && me->query("env/combat")=="verbose")
-   tell_object(me, GRN "½ø¹¥="+ap+", ·ÀÊØ="+dp+", ±ÈÀı="+attackfactor+"¡£\n" NOR);
+   tell_object(me, GRN "è¿›æ”»="+ap+", é˜²å®ˆ="+dp+", æ¯”ä¾‹="+attackfactor+"ã€‚\n" NOR);
     if(attackfactor>dp/3)
     {
-   msg+=HIR"$n±»òÔÁúÅÌ¸öÕı×Å£¬¶ÙÊ±ÊÖÃ¦½ÅÂÒ£¬²»ÖªËù´ë¡£\n" NOR;
-   msg+=CYN"$n±»"+objname+CYN"µÄ·¨Á¦¶¨×¡ÁË£¡\n"NOR;
+   msg+=HIR"$nè¢«è›Ÿé¾™ç›˜ä¸ªæ­£ç€ï¼Œé¡¿æ—¶æ‰‹å¿™è„šä¹±ï¼Œä¸çŸ¥æ‰€æªã€‚\n" NOR;
+   msg+=CYN"$nè¢«"+objname+CYN"çš„æ³•åŠ›å®šä½äº†ï¼\n"NOR;
    victim->set_temp("no_move", 1);
    dingtime=random(mykar)/2+10;
    if (dingtime < 1) dingtime=1;
    if (wizardp(me) && me->query("env/combat")=="verbose")
-       tell_object(me, GRN ""+victim->name()+"±»¶¨×¡ÁË"+chinese_number(dingtime)+"Ãë¡£\n" NOR);
+       tell_object(me, GRN ""+victim->name()+"è¢«å®šä½äº†"+chinese_number(dingtime)+"ç§’ã€‚\n" NOR);
    this_object()->set("in_use", 1);
    call_out("remove_ding", dingtime, me, victim);
     }
     else if(attackfactor>dp/6)
-   msg+=HIB"$nÉìÊÖÒ»Ö¸£¬´óºÈÒ»Éù¡°Âä£¡¡±Ö»¼ûòÔÁú±ä»ØºìË÷£¬Âä»Ø$NÊÖÖĞ¡£\n"NOR;
+   msg+=HIB"$nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°â€œè½ï¼â€åªè§è›Ÿé¾™å˜å›çº¢ç´¢ï¼Œè½å›$Næ‰‹ä¸­ã€‚\n"NOR;
     else if(attackfactor>dp/9)
     {
-   msg+=HIB"$nÉìÊÖÒ»Ö¸£¬´óºÈÒ»Éù¡°»Ø£¡¡±Ö»¼ûòÔÁú·´½«$N²ø×¡ÁË£¡\n"NOR;
+   msg+=HIB"$nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°â€œå›ï¼â€åªè§è›Ÿé¾™åå°†$Nç¼ ä½äº†ï¼\n"NOR;
    dingtime=random(victim->query_kar())/2+10;
    if (dingtime<1) dingtime=1;
    me->set_temp("no_move");
@@ -97,7 +97,7 @@ int ji(string target)
     }
     else
     {
-   msg+=HIB"$nÉìÊÖÒ»Ö¸£¬´óºÈÒ»Éù¡°ÊÕ£¡¡±Ö»¼ûòÔÁú±ä»ØºìË÷£¬ÂäÈë$nÊÖÖĞ¡£\n"NOR;
+   msg+=HIB"$nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°â€œæ”¶ï¼â€åªè§è›Ÿé¾™å˜å›çº¢ç´¢ï¼Œè½å…¥$næ‰‹ä¸­ã€‚\n"NOR;
    this_object()->move(victim);
     }
     message_vision(msg,me,victim);
@@ -113,7 +113,7 @@ int ji(string target)
 }
 void remove_ding(object me, object victim)
 {
-    message_vision(CYN"Ö»¼ûòÔÁúÌÚ¿Õ¶øÆğ£¬¸½»ØÁË"+RED+"À¦ÏÉË÷"+CYN"¡£$nÓÖ»Ö¸´ÁË×ÔÓÉ¡£\n" NOR, me, victim);
+    message_vision(CYN"åªè§è›Ÿé¾™è…¾ç©ºè€Œèµ·ï¼Œé™„å›äº†"+RED+"æ†ä»™ç´¢"+CYN"ã€‚$nåˆæ¢å¤äº†è‡ªç”±ã€‚\n" NOR, me, victim);
     victim->delete_temp("no_move");
     this_object()->delete("in_use");
     return;

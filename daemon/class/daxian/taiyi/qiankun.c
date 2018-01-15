@@ -1,8 +1,8 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-//cast function: qiankun.c ĞäÀïÇ¬À¤¡£
-//need to be activated by ÕòÔª´óÏÉ to use this cast...weiqi, 
+//cast function: qiankun.c è¢–é‡Œä¹¾å¤ã€‚
+//need to be activated by é•‡å…ƒå¤§ä»™ to use this cast...weiqi, 
 //weiqi, mon 1/98
 
 #include <ansi.h>
@@ -22,7 +22,7 @@ int cast(object me, object target)
    seteuid(getuid());
 
    if( me->query("spell_qiankun_on") != 1 )
-     return notify_fail("Äã»¹²»»áĞäÀïÇ¬À¤¡£\n");
+     return notify_fail("ä½ è¿˜ä¸ä¼šè¢–é‡Œä¹¾å¤ã€‚\n");
 
 //   if( !target ) target = offensive_target(me);
 
@@ -34,28 +34,28 @@ int cast(object me, object target)
          {
      // then take stuff out.
      sleeveroom=load_object("/d/wiz/sleeveroom");
-     if(!sleeveroom) return notify_fail("ÄãµÄĞä×Ó¿ÖÅÂÆÆÁË¡£\n");
+     if(!sleeveroom) return notify_fail("ä½ çš„è¢–å­ææ€•ç ´äº†ã€‚\n");
 
           sname=me->query("id")+"'s sleeve";
           if(!sleeve=present(sname,sleeveroom)) {
              message_vision(
-        "$N½«´óĞäÓ­¿ÕÒ»Ë¦£¬µ«ÊÇÀïÃæÊ²Ã´Ò²Ã»ÓĞ¡£\n",me);
+        "$Nå°†å¤§è¢–è¿ç©ºä¸€ç”©ï¼Œä½†æ˜¯é‡Œé¢ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n",me);
         return 1;
           }
 
      size=sizeof(inv=all_inventory(sleeve));
      if(!size) {
              message_vision(
-        "$N½«´óĞäÓ­¿ÕÒ»Ë¦£¬µ«ÊÇÀïÃæÊ²Ã´Ò²Ã»ÓĞ¡£\n",me);
+        "$Nå°†å¤§è¢–è¿ç©ºä¸€ç”©ï¼Œä½†æ˜¯é‡Œé¢ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n",me);
         return 1;
           }
 
-     msg="$N½«´óĞäÓ­¿ÕÒ»Ë¦£¬";
+     msg="$Nå°†å¤§è¢–è¿ç©ºä¸€ç”©ï¼Œ";
      for(i=0;i<size;i++) {
        if(inv[i]->is_character())
-         msg+="$nÆËÍ¨Ò»ÉùË¤µ¹ÔÚµØÉÏ¡£\n";
+         msg+="$næ‰‘é€šä¸€å£°æ‘”å€’åœ¨åœ°ä¸Šã€‚\n";
             else
-         msg+="$nàÌµØÒ»ÉùÔÒÔÚµØÉÏ¡£\n";
+         msg+="$nå—µåœ°ä¸€å£°ç ¸åœ¨åœ°ä¸Šã€‚\n";
 
             env=environment(me);
             while(!(inv[i]->move(env))) env=environment(env);
@@ -71,20 +71,20 @@ int cast(object me, object target)
    || !target->is_character()
    || target->is_corpse()
    || target==me)
-     return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ĞäÀïÇ¬À¤£¿\n");
+     return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¢–é‡Œä¹¾å¤ï¼Ÿ\n");
 
    if( (int)me->query("mana") < 400 )
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
    if( (int)me->query("sen") < (int)me->query("max_sen")/2 )
-     return notify_fail("ÄãÏÖÔÚÍ·ÄÔ²»ÇåĞÑ£¬ÄÄÀïÊ¹µÃ³öĞäÀïÇ¬À¤£¡\n");
+     return notify_fail("ä½ ç°åœ¨å¤´è„‘ä¸æ¸…é†’ï¼Œå“ªé‡Œä½¿å¾—å‡ºè¢–é‡Œä¹¾å¤ï¼\n");
 
    if( random(me->query("max_mana")) < 50 ) {
-     write("ÄãÊ§°ÜÁË£¡\n");
+     write("ä½ å¤±è´¥äº†ï¼\n");
      return 1;
    }
 
-   msg =  HIR "$Nà«à«µØÄîÁË¼¸¾äÖäÓï£¬Í»È»´óĞäÒ»»Ó³¯$nÕÖÁË¹ıÈ¥£¡\n" NOR;
+   msg =  HIR "$Nå–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ï¼Œçªç„¶å¤§è¢–ä¸€æŒ¥æœ$nç½©äº†è¿‡å»ï¼\n" NOR;
    message_vision(msg, me, target);
    
    target->kill_ob(me);
@@ -111,12 +111,12 @@ int cast(object me, object target)
      me->add("mana", -400);
    
            sleeveroom=load_object("/d/wiz/sleeveroom");
-     if(!sleeveroom) return notify_fail("ÄãµÄĞä×Ó¿ÖÅÂÆÆÁË¡£\n");
+     if(!sleeveroom) return notify_fail("ä½ çš„è¢–å­ææ€•ç ´äº†ã€‚\n");
 
                 sname=me->query("id")+"'s sleeve";
      if(!sleeve=present(sname,sleeveroom)) {
                   sleeve=new("/d/obj/fabao/sleeve");
-       if(!sleeve) return notify_fail("ÄãµÄĞä×Ó¿ÖÅÂÆÆÁË¡£\n");
+       if(!sleeve) return notify_fail("ä½ çš„è¢–å­ææ€•ç ´äº†ã€‚\n");
 
      taiyi_level = (int)me->query_skill("taiyi", 1);
      maxenc=taiyi_level*2000;
@@ -133,26 +133,26 @@ int cast(object me, object target)
      //note...if we want a npc can not be moved...can set its str very high...:)
 
        sleeve->set_name(
-         me->query("name")+"µÄÒÂĞäÖĞ",({sname,"sleeve"}));
+         me->query("name")+"çš„è¡£è¢–ä¸­",({sname,"sleeve"}));
                   sleeve->set("short",
-         me->query("name")+"µÄÒÂĞäÖĞ");
+         me->query("name")+"çš„è¡£è¢–ä¸­");
        if(!sleeve->move(sleeveroom)) 
-         return notify_fail("ÄãµÄĞä×Ó¿ÖÅÂÆÆÁË¡£\n");
+         return notify_fail("ä½ çš„è¢–å­ææ€•ç ´äº†ã€‚\n");
      }
 
      if(target->move(sleeve)) {
-       msg =  HIR "½á¹ûà²µÄÒ»Éù$n±»×°ÁË½øÈ¥¡£\n" NOR;
+       msg =  HIR "ç»“æœå—–çš„ä¸€å£°$nè¢«è£…äº†è¿›å»ã€‚\n" NOR;
        message_vision(msg, me, target);
                 } else {
-                  msg=HIR"½á¹û$nÖ»ÊÇÒ¡»ÎÁËÒ»ÏÂ£¬ÓÖ²»¶¯ÁË¡£\n" NOR;
-       msg+="$n¶Ô$NÀ´ËµÌ«³ÁÁË¡£\n";
+                  msg=HIR"ç»“æœ$nåªæ˜¯æ‘‡æ™ƒäº†ä¸€ä¸‹ï¼Œåˆä¸åŠ¨äº†ã€‚\n" NOR;
+       msg+="$nå¯¹$Næ¥è¯´å¤ªæ²‰äº†ã€‚\n";
        message_vision(msg, me, target);
      }
      
    }
    else 
    {
-     msg =  HIR "½á¹û±»$n·¨Á¦Ò»±Æ£¬²îµãÕÖ×¡$N×Ô¼ºµÄÄÔ´ü¡£\n" NOR;
+     msg =  HIR "ç»“æœè¢«$næ³•åŠ›ä¸€é€¼ï¼Œå·®ç‚¹ç½©ä½$Nè‡ªå·±çš„è„‘è¢‹ã€‚\n" NOR;
      message_vision(msg, me, target);
 
      me->add("mana", -400);

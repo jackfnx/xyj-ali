@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,8 +8,8 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("Ҷ��ɩ", ({"ye dasao", "ye", "dasao", "fruit vendor"}));
-  set("gender", "Ů��");
+  set_name("叶大嫂", ({"ye dasao", "ye", "dasao", "fruit vendor"}));
+  set("gender", "女性");
   set("combat_exp", 1000);
   set("age", 26);
   set("per", 20);
@@ -46,8 +46,8 @@ void greeting(object ob)
   if( !ob || !visible(ob) || environment(ob) != environment() ) return;
   switch( random(3) ) {  // 1/3 chance to greet.
     case 0:
-      say ("Ҷ��ɩЦ�����˵������λ" + RANK_D->query_respect(ob)
-           + "����ӭ�ݹ��ļ��Ϲ��꣡\n");
+      say ("叶大嫂笑咪咪地说道：这位" + RANK_D->query_respect(ob)
+           + "，欢迎惠顾四季瓜果店！\n");
       break;
   }
 }

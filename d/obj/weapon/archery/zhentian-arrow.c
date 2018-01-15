@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// zhentian-arrow.c ÕğÌì¼ı
+// zhentian-arrow.c éœ‡å¤©ç®­
 
 #include <weapon.h>
 
@@ -9,14 +9,14 @@ inherit ARCHERY;
 
 void create()
 {
-  set_name("ÕğÌì¼ı", ({ "zhentian jian", "arrow", "jian", "zhentian", "zhentian jian", }) );
+  set_name("éœ‡å¤©ç®­", ({ "zhentian jian", "arrow", "jian", "zhentian", "zhentian jian", }) );
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("long",
-"ÕğÌì¼ıÄËÊÇ³ÂÌÆ¹Ø×Ü±øÀî¾¸µÄÕò¹ØÖ®±¦¡£ºóÒòÀî¾¸½á½»\nò°÷×¿Í±»ÒÉ¶øµ÷Èë¾©³Ç£¬Ò²±»Àî¾¸´øÀ´ÁË¡£\n");
-    set("unit", "ºø");
-    set("base_unit", "Ö¦");
+"éœ‡å¤©ç®­ä¹ƒæ˜¯é™ˆå”å…³æ€»å…µæé–çš„é•‡å…³ä¹‹å®ã€‚åå› æé–ç»“äº¤\nè™¬é«¯å®¢è¢«ç–‘è€Œè°ƒå…¥äº¬åŸï¼Œä¹Ÿè¢«æé–å¸¦æ¥äº†ã€‚\n");
+    set("unit", "å£¶");
+    set("base_unit", "æ");
     set("base_weight", 40);
     set("base_value", 500);
   }

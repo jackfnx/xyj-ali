@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,11 +6,11 @@ inherit NPC;
 void create()
 {
 
-        set_name("����С����", ({ "dongfang sister", "dongfang", "sister"}) );
-        set("gender", "Ů��");
+        set_name("东方小二姐", ({ "dongfang sister", "dongfang", "sister"}) );
+        set("gender", "女性");
         set("age", 16);
    set("per", 28);
-        set("long", "����С�����ǹ�����Զ��ֶŮ���������������档\n");
+        set("long", "东方小二姐是馆主的远房侄女，来傲来见见世面。\n");
         set("combat_exp", 5000);
    set("max_kee", 300);
    set_skill("sword", 10);
@@ -20,8 +20,8 @@ void create()
    set_skill("force", 20);
 set("chat_chance", 3);
 set("chat_msg", ({
-"С����˵�����Һ�ϲ�����ϣ�\n",
-"С����˵��������Ļ��������ϣ�\n",
+"小二姐说道：我好喜欢花呦！\n",
+"小二姐说道：外面的花儿好香呦！\n",
 }) );
 
         setup();
@@ -34,8 +34,8 @@ int accept_object(object who,object ob)
 {
         object m;
         if (ob->query("id")=="flower") {
-                say("С����Ц������л"  + RANK_D->query_respect(who) + "������ĺ�ϲ���ϣ�\n");
-     command("whisper " + who->query("id") + " �������о˹���һ���飬����ȥ���ɣ�\n");
+                say("小二姐笑道：多谢"  + RANK_D->query_respect(who) + "，我真的好喜欢呦！\n");
+     command("whisper " + who->query("id") + " 我这里有舅公的一本书，你拿去看吧！\n");
         m=new("/d/obj/book/forcebook");
         m->move(who);
         call_out("destroy", 1, ob);

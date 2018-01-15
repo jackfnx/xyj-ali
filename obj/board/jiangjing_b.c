@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit BULLETIN_BOARD;
 
 void create()
 {
-  set_name("½²¾­°å", ({"board"}) );
+  set_name("è®²ç»æ¿", ({"board"}) );
   set("location", "/d/qujing/wuzhuang/jiangjing");
   set("board_id", "jiangjing_b");
   set("capacity", 100);
-  set("long", "Ò»¿é¹©Îå×¯¹ÛµÜ×Ó½²¾­ÂÛ·¨µÄÁôÑÔ°æ¡£\n");
+  set("long", "ä¸€å—ä¾›äº”åº„è§‚å¼Ÿå­è®²ç»è®ºæ³•çš„ç•™è¨€ç‰ˆã€‚\n");
   setup();
   replace_program(BULLETIN_BOARD);
 }

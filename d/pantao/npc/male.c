@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 5/29/1997
@@ -9,12 +9,12 @@ inherit NPC;
 
 void create()
 {
-  string *names = ({ "ÏÉ¹Ù", "ÏÉ½«", "ÏÉÇä", });
+  string *names = ({ "ä»™å®˜", "ä»™å°†", "ä»™å¿", });
   string name = names[random(sizeof(names))];
 
   set_name(name,({ "xian" }) );
-  set("gender", "ÄĞĞÔ" );
-  set("long", "Ò»Î»×Ïç·½ğÕÂÜ½ÈØ¹ÚµÄ"+name+"¡£\n");
+  set("gender", "ç”·æ€§" );
+  set("long", "ä¸€ä½ç´«ç»¶é‡‘ç« èŠ™è“‰å† çš„"+name+"ã€‚\n");
   set("age", 100+random(100));
   set("attitude", "peaceful");
   set("str", 50);

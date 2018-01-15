@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-  set_name("Öí±ø", ({ "zhu bing", "zhu", "bing" }));
+  set_name("çŒªå…µ", ({ "zhu bing", "zhu", "bing" }));
   set("age", 28);
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("attitude", "peaceful");
   set("str", 40);
   set("combat_exp", 50000);

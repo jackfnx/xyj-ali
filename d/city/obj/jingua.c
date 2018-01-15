@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -8,17 +8,17 @@ inherit HAMMER;
 
 void create()
 {
-   set_name(HIY"½ğ¹Ï"NOR, ({ "jin gua", "gua", "hammer" }) );
+   set_name(HIY"é‡‘ç“œ"NOR, ({ "jin gua", "gua", "hammer" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-     set("long", "ÕâÊÇÒ»°Ñ³ÁÖØµÄ½ğ¹Ï£¬ÊÇ»Ê³ÇÎÀÊ¿µÄ×¨ÓÃÎäÆ÷¡£\n");
+                set("unit", "æŠŠ");
+     set("long", "è¿™æ˜¯ä¸€æŠŠæ²‰é‡çš„é‡‘ç“œï¼Œæ˜¯çš‡åŸå«å£«çš„ä¸“ç”¨æ­¦å™¨ã€‚\n");
                 set("value", 3);
                 set("material", "iron");
-     set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+     set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(15);

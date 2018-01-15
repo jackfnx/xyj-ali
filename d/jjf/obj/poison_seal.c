@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <skill.h>
@@ -8,14 +8,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÎåÎÁ·û", ({"poison seal", "seal", "paper"}));
+        set_name("äº”ç˜Ÿç¬¦", ({"poison seal", "seal", "paper"}));
    set_weight(100);
    if(clonep())
          set_default_object(__FILE__);
      else {
 
-        set("long","Ò»ÕÅ»­ÉÏÁË·ûÖäµÄÌÒ·ûÖ½£¬ÖĞÑëÓĞ¸ö´ó´óµÄ¡°ÎÁ¡±×Ö¡£\n");
-        set("unit", "ÕÅ");
+        set("long","ä¸€å¼ ç”»ä¸Šäº†ç¬¦å’’çš„æ¡ƒç¬¦çº¸ï¼Œä¸­å¤®æœ‰ä¸ªå¤§å¤§çš„â€œç˜Ÿâ€å­—ã€‚\n");
+        set("unit", "å¼ ");
         set("value", 0);
    set("no_put",1);
    set("no_sell",1);
@@ -50,7 +50,7 @@ void destruct_me(object where, object me)
         object seal;
         if( seal=new("/obj/paper_seal"))
                 seal->move(where);
-   message_vision("$NÊÖÖĞµÄ$nÍ»·¢ºì¹â£¬·ûÖä½¥½¥µ­È¥²»¼ûÁË¡£\n",where,me);
+   message_vision("$Næ‰‹ä¸­çš„$nçªå‘çº¢å…‰ï¼Œç¬¦å’’æ¸æ¸æ·¡å»ä¸è§äº†ã€‚\n",where,me);
         destruct(me);
 }
 
@@ -75,21 +75,21 @@ int ji_ob(object victim)
    int damage, ap, dp, i;
    
    if(me->is_busy())
-     return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÎŞ·¨¼ÀÎåÎÁ·û¡£\n");
+     return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ— æ³•ç¥­äº”ç˜Ÿç¬¦ã€‚\n");
    if( !victim)
-     return notify_fail("ÄãÏë¼ÀµÄÈË²»ÔÚÕâÀï¡£\n");
+     return notify_fail("ä½ æƒ³ç¥­çš„äººä¸åœ¨è¿™é‡Œã€‚\n");
    if( where->query("no_magic"))
-     return notify_fail("ÕâÀï²»ÄÜ¼ÀÎåÎÁ·û¡£\n");
+     return notify_fail("è¿™é‡Œä¸èƒ½ç¥­äº”ç˜Ÿç¬¦ã€‚\n");
    if( !me->is_fighting())
-     return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜ¼ÀÎåÎÁ·û¡£\n");
+     return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­äº”ç˜Ÿç¬¦ã€‚\n");
    if( (int)me->query("mana") < 100 )
-     return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆÎåÎÁ·û¡£\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æ§åˆ¶äº”ç˜Ÿç¬¦ã€‚\n");
    if( (int)me->query("sen") < 100 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬ºÜÄÑ¼İÔ¦ÎåÎÁ·û¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œå¾ˆéš¾é©¾é©­äº”ç˜Ÿç¬¦ã€‚\n");
 
 
-   message_vision(HIC"\n$N´óº°Ò»Éù¡°×Å¡±£¬ÊÖÒ»»Ó£¬¼À³öÁËÒ»ÕÅ$n¡£¡£¡£\n"NOR, me, seal);
-message_vision(HIC"$n¡¸ºô¡¹µØÒ»ÏÂ·Éµ½°ë¿Õ£¬ºì¹âÉÁºó»¯ÎªÒ»Õó·ÉÓê£¬±¢´ò²ĞºÉ°ãÏò$NÏ®È¥¡£\n"NOR,
+   message_vision(HIC"\n$Nå¤§å–Šä¸€å£°â€œç€â€ï¼Œæ‰‹ä¸€æŒ¥ï¼Œç¥­å‡ºäº†ä¸€å¼ $nã€‚ã€‚ã€‚\n"NOR, me, seal);
+message_vision(HIC"$nã€Œå‘¼ã€åœ°ä¸€ä¸‹é£åˆ°åŠç©ºï¼Œçº¢å…‰é—ªååŒ–ä¸ºä¸€é˜µé£é›¨ï¼Œé›¹æ‰“æ®‹è·èˆ¬å‘$Nè¢­å»ã€‚\n"NOR,
 victim,seal);
 
 
@@ -108,17 +108,17 @@ random((int)victim->query("eff_kee") / 5);
                 damage+=(int)me->query("mana_factor")-random((int)victim->query("mana_factor"));
    
      if( damage> 0){
-   message_vision(HIC"\n$N¶ãÉÁ²»¼°£¬±»½¦ÁËÒ»Éí¡£¡£¡£\n"NOR,victim);
+   message_vision(HIC"\n$Nèº²é—ªä¸åŠï¼Œè¢«æº…äº†ä¸€èº«ã€‚ã€‚ã€‚\n"NOR,victim);
      i=damage/20;
      if( i > 20){i=20;}
      if( i < 5 ){i=5;}
      victim->apply_condition("jjf_poison",
 (int)victim->query_condition("jjf_poison")+i);
      } else {
-        message_vision(HIC"\n$NÃÍÍË¼¸²½£¬¶ãÁË¹ıÈ¥¡£\n"NOR,victim);
+        message_vision(HIC"\n$NçŒ›é€€å‡ æ­¥ï¼Œèº²äº†è¿‡å»ã€‚\n"NOR,victim);
      }
    }else{
-     message_vision(HIC"\nË­Öª±»$N¶ãÁË¹ıÈ¥¡£\n"NOR,victim);
+     message_vision(HIC"\nè°çŸ¥è¢«$Nèº²äº†è¿‡å»ã€‚\n"NOR,victim);
    }
    
            if( !victim->is_fighting(me) ) {
@@ -144,7 +144,7 @@ int ji (string target)
   object victim;
 
   if (!target)
-    return notify_fail("ÄãÏë¶ÔË­¼À"+name+"£¿\n");
+    return notify_fail("ä½ æƒ³å¯¹è°ç¥­"+name+"ï¼Ÿ\n");
 
   victim=present(target,environment(me));
   seal->ji_ob(victim);

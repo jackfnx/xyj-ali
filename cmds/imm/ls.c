@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // ls.c
@@ -24,9 +24,9 @@ int main(object me, string arg)
    if( file_size(dir)==-2 && dir[strlen(dir)-1] != '/' ) dir += "/";
    file = get_dir(dir, -1);
    if( !sizeof(file) )
-   {if (file_size(dir) == -2) return notify_fail("Ŀ¼�ǿյġ�\n");
+   {if (file_size(dir) == -2) return notify_fail("目录是空的。\n");
      else
-     return notify_fail("û�����Ŀ¼��\n");
+     return notify_fail("没有这个目录。\n");
    }
 
    i = sizeof(file);
@@ -35,7 +35,7 @@ int main(object me, string arg)
      if (file[i][1]==-2) file[i][0] += "/";
      if (strlen(file[i][0])>w) w = strlen(file[i][0]) + 1;
    }
-   write("Ŀ¼��" + dir + "\n");
+   write("目录：" + dir + "\n");
    col = 70 / (w+6);
    if (sizeof(file))
      for(i=0, j = sizeof(file); i<j; i++)
@@ -46,7 +46,7 @@ int main(object me, string arg)
         else printf("%10d %s %-*s%s", file[i][1], ctime(file[i][2]), w+1,
           file[i][0] + (find_object(dir + file[i][0])? "*":" "), "\n");
 
-   else write("    û���κε�����\n");
+   else write("    没有任何档案。\n");
    write("\n");
    
    return 1;   
@@ -55,13 +55,13 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-ָ���ʽ: ls [<·����>]
+指令格式: ls [<路径名>]
  
-�г�Ŀ¼�����е���Ŀ¼������, ���û��ָ��Ŀ¼, ���г�����Ŀ¼
-�����ݣ����г��ĵ�����ǰ���ʾ * �ŵ����Ѿ�����������
+列出目录下所有的子目录及档案, 如果没有指定目录, 则列出所在目录
+的内容，所列出的档案中前面标示 * 号的是已经载入的物件。
  
-����:
-'ls /' ���г�����λ�ڸ�Ŀ¼�µĵ�������Ŀ¼.
+□例:
+'ls /' 会列出所有位于根目录下的档案及子目录.
  
 HELP
    );

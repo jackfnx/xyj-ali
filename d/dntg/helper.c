@@ -34,21 +34,21 @@ void one_hit_to_die(object me, object victim, object weapon, int damage);
 
 void create()
 {
-    set_name(HIY "�𹿰�" NOR, ({ "jingu bang", "jingubang", "bang", "ruyi"}));
+    set_name(HIY "金箍棒" NOR, ({ "jingu bang", "jingubang", "bang", "ruyi"}));
     set_weight(10);
-    set("title", HIY "����" NOR);
-    set("gender", "����");
+    set("title", HIY "如意" NOR);
+    set("gender", "男性");
     set("long", @LONG
-����ǵ��������ʥ������õı�������֪Ϊʲô����ʥ���������˻���ɽ��
-��Ϊ�˹�������ʵ��̫�����Ծ�Ȼ�����������Ϊһ��ͨ��ı�����
+这就是当年齐天大圣孙悟空用的兵器。不知为什么，大圣将他留在了花果山。
+因为此棍的威力实在太大，所以竟然以力入道，成为一件通灵的兵器。
 LONG );
     set("age", 500);
-    set("unit", "��");
-    set("race", "��ħ");
-    set("limbs", ({ "����" }));
+    set("unit", "条");
+    set("race", "妖魔");
+    set("limbs", ({ "棒体" }));
     set("can_speak", 1);
-    set("rank_info/respect", "�𹿰�����");
-    set("rank_info/rude", "������");
+    set("rank_info/respect", "金箍棒大人");
+    set("rank_info/rude", "死妖怪");
     set("str", 40);
     set("per", 120);
     set("int", 50);
@@ -90,8 +90,8 @@ LONG );
 void reset_action()
 {
     set("actions", ([
-        "action":     "$N�Ӷ����幥��$n��$l",
-        "damage_type":   "������",
+        "action":     "$N挥动棒体攻击$n的$l",
+        "damage_type":   "致命伤",
         "post_action":   (: one_hit_to_die :)
     ]));
 }
@@ -99,7 +99,7 @@ void reset_action()
 void one_hit_to_die(object me, object victim, object weapon, int damage)
 {
     if (damage > 0) {
-        message_vision("$N���Ϸ����һ������ĺ�⣡����\n", me);
+        message_vision("$N身上放射出一道毁灭的红光！！！\n", me);
         victim->die();
     }
 }
@@ -117,26 +117,26 @@ void do_report_progress()
     
     if (!ob) return;
     if (ob->query("dntg/huaguo") != "done") {
-        prog = "���ȣ���Ҫ��Ϊ����ɽˮ������Ⱥ��֮��";
+        prog = "首先，你要成为花果山水帘洞的群猴之王";
         foo = new(__DIR__"huaguo/flag");
         foo->set("owner", ob);
         foo->place_room(HUAG_GETFLAG_ROOM);
     }
     else if (ob->query("dntg/donghai") == 0) {
-        prog = "���Ѿ��ǻ���ɽ��Ⱥ��֮���ˣ�������Ҫ�����ǲ������µ�Ⱥ�������ɽ�����ͭǽ����";
+        prog = "你已经是花果山的群猴之王了，现在你要做的是操练手下的群猴，将花果山打造成铜墙铁壁";
         foo = new(__DIR__"donghai/rack");
         foo->set("owner", ob);
         foo->move(DONH_ASNL_ROOM);
     }
     else if (ob->query("dntg/donghai") != "done") {
-        prog = "�ߣ��ߣ��ߣ�ȥ������ȥ�ý𹿰���";
+        prog = "走！走！走！去东海！去拿金箍棒！";
         foo = new(__DIR__"donghai/patrol");
         foo->set("target", ob);
         foo->move(DONH_GATE_ROOM);
     }
     else if (ob->query("dntg/hell") == 0) {
-        tell_object(ob, name() + CYN "����������������������������ֵظ�������ϲ���ֵظ��ˣ�\n" NOR);
-        prog = "�ߣ��ߣ��ߣ���ȥ��������˯����";
+        tell_object(ob, name() + CYN "自言自语道：啊哈！接下来又是闹地府！我最喜欢闹地府了！\n" NOR);
+        prog = "走！走！走！先去铁板桥上睡觉！";
         foo = new(__DIR__"hell/bed");
         foo->set("owner", ob);
         foo->set("hell_ent_room", HELL_ENT_ROOM);
@@ -146,16 +146,16 @@ void do_report_progress()
     }
     else {
         if (OBSTACLES_D->check_obstacles(ob, "dntg")) {
-            tell_object(ob, name() + CYN "�����˵�����ף�"
-                    + RANK_D->query_respect(ob) + "��Ȼ�Ѿ�����˴����칬��׳�٣�\n" NOR);
-            tell_object(ob, name() + CYN "������������\n" NOR);
-            tell_object(ob, name() + CYN "��������Ҳ��\n" NOR);
-            tell_object(ob, name() + "����һ����⣬��������ʡ�\n");
+            tell_object(ob, name() + CYN "惊奇的说道：咦？"
+                    + RANK_D->query_respect(ob) + "居然已经完成了大闹天宫的壮举！\n" NOR);
+            tell_object(ob, name() + CYN "道：佩服佩服！\n" NOR);
+            tell_object(ob, name() + CYN "道：我走也！\n" NOR);
+            tell_object(ob, name() + "化作一道金光，飞向了天际。\n");
             destruct(this_object());
         }
         return;
     }
-    tell_object(ob, name() + CYN "����������е���" + prog + "��\n" NOR);
+    tell_object(ob, name() + CYN "对着你耳朵大叫道：" + prog + "！\n" NOR);
 }
 
 void speak_one(int i)
@@ -194,12 +194,12 @@ void greeting(object ob)
     object me = this_object();
     if (environment() != environment(ob)) return;
     
-    command("say hi, " + RANK_D->query_respect(ob) + "�벻����������³���������\n");
+    command("say hi, " + RANK_D->query_respect(ob) + "想不想办两件大事出出名啊？\n");
     set("inquiry", ([
-        "����" : "Ҫ˵��������Ȼ�����ƴ����칬����\n",
-        "�����칬" : (: ask_for_dntg :),
+        "大事" : "要说这大事嘛，当然是首推大闹天宫啦！\n",
+        "大闹天宫" : (: ask_for_dntg :),
         "dntg" : (: ask_for_dntg :),
-        "����ʲô" : (: ask_for_detail :),
+        "除非什么" : (: ask_for_detail :),
     ]));
 }
 
@@ -207,11 +207,11 @@ string ask_for_dntg()
 {
     object ob = this_player();
     if (OBSTACLES_D->check_obstacles(ob, "dntg"))
-        return "�㲻���Լ�Ҳ���������𣬻����ң�";
-    command("say Ҫ˵������칬�����ǵ��������ʥ����յ�׳�١�");
-    command("say �����ʱ�������٣�����û�����ܸ���");
+        return "你不是自己也曾经做过吗，还问我？";
+    command("say 要说这大闹天宫，乃是当初齐天大圣孙悟空的壮举。");
+    command("say 如今天时地利不再，恐怕没有人能复制");
     ob->set_temp("pending/ask_for_detail", 1);
-    return "���ǡ�����";
+    return "除非。。。";
 }
 
 string ask_for_detail()
@@ -219,13 +219,13 @@ string ask_for_detail()
     object ob = this_player();
     if (!ob->query_temp("pending/ask_for_detail")) {
         command("?");
-        return "������˵����ôǰ�Բ������ģ�";
+        return "你这人说话怎么前言不搭后语的？";
     }
-    command("say ���ǽ��ܱ����˼ҵ�ָ�㡣");
+    command("say 除非接受本老人家的指点。");
     command("hehe");
-    command("say " + RANK_D->query_respect(ob) + "Ҫ��Ը�⣬�ͷ�һ����(swear)��˵��Ҫ�������칬����");
+    command("say " + RANK_D->query_respect(ob) + "要是愿意，就发一个誓(swear)，说你要“大闹天宫”！");
     ob->delete_temp("pending/ask_for_detail");
-    return "�����˼���������ã�˵������ָ�����㡣";
+    return "本老人家若是心情好，说不定会指点与你。";
 }
 
 int do_swear(string arg)
@@ -233,16 +233,16 @@ int do_swear(string arg)
     object ob = this_player();
     if (environment() == ob) return 0;
     if (OBSTACLES_D->check_obstacles(ob, "dntg")) return 0;
-    if (!arg) return notify_fail("��Ҫ����ʲô���ԣ�\n");
-    message_vision("$Nָ�췢�ģ���Ҫ " + arg + " ��\n", ob);
-    if (arg != "�����칬") {
-        tell_object(ob, "����ʲôҲû�з�����\n");
+    if (!arg) return notify_fail("你要发出什么誓言？\n");
+    message_vision("$N指天发誓：我要 " + arg + " ！\n", ob);
+    if (arg != "大闹天宫") {
+        tell_object(ob, "可是什么也没有发生。\n");
         return 1;
     }
     command("haha");
-    command("say �ã��ã��ã�");
-    command("say " + RANK_D->query_respect(ob) + "��Ȼ�д�����׳־�������˼Ҿ�����һ���컯��");
-    message_vision("ٿ��һ����$n�Զ��ɽ���$P�Ļ��\n", ob, this_object());
+    command("say 好！好！好！");
+    command("say " + RANK_D->query_respect(ob) + "既然有此雄心壮志，本老人家就送你一场造化。");
+    message_vision("倏的一声，$n自动飞进了$P的怀里。\n", ob, this_object());
     set_temp("chosen", ob);
     ob->set_temp("dntg_helper", this_object());
     move(ob);
@@ -256,8 +256,8 @@ void disappear()
 {
     object chosen = query_temp("chosen");
     if (chosen)
-        tell_object(chosen, name() + CYN "�ȵ���" + chosen->name(1) + CYN "����̫����ʧ���ˣ���Ͳ��Ǹ��������µ��ˣ�\n" NOR);
-    message_vision("\n$NͻȻ����һ����������ʣ������ˡ�\n", this_object());
+        tell_object(chosen, name() + CYN "喝到：" + chosen->name(1) + CYN "！你太让我失望了，你就不是个能做大事的人！\n" NOR);
+    message_vision("\n$N突然化作一道金光飞向天际，不见了。\n", this_object());
     destruct(this_object());
 }
 

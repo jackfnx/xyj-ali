@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //changan city
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "³¤°²¶þÂ¥");
+        set ("short", "é•¿å®‰äºŒæ¥¼");
         set ("long", @LONG
 
-ÀÖ·»Â¥ÉÏÏÔµÃ¸ñÍâÈÈÄÖ£¬×ßÀÈÀïÈËÀ´ÈËÍù£¬¼¸¼äÎÝ×ÓÀïÈËÉùàÐÔÓ£¬ÅÆ
-Ç©¹Ç÷»Ç®±ÒÂäÅÌµÄÉùÒô²»¾ø¡£¿´Ñù×Ó£¬¿ÍÈËÃÇ¶ÄµÃÕý»¶ÄØ¡£
+ä¹åŠæ¥¼ä¸Šæ˜¾å¾—æ ¼å¤–çƒ­é—¹ï¼Œèµ°å»Šé‡Œäººæ¥äººå¾€ï¼Œå‡ é—´å±‹å­é‡Œäººå£°å˜ˆæ‚ï¼Œç‰Œ
+ç­¾éª¨éª°é’±å¸è½ç›˜çš„å£°éŸ³ä¸ç»ã€‚çœ‹æ ·å­ï¼Œå®¢äººä»¬èµŒå¾—æ­£æ¬¢å‘¢ã€‚
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));

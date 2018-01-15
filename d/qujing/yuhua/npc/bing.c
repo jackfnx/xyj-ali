@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ê¿±ø", ({ "shi bing", "bing" }) );
-  set("gender", "ÄĞĞÔ");
+  set_name("å£«å…µ", ({ "shi bing", "bing" }) );
+  set("gender", "ç”·æ€§");
   set("age", 15+random(15));
   set("combat_exp", 200000+random(20000));
   set("attitude", "heroism");

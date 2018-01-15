@@ -1,16 +1,16 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-        set_name("������", ({"liu yuntian", "liu"}));
+        set_name("柳云天", ({"liu yuntian", "liu"}));
         set("age", 22);
-        set("gender", "����");
+        set("gender", "男性");
         set("long",
-"���ǲ�ׯ���ٶ��ң�Ҳ��������Ϊ��һ��������������ӡ�\n");
-   set("title", "���ǲ�ׯ����");
+"柳记布庄的少东家，也是年少有为，一副得意洋洋地样子。\n");
+   set("title", "柳记布庄东家");
         set("attitude", "friendly");
         set("combat_exp", 20000);
         set("shen_type", 1);
@@ -49,7 +49,7 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say(name()+ "Ц���е�ӭ��������λ" + RANK_D->query_respect(ob) + "��Ҫ��Щʲô������\n");
+                        say(name()+ "笑眯眯地迎上来：这位" + RANK_D->query_respect(ob) + "，要买些什么东西？\n");
                         break;
         }
 }
@@ -67,7 +67,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\n��Ȼ������������Ѳ�߹ٱ�����$N��һ������ʲô����ɱ��ı��ô��\n\n",me);        
+        message_vision("\n忽然从门外冲进来个巡逻官兵，对$N大喊一声“干什么？想杀人谋财么！\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

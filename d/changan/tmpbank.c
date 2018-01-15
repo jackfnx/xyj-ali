@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // tmpbank.c
@@ -8,12 +8,12 @@ inherit BANK;
 
 void create()
 {
-   set("short", "����Ǯׯ��ʱ���´�");
+   set("short", "相氏钱庄临时办事处");
    set("long", @LONG
 
-��Ϊ�������ݱ����գ����ϰ�Ϊ�˿ͷ���ƣ�����ˮ�ӱ���
-ʱ������һ�����´������ɳ���������ƹ��������ڴ�����
-���´�ֻ��һ���ª��Сľ��ſڹ���һ������(paizi)��
+因为长安城暂闭数日，相老板为顾客方便计，在泾水河边临
+时开设了一个办事处，并派出他最得力掌柜铁算盘在此坐阵。
+办事处只是一间简陋的小木棚，门口挂有一块牌子(paizi)。
 LONG
    );
    set("exits", ([ /* sizeof() == 1 */
@@ -22,12 +22,12 @@ LONG
 
    set("item_desc", ([
      "paizi": @TEXT
-������Ǯׯ��Ŀǰ�����ṩ�ķ����У�
+这里是钱庄，目前我们提供的服务有：
 
-check     ���ʡ�
-deposit     ��
-withdraw   ȡ�
-convert     �һ�Ǯ�ҡ�
+check     查帐。
+deposit     存款。
+withdraw   取款。
+convert     兑换钱币。
 
 TEXT
    ]) );

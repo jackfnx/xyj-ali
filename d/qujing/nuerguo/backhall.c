@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 4/4/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºó¹¬");
+  set ("short", "åå®«");
   set ("long", @LONG
 
-Õâ±ãÊÇÎ÷Áº¹«Ö÷½Ó¼û±ö¿ÍµÄºó¹¬ÁË¡£Ò»Á±ÏâÖé×Ïºì´óÕÊ½«ºó
-¹¬µÄÈë¿ÚÕÚÑÏ£¬µîÄÚ×¯ÑÏËàÄÂ£¬ÕıÖĞÓñ°×Ì¨½×ÉÏÊÇ²ÊÁú½ğ·ï
-Ë«µû±¦×ù£¬ÉÏÃæ¸ß¸ßµØ×ø×ÅÎ÷Áº¹«Ö÷¡£
+è¿™ä¾¿æ˜¯è¥¿æ¢å…¬ä¸»æ¥è§å®¾å®¢çš„åå®«äº†ã€‚ä¸€å¸˜é•¶ç ç´«çº¢å¤§å¸å°†å
+å®«çš„å…¥å£é®ä¸¥ï¼Œæ®¿å†…åº„ä¸¥è‚ƒç©†ï¼Œæ­£ä¸­ç‰ç™½å°é˜¶ä¸Šæ˜¯å½©é¾™é‡‘å‡¤
+åŒè¶å®åº§ï¼Œä¸Šé¢é«˜é«˜åœ°åç€è¥¿æ¢å…¬ä¸»ã€‚
 
 LONG);
 
@@ -36,7 +36,7 @@ int valid_leave (object me, string dir)
   princess = present("xiliang princess",environment(me)); 
   if (princess && dir=="north") 
   {
-    return notify_fail("Ğ¡¹«Ö÷¶ÔÄã´óºÈÒ»Éù´óµ¨£¡\n");
+    return notify_fail("å°å…¬ä¸»å¯¹ä½ å¤§å–ä¸€å£°å¤§èƒ†ï¼\n");
   }
   // once get into here, reset all greenyard temps, to prevent abuse
   me->set_temp("lost_in_greenyard",0);

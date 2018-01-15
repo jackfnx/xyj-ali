@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -9,9 +9,9 @@ int test_player (object me);
 
 void create()
 {
-  set_name("¶Ï³¦¸¾ÈË", ({"duanchang furen", "furen", "woman"}));
-  set("long", "Éí×ÅÖØĞ¢µÄ¸¾ÈË¡£\n");
-  set("gender", "Å®ĞÔ");
+  set_name("æ–­è‚ å¦‡äºº", ({"duanchang furen", "furen", "woman"}));
+  set("long", "èº«ç€é‡å­çš„å¦‡äººã€‚\n");
+  set("gender", "å¥³æ€§");
   set("age", 36);
   set("per", 18);
   set("attitude", "peaceful");
@@ -27,9 +27,9 @@ void create()
   set("max_mana",200);
   set("force_factor",12);
   set("inquiry", ([
-        "Ç®":   (: test_player :),
-        "Ö½Ç®": (: test_player :),
-        "»ÆÇ®": (: test_player :),
+        "é’±":   (: test_player :),
+        "çº¸é’±": (: test_player :),
+        "é»„é’±": (: test_player :),
       ]));
 
   setup();

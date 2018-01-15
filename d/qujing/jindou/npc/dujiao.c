@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("���������", ({ "dujiaosi dawang", "dujiaosi", "dawang", "wang" }));
-  set("title", "�𶵶�");   
-  set("long", "һλ����׳ʵ�Ĵ��ͷ������ͷ�ϳ���һֻ�ǡ�\n");
-  set("gender", "����");
+  set_name("独角兕大王", ({ "dujiaosi dawang", "dujiaosi", "dawang", "wang" }));
+  set("title", "金兜洞");   
+  set("long", "一位身材壮实的大块头妖王，头上长着一只角。\n");
+  set("gender", "男性");
   set("age", 70);
   set("attitude", "heroism");
   set("per", 30);
@@ -66,16 +66,16 @@ void die ()
     ob->set_temp("obstacle/jindou_killed",1);
     call_out ("li_appearing",1,ob);
   }
-  message_vision ("\nһ��紵���������������Ͼ���������ţ���ؼ�Ҳ��\n",me);
-  message_vision ("\n$N��������ԭ������Ȼ��һͷ����ţ��\n",me);
-  message_vision ("����ţ�������Ͼ������ķ���ȥ",me);
+  message_vision ("\n一阵风吹来，传来天上李老君的声音：牛儿回家也！\n",me);
+  message_vision ("\n$N闻声现了原身，果然是一头大青牛。\n",me);
+  message_vision ("大青牛沿着李老君声音的方向奔去",me);
   if (fabao)
   {
-     message_vision ("������һֻ$n��\n",me,fabao);
+     message_vision ("，丢下一只$n。\n",me,fabao);
      fabao->move(environment(me));
   }
   else
-    message_vision ("��\n",me);
+    message_vision ("。\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

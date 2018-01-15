@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,17 +7,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼Ğşºü³¤ºŞµ¶·¨¡½", ({"xuanhu book", "book"}));
+        set_name("ã€–ç„ç‹é•¿æ¨åˆ€æ³•ã€—", ({"xuanhu book", "book"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
      set("value", 0);
      set("no_sell", 1);
      set("no_put", 1);
      set("no_give", 1);
-   set("long","Ò»±¾Ğşºü³¤ºŞµ¶·¨µÄ»­²á¡£\n");
+   set("long","ä¸€æœ¬ç„ç‹é•¿æ¨åˆ€æ³•çš„ç”»å†Œã€‚\n");
         set("material", "paper");
         set("skill", ([
                         "name": "xuanhu-blade",

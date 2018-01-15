@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // combatd.c
@@ -21,50 +21,50 @@ int check_family(string fam);
 
 //this mapping indicates whether this family class is
 //xian or yao.
-mapping family=(["·½´çÉ½ÈıĞÇ¶´":1,
-                 "ÄÏº£ÆÕÍÓÉ½":1,
-                 "½«¾ü¸®":1,
-                 "Îå×¯¹Û":1,
-                 "ÑÖÂŞµØ¸®":0,
-                 "ÔÂ¹¬":0,
-                 "¶«º£Áú¹¬":0,
-                 "Áú¹¬":0,
-                 "´óÑ©É½":-1,
-                 "´äÔÆÉ½°Å½¶¶´":-1,
-                 "Ïİ¿ÕÉ½ÎŞµ×¶´":-1,
-                 "ÂÒÊ¯É½±Ì²¨Ì¶":-1, 
+mapping family=(["æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´":1,
+                 "å—æµ·æ™®é™€å±±":1,
+                 "å°†å†›åºœ":1,
+                 "äº”åº„è§‚":1,
+                 "é˜ç½—åœ°åºœ":0,
+                 "æœˆå®«":0,
+                 "ä¸œæµ·é¾™å®«":0,
+                 "é¾™å®«":0,
+                 "å¤§é›ªå±±":-1,
+                 "ç¿ äº‘å±±èŠ­è•‰æ´":-1,
+                 "é™·ç©ºå±±æ— åº•æ´":-1,
+                 "ä¹±çŸ³å±±ç¢§æ³¢æ½­":-1, 
 ]);
 
 string *guard_msg = ({
-   CYN "$N×¢ÊÓ×Å$nµÄĞĞ¶¯£¬ÆóÍ¼Ñ°ÕÒ»ú»á³öÊÖ¡£\n" NOR,
-   CYN "$NÕı¶¢×Å$nµÄÒ»¾ÙÒ»¶¯£¬ËæÊ±×¼±¸·¢¶¯¹¥ÊÆ¡£\n" NOR,
-   CYN "$N»º»ºµØÒÆ¶¯½Å²½£¬ÏëÒªÕÒ³ö$nµÄÆÆÕÀ¡£\n" NOR,
-   CYN "$NÄ¿²»×ª¾¦µØ¶¢×Å$nµÄ¶¯×÷£¬Ñ°ÕÒ½ø¹¥µÄ×î¼ÑÊ±»ú¡£\n" NOR,
-   CYN "$NÂıÂıµØÒÆ¶¯×Å½Å²½£¬ËÅ»ú³öÊÖ¡£\n" NOR,
+   CYN "$Næ³¨è§†ç€$nçš„è¡ŒåŠ¨ï¼Œä¼å›¾å¯»æ‰¾æœºä¼šå‡ºæ‰‹ã€‚\n" NOR,
+   CYN "$Næ­£ç›¯ç€$nçš„ä¸€ä¸¾ä¸€åŠ¨ï¼Œéšæ—¶å‡†å¤‡å‘åŠ¨æ”»åŠ¿ã€‚\n" NOR,
+   CYN "$Nç¼“ç¼“åœ°ç§»åŠ¨è„šæ­¥ï¼Œæƒ³è¦æ‰¾å‡º$nçš„ç ´ç»½ã€‚\n" NOR,
+   CYN "$Nç›®ä¸è½¬ç›åœ°ç›¯ç€$nçš„åŠ¨ä½œï¼Œå¯»æ‰¾è¿›æ”»çš„æœ€ä½³æ—¶æœºã€‚\n" NOR,
+   CYN "$Næ…¢æ…¢åœ°ç§»åŠ¨ç€è„šæ­¥ï¼Œä¼ºæœºå‡ºæ‰‹ã€‚\n" NOR,
 });
 
 string *catch_hunt_msg = ({
-   HIW "$NºÍ$n³ğÈËÏà¼û·İÍâÑÛºì£¬Á¢¿Ì´òÁËÆğÀ´£¡\n" NOR,
-   HIW "$N¶Ô×Å$n´óºÈ£º¡¸¿É¶ñ£¬ÓÖÊÇÄã£¡¡¹\n" NOR,
-   HIW "$NºÍ$nÒ»ÅöÃæ£¬¶ş»°²»Ëµ¾Í´òÁËÆğÀ´£¡\n" NOR,
-   HIW "$NÒ»ÑÛÆ³¼û$n£¬¡¸ºß¡¹µÄÒ»Éù³åÁË¹ıÀ´£¡\n" NOR,
-   HIW "$NÒ»¼ûµ½$n£¬ã¶ÁËÒ»ã¶£¬´ó½Ğ£º¡¸ÎÒÔ×ÁËÄã£¡¡¹\n" NOR,
-   HIW "$NºÈµÀ£º¡¸$n£¬ÎÒÃÇµÄÕÊ»¹Ã»ËãÍê£¬¿´ÕĞ£¡¡¹\n" NOR,
-   HIW "$NºÈµÀ£º¡¸$n£¬¿´ÕĞ£¡¡¹\n" NOR,});
+   HIW "$Nå’Œ$nä»‡äººç›¸è§ä»½å¤–çœ¼çº¢ï¼Œç«‹åˆ»æ‰“äº†èµ·æ¥ï¼\n" NOR,
+   HIW "$Nå¯¹ç€$nå¤§å–ï¼šã€Œå¯æ¶ï¼Œåˆæ˜¯ä½ ï¼ã€\n" NOR,
+   HIW "$Nå’Œ$nä¸€ç¢°é¢ï¼ŒäºŒè¯ä¸è¯´å°±æ‰“äº†èµ·æ¥ï¼\n" NOR,
+   HIW "$Nä¸€çœ¼ç¥è§$nï¼Œã€Œå“¼ã€çš„ä¸€å£°å†²äº†è¿‡æ¥ï¼\n" NOR,
+   HIW "$Nä¸€è§åˆ°$nï¼Œæ„£äº†ä¸€æ„£ï¼Œå¤§å«ï¼šã€Œæˆ‘å®°äº†ä½ ï¼ã€\n" NOR,
+   HIW "$Nå–é“ï¼šã€Œ$nï¼Œæˆ‘ä»¬çš„å¸è¿˜æ²¡ç®—å®Œï¼Œçœ‹æ‹›ï¼ã€\n" NOR,
+   HIW "$Nå–é“ï¼šã€Œ$nï¼Œçœ‹æ‹›ï¼ã€\n" NOR,});
 
 string *winner_msg = ({
-   CYN "\n$N¹ş¹ş´óĞ¦£¬ËµµÀ£º³ĞÈÃÁË£¡\n\n" NOR,
-   CYN "\n$NË«ÊÖÒ»¹°£¬Ğ¦×ÅËµµÀ£º³ĞÈÃ£¡\n\n" NOR,
-   CYN "\n$NÊ¤ÁËÕâÕĞ£¬ÏòºóÔ¾¿ªÈı³ß£¬Ğ¦µÀ£º³ĞÈÃ£¡\n\n" NOR,
-   CYN "\n$nÁ³É«Î¢±ä£¬ËµµÀ£ºÅå·ş£¬Åå·ş£¡\n\n" NOR,
-   CYN "\n$nÏòºóÍËÁË¼¸²½£¬ËµµÀ£ºÕâ³¡±ÈÊÔËãÎÒÊäÁË£¬Åå·ş£¬Åå·ş£¡\n\n" NOR,
-   CYN "\n$nÏòºóÒ»×İ£¬¹ªÉí×öÒ¾ËµµÀ£º¸óÏÂÎäÒÕ²»·²£¬¹ûÈ»¸ßÃ÷£¡\n\n" NOR,
+   CYN "\n$Nå“ˆå“ˆå¤§ç¬‘ï¼Œè¯´é“ï¼šæ‰¿è®©äº†ï¼\n\n" NOR,
+   CYN "\n$NåŒæ‰‹ä¸€æ‹±ï¼Œç¬‘ç€è¯´é“ï¼šæ‰¿è®©ï¼\n\n" NOR,
+   CYN "\n$Nèƒœäº†è¿™æ‹›ï¼Œå‘åè·ƒå¼€ä¸‰å°ºï¼Œç¬‘é“ï¼šæ‰¿è®©ï¼\n\n" NOR,
+   CYN "\n$nè„¸è‰²å¾®å˜ï¼Œè¯´é“ï¼šä½©æœï¼Œä½©æœï¼\n\n" NOR,
+   CYN "\n$nå‘åé€€äº†å‡ æ­¥ï¼Œè¯´é“ï¼šè¿™åœºæ¯”è¯•ç®—æˆ‘è¾“äº†ï¼Œä½©æœï¼Œä½©æœï¼\n\n" NOR,
+   CYN "\n$nå‘åä¸€çºµï¼Œèº¬èº«åšæ–è¯´é“ï¼šé˜ä¸‹æ­¦è‰ºä¸å‡¡ï¼Œæœç„¶é«˜æ˜ï¼\n\n" NOR,
 });
 
 void create()
 {
    seteuid(getuid());
-   set("name", "Õ½¶·¾«Áé");
+   set("name", "æˆ˜æ–—ç²¾çµ");
    set("id", "combatd");
 }
 
@@ -72,144 +72,144 @@ string damage_msg(int damage, string type)
 {
    string str;
 
-//   return "Ôì³É " + damage + " µã" + type + "¡£\n";
+//   return "é€ æˆ " + damage + " ç‚¹" + type + "ã€‚\n";
 
-   if( damage == 0 ) return "½á¹ûÃ»ÓĞÔì³ÉÈÎºÎÉËº¦¡£\n";
+   if( damage == 0 ) return "ç»“æœæ²¡æœ‰é€ æˆä»»ä½•ä¼¤å®³ã€‚\n";
 
    switch( type ) {
-   case "²ÁÉË":
-   case "×¥ÉË":
-   case "¸îÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÇáÇáµØ»®ÆÆ$pµÄÆ¤Èâ¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$p$l»®³öÒ»µÀÏ¸³¤µÄÑªºÛ¡£\n";
-     else if( damage < 40 ) return "½á¹û¡¸àÍ¡¹µØÒ»Éù»®³öÒ»µÀÉË¿Ú£¡\n";
-     else if( damage < 80 ) return "½á¹û¡¸àÍ¡¹µØÒ»Éù»®³öÒ»µÀÑªÁÜÁÜµÄÉË¿Ú£¡\n";
-     else if( damage < 160 ) return "½á¹û¡¸àÍ¡¹µØÒ»Éù»®³öÒ»µÀÓÖ³¤ÓÖÉîµÄÉË¿Ú£¬½¦µÃ$NÂúÁ³ÏÊÑª£¡\n";
-     else return "½á¹ûÖ»Ìı¼û$nÒ»Éù²Òº¿£¬$pµÄ$l±»»®³öÒ»µÀÉî¼°¼û¹ÇµÄ¿ÉÅÂÉË¿Ú£¡\n";
+   case "æ“¦ä¼¤":
+   case "æŠ“ä¼¤":
+   case "å‰²ä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯è½»è½»åœ°åˆ’ç ´$pçš„çš®è‚‰ã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$p$låˆ’å‡ºä¸€é“ç»†é•¿çš„è¡€ç—•ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœã€Œå—¤ã€åœ°ä¸€å£°åˆ’å‡ºä¸€é“ä¼¤å£ï¼\n";
+     else if( damage < 80 ) return "ç»“æœã€Œå—¤ã€åœ°ä¸€å£°åˆ’å‡ºä¸€é“è¡€æ·‹æ·‹çš„ä¼¤å£ï¼\n";
+     else if( damage < 160 ) return "ç»“æœã€Œå—¤ã€åœ°ä¸€å£°åˆ’å‡ºä¸€é“åˆé•¿åˆæ·±çš„ä¼¤å£ï¼Œæº…å¾—$Næ»¡è„¸é²œè¡€ï¼\n";
+     else return "ç»“æœåªå¬è§$nä¸€å£°æƒ¨åšï¼Œ$pçš„$lè¢«åˆ’å‡ºä¸€é“æ·±åŠè§éª¨çš„å¯æ€•ä¼¤å£ï¼\n";
      break;
-   case "¿³ÉË":
-   case "ÅüÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÔÚ$nµÄÆ¤ÈâÉÏÅöÁËÅö£¬¸úÎÃ×Ó¶£²î²»¶à¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$n$l¿³³öÒ»µÀÏ¸³¤µÄÑªºÛ¡£\n";
-     else if( damage < 40 ) return "½á¹û¡¸àÛàÍ¡¹Ò»ÉùÅü³öÒ»µÀÑªÁÜÁÜµÄÉË¿Ú£¡\n";
-     else if( damage < 80 ) return "½á¹ûÖ»Ìı¡¸àÛ¡¹µØÒ»Éù£¬$nµÄ$l±»ÅüµÃÑªÈçÈªÓ¿£¬Í´µÃ$pÒ§ÑÀÇĞ³İ£¡\n";
-     else if( damage < 160 ) return "½á¹û¡¸àÛ¡¹µØÒ»Éù¿³³öÒ»µÀÓÖ³¤ÓÖÉîµÄÉË¿Ú£¬½¦µÃ$NÂúÁ³ÏÊÑª£¡\n";
-     else return "½á¹ûÖ»Ìı¼û$nÒ»Éù²Òº¿£¬$pµÄ$l±»Åü¿ªÒ»µÀÉî¼°¼û¹ÇµÄ¿ÉÅÂÉË¿Ú£¡\n";
+   case "ç ä¼¤":
+   case "åŠˆä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯åœ¨$nçš„çš®è‚‰ä¸Šç¢°äº†ç¢°ï¼Œè·ŸèšŠå­å®å·®ä¸å¤šã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$n$lç å‡ºä¸€é“ç»†é•¿çš„è¡€ç—•ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœã€Œå™—å—¤ã€ä¸€å£°åŠˆå‡ºä¸€é“è¡€æ·‹æ·‹çš„ä¼¤å£ï¼\n";
+     else if( damage < 80 ) return "ç»“æœåªå¬ã€Œå™—ã€åœ°ä¸€å£°ï¼Œ$nçš„$lè¢«åŠˆå¾—è¡€å¦‚æ³‰æ¶Œï¼Œç—›å¾—$på’¬ç‰™åˆ‡é½¿ï¼\n";
+     else if( damage < 160 ) return "ç»“æœã€Œå™—ã€åœ°ä¸€å£°ç å‡ºä¸€é“åˆé•¿åˆæ·±çš„ä¼¤å£ï¼Œæº…å¾—$Næ»¡è„¸é²œè¡€ï¼\n";
+     else return "ç»“æœåªå¬è§$nä¸€å£°æƒ¨åšï¼Œ$pçš„$lè¢«åŠˆå¼€ä¸€é“æ·±åŠè§éª¨çš„å¯æ€•ä¼¤å£ï¼\n";
      break;
-   case "Ç¹ÉË":
-   case "´ÌÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÇáÇáµØ´ÌÆÆ$pµÄÆ¤Èâ¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$p$l´Ì³öÒ»¸ö´´¿Ú¡£\n";
-     else if( damage < 40 ) return "½á¹û¡¸àÛ¡¹µØÒ»Éù´ÌÈëÁË$n$l´çĞí£¡\n";
-     else if( damage < 80 ) return "½á¹û¡¸àÛ¡¹µØÒ»Éù´Ì½ø$nµÄ$l£¬Ê¹$p²»ÓÉ×ÔÖ÷µØÍËÁË²½£¡\n";
-     else if( damage < 160 ) return "½á¹û¡¸àÛàÍ¡¹µØÒ»Éù£¬$wÒÑÔÚ$p$l´Ì³öÒ»¸öÑªÈâÄ£ºıµÄÑª¿ßÁş£¡\n";
-     else return "½á¹ûÖ»Ìı¼û$nÒ»Éù²Òº¿£¬$wÒÑÔÚ$pµÄ$l¶Ô´©¶ø³ö£¬ÏÊÑª½¦µÃÂúµØ£¡\n";
+   case "æªä¼¤":
+   case "åˆºä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯è½»è½»åœ°åˆºç ´$pçš„çš®è‚‰ã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$p$låˆºå‡ºä¸€ä¸ªåˆ›å£ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœã€Œå™—ã€åœ°ä¸€å£°åˆºå…¥äº†$n$lå¯¸è®¸ï¼\n";
+     else if( damage < 80 ) return "ç»“æœã€Œå™—ã€åœ°ä¸€å£°åˆºè¿›$nçš„$lï¼Œä½¿$pä¸ç”±è‡ªä¸»åœ°é€€äº†æ­¥ï¼\n";
+     else if( damage < 160 ) return "ç»“æœã€Œå™—å—¤ã€åœ°ä¸€å£°ï¼Œ$wå·²åœ¨$p$låˆºå‡ºä¸€ä¸ªè¡€è‚‰æ¨¡ç³Šçš„è¡€çªŸçª¿ï¼\n";
+     else return "ç»“æœåªå¬è§$nä¸€å£°æƒ¨åšï¼Œ$wå·²åœ¨$pçš„$lå¯¹ç©¿è€Œå‡ºï¼Œé²œè¡€æº…å¾—æ»¡åœ°ï¼\n";
      break;
-   case "ÖşÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÇáÇáµØÒ»´¥£¬ÔÚ$nµÄÆ¤·ôÉÏÁôÏÂÒ»µã°×ºÛ¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$pµÄ$lÁôÏÂ¼¸µÀÑªºÛ¡£\n";
-     else if( damage < 40 ) return "½á¹ûÒ»ÏÂ×ÓÖşÖĞ£¬$nµÄ$l¶ÙÊ±³öÏÖ¼¸¸öÑª¿×£¡\n";
-     else if( damage < 80 ) return "½á¹ûÒ»ÏÂ×ÓÖşÖĞ£¬$nÁ¢¿ÌÑªÁ÷Èç×¢£¡\n";
-     else if( damage < 120 ) return "½á¹û¡¸ßê¡¹µØÒ»Éù£¬$n¶ÙÊ±ÏÊÑª·É½¦£¡\n";
-     else if( damage < 160 ) return "½á¹ûÕâÒ»ÏÂ¡¸ßê¡¹µØÒ»Éù£¬$n±»ÖşµÃ»ëÉíÊÇÑª£¡\n";
-     else return "½á¹û¡¸ßê¡¹ÖØÖØµØÔÒÖĞ£¬$n±»ÖşµÃÇ§´¯°×¿×£¬ÑªÈâËÄ´¦ºá·É£¡\n";
+   case "ç­‘ä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯è½»è½»åœ°ä¸€è§¦ï¼Œåœ¨$nçš„çš®è‚¤ä¸Šç•™ä¸‹ä¸€ç‚¹ç™½ç—•ã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$pçš„$lç•™ä¸‹å‡ é“è¡€ç—•ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœä¸€ä¸‹å­ç­‘ä¸­ï¼Œ$nçš„$lé¡¿æ—¶å‡ºç°å‡ ä¸ªè¡€å­”ï¼\n";
+     else if( damage < 80 ) return "ç»“æœä¸€ä¸‹å­ç­‘ä¸­ï¼Œ$nç«‹åˆ»è¡€æµå¦‚æ³¨ï¼\n";
+     else if( damage < 120 ) return "ç»“æœã€Œå“§ã€åœ°ä¸€å£°ï¼Œ$né¡¿æ—¶é²œè¡€é£æº…ï¼\n";
+     else if( damage < 160 ) return "ç»“æœè¿™ä¸€ä¸‹ã€Œå“§ã€åœ°ä¸€å£°ï¼Œ$nè¢«ç­‘å¾—æµ‘èº«æ˜¯è¡€ï¼\n";
+     else return "ç»“æœã€Œå“§ã€é‡é‡åœ°ç ¸ä¸­ï¼Œ$nè¢«ç­‘å¾—åƒç–®ç™½å­”ï¼Œè¡€è‚‰å››å¤„æ¨ªé£ï¼\n";
      break;
-   case "ÕÆÉË":
-   case "È­ÉË":
-   case "ğöÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÇáÇáµØÅöµ½£¬±ÈÅÄ²ÔÓ¬ÉÔÎ¢ÖØÁËµã¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$pµÄ$lÔì³ÉÒ»´¦ğöÇà¡£\n";
-     else if( damage < 40 ) return "½á¹ûÒ»»÷ÃüÖĞ£¬$nµÄ$lµÇÊ±Ö×ÁËÒ»¿éÀÏ¸ß£¡\n";
-     else if( damage < 80 ) return "½á¹ûÒ»»÷ÃüÖĞ£¬$nÃÆºßÁËÒ»ÉùÏÔÈ»³ÔÁË²»Ğ¡µÄ¿÷£¡\n";
-     else if( damage < 120 ) return "½á¹û¡¸Åé¡¹µØÒ»Éù£¬$nÍËÁËÁ½²½£¡\n";
-     else if( damage < 160 ) return "½á¹ûÕâÒ»ÏÂ¡¸Åé¡¹µØÒ»Éù´òµÃ$nÁ¬ÍËÁËºÃ¼¸²½£¬²îÒ»µãË¤µ¹£¡\n";
-     else if( damage < 240 ) return "½á¹ûÖØÖØµØ»÷ÖĞ£¬$n¡¸ÍÛ¡¹µØÒ»ÉùÍÂ³öÒ»¿ÚÏÊÑª£¡\n";
-     else return "½á¹ûÖ»Ìı¼û¡¸Åé¡¹µØÒ»Éù¾ŞÏì£¬$nÏñÒ»À¦µ¾²İ°ã·ÉÁË³öÈ¥£¡\n";
+   case "æŒä¼¤":
+   case "æ‹³ä¼¤":
+   case "ç˜€ä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯è½»è½»åœ°ç¢°åˆ°ï¼Œæ¯”æ‹è‹è‡ç¨å¾®é‡äº†ç‚¹ã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$pçš„$lé€ æˆä¸€å¤„ç˜€é’ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœä¸€å‡»å‘½ä¸­ï¼Œ$nçš„$lç™»æ—¶è‚¿äº†ä¸€å—è€é«˜ï¼\n";
+     else if( damage < 80 ) return "ç»“æœä¸€å‡»å‘½ä¸­ï¼Œ$né—·å“¼äº†ä¸€å£°æ˜¾ç„¶åƒäº†ä¸å°çš„äºï¼\n";
+     else if( damage < 120 ) return "ç»“æœã€Œç °ã€åœ°ä¸€å£°ï¼Œ$né€€äº†ä¸¤æ­¥ï¼\n";
+     else if( damage < 160 ) return "ç»“æœè¿™ä¸€ä¸‹ã€Œç °ã€åœ°ä¸€å£°æ‰“å¾—$nè¿é€€äº†å¥½å‡ æ­¥ï¼Œå·®ä¸€ç‚¹æ‘”å€’ï¼\n";
+     else if( damage < 240 ) return "ç»“æœé‡é‡åœ°å‡»ä¸­ï¼Œ$nã€Œå“‡ã€åœ°ä¸€å£°åå‡ºä¸€å£é²œè¡€ï¼\n";
+     else return "ç»“æœåªå¬è§ã€Œç °ã€åœ°ä¸€å£°å·¨å“ï¼Œ$nåƒä¸€æ†ç¨»è‰èˆ¬é£äº†å‡ºå»ï¼\n";
      break;
-   case "×²ÉË":
-   case "ÔÒÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÇáÇáµØÅöµ½£¬µÈÓÚ¸ø$nÉ¦ÁËÒ»ÏÂÑ÷¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$pµÄ$lÔÒ³öÒ»¸öĞ¡ëû°ü¡£\n";
-     else if( damage < 40 ) return "½á¹ûÔÒ¸öÕı×Å£¬$nµÄ$lµÇÊ±Ö×ÁËÒ»¿éÀÏ¸ß£¡\n";
-     else if( damage < 80 ) return "½á¹ûÔÒ¸öÕı×Å£¬$nÃÆºßÒ»ÉùÏÔÈ»³ÔÁË²»Ğ¡µÄ¿÷£¡\n";
-     else if( damage < 120 ) return "½á¹û¡¸Åé¡¹µØÒ»Éù£¬$nÌÛµÃÁ¬Ñü¶¼ÍäÁË£¡\n";
-     else if( damage < 160 ) return "½á¹ûÕâÒ»ÏÂ¡¸ºä¡¹µØÒ»ÉùÔÒµÃ$nÑÛÃ°½ğĞÇ£¬²îÒ»µãË¤µ¹£¡\n";
-     else if( damage < 240 ) return "½á¹ûÖØÖØµØÔÒÖĞ£¬$nÑÛÇ°Ò»ºÚ£¬¡¸ÍÛ¡¹µØÒ»ÉùÍÂ³öÒ»¿ÚÏÊÑª£¡\n";
-     else return "½á¹ûÖ»Ìı¼û¡¸ºä¡¹µØÒ»Éù¾ŞÏì£¬$n±»ÔÒµÃÑªÈâÄ£ºı£¬²Ò²»ÈÌ¶Ã£¡\n";
+   case "æ’ä¼¤":
+   case "ç ¸ä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯è½»è½»åœ°ç¢°åˆ°ï¼Œç­‰äºç»™$næ”äº†ä¸€ä¸‹ç—’ã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$pçš„$lç ¸å‡ºä¸€ä¸ªå°è‡ŒåŒ…ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœç ¸ä¸ªæ­£ç€ï¼Œ$nçš„$lç™»æ—¶è‚¿äº†ä¸€å—è€é«˜ï¼\n";
+     else if( damage < 80 ) return "ç»“æœç ¸ä¸ªæ­£ç€ï¼Œ$né—·å“¼ä¸€å£°æ˜¾ç„¶åƒäº†ä¸å°çš„äºï¼\n";
+     else if( damage < 120 ) return "ç»“æœã€Œç °ã€åœ°ä¸€å£°ï¼Œ$nç–¼å¾—è¿è…°éƒ½å¼¯äº†ï¼\n";
+     else if( damage < 160 ) return "ç»“æœè¿™ä¸€ä¸‹ã€Œè½°ã€åœ°ä¸€å£°ç ¸å¾—$nçœ¼å†’é‡‘æ˜Ÿï¼Œå·®ä¸€ç‚¹æ‘”å€’ï¼\n";
+     else if( damage < 240 ) return "ç»“æœé‡é‡åœ°ç ¸ä¸­ï¼Œ$nçœ¼å‰ä¸€é»‘ï¼Œã€Œå“‡ã€åœ°ä¸€å£°åå‡ºä¸€å£é²œè¡€ï¼\n";
+     else return "ç»“æœåªå¬è§ã€Œè½°ã€åœ°ä¸€å£°å·¨å“ï¼Œ$nè¢«ç ¸å¾—è¡€è‚‰æ¨¡ç³Šï¼Œæƒ¨ä¸å¿ç¹ï¼\n";
      break;
-   case "ÕğÉË":
-   case "ÄÚÉË":
-     if( damage < 20 ) return "½á¹ûÔÚ$nÉíÉÏÒ»´¥¼´ÊÅ£¬µÈÓÚ¸ø$nÉ¦ÁËÒ»ÏÂÑ÷¡£\n";
-     else if( damage < 40 ) return "½á¹û$n»ÎÁËÒ»»Î£¬³ÔÁËµãĞ¡¿÷¡£\n";
-     else if( damage < 80 ) return "½á¹û$nÆøÏ¢Ò»ÖÏ£¬ÏÔÈ»ÓĞµãºôÎü²»³©£¡\n";
-     else if( damage < 120 ) return "½á¹û$nÌåÄÚÒ»Õó¾çÍ´£¬¿´ÆğÀ´ÄÚÉË²»Çá£¡\n";
-     else if( damage < 160 ) return "½á¹û¡¸ÎË¡¹µØÒ»Éù$nÖ»¾õµÃÑÛÇ°Ò»ºÚ£¬Ë«¶úºäÃù²»Ö¹£¡\n";
-     else return "½á¹ûÖ»Ìı¼û¡¸ÎË¡¹µØÒ»Éù¾ŞÏì£¬$n¡¸ÍÛ¡¹µØÒ»ÉùÍÂ³öÒ»¿ÚÏÊÑª£¬ÎåÔàÁù¸­¶¼´íÁËÎ»£¡\n";
+   case "éœ‡ä¼¤":
+   case "å†…ä¼¤":
+     if( damage < 20 ) return "ç»“æœåœ¨$nèº«ä¸Šä¸€è§¦å³é€ï¼Œç­‰äºç»™$næ”äº†ä¸€ä¸‹ç—’ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœ$næ™ƒäº†ä¸€æ™ƒï¼Œåƒäº†ç‚¹å°äºã€‚\n";
+     else if( damage < 80 ) return "ç»“æœ$næ°”æ¯ä¸€çª’ï¼Œæ˜¾ç„¶æœ‰ç‚¹å‘¼å¸ä¸ç•…ï¼\n";
+     else if( damage < 120 ) return "ç»“æœ$nä½“å†…ä¸€é˜µå‰§ç—›ï¼Œçœ‹èµ·æ¥å†…ä¼¤ä¸è½»ï¼\n";
+     else if( damage < 160 ) return "ç»“æœã€Œå—¡ã€åœ°ä¸€å£°$nåªè§‰å¾—çœ¼å‰ä¸€é»‘ï¼ŒåŒè€³è½°é¸£ä¸æ­¢ï¼\n";
+     else return "ç»“æœåªå¬è§ã€Œå—¡ã€åœ°ä¸€å£°å·¨å“ï¼Œ$nã€Œå“‡ã€åœ°ä¸€å£°åå‡ºä¸€å£é²œè¡€ï¼Œäº”è„å…­è…‘éƒ½é”™äº†ä½ï¼\n";
      break;
-     case "±ŞÉË":
-     case "³éÉË":
-     if( damage < 10 ) return "½á¹ûÖ»ÊÇÔÚ$nµÄÆ¤ÈâÉÏÅöÁËÅö£¬¸úÎÃ×Ó¶£²î²»¶à¡£\n";
-     else if( damage < 20 ) return "½á¹ûÔÚ$n$l³é³öÒ»µÀÇáÎ¢µÄ×ÏºÛ¡£\n";
-     else if( damage < 40 ) return "½á¹û¡¸Å¾¡¹µØÒ»ÉùÔÚ$n$l³é³öÒ»µÀ³¤³¤µÄÑªºÛ£¡\n";
-     else if( damage < 80 ) return "½á¹ûÖ»Ìı¡¸Å¾¡¹µØÒ»Éù£¬$nµÄ$l±»³éµÃÆ¤¿ªÈâÕÀ£¬Í´µÃ$pÒ§ÑÀÇĞ³İ£¡\n";
-     else if( damage < 160 ) return "½á¹û¡¸Å¾¡¹µØÒ»Éù±¬Ïì£¡ÕâÒ»ÏÂºÃÀ÷º¦£¬Ö»³éµÃ$nÆ¤¿ªÈâÕÀ£¬Ñª»¨·É½¦£¡\n";
-     else return "½á¹ûÖ»Ìı¼û$nÒ»Éù²Òº¿£¬$wÖØÖØµØ³éÉÏÁË$pµÄ$l£¬$n¶ÙÊ±ÑªÈâºá·É£¬Ê®Ãü¶ÏÁË¾ÅÌõ£¡\n";
+     case "é­ä¼¤":
+     case "æŠ½ä¼¤":
+     if( damage < 10 ) return "ç»“æœåªæ˜¯åœ¨$nçš„çš®è‚‰ä¸Šç¢°äº†ç¢°ï¼Œè·ŸèšŠå­å®å·®ä¸å¤šã€‚\n";
+     else if( damage < 20 ) return "ç»“æœåœ¨$n$læŠ½å‡ºä¸€é“è½»å¾®çš„ç´«ç—•ã€‚\n";
+     else if( damage < 40 ) return "ç»“æœã€Œå•ªã€åœ°ä¸€å£°åœ¨$n$læŠ½å‡ºä¸€é“é•¿é•¿çš„è¡€ç—•ï¼\n";
+     else if( damage < 80 ) return "ç»“æœåªå¬ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$nçš„$lè¢«æŠ½å¾—çš®å¼€è‚‰ç»½ï¼Œç—›å¾—$på’¬ç‰™åˆ‡é½¿ï¼\n";
+     else if( damage < 160 ) return "ç»“æœã€Œå•ªã€åœ°ä¸€å£°çˆ†å“ï¼è¿™ä¸€ä¸‹å¥½å‰å®³ï¼ŒåªæŠ½å¾—$nçš®å¼€è‚‰ç»½ï¼Œè¡€èŠ±é£æº…ï¼\n";
+     else return "ç»“æœåªå¬è§$nä¸€å£°æƒ¨åšï¼Œ$wé‡é‡åœ°æŠ½ä¸Šäº†$pçš„$lï¼Œ$né¡¿æ—¶è¡€è‚‰æ¨ªé£ï¼Œåå‘½æ–­äº†ä¹æ¡ï¼\n";
      break;
    default:
-     if( !type ) type = "ÉËº¦";
-     if( damage < 10 ) str =  "½á¹ûÖ»ÊÇÃãÇ¿Ôì³ÉÒ»´¦ÇáÎ¢";
-     else if( damage < 20 ) str = "½á¹ûÔì³ÉÇáÎ¢µÄ";
-     else if( damage < 30 ) str = "½á¹ûÔì³ÉÒ»´¦";
-     else if( damage < 50 ) str = "½á¹ûÔì³ÉÒ»´¦ÑÏÖØ";
-     else if( damage < 80 ) str = "½á¹ûÔì³ÉÆÄÎªÑÏÖØµÄ";
-     else if( damage < 120 ) str = "½á¹ûÔì³ÉÏàµ±ÑÏÖØµÄ";
-     else if( damage < 170 ) str = "½á¹ûÔì³ÉÊ®·ÖÑÏÖØµÄ";
-     else if( damage < 230 ) str = "½á¹ûÔì³É¼«ÆäÑÏÖØµÄ";
-     else str =  "½á¹ûÔì³É·Ç³£¿ÉÅÂµÄÑÏÖØ";
-     return str + type + "£¡\n";
+     if( !type ) type = "ä¼¤å®³";
+     if( damage < 10 ) str =  "ç»“æœåªæ˜¯å‹‰å¼ºé€ æˆä¸€å¤„è½»å¾®";
+     else if( damage < 20 ) str = "ç»“æœé€ æˆè½»å¾®çš„";
+     else if( damage < 30 ) str = "ç»“æœé€ æˆä¸€å¤„";
+     else if( damage < 50 ) str = "ç»“æœé€ æˆä¸€å¤„ä¸¥é‡";
+     else if( damage < 80 ) str = "ç»“æœé€ æˆé¢‡ä¸ºä¸¥é‡çš„";
+     else if( damage < 120 ) str = "ç»“æœé€ æˆç›¸å½“ä¸¥é‡çš„";
+     else if( damage < 170 ) str = "ç»“æœé€ æˆååˆ†ä¸¥é‡çš„";
+     else if( damage < 230 ) str = "ç»“æœé€ æˆæå…¶ä¸¥é‡çš„";
+     else str =  "ç»“æœé€ æˆéå¸¸å¯æ€•çš„ä¸¥é‡";
+     return str + type + "ï¼\n";
    }
 }
 
 string eff_status_msg(int ratio)
 {
-   if( ratio==100 ) return HIG "¿´ÆğÀ´ÆøÑª³äÓ¯£¬²¢Ã»ÓĞÊÜÉË¡£" NOR;
-   if( ratio > 95 ) return HIG "ËÆºõÊÜÁËµãÇáÉË£¬²»¹ı¹â´ÓÍâ±í¿´²»´ó³öÀ´¡£" NOR;
-   if( ratio > 90 ) return HIY "¿´ÆğÀ´¿ÉÄÜÊÜÁËµãÇáÉË¡£" NOR;
-   if( ratio > 80 ) return HIY "ÊÜÁË¼¸´¦ÉË£¬²»¹ıËÆºõ²¢²»°­ÊÂ¡£" NOR;
-   if( ratio > 60 ) return HIY "ÊÜÉË²»Çá£¬¿´ÆğÀ´×´¿ö²¢²»Ì«ºÃ¡£" NOR;
-   if( ratio > 40 ) return HIR "ÆøÏ¢´ÖÖØ£¬¶¯×÷¿ªÊ¼É¢ÂÒ£¬¿´À´ËùÊÜµÄÉË×ÅÊµ²»Çá¡£" NOR;
-   if( ratio > 30 ) return HIR "ÒÑ¾­ÉËºÛÀÛÀÛ£¬ÕıÔÚÃãÁ¦Ö§³Å×Å²»µ¹ÏÂÈ¥¡£" NOR;
-   if( ratio > 20 ) return HIR "ÊÜÁËÏàµ±ÖØµÄÉË£¬Ö»ÅÂ»áÓĞÉúÃüÎ£ÏÕ¡£" NOR;
-   if( ratio > 10 ) return RED "ÉËÖØÖ®ÏÂÒÑ¾­ÄÑÒÔÖ§³Å£¬ÑÛ¿´¾ÍÒªµ¹ÔÚµØÉÏ¡£" NOR;
-   if( ratio > 5  ) return RED "ÊÜÉË¹ıÖØ£¬ÒÑ¾­ÑÙÑÙÒ»Ï¢£¬ÃüÔÚµ©Ï¦ÁË¡£" NOR;
-   return RED "ÊÜÉË¹ıÖØ£¬ÒÑ¾­ÓĞÈç·çÖĞ²ĞÖò£¬ËæÊ±¶¼¿ÉÄÜ¶ÏÆø¡£" NOR;
+   if( ratio==100 ) return HIG "çœ‹èµ·æ¥æ°”è¡€å……ç›ˆï¼Œå¹¶æ²¡æœ‰å—ä¼¤ã€‚" NOR;
+   if( ratio > 95 ) return HIG "ä¼¼ä¹å—äº†ç‚¹è½»ä¼¤ï¼Œä¸è¿‡å…‰ä»å¤–è¡¨çœ‹ä¸å¤§å‡ºæ¥ã€‚" NOR;
+   if( ratio > 90 ) return HIY "çœ‹èµ·æ¥å¯èƒ½å—äº†ç‚¹è½»ä¼¤ã€‚" NOR;
+   if( ratio > 80 ) return HIY "å—äº†å‡ å¤„ä¼¤ï¼Œä¸è¿‡ä¼¼ä¹å¹¶ä¸ç¢äº‹ã€‚" NOR;
+   if( ratio > 60 ) return HIY "å—ä¼¤ä¸è½»ï¼Œçœ‹èµ·æ¥çŠ¶å†µå¹¶ä¸å¤ªå¥½ã€‚" NOR;
+   if( ratio > 40 ) return HIR "æ°”æ¯ç²—é‡ï¼ŒåŠ¨ä½œå¼€å§‹æ•£ä¹±ï¼Œçœ‹æ¥æ‰€å—çš„ä¼¤ç€å®ä¸è½»ã€‚" NOR;
+   if( ratio > 30 ) return HIR "å·²ç»ä¼¤ç—•ç´¯ç´¯ï¼Œæ­£åœ¨å‹‰åŠ›æ”¯æ’‘ç€ä¸å€’ä¸‹å»ã€‚" NOR;
+   if( ratio > 20 ) return HIR "å—äº†ç›¸å½“é‡çš„ä¼¤ï¼Œåªæ€•ä¼šæœ‰ç”Ÿå‘½å±é™©ã€‚" NOR;
+   if( ratio > 10 ) return RED "ä¼¤é‡ä¹‹ä¸‹å·²ç»éš¾ä»¥æ”¯æ’‘ï¼Œçœ¼çœ‹å°±è¦å€’åœ¨åœ°ä¸Šã€‚" NOR;
+   if( ratio > 5  ) return RED "å—ä¼¤è¿‡é‡ï¼Œå·²ç»å¥„å¥„ä¸€æ¯ï¼Œå‘½åœ¨æ—¦å¤•äº†ã€‚" NOR;
+   return RED "å—ä¼¤è¿‡é‡ï¼Œå·²ç»æœ‰å¦‚é£ä¸­æ®‹çƒ›ï¼Œéšæ—¶éƒ½å¯èƒ½æ–­æ°”ã€‚" NOR;
 }
 
 string status_msg(int ratio)
 {
-   if( ratio==100 ) return HIG "¿´ÆğÀ´³äÂú»îÁ¦£¬Ò»µãÒ²²»ÀÛ¡£" NOR;
-   if( ratio > 95 ) return HIG "ËÆºõÓĞĞ©Æ£±¹£¬µ«ÊÇÈÔÈ»Ê®·ÖÓĞ»îÁ¦¡£" NOR;
-   if( ratio > 90 ) return HIY "¿´ÆğÀ´¿ÉÄÜÓĞĞ©ÀÛÁË¡£" NOR;
-   if( ratio > 80 ) return HIY "¶¯×÷ËÆºõ¿ªÊ¼ÓĞµã²»Ì«Áé¹â£¬µ«ÊÇÈÔÈ»ÓĞÌõ²»ÎÉ¡£" NOR;
-   if( ratio > 60 ) return HIY "Æø´­ĞêĞê£¬¿´ÆğÀ´×´¿ö²¢²»Ì«ºÃ¡£" NOR;
-   if( ratio > 40 ) return HIR "ËÆºõÊ®·ÖÆ£±¹£¬¿´À´ĞèÒªºÃºÃĞİÏ¢ÁË¡£" NOR;
-   if( ratio > 30 ) return HIR "ÒÑ¾­Ò»¸±Í·ÖØ½ÅÇáµÄÄ£Ñù£¬ÕıÔÚÃãÁ¦Ö§³Å×Å²»µ¹ÏÂÈ¥¡£" NOR;
-   if( ratio > 20 ) return HIR "¿´ÆğÀ´ÒÑ¾­Á¦²»´ÓĞÄÁË¡£" NOR;
-   if( ratio > 10 ) return RED "Ò¡Í·»ÎÄÔ¡¢ÍáÍáĞ±Ğ±µØÕ¾¶¼Õ¾²»ÎÈ£¬ÑÛ¿´¾ÍÒªµ¹ÔÚµØÉÏ¡£" NOR;
-   return RED "ÒÑ¾­ÏİÈë°ë»èÃÔ×´Ì¬£¬ËæÊ±¶¼¿ÉÄÜË¤µ¹ÔÎÈ¥¡£" NOR;
+   if( ratio==100 ) return HIG "çœ‹èµ·æ¥å……æ»¡æ´»åŠ›ï¼Œä¸€ç‚¹ä¹Ÿä¸ç´¯ã€‚" NOR;
+   if( ratio > 95 ) return HIG "ä¼¼ä¹æœ‰äº›ç–²æƒ«ï¼Œä½†æ˜¯ä»ç„¶ååˆ†æœ‰æ´»åŠ›ã€‚" NOR;
+   if( ratio > 90 ) return HIY "çœ‹èµ·æ¥å¯èƒ½æœ‰äº›ç´¯äº†ã€‚" NOR;
+   if( ratio > 80 ) return HIY "åŠ¨ä½œä¼¼ä¹å¼€å§‹æœ‰ç‚¹ä¸å¤ªçµå…‰ï¼Œä½†æ˜¯ä»ç„¶æœ‰æ¡ä¸ç´Šã€‚" NOR;
+   if( ratio > 60 ) return HIY "æ°”å–˜å˜˜å˜˜ï¼Œçœ‹èµ·æ¥çŠ¶å†µå¹¶ä¸å¤ªå¥½ã€‚" NOR;
+   if( ratio > 40 ) return HIR "ä¼¼ä¹ååˆ†ç–²æƒ«ï¼Œçœ‹æ¥éœ€è¦å¥½å¥½ä¼‘æ¯äº†ã€‚" NOR;
+   if( ratio > 30 ) return HIR "å·²ç»ä¸€å‰¯å¤´é‡è„šè½»çš„æ¨¡æ ·ï¼Œæ­£åœ¨å‹‰åŠ›æ”¯æ’‘ç€ä¸å€’ä¸‹å»ã€‚" NOR;
+   if( ratio > 20 ) return HIR "çœ‹èµ·æ¥å·²ç»åŠ›ä¸ä»å¿ƒäº†ã€‚" NOR;
+   if( ratio > 10 ) return RED "æ‘‡å¤´æ™ƒè„‘ã€æ­ªæ­ªæ–œæ–œåœ°ç«™éƒ½ç«™ä¸ç¨³ï¼Œçœ¼çœ‹å°±è¦å€’åœ¨åœ°ä¸Šã€‚" NOR;
+   return RED "å·²ç»é™·å…¥åŠæ˜è¿·çŠ¶æ€ï¼Œéšæ—¶éƒ½å¯èƒ½æ‘”å€’æ™•å»ã€‚" NOR;
 }
 
 //report_shen messages
 string sen_status_msg(int ratio)
 {
-   if( ratio==100 ) return HIG "¿´ÆğÀ´Í·ÄÔÇåĞÑ£¬Ò»µãÒ²²»ÃÔºı¡£" NOR;
-   if( ratio > 90 ) return HIG "ÅÄÁËÅÄ×Ô¼ºµÄÄÔ´ü£¬ËÆºõÓĞµã²»Ì«µÃ¾¢¡£" NOR;
-   if( ratio > 80 ) return HIY "¿´ÆğÀ´ÓĞĞ©ÃÔºıÁË¡£" NOR;
-   if( ratio > 60 ) return HIY "µÄÈ·ÓĞµãÃÔºıÁË£¬µ«»¹±æµÃ³ö¶«Î÷ÄÏ±±¡£" NOR;
-   if( ratio > 40 ) return HIR "Á½ÑÛ·¢Ö±£¬¿Ú½ÇÁ÷ÏÑ£¬ÉñÖÇ¿ªÊ¼»ìÂÒ¡£" NOR;
-   if( ratio > 20 ) return HIR "ÃÔÃÔºıºı£¬Ò¡Ò¡»Î»Î£¬ÒÑ¾­±æ²»³ö¶«Î÷ÄÏ±±ÁË¡£" NOR;
-   if( ratio > 10 ) return RED "ÉñÖÇÒÑ¾­´¦ÔÚ¼«¶È»ìÂÒÖĞ¡£" NOR;
-   return RED "ĞÄÖÇÒÑ¾­ÍêÈ«ÃÔÊ§£¬ËæÊ±¶¼ÓĞ¿ÉÄÜ±³¹ıÆøÈ¥¡£" NOR;
+   if( ratio==100 ) return HIG "çœ‹èµ·æ¥å¤´è„‘æ¸…é†’ï¼Œä¸€ç‚¹ä¹Ÿä¸è¿·ç³Šã€‚" NOR;
+   if( ratio > 90 ) return HIG "æ‹äº†æ‹è‡ªå·±çš„è„‘è¢‹ï¼Œä¼¼ä¹æœ‰ç‚¹ä¸å¤ªå¾—åŠ²ã€‚" NOR;
+   if( ratio > 80 ) return HIY "çœ‹èµ·æ¥æœ‰äº›è¿·ç³Šäº†ã€‚" NOR;
+   if( ratio > 60 ) return HIY "çš„ç¡®æœ‰ç‚¹è¿·ç³Šäº†ï¼Œä½†è¿˜è¾¨å¾—å‡ºä¸œè¥¿å—åŒ—ã€‚" NOR;
+   if( ratio > 40 ) return HIR "ä¸¤çœ¼å‘ç›´ï¼Œå£è§’æµæ¶ï¼Œç¥æ™ºå¼€å§‹æ··ä¹±ã€‚" NOR;
+   if( ratio > 20 ) return HIR "è¿·è¿·ç³Šç³Šï¼Œæ‘‡æ‘‡æ™ƒæ™ƒï¼Œå·²ç»è¾¨ä¸å‡ºä¸œè¥¿å—åŒ—äº†ã€‚" NOR;
+   if( ratio > 10 ) return RED "ç¥æ™ºå·²ç»å¤„åœ¨æåº¦æ··ä¹±ä¸­ã€‚" NOR;
+   return RED "å¿ƒæ™ºå·²ç»å®Œå…¨è¿·å¤±ï¼Œéšæ—¶éƒ½æœ‰å¯èƒ½èƒŒè¿‡æ°”å»ã€‚" NOR;
 }
 
 varargs void report_status(object ob, int effective)
@@ -302,7 +302,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
         return 0;
      }
    }
-   result = "\n" + action["action"] + "£¡\n";
+   result = "\n" + action["action"] + "ï¼\n";
 
    //
    // (2) Prepare AP, DP for checking if hit.
@@ -531,18 +531,18 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
 
    if( wizardp(me) && (string)me->query("env/combat")=="verbose" ) {
      if( damage > 0 )
-        tell_object(me, sprintf( GRN "AP£º%d£¬DP£º%d£¬PP£º%d£¬Mod£º%d£¬ÉËº¦Á¦£º%d\n" NOR,
+        tell_object(me, sprintf( GRN "APï¼š%dï¼ŒDPï¼š%dï¼ŒPPï¼š%dï¼ŒModï¼š%dï¼Œä¼¤å®³åŠ›ï¼š%d\n" NOR,
           ap, dp, pp, mod_val, damage));
      else
-        tell_object(me, sprintf( GRN "AP£º%d£¬DP£º%d£¬PP£º%d£¬Mod£º%d\n" NOR,
+        tell_object(me, sprintf( GRN "APï¼š%dï¼ŒDPï¼š%dï¼ŒPPï¼š%dï¼ŒModï¼š%d\n" NOR,
           ap, dp, pp, mod_val));
    }
    if( wizardp(victim) && (string)victim->query("env/combat")=="verbose" ) {
      if( damage > 0 )
-        tell_object(victim, sprintf( GRN "AP£º%d£¬DP£º%d£¬PP£º%d£¬Mod£º%d£¬ÉËº¦Á¦£º%d\n" NOR,
+        tell_object(victim, sprintf( GRN "APï¼š%dï¼ŒDPï¼š%dï¼ŒPPï¼š%dï¼ŒModï¼š%dï¼Œä¼¤å®³åŠ›ï¼š%d\n" NOR,
           ap, dp, pp, mod_val, damage));
      else
-        tell_object(victim, sprintf( GRN "AP£º%d£¬DP£º%d£¬PP£º%d£¬Mod£º%d\n" NOR,
+        tell_object(victim, sprintf( GRN "APï¼š%dï¼ŒDPï¼š%dï¼ŒPPï¼š%dï¼ŒModï¼š%d\n" NOR,
           ap, dp, pp, mod_val));
    }
 
@@ -555,16 +555,16 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
              victim->set_temp("no_move",1);
              me->set_temp("sex/makelove_ob", victim);
              if (me->query("max_mana") > 500)
-                message_vision(HIY + "\n\n$nÃæÉ«²Ô°×£¬µøµ¹ÔÚµØ£¬ÒÑÈ»ºÄ¾¡ÁËÌåÁ¦¡£\n"
-                        + "$N¼û×´´óÏ²£¬Á¬Ã¦´ò³ö¼¸µÀ·¨¾÷£¬½ûÖÆÁË$nµÄ»î¶¯ÄÜÁ¦£¬½«$p³¹µ×ÖÆ·ş¡£\n\n" + NOR,
+                message_vision(HIY + "\n\n$né¢è‰²è‹ç™½ï¼Œè·Œå€’åœ¨åœ°ï¼Œå·²ç„¶è€—å°½äº†ä½“åŠ›ã€‚\n"
+                        + "$Nè§çŠ¶å¤§å–œï¼Œè¿å¿™æ‰“å‡ºå‡ é“æ³•è¯€ï¼Œç¦åˆ¶äº†$nçš„æ´»åŠ¨èƒ½åŠ›ï¼Œå°†$på½»åº•åˆ¶æœã€‚\n\n" + NOR,
                     me, victim);
              else if (me->query("max_force") > 100)
-                message_vision(HIY + "\n\n$nÃæÉ«²Ô°×£¬µøµ¹ÔÚµØ£¬ÒÑÈ»ºÄ¾¡ÁËÌåÁ¦¡£\n"
-                        + "$N¼û×´´óÏ²£¬Á¬Ã¦·â×¡ÁË$nµÄ¼¸´¦´óÑ¨£¬½«$p³¹µ×ÖÆ·ş¡£\n\n" + NOR,
+                message_vision(HIY + "\n\n$né¢è‰²è‹ç™½ï¼Œè·Œå€’åœ¨åœ°ï¼Œå·²ç„¶è€—å°½äº†ä½“åŠ›ã€‚\n"
+                        + "$Nè§çŠ¶å¤§å–œï¼Œè¿å¿™å°ä½äº†$nçš„å‡ å¤„å¤§ç©´ï¼Œå°†$på½»åº•åˆ¶æœã€‚\n\n" + NOR,
                     me, victim);
             else
-                message_vision(HIY + "\n\n$nÃæÉ«²Ô°×£¬µøµ¹ÔÚµØ£¬ÒÑÈ»ºÄ¾¡ÁËÌåÁ¦¡£\n"
-                        + "$N¼û×´´óÏ²£¬Á¬Ã¦½âÏÂÑü´ø½«$nÀ¦ÁË¸ö½á½áÊµÊµ£¬½«$p³¹µ×ÖÆ·ş¡£\n\n" + NOR,
+                message_vision(HIY + "\n\n$né¢è‰²è‹ç™½ï¼Œè·Œå€’åœ¨åœ°ï¼Œå·²ç„¶è€—å°½äº†ä½“åŠ›ã€‚\n"
+                        + "$Nè§çŠ¶å¤§å–œï¼Œè¿å¿™è§£ä¸‹è…°å¸¦å°†$næ†äº†ä¸ªç»“ç»“å®å®ï¼Œå°†$på½»åº•åˆ¶æœã€‚\n\n" + NOR,
                     me, victim);
          }
      }
@@ -588,7 +588,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
            if( me->query_temp("perf_quick/msg") )
                message_vision(CYN + me->query_temp("perf_quick/msg") +NOR, me, victim);
            else
-               message_vision(CYN + "$NµÃÊÆ²»ÈÄÈË£¬¶Ô$nÕ¹¿ªÁ¬Ğø¹¥»÷¡£"+NOR, me, victim);
+               message_vision(CYN + "$Nå¾—åŠ¿ä¸é¥¶äººï¼Œå¯¹$nå±•å¼€è¿ç»­æ”»å‡»ã€‚"+NOR, me, victim);
            do_attack(me, victim, me->query_temp("weapon"), TYPE_QUICK);
            return 1;
         }
@@ -600,10 +600,10 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
    &&   victim->query_temp("guarding") ) {
      victim->set_temp("guarding", 0);
      if( random(my["cps"]) < 5 ) {
-        message_vision("$NÒ»»÷²»ÖĞ£¬Â¶³öÁËÆÆÕÀ£¡\n", me);
+        message_vision("$Nä¸€å‡»ä¸ä¸­ï¼Œéœ²å‡ºäº†ç ´ç»½ï¼\n", me);
         do_attack(victim, me, victim->query_temp("weapon"), TYPE_QUICK);
      } else {
-        message_vision("$N¼û$n¹¥»÷Ê§Îó£¬³Ã»ú·¢¶¯¹¥»÷£¡\n", victim, me);
+        message_vision("$Nè§$næ”»å‡»å¤±è¯¯ï¼Œè¶æœºå‘åŠ¨æ”»å‡»ï¼\n", victim, me);
         do_attack(victim, me, victim->query_temp("weapon"), TYPE_RIPOSTE);
      }
    }
@@ -686,18 +686,18 @@ void start_berserk(object me, object obj)
    )   return;
 
    bellicosity = (int)me->query("bellicosity");
-   message_vision("$NÓÃÒ»ÖÖÒìÑùµÄÑÛÉñÉ¨ÊÓ×ÅÔÚ³¡µÄÃ¿Ò»¸öÈË¡£\n", me);
+   message_vision("$Nç”¨ä¸€ç§å¼‚æ ·çš„çœ¼ç¥æ‰«è§†ç€åœ¨åœºçš„æ¯ä¸€ä¸ªäººã€‚\n", me);
 
    if(   (int)me->query("force") > (random(bellicosity) + bellicosity)/2 ) return;
 
    if( bellicosity > (int)me->query("score") 
    &&   !wizardp(obj) ) {
-     message_vision("$N¶Ô×Å$nºÈµÀ£º" + RANK_D->query_self_rude(me)
-        + "¿´ÄãÊµÔÚºÜ²»Ë³ÑÛ£¬È¥ËÀ°É¡£\n", me, obj);
+     message_vision("$Nå¯¹ç€$nå–é“ï¼š" + RANK_D->query_self_rude(me)
+        + "çœ‹ä½ å®åœ¨å¾ˆä¸é¡ºçœ¼ï¼Œå»æ­»å§ã€‚\n", me, obj);
      me->kill_ob(obj);
    } else {
-     message_vision("$N¶Ô×Å$nºÈµÀ£ºÎ¹£¡" + RANK_D->query_rude(obj)
-        + "£¬" + RANK_D->query_self_rude(me) + "ÕıÏëÕÒÈË´ò¼Ü£¬ÅãÎÒÍæÁ½ÊÖ°É£¡\n",
+     message_vision("$Nå¯¹ç€$nå–é“ï¼šå–‚ï¼" + RANK_D->query_rude(obj)
+        + "ï¼Œ" + RANK_D->query_self_rude(me) + "æ­£æƒ³æ‰¾äººæ‰“æ¶ï¼Œé™ªæˆ‘ç©ä¸¤æ‰‹å§ï¼\n",
         me, obj);
      me->fight_ob(obj);
    }
@@ -758,13 +758,13 @@ void announce(object ob, string event, string msg)
 {
    switch(event) {
      case "dead":
-        message_vision("\n$NËÀÁË¡£\n\n", ob);
+        message_vision("\n$Næ­»äº†ã€‚\n\n", ob);
         break;
      case "unconcious":
-        message_vision("\n$N½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏÒ»¶¯Ò²²»¶¯ÁË¡£\n\n", ob);
+        message_vision("\n$Nè„šä¸‹ä¸€ä¸ªä¸ç¨³ï¼Œè·Œåœ¨åœ°ä¸Šä¸€åŠ¨ä¹Ÿä¸åŠ¨äº†ã€‚\n\n", ob);
         break;
      case "revive":
-        message_vision("\n$NÂıÂıÕö¿ªÑÛ¾¦£¬ÇåĞÑÁË¹ıÀ´¡£\n\n", ob);
+        message_vision("\n$Næ…¢æ…¢çå¼€çœ¼ç›ï¼Œæ¸…é†’äº†è¿‡æ¥ã€‚\n\n", ob);
         break;
                 case "death_rumor":
         CHANNEL_D->do_channel(this_object(),"rumor",msg);
@@ -839,10 +839,10 @@ void killer_reward(object killer, object victim)
 
              if (gain) {
              str=chinese_daoxing(gain);
-               str=killer->name(1)+"µÃµ½"+str+"µÀĞĞ£¡";
+               str=killer->name(1)+"å¾—åˆ°"+str+"é“è¡Œï¼";
              } 
-        str=victim->name(1)+"±»"+killer->name(1)+
-            "³ÔµôÁË¡£"+str;
+        str=victim->name(1)+"è¢«"+killer->name(1)+
+            "åƒæ‰äº†ã€‚"+str;
         CHANNEL_D->do_channel(this_object(), "rumor",str);
         bls=10;
            } else {    //not being killed by players.
@@ -851,7 +851,7 @@ void killer_reward(object killer, object victim)
 
      bls = 10;
      CHANNEL_D->do_channel(this_object(), "rumor",
-       sprintf("%s±»%sÉ±ËÀÁË¡£", victim->name(1), killer->name(1)));
+       sprintf("%sè¢«%sæ€æ­»äº†ã€‚", victim->name(1), killer->name(1)));
            }
    } else {  //NPC is the victim.
      if(userp(killer)) {
@@ -864,8 +864,8 @@ void killer_reward(object killer, object victim)
                   killer->add("kill/nkgain",reward);
        killer->add("combat_exp",reward);
                   str=chinese_daoxing(reward);
-                  tell_object(killer,"\nÄãµÃµ½ÁË"+str+"µÀĞĞ¡£\n");
-       msg=sprintf("%s(%d)É±ËÀÁË%s(%d)£¬µÃµ½%dµãµÀĞĞ¡£", 
+                  tell_object(killer,"\nä½ å¾—åˆ°äº†"+str+"é“è¡Œã€‚\n");
+       msg=sprintf("%s(%d)æ€æ­»äº†%s(%d)ï¼Œå¾—åˆ°%dç‚¹é“è¡Œã€‚", 
          killer->query("id"),killer->query("combat_exp"), 
          victim->query("id"),victim->query("combat_exp"),reward);
        log_file("npc_kill","["+ctime(time())+"] "+msg+"\n");
@@ -1053,10 +1053,10 @@ string chinese_daoxing(int gain)
              day=(gain-year*1000)/4;
              hour=(gain-year*1000-day*4)*3;
              str="";
-             if(year) str=str+chinese_number(year)+"Äê";
-             if(day) str=str+chinese_number(day)+"Ìì";
-             if(hour) str=str+chinese_number(hour)+"Ê±³½";
-             if(str=="") str="Áã";
+             if(year) str=str+chinese_number(year)+"å¹´";
+             if(day) str=str+chinese_number(day)+"å¤©";
+             if(hour) str=str+chinese_number(hour)+"æ—¶è¾°";
+             if(str=="") str="é›¶";
 
              return str;
 }

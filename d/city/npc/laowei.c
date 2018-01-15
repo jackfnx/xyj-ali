@@ -1,16 +1,16 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-        set_name("κ¼��", ({"wei luqi", "wei"}));
+        set_name("魏录齐", ({"wei luqi", "wei"}));
         set("age", 42);
-        set("gender", "����");
+        set("gender", "男性");
         set("long",
-"�ӻ��̵��ϰ壬Ц���еĿ����㡣\n");
-   set("title", "�ӻ����ϰ�");
+"杂货铺的老板，笑眯眯的看着你。\n");
+   set("title", "杂货铺老板");
         set("attitude", "peaceful");
 
         set("combat_exp", 10000);
@@ -49,9 +49,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"˵������λ" +
+                        say( name()+"说道：这位" +
 RANK_D->query_respect(ob)
-                                + "��Ҫ��Щʲô������\n");
+                                + "，要买些什么东西？\n");
                         break;
         }
 }

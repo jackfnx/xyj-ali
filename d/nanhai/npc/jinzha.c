@@ -1,19 +1,19 @@
 
-// jinzha.c ½ğß¸
+// jinzha.c é‡‘å’
 
 inherit NPC;
 
 void create()
 {
-    set_name("½ğß¸", ({ "jinzha" }));
-    set("title", "ÎÄÊâÊ×Í½");   
+    set_name("é‡‘å’", ({ "jinzha" }));
+    set("title", "æ–‡æ®Šé¦–å¾’");   
     set("long", @LONG
-ÀîÌìÍõ´ó¹«×Ó½ğß¸£¬ÄËÎÄÊâÆĞÈøÊ×Í½£¬À´ÆÕÍÓÉ½Ö§Ô®×Ô¼ºµÄµÜµÜ¡£
+æå¤©ç‹å¤§å…¬å­é‡‘å’ï¼Œä¹ƒæ–‡æ®Šè©è¨é¦–å¾’ï¼Œæ¥æ™®é™€å±±æ”¯æ´è‡ªå·±çš„å¼Ÿå¼Ÿã€‚
 LONG);
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("age", 25);
     set("attitude", "peaceful");
-    set("rank_info/self", "Æ¶É®");
+    set("rank_info/self", "è´«åƒ§");
     set("class", "bonze");
     set("max_kee", 850);
     set("max_gin", 800);
@@ -54,7 +54,7 @@ LONG);
         (: cast_spell, "jingang" :)
     }) );
     
-    create_family("ÄÏº£ÆÕÍÓÉ½", 2, "µÜ×Ó");
+    create_family("å—æµ·æ™®é™€å±±", 2, "å¼Ÿå­");
 
     setup();
 //    carry_object("/obj/money/thousand-cash");
@@ -66,15 +66,15 @@ LONG);
 void attempt_apprentice(object ob)
 {
    if (!((string)ob->query("bonze/class") =="bonze" )) {
-     command("say " + RANK_D->query_respect(ob) + "Î´Èë·ğÃÅ£¬Ë¡Æ¶É®²»ÄÜ½ÓÄÉ¡£\n");
+     command("say " + RANK_D->query_respect(ob) + "æœªå…¥ä½›é—¨ï¼Œæ•è´«åƒ§ä¸èƒ½æ¥çº³ã€‚\n");
      return;
    }
    if (((int)ob->query_skill("buddhism", 1) < 50 )) {
-     command("say " + RANK_D->query_respect(ob) + "ÈôÓûÉîĞŞ£¬ĞèµÃÊì¶Á·ğ·¨¡£\n");
+     command("say " + RANK_D->query_respect(ob) + "è‹¥æ¬²æ·±ä¿®ï¼Œéœ€å¾—ç†Ÿè¯»ä½›æ³•ã€‚\n");
      return;
    }
    command("nod");
-   command("say ºÜºÃ£¬Æ¶É®¾ÍÊÕÏÂÄã£¬Ï£ÍûÄã¶à¼ÓÅ¬Á¦£¬Ôç³ÉÕı¹û¡£\n");
+   command("say å¾ˆå¥½ï¼Œè´«åƒ§å°±æ”¶ä¸‹ä½ ï¼Œå¸Œæœ›ä½ å¤šåŠ åŠªåŠ›ï¼Œæ—©æˆæ­£æœã€‚\n");
 
    command("recruit " + ob->query("id") );
    return;   

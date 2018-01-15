@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // wudidong_b.c
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("ÕÊ±¾", ({ "board" }) );
+        set_name("å¸æœ¬", ({ "board" }) );
         set("location", "/d/qujing/wudidong/kitchen.c");
         set("board_id", "wudidong_b");
-        set("long", "ÕâÊÇÎŞµ×¶´µÄÕÊ±¾£¬ÊÇ³ø×ÓÓÃÀ´¼ÇÏÂË­Ğ¢¾´ÁËĞÂÏÊÈËÈâÓÃµÄ¡£\n");
+        set("long", "è¿™æ˜¯æ— åº•æ´çš„å¸æœ¬ï¼Œæ˜¯å¨å­ç”¨æ¥è®°ä¸‹è°å­æ•¬äº†æ–°é²œäººè‚‰ç”¨çš„ã€‚\n");
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

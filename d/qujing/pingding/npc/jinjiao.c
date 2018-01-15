@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("╫П╫г╢СмУ", ({ "jinjiao dawang", "jinjiao", "dawang", "wang" }));
-  set("title", "а╚╩╗╤╢");   
-  set("long", "р╩н╩иЯл╛╟ах╩╣да╚╩╗╤╢яЩмУ║ё\n");
-  set("gender", "дппт");
+  set_name("И┤▒Х╖▓Е╓╖Г▌▀", ({ "jinjiao dawang", "jinjiao", "dawang", "wang" }));
+  set("title", "Х▌╡Х┼╠Ф╢·");   
+  set("long", "Д╦─Д╫█Г╔·Ф─│Е┌╡Г└╤Г └Х▌╡Х┼╠Ф╢·Е╕√Г▌▀Ц─┌\n");
+  set("gender", "Г■╥Ф─╖");
   set("age", 56);
   set("attitude", "heroism");
   set("per", 30);
@@ -61,16 +61,16 @@ void die ()
     ob->set_temp("obstacle/pingding_jinjiao_killed",1);
     call_out ("taishang_appearing",1,ob);
   }
-  message_vision ("\n$Nнч©идн╨н╣ьожакуФиМё╛т╜ю╢йгл╚иоюо╬Щ╣д╫П╫гм╞вс║ё\n",me);
-  message_vision ("\n╫П╫гм╞вс╬оак╦Ж╧╙ё╨й╠Ё╫ря╣╫ё╛х╔╪Шл╚иоюо╬Щр╡║ё\n",me);
-  message_vision ("╫П╫гм╞всмЫмБ╠╪х╔",me);
+  message_vision ("\n$NФ≈═Е▐╞Е╔┬Д╫∙Е°╟Г▌╟Д╨├Г°÷Х╨╚О╪▄Е▌÷Ф²╔Ф≤╞Е╓╙Д╦┼Х─│Е░⌡Г └И┤▒Х╖▓Г╚╔Е╜░Ц─┌\n",me);
+  message_vision ("\nИ┤▒Х╖▓Г╚╔Е╜░И·═Д╨├Д╦╙Х╨╛О╪ Ф≈╤Х╬╟Е╥╡Е┬╟О╪▄Е▌╩Х╖│Е╓╙Д╦┼Х─│Е░⌡Д╧÷Ц─┌\n",me);
+  message_vision ("И┤▒Х╖▓Г╚╔Е╜░Е╬─Е╓√Е╔■Е▌╩",me);
   if (fabao)
   {
-     message_vision ("ё╛╤╙обр╩ж╩$n║ё\n",me,fabao);
+     message_vision ("О╪▄Д╦╒Д╦▀Д╦─Е▐╙$nЦ─┌\n",me,fabao);
      fabao->move(environment(me));
   }
   else
-    message_vision ("║ё\n",me);
+    message_vision ("Ц─┌\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

@@ -7,14 +7,14 @@ void create()
 {
   string name, id;
 
-    set_name("Ìì¶¡", ({ "tian ding", "tian", "ding" }));
-    set("gender", "ÄĞĞÔ");
+    set_name("å¤©ä¸", ({ "tian ding", "tian", "ding" }));
+    set("gender", "ç”·æ€§");
     set("long", "
 
-Ôö³¤ÌìÍõÊÖÏÂ°Ë´óÌìÍõÖ®Ò»£¬ÕıÔÚÕâÀï×ĞÏ¸µÄÑ°²é
-Ã¿Ò»¸ö¹ıÍùĞĞÈË¡£
+å¢é•¿å¤©ç‹æ‰‹ä¸‹å…«å¤§å¤©ç‹ä¹‹ä¸€ï¼Œæ­£åœ¨è¿™é‡Œä»”ç»†çš„å¯»æŸ¥
+æ¯ä¸€ä¸ªè¿‡å¾€è¡Œäººã€‚
 ");
-    set("title", "´óÁ¦Ìì¶¡");
+    set("title", "å¤§åŠ›å¤©ä¸");
     set("age", 35+random(10));
     set("attitude", "peaceful");
     set("str", 27);

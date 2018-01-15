@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÂÃ¿Í", ({ "traveller"}));
-            set("gender", "ÄĞĞÔ" );
+        set_name("æ—…å®¢", ({ "traveller"}));
+            set("gender", "ç”·æ€§" );
         set("age", 15+random(50));
-        set("long","Ò»Î»·ç³¾ÆÓÆÓµÄÂÃ¿Í¡£");
+        set("long","ä¸€ä½é£å°˜æœ´æœ´çš„æ—…å®¢ã€‚");
         set("chat_chance", 20);
         set("chat_msg", ({
                 (: random_move :)

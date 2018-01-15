@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/temple-qiandian.c
@@ -7,17 +7,17 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "С��ǰ��");
+  set ("short", "小庙前殿");
   set ("long", @LONG
 
-С����ɽ���죬Զ����Ϊ���ţ�����ȴ���ֲ�Ȼ���������ı�͸�磬
-����©ˮ���������Ա��ϵ��������ȱ�첲���ȡ��ۼ����߽�����Ҳ
-û�и�֪��ɮ����ӭ���ϱ߻��м��Ҳ�ǲ��Ʋ�����ֻ�ж���һ
-�䷿�ӻ����Ĺ�ȥ��
+小庙依山而造，远看颇为风雅，进来却发现不然。正殿里四壁透风，
+房顶漏水，几座难以辨认的泥像个个缺胳膊少腿。眼见你走进来，也
+没有个知客僧来欢迎。南边还有间后殿，也是残破不堪。只有东边一
+间房子还看的过去。
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
-  "east" : "һ�Ƚ��յ�ľ�ţ���������(knock)������û���ˡ�
+  "east" : "一扇紧闭的木门，可以敲门(knock)看看有没有人。
 ",
 ]));
   set("exits", ([ /* sizeof() == 2 */
@@ -41,13 +41,13 @@ int do_knock()
 
   if (me->query("obstacle/wudidong") != "done")
   {
-      message_vision("ֻ���ź���һ�󾪽У��㡢�㡢����ʲô���֣�ɱ��������������\n", me);
+      message_vision("只听门后传来一阵惊叫：你、你、你是什么妖怪？杀人啦！救命啊！\n", me);
       return 1;
   }
-  message_vision("ֻ����֨����һ�������ű�������һ���졣\n", me);
-  message_vision("һ������̽��ͷ���Ĵ����˿���������$N�����ŵ�����¶��һ˿Ц�ݡ�\n", me);
-  message_vision("���е���ԭ����"+myrespect+"���ɰ��Ҹ��Ż��ˡ�\n", me);
-  message_vision("���д��ţ���$N���˽�ȥ���ּ�æ���Ź����ˡ�\n",me);
+  message_vision("只听“吱”的一声，房门被拉开了一条缝。\n", me);
+  message_vision("一个和尚探出头来四处看了看，见到是$N，紧张的脸上露出一丝笑容。\n", me);
+  message_vision("和尚道：原来是"+myrespect+"。可把我给吓坏了。\n", me);
+  message_vision("和尚打开门，把$N拉了进去，又急忙把门关上了。\n",me);
   me->move(__DIR__"bedroom");
   return 1;
 }

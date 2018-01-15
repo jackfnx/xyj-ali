@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bayuban.c
@@ -9,17 +9,17 @@ inherit HAMMER;
 
 void create()
 {
-   set_name("°×Óñ°å", ({ "baiyu ban", "baiyuban", "yuban", "ban" }) );
+   set_name("ç™½ç‰æ¿", ({ "baiyu ban", "baiyuban", "yuban", "ban" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¿é");
+     set("unit", "å—");
      set("value", 10000);
      set("material", "wood");
-     set("long", "Ò»¿é°×ÓñÖÆ¾ÍµÄ°å×Ó£¬³ÁµéµéµØÉõÊÇÑ¹ÊÖ¡£\n");
-     set("wield_msg", "$NÄÃÆğÒ»¿é$nÅÄÁËÅÄÕÆĞÄ¡£\n");
-     set("unwield_msg", "$N½«$n²å»ØÑü¼ä¡£\n");
+     set("long", "ä¸€å—ç™½ç‰åˆ¶å°±çš„æ¿å­ï¼Œæ²‰ç”¸ç”¸åœ°ç”šæ˜¯å‹æ‰‹ã€‚\n");
+     set("wield_msg", "$Næ‹¿èµ·ä¸€å—$næ‹äº†æ‹æŒå¿ƒã€‚\n");
+     set("unwield_msg", "$Nå°†$næ’å›è…°é—´ã€‚\n");
    }
    init_hammer(15);
    setup();

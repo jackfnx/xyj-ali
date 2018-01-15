@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// zhangchan.c ÕÆìøÉ®
+// zhangchan.c æŽŒç¦…åƒ§
 // By Dream Dec. 20, 1996
 
 inherit NPC;
@@ -10,8 +10,8 @@ string ask_staff(object who);
 
 void create()
 {
-    set_name("ÕÆìøÉ®", ({ "zhangchan seng", "seng" }));
-    set("gender", "ÄÐÐÔ");
+    set_name("æŽŒç¦…åƒ§", ({ "zhangchan seng", "seng" }));
+    set("gender", "ç”·æ€§");
     set("age", 35);
     set("attitude", "peaceful");
     set("class", "bonze");
@@ -36,12 +36,12 @@ void create()
     map_skill("unarmed", "jienan-zhi");
 
     set("inquiry", ([
-        "±øÆ÷": (: ask_staff :),
-        "ÌúÕÈ": (: ask_staff :)
+        "å…µå™¨": (: ask_staff :),
+        "é“æ–": (: ask_staff :)
     ]) );
 
     set("apply/staffno", 10);
-    create_family("ÄÏº£ÆÕÍÓÉ½", 4, "µÜ×Ó");
+    create_family("å—æµ·æ™®é™€å±±", 4, "å¼Ÿå­");
 
     setup();
     carry_object("/obj/money/gold");
@@ -53,16 +53,16 @@ string ask_staff(object me)
     object ob, who = this_player();
     int number;
 
-    if (who->query("family/family_name") != "ÄÏº£ÆÕÍÓÉ½") 
-        return RANK_D->query_respect(who) +"Óë±¾ÃÅºÁÎÞÔ¨Ô´£¬ÎªÊ²Ã´ÎÊÆðÕâ¸ö£¿\n";
+    if (who->query("family/family_name") != "å—æµ·æ™®é™€å±±") 
+        return RANK_D->query_respect(who) +"ä¸Žæœ¬é—¨æ¯«æ— æ¸Šæºï¼Œä¸ºä»€ä¹ˆé—®èµ·è¿™ä¸ªï¼Ÿ\n";
 
-    if (present("tie zhang", who)) return "ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓÐÌúÕÈÁËÂð£¬ÔõÃ´ÓÖÀ´Òª£¿\n";
+    if (present("tie zhang", who)) return "ä½ èº«ä¸Šä¸æ˜¯å·²ç»æœ‰é“æ–äº†å—ï¼Œæ€Žä¹ˆåˆæ¥è¦ï¼Ÿ\n";
 
-    if (!(number = me->query("apply/staffno"))) return "¶Ô²»Æð£¬±øÆ÷ÒÑ¾­È«²¿·¢·Å³öÈ¥ÁË¡£\n";
+    if (!(number = me->query("apply/staffno"))) return "å¯¹ä¸èµ·ï¼Œå…µå™¨å·²ç»å…¨éƒ¨å‘æ”¾å‡ºåŽ»äº†ã€‚\n";
     set("apply/staffno", --number);
 
     ob = new("/d/nanhai/obj/tiezhang");
     ob->move(me);
     command("give " + who->query("id") + " staff");
-    return "Ç§Íò¼Ç×¡£¬±øÆ÷Ö»¿ÉÓÃÀ´·ÀÉí£¬²»¿ÉÀÄÉ±ÎÞ¹¼¡£";
+    return "åƒä¸‡è®°ä½ï¼Œå…µå™¨åªå¯ç”¨æ¥é˜²èº«ï¼Œä¸å¯æ»¥æ€æ— è¾œã€‚";
 }

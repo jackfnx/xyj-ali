@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // semote.c
@@ -24,9 +24,9 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : semote
+æŒ‡ä»¤æ ¼å¼ : semote
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁĞ³öÄ¿Ç°ËùÄÜÊ¹ÓÃµÄemote.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åˆ—å‡ºç›®å‰æ‰€èƒ½ä½¿ç”¨çš„emote.
 HELP
     );
     return 1;

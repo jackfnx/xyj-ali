@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -7,20 +7,20 @@
 inherit NPC;
 
 string *death_msg = ({  
-        HIW "���й����������֣�˵���������ģ���Ī���ܣ��������������Һ����㻹����\n\n" NOR,
-        HIW "���йٿ�����Ц��Ц��˵����������������Ҳ��Ҫ̫�ѹ��ˡ�\n\n" NOR,
-        HIW "���йٴӻ����ó�һ���ڵװ��ֵĲ��ӷ����š�����\n\n" NOR,
-        HIW "���йٺ��ϲ��ӣ�˵���������������������棬��������㻹��ȥ�ɣ�\n\n" NOR,
-        HIW "���й���������һָ����Ļ����ֻص����Լ����ϡ�����\n\n"
-                "һ�������Ũ��ͻȻ���֣��ܿ�ذ�Χ���㡣\n\n" NOR,
+        HIW "崔判官向你招招手，说道：新来的，你莫乱跑，画了生死簿，我好送你还阳。\n\n" NOR,
+        HIW "崔判官看着你笑了笑，说道：生死有命，你也不要太难过了。\n\n" NOR,
+        HIW "崔判官从怀中拿出一个黑底白字的册子翻看着。。。\n\n" NOR,
+        HIW "崔判官合上册子，说道：命不该死，多留无益，我这便送你还阳去吧！\n\n" NOR,
+        HIW "崔判官伸手向你一指，你的魂魄又回到了自己身上。。。\n\n"
+                "一股阴冷的浓雾突然出现，很快地包围了你。\n\n" NOR,
 });
 
 void create()
 {
-       set_name(HIW"����"NOR, ({"cui jue", "cui"}));
-   set("title",HIW"����й�"NOR);
-       set("gender", "����");
-   set("long", "���й�ԭ������Ϊ�٣��������£����󱻷�Ϊ�����й١�\n");
+       set_name(HIW"崔珏"NOR, ({"cui jue", "cui"}));
+   set("title",HIW"朱笔判官"NOR);
+       set("gender", "男性");
+   set("long", "崔判官原是阳世为官，因广积阴德，死后被封为阴间判官。\n");
        set("age", 30);
        set("attitude", "friendly");
        set("shen_type", 1);
@@ -71,6 +71,6 @@ void death_stage(object ob, int stage)
      //ob->set("gin", (int)ob->query("max_gin"));
         ob->move(REVIVE_ROOM);
         tell_room(environment(ob), 
-     "��ǰһ������Ʈ���������ؾ۳���һ���˵����ӡ�\n",({ob, ob}));
+     "眼前一股青气飘荡，满满地聚成了一个人的样子。\n",({ob, ob}));
 }
 

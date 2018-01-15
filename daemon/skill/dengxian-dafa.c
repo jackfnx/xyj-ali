@@ -1,7 +1,7 @@
-// dengxian-dafa.c ¡¾µÇÏÉ´ó·¨¡¿
+// dengxian-dafa.c ã€ç™»ä»™å¤§æ³•ã€‘
 inherit SPELLS;
 
-string name() { return "µÇÏÉ´ó·¨"; }
+string name() { return "ç™»ä»™å¤§æ³•"; }
 
 int query_basic_limit() { return 10; }
 

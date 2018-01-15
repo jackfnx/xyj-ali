@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // pang.c
@@ -7,11 +7,11 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("��ɩ", ({"pang sao", "pang", "sao"}));
+       set_name("胖嫂", ({"pang sao", "pang", "sao"}));
        set("long",
-"��ɩԭ�ǲ÷죬���ڳ����Ķ��ӷ��˲ƣ����Լҿ��˲��꣮\n");
-       set("gender", "Ů��");
-   set("title", "�ϰ���");
+"胖嫂原是裁缝，后在长安的儿子发了财，便自家开了布店．\n");
+       set("gender", "女性");
+   set("title", "老板娘");
    set("combat_exp", 1100);
        set("age", 46);
    set("per", 12);
@@ -46,9 +46,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( "��ɩЦ���е�ӭ��������λ" +
+                        say( "胖嫂笑眯眯的迎上来：这位" +
 RANK_D->query_respect(ob)
-                                + "����㿴����\n");
+                                + "，随便看看．\n");
                         break;
         }
 }
@@ -65,7 +65,7 @@ void accept_kill(object me)
      ob=new("/d/ourhome/npc/bigeye");
      ob->move(environment());
    }
-        tell_room(environment(), "ǧ���ۿ���Ҫɱ�ˣ��˳������˹�����\n");
+        tell_room(environment(), "千里眼看到要杀人，兴冲冲的跑了过来。\n");
    ob->kill_ob(me);
    me->fight_ob(ob);
 }

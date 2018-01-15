@@ -1,9 +1,9 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
-string *first_name = ({ "»¨Æ¤", "ÂÌ±³", "Ë«Í·", "»¢³İ"});
-string *name_words = ({ "öè"});
+string *first_name = ({ "èŠ±çš®", "ç»¿èƒŒ", "åŒå¤´", "è™é½¿"});
+string *name_words = ({ "é²¨"});
 
 void create()
 {
@@ -12,14 +12,14 @@ void create()
         name += name_words[random(sizeof(name_words))];
 
         set_name(name, ({ "shark" }) );
-        set("race", "Ò°ÊŞ");
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»Ä£ÑùĞ×¶ñµÄ´óöèÓã¡£\n");
+        set("long", "ä¸€åªæ¨¡æ ·å‡¶æ¶çš„å¤§é²¨é±¼ã€‚\n");
         set("str", 20);
         set("cor", 30);
         set("max_kee", 1200);
         set("max_sen", 1200);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°÷¢", "Î²°Í", "¶ÇÆ¤"}) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰é³", "å°¾å·´", "è‚šçš®"}) );
         set("verbs", ({ "bite"}) );
 
         set("combat_exp", 100000+random(100000));
@@ -46,11 +46,11 @@ int do_train()
         who=this_player();
 
         if(me->is_fighting())
-                return notify_fail("ÕâÖ»º£ÊŞÕıÔÚÕ½¶·¡£\n");
-        if((string)who->query("family/family_name")!="¶«º£Áú¹¬")
-                return notify_fail("Ê²Ã´£¿\n");
-        message_vision("$N¶Ô$n´óº°Ò»Éù£ºÄõĞó£¬¿´Äã²ş¿ñµ½¼¸Ê±£¡\n\n", who,me);
-        message_vision("$nÒ»Éú³¤Ò÷£¬ÆËÉÏÀ´ºÍ$nÅ¤´òµ½Ò»Æğ¡£\n",me,who);
+                return notify_fail("è¿™åªæµ·å…½æ­£åœ¨æˆ˜æ–—ã€‚\n");
+        if((string)who->query("family/family_name")!="ä¸œæµ·é¾™å®«")
+                return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
+        message_vision("$Nå¯¹$nå¤§å–Šä¸€å£°ï¼šå­½ç•œï¼Œçœ‹ä½ çŒ–ç‹‚åˆ°å‡ æ—¶ï¼\n\n", who,me);
+        message_vision("$nä¸€ç”Ÿé•¿åŸï¼Œæ‰‘ä¸Šæ¥å’Œ$næ‰­æ‰“åˆ°ä¸€èµ·ã€‚\n",me,who);
         me->kill_ob(who);
         who->kill_ob(me);
         COMBAT_D->do_attack(me, who, query_temp("weapon"));
@@ -73,7 +73,7 @@ void die()
 
         if( owner_ob && (object)query_temp("last_damage_from") == owner_ob ) {
                 owner_ob->add_temp("dragonforce_practice", owner_ob->query("spi")*2);
-     message_vision("$NµÍÍ·ËõÎ²£¬ÒÔÊ¾½µ·ş¡£\n",this_object());
+     message_vision("$Nä½å¤´ç¼©å°¾ï¼Œä»¥ç¤ºé™æœã€‚\n",this_object());
      destruct(this_object());
      return;
         }

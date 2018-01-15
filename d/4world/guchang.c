@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/guchang.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�ȳ�");
+  set ("short", "谷场");
   set ("long", @LONG
 
-���ǿ����Ǳߵ�һ����ȳ������Ϻ�ƽ��ѹ�ĺ�Ӳ�����ϸ߸ߵ͵�
-�м����ݶѣ����ô��������м���Ұ���ڴ��˯�������м�ֻ��ĸ
-�����Ĺ����ԡ�
+这是靠近城边的一个打谷场，场上很平并压的很硬。边上高高低低
+有几个草堆，几棵大柳树下有几条野狗在打瞌睡。场中有几只老母
+鸡在啄谷粒吃。
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ñ°»¶",({"star sigh","sigh","star"}));
-  set("gender", "ÄÐÐÔ");
-  set("title", "¿üÄ¾ÐÇ¹Ù");
+  set_name("å¯»æ¬¢",({"star sigh","sigh","star"}));
+  set("gender", "ç”·æ€§");
+  set("title", "å¥Žæœ¨æ˜Ÿå®˜");
   set("age", 40);
-  set("long", "    \nÎªÆÚ´ý¶ø¾øÍû Îª¾øÍû¶øÆÚ´ý\n¾øÍûÊÇ×îÍêÃÀµÄÆÚ´ý\nÆÚ´ýÊÇ×îÂþ³¤µÄ¾øÍû\nÆÚ´ý²»Ò»¶¨¿ªÊ¼\n¾øÍûÒ²Î´±Ø½áÊø\n»òÐíÕÙ»½Ö»ÓÐÒ»Éù¡ª¡ª\n×îàÚÁÁµÄ, Ç¡Ç¡ÊÇ¼Å¾²\n");
+  set("long", "    \nä¸ºæœŸå¾…è€Œç»æœ› ä¸ºç»æœ›è€ŒæœŸå¾…\nç»æœ›æ˜¯æœ€å®Œç¾Žçš„æœŸå¾…\næœŸå¾…æ˜¯æœ€æ¼«é•¿çš„ç»æœ›\næœŸå¾…ä¸ä¸€å®šå¼€å§‹\nç»æœ›ä¹Ÿæœªå¿…ç»“æŸ\næˆ–è®¸å¬å”¤åªæœ‰ä¸€å£°â€”â€”\næœ€å˜¹äº®çš„, æ°æ°æ˜¯å¯‚é™\n");
 
   set("attitude", "heroism");
   set("class", "xian");
@@ -42,10 +42,10 @@ void init()
   string armor1_id="armor",armor2_id="pifeng";
   ::init();
   if (my_weapon=present(weapon_id, me))
-       my_weapon->set("name","Ò¶×Ó");
+       my_weapon->set("name","å¶å­");
   if (my_armor1=present(armor1_id, me))
-       my_armor1->set("name",HIY"Á÷ÔÆ"NOR);
+       my_armor1->set("name",HIY"æµäº‘"NOR);
   if (my_armor2=present(armor2_id, me))
-       my_armor2->set("name",HIY"Çï·ç"NOR);
+       my_armor2->set("name",HIY"ç§‹é£Ž"NOR);
 }
 

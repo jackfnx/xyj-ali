@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /4world/houshan1
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ɽС·");
+  set ("short", "后山小路");
   set ("long", @LONG
 
-����ͨ����ɽ��һ��С·��ֻ��С�������������������У�
-һ����ע��ͻ�����ͷ��Ѫ������ֻ����Χ����������ȥ��
-һ��֨֨�ҽУ�һ�߳�����Ұ����
+这是通往后山的一条小路。只能小心翼翼地在树丛中钻行，
+一个不注意就会碰得头破血流。几只猴子围着你跳来跳去，
+一边吱吱乱叫，一边冲你扔野果。
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

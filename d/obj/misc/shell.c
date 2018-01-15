@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -10,13 +10,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("¿Ç", ({ "shell" }));
+  set_name("å£³", ({ "shell" }));
   set_weight(8000);
-  set("long", "ÕâÊÇÒ»Ö»ÕıÔÚ·ç»¯µÄ³æ¿Ç¡£\n" );
+  set("long", "è¿™æ˜¯ä¸€åªæ­£åœ¨é£åŒ–çš„è™«å£³ã€‚\n" );
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
+    set("unit", "åª");
     set("material", "bone");
   }
   setup();

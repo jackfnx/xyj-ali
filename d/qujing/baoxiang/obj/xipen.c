@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÎıÅè", ({"xi pen", "xipen", "pen"}));
+  set_name("é”¡ç›†", ({"xi pen", "xipen", "pen"}));
   set_weight(1100);
   set_max_encumbrance(8000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
-    set("long", "Ò»Ö»Ó¡»¨´óÎıÅè£®\n"),
+    set("unit", "åª");
+    set("long", "ä¸€åªå°èŠ±å¤§é”¡ç›†ï¼\n"),
     set("value", 2000);
   }
   setup();

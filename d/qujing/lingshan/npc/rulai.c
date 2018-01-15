@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 14 1997
@@ -15,14 +15,14 @@ int recover_death ();
 
 void create()
 {
-  set_name("ÈçÀ´·ğ", ({ "rulai fo", "rulai", "fo" }));
-  set("title", "·ğ×æ¶àÍÓ°¢Ù¤ÍÓ");
-  set("long", "´ó´È´ó±¯ÁéÉ½À×Òô¹ÅÉ²·ğ×æ¶àÍÓ°¢Ù¤ÍÓÈçÀ´·ğÒ¯¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("å¦‚æ¥ä½›", ({ "rulai fo", "rulai", "fo" }));
+  set("title", "ä½›ç¥–å¤šé™€é˜¿ä¼½é™€");
+  set("long", "å¤§æ…ˆå¤§æ‚²çµå±±é›·éŸ³å¤åˆ¹ä½›ç¥–å¤šé™€é˜¿ä¼½é™€å¦‚æ¥ä½›çˆ·ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 10000);
   set("attitude", "peaceful");
-  set("rank_info/self", "Æ¶É®");
-  set("rank_info/respect", "·ğ×æÒ¯Ò¯");
+  set("rank_info/self", "è´«åƒ§");
+  set("rank_info/respect", "ä½›ç¥–çˆ·çˆ·");
   //set("class", "bonze");
   set("str",100);
   set("per",100);
@@ -62,15 +62,15 @@ void create()
     "die" : (: recover_death :),
     "death" : (: recover_death :),
     "recover" : (: recover_death :),
-    "ÆğËÀ»ØÉú" : (: recover_death :),
-    "¸´Éú" : (: recover_death :),
-    "ËÀ" : (: recover_death :),
-    "Éú" : (: recover_death :),
+    "èµ·æ­»å›ç”Ÿ" : (: recover_death :),
+    "å¤ç”Ÿ" : (: recover_death :),
+    "æ­»" : (: recover_death :),
+    "ç”Ÿ" : (: recover_death :),
     "qujing" : (: reward_player :),
     "obstacle" : (: reward_player :),
     "obstacles" : (: reward_player :),
-    "È¡¾­" : (: reward_player :),
-    "¾­" : (: reward_player :),
+    "å–ç»" : (: reward_player :),
+    "ç»" : (: reward_player :),
   ]) );
 
   set("my_level",LEVEL_NONE);
@@ -89,7 +89,7 @@ void announce (object me, string str)
   { 
     object snowcat = find_player ("snowcat");
     if (snowcat && wizardp(snowcat))
-      tell_object (snowcat,"¡ô "+str+"\n");
+      tell_object (snowcat,"â—† "+str+"\n");
   }
   else
   {
@@ -104,30 +104,30 @@ int recover_death()
 
   if (who->query("obstacle/mud_age") > who->query("death/mud_age"))
   {
-    message_vision ("$N¶Ô$nÒ¡ÁËÒ¡Í·£ºÀÏ·òÎ´ÎÅËÀÑ¸Ò²¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡äº†æ‘‡å¤´ï¼šè€å¤«æœªé—»æ­»è¿…ä¹Ÿã€‚\n",me,who);
     return 1;
   }
   if (! who->query("obstacle/reward"))
   {
-    message_vision ("$N¶Ô$nÒ¡ÁËÒ¡Í·£ºÄãÏÈÈ¥Î÷Óò¹ı¹Ø°É¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡äº†æ‘‡å¤´ï¼šä½ å…ˆå»è¥¿åŸŸè¿‡å…³å§ã€‚\n",me,who);
     return 1;
   }
   if (who->query("obstacle/rebirth") >= 3)
   {
-    message_vision ("$N¶Ô$nÒ¡ÁËÒ¡Í·£ºÄãÈı¸ù¾ÈÃüºÁÃ«ÒÑÓÃ¾¡Ò²¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡äº†æ‘‡å¤´ï¼šä½ ä¸‰æ ¹æ•‘å‘½æ¯«æ¯›å·²ç”¨å°½ä¹Ÿã€‚\n",me,who);
     return 1;
   }
   who->add("obstacle/rebirth",1);
-  message_vision ("\n$N°Î³öÒ»¸ù¾ÈÃüºÁÃ«£¬·ğÊÖÒ»Ñï¡­¡­¡£\n",me);
-  message_vision ("\n$N¶Ù¾õÌìĞüµØ×ªÇ¬À¤µ¹ÖÃ£¬É²ÄÇ¼ä½û²»×¡»ëÉí²ü¶¶£¡\n",who);
+  message_vision ("\n$Næ‹”å‡ºä¸€æ ¹æ•‘å‘½æ¯«æ¯›ï¼Œä½›æ‰‹ä¸€æ‰¬â€¦â€¦ã€‚\n",me);
+  message_vision ("\n$Né¡¿è§‰å¤©æ‚¬åœ°è½¬ä¹¾å¤å€’ç½®ï¼Œåˆ¹é‚£é—´ç¦ä¸ä½æµ‘èº«é¢¤æŠ–ï¼\n",who);
   if (who->query("death/combat_exp_loss"))
   {
-    tell_object (who,"ÄãÍ»È»·¢ÏÖÄãµÄµÀĞĞÈ«²¿»Ö¸´ÁË£¡\n");
+    tell_object (who,"ä½ çªç„¶å‘ç°ä½ çš„é“è¡Œå…¨éƒ¨æ¢å¤äº†ï¼\n");
     who->add("combat_exp", (int)who->query("death/combat_exp_loss"));
   }
   if (who->query("death/skill_loss"))
   {
-    tell_object (who,"ÄãÍ»È»·¢ÏÖÄãµÄÎä¹¦È«²¿»Ö¸´ÁË£¡\n");
+    tell_object (who,"ä½ çªç„¶å‘ç°ä½ çš„æ­¦åŠŸå…¨éƒ¨æ¢å¤äº†ï¼\n");
     who->skill_death_recover();
   }
   who->delete("death");
@@ -160,10 +160,10 @@ void do_reward (object who)
 
   size2 = sizeof(skills);
 
-  message_vision ("±¦µîÀï×ÏÏ¼çÔÈÆ½ğ¹âÍòµÀ£¬$N¼ûµ½ÈçÀ´ÕæÉí»ëÉíÒ»Èí°İµ¹ÔÚµØ£¡\n",
+  message_vision ("å®æ®¿é‡Œç´«éœç¼­ç»•é‡‘å…‰ä¸‡é“ï¼Œ$Nè§åˆ°å¦‚æ¥çœŸèº«æµ‘èº«ä¸€è½¯æ‹œå€’åœ¨åœ°ï¼\n",
                   who);
-  message_vision ("\n$N¶Ô$nËµ£º"+RANK_D->query_respect(who)+
-                  "Ò»Â·ÉÏÀú¾­ÔÖí©»¼ÄÑ£¬ÍòÀïÌöÌö¿à¾¡¹¦³ÉÒ²¡£\n",me,who);
+  message_vision ("\n$Nå¯¹$nè¯´ï¼š"+RANK_D->query_respect(who)+
+                  "ä¸€è·¯ä¸Šå†ç»ç¾æ„†æ‚£éš¾ï¼Œä¸‡é‡Œè¿¢è¿¢è‹¦å°½åŠŸæˆä¹Ÿã€‚\n",me,who);
   i = (size1+size2+2)*3;
   who->start_busy(i,i);
   who->set_temp("no_move",1);
@@ -188,9 +188,9 @@ void rewarding1 (object me, object who, string str)
 
   who->add("obstacle/reward",i);
   who->add("potential",i);
-  message_vision ("\n$NËµµÀ£º"+str+"Ò»¹Ø£¬½±$n"+chinese_number(i)+
-                  "µãÇ±ÄÜ£¡\n",me,who);
-  tell_object(who,"ÄãµÄÇ±ÄÜÔö¼ÓÁË"+chinese_number(i)+"µã£¡\n");
+  message_vision ("\n$Nè¯´é“ï¼š"+str+"ä¸€å…³ï¼Œå¥–$n"+chinese_number(i)+
+                  "ç‚¹æ½œèƒ½ï¼\n",me,who);
+  tell_object(who,"ä½ çš„æ½œèƒ½å¢åŠ äº†"+chinese_number(i)+"ç‚¹ï¼\n");
 }
 
 void rewarded1 (object me, object who)
@@ -198,9 +198,9 @@ void rewarded1 (object me, object who)
   int i = who->query("obstacle/reward");
 
   remove_call_out("rewarding1");
-  message_vision ("\n$NÒ»µãÍ·£º¹²¼Æ"+chinese_number(i)+"µãÇ±ÄÜ£¡\n",me);
-  announce (me,who->query("name")+"Î÷ÌìÈ¡¾­Àú¾­ÔÖí©£¬½±Àø"+
-            chinese_number(i)+"µãÇ±ÄÜ£¡\n");
+  message_vision ("\n$Nä¸€ç‚¹å¤´ï¼šå…±è®¡"+chinese_number(i)+"ç‚¹æ½œèƒ½ï¼\n",me);
+  announce (me,who->query("name")+"è¥¿å¤©å–ç»å†ç»ç¾æ„†ï¼Œå¥–åŠ±"+
+            chinese_number(i)+"ç‚¹æ½œèƒ½ï¼\n");
 }
 
 void rewarding2 (object me, object who, string str)
@@ -209,16 +209,16 @@ void rewarding2 (object me, object who, string str)
   string name = SKILL_D(str)->name();
 
   who->set_skill(str,i+1);
-  message_vision ("\n$NËµµÀ£º½±ÀøÒ»¼¶"+name+"£¡\n",me,who);
-  tell_object(who,"ÄãµÄ"+name+"Ôö¼ÓÁËÒ»¼¶£¡\n");
+  message_vision ("\n$Nè¯´é“ï¼šå¥–åŠ±ä¸€çº§"+name+"ï¼\n",me,who);
+  tell_object(who,"ä½ çš„"+name+"å¢åŠ äº†ä¸€çº§ï¼\n");
 }
 
 void rewarded2 (int size, object me, object who)
 {
   remove_call_out("rewarding2");
-  message_vision ("\n$NÒ»µãÍ·£º¹²¼Æ"+chinese_number(size)+"¼¶¼¼ÄÜ£¡\n",me);
-  announce (me,who->query("name")+"Î÷ÌìÈ¡¾­¹¦µÂÎŞÁ¿£¬½±Àø"+
-            chinese_number(size)+"¼¶¼¼ÄÜ£¡\n");
+  message_vision ("\n$Nä¸€ç‚¹å¤´ï¼šå…±è®¡"+chinese_number(size)+"çº§æŠ€èƒ½ï¼\n",me);
+  announce (me,who->query("name")+"è¥¿å¤©å–ç»åŠŸå¾·æ— é‡ï¼Œå¥–åŠ±"+
+            chinese_number(size)+"çº§æŠ€èƒ½ï¼\n");
   call_out("informing",1,me,who);
 }
 
@@ -229,8 +229,8 @@ void informing (object me, object who)
   who->save();
   me->set("my_level",LEVEL_NONE);
   me->delete_temp("invite");
-  message_vision ("\n$N¶Ô$nËµ£ºÆğÉí£¬¿ÉÈ¥±¦¸óÈ¡Õæ¾­Ò»±¾¡£\n",me,who);
-  message_vision ("\n$NÓÖ²¹³äµÀ£ºÈÕºóÈôÓĞ²»²â£¬¿ÉÀ´´óĞÛ±¦µîÆğËÀ»ØÉúÈı´Î¡£\n",
+  message_vision ("\n$Nå¯¹$nè¯´ï¼šèµ·èº«ï¼Œå¯å»å®é˜å–çœŸç»ä¸€æœ¬ã€‚\n",me,who);
+  message_vision ("\n$Nåˆè¡¥å……é“ï¼šæ—¥åè‹¥æœ‰ä¸æµ‹ï¼Œå¯æ¥å¤§é›„å®æ®¿èµ·æ­»å›ç”Ÿä¸‰æ¬¡ã€‚\n",
                   me);
 }
 
@@ -243,25 +243,25 @@ int reward_player ()
 
   if (me->query("my_level") == LEVEL_ASKED)
   {
-    message_vision ("$N¶Ô$nÒ¡Í·ËµµÀ£ºÀÏ·òÕıÃ¦¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡å¤´è¯´é“ï¼šè€å¤«æ­£å¿™ã€‚\n",me,who);
     return 1;
   }
 
   if (who->query("obstacle/reward"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÄã²»ÊÇÒÑ¾­À´¹ıÁËÂğ£¿\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šä½ ä¸æ˜¯å·²ç»æ¥è¿‡äº†å—ï¼Ÿ\n",me,who);
     return 1;
   }
 
   if (who->query_temp("no_move"))
   {
-    message_vision ("$N¶Ô$nÒ¡Ò¡Í·¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡æ‘‡å¤´ã€‚\n",me,who);
     return 1;
   }
 
   if (!OBSTACLES_D->check_obstacles(who))
   {
-    message_vision ("$N¶Ô$nÒ¡Í·ËµµÀ£ºÄãÉĞÎ´Àú¾¡ÄÑ¹Ø¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡å¤´è¯´é“ï¼šä½ å°šæœªå†å°½éš¾å…³ã€‚\n",me,who);
     return 1;
   }
 
@@ -269,8 +269,8 @@ int reward_player ()
   {
     me->set("last_player",who);
     me->set_temp("invite","public");
-    announce (me,who->query("name")+"²»Ô¶ÍòÀïÇ°À´È¡Õæ¾­£¡");
-    announce (me,"ÖîÎ»ÏÉÏÍÈçÔ¸¹ÛÀñ£¬Ê¹accept rulai fo±ã¿É£¡\n");
+    announce (me,who->query("name")+"ä¸è¿œä¸‡é‡Œå‰æ¥å–çœŸç»ï¼");
+    announce (me,"è¯¸ä½ä»™è´¤å¦‚æ„¿è§‚ç¤¼ï¼Œä½¿accept rulai foä¾¿å¯ï¼\n");
     remove_call_out ("inviting");
     call_out ("inviting",1,me);
     return 1;
@@ -283,13 +283,13 @@ int reward_player ()
 
   if ((i/4-j) > 0)
   {
-    message_vision ("$N¶Ô$nÒ¡Ò¡Í·£ºÎ÷ÓÎ¼ÇÏÖÓĞ"+chinese_number(i)+"Î»Íæ¼Ò£¬"
-                    "´Ë´¦½öÓĞÊıÎ»ÏÉÏÍÔÚÑû£¬¿É·ñÔÙÑû"+chinese_number(i/4-j)+
-                    "Î»ÏÉÏÍÇ°À´¹ÛÀñ£¿\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡æ‘‡å¤´ï¼šè¥¿æ¸¸è®°ç°æœ‰"+chinese_number(i)+"ä½ç©å®¶ï¼Œ"
+                    "æ­¤å¤„ä»…æœ‰æ•°ä½ä»™è´¤åœ¨é‚€ï¼Œå¯å¦å†é‚€"+chinese_number(i/4-j)+
+                    "ä½ä»™è´¤å‰æ¥è§‚ç¤¼ï¼Ÿ\n",me,who);
     if (! DEBUG)                 
       return 1;
   }
-  announce (me,"Î÷ÓÎ¼ÇÎ÷ÌìÈ¡Õæ¾­¹ÛÀñ£º"+who->query("name")+"´óĞÛ±¦µî°İÀñ£¡\n");
+  announce (me,"è¥¿æ¸¸è®°è¥¿å¤©å–çœŸç»è§‚ç¤¼ï¼š"+who->query("name")+"å¤§é›„å®æ®¿æ‹œç¤¼ï¼\n");
 
   me->set("my_level",LEVEL_ASKED);
   do_reward (who);
@@ -335,12 +335,12 @@ void inviting (object me)
     if (here == there)
       continue;
 
-    message_vision("$NÈôÓĞËùË¼µØÏòÔ¶·½Éì³öÊÖ¡­¡­\n",me);
+    message_vision("$Nè‹¥æœ‰æ‰€æ€åœ°å‘è¿œæ–¹ä¼¸å‡ºæ‰‹â€¦â€¦\n",me);
     list[i]->set_temp("accept",0);
     list[i]->set_temp("lingshan/from",there);
-    message_vision("Ò»ÍÅÏéÔÆÆ®À´£¬ÔÆÖĞÉì³öÒ»Ö»¾Ş´óµÄ·ğÊÖ½«$NÇáÇáÍĞÆğ£¬ÏûÊ§ÔÚÌì¿Õ¡£\n",list[i]);
+    message_vision("ä¸€å›¢ç¥¥äº‘é£˜æ¥ï¼Œäº‘ä¸­ä¼¸å‡ºä¸€åªå·¨å¤§çš„ä½›æ‰‹å°†$Nè½»è½»æ‰˜èµ·ï¼Œæ¶ˆå¤±åœ¨å¤©ç©ºã€‚\n",list[i]);
     list[i]->move(here);
-    message_vision("¡­¡­$NÇáÇáÒ»·­ÕÆ£¬$nÎÈÎÈµØÌøÏÂÀ´ÂäÔÚµØÉÏ¡£\n",me,list[i]);
+    message_vision("â€¦â€¦$Nè½»è½»ä¸€ç¿»æŒï¼Œ$nç¨³ç¨³åœ°è·³ä¸‹æ¥è½åœ¨åœ°ä¸Šã€‚\n",me,list[i]);
     break;
   }
 }
@@ -352,15 +352,15 @@ int do_back(string arg)
   string here = (string)environment(me);
   string there = who->query_temp("lingshan/from");
 
-  message_vision("$NÇëÇó$nËÍ$N»Ø·µ¡£\n",who,me);
+  message_vision("$Nè¯·æ±‚$né€$Nå›è¿”ã€‚\n",who,me);
   //if (!there)
   //  there = "/d/city/kezhan";
   there = "/d/city/kezhan";
 
   who->set_temp("accept",0);
-  message_vision("$NµÄÊÖÕÆÇáÇáÍĞÆğ$nÏòÔ¶·½ÉìÈ¥¡­¡­\n",me,who);
+  message_vision("$Nçš„æ‰‹æŒè½»è½»æ‰˜èµ·$nå‘è¿œæ–¹ä¼¸å»â€¦â€¦\n",me,who);
   who->move(there);
-  message_vision("¡­¡­ÔÆÖĞÉì³öÒ»Ö»¾Ş´óµÄ·ğÊÖÇáÇáÒ»·­£¬Ö»¼û$N´ÓÀïÃæÌø³öÀ´¡£\n",who);
+  message_vision("â€¦â€¦äº‘ä¸­ä¼¸å‡ºä¸€åªå·¨å¤§çš„ä½›æ‰‹è½»è½»ä¸€ç¿»ï¼Œåªè§$Nä»é‡Œé¢è·³å‡ºæ¥ã€‚\n",who);
   
   return 1;
 }
@@ -368,7 +368,7 @@ int do_back(string arg)
 void die()
 {
   if (environment())
-    message("sound", "\n\nÈçÀ´»º»ºÒ»µãÍ·£º·ğ·¨ÎŞ±ß£¡\n\n", environment());
+    message("sound", "\n\nå¦‚æ¥ç¼“ç¼“ä¸€ç‚¹å¤´ï¼šä½›æ³•æ— è¾¹ï¼\n\n", environment());
 
   set("eff_kee", 10000);
   set("eff_gin", 10000);

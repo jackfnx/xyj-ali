@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // qinbing.c
@@ -8,13 +8,13 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ç×±ø", ({ "qin bing", "qin", "bing", "qinbing"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("äº²å…µ", ({ "qin bing", "qin", "bing", "qinbing"}));
+  set("gender", "ç”·æ€§");
   set("age", 19+random(30));
-  set("title", "½«¾ü¸®");
+  set("title", "å°†å†›åºœ");
   set ("long", @LONG
-ÕâÐ©Ç×±ø¶¼ÊÇÔÚÉ³³¡ÉÏÁ¢¹ýÎÞÊýº¹Âí¹¦ÀÍµÄÇ¿½«¡£
-ËûÃÇ²»Ô­ÊÜ·âÎª¹Ù£¬Äþ¿Ï¸úËæ±£»¤¾ÉÖ÷¡£
+è¿™äº›äº²å…µéƒ½æ˜¯åœ¨æ²™åœºä¸Šç«‹è¿‡æ— æ•°æ±—é©¬åŠŸåŠ³çš„å¼ºå°†ã€‚
+ä»–ä»¬ä¸åŽŸå—å°ä¸ºå®˜ï¼Œå®è‚¯è·Ÿéšä¿æŠ¤æ—§ä¸»ã€‚
 LONG);
 
   set("combat_exp", 160000+random(40000));
@@ -33,7 +33,7 @@ LONG);
   set("max_force", 350);
   set("force_factor", 15);
 
-  create_family("½«¾ü¸®", 3, "À¶");
+  create_family("å°†å†›åºœ", 3, "è“");
   setup();
 
   carry_object("/d/obj/weapon/blade/kandao")->wield();

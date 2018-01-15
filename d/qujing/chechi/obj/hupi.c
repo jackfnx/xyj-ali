@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 29 1997
@@ -8,15 +8,15 @@ inherit CLOTH;
 
 void create()
 {
-  set_name("»Æ»¢Æ¤", ({"huang hupi", "hupi"}));
+  set_name("é»„è™çš®", ({"huang hupi", "hupi"}));
   set_weight(4500);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»ÕÅ»ÆÉ«»¢Æ¤¡£\n");
+    set("long", "ä¸€å¼ é»„è‰²è™çš®ã€‚\n");
     set("material", "leather");
-    set("unit", "ÕÅ");
+    set("unit", "å¼ ");
     set("value", 1000);
     set("armor_prop/armor", 15);
   }

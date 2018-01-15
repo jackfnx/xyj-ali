@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/fairyplace
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "̫��þ�");
+  set ("short", "太虚幻境");
   set ("long", @LONG
 
-����������˭���뻪�㾳��ǧ�ŷ�����ҵ��
+　　　　问谁幻入华胥境　千古风流造业人
 
 LONG);
 

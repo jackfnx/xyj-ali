@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <skill.h>
@@ -8,15 +8,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("×·»ê·û", ({"find seal", "seal", "paper"}));
+        set_name("è¿½é­‚ç¬¦", ({"find seal", "seal", "paper"}));
    set_weight(100);
    if(clonep())
          set_default_object(__FILE__);
      else {
 
-        set("long","Ò»ÕÅ»­ÉÏÁË·ûÖäµÄÌÒ·ûÖ½£¬ÖĞÑëÓĞ¸ö´ó´óµÄ¡°×·»ê¡±×Ö¡£
-Äã¿É½«ËüÌù(attach)ÔÚÄ³ÈËÉíÉÏ×·×ÙÆäĞĞ¼£¡£\n");
-        set("unit", "ÕÅ");
+        set("long","ä¸€å¼ ç”»ä¸Šäº†ç¬¦å’’çš„æ¡ƒç¬¦çº¸ï¼Œä¸­å¤®æœ‰ä¸ªå¤§å¤§çš„â€œè¿½é­‚â€å­—ã€‚
+ä½ å¯å°†å®ƒè´´(attach)åœ¨æŸäººèº«ä¸Šè¿½è¸ªå…¶è¡Œè¿¹ã€‚\n");
+        set("unit", "å¼ ");
         set("value", 0);
    set("no_put",1);
    set("no_sell",1);
@@ -35,7 +35,7 @@ void destruct_me(object where, object me)
         object seal;
         if( seal=new("/obj/paper_seal"))
                 seal->move(where);
-   message_vision("$NÊÖÖĞµÄ$nÍ»·¢ºì¹â£¬·ûÖä½¥½¥µ­È¥²»¼ûÁË¡£\n",where,me);
+   message_vision("$Næ‰‹ä¸­çš„$nçªå‘çº¢å…‰ï¼Œç¬¦å’’æ¸æ¸æ·¡å»ä¸è§äº†ã€‚\n",where,me);
         destruct(me);
 }
 */
@@ -69,23 +69,23 @@ int do_attach(string arg)
    int ap, dp, a, b;
 
    if( seal->query("can_not_attach") )
-     return notify_fail("Ê²Ã´£¿\n");
+     return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
    if( !arg )
-                return notify_fail("ÄãÏë¶ÔË­Ê¹ÓÃ×·»ê·û£¿\n");
+                return notify_fail("ä½ æƒ³å¯¹è°ä½¿ç”¨è¿½é­‚ç¬¦ï¼Ÿ\n");
         if(!objectp(victim = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");   
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");   
    if(me->is_busy())
-     return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÎŞ·¨ÓÃ×·»ê·û¡£\n");
+     return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ— æ³•ç”¨è¿½é­‚ç¬¦ã€‚\n");
         if( !victim->is_character() || victim->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
    if( where->query("no_magic"))
-     return notify_fail("ÕâÀï²»ÄÜ¼À×·»ê·û¡£\n");
+     return notify_fail("è¿™é‡Œä¸èƒ½ç¥­è¿½é­‚ç¬¦ã€‚\n");
        if( where->query("no_fight"))
-                return notify_fail("ÕâÀï²»ÄÜ¼À×·»ê·û¡£\n");
+                return notify_fail("è¿™é‡Œä¸èƒ½ç¥­è¿½é­‚ç¬¦ã€‚\n");
    if( (int)me->query("mana") < 100 )
-     return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆ×·»ê·û¡£\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æ§åˆ¶è¿½é­‚ç¬¦ã€‚\n");
    if( (int)me->query("sen") < 100 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬ºÜÄÑ¼İÔ¦×·»ê·û¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œå¾ˆéš¾é©¾é©­è¿½é­‚ç¬¦ã€‚\n");
 
    ap= (int)seal->query("ap");
    dp= (int)victim->query("combat_exp");
@@ -93,21 +93,21 @@ int do_attach(string arg)
    
    if( random(ap+dp) > dp ){
    
-   tell_room( environment(me), me->name()+"ÇÄÇÄµØ½«×·»ê·ûÌùµ½"+victim->name()+"±³ºó¡£\n",({me,victim}));
+   tell_room( environment(me), me->name()+"æ‚„æ‚„åœ°å°†è¿½é­‚ç¬¦è´´åˆ°"+victim->name()+"èƒŒåã€‚\n",({me,victim}));
 
    a=(int)me->query_kar() * (int)me->query("mana");
    b=(int)victim->query("kar") * (int)victim->query("max_mana");
    if( b > random(a+b) ){
-     tell_object( victim, me->name()+"¶ÔÄãÏ¡Ææ¹Å¹ÖµØĞ¦ÁËÒ»ÏÂ¡£\n");
+     tell_object( victim, me->name()+"å¯¹ä½ ç¨€å¥‡å¤æ€ªåœ°ç¬‘äº†ä¸€ä¸‹ã€‚\n");
    }
 
-   tell_object( me,"ÄãÇÄÇÄµØ½«×·»ê·ûÌùµ½"+victim->name()+"±³ºó¡£\n");
+   tell_object( me,"ä½ æ‚„æ‚„åœ°å°†è¿½é­‚ç¬¦è´´åˆ°"+victim->name()+"èƒŒåã€‚\n");
    seal->set("can_not_attach",1);
    call_out("report",30,victim);
    seal->move(victim);
    } else {
-     message_vision("$NÒ»»ØÍ·£¬¿´µ½$nÕıÒª½«×·»ê·ûÍù×Ô¼º±³ºóÌù¡£\n\n", victim, me);
-     message_vision("$N¶Ô$n´óºÈÒ»Éù£º¡°¸ÉÊ²Ã´£¿¡±\n", victim, me);
+     message_vision("$Nä¸€å›å¤´ï¼Œçœ‹åˆ°$næ­£è¦å°†è¿½é­‚ç¬¦å¾€è‡ªå·±èƒŒåè´´ã€‚\n\n", victim, me);
+     message_vision("$Nå¯¹$nå¤§å–ä¸€å£°ï¼šâ€œå¹²ä»€ä¹ˆï¼Ÿâ€\n", victim, me);
 
      if( !victim->is_fighting(me) ) {
                 if( living(victim) ) {
@@ -137,7 +137,7 @@ int report(object who)
    }
    where=environment(who);
 
-   tell_object(owner_ob, "ÄãÄ£Ä£ºıºıÌıµ½Ò»¸öÉùÒô£º"+who->name()+"ÏÖÔÚÔÚ"+where->query("short")+"¡£\n");
+   tell_object(owner_ob, "ä½ æ¨¡æ¨¡ç³Šç³Šå¬åˆ°ä¸€ä¸ªå£°éŸ³ï¼š"+who->name()+"ç°åœ¨åœ¨"+where->query("short")+"ã€‚\n");
    owner_ob->receive_damage("sen", 10);
    owner_ob->add("mana",-10);
 

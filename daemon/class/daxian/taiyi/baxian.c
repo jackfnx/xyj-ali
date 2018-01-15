@@ -1,4 +1,4 @@
-//baxian.c ¡¾°ËÏÉ´óÕó¡¿weiqi...980307
+//baxian.c ã€å…«ä»™å¤§é˜µã€‘weiqi...980307
 
 #include <ansi.h>
 
@@ -15,36 +15,36 @@ int cast(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target == me)
-        return notify_fail("ÄãÏëÇë°ËÏÉÄÃË­£¿\n");
-    if ((string)me->query("family/family_name") != "Îå×¯¹Û")
-        return notify_fail("ÄãÓÖ²»ÊÇÎå×¯¹ÛµÜ×Ó£¬°ËÏÉÄÄÀï»á°ïÄãÄÃÈË¡£\n");
-    if ((string)target->query("family/family_name") == "Îå×¯¹Û")
-        return notify_fail("Í¬ÃÅÏà¶·Ò²½Ğ°ËÏÉ°ïÃ¦£¿\n");
+        return notify_fail("ä½ æƒ³è¯·å…«ä»™æ‹¿è°ï¼Ÿ\n");
+    if ((string)me->query("family/family_name") != "äº”åº„è§‚")
+        return notify_fail("ä½ åˆä¸æ˜¯äº”åº„è§‚å¼Ÿå­ï¼Œå…«ä»™å“ªé‡Œä¼šå¸®ä½ æ‹¿äººã€‚\n");
+    if ((string)target->query("family/family_name") == "äº”åº„è§‚")
+        return notify_fail("åŒé—¨ç›¸æ–—ä¹Ÿå«å…«ä»™å¸®å¿™ï¼Ÿ\n");
     if (!target->is_fighting(me))
-        return notify_fail("Ö»ÓĞÔÚÕ½¶·ÖĞ²ÅÄÜÕÙ»½°ËÏÉ£¡\n");
+        return notify_fail("åªæœ‰åœ¨æˆ˜æ–—ä¸­æ‰èƒ½å¬å”¤å…«ä»™ï¼\n");
     if ((int)me->query_skill("taiyi", 1) < 20)
-        return notify_fail("ÄãµÄÌ«ÒÒÏÉ·¨ĞŞÎª²»Éî£¬Çë²»¶¯°ËÏÉ¡£\n");
+        return notify_fail("ä½ çš„å¤ªä¹™ä»™æ³•ä¿®ä¸ºä¸æ·±ï¼Œè¯·ä¸åŠ¨å…«ä»™ã€‚\n");
     if ((int)me->query_skill("bagua-zhen", 1) < 30)
-        return notify_fail("ÄãµÄ°ËØÔÕóË®Æ½²»¹»£¬Ã»·¨Ê¹¶¯°ËÏÉ¡£\n");
+        return notify_fail("ä½ çš„å…«å¦é˜µæ°´å¹³ä¸å¤Ÿï¼Œæ²¡æ³•ä½¿åŠ¨å…«ä»™ã€‚\n");
     if ((int)me->query("mana") < 200)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬Ã»°ì·¨Öª»á°ËÏÉ¡£\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œæ²¡åŠæ³•çŸ¥ä¼šå…«ä»™ã€‚\n");
     if ((int)me->query("sen") < 10)
-        return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬²»±»ÈËÄÃÒÑÊÇÍòĞÒÁË£¡\n");
+        return notify_fail("ä½ ç°åœ¨ç¥æ™ºä¸æ¸…ï¼Œä¸è¢«äººæ‹¿å·²æ˜¯ä¸‡å¹¸äº†ï¼\n");
 
     me->add("mana", -200);
     me->receive_damage("sen", 10);
 
     if (random(me->query("max_mana")) < 50) {
-        tell_object(me, "ß×£¿ÕâÒ»´ÎºÃÏñ²»Áé¡£\n");
+        tell_object(me, "å’¦ï¼Ÿè¿™ä¸€æ¬¡å¥½åƒä¸çµã€‚\n");
         return 1;
     }
 
-    msg = HIC "$N´óºÈÒ»Éù£º°ËÏÉºÎÔÚ£¡\n"+
-           "Ö»ÌıËÄÖÜÒ»Á¬´®µÄÉùÒô´ğµÀ£ºÇ¬Î»ÂÀ¶´±ö£¡"+
-           "£®£®£®À¤Î»ºÎÏÉ¹Ã£¡£®£®£®ÕğÎ»Ìú¹ÕÀî£¡£®£®£®\n"+
-           "$NÒ»Ö¸$n£ºÄÃÈË£¡\n\n" NOR;    
+    msg = HIC "$Nå¤§å–ä¸€å£°ï¼šå…«ä»™ä½•åœ¨ï¼\n"+
+           "åªå¬å››å‘¨ä¸€è¿ä¸²çš„å£°éŸ³ç­”é“ï¼šä¹¾ä½å•æ´å®¾ï¼"+
+           "ï¼ï¼ï¼å¤ä½ä½•ä»™å§‘ï¼ï¼ï¼ï¼éœ‡ä½é“æ‹æï¼ï¼ï¼ï¼\n"+
+           "$Nä¸€æŒ‡$nï¼šæ‹¿äººï¼\n\n" NOR;    
     message_vision(msg, me, target);
-    msg = HIC "$n¶Ô×Å$N¸ßÉùÂîµÀ£ººÃ¼Ò»ï£¬Ò»Óµ¶øÉÏÁË£¬ÎÒÔ×ÁËÄã£¡\n" NOR;    
+    msg = HIC "$nå¯¹ç€$Né«˜å£°éª‚é“ï¼šå¥½å®¶ä¼™ï¼Œä¸€æ‹¥è€Œä¸Šäº†ï¼Œæˆ‘å®°äº†ä½ ï¼\n" NOR;    
     message_vision(msg, me, target);
     target->kill_ob(me);
     

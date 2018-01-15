@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// ÀîÔª¼ª npc: /d/jjf/npc/liyuanji.c
+// æå…ƒå‰ npc: /d/jjf/npc/liyuanji.c
 // created 5-20-97 pickle
  
 inherit NPC;
@@ -9,15 +9,15 @@ string expell_me(object me);
  
 void create()
 {
-  set_name("ÀîÔª¼ª", ({"li yuanji", "li", "yuanji", "liyuanji", "jianwang", "jian wang", "wang", "jian"}));
+  set_name("æå…ƒå‰", ({"li yuanji", "li", "yuanji", "liyuanji", "jianwang", "jian wang", "wang", "jian"}));
   set ("long", @LONG
-ÀîÔª¼ªÄËÊÇÌÆ¸ß×æÀîÔ¨µÄÈı×Ó£¬ÊÜ·âÆëÍõ¡£Èı×ÓÖĞÒÔÀîÔª¼ª×î
-ÎªÎŞÓÃ¡£Ëû¿ÕÓĞÒ»ÉíÂùÁ¦£¬µ«ÎŞ¶ñ²»×÷£¬ºÁ²»ÒÔÁìµØ°ÙĞÕÎªÖØ¡£
-ÇÒÔÚ×÷Õ½Ê±ÂÅÊ§ÖØÒª¾İµã£¬ÊµÔÚÁî¸ß×æ´óÎªÍ·Í´¡£
+æå…ƒå‰ä¹ƒæ˜¯å”é«˜ç¥–ææ¸Šçš„ä¸‰å­ï¼Œå—å°é½ç‹ã€‚ä¸‰å­ä¸­ä»¥æå…ƒå‰æœ€
+ä¸ºæ— ç”¨ã€‚ä»–ç©ºæœ‰ä¸€èº«è›®åŠ›ï¼Œä½†æ— æ¶ä¸ä½œï¼Œæ¯«ä¸ä»¥é¢†åœ°ç™¾å§“ä¸ºé‡ã€‚
+ä¸”åœ¨ä½œæˆ˜æ—¶å±¡å¤±é‡è¦æ®ç‚¹ï¼Œå®åœ¨ä»¤é«˜ç¥–å¤§ä¸ºå¤´ç—›ã€‚
 LONG);
  
-  set("title", "ÆëÍõ");
-  set("gender", "ÄĞĞÔ");
+  set("title", "é½ç‹");
+  set("gender", "ç”·æ€§");
   set("age", 22);
   set("str", 40);
   set("per", 15);
@@ -56,20 +56,20 @@ int accept_fight(object me)
   string myrude=RANK_D->query_rude(me), player=me->query("id");
   int kar=(int)me->query_kar();
 
-  if ((string)me->query("family/family_name") == "½«¾ü¸®")
+  if ((string)me->query("family/family_name") == "å°†å†›åºœ")
     {
-      command("say Äã¸ö"+myrude+"£¡¾¹¸ÒÔÚÌ«ËêÒ¯Í·ÉÏ¶¯ÍÁ£¡");
+      command("say ä½ ä¸ª"+myrude+"ï¼ç«Ÿæ•¢åœ¨å¤ªå²çˆ·å¤´ä¸ŠåŠ¨åœŸï¼");
       command("kill "+player);
       return 1;
     }
   if (random(kar-10) > 10)
    {
      command("sneer "+player);
-     command("say ÀÏ×Ó½ñÌìÃ»ĞËÖÂ£¬Äã¸ö"+myrude+"³ÃÔç¸øÎÒ¹ö£¡");
+     command("say è€å­ä»Šå¤©æ²¡å…´è‡´ï¼Œä½ ä¸ª"+myrude+"è¶æ—©ç»™æˆ‘æ»šï¼");
      me->move("/d/jjf/zuixing");
-     return notify_fail("ĞÒ¿÷ÄãÔËÆøºÃ£¬·ñÔò¡£¡£¡£\n");
+     return notify_fail("å¹¸äºä½ è¿æ°”å¥½ï¼Œå¦åˆ™ã€‚ã€‚ã€‚\n");
    }
-  command("say ÀÏ×ÓÉúÆ½×î°®É±ÈË£¡½ñÌìËãÄãµ¹Ã¹£¡");
+  command("say è€å­ç”Ÿå¹³æœ€çˆ±æ€äººï¼ä»Šå¤©ç®—ä½ å€’éœ‰ï¼");
   command("kill "+player);
   return 1;
 }

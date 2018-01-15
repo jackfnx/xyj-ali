@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/village
@@ -8,19 +8,19 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "µ¾Ïã´å");
+  set ("short", "ç¨»é¦™æ‘");
   set ("long", @LONG
 
-¡¡¡¡¡¡¡¡ÐÓÁ±ÕÐ¿ÍÒû£¬ÔÚÍûÓÐÉ½×¯¡£ÁâÜô¶ÓÚùË®£¬É£ÓÜÑà×ÓÁº¡£
-¡¡¡¡¡¡¡¡Ò»Æè´º¾ÂÊì£¬Ê®Àïµ¾»¨Ïã¡£Ê¢ÊÀÎÞ¡õÄÙ£¬ºÎÐë¸ûÖ¯Ã¦¡£
+ã€€ã€€ã€€ã€€æå¸˜æ‹›å®¢é¥®ï¼Œåœ¨æœ›æœ‰å±±åº„ã€‚è±è‡é˜Ÿé‚¬æ°´ï¼Œæ¡‘æ¦†ç‡•å­æ¢ã€‚
+ã€€ã€€ã€€ã€€ä¸€ç•¦æ˜¥éŸ­ç†Ÿï¼Œåé‡Œç¨»èŠ±é¦™ã€‚ç››ä¸–æ— â–¡é¦ï¼Œä½•é¡»è€•ç»‡å¿™ã€‚
 
-¡¡¡¡Ò»¸ö¾Æ»Ï(sign)ÓÃÖñ¸ÍÌôÔÚÊ÷ÉÒ¡£
+ã€€ã€€ä¸€ä¸ªé…’å¹Œ(sign)ç”¨ç«¹ç«¿æŒ‘åœ¨æ ‘æ¢¢ã€‚
 
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
   "sign" : "
-¡¡¡¡¡¡¡¡¡ºÐÓÁ±ÔÚÍû¡»
+ã€€ã€€ã€€ã€€ã€Žæå¸˜åœ¨æœ›ã€
 
 ",
 ]));
@@ -45,7 +45,7 @@ int valid_leave(object me, string dir)
 //     ( membership == "(NotMember)" || membership == "(guest)") ) 
               ( membership == "(NotMember)"))
         {
-        return notify_fail("Ö»Ìý¡ºàØ¡»µÄÒ»Éù£¬ÄãµÄÄÔÃÅ¶ù±»·´µ¯»ØÀ´µÄÃÅ×²¸öÕý×Å~~~~~~~~\n");
+        return notify_fail("åªå¬ã€Žå˜­ã€çš„ä¸€å£°ï¼Œä½ çš„è„‘é—¨å„¿è¢«åå¼¹å›žæ¥çš„é—¨æ’žä¸ªæ­£ç€~~~~~~~~\n");
         }
         return ::valid_leave(me, dir);
 }

@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 inherit ITEM;
 void create()
 {
-  set_name("ÆÆÌúÁı", ({"tie long", "long"}));
+  set_name("ç ´é“ç¬¼", ({"tie long", "long"}));
   set_weight(2800000);
-  set("long", "Ò»¸öÆÆÌúÁı¡£\n" );
+  set("long", "ä¸€ä¸ªç ´é“ç¬¼ã€‚\n" );
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("no_get", 1);
-    set("unit", "°Ñ");
+    set("unit", "æŠŠ");
     set("material", "stone");
     set("value", 2000);
     set("no_sell", 1);

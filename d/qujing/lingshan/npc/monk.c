@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 14 1997
@@ -8,11 +8,11 @@ inherit NPC;
 void create()
 {
   if (random(2))
-    set_name("°¢ÂŞ", ({ "a luo", "a", "luo" }));
+    set_name("é˜¿ç½—", ({ "a luo", "a", "luo" }));
   else
-    set_name("½ÒÚĞ", ({ "jie di", "jie", "di" }));
-  set("title", "ÁéÉ½");
-  set("gender", "ÄĞĞÔ");
+    set_name("æ­è°›", ({ "jie di", "jie", "di" }));
+  set("title", "çµå±±");
+  set("gender", "ç”·æ€§");
   set("age", 100);
   set("attitude", "peaceful");
   set("str",40);

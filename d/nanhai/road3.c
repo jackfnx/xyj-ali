@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/nanhai/road1
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "С·");
+  set ("short", "小路");
   set ("long", @LONG
 
-����һ��ͨ����ɽ��С·����·����Խ��Խ�����ߣ��ֲ�ҲԽ��Խ���ˡ�
+这是一条通往后山的小路，道路至此越来越不好走，分叉也越来越多了。
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

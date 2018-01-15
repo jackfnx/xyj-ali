@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gangcha.c
@@ -9,16 +9,16 @@ inherit FORK;
 
 void create()
 {
-  set_name("Èı³İ¸Ö²æ", ({ "sanchi gangcha", "gangcha", "cha","fork" }) );
+  set_name("ä¸‰é½¿é’¢å‰", ({ "sanchi gangcha", "gangcha", "cha","fork" }) );
   set_weight(8000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±ú");
+    set("unit", "æŸ„");
     set("value", 1000);
     set("material", "steal");
-    set("long", "Ò»±ú·æÀûï­ÁÁµÄÈı³İ¸Ö²æ¡£\n");
-    set("wield_msg", "$NÉí×ÓÒ»¶¶£¬·ÉÊÖ³­ÆğÒ»±ú$n¡£\n");
+    set("long", "ä¸€æŸ„é”‹åˆ©é”ƒäº®çš„ä¸‰é½¿é’¢å‰ã€‚\n");
+    set("wield_msg", "$Nèº«å­ä¸€æŠ–ï¼Œé£æ‰‹æŠ„èµ·ä¸€æŸ„$nã€‚\n");
   }
   init_fork(65);
   setup();

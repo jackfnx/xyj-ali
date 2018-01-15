@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // long1.c
@@ -10,11 +10,11 @@ inherit NPC;
 //
 void create()
 {
-  set_name("╟тоб",({"ba xia","ba","xia","long","baxia","dragon"}));
-  set("long","аЗиЗ╬евс╡╩ЁиаЗё╛╦ВспкЫ╨цё╨фя╟тоб╣зкдвсё╛ф╫иЗ╨ц╦╨жь║ё\n");
-  set("gender", "дппт");
+  set_name("И°╦Д╦▀",({"ba xia","ba","xia","long","baxia","dragon"}));
+  set("long","И╬≥Г■÷Д╧²Е╜░Д╦█Ф┬░И╬≥О╪▄Е░└Ф°┴Ф┴─Е╔╫О╪ Х▓╡И°╦Д╦▀Г╛╛Е⌡⌡Е╜░О╪▄Е╧ЁГ■÷Е╔╫Х╢÷И┤█Ц─┌\n");
+  set("gender", "Г■╥Ф─╖");
   set("age", 34);
-  set("title", "аЗмУ╬евсж╝");
+  set("title", "И╬≥Г▌▀Д╧²Е╜░Д╧▀");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);
@@ -56,7 +56,7 @@ void create()
   set("chat_msg_combat", ({
     (: cast_spell, "hufa" :),
     (: exert_function, "shield" :),
-    "╟тобгСхд╣юё╨╠П╢Ракё║╠П╢Ракё║нрм╤╫╣ё║\n",
+    "И°╦Д╦▀Ф╠┌И╔╤И│⌠О╪ Е┬╚Ф┴⌠Д╨├О╪│Е┬╚Ф┴⌠Д╨├О╪│Ф┬▒Ф┼∙И≥█О╪│\n",
     (: command, "surrender" :),
 
   }) );
@@ -71,7 +71,7 @@ void create()
 int accept_fight(object me)
 {
   command("fear");
-  command("say нриЗф╫вНеб╢Р╪эё╛"+RANK_D->query_respect(this_player())+"╩╧йг╥енрр╩бМ╟иё╝ё╝ё╝");
+  command("say Ф┬▒Г■÷Е╧ЁФ°─Ф─∙Ф┴⌠Ф·╤О╪▄"+RANK_D->query_respect(this_player())+"Х©≤Ф≤╞Ф■╬Ф┬▒Д╦─И╘╛Е░╖О╪▌О╪▌О╪▌");
   return 0;
 }
 

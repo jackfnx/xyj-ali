@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/nanhai/zhulin.c
@@ -9,11 +9,11 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "×ÏÖñÁÖ");
+   set("short", "ç´«ç«¹æ—");
    set("long", @LONG
 
-ÆÕÍÓºóÉ½µÄ×ÏÖñÁÖ¡£Ò²ÊÇ¹ÛÒôÆĞÈøÏĞí¬³£µ½µÄËùÔÚ¡£×ÏÖñÏ¸Êè£¬
-Çå·çÎ¢·÷¡£Âş²½ÓÚ´Ë£¬ÊÀÊÂÖ®·×ÈÅ¶ÙÊ±ÑÌÏûÔÆÉ¢¡£
+æ™®é™€åå±±çš„ç´«ç«¹æ—ã€‚ä¹Ÿæ˜¯è§‚éŸ³è©è¨é—²æ†©å¸¸åˆ°çš„æ‰€åœ¨ã€‚ç´«ç«¹ç»†ç–ï¼Œ
+æ¸…é£å¾®æ‹‚ã€‚æ¼«æ­¥äºæ­¤ï¼Œä¸–äº‹ä¹‹çº·æ‰°é¡¿æ—¶çƒŸæ¶ˆäº‘æ•£ã€‚
 LONG
    );
    set("exits", ([ /* sizeof() == 4 */
@@ -34,7 +34,7 @@ void init()
 
         if ( (me->query_temp("aware_of_jinguzhou")) && 
      (me -> query_kar() > 20) ) {
-                tell_object(me, HIY"ÄãĞÄÖĞÒ»¶¯£¬ËÆºõÓĞËù¾õÎò¡£\n"NOR);
+                tell_object(me, HIY"ä½ å¿ƒä¸­ä¸€åŠ¨ï¼Œä¼¼ä¹æœ‰æ‰€è§‰æ‚Ÿã€‚\n"NOR);
         }
         add_action("do_search", "search");
 }
@@ -45,26 +45,26 @@ int do_search (string arg)
 
     if (!arg || arg != "jinguzhou")
   {
-    message_vision ("$N¶×ÏÂÈ¥Ñ°ÕÒÊ²Ã´¡£\n",me);
+    message_vision ("$Nè¹²ä¸‹å»å¯»æ‰¾ä»€ä¹ˆã€‚\n",me);
     return 1;
   }
 
   if (me -> query_kar() < 20)
   {
-    message_vision ("$N¶×ÏÂÈ¥ÔÚÖñ´ÔÀïºúÂÒ·­ÁËÆğÀ´¡£\n",me);
+    message_vision ("$Nè¹²ä¸‹å»åœ¨ç«¹ä¸›é‡Œèƒ¡ä¹±ç¿»äº†èµ·æ¥ã€‚\n",me);
     return 1;
   }
 
    if( !(ob = find_object(__DIR__"obj/jingu1")) ) {
             ob = load_object(__DIR__"obj/jingu1");
        ob -> move(me);
-       message_vision ("$NÑÛ¾¦Ò»ÁÁ£º½ô¹¿Öä£¡\n",me);
+       message_vision ("$Nçœ¼ç›ä¸€äº®ï¼šç´§ç®å’’ï¼\n",me);
        if (me->query_temp("aware_of_jinguzhou"))
      me -> delete_temp("aware_of_jinguzhou");
        return 1;   
    }
 
-   message_vision ("$N¶×ÏÂÈ¥ÔÚÖñ´ÔÀï×ĞÏ¸µØ·­À´·­È¥¡£\n",me);
+   message_vision ("$Nè¹²ä¸‹å»åœ¨ç«¹ä¸›é‡Œä»”ç»†åœ°ç¿»æ¥ç¿»å»ã€‚\n",me);
    return 1;
 }
 

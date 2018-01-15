@@ -5,13 +5,13 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "ÖĞĞÄÎä³¡");
+   set ("short", "ä¸­å¿ƒæ­¦åœº");
    set ("long", @LONG
 
-ÕâÊÇ±ù¹ÈÖĞµÄÒ»¿éÆ½µØ£¬¹©´óÑ©É½µÜ×ÓÁ·¹¦Ö®ÓÃ¡£±ùÃæ¼«Æ½£¬¹â
-¼øÕÕÈË¡£²»¹ı×ßÔÚÉÏÃæµÃĞ¡ĞÄµã£¬Ñ©É½µÜ×ÓÒ²ÕıÊÇ½è´Ë¶ÍÁ¶ÏÂÅÌ
-µÄÎÈ¹Ì¹¦·ò¡£¶«ÃæµÄÒ»¶°·¿×Ó¶¥ÉÏÒ»¹É´¶ÑÌÈ½È½ÉıÆğ£¬Ïë±ØÊÇ³ø
-·¿ÁË¡£Î÷ÃæÊÇÑ©É½µÜ×ÓµÄĞİÏ¢´¦¡£
+è¿™æ˜¯å†°è°·ä¸­çš„ä¸€å—å¹³åœ°ï¼Œä¾›å¤§é›ªå±±å¼Ÿå­ç»ƒåŠŸä¹‹ç”¨ã€‚å†°é¢æå¹³ï¼Œå…‰
+é‰´ç…§äººã€‚ä¸è¿‡èµ°åœ¨ä¸Šé¢å¾—å°å¿ƒç‚¹ï¼Œé›ªå±±å¼Ÿå­ä¹Ÿæ­£æ˜¯å€Ÿæ­¤é”»ç‚¼ä¸‹ç›˜
+çš„ç¨³å›ºåŠŸå¤«ã€‚ä¸œé¢çš„ä¸€æ ‹æˆ¿å­é¡¶ä¸Šä¸€è‚¡ç‚ŠçƒŸå†‰å†‰å‡èµ·ï¼Œæƒ³å¿…æ˜¯å¨
+æˆ¿äº†ã€‚è¥¿é¢æ˜¯é›ªå±±å¼Ÿå­çš„ä¼‘æ¯å¤„ã€‚
 LONG);
 
    set("exits", ([ //sizeof() == 4
@@ -52,166 +52,166 @@ int do_skate(string arg)
 
    if( me->query("kee") < (int)me->query("max_kee")/4 )
    {
-     message_vision("$NÌøÆğÀ´Íù±ùÉÏÒ»»¬...½á¹ûË¤ÁË¸öËÄ½Å³¯Ìì¡£\n", me);
+     message_vision("$Nè·³èµ·æ¥å¾€å†°ä¸Šä¸€æ»‘...ç»“æœæ‘”äº†ä¸ªå››è„šæœå¤©ã€‚\n", me);
      return 1;
    }      
    if( me->query("sen") < (int)me->query("max_sen")/4 )
    {
-     message_vision("$NÌøÆğÀ´Íù±ùÉÏÒ»»¬...½á¹ûÔ­µØ×ªÁË¼¸È¦£¬Í·ÔÎÖ®ÏÂ¸ÏÃ¦Å¿ÔÚ±ùÉÏ£¬ÔÙÒ²²»¸Ò¶¯µ¯¡£\n", me);
+     message_vision("$Nè·³èµ·æ¥å¾€å†°ä¸Šä¸€æ»‘...ç»“æœåŸåœ°è½¬äº†å‡ åœˆï¼Œå¤´æ™•ä¹‹ä¸‹èµ¶å¿™è¶´åœ¨å†°ä¸Šï¼Œå†ä¹Ÿä¸æ•¢åŠ¨å¼¹ã€‚\n", me);
      return 1;
    }      
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go north.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍù±±»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€åŒ—æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-n");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 1.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go west.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍùÎ÷»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€è¥¿æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-nw");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 2.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go south.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍùÄÏ»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€å—æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-w");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 3.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go south.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍùÄÏ»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€å—æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-sw");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 4.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go east.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍù¶«»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€ä¸œæ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-s");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 5.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go east.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍù¶«»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€ä¸œæ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-se");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 6.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go north.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍù±±»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€åŒ—æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-e");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 7.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go north.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍù±±»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€åŒ—æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-ne");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 8.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go west.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍùÎ÷»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€è¥¿æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-n");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 9.
 
 //need construct the followwing section as another function?dunno how yet...weiqi.
    //go south.
-   message_vision("$NĞË¸ß²ÉÁÒ£¬×ËÊÆÓÅÃÀµØÍùÄÏ»¬ÁË¹ıÈ¥¡£\n", me);
+   message_vision("$Nå…´é«˜é‡‡çƒˆï¼Œå§¿åŠ¿ä¼˜ç¾åœ°å¾€å—æ»‘äº†è¿‡å»ã€‚\n", me);
    me->move(__DIR__"wuchang-c");
    me->receive_damage("kee", point);
    me->improve_skill("dodge", (1+random(point/2))*gainfactor);
-   message_vision("$NµÃÒâÑóÑóµØ´Ó±ùÉÏ³åÁË¹ıÀ´£¡\n", me);
+   message_vision("$Nå¾—æ„æ´‹æ´‹åœ°ä»å†°ä¸Šå†²äº†è¿‡æ¥ï¼\n", me);
 
    if( (me->query("kee") < (int)me->query("max_kee")/4) || 
        (me->query("sen") < (int)me->query("max_sen")/4) ){
-     message_vision("½á¹û°ÈßÕ£¡Ò»ÉùË¤ÁË¸öËÄ½Å³¯Ìì£¡\n", me);
+     message_vision("ç»“æœå­å“’ï¼ä¸€å£°æ‘”äº†ä¸ªå››è„šæœå¤©ï¼\n", me);
      return 1;
    }
 //end of section 10.
 
-   message_vision("$N´µÁËÉù¿ÚÉÚ£¬ÎÈÎÈµØÍ£ÁËÏÂÀ´£¡\n", me);
+   message_vision("$Nå¹äº†å£°å£å“¨ï¼Œç¨³ç¨³åœ°åœäº†ä¸‹æ¥ï¼\n", me);
    return 1;
 }
 

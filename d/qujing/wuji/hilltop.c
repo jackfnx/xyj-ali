@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/hilltop  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ɽ��");
+  set ("short", "山顶");
   set ("long", @LONG
 
-ɽ��ɽ��ʯ�������Ա���һƬϡϡ���������֡��ϱ��Ƕ��͵�����
-ֱ�ڣ���·���С��˴�ɽ�߷��䣬�չȻ�����
+山顶山磐石耸立，旁边有一片稀稀拉拉的树林。南边是陡峭的悬崖
+直壁，无路可行。此处山高风冷，空谷回音。
 
 LONG);
 

@@ -1,17 +1,17 @@
-// jinjia.c ½ð¼×
+// jinjia.c é‡‘ç”²
 #include <armor.h>
 
 inherit ARMOR;
 
 void create()
 {
-        set_name("Õ½¼×", ({"armor"}));
+        set_name("æˆ˜ç”²", ({"armor"}));
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
-		set("long", "Ò»¼þÕ½¼×£®\n");
+                set("unit", "ä»¶");
+		set("long", "ä¸€ä»¶æˆ˜ç”²ï¼Ž\n");
                 set("material", "steel");
                 set("value", 20000);
                 set("armor_prop/armor", 55);

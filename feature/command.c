@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // command.c
@@ -22,10 +22,10 @@ string find_command(string verb)
           if(me->query_temp("is_living")!=1) {
             if(verb!="bian" && verb!="chat" && verb!="say"
        && verb!="tell" && verb!="reply" && verb!="look")
-       return (string)notify_fail("±ðÍüÁËÄãÏÖÔÚÊÇÒ»"+
+       return (string)notify_fail("åˆ«å¿˜äº†ä½ çŽ°åœ¨æ˜¯ä¸€"+
            (undefinedp(me->query_temp("unit"))?
-         "¸ö":me->query_temp("unit"))
-              +me->name()+"£¡\n");
+         "ä¸ª":me->query_temp("unit"))
+              +me->name()+"ï¼\n");
      }
         } 
    

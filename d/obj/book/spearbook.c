@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼Ç¹·¨¼ò½é¡½", ({"spear book", "book"}));
+        set_name("ã€–æªæ³•ç®€ä»‹ã€—", ({"spear book", "book"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("value", 2000);
      set("no_sell", 1);
-        set("long", "Ò»±¾±¡±¡µÄĞ¡²á×Ó£®»­ÁËĞ©Ç¹·¨µÄÍ¼½â£®\n");
+        set("long", "ä¸€æœ¬è–„è–„çš„å°å†Œå­ï¼ç”»äº†äº›æªæ³•çš„å›¾è§£ï¼\n");
         set("material", "paper");
         set("skill", ([
                         "name": "spear",

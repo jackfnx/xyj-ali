@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4.12.1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("̫���Ͼ�", ({"taishang laojun", "taishang", "laojun"}));
-  set("gender", "����");
+  set_name("太上老君", ({"taishang laojun", "taishang", "laojun"}));
+  set("gender", "男性");
   set("age", 100);
   set("attitude", "friendly");
   set("combat_exp", 1250000);
@@ -56,11 +56,11 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/pingding","done");
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"ƽ��ɽѹ��ɽʩ�������Ϸ��ջؽ���ͯ�ӣ�");
-  command("chat "+who->query("name")+"˳������������һ�أ�");
-  tell_object (who,"��Ӯ����"+chinese_number(3)+"��"+
-               chinese_number(i/4)+"��"+
-               chinese_number((i-(i/4)*4)*3)+"ʱ���ĵ��У�\n");
+  command("chat "+who->query("name")+"平顶山压龙山施威，替老夫收回金银童子！");
+  command("chat "+who->query("name")+"顺利闯过西行又一关！");
+  tell_object (who,"你赢得了"+chinese_number(3)+"年"+
+               chinese_number(i/4)+"天"+
+               chinese_number((i-(i/4)*4)*3)+"时辰的道行！\n");
   who->save();
 }
 

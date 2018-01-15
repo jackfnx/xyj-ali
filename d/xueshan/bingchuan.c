@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //standroom.c used by weiqi...others may hate this format:D
@@ -8,13 +8,13 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "����");
+   set ("short", "冰川");
    set ("long", @LONG
 
-�����˱�������ž���������������ְθ���һ�㡣������ȥ��
-һ�������಻����ѩ�壬����ʱ����������Ľ��¡�һ���Ǻ�
-������ı�ԭ������еĲ���һ������������ǰ����������
-��ı���Ҳ�ڱ�ԭ�д��У���ɲ�صȴ���ʧ������ˡ�
+等上了冰川，你才觉得世界在你脚下又拔高了一层。放眼望去，
+一面是延绵不尽的雪峰，但此时都好像到了你的脚下。一面是浩
+翰无垠的冰原，如大海中的波涛一样起伏在你的面前。而几条巨
+大的冰缝也在冰原中穿行，深不可测地等待着失足的旅人。
 LONG);
 
    //set("item_desc", ([" *** " : " *** \n", ]));

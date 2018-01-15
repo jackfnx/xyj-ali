@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create ()
 {
-    set_name("¡¼ORZ-ZTO¡½", ({"orz", "zto"}));
+    set_name("ã€–ORZ-ZTOã€—", ({"orz", "zto"}));
     set_weight(100);
     seteuid(getuid());
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "Ì×");
+        set("unit", "å¥—");
         set("long", "orz zto");
         set("material", "paper");
         set("value", 0);
@@ -40,7 +40,7 @@ int do_orz()
     f = me->query("fabao");
     
     if (!mapp(f)) {
-        printf("²»ÊÇmap.\n");
+        printf("ä¸æ˜¯map.\n");
         return 1;
     }
     

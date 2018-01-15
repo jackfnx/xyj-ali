@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// bianfu.c òùòğ¾«
+// bianfu.c è™è ç²¾
 // 9-18-97 pickle
 
 #include <ansi.h>
@@ -23,18 +23,18 @@ void mie_kou(object me);
 void create()
 {
 
-  set_name("Çîºº", ({"qiong han", "qiong", "han", "poor man","man"}));
-  set("title", "ÆÕÍ¨°ÙĞÕ");
+  set_name("ç©·æ±‰", ({"qiong han", "qiong", "han", "poor man","man"}));
+  set("title", "æ™®é€šç™¾å§“");
   set("long",
-"Ëû¿´ÆğÀ´Ò»¸¶ÇîÀ§ÁÊµ¹µÄÑù×Ó£¬»ëÉíÃ»Ò»¼şÏóÑùµÄÒÂ·ş£¬Êİ¹Çá×á¾µÄ£¬\n"
-"¾ÍÏóÈıÄêÃ»³Ô¹ıÒ»¶Ù±¥·¹ËÆµÄ¡£ËäËµ³¤°²³ÇÀïÕâÑùµÄÈË±È±È½ÔÊÇ£¬µ«Äã\n"
-"¿´Ëû¾ÍÊÇ¾õµÃ²»Ë³ÑÛ¡£×ĞÏ¸¶ËÏêÒ»·¬£¬Äã·¢ÏÖÔ­À´ËûÈ«Éí³¤×ÅÒ»²ãµ­µ­\n"
-"µÄÈ×Ã«¡£\n");
+"ä»–çœ‹èµ·æ¥ä¸€ä»˜ç©·å›°æ½¦å€’çš„æ ·å­ï¼Œæµ‘èº«æ²¡ä¸€ä»¶è±¡æ ·çš„è¡£æœï¼Œç˜¦éª¨å¶™å³‹çš„ï¼Œ\n"
+"å°±è±¡ä¸‰å¹´æ²¡åƒè¿‡ä¸€é¡¿é¥±é¥­ä¼¼çš„ã€‚è™½è¯´é•¿å®‰åŸé‡Œè¿™æ ·çš„äººæ¯”æ¯”çš†æ˜¯ï¼Œä½†ä½ \n"
+"çœ‹ä»–å°±æ˜¯è§‰å¾—ä¸é¡ºçœ¼ã€‚ä»”ç»†ç«¯è¯¦ä¸€ç•ªï¼Œä½ å‘ç°åŸæ¥ä»–å…¨èº«é•¿ç€ä¸€å±‚æ·¡æ·¡\n"
+"çš„èŒ¸æ¯›ã€‚\n");
   set("combat_exp", 3000);
   set("attitude", "peaceful");
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("age", 39);
-  create_family("Ïİ¿ÕÉ½ÎŞµ×¶´", 2, "µÜ×Ó");
+  create_family("é™·ç©ºå±±æ— åº•æ´", 2, "å¼Ÿå­");
 
   set_skill("unarmed", 80);
   set_skill("dodge", 80);
@@ -67,12 +67,12 @@ void create()
   set("mana", 350);
   set("max_mana", 300);
   set("inquiry", ([
-                   "name": "Õâ¸ö¡­¡­ÎÒÕâÇîººµÄÃû×Ö¶ÔÄãÓÖÓĞÊ²Ã´ÓÃÁË£¿",
-                   "here": "ÕâÀï£¿ÄãÎÊÎÒÎÒÎÊË­È¥£¿",
-        "rumors": "ÌıËµ×î½ü¸½½üÓĞĞ©ÀÏÊó¾«ÔÚ³¤°²³Ç³öÃ»¡£°¦¡£",
-        "ÀÏÊó¾«": "ÎÒÌıËµËûÃÇÊÇ¸öÊ²Ã´Ê²Ã´É½Ê²Ã´Ê²Ã´¶´µÄ£¬Ò²²»ÖªÕ¦»ØÊÂ¡£",
-        "Ïİ¿ÕÉ½": (: ask_me :),
-        "ÎŞµ×¶´": (: ask_me :),
+                   "name": "è¿™ä¸ªâ€¦â€¦æˆ‘è¿™ç©·æ±‰çš„åå­—å¯¹ä½ åˆæœ‰ä»€ä¹ˆç”¨äº†ï¼Ÿ",
+                   "here": "è¿™é‡Œï¼Ÿä½ é—®æˆ‘æˆ‘é—®è°å»ï¼Ÿ",
+        "rumors": "å¬è¯´æœ€è¿‘é™„è¿‘æœ‰äº›è€é¼ ç²¾åœ¨é•¿å®‰åŸå‡ºæ²¡ã€‚å”‰ã€‚",
+        "è€é¼ ç²¾": "æˆ‘å¬è¯´ä»–ä»¬æ˜¯ä¸ªä»€ä¹ˆä»€ä¹ˆå±±ä»€ä¹ˆä»€ä¹ˆæ´çš„ï¼Œä¹Ÿä¸çŸ¥å’‹å›äº‹ã€‚",
+        "é™·ç©ºå±±": (: ask_me :),
+        "æ— åº•æ´": (: ask_me :),
                  ]) );  
 
   setup();
@@ -89,8 +89,8 @@ int attempt_apprentice(object me)
    && !query("accept_dizi"))
    return 0;
   command("spank "+myid);
-  command("say ²»´í²»´í¡£");
-  command("say µ«ÄãÒª¾­µÃÆğ¿¼Ñé²ÅÄÜÕæÕıÑ§µ½ÎÒÎŞµ×¶´µÄ¸ßÉîÎä¹¦¡£");
+  command("say ä¸é”™ä¸é”™ã€‚");
+  command("say ä½†ä½ è¦ç»å¾—èµ·è€ƒéªŒæ‰èƒ½çœŸæ­£å­¦åˆ°æˆ‘æ— åº•æ´çš„é«˜æ·±æ­¦åŠŸã€‚");
   command("recruit "+myid);
 }
 int recruit_apprentice(object ob)
@@ -103,44 +103,44 @@ int recruit_apprentice(object ob)
 /************************************************************/
 
 // since this npc stands in the middle of chang an, he can't
-// be in his normal Ñı¹Ö form. so he is usually a Çîºº until
+// be in his normal å¦–æ€ª form. so he is usually a ç©·æ±‰ until
 // somebody asks THE question. hehe...
 
 string ask_me()
 {
     object me=this_player();
 
-    if (me->query("family/family_name") == "Ïİ¿ÕÉ½ÎŞµ×¶´")
+    if (me->query("family/family_name") == "é™·ç©ºå±±æ— åº•æ´")
     {
    command("nod");
    command("recruit "+me->query("id"));
-   return "ÕâÄã»¹ÓÃÎÊÎÒ£¿£¡";   // if already in wudidong, no point
+   return "è¿™ä½ è¿˜ç”¨é—®æˆ‘ï¼Ÿï¼";   // if already in wudidong, no point
     }
     if(!query("wudidong_state"))   // if not in bianfu form, ask person
     {             // whether they wanna join anyway.
    command("hehe");
-   command("say Êµ»°¸æËßÄã°É£¡´óÒ¯ÎÒ¾ÍÊÇÎŞµ×¶´µÄÉÏÏÉ£¡");
+   command("say å®è¯å‘Šè¯‰ä½ å§ï¼å¤§çˆ·æˆ‘å°±æ˜¯æ— åº•æ´çš„ä¸Šä»™ï¼");
    set("accept_dizi", 1);     // here, be ready to accept dizi
-   command("say "+me->name()+"£¬Äã¿ÉÔ¸ÒâÈëÎÒÎŞµ×¶´£¿");
+   command("say "+me->name()+"ï¼Œä½ å¯æ„¿æ„å…¥æˆ‘æ— åº•æ´ï¼Ÿ");
    command("recruit "+me->query("id"));
-   call_out("mie_kou", 60, me);   // give him 5 min, if still not, Ãğ¿Ú
-   return "ºÙºÙ£¬ÄãÈôÊÇ²»Ô¸£¬¿ÉÄª¹ÖÎÒĞÄºİÊÖÀ±£¡";
+   call_out("mie_kou", 60, me);   // give him 5 min, if still not, ç­å£
+   return "å˜¿å˜¿ï¼Œä½ è‹¥æ˜¯ä¸æ„¿ï¼Œå¯è«æ€ªæˆ‘å¿ƒç‹ æ‰‹è¾£ï¼";
     }
-    command("say ÈôÊÇÏë°İÎÒÎŞµ×¶´£¬¾¡¹ÜËµ£¡");   // if in bianfu form, recruit
+    command("say è‹¥æ˜¯æƒ³æ‹œæˆ‘æ— åº•æ´ï¼Œå°½ç®¡è¯´ï¼");   // if in bianfu form, recruit
     command("recruit "+me->query("id"));   // also set miekou condition
     remove_call_out("transform_back");     // note one thing: our bianfu
     call_out("mie_kou", 60, me);     // will not transform back into
-    return "·ñÔò¾Í±ğ¹ÖÎÒÉ±ÈËÃğ¿ÚÁË£¡";     // human coz he needs to kill
+    return "å¦åˆ™å°±åˆ«æ€ªæˆ‘æ€äººç­å£äº†ï¼";     // human coz he needs to kill
 }
 void transform()
 {
   object weapon;
   if(!interactive())
     return;
-  set_name("òùòğ¾«", ({"bian fu", "bianfu", "fu", "bat", "monster"}));
-  set("title", "ÉÏÏÉ");
+  set_name("è™è ç²¾", ({"bian fu", "bianfu", "fu", "bat", "monster"}));
+  set("title", "ä¸Šä»™");
   set("long",
-"ÕâÃ÷Ã÷ÊÇÒ»Ö»¾Ş´óµÄòùòğ£¬µ«²»ÖªÎªºÎ¾¹È»»áËµÈË»°£¡\n");
+"è¿™æ˜æ˜æ˜¯ä¸€åªå·¨å¤§çš„è™è ï¼Œä½†ä¸çŸ¥ä¸ºä½•ç«Ÿç„¶ä¼šè¯´äººè¯ï¼\n");
   set("combat_exp", 300000);
   weapon=new("/d/obj/weapon/sword/changjian");
   weapon->move(this_object());
@@ -152,29 +152,29 @@ void transform()
   command("enable parry qixiu-sword");
   command("enable dodge lingfu-steps");
   set("wudidong_state", 1);
-  message_vision(HIY"ÇîººÒ¡ÉíÒ»±ä£¬ÏÖÁËÔ­ĞÎ¡£Ô­À´ÊÇÖ»òùòğ£¡\n"NOR, this_object());
+  message_vision(HIY"ç©·æ±‰æ‘‡èº«ä¸€å˜ï¼Œç°äº†åŸå½¢ã€‚åŸæ¥æ˜¯åªè™è ï¼\n"NOR, this_object());
 }
 void mie_kou(object me)
 {
     string myid=me->query("id");
     if (!interactive()) return;
-    if (me->query("family/family_name") == "Ïİ¿ÕÉ½ÎŞµ×¶´")
+    if (me->query("family/family_name") == "é™·ç©ºå±±æ— åº•æ´")
     {
    command("pat "+myid);        // if he has bai in meantime
-   command("say ²»´í£¬Ê¶Ê±ÎñÕß¿¡½Ü£¡");   // don't kill him, compliment him
+   command("say ä¸é”™ï¼Œè¯†æ—¶åŠ¡è€…ä¿Šæ°ï¼");   // don't kill him, compliment him
    call_out("transform_back", 300);   // change back to human
    return;
     }
     if (!present(myid, environment()))
     {
    command("sneer");        // laugh at the cowards
-   command("say ĞÒ¿÷"+me->name()+"ÁïµÃ¿ì¡£·ñÔò£¬ºß£¡ºß£¡ºß£¡");
+   command("say å¹¸äº"+me->name()+"æºœå¾—å¿«ã€‚å¦åˆ™ï¼Œå“¼ï¼å“¼ï¼å“¼ï¼");
    call_out("transform_back", 300);
    return;
     }
     if (!query("wudidong_state"))     // if still in human form
    transform();          // change into bianfu form to kill
-    command("say "+me->name()+"£¬Äã¼ÈÈ»Ö´ÃÔ²»Îò£¬ÄÇ¾ÍÄÉÃüÀ´°É£¡");
+    command("say "+me->name()+"ï¼Œä½ æ—¢ç„¶æ‰§è¿·ä¸æ‚Ÿï¼Œé‚£å°±çº³å‘½æ¥å§ï¼");
     command("kill "+myid);        // kill!
     call_out("transform_back", 180);     // assume fight over in 3 min
     return;             // at which time change back
@@ -199,14 +199,14 @@ void transform_back()
     }
   if (objectp(weapon=present("sword", me)))
     destruct(weapon);
-  message_vision(HIY"$NÒ¡ÉíÒ»±ä£¬±ä³ÉÁË¸öÇîºº£¡\n"NOR, this_object());
-  set_name("Çîºº", ({"qiong han", "qiong", "han", "poor man","man"}));
-  set("title", "ÆÕÍ¨°ÙĞÕ");
+  message_vision(HIY"$Næ‘‡èº«ä¸€å˜ï¼Œå˜æˆäº†ä¸ªç©·æ±‰ï¼\n"NOR, this_object());
+  set_name("ç©·æ±‰", ({"qiong han", "qiong", "han", "poor man","man"}));
+  set("title", "æ™®é€šç™¾å§“");
   set("long",
-"Ëû¿´ÆğÀ´Ò»¸¶ÇîÀ§ÁÊµ¹µÄÑù×Ó£¬»ëÉíÃ»Ò»¼şÏóÑùµÄÒÂ·ş£¬Êİ¹Çá×á¾µÄ£¬\n"
-"¾ÍÏóÈıÄêÃ»³Ô¹ıÒ»¶Ù±¥·¹ËÆµÄ¡£ËäËµ³¤°²³ÇÀïÕâÑùµÄÈË±È±È½ÔÊÇ£¬µ«Äã\n"
-"¿´Ëû¾ÍÊÇ¾õµÃ²»Ë³ÑÛ¡£×ĞÏ¸¶ËÏêÒ»·¬£¬Äã·¢ÏÖÔ­À´ËûÈ«Éí³¤×ÅÒ»²ãµ­µ­\n"
-"µÄÈ×Ã«¡£\n");
+"ä»–çœ‹èµ·æ¥ä¸€ä»˜ç©·å›°æ½¦å€’çš„æ ·å­ï¼Œæµ‘èº«æ²¡ä¸€ä»¶è±¡æ ·çš„è¡£æœï¼Œç˜¦éª¨å¶™å³‹çš„ï¼Œ\n"
+"å°±è±¡ä¸‰å¹´æ²¡åƒè¿‡ä¸€é¡¿é¥±é¥­ä¼¼çš„ã€‚è™½è¯´é•¿å®‰åŸé‡Œè¿™æ ·çš„äººæ¯”æ¯”çš†æ˜¯ï¼Œä½†ä½ \n"
+"çœ‹ä»–å°±æ˜¯è§‰å¾—ä¸é¡ºçœ¼ã€‚ä»”ç»†ç«¯è¯¦ä¸€ç•ªï¼Œä½ å‘ç°åŸæ¥ä»–å…¨èº«é•¿ç€ä¸€å±‚æ·¡æ·¡\n"
+"çš„èŒ¸æ¯›ã€‚\n");
   set("combat_exp", 3000);
   set("attitude", "peaceful");
   delete("wudidong_state");

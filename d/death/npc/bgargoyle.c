@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // gargoyle.c
@@ -8,27 +8,27 @@
 
 inherit NPC;
 string *death_msg = ({
-        HIB "���޳�˵����ι�������ģ����ʲô���֣�\n\n" NOR,
-        HIB "���޳���������۹ⶢ���㣬����Ҫ�������һ���Ƶġ�\n\n" NOR,
-        HIB "���޳����ߡ���һ�����������ͳ�һ�����ʲ�Ķ�����������\n\n" NOR,
-        HIB "���޳����ϲ��ӣ�˵�����ף�����δ������ô���ܣ�\n\n" NOR,
-        HIB "���޳�ɦ��ɦͷ��̾�������˰��ˣ����߰ɡ�\n\n"
-                "һ�������Ũ��ͻȻ���֣��ܿ�ذ�Χ���㡣\n\n" NOR,
+        HIB "黑无常说道：喂！新来的，你叫什么名字？\n\n" NOR,
+        HIB "黑无常用奇异的眼光盯着你，好像要看穿你的一切似的。\n\n" NOR,
+        HIB "黑无常「哼」的一声，从袖中掏出一本像帐册的东西翻看著。\n\n" NOR,
+        HIB "黑无常合上册子，说道：咦？阳寿未尽？怎么可能？\n\n" NOR,
+        HIB "黑无常搔了搔头，叹道：罢了罢了，你走吧。\n\n"
+                "一股阴冷的浓雾突然出现，很快地包围了你。\n\n" NOR,
 });
 
 void create()
 {
-        set_name("���޳�", ({ "black gargoyle", "gargoyle" }) );
+        set_name("黑无常", ({ "black gargoyle", "gargoyle" }) );
         set("long",
 
-"���޳����ų�������ͷ�����㣬��ڵ����Ͽ������κ�ϲŭ���֡�\n");
+"黑无常伸着长长的舌头瞪着你，黝黑的脸上看不出任何喜怒哀乐。\n");
         set("attitude", "peaceful");
         set("chat_chance", 10);
         set("chat_msg", ({
 
-"���޳�����һ����������������������������ע��������ʱ�򣬵�����һ�ۡ�\n",
+"黑无常发出一阵像呻吟的声音，当他发现你正注视着他的时候，瞪了你一眼。\n",
 
-"���޳��ѳ�������ͷ��������������������Լ��ֺ��ֳ�����ָ��\n"
+"黑无常把长长的舌头伸出来，缓缓地舔了舔自己又黑又长的手指。\n"
         }) );
    set("per", 100);
    set("str", 25);
@@ -45,7 +45,7 @@ void create()
    set("max_mana", 500);
    set("mana", 500);
    set("mana_factor", 30);
-        set("title", "�ͻ�ʹ��");
+        set("title", "送魂使者");
         set_temp("apply/damage", 10);
         set_skill("ghost-steps", 70);
         set_skill("dodge", 70);
@@ -64,7 +64,7 @@ void create()
    map_skill("stick", "keening-stick");
    map_skill("parry", "keening-stick");
         map_skill("unarmed", "dread-hand");
-   create_family("���޵ظ�", 4, "���");
+   create_family("阎罗地府", 4, "你好");
         setup();
    carry_object("/d/obj/cloth/hei")->wear();
 }
@@ -83,8 +83,8 @@ void death_stage(object ob, int stage)
         if( !ob || !present(ob) ) return;
 
         if( !ob->is_ghost()) {
-     if( visible(ob)&&(string)ob->query("family/family_name")!="���޵ظ�" ){
-                   command("say ι��������������ʲô���ѵ��ǻ���������\n");
+     if( visible(ob)&&(string)ob->query("family/family_name")!="阎罗地府" ){
+                   command("say 喂！阳人来阴间做什么？难道是活的厌倦了吗？\n");
                    kill_ob(ob);
                     ob->fight_ob(this_object());
                    return;
@@ -106,15 +106,15 @@ void death_stage(object ob, int stage)
      ob->set("gin", (int)ob->query("max_gin"));
         ob->move(REVIVE_ROOM);
         message("vision",
-                "���Ȼ����ǰ�����һ����Ӱ����������Ӱ�ֺ����Ѿ�������\n"
-                "�ܾ��ˣ�ֻ����һֱû������\n", environment(ob), ob);
+                "你忽然发现前面多了一个人影，不过那人影又好像已经在那里\n"
+                "很久了，只是你一直没发觉。\n", environment(ob), ob);
 }
 void attempt_apprentice()
 {       object me;
         me = this_player();
-        if ( (string)me->query("family/family_name")=="���޵ظ�") {
+        if ( (string)me->query("family/family_name")=="阎罗地府") {
         if (((int)me->query("combat_exp") < 10000 )) {
-        command("say " + RANK_D->query_rude(me) + "���Ļ������ڣ��Ϸ�м���㣡\n");
+        command("say " + RANK_D->query_rude(me) + "的心还不够黑，老夫不屑收你！\n");
         return;
         }
         command("grin");
@@ -122,14 +122,14 @@ void attempt_apprentice()
         me->reincarnate();
    me->set("gin", (int)me->query("max_gin"));
         }
-        command("say �ܺã�" + RANK_D->query_respect(me) +
-"���Ŭ�������ձض��гɡ�\n");
+        command("say 很好，" + RANK_D->query_respect(me) +
+"多加努力，他日必定有成。\n");
        command("recruit " + me->query("id") );
         return;
         }
         command("shake");
         command("say " + RANK_D->query_rude(me) +
-"������ȥѧЩ��������ɣ�\n");
+"还是先去学些基础功夫吧！\n");
         return;
 }
 

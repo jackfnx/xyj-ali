@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // transfer.c
@@ -10,40 +10,40 @@ int cast(object me, object target)
    object zhenshen;
 
    if ( me->is_fight() )
-     return notify_fail("Äã»¹ÔÚÕ½¶·£¬ÒªÁé»ê³ö¿Ç¾ÍËÀ¶¨À²£¡\n");
+     return notify_fail("ä½ è¿˜åœ¨æˆ˜æ–—ï¼Œè¦çµé­‚å‡ºå£³å°±æ­»å®šå•¦ï¼\n");
 
    if ( me->is_ghost() )
-     return notify_fail("ÄãÒÑ¾­ÊÇ¹íÁË£¬»¹Òª¸ÉÊ²Ã´£¿\n");
+     return notify_fail("ä½ å·²ç»æ˜¯é¬¼äº†ï¼Œè¿˜è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
-   if( (string)me->query("family/family_name")=="ÑÖÂŞµØ¸®" )
-     return notify_fail("ÄãÊÇ¹íÀà£¬ÄÇÀïÓĞÊ²Ã´»êÆÇ¡£\n");
+   if( (string)me->query("family/family_name")=="é˜ç½—åœ°åºœ" )
+     return notify_fail("ä½ æ˜¯é¬¼ç±»ï¼Œé‚£é‡Œæœ‰ä»€ä¹ˆé­‚é­„ã€‚\n");
 
    if( (int)me->query("max_mana") <100 )
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
    
    if( (int)me->query("combat_exp") < 30000 )
-     return notify_fail("ÄãµÄ¾­Ñé²»¹»£¬Áé»ê³öÁË¿ÇÅÂºÜÄÑ»ØÀ´¡£\n");
+     return notify_fail("ä½ çš„ç»éªŒä¸å¤Ÿï¼Œçµé­‚å‡ºäº†å£³æ€•å¾ˆéš¾å›æ¥ã€‚\n");
    
    if( (int)me->query("mana") - (int)me->query("max_mana") < 50)
-     return notify_fail("ÄãµÄ·¨Á¦²»×ã£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼\n");
 
    if( me->query_temp("in_hell") )
-     return notify_fail("ÄãµÄ»êÆÇÒÑ¾­³ö¿ÇÁË£¡\n");
+     return notify_fail("ä½ çš„é­‚é­„å·²ç»å‡ºå£³äº†ï¼\n");
 
    if( environment(me)->query("hell"))
-     return notify_fail("ÄãÒÑÉí´¦µØÓüÁË£¡\n");
+     return notify_fail("ä½ å·²èº«å¤„åœ°ç‹±äº†ï¼\n");
 
    me->receive_damage("sen", 30);
    me->add("mana", -30);
    me->set_temp("in_hell", 1);
 
    if((int)me->query_skill("spells", 1) - 30 < 10 ) {
-     write("ÄãÊ§°ÜÁË£¡\n");
+     write("ä½ å¤±è´¥äº†ï¼\n");
                 return 1;
         }
 
-   message_vision("$N¿ÚÖĞà«à«µØÄîÁË¼¸¾äÖäÓï¡£\n", me);
-   message_vision(YEL"Ò»¹ÉÁéÆø´Ó$NÄÔÃÅÉÏ×ê³ö£¬Ëæ·çÆ®È¥£¬×ªÑÛ¾Í²»¼ûÁË¡£\n"NOR, me);
+   message_vision("$Nå£ä¸­å–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n", me);
+   message_vision(YEL"ä¸€è‚¡çµæ°”ä»$Nè„‘é—¨ä¸Šé’»å‡ºï¼Œéšé£é£˜å»ï¼Œè½¬çœ¼å°±ä¸è§äº†ã€‚\n"NOR, me);
 
    seteuid(getuid());
    zhenshen= new("/obj/npc/zhenshen");
@@ -51,7 +51,7 @@ int cast(object me, object target)
    zhenshen->invocation(me);
    me->set_temp("zhenshen", zhenshen);
    me->move("/d/death/gate");
-   message_vision("ËÄ³ö¹ÎÆğÒõ·ç£¬ÏÖ³öÁË$NµÄÓ°×Ó¡£\n", me);
+   message_vision("å››å‡ºåˆ®èµ·é˜´é£ï¼Œç°å‡ºäº†$Nçš„å½±å­ã€‚\n", me);
    me->apply_condition("in_hell", 1);   
    
   

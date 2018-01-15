@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/mishi.c
@@ -7,17 +7,17 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "С��");
+   set("short", "小屋");
    set("long", @LONG
 
-������С�ݺܾ�û�������ˣ��������ǻҳ�����ǰ����һ��
-��ľ�������Ϲ���һ����λ��������̨�ϵ���������ȼ����
+看起来小屋很久没有人来了，到处都是灰尘．正前方有一张
+大木桌，桌上供着一个牌位，两边烛台上的香烛早已燃尽．
 LONG
    );
    set("item_desc", ([ /* sizeof() == 2 */
-  "table" : "���϶��ǻң�ʲôҲ�����壮
+  "table" : "桌上都是灰，什么也看不清．
 ",
-  "��λ" : "��λ��д�ţ������޳�֮λ��
+  "牌位" : "牌位上写着：表弟罗成之位．
 ",
 ]));
    set("exits", ([ /* sizeof() == 1 */

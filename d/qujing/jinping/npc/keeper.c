@@ -1,14 +1,14 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-  set_name("��ף", ({ "keeper" }) );
-  set("gender", "����" );
+  set_name("庙祝", ({ "keeper" }) );
+  set("gender", "男性" );
   set("age", 74);
-  set("long", "������˿�������ʮ�����ˣ�����ȴ�ܺá�\n");
+  set("long", "这个老人看起来七十多岁了，精神却很好。\n");
   set("combat_exp", 1);
   set("attitude", "friendly");
   setup();
@@ -27,7 +27,7 @@ void init()
 void greeting(object ob)
 {
   if( !ob || !present(ob, environment(this_object())) ) return;
-  say( "��ף˵������λ" + RANK_D->query_respect(ob) + "��������Ǯ�ɡ�\n");
+  say( "庙祝说道：这位" + RANK_D->query_respect(ob) + "，捐点香火钱吧。\n");
 }
 
 int accept_object(object who, object ob)
@@ -36,7 +36,7 @@ int accept_object(object who, object ob)
 
   val = ob->value();
   if( !val )
-    return notify_fail("��ף������Ʒ�ľ��ס�\n");
+    return notify_fail("庙祝不收物品的捐献。\n");
   else if( val > 100 ) {
     who->add("donation", val);
     if( (who->query("bellicosity") > 0)
@@ -45,8 +45,8 @@ int accept_object(object who, object ob)
        if(who->query("bellicosity")<0)
          who->set("bellicosity",0);
    }
-   say(name()+ "˵������л��λ" + RANK_D->query_respect(who)
-     + "������һ���ᱣ����ġ�\n");
+   say(name()+ "说道：多谢这位" + RANK_D->query_respect(who)
+     + "，神明一定会保佑你的。\n");
   return 1;
 }
 

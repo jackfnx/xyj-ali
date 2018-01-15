@@ -12,29 +12,29 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕÐÕÆÐÄÀ×£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›æŽŒå¿ƒé›·ï¼Ÿ\n");
 
     if (!me->is_fighting())
-        return notify_fail("ÕÆÐÄÀ×Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ£¡\n");
+        return notify_fail("æŽŒå¿ƒé›·åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
 
-    if (me->query("family/family_name")!="»ðÔÆ¶´")
-       return notify_fail("¡¸ÕÆÐÄÀ×¡¹Ö»ÓÐ»ðÔÆ¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+    if (me->query("family/family_name")!="ç«äº‘æ´ž")
+       return notify_fail("ã€ŒæŽŒå¿ƒé›·ã€åªæœ‰ç«äº‘æ´žé—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
 
     if (time()-(int)me->query_temp("xiao_end") < 5)
-        return notify_fail("¾øÕÐÓÃ¶à¾Í²»ÁéÁË£¡\n");
+        return notify_fail("ç»æ‹›ç”¨å¤šå°±ä¸çµäº†ï¼\n");
 
     if ((int)me->query("force") < 500)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
     if ((int)me->query("kee") < 300)
-        return notify_fail("ÄãµÄÆøÑª²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+        return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
     if ((int)me->query_skill("demon-touch", 1) < 70)
-        return notify_fail("ÄãµÄÄ§ÔÆÊÖ¼¶±ð»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕÐ»áÓÐÀ§ÄÑ£¡\n");
+        return notify_fail("ä½ çš„é­”äº‘æ‰‹çº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
 
     me->delete("env/brief_message");
 
-    message_vision("\n$N´óºÈÒ»Éù¡°ÕÆÐÄÀ×¡±£¡\n", me);
+    message_vision("\n$Nå¤§å–ä¸€å£°â€œæŽŒå¿ƒé›·â€ï¼\n", me);
 
     me->set_temp("moyunshou_per", 6);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"));

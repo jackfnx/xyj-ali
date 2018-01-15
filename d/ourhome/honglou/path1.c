@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/path1
@@ -14,18 +14,18 @@ string look_door2();
 
 void create ()
 {
-  set ("short", "Çú¾¶Í¨ÓÄ");
+  set ("short", "æ›²å¾„é€šå¹½");
   set ("long", @LONG
 
-¡¡¡¡Ó­ÃÅÒ»´ø´äáÖµ²ÔÚÃæÇ°¡£ÆäÖĞÎ¢Â¶Ñò³¦Ğ¡¾¶¡£
-É½ÉÏÓĞ¾µÃæ°×Ê¯Ò»¿é(stone)¡£
+ã€€ã€€è¿é—¨ä¸€å¸¦ç¿ å¶‚æŒ¡åœ¨é¢å‰ã€‚å…¶ä¸­å¾®éœ²ç¾Šè‚ å°å¾„ã€‚
+å±±ä¸Šæœ‰é•œé¢ç™½çŸ³ä¸€å—(stone)ã€‚
 
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
   "door" : (: look_door2 :),
   "stone" : "
-¡¡¡¡¡¡¡¡¡ºÇú¾¶Í¨ÓÄ¡»
+ã€€ã€€ã€€ã€€ã€æ›²å¾„é€šå¹½ã€
 
 ",
 ]));
@@ -52,10 +52,10 @@ void close_door2()
 
         if(( room = find_object(__DIR__"workroom")) ) {
                 delete("exits/out");
-                        message("vision", "¿©Ö¨Ò»Éù, ½ÇÃÅÂıÂıµØºÏÉÏÁË¡£\n",
+                        message("vision", "å’¯å±ä¸€å£°, è§’é—¨æ…¢æ…¢åœ°åˆä¸Šäº†ã€‚\n",
                         this_object());
                 room->delete("exits/enter");
-                message("vision", "¿©Ö¨Ò»Éù, ½ÇÃÅ´ÓÀïÃæÂıÂıµØºÏÉÏÁË¡£\n", room);
+                message("vision", "å’¯å±ä¸€å£°, è§’é—¨ä»é‡Œé¢æ…¢æ…¢åœ°åˆä¸Šäº†ã€‚\n", room);
         }
         else message("vision","ERROR: door not found(close).\n", room);
 
@@ -66,10 +66,10 @@ int do_close(string arg)
         object room;
 
         if (!query("exits/out"))
-                return notify_fail("½ÇÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("è§’é—¨å·²ç»æ˜¯å…³ç€çš„äº†ã€‚\n");
 
         if (!arg || (arg != "door" && arg != "out"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å…³ä»€ä¹ˆï¼Ÿ\n");
 
         remove_call_out("close_door2");
         call_out("close_door2", 2);
@@ -82,17 +82,17 @@ int do_push(string arg)
         object room;
 
         if (query("exits/enter"))
-                return notify_fail("½ÇÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("è§’é—¨å·²ç»æ˜¯å¼€ç€äº†ã€‚\n");
 
         if (!arg || arg!="door")
-                return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ¨ä»€ä¹ˆï¼Ÿ\n");
 
         if( room = find_object(__DIR__"workroom") ) {
                 set("exits/out", __DIR__"workroom");
-                message_vision("$NÇáÇáµØÍÆÁËÍÆÃÅ£¬Ö»ÌıÖ¨µØÒ»Éù£¬½ÇÃÅÂıÂıµØ¿ªÁËÒ»Ìõ·ì¡£\n",
+                message_vision("$Nè½»è½»åœ°æ¨äº†æ¨é—¨ï¼Œåªå¬å±åœ°ä¸€å£°ï¼Œè§’é—¨æ…¢æ…¢åœ°å¼€äº†ä¸€æ¡ç¼ã€‚\n",
                         this_player());
                 room->set("exits/enter", __FILE__);
-                message("vision", "\nÀïÃæÓĞÈËÍÆÃÅ£¬Ö»ÌıÖ¨µØÒ»Éù£¬½ÇÃÅÂıÂıµØ¿ªÁËÒ»Ìõ·ì¡£\n", 
+                message("vision", "\né‡Œé¢æœ‰äººæ¨é—¨ï¼Œåªå¬å±åœ°ä¸€å£°ï¼Œè§’é—¨æ…¢æ…¢åœ°å¼€äº†ä¸€æ¡ç¼ã€‚\n", 
                         room);
                 remove_call_out("close_door2");
                 call_out("close_door2", 10);
@@ -114,5 +114,5 @@ int valid_leave(object me, string dir)
 
 string look_door2()
 {
-        return("Ò»µÀ¹©ÈË³öÈëµÄ½ÇÃÅ¡£\nÄãÊÔ×ÅÍÆÁËÍÆÃÅ¡£\n");
+        return("ä¸€é“ä¾›äººå‡ºå…¥çš„è§’é—¨ã€‚\nä½ è¯•ç€æ¨äº†æ¨é—¨ã€‚\n");
 }

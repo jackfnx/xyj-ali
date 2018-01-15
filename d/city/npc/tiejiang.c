@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // waiter.c
@@ -8,13 +8,13 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("ÖÜÌú½³", ({ "zhou tiejiang", "zhou", "tiejiang", "smith"
+        set_name("å‘¨é“åŒ ", ({ "zhou tiejiang", "zhou", "tiejiang", "smith"
 }) );
-        set("gender", "ÄÐÐÔ" );
-   set("title","Ìú½³");
+        set("gender", "ç”·æ€§" );
+   set("title","é“åŒ ");
         set("age", 42);
         set("long",
-                "ÖÜÌú½³ËÄÊ®¶àËê£¬³¤µÃ»¢±³ÐÜÑü¡£¡£\n");
+                "å‘¨é“åŒ å››åå¤šå²ï¼Œé•¿å¾—è™ŽèƒŒç†Šè…°ã€‚ã€‚\n");
         set("combat_exp", 10000);
         set("attitude", "peaceful");
 
@@ -57,19 +57,19 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {
                 case 0:
-                        say( name()+"ËµµÀ£ºÕâÎ»" +
+                        say( name()+"è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´Ëæ±ã¿´¿´°É¡£\n");
+                                + "ï¼Œè¿›æ¥éšä¾¿çœ‹çœ‹å§ã€‚\n");
                         break;
                 case 1:
-                        say(name()+ "ÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" +
+                        say(name()+ "ç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œè¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬Çë½øÇë½ø¡£\n");
+                                + "ï¼Œè¯·è¿›è¯·è¿›ã€‚\n");
                         break;
                 case 2:
-                        say(name()+ "ËµµÀ£ºÕâÎ»" +
+                        say(name()+ "è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ÌôÒ»¼þ³ÆÊÖµÄ±øÆ÷°É¡£\n");
+                                + "ï¼Œè¿›æ¥æŒ‘ä¸€ä»¶ç§°æ‰‹çš„å…µå™¨å§ã€‚\n");
                         break;
         }
 }

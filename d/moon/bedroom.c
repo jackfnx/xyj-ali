@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -6,41 +6,8 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "нт╥©");
+  set ("short", "Е█╖Ф┬©");
   set ("long", @LONG
 
-р╩╪Д╣╜╨Чбли╚╣д╥©╪Д, хЩцФйгйИ╪э, иоцФ╟збЗактсфътс╟к╣дйИё╛╤т╨Ч╣др╩
-цФ©╙акр╩ихжЯ╢╟, ╢╟г╟╥евер╩╪энЕоргыё╛г╫╠ъспр╩уеяюсЯи╚╣дхМИ╫(bed)ё
-╝
-LONG);
-
-  set("no_fight", 1);
-  set("item_desc", ([ /* sizeof() == 1 */
-  "bed" : "р╩уеяюсЯи╚╣дхМИ╫ё╛кЗкджэ╣ЯвежЯр╤╦Яё╛©╢иох╔╪╚н╙╬╚жб(gosleep,gobed,bed)║ё 
-",
-]));
-  set("exits", ([ /* sizeof() == 1 */
-  "down" : __DIR__"rain",
-]));
-  set("no_magic", 1);
-
-  setup();
-}
-
-void init()
-{
-        add_action("do_bed", "gosleep");
-        add_action("do_bed", "gobed", );
-        add_action("do_bed", "bed");
-}
-
-int do_bed()
-{       object me;
-        me=this_player();
-        message_vision(HIY "$Nоф©╙и╢уйё╛в╪╠╦ио╢╡ак║ё\n\n" NOR, me);
-        me->move(__DIR__"bed");
-            message_vision(HIY "\nиЁуйгАгАр╩╤╞ё╛$NвЙак╫Ью╢║ё\n" NOR, me);
-                return 1;
-}
-
-
+Д╦─И≈╢Ф╥║Ф╧√Г╩©Х┴╡Г └Ф┬©И≈╢, Д╦┴И²╒Ф≤╞Д╧╕Ф·╤, Д╦┼И²╒Ф▒├Ф╩║Д╨├Ф²┌Д╦┐Ф²┌Е┘╚Г └Д╧╕О╪▄Е╞╧Ф╧√Г └Д╦─
+И²╒Е╪─Д╨├Д╦─Ф┴┤Г╚╧Г╙≈, Г╙≈Е┴█Ф■╬Г²─Д╦─Ф·╤Д╨■Е╪╕Г░╢О╪▄Е╒≥Х╬╧Ф°┴Д╦─Е╪═Г┴≥Г▌┴Х┴╡Г └Х╫╞Ф╕╩(bed)

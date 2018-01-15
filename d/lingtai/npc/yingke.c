@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // worker.c
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("����", ({"chen yue"}));
-        set("gender", "����" );
+        set_name("晨月", ({"chen yue"}));
+        set("gender", "男性" );
         set("age", 13);
-   set("title", "ɽ��ӭ��");
-        set("long", "һ��С��ʿ��ÿ�츺����ɽ��ӭ��Զ�������Ŀ��ˣ�\n");
+   set("title", "山门迎客");
+        set("long", "一个小道士，每天负责在山门迎接远道而来的客人．\n");
         set("combat_exp", 200);
         set("attitude", "friendly");
         set_skill("dodge", 10);
@@ -36,7 +36,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
-        say( "����˵������λ" + RANK_D->query_respect(ob) +
-"����ӭ������б�����Ƕ�����\n");
+        say( "晨月说道：这位" + RANK_D->query_respect(ob) +
+"，欢迎到我们斜月三星洞来！\n");
 }
 

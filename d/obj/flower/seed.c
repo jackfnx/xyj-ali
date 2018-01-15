@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
@@ -9,14 +9,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("╩╗вя", ({ "seed"}));
+  set_name("Х┼╠Г╠╫", ({ "seed"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long","р╩©еп║п║╣д╩╗вя║ё\n");
-    set("unit", "©е");
+    set("long","Д╦─И╒≈Е╟▐Е╟▐Г └Х┼╠Г╠╫Ц─┌\n");
+    set("unit", "И╒≈");
   }
   setup();
   call_out("need_water", 3, environment(this_object()));
@@ -46,15 +46,15 @@ void grow (object where)
   {
     if (random(6) == 0)
     {
-      message_vision ("╩╗вяуюая©╙ё╛б╤ЁЖакр╩©ебля©║ё\n",who);
-      me->set_name("бля©", ({ "germ"}));
-      //me->set("name","бля©");
+      message_vision ("Х┼╠Г╠╫Г╩╫Хё┌Е╪─О╪▄И°╡Е┤╨Д╨├Д╦─И╒≈Г╩©Х┼╫Ц─┌\n",who);
+      me->set_name("Г╩©Х┼╫", ({ "germ"}));
+      //me->set("name","Г╩©Х┼╫");
       //me->set("id","germ");
-      me->set("long","р╩©еуЩтзЁ╓╢С╣дп║бля©║ё\n");
-      me->set("unit", "©е");
+      me->set("long","Д╦─И╒≈Ф╜ёЕ°╗И∙©Е╓╖Г └Е╟▐Г╩©Х┼╫Ц─┌\n");
+      me->set("unit", "И╒≈");
     }
     else
-      message_vision ("╩╗вя╤╞акр╩обё╛ум╢Сакр╩╣Ц╣Ц║ё\n",who);
+      message_vision ("Х┼╠Г╠╫Е┼╗Д╨├Д╦─Д╦▀О╪▄Х┐─Е╓╖Д╨├Д╦─Г┌╧Г┌╧Ц─┌\n",who);
     return;
   }
 
@@ -62,15 +62,15 @@ void grow (object where)
   {
     if (random(9) == 0)
     {
-      message_vision ("бля©жусзЁ╓╦ъакё╛тз╥Гжп╩╤©Л╣ьр║ъ╝║ё\n",who);
-      me->set_name("бл╡щ", ({ "plant"}));
-      //me->set("name","бл╡щ");
+      message_vision ("Г╩©Х┼╫Г╩┬Д╨▌И∙©И╚≤Д╨├О╪▄Е°╗Иё▌Д╦╜Ф╛╒Е©╚Е°╟Ф▒┤Е╪▀Ц─┌\n",who);
+      me->set_name("Г╩©Х█┴", ({ "plant"}));
+      //me->set("name","Г╩©Х█┴");
       //me->set("id","plant");
-      me->set("long","р╩©цвбвЁ╣дбл╡щё╛иоцФсп╩╗╟З║ё\n");
-      me->set("unit", "©ц");
+      me->set("long","Д╦─Фё╣Х▄│Её╝Г └Г╩©Х█┴О╪▄Д╦┼И²╒Ф°┴Х┼╠Х▀·Ц─┌\n");
+      me->set("unit", "Фё╣");
     }
     else
-      message_vision ("бля©ъгЮЙр╩иЫЁ╓╦ъакр╩╫ь║ё\n",who);
+      message_vision ("Г╩©Х┼╫Е▓■Е ⌠Д╦─Её╟И∙©И╚≤Д╨├Д╦─Ф┬╙Ц─┌\n",who);
     return;
   }
 
@@ -79,7 +79,7 @@ void grow (object where)
     if (random(12) == 0)
     {
       object flower;
-      message_vision ("бл╡щио╣д╩╗╟Зую©╙акё║╢╨лЛю╢акё║\n",who);
+      message_vision ("Г╩©Х█┴Д╦┼Г └Х┼╠Х▀·Г╩╫Е╪─Д╨├О╪│Ф≤╔Е╓╘Ф²╔Д╨├О╪│\n",who);
       flower = new (__DIR__"flower");
       flower->move(who);
       destruct(me);
@@ -89,11 +89,11 @@ void grow (object where)
       switch (random(3))
       {
         case 0:
-          { message_vision ("бл╡щтз╥ГжплЬфПакнХ║ё\n",who); break; }
+          { message_vision ("Г╩©Х█┴Е°╗Иё▌Д╦╜Х╥ЁХ╣╥Д╨├Х┬·Ц─┌\n",who); break; }
         case 1:
-          { message_vision ("бл╡щр╙©╙╩╗ак║ё\n",who); break; }
+          { message_vision ("Г╩©Х█┴Х╕│Е╪─Х┼╠Д╨├Ц─┌\n",who); break; }
         case 2:
-          { message_vision ("бл╡щн╒п╕ве║ё\n",who); break; }
+          { message_vision ("Г╩©Х█┴Е╬╝Г╛▒Г²─Ц─┌\n",who); break; }
       }
     }
   }
@@ -118,18 +118,18 @@ void need_water (object where)
   switch (me->query("water"))
   {
     case 0:
-      { msg = name+"Ё╓╦ъакр╩╣Ц║ё\n"; break; }
+      { msg = name+"И∙©И╚≤Д╨├Д╦─Г┌╧Ц─┌\n"; break; }
     case 1:
-      { msg = name+"сп╣ЦдХакё╛©Лаэр╩╣Цк╝╟и║ё\n"; break; }
+      { msg = name+"Ф°┴Г┌╧Х■╚Д╨├О╪▄Е©╚Ф╥▀Д╦─Г┌╧Ф╟╢Е░╖Ц─┌\n"; break; }
     case 2:
-      { msg = name+"©╙й╪╥╒╩фак║ё\n"; break; }
+      { msg = name+"Е╪─Е╖▀Е▐▒И╩└Д╨├Ц─┌\n"; break; }
     case 3:
-      { msg = name+"ря╬╜й╖х╔акбли╚╣д╧БтС║ё\n"; break; }
+      { msg = name+"Е╥╡Г╩▐Е╓╠Е▌╩Д╨├Г╩©Х┴╡Г └Е┘┴ФЁ╫Ц─┌\n"; break; }
     case 4:
-      { msg = name+"©╢иох╔яожьх╠к╝ё╛яыяыр╩о╒ак║ё\n"; break; }
+      { msg = name+"Г°▀Д╦┼Е▌╩Д╦╔И┤█Г╪╨Ф╟╢О╪▄Е╔└Е╔└Д╦─Ф│╞Д╨├Ц─┌\n"; break; }
     case 5:
-      { msg = name+"╦и©щак║ё\n";
-        me->set("name","╦и"+name);
+      { msg = name+"Е╧╡Ф·╞Д╨├Ц─┌\n";
+        me->set("name","Е╧╡"+name);
         me->set("dried",1);
         break; }
   }
@@ -152,30 +152,30 @@ int do_water (string arg)
 
   if (me->query("water") >= 5)
   {
-    message_vision ("$N╣дюАк╝р╩╣н╣наВтз"+name+"ио║ё\n",who);
+    message_vision ("$NГ └ФЁ╙Ф╟╢Д╦─Ф╩╢Ф╩╢Ф╣│Е°╗"+name+"Д╦┼Ц─┌\n",who);
     return 1;
   }
 
   switch (random(9))
   {
     case 0:
-      { msg = "$N©з╨╛гЕк╝ё╛еГтз"+name+"ио║ё\n"; break; }
+      { msg = "$NЕ▐ёЕ░╚Ф╦┘Ф╟╢О╪▄Е√╥Е°╗"+name+"Д╦┼Ц─┌\n"; break; }
     case 1:
-      { msg = "$N╫╚р╩╣ЦгЕк╝хВтз"+name+"ио║ё\n"; break; }
+      { msg = "$NЕ╟├Д╦─Г┌╧Ф╦┘Ф╟╢Ф╢▓Е°╗"+name+"Д╦┼Ц─┌\n"; break; }
     case 2:
-      { msg = "$NиЛЁЖйжв╔в║о╦о╦╣дп║сЙё╛аэтз"+name+"ио║ё\n"; break; }
+      { msg = "$NД╪╦Е┤╨Ф┴▀Ф┼⌠Д╫▐Г╩├Г╩├Г └Е╟▐И⌡╗О╪▄Ф╥▀Е°╗"+name+"Д╦┼Ц─┌\n"; break; }
     case 3:
-      { msg = "$Nп║пд╣ьеУфПр╩╣Ц╣Цб╤к╝ё╛╣нтз"+name+"ио║ё\n"; break; }
+      { msg = "$NЕ╟▐Е©┐Е°╟Ф█╖Х╣╥Д╦─Г┌╧Г┌╧И°╡Ф╟╢О╪▄Ф╩╢Е°╗"+name+"Д╦┼Ц─┌\n"; break; }
     case 4:
-      { msg = "$Nр╩уСпдм╢ё╛юАк╝аВтз"+name+"ио║ё\n";break; }
+      { msg = "$NД╦─И≤╣Е©┐Г≈⌡О╪▄ФЁ╙Ф╟╢Ф╣│Е°╗"+name+"Д╦┼Ц─┌\n";break; }
     case 5:
-      { msg = "$Nк╚йжеУве"+name+"ё╛иЛ╣╫╢╟мБ╣дп║сЙжп║╜║╜\n";break; }
+      { msg = "$NЕ▐▄Ф┴▀Ф█╖Г²─"+name+"О╪▄Д╪╦Е┬╟Г╙≈Е╓√Г └Е╟▐И⌡╗Д╦╜Б─╕Б─╕\n";break; }
     case 6:
-      { msg = "$Nвпо╦╣ьдцфПр╩ж╩п║╠╜всё╛╫╚к╝╣нтз"+name+"ио║ё\n";break; }
+      { msg = "$NД╩■Г╩├Е°╟Ф▀©Х╣╥Д╦─Е▐╙Е╟▐Ф²╞Е╜░О╪▄Е╟├Ф╟╢Ф╩╢Е°╗"+name+"Д╦┼Ц─┌\n";break; }
     case 7:
-      { msg = "$NеУфП╢ср╟мБ╡ию╢╣дЁ©б╤ё╛хВтз"+name+"ио║ё\n";break; }
+      { msg = "$NФ█╖Х╣╥Д╩▌И┤▌Е╓√И┤┤Ф²╔Г └Ф≥╗И°╡О╪▄Ф╢▓Е°╗"+name+"Д╦┼Ц─┌\n";break; }
     case 8:
-      { msg = "$Nсцйжж╦у╨вегЕк╝ё╛р╩╣Ц╣Ц╣нтз"+name+"ио║ё\n";break; }
+      { msg = "$NГ■╗Ф┴▀Ф▄┤Х≤╦Г²─Ф╦┘Ф╟╢О╪▄Д╦─Г┌╧Г┌╧Ф╩╢Е°╗"+name+"Д╦┼Ц─┌\n";break; }
   }
   message_vision (msg,who);
   me->set("water",0);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -8,14 +8,14 @@ inherit ITEM;
 void create()
 {
    int i;
-        set_name("¡¼¾ÉÊé¡½", ({"book"}));
+        set_name("ã€–æ—§ä¹¦ã€—", ({"book"}));
         set_weight(500);
         i=random(11);
    if( clonep() ) 
                 set_default_object(__FILE__);
         else {
-     set("long","Ò»±¾ÆÆ¾É²»¿°µÄĞ¡²á×Ó¡£\n");
-                set("unit", "±¾");
+     set("long","ä¸€æœ¬ç ´æ—§ä¸å ªçš„å°å†Œå­ã€‚\n");
+                set("unit", "æœ¬");
      set("value", 0);
            set("material", "paper");
    if( i>=10)
@@ -101,7 +101,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$n»¯ÎªµãµãÖ½Ğ¼£¬ÈçµûÎè°ãËæ·çÆ®È¥ÁË¡£\n",where,me);
+  message_vision("$nåŒ–ä¸ºç‚¹ç‚¹çº¸å±‘ï¼Œå¦‚è¶èˆèˆ¬éšé£é£˜å»äº†ã€‚\n",where,me);
   destruct (me);
 }
 

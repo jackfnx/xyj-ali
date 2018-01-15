@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("ÎíÔ¨µÀ³¤", ({"wuyuan daozhang", "wuyuan", "daozhang","taoist"}));
+        set_name("é›¾æ¸Šé“é•¿", ({"wuyuan daozhang", "wuyuan", "daozhang","taoist"}));
         set("age", 62);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"ÇåÐé¹ÛµÄÖ÷³Ö£¬¿´ÆðÀ´ÏÉ·çµÀ¹Ç£®\n");
+"æ¸…è™šè§‚çš„ä¸»æŒï¼Œçœ‹èµ·æ¥ä»™é£Žé“éª¨ï¼Ž\n");
         set("attitude", "peaceful");
    set("class", "taoist");
         set("combat_exp", 180000);
@@ -45,7 +45,7 @@ void create()
 
    set("chat_chance", 1);
    set("chat_msg", ({
-"ÎíÔ¨ÕæÈËÌ¾µ½£ºÄÑÄÑÄÑ£¬µÀ×îÐþ£¬Äª°Ñ½ðµ¤×÷µÈÏÐ£®\n",
+"é›¾æ¸ŠçœŸäººå¹åˆ°ï¼šéš¾éš¾éš¾ï¼Œé“æœ€çŽ„ï¼ŒèŽ«æŠŠé‡‘ä¸¹ä½œç­‰é—²ï¼Ž\n",
 }) );
         setup();
         carry_object("/d/obj/weapon/whip/fuchen")->wield();

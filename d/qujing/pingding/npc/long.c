@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÒĞº£Áú", ({ "yihai long", "yihai", "long" }));
-  set("gender", "ÄĞĞÔ");
+  set_name("å€šæµ·é¾™", ({ "yihai long", "yihai", "long" }));
+  set("gender", "ç”·æ€§");
   set("age", 34);
   set("attitude", "heroism");
   set("per", 30);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mon/poem/yard by mon@xyj 5/9/97
@@ -30,15 +30,15 @@ string enscript(string arg);
 
 void create ()
 {
-  set ("short", "Ş¿ÎßÔº");
+  set ("short", "è˜…èŠœé™¢");
   set ("long", @LONG
 
-¡¡¡¡¡¡¡¡Ş¿ÎßÂú¾²Ô·£¬ÂÜŞµÖú·Ò·¼¡£Èí³ÄÈı´º²İ£¬ÈáÍÏÒ»ÂÆÏã¡£
-¡¡¡¡¡¡¡¡ÇáÑÌÃÔÇú¾¶£¬Àä´äµÎ»ØÀÈ¡£Ë­Î½³ØÌÁÇú£¿Ğ»¼ÒÓÄÃÎ³¤¡£
+ã€€ã€€ã€€ã€€è˜…èŠœæ»¡é™è‹‘ï¼Œèè–œåŠ©èŠ¬èŠ³ã€‚è½¯è¡¬ä¸‰æ˜¥è‰ï¼ŒæŸ”æ‹–ä¸€ç¼•é¦™ã€‚
+ã€€ã€€ã€€ã€€è½»çƒŸè¿·æ›²å¾„ï¼Œå†·ç¿ æ»´å›å»Šã€‚è°è°“æ± å¡˜æ›²ï¼Ÿè°¢å®¶å¹½æ¢¦é•¿ã€‚
 
 
-À¸¸ËÍâÁí·Å×ÅÁ½ÕÅÖñ°¸£¬Ò»¸öÉÏÍ·Éè×Å²èóÚ²èÓÛ¸÷É«²è¾ß£¬Ò»¸öÉÏÃæ°Ú×Å
-±ÊÄ«Ö½Ñâ¡£µ±ÖĞÒ»ÕÅ´óÖ½ÉÏ£¬Ä«¼£Î´¸É£¬Áú·É·ïÎèµØĞ´×ÅĞ©Ê²Ã´(poem)¡£
+æ æ†å¤–å¦æ”¾ç€ä¸¤å¼ ç«¹æ¡ˆï¼Œä¸€ä¸ªä¸Šå¤´è®¾ç€èŒ¶ç­…èŒ¶ç›‚å„è‰²èŒ¶å…·ï¼Œä¸€ä¸ªä¸Šé¢æ‘†ç€
+ç¬”å¢¨çº¸ç šã€‚å½“ä¸­ä¸€å¼ å¤§çº¸ä¸Šï¼Œå¢¨è¿¹æœªå¹²ï¼Œé¾™é£å‡¤èˆåœ°å†™ç€äº›ä»€ä¹ˆ(poem)ã€‚
 
 LONG);
 
@@ -82,28 +82,28 @@ void init()
 
 void do_init(object me)
 { 
-    tell_object(me,"\nÌ½´º¸æËßÄã£ºÄã¿ÉÒÔÓÃanswer <...>À´¶ÔÊ«¾ä£¬author <...>À´»Ø´ğ×÷ÕßĞÕÃû¡£\n\n");
+    tell_object(me,"\næ¢æ˜¥å‘Šè¯‰ä½ ï¼šä½ å¯ä»¥ç”¨answer <...>æ¥å¯¹è¯—å¥ï¼Œauthor <...>æ¥å›ç­”ä½œè€…å§“åã€‚\n\n");
     return;
 }
 
 int do_author(string arg)
 {   object me=this_player();
     
-    if(!arg) return notify_fail("×÷ÕßÊÇË­£¿\n");
+    if(!arg) return notify_fail("ä½œè€…æ˜¯è°ï¼Ÿ\n");
 
     if( living(me) ) me->receive_damage("sen",5+random(15));
 
     arg=replace_string(arg," ","");
     if(me->query_temp("poem/index")!=poem_index ) 
-      return notify_fail("Ö»ÓĞ¶Ô³öÊ«¾äºó²ÅÄÜ»Ø´ğ×÷ÕßÊÇË­¡£\n");
+      return notify_fail("åªæœ‰å¯¹å‡ºè¯—å¥åæ‰èƒ½å›ç­”ä½œè€…æ˜¯è°ã€‚\n");
 
     if(answerd==1) return
-      notify_fail("±ğÈËÒÑ¾­»Ø´ğ¹ıÕâÊ×Ê«µÄ×÷ÕßÁË¡£\n");
+      notify_fail("åˆ«äººå·²ç»å›ç­”è¿‡è¿™é¦–è¯—çš„ä½œè€…äº†ã€‚\n");
       
-    message_vision("$NËµµÀ£ºÕâÊ×Ê«µÄ×÷ÕßÊÇ"+arg+"£¿\n",me);
+    message_vision("$Nè¯´é“ï¼šè¿™é¦–è¯—çš„ä½œè€…æ˜¯"+arg+"ï¼Ÿ\n",me);
     if(arg==author) { 
          answerd=1;
-         write("Ì½´ºËµµÀ£º¶ÔÁË£¡\n");
+         write("æ¢æ˜¥è¯´é“ï¼šå¯¹äº†ï¼\n");
          poem_reward1(me);
     } else {
       me->add_temp("poem/wrong",1);
@@ -116,20 +116,20 @@ int do_answer(string arg)
 { 
     object me=this_player();
 
-    if(!arg) return notify_fail("»Ø´ğÊ²Ã´£¿\n");
+    if(!arg) return notify_fail("å›ç­”ä»€ä¹ˆï¼Ÿ\n");
 
     if( living(me) ) me->receive_damage("sen",5+random(15));
 
     arg=replace_string(arg," ","");
     switch(random(2)) {
-     case 0: message_vision("$NËµµÀ£º¿ÉÊÇ£®£®£®"+arg+"£¿\n",me);
+     case 0: message_vision("$Nè¯´é“ï¼šå¯æ˜¯ï¼ï¼ï¼"+arg+"ï¼Ÿ\n",me);
              break;
-     case 1: message_vision("$N´ğµÀ£º"+arg+"£¿\n",me);
+     case 1: message_vision("$Nç­”é“ï¼š"+arg+"ï¼Ÿ\n",me);
              break;
     }
     if(arg==current&&strlen(current)>2) {
       if(ans_curr==1) {
-       write("±ğÈËÒÑ¾­»Ø´ğ¹ıÕâ¾äÊ«ÁË¡£\n");
+       write("åˆ«äººå·²ç»å›ç­”è¿‡è¿™å¥è¯—äº†ã€‚\n");
        return 1;
       }
       ans_curr=1;
@@ -141,13 +141,13 @@ int do_answer(string arg)
       poem_reward(me,current_all);
     } else if(arg==last&&strlen(last)>2) {
       if(ans_last==1) {
-       write("±ğÈËÒÑ¾­»Ø´ğ¹ıÕâ¾äÊ«ÁË¡£\n");
+       write("åˆ«äººå·²ç»å›ç­”è¿‡è¿™å¥è¯—äº†ã€‚\n");
        return 1;
       }
       ans_last=1;
       poem_reward(me,last_all);
     } else {
-      write("Ì½´ºÒ¡ÁËÒ¡Í·£ººÃÏó²»¶Ô°É£¿\n");
+      write("æ¢æ˜¥æ‘‡äº†æ‘‡å¤´ï¼šå¥½è±¡ä¸å¯¹å§ï¼Ÿ\n");
       me->add_temp("poem/wrong",1);
       if(me->query_temp("poem/wrong")>20) poem_penalty(me);
     }
@@ -157,10 +157,10 @@ int do_answer(string arg)
 
 void poem_penalty(object me)
 {
-    message_vision("ºöÈ»Ò»Õó¿ñ·ç¾íÆğ£¬°Ñ$N´µµÃÎŞÓ°ÎŞ×ÙÁË£®£®£®\n",me);
+    message_vision("å¿½ç„¶ä¸€é˜µç‹‚é£å·èµ·ï¼ŒæŠŠ$Nå¹å¾—æ— å½±æ— è¸ªäº†ï¼ï¼ï¼\n",me);
     if(!me->query("dream_place")) me->move("/d/city/kezhan");
     else me->move((string)me->query("dream_place"));
-    write("ÄãÕö¿ªÑÛÀ´£¬²ÅÖª²»¹ıÊÇÄÏ¿ÂÒ»ÃÎ£¬²»¹ı£¬ÓÖÓĞĞ©Í·Í´£®£®£®\n");
+    write("ä½ çå¼€çœ¼æ¥ï¼Œæ‰çŸ¥ä¸è¿‡æ˜¯å—æŸ¯ä¸€æ¢¦ï¼Œä¸è¿‡ï¼Œåˆæœ‰äº›å¤´ç—›ï¼ï¼ï¼\n");
     me->set("sen",-1);
     me->set_temp("poem/wrong",0);
 
@@ -170,7 +170,7 @@ void poem_penalty(object me)
 void poem_reward(object me,string arg)
 {
     me->set_temp("poem/wrong",0);
-    message_vision("Ì½´ºµãÍ·µÀ£º¡°"+arg+"¡±ºÃÊ«£¡ºÃÊ«£¡\n",me);
+    message_vision("æ¢æ˜¥ç‚¹å¤´é“ï¼šâ€œ"+arg+"â€å¥½è¯—ï¼å¥½è¯—ï¼\n",me);
     poem_reward1(me);
 }
 
@@ -180,28 +180,28 @@ void poem_reward1(object me)
     switch(random(3)) {
      case 0: dx=3+random(6);
              me->add("combat_exp",dx);
-        message_vision("$NµÄµÀĞĞÔö¼ÓÁË£¡\n",me);
+        message_vision("$Nçš„é“è¡Œå¢åŠ äº†ï¼\n",me);
         break;
      case 1: pot=2+random(3);
         if(me->query("potential")+pot-me->query("learned_points")<=100)
                me->add("potential",pot);
-             message_vision("$NµÄÇ±ÄÜÔö¼ÓÁË£¡\n",me);
+             message_vision("$Nçš„æ½œèƒ½å¢åŠ äº†ï¼\n",me);
         break;
      case 2: lite=3+random(6);
              me->improve_skill("literate",lite);
-        message_vision("$NµÄ¶ÁÊéÊ¶×Ö½ø²½ÁË£¡\n",me);
+        message_vision("$Nçš„è¯»ä¹¦è¯†å­—è¿›æ­¥äº†ï¼\n",me);
         break;
     }
     me->add("poem_answered",1);
     dx=me->query("poem_answered");
     if((dx-dx/10*10)==0) {
-      message_vision("$NÙ¿µØ»¯ÎªÒ»¹ÉÇåÑÌ£¬Ëæ¼´Æ®É¢²»¼ûÁË£®£®£®\n",me);
+      message_vision("$Nå€åœ°åŒ–ä¸ºä¸€è‚¡æ¸…çƒŸï¼Œéšå³é£˜æ•£ä¸è§äº†ï¼ï¼ï¼\n",me);
       if(!me->query("dream_place")) me->move("/d/city/kezhan");
       else me->move((string)me->query("dream_place"));
       if(me->query("startroom")==this_place)
         me->set("startroom","/d/city/kezhan");
       me->save();
-      message_vision("$NÒ»¾õĞÑÀ´£¬Õö¿ªÁËÑÛ£¬ÃÎÖĞËù¼ûËÆºõ»¹ÀúÀúÔÚÄ¿£®£®£®\n",me);
+      message_vision("$Nä¸€è§‰é†’æ¥ï¼Œçå¼€äº†çœ¼ï¼Œæ¢¦ä¸­æ‰€è§ä¼¼ä¹è¿˜å†å†åœ¨ç›®ï¼ï¼ï¼\n",me);
     }
 }
 
@@ -223,9 +223,9 @@ void do_test()
      new_poem();
     } else {
       if(sscanf(poem[index],"%s  %s",first,second)==2 &&
-       !sscanf(poem[index],"%*s£Û") && 
-       !sscanf(poem[index],"%*s£¨") &&
-       !sscanf(poem[index],"%*s¡õ") ) {
+       !sscanf(poem[index],"%*sï¼»") && 
+       !sscanf(poem[index],"%*sï¼ˆ") &&
+       !sscanf(poem[index],"%*sâ–¡") ) {
          if(strlen(first)>2&&strlen(second)>2) {
       newt=1;
          } 
@@ -240,25 +240,25 @@ void do_test()
    if(random(2)==0) {
      quest=enscript(first);
      current=second;
-     curr_show=quest+enscript("£®£®£®");
+     curr_show=quest+enscript("ï¼ï¼ï¼");
      switch(random(2)) {
        case 0: 
-         tell_room(this_object(),"Ì½´ºµÀ£º¡°"+quest+"¡±µÄºó°ë¾äÊÇÊ²Ã´£¿\n");
+         tell_room(this_object(),"æ¢æ˜¥é“ï¼šâ€œ"+quest+"â€çš„ååŠå¥æ˜¯ä»€ä¹ˆï¼Ÿ\n");
          break;
        case 1:
-         tell_room(this_object(),"Ì½´ºËµ£º"+quest+"£®£®£®ºóÃæÊÇÊ²Ã´À´×Å£¿\n");
+         tell_room(this_object(),"æ¢æ˜¥è¯´ï¼š"+quest+"ï¼ï¼ï¼åé¢æ˜¯ä»€ä¹ˆæ¥ç€ï¼Ÿ\n");
          break;
      }
    } else {
      quest=enscript(second);
      current=first;
-     curr_show=enscript("£®£®£®")+quest;
+     curr_show=enscript("ï¼ï¼ï¼")+quest;
      switch(random(2)) {
        case 0:
-         tell_room(this_object(),"Ì½´ºÎÊµÀ£º¡°"+quest+"¡±µÄÇ°°ë¾äÊÇÊ²Ã´£¿\n");
+         tell_room(this_object(),"æ¢æ˜¥é—®é“ï¼šâ€œ"+quest+"â€çš„å‰åŠå¥æ˜¯ä»€ä¹ˆï¼Ÿ\n");
     break;
        case 1:
-         tell_room(this_object(),"Ì½´º×ÔÑÔ×ÔÓï£º£®£®£®"+quest+"£¿Ç°ÃæÊÇÊ²Ã´À´×Å£¿\n");
+         tell_room(this_object(),"æ¢æ˜¥è‡ªè¨€è‡ªè¯­ï¼šï¼ï¼ï¼"+quest+"ï¼Ÿå‰é¢æ˜¯ä»€ä¹ˆæ¥ç€ï¼Ÿ\n");
     break;
      }
    }
@@ -272,13 +272,13 @@ int do_look(string arg)
 
     if(!arg || arg!="poem") return 0;
 
-    write("\n\n    "+author1+"£º"+title1+"\n");
+    write("\n\n    "+author1+"ï¼š"+title1+"\n");
     for (i=0;i<length1;i++) {
       write("    "+poem1[i]+"\n");
     }
     write("\n\n\n");
 
-    write(enscript("µ±Ç°ÌâÄ¿£º¡¡¡¡¡¡")+curr_show+"\n\n");
+    write(enscript("å½“å‰é¢˜ç›®ï¼šã€€ã€€ã€€")+curr_show+"\n\n");
 
     return 1;
 
@@ -305,7 +305,7 @@ void new_poem()
     while((k=(1+random(POEMS)))==poem_index);
     filename=__DIR__"poem/poem"+k;
     buf=read_file(filename,1,1);
-    sscanf(buf,"%s£º%s",author,title);
+    sscanf(buf,"%sï¼š%s",author,title);
     i=0;
     j=0;
     poem=({});

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/huanggong/yhy2b
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Óù»¨Ô°");
+  set ("short", "å¾¡èŠ±å›­");
   set ("long", @LONG
 
-´Ð´äÑÞÀöµÄÓù»¨Ô°£¬ËÄÖÜÖÖÂúÎåÑÕÁùÉ«ÁúÐÎ·ï×ËµÄÆæ»¨ÒìÈï
-ÖÐ¼äÊÇÊýÌõ»Ø×ªµÄÇàÓñÊ¯µñ»¨Ð¡¾¶»¥Îª½»´í¡£ìã·ç´µ¹ý£¬Õæ
-ÊÇÝâ´¼»¨ÏãÎÞ±È£¬ÁîÈË»ÐÈ»·××í¡£
+è‘±ç¿ è‰³ä¸½çš„å¾¡èŠ±å›­ï¼Œå››å‘¨ç§æ»¡äº”é¢œå…­è‰²é¾™å½¢å‡¤å§¿çš„å¥‡èŠ±å¼‚è•Š
+ä¸­é—´æ˜¯æ•°æ¡å›žè½¬çš„é’çŽ‰çŸ³é›•èŠ±å°å¾„äº’ä¸ºäº¤é”™ã€‚ç…¦é£Žå¹è¿‡ï¼ŒçœŸ
+æ˜¯è‘©é†‡èŠ±é¦™æ— æ¯”ï¼Œä»¤äººæç„¶çº·é†‰ã€‚
 
 LONG);
 

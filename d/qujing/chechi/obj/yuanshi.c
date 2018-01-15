@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 26 1997
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÔªÊ¼Ìì×ğ", ({"yuanshi tianzun", "yuanshi", "tianzun"}));
+  set_name("å…ƒå§‹å¤©å°Š", ({"yuanshi tianzun", "yuanshi", "tianzun"}));
   set_weight(75000);
-  set("long", "Ò»×ğÕÉĞí¸ßµÄÔªÊ¼Ìì×ğµÄÄàËÜÊ¥Ïó£¬ÔÚµîÌ¨ÉÏÕıÑÕ¶Ë×ø¡£\n");
-  set("unit", "×ğ");
+  set("long", "ä¸€å°Šä¸ˆè®¸é«˜çš„å…ƒå§‹å¤©å°Šçš„æ³¥å¡‘åœ£è±¡ï¼Œåœ¨æ®¿å°ä¸Šæ­£é¢œç«¯åã€‚\n");
+  set("unit", "å°Š");
   set("value", 10000);
-  set("no_get","ÕâÊ¥ÏóÈç´ËÖ®ÖØ£¬²»ÓÃÁ¦È¥°á¿ÖÅÂ·Ö´çÄÑÒÆÒ²¡£\n");
-  set("no_drop","Äã½«Ê¥ÏóÍùµØÉÏÒ»·Å£¬ÓÖ¾õ²»Í×£¬Ó²×ÅÍ·Æ¤ÓÖ°áÁËÆğÀ´¡£\n");
-  set("no_give","Ê¥ÏóÈç´ËÖ®´ó£¬ÅÂÊÇ¸ø²»ÁËÈË°É¡£\n");
-  set("no_sell","Ê¥Ïó·ÇÂôÆ·Ò²¡£\n");
+  set("no_get","è¿™åœ£è±¡å¦‚æ­¤ä¹‹é‡ï¼Œä¸ç”¨åŠ›å»æ¬ææ€•åˆ†å¯¸éš¾ç§»ä¹Ÿã€‚\n");
+  set("no_drop","ä½ å°†åœ£è±¡å¾€åœ°ä¸Šä¸€æ”¾ï¼Œåˆè§‰ä¸å¦¥ï¼Œç¡¬ç€å¤´çš®åˆæ¬äº†èµ·æ¥ã€‚\n");
+  set("no_give","åœ£è±¡å¦‚æ­¤ä¹‹å¤§ï¼Œæ€•æ˜¯ç»™ä¸äº†äººå§ã€‚\n");
+  set("no_sell","åœ£è±¡éå–å“ä¹Ÿã€‚\n");
   setup();
 }
 
@@ -40,7 +40,7 @@ int do_get (string arg)
     obj = present(arg+" 2",where);
   if (obj == me)
   {
-    tell_object(who,"¿ÖÅÂÒª»¨³ÔÄÌµÄÁ¦ÆøÈ¥°á²ÅÄÜ°áµÃ¶¯°É¡£\n");
+    tell_object(who,"ææ€•è¦èŠ±åƒå¥¶çš„åŠ›æ°”å»æ¬æ‰èƒ½æ¬å¾—åŠ¨å§ã€‚\n");
     return 1;
   }
   return 0;
@@ -54,26 +54,26 @@ int do_lift (string arg)
   object obj;
 
   if (! arg)
-    return notify_fail("ÄãÒª°áÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ¬ä»€ä¹ˆï¼Ÿ\n");
   obj = present(arg,where);
   if (obj == who)
     obj = present(arg+" 2",where);
   if (! obj)
-    return notify_fail("ÄãÒª°áÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ¬ä»€ä¹ˆï¼Ÿ\n");
   if (obj != me)
-    return notify_fail("ÄãÒª°áÊ²Ã´£¿\n");
-  if (where->query("short") != "ÈıÇåµî")
+    return notify_fail("ä½ è¦æ¬ä»€ä¹ˆï¼Ÿ\n");
+  if (where->query("short") != "ä¸‰æ¸…æ®¿")
   {
-    message_vision("$NÊ¹ÁË³ÔÄÌµÄÁ¦ÆøÒ²Ã»ÄÜ½«Ê¥Ïó°áÆğÀ´¡£\n",who,me);
+    message_vision("$Nä½¿äº†åƒå¥¶çš„åŠ›æ°”ä¹Ÿæ²¡èƒ½å°†åœ£è±¡æ¬èµ·æ¥ã€‚\n",who,me);
     return 1;
   }
   me->move(who);
   if (environment(me) != who)
   {    
-    message_vision("$N±ïºìÁËÁ³Ò»Ê¹¾¢£¬$nÖ»ÊÇ»ÎÁËÒ»»Î¡£\n",who,me);
+    message_vision("$Næ†‹çº¢äº†è„¸ä¸€ä½¿åŠ²ï¼Œ$nåªæ˜¯æ™ƒäº†ä¸€æ™ƒã€‚\n",who,me);
     return 1;
   }
-  message_vision ("$N´óºÈÒ»Éù£¬ÎÈÎÈµØ½«$n¿¸ÔÚ¼çÉÏ¡£\n",who,me);
+  message_vision ("$Nå¤§å–ä¸€å£°ï¼Œç¨³ç¨³åœ°å°†$næ‰›åœ¨è‚©ä¸Šã€‚\n",who,me);
   return 1;
 }
 
@@ -85,18 +85,18 @@ int do_throw (string arg)
   object obj;
 
   if (! arg)
-    return notify_fail("ÄãÒªÈÓÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ‰”ä»€ä¹ˆï¼Ÿ\n");
   obj = present(arg,who);
   if (! obj)
-    return notify_fail("ÄãÒªÈÓÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ‰”ä»€ä¹ˆï¼Ÿ\n");
   if (obj != me)
-    return notify_fail("ÄãÒªÈÓÊ²Ã´£¿\n");
-  if (where->query("short") != "Îå¹ÈÂÖ»Ø")
-    return notify_fail("ÕâÀïÅÂÊÇÃ»ÓĞÈÓÊ¥ÏóµÄµØ·½¡£\n");
+    return notify_fail("ä½ è¦æ‰”ä»€ä¹ˆï¼Ÿ\n");
+  if (where->query("short") != "äº”è°·è½®å›")
+    return notify_fail("è¿™é‡Œæ€•æ˜¯æ²¡æœ‰æ‰”åœ£è±¡çš„åœ°æ–¹ã€‚\n");
   if (environment(me) != who)
-    return notify_fail("ÕâÀïÅÂÊÇÃ»ÓĞÈÓÊ¥ÏóµÄµØ·½¡£\n");
+    return notify_fail("è¿™é‡Œæ€•æ˜¯æ²¡æœ‰æ‰”åœ£è±¡çš„åœ°æ–¹ã€‚\n");
 
-  message_vision ("$N½«$n¾Ù¹ıÍ·¶¥£¬Íù¿ÓÀïÒ»ÈÓ¡£\n",who,me);
+  message_vision ("$Nå°†$nä¸¾è¿‡å¤´é¡¶ï¼Œå¾€å‘é‡Œä¸€æ‰”ã€‚\n",who,me);
   remove_call_out ("destruct_me");
   call_out ("destruct_me",1,who,me);
   return 1;
@@ -104,6 +104,6 @@ int do_throw (string arg)
 
 void destruct_me (object who, object me)
 {
-  message_vision ("Ö»Ìı¡°àÌ¡±µØÒ»Éù£¬$n½¦ÆğÒ»Õó³ôÆø¡£\n",who,me);
+  message_vision ("åªå¬â€œå—µâ€åœ°ä¸€å£°ï¼Œ$næº…èµ·ä¸€é˜µè‡­æ°”ã€‚\n",who,me);
   destruct (me);
 }

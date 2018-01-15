@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit MACE;
 
 void create()
 {
-  set_name("Ìú¾£¼¬", ({ "tie jingji", "jingji", "mace" }) );
+  set_name("é“è†æ£˜", ({ "tie jingji", "jingji", "mace" }) );
   init_mace(35);
-  set("unit", "±ú");
+  set("unit", "æŸ„");
   set_weight(900);
   if( clonep() )
      set_default_object(__FILE__);
@@ -17,7 +17,7 @@ void create()
     set("value", 400);
     set("material", "iron");
   }
-  set("wield_msg","$NÄÃÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ‹¿èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

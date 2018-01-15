@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/22/1997 by snowcat
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("����", ({"gong zhu", "zhu", "princess"}));
-  set("title", "���ù�");
-  set("gender", "Ů��");
+  set_name("公主", ({"gong zhu", "zhu", "princess"}));
+  set("title", "天竺国");
+  set("gender", "女性");
   set("age", 20);
   set("attitude", "peaceful");
   set("combat_exp", 900000);
@@ -77,7 +77,7 @@ void move_to_cave (object me)
 
   if (me->is_fighting())
   {
-    message_vision ("$N���Ա�һ����һת����������Ӱ��\n",me);
+    message_vision ("$N往旁边一跳，一转眼已无踪无影！\n",me);
     me->move(room);
   }
 }
@@ -91,9 +91,9 @@ void unconcious()
   {
     ob->set_temp("obstacle/tianzhu_killed",1);
   }
-  message_vision ("\n$N����ԭ�Σ�����һֻ���á�\n",me);
-  message_vision ("ֻ��ԶԶ�ش���̫���Ǿ���ŭ�⣺�����ö�����\n",me);
-  message_vision ("\n���������ԹԵ�������ȥ��\n",me);
+  message_vision ("\n$N现了原形，竟是一只玉兔。\n",me);
+  message_vision ("只听远远地传来太阴星君的怒斥：“玉兔儿！”\n",me);
+  message_vision ("\n玉兔闻声乖乖地向外跳去。\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

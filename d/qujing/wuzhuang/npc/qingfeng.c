@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //qingfeng.c
@@ -6,14 +6,14 @@
 inherit NPC;
 void create()
 {
-   set_name("���", ({"qing feng", "qingfeng"}));
-   set("gender", "����" );
+   set_name("清风", ({"qing feng", "qingfeng"}));
+   set("gender", "男性" );
    set("age", 16);
-   set("long", "һ�������С��ͯ������ׯ�����º��ǳԵÿ���\n");
+   set("long", "一个机灵的小仙童，在五庄观上下很是吃得开。\n");
    set("class", "xian");
    set("combat_exp", 10000);
    set("attitude", "peaceful");
-   set("title", "С��ͯ");
+   set("title", "小仙童");
    set_skill("unarmed", 40);
    set_skill("dodge", 40);
    set_skill("parry", 40);
@@ -31,7 +31,7 @@ void init()
 
    ::init();
 
-   if ( ((int)ob->query("env/invisibility")  == 0) && ((string)environment(me)->query("short")=="����") )
+   if ( ((int)ob->query("env/invisibility")  == 0) && ((string)environment(me)->query("short")=="正殿") )
    {
      remove_call_out("greeting");
      call_out("greeting", 1, ob);
@@ -43,11 +43,11 @@ void greeting(object ob)
    if( !ob || environment(ob) != environment() ) return;
 
    if ( (int)ob->query("combat_exp")>500000 )
-     command("say ��λ" + RANK_D->query_respect(ob) + "ʧӭ�ˣ������������뵽��������裡\n");
+     command("say 这位" + RANK_D->query_respect(ob) + "失迎了，快请上坐！请到东殿用香茶！\n");
    else if ( (int)ob->query("combat_exp")>100000 )
-     command("say ��λ" + RANK_D->query_respect(ob) + "ʧӭ�ˣ����������뵽�����ò裡\n");
+     command("say 这位" + RANK_D->query_respect(ob) + "失迎了，快请坐！请到东殿用茶！\n");
    else if ( (int)ob->query("combat_exp")>10000 )
-     command("say ��λ" + RANK_D->query_respect(ob) + "���������ò裡\n");
+     command("say 这位" + RANK_D->query_respect(ob) + "，请坐！用茶！\n");
    else if ( (int)ob->query("combat_exp")>1000 )
      command("hi " + ob->query("id"));   
    else

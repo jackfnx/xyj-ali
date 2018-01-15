@@ -4,16 +4,16 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ê¯·¿");
+    set("short", "çŸ³æˆ¿");
     set("long", @LONG
 
-Ò»×ù¿í´óµÄÊ¯·¿£¬·¿ÄÚÓĞÊ¯ÎÑ¡¢Ê¯Ôî¡¢Ê¯Íë¡¢Ê¯Åè¡¢Ê¯´²(bed)¡¢
-Ê¯µÊ£¬¸÷ÖÖ¼Òµ±ÑùÑù¾ãÈ«¡£ºÃÒ»×ùÌìÔìµØÉèµÄ°²ÉíÖ®Ëù¡£
+ä¸€åº§å®½å¤§çš„çŸ³æˆ¿ï¼Œæˆ¿å†…æœ‰çŸ³çªã€çŸ³ç¶ã€çŸ³ç¢—ã€çŸ³ç›†ã€çŸ³åºŠ(bed)ã€
+çŸ³å‡³ï¼Œå„ç§å®¶å½“æ ·æ ·ä¿±å…¨ã€‚å¥½ä¸€åº§å¤©é€ åœ°è®¾çš„å®‰èº«ä¹‹æ‰€ã€‚
 LONG
     );
 
     set("item_desc", ([
-        "bed": "Ò»ÕÅÊ¯´²(gosleep,gobed,bed)¡£\n", 
+        "bed": "ä¸€å¼ çŸ³åºŠ(gosleep,gobed,bed)ã€‚\n", 
     ]));
 
     set("exits", ([
@@ -22,7 +22,7 @@ LONG
     ]));
     set("no_clean_up", 1);
 
-    create_door("west", "Ê¯ÃÅ", "east", DOOR_CLOSED);
+    create_door("west", "çŸ³é—¨", "east", DOOR_CLOSED);
     setup();
 }
 
@@ -34,8 +34,8 @@ void init()
 int do_bed()
 {
     object me = this_player();
-    message_vision("$NÍùÊ¯´²ÉÏÒ»ÌÉ£¬×¼±¸Ë¯¾õÁË¡£\n\n", me);
+    message_vision("$Nå¾€çŸ³åºŠä¸Šä¸€èººï¼Œå‡†å¤‡ç¡è§‰äº†ã€‚\n\n", me);
     me->move(__DIR__"shichuang");
-    message_vision("\n$N×êµ½ÁË±»ÎÑÀï¡£\n", me);
+    message_vision("\n$Né’»åˆ°äº†è¢«çªé‡Œã€‚\n", me);
     return 1;
 }

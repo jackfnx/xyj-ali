@@ -4,13 +4,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("Àë»ğÖ®¾«", ({ "lihuo zhijing", "fire" }));
+    set_name("ç¦»ç«ä¹‹ç²¾", ({ "lihuo zhijing", "fire" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "ÄÏÃ÷Àë»ğµÄ¾«»ª£¬·Ù»¯Ò»ÇĞµÄ»ğÑæ¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "å—æ˜ç¦»ç«çš„ç²¾åï¼Œç„šåŒ–ä¸€åˆ‡çš„ç«ç„°ã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
         set("elements/fire", 100);

@@ -1,19 +1,19 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in Î÷Å£ºØÖÞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // uphill6.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "ÇàÊ¯½×");
+  set ("short", "é’çŸ³é˜¶");
   set ("long", @LONG
 
-Ê¯½×ÏòÇ°ÑÓÐø£¬ÒþÒþÔ¼Ô¼ÒÑ¿É¿´¼ûÉ½ÃÅ£¬ÃÅÅÔÁ½ÖêËÉÊ÷ÒãÈ»¶øÁ¢¡£
-ÄãÒ²²»ÓÉ¸ßÐËÆðÀ´¡£Ëæ×Å½ÅÏÂÌ¤Ì¤£¬ÐÄ¶ùÒ²Ì¤Ì¤µÄÌø£¬ÕæÏëÒ»²½¿ç
-µ½ÃÅ¿ÚÈ¥¿´¸ö¾¿¾¹¡£
+çŸ³é˜¶å‘å‰å»¶ç»­ï¼Œéšéšçº¦çº¦å·²å¯çœ‹è§å±±é—¨ï¼Œé—¨æ—ä¸¤æ ªæ¾æ ‘æ¯…ç„¶è€Œç«‹ã€‚
+ä½ ä¹Ÿä¸ç”±é«˜å…´èµ·æ¥ã€‚éšç€è„šä¸‹è¸è¸ï¼Œå¿ƒå„¿ä¹Ÿè¸è¸çš„è·³ï¼ŒçœŸæƒ³ä¸€æ­¥è·¨
+åˆ°é—¨å£åŽ»çœ‹ä¸ªç©¶ç«Ÿã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "northup" : __DIR__"gate",

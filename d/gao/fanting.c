@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // fanting.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "����");
+  set ("short", "饭厅");
   set ("long", @LONG
 
-�����з���һ�Ű����������ϱ����Ǽ���һ����˸ճԹ����ˣ�С
-Ѿ������ɨ��ʣ��ʣ����˵��ʣ��ʣ������ʵ��Щ��û������
+饭厅中放了一张八仙桌，桌上杯碟狼籍．一伙客人刚吃过走了．小
+丫环正打扫着剩汤剩饭．说是剩汤剩饭，其实好些还没碰过．
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "west" : __DIR__"zhting",

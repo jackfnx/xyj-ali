@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -9,11 +9,11 @@ int base_price=100000;
 int ask_money();
 void create()
 {
-        set_name("�Ϻ���", ({"xifuhui boss","boss" }));
-   set("title", "ϲ�����ϰ���");
+        set_name("老害虫", ({"xifuhui boss","boss" }));
+   set("title", "喜福会老板娘");
    
         set("age", 32);
-        set("gender", "Ů��");
+        set("gender", "女性");
         set("attitude", "friendly");
 
         set("combat_exp", 50000);
@@ -24,12 +24,12 @@ void create()
    set("per", 20);
 
 set("inquiry", ([
-"name": "���±���������ϰ塣",
-"here": "������ϲ���ᣬ�����ǰ�ϲ��ĵط�����ϧ�����������£����Ĳ��ţ����û�˽���ˡ�",
-"ϲ��" : "ȥ��һ��ȥ���������û�˽���ˣ��Ļ���ʲôϲ�磿",
-"��ϯ" : "���㲻��ϲ�磬ֻҪ��Ը�⻨Ǯ��һ������Ϊ��ٰ�һ����ᡣ",
-"���" : "���㲻��ϲ�磬ֻҪ��Ը�⻨Ǯ��һ������Ϊ��ٰ�һ����ᡣ",
-"party" : "���㲻��ϲ�磬ֻҪ��Ը�⻨Ǯ��һ������Ϊ��ٰ�һ����ᡣ",
+"name": "在下便是这里的老板。",
+"here": "这里是喜福会，本来是摆喜宴的地方。可惜现在世风日下，人心不古，早就没人结婚了。",
+"喜宴" : "去！一边去！现在早就没人结婚了！哪还有什么喜宴？",
+"酒席" : "就算不是喜宴，只要你愿意花钱，一样可以为你操办一场宴会。",
+"宴会" : "就算不是喜宴，只要你愿意花钱，一样可以为你操办一场宴会。",
+"party" : "就算不是喜宴，只要你愿意花钱，一样可以为你操办一场宴会。",
 "money": (: ask_money :),
 ]) );
         setup();
@@ -61,7 +61,7 @@ int accept_object(object who, object ob)
    value=ob->value();
 
    if( !value )
-     return notify_fail(name()+"��ֵĿ�����˵���������ʲô��\n");
+     return notify_fail(name()+"奇怪的看着你说：给我这干什么？\n");
 
    call_out("destroy", 1, ob);
    if( value >= base_price ) {
@@ -79,17 +79,17 @@ void destroy(object ob)
 }
 void count_money(object who)
 {
-   message_vision("\n$N��$n����Ǯ��ϸ�������һ�顣\n\n", this_object(), who);
-   message_vision("$Nʹ���˵����ϯ��\n", this_object() );
+   message_vision("\n$N把$n给的钱仔细的清点了一遍。\n\n", this_object(), who);
+   message_vision("$N痛快的说：开席！\n", this_object() );
 }
 
 void start_party(object who)
 {
    object me=this_object();
    command("chat* "+name()+
-          "����λ��ү̫̫��үС�㣬����" + who->query("name") +  
-"��ϲ����󿪾�ϯ����ӭ��λǰ��������");
-   command("say ��Ҫ��ʼ(start)���ұ㿪ϯ����Ҫ�ϲ�(serve)���Ҿ��ϲˣ������Ա��ˣ������ˣ��۾ͽ���(finish)��");
+          "：各位老爷太太少爷小姐，今日" + who->query("name") +  
+"在喜福会大开酒席，欢迎各位前来捧场！");
+   command("say 您要开始(start)，我便开席。您要上菜(serve)，我就上菜，等您吃饱了，玩腻了，咱就结束(finish)。");
    me->set_temp("ready_to_party", 1);
 }
 int do_start()
@@ -100,14 +100,14 @@ int do_start()
    object *list;
    object girla,girlb,girlc,girld,cup;
    if( !who->query_temp("host_of_party") )
-     return notify_fail(name()+"����˵�����ֲ������ˣ�\n");
+     return notify_fail(name()+"对你说：你又不是主人？\n");
    if( !me->query_temp("ready_to_party") )
-     return notify_fail(name()+"����˵����ʼʲôѽ��������û�˰���ᣡ\n");
+     return notify_fail(name()+"对你说：开始什么呀，现在又没人办宴会！\n");
    if( me->query_temp("party_start_already") )
-     return notify_fail(name()+"�����Ķ���˵���ⲻ���Ѿ���ʼ���\n");
+     return notify_fail(name()+"生气的对你说：这不是已经开始了嘛！\n");
 
-   message_vision("$N������$n˵���ϰ壬��ϯ��\n\n", who, me);
-   message_vision("$N�������ţ�������ϯ����ඡ���\n\n", me);
+   message_vision("$N大声对$n说：老板，开席！\n\n", who, me);
+   message_vision("$N大声喊着：开～～席～～喽～～\n\n", me);
    me->set_temp("party_start_already", 1);
    me->delete_temp("ready_to_party");
 
@@ -135,8 +135,8 @@ int do_start()
         if(girld=new("/d/city/npc/girld"))
         girld->move(environment(me));
 
-   tell_room(environment(who), "�����߳�����Ư����С���\n");
-   tell_room(environment(who), "��õ���һ�������յ��\n");
+   tell_room(environment(who), "内堂走出几个漂亮的小姑娘。\n");
+   tell_room(environment(who), "你得到了一个白玉酒盏。\n");
    call_out("finish_party", 500, who);
    return 1;
 }
@@ -146,16 +146,16 @@ int do_serve()
    object who=this_player();
    object food;
    if( !who->query_temp("host_of_party") )
-     return notify_fail(name()+"�����µ������˻�û˵�������¸�ʲô����\n");
+     return notify_fail(name()+"对你嚷道：主人还没说话，你嚷个什么劲！\n");
    if( !me->query_temp("party_start_already") )
-     return notify_fail(name()+"����˵���㻹û������ʼ(start)����ô�ϲ��أ�\n");
+     return notify_fail(name()+"对你说：你还没宣布开始(start)，怎么上菜呢？\n");
    if ( (present("food 2", environment(me))) )
-     return notify_fail(name()+"����˵�������ԣ�������Ȼ������ϲˡ�\n");
+     return notify_fail(name()+"对你说：慢慢吃，吃完自然会给你上菜。\n");
 
-   message_vision("$N���������ţ��ϲˣ��ϲˣ�\n", who);
+   message_vision("$N大声嚷嚷着：上菜，上菜！\n", who);
 
-   tell_room(environment(me), "�������ܳ������С��ƣ��ֽ������Ľ����ϵ�ʣ�˷�������ȥ��\n");
-   tell_room(environment(me), "С����ִ����ó�����������һ���µľ�ϯ��\n");
+   tell_room(environment(me), "从内堂跑出四五个小伙计，手脚麻利的将桌上的剩菜饭端了下去。\n");
+   tell_room(environment(me), "小伙计又从内堂出来，端上了一桌新的酒席。\n");
         if(food=new("/d/obj/food/dishes/food"))
         food->move(environment(me));
    if(food=new("/d/obj/food/dishes/food"))
@@ -172,11 +172,11 @@ int do_finish()
    object who=this_player();
 
    if( !who->query_temp("host_of_party") )
-     return notify_fail(name()+"������һ�ۣ�����˵����\n");
+     return notify_fail(name()+"瞪了你一眼：别乱说话！\n");
 
    if( !me->query_temp("party_start_already") )
-     return notify_fail(name()+"������һ�ۣ������Ѿ���������\n");
-   message_vision("$N��$n˵�����Ա����㣬��л�ϰ��д���\n", who, me);
+     return notify_fail(name()+"瞪了你一眼：不是已经结束了吗！\n");
+   message_vision("$N对$n说道：吃饱喝足，多谢老板招待！\n", who, me);
    remove_call_out("finish_party");
    call_out("finish_party", 3, who);
    return 1;
@@ -187,7 +187,7 @@ void finish_party(object who)
         int i;
         object *list;
 
-   message_vision("$N����˵������ϯ�ʹ˽�������л��ҹ��٣�\n", me);
+   message_vision("$N大声说道：宴席就此结束，多谢大家光临！\n", me);
 
    me->delete_temp("party_start_already");
    who->delete_temp("host_of_party");

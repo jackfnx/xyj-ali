@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/death/walk.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "»Ä½¼²ÝÒ°");
+  set ("short", "è’éƒŠè‰é‡Ž");
   set ("long", @LONG
 
-ÖÜÎ§Ê²Ã´Ò²Ã»ÓÐ£¬¿´²»µ½Ò»¸öÈËÓ°£¬Ìýµ½µÄÖ»ÊÇÎØÎØµÄ·çÉù£¬¾ÍÏó
-ÓÐÎÞÊýµÄÒ°¹íÔÚÄã¶ú±ß¿ñÐ¥¡£³ß¸ßµÄÒ°²ÝËæ·çÒ¡°Ú£¬²ÝÖÐ·¢³öºôºô
-µÄÉùÒô£¬ÏóÊÇÓÐÈËÔÚÀïÃæ´©ÐÐ¡£
+å‘¨å›´ä»€ä¹ˆä¹Ÿæ²¡æœ‰ï¼Œçœ‹ä¸åˆ°ä¸€ä¸ªäººå½±ï¼Œå¬åˆ°çš„åªæ˜¯å‘œå‘œçš„é£Žå£°ï¼Œå°±è±¡
+æœ‰æ— æ•°çš„é‡Žé¬¼åœ¨ä½ è€³è¾¹ç‹‚å•¸ã€‚å°ºé«˜çš„é‡Žè‰éšé£Žæ‘‡æ‘†ï¼Œè‰ä¸­å‘å‡ºå‘¼å‘¼
+çš„å£°éŸ³ï¼Œè±¡æ˜¯æœ‰äººåœ¨é‡Œé¢ç©¿è¡Œã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */

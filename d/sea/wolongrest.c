@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /city/erlou.c
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÐÝÏ¢ÊÒ");
+        set("short", "ä¼‘æ¯å®¤");
         set("long", @LONG
 
-×ÏÔÆ¹«Ö÷µÄÒ»¼äË¯·¿£¬·¿¼ä¸É¸É¾»¾»¡£
+ç´«äº‘å…¬ä¸»çš„ä¸€é—´ç¡æˆ¿ï¼Œæˆ¿é—´å¹²å¹²å‡€å‡€ã€‚
 LONG
         );
 

@@ -12,7 +12,7 @@ int valid_learn(object me)
     basic_level = me->query_skill("spells", 1);
     limit_level = this_object()->query_basic_limit();
     if (basic_level < limit_level)
-        return notify_fail("ÄãµÄ·¨ÊõĞŞÎª»¹²»¹»¸ßÉî£¬ÎŞ·¨Ñ§Ï°¡¸" + this_object()->name() + "¡¹¡£\n");
+        return notify_fail("ä½ çš„æ³•æœ¯ä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ ã€Œ" + this_object()->name() + "ã€ã€‚\n");
 
     if (mapp(skills = me->query_skills())) {
         names = keys(skills);
@@ -23,15 +23,15 @@ int valid_learn(object me)
             skill = find_object(SKILL_D(name));
             if (skill == this_object()) {
                 if (!this_object()->override_basic_level() && basic_level <= skills[name])
-                    return notify_fail("ÄãµÄ·¨ÊõĞŞÎª»¹²»¹»¸ßÉî£¬ÎŞ·¨Ñ§Ï°¡¸" + this_object()->name() + "¡¹¡£\n");
+                    return notify_fail("ä½ çš„æ³•æœ¯ä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ ã€Œ" + this_object()->name() + "ã€ã€‚\n");
             }
             else if (wizardp(me) && skill->valid_enable("spells")) {
                 if (this_object()->is_exclusive())
-                    return notify_fail("ÄãÊÔÍ¼Á·Ï°" + this_object()->name()
-                            + "È´¸Ğ¾õ·ÖÍâ±ğÅ¤£¬´ó¸ÅÊÇÒòÎªÆäËû·¨ÊõµÄ´æÔÚ¸ÉÈÅÁË" + this_object()->name() + "µÄÔË×÷¡£\n");
+                    return notify_fail("ä½ è¯•å›¾ç»ƒä¹ " + this_object()->name()
+                            + "å´æ„Ÿè§‰åˆ†å¤–åˆ«æ‰­ï¼Œå¤§æ¦‚æ˜¯å› ä¸ºå…¶ä»–æ³•æœ¯çš„å­˜åœ¨å¹²æ‰°äº†" + this_object()->name() + "çš„è¿ä½œã€‚\n");
                 if (skill->is_exclusive())
-                    return notify_fail("ÄãÊÔÍ¼Á·Ï°" + this_object()->name()
-                            + "È´¸Ğ¾õ·ÖÍâ±ğÅ¤£¬´ó¸ÅÊÇÒòÎª" + skill->name() + "µÄ´æÔÚ¸ÉÈÅÁËÆäËû·¨ÊõµÄÔË×÷¡£\n");
+                    return notify_fail("ä½ è¯•å›¾ç»ƒä¹ " + this_object()->name()
+                            + "å´æ„Ÿè§‰åˆ†å¤–åˆ«æ‰­ï¼Œå¤§æ¦‚æ˜¯å› ä¸º" + skill->name() + "çš„å­˜åœ¨å¹²æ‰°äº†å…¶ä»–æ³•æœ¯çš„è¿ä½œã€‚\n");
             }
         }
     }
@@ -40,5 +40,5 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-    return notify_fail(this_object()->name() + "Ö»ÄÜÓÃÑ§µÄ£¬»òÊÇ´ÓÔËÓÃ(cast)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+    return notify_fail(this_object()->name() + "åªèƒ½ç”¨å­¦çš„ï¼Œæˆ–æ˜¯ä»è¿ç”¨(cast)ä¸­å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }

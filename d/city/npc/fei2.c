@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("����", ({"da shou", "shou"}));
+        set_name("打手", ({"da shou", "shou"}));
         set("age", 22);
-        set("gender", "����");
+        set("gender", "男性");
         set("long",
-"��Ȼ�书����ô�������ĺ�������Ҳ�����ǡ�\n");
+"虽然武功不怎么样，但心黑手辣，也不好惹。\n");
         set("attitude", "heroism");
 
         set("combat_exp", 10000+random(2000));
@@ -22,7 +22,7 @@ void create()
 
         set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "���ִ󺰣��Ҹ����ӹ���ȥ��ȥ���ɣ�\n"
+                "打手大喊，敢跟老子过不去，去死吧！\n"
         }));
         setup();
         carry_object("/d/obj/weapon/dagger/dagger")->wield();

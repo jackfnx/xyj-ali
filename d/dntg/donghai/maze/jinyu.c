@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ğ¡½ğÓã", ({"xiao jin yu", "xiao yu", "fish", "yu"}));
-    set("long", "Ò»ÌõĞ¡½ğÓã£¬ÕıÔÚº£ÖĞ×ÔÓÉ×ÔÔÚµÄÓÎ×Å¡£\n");
+    set_name("å°é‡‘é±¼", ({"xiao jin yu", "xiao yu", "fish", "yu"}));
+    set("long", "ä¸€æ¡å°é‡‘é±¼ï¼Œæ­£åœ¨æµ·ä¸­è‡ªç”±è‡ªåœ¨çš„æ¸¸ç€ã€‚\n");
 
-    set("title", "ÒıÂ·Ê¹Õß");
+    set("title", "å¼•è·¯ä½¿è€…");
     set("age", 2);
-    set("race", "Ò°ÊŞ");
+    set("race", "é‡å…½");
 
     set_skill("dodge", 60);
     set("combat_exp", 10);
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }));
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }));
     set("verbs", ({ "bite" }));
 
     setup();
@@ -67,7 +67,7 @@ void yinlu5()
 void yinlu6()
 {
     command("south");
-    message_vision("$NÒ»°ÚÎ²°Í²»ÖªÓÎµ½ÄÄÀïÈ¥ÁË¡£\n", this_object());
+    message_vision("$Nä¸€æ‘†å°¾å·´ä¸çŸ¥æ¸¸åˆ°å“ªé‡Œå»äº†ã€‚\n", this_object());
     move(__DIR__"mazee");
 }
 

@@ -24,17 +24,17 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹¡¸ÄýÑª¡¹£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•ã€Œå‡è¡€ã€ï¼Ÿ\n");
     if (!me->is_fighting())
-           return notify_fail("¡¸ÄýÑª¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ£¡\n");
+           return notify_fail("ã€Œå‡è¡€ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
     skill = me->query_skill("iceblood-force", 1);
     if (skill > 250) skill = 250;
     if (skill < 100)
-        return notify_fail("ÄãµÄ±ù¹ÈÄýÑª¹¦ÐÞÎª²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†°è°·å‡è¡€åŠŸä¿®ä¸ºä¸å¤Ÿã€‚\n");
     if (me->query_skill("blade",1) < 100)
-        return notify_fail("ÄãµÄ»ù±¾µ¶·¨Î´¹»´¿Êì¡£\n");
+        return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æœªå¤Ÿçº¯ç†Ÿã€‚\n");
     if (me->query_skill("ice-blade",1) < 100)
-        return notify_fail("ÄãµÄ±ùÆÇº®µ¶Î´¹»´¿Êì¡£\n");
+        return notify_fail("ä½ çš„å†°é­„å¯’åˆ€æœªå¤Ÿçº¯ç†Ÿã€‚\n");
 
     if (me->query_temp("ningxie")) {
         remove_effect(me, target, dodge_amount, attack_amount);
@@ -42,15 +42,15 @@ int perform(object me, object target)
     }
 
     if ((int)me->query("force") < skill)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
     me->add("force", -skill);
-    message_vision(HIW "$N°ÑÄýÑªÉñ¹¦ÔÚÌåÄÚÔË×ª£¬È»ºóÐìÐì×¢Èë"+weapon->name()+HIW "ÖÐ¡£\n"
-            "$NÊÖÖÐ"+weapon->name()+HIW"Ëùµ½´¦´øÆðÁËÒ»ÕóÇáÑÌ£¬·½Ô²¼¸ÕÉÄÚµÄ¿ÕÆøºÃÏó¶¼Äý¾ÛÆðÀ´£¡\n" NOR, me);
+    message_vision(HIW "$NæŠŠå‡è¡€ç¥žåŠŸåœ¨ä½“å†…è¿è½¬ï¼Œç„¶åŽå¾å¾æ³¨å…¥"+weapon->name()+HIW "ä¸­ã€‚\n"
+            "$Næ‰‹ä¸­"+weapon->name()+HIW"æ‰€åˆ°å¤„å¸¦èµ·äº†ä¸€é˜µè½»çƒŸï¼Œæ–¹åœ†å‡ ä¸ˆå†…çš„ç©ºæ°”å¥½è±¡éƒ½å‡èšèµ·æ¥ï¼\n" NOR, me);
     me->set_temp("ningxie", 1);
     target->set_temp("ningxie_effect",0);
 
-    //Òªperform ningxieµ±È»ÒªÓÐËù´ú¼Û
+    //è¦perform ningxieå½“ç„¶è¦æœ‰æ‰€ä»£ä»·
 //    me->add_temp("apply/attack", -attack_amount);  
 //    me->add_temp("apply/dodge",-dodge_amount);
 
@@ -92,9 +92,9 @@ void remove_effect(object me,object target, int dodge_amount,int attack_amount)
 //    me->add_temp("apply/dodge", dodge_amount);
 //    me->add_temp("apply/attack", attack_amount);
     me->delete_temp("ningxie");
-    tell_object(me, GRN"Äã½«ÄýÑªÉñ¹¦ÊÕ»Øµ¤Ìï¡£\n"NOR);
-    message_vision(HIY"ÖÜÎ§º®ÆøÂýÂýÉ¢¿ªÁË¡£\n"NOR,me);
-    tell_object(target, HIY"Äã¾õµÃÅ¯ºÍÆðÀ´ÁË¡£\n"NOR);
+    tell_object(me, GRN"ä½ å°†å‡è¡€ç¥žåŠŸæ”¶å›žä¸¹ç”°ã€‚\n"NOR);
+    message_vision(HIY"å‘¨å›´å¯’æ°”æ…¢æ…¢æ•£å¼€äº†ã€‚\n"NOR,me);
+    tell_object(target, HIY"ä½ è§‰å¾—æš–å’Œèµ·æ¥äº†ã€‚\n"NOR);
     if (target && living(target)) target->delete_temp("ningxie_effect");
 }
 
@@ -105,7 +105,7 @@ void ningxie_result(object me, object target)
     string str;
     weapon = me->query_temp("weapon");
     
-    message_vision(HIB"\nËæ×Å$NÊÖÖÐ"+weapon->name()+HIB"µÄÎè¶¯£¬ÖÜÎ§µÄ¿ÕÆøÔ½À´Ô½ÀäÁË¡£\n"NOR,me);
+    message_vision(HIB"\néšç€$Næ‰‹ä¸­"+weapon->name()+HIB"çš„èˆžåŠ¨ï¼Œå‘¨å›´çš„ç©ºæ°”è¶Šæ¥è¶Šå†·äº†ã€‚\n"NOR,me);
     
     afp = COMBAT_D->skill_power(me, "force", SKILL_USAGE_DEFENSE);
     if (afp < 1) afp = 1;
@@ -120,7 +120,7 @@ void ningxie_result(object me, object target)
         mod_val = (100 + mod_val) * afp / 100;
     if (mod_val < 1) mod_val = 1;
     if (random(mod_val + vfp) < vfp) {
-        message_vision(YEL"$NÔËÆøÒ»×ª£¬È«²»°Ñº®Àä·ÅÔÚÐÄÉÏ£¡\n"NOR, target);
+        message_vision(YEL"$Nè¿æ°”ä¸€è½¬ï¼Œå…¨ä¸æŠŠå¯’å†·æ”¾åœ¨å¿ƒä¸Šï¼\n"NOR, target);
         target->add_temp("ningxie_effect", -1);
         if (target->query_temp("ningxie_effect") < 0)
             target->set_temp("ningxie_effect", 0);
@@ -130,7 +130,7 @@ void ningxie_result(object me, object target)
         
         switch (target->query_temp("ningxie_effect")) {
             case 0:
-                message_vision(WHT"$N´òÁËÒ»¸öº®²ü¡£\n"NOR,target);
+                message_vision(WHT"$Næ‰“äº†ä¸€ä¸ªå¯’é¢¤ã€‚\n"NOR,target);
                 me->set_temp("ex_ningxie",7);
                 COMBAT_D->do_attack_damage(me, target, me->query_temp("weapon"));
                 COMBAT_D->report_status(target);
@@ -140,7 +140,7 @@ void ningxie_result(object me, object target)
                 me->delete_temp("ex_ningxie");
                 break;
             case 1:
-                message_vision(WHT"$NÀäµÄ»ëÉí²ü¶¶£¡\n"NOR,target);
+                message_vision(WHT"$Nå†·çš„æµ‘èº«é¢¤æŠ–ï¼\n"NOR,target);
                 me->set_temp("ex_ningxie",8);
                 COMBAT_D->do_attack_damage(me, target, me->query_temp("weapon"));
                 COMBAT_D->report_status(target);
@@ -150,7 +150,7 @@ void ningxie_result(object me, object target)
                 me->delete_temp("ex_ningxie");
                 break;
             case 2:
-                message_vision(WHT"$NÀäµÃÁ³É«²Ò°×£¡\n"NOR,target);
+                message_vision(WHT"$Nå†·å¾—è„¸è‰²æƒ¨ç™½ï¼\n"NOR,target);
                 me->set_temp("ex_ningxie",9);
                 COMBAT_D->do_attack_damage(me, target, me->query_temp("weapon"));
                 COMBAT_D->report_status(target);
@@ -160,7 +160,7 @@ void ningxie_result(object me, object target)
                 me->delete_temp("ex_ningxie");
                 break;
             case 3:
-                message_vision(WHT"$NÀäµÃÏñÒ»Ìõ±ù¹÷ÁË£¡\n"NOR,target);
+                message_vision(WHT"$Nå†·å¾—åƒä¸€æ¡å†°æ£äº†ï¼\n"NOR,target);
                 me->set_temp("ex_ningxie",10);
                 COMBAT_D->do_attack_damage(me, target, me->query_temp("weapon"));
                 COMBAT_D->report_status(target);
@@ -171,7 +171,7 @@ void ningxie_result(object me, object target)
         if (target->query("eff_kee") < 0
         ||  target->query("eff_sen") < 0
         ||  (!living(target) && ((target->query("sen")<0) || target->query("kee")<0))) {
-            str = target->name()+"±»"+me->name()+"ÊÖÖÐ"+weapon->name()+HIM"Ëù´ø³öµÄº®Æø»î»î¶³ËÀÁË£¬ÌýËµÁ¬Ê¬ÌåÒ²ÇàÒ»¿é×ÏÒ»¿ìµÄ£¡"NOR;
+            str = target->name()+"è¢«"+me->name()+"æ‰‹ä¸­"+weapon->name()+HIM"æ‰€å¸¦å‡ºçš„å¯’æ°”æ´»æ´»å†»æ­»äº†ï¼Œå¬è¯´è¿žå°¸ä½“ä¹Ÿé’ä¸€å—ç´«ä¸€å¿«çš„ï¼"NOR;
             CHANNEL_D->do_channel(me, "rumor", str);
             target->die();
             me->delete_temp("last_channel_msg");

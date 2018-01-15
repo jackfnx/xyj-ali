@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // key.c
@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÌúÔ¿³×", ({ "tie yaoshi","key","iron key", "yaoshi" }));
+  set_name("é“é’¥åŒ™", ({ "tie yaoshi","key","iron key", "yaoshi" }));
   set_weight(200);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ÑÆÕÆÕÍ¨Í¨µÄÔ¿³×. \n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠæ™®æ™®é€šé€šçš„é’¥åŒ™. \n");
+    set("unit", "æŠŠ");
     set("material", "iron");
     set("no_give", 1);
     set("value", 0);

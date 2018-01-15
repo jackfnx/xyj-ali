@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rose_poison.c
@@ -9,7 +9,7 @@ int update_condition(object me, int duration)
 {
         me->receive_wound("sen", 20);
         me->apply_condition("mihun_poison", duration - 1);
-        tell_object(me, HIR "Äã¾õµÃËÄÖ«ÂéÄ¾£¬ÉíÌåÖÐµÄÔªÉñÕýÒ»µãµãµÄÁ÷Ê§£®\n" NOR);
+        tell_object(me, HIR "ä½ è§‰å¾—å››è‚¢éº»æœ¨ï¼Œèº«ä½“ä¸­çš„å…ƒç¥žæ­£ä¸€ç‚¹ç‚¹çš„æµå¤±ï¼Ž\n" NOR);
         if( duration < 1 ) return 0;
         return 1;
 }

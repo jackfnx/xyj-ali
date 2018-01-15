@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹¬åú", ({"gong fei", "fei", "girl"}));
-  set("gender", "Å®ĞÔ");
+  set_name("å®«å¦ƒ", ({"gong fei", "fei", "girl"}));
+  set("gender", "å¥³æ€§");
   set("combat_exp", 10000);
   set("age", 15);
   set("per", 30);
@@ -25,7 +25,7 @@ void check_hair ()
 {
   object me = this_object();
 
-  if (me->query("disable_type") == "<Ë¯ÃÎÖĞ>" &&
+  if (me->query("disable_type") == "<ç¡æ¢¦ä¸­>" &&
       me->query_temp("disabled"))
   {
     call_out("check_hair",1);
@@ -35,7 +35,7 @@ void check_hair ()
   if (me->query_temp("has_said"))
     return;
 
-  message_vision ("$NÍ»È»ÏÂÒâÊ¶µØÃşÁËÃşÍ·£ºÌìÄÅ£¬ÄÔ´üÈ«Ìê¹âÁË£¡\n",me);
-  message_vision ("$NÒ»ÕóÑ£ÔÎ£¬²îµãË¤µ¹ÔÚµØ£¡\n",me);
+  message_vision ("$Nçªç„¶ä¸‹æ„è¯†åœ°æ‘¸äº†æ‘¸å¤´ï¼šå¤©å‘ï¼Œè„‘è¢‹å…¨å‰ƒå…‰äº†ï¼\n",me);
+  message_vision ("$Nä¸€é˜µçœ©æ™•ï¼Œå·®ç‚¹æ‘”å€’åœ¨åœ°ï¼\n",me);
   me->set_temp("has_said",1);
 }

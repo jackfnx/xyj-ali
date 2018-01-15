@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,13 +6,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����̨");
+  set ("short", "云霁台");
   set ("long", @LONG
 
-�������зǳ��ķ��������������ǳ��ġ�һ���������ɵĸ�̨��
-���������зֿ����Ӹ�̨�Ͽ��Ը���ȫ�ǣ�ֻ����¥����ϣ�
-���������˵��¹�¡�أ������񸻺������������Ź�����̨ǰѲ
-�ӣ���ֹ�����˵����ڡ�
+祭赛国中非常的繁华，王宫便在那城心。一个高有数丈的高台将
+王宫和闹市分开。从高台上可以附视全城，只见高楼宫宇不断，
+街上来往人等衣冠隆重，足显民富豪华。几个黄门官正在台前巡
+视，防止闲杂人等如内。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 
@@ -38,9 +38,9 @@ int valid_leave(object me, string dir)
 
         if (dir == "north") {
                 if(objectp(a=present("guan", environment(me))) && living(a) )
-     return notify_fail("���Źپ��������䵶����ס�����ȥ·��\n");
+     return notify_fail("黄门官举起手中弯刀，挡住了你的去路。\n");
                 if(objectp(b=present("guan 2", environment(me))) && living(b) )
-                return notify_fail("���Źپ��������䵶����ס�����ȥ·��\n");
+                return notify_fail("黄门官举起手中弯刀，挡住了你的去路。\n");
 
         return ::valid_leave(me, dir);
         }

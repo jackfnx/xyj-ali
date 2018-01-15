@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // scythe.c
@@ -9,17 +9,17 @@ inherit BLADE;
 
 void create()
 {
-   set_name("³¤±úÁ­µ¶", ({ "scythe", "blade", "dao", "lian dao", "lian" }) );
+   set_name("é•¿æŸ„é•°åˆ€", ({ "scythe", "blade", "dao", "lian dao", "lian" }) );
    set_weight(2000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 300);
      set("material", "wood");
-     set("long", "ÕâÊÇÒ»±úÅ©Ãñ¹ßÓÃµÄ³¤±úÁ­µ¶¡£\n");
-     set("wield_msg", "$N³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬µ¶ÈĞÉÏ»¹¹Ò×Åµ¾²İ¡£\n");
-     set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğ»ØÑü´øÖĞ¡£\n");
+     set("long", "è¿™æ˜¯ä¸€æŸ„å†œæ°‘æƒ¯ç”¨çš„é•¿æŸ„é•°åˆ€ã€‚\n");
+     set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œåˆ€åˆƒä¸Šè¿˜æŒ‚ç€ç¨»è‰ã€‚\n");
+     set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nåˆ«å›è…°å¸¦ä¸­ã€‚\n");
    }
    init_blade(10, TWO_HANDED);
    setup();

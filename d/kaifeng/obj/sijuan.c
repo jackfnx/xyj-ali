@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,12 +7,12 @@ inherit WRISTS;
 
 void create()
 {
-        set_name("Í¸Ã÷Ë¿¾î", ({ "si juan", "si", "juan" }) );
+        set_name("é€æ˜ä¸ç»¢", ({ "si juan", "si", "juan" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
                 set("material", "silk");
      set("value", 1000);
                 set("armor_prop/dodge", 1);

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/eroom.c
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "练功房");
   set ("long", @LONG
 
-�����¹�����ƽʱ�����ĵط�������ǽ����һ����ܡ�������鲢���࣬
-�޷���һЩ�������Եķ��š�
+这是月宫弟子平时修炼的地方。靠南墙摆着一个书架。书架上书并不多，
+无非是一些修生养性的法门。
 LONG);
 
   set("objects", ([ /* sizeof() == 2 */

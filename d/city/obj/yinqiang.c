@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hammer.c
@@ -9,19 +9,19 @@ inherit SPEAR;
 
 void create()
 {
-        set_name(HIY "ÁÁÒøÇ¹" NOR, ({"yin qiang", "qiang", "spear"}));
+        set_name(HIY "äº®é“¶æª" NOR, ({"yin qiang", "qiang", "spear"}));
         set_weight(14000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("long",
-"ÕâÊÇ°Ñ³ÁÖØµÄ³¤Ç¹£¬Ç¹¼âÊÇ´¿Òø´òÖÆ£¬·æÀûÎŞ±È£®\n");
+"è¿™æ˜¯æŠŠæ²‰é‡çš„é•¿æªï¼Œæªå°–æ˜¯çº¯é“¶æ‰“åˆ¶ï¼Œé”‹åˆ©æ— æ¯”ï¼\n");
                 set("value", 50000);
                 set("material", "iron");
                 set("wield_msg",
-"$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬ÑÛÇ°ÉÁ¹ıÒ»µÀº®¹â£®\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+"$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œçœ¼å‰é—ªè¿‡ä¸€é“å¯’å…‰ï¼\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_spear(90);

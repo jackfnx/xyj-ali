@@ -6,13 +6,13 @@ inherit THROWING;
 
 void create()
 {
-    set_name("ÒøÕë", ({"yin zhen","zhen"}));
+    set_name("é“¶é’ˆ", ({"yin zhen","zhen"}));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»°ÑÏ¸Ğ¡µÄĞå»¨Õë£¬ÉÁ×Åµãµãº®Ã¢¡£\n");
-        set("unit", "°Ñ");
-        set("base_unit", "¸ù");
+        set("long", "ä¸€æŠŠç»†å°çš„ç»£èŠ±é’ˆï¼Œé—ªç€ç‚¹ç‚¹å¯’èŠ’ã€‚\n");
+        set("unit", "æŠŠ");
+        set("base_unit", "æ ¹");
         set("base_weight", 5);
         set("value", 3);
     }

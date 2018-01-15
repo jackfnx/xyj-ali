@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����ƺ");
+  set ("short", "萝藤坪");
   set ("long", @LONG
 
-������з�Բ���ɵ�һƬ�յأ��Ĵ����Ų������ܣ�����ڵ���
-�̽Ṵ�����ͺ���һ�Ŵ���������ʯ���ϡ�Զ��ɽ���ϱ�صľ�
-��������·����Χס��
+这里独有方圆近丈的一片空地，四处结着不少藤萝，箩根在地下
+盘结勾连，就好象一张大网般笼在石崖上。远望山坡上遍地的荆
+棘，将道路团团围住。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
                 if(objectp(a=present("guard", environment(me))) &&
 living(a) )
                 return
-notify_fail("������ʹһͦ���иֲ棬��ס�����ȥ·��\n");
+notify_fail("赤身鬼使一挺手中钢叉，挡住了你的去路。\n");
         }
 
         return 1;

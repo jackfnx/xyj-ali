@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -31,14 +31,14 @@ void init()
 
 void create()
 {
-        set_name(YEL "·ğ±¦ÉáÀû×Ó" NOR, ({ "tooth" }) );
+        set_name(YEL "ä½›å®èˆåˆ©å­" NOR, ({ "tooth" }) );
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿Åµ­»ÆÉ«µÄÖé×Ó£¬ÏóÓĞÖÖÉñÆæµÄÁ¦Á¿ÔĞÓıÆäÖĞ¡£\n");
+                set("long", "ä¸€é¢—æ·¡é»„è‰²çš„ç å­ï¼Œè±¡æœ‰ç§ç¥å¥‡çš„åŠ›é‡å­•è‚²å…¶ä¸­ã€‚\n");
                 set("material", "silver");
-                set("unit", "¿Å");
+                set("unit", "é¢—");
      set("no_sell", 1);
      set("no_drop", 1);
      set("asdfghj", 1);

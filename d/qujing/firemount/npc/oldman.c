@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/12/1997
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("����", ({"oldman","man"}));
-  set("gender", "����");
+  set_name("老者", ({"oldman","man"}));
+  set("gender", "男性");
   set("age", 60);
-  set("long","����һλ��ס�˵ص����ˡ���ü���룬ͭ����ۣ���Ϊ�Ͱ���\n"); 
+  set("long","这是一位常住此地的老人。白眉白须，铜面碧眼，极为和蔼。\n"); 
   set("attitude", "friendly");
   set("combat_exp", 5000);
   set("per", 25);
@@ -23,7 +23,7 @@ void create()
 
 int accept_fight(object me)
 {
-  say("���߲�ΣΣ��˵����"+RANK_D->query_respect(me)+"��������������ɡ�\n");
+  say("老者颤危危地说道："+RANK_D->query_respect(me)+"饶了我这点老命吧。\n");
   return 0;
 }
 
@@ -33,11 +33,11 @@ void init()
 
   ::init();
   set("inquiry", ([
-        "here":   "����ǻ���ɽ���Թ����������󱦣����ȣ��Ž��ǡ�\n",
-        "����ɽ": "����ɽ�˰����𣬷���ʵ�ǲ���ѷɣ�Ҫ�����Ȳ������\n",
-        "����":   "�����ȹ����ɣ���˵����Ҳ�У����ͰŽ���Ҳ�С�\n",
-        "�Ž���": "ȥ���������أ�ֻ����ָ�����ȥ�ҰŽ��ǡ�\n",
-        "���ȹ���": "����ס�ڴ���ɽ�У�����һ��Ů������\n",
+        "here":   "这儿是火焰山，自古以来有两大宝：铁扇，芭蕉骨。\n",
+        "火焰山": "火焰山八百里大火，凡人实是插翅难飞，要用铁扇才能灭火。\n",
+        "铁扇":   "找铁扇公主吧，据说比武也行，赠送芭蕉骨也行。\n",
+        "芭蕉骨": "去庙里问土地，只有他指点才能去找芭蕉骨。\n",
+        "铁扇公主": "她就住在翠云山中，真是一个女菩萨。\n",
       ]));
 
   if (interactive(ob = this_player()) && !is_fighting())
@@ -56,7 +56,7 @@ void greeting(object ob)
   {
     case 0:
     {
-      say( "����ӭ��ǰ����"+RANK_D->query_respect(ob)+"���Ķ���ѽ��\n");
+      say( "老者迎上前道："+RANK_D->query_respect(ob)+"打哪儿来呀？\n");
       break;
     }
   }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -6,8 +6,8 @@
 inherit NPC;
 inherit F_CLEAN_UP;
 
-string *first_name = ({ "´óÍ·", "ÇàÃæ", "¶À½Ç", "ºì·¢"});
-string *name_words = ({ "¹í"});
+string *first_name = ({ "å¤§å¤´", "é’é¢", "ç‹¬è§’", "çº¢å‘"});
+string *name_words = ({ "é¬¼"});
 int random_go(object me, string* dirs);
 
 void create()
@@ -16,11 +16,11 @@ void create()
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))];
         set_name(name, ({"ghost"}));
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
    set("age", 30+random(20));
    set("class", "ghost");
    set("env/invisibility", 1);
-   set("title", RED "(¹íÆø)" NOR);
+   set("title", RED "(é¬¼æ°”)" NOR);
         set("combat_exp", 3000);
    set("attitude", "heroism");
    set_skill("unarmed", 10);
@@ -149,7 +149,7 @@ int heal_up()
 void leave()
 {
       if(this_object()) { //mon 11/23/97
-        message("vision",HIB + name() + "Éí×ÓÒ»»Î£¬±ä³ÉÒ»¹ÉÇàÑÌÉ¢È¥ÁË¡£\n" NOR,environment(),this_object() );
+        message("vision",HIB + name() + "èº«å­ä¸€æ™ƒï¼Œå˜æˆä¸€è‚¡é’çƒŸæ•£å»äº†ã€‚\n" NOR,environment(),this_object() );
         destruct(this_object());
       }
       return;
@@ -172,13 +172,13 @@ void die()
 
         if( objectp(owner_ob = find_player(owner)) ) {
                 if( (object)query_temp("last_damage_from") != owner_ob ) {
-                        tell_object(owner_ob, "´ŞçåÅĞ¹Ù¸æËßÄã£ºÄãÒª×¥µÄ¹í±»ÈË×¥»ØÀ´ÁË¡£¡£¡£\n");
+                        tell_object(owner_ob, "å´”çåˆ¤å®˜å‘Šè¯‰ä½ ï¼šä½ è¦æŠ“çš„é¬¼è¢«äººæŠ“å›æ¥äº†ã€‚ã€‚ã€‚\n");
                 } else {
-        message_vision("$NºÈµÀ£ºÄõĞó£¬ÓëÎÒ»ØÒõ¸®Áì×ïÈ¥°É£¡\n", owner_ob);
-        message_vision("$NÑÛ¼ûÎŞÄÎ£¬Ö»ºÃ»¯³É¹ÉÇàÑÌ¸½µ½ÁË$nµÄÊÖÖĞ¡£\n", this_object(), owner_ob);
+        message_vision("$Nå–é“ï¼šå­½ç•œï¼Œä¸æˆ‘å›é˜´åºœé¢†ç½ªå»å§ï¼\n", owner_ob);
+        message_vision("$Nçœ¼è§æ— å¥ˆï¼Œåªå¥½åŒ–æˆè‚¡é’çƒŸé™„åˆ°äº†$nçš„æ‰‹ä¸­ã€‚\n", this_object(), owner_ob);
         owner_ob->add("combat_exp", bonus);
         log_file("Hell_Job", owner_ob->query("name")+ " get (" +bonus+") " +NATURE_D->game_time()+"("+ctime(time())+")\n");
-        tell_object(owner_ob, "ÄãµÃµ½ÁË"+chinese_number(bonus/4)+"ÌìµÄµÀĞĞ£¡\n");
+        tell_object(owner_ob, "ä½ å¾—åˆ°äº†"+chinese_number(bonus/4)+"å¤©çš„é“è¡Œï¼\n");
                 }
         }
    destruct(this_object());

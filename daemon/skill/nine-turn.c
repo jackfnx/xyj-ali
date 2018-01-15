@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // nine-turn.c
 inherit FORCE;
 
-string name() { return "¾Å×ªĞş¹¦"; }
+string name() { return "ä¹è½¬ç„åŠŸ"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 
@@ -19,7 +19,7 @@ int valid_learn(object me)
         me->set("mark/nine-turn", mark);
     }
     if (mark == "true") return 1;
-    else return notify_fail("ĞŞÏ°¾Å×ªĞş¹¦ĞëÓĞÔµ·Ö£¬ÄãÓë´ËÊõÎŞÔµ£¬»¹ÊÇËãÁË°É¡£\n");
+    else return notify_fail("ä¿®ä¹ ä¹è½¬ç„åŠŸé¡»æœ‰ç¼˜åˆ†ï¼Œä½ ä¸æ­¤æœ¯æ— ç¼˜ï¼Œè¿˜æ˜¯ç®—äº†å§ã€‚\n");
 }
 
 string exert_function_file(string func)

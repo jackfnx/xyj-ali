@@ -1,17 +1,17 @@
-// °ÙÄñ³¯·ï
+// ç™¾é¸Ÿæœå‡¤
 /*
-requirement: sword+avian_sword+throwing >80 ²ØÁË°µÆ÷µÄ½£ÖĞ¿É·¢°µÆ÷
-                                        >150 ½£ÆøÉËÈË
-damage : ·¢³ö°µÆ÷/½£Æø  1. random ·¢³ö1--10¹É
-         ÃüÖĞ¼¸ÂÊ       (me->a)/(target->d)*0.3
-         ÉËº¦:          ÒøÕë: 20+me->query_temp("apply/damage") 
-                        ¶¾Õë: <Õ¸È±>
-                        ¿×È¸ôá: 50+me->query_temp("apply/damage") 
-                        ½£Æø: me->query("force_factor")
-                        ½£Æø+°µÆ÷ : ÉËº¦ÀÛ¼Ó
-                                    ×Ô¼ºÄÚÁ¦ - me->query("force_factor")
+requirement: sword+avian_sword+throwing >80 è—äº†æš—å™¨çš„å‰‘ä¸­å¯å‘æš—å™¨
+                                        >150 å‰‘æ°”ä¼¤äºº
+damage : å‘å‡ºæš—å™¨/å‰‘æ°”  1. random å‘å‡º1--10è‚¡
+         å‘½ä¸­å‡ ç‡       (me->a)/(target->d)*0.3
+         ä¼¤å®³:          é“¶é’ˆ: 20+me->query_temp("apply/damage") 
+                        æ¯’é’ˆ: <å´­ç¼º>
+                        å­”é›€ç¿: 50+me->query_temp("apply/damage") 
+                        å‰‘æ°”: me->query("force_factor")
+                        å‰‘æ°”+æš—å™¨ : ä¼¤å®³ç´¯åŠ 
+                                    è‡ªå·±å†…åŠ› - me->query("force_factor")
 (haven't done :P)
-Ö»¼ûÄãÊÖÖĞ·çÑ©½£¼±²ü£¬»Ã³öÂúÌì½£Ã¢£¬ÎŞÊı0¼Ó×Å½£ÆøÓĞÈç°ÙÄñÍ¶ÁÖ°ãÏòĞ¡ÂÜ²·ÆËÀ´£¡
+åªè§ä½ æ‰‹ä¸­é£é›ªå‰‘æ€¥é¢¤ï¼Œå¹»å‡ºæ»¡å¤©å‰‘èŠ’ï¼Œæ— æ•°0åŠ ç€å‰‘æ°”æœ‰å¦‚ç™¾é¸ŸæŠ•æ—èˆ¬å‘å°èåœæ‰‘æ¥ï¼
 */
 
 #include <ansi.h>
@@ -32,7 +32,7 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+        return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
 
     weapon = me->query_temp("weapon");
     req = (int)me->query_skill("sword", 1)
@@ -45,32 +45,32 @@ int perform(object me, object target)
     }
 
     if (me->query_skill_mapped("force") != "iceblood-force")
-        return notify_fail("°ÙÄñ³¯·ï±ØĞëÅäºÏ±ù¹ÈÄıÑª¹¦²ÅÄÜÊ¹ÓÃ¡£\n");
+        return notify_fail("ç™¾é¸Ÿæœå‡¤å¿…é¡»é…åˆå†°è°·å‡è¡€åŠŸæ‰èƒ½ä½¿ç”¨ã€‚\n");
     if (req < 80)
-        return notify_fail("Äã½£ÖĞ´ò°µÆ÷µÄ¹¦·ò»¹²»µ½»ğºò£¡\n");
+        return notify_fail("ä½ å‰‘ä¸­æ‰“æš—å™¨çš„åŠŸå¤«è¿˜ä¸åˆ°ç«å€™ï¼\n");
     if (req < 150 && weapon->query("anqi/now") == 0)
-        return notify_fail("Äã½£ÖĞÃ»ÓĞ°µÆ÷¿É´ò£¡\n");
+        return notify_fail("ä½ å‰‘ä¸­æ²¡æœ‰æš—å™¨å¯æ‰“ï¼\n");
     if (me->query("force") < 200)
-        return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÄÑÒÔÓù½£·ÉÕë¡£\n");
+        return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œéš¾ä»¥å¾¡å‰‘é£é’ˆã€‚\n");
     if (((t = (int)me->query_temp("chaofeng_time")) <= time()) && (time() < t + 5))
-        return notify_fail("°ÙÄñ³¯·ç¶àÊ¹¾Í²»ÁéÁË¡£\n");
+        return notify_fail("ç™¾é¸Ÿæœé£å¤šä½¿å°±ä¸çµäº†ã€‚\n");
     else me->delete_temp("chaofeng_time") ;
 
     me->add("force", -60);
 
     if (num_anqi <= 0) {
-        anqi_type = "½£Æø";
+        anqi_type = "å‰‘æ°”";
         damage = me->query("force_factor") + 10;
     } else if (req < 150) {
         anqi_type = weapon->query("anqi/type");
         damage = me->query_temp("apply/damage");
     } else {
-        anqi_type = weapon->query("anqi/type") + "¼Ó×Å½£Æø";
+        anqi_type = weapon->query("anqi/type") + "åŠ ç€å‰‘æ°”";
         damage = me->query_temp("apply/damage") + me->query("force_factor") + 10;
     }
 
-    msg = HIW"Ö»¼û$NÊÖÖĞ"+weapon->query("name")+HIW"¼±²ü£¬»Ã³öÂúÌì½£Ã¢£¬ÎŞÊı"
-        +anqi_type+HIW"ÓĞÈç°ÙÄñÍ¶ÁÖ°ãÏò$nÆËÀ´£¡\n" NOR;
+    msg = HIW"åªè§$Næ‰‹ä¸­"+weapon->query("name")+HIW"æ€¥é¢¤ï¼Œå¹»å‡ºæ»¡å¤©å‰‘èŠ’ï¼Œæ— æ•°"
+        +anqi_type+HIW"æœ‰å¦‚ç™¾é¸ŸæŠ•æ—èˆ¬å‘$næ‰‘æ¥ï¼\n" NOR;
 
     if (num_anqi > 10 || num_anqi == 0) max_hit = 10;
     else max_hit = weapon->query("anqi/now");
@@ -85,8 +85,8 @@ int perform(object me, object target)
         if (op > random(100)) hitt++;
     }
 
-    if (weapon->query("anqi/type") == "¿×È¸ôá") b_unit="Ö§";
-    else b_unit = "¸ù";
+    if (weapon->query("anqi/type") == "å­”é›€ç¿") b_unit="æ”¯";
+    else b_unit = "æ ¹";
     if (weapon->query("anqi/now") != 0) remain=weapon->query("anqi/now") - num_hit;
     else remain = 0;
     weapon->set("anqi/now", remain);
@@ -94,27 +94,27 @@ int perform(object me, object target)
         weapon->delete("anqi/type");
         weapon->set("long", weapon->query("orilong"));
     } else
-        weapon->set("long", weapon->query("orilong")+"ÀïÃæÒÑ¾­×°ÁË"
+        weapon->set("long", weapon->query("orilong")+"é‡Œé¢å·²ç»è£…äº†"
             +chinese_number(weapon->query("anqi/now"))
             +b_unit+weapon->query("anqi/type")
-            +"£¬Ïë²ğµôÓÃuninstall¡£\n"); 
+            +"ï¼Œæƒ³æ‹†æ‰ç”¨uninstallã€‚\n"); 
 
     if (hitt == 0) {
-        msg += HIW "$nÁ¬Ã¦ÉíĞĞÒ»×ª£¬Á¬ÍËÊı²½£¬ÉÁ¹ıÁËÕâÂúÌì»¨Óê°ãµÄÒ»»÷¡£\n"NOR;
+        msg += HIW "$nè¿å¿™èº«è¡Œä¸€è½¬ï¼Œè¿é€€æ•°æ­¥ï¼Œé—ªè¿‡äº†è¿™æ»¡å¤©èŠ±é›¨èˆ¬çš„ä¸€å‡»ã€‚\n"NOR;
         message_vision(msg, me, target);
         me->start_busy(1+random(2));
     }
     else {
         damage=damage * hitt;
         target->receive_damage("kee", damage, me);
-        msg += HIW "$n¶ãÉÁ²»¼°£¬ÉíÉÏ"+chinese_number(hitt)+"´¦ÖĞÁË"+anqi_type+"£¡\n" NOR;
+        msg += HIW "$nèº²é—ªä¸åŠï¼Œèº«ä¸Š"+chinese_number(hitt)+"å¤„ä¸­äº†"+anqi_type+"ï¼\n" NOR;
         message_vision(msg, me, target);
         COMBAT_D->report_status(target);
         if (!target->is_busy())
             target->start_busy(3+random(8));
         me->set_temp("chaofeng_time",time());
     }
-    msg = HIW "$n¶Ô×Å$N¸ßÉùÂîµÀ£ººÃ°¡£¬¸Ò·Å°µÆ÷£¬¿´ÎÒÔõÃ´ÊÕÊ°Äã£¡\n" NOR;
+    msg = HIW "$nå¯¹ç€$Né«˜å£°éª‚é“ï¼šå¥½å•Šï¼Œæ•¢æ”¾æš—å™¨ï¼Œçœ‹æˆ‘æ€ä¹ˆæ”¶æ‹¾ä½ ï¼\n" NOR;
     message_vision(msg, me, target);
     target->kill_ob(me);
     return 1;

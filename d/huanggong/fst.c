@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 10/05/1997
@@ -10,28 +10,28 @@ inherit ROOM;
 #define MAXPOSITION 3
 
 string *categories = ({
-  "½ð°ñ",
-  "Òø°ñ",
-  "Í­°ñ",
-  "Ìú°ñ",
-  "Îý°ñ",
+  "é‡‘æ¦œ",
+  "é“¶æ¦œ",
+  "é“œæ¦œ",
+  "é“æ¦œ",
+  "é”¡æ¦œ",
  });
 
 string *positions = ({
-  "×´Ôª",
-  "°ñÑÛ",
-  "Ì½»¨",
+  "çŠ¶å…ƒ",
+  "æ¦œçœ¼",
+  "æŽ¢èŠ±",
  });
 
 void create ()
 {
-  set ("short", "·â°ñÌÃ");
+  set ("short", "å°æ¦œå ‚");
 
   set ("long", @LONG
 
-·â°ñÌÃÀï±ÌµÆÆë·Å£¬óÏÀÖ¸ß×à£¬ÖÚ¹ÙÒÂ¹Ú³þ³þÍþÎä¾²×ø¡£¸üÓÐÒ»
-Èº¹¬Å®³¤ÐäÇáÆ®ÐìÐì¶øÎè£¬ÕýÖÐÊÇË«ÁúË«·ïÂêè§Ì¨×ù£¬¹©ÉèÏâ½ð
-Ç¶Òø×ºÖéºº°×Óñ¾«µñÓùÅú×´ÔªÎä°ñ¡£
+å°æ¦œå ‚é‡Œç¢§ç¯é½æ”¾ï¼Œç¬™ä¹é«˜å¥ï¼Œä¼—å®˜è¡£å† æ¥šæ¥šå¨æ­¦é™åã€‚æ›´æœ‰ä¸€
+ç¾¤å®«å¥³é•¿è¢–è½»é£˜å¾å¾è€Œèˆžï¼Œæ­£ä¸­æ˜¯åŒé¾™åŒå‡¤çŽ›ç‘™å°åº§ï¼Œä¾›è®¾é•¶é‡‘
+åµŒé“¶ç¼€ç æ±‰ç™½çŽ‰ç²¾é›•å¾¡æ‰¹çŠ¶å…ƒæ­¦æ¦œã€‚
 
 LONG);
 
@@ -63,11 +63,11 @@ void reset_long (object where)
   int i, j, k;
   string str = @LONG
 
-·âÉñÌÃÀï±ÌµÆÆë·Å£¬óÏÀÖ¸ß×à£¬ÖÚ¹ÙÒÂ¹Ú³þ³þÍþÎä¾²×ø¡£¸üÓÐÒ»
-Èº¹¬Å®³¤ÐäÇáÆ®ÐìÐì¶øÎè£¬ÕýÖÐÊÇË«ÁúË«·ïÂêè§Ì¨×ù£¬¹©ÉèÏâ½ð
-Ç¶Òø×ºÖéºº°×Óñ¾«µñÓùÅú×´ÔªÎä°ñ¡£
+å°ç¥žå ‚é‡Œç¢§ç¯é½æ”¾ï¼Œç¬™ä¹é«˜å¥ï¼Œä¼—å®˜è¡£å† æ¥šæ¥šå¨æ­¦é™åã€‚æ›´æœ‰ä¸€
+ç¾¤å®«å¥³é•¿è¢–è½»é£˜å¾å¾è€Œèˆžï¼Œæ­£ä¸­æ˜¯åŒé¾™åŒå‡¤çŽ›ç‘™å°åº§ï¼Œä¾›è®¾é•¶é‡‘
+åµŒé“¶ç¼€ç æ±‰ç™½çŽ‰ç²¾é›•å¾¡æ‰¹çŠ¶å…ƒæ­¦æ¦œã€‚
 
-          £­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­
+          ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
 
 LONG;
 
@@ -104,7 +104,7 @@ LONG;
     if (found_player)
       str = str + "\n";
   }
-  str = str + "          £­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n\n";
+  str = str + "          ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n\n";
   where->set("long",str);
 }
 

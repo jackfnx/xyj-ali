@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // caoguojiu.c...weiqi, 98.02.24.
@@ -6,12 +6,12 @@
 inherit NPC;
 void create()
 {
-    set_name("²Ü¹ú¾Ë", ({"cao guojiu", "cao", "guojiu"}));
-    set("title", "°ËÏÉÖ®");
-    set("gender", "ÄĞĞÔ" );
+    set_name("æ›¹å›½èˆ…", ({"cao guojiu", "cao", "guojiu"}));
+    set("title", "å…«ä»™ä¹‹");
+    set("gender", "ç”·æ€§" );
     set("age", 40);
     set("per", 20);
-    set("long", "Ò»Î»ÉñÇéÑÏËàµÄÖĞÄêÈË¡£\n");
+    set("long", "ä¸€ä½ç¥æƒ…ä¸¥è‚ƒçš„ä¸­å¹´äººã€‚\n");
     set("class", "xian");
     set("combat_exp", 120000);
     set("attitude", "peaceful");

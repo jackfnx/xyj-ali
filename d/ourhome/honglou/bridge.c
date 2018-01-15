@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/bridge
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�߷�բ");
+  set ("short", "沁芳闸");
   set ("long", @LONG
 
-�������ű�ͨ���֮բ����Ȫ�����ߡ�
+　　这桥便通外河之闸，引泉而入者。
 
 LONG);
 

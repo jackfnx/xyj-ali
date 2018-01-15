@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // call.c
@@ -15,26 +15,26 @@ int main(object me, string arg)
    if( arg ) {
      if( sscanf(arg, "-%s %s", euid, arg)==2 ) {
         if( (string)SECURITY_D->get_status(me) != "(admin)" )
-          return notify_fail("Äã²»ÄÜÉè¶¨×Ô¼ºµÄ euid¡£\n");
+          return notify_fail("ä½ ä¸èƒ½è®¾å®šè‡ªå·±çš„ euidã€‚\n");
         seteuid(euid);
      }
      else
         seteuid( geteuid(this_player(1)) );
 
      if( sscanf(arg, "%s->%s(%s)", objname, func, param)!=3 )
-        return notify_fail("Ö¸Áî¸ñÊ½£ºcall <Îï¼ş>-><º¯Êı>( <²ÎÊı>, ... )\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcall <ç‰©ä»¶>-><å‡½æ•°>( <å‚æ•°>, ... )\n");
    } else
-     return notify_fail("Ö¸Áî¸ñÊ½£ºcall <Îï¼ş>-><º¯Êı>( <²ÎÊı>, ... )\n");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcall <ç‰©ä»¶>-><å‡½æ•°>( <å‚æ•°>, ... )\n");
 
    obj = present(objname, environment(me));
    if(!obj) obj = present(objname, me);
    if(!obj) obj = find_player(objname);
    if(!obj || !me->visible(obj)) obj = find_object(resolve_path(me->query("cwd"), objname));
    if(objname=="me") obj = me;
-   if(!obj) return notify_fail("ÕÒ²»µ½Ö¸¶¨µÄÎï¼ş¡£\n");
+   if(!obj) return notify_fail("æ‰¾ä¸åˆ°æŒ‡å®šçš„ç‰©ä»¶ã€‚\n");
 
    if(wizardp(obj) && wiz_level(me) < wiz_level(obj))
-      return notify_fail("Äã²»ÄÜÉè¶¨µÈ¼¶±ÈÄã¸ßµÄÎ×Ê¦×´Ì¬¡£\n");
+      return notify_fail("ä½ ä¸èƒ½è®¾å®šç­‰çº§æ¯”ä½ é«˜çš„å·«å¸ˆçŠ¶æ€ã€‚\n");
       
    if( userp(obj) ){
      if( obj != me ) log_file("static/CALL_PLAYER",
@@ -42,7 +42,7 @@ int main(object me, string arg)
           me->name(1), geteuid(me), obj->name(1), geteuid(obj), func, param,
           ctime(time()) ) );
    } else if( !master()->valid_write( base_name(obj), me, "set" ) )
-     return notify_fail("ÄãÃ»ÓĞÖ±½Óºô½ĞÕâ¸öÎï¼şµÄº¯ÊıµÄÈ¨Á¦¡£\n");
+     return notify_fail("ä½ æ²¡æœ‰ç›´æ¥å‘¼å«è¿™ä¸ªç‰©ä»¶çš„å‡½æ•°çš„æƒåŠ›ã€‚\n");
 
    args = explode(param, ",");
    for(i=0; i<sizeof(args); i++) {
@@ -66,9 +66,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : call <Îï¼ş>-><º¯Êı>(<²ÎÊı>, ...... )
+æŒ‡ä»¤æ ¼å¼ : call <ç‰©ä»¶>-><å‡½æ•°>(<å‚æ•°>, ...... )
  
-ºô½Ğ<Îï¼ş>ÀïµÄ<º¯Êı>²¢´«ÈëÏà¹Ø<²ÎÊı>.
+å‘¼å«<ç‰©ä»¶>é‡Œçš„<å‡½æ•°>å¹¶ä¼ å…¥ç›¸å…³<å‚æ•°>.
  
 HELP
     );

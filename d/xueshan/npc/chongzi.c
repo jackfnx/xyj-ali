@@ -1,11 +1,11 @@
 inherit NPC;
 
 string *names = ({
-    "青蛇",
-    "蜈蚣",
-    "蝎子",
-    "蜘蛛",
-    "蟾蜍",
+    "闈掕泧",
+    "铚堣殻",
+    "铦庡瓙",
+    "铚樿洓",
+    "锜捐湇",
 });
 
 string *ids = ({
@@ -22,12 +22,12 @@ void create()
     ii=random(sizeof(names));
 
     set_name(names[ii], ({ids[ii]}));
-    set("race", "野兽");
+    set("race", "閲庡吔");
     set("age", 10);
 
     set_skill("dodge", 10);
     set("combat_exp", 100);
-    set("limbs", ({ "头部", "身体", "前腿","後腿", "尾巴" }));
+    set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈吙","寰岃吙", "灏惧反" }));
     set("verbs", ({ "bite" }));
 
     setup();
@@ -43,7 +43,7 @@ void unconcious()
     ob->set("name", me->query("name"));
     ob->set("cook/type", me->query("id"));
     ob->move(where);
-    message_vision("\n$N缩成一团，不再动了。\n",me,ob);
+    message_vision("\n$N缂╂垚涓�鍥紝涓嶅啀鍔ㄤ簡銆俓n",me,ob);
     destruct(me);
 }
 

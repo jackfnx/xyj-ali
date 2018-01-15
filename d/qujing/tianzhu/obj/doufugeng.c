@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("ÃÀÎ¶¶¹¸¯¸ş", ({"doufu geng", "geng"}));
+  set_name("ç¾å‘³è±†è…ç¾¹", ({"doufu geng", "geng"}));
   set_weight(400);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»´óÉ°¹øÃÀÎ¶¶¹¸¯¸ş£¬Ã°×ÅÈÈÆø¡£\n");
-    set("unit", "´óÉ°¹ø");
+    set("long", "ä¸€å¤§ç ‚é”…ç¾å‘³è±†è…ç¾¹ï¼Œå†’ç€çƒ­æ°”ã€‚\n");
+    set("unit", "å¤§ç ‚é”…");
     set("value", 310);
     set("food_remaining", 14);
     set("food_supply", 20);

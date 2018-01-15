@@ -31,7 +31,7 @@ int self_purge()
     ghost =1;
     me->move("/d/death/block.c");
     CHANNEL_D->do_channel(me, "rumor", me->query("name")
-            + "ÒòÎªÄê¼ÍÌ«´ó£¬ĞÄÁ¦½»´á£¬²»ĞÒÓëÊÀ³¤´Ç£¬ÓÀÔ¶Àë¿ªÁËÎÒÃÇ£¡");
+            + "å› ä¸ºå¹´çºªå¤ªå¤§ï¼Œå¿ƒåŠ›äº¤ç˜ï¼Œä¸å¹¸ä¸ä¸–é•¿è¾ï¼Œæ°¸è¿œç¦»å¼€äº†æˆ‘ä»¬ï¼");
     return 1;
 }
 
@@ -39,9 +39,9 @@ varargs int receive_damage(string type, int damage, object who)
 {
     int val;
 
-    if ( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+    if ( damage < 0 ) error("F_DAMAGE: ä¼¤å®³å€¼ä¸ºè´Ÿå€¼ã€‚\n");
     if ( type!="gin" && type!="kee" && type!="sen" )
-        error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ gin, kee, sen ÆäÖĞÖ®Ò» )¡£\n");
+        error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ gin, kee, sen å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
     if ( objectp(who) ) set_temp("last_damage_from", who);
     val = (int)query(type) - damage;
@@ -77,9 +77,9 @@ varargs int receive_wound(string type, int damage, object who)
 {
     int val;
 
-    if ( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+    if ( damage < 0 ) error("F_DAMAGE: ä¼¤å®³å€¼ä¸ºè´Ÿå€¼ã€‚\n");
     if ( type!="gin" && type!="kee" && type!="sen" )
-        error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ gin, kee, sen ÆäÖĞÖ®Ò» )¡£\n");
+        error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ gin, kee, sen å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
     if ( objectp(who) ) set_temp("last_damage_from", who);
         val = (int)query("eff_" + type) - damage;
@@ -123,9 +123,9 @@ int receive_heal(string type, int heal)
 {
     int val;
 
-    if ( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+    if ( heal < 0 ) error("F_DAMAGE: æ¢å¤å€¼ä¸ºè´Ÿå€¼ã€‚\n");
     if ( type!="gin" && type!="kee" && type!="sen" )
-        error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ gin, kee, sen ÆäÖĞÖ®Ò» )¡£\n");
+        error("F_DAMAGE: æ¢å¤ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ gin, kee, sen å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
     val = (int)query(type) + heal;
 
@@ -139,9 +139,9 @@ int receive_curing(string type, int heal)
 {
     int max, val;
 
-    if ( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+    if ( heal < 0 ) error("F_DAMAGE: æ¢å¤å€¼ä¸ºè´Ÿå€¼ã€‚\n");
     if ( type!="gin" && type!="kee" && type!="sen" )
-        error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ gin, kee, sen ÆäÖĞÖ®Ò» )¡£\n");
+        error("F_DAMAGE: æ¢å¤ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ gin, kee, sen å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
     val = (int)query("eff_" + type);
     max = (int)query("max_" + type);
@@ -188,9 +188,9 @@ void unconcious()
     this_object()->remove_all_enemy();
     remove_ride();
 
-    message("system", HIR "\nÄãµÄÑÛÇ°Ò»ºÚ£¬½Ó×ÅÊ²Ã´Ò²²»ÖªµÀÁË£®£®£®\n\n" NOR,
+    message("system", HIR "\nä½ çš„çœ¼å‰ä¸€é»‘ï¼Œæ¥ç€ä»€ä¹ˆä¹Ÿä¸çŸ¥é“äº†ï¼ï¼ï¼\n\n" NOR,
             this_object());
-    this_object()->disable_player(" <»èÃÔ²»ĞÑ>");
+    this_object()->disable_player(" <æ˜è¿·ä¸é†’>");
     set("gin", 0);
     set("kee", 0);
     set("sen", 0);
@@ -221,7 +221,7 @@ varargs void revive(int quiet)
     if ( !quiet ) {
         COMBAT_D->announce(this_object(), "revive");
         set_temp("block_msg/all", 0);
-        message("system", HIY "\nÂıÂıµØÄãÖÕÓÚÓÖÓĞÁËÖª¾õ£®£®£®\n\n" NOR,
+        message("system", HIY "\næ…¢æ…¢åœ°ä½ ç»ˆäºåˆæœ‰äº†çŸ¥è§‰ï¼ï¼ï¼\n\n" NOR,
                 this_object());
     } else
         set_temp("block_msg/all", 0);
@@ -256,8 +256,8 @@ void die()
     inv = all_inventory(this_object());
     for (i=0; i<sizeof(inv); i++) {
         if ( inv[i]->query("owner_id") == getuid(this_object()) ) {
-            tell_object(this_object(), HIB+"Äã¿´µ½" + inv[i]->query("name") +
-                    HIB + "ÆÆ¿Õ¶øÈ¥£¬ÂıÂıÏûÊ§ÔÚÌì¼Ê£®£®£®\n"+NOR);
+            tell_object(this_object(), HIB+"ä½ çœ‹åˆ°" + inv[i]->query("name") +
+                    HIB + "ç ´ç©ºè€Œå»ï¼Œæ…¢æ…¢æ¶ˆå¤±åœ¨å¤©é™…ï¼ï¼ï¼\n"+NOR);
             destruct( inv[i] );
         }
     }
@@ -285,7 +285,7 @@ void die()
                 if (str=this_object()->query_temp("death_msg"))
                     //can set customized death message to death_msg.
                     str=this_object()->name(1)+str;
-                else  str=this_object()->name(1)+"ÄªÃûÆäÃîµØËÀÁË¡£\n";
+                else  str=this_object()->name(1)+"è«åå…¶å¦™åœ°æ­»äº†ã€‚\n";
                 COMBAT_D->announce(this_object(), "death_rumor", str);
                 log_file("death",sprintf("[%s] %s is killed: %s.\n",
                             ctime(time()),this_object()->query("id"),
@@ -412,11 +412,11 @@ int sex_excite(string type, int fire)
 {
     int val, max;
 
-    if (fire < 0) error("F_DAMAGE: SEÎª¸ºÖµ¡£\n");
+    if (fire < 0) error("F_DAMAGE: SEä¸ºè´Ÿå€¼ã€‚\n");
     if (type == "lust")
         max = MAX_LUST;
     else
-        error("F_DAMAGE: Î´ÖªµÄSEÖÖÀà¡£\n");
+        error("F_DAMAGE: æœªçŸ¥çš„SEç§ç±»ã€‚\n");
 
     val = (int)query(type);
     val += fire;
@@ -431,9 +431,9 @@ int sex_depress(string type, int water)
 {
     int val;
 
-    if (water < 0) error("F_DAMAGE: SDÎª¸ºÖµ¡£\n");
+    if (water < 0) error("F_DAMAGE: SDä¸ºè´Ÿå€¼ã€‚\n");
     if (type != "lust")
-        error("F_DAMAGE: Î´ÖªµÄSDÖÖÀà¡£\n");
+        error("F_DAMAGE: æœªçŸ¥çš„SDç§ç±»ã€‚\n");
 
     val = (int)query(type);
     val -= water;
@@ -451,14 +451,14 @@ void heat()
         return;
 
     set_temp("sex_heat", 1);
-    if (gender == "ÄĞĞÔ") {
+    if (gender == "ç”·æ€§") {
         set_temp("erect", 1);
         SEX_D->announce(this_object(), "erect");
-    } else if (gender == "Å®ĞÔ") {
+    } else if (gender == "å¥³æ€§") {
         set_temp("wet", 1);
         SEX_D->announce(this_object(), "wet");
     } else
-        error("F_DAMAGE: Î´ÖªµÄĞÔ±ğ... " + gender + "\n");
+        error("F_DAMAGE: æœªçŸ¥çš„æ€§åˆ«... " + gender + "\n");
 
     call_out("remove_heat", 20);
 }
@@ -480,14 +480,14 @@ void remove_heat()
     }
 
     set_temp("sex_heat", 0);
-    if (gender == "ÄĞĞÔ") {
+    if (gender == "ç”·æ€§") {
         delete_temp("erect");
         SEX_D->announce(this_object(), "no_erect");
-    } else if (gender == "Å®ĞÔ") {
+    } else if (gender == "å¥³æ€§") {
         delete_temp("wet");
         SEX_D->announce(this_object(), "no_wet");
     } else
-        error("F_DAMAGE: Î´ÖªµÄĞÔ±ğ... " + gender + "\n");
+        error("F_DAMAGE: æœªçŸ¥çš„æ€§åˆ«... " + gender + "\n");
 }
 
 // gaochao: shejing and chaochui
@@ -497,23 +497,23 @@ void orgasm()
 
     this_object()->remove_all_fucker();
 
-    if (gender == "ÄĞĞÔ") {
-        message("system", HIR "\nÄã¸Ğµ½ÑüÑÛÒ»Âé£¬ÏÂÌåÉä³öÁËÒ»µÀ¾«Ñô£¡\n¶ÙÊ±Ò»Õó¾Ş´óµÄ¿ì¸ĞÏ®ÈëÁËÄãµÄÄÔº££¬Äã²»½ûÒ»ÕóÑ£ÔÎ¡£¡£¡£\n\n" NOR, this_object());
+    if (gender == "ç”·æ€§") {
+        message("system", HIR "\nä½ æ„Ÿåˆ°è…°çœ¼ä¸€éº»ï¼Œä¸‹ä½“å°„å‡ºäº†ä¸€é“ç²¾é˜³ï¼\né¡¿æ—¶ä¸€é˜µå·¨å¤§çš„å¿«æ„Ÿè¢­å…¥äº†ä½ çš„è„‘æµ·ï¼Œä½ ä¸ç¦ä¸€é˜µçœ©æ™•ã€‚ã€‚ã€‚\n\n" NOR, this_object());
         set_temp("no_move", 1);
         SEX_D->announce(this_object(), "ejaculate");
         add_temp("ejaculate", random(query("lust") / 10));
         call_out("ejaculate", 2);
-    } else if (gender == "Å®ĞÔ") {
+    } else if (gender == "å¥³æ€§") {
         string org;
         add_temp("orgasm", 1);
-        if ((int)query_temp("orgasm") < 2) org = "¸ß³±";
-        else org = chinese_number((int)query("orgasm")) + "ÖØ¸ß³±";
-        message("system", HIR "\nÄã¸Ğµ½ÄÔÖĞºäµÄÒ»Éù£¬·Â·ğÁé»êÒÑ¾­±»³é³öÁËÈâÌå£¡\nÄã´ïµ½ÁËÖÁ¸ßÎŞÉÏµÄ" + org + "£¡\n\n" NOR, this_object());
+        if ((int)query_temp("orgasm") < 2) org = "é«˜æ½®";
+        else org = chinese_number((int)query("orgasm")) + "é‡é«˜æ½®";
+        message("system", HIR "\nä½ æ„Ÿåˆ°è„‘ä¸­è½°çš„ä¸€å£°ï¼Œä»¿ä½›çµé­‚å·²ç»è¢«æŠ½å‡ºäº†è‚‰ä½“ï¼\nä½ è¾¾åˆ°äº†è‡³é«˜æ— ä¸Šçš„" + org + "ï¼\n\n" NOR, this_object());
         set_temp("no_move", 1);
         SEX_D->announce(this_object(), "orgasm");
         call_out("no_orgasm", random(40 - this_object()->query_con()));
     } else
-        error("F_DAMAGE: Î´ÖªµÄĞÔ±ğ... " + gender + "\n");
+        error("F_DAMAGE: æœªçŸ¥çš„æ€§åˆ«... " + gender + "\n");
 }
 
 void ejaculate()
@@ -527,7 +527,7 @@ void ejaculate()
         call_out("ejaculate", 2);
     } else {
         set_temp("ejaculate", 0);
-        message("system", HIG "\nÄãµÄÉä³öÁË×îºóÒ»µÀ¾«Ñô£¬³¤³öÒ»¿ÚÆø£¡\n\n" NOR, this_object());
+        message("system", HIG "\nä½ çš„å°„å‡ºäº†æœ€åä¸€é“ç²¾é˜³ï¼Œé•¿å‡ºä¸€å£æ°”ï¼\n\n" NOR, this_object());
         delete_temp("no_move");
         SEX_D->stop_makelove(this_object());
         call_out("remove_heat", 1);
@@ -540,7 +540,7 @@ void no_orgasm()
     sex_depress("lust", random(query("lust")*2/3));
     set_temp("orgasm", 0);
     delete_temp("no_move");
-    message("system", HIG "\nËæ×ÅÓû»ğµÄÏûÍË£¬Äã¸Ğµ½Áé»êÓÖ»Øµ½ÁËÈâÌåÖĞ£¡\n\n" NOR, this_object());
+    message("system", HIG "\néšç€æ¬²ç«çš„æ¶ˆé€€ï¼Œä½ æ„Ÿåˆ°çµé­‚åˆå›åˆ°äº†è‚‰ä½“ä¸­ï¼\n\n" NOR, this_object());
     SEX_D->stop_makelove(this_object());
 }
 
@@ -576,7 +576,7 @@ int sex_refresh()
                 ob = next_inventory(ob);
             }
             if (i)
-                message_vision("$NµÄÉíÉÏÉ¢·¢×Å²»¿É¿¹¾ÜµÄ÷ÈÁ¦£¬ÔÚ³¡ÖÚÈË¶¼²»½ûâñÈ»ĞÄ¶¯¡£\n", this_object());
+                message_vision("$Nçš„èº«ä¸Šæ•£å‘ç€ä¸å¯æŠ—æ‹’çš„é­…åŠ›ï¼Œåœ¨åœºä¼—äººéƒ½ä¸ç¦æ€¦ç„¶å¿ƒåŠ¨ã€‚\n", this_object());
         }
     }
     */

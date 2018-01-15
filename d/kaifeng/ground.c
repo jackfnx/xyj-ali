@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -10,12 +10,12 @@ inherit __DIR__"ground3";
 
 void create ()
 {
-  set ("short", "Èü³¡");
+  set ("short", "èµ›åœº");
   set ("long", @LONG
 
-Èü³¡ËÄÖÜÊÇ¸ß¸ßµÄ¹ó±ö¹ÛÀñÌ¨£¬Ê®ÕÉ¼û·½µÄ³¡µØÉÏÕûÕûÆëÆëµØ
-ÆÌ×ÅÒ»È¦²ÊÉ«Âêè§Ê¯£¬¼Ü×ÅÏãÑÌôÁÈÆµÄËÄ¸ö¾Þ´ó½ðÒøÍ­Ìú¶¦£¬
-³¡µØÖÐ¼äÊÇÈíËÉµÄÆ¤ÈÞÖ¯½õÌº¡£
+èµ›åœºå››å‘¨æ˜¯é«˜é«˜çš„è´µå®¾è§‚ç¤¼å°ï¼Œåä¸ˆè§æ–¹çš„åœºåœ°ä¸Šæ•´æ•´é½é½åœ°
+é“ºç€ä¸€åœˆå½©è‰²çŽ›ç‘™çŸ³ï¼Œæž¶ç€é¦™çƒŸè¢…ç»•çš„å››ä¸ªå·¨å¤§é‡‘é“¶é“œé“é¼Žï¼Œ
+åœºåœ°ä¸­é—´æ˜¯è½¯æ¾çš„çš®ç»’ç»‡é”¦æ¯¯ã€‚
 
 LONG);
 
@@ -71,7 +71,7 @@ int check_fighters (object who, object ob)
   }
   if (names != "")
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâ³¡ÉÏ"+names+"µÈÕýÔÚÞÕËÀØËÉ±£¬ÇëÉÔºòÆ¬¿Ì£¡\n",wei,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™åœºä¸Š"+names+"ç­‰æ­£åœ¨æ‹šæ­»åŽ®æ€ï¼Œè¯·ç¨å€™ç‰‡åˆ»ï¼\n",wei,who);
     return 0;
   }
   if (! userp(who) || ! userp(ob))
@@ -103,7 +103,7 @@ void wait_and_announce (object who, object ob)
     return;
 
   match["fighters"] = names;
-  announce (name0 + "Óë" + name1 + "Ë®Â½´ó»áÉúËÀÏà²«£¡\n");
+  announce (name0 + "ä¸Ž" + name1 + "æ°´é™†å¤§ä¼šç”Ÿæ­»ç›¸æï¼\n");
 }
 
 int do_fight (string arg)
@@ -125,11 +125,11 @@ int do_fight (string arg)
 void hinting (object who)
 {
   tell_object (who, "\n");
-  tell_object (who, "¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó\n");
-  tell_object (who, "¡ó´ó»á·Ö³ï±¸¡¢±ÈÈü¡¢½áÊøµÈ½×¶Î£¬²»Í¬½×¶ÎÓÐ²»Í¬ÃüÁî¡£¡ó\n");
-  tell_object (who, "¡óÊ¹ÓÃÃüÁîÊ±Çë×¢ÒâÊÇ·ñÓÐÆäËûÎ×Ê¦Ò²ÔÚ´ËÉèÖÃ±ÈÈüÊý¾Ý¡£¡ó\n");
-  tell_object (who, "¡ó¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ó\n");
-  tell_object (who, "¡óÇëÄúËæÊ±Ê¹ÓÃ ? »ò what À´²éÑ¯Äú¿ÉÒÔÊ¹ÓÃµÄÃüÁî¡£ ¡¡¡ó\n");
-  tell_object (who, "¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó¡ó\n");
+  tell_object (who, "â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡\n");
+  tell_object (who, "â—‡å¤§ä¼šåˆ†ç­¹å¤‡ã€æ¯”èµ›ã€ç»“æŸç­‰é˜¶æ®µï¼Œä¸åŒé˜¶æ®µæœ‰ä¸åŒå‘½ä»¤ã€‚â—‡\n");
+  tell_object (who, "â—‡ä½¿ç”¨å‘½ä»¤æ—¶è¯·æ³¨æ„æ˜¯å¦æœ‰å…¶ä»–å·«å¸ˆä¹Ÿåœ¨æ­¤è®¾ç½®æ¯”èµ›æ•°æ®ã€‚â—‡\n");
+  tell_object (who, "â—‡ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â—‡\n");
+  tell_object (who, "â—‡è¯·æ‚¨éšæ—¶ä½¿ç”¨ ? æˆ– what æ¥æŸ¥è¯¢æ‚¨å¯ä»¥ä½¿ç”¨çš„å‘½ä»¤ã€‚ ã€€â—‡\n");
+  tell_object (who, "â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡\n");
   tell_object (who, "\n");
 }

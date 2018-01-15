@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // title.c (Mon  09-04-95) 
@@ -14,16 +14,16 @@ int main(object me, string arg)
    int titlelength=0;
 
    if( !arg ){
-         printf("ÄãÄ¿Ç°µÄÍ·ÏÎ¼°ÃÅÅÉ£º\n");
+         printf("ä½ ç›®å‰çš„å¤´è¡”åŠé—¨æ´¾ï¼š\n");
          printf(BOLD "%s" NOR "%s\n\n", RANK_D->query_rank(me), me->short(1));
          if(strlen(me->query("added_title"))>1)
-       printf("ÆäÖĞÍ·ÏÎ×ÔÉè²¿·İ£º%s\n", (string)me->query("added_title"));
+       printf("å…¶ä¸­å¤´è¡”è‡ªè®¾éƒ¨ä»½ï¼š%s\n", (string)me->query("added_title"));
          return 1;
    }
    
    if( arg=="none" ) {
      me->delete("added_title");
-     printf("ºÃ£¬É¾µôÍ·ÏÎ×ÔÉè²¿·İ¡£\n");
+     printf("å¥½ï¼Œåˆ æ‰å¤´è¡”è‡ªè®¾éƒ¨ä»½ã€‚\n");
      return 1;
    }
 
@@ -49,22 +49,22 @@ int check_legal_title(string addtitle, int titlelength)
    i = strlen(addtitle);
 
    if(titlelength<=0){
-     write("¶Ô²»Æğ£¬Ä¿Ç°Äã»¹²»ÄÜ¸ø×Ô¼ºÉèÍ·ÏÎ¡£\n");
+     write("å¯¹ä¸èµ·ï¼Œç›®å‰ä½ è¿˜ä¸èƒ½ç»™è‡ªå·±è®¾å¤´è¡”ã€‚\n");
          return 0;
    }
 
    if(titlelength < strlen(addtitle)){
-         printf("¶Ô²»Æğ£¬Ä¿Ç°Äã×î¶àÖ»ÄÜÉè%s¸öÖĞÎÄ×Ö×÷ÎªÍ·ÏÎ¡£\n", chinese_number(titlelength/2));
+         printf("å¯¹ä¸èµ·ï¼Œç›®å‰ä½ æœ€å¤šåªèƒ½è®¾%sä¸ªä¸­æ–‡å­—ä½œä¸ºå¤´è¡”ã€‚\n", chinese_number(titlelength/2));
          return 0;
    }
 
    while(i--) {
                   if( addtitle[i]<=' ' ) {
-                          write("¶Ô²»Æğ£¬ÄãµÄÍ·ÏÎ²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                          write("å¯¹ä¸èµ·ï¼Œä½ çš„å¤´è¡”ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                           return 0;
                   }
                   if( i%2==0 && !is_chinese(addtitle[i..<0]) ) {
-                          write("¶Ô²»Æğ£¬ÇëÄúÓÃ¡¸ÖĞÎÄ¡¹ÉèÍ·ÏÎ¡£\n");
+                          write("å¯¹ä¸èµ·ï¼Œè¯·æ‚¨ç”¨ã€Œä¸­æ–‡ã€è®¾å¤´è¡”ã€‚\n");
                           return 0;
                   }
           }
@@ -75,13 +75,13 @@ int check_legal_title(string addtitle, int titlelength)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½: title ***
+æŒ‡ä»¤æ ¼å¼: title ***
  
-×Ô¼ºÉè¶¨Í·ÏÎ¡£µÀĞĞ³¬¹ı500Äê¿ÉÒÔÉè4¸öÖĞÎÄ×Ö£¬
-³¬¹ı100Äê¿ÉÒÔÉè2¸öÖĞÎÄ×Ö£¬ÉÙÓÚ100Äê»¹µÃ¼ÓÓÍ:)
+è‡ªå·±è®¾å®šå¤´è¡”ã€‚é“è¡Œè¶…è¿‡500å¹´å¯ä»¥è®¾4ä¸ªä¸­æ–‡å­—ï¼Œ
+è¶…è¿‡100å¹´å¯ä»¥è®¾2ä¸ªä¸­æ–‡å­—ï¼Œå°‘äº100å¹´è¿˜å¾—åŠ æ²¹:)
 
-title ²»¼Ó²ÎÊıÏÔÊ¾ÄãÄ¿Ç°µÄÍ·ÏÎ¼°ÃÅÅÉ¡£
-title none  É¾µôÍ·ÏÎ×ÔÉè²¿·İ¡£
+title ä¸åŠ å‚æ•°æ˜¾ç¤ºä½ ç›®å‰çš„å¤´è¡”åŠé—¨æ´¾ã€‚
+title none  åˆ æ‰å¤´è¡”è‡ªè®¾éƒ¨ä»½ã€‚
 
 HELP
     );

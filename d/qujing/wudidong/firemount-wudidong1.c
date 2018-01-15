@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/firemount/firemount-wudidong1
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ȡ��·");
+  set ("short", "取经路");
   set ("long", @LONG
 
-�뿪�˱����������̤��������֮·����ǰ��һƬһ���޼ʵ�ƽҰ��
-��Ұ�ڲ���һ�����̡��ֲ�֪Ҫ�ȹ����ٸ����˰������;֮ҹ����
-��֪Ҫ������Զ��ٶ���Ұ�ޣ���ħ�����ˡ�
+离开了比丘国，你又踏上了西行之路。面前是一片一望无际的平野，
+视野内不见一道炊烟。又不知要度过多少个无人伴随的旅途之夜，又
+不知要独自面对多少毒虫野兽，妖魔鬼怪了。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

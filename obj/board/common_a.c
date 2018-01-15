@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // common_b.c
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-   set_name("Ò»°ãÓÃÍ¾ÁôÑÔ°å", ({ "board" }) );
+   set_name("ä¸€èˆ¬ç”¨é€”ç•™è¨€æ¿", ({ "board" }) );
    set("location", "/d/ourhome/kedian");
    set("board_id", "common_a");
-   set("long",   "ÕâÊÇÒ»¸ö¹©ÈËÁôÑÔ¼ÇÊÂµÄÁôÑÔ°å¡£\n" );
+   set("long",   "è¿™æ˜¯ä¸€ä¸ªä¾›äººç•™è¨€è®°äº‹çš„ç•™è¨€æ¿ã€‚\n" );
    setup();
    set("capacity", 80);
    replace_program(BULLETIN_BOARD);

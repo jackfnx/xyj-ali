@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //standroom.c used by weiqi...others may hate this format:D
@@ -11,10 +11,10 @@ string direction_rev(string);
 
 void create ()
 {
-   set ("short", "±ùÑÂÉÏ");
+   set ("short", "å†°å´–ä¸Š");
    set ("long", @LONG
 
-ÄãÅ¿ÔÚ±ùÑÂÉÏ£¬µ±ÕæÊÇĞ¡ĞÄÒíÒí¡£
+ä½ è¶´åœ¨å†°å´–ä¸Šï¼Œå½“çœŸæ˜¯å°å¿ƒç¿¼ç¿¼ã€‚
 LONG);
 
    //set("item_desc", ([" *** " : " *** ", ]));
@@ -55,41 +55,41 @@ int do_climb(string arg)
 
    if( !arg || (arg != "up" && arg != "down" && arg != "left" && arg != "right") )
    {
-     return notify_fail("ÄãÒªÅÀµ½ÄÄÀïÈ¥£¿\n");
+     return notify_fail("ä½ è¦çˆ¬åˆ°å“ªé‡Œå»ï¼Ÿ\n");
    }
 
    if( arg == "right" ) 
    {
-     message_vision("$NÊÖ×ã²¢ÓÃ£¬Ğ¡ĞÄÒíÒíµØÍù"+direction_name(arg)+"ÅÀÁË¹ıÈ¥¡£\n", me);
+     message_vision("$Næ‰‹è¶³å¹¶ç”¨ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å¾€"+direction_name(arg)+"çˆ¬äº†è¿‡å»ã€‚\n", me);
      me->move(__DIR__"bingya-up4");
    }
    else if( arg == "left" ) 
    {
-     message_vision("$NÊÖ×ã²¢ÓÃ£¬Ğ¡ĞÄÒíÒíµØÍù"+direction_name(arg)+"ÅÀÁË¹ıÈ¥¡£\n", me);
+     message_vision("$Næ‰‹è¶³å¹¶ç”¨ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å¾€"+direction_name(arg)+"çˆ¬äº†è¿‡å»ã€‚\n", me);
      me->move(__DIR__"bingya-up6");
    } 
-   else return notify_fail( "Íù"+direction_name(arg)+"ÒÑ¾­Ã»ÓĞ×ÅÊÖÖ®µãÁË¡£\n" );
+   else return notify_fail( "å¾€"+direction_name(arg)+"å·²ç»æ²¡æœ‰ç€æ‰‹ä¹‹ç‚¹äº†ã€‚\n" );
 
-   message_vision("$N´Ó"+direction_rev(arg)+"ÃæÅÀÁË¹ıÀ´£¬³¤³¤µØÊæÁË¿ÚÆø¡£\n", me);   
+   message_vision("$Nä»"+direction_rev(arg)+"é¢çˆ¬äº†è¿‡æ¥ï¼Œé•¿é•¿åœ°èˆ’äº†å£æ°”ã€‚\n", me);   
    return 1;    
 }
 
 string direction_name(string arg)
 {
-   if ( arg == "up" ) return "ÉÏ";
-   else if ( arg == "down" ) return "ÏÂ";
-   else if ( arg == "left" ) return "×ó";
-   else if ( arg == "right" ) return "ÓÒ";
-   else return "²»ÖªµÀÄÄ¶ù";
+   if ( arg == "up" ) return "ä¸Š";
+   else if ( arg == "down" ) return "ä¸‹";
+   else if ( arg == "left" ) return "å·¦";
+   else if ( arg == "right" ) return "å³";
+   else return "ä¸çŸ¥é“å“ªå„¿";
 }
 
 string direction_rev(string arg)
 {
-   if ( arg == "up" ) return "ÏÂ";
-   else if ( arg == "down" ) return "ÉÏ";
-   else if ( arg == "left" ) return "ÓÒ";
-   else if ( arg == "right" ) return "×ó";
-   else return "²»ÖªµÀÄÄ¶ù";
+   if ( arg == "up" ) return "ä¸‹";
+   else if ( arg == "down" ) return "ä¸Š";
+   else if ( arg == "left" ) return "å³";
+   else if ( arg == "right" ) return "å·¦";
+   else return "ä¸çŸ¥é“å“ªå„¿";
 }
 
 

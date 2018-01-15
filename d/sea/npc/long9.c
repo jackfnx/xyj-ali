@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // long1.c
@@ -10,11 +10,11 @@ inherit NPC;
 //
 void create()
 {
-  set_name("╫╥м╪",({"shu tu","shu","tu","long","shutu","dragon"}));
-  set("long","аЗиЗ╬евс╡╩ЁиаЗё╛╦ВспкЫ╨цё╨╫╥м╪дк╣з╬евсё╛ф╫иЗ╨ц╠у║ё\n");
-  set("gender", "дппт");
+  set_name("Ф╓▓Е⌡╬",({"shu tu","shu","tu","long","shutu","dragon"}));
+  set("long","И╬≥Г■÷Д╧²Е╜░Д╦█Ф┬░И╬≥О╪▄Е░└Ф°┴Ф┴─Е╔╫О╪ Ф╓▓Е⌡╬Д╧┐Г╛╛Д╧²Е╜░О╪▄Е╧ЁГ■÷Е╔╫И≈╜Ц─┌\n");
+  set("gender", "Г■╥Ф─╖");
   set("age", 41);
-  set("title", "аЗмУ╬евсж╝");
+  set("title", "И╬≥Г▌▀Д╧²Е╜░Д╧▀");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);
@@ -63,8 +63,8 @@ void create()
 int accept_fight(object me)
 {
   command("fear");
-  command("say ╟Ё╬мо╡╩╤тзнщюО╤Цвеё╛╢сю╢╡╩о╡╩╤╢Р╪э║ё");
-  command("say ╡╩╧Щ╪хх╩" + RANK_D->query_respect(me) + "оК╠х╩╝а╫упё╛╟Ёр╡ж╩╨ц╥НеЦак║ё");
+  command("say Д©╨Е╟╠Е√°Ф╛╒Е°╗Е╠▀И┤▄Х╨╡Г²─О╪▄Д╩▌Ф²╔Д╦█Е√°Ф╛╒Ф┴⌠Ф·╤Ц─┌");
+  command("say Д╦█Х©┤Ф≈╒Г└╤" + RANK_D->query_respect(me) + "Ф┐ЁФ╞■Е┬▓Д╦╓Ф▀⌡О╪▄Д©╨Д╧÷Е▐╙Е╔╫Е╔┴И≥╙Д╨├Ц─┌");
   return 1;
 }
 

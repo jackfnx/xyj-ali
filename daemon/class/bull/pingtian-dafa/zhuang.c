@@ -3,26 +3,26 @@
 inherit F_SSERVER;
 
 mapping default_dirs = ([
-    "north":    "±±",
-    "south":    "ÄÏ",
-    "east":     "¶«",
-    "west":     "Î÷",
-    "northup":      "±±±ß",
-    "southup":      "ÄÏ±ß",
-    "eastup":       "¶«±ß",
-    "westup":       "Î÷±ß",
-    "northdown":    "±±±ß",
-    "southdown":    "ÄÏ±ß",
-    "eastdown":     "¶«±ß",
-    "westdown":     "Î÷±ß",
-    "northeast":    "¶«±±",
-    "northwest":    "Î÷±±",
-    "southeast":    "¶«ÄÏ",
-    "southwest":    "Î÷ÄÏ",
-    "up":       "ÉÏ",
-    "down":     "ÏÂ",
-    "out":      "Íâ",
-    "enter":    "Àï",
+    "north":    "åŒ—",
+    "south":    "å—",
+    "east":     "ä¸œ",
+    "west":     "è¥¿",
+    "northup":      "åŒ—è¾¹",
+    "southup":      "å—è¾¹",
+    "eastup":       "ä¸œè¾¹",
+    "westup":       "è¥¿è¾¹",
+    "northdown":    "åŒ—è¾¹",
+    "southdown":    "å—è¾¹",
+    "eastdown":     "ä¸œè¾¹",
+    "westdown":     "è¥¿è¾¹",
+    "northeast":    "ä¸œåŒ—",
+    "northwest":    "è¥¿åŒ—",
+    "southeast":    "ä¸œå—",
+    "southwest":    "è¥¿å—",
+    "up":       "ä¸Š",
+    "down":     "ä¸‹",
+    "out":      "å¤–",
+    "enter":    "é‡Œ",
 ]);
 
 
@@ -38,25 +38,25 @@ int cast(object me, object target)
     seteuid(getuid());
 
     if (!target) target = offensive_target(me);
-    if (me->query("family/family_name")!="»ðÔÆ¶´")
-        return notify_fail("Ö»ÓÐ»ðÔÆ¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+    if (me->query("family/family_name")!="ç«äº‘æ´ž")
+        return notify_fail("åªæœ‰ç«äº‘æ´žé—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
     if (!target
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒªÏÖÕæÉíÈ¥×²Ë­£¿\n");
+        return notify_fail("ä½ è¦çŽ°çœŸèº«åŽ»æ’žè°ï¼Ÿ\n");
 
     if ((int)me->query_skill("pingtian-dafa", 1) < 30)
-        return notify_fail("ÄãµÄÆ½Ìì´ó·¨»ðºò²»¹»£¬ÄÄÀïÊ©Õ¹µÄ³ö£¡\n");
+        return notify_fail("ä½ çš„å¹³å¤©å¤§æ³•ç«å€™ä¸å¤Ÿï¼Œå“ªé‡Œæ–½å±•çš„å‡ºï¼\n");
 
     if ((int)me->query("mana") < 25+(int)me->query("mana_factor"))
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬¿ÖÅÂÃ»ÓÐÊ²Ã´ÓÃ£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œææ€•æ²¡æœ‰ä»€ä¹ˆç”¨ï¼\n");
 
     if ((int)me->query("force") < 100)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
     if ((int)me->query("sen") < 10)
-        return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬±ð°Ñ×Ô¼º×²ÉËÁË£¡\n");
+        return notify_fail("ä½ çŽ°åœ¨ç¥žæ™ºä¸æ¸…ï¼Œåˆ«æŠŠè‡ªå·±æ’žä¼¤äº†ï¼\n");
 
     me->add("mana", -25-(int)me->query("mana_factor"));
     me->add("force", -30);
@@ -64,7 +64,7 @@ int cast(object me, object target)
 
     success=0;
 
-    msg = HIC "\n\n$NÃÍÈ»ÍËºóÁ½²½£¬Ò»µÍÍ·£¬ºôµØ¾ÍÏò$n×²È¥£¡\n" NOR;
+    msg = HIC "\n\n$NçŒ›ç„¶é€€åŽä¸¤æ­¥ï¼Œä¸€ä½Žå¤´ï¼Œå‘¼åœ°å°±å‘$næ’žåŽ»ï¼\n" NOR;
 
     ap = me->query_skill("spells");
     ap = ( ap * ap * ap / (4 * 400)) * (int)me->query("sen");
@@ -80,7 +80,7 @@ int cast(object me, object target)
             //finally damage also depends on enabled spells level.
             damage +=random((damage*(int)me->query_skill("spells"))/100);
             
-            msg += HIC "½á¹û$n¶ãÉÁ²»¼°£¬±»×²µÄ" NOR;
+            msg += HIC "ç»“æžœ$nèº²é—ªä¸åŠï¼Œè¢«æ’žçš„" NOR;
 
             env=environment(me);
             exit=env->query("exits");
@@ -97,36 +97,36 @@ int cast(object me, object target)
 
                 if (obj=load_object(dest)) {
                     success=1;
-                    msg += HIC "Ïò" +target_dir+ NOR;
+                    msg += HIC "å‘" +target_dir+ NOR;
                 }
             }
 
 
-            msg += HIC "·ÉÁË³öÈ¥£¡\n\n" NOR;
+            msg += HIC "é£žäº†å‡ºåŽ»ï¼\n\n" NOR;
 
             if (success == 1) {
                 if (target->move(obj)) {
                     tell_room(environment(target),
-                        HIR "\nÖ»¼û"+target->name()+"ÏóÀ¦µ¾²Ý°ãµÄ·ÉÁË¹ýÀ´£¡\n" NOR, ({target,target}));
+                        HIR "\nåªè§"+target->name()+"è±¡æ†ç¨»è‰èˆ¬çš„é£žäº†è¿‡æ¥ï¼\n" NOR, ({target,target}));
                 }
             }
             target->receive_damage("kee", damage, me);
         } else {
             //here, cast failed and the target's mana_factor will be added to the previous 
             //damage to hurt yourself:(...note, damage<0.
-            msg += HIC "½á¹û±»$nÒÔ·¨Á¦Ò»±Æ£¬$NÃ»×²ÉÏÈ¥£¬×Ô¼º·´¶øÊÜÁËÄÚÉË£¡\n" NOR;
+            msg += HIC "ç»“æžœè¢«$nä»¥æ³•åŠ›ä¸€é€¼ï¼Œ$Næ²¡æ’žä¸ŠåŽ»ï¼Œè‡ªå·±åè€Œå—äº†å†…ä¼¤ï¼\n" NOR;
             damage -= (int)target->query("mana_factor");
             damage -= random((-damage*(int)target->query_skill("spells"))/100);
             me->receive_damage("kee", -damage/2, target);
         }
     } else
-        msg += "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n";
+        msg += "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n";
 
     message_vision(msg, me, target);
 
     if (damage > 0) COMBAT_D->report_status(target);
     else if (damage < 0) COMBAT_D->report_status(me);
-    //damage=0 corresponding to "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n"--no report.
+    //damage=0 corresponding to "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n"--no report.
 
     if (!target->is_fighting(me)) {
         if (living(target)) {

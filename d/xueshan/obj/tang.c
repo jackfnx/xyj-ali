@@ -6,16 +6,16 @@ int do_he(string);
 
 void create() 
 {
-    set_name(YEL "ÎåÏÉÌÀ" NOR, ({"tang"}));
+    set_name(YEL "äº”ä»™æ±¤" NOR, ({"tang"}));
     set_weight(50);
-    set("unit","Íë");
+    set("unit","ç¢—");
     setup();
 }
 
 void setup()
 {
-    if (!query("prices")) set_name("Ë¢¹øË®", ({"tang"}));
-    set("long", "Ò»Íë»¨»¨ÂÌÂÌµÄ"+name()+"£¬³¢³¢(he)Î¶µÀ£¿\n");
+    if (!query("prices")) set_name("åˆ·é”…æ°´", ({"tang"}));
+    set("long", "ä¸€ç¢—èŠ±èŠ±ç»¿ç»¿çš„"+name()+"ï¼Œå°å°(he)å‘³é“ï¼Ÿ\n");
 }
 
 void init()
@@ -27,19 +27,19 @@ int do_he(string arg)
 {
     object who = this_player();
 
-    if (!id(arg)) return notify_fail("ÄãÏëºÈÉ¶£¿\n");
-    message_vision("$N¶ËÆğ"+name()+"¹¾à½¹¾à½µÄºÈÁËÏÂÈ¥¡£\n", who);
-    if (query("prices") <= 0)  message_vision("µ«Ê²Ã´×ÌÎ¶Ò²Ã»³¢³öÀ´¡£\n", who);
+    if (!id(arg)) return notify_fail("ä½ æƒ³å–å•¥ï¼Ÿ\n");
+    message_vision("$Nç«¯èµ·"+name()+"å’•å˜Ÿå’•å˜Ÿçš„å–äº†ä¸‹å»ã€‚\n", who);
+    if (query("prices") <= 0)  message_vision("ä½†ä»€ä¹ˆæ»‹å‘³ä¹Ÿæ²¡å°å‡ºæ¥ã€‚\n", who);
     else if ((int)who->query_skill("iceblood-force", 1) < 10
         ||  (int)who->query_skill("iceblood-force", 1) > 199 ) {
-            message_vision("$NÖ»¸Ğµ½Ò»Õó¶ñĞÄ£¬ÌìĞüµØ×ª¡£\n", who);
+            message_vision("$Nåªæ„Ÿåˆ°ä¸€é˜µæ¶å¿ƒï¼Œå¤©æ‚¬åœ°è½¬ã€‚\n", who);
             who->unconcious();
     } else {
-        message_vision("$N¿àµÃÌéÀáºáÁ÷£¬Ç¿ÈÌ×ÅÃ»ÍÂ³öÀ´¡£\n", who);
+        message_vision("$Nè‹¦å¾—æ¶•æ³ªæ¨ªæµï¼Œå¼ºå¿ç€æ²¡åå‡ºæ¥ã€‚\n", who);
         who->improve_skill("iceblood-force", query("prices"));
-        tell_object(who, "ÄãÖ»¸Ğµ½¸¹ÄÚÈçÓĞÊıÊ®°ÑĞ¡µ¶ÔÚÂÒÔÜÂÒ´Ì£¬ÄãÊ¹¾¡ÁËÁ¦Æø£¬"
-            +"²Å½«¶¾ÌÀµÄÒ©Á¦ÍêÈ«»¯½â¡£\n");
-        tell_object(who, YEL "ÄãµÄ±ù¹ÈÄıÑª¹¦Ôö¼ÓÁË"+ chinese_number(query("prices"))+"µã£¡\n" NOR);
+        tell_object(who, "ä½ åªæ„Ÿåˆ°è…¹å†…å¦‚æœ‰æ•°åæŠŠå°åˆ€åœ¨ä¹±æ”’ä¹±åˆºï¼Œä½ ä½¿å°½äº†åŠ›æ°”ï¼Œ"
+            +"æ‰å°†æ¯’æ±¤çš„è¯åŠ›å®Œå…¨åŒ–è§£ã€‚\n");
+        tell_object(who, YEL "ä½ çš„å†°è°·å‡è¡€åŠŸå¢åŠ äº†"+ chinese_number(query("prices"))+"ç‚¹ï¼\n" NOR);
     } 
     destruct(this_object());
     return 1;

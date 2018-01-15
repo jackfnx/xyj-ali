@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÕÅÊ¿ºâ", ({ "zhang shiheng", "zhang", "shiheng", "da chen" }));
-  set("title", "´ó³¼");
-  set("gender", "ÄĞĞÔ");
+  set_name("å¼ å£«è¡¡", ({ "zhang shiheng", "zhang", "shiheng", "da chen" }));
+  set("title", "å¤§è‡£");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -62,7 +62,7 @@ void reward (object who)
         if (who->query_str() < limit)
         {
           str = "apply/strength";
-          name = "ëöÁ¦";
+          name = "è†‚åŠ›";
           break;
         }
       }
@@ -71,7 +71,7 @@ void reward (object who)
         if (who->query_cor() < limit)
         {
           str = "apply/courage";
-          name = "µ¨Ê¶";
+          name = "èƒ†è¯†";
           break;
         }
       }
@@ -80,7 +80,7 @@ void reward (object who)
         if (who->query_int() < limit)
         {
           str = "apply/intelligence";
-          name = "ÎòĞÔ";
+          name = "æ‚Ÿæ€§";
           break;
         }
       }
@@ -89,7 +89,7 @@ void reward (object who)
         if (who->query_spi() < limit)
         {
           str = "apply/spirituality";
-          name = "ÁéĞÔ";
+          name = "çµæ€§";
           break;
         }
       }
@@ -98,7 +98,7 @@ void reward (object who)
         if (who->query_cps() < limit)
         {
           str = "apply/composure";
-          name = "¶¨Á¦";
+          name = "å®šåŠ›";
           break;
         }
       }
@@ -107,7 +107,7 @@ void reward (object who)
         if (who->query_per() < limit)
         {
           str = "apply/personality";
-          name = "ÈİÃ²";
+          name = "å®¹è²Œ";
           break;
         }
       }
@@ -116,7 +116,7 @@ void reward (object who)
         if (who->query_con() < limit)
         {
           str = "apply/constitution";
-          name = "¸ù¹Ç";
+          name = "æ ¹éª¨";
           break;
         }
       }
@@ -125,7 +125,7 @@ void reward (object who)
         if (who->query_kar() < limit)
         {
           str = "apply/karma";
-          name = "¸£Ôµ";
+          name = "ç¦ç¼˜";
           break;
         }
       }
@@ -134,18 +134,18 @@ void reward (object who)
   if (! str)
   {
     str = "apply/personality";
-    name = "ÈİÃ²";
+    name = "å®¹è²Œ";
   }
   
   points = 2;
-  message_vision ("$N¶Ô$nÒ»°İ£º±İÏÂÓĞÖ¼£¬´Í"+RANK_D->query_respect(who)+
-                  chinese_number(points)+"µã"+name+"£¡\n",me,who);
+  message_vision ("$Nå¯¹$nä¸€æ‹œï¼šé™›ä¸‹æœ‰æ—¨ï¼Œèµ"+RANK_D->query_respect(who)+
+                  chinese_number(points)+"ç‚¹"+name+"ï¼\n",me,who);
 /*  
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"±İÏÂÓĞÖ¼£¬´Í"+
-           chinese_number(points)+"µã"+name+"£¡");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"é™›ä¸‹æœ‰æ—¨ï¼Œèµ"+
+           chinese_number(points)+"ç‚¹"+name+"ï¼");
 */  
   who->add("quest/gain/"+str,points);
-  reporting (who, who->query("quest/reason"), points, "µã"+name);
+  reporting (who, who->query("quest/reason"), points, "ç‚¹"+name);
 
   who->add_temp(str,points);
 }

@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî"});
-string *name_words = ({ "¶ş","Èı"});
-string *last_words = ({ "¸ç","²®","Êå"});
+string *first_name = ({ "èµµ","é’±","å­™","æ"});
+string *name_words = ({ "äºŒ","ä¸‰"});
+string *last_words = ({ "å“¥","ä¼¯","å”"});
 void create()
 {
    string name;
@@ -13,11 +13,11 @@ void create()
    name += last_words[random(sizeof(last_words))];
 
         set_name(name, ({"lie hu", "hu"}));
-   set("title", "ÁÔ»§");
-        set("long", "Ò»¸öÉ½¼äÁÔÊÖ¡£\n");
+   set("title", "çŒæˆ·");
+        set("long", "ä¸€ä¸ªå±±é—´çŒæ‰‹ã€‚\n");
         set("age", 30+random(20));
    set("attitude", "heroism");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("str", 25);
         set("int", 20);
         set("per", 10);
@@ -36,8 +36,8 @@ void create()
         set_skill("dodge", 60);
    set_skill("fork", 60);
 set("inquiry", ([
-"name": "Ïç¼ä²İÃñ£¬´òÁÔÎªÉú£¬Ëµ³öÀ´ÅÂÄúÒ²²»ÖªµÀ¡£\n",
-"here": "´ËµØÉ½ÉÏÒ°ÊŞÉõ¶à£¬Äã¿ÉÒªĞ¡ĞÄÄÄ¡£\n",
+"name": "ä¹¡é—´è‰æ°‘ï¼Œæ‰“çŒä¸ºç”Ÿï¼Œè¯´å‡ºæ¥æ€•æ‚¨ä¹Ÿä¸çŸ¥é“ã€‚\n",
+"here": "æ­¤åœ°å±±ä¸Šé‡å…½ç”šå¤šï¼Œä½ å¯è¦å°å¿ƒå“ªã€‚\n",
 ]) );
 
         setup();

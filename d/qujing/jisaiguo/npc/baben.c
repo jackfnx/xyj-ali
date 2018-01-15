@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/1/1997
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("å±²¨¶ù±¼", ({ "baboer ben", "ben"}) );
-  set("gender", "ÄĞĞÔ" );
-  set("title", "ºÚÓã¾«");
+  set_name("çæ³¢å„¿å¥”", ({ "baboer ben", "ben"}) );
+  set("gender", "ç”·æ€§" );
+  set("title", "é»‘é±¼ç²¾");
   set("age", 30);
   set("str", 30);
   set("per", 30);
@@ -59,8 +59,8 @@ void autofight(object me, object ob)
   if (! living(me))
     return;
    
-  message_vision("$N¶Ô$n½ĞµÀ£ºÄÄÀ´µÄÄñÔôÈË£¡\n",me,ob);
-  message_vision("$N¾¾×¡$n¾Í´òÁËÆğÀ´£¡\n\n",me,ob);
+  message_vision("$Nå¯¹$nå«é“ï¼šå“ªæ¥çš„é¸Ÿè´¼äººï¼\n",me,ob);
+  message_vision("$Næªä½$nå°±æ‰“äº†èµ·æ¥ï¼\n\n",me,ob);
 
   me->fight_ob(ob);
   ob->fight_ob(me);
@@ -90,7 +90,7 @@ int check_result(object me, object ob)
   {
     object tie;
 
-    message_vision ("$NÕ½Õ½¾¤¾¤£¬¿Ú½ĞÈÄÃü¡£\n",me);
+    message_vision ("$Næˆ˜æˆ˜å…¢å…¢ï¼Œå£å«é¥¶å‘½ã€‚\n",me);
 
     ob->set_temp("obstacle/jisaiguo/bbeb2",1);
 
@@ -102,13 +102,13 @@ int check_result(object me, object ob)
     ob->set_temp("obstacle/jisaiguo/letter",1);
     tie = new ("/d/qujing/jisaiguo/obj/tie");
     tie->move(ob);
-    message_vision ("$N½»¸ø$nÒ»·âÌû¡£\n",me,ob);
+    message_vision ("$Näº¤ç»™$nä¸€å°å¸–ã€‚\n",me,ob);
     
   }
 
   if (( (int)ob->query("kee")*100/his_max_kee)<=50)
   {
-    message_vision ("$N¶Ô$n·¢³öÒ»Õó¿ñĞ¦¡£\n",me,ob);
+    message_vision ("$Nå¯¹$nå‘å‡ºä¸€é˜µç‹‚ç¬‘ã€‚\n",me,ob);
   }
 
   return 1;  
@@ -119,8 +119,8 @@ void die()
   object me = this_object();
   object fish = new("/d/qujing/jisaiguo/obj/fish");
 
-  fish->set_name("ºÚÓã",({"fish"}));
+  fish->set_name("é»‘é±¼",({"fish"}));
   fish->move(environment(me));
-  message_vision("\n$NÂıÂıµØµ¹ÏÂ£¬ÏÖĞÎÎªÒ»ÌõºÚÓã¡£\n",me);
+  message_vision("\n$Næ…¢æ…¢åœ°å€’ä¸‹ï¼Œç°å½¢ä¸ºä¸€æ¡é»‘é±¼ã€‚\n",me);
   destruct(me);
 }

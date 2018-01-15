@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/westroom  snowcat moved to /d/qujing/wuji
@@ -35,12 +35,12 @@ int get_current_day_phase() {
 
 void create ()
 {
-  set ("short", "Î÷Ïá·¿");
+  set ("short", "è¥¿åŽ¢æˆ¿");
   set ("long", @LONG
 
-´Ë¼äÄËËÂÖÐÖ÷³ÖµÄìø·¿£¬µ«Òò½üÀ´Ò¹¼äÄÖ¹í£¬Ö÷³ÖÒÑ°áÈ¥±ð´¦¡£ÎÝ
-ÖÐ³ÂÉèÉõÊÇµäÑÅ¡£Á½±ßÊé¼ÜÉÏ°ÚÂúÁË¾­Êé£¬³¯ÄÏµÄ°¸ÉÏÓÐÒ»¶¦ÏãÂ¯
-È´ºÃÏóºÃ¾ÃÃ»ÈËÉÏÏãÁË¡£
+æ­¤é—´ä¹ƒå¯ºä¸­ä¸»æŒçš„ç¦…æˆ¿ï¼Œä½†å› è¿‘æ¥å¤œé—´é—¹é¬¼ï¼Œä¸»æŒå·²æ¬åŽ»åˆ«å¤„ã€‚å±‹
+ä¸­é™ˆè®¾ç”šæ˜¯å…¸é›…ã€‚ä¸¤è¾¹ä¹¦æž¶ä¸Šæ‘†æ»¡äº†ç»ä¹¦ï¼Œæœå—çš„æ¡ˆä¸Šæœ‰ä¸€é¼Žé¦™ç‚‰
+å´å¥½è±¡å¥½ä¹…æ²¡äººä¸Šé¦™äº†ã€‚
 
 LONG);
 
@@ -72,7 +72,7 @@ int do_sleep (string arg)
   if (phase > 0 && phase < 5)
     return 0;
 
-  message_vision ("$NÊÔ×ÅÌÉÏÂÏëË¯×Å£¬µ«ÐÄÀïÓÐµãìþìý²»°²¡£\n",who);
+  message_vision ("$Nè¯•ç€èººä¸‹æƒ³ç¡ç€ï¼Œä½†å¿ƒé‡Œæœ‰ç‚¹å¿å¿‘ä¸å®‰ã€‚\n",who);
   remove_call_out ("create_king");
   call_out ("create_king",2+random(10));
   return 1; 

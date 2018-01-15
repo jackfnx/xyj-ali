@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// goldring.c ½ğ½äÖ¸
+// goldring.c é‡‘æˆ’æŒ‡
 
 #include <armor.h>
 
@@ -9,12 +9,12 @@ inherit FINGER;
 
 void create()
 {
-   set_name("×êÊ¯½äÖ¸", ({ "ring", "jiezhi", "ring" }));
+   set_name("é’»çŸ³æˆ’æŒ‡", ({ "ring", "jiezhi", "ring" }));
    set("weight", 400);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("unit", "¸ö");
+     set("unit", "ä¸ª");
      set("value", 9000);
      set("material", "gold");
      set("armor_prop/armor", 1);

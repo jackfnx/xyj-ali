@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// jia-shen.c ¼ÙÉí
+// jia-shen.c å‡èº«
 #include <ansi.h>
 
 inherit NPC;
 
 void create()
 {
-   set_name("ÕæÉí",({"zhen shen"}));
-   set("gender","ÄĞĞÔ");
+   set_name("çœŸèº«",({"zhen shen"}));
+   set("gender","ç”·æ€§");
    set("age",30);
    set("str",30);
    set("per",20);
@@ -122,11 +122,11 @@ void die()
    object owner_ob;
    owner = query("owner");
    if( objectp(owner_ob = find_player(owner)) ) {
-                        tell_object(owner_ob, "ÄãµÄÕæÉí±»ÈËÉ±ËÀÁË£¬Äã¾õµÃÒ»ÕóÌìĞıµØ×ª....\n");
+                        tell_object(owner_ob, "ä½ çš„çœŸèº«è¢«äººæ€æ­»äº†ï¼Œä½ è§‰å¾—ä¸€é˜µå¤©æ—‹åœ°è½¬....\n");
         owner_ob->move("/obj/void");
         owner_ob->unconcious(); 
    }
-       message("vision",HIB + name() + "Éí×ÓÒ»»Î£¬±ä³ÉÒ»¹ÉÇàÑÌÉ¢È¥ÁË¡£\n" NOR,environment(),this_object() );
+       message("vision",HIB + name() + "èº«å­ä¸€æ™ƒï¼Œå˜æˆä¸€è‚¡é’çƒŸæ•£å»äº†ã€‚\n" NOR,environment(),this_object() );
         destruct(this_object());
 }
 
@@ -145,7 +145,7 @@ int heal_up()
 void leave()
 {
       if(this_object()) { //mon 11/23/97
-        message("vision",HIB + name() + "Éí×ÓÒ»»Î£¬±ä³ÉÒ»¹ÉÇàÑÌÉ¢È¥ÁË¡£\n" NOR,environment(),this_object() );
+        message("vision",HIB + name() + "èº«å­ä¸€æ™ƒï¼Œå˜æˆä¸€è‚¡é’çƒŸæ•£å»äº†ã€‚\n" NOR,environment(),this_object() );
         destruct(this_object());
       }
       return;

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
 
 // put.c
@@ -15,30 +15,30 @@ int main(object me, string arg)
     object obj, dest, *inv, obj2;
     int i, amount;
 
-    if (!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+    if (!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
     if (sscanf(arg, "%s into %s", item, target) != 2)
-        return notify_fail("ÄãÒª°ÑÊ²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        return notify_fail("ä½ è¦æŠŠä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
     dest = present(target, me);
     if (!dest || living(dest)) dest = present(target, environment(me));
     if (!dest || living(dest))
-        return notify_fail("ÕâÀïÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+        return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 
     if (sscanf(item, "%d %s", amount, item) == 2) {
         if (!objectp(obj = present(item, me)))
-            return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+            return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if (obj->query("no_give")
         ||  obj->query("no_drop")
         ||  obj->query("no_get"))
-            return notify_fail("Õâ¼þ¶«Î÷²»ÄÜÀëÊÖ¡£\n");
+            return notify_fail("è¿™ä»¶ä¸œè¥¿ä¸èƒ½ç¦»æ‰‹ã€‚\n");
         if (!obj->query_amount())
-            return notify_fail(obj->name() + "²»ÄÜ±»·Ö¿ª¡£\n");
+            return notify_fail(obj->name() + "ä¸èƒ½è¢«åˆ†å¼€ã€‚\n");
         if (amount < 1)
-            return notify_fail("¶«Î÷µÄÊýÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+            return notify_fail("ä¸œè¥¿çš„æ•°é‡è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
         if (amount > obj->query_amount())
-            return notify_fail("ÄãÃ»ÓÐÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+            return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
         else if (amount == (int)obj->query_amount())
             return do_put(me, obj, dest);
         else {
@@ -66,11 +66,11 @@ int main(object me, string arg)
     }
 
     if (!objectp(obj = present(item, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
     if (obj->query("no_give")
     ||  obj->query("no_drop")
     ||  obj->query("no_get"))
-        return notify_fail("Õâ¼þ¶«Î÷²»ÄÜÀëÊÖ¡£\n");
+        return notify_fail("è¿™ä»¶ä¸œè¥¿ä¸èƒ½ç¦»æ‰‹ã€‚\n");
     return do_put(me, obj, dest);
 }
 
@@ -82,17 +82,17 @@ int do_put(object me, object obj, object dest)
     if (userp(dest)) {
         inv = all_inventory(dest);
         if (sizeof(inv) > 30)
-            return notify_fail("¶Ô·½ÉíÉÏÔÙÒ²×°²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+            return notify_fail("å¯¹æ–¹èº«ä¸Šå†ä¹Ÿè£…ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
     }
     else if (!dest->is_character() && dest->is_container()) {
         inv = all_inventory(dest);
         if (!(amount=dest->query("max_items"))) amount = 5;
         if (sizeof(inv) >= amount)
-            return notify_fail(dest->name()+ "ÀïÔÙÒ²×°²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+            return notify_fail(dest->name()+ "é‡Œå†ä¹Ÿè£…ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
     }
 */
     if (obj->move(dest)) {
-        message_vision(sprintf("$N½«Ò»%s%s·Å½ø%s¡£\n",
+        message_vision(sprintf("$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n",
             obj->query("unit"), obj->name(), dest->name()),
             me);
         return 1;
@@ -103,9 +103,9 @@ int do_put(object me, object obj, object dest)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : put <ÎïÆ·Ãû³Æ> into <Ä³ÈÝÆ÷>
+æŒ‡ä»¤æ ¼å¼ : put <ç‰©å“åç§°> into <æŸå®¹å™¨>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³ÑùÎïÆ··Å½øÒ»¸öÈÝÆ÷£¬µ±È»£¬Ê×ÏÈÄãÒªÓµÓÐÕâÑùÎïÆ·¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å°†æŸæ ·ç‰©å“æ”¾è¿›ä¸€ä¸ªå®¹å™¨ï¼Œå½“ç„¶ï¼Œé¦–å…ˆä½ è¦æ‹¥æœ‰è¿™æ ·ç‰©å“ã€‚
 
 HELP
     );

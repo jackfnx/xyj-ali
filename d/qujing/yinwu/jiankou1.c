@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 12/2/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "½§¿Ú");
+  set ("short", "æ¶§å£");
   set ("long", @LONG
 
-É½Ê¯¸ßËÊÖ®´¦£¬ÓÐÐ±ÆÂ×ÔÁ½°¶»º»º¶øÏÂ£¬µ×ÏÂÊÇäýäýÁ÷Ë®Ö®Éù
-²»¶Ï£¬½§Ë®³å»÷×ÅÁ÷Ë®ÖÐµÄ´óÐ¡Ê¯¿é£¬·¢³öÒ»ÕóÕóÕð¶úÓûÁûµÄ
-ºäÃùÀËÉù£¬½ü´¦ÓÐ¼¸Ìõ°µ¹µ¡£
+å±±çŸ³é«˜è€¸ä¹‹å¤„ï¼Œæœ‰æ–œå¡è‡ªä¸¤å²¸ç¼“ç¼“è€Œä¸‹ï¼Œåº•ä¸‹æ˜¯æ½ºæ½ºæµæ°´ä¹‹å£°
+ä¸æ–­ï¼Œæ¶§æ°´å†²å‡»ç€æµæ°´ä¸­çš„å¤§å°çŸ³å—ï¼Œå‘å‡ºä¸€é˜µé˜µéœ‡è€³æ¬²è‹çš„
+è½°é¸£æµªå£°ï¼Œè¿‘å¤„æœ‰å‡ æ¡æš—æ²Ÿã€‚
 
 LONG);
 
@@ -32,11 +32,11 @@ int do_dive (string arg)
 {
   object who = this_player ();
 
-  message_vision ("$NÍùË®ÀïÒ»ÔúÇ±ÁËÏÂÈ¥¡­¡­\n",who);
+  message_vision ("$Nå¾€æ°´é‡Œä¸€æ‰Žæ½œäº†ä¸‹åŽ»â€¦â€¦\n",who);
   if (! who->query_temp("apply/name") ||
-      who->query_temp("apply/name")[0] != "Ë®ÀÏÊó")
+      who->query_temp("apply/name")[0] != "æ°´è€é¼ ")
   {
-    message_vision ("\nÖ»¼û$NÓÖÊÖÃ¦½ÅÂÒµØÅÀÉÏ°¶À´¡£\n",who);    
+    message_vision ("\nåªè§$Nåˆæ‰‹å¿™è„šä¹±åœ°çˆ¬ä¸Šå²¸æ¥ã€‚\n",who);    
   }
   else
     who->move(__DIR__"tianjing");

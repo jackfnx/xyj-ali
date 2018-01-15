@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¸èÅ®", ({ "ge nu", "nu" }) );
-  set("gender", "Å®ĞÔ");
+  set_name("æ­Œå¥³", ({ "ge nu", "nu" }) );
+  set("gender", "å¥³æ€§");
   set("age", 15);
   set("combat_exp", 2000);
 
@@ -34,9 +34,9 @@ int random_move ()
 {
   object me = this_object();
   string *strs = ({
-    "$NÃÔÈËÒ»Ğ¦¡£\n",
-    "$NÕÅ¿ªÓ£ÌÒĞ¡¿ÚÇá³ªÆğÀ´¡£\n",
-    "$NÃæ¼ÕÌÒºì£¬³ª×ÅÇú¶ù¡£\n",
+    "$Nè¿·äººä¸€ç¬‘ã€‚\n",
+    "$Nå¼ å¼€æ¨±æ¡ƒå°å£è½»å”±èµ·æ¥ã€‚\n",
+    "$Né¢é¢Šæ¡ƒçº¢ï¼Œå”±ç€æ›²å„¿ã€‚\n",
   });
 
   message_vision (strs[random(sizeof(strs))],me);

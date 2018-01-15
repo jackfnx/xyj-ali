@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,15 +7,15 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÑÃÒÛ·ş", ({"yayi cloth", "cloth"}));
+        set_name("è¡™å½¹æœ", ({"yayi cloth", "cloth"}));
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
      set("long",
-"Ò»¼şÇàÉ«¶Ì×°£¬Ç¶ÒÔºì±ß£¬ÊÇÉÏÌÃµÄÑÃÒÛ´©µÄ£®\n");
+"ä¸€ä»¶é’è‰²çŸ­è£…ï¼ŒåµŒä»¥çº¢è¾¹ï¼Œæ˜¯ä¸Šå ‚çš„è¡™å½¹ç©¿çš„ï¼\n");
                 set("material", "cloth");
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 500);
                 set("armor_prop/armor", 10);
         }

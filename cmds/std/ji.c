@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
- // ji.c ¼À·¨±¦
+ // ji.c ç¥­æ³•å®
  // created 7-4-97 pickle
 
 inherit F_CLEAN_UP;
@@ -16,12 +16,12 @@ int main(object me, string arg)
     mixed no_get;
 
     if( !wizardp(me) && environment(me)->query("no_magic") )
-   return notify_fail("ÕâÀï½ûÖ¹¼À·¨±¦¡£\n");
-    if( !arg ) return notify_fail("ÄãÒª¼ÀÄÄÑù·¨±¦£¿\n");
+   return notify_fail("è¿™é‡Œç¦æ­¢ç¥­æ³•å®ã€‚\n");
+    if( !arg ) return notify_fail("ä½ è¦ç¥­å“ªæ ·æ³•å®ï¼Ÿ\n");
 
     // Check if correct format is followed
     if( sscanf(arg, "%s on %s", fabaoname, targetname)>2 )
-   return notify_fail("Ö¸Áî¸ñÊ½ : ji <·¨±¦Ãû³Æ> [on <Ä¿±ê>]\n");
+   return notify_fail("æŒ‡ä»¤æ ¼å¼ : ji <æ³•å®åç§°> [on <ç›®æ ‡>]\n");
 
     // Check if both a fabao and a target is specified.
     // if so, then check 1. whether the player own's the fabao,
@@ -29,27 +29,27 @@ int main(object me, string arg)
     if( sscanf(arg, "%s on %s", fabaoname, targetname)==2 )
     {
    fabao=present(fabaoname, me);
-   if(!fabao) return notify_fail("ÄãÃ»ÓÐ "+fabaoname+" ÕâÑù·¨±¦¡£\n");
+   if(!fabao) return notify_fail("ä½ æ²¡æœ‰ "+fabaoname+" è¿™æ ·æ³•å®ã€‚\n");
    target = present(targetname, environment(me));
    if (me->is_busy() && !fabao->query("no_busy"))
-       return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬ÎÞÏ¾·ÖÉí¼À·¨±¦¡£\n");
-   if(!target) return notify_fail("ÕâÀïÃ»ÓÐ " + targetname + "¡£\n");
+       return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œæ— æš‡åˆ†èº«ç¥­æ³•å®ã€‚\n");
+   if(!target) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + targetname + "ã€‚\n");
    return fabao->ji(targetname);
    
 }
     fabao=present(arg, me);
-    if(!fabao) return notify_fail("ÄãÃ»ÓÐ" + arg +"ÕâÑù·¨±¦¡£\n");
+    if(!fabao) return notify_fail("ä½ æ²¡æœ‰" + arg +"è¿™æ ·æ³•å®ã€‚\n");
     if (me->is_busy() && !fabao->query("no_busy"))
-   return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬ÎÞÏ¾·ÖÉí¼À·¨±¦¡£\n");
+   return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œæ— æš‡åˆ†èº«ç¥­æ³•å®ã€‚\n");
 
     return fabao->ji();
 }
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : ji <·¨±¦Ãû³Æ> [on <Ä¿±ê>]
+æŒ‡ä»¤æ ¼å¼ : ji <æ³•å®åç§°> [on <ç›®æ ‡>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¼ÀÒ»Ïî·¨±¦¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ ç¥­ä¸€é¡¹æ³•å®ã€‚
 
 HELP
         );

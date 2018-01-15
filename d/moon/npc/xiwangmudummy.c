@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //xiwangmufake.c
@@ -8,17 +8,17 @@ string miekou();
 
 void create()
 {
-    set_name("����ĸ", ({"xi wangmu", "xi", "wangmu","master"}));
-    set("long", "����������������������������ء�\n");
-    set("title", "�¹���ʦ");
-    set("gender", "Ů��");
+    set_name("西王母", ({"xi wangmu", "xi", "wangmu","master"}));
+    set("long", "西华至妙生伊川，穆王八骑访昆仑。\n");
+    set("title", "月宫祖师");
+    set("gender", "女性");
     set("age", 100);
     set("class","xian");
     set("attitude", "friendly");
-    set("rank_info/respect", "�Ϸ���");
+    set("rank_info/respect", "老夫人");
     set("cor", 30);
     set("per", 30);
-    set("looking", "�޾���ɣ���̬ľګ��");
+    set("looking", "无精打采，神态木讷。");
     set("max_kee", 4500);
     set("max_gin", 800);
     set("max_sen", 4500);
@@ -48,15 +48,15 @@ void create()
     map_skill("parry", "snowsword");
     map_skill("dodge", "moondance");
     set("inquiry", ([
-        "槼�": (: miekou :),
-        "��ԯ��Ĺ": (: miekou :),
+        "妲己": (: miekou :),
+        "轩辕古墓": (: miekou :),
     ]));
     set("chat_chance_combat", 50);
     set("chat_msg_combat", ({
         (: cast_spell, "arrow" :),
     }) );
 
-    create_family("�¹�", 1, "��");
+    create_family("月宫", 1, "红");
     setup();
 
     carry_object("/d/obj/cloth/tianyi.c")->wear();
@@ -65,28 +65,28 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-    if (!((string)ob->query("gender") == "Ů��")) {
+    if (!((string)ob->query("gender") == "女性")) {
         command("shake");
-        command("say �����¹�ֻ��Ůͽ����λ" + RANK_D->query_respect(ob) + "��������߾Ͱɡ�\n");
+        command("say 我们月宫只收女徒，这位" + RANK_D->query_respect(ob) + "还是另请高就吧。\n");
         return;
     }
 
-    if ((string)ob->query("family/family_name") == "�¹�") {
+    if ((string)ob->query("family/family_name") == "月宫") {
         if (((int)ob->query("combat_exp") < 100000)) {
             command("say " + RANK_D->query_respect(ob) +
-                "�ĵ��в��������Щ��ѧ�ط�������������\n");
+                "的道行不够高深，有些绝学秘法恐怕难以领悟。\n");
             return;
         }
         command("pat "+ob->query("id"));
-        command("say �ã�ϣ��" + RANK_D->query_respect(ob) +
-            "���Ŭ�����������¹�������\n");
+        command("say 好，希望" + RANK_D->query_respect(ob) +
+            "多加努力，把我们月宫发扬光大。\n");
         command("recruit " + ob->query("id") );
         return;
     }
     
     command("shake");
     command("say " + RANK_D->query_respect(ob) +
-        "������ȥѧЩ��������ɡ�\n");
+        "还是先去学些基础功夫吧。\n");
     return;
 }
 
@@ -101,11 +101,11 @@ string miekou()
     who = this_player();
     here = environment();
     there = load_object("/d/gumu/dajiroom");
-    message_vision(this_object()->name() + "��ʱ��ɫһ�䣬�����г�һ����������ס��$N\n", who);
+    message_vision(this_object()->name() + "顿时脸色一变，挥手招出一团云雾，罩住了$N\n", who);
     who->move(there);
-    tell_room(here, "����ɢȥ��" + who->name() + "�����ˡ�\n��" + this_object()->name() + "ȴ¶�����ص�Ц�ݡ�\n");
-    tell_object(who, "����ɢȥ���㷢���Լ�����һ��İ���ĵط���\n");
-    tell_room(there, "��Ȼ��һ����������" + who->name() + "���������\n", who);
+    tell_room(here, "云雾散去，" + who->name() + "不见了。\n而" + this_object()->name() + "却露出神秘的笑容。\n");
+    tell_object(who, "云雾散去，你发现自己处于一个陌生的地方。\n");
+    tell_room(there, "忽然，一团云雾升起，" + who->name() + "出现在这里。\n", who);
     there->miekou(who);
-    return "������Ӱ�����Ҳ������ʵ��𣿺Ǻǡ�����";
+    return "这个孩子啊，这也是你该问的吗？呵呵～～～";
 }

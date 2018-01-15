@@ -1,19 +1,19 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 void create()
 {
-        set_name("ÁøÊ÷¾«", ({"liushu jing", "jing"}));
-        set("long", "Ò»¸öÄ£Ñù¼«ÏóÊ÷×®×ÓµÄÑı¹Ö£¬ÊÖÀïÌá×ÅÒ»½ØÊ÷¸É¡£\n");
+        set_name("æŸ³æ ‘ç²¾", ({"liushu jing", "jing"}));
+        set("long", "ä¸€ä¸ªæ¨¡æ ·æè±¡æ ‘æ¡©å­çš„å¦–æ€ªï¼Œæ‰‹é‡Œæç€ä¸€æˆªæ ‘å¹²ã€‚\n");
         set("age", 30);
         set("attitude", "aggressive");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
    set("class", "yaomo");
         set("str", 20);
         set("int", 20);
         set("per", 10);
-   set("looking", "»ëÉíÉÏÏÂ¾ÍÊÇÄ¾Í·£¬ÄÇÀïÓĞÊ²Ã´ÈİÃ²¡£");
+   set("looking", "æµ‘èº«ä¸Šä¸‹å°±æ˜¯æœ¨å¤´ï¼Œé‚£é‡Œæœ‰ä»€ä¹ˆå®¹è²Œã€‚");
         set("con", 30);
         set("max_kee",600);
         set("max_sen", 600);
@@ -55,7 +55,7 @@ void leave()
    
    this_object()->add("time", 1);
    if( (int)this_object()->query("time") >= 15 ) {
-        message("vision",name() + "Ò»¸ö×İÉí£¬Ìø»Øµ½Ê÷ÉÏ¡£\n", environment(),this_object() );
+        message("vision",name() + "ä¸€ä¸ªçºµèº«ï¼Œè·³å›åˆ°æ ‘ä¸Šã€‚\n", environment(),this_object() );
         destruct(this_object());
 
    }

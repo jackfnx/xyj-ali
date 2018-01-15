@@ -1,19 +1,19 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create()
 {
-  set ("short", "³¬Éú¹óµÀÃÅ");
+  set ("short", "è¶…ç”Ÿè´µé“é—¨");
   set ("long", @LONG
 
-ÕâÀï±ßÊÇÒõ¼äÍ¨ÍùÑô¼äµÄÎ¨Ò»³ö¿Ú£­¹óµÀÃÅ¡£ÈôÊÇÓĞÔ©ËÀ¹íÍ¶
-Ì¥£¬¾ÍÓÉ´Ë³öÒõ¼ä¡£ÄÏ·½ÓĞÒ»×ù´óÅÆ·»ËÊÁ¢£¬ÅÆ·»µÄÁíÒ»ÃæÊ²
-Ã´Ò²¿´²»µ½¡£´ó¸ÅÒª³öÈ¥(out)²ÅÄÜ¿´µ½¡£
+è¿™é‡Œè¾¹æ˜¯é˜´é—´é€šå¾€é˜³é—´çš„å”¯ä¸€å‡ºå£ï¼è´µé“é—¨ã€‚è‹¥æ˜¯æœ‰å†¤æ­»é¬¼æŠ•
+èƒï¼Œå°±ç”±æ­¤å‡ºé˜´é—´ã€‚å—æ–¹æœ‰ä¸€åº§å¤§ç‰ŒåŠè€¸ç«‹ï¼Œç‰ŒåŠçš„å¦ä¸€é¢ä»€
+ä¹ˆä¹Ÿçœ‹ä¸åˆ°ã€‚å¤§æ¦‚è¦å‡ºå»(out)æ‰èƒ½çœ‹åˆ°ã€‚
 LONG);
   set("item_desc", ([ /* sizeof() == 1 */
-  "out" : "ÅÆ·»µÄÁíÒ»ÃæÊ²Ã´Ò²¿´²»µ½¡£\n",
+  "out" : "ç‰ŒåŠçš„å¦ä¸€é¢ä»€ä¹ˆä¹Ÿçœ‹ä¸åˆ°ã€‚\n",
 ]));
 
 set("exits", ([ /* sizeof() == 4 */
@@ -33,18 +33,18 @@ int do_out()
 {//   string owner;
         object me, zhenshen;
    me=this_player();
-   message_vision("$NÂõÍÈÏòÅ¨ÎíÖĞ×ßÁË½øÈ¥¡£\n", me);
+   message_vision("$Nè¿ˆè…¿å‘æµ“é›¾ä¸­èµ°äº†è¿›å»ã€‚\n", me);
    if( me->query_temp("in_hell")) {
      if( zhenshen=me->query_temp("zhenshen")) {
         me->move(environment(zhenshen));
         destruct(zhenshen);
         me->delete_temp("in_hell");
-        message_vision("$NÈàÈàÑÛ¾¦£¬ËÆºõÇåĞÑÁË¹ıÀ´¡£\n", me);
+        message_vision("$Næ‰æ‰çœ¼ç›ï¼Œä¼¼ä¹æ¸…é†’äº†è¿‡æ¥ã€‚\n", me);
         return 1;
      }
    }
         me->move("/d/death/out");
-   message_vision("$NÍ´¿àµÄºßÁËÒ»Éù¡£\n", me);
+   message_vision("$Nç—›è‹¦çš„å“¼äº†ä¸€å£°ã€‚\n", me);
         me->delete_temp("in_hell");
         return 1;
 }

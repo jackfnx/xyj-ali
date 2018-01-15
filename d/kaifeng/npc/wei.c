@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÎºÕ÷", ({ "wei zheng", "wei", "zheng" }));
-  set("title", "Ø©Ïà");
-  set("gender", "ÄÐÐÔ");
+  set_name("é­å¾", ({ "wei zheng", "wei", "zheng" }));
+  set("title", "ä¸žç›¸");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -45,14 +45,14 @@ void init ()
     object where = environment(me);
     
     if (! where->valid_player(who))
-      message_vision ("$N¶Ô$nËµµÀ£ºÕâÀïÊÇÈü³¡£¬"+RANK_D->query_respect(who)+
-                      "²»¿ÉËæ±ãÂÒ´³Ò²¡£\n",me,who);
+      message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™é‡Œæ˜¯èµ›åœºï¼Œ"+RANK_D->query_respect(who)+
+                      "ä¸å¯éšä¾¿ä¹±é—¯ä¹Ÿã€‚\n",me,who);
     else 
       command ("hi "+who->query("id")); 
     if (who->query("env/wimpy") > 0)
     {
       who->set("env/wimpy",0);
-      message_vision ("$N¶Ô$nËµµÀ£ºÔÚÕâÀïÉ±Éí²»ÉË½î¹Ç£¬ÀÏ·òÌæÄã½«ÌÓÃüÏµÊý(wimpy)ÖÃÁãÁË¡£\n",me,who);
+      message_vision ("$Nå¯¹$nè¯´é“ï¼šåœ¨è¿™é‡Œæ€èº«ä¸ä¼¤ç­‹éª¨ï¼Œè€å¤«æ›¿ä½ å°†é€ƒå‘½ç³»æ•°(wimpy)ç½®é›¶äº†ã€‚\n",me,who);
 
     }
   }
@@ -62,8 +62,8 @@ void die ()
 {
   object me = this_object();
 
-  message_vision ("\nµØÏÂ´«À´´ÞÅÐ¹ÙµÄÉùÒô£º$NÑôÊÙÎ´¾¡£¡\n",me);
-  message_vision ("\n$N²üÎ¡Î¡µØ´ÓµØÉÏË¦ÐäÅÀ½«ÆðÀ´¡£\n",me);
+  message_vision ("\nåœ°ä¸‹ä¼ æ¥å´”åˆ¤å®˜çš„å£°éŸ³ï¼š$Né˜³å¯¿æœªå°½ï¼\n",me);
+  message_vision ("\n$Né¢¤å·å·åœ°ä»Žåœ°ä¸Šç”©è¢–çˆ¬å°†èµ·æ¥ã€‚\n",me);
   set("kee", 3000);
   set("sen", 3000);
 }
@@ -77,14 +77,14 @@ void accept_fight (object ob)
 {
   object me = this_object();
 
-  message_vision ("$NÁ¬Ã¦Ìø¿ªËµ£ºÀÏ·ò½î¹ÇÒÑÐà£¬²»´ò£¬²»´òÒ²£¡\n",me);
+  message_vision ("$Nè¿žå¿™è·³å¼€è¯´ï¼šè€å¤«ç­‹éª¨å·²æœ½ï¼Œä¸æ‰“ï¼Œä¸æ‰“ä¹Ÿï¼\n",me);
 }
 
 void kill_ob (object ob)
 {
   object me = this_object();
 
-  message_vision ("$NÁ¬Ã¦Ìø¿ªËµ£ºÀÏ·ò½î¹ÇÒÑÐà£¬²»´ò£¬²»´òÒ²£¡\n",me);
+  message_vision ("$Nè¿žå¿™è·³å¼€è¯´ï¼šè€å¤«ç­‹éª¨å·²æœ½ï¼Œä¸æ‰“ï¼Œä¸æ‰“ä¹Ÿï¼\n",me);
   me->remove_all_killer();
   all_inventory(environment(me))->remove_killer(me);
 }

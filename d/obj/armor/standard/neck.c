@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // shoupi.c
@@ -9,13 +9,13 @@ inherit NECK;
 
 void create()
 {
-        set_name("Î§²±", ({"neck"}));
+        set_name("å›´è„–", ({"neck"}));
    set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
      set("armor_prop/armor", 1);
         }
         setup();

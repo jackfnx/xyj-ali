@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-    set ("short", "����ͤ");
+    set ("short", "八仙亭");
     set ("long", @LONG
 
-�����뿪��ׯ�ۺ󣬾͵������Ρ���Ϊ�����������ཻ���꣬�����
-�����̻���ʱ����ࡣΪ�ˣ�������޽���һ������ͤ��ר��������
-�š�
+八仙离开五庄观后，就到处云游。因为他们与三星相交多年，因此在
+蓬莱盘桓的时间最多。为此，这里就修建了一座八仙亭，专供他们落
+脚。
 LONG);
     set("exits", ([ /* sizeof() == 3 */
         "west" : __DIR__"road1",

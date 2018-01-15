@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/road.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "»ØÀÈ");
+  set ("short", "å›žå»Š");
   set ("long", @LONG
 
-ÇúÕÛÓÎÀÈ£¬½×ÏÂÊ¯×ÓÂþ³Éð®Â·£¬Î÷±ßÊÇÒ»¼ä²èÞÂÅÀÂúÁËµÄÐ¡
-ÎÝ£¬»¨Ïãð¥Óô¡£
+æ›²æŠ˜æ¸¸å»Šï¼Œé˜¶ä¸‹çŸ³å­æ¼«æˆç”¬è·¯ï¼Œè¥¿è¾¹æ˜¯ä¸€é—´èŒ¶è˜¼çˆ¬æ»¡äº†çš„å°
+å±‹ï¼ŒèŠ±é¦™é¦¥éƒã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

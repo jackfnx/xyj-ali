@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ãşË®ÇÅ");
+  set ("short", "æ³¾æ°´æ¡¥");
   set ("long", @LONG
 
-´ËÇÅ¸ß¿çãşË®Ö®ÉÏ£¬ÆøÊÆ·Ç·²¡£ÇÅÉíÒÔºº°×ÓñÔì¾Í£¬¼ÈÃÀ¹Û
-ÓÖ¼á¹Ì¡£ÇÅÉÏ³µË®ÂíÁú£¬´¨Á÷²»Ï¢¡£ÇÅÏÂãşË®Çå³º¼ûµ×£¬Ê±
-ÓĞÓÎÓãÔ¾Æğ¡£
+æ­¤æ¡¥é«˜è·¨æ³¾æ°´ä¹‹ä¸Šï¼Œæ°”åŠ¿éå‡¡ã€‚æ¡¥èº«ä»¥æ±‰ç™½ç‰é€ å°±ï¼Œæ—¢ç¾è§‚
+åˆåšå›ºã€‚æ¡¥ä¸Šè½¦æ°´é©¬é¾™ï¼Œå·æµä¸æ¯ã€‚æ¡¥ä¸‹æ³¾æ°´æ¸…æ¾ˆè§åº•ï¼Œæ—¶
+æœ‰æ¸¸é±¼è·ƒèµ·ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -32,18 +32,18 @@ int do_jump(string arg)
         me=this_player();
 
         if ( !arg || ((arg != "bridge") ))
-                return notify_fail("ÄãÒªÍùÄÄÌø£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªè·³ï¼Ÿ\n");
         else
-message_vision("$NÌ¾ÁË¿ÚÆø£¬ÑÛÒ»±Õ£¬ÍùÇÅÏÂÌøÈ¥£®£®£®\n",me);
+message_vision("$Nå¹äº†å£æ°”ï¼Œçœ¼ä¸€é—­ï¼Œå¾€æ¡¥ä¸‹è·³å»ï¼ï¼ï¼\n",me);
 
-if( me->query("family") && (string)me->query("family/family_name")!="ÑÖÂŞµØ¸®" ) {
+if( me->query("family") && (string)me->query("family/family_name")!="é˜ç½—åœ°åºœ" ) {
                 me->move(__DIR__"inwater");
-     message_vision("Ö»Ìı¡¸àÛàÌ¡¹Ò»Éù£¬$N´ÓÇÅÉÏµôµ½Ë®ÖĞ£®\n",
+     message_vision("åªå¬ã€Œå™—å—µã€ä¸€å£°ï¼Œ$Nä»æ¡¥ä¸Šæ‰åˆ°æ°´ä¸­ï¼\n",
 me);
                 return 1;
                 }
                 me->move("/d/death/gate");
-     message_vision("ËÄ´¦¹ÎÆğÒõ·ç£¬ÏÖ³ö$NµÄÓ°×Ó£®\n", me);
+     message_vision("å››å¤„åˆ®èµ·é˜´é£ï¼Œç°å‡º$Nçš„å½±å­ï¼\n", me);
                 return 1;
 }
 

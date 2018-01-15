@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // jjf_b.c
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("¹¦ÀÍ²¾", ({ "board" }) );
+        set_name("åŠŸåŠ³ç°¿", ({ "board" }) );
         set("location", "/d/jjf/keting.c");
         set("board_id", "jjf_b");
-        set("long", "ÕâÊÇÒ»±¾±¡±¡µÄ¹¦ÀÍ²¾£¬ÉÏÃæÃÜÃÜÂéÂéµØ¼Ç×Å½«¾ü¸®µÜ×ÓËùÁ¢µÄÕ½¹¦¡£\n" );
+        set("long", "è¿™æ˜¯ä¸€æœ¬è–„è–„çš„åŠŸåŠ³ç°¿ï¼Œä¸Šé¢å¯†å¯†éº»éº»åœ°è®°ç€å°†å†›åºœå¼Ÿå­æ‰€ç«‹çš„æˆ˜åŠŸã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("цовсхГ", ({ "meng ziru", "meng", "ziru", "da chen" }));
-  set("title", "╢СЁ╪");
-  set("gender", "дппт");
+  set_name("Е╜÷Е╜░Е╕┌", ({ "meng ziru", "meng", "ziru", "da chen" }));
+  set("title", "Е╓╖Х┤ё");
+  set("gender", "Г■╥Ф─╖");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -51,18 +51,18 @@ void reward (object who)
   who->set("channels",channels);
 
   points = points * 10;
-  message_vision ("$N╤т$nр╩╟щё╨╠щобспж╪ё╛╢м"+RANK_D->query_respect(who)+
-                  chinese_number(points)+"а╫╟врЬё║\n",me,who);
+  message_vision ("$NЕ╞╧$nД╦─Ф▀°О╪ И≥⌡Д╦▀Ф°┴Ф≈╗О╪▄Х╣░"+RANK_D->query_respect(who)+
+                  chinese_number(points)+"Д╦╓Г≥╫И⌠╤О╪│\n",me,who);
 /*  
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"╠щобспж╪ё╛╢м"+
-           chinese_number(points)+"а╫╟врЬё║\n");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"И≥⌡Д╦▀Ф°┴Ф≈╗О╪▄Х╣░"+
+           chinese_number(points)+"Д╦╓Г≥╫И⌠╤О╪│\n");
 */  
   who->add("quest/gain/silver",points);
-  reporting (who, who->query("quest/reason"), points, "а╫╟врЬ");
+  reporting (who, who->query("quest/reason"), points, "Д╦╓Г≥╫И⌠╤");
   
   silver->set_amount(points);
   if(!(silver->move(who)))
     silver->move(environment(who));
-  message_vision ("$N╣щ╦Ь$nр╩╟Э╟врЬ║ё\n",me,who);
+  message_vision ("$NИ─▓Г╩≥$nД╦─Е▄┘Г≥╫И⌠╤Ц─┌\n",me,who);
 }
 

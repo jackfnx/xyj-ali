@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,17 +6,17 @@
 inherit ARMOR;
 
 string *prefixs = ({
-  "°×",
-  "»Ò",
-  "Çà",
-  "Ğâ",
-  "ÎÚ",
-  "ºÚ",
+  "ç™½",
+  "ç°",
+  "é’",
+  "é”ˆ",
+  "ä¹Œ",
+  "é»‘",
 });
 
 string *names = ({
-  "Ìú¼×",
-  "Í­¼×",
+  "é“ç”²",
+  "é“œç”²",
 });
 
 void create()
@@ -27,7 +27,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 200);
    set("material", "shell");
    set("armor_prop/armor", 20);

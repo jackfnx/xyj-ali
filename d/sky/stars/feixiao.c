@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ã÷ÏÃ",({"star feixiao","feixiao","star"}));
-  set("gender", "ÄÐÐÔ");
-  set("title", "ÁøÍÁÐÇËÞ");
+  set_name("æ˜ŽåŽ¦",({"star feixiao","feixiao","star"}));
+  set("gender", "ç”·æ€§");
+  set("title", "æŸ³åœŸæ˜Ÿå®¿");
   set("age", 60);
   set("long", "    \n$n$r\n");
 
@@ -41,10 +41,10 @@ void init()
   string armor1_id="armor",armor2_id="pifeng";
   ::init();
   if (my_weapon=present(weapon_id, me))
-       my_weapon->set("name",HIY"±ÌÓñÐ°Ñý"NOR);
+       my_weapon->set("name",HIY"ç¢§çŽ‰é‚ªå¦–"NOR);
   if (my_armor1=present(armor1_id, me))
-       my_armor1->set("name",HIY"±ÌÓñ»·"NOR);
+       my_armor1->set("name",HIY"ç¢§çŽ‰çŽ¯"NOR);
   if (my_armor2=present(armor2_id, me))
-       my_armor2->set("name",HIY"±ÌÓñÈ¦"NOR);
+       my_armor2->set("name",HIY"ç¢§çŽ‰åœˆ"NOR);
 }
 

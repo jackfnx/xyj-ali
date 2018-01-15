@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/14/1997
@@ -8,13 +8,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÔÆÍ·ÇÅ");
+  set ("short", "äº‘å¤´æ¡¥");
   set ("long", @LONG
 
-Ò»ÌõºÓ¶«Î÷·½ÏòºáÔÚÃæÇ°£¬Á½°¶ÄàÅ¢£¬ÕÓÔóÁ¬Æ¬¡£×ß½øÈ¥ÅÂÊÇ»á
-ÏÝÔÚÀïÃæÈËÂíÎÞ¹é£¬ºÓÐÄ¸üÊÇ¼±Á÷¹ö¹ö¡£
+ä¸€æ¡æ²³ä¸œè¥¿æ–¹å‘æ¨ªåœ¨é¢å‰ï¼Œä¸¤å²¸æ³¥æ³žï¼Œæ²¼æ³½è¿žç‰‡ã€‚èµ°è¿›åŽ»æ€•æ˜¯ä¼š
+é™·åœ¨é‡Œé¢äººé©¬æ— å½’ï¼Œæ²³å¿ƒæ›´æ˜¯æ€¥æµæ»šæ»šã€‚
 
-ºÓÃæÉÏÓÐÒ»´®ÓÃ´¬´î³ÉµÄ¼òÒ×¸¡ÇÅ(qiao)¡£
+æ²³é¢ä¸Šæœ‰ä¸€ä¸²ç”¨èˆ¹æ­æˆçš„ç®€æ˜“æµ®æ¡¥(qiao)ã€‚
 
 LONG);
 
@@ -23,7 +23,7 @@ LONG);
         "south"      : __DIR__"qiao2",
       ]));
   set("item_desc",([
-      "qiao" : "\n¼¸Ö»´¬Á¬³ÉÒ»×ù¸¡ÇÅÍ¨Ïò¶Ô°¶¡£\n\n",
+      "qiao" : "\nå‡ åªèˆ¹è¿žæˆä¸€åº§æµ®æ¡¥é€šå‘å¯¹å²¸ã€‚\n\n",
      ]));
   set("outdoors","/d/qujing/baoxiang");
 
@@ -68,14 +68,14 @@ void open_bridge (int tell)
   object room = this_object();
 
   if (tell)
-    tell_room (room,"ºÓÃæÉÏµÄ¸¡ÇÅÂýÂýÉ¢¿ª¡£\n");
+    tell_room (room,"æ²³é¢ä¸Šçš„æµ®æ¡¥æ…¢æ…¢æ•£å¼€ã€‚\n");
 
   room->set("long", @LONG
 
-Ò»ÌõºÓ¶«Î÷·½ÏòºáÔÚÃæÇ°£¬Á½°¶ÄàÅ¢£¬ÕÓÔóÁ¬Æ¬¡£×ß½øÈ¥ÅÂÊÇ»á
-ÏÝÔÚÀïÃæÈËÂíÎÞ¹é£¬ºÓÐÄ¸üÊÇ¼±Á÷¹ö¹ö¡£
+ä¸€æ¡æ²³ä¸œè¥¿æ–¹å‘æ¨ªåœ¨é¢å‰ï¼Œä¸¤å²¸æ³¥æ³žï¼Œæ²¼æ³½è¿žç‰‡ã€‚èµ°è¿›åŽ»æ€•æ˜¯ä¼š
+é™·åœ¨é‡Œé¢äººé©¬æ— å½’ï¼Œæ²³å¿ƒæ›´æ˜¯æ€¥æµæ»šæ»šã€‚
 
-ºÓÃæÉÏÓÃ´¬´î³ÉµÄ¼òÒ×¸¡ÇÅ(qiao)ÒÑ±»²ð¿ª¡£
+æ²³é¢ä¸Šç”¨èˆ¹æ­æˆçš„ç®€æ˜“æµ®æ¡¥(qiao)å·²è¢«æ‹†å¼€ã€‚
 
 LONG);
 
@@ -84,7 +84,7 @@ LONG);
                       ]));
 
   room->set("item_desc",([
-               "qiao" : "\n¼¸Ö»´¬¸¡ÔÚºÓÉÏ¡£\n\n",
+               "qiao" : "\nå‡ åªèˆ¹æµ®åœ¨æ²³ä¸Šã€‚\n\n",
             ]));
 
   remove_call_out ("close_bridge");
@@ -96,19 +96,19 @@ void close_bridge (int tell)
   object room = this_object();
 
   if (tell)
-    tell_room (room,"ºÓÃæÉÏµÄ´¬ÂýÂý¾ÛÔÚÒ»Æð¡£\n");
+    tell_room (room,"æ²³é¢ä¸Šçš„èˆ¹æ…¢æ…¢èšåœ¨ä¸€èµ·ã€‚\n");
 
   room->set("long", @LONG
 
-Ò»ÌõºÓ¶«Î÷·½ÏòºáÔÚÃæÇ°£¬Á½°¶ÄàÅ¢£¬ÕÓÔóÁ¬Æ¬¡£×ß½øÈ¥ÅÂÊÇ»á
-ÏÝÔÚÀïÃæÈËÂíÎÞ¹é£¬ºÓÐÄ¸üÊÇ¼±Á÷¹ö¹ö¡£
+ä¸€æ¡æ²³ä¸œè¥¿æ–¹å‘æ¨ªåœ¨é¢å‰ï¼Œä¸¤å²¸æ³¥æ³žï¼Œæ²¼æ³½è¿žç‰‡ã€‚èµ°è¿›åŽ»æ€•æ˜¯ä¼š
+é™·åœ¨é‡Œé¢äººé©¬æ— å½’ï¼Œæ²³å¿ƒæ›´æ˜¯æ€¥æµæ»šæ»šã€‚
 
-ºÓÃæÉÏÓÐÒ»´®ÓÃ´¬´î³ÉµÄ¼òÒ×¸¡ÇÅ(qiao)¡£
+æ²³é¢ä¸Šæœ‰ä¸€ä¸²ç”¨èˆ¹æ­æˆçš„ç®€æ˜“æµ®æ¡¥(qiao)ã€‚
 
 LONG);
 
   set("item_desc",([
-      "qiao" : "\n¼¸Ö»´¬Á¬³ÉÒ»×ù¸¡ÇÅÍ¨Ïò¶Ô°¶¡£\n\n",
+      "qiao" : "\nå‡ åªèˆ¹è¿žæˆä¸€åº§æµ®æ¡¥é€šå‘å¯¹å²¸ã€‚\n\n",
      ]));
 
   room->set("exits", ([
@@ -117,7 +117,7 @@ LONG);
                       ]));
 
   room->set("item_desc",([
-               "qiao" : "\n¼¸Ö»´¬Á¬³ÉÒ»×ù¸¡ÇÅÍ¨Ïò¶Ô°¶¡£\n\n",
+               "qiao" : "\nå‡ åªèˆ¹è¿žæˆä¸€åº§æµ®æ¡¥é€šå‘å¯¹å²¸ã€‚\n\n",
             ]));
 
   remove_call_out ("open_bridge");

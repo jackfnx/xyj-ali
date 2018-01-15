@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -8,22 +8,22 @@ inherit STAFF;
 
 void create()
 {
-        set_name( "ÁúÍ·¹ÕÕÈ", ({ "dragon staff", "zhang", "staff" }) );
+        set_name( "é¾™å¤´æ‹æ–", ({ "dragon staff", "zhang", "staff" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Ò»¸ùºìÉ«ÁúÍ·¹ÕÕÈ£¬ÉÏÏÂ»­ÁËĞ©ÏéÔÆ·É·ïÖ®ÀàµÄ»¨ÎÆ¡£
-ÈëÊÖ³ÁÖØ£¬Ò»¿´¾ÍÖª²»ÊÇ·²Îï¡£\n");
+                set("unit", "æ ¹");
+                set("long", "ä¸€æ ¹çº¢è‰²é¾™å¤´æ‹æ–ï¼Œä¸Šä¸‹ç”»äº†äº›ç¥¥äº‘é£å‡¤ä¹‹ç±»çš„èŠ±çº¹ã€‚
+å…¥æ‰‹æ²‰é‡ï¼Œä¸€çœ‹å°±çŸ¥ä¸æ˜¯å‡¡ç‰©ã€‚\n");
                 set("value", 0);
                 set("no_sell",1);
      set("no_give", 1);
      set("no_drop", 1);
      set("no_put", 1);
           set("replace_file", "/d/obj/weapon/staff/shugan");
-                set("wield_msg", "$NÄÃ³ö$nÖôÔÚÊÖÀï£¬×ìÀï»¹¿ÈËÔÁË¼¸Éù£¡\n");
-                set("unwield_msg","$N½«ÊÖÖĞµÄ$n±ğµ½Ñüºó¡£\n");
+                set("wield_msg", "$Næ‹¿å‡º$næ‹„åœ¨æ‰‹é‡Œï¼Œå˜´é‡Œè¿˜å’³å—½äº†å‡ å£°ï¼\n");
+                set("unwield_msg","$Nå°†æ‰‹ä¸­çš„$nåˆ«åˆ°è…°åã€‚\n");
            set("weapon_prop/intelligence", 5);
                 set("material", "wood");
         }

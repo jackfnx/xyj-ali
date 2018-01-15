@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/jjf_bingqi.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "±øÆ÷¼Ü");
+  set ("short", "å…µå™¨æž¶");
   set ("long", @LONG
 
-ÕâÀïÓÐÒ»¸ö±øÆ÷¼Ü(rack)£¬Ê®°Ë°ã±øÈÐÑùÑùÆëÈ«¡£¼Ü×ÓÅÔ±ß¹Ò×ÅÊýÊ®
-¸±ÉÁÉÁ·¢¹âµÄ¿ø¼×£¬Ñü´ø£¬ºÍÕ½Ñ¥µÈÎï¡£ÅÔ±ßÒ»Î»½«¾üÕý±ÕÄ¿ÑøÉñ£¬
-¿´À´¿ÉÒÔ¸úËûÒªÒ»¸±ÒÂ¼×ºÍÒ»¼þ³ÃÊÖµÄ±øÆ÷¡£
+è¿™é‡Œæœ‰ä¸€ä¸ªå…µå™¨æž¶(rack)ï¼Œåå…«èˆ¬å…µåˆƒæ ·æ ·é½å…¨ã€‚æž¶å­æ—è¾¹æŒ‚ç€æ•°å
+å‰¯é—ªé—ªå‘å…‰çš„ç›”ç”²ï¼Œè…°å¸¦ï¼Œå’Œæˆ˜é´ç­‰ç‰©ã€‚æ—è¾¹ä¸€ä½å°†å†›æ­£é—­ç›®å…»ç¥žï¼Œ
+çœ‹æ¥å¯ä»¥è·Ÿä»–è¦ä¸€å‰¯è¡£ç”²å’Œä¸€ä»¶è¶æ‰‹çš„å…µå™¨ã€‚
 LONG);
 
   set("outdoors", 1);
@@ -25,18 +25,18 @@ LONG);
 
   set("item_desc", ([
 "rack": "
-±øÆ÷¼ÜÉÏ²å×Å£º
+å…µå™¨æž¶ä¸Šæ’ç€ï¼š
 
-³¤½£(sword)£¬µ¥µ¶(blade)£¬Í­ïµ(mace)£¬³¤Ç¹(spear)£¬
-Ìú´¸(hammer)£¬°å¸«(axe)£¬¸Ö²æ(fork)£¬ºÍÌú¹÷(stick)¡£
+é•¿å‰‘(sword)ï¼Œå•åˆ€(blade)ï¼Œé“œé”(mace)ï¼Œé•¿æžª(spear)ï¼Œ
+é“é”¤(hammer)ï¼Œæ¿æ–§(axe)ï¼Œé’¢å‰(fork)ï¼Œå’Œé“æ£(stick)ã€‚
 
-ÅÔ±ß°Ú×Å£º
+æ—è¾¹æ‘†ç€ï¼š
 
-Ø°Ê×(dagger)£¬Æ¤±Þ(whip)£¬ºÍÒ»Ð©·É»ÈÊ¯(throwing)¡£
+åŒ•é¦–(dagger)ï¼Œçš®éž­(whip)ï¼Œå’Œä¸€äº›é£žè—çŸ³(throwing)ã€‚
 
-Ò»±ßÒÂ¼ÜÉÏ¹Ò×Å£º
+ä¸€è¾¹è¡£æž¶ä¸ŠæŒ‚ç€ï¼š
 
-¸Ö¿ø(head)£¬Ìú¼×(body)£¬»¤ÐÄ¾µ(waist)£¬ºÍÕ½Ñ¥(feet)¡£
+é’¢ç›”(head)ï¼Œé“ç”²(body)ï¼ŒæŠ¤å¿ƒé•œ(waist)ï¼Œå’Œæˆ˜é´(feet)ã€‚
 
 ",
 ]));

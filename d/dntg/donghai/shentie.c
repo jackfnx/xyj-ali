@@ -7,23 +7,23 @@ inherit ITEM;
 
 void create()
 {
-    set_name("����������", ({ "shen tie" ,"tie"}));
+    set_name("定海神针铁", ({ "shen tie" ,"tie"}));
     set_weight(30000);
     set("long", @LONG
 
-��˵���������Ǵ�����ˮ֮ʱ��������ǳ���һ�����ӡ�
-��ǰ��ϸ���ƣ� ԭ����ͷ�������𹿣��м���һ��������
-���������Գɵ�һ���֣�����������𹿰�������һ����
-ǧ��ٽ
+传说这神铁乃是大禹治水之时，定江海浅深的一个定子。
+上前仔细观瞧， 原来两头是两个金箍，中间乃一段乌铁；
+紧挨箍有镌成的一行字，唤做『如意金箍棒』，重一万三
+千五百斤。
 LONG );
 
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "��");
+        set("unit", "个");
         set("material", "crimsonsteel");
         set("value", 20000000);
-        set("no_get", "��ô�ֵ����������õ�������\n");
+        set("no_get", "这么粗的神铁哪里拿得起来？\n");
         set("no_sell", 1);
     }
     setup();
@@ -41,18 +41,18 @@ int do_xiao()
     object helper = who->query_temp("dntg_helper");
 
     if (who->query("dntg/donghai") != "hua gan ji" || !helper) {
-        message_vision("$N���һ����С��С��С��������һ�㷴ӦҲû�з�����\n", who);
+        message_vision("$N大喝一声＂小，小，小！但神铁一点反应也没有发生。\n", who);
         return 1;
     }
 
     if (who->query("mana") < 500)
-        message_vision("$N���һ����С��С��С����ʲôҲû�з�����\n", who);
+        message_vision("$N大喝一声＂小，小，小！但什么也没有发生。\n", who);
     else {
         who->add("mana", -500);
         if (random(5) < 4)
-            message_vision("$N���һ����С��С��С����\nֻ��������Ȼ��̱�ϸ��Щ��\n", who);
+            message_vision("$N大喝一声＂小，小，小！＂\n只见神铁果然变短变细了些。\n", who);
         else {
-            message_vision("$N���һ����С��С��С����\nֻ������������һ����Ӱ��������$N���ϵ�" +helper->name()+ "��\n", who);
+            message_vision("$N大喝一声＂小，小，小！＂\n只见神铁化作了一团虚影，融入了$N身上的" +helper->name()+ "。\n", who);
             call_out("finish_summary", 1, who);
             load_object("/obj/empty");
             move("/obj/empty");
@@ -69,17 +69,17 @@ void finish_summary(object who)
 
     who->start_busy(50);
     helper->speak(({
-            CYN "˵�����ٺٺٺ٣������Ҳ�Ѿ��µ��ˡ�" NOR,
-            CYN "˵�������������û�н𹿰���" NOR,
-            CYN "˵������ʵ���Դӵ����ʥүү���Ҵ��������ߣ��ǰ������ˡ�" NOR,
-            CYN "˵����������Ϊ�𹿰������⣬���쵣���������˻�������" NOR,
-            CYN "˵����ʱ�䳤�ˣ����ﾹȻ����ƾ�չ������һ�������������Ӱ��" NOR,
-            CYN "˵�����������������Ա����˼ҳɵ�ȴ�Ǵ�����������Ҳ������������ôһ��Ϸ��" NOR,
-            CYN "˵������С�Ӱ����Ҵ�æ�������˼���ȻҲ��������㡣" NOR,
-            CYN "˵���������ɣ��ұ㴫��һ������仯֮����ֻҪ�������Ʒ����������ҿ�������ӵ�еڶ�����̬��" NOR,
-            CYN "˵������Ȼ����𹿰��仯��ˣ���Ҳ����һ�����á�" NOR,
-            CYN "˵������������ʱû�����Ʒ�������Ҳû��ϵ������ү�������ã��������������������ң�����ү��ʱ����" NOR,
-            CYN "˵�������˺��ˣ��ϻ�˵���ˣ����ڸ��뿪�ˡ�" NOR,
+            CYN "说道：嘿嘿嘿嘿，大概你也已经猜到了。" NOR,
+            CYN "说道：这里根本就没有金箍棒！" NOR,
+            CYN "说道：其实，自从当年大圣爷爷把我从这里抢走，那敖广便疯了。" NOR,
+            CYN "说道：整天以为金箍棒还在这，整天担惊受怕有人会来抢。" NOR,
+            CYN "说道：时间长了，这里竟然被他凭空观想出了一条定海神针的虚影。" NOR,
+            CYN "说道：这玩意戳在这里，对本老人家成道却是大大不利，所以我才让你帮我演这么一出戏。" NOR,
+            CYN "说道：你小子帮了我大忙，本老人家自然也不会亏待你。" NOR,
+            CYN "说道：这样吧，我便传你一套如意变化之道，只要你有自制法宝兵器，我可以让它拥有第二种形态。" NOR,
+            CYN "说道：虽然不如金箍棒变化多端，但也别有一番妙用。" NOR,
+            CYN "说道：就算你暂时没有自制法宝兵器也没关系，本大爷最守信用，将来等你有了再来找我，本大爷随时恭候。" NOR,
+            CYN "说道：好了好了，废话说完了，现在该离开了。" NOR,
             (: call_other, this_object(), "finish_announce", who :),
     }));
 }

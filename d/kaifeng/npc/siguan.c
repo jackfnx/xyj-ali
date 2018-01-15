@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ËÅ¹Ù", ({ "si guan", "si", "guan" }));
+  set_name("ä¼ºå®˜", ({ "si guan", "si", "guan" }));
   set("age", 18+random(10));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("attitude", "peaceful");
   set("str", 20);
   set("combat_exp", 30000);

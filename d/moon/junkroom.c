@@ -1,14 +1,14 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "储藏室");
   set ("long", @LONG
 
-һ�䲻��ķ���,����������ĵ��ߺ�һЩ�ճ����þߡ�
+一间不大的房间,放满了练舞的道具和一些日常的用具。
 LONG);
 
   set("objects", ([ /* sizeof() == 4 */

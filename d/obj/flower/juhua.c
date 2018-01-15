@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -12,16 +12,16 @@ void create()
 switch (random(3))
   {
    case 0:
-    { set_name(HIB "Ò°¾Õ»¨" NOR, ({ "ju hua", "flower"})); break; }
+    { set_name(HIB "é‡èŠèŠ±" NOR, ({ "ju hua", "flower"})); break; }
    case 1:
-     { set_name(HIB "Ê¸³µ¾Õ" NOR, ({ "ju hua", "flower"})); break; }
+     { set_name(HIB "çŸ¢è½¦èŠ" NOR, ({ "ju hua", "flower"})); break; }
    case 2:
-   { set_name(HIB "°×¾Õ»¨" NOR, ({ "ju hua", "flower"})); break; }
+   { set_name(HIB "ç™½èŠèŠ±" NOR, ({ "ju hua", "flower"})); break; }
 }
   set_weight(100);
-  set("long","Ò»¶äÇåĞÂµ­ÀöµÄĞ¡"+query("name")+"£¬É¢·¢×ÅÒ»Ë¿Ë¿ÇåÏã¡£\n");
+  set("long","ä¸€æœµæ¸…æ–°æ·¡ä¸½çš„å°"+query("name")+"ï¼Œæ•£å‘ç€ä¸€ä¸ä¸æ¸…é¦™ã€‚\n");
   set("material", "flower");
-  set("unit", "¶ä");
+  set("unit", "æœµ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 1);
   setup();
@@ -47,7 +47,7 @@ int do_wear (string arg)
 
   if (arg != "flower" && arg != "ju hua")
     return 0;
-  msg = "$N´÷ÉÏÒ»¶ä"+name+"£¬²»½ûÏëÆğÄêÉÙÊ±Ôø¾­µÄÃÎÖĞÈË¡£\n"; 
+  msg = "$Næˆ´ä¸Šä¸€æœµ"+name+"ï¼Œä¸ç¦æƒ³èµ·å¹´å°‘æ—¶æ›¾ç»çš„æ¢¦ä¸­äººã€‚\n"; 
   flower->set("wear_msg",msg);
   return 0;
 }
@@ -62,7 +62,7 @@ int do_remove (string arg)
   if (arg != "flower" && arg != "ju hua")
     return 0;
 
-  msg = "$N½«"+name+"ÇáÇáµØÕªÏÂÀ´¡­¡­\n"; 
+  msg = "$Nå°†"+name+"è½»è½»åœ°æ‘˜ä¸‹æ¥â€¦â€¦\n"; 
   flower->set("unequip_msg",msg);
   return 0;
 }
@@ -77,7 +77,7 @@ int do_smell (string arg)
   if (arg != "flower" &&  arg != "ju hua")
     return 0;
 
-  msg = "$N½«"+name+"ÅõÆğÎÅÁËÎÅ£¬ÓÖµë¼ÇÆğ×òÌìµÄ¹ÊÈË¡£\n"; 
+  msg = "$Nå°†"+name+"æ§èµ·é—»äº†é—»ï¼Œåˆæƒ¦è®°èµ·æ˜¨å¤©çš„æ•…äººã€‚\n"; 
   message_vision (msg,me);
   return 1;
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,19 +7,19 @@ inherit SWORD;
 
 void create()
 {
-        set_name("³şåú½£", ({"chufei sword", "sword"}));
+        set_name("æ¥šå¦ƒå‰‘", ({"chufei sword", "sword"}));
         set_weight(14000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñµ­ÂÌÉ«µÄÏ¸½££¬¿´ÆğÀ´·Ç³£µÄ»ªÀö£®\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠæ·¡ç»¿è‰²çš„ç»†å‰‘ï¼Œçœ‹èµ·æ¥éå¸¸çš„åä¸½ï¼\n");
                 set("value", 10000);
                 set("material", "crimsonsteel");
                 set("wield_msg",
-"$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£®\n");
+"$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼\n");
                 set("unwield_msg",
-"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä£¬×ì½ÇÂ¶³öÒ»Ë¿Ğ¦Òâ£®\n");
+"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ï¼Œå˜´è§’éœ²å‡ºä¸€ä¸ç¬‘æ„ï¼\n");
         set("weapon_prop/int", 2);
 
         }

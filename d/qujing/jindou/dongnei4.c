@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/15/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "洞内");
   set ("long", @LONG
 
-�����Ķ����������ڣ������ϳ��Ŵֳ������٣���ͷ�Ϲ�������
-���ڲ������ͻ�ѣ�֨֨��ð���̣����������������ĵ�����
-��ƽƽ����������һ��һ��ʯ�塣
+宽敞的洞内雾气腾腾，洞顶上长着粗长的青藤，从头上挂下来。
+洞壁插着兽油火把，吱吱地冒着烟，将洞内照亮。洞的地上填
+得平平整整，铺着一块一块石板。
 
 LONG);
 
@@ -40,27 +40,27 @@ int do_dig (string arg)
   object sha;
 
   if (who->is_fighting())
-    return notify_fail ("������ս��֮�У�����ھ��ɰ��\n");
+    return notify_fail ("你正在战斗之中，如何挖掘金丹砂？\n");
 
   if (who->is_busy())
-    return notify_fail ("������æ���ء�\n");
+    return notify_fail ("你正在忙着呢。\n");
 
   if (where->query("has_digged"))
   {
-    message_vision ("$N�ڶ��ǵ����к��Ұ�����һ����ʲôҲû���ҵ���\n",who);  
+    message_vision ("$N在洞角的土中胡乱扒拉了一番，什么也没有找到。\n",who);  
     return 1;
   }
 
   if (random(10))
   {
-    message_vision ("$N�ڶ��ǵ�������ϸ�ذ�����һ����û���ҵ�������\n",who);  
+    message_vision ("$N在洞角的土中仔细地扒拉了一番，没有找到东西。\n",who);  
     who->start_busy(1);
   }
   else
   {
     sha = new (__DIR__"obj/jindan");
-    message_vision ("$N�ڶ��ǵ�������˫��һ�ǣ�����һ��������\n",who);  
-    message_vision ("$N��ֽ���ҿ���ȡ��$n���ڻ��\n",who,sha);
+    message_vision ("$N在洞角的泥土中双手一扒，捧出一包东西。\n",who);  
+    message_vision ("$N将纸包揭开，取出$n揣在怀里。\n",who,sha);
     sha->move(who);  
     where->set("has_digged",1);
   }

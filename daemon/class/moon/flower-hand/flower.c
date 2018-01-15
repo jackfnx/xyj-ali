@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-//ÌìÅ®É¢»¨ 
+//å¤©å¥³æ•£èŠ± 
 // dream 7/17/97
 #include <ansi.h>
 
@@ -20,16 +20,16 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹¡¸ÌìÅ®É¢»¨¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•ã€Œå¤©å¥³æ•£èŠ±ã€ï¼Ÿ\n");
 
         if((int)me->query("force") < 25+(int)me->query("force_factor") )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("kee") < 100 )
-                return notify_fail("ÄãµÄÆøÑª²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+                return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
    if((int)me->query_skill("flower-hand", 1) <80)
-     return notify_fail("ÄãµÄ°Ù»¨ÕÆ¼¶±ğ»¹²»¹»£¡\n");
+     return notify_fail("ä½ çš„ç™¾èŠ±æŒçº§åˆ«è¿˜ä¸å¤Ÿï¼\n");
 
    tar=all_inventory(me);
         size = sizeof(tar); 
@@ -42,14 +42,14 @@ int perform(object me, object target)
 
    
    if((int)number < 5)
-     return notify_fail("ÄãµÄ»¨²»×ãÒÔÊ©Õ¹¡¸ÌìÅ®É¢»¨¡¹£¡\n");
+     return notify_fail("ä½ çš„èŠ±ä¸è¶³ä»¥æ–½å±•ã€Œå¤©å¥³æ•£èŠ±ã€ï¼\n");
 
         me->add("force", -25-(int)me->query("force_factor"));
         me->receive_damage("kee", 100);
 
    msg = HIC
-"\n$NÎ¢Î¢Ò»Ğ¦£¬Éí×ÓÁè¿Õ¶øÆğ£¬È÷ÏÂÂşÌì»¨Óê£¬Ò»Ê±»¨ÏãçÔÈÆ\n"
-"$nÖ»¾õÖÜÉí¶¼±»»¨Ó°ÕÖ×¡ÁË£¬Ò»Ê±¾¹È»²»ÖªÈçºÎÕĞ¼Ü£¬¸ü²»ÓÃËµ¶ãÉÁÁË£¡\n" NOR;
+"\n$Nå¾®å¾®ä¸€ç¬‘ï¼Œèº«å­å‡Œç©ºè€Œèµ·ï¼Œæ´’ä¸‹æ¼«å¤©èŠ±é›¨ï¼Œä¸€æ—¶èŠ±é¦™ç¼­ç»•\n"
+"$nåªè§‰å‘¨èº«éƒ½è¢«èŠ±å½±ç½©ä½äº†ï¼Œä¸€æ—¶ç«Ÿç„¶ä¸çŸ¥å¦‚ä½•æ‹›æ¶ï¼Œæ›´ä¸ç”¨è¯´èº²é—ªäº†ï¼\n" NOR;
 
         ap = me->query_skill("flower-hand", 1);
 // + me->query_skill("parry");
@@ -61,13 +61,13 @@ int perform(object me, object target)
 // + (int)target->query("kee");
    dp = dp*250 + target->query("combat_exp"); 
         if( random((ap + dp)/1000+1) <  dp/1000 ) {
-     msg += HIC "Ë­Öª$n¾¹ÏÕÖĞÇóÊ¤£¬³¤ĞäÒ»°Ú£¬ÒÑ½«ËùÓĞ»¨°ê´òÂä£¡\n\n"NOR;
+     msg += HIC "è°çŸ¥$nç«Ÿé™©ä¸­æ±‚èƒœï¼Œé•¿è¢–ä¸€æ‘†ï¼Œå·²å°†æ‰€æœ‰èŠ±ç“£æ‰“è½ï¼\n\n"NOR;
            message_vision(msg, me, target);
    } else {
                 damage = (int)me->query_skill("flower-hand",1) / 10 +
         (int)me->query("sen") / 400 + random((int)me->query("sen") / 200 ) +
         (int)me->query("kee") / 400 + random((int)me->query("kee") / 200 );
-     msg += HIC "ÕâĞ©»¨°ê¿´ËÆÈáÈõÎŞÁ¦£¬È´Èç¼²·çÖèÓê°ãÉäÏò$n,ÉîÉîµÄÇ¶ÈëÈâÀï£¡\n" NOR;
+     msg += HIC "è¿™äº›èŠ±ç“£çœ‹ä¼¼æŸ”å¼±æ— åŠ›ï¼Œå´å¦‚ç–¾é£éª¤é›¨èˆ¬å°„å‘$n,æ·±æ·±çš„åµŒå…¥è‚‰é‡Œï¼\n" NOR;
      if (number < 10) damage +=random(number+1);
      else damage +=random(10);
                         target->receive_damage("sen", me->query("eff_sen")*damage/100, me);

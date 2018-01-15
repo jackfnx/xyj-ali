@@ -6,23 +6,23 @@ int cast(object me, object target)
 {
     int invocation_time,k,i;
     object soldier;
-    if (me->query("family/family_name")!="»ðÔÆ¶´")
-        return notify_fail("ÄãÉíÉÏÓÐÃ»ÓÐÅ£Ê­£¬ÕÙÊ²Ã´°¡£¡\n");
+    if (me->query("family/family_name")!="ç«äº‘æ´ž")
+        return notify_fail("ä½ èº«ä¸Šæœ‰æ²¡æœ‰ç‰›è™±ï¼Œå¬ä»€ä¹ˆå•Šï¼\n");
     if (!me->is_fighting())
-        return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜÕÙ»½Å£Ê­£¡\n");
+        return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½å¬å”¤ç‰›è™±ï¼\n");
     invocation_time = 60+(200-(int)me->query_skill("spells"));
     if (invocation_time<30) invocation_time=30;
     if ((time()-me->query("last_invocation"))<invocation_time)
-        return notify_fail("ÄãÉíÉÏÄêÇáÁ¦×³µÄÊ­×ÓÒÑ¾­¶¼À´°ïÄãÁË£¡\n");
+        return notify_fail("ä½ èº«ä¸Šå¹´è½»åŠ›å£®çš„è™±å­å·²ç»éƒ½æ¥å¸®ä½ äº†ï¼\n");
     if ((int)me->query("mana") < 100)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if ((int)me->query("sen") < 100)
-        return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ£¡\n");
-    message_vision("$NÏó³ÔÁËÒ¡Í·ÍèÒ»Ñù£¬¿ñ¶¶ÁË¼¸ÏÂ¡£\n\n", me);
+        return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ï¼\n");
+    message_vision("$Nè±¡åƒäº†æ‘‡å¤´ä¸¸ä¸€æ ·ï¼Œç‹‚æŠ–äº†å‡ ä¸‹ã€‚\n\n", me);
     me->add("mana", -80);
     me->receive_damage("sen", 100);
     if (random(me->query("max_mana")) < 50) {
-        message("vision", "µ«ÊÇÊ²Ã´Ò²Ã»ÓÐ·¢Éú¡£\n", environment(me));
+        message("vision", "ä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚\n", environment(me));
         return 1;
     }
     

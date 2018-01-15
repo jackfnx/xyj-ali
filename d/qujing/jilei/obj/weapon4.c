@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit WHIP;
 
 void create()
 {
-  set_name("Å£Æ¤±Ş", ({ "niupi bian", "bian", "whip" }) );
+  set_name("ç‰›çš®é­", ({ "niupi bian", "bian", "whip" }) );
   init_whip(35);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(600);
   if( clonep() )
      set_default_object(__FILE__);

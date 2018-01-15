@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/shuyuan.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "������Ժ");
+  set ("short", "西城书院");
   set ("long", @LONG
 
-���ǰ�������Ψһ����Ժ������������紾�ӣ���������ǫ�У�
-�ڴ���֮�Ĳ�����ȴ����ͬ�ᡣ��Ժ������ǰ����ԭ����һλ
-���������������ѧ����Ҳ�ǲ��١�
+这是傲来国中唯一的书院。傲来本是民风淳朴，虽人人礼谦有，
+于大唐之文彩天下却不可同提。书院是数年前从中原来的一位
+秀才所开，城中来学的人也是不少。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -34,15 +34,15 @@ int do_skills(string arg)
         me=this_player();
         if(!(ob = present("lan tuyu", environment(me))))
                 return
-notify_fail("ֻ����ʦ����ʦͽ��ϵ�����ܲ쿴���˵ļ��ܡ�\n");
+notify_fail("只有巫师或有师徒关系的人能察看他人的技能。\n");
         if ( (arg != "lan") )
                 return
-notify_fail("ֻ����ʦ����ʦͽ��ϵ�����ܲ쿴���˵ļ��ܡ�\n");
+notify_fail("只有巫师或有师徒关系的人能察看他人的技能。\n");
         else
 write("
-��ͼ��Ŀǰ��ѧ���ļ��ܣ�
+蓝图郁目前所学过的技能：
 
-  ����ʶ�� (literate)                      - ����С��  40/    0
+  读书识字 (literate)                      - 已有小成  40/    0
 
 \n");
                 return 1;

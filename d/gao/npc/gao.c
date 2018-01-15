@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gao.c
@@ -6,12 +6,12 @@
 inherit NPC;
 void create()
 {
-       set_name("¸ßÔ±Íâ", ({"gao yuanwai", "gao"}));
+       set_name("é«˜å‘˜å¤–", ({"gao yuanwai", "gao"}));
 
-set("long","¸ß¼Ò×¯µÄÖ÷ÈË£¬³ÔµÄÅÖºõºõµÄ£®\n°´Ëµ´ó²ÆÖ÷Ó¦¸ÃÀÖºÇºÇµØ£¬ËûÈ´³îÃ¼¿àÁ³£¬ÏóÊÇÓöµ½ÁËÊ²Ã´ÄÑÊÂ£®\n");
-       set("gender", "ÄÐÐÔ");
+set("long","é«˜å®¶åº„çš„ä¸»äººï¼Œåƒçš„èƒ–ä¹Žä¹Žçš„ï¼Ž\næŒ‰è¯´å¤§è´¢ä¸»åº”è¯¥ä¹å‘µå‘µåœ°ï¼Œä»–å´æ„çœ‰è‹¦è„¸ï¼Œè±¡æ˜¯é‡åˆ°äº†ä»€ä¹ˆéš¾äº‹ï¼Ž\n");
+       set("gender", "ç”·æ€§");
        set("age", 46);
-       set("title", "×¯Ö÷");
+       set("title", "åº„ä¸»");
        set("attitude", "peaceful");
        set("shen_type", 1);
    set("combat_exp", 5000);
@@ -19,8 +19,8 @@ set("long","¸ß¼Ò×¯µÄÖ÷ÈË£¬³ÔµÄÅÖºõºõµÄ£®\n°´Ëµ´ó²ÆÖ÷Ó¦¸ÃÀÖºÇºÇµØ£¬ËûÈ´³îÃ¼¿àÁ³£¬
    set_skill("dodge", 30);
    set_skill("parry", 15);
 set("inquiry", ([
-"name": "ÀÏ·òÐÕ¸ß£¬ÄËÊÇ¼ÒÖÐµÄÖ÷ÈË£®\n",
-"here": "¸ßÀÏ×¯ÊÇÒ²£®\n",
+"name": "è€å¤«å§“é«˜ï¼Œä¹ƒæ˜¯å®¶ä¸­çš„ä¸»äººï¼Ž\n",
+"here": "é«˜è€åº„æ˜¯ä¹Ÿï¼Ž\n",
 ]) );
 
    setup();
@@ -31,8 +31,8 @@ int accept_object(object who,object ob)
 {
         object m;
         if (ob->query("id")=="mmmmmm") {
-                say("¸ß×¯Ö÷Ð¦µÀ£º¶àÐ»"  + RANK_D->query_respect(who) +
-"£¬ÀÏ·òÕâÏáÓÐÀñÁË£®\n¸ß×¯Ö÷ËµµÀ£ºÕâÊÇÒÔÇ°Ò»Ãû¸ßÊ¿ÁôÏÂµÄ£¬Ò²Ðí¶ÔÄúÓÐÓÃ£®\n");
+                say("é«˜åº„ä¸»ç¬‘é“ï¼šå¤šè°¢"  + RANK_D->query_respect(who) +
+"ï¼Œè€å¤«è¿™åŽ¢æœ‰ç¤¼äº†ï¼Ž\né«˜åº„ä¸»è¯´é“ï¼šè¿™æ˜¯ä»¥å‰ä¸€åé«˜å£«ç•™ä¸‹çš„ï¼Œä¹Ÿè®¸å¯¹æ‚¨æœ‰ç”¨ï¼Ž\n");
    m=new("/d/gao/obj/pa_book");
         m->move(who);
    call_out("destroy", 1, ob);

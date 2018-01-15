@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // nowords.c
@@ -11,14 +11,14 @@ void tear();
 
 void create()
 {
-        set_name("ÎÞ×ÖÌìÊé", ({"book","nowords","shu"}));
+        set_name("æ— å­—å¤©ä¹¦", ({"book","nowords","shu"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
    set("long",
-   "Ò»±¾ÔàÙâÙâµÄÐ¡²á×Ó¡£ÉÏÃæ»®×ÅÒ»Ð©ÏóÊÇòÇò¾ÅÀ³öÀ´µÄÍ¼°¸¡£\n");
+   "ä¸€æœ¬è„å…®å…®çš„å°å†Œå­ã€‚ä¸Šé¢åˆ’ç€ä¸€äº›è±¡æ˜¯èš¯èš“çˆ¬å‡ºæ¥çš„å›¾æ¡ˆã€‚\n");
         set("material", "paper");
         set("value", 100);
         set("skill", ([
@@ -43,7 +43,7 @@ int do_tear(string arg){
    if( !this_object()->id(arg) ) return 0;
    ob=new("/d/ourhome/obj/bishuizhou");
    ob->move(me);
-   message_vision("$NËº¿ªÎÞ×ÖÌìÊéµÄ±³Ò³£¬´ÓÀïÃæÐ¡ÐÄÒíÒíµØÈ¡³öÒ»ÕÅÐ¡Ö½Æ¬¡£\n", me);
+   message_vision("$Næ’•å¼€æ— å­—å¤©ä¹¦çš„èƒŒé¡µï¼Œä»Žé‡Œé¢å°å¿ƒç¿¼ç¿¼åœ°å–å‡ºä¸€å¼ å°çº¸ç‰‡ã€‚\n", me);
    destruct(this_object());
    return 1;     
 }

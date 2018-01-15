@@ -2,7 +2,7 @@ inherit ITEM;
 
 void create()
 {
-    set_name("±øÆ÷¼Ü", ({ "rack" }));
+    set_name("å…µå™¨æ¶", ({ "rack" }));
     set_weight(500000);
     set_max_encumbrance(40000);
     if (clonep()) {
@@ -30,8 +30,8 @@ void create()
 
         set_default_object(__FILE__);
     } else {
-        set("unit", "¸ö");
-        set("long", "ÕâÊÇÒ»¿ÚÑ°³£µÄ¼Ü×Ó£¬¿ÉÒÔÓÃÀ´¶Ñ·ÅÒ»Ğ©ÔÓÎï¡£\n");
+        set("unit", "ä¸ª");
+        set("long", "è¿™æ˜¯ä¸€å£å¯»å¸¸çš„æ¶å­ï¼Œå¯ä»¥ç”¨æ¥å †æ”¾ä¸€äº›æ‚ç‰©ã€‚\n");
         set("value", 0);
     }
 }

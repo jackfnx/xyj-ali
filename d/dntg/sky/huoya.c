@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("»ğÑ»", ({ "huo ya", "ya", "huoya" }));
-    set("race", "Ò°ÊŞ");
+    set_name("ç«é¸¦", ({ "huo ya", "ya", "huoya" }));
+    set("race", "é‡å…½");
     set("age", 500);
-    set("long", "Ì«ÉÏÀÏ¾ıµÄ»ğ²¿Éñ±øÖ®»ğÑ».\n");   
+    set("long", "å¤ªä¸Šè€å›çš„ç«éƒ¨ç¥å…µä¹‹ç«é¸¦.\n");   
     set("str", 40);
     set("per", 400);
     set("cor", 26);   
@@ -29,7 +29,7 @@ void create()
     map_skill("unarmed", "dragonfight");
     map_skill("parry", "dragonfight");
     map_skill("dodge", "dragonstep");
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "½Å×¦", "Î²°Í", "³á°ò"}));   
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è„šçˆª", "å°¾å·´", "ç¿…è†€"}));   
     setup();
     set("chat_msg_combat", ({
                 (: cast_spell, "zhenhuo" :),
@@ -41,7 +41,7 @@ void create()
 void die()
 {
             if (environment()) 
-        message("sound", ""HIY"»ğÑ»ÏûÊ§ÔÚ»ğ¹âÖ®ÖĞ¡£"NOR"\n", environment());        
+        message("sound", ""HIY"ç«é¸¦æ¶ˆå¤±åœ¨ç«å…‰ä¹‹ä¸­ã€‚"NOR"\n", environment());        
                 destruct(this_object());
 }
 

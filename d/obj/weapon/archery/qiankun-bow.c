@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,15 +7,15 @@ inherit BOW;
 
 void create()
 {
-        set_name("Ç¬À¤¹­", ({"qiankun gong", "qiankungong", "bow", "gong", "qiankun"}));
+        set_name("ä¹¾å¤å¼“", ({"qiankun gong", "qiankungong", "bow", "gong", "qiankun"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-     set("long", "Ç¬À¤¹­ÄËÊÇ³ÂÌÆ¹Ø×Ü±øÀî¾¸µÄÕò¹ØÖ®±¦¡£ºóÒòÀî¾¸½á½»\nò°÷×¿Í±»ÒÉ¶øµ÷Èë¾©³Ç£¬Ò²±»Àî¾¸´øÀ´ÁË¡£\n");
-                set("unit", "ÕÅ");
+     set("long", "ä¹¾å¤å¼“ä¹ƒæ˜¯é™ˆå”å…³æ€»å…µæé–çš„é•‡å…³ä¹‹å®ã€‚åå› æé–ç»“äº¤\nè™¬é«¯å®¢è¢«ç–‘è€Œè°ƒå…¥äº¬åŸï¼Œä¹Ÿè¢«æé–å¸¦æ¥äº†ã€‚\n");
+                set("unit", "å¼ ");
      set("value", 30000);
-                set("wield_msg", "$N×¥ÆğÒ»ÕÅ$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€å¼ $nï¼Œæ¡åœ¨æ‰‹ä¸­å½“æ­¦å™¨ã€‚\n");
                 set("material", "steel");
         }
 

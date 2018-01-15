@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //lancaoxie.c
@@ -8,12 +8,12 @@ inherit BOOTS;
 
 void create()
 {
-   set_name("ÀÃ²İĞ¬", ({"lan caoxie", "caoxie", "shoes"}));
+   set_name("çƒ‚è‰é‹", ({"lan caoxie", "caoxie", "shoes"}));
    set_weight(800);
    if( clonep() ) set_default_object(__FILE__);
    else 
    {
-     set("unit", "Ë«");
+     set("unit", "åŒ");
      set("material", "cloth");
      set("armor_prop/armor", 1);
    }

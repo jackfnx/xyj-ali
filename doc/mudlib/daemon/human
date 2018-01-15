@@ -1,16 +1,16 @@
-¡õ HUMAN 
+â–¡ HUMAN 
 
-BASE_WEIGHT 	ÌåÖØ
+BASE_WEIGHT 	ä½“é‡
 
 void create()
-Éè¶¨ÈËÀàµÄ»ù±¾×ÊÁÏ¼°ÊôÐÔ.
-µ¥Î», ÐÔ±ð, ÊÇ·ñ»áËµ»°, ÉíÌåµÄ¸÷²¿·Ý ... etc.
+è®¾å®šäººç±»çš„åŸºæœ¬èµ„æ–™åŠå±žæ€§.
+å•ä½, æ€§åˆ«, æ˜¯å¦ä¼šè¯´è¯, èº«ä½“çš„å„éƒ¨ä»½ ... etc.
 
 void setup_human(object ob)
-Éè¶¨ÈËÀàµÄ¸÷Ïî×ÊÁÏ. 
+è®¾å®šäººç±»çš„å„é¡¹èµ„æ–™. 
 
 mapping query_action()
-´«»Ø¶¯×÷´Ê.
+ä¼ å›žåŠ¨ä½œè¯.
 
 Elon@ES2
 drafted: 07-13-95

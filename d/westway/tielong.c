@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÌúÁıÖĞ");
+  set ("short", "é“ç¬¼ä¸­");
   set ("long", @LONG
 
-ÌúÁıÊÇÓÉÊÖÖ¸´ÖµÄ¸ÖÌõÈ¦³É£¬¿´ÆğÀ´Ê®·ÖµÄ¼á¹Ì¡£Ò»°ãÈË¿´À´
-ÊÇĞİÏëÌÓ³öÈ¥µÄ£¬²»¹ıÄãÒ²¿ÉÒÔÈ¥ÊÔÊÔ°â¿ª(break)Ëü¡£
+é“ç¬¼æ˜¯ç”±æ‰‹æŒ‡ç²—çš„é’¢æ¡åœˆæˆï¼Œçœ‹èµ·æ¥ååˆ†çš„åšå›ºã€‚ä¸€èˆ¬äººçœ‹æ¥
+æ˜¯ä¼‘æƒ³é€ƒå‡ºå»çš„ï¼Œä¸è¿‡ä½ ä¹Ÿå¯ä»¥å»è¯•è¯•æ‰³å¼€(break)å®ƒã€‚
 LONG);
 
   set("exits", ([
@@ -31,18 +31,18 @@ int do_break()
    i=(int)me->query("force_factor")*5 + (int)me->query("str");
 
    if( this_object()->query("open") )
-     return notify_fail("ÌúÁıÒÑ¾­´ò¿ªÁË£¬±ğ·Ñ¾¢ÁË¡£\n");
+     return notify_fail("é“ç¬¼å·²ç»æ‰“å¼€äº†ï¼Œåˆ«è´¹åŠ²äº†ã€‚\n");
 
-   message_vision("$N³¶×ÅÌúÀ¸¸Ë£¬Ë«ÊÖÒ»½Ï¾¢£¬´óº°Ò»Éù¡°¿ª£¡¡±\n", me);
+   message_vision("$Næ‰¯ç€é“æ æ†ï¼ŒåŒæ‰‹ä¸€è¾ƒåŠ²ï¼Œå¤§å–Šä¸€å£°â€œå¼€ï¼â€\n", me);
    
    if( i > 300)
-     tell_room(this_object(), "Ö»ÌıÌúÀ¸¸Ë·¢³ö¡°ßÇ£¬ßÇ¡±µÄÏìÉù¡­¡­¡­\n");
+     tell_room(this_object(), "åªå¬é“æ æ†å‘å‡ºâ€œå’”ï¼Œå’”â€çš„å“å£°â€¦â€¦â€¦\n");
    else if( i > 200)
-     tell_room(this_object(), "Ö»¼ûÌúÀ¸¸ËÂıÂı±äÍä¡­¡­¡­\n");
+     tell_room(this_object(), "åªè§é“æ æ†æ…¢æ…¢å˜å¼¯â€¦â€¦â€¦\n");
    else if( i > 100)
-     tell_room(this_object(), "ÌúÀ¸¸ËºÃÏó±»°âÍäÁËÒ»Ğ©¡­¡­¡­\n");
+     tell_room(this_object(), "é“æ æ†å¥½è±¡è¢«æ‰³å¼¯äº†ä¸€äº›â€¦â€¦â€¦\n");
    else
-     tell_room(this_object(), "ÌúÀ¸¸ËºÃÏóÃ»ÓĞÊ²Ã´¶¯¾²¡­¡­¡­\n");
+     tell_room(this_object(), "é“æ æ†å¥½è±¡æ²¡æœ‰ä»€ä¹ˆåŠ¨é™â€¦â€¦â€¦\n");
 
    this_object()->add("break", i);
    me->receive_damage("kee", 30);
@@ -53,12 +53,12 @@ int do_break()
    }
 
    if ( (int)this_object()->query("break") > 3000 ){
-     tell_room(this_object(),"ÌúÀ¸¸ËµÄ·ìÏ¶×ã¹»Ò»¸öÈË×ê³öÈ¥ÁË¡£\n");
+     tell_room(this_object(),"é“æ æ†çš„ç¼éš™è¶³å¤Ÿä¸€ä¸ªäººé’»å‡ºå»äº†ã€‚\n");
      this_object()->set("open", 1);
      set("long", @LONG
 
-Ò»¸öÆÆÀÃ²»¿°µÄÌúÁı£¬Å¤ÇúµÄÀ¸¼ÜÈÃ³öµÄ¿ÕÏ¶ÕıºÃ¿ÉÒÔÈÃÒ»¸öÈË
-×ê³öÈ¥¡£
+ä¸€ä¸ªç ´çƒ‚ä¸å ªçš„é“ç¬¼ï¼Œæ‰­æ›²çš„æ æ¶è®©å‡ºçš„ç©ºéš™æ­£å¥½å¯ä»¥è®©ä¸€ä¸ªäºº
+é’»å‡ºå»ã€‚
 LONG);
      this_object()->set("exits/out", "/d/westway/lu1");
    }
@@ -69,8 +69,8 @@ int valid_leave(object me, string dir)
 {
         if (dir == "out" ) {
      if( !this_object()->query("exits/out"))
-        return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞ³öÂ·¡£\n");
-     message_vision("$N¹ªÉí´ÓÌúÁıÖĞ×êÁË³öÈ¥¡£\n", me);
+        return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
+     message_vision("$Nèº¬èº«ä»é“ç¬¼ä¸­é’»äº†å‡ºå»ã€‚\n", me);
      return 1;
         }   
    

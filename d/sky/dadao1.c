@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ìì¹¬´óµÀ");
+    set("short", "å¤©å®«å¤§é“");
     set("long", @LONG
     
-Ò»Ìõ´óµÀ£¬±ÊÖ±µÄÉìÕ¹³öÈ¥£¬Ö±Í¨ÄÏÌìÃÅ¡£µÀÉÏ²»Ê±×ß¹ı¼¸Ãû
-Ñ²²éµÄÌì±ø£¬³Öµ¶Ğü½££¬Íş·çÁİÁİ¡£
+ä¸€æ¡å¤§é“ï¼Œç¬”ç›´çš„ä¼¸å±•å‡ºå»ï¼Œç›´é€šå—å¤©é—¨ã€‚é“ä¸Šä¸æ—¶èµ°è¿‡å‡ å
+å·¡æŸ¥çš„å¤©å…µï¼ŒæŒåˆ€æ‚¬å‰‘ï¼Œå¨é£å‡›å‡›ã€‚
 LONG );
 
     set("exits", ([
@@ -35,16 +35,16 @@ object horse = who->query_temp("ridee");
 
 if (! horse) 
   {
-    message_vision(HIY "$N×İÉíÒ»Ô¾£¬ÌøÈëÌìºÓ¡£\n" NOR, who);
+    message_vision(HIY "$Nçºµèº«ä¸€è·ƒï¼Œè·³å…¥å¤©æ²³ã€‚\n" NOR, who);
     who->move(__DIR__"tianhe");
   }
 else 
   {
-    message_vision(HIY "$N"+horse->query("ride/msg")+"×Å"+horse->name()+"Ô¾ÈëÌìºÓ¡£\n" NOR, who,horse);
+    message_vision(HIY "$N"+horse->query("ride/msg")+"ç€"+horse->name()+"è·ƒå…¥å¤©æ²³ã€‚\n" NOR, who,horse);
     who->move(__DIR__"tianhe");
     horse->move(__DIR__"tianhe");
   }
-message_vision(HIY "$NË³×Å¿í¹ãµÄºÓË®Æ®ÁË¹ıÀ´¡£\n" NOR, who);
+message_vision(HIY "$Né¡ºç€å®½å¹¿çš„æ²³æ°´é£˜äº†è¿‡æ¥ã€‚\n" NOR, who);
 return 1;
 }
 

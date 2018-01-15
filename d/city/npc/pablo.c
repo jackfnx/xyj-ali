@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-   set_name("¶­ÆÓÉý", ({"dong pusheng", "dong", "boss"}));
-   set("title", "µ±ÆÌÕÆ¹ñ");
-   set("gender", "ÄÐÐÔ");
+   set_name("è‘£æœ´å‡", ({"dong pusheng", "dong", "boss"}));
+   set("title", "å½“é“ºæŽŒæŸœ");
+   set("gender", "ç”·æ€§");
    set("age", 47);
    set("kee", 500); 
    set("max_kee", 500);
@@ -15,7 +15,7 @@ void create()
    set("max_sen", 200);   
    set("combat_exp", 50000);
    set("attitude", "friendly");
-   set("rank_info/respect", "ÕÆ¹ñµÄ");
+   set("rank_info/respect", "æŽŒæŸœçš„");
    set("env/wimpy", 50);
    set("chat_chance", 10);
    set_skill("parry", 60);
@@ -43,7 +43,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-   message_vision("\nºöÈ»´ÓÃÅÍâ³å½øÀ´¸öÑ²Âß¹Ù±ø£¬¶Ô$N´óº°Ò»Éù¡°¸ÉÊ²Ã´£¿ÏëÉ±ÈËÄ±²ÆÃ´£¡\n\n",me);        
+   message_vision("\nå¿½ç„¶ä»Žé—¨å¤–å†²è¿›æ¥ä¸ªå·¡é€»å®˜å…µï¼Œå¯¹$Nå¤§å–Šä¸€å£°â€œå¹²ä»€ä¹ˆï¼Ÿæƒ³æ€äººè°‹è´¢ä¹ˆï¼\n\n",me);        
    
         ob->kill_ob(me);
    ob->set_leader(me);

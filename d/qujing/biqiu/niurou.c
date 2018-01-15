@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 11/21/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Å£Èâ¹Ý");
+  set ("short", "ç‰›è‚‰é¦†");
   set ("long", @LONG
 
-Å£Èâ¹ÝÀïÈÈÆøÌÚÌÚ£¬Ò»ÕóÅ£ÌÀÏãÎ¶ÆË±Ç¶øÀ´¡£µØÉÏÆÌ×ÅÆÑÍÅºÍ
-¼¸ÕÅ°«½Å×À£¬Ã¿¸ö×À×ÓÉÏ·Å×ÅÒ»´óÎÍÅ£ÈâÇåÌÀ£¬ÈÃÊ³¿ÍÃÇËæÒâ
-ÏíÊÜ¡£
+ç‰›è‚‰é¦†é‡Œçƒ­æ°”è…¾è…¾ï¼Œä¸€é˜µç‰›æ±¤é¦™å‘³æ‰‘é¼»è€Œæ¥ã€‚åœ°ä¸Šé“ºç€è’²å›¢å’Œ
+å‡ å¼ çŸ®è„šæ¡Œï¼Œæ¯ä¸ªæ¡Œå­ä¸Šæ”¾ç€ä¸€å¤§ç“®ç‰›è‚‰æ¸…æ±¤ï¼Œè®©é£Ÿå®¢ä»¬éšæ„
+äº«å—ã€‚
 
 LONG);
 

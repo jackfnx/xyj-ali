@@ -1,27 +1,27 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //changan city
 
 inherit ROOM;
 string *student_msg = ({
-                "³¯ÎÅµÀ£¬Ï¦ËÀ¿ÉÒÓ",
-                "¾ý×ÓÓ÷ÓÚÒå£¬Ð¡ÈËÓ÷ÓÚÀû",
-                "¼ûÏÍË¼ÆëÑÉ£¬¼û²»ÏÍ¶øÄÚ×ÔÊ¡Ò²",
-                "¾ý×ÓÚ«ÓÚÑÔ¶øÃôÓÚÐÐ",
-                "¾ý×ÓÌ¹µ´µ´£¬Ð¡ÈË³¤ÆÝÆÝ",
-                "¾ý×ÓÌ©¶ø²»½¾£»Ð¡ÈË½¾¶ø²»Ì©",
+                "æœé—»é“ï¼Œå¤•æ­»å¯çŸ£",
+                "å›å­å–»äºŽä¹‰ï¼Œå°äººå–»äºŽåˆ©",
+                "è§è´¤æ€é½ç„‰ï¼Œè§ä¸è´¤è€Œå†…è‡ªçœä¹Ÿ",
+                "å›å­è®·äºŽè¨€è€Œæ•äºŽè¡Œ",
+                "å›å­å¦è¡è¡ï¼Œå°äººé•¿æˆšæˆš",
+                "å›å­æ³°è€Œä¸éª„ï¼›å°äººéª„è€Œä¸æ³°",
 });
 
 
 void create ()
 {
-        set ("short", "×Ü¹Ü¸®´óÌÃ");
+        set ("short", "æ€»ç®¡åºœå¤§å ‚");
         set ("long", @LONG
 
-Ïà¸®µÄ´óÌü£¬°ÚÉèËäËµ²»ÊÇºÜºÀ»ª£¬È´Ò²±ðÓÐÒ»·¬ÆøÊÆ¡£ÕýÖÐÓÐÒ»ÕÅ
-éªÄ¾µñ»¨ÒÎ£¬Á½±ßÊÇ¼¸ÕÅºìÄ¾µÄ×øÒÎ£®×Ü¹ÜÆ½Ê±ÔÚÕâÀï½Ó¼ûÒ»Ð©¿ÍÈË
-(qiuxue)£¬Á½±ß»ØÀÈÍ¨ÏòÄÚÕ¬¡£
+ç›¸åºœçš„å¤§åŽ…ï¼Œæ‘†è®¾è™½è¯´ä¸æ˜¯å¾ˆè±ªåŽï¼Œå´ä¹Ÿåˆ«æœ‰ä¸€ç•ªæ°”åŠ¿ã€‚æ­£ä¸­æœ‰ä¸€å¼ 
+æ¥ æœ¨é›•èŠ±æ¤…ï¼Œä¸¤è¾¹æ˜¯å‡ å¼ çº¢æœ¨çš„åæ¤…ï¼Žæ€»ç®¡å¹³æ—¶åœ¨è¿™é‡ŒæŽ¥è§ä¸€äº›å®¢äºº
+(qiuxue)ï¼Œä¸¤è¾¹å›žå»Šé€šå‘å†…å®…ã€‚
 LONG);
 
         //set("item_desc", ([" *** " : " *** ", ]));
@@ -56,14 +56,14 @@ int do_qiuxue()
         object me;
         me=this_player();
         if(!(ob = present("yin kaishan", environment(me))))
-                return notify_fail("×Ü¹Ü½ñÈÕ²»ÔÚ£¬¸ÄÈÕÔÙÀ´°É£¡\n");
+                return notify_fail("æ€»ç®¡ä»Šæ—¥ä¸åœ¨ï¼Œæ”¹æ—¥å†æ¥å§ï¼\n");
         if( !(int)me->query_skill("literate") >= 45 )
-return notify_fail("Òó¿ªÉ½Ð¦µÀ£º¸óÏÂµÄË®Æ½ÅÂ»¹²»¿ÉÒÔÉÏ¹ú×Ó¼à°É£¡\n");
+return notify_fail("æ®·å¼€å±±ç¬‘é“ï¼šé˜ä¸‹çš„æ°´å¹³æ€•è¿˜ä¸å¯ä»¥ä¸Šå›½å­ç›‘å§ï¼\n");
         if(!me->query("guozi/paid"))
-        return notify_fail("Òó¿ªÉ½Ð¦µÀ£ºËäÊÇ¹ú×Ó¼à£¬²ñÃ×ÓÍÑÎÇ®»¹ÊÇÒª½»µÄ£¡\n");
+        return notify_fail("æ®·å¼€å±±ç¬‘é“ï¼šè™½æ˜¯å›½å­ç›‘ï¼ŒæŸ´ç±³æ²¹ç›é’±è¿˜æ˜¯è¦äº¤çš„ï¼\n");
 
-write("Òó¿ªÉ½´Ó¼ÜÉÏÄÃÏÂÒ»¸öÐ¡ÅÆ£¬Ð¦µÀ£ºÍû¸óÏÂÕäÏ§»ú»á£¬ËûÈÕ¶¨»á³öÈËÍ·µØ£¡\n
-Òó¿ªÉ½°ÑÅÆ×ÓµÝ¸ø" + this_player()->name() + "£®\n");
+write("æ®·å¼€å±±ä»Žæž¶ä¸Šæ‹¿ä¸‹ä¸€ä¸ªå°ç‰Œï¼Œç¬‘é“ï¼šæœ›é˜ä¸‹çæƒœæœºä¼šï¼Œä»–æ—¥å®šä¼šå‡ºäººå¤´åœ°ï¼\n
+æ®·å¼€å±±æŠŠç‰Œå­é€’ç»™" + this_player()->name() + "ï¼Ž\n");
         me->set("guozi/paid", 0);
         pai_ob = new("/obj/pai");
                 obj_file = sprintf("%O", ob);
@@ -72,7 +72,7 @@ write("Òó¿ªÉ½´Ó¼ÜÉÏÄÃÏÂÒ»¸öÐ¡ÅÆ£¬Ð¦µÀ£ºÍû¸óÏÂÕäÏ§»ú»á£¬ËûÈÕ¶¨»á³öÈËÍ·µØ£¡\n
         obj_file = obj_file[0..i-1];
 
         pai_ob->set("player", this_player()->id());
-pai_ob->set_temp("long_1", "¹ú×Ó¼àÐã²Å" + this_player()->name() + "\n" + "±³Ãæ»¹¿Ì×Å£º" +
+pai_ob->set_temp("long_1", "å›½å­ç›‘ç§€æ‰" + this_player()->name() + "\n" + "èƒŒé¢è¿˜åˆ»ç€ï¼š" +
 student_msg[random(sizeof(student_msg))] + "\n");
         
         this_player()->start_busy(1);

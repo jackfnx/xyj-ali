@@ -4,7 +4,7 @@
 
 inherit F_CLEAN_UP;
 
-string *gift_ranking = ({"ÏÂÏÂ","ÏÂµÈ", "ÖĞÏÂ", "ÖĞµÈ", "ÖĞÉÏ", "ÉÏµÈ", "ÉÏÉÏ"});
+string *gift_ranking = ({"ä¸‹ä¸‹","ä¸‹ç­‰", "ä¸­ä¸‹", "ä¸­ç­‰", "ä¸­ä¸Š", "ä¸Šç­‰", "ä¸Šä¸Š"});
 
 string display_attr(string gift, int value,int effective);
 string type;
@@ -28,23 +28,23 @@ int main(object me, string arg)
    type="current";
    player_id=arg;
         }
-        else if (flag != "o") return notify_fail ("Çë²ÎÕÕ help gift¡£\n");
+        else if (flag != "o") return notify_fail ("è¯·å‚ç…§ help giftã€‚\n");
         type="original";
         player_id=this_player()->query("id");
     }
     else
     {
-        if (flag !="o") return notify_fail ("Çë²ÎÕÕ help gift¡£\n");
+        if (flag !="o") return notify_fail ("è¯·å‚ç…§ help giftã€‚\n");
         type="original";
     }
     if (!player) player = present(player_id, environment(me));
     if (!player) player = find_player(arg);
     if (!player) player = find_living(arg);
-    if (!player) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+    if (!player) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
     my = player->query_entire_dbase();
     line = sprintf(
-            " ëöÁ¦£º[%s]  µ¨Ê¶£º[%s]  ÎòĞÔ£º[%s]  ÁéĞÔ£º[%s]\n"
-            " ¶¨Á¦£º[%s]  ÈİÃ²£º[%s]  ¸ù¹Ç£º[%s]  ¸£Ôµ£º[%s]\n\n",
+            " è†‚åŠ›ï¼š[%s]  èƒ†è¯†ï¼š[%s]  æ‚Ÿæ€§ï¼š[%s]  çµæ€§ï¼š[%s]\n"
+            " å®šåŠ›ï¼š[%s]  å®¹è²Œï¼š[%s]  æ ¹éª¨ï¼š[%s]  ç¦ç¼˜ï¼š[%s]\n\n",
             display_attr("str", my["str"], player->query_str()),
             display_attr("cor", my["cor"], player->query_cor()),
             display_attr("int", my["int"], player->query_int()),
@@ -62,7 +62,7 @@ int main(object me, string arg)
             gift_evaluation(my["cps"]), gift_evaluation(my["per"]),
             gift_evaluation(my["con"]), gift_evaluation(my["kar"]));
 */
-    line += sprintf(" ×ÛºÏÆÀ¼Û£º " HIC "%d\n\n" NOR,player->query("score") );
+    line += sprintf(" ç»¼åˆè¯„ä»·ï¼š " HIC "%d\n\n" NOR,player->query("score") );
  
     write(line);
     return 1;
@@ -71,7 +71,7 @@ int main(object me, string arg)
 string display_attr(string gift, int value, int effective)
 {
     int eff_value=value, eval_value;
-    string eval="£¬";
+    string eval="ï¼Œ";
     if (type=="current") eff_value=effective;
     eval_value=eff_value;
     if (eval_value > 21) eval_value-=1;
@@ -87,11 +87,11 @@ string display_attr(string gift, int value, int effective)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½£ºgift [-o] <¶ÔÏóÃû³Æ>
+æŒ‡ä»¤æ ¼å¼ï¼šgift [-o] <å¯¹è±¡åç§°>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã»òÖ¸¶¨¶ÔÏó£¨º¬¹ÖÎï£©µÄÌì¸³¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºä½ æˆ–æŒ‡å®šå¯¹è±¡ï¼ˆå«æ€ªç‰©ï¼‰çš„å¤©èµ‹ã€‚
 
--o (original) ÏÔÊ¾×î³õÌì¸³£¨²»ËãliterateµÈµÄĞ§¹û£©¡£
+-o (original) æ˜¾ç¤ºæœ€åˆå¤©èµ‹ï¼ˆä¸ç®—literateç­‰çš„æ•ˆæœï¼‰ã€‚
 see also : score
 HELP
     );

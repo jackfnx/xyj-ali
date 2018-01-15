@@ -1,19 +1,19 @@
-¡õ RANKD
+â–¡ RANKD
 
 string query_rank(object ob) 
-´«»ØÎï¼şµÄ rank
+ä¼ å›ç‰©ä»¶çš„ rank
 
 string query_respect(object ob)
-´«»Ø¶ÔÎï¼şµÄ×ğ³Æ.
+ä¼ å›å¯¹ç‰©ä»¶çš„å°Šç§°.
 
 string query_rude(object ob)
-´«»Ø¶ÔÎï¼ş´ÖÂ³µÄ³Æºô.
+ä¼ å›å¯¹ç‰©ä»¶ç²—é²çš„ç§°å‘¼.
 
 string query_self(object ob)
-´«»Ø×Ô³Æ
+ä¼ å›è‡ªç§°
 
 string query_self_rude(object ob)
-´«»Ø´ÖÂ³µÄ×Ô³Æ.
+ä¼ å›ç²—é²çš„è‡ªç§°.
 
 Elon@ES2
 drafted: 07-13-95

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -7,10 +7,10 @@ int give_book ();
 
 int create()
 {
-  set_name("�궥Сɮ", ({"jieding xiaoseng","xiaoseng", "seng"}));
-  set("long", "һλС���У�ͷ��ȫ�ǽ�̡�\n");
+  set_name("疥顶小僧", ({"jieding xiaoseng","xiaoseng", "seng"}));
+  set("long", "一位小和尚，头上全是疥疤。\n");
 
-  set("gender", "����");
+  set("gender", "男性");
   set("attitude", "peaceful");
   set("class", "bonze");
   set("age", 15);
@@ -30,12 +30,12 @@ int create()
 
   set("chat_chance", 5);
   set("chat_msg", ({
-    "�궥Сɮ̾�����������ȴ�Ƿ���������������������ȥ����ȡ��Ҳ��\n",
+    "疥顶小僧叹道：长安虽好却是凡尘，若欲求正果金身须去西天取经也！\n",
     (: random_move :)
   }));
   set("inquiry", ([
-    "����" : (: give_book :),
-    "ȡ��" : (: give_book :),
+    "西天" : (: give_book :),
+    "取经" : (: give_book :),
   ]) );
 
   set_skill("force", 50);
@@ -74,7 +74,7 @@ int give_book ()
   
   book = new ("/d/obj/books-nonskill/book-qujing");
   add("books",-1);
-  message_vision ("�궥Сɮ��$Nһ��$n��\n",who,book);
+  message_vision ("疥顶小僧给$N一本$n。\n",who,book);
   book->move(who);
   return 1; 
 }

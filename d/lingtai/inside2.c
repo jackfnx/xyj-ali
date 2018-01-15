@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in Î÷Å£ºØÖŞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // inside2.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "Á·¹¦³¡");
+  set ("short", "ç»ƒåŠŸåœº");
   set ("long", @LONG
 
-Ò»¸öĞ¡Ğ¡µÄÁ·¹¦³¡£®³¡ÄÚÒ»¸öÖĞÄêµÀÊ¿ÔÚ½ÌÒ»Ğ©Ğ¡µÀÃÇÎä¹¦¡£ÖÜ
-Î§±øÆ÷¼ÜÉÏ·Å×ÅÒ»Ğ©±øÆ÷¡£
+ä¸€ä¸ªå°å°çš„ç»ƒåŠŸåœºï¼åœºå†…ä¸€ä¸ªä¸­å¹´é“å£«åœ¨æ•™ä¸€äº›å°é“ä»¬æ­¦åŠŸã€‚å‘¨
+å›´å…µå™¨æ¶ä¸Šæ”¾ç€ä¸€äº›å…µå™¨ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "west": __DIR__"gate1",
@@ -33,10 +33,10 @@ int valid_leave(object me, string dir)
 {
         if (dir == "south" ) {
         if (objectp(present("zhang men", environment(me)))) {
-        if((string)me->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+        if((string)me->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
         return ::valid_leave(me, dir);
         }
-        return notify_fail("ÕÆÃÅ´óµÜ×ÓÈÂµ½£ºÄÇ²»ÊÇÄã¸ÃÈ¥µÄµØ·½£¡\n");
+        return notify_fail("æŒé—¨å¤§å¼Ÿå­åš·åˆ°ï¼šé‚£ä¸æ˜¯ä½ è¯¥å»çš„åœ°æ–¹ï¼\n");
         }
         }
         return ::valid_leave(me, dir);

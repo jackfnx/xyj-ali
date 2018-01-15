@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // huayuan.c
@@ -7,15 +7,15 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "��԰");
+  set ("short", "后花园");
   set ("long", @LONG
 
-��԰�л������࣬ʲô���ɡ����ڡ�������ٺϡ�Ǿޱ��ĵ����
-�ȣ�����ö�٣���Ŀ���ǣ�������֮ʱ����԰�к�����ϣ�����
-������������һ�ᣬ�úÿ�����
+后花园中花草甚多，什么凤仙、鸡冠、秋葵、百合、蔷薇、牡丹等
+等，不可枚举，满目皆是．遇花开之时，后花园中红红紫紫，漫如
+锦屏．真想多呆一会，好好看看．
 LONG);
 set("item_desc",(["flower":
-"Ư���Ļ�԰���˲ȵ����߰��㣬�ۼ�һֱͨ����ǽ�ߣ�����\n"
+"漂亮的花园被人踩的乱七八糟，痕迹一直通到矮墙边．．．\n"
 ]));
 
 set("exits", ([ /* sizeof() == 4 */
@@ -35,11 +35,11 @@ int do_climb(string arg)
         me=this_player();
 
         if ( !arg || ((arg != "wall") ))
-                return notify_fail("��Ҫ��ʲô��\n");
+                return notify_fail("你要爬什么？\n");
         else
-                message_vision("$Nһ��ǽͷ�����˹�ȥ��\n", me);
+                message_vision("$N一扒墙头，翻了过去。\n", me);
                 me->move("/d/gao/xiaolu");
-     tell_room( environment(me), "�����ˡ�һ����" + me->name() + "��ǽͷ������������\n",
+     tell_room( environment(me), "「咕咚」一声，" + me->name() + "从墙头上跳了下来！\n",
 ({me}) );
                 return 1;
 }

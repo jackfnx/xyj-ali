@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// ÇàÓñºùÂ«, created by mes
+// é’ç‰è‘«èŠ¦, created by mes
 // updated 6-9-97 pickle
  
 #include <ansi.h>
@@ -11,16 +11,16 @@ inherit ITEM;
  
 void create()
 {
-    set_name(HIC "ÇàÓñºùÂ«" NOR,({"qingyu hulu", "qingyu", "hulu", "qingyuhulu", "fabao"}));
+    set_name(HIC "é’ç‰è‘«èŠ¦" NOR,({"qingyu hulu", "qingyu", "hulu", "qingyuhulu", "fabao"}));
     set_weight(5000);
     set_max_encumbrance(50000);
     if(clonep())
    set_default_object(__FILE__);
     else {
-   set("unit","Ö»");
+   set("unit","åª");
    set("value",100);
    set("material","jade");
-   set("long","Ò»Ö»°µÇàÉ«µÄºùÂ«£¬²»ÖªÊÇÄÃÊ²Ã´×öµÄ£¬´¥ÊÖÉúÎÂ¡£\n");
+   set("long","ä¸€åªæš—é’è‰²çš„è‘«èŠ¦ï¼Œä¸çŸ¥æ˜¯æ‹¿ä»€ä¹ˆåšçš„ï¼Œè§¦æ‰‹ç”Ÿæ¸©ã€‚\n");
     }
     set("unique", 1);
     set("replace_file", "/d/obj/fabao/qingyu-fake.c");
@@ -35,17 +35,17 @@ int ji(string target)
     string msg, obname=(string)ob->query("name"), weaponname;
 
     hulu=present("qingyu hulu",me);
-    if(!target) return notify_fail("ÄãÏëÓÃ¶ÔË­ÓÃ"+obname+"£¿\n");
+    if(!target) return notify_fail("ä½ æƒ³ç”¨å¯¹è°ç”¨"+obname+"ï¼Ÿ\n");
     victim=present(target,environment(me));
-    if(!victim) return notify_fail("ÕâÀïÃ»ÓĞ "+target+"¡£\n");
-    if(!living(victim)) return notify_fail("ËÀÈËµÄ±øÆ÷»¹ĞèÒªÓÃ·¨±¦È¥ÄÃ£¿\n");
-    if(!me->is_fighting()) return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜ¼À"+obname+"¡£\n");
-    if( (int)me->query("mana") < 300 ) return notify_fail("ÕâÃ´Ò»µãµã·¨Á¦Ò²ÏëÇı¶¯·¨±¦£¿\n");
-    if( (int)me->query("sen") < 100 ) return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«ÉñÄîÖäÓï¡£\n");
+    if(!victim) return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
+    if(!living(victim)) return notify_fail("æ­»äººçš„å…µå™¨è¿˜éœ€è¦ç”¨æ³•å®å»æ‹¿ï¼Ÿ\n");
+    if(!me->is_fighting()) return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+obname+"ã€‚\n");
+    if( (int)me->query("mana") < 300 ) return notify_fail("è¿™ä¹ˆä¸€ç‚¹ç‚¹æ³•åŠ›ä¹Ÿæƒ³é©±åŠ¨æ³•å®ï¼Ÿ\n");
+    if( (int)me->query("sen") < 100 ) return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾ç¥å¿µå’’è¯­ã€‚\n");
     weapon = victim->query_temp("weapon"); 
-    if(!weapon) return notify_fail("ÄãµÄµĞÈË²¢Ã»ÓĞÊ¹ÓÃÎäÆ÷¡£\n");
-    msg="$NÅ×Æğ"+obname+"£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬\n";
-    msg+="Ö»¼ûÒ»Òõ·ç¹ÎÆğ£¬ÇàÓñºùÂ«¿ÚÉä³öÒ»µÀÇà¹â¡£\n";
+    if(!weapon) return notify_fail("ä½ çš„æ•Œäººå¹¶æ²¡æœ‰ä½¿ç”¨æ­¦å™¨ã€‚\n");
+    msg="$NæŠ›èµ·"+obname+"ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œ\n";
+    msg+="åªè§ä¸€é˜´é£åˆ®èµ·ï¼Œé’ç‰è‘«èŠ¦å£å°„å‡ºä¸€é“é’å…‰ã€‚\n";
     me->start_busy(30/mykar);
     victimkar=victim->query_kar();
     myspells=me->query_skill("spells")/10;
@@ -57,23 +57,23 @@ int ji(string target)
     dp=(victimexp+victimspells*victimspells*victimspells/3)*victim->query("sen")/victim->query("max_sen");
     dp=dp*victimkar/1000;
     if (wizardp(me) && me->query("env/combat")=="verbose")
-        tell_object(me, GRN "½ø¹¥£º"+ap+"£¬·ÀÊØ£º"+dp+"¡£\n" NOR);
+        tell_object(me, GRN "è¿›æ”»ï¼š"+ap+"ï¼Œé˜²å®ˆï¼š"+dp+"ã€‚\n" NOR);
     if(random(ap+dp)>dp)
     {
-   msg+=BLU"$n±»Çà¹âÕÖ¸öÕı×Å£¬ÊÖÖĞ"+ weapon->name() +BLU"ÏòºùÂ«Àï·ÉÈ¥£¡ \n"NOR;
-   msg+="$nÊÖÖĞµÄ"+weapon->query("name")+"±»$NÊÕÈ¥ÁË£¡\n"NOR; 
+   msg+=BLU"$nè¢«é’å…‰ç½©ä¸ªæ­£ç€ï¼Œæ‰‹ä¸­"+ weapon->name() +BLU"å‘è‘«èŠ¦é‡Œé£å»ï¼ \n"NOR;
+   msg+="$næ‰‹ä¸­çš„"+weapon->query("name")+"è¢«$Næ”¶å»äº†ï¼\n"NOR; 
    weapon->unequip();
    if (weapon->query_weight()>hulu->query_max_encumbrance())
    {
        weaponname=weapon->name();
        destruct(weapon);
-       msg+=BLU"Ö»¼û"+weaponname+BLU"±»"+obname+BLU"»¯³ÉÒ»ÂÆÇáÑÌ£¬Ëæ·çÆ®È¥¡£\n" NOR;
+       msg+=BLU"åªè§"+weaponname+BLU"è¢«"+obname+BLU"åŒ–æˆä¸€ç¼•è½»çƒŸï¼Œéšé£é£˜å»ã€‚\n" NOR;
    }
    else weapon->move(hulu);
    me->add("mana", -250);
     }
     else {
-   msg+="$n½«ÉíÒ»²à£¬¶ã¹ıÁËÇà¹â¡£\n";
+   msg+="$nå°†èº«ä¸€ä¾§ï¼Œèº²è¿‡äº†é’å…‰ã€‚\n";
    me->add("mana", -125);
     }
     message_vision(msg,me,victim);

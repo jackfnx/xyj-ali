@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit SPEAR;
 
 void create()
 {
-        set_name("Èı¼âÁ½ÈĞÇ¹", ({"sanliang spear", "spear"}));
+        set_name("ä¸‰å°–ä¸¤åˆƒæª", ({"sanliang spear", "spear"}));
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Èı¼âÁ½ÈĞÇ¹ÄËÊÇ¶şÀÉÉñ¾ıµÄ¶ÀÃÅ±øÆ÷£¬·æÀûÎŞ±È¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸‰å°–ä¸¤åˆƒæªä¹ƒæ˜¯äºŒéƒç¥å›çš„ç‹¬é—¨å…µå™¨ï¼Œé”‹åˆ©æ— æ¯”ã€‚\n");
                 set("value", 50000);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬ÑÛÇ°ÉÁ¹ıÒ»µÀº®¹â£®\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œçœ¼å‰é—ªè¿‡ä¸€é“å¯’å…‰ï¼\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_spear(80);

@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 
 void create()
 {
-        set_name("Ô¿³×", ({ "key", "yaoshi"}) );
+        set_name("é’¥åŒ™", ({ "key", "yaoshi"}) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
         }
 }
 

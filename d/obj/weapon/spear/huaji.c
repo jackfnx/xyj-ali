@@ -7,16 +7,16 @@ inherit SPEAR;
 
 void create()
 {
-    set_name(HIY "·½Ìì»­êª" NOR, ({ "fangtian huaji","huaji","ji" }));
+    set_name(HIY "æ–¹å¤©ç”»æˆŸ" NOR, ({ "fangtian huaji","huaji","ji" }));
     set_weight(10000);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "¸Ë");
+        set("unit", "æ†");
         set("value", 10000);
         set("material", "blacksteel");
-        set("long", "Ò»¸ËïÙÌú´òÖÆµÄ·½Ìì»­êª¡£\n");
-        set("wield_msg", "$NÌáÆğ$nÎÕÔÚÊÖÖĞ£¬Íş·çÁİÁİ¡£\n");
+        set("long", "ä¸€æ†é•”é“æ‰“åˆ¶çš„æ–¹å¤©ç”»æˆŸã€‚\n");
+        set("wield_msg", "$Næèµ·$næ¡åœ¨æ‰‹ä¸­ï¼Œå¨é£å‡›å‡›ã€‚\n");
     }
     init_spear(40);
     setup();

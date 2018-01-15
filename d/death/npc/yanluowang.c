@@ -6,12 +6,12 @@ int work_me();
 string expell_me(object me);
 void create()
 {
-    set_name("ÑÖÂÞÍõ", ({"yanluo wang","wang", "master", "yanluo"}));
-    set("long", "Éí´©´óºìòþÅÛ£¬Í·´÷ºÚ³ñÈí½í£®
-ÃæÈç¹øµ×£¬ÐëÈô¸ÖÕë£¬Õâ¾ÍÊÇÑÖÂÞÍõ£®\n");
-    set("title", "Òõ¼äÊ®ÍõÖ®");
+    set_name("é˜Žç½—çŽ‹", ({"yanluo wang","wang", "master", "yanluo"}));
+    set("long", "èº«ç©¿å¤§çº¢èŸ’è¢ï¼Œå¤´æˆ´é»‘ç»¸è½¯å·¾ï¼Ž
+é¢å¦‚é”…åº•ï¼Œé¡»è‹¥é’¢é’ˆï¼Œè¿™å°±æ˜¯é˜Žç½—çŽ‹ï¼Ž\n");
+    set("title", "é˜´é—´åçŽ‹ä¹‹");
     set("class", "ghost");
-    set("gender", "ÄÐÐÔ");
+    set("gender", "ç”·æ€§");
     set("age", 50);
     set("attitude", "peaceful");
     set("shen_type", 1);
@@ -60,19 +60,19 @@ void create()
     }) );
 
 set("inquiry", ([
-"»¹Ñô": (: expell_me :),
+"è¿˜é˜³": (: expell_me :),
 "leave": (: expell_me :),
 "watch":(:send_me:),
-"Ê®°Ë²ãµØÓü":(: work_me :),
+"åå…«å±‚åœ°ç‹±":(: work_me :),
 "18": (: work_me :),
-"name": "ºß£¡Á¬ÀÏ·ò¶¼²»ÈÏµÃ£¬ÏëÀ´ÊÇ»îµÄÌ«¾ÃÁË£¡\n",
-"here": "Õâ±ãÊÇÑÖÂÞµØ¸®£¬µ½Ñô¼äÒ»Ì¸£¬ºÙºÙ£¬Ã»ÈË²»ÅÂ£¡\n",
-"Ñô¼ä": "ÈËËµÒõÑôÊâÍ¾£¬ÆäÊµ²»È»£¬ÒõÑô¼äÓÐÎåµãÏà½»£¬À´È¥ÏàÍ¨£¡\n",
-"Îåµã": "¹þ¹þ£¬ÒªËµÖªµÀµÄÈËÈ´Ò²²»¶à£¬ÄÇ±ãÊÇÄê£¬ÔÂ£¬ÈÕ£¬Ê±ºÍ³¤°²ãþË®ÇÅ£¡\n",
+"name": "å“¼ï¼è¿žè€å¤«éƒ½ä¸è®¤å¾—ï¼Œæƒ³æ¥æ˜¯æ´»çš„å¤ªä¹…äº†ï¼\n",
+"here": "è¿™ä¾¿æ˜¯é˜Žç½—åœ°åºœï¼Œåˆ°é˜³é—´ä¸€è°ˆï¼Œå˜¿å˜¿ï¼Œæ²¡äººä¸æ€•ï¼\n",
+"é˜³é—´": "äººè¯´é˜´é˜³æ®Šé€”ï¼Œå…¶å®žä¸ç„¶ï¼Œé˜´é˜³é—´æœ‰äº”ç‚¹ç›¸äº¤ï¼Œæ¥åŽ»ç›¸é€šï¼\n",
+"äº”ç‚¹": "å“ˆå“ˆï¼Œè¦è¯´çŸ¥é“çš„äººå´ä¹Ÿä¸å¤šï¼Œé‚£ä¾¿æ˜¯å¹´ï¼Œæœˆï¼Œæ—¥ï¼Œæ—¶å’Œé•¿å®‰æ³¾æ°´æ¡¥ï¼\n",
 ]) );
 
 
-create_family("ÑÖÂÞµØ¸®", 2, "ÄãºÃ");
+create_family("é˜Žç½—åœ°åºœ", 2, "ä½ å¥½");
 setup();
 
     carry_object("/d/obj/cloth/mangpao")->wear();
@@ -80,19 +80,19 @@ setup();
 }
 void attempt_apprentice(object ob, object me)
 {
-        if ( (string)ob->query("family/family_name")=="ÑÖÂÞµØ¸®") {
+        if ( (string)ob->query("family/family_name")=="é˜Žç½—åœ°åºœ") {
         if (((int)ob->query("combat_exp") < 50000 )) {
-        command("say " + RANK_D->query_rude(ob) + "²»µàµà½ïÁ½£¬ÀÏ×ÓÃ»¿Õ½ÌÄã£¡\n");
+        command("say " + RANK_D->query_rude(ob) + "ä¸æŽ‚æŽ‚æ–¤ä¸¤ï¼Œè€å­æ²¡ç©ºæ•™ä½ ï¼\n");
         return;
         }
         command("grin");
-        message_vision("ÑÖÂÞÍõ¶Ô$NºÙºÙµØÐ¦ÁË¼¸Éù¡£\n", ob);
-   message_vision("ÑÖÂÞÍõÅÄÅÄ$NµÄ¼ç°òËµµÀ£ºÒÔºóÔÚÕâÀï¶àÓÃ¹¦£¬³ÙÔçÓÐ³öÍ·µÄÈÕ×Ó£¡\n", ob);
+        message_vision("é˜Žç½—çŽ‹å¯¹$Nå˜¿å˜¿åœ°ç¬‘äº†å‡ å£°ã€‚\n", ob);
+   message_vision("é˜Žç½—çŽ‹æ‹æ‹$Nçš„è‚©è†€è¯´é“ï¼šä»¥åŽåœ¨è¿™é‡Œå¤šç”¨åŠŸï¼Œè¿Ÿæ—©æœ‰å‡ºå¤´çš„æ—¥å­ï¼\n", ob);
        command("recruit " + ob->query("id") );
         return;
         }
-   message_vision("ÑÖÂÞÍõ¶Ô$NºÈµÀ£ºÄãÊÇÄÇÀïÀ´µÄÃ«Ôô£¬¸ÒÅÜµ½±¦µîÉÏÈöÒ°£¡ÓëÎÒºå³öÈ¥£¡\n", ob);
-   message_vision("ÅÜ½øÀ´Á½¸öÇàÃæÐ¡¹í°Ñ$NÍÏÁË³öÈ¥¡£\n", ob);
+   message_vision("é˜Žç½—çŽ‹å¯¹$Nå–é“ï¼šä½ æ˜¯é‚£é‡Œæ¥çš„æ¯›è´¼ï¼Œæ•¢è·‘åˆ°å®æ®¿ä¸Šæ’’é‡Žï¼ä¸Žæˆ‘å“„å‡ºåŽ»ï¼\n", ob);
+   message_vision("è·‘è¿›æ¥ä¸¤ä¸ªé’é¢å°é¬¼æŠŠ$Næ‹–äº†å‡ºåŽ»ã€‚\n", ob);
    ob->move("/d/diyu/walk7");
         return;
 }
@@ -105,20 +105,20 @@ int recruit_apprentice(object ob)
 
 int accept_fight(object me)
 {
-        command("say " + "¹þ¹þ£¡ÑÖÍõ²»½Ð£¬×Ô¼ºÉÏÃÅ£¡\n");
+        command("say " + "å“ˆå“ˆï¼é˜ŽçŽ‹ä¸å«ï¼Œè‡ªå·±ä¸Šé—¨ï¼\n");
         return 1;
 }
 
 string expell_me(object me)
 {       
    me=this_player();
-        if((string)me->query("family/family_name")=="ÑÖÂÞµØ¸®") {
-     message_vision("ÑÖÂÞÍõºú×Ó¶¶¶¶£¬ºÃÏñ·Ç³£ÉúÆø¡£\n", me);
+        if((string)me->query("family/family_name")=="é˜Žç½—åœ°åºœ") {
+     message_vision("é˜Žç½—çŽ‹èƒ¡å­æŠ–æŠ–ï¼Œå¥½åƒéžå¸¸ç”Ÿæ°”ã€‚\n", me);
                 me->set_temp("betray", 1);
-     message_vision("ÑÖÂÞÍõ¶Ô$NÈÂÈÂ×Å£ºÐ¡¶«Î÷£¬ÄãËµ»°ÊÇÕæÐÄ»°(true)£¿\n", me);
-                return ("ÆøËÀÎÒÁË£¬ÆøËÀÎÒÁË£¡\n");
+     message_vision("é˜Žç½—çŽ‹å¯¹$Nåš·åš·ç€ï¼šå°ä¸œè¥¿ï¼Œä½ è¯´è¯æ˜¯çœŸå¿ƒè¯(true)ï¼Ÿ\n", me);
+                return ("æ°”æ­»æˆ‘äº†ï¼Œæ°”æ­»æˆ‘äº†ï¼\n");
         }
-        return ("ÎÊÊ²Ã´ÎÊ£¡×Ô¼ºÏëÈ¥£¡\n");
+        return ("é—®ä»€ä¹ˆé—®ï¼è‡ªå·±æƒ³åŽ»ï¼\n");
 }
 void init()
 {
@@ -128,19 +128,19 @@ void init()
 int do_true(string arg)
 {
         if(this_player()->query_temp("betray")) {
-                message_vision("$N´ðµÀ£ºµÜ×Ó½²µÄÕæÐÄ»°£¡\n\n", this_player());
-     message_vision("ÑÖÂÞÍõÌ¾ÁË¿ÚÆø£¬¼ÈÊÇÈç´Ë£¬Äã±ã»¹ÑôÈ¥°É£¡\n", this_player());
+                message_vision("$Nç­”é“ï¼šå¼Ÿå­è®²çš„çœŸå¿ƒè¯ï¼\n\n", this_player());
+     message_vision("é˜Žç½—çŽ‹å¹äº†å£æ°”ï¼Œæ—¢æ˜¯å¦‚æ­¤ï¼Œä½ ä¾¿è¿˜é˜³åŽ»å§ï¼\n", this_player());
                 this_player()->set("combat_exp", this_player()->query("combat_exp")*95/100);
      this_player()->add("betray/count", 1);
      this_player()->add("betray/hell", 1);
                 this_player()->delete("family");
                 this_player()->delete("class");
-                this_player()->set("title", "ÆÕÍ¨°ÙÐÕ");
+                this_player()->set("title", "æ™®é€šç™¾å§“");
                 this_player()->set_temp("betray", 0);
                 this_player()->save();
-     message_vision("ÑÖÂÞÍõÉì³öÊÖ½«$NÒ»ÍÆ£¬$N»¯×÷Ò»¹ÉÇàÑÌÏò¶«¶øÈ¥¡£¡£¡£\n", this_player());
+     message_vision("é˜Žç½—çŽ‹ä¼¸å‡ºæ‰‹å°†$Nä¸€æŽ¨ï¼Œ$NåŒ–ä½œä¸€è‚¡é’çƒŸå‘ä¸œè€ŒåŽ»ã€‚ã€‚ã€‚\n", this_player());
      this_player()->move("/obj/void");
-     tell_room( environment(this_player()),"·¿ÁºÉÏàÛàÛàÂàÂ¼¸ÉùÏì£¬µôÏÂ¸öÈËÀ´£¡\n", ({this_player()}));
+     tell_room( environment(this_player()),"æˆ¿æ¢ä¸Šå™—å™—å—¦å—¦å‡ å£°å“ï¼ŒæŽ‰ä¸‹ä¸ªäººæ¥ï¼\n", ({this_player()}));
      this_player()->unconcious();     
                 return 1;
                 }
@@ -154,8 +154,8 @@ int work_me()
 {
    object ghost, me;
    me=this_player();
-   if( (string)me->query("family/family_name")!="ÑÖÂÞµØ¸®" ) {
-     message_vision("$NÐ±Ð±µÄÆ³ÁË$nÒ»ÑÛ£¬ÀäÐ¦µÀ£º¾ÍÄã£¬ºÃÐ¦ºÃÐ¦¡£¡£¡£\n", this_object(), me);
+   if( (string)me->query("family/family_name")!="é˜Žç½—åœ°åºœ" ) {
+     message_vision("$Næ–œæ–œçš„çž¥äº†$nä¸€çœ¼ï¼Œå†·ç¬‘é“ï¼šå°±ä½ ï¼Œå¥½ç¬‘å¥½ç¬‘ã€‚ã€‚ã€‚\n", this_object(), me);
      return 1;
      }
    //for first time.
@@ -166,10 +166,10 @@ int work_me()
    if( (int)me->query("Hell_Job/time_start") + 900 > time() ) {
      if( !me->query("Hell_Job/done")) {
         command("heng " + me->query("id"));
-        command("say ÉÏ´Î¶¼Ã»¸ÉÍê£¬ÈËÒ²Ã»×¥»ØÀ´£¬»¹ÓÐÁ³»ØÀ´¼ûÎÒ£¡\n");
+        command("say ä¸Šæ¬¡éƒ½æ²¡å¹²å®Œï¼Œäººä¹Ÿæ²¡æŠ“å›žæ¥ï¼Œè¿˜æœ‰è„¸å›žæ¥è§æˆ‘ï¼\n");
         return 1;
      }
-     command("say ÉÏ´Î¸ÉµÄ²»´í£¬ÑÛÏÂÃ»Ê²Ã´Òª½ôÊÂ£¬ÏÈÐª×Å°É¡£\n");
+     command("say ä¸Šæ¬¡å¹²çš„ä¸é”™ï¼Œçœ¼ä¸‹æ²¡ä»€ä¹ˆè¦ç´§äº‹ï¼Œå…ˆæ­‡ç€å§ã€‚\n");
      return 1;
    }
    call_out("start_job", 1, me);
@@ -193,7 +193,7 @@ int start_job(object me)
 //
    command("spank " + me->query("id"));
    command("whisper " + me->query("id") + "
-¾Ý´ÞÅÐ¹ÙËµ£¬ÅÜÁË¸öÀÎÖÐ¶ñ¹í£¬´ó¸ÅÔÚ¸½½ü£¬¸øÄãÊ®Îå·ÖÖÖ°ÑËû×½»ØÀ´¡£\n");
+æ®å´”åˆ¤å®˜è¯´ï¼Œè·‘äº†ä¸ªç‰¢ä¸­æ¶é¬¼ï¼Œå¤§æ¦‚åœ¨é™„è¿‘ï¼Œç»™ä½ åäº”åˆ†ç§æŠŠä»–æ‰å›žæ¥ã€‚\n");
    me->set("Hell_Job/time_start", time());
 
    return 1;
@@ -203,7 +203,7 @@ int send_me()
 {
    object who;
    who=this_player();
-   message_vision("$N¶Ô$nµãÁËµãÍ·£¬µÀ£ºÊÇÄã×Ô¼ºÒªÈ¥£¬»Ø²»À´±ðÔ¹ÎÒ¡£\n",this_object(),who);
+   message_vision("$Nå¯¹$nç‚¹äº†ç‚¹å¤´ï¼Œé“ï¼šæ˜¯ä½ è‡ªå·±è¦åŽ»ï¼Œå›žä¸æ¥åˆ«æ€¨æˆ‘ã€‚\n",this_object(),who);
    who->move("/d/death/emptyroom");
    return 1;
 }
@@ -213,26 +213,26 @@ int work_me()
    who=this_player();
 
    if( (int)who->query("combat_exp") < 300000 ) {
-     message_vision("$N¶Ô$nÒ»¹°ÊÖ£¬µÀ£ºµÀÐÐ²»¹»£¬Ç¿ÇóÒàÊÇÍ÷È»¡£\n", this_object(),who);
+     message_vision("$Nå¯¹$nä¸€æ‹±æ‰‹ï¼Œé“ï¼šé“è¡Œä¸å¤Ÿï¼Œå¼ºæ±‚äº¦æ˜¯æž‰ç„¶ã€‚\n", this_object(),who);
      return 1;
    }
    if( who->query("HellZhenPass") ) {
 
-message_vision("$N¶Ô$nÒ»¹°ÊÖ£¬µÀ£º¼´ÊÇÎä¹¦¸ßÇ¿£¬ÎÒµÈÅå·þ±ãÊÇ£¬Õâ¡£¡£¡£±ãÊÇÃâÁË°É£¡\n",this_object(),who);
+message_vision("$Nå¯¹$nä¸€æ‹±æ‰‹ï¼Œé“ï¼šå³æ˜¯æ­¦åŠŸé«˜å¼ºï¼Œæˆ‘ç­‰ä½©æœä¾¿æ˜¯ï¼Œè¿™ã€‚ã€‚ã€‚ä¾¿æ˜¯å…äº†å§ï¼\n",this_object(),who);
    return 1;
    }
    if( this_object()->query_temp("SomeonePassing") ) {
-     message_vision("$N¶Ô$nÒ»¹°ÊÖ£¬µÀ£ºÕæÊ±»úÔµ²»ÇÉ£¬¸ÄÈÕÔÙÀ´°É¡£\n",this_object(),who);
+     message_vision("$Nå¯¹$nä¸€æ‹±æ‰‹ï¼Œé“ï¼šçœŸæ—¶æœºç¼˜ä¸å·§ï¼Œæ”¹æ—¥å†æ¥å§ã€‚\n",this_object(),who);
      return 1;
    }
 
 
-message_vision("$N¶Ô$nÒõÒõµØÐ¦ÁË¼¸Éù£¬Ëµ£ºÌìÌÃÓÐÂ·Äã²»×ß£¬µØÓüÎÞÃÅÄã´³½øÀ´¡£\n",this_object(),who);
+message_vision("$Nå¯¹$né˜´é˜´åœ°ç¬‘äº†å‡ å£°ï¼Œè¯´ï¼šå¤©å ‚æœ‰è·¯ä½ ä¸èµ°ï¼Œåœ°ç‹±æ— é—¨ä½ é—¯è¿›æ¥ã€‚\n",this_object(),who);
    this_object()->set_temp("SomeonePassing");
 //add a chat here.
-   command("chat "+who->query("name")+"Òª´³°³µØ¸®Ê®°Ë²ãµØÓü£¬ºß£¡µÈ×ÅÊÕÊ¬°É£¡\n");
+   command("chat "+who->query("name")+"è¦é—¯ä¿ºåœ°åºœåå…«å±‚åœ°ç‹±ï¼Œå“¼ï¼ç­‰ç€æ”¶å°¸å§ï¼\n");
 
-   message_vision("$NË«ÊÖÅÄÁËÒ»ÏÂ£¬$n½ÅÏÂÍ»È»ÏÝÁËÏÂÈ¥¡£¡£¡£\n", this_object(),who);
+   message_vision("$NåŒæ‰‹æ‹äº†ä¸€ä¸‹ï¼Œ$nè„šä¸‹çªç„¶é™·äº†ä¸‹åŽ»ã€‚ã€‚ã€‚\n", this_object(),who);
    who->delete("env/brief_message");
    who->move("/d/death/emptyroom");
 
@@ -251,7 +251,7 @@ int get_all(object who)
   object *obs = all_inventory (who);
   int i = sizeof(obs);
 
-  message_vision ("Ò»Õó¿ñ·ç´µÀ´£¬·ðÒ¯³öÏÖ£¡\n",who);
+  message_vision ("ä¸€é˜µç‹‚é£Žå¹æ¥ï¼Œä½›çˆ·å‡ºçŽ°ï¼\n",who);
   while (i--)
   {
     object ob = obs[i];
@@ -263,7 +263,7 @@ int get_all(object who)
     if (ob->query("no_drop"))
       continue;
 
-    message_vision ("·ðÒ¯´Ó$NÉíÉÏËÑ³ö$n£¡\n",who,ob);
+    message_vision ("ä½›çˆ·ä»Ž$Nèº«ä¸Šæœå‡º$nï¼\n",who,ob);
     if (! interactive(ob))
       destruct (ob);
     else
@@ -302,8 +302,8 @@ int check_status(object who)
 }
 int failed(object who)
 {   
-   command("chat* ÑÖÂÞÍõ¿ñÐ¦ÁË¼¸Éù¡£");
-   command("chat ¹ûÕæÓÐ²»ÅÂËÀµÄ£¬¿ÉÏ§»¹ÊÇÌÓ²»³ö°³µÄÊÖÕÆÐÄ£¡\n");
+   command("chat* é˜Žç½—çŽ‹ç‹‚ç¬‘äº†å‡ å£°ã€‚");
+   command("chat æžœçœŸæœ‰ä¸æ€•æ­»çš„ï¼Œå¯æƒœè¿˜æ˜¯é€ƒä¸å‡ºä¿ºçš„æ‰‹æŽŒå¿ƒï¼\n");
    this_object()->delete_temp("SomeonePassing");
    who->move("obj/void");
    who->unconcious();
@@ -317,7 +317,7 @@ int remove_all()
 
         if( !(empty = find_object("/d/death/emptyroom")) )
                 empty = load_object("/d/death/emptyroom");
-   write("ËÄÖÜ¹ÎÆðÒ»ÕóÒõ·ç¡£¡£¡£\n");
+   write("å››å‘¨åˆ®èµ·ä¸€é˜µé˜´é£Žã€‚ã€‚ã€‚\n");
         if( empty = find_object("/d/death/emptyroom") ) {
 
      list=all_inventory(empty);
@@ -334,12 +334,12 @@ int remove_all()
 int winning(object who)
 {
 // add a chat here.
-   command("chat "+who->query("name")+"£¬ËãÄã×ßÔË£¬ÏÂ»Ø¿ÉÃ»ÕâÃ´±ãÒËÁË£¡\n");
+   command("chat "+who->query("name")+"ï¼Œç®—ä½ èµ°è¿ï¼Œä¸‹å›žå¯æ²¡è¿™ä¹ˆä¾¿å®œäº†ï¼\n");
 // add reward here.
    who->add("kar", 10);
    who->add("potential", 1000);
    who->add("combat_exp", 5000);
-   tell_object(who,"ÄãµÃµ½ÁËÒ»Ç§µãÇ±ÄÜºÍÎåÄêµÀÐÐ¡£\n");
+   tell_object(who,"ä½ å¾—åˆ°äº†ä¸€åƒç‚¹æ½œèƒ½å’Œäº”å¹´é“è¡Œã€‚\n");
    who->set("HellZhenPass",1);
    this_object()->move("/d/death/zhengtang");
    this_object()->delete_temp("SomeonePassing");
@@ -351,19 +351,19 @@ int message(object who)
    switch(random(5)) {
 
      case 0:
-tell_room(environment(who),"\nÄã¾õµÃ×Ô¼º²»¶ÏÏÂ½µ£¬ÖÜÎ§¾°ÎïÈç²Êµû·­·É£¬²»¿É×¢Ä¿¡£\n");
+tell_room(environment(who),"\nä½ è§‰å¾—è‡ªå·±ä¸æ–­ä¸‹é™ï¼Œå‘¨å›´æ™¯ç‰©å¦‚å½©è¶ç¿»é£žï¼Œä¸å¯æ³¨ç›®ã€‚\n");
 break;
      case 1:
-tell_room(environment(who),"\nÄã¾õµÃ×Ô¼º²»¶ÏÏÂ½µ¡£\n");
+tell_room(environment(who),"\nä½ è§‰å¾—è‡ªå·±ä¸æ–­ä¸‹é™ã€‚\n");
 break;
      case 2:
-tell_room(environment(who),"\nÄã¾õµÃ×Ô¼º²»¶ÏÏÂ½µ£¬ÌìµØËÆºõÃ»ÁË½çÏÞ¡£¡£¡£\n");
+tell_room(environment(who),"\nä½ è§‰å¾—è‡ªå·±ä¸æ–­ä¸‹é™ï¼Œå¤©åœ°ä¼¼ä¹Žæ²¡äº†ç•Œé™ã€‚ã€‚ã€‚\n");
 break;
                 case 3:
-tell_room(environment(who),"\nÄã¾õµÃ×Ô¼º²»¶ÏÏÂ½µ£¬ÖÜÎ§Ò»ÇÐ¶¼ÔÚÐý×ª¡£¡£¡£\n");
+tell_room(environment(who),"\nä½ è§‰å¾—è‡ªå·±ä¸æ–­ä¸‹é™ï¼Œå‘¨å›´ä¸€åˆ‡éƒ½åœ¨æ—‹è½¬ã€‚ã€‚ã€‚\n");
 break;
      case 4:
-tell_room(environment(who),"\nÄã¾õµÃ×Ô¼º²»¶ÏÏÂ½µ£¬ÏÂ½µ£¬ËÆºõÂäÏòÁËÎÞ¾¡µÄÉîÔ¨¡£\n");
+tell_room(environment(who),"\nä½ è§‰å¾—è‡ªå·±ä¸æ–­ä¸‹é™ï¼Œä¸‹é™ï¼Œä¼¼ä¹Žè½å‘äº†æ— å°½çš„æ·±æ¸Šã€‚\n");
 break;
    }
    return 1;
@@ -373,9 +373,9 @@ int round_1(object who)
    object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/1");
-   tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+   tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
    tell_room(environment(who),RED"                **************************************\n"NOR);
-   tell_room(environment(who),RED"                **               µõ½îÓü             **\n"NOR);
+   tell_room(environment(who),RED"                **               åŠç­‹ç‹±             **\n"NOR);
    tell_room(environment(who),RED"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -390,9 +390,9 @@ int round_2(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/2");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),GRN"                **************************************\n"NOR);
-        tell_room(environment(who),GRN"                **               ÓÄÍ÷Óü             **\n"NOR);
+        tell_room(environment(who),GRN"                **               å¹½æž‰ç‹±             **\n"NOR);
         tell_room(environment(who),GRN"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -406,9 +406,9 @@ int round_3(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/3");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),YEL"                **************************************\n"NOR);
-        tell_room(environment(who),YEL"                **               »ð·»Óü             **\n"NOR);
+        tell_room(environment(who),YEL"                **               ç«åŠç‹±             **\n"NOR);
         tell_room(environment(who),YEL"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -422,9 +422,9 @@ int round_4(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/4");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),BLU"                **************************************\n"NOR);
-        tell_room(environment(who),BLU"                **               Ûº¶¼Óü             **\n"NOR);
+        tell_room(environment(who),BLU"                **               é…†éƒ½ç‹±             **\n"NOR);
         tell_room(environment(who),BLU"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -438,9 +438,9 @@ int round_5(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/5");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),MAG"                **************************************\n"NOR);
-        tell_room(environment(who),MAG"                **               °ÎÉàÓü             **\n"NOR);
+        tell_room(environment(who),MAG"                **               æ‹”èˆŒç‹±             **\n"NOR);
         tell_room(environment(who),MAG"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -454,9 +454,9 @@ int round_6(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/6");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),CYN"                **************************************\n"NOR);
-        tell_room(environment(who),CYN"                **               °þÆ¤Óü             **\n"NOR);
+        tell_room(environment(who),CYN"                **               å‰¥çš®ç‹±             **\n"NOR);
         tell_room(environment(who),CYN"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -470,9 +470,9 @@ int round_7(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/7");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIR"                **************************************\n"NOR);
-        tell_room(environment(who),HIR"                **               Ä¥ÑÄÓü             **\n"NOR);
+        tell_room(environment(who),HIR"                **               ç£¨æ¶¯ç‹±             **\n"NOR);
         tell_room(environment(who),HIR"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -486,9 +486,9 @@ int round_8(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/8");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIG"                **************************************\n"NOR);
-        tell_room(environment(who),HIG"                **               ×¶µ·Óü             **\n"NOR);
+        tell_room(environment(who),HIG"                **               é”¥æ£ç‹±             **\n"NOR);
         tell_room(environment(who),HIG"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -502,9 +502,9 @@ int round_9(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/9");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIY"                **************************************\n"NOR);
-        tell_room(environment(who),HIY"                **               ³µ±ÀÓü             **\n"NOR);
+        tell_room(environment(who),HIY"                **               è½¦å´©ç‹±             **\n"NOR);
         tell_room(environment(who),HIY"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -518,9 +518,9 @@ int round_10(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/10");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIB"                **************************************\n"NOR);
-        tell_room(environment(who),HIB"                **               º®±ùÓü             **\n"NOR);
+        tell_room(environment(who),HIB"                **               å¯’å†°ç‹±             **\n"NOR);
         tell_room(environment(who),HIB"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -536,9 +536,9 @@ int round_11(object who)
         ghostb=new("/d/death/HellZhen/15");
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/11");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIM"                **************************************\n"NOR);
-        tell_room(environment(who),HIM"                **               ÍÑ¿ÇÓü             **\n"NOR);
+        tell_room(environment(who),HIM"                **               è„±å£³ç‹±             **\n"NOR);
         tell_room(environment(who),HIM"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -556,9 +556,9 @@ int round_12(object who)
         ghostb=new("/d/death/HellZhen/11");
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/12");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIC"                **************************************\n"NOR);
-        tell_room(environment(who),HIC"                **               ³é³¦Óü             **\n"NOR);
+        tell_room(environment(who),HIC"                **               æŠ½è‚ ç‹±             **\n"NOR);
         tell_room(environment(who),HIC"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -577,9 +577,9 @@ int round_13(object who)
 
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/13");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),HIW"                **************************************\n"NOR);
-        tell_room(environment(who),HIW"                **               ÓÍ¹øÓü             **\n"NOR);
+        tell_room(environment(who),HIW"                **               æ²¹é”…ç‹±             **\n"NOR);
         tell_room(environment(who),HIW"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -597,9 +597,9 @@ int round_14(object who)
         ghostb=new("/d/death/HellZhen/18");
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/14");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),RED"                **************************************\n"NOR);
-        tell_room(environment(who),RED"                **               ºÚ°µÓü             **\n"NOR);
+        tell_room(environment(who),RED"                **               é»‘æš—ç‹±             **\n"NOR);
         tell_room(environment(who),RED"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -615,9 +615,9 @@ int round_15(object who)
         object ghost;
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/15");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),GRN"                **************************************\n"NOR);
-        tell_room(environment(who),GRN"                **               µ¶É½Óü             **\n"NOR);
+        tell_room(environment(who),GRN"                **               åˆ€å±±ç‹±             **\n"NOR);
         tell_room(environment(who),GRN"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -633,9 +633,9 @@ int round_16(object who)
         ghostb=new("/d/death/HellZhen/15");
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/16");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),YEL"                **************************************\n"NOR);
-        tell_room(environment(who),YEL"                **               Ñª³ØÓü             **\n"NOR);
+        tell_room(environment(who),YEL"                **               è¡€æ± ç‹±             **\n"NOR);
         tell_room(environment(who),YEL"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -653,9 +653,9 @@ int round_17(object who)
         ghostb=new("/d/death/HellZhen/16");
         seteuid(getuid());
         ghost=new("/d/death/HellZhen/17");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),BLU"                **************************************\n"NOR);
-        tell_room(environment(who),BLU"                **               °¢±ÇÓü             **\n"NOR);
+        tell_room(environment(who),BLU"                **               é˜¿é¼»ç‹±             **\n"NOR);
         tell_room(environment(who),BLU"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);
@@ -673,9 +673,9 @@ int round_18(object who)
         ghost=new("/d/death/HellZhen/18");
    seteuid(getuid());
    ghostb=new("/d/death/HellZhen/17");
-        tell_room(environment(who),"\nÍ»È»¼äÒ»µÀºÚÅÆÉÁ¹ý£º\n\n");
+        tell_room(environment(who),"\nçªç„¶é—´ä¸€é“é»‘ç‰Œé—ªè¿‡ï¼š\n\n");
         tell_room(environment(who),CYN"                **************************************\n"NOR);
-        tell_room(environment(who),CYN"                **               ³Ó¸ËÓü             **\n"NOR);
+        tell_room(environment(who),CYN"                **               ç§¤æ†ç‹±             **\n"NOR);
         tell_room(environment(who),CYN"                **************************************\n"NOR);
         ghost->move(environment(who));
         ghost->invocation(who);

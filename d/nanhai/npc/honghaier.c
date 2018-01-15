@@ -1,21 +1,21 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// honghaier.c �캢��
+// honghaier.c 红孩儿
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-    set_name("�캢��", ({ "honghaier", "hong" }));
-    set("title", "ʥӤ����");
+    set_name("红孩儿", ({ "honghaier", "hong" }));
+    set("title", "圣婴大王");
     set("long", @LONG
-������ţħ��֮�ӣ����Ժö������Ϻ������ܵ�������ɽ�����˸�
-�Ʋ�ͯ�ӡ�������Ȼ����ѱ��ʱ�����ŷ�ҧһ�ڣ��Һù���������
-���˽��䣬���������������ࡣ
+他本是牛魔王之子，生性好斗；后被南海观音擒到这普陀山上做了个
+善财童子。可他仍然桀骜不驯，时刻想着反咬一口，幸好观音给他带
+上了金箍咒，才让他乖巧了许多。
 LONG);
-    set("gender", "����");
+    set("gender", "男性");
     set("age", 15);
     set("attitude", "heroism");
     set("max_kee", 1000);
@@ -52,7 +52,7 @@ LONG);
         (: cast_spell, "zhenhuo" :),
     }) );
 
-    create_family("����ɽ", 2, "����");
+    create_family("火焰山", 2, "弟子");
 
     setup();
     carry_object("/obj/money/gold");
@@ -65,7 +65,7 @@ LONG);
 void attempt_apprentice(object ob)
 {
     command("smile");
-    command("say �ܺã��������������㣬ϣ������Ŭ�����ܸ����������ǡ�\n");
+    command("say 很好，本大王就收下你，希望你多加努力，能给本大王分忧。\n");
     command("recruit " + ob->query("id") );
     return;
 }

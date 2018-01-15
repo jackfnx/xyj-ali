@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/1/1997
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÊéÌû", ({"shu tie", "tie"}));
+  set_name("ä¹¦å¸–", ({"shu tie", "tie"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "·â");
-    set("long", "Ò»·âÆæ¹ÖµÄÂÌÉ«ÊéÌû¡£\n");
+    set("unit", "å°");
+    set("long", "ä¸€å°å¥‡æ€ªçš„ç»¿è‰²ä¹¦å¸–ã€‚\n");
   }
 //  set("is_monitored",1);
   setup();
@@ -21,7 +21,7 @@ void create()
 /*
 void destruct_me(object where, object me)
 {
-  message_vision("$nÒ»·É¾Í²»¼ûÁË¡­¡­\n",where,me);
+  message_vision("$nä¸€é£å°±ä¸è§äº†â€¦â€¦\n",where,me);
   destruct (me);
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat on 7/5/1997 
@@ -6,16 +6,16 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹«¼¦", ({ "gong ji", "ji" }) );
-  set("race", "Ò°ÊŞ");
-  set("gender", "ĞÛĞÔ");
+  set_name("å…¬é¸¡", ({ "gong ji", "ji" }) );
+  set("race", "é‡å…½");
+  set("gender", "é›„æ€§");
   set("age", 2);
-  set("long", "Ò»Ö»ĞÛôñôñµÄ´ó¹«¼¦¡£\n");
+  set("long", "ä¸€åªé›„èµ³èµ³çš„å¤§å…¬é¸¡ã€‚\n");
   set("attitude", "friendly");
   set_skill("unarmed", 2);
   set_skill("dodge", 10);
   set_skill("parry", 10);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
   set("verbs", ({ "bite"}) );
 
   setup();

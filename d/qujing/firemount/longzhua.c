@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // /u/wuliao/firemount/longzhuang
@@ -9,10 +9,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ɫׯԺ");
+  set ("short", "红色庄院");
   set ("long", @LONG
-���߸ǵķ��ᣬ��ש����ԫǽ���������ȣ������齣�һƬ���Ǻ��
-��
+红瓦盖的房舍，红砖砌的垣墙，红油门扇，红漆板榻，一片都是红的
+。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

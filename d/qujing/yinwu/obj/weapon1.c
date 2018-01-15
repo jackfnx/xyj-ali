@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit STAFF;
 
 void create()
 {
-  set_name("¿İËÉÕÈ", ({ "kusong zhang", "zhang", "staff" }) );
+  set_name("æ¯æ¾æ–", ({ "kusong zhang", "zhang", "staff" }) );
   init_staff(20);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(550);
   if( clonep() )
     set_default_object(__FILE__);
@@ -17,7 +17,7 @@ void create()
     set("value", 280);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

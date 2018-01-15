@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-//cast function: escape.c ¿ÉÓÃÓÚ¸÷ÖÖÌÓ¶İ¡£
+//cast function: escape.c å¯ç”¨äºå„ç§é€ƒéã€‚
 //useful only when fighting, other cases only waste fali.
 //modified for wudidong, 10-4-97 pickle
 
@@ -17,55 +17,55 @@ int cast(object me, object target)
    //always use the one who is fighting me as target.
 
    if( me->is_busy())
-     return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÏÈÓ¦¸¶ÑÛÇ°µÄÊÂ°É¡£\n");
+     return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œå…ˆåº”ä»˜çœ¼å‰çš„äº‹å§ã€‚\n");
 
    if( (int)me->query("mana") < 100 )
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
    if( (int)me->query("sen") < (int)me->query("max_sen")/5 )
-     return notify_fail("Äã¾«ÉñÌ«²î£¬ÄÑÒÔ¼¯ÖĞ¾«Á¦ÄîÖä¡£\n");
+     return notify_fail("ä½ ç²¾ç¥å¤ªå·®ï¼Œéš¾ä»¥é›†ä¸­ç²¾åŠ›å¿µå’’ã€‚\n");
 
    if( (int)me->query_skill("yaofa", 1) < 20)
-     return notify_fail("ÄãÎ´ÔøÑ§»áÍÁ¶İ¡£\n");
+     return notify_fail("ä½ æœªæ›¾å­¦ä¼šåœŸéã€‚\n");
 
    if(environment(me)->query("under_water"))
-     return notify_fail("ÄãÔÚË®ÖĞ£¬Ã»·¨Ê©ÓÃÍÁ¶İ£¡\n");
+     return notify_fail("ä½ åœ¨æ°´ä¸­ï¼Œæ²¡æ³•æ–½ç”¨åœŸéï¼\n");
 
    ap=me->query_skill("spells")+me->query("max_mana")/10;
    if(target) dp=target->query_skill("spells")+target->query("max_mana")/10;
 
    if(!me->is_fighting() )
    {
-     message_vision(YEL"$NÏò¿ÕÖĞÅ×ÁËÒ»°ÑÍÁ£¬Äî¾äÖä£¬×êÈëÍÁÖĞ²»¼ûÁË¡£\n"NOR,me);
+     message_vision(YEL"$Nå‘ç©ºä¸­æŠ›äº†ä¸€æŠŠåœŸï¼Œå¿µå¥å’’ï¼Œé’»å…¥åœŸä¸­ä¸è§äº†ã€‚\n"NOR,me);
      me->add("sen", -me->query("max_sen")/8);
      me->add("mana", -80);
      success=1;
    }
    else
    {
-     msg=YEL"¼¤Õ½ÖĞ£¬$NÍ»È»Ìø³öÕ½È¦£¬Ïò¿ÕÖĞÅ×Ò»°ÑÍÁ£¬à«à«ÄîÁË¼¸¾äÖä¡£\n"NOR;
+     msg=YEL"æ¿€æˆ˜ä¸­ï¼Œ$Nçªç„¶è·³å‡ºæˆ˜åœˆï¼Œå‘ç©ºä¸­æŠ›ä¸€æŠŠåœŸï¼Œå–ƒå–ƒå¿µäº†å‡ å¥å’’ã€‚\n"NOR;
      if(random(ap+dp)>dp/2)
      {
-        msg+=YEL"Ö»Ìı$NºÈÁËÒ»Éù¡¸×ß£¡¡¹£¬ÈËÓ°ÒÑ¾­²»¼ûÁË¡£\n"NOR;
+        msg+=YEL"åªå¬$Nå–äº†ä¸€å£°ã€Œèµ°ï¼ã€ï¼Œäººå½±å·²ç»ä¸è§äº†ã€‚\n"NOR;
         me->add("sen", -me->query("max_sen")/6);
         me->add("mana", -50);
         success=1;
      }
-     else msg+=YEL"µ«$nµÄÉíÓ°ÒÑ½ô½ô¸úÉÏ£¬½«$NÀ¹ÁËÏÂÀ´¡£\n"NOR;
+     else msg+=YEL"ä½†$nçš„èº«å½±å·²ç´§ç´§è·Ÿä¸Šï¼Œå°†$Næ‹¦äº†ä¸‹æ¥ã€‚\n"NOR;
      me->add("mana", -50);
      message_vision(msg, me, target);
    }
    if(success)
    {
      start=me->query("env/destination");
-     start=me->query("¼ÇºÅ/"+start);
+     start=me->query("è®°å·/"+start);
      if(!start || !find_object(start))
         start=me->query("startroom");
      if(!start) start="/d/qujing/wudidong/kitchen";
      me->move(start);
-     message("vision", YEL+me->name()+"Í»È»´ÓµØÏÂ×êÁË³öÀ´¡£\n"NOR,
+     message("vision", YEL+me->name()+"çªç„¶ä»åœ°ä¸‹é’»äº†å‡ºæ¥ã€‚\n"NOR,
             environment(me), me);
-     tell_object(me, YEL"ÄãµÄÉíÓ°Í»È»³öÏÖÔÚÒ»Õó³¾ÍÁÖĞ¡£\n"NOR);
+     tell_object(me, YEL"ä½ çš„èº«å½±çªç„¶å‡ºç°åœ¨ä¸€é˜µå°˜åœŸä¸­ã€‚\n"NOR);
      return 3+random(3);
    }
    return 5+random(5);

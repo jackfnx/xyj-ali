@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // slumber_drug.c
@@ -7,16 +7,16 @@ inherit POWDER;
 
 void create()
 {
-   set_name("ÃÉº¹Ò©", ({ "slumber drug", "drug" }) );
+   set_name("è’™æ±—è¯", ({ "slumber drug", "drug" }) );
    if( clonep() )
      set_default_object(__FILE__);
    else {
      set("long",
-        "ÕâÊÇÑ°³£µÄÂÌÁÖµÁÔôÓÃÀ´×÷°¸µÄÃÉº¹Ò©£¬Äã¿ÉÒÔ°ÑËüµ¹(pour)ÔÚ\n"
-        "¾ÆË®Ö®ÖĞÊ¹ÓÃ¡£\n" );
-     set("unit", "°ü");
+        "è¿™æ˜¯å¯»å¸¸çš„ç»¿æ—ç›—è´¼ç”¨æ¥ä½œæ¡ˆçš„è’™æ±—è¯ï¼Œä½ å¯ä»¥æŠŠå®ƒå€’(pour)åœ¨\n"
+        "é…’æ°´ä¹‹ä¸­ä½¿ç”¨ã€‚\n" );
+     set("unit", "åŒ…");
      set("base_value", 20);
-     set("base_unit", "·İ");
+     set("base_unit", "ä»½");
      set("base_weight", 30);
    }
    set_amount(1);

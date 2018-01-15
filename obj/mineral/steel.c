@@ -4,17 +4,17 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("ÁùÑôÎÙ¸Ö", ({ "liuyang wugang", "steel" }));
+    set_name("å…­é˜³é’¨é’¢", ({ "liuyang wugang", "steel" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "´ÓÎÙ¸ÖÖĞÌáÈ¡µÄ¾«»ª²ÄÁÏ£¬¾ßÓĞ¼«´óµÄÕ½ÂÔ¼ÛÖµ£¬Òò´ËÊµĞĞ³¯Í¢×¨Âô¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "ä»é’¨é’¢ä¸­æå–çš„ç²¾åææ–™ï¼Œå…·æœ‰æå¤§çš„æˆ˜ç•¥ä»·å€¼ï¼Œå› æ­¤å®è¡Œæœå»·ä¸“å–ã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
         set("value", 100000);
-        set("no_sell", "ÁùÑôÎÙ¸ÖÊÇ³¯Í¢×¨ÂôÎï×Ê£¬Ë½ÈË½ûÖ¹ÂòÂô¡£");
+        set("no_sell", "å…­é˜³é’¨é’¢æ˜¯æœå»·ä¸“å–ç‰©èµ„ï¼Œç§äººç¦æ­¢ä¹°å–ã€‚");
     }
 
     set_amount(1);

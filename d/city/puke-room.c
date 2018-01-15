@@ -1,22 +1,22 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 //puke-room.c...weiqi, 98/01/18
-//ÆË¿ËÅÆ¡£
+//æ‰‘å…‹ç‰Œã€‚
 
 inherit ROOM;
 
 string *pai_name = ({
-"¡¾ºÚ£Á¡¿", "¡¾ºÚ£²¡¿", "¡¾ºÚ£³¡¿", "¡¾ºÚ£´¡¿", "¡¾ºÚ£µ¡¿", "¡¾ºÚ£¶¡¿", "¡¾ºÚ£·¡¿", 
-"¡¾ºÚ£¸¡¿", "¡¾ºÚ£¹¡¿", "¡¾ºÚÊ®¡¿", "¡¾ºÚ£Ê¡¿", "¡¾ºÚ£Ñ¡¿", "¡¾ºÚ£Ë¡¿", 
-"¡¾ºì£Á¡¿", "¡¾ºì£²¡¿" ,"¡¾ºì£³¡¿", "¡¾ºì£´¡¿", "¡¾ºì£µ¡¿", "¡¾ºì£¶¡¿", "¡¾ºì£·¡¿", 
-"¡¾ºì£¸¡¿", "¡¾ºì£¹¡¿", "¡¾ºìÊ®¡¿", "¡¾ºì£Ê¡¿", "¡¾ºì£Ñ¡¿", "¡¾ºì£Ë¡¿", 
-"¡¾²İ£Á¡¿", "¡¾²İ£²¡¿", "¡¾²İ£³¡¿", "¡¾²İ£´¡¿", "¡¾²İ£µ¡¿", "¡¾²İ£¶¡¿", "¡¾²İ£·¡¿", 
-"¡¾²İ£¸¡¿", "¡¾²İ£¹¡¿", "¡¾²İÊ®¡¿", "¡¾²İ£Ê¡¿", "¡¾²İ£Ñ¡¿", "¡¾²İ£Ë¡¿", 
-"¡¾·½£Á¡¿", "¡¾·½£²¡¿", "¡¾·½£³¡¿", "¡¾·½£´¡¿", "¡¾·½£µ¡¿", "¡¾·½£¶¡¿", "¡¾·½£·¡¿", 
-"¡¾·½£¸¡¿", "¡¾·½£¹¡¿", "¡¾·½Ê®¡¿", "¡¾·½£Ê¡¿", "¡¾·½£Ñ¡¿", "¡¾·½£Ë¡¿", 
-"¡¾Ğ¡Íõ¡¿", "¡¾´óÍõ¡¿"
+"ã€é»‘ï¼¡ã€‘", "ã€é»‘ï¼’ã€‘", "ã€é»‘ï¼“ã€‘", "ã€é»‘ï¼”ã€‘", "ã€é»‘ï¼•ã€‘", "ã€é»‘ï¼–ã€‘", "ã€é»‘ï¼—ã€‘", 
+"ã€é»‘ï¼˜ã€‘", "ã€é»‘ï¼™ã€‘", "ã€é»‘åã€‘", "ã€é»‘ï¼ªã€‘", "ã€é»‘ï¼±ã€‘", "ã€é»‘ï¼«ã€‘", 
+"ã€çº¢ï¼¡ã€‘", "ã€çº¢ï¼’ã€‘" ,"ã€çº¢ï¼“ã€‘", "ã€çº¢ï¼”ã€‘", "ã€çº¢ï¼•ã€‘", "ã€çº¢ï¼–ã€‘", "ã€çº¢ï¼—ã€‘", 
+"ã€çº¢ï¼˜ã€‘", "ã€çº¢ï¼™ã€‘", "ã€çº¢åã€‘", "ã€çº¢ï¼ªã€‘", "ã€çº¢ï¼±ã€‘", "ã€çº¢ï¼«ã€‘", 
+"ã€è‰ï¼¡ã€‘", "ã€è‰ï¼’ã€‘", "ã€è‰ï¼“ã€‘", "ã€è‰ï¼”ã€‘", "ã€è‰ï¼•ã€‘", "ã€è‰ï¼–ã€‘", "ã€è‰ï¼—ã€‘", 
+"ã€è‰ï¼˜ã€‘", "ã€è‰ï¼™ã€‘", "ã€è‰åã€‘", "ã€è‰ï¼ªã€‘", "ã€è‰ï¼±ã€‘", "ã€è‰ï¼«ã€‘", 
+"ã€æ–¹ï¼¡ã€‘", "ã€æ–¹ï¼’ã€‘", "ã€æ–¹ï¼“ã€‘", "ã€æ–¹ï¼”ã€‘", "ã€æ–¹ï¼•ã€‘", "ã€æ–¹ï¼–ã€‘", "ã€æ–¹ï¼—ã€‘", 
+"ã€æ–¹ï¼˜ã€‘", "ã€æ–¹ï¼™ã€‘", "ã€æ–¹åã€‘", "ã€æ–¹ï¼ªã€‘", "ã€æ–¹ï¼±ã€‘", "ã€æ–¹ï¼«ã€‘", 
+"ã€å°ç‹ã€‘", "ã€å¤§ç‹ã€‘"
 });
 
 int pai_size = sizeof(pai_name)-2;
@@ -89,34 +89,34 @@ void check_finish(int previous_game_id);
 
 void create ()
 {
-   set ("short", "¹°Öí·¿");
+   set ("short", "æ‹±çŒªæˆ¿");
    set ("long", @LONG
 
-ÎİÖĞ¼ä°Ú×ÅÒ»ÕÅ¿´ÆğÀ´Ïàµ±½áÊµµÄ´ó·½×À(table)£¬×À±ßÎ§×ÅËÄ°Ñ
-¿¿±³Ä¾ÒÎ¡£¶«ÃæÇ½ÉÏÓĞÒ»¿é´óÅÆ×Ó(paizi)£¬Î÷ÃæÇ½ÉÏÓĞÒ»¿éĞ¡ÅÆ
-×Ó(score)¡£
+å±‹ä¸­é—´æ‘†ç€ä¸€å¼ çœ‹èµ·æ¥ç›¸å½“ç»“å®çš„å¤§æ–¹æ¡Œ(table)ï¼Œæ¡Œè¾¹å›´ç€å››æŠŠ
+é èƒŒæœ¨æ¤…ã€‚ä¸œé¢å¢™ä¸Šæœ‰ä¸€å—å¤§ç‰Œå­(paizi)ï¼Œè¥¿é¢å¢™ä¸Šæœ‰ä¸€å—å°ç‰Œ
+å­(score)ã€‚
 LONG);
 
    set("item_desc", (["paizi" : "
 
-¹°Öí¹æÔò£º
+æ‹±çŒªè§„åˆ™ï¼š
 
-Ö÷ÒªÖ¸ÁîÓĞ£º
-Ò»£¬¾Í×ø(sit <n, s, e, w>)¡£
-¶ş£¬¿ª¹°(start)¡£
-Èı£¬³öÅÆ(play <»¨É«> <´óĞ¡>)¡£
-¡¡¡¡»¨É«ÓĞ(hei, hong, cao, fang)»òÓÃ(S/s, H/h, C/c, D/d)À´´ú±í¡£
-¡¡¡¡´óĞ¡ÓĞ(1, ..., 13)»òÓÃ(A/a, J/j, Q/q, K/k)À´´ú±í(1, 11, 12, 13)¡£
-ËÄ£¬ºÃÅÆÁÁÏà(double <zhu/z, yang/y, hong/h, bian/b>)¡£
-Îå£¬²é×Ô¼ºµÄÅÆ(my)¡£
-Áù£¬¿´×ÀÃæÇé¿ö(look table)¡£
-Æß£¬¿´»ı·Ö(look score)¡£
-°Ë£¬ÍË³ö¹°Öí(leave)¡£
+ä¸»è¦æŒ‡ä»¤æœ‰ï¼š
+ä¸€ï¼Œå°±å(sit <n, s, e, w>)ã€‚
+äºŒï¼Œå¼€æ‹±(start)ã€‚
+ä¸‰ï¼Œå‡ºç‰Œ(play <èŠ±è‰²> <å¤§å°>)ã€‚
+ã€€ã€€èŠ±è‰²æœ‰(hei, hong, cao, fang)æˆ–ç”¨(S/s, H/h, C/c, D/d)æ¥ä»£è¡¨ã€‚
+ã€€ã€€å¤§å°æœ‰(1, ..., 13)æˆ–ç”¨(A/a, J/j, Q/q, K/k)æ¥ä»£è¡¨(1, 11, 12, 13)ã€‚
+å››ï¼Œå¥½ç‰Œäº®ç›¸(double <zhu/z, yang/y, hong/h, bian/b>)ã€‚
+äº”ï¼ŒæŸ¥è‡ªå·±çš„ç‰Œ(my)ã€‚
+å…­ï¼Œçœ‹æ¡Œé¢æƒ…å†µ(look table)ã€‚
+ä¸ƒï¼Œçœ‹ç§¯åˆ†(look score)ã€‚
+å…«ï¼Œé€€å‡ºæ‹±çŒª(leave)ã€‚
 
-×¢ÒâÊÂÏî£º
-Ò»£¬Òª¶ËÕıÅÆ·ç£¬ÏµÍ³²»½Ò·¢Îè±×¡£
-¶ş£¬Ã¿Ò»ÅÌ±ØĞëÔÚ°ëĞ¡Ê±ÄÚÍê³É£¬·ñÔòÈ¡ÏûÖØÀ´¡£
-¶ş£¬ÓĞÈÎºÎbugÇë±¨¸æÎ×Ê¦¡£Ä¿Ç°ÊÇ²âÊÔ½×¶Î£¬¿ÉÄÜ»¹ÓĞ²»ÉÙ´í¡£
+æ³¨æ„äº‹é¡¹ï¼š
+ä¸€ï¼Œè¦ç«¯æ­£ç‰Œé£ï¼Œç³»ç»Ÿä¸æ­å‘èˆå¼Šã€‚
+äºŒï¼Œæ¯ä¸€ç›˜å¿…é¡»åœ¨åŠå°æ—¶å†…å®Œæˆï¼Œå¦åˆ™å–æ¶ˆé‡æ¥ã€‚
+äºŒï¼Œæœ‰ä»»ä½•bugè¯·æŠ¥å‘Šå·«å¸ˆã€‚ç›®å‰æ˜¯æµ‹è¯•é˜¶æ®µï¼Œå¯èƒ½è¿˜æœ‰ä¸å°‘é”™ã€‚
 
      \n" ]));
    //for look something.
@@ -188,9 +188,9 @@ int check_score(int i)
 {
    int rank;
 
-   if(pai_name[i]=="¡¾ºÚ£Ñ¡¿") return 100*pig_double;
-   if(pai_name[i]=="¡¾·½£Ê¡¿") return -100*yang_double;
-   if(pai_name[i]=="¡¾²İÊ®¡¿") return -10;
+   if(pai_name[i]=="ã€é»‘ï¼±ã€‘") return 100*pig_double;
+   if(pai_name[i]=="ã€æ–¹ï¼ªã€‘") return -100*yang_double;
+   if(pai_name[i]=="ã€è‰åã€‘") return -10;
 
    if(check_kind(i) != "hong" ) return 0;
 
@@ -218,15 +218,15 @@ int convert_to_id(string kind, int rank)
 
 string chinese_dir(string dir)
 {
-   if(dir == "east" || dir == "e") return "¶«";
-   else if(dir == "west" || dir == "w") return "Î÷";
-   else if(dir == "south" || dir == "s") return "ÄÏ";
-   else if(dir == "north" || dir == "n") return "±±";
-   else if(dir == "up" || dir == "u") return "ÉÏ";
-   else if(dir == "down" || dir == "d") return "ÏÂ";
-   else if(dir == "left" || dir == "l") return "×ó";
-   else if(dir == "right" || dir == "r") return "ÓÒ";
-   else return "£¿";
+   if(dir == "east" || dir == "e") return "ä¸œ";
+   else if(dir == "west" || dir == "w") return "è¥¿";
+   else if(dir == "south" || dir == "s") return "å—";
+   else if(dir == "north" || dir == "n") return "åŒ—";
+   else if(dir == "up" || dir == "u") return "ä¸Š";
+   else if(dir == "down" || dir == "d") return "ä¸‹";
+   else if(dir == "left" || dir == "l") return "å·¦";
+   else if(dir == "right" || dir == "r") return "å³";
+   else return "ï¼Ÿ";
 }
 
 int do_sit(string arg)
@@ -238,20 +238,20 @@ int do_sit(string arg)
    my_id = me->query("id");
 
    if( my_id == e_id || my_id == w_id || my_id == n_id || my_id == s_id )
-     return notify_fail("ÄãÒÑ¾­×øÏÂÁË£¿\n");
+     return notify_fail("ä½ å·²ç»åä¸‹äº†ï¼Ÿ\n");
 
-   if(!arg) return notify_fail("ÄãÒª×øÄÄ±ß£¿\n");
+   if(!arg) return notify_fail("ä½ è¦åå“ªè¾¹ï¼Ÿ\n");
 
    if ( arg == "east" || arg == "e" )
    {
      if( objectp(players=present(e_id, this_object())) && living(players) ) 
      {
-        return notify_fail("¶«×ùÒÑ¾­ÓĞÈËÁË¡£\n");
+        return notify_fail("ä¸œåº§å·²ç»æœ‰äººäº†ã€‚\n");
      }
      else 
      {
         e_id = my_id;
-        message_vision("$N×øÉÏÁË¶«±ßµÄÒÎ×Ó¡£\n", me);
+        message_vision("$Nåä¸Šäº†ä¸œè¾¹çš„æ¤…å­ã€‚\n", me);
         return 1;
      }
    }
@@ -259,12 +259,12 @@ int do_sit(string arg)
    {
      if( objectp(players=present(w_id, this_object())) && living(players) ) 
      {
-        return notify_fail("Î÷×ùÒÑ¾­ÓĞÈËÁË¡£\n");
+        return notify_fail("è¥¿åº§å·²ç»æœ‰äººäº†ã€‚\n");
      }
      else 
      {
         w_id = my_id;
-        message_vision("$N×øÉÏÁËÎ÷±ßµÄÒÎ×Ó¡£\n", me);
+        message_vision("$Nåä¸Šäº†è¥¿è¾¹çš„æ¤…å­ã€‚\n", me);
         return 1;
      }
    }
@@ -272,12 +272,12 @@ int do_sit(string arg)
    {
      if( objectp(players=present(n_id, this_object())) && living(players) ) 
      {
-        return notify_fail("±±×ùÒÑ¾­ÓĞÈËÁË¡£\n");
+        return notify_fail("åŒ—åº§å·²ç»æœ‰äººäº†ã€‚\n");
      }
      else 
      {
         n_id = my_id;
-        message_vision("$N×øÉÏÁË±±±ßµÄÒÎ×Ó¡£\n", me);
+        message_vision("$Nåä¸Šäº†åŒ—è¾¹çš„æ¤…å­ã€‚\n", me);
         return 1;
      }
    }
@@ -285,16 +285,16 @@ int do_sit(string arg)
    {
      if( objectp(players=present(s_id, this_object())) && living(players) ) 
      {
-        return notify_fail("ÄÏ×ùÒÑ¾­ÓĞÈËÁË¡£\n");
+        return notify_fail("å—åº§å·²ç»æœ‰äººäº†ã€‚\n");
      }
      else 
      {
         s_id = my_id;
-        message_vision("$N×øÉÏÁËÄÏ±ßµÄÒÎ×Ó¡£\n", me);
+        message_vision("$Nåä¸Šäº†å—è¾¹çš„æ¤…å­ã€‚\n", me);
         return 1;
      }
    }
-   else return notify_fail("ÄãÒª×øÄÄ±ß£¿\n");
+   else return notify_fail("ä½ è¦åå“ªè¾¹ï¼Ÿ\n");
 }
 
 int do_play(string arg)
@@ -311,36 +311,36 @@ int do_play(string arg)
 
    //check if I am playing...
    if( my_id != e_id && my_id != w_id && my_id != n_id && my_id != s_id )
-     return notify_fail("¹ÛÅÆ²»ÓïÕæ¾ı×Ó¡£\n");
+     return notify_fail("è§‚ç‰Œä¸è¯­çœŸå›å­ã€‚\n");
 
    //everyone is here?
    if(!objectp(players=present(e_id, this_object())) )
    {
      e_id = "no one";
-     return notify_fail("¶«¼Ò²»ÔÚÁË¡£ÕÒÈËÀ´Ìæ²¹°É¡£\n");
+     return notify_fail("ä¸œå®¶ä¸åœ¨äº†ã€‚æ‰¾äººæ¥æ›¿è¡¥å§ã€‚\n");
    }
    if(!objectp(players=present(w_id, this_object())) )
    {
      w_id = "no one";
-     return notify_fail("Î÷¼Ò²»ÔÚÁË¡£ÕÒÈËÀ´Ìæ²¹°É¡£\n");
+     return notify_fail("è¥¿å®¶ä¸åœ¨äº†ã€‚æ‰¾äººæ¥æ›¿è¡¥å§ã€‚\n");
    }
    if(!objectp(players=present(n_id, this_object())) )
    {
      n_id = "no one";
-     return notify_fail("±±¼Ò²»ÔÚÁË¡£ÕÒÈËÀ´Ìæ²¹°É¡£\n");
+     return notify_fail("åŒ—å®¶ä¸åœ¨äº†ã€‚æ‰¾äººæ¥æ›¿è¡¥å§ã€‚\n");
    }
    if(!objectp(players=present(s_id, this_object())) )
    {
      s_id = "no one";
-     return notify_fail("ÄÏ¼Ò²»ÔÚÁË¡£ÕÒÈËÀ´Ìæ²¹°É¡£\n");
+     return notify_fail("å—å®¶ä¸åœ¨äº†ã€‚æ‰¾äººæ¥æ›¿è¡¥å§ã€‚\n");
    }
 
    //who to play?
    if(my_id != who_to_play )
-     return notify_fail("»¹Ã»µ½Äã³öÅÆ¡£\n");
+     return notify_fail("è¿˜æ²¡åˆ°ä½ å‡ºç‰Œã€‚\n");
 
    if( (! arg) || (sscanf (arg,"%s %s", kind, rank_str) != 2))
-     return notify_fail("ÇëÊ¹ÓÃ£ºplay <»¨É«> <´óĞ¡>\n");
+     return notify_fail("è¯·ä½¿ç”¨ï¼šplay <èŠ±è‰²> <å¤§å°>\n");
 
    //convert...
    if( kind == "S" || kind == "s" ) kind = "hei";
@@ -348,7 +348,7 @@ int do_play(string arg)
    else if( kind == "C" || kind == "c" ) kind = "cao";
    else if( kind == "D" || kind == "d" ) kind = "fang";
    else if( kind == "hei" || kind == "hong" || kind == "cao" || kind == "fang" ) kind = kind;//do nothing here.
-   else return notify_fail("»¨É«Ö»ÓĞ(hei, hong, cao, fang)»òÓÃ(S/s, H/h, C/c, D/d)À´´ú±í¡£\n");
+   else return notify_fail("èŠ±è‰²åªæœ‰(hei, hong, cao, fang)æˆ–ç”¨(S/s, H/h, C/c, D/d)æ¥ä»£è¡¨ã€‚\n");
 
    if( rank_str == "1" || rank_str == "A" || rank_str == "a" ) rank = 1;
    else if( rank_str == "2") rank = 2; 
@@ -363,31 +363,31 @@ int do_play(string arg)
     else if( rank_str == "11" || rank_str == "J" || rank_str == "j" ) rank = 11;
    else if( rank_str == "12" || rank_str == "Q" || rank_str == "q" ) rank = 12;
    else if( rank_str == "13" || rank_str == "K" || rank_str == "k" ) rank = 13;
-   else return notify_fail("´óĞ¡Ö»ÓĞ(1, ..., 13)»òÓÃ(A/a, J/j, Q/q, K/k)À´´ú±í(1, 11, 12, 13)¡£\n");
+   else return notify_fail("å¤§å°åªæœ‰(1, ..., 13)æˆ–ç”¨(A/a, J/j, Q/q, K/k)æ¥ä»£è¡¨(1, 11, 12, 13)ã€‚\n");
    
    //if I have this pai.   
    pai_id = convert_to_id(kind, rank);
    if( pai_id < 0 || pai_id >= pai_size) //note, here no wang.
-     return notify_fail("Ã»ÓĞÕâÕÅÅÆ¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™å¼ ç‰Œã€‚\n");
 
    if( pai_state[pai_id] == "e" ) pai_owner = e_id;
    else if( pai_state[pai_id] == "w" ) pai_owner = w_id;
    else if( pai_state[pai_id] == "n" ) pai_owner = n_id;
    else if( pai_state[pai_id] == "s" ) pai_owner = s_id;
-   else if( pai_state[pai_id] == "t" ) return notify_fail("ÕâÕÅÅÆ³ö¹ıÁË¡£\n");
-   else return notify_fail("Ææ¹Ö£¬ÕâÕÅÅÆ¶ªÁË¡£\n");
+   else if( pai_state[pai_id] == "t" ) return notify_fail("è¿™å¼ ç‰Œå‡ºè¿‡äº†ã€‚\n");
+   else return notify_fail("å¥‡æ€ªï¼Œè¿™å¼ ç‰Œä¸¢äº†ã€‚\n");
 
    if( my_id != pai_owner )
-     return notify_fail("ÄãÃ»ÓĞÕâÕÅÅÆ¡£\n");
+     return notify_fail("ä½ æ²¡æœ‰è¿™å¼ ç‰Œã€‚\n");
 
    //I  can play out this pai.
-   message_vision("$N´ò³öÒ»ÕÅ"+pai_name[pai_id]+"¡£\n", me);
+   message_vision("$Næ‰“å‡ºä¸€å¼ "+pai_name[pai_id]+"ã€‚\n", me);
 
    if( pai_state[pai_id] == "e" ) e_last = pai_id;
    else if( pai_state[pai_id] == "w" ) w_last = pai_id;
    else if( pai_state[pai_id] == "n" ) n_last = pai_id;
    else if( pai_state[pai_id] == "s" ) s_last = pai_id;
-   else tell_room(this_object(), "³öÎÊÌâÁË(set last pai)£¬½ĞÎ×Ê¦À´°É¡£\n");
+   else tell_room(this_object(), "å‡ºé—®é¢˜äº†(set last pai)ï¼Œå«å·«å¸ˆæ¥å§ã€‚\n");
 
    pai_state[pai_id] = "t";//mark it as on table.   
 
@@ -425,7 +425,7 @@ void game_process()
    else if( who_to_play == s_id ) 
      current_round_ids[current_round_step] = s_last ;
    else 
-     tell_room(this_object(), "³öÎÊÌâÁË(set current ids)£¬½ĞÎ×Ê¦À´°É¡£\n");
+     tell_room(this_object(), "å‡ºé—®é¢˜äº†(set current ids)ï¼Œå«å·«å¸ˆæ¥å§ã€‚\n");
    
    //set round rank
    if( current_round_step == 1 )
@@ -439,7 +439,7 @@ void game_process()
      else if( who_to_play == s_id ) 
         current_round_kind = check_kind( s_last );
      else 
-        tell_room(this_object(), "³öÎÊÌâÁË(set current kind)£¬½ĞÎ×Ê¦À´°É¡£\n");
+        tell_room(this_object(), "å‡ºé—®é¢˜äº†(set current kind)ï¼Œå«å·«å¸ˆæ¥å§ã€‚\n");
    }
  
 
@@ -448,17 +448,17 @@ void game_process()
      who_to_play = get_next_player();
    }
    else
-   {//ÂÖ×ÅÅÅ¡£
+   {//è½®ç€æ’ã€‚
      if( who_to_play == e_id ) who_to_play = n_id;
      else if( who_to_play == n_id ) who_to_play = w_id;
      else if( who_to_play == w_id ) who_to_play = s_id;
      else if( who_to_play == s_id ) who_to_play = e_id;
-     else tell_room(this_object(), "³öÎÊÌâÁË(shift player)£¬½ĞÎ×Ê¦À´°É¡£\n");
+     else tell_room(this_object(), "å‡ºé—®é¢˜äº†(shift player)ï¼Œå«å·«å¸ˆæ¥å§ã€‚\n");
    }
 
    if( current_round_step != 0 )
    {
-     rd_msg = "ÕâÒ»ÂÖËù³öµÄÅÆ£º";
+     rd_msg = "è¿™ä¸€è½®æ‰€å‡ºçš„ç‰Œï¼š";
      for(rd=1; rd<=current_round_step; rd++)
      {
         if ( current_round_ids[rd] < pai_size )
@@ -476,11 +476,11 @@ void game_process()
 
    if(objectp(next_player=present(who_to_play, this_object())) && living(next_player) )
    {
-     tell_room(this_object(), "ÏÂÃæ¸Ã"+next_player->query("name")+"³öÅÆÁË¡£\n");
+     tell_room(this_object(), "ä¸‹é¢è¯¥"+next_player->query("name")+"å‡ºç‰Œäº†ã€‚\n");
    }
    else
    {
-     tell_room(this_object(), "ÏÂÒ»Î»³öÅÆÈËÅÜÁË£¿\n");
+     tell_room(this_object(), "ä¸‹ä¸€ä½å‡ºç‰Œäººè·‘äº†ï¼Ÿ\n");
    }        
 }
 
@@ -518,20 +518,20 @@ string get_next_player()
      dest = "s"; 
      next_player = s_id;
    } 
-   else tell_room(this_object(), "³öÎÊÌâÁË(get next player)£¬½ĞÎ×Ê¦À´°É¡£\n");
+   else tell_room(this_object(), "å‡ºé—®é¢˜äº†(get next player)ï¼Œå«å·«å¸ˆæ¥å§ã€‚\n");
 
    if( check_score(e_last) != 0 ) pai_destination[e_last] = dest;
    if( check_score(w_last) != 0 ) pai_destination[w_last] = dest;
    if( check_score(n_last) != 0 ) pai_destination[n_last] = dest;
    if( check_score(s_last) != 0 ) pai_destination[s_last] = dest;
 
-   tell_room(this_object(), chinese_dir(dest)+"¼ÒµÄ"+pai_name[bigger]+"×î´ó¡£\n");
-   if(pai_name[e_last]=="¡¾ºÚ£Ñ¡¿" || pai_name[w_last]=="¡¾ºÚ£Ñ¡¿" 
-   ||  pai_name[n_last]=="¡¾ºÚ£Ñ¡¿" || pai_name[s_last]=="¡¾ºÚ£Ñ¡¿" )
-     tell_room(this_object(), "°¡¹ş£¡ÖíÉÏ"+chinese_dir(dest)+"¼ÒÈ¥ÁË¡£\n");
-   if(pai_name[e_last]=="¡¾·½£Ê¡¿" || pai_name[w_last]=="¡¾·½£Ê¡¿" 
-   ||  pai_name[n_last]=="¡¾·½£Ê¡¿" || pai_name[s_last]=="¡¾·½£Ê¡¿" )
-     tell_room(this_object(), chinese_dir(dest)+"¼ÒµÃµ½ÁËÑò¡£\n");
+   tell_room(this_object(), chinese_dir(dest)+"å®¶çš„"+pai_name[bigger]+"æœ€å¤§ã€‚\n");
+   if(pai_name[e_last]=="ã€é»‘ï¼±ã€‘" || pai_name[w_last]=="ã€é»‘ï¼±ã€‘" 
+   ||  pai_name[n_last]=="ã€é»‘ï¼±ã€‘" || pai_name[s_last]=="ã€é»‘ï¼±ã€‘" )
+     tell_room(this_object(), "å•Šå“ˆï¼çŒªä¸Š"+chinese_dir(dest)+"å®¶å»äº†ã€‚\n");
+   if(pai_name[e_last]=="ã€æ–¹ï¼ªã€‘" || pai_name[w_last]=="ã€æ–¹ï¼ªã€‘" 
+   ||  pai_name[n_last]=="ã€æ–¹ï¼ªã€‘" || pai_name[s_last]=="ã€æ–¹ï¼ªã€‘" )
+     tell_room(this_object(), chinese_dir(dest)+"å®¶å¾—åˆ°äº†ç¾Šã€‚\n");
    
    return next_player;
 }
@@ -552,7 +552,7 @@ int pai_compare(int p1, int p2)
 
 void game_finished()
 {
-   tell_room(this_object(), "ÕâÒ»¾Ö½áÊøÁË¡£\n");
+   tell_room(this_object(), "è¿™ä¸€å±€ç»“æŸäº†ã€‚\n");
 
    //calculate score for this round.
    calculate_score();
@@ -603,7 +603,7 @@ check_finish(int previous_game_id)
    if(previous_game_id != game_id) return; //it means already finished.
    if(game_status == 0) return; //no game, no need to cancel.
 
-   tell_room(this_object(), "ÕâÒ»ÅÌÒ»Ö±Íê²»³É£¬Ö»ºÃÈ¡ÏûÖØÀ´ÁË¡£\n");
+   tell_room(this_object(), "è¿™ä¸€ç›˜ä¸€ç›´å®Œä¸æˆï¼Œåªå¥½å–æ¶ˆé‡æ¥äº†ã€‚\n");
    game_reset();
 }
 
@@ -656,28 +656,28 @@ void show_table(int out)
 
    if( out == 0 )
    {
-     msg = "¶«¼Ò£º";
+     msg = "ä¸œå®¶ï¼š";
      if( objectp(players=present(e_id, this_object())) && living(players) )
-        msg += players->query("name")+"£»";
-     else msg += "ÔİÈ±£»"; 
-     msg += "ÄÏ¼Ò£º";
+        msg += players->query("name")+"ï¼›";
+     else msg += "æš‚ç¼ºï¼›"; 
+     msg += "å—å®¶ï¼š";
      if( objectp(players=present(s_id, this_object())) && living(players) )
-        msg += players->query("name")+"£»";
-     else msg += "ÔİÈ±£»"; 
-     msg += "Î÷¼Ò£º";
+        msg += players->query("name")+"ï¼›";
+     else msg += "æš‚ç¼ºï¼›"; 
+     msg += "è¥¿å®¶ï¼š";
      if( objectp(players=present(w_id, this_object())) && living(players) )
-        msg += players->query("name")+"£»";
-     else msg += "ÔİÈ±£»"; 
-     msg += "±±¼Ò£º";
+        msg += players->query("name")+"ï¼›";
+     else msg += "æš‚ç¼ºï¼›"; 
+     msg += "åŒ—å®¶ï¼š";
      if( objectp(players=present(n_id, this_object())) && living(players) )
         msg += players->query("name")+"\n\n";
-     else msg += "ÔİÈ±¡£\n\n";
+     else msg += "æš‚ç¼ºã€‚\n\n";
 
      if( game_status == 1 )
      {
         if( current_round_step != 0 )
         {
-          msg += "ÕâÒ»ÂÖËù³öµÄÅÆ£º";
+          msg += "è¿™ä¸€è½®æ‰€å‡ºçš„ç‰Œï¼š";
           for(rd=1; rd<=current_round_step; rd++)
           {
              if ( current_round_ids[rd] < pai_size )
@@ -686,15 +686,15 @@ void show_table(int out)
           msg += "\n";
         }
         if( objectp(players=present(who_to_play, this_object())) && living(players) )
-          msg += "ÏÂÃæ¸Ã"+players->query("name")+"³öÅÆ¡£\n\n";
-        else msg += "ÏÂÃæ¸Ã???³öÅÆ¡£\n\n";
+          msg += "ä¸‹é¢è¯¥"+players->query("name")+"å‡ºç‰Œã€‚\n\n";
+        else msg += "ä¸‹é¢è¯¥???å‡ºç‰Œã€‚\n\n";
      }
  
      write(msg);
    }
 
    j = 0;
-   msg = "ÒÑ³öµÄÅÆÓĞ£º\n";
+   msg = "å·²å‡ºçš„ç‰Œæœ‰ï¼š\n";
    for(i=0; i<pai_size; i++)
    {
      if( (i==13 ||  i==26 || i==39 || i==52) ) 
@@ -718,10 +718,10 @@ void show_table(int out)
    if( out ) tell_room(this_object(), msg+"\n\n");
    else write(msg+"\n\n");
 
-   e_msg = "¶«¼ÒËùµÃÅÆ£º\n";
-   w_msg = "Î÷¼ÒËùµÃÅÆ£º\n";
-   n_msg = "±±¼ÒËùµÃÅÆ£º\n";
-   s_msg = "ÄÏ¼ÒËùµÃÅÆ£º\n";
+   e_msg = "ä¸œå®¶æ‰€å¾—ç‰Œï¼š\n";
+   w_msg = "è¥¿å®¶æ‰€å¾—ç‰Œï¼š\n";
+   n_msg = "åŒ—å®¶æ‰€å¾—ç‰Œï¼š\n";
+   s_msg = "å—å®¶æ‰€å¾—ç‰Œï¼š\n";
    for(i=0; i<52; i++)
    {
      if(pai_destination[i] == "e") e_msg += pai_name[i];
@@ -750,21 +750,21 @@ void show_score()
 {
    if( game_id == 0 )
    { 
-     write("¹°Öí»¹Ã»¿ªÕÅ£¬Ã»ÓĞÈÎºÎ·ÖÊı¡£\n");
+     write("æ‹±çŒªè¿˜æ²¡å¼€å¼ ï¼Œæ²¡æœ‰ä»»ä½•åˆ†æ•°ã€‚\n");
      return;
    }
  
    if( game_status == 1 ) 
    {
-     write("¹°ÖíÕıÔÚ½øĞĞ£¬ÕâÒ»¾ÖµÄ·ÖÊı»¹Ã»³öÀ´¡£\n");
-     write("ÉÏÒ»¾ÖµÄ½á¹ûÊÇ£º\n");
+     write("æ‹±çŒªæ­£åœ¨è¿›è¡Œï¼Œè¿™ä¸€å±€çš„åˆ†æ•°è¿˜æ²¡å‡ºæ¥ã€‚\n");
+     write("ä¸Šä¸€å±€çš„ç»“æœæ˜¯ï¼š\n");
    }
-   else  write("×îĞÂÕ½¿ö£º\n");
+   else  write("æœ€æ–°æˆ˜å†µï¼š\n");
 
-   write("¶«¼Ò£º"+sprintf("%d", e_score)+"·Ö¡£\n");
-   write("ÄÏ¼Ò£º"+sprintf("%d", s_score)+"·Ö¡£\n");
-   write("Î÷¼Ò£º"+sprintf("%d", w_score)+"·Ö¡£\n");
-   write("±±¼Ò£º"+sprintf("%d", n_score)+"·Ö¡£\n");
+   write("ä¸œå®¶ï¼š"+sprintf("%d", e_score)+"åˆ†ã€‚\n");
+   write("å—å®¶ï¼š"+sprintf("%d", s_score)+"åˆ†ã€‚\n");
+   write("è¥¿å®¶ï¼š"+sprintf("%d", w_score)+"åˆ†ã€‚\n");
+   write("åŒ—å®¶ï¼š"+sprintf("%d", n_score)+"åˆ†ã€‚\n");
 }
 
 int do_leave()
@@ -774,13 +774,13 @@ int do_leave()
 
    my_id = me->query("id");
    if( my_id != e_id && my_id != w_id && my_id != n_id && my_id != s_id )
-     return notify_fail("Äã²¢Ã»ÓĞ²Î¼Ó¹°Öí¡£\n");
+     return notify_fail("ä½ å¹¶æ²¡æœ‰å‚åŠ æ‹±çŒªã€‚\n");
 
    if( my_id == e_id ) e_id = "no one";
    else if( my_id == w_id ) w_id = "no one";
    else if( my_id == n_id ) n_id = "no one";
    else if( my_id == s_id ) s_id = "no one";
-   message_vision("$NËµµÀ£º¶Ô²»Æğ£¬ÄãÃÇÕÒÈË½ÓÌæ°É£¬ÎÒ²»ÍæÁË¡£\n", me);
+   message_vision("$Nè¯´é“ï¼šå¯¹ä¸èµ·ï¼Œä½ ä»¬æ‰¾äººæ¥æ›¿å§ï¼Œæˆ‘ä¸ç©äº†ã€‚\n", me);
    return 1;
 }
 
@@ -792,22 +792,22 @@ int do_double(string arg)
 
    my_id = me->query("id");
    if( my_id != e_id && my_id != w_id && my_id != n_id && my_id != s_id )
-     return notify_fail("Äã²¢Ã»ÓĞ²Î¼Ó¹°Öí¡£\n");
+     return notify_fail("ä½ å¹¶æ²¡æœ‰å‚åŠ æ‹±çŒªã€‚\n");
 
-   if(game_status == 0) return notify_fail("¹°Öí»¹Ã»¿ªÊ¼¡£\n");
+   if(game_status == 0) return notify_fail("æ‹±çŒªè¿˜æ²¡å¼€å§‹ã€‚\n");
 
    pai_on_table = 0;
    for(i=0; i<pai_size; i++)
    {
      if( pai_state[i] == "t" ) pai_on_table++;
    }
-   if ( pai_on_table != 0 ) return notify_fail("Ì«ÍíÁË¡£\n");   
+   if ( pai_on_table != 0 ) return notify_fail("å¤ªæ™šäº†ã€‚\n");   
 
    if(!arg||(arg!="zhu"&&arg!="z"&&
      arg!="yang"&&arg!="y"&&
      arg!="hong"&&arg!="h"&&
      arg!="bian"&&arg!="b")) 
-     return notify_fail("ÄãÒªÁÁÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦äº®ä»€ä¹ˆï¼Ÿ\n");
 
    if( my_id == e_id ) dir="e";
    else if( my_id == w_id ) dir="w";
@@ -819,40 +819,40 @@ int do_double(string arg)
      if( pai_state[convert_to_id("hei", 12)] == dir )
      {
         pig_double = 2;
-        message_vision("$N¼éĞ¦ÁË¼¸Éù£ººÙºÙ£¬ÎÒÓĞÖí£¬ÄãÃÇµÃĞ¡ĞÄµã¡£\n", me);   
+        message_vision("$Nå¥¸ç¬‘äº†å‡ å£°ï¼šå˜¿å˜¿ï¼Œæˆ‘æœ‰çŒªï¼Œä½ ä»¬å¾—å°å¿ƒç‚¹ã€‚\n", me);   
         return 1;
      }
-     else return notify_fail("ÄãÊÖÍ·²¢Ã»ÓĞÖí¡£\n");
+     else return notify_fail("ä½ æ‰‹å¤´å¹¶æ²¡æœ‰çŒªã€‚\n");
    }
    else if(arg=="yang"||arg=="y")
    {
      if( pai_state[convert_to_id("fang", 11)] == dir )
      {
         yang_double = 2;
-        message_vision("$NĞË·ÜµØ½ĞµÀ£ºÎÒÓĞÑò£¡\n", me);   
+        message_vision("$Nå…´å¥‹åœ°å«é“ï¼šæˆ‘æœ‰ç¾Šï¼\n", me);   
         return 1;
      }
-     else return notify_fail("±ğ×öÃÎÁË¡£\n");
+     else return notify_fail("åˆ«åšæ¢¦äº†ã€‚\n");
    }
    else if(arg=="hong"||arg=="h")
    {
      if( pai_state[convert_to_id("hong", 1)] == dir )
      {
         hong_double = 2;
-        message_vision("$N´óÉùµÀ£ºÏÖÔÚÎÒĞû²¼£¬ºìĞÄÌá¼Û£¡\n", me);   
+        message_vision("$Nå¤§å£°é“ï¼šç°åœ¨æˆ‘å®£å¸ƒï¼Œçº¢å¿ƒæä»·ï¼\n", me);   
         return 1;
      }
-     else return notify_fail("ÄãÃ»ÓĞºìĞÄ¼â¡£\n");
+     else return notify_fail("ä½ æ²¡æœ‰çº¢å¿ƒå°–ã€‚\n");
    }
    else if(arg=="bian"||arg=="b")
    {
      if( pai_state[convert_to_id("cao", 10)] == dir )
      {
         cao_double = 2;
-        message_vision("$N¶ãÔÚÒ»±ßÍµÍµÖ±Ğ¦£º±äÑ¹Æ÷µÄÓÍ¿ÉÊÇ¼ÓÂúÁË£¡\n", me);   
+        message_vision("$Nèº²åœ¨ä¸€è¾¹å·å·ç›´ç¬‘ï¼šå˜å‹å™¨çš„æ²¹å¯æ˜¯åŠ æ»¡äº†ï¼\n", me);   
         return 1;
      }
-     else return notify_fail("Äã»¹ÊÇÏÈÅª¸ö±äÑ¹Æ÷ÔÙËµ°É¡£\n");
+     else return notify_fail("ä½ è¿˜æ˜¯å…ˆå¼„ä¸ªå˜å‹å™¨å†è¯´å§ã€‚\n");
    }
 
    return 1;
@@ -869,10 +869,10 @@ int do_start()
    me = this_player();
    my_id = me->query("id");
 
-   if(game_status == 1) return notify_fail("¹°ÖíÒÑ¾­¿ªÊ¼ÁË¡£\n");
+   if(game_status == 1) return notify_fail("æ‹±çŒªå·²ç»å¼€å§‹äº†ã€‚\n");
 
    if( my_id != e_id && my_id != w_id && my_id != n_id && my_id != s_id )
-     return notify_fail("Äã»¹Ã»×øÏÂÀ´ÄØ¡£\n");
+     return notify_fail("ä½ è¿˜æ²¡åä¸‹æ¥å‘¢ã€‚\n");
 
    if( !objectp(players=present(e_id, this_object())) ) 
      need_players++;
@@ -883,18 +883,18 @@ int do_start()
    if( !objectp(players=present(s_id, this_object())) ) 
      need_players++;
    
-   if( need_players > 0 ) return notify_fail("»¹µÃÕÒ"+chinese_number(need_players)+"¸öÈË²ÅÄÜ¿ª¹°¡£\n");
+   if( need_players > 0 ) return notify_fail("è¿˜å¾—æ‰¾"+chinese_number(need_players)+"ä¸ªäººæ‰èƒ½å¼€æ‹±ã€‚\n");
 
    //now start game.
    game_status = 1;
    game_id ++;
    call_out("check_finish", 1800, game_id); //30 minutes
 
-   message_vision("$N´óÉùĞû²¼£º¹°ÖíÕıÊ½¿ªÊ¼£¡\n", me);
+   message_vision("$Nå¤§å£°å®£å¸ƒï¼šæ‹±çŒªæ­£å¼å¼€å§‹ï¼\n", me);
    send_pai();   
    who_to_play = my_id;
-   tell_room(this_object(), "ÏÂÃæÓÉ"+me->query("name")+"¿ªÅÆ¡£\n");
-   message_vision("$NÎÊµÀ£ºÓĞÁÁÏàµÄÃ»ÓĞ£¿Ã»ÓĞÎÒ¿É³öÅÆÁË£¡\n", me);
+   tell_room(this_object(), "ä¸‹é¢ç”±"+me->query("name")+"å¼€ç‰Œã€‚\n");
+   message_vision("$Né—®é“ï¼šæœ‰äº®ç›¸çš„æ²¡æœ‰ï¼Ÿæ²¡æœ‰æˆ‘å¯å‡ºç‰Œäº†ï¼\n", me);
    current_round_step = 1; //set it to 1 as the beginning.
    return 1;
 }
@@ -964,7 +964,7 @@ int do_my()
    me = this_player();
    my_id = me->query("id");
 
-   if(game_status == 0) return notify_fail("¹°Öí»¹Ã»¿ªÊ¼¡£\n");
+   if(game_status == 0) return notify_fail("æ‹±çŒªè¿˜æ²¡å¼€å§‹ã€‚\n");
 
    dir="no dir";
 
@@ -972,9 +972,9 @@ int do_my()
     else if( my_id == w_id ) dir="w";
    else if( my_id == n_id ) dir="n";
    else if( my_id == s_id ) dir="s";
-   else return notify_fail("Äã²¢Ã»ÓĞ¼ÓÈë¹°Öí¡£\n");
+   else return notify_fail("ä½ å¹¶æ²¡æœ‰åŠ å…¥æ‹±çŒªã€‚\n");
 
-   msg = "ÄãÊÖÍ·µÄÅÆÓĞ£º\n";
+   msg = "ä½ æ‰‹å¤´çš„ç‰Œæœ‰ï¼š\n";
 
    j = 0;
    for(i=0; i<pai_size; i++)

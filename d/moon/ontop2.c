@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/ontop.c
@@ -8,17 +8,17 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ů�嶥");
+  set ("short", "玉女峰顶");
   set ("long", @LONG
 
-���ƹ����������㸡���������ѩ�����Ȼ��������ɾ����������Ƕ���
-�ƺ�����Խǧɽ�����ؼ����������ƺ���һ����ɽ��С·����������һȦ
-��ʣ�Χ�ż��侫�µ�С�ݣ���ڴ���һ�����(tree)��
+祥云光满，瑞霭香浮。在这冰天雪地里居然还有如此仙境。这里正是独立
+云海，傲越千山的昆仑极顶。靠南似乎有一条下山的小路。靠北则有一圈
+篱笆，围着几间精致的小屋，入口处有一株桂树(tree)。
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
-  "tree" : "һ��������ƵĴ���� �����������Ĺ�
-��ɢ�����������㣬��֪���������ܲɼ�����
+  "tree" : "一株高耸入云的大桂树 。上面无数的桂花
+正散发出阵阵清香，不知道怎样才能采集到。
 ",
 ]));
   set("objects", ([ /* sizeof() == 2 */
@@ -43,10 +43,10 @@ void init()
 int valid_leave(object me, string dir)
 {
         object wugang;
-    if (me->query("gender") == "����" && dir == "north") {
+    if (me->query("gender") == "男性" && dir == "north") {
         if(objectp(wugang=present("wu gang", environment(me))) && living(wugang) )
 
-            return notify_fail("������ת����գ����һ�Ѵ�師��ס�����\n����...Ժ����ס��ȫ��Ů�ˣ����ܽ�ȥ���ʲô��\n");
+            return notify_fail("桂花树后转出吴刚，伸出一把大板斧拦住你道：\n慢着...院子里住的全是女人，你跑进去想干什么？\n");
     }
     return ::valid_leave(me, dir);
 }
@@ -56,28 +56,28 @@ int do_climb(string arg)
    object wugang;
   object me=this_player();
  
-  if( (!arg) || !((arg == "tree") || (arg == "����")))
-    return notify_fail("��ʲô��\n");
+  if( (!arg) || !((arg == "tree") || (arg == "桂树")))
+    return notify_fail("爬什么？\n");
   if( me->query("kee") < (int)(me->query("max_kee")/3)){
     me->receive_damage("kee",(int)me->query("max_kee")*20/100);
-    return notify_fail("�����ӷ��飬һͷ������������ѽ��\n");
+    return notify_fail("你身子发虚，一头栽了下来，哎呀！\n");
 }
-  if (!((string)me->query("family/family_name")=="�¹�")
+  if (!((string)me->query("family/family_name")=="月宫")
     && objectp(wugang=present("wu gang", environment(me))) && living(wugang) )
     {
-      message_vision("����������˼䲢��Ϸˣ֮��������ɧ�����ɼ�����\n", me);
+      message_vision("吴刚拦道：此间并非戏耍之处，请勿骚扰我仙家清修\n", me);
     }
   else
     {
       if ((int)me->query_skill("dodge", 1)<40 && (int)me->query_skill("moondance", 1) < 80)
         {
-     message_vision("$NС����������������һ�㣬����ͷ���ۻ����͸Ͻ�����������\n", me);
+     message_vision("$N小心翼翼的往上爬了一点，觉得头晕眼花，就赶紧爬了下来．\n", me);
           me->improve_skill("dodge", 40-me->query("str"));
-          tell_object(me, "�������һЩ�����Ṧ��������š�\n");
+          tell_object(me, "你领悟出一些基本轻功方面的窍门。\n");
         }
       else
         {
-     message_vision("$N������������һ�����������������в����ˡ�\n", me);
+     message_vision("$N纵身往桂树上一跳，接着爬入树丛中不见了。\n", me);
           me->move(__DIR__"tree1.c");
         }
     }
@@ -90,27 +90,27 @@ int do_kan(string arg)
   object me=this_player();
   object ob; 
   object wugang;
-  if( (!arg) || !((arg == "tree") || (arg == "����")))
-    return notify_fail("��Ҫ��ʲô��\n");
+  if( (!arg) || !((arg == "tree") || (arg == "桂树")))
+    return notify_fail("你要砍什么？\n");
    if( !(ob = me->query_temp("weapon"))|| (string)ob->query("skill_type") != "axe")
-    return notify_fail("��ȥ�ҰѸ�ͷ�ɣ�\n");
+    return notify_fail("先去找把斧头吧！\n");
   if( me->query("kee") < (int)(me->query("max_kee")/3))
-    return notify_fail("�ٿ���ȥ�ֶ�Ҫĥ���ˣ�\n");
-  if (!((string)me->query("family/family_name")=="�¹�" )&&
+    return notify_fail("再砍下去手都要磨破了！\n");
+  if (!((string)me->query("family/family_name")=="月宫" )&&
    objectp(wugang = present("wugang", environment(me))) && living(wugang))
     {
-      message_vision("����������˼䲢��Ϸˣ֮��������ɧ�����ɼ�����!\n",me);
+      message_vision("吴刚拦道：此间并非戏耍之处，请勿骚扰我仙家清修!\n",me);
     }
   else
     {
-      message_vision("$N������ʹ�������˼��£�\n", me);
+      message_vision("$N朝桂树使劲儿砍了几下．\n", me);
       if ((int)me->query_skill("unarmed", 1)< 50 )
         {
           me->improve_skill("unarmed", me->query("str"));
-          tell_object(me, "���˸������������������һЩ�˾�ʹ����������š�\n");
+          tell_object(me, "累了个臭死，你总算领悟出一些运劲使力方面的窍门。\n");
         }
       else {
-   tell_object(me, "�����ſ��˼��£�������Ϊʲô���˻�������ɵ�¡�\n"); 
+   tell_object(me, "你试着砍了几下，不明白为什么有人会做这种傻事。\n"); 
    }
 
     }

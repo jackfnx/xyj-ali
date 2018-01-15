@@ -5,28 +5,28 @@
 inherit F_CLEAN_UP;
 
 mapping valid_types = ([
-    "unarmed":   "È­½Å",
-    "sword":   "½£·¨",
-    "blade":   "µ¶·¨",
-    "stick":   "¹÷·¨",
-    "staff":   "ÕÈ·¨",
-    "throwing":   "°µÆ÷",
-    "force":   "ÄÚ¹¦",
-    "parry":   "ÕĞ¼Ü",
-    "dodge":   "Çá¹¦",
-    "magic":   "ÉñÍ¨",
-    "spells":   "·¨Êõ",
-//    "move":   "ĞĞ¶¯",
-//    "array":   "Õó·¨",
-    "whip" :   "±Ş·¨",
-    "spear":   "Ç¹·¨",
-    "axe":   "¸«·¨",
-    "mace":   "ïµ·¨",
-    "fork":   "²æ·¨",
-    "rake":   "îÙ·¨",
-    "archery":   "¹­¼ı",
-    "hammer":   "´¸·¨",
-    "charm":   "ÃÄÊõ",
+    "unarmed":   "æ‹³è„š",
+    "sword":   "å‰‘æ³•",
+    "blade":   "åˆ€æ³•",
+    "stick":   "æ£æ³•",
+    "staff":   "æ–æ³•",
+    "throwing":   "æš—å™¨",
+    "force":   "å†…åŠŸ",
+    "parry":   "æ‹›æ¶",
+    "dodge":   "è½»åŠŸ",
+    "magic":   "ç¥é€š",
+    "spells":   "æ³•æœ¯",
+//    "move":   "è¡ŒåŠ¨",
+//    "array":   "é˜µæ³•",
+    "whip" :   "é­æ³•",
+    "spear":   "æªæ³•",
+    "axe":   "æ–§æ³•",
+    "mace":   "é”æ³•",
+    "fork":   "å‰æ³•",
+    "rake":   "é’¯æ³•",
+    "archery":   "å¼“ç®­",
+    "hammer":   "é”¤æ³•",
+    "charm":   "åªšæœ¯",
 ]);
 
 int main(object me, string arg)
@@ -42,15 +42,15 @@ int main(object me, string arg)
     if (check=="check" && wizardp(me) && arg) {
         me = find_player(arg);
         if (!me) me = LOGIN_D->find_body(arg);
-        if (!me) return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+        if (!me) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
     }
 
     if (!arg || check=="check") {
         map = me->query_skill_map();
         if (!mapp(map) || sizeof(map) == 0)
-            return notify_fail("ÄãÏÖÔÚÃ»ÓĞÊ¹ÓÃÈÎºÎÌØÊâ¼¼ÄÜ¡£\n");
+            return notify_fail("ä½ ç°åœ¨æ²¡æœ‰ä½¿ç”¨ä»»ä½•ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
         skill = keys(valid_types);
-        write("ÒÔÏÂÊÇÄãÄ¿Ç°Ê¹ÓÃÖĞµÄÌØÊâ¼¼ÄÜ¡£\n");
+        write("ä»¥ä¸‹æ˜¯ä½ ç›®å‰ä½¿ç”¨ä¸­çš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
         for (i = 0; i < sizeof(skill); i++) {
             if (undefinedp(valid_types[skill[i]])) {
                 map_delete(map, skill[i]);
@@ -58,9 +58,9 @@ int main(object me, string arg)
             }
             if (!me->query_skill(skill[i])) continue;
             modify = me->query_temp("apply/" + skill[i]);
-            printf("  %-20s£º %-20s  ÓĞĞ§µÈ¼¶£º%s%3d\n" NOR, 
+            printf("  %-20sï¼š %-20s  æœ‰æ•ˆç­‰çº§ï¼š%s%3d\n" NOR, 
                 valid_types[skill[i]] + " (" + skill[i] + ")",
-                undefinedp(map[skill[i]]) ? "ÎŞ" : SKILL_D(map[skill[i]])->name(),
+                undefinedp(map[skill[i]]) ? "æ— " : SKILL_D(map[skill[i]])->name(),
                 (modify==0 ? "" : (modify>0 ? HIC : HIR)),
                 me->query_skill(skill[i]));
         }
@@ -68,7 +68,7 @@ int main(object me, string arg)
     }
 
     if (arg == "?") {
-        write("ÒÔÏÂÊÇ¿ÉÒÔÊ¹ÓÃÌØÊâ¼¼ÄÜµÄÖÖÀà£º\n");
+        write("ä»¥ä¸‹æ˜¯å¯ä»¥ä½¿ç”¨ç‰¹æ®ŠæŠ€èƒ½çš„ç§ç±»ï¼š\n");
         skill = sort_array(keys(valid_types), (: strcmp :));
         for (i = 0; i < sizeof(skill); i++) {
             printf("  %s (%s)\n", valid_types[skill[i]], skill[i]);
@@ -77,10 +77,10 @@ int main(object me, string arg)
     }
 
     if (sscanf(arg, "%s %s", ski, map_to) != 2)
-        return notify_fail("Ö¸Áî¸ñÊ½£ºenable [<¼¼ÄÜÖÖÀà> <¼¼ÄÜÃû³Æ>|none]\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenable [<æŠ€èƒ½ç§ç±»> <æŠ€èƒ½åç§°>|none]\n");
 
     if (undefinedp(valid_types[ski]))
-        return notify_fail("Ã»ÓĞÕâ¸ö¼¼ÄÜÖÖÀà£¬ÓÃ enable ? ¿ÉÒÔ²é¿´ÓĞÄÄĞ©ÖÖÀà¡£\n");
+        return notify_fail("æ²¡æœ‰è¿™ä¸ªæŠ€èƒ½ç§ç±»ï¼Œç”¨ enable ? å¯ä»¥æŸ¥çœ‹æœ‰å“ªäº›ç§ç±»ã€‚\n");
 
     if (map_to == "none") {
         me->map_skill(ski);
@@ -89,19 +89,19 @@ int main(object me, string arg)
         write("Ok.\n");
         return 1;
     } else if (map_to == ski) {
-        write("¡¸" + SKILL_D(ski)->name() + "¡¹ÊÇËùÓĞ" + valid_types[ski] + "µÄ»ù´¡£¬²»ĞèÒª enable¡£\n");
+        write("ã€Œ" + SKILL_D(ski)->name() + "ã€æ˜¯æ‰€æœ‰" + valid_types[ski] + "çš„åŸºç¡€ï¼Œä¸éœ€è¦ enableã€‚\n");
         return 1;
     }
 
     if (!me->query_skill(map_to, 1))
-        return notify_fail("Äã²»»áÕâÖÖ¼¼ÄÜ¡£\n");
+        return notify_fail("ä½ ä¸ä¼šè¿™ç§æŠ€èƒ½ã€‚\n");
 
 //    if (!me->query_skill(ski, 1))
-//        return notify_fail("ÄãÁ¬¡¸" + SKILL_D(ski)->name() + "¡¹¶¼Ã»Ñ§»á£¬¸ü±ğÌá"
-//                + SKILL_D(map_to)->name() + "ÁË¡£\n");
+//        return notify_fail("ä½ è¿ã€Œ" + SKILL_D(ski)->name() + "ã€éƒ½æ²¡å­¦ä¼šï¼Œæ›´åˆ«æ"
+//                + SKILL_D(map_to)->name() + "äº†ã€‚\n");
 
     if (!SKILL_D(map_to)->valid_enable(ski))
-        return notify_fail("Õâ¸ö¼¼ÄÜ²»ÄÜµ±³ÉÕâÖÖÓÃÍ¾¡£\n");
+        return notify_fail("è¿™ä¸ªæŠ€èƒ½ä¸èƒ½å½“æˆè¿™ç§ç”¨é€”ã€‚\n");
 
     me->map_skill(ski, map_to);
     me->delete_temp("perf_quick");
@@ -109,17 +109,17 @@ int main(object me, string arg)
     write("Ok.\n");
 
     if (ski == "magic") {
-        write("Äã¸ÄÓÃÁíÒ»ÖÖÉñÍ¨£¬ÕæÔª±ØĞëÖØĞÂ»ıÀÛ¡£\n");
+        write("ä½ æ”¹ç”¨å¦ä¸€ç§ç¥é€šï¼ŒçœŸå…ƒå¿…é¡»é‡æ–°ç§¯ç´¯ã€‚\n");
         me->set("atman", 0);
         me->receive_damage("gin", 0);
     } else if (ski == "force") {
-        write("Äã¸ÄÓÃÁíÒ»ÖÖÄÚ¹¦£¬ÄÚÁ¦±ØĞëÖØĞÂĞŞÁ¶¡£\n");
+        write("ä½ æ”¹ç”¨å¦ä¸€ç§å†…åŠŸï¼Œå†…åŠ›å¿…é¡»é‡æ–°ä¿®ç‚¼ã€‚\n");
         me->set("force", 0);
         me->set("force_factor", 0);
         // need this to fix low special high factor. 
         me->receive_damage("kee", 0);
     } else if (ski == "spells") {
-        write("Äã¸ÄÓÃÁíÒ»ÖÖ·¨Êõ£¬·¨Á¦±ØĞëÖØĞÂĞŞÁ¶¡£\n");
+        write("ä½ æ”¹ç”¨å¦ä¸€ç§æ³•æœ¯ï¼Œæ³•åŠ›å¿…é¡»é‡æ–°ä¿®ç‚¼ã€‚\n");
         me->set("mana", 0);
         me->set("mana_factor", 0);
         // same as the fix for force.
@@ -131,12 +131,12 @@ int main(object me, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : enable|jifa [<¼¼ÄÜÖÖÀà> <¼¼ÄÜÃû³Æ> | none]
+æŒ‡ä»¤æ ¼å¼ : enable|jifa [<æŠ€èƒ½ç§ç±»> <æŠ€èƒ½åç§°> | none]
            enable ?
 
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨ËùÒªÓÃµÄ¼¼ÄÜ£¬ĞèÖ¸Ã÷¼¼ÄÜÖÖÀàºÍ¼¼ÄÜÃû³Æ¡£Èç¹û²»¼Ó²Î
-ÊıÔò»áÏÔÊ¾³ö¼¼ÄÜÖÖÀà¼°ÄãÄ¿Ç°ËùÊ¹ÓÃµÄ¼¼ÄÜÃû³Æ £¬Èç¹û¼ÓÒ»¸ö ? »áÁĞ³ö
-ËùÓĞÄÜÊ¹ÓÃÌØÊâ¼¼ÄÜµÄ¼¼ÄÜÖÖÀà¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŒ‡å®šæ‰€è¦ç”¨çš„æŠ€èƒ½ï¼Œéœ€æŒ‡æ˜æŠ€èƒ½ç§ç±»å’ŒæŠ€èƒ½åç§°ã€‚å¦‚æœä¸åŠ å‚
+æ•°åˆ™ä¼šæ˜¾ç¤ºå‡ºæŠ€èƒ½ç§ç±»åŠä½ ç›®å‰æ‰€ä½¿ç”¨çš„æŠ€èƒ½åç§° ï¼Œå¦‚æœåŠ ä¸€ä¸ª ? ä¼šåˆ—å‡º
+æ‰€æœ‰èƒ½ä½¿ç”¨ç‰¹æ®ŠæŠ€èƒ½çš„æŠ€èƒ½ç§ç±»ã€‚
 
 HELP
     );

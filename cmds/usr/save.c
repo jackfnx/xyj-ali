@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // save.c
@@ -13,26 +13,26 @@ int main(object me, string arg)
    seteuid(getuid());
 
    if( !objectp(link_ob = me->query_temp("link_ob")) )
-     return notify_fail("Äã²»ÊÇ¾­ÓÉÕı³£Á¬Ïß½øÈë£¬²»ÄÜ´¢´æ¡£\n");
+     return notify_fail("ä½ ä¸æ˜¯ç»ç”±æ­£å¸¸è¿çº¿è¿›å…¥ï¼Œä¸èƒ½å‚¨å­˜ã€‚\n");
 
    cur_time = time();
    if( (cur_time - me->query("last_save")) < 1 ) {
                 me->set("last_save", cur_time);
-     return notify_fail("Äã³Ùµã²Å¿ÉÒÔ´¢´æ¡£\n");
+     return notify_fail("ä½ è¿Ÿç‚¹æ‰å¯ä»¥å‚¨å­˜ã€‚\n");
         }
         // mon shortened the no_save time. 4/2/98
      
    me->set("last_save", cur_time);   
    if( environment(me)->query("valid_startroom") ) {
      me->set("startroom", base_name(environment(me)));
-     write("µ±ÄãÏÂ´ÎÁ¬Ïß½øÀ´Ê±£¬»á´ÓÕâÀï¿ªÊ¼¡£\n");
+     write("å½“ä½ ä¸‹æ¬¡è¿çº¿è¿›æ¥æ—¶ï¼Œä¼šä»è¿™é‡Œå¼€å§‹ã€‚\n");
    }
 
    if( (int)link_ob->save() && (int)me->save() ) {
-        write("µµ°¸´¢´æÍê±Ï¡£\n");
+        write("æ¡£æ¡ˆå‚¨å­˜å®Œæ¯•ã€‚\n");
      return 1;
    } else {
-     write("´¢´æÊ§°Ü¡£\n");
+     write("å‚¨å­˜å¤±è´¥ã€‚\n");
      return 0;
    }
 }
@@ -40,9 +40,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£ºsave
+æŒ‡ä»¤æ ¼å¼ï¼šsave
 
-°ÑÄãĞÁ¿à·Ü¶·µÄ½á¹û´æÆğÀ´¡£
+æŠŠä½ è¾›è‹¦å¥‹æ–—çš„ç»“æœå­˜èµ·æ¥ã€‚
 HELP
    );
    return 1;

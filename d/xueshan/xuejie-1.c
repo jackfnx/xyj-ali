@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ѩ����");
+    set("short", "雪阶下");
     set("long", @LONG
 
-������һƬСƽ̨��ѩɽ����ƽ����ӵĴ������������������
-������Ϣ�ң��������ǳ��������ϻ��˺���ѩ��������ѩɽ����
-ȴ�Ӳ��е��Ϻ���
+这里是一片小平台，雪山弟子平日起居的处所基本都在这里，西边
+就是休息室，东边则是厨房。地上积了厚厚的雪，往来的雪山弟子
+却从不感到严寒。
 LONG);
 
     set("exits", ([ //sizeof() == 4
@@ -26,7 +26,7 @@ LONG);
 
     set("outdoors", "xueshan");
 
-    create_door("east", "������", "west", DOOR_CLOSED);
+    create_door("east", "厨房门", "west", DOOR_CLOSED);
     set("no_clean_up", 0);
 
     setup();

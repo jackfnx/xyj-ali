@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // pink_cloth.c
@@ -9,11 +9,11 @@
 inherit CLOTH;
 
 string *names = ({
-  "Ó¡»¨È¹",
-  "ÊøÑüÍ²È¹",
-  "Ë®È¾²ÊÈ¹",
-  "¿íÉíËØ³¤È¹",
-  "¶ÌÅÛÈ¹",
+  "å°èŠ±è£™",
+  "æŸè…°ç­’è£™",
+  "æ°´æŸ“å½©è£™",
+  "å®½èº«ç´ é•¿è£™",
+  "çŸ­è¢è£™",
 });
 
 void create()
@@ -23,8 +23,8 @@ void create()
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»ÌõÎ÷ÁºÅ®¹úµÄÈ¹×Ó¡£\n");
-    set("unit", "Ìõ");
+    set("long", "ä¸€æ¡è¥¿æ¢å¥³å›½çš„è£™å­ã€‚\n");
+    set("unit", "æ¡");
     set("material", "cloth");
     set("armor_prop/armor", 3);
     set("armor_prop/personality", 4);

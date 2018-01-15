@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ȡ��·");
+  set ("short", "取经路");
   set ("long", @LONG
 
-������һ��Ƭ��ɳĮ�����磬�������ܣ��Ĵ����ǻ�ɳ���߸ߵ͵ͣ�
-���Ѵ����ҳ�·�����������е���š�
+你陷入一大片荒沙漠的世界，环顾四周，四处都是黄沙，高高低低，
+很难从中找出路来。你心里有点紧张。
 
 LONG);
 

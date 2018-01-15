@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// guanyin.c ¹ÛÒôÆĞÈø
+// guanyin.c è§‚éŸ³è©è¨
 // By Dream Dec. 19, 1996
 
 inherit NPC;
@@ -10,17 +10,17 @@ int do_drop(object, object);
 
 void create()
 {
-    set_name("¹ÛÒôÆĞÈø", ({ "guanyin pusa", "guanyin", "pusa" }));
-    set("title", "´ó´È´ó±¯¾È¿à¾ÈÄÑ");
+    set_name("è§‚éŸ³è©è¨", ({ "guanyin pusa", "guanyin", "pusa" }));
+    set("title", "å¤§æ…ˆå¤§æ‚²æ•‘è‹¦æ•‘éš¾");
     set("long", @LONG
-ÀíÔ²ËÄµÂ£¬ÖÇÂú½ğÉí¡£Ã¼ÈçĞ¡ÔÂ£¬ÑÛËÆË«ĞÇ¡£À¼ĞÄĞÀ×ÏÖñ£¬
-Ş¥ĞÔ°®µÃÌÙ¡£Ëı¾ÍÊÇÂäÙ¤É½ÉÏ´È±¯Ö÷£¬³±Òô¶´Àï»î¹ÛÒô¡£
+ç†åœ†å››å¾·ï¼Œæ™ºæ»¡é‡‘èº«ã€‚çœ‰å¦‚å°æœˆï¼Œçœ¼ä¼¼åŒæ˜Ÿã€‚å…°å¿ƒæ¬£ç´«ç«¹ï¼Œ
+è•™æ€§çˆ±å¾—è—¤ã€‚å¥¹å°±æ˜¯è½ä¼½å±±ä¸Šæ…ˆæ‚²ä¸»ï¼Œæ½®éŸ³æ´é‡Œæ´»è§‚éŸ³ã€‚
 LONG);
-    set("gender", "Å®ĞÔ");
+    set("gender", "å¥³æ€§");
     set("age", 35);
     set("attitude", "peaceful");
-    set("rank_info/self", "Æ¶É®");
-    set("rank_info/respect", "ÆĞÈø");
+    set("rank_info/self", "è´«åƒ§");
+    set("rank_info/respect", "è©è¨");
     set("class", "bonze");
     set("str",24);
     set("per",100);//means no rong-mao description.
@@ -59,7 +59,7 @@ LONG);
     }) );
     //hehe, since guanyin was killed several times
     //let's use cast bighammer to protect her...weiqi:)
-    create_family("ÄÏº£ÆÕÍÓÉ½", 1, "ÆĞÈø");
+    create_family("å—æµ·æ™®é™€å±±", 1, "è©è¨");
 
     setup();
     carry_object("/d/nanhai/obj/jiasha")->wear();
@@ -69,16 +69,16 @@ LONG);
 void attempt_apprentice(object ob)
 {
     if (!((string)ob->query("bonze/class") =="bonze")) {
-        command("say ÎÒ·ğÃÅÉñÍ¨¹ã´ó£¬" + RANK_D->query_respect(ob) + "Óû³ÉÕı¹û£¬ÏÈÈëÎÒÃÅ¡£\n");
-        write("¿´Ñù×Ó¹ÛÒôÆĞÈø¶ÔÄãÎ´Ìê¶È³ö¼ÒÆÄÎª²»¿ì¡£\n");
+        command("say æˆ‘ä½›é—¨ç¥é€šå¹¿å¤§ï¼Œ" + RANK_D->query_respect(ob) + "æ¬²æˆæ­£æœï¼Œå…ˆå…¥æˆ‘é—¨ã€‚\n");
+        write("çœ‹æ ·å­è§‚éŸ³è©è¨å¯¹ä½ æœªå‰ƒåº¦å‡ºå®¶é¢‡ä¸ºä¸å¿«ã€‚\n");
         return;
     }   
     if (((int)ob->query_skill("buddhism", 1) < 80)) {
-        command("say " + RANK_D->query_respect(ob) + "²»ÔÚ·ğ·¨ÉÏ¿àĞŞ£¬¿ÖÅÂÄÑ³ÉÕı¹û¡£\n");
+        command("say " + RANK_D->query_respect(ob) + "ä¸åœ¨ä½›æ³•ä¸Šè‹¦ä¿®ï¼Œææ€•éš¾æˆæ­£æœã€‚\n");
         return;
     }
     command("pat " + ob->query("id") );
-    command("say ºÃ£¡Õâ²ÅÊÇÎÒ·ğÃÅµÄºÃµÜ×Ó¡£Ö»Òª¶à¼ÓÅ¬Á¦£¬¶¨¿ÉÔç³ÉÕı¹û¡£\n");
+    command("say å¥½ï¼è¿™æ‰æ˜¯æˆ‘ä½›é—¨çš„å¥½å¼Ÿå­ã€‚åªè¦å¤šåŠ åŠªåŠ›ï¼Œå®šå¯æ—©æˆæ­£æœã€‚\n");
     command("recruit " + ob->query("id") );
     return;   
 }
@@ -89,9 +89,9 @@ void die()
     object *inv;
 
     if (environment()) {
-        message("sound", "\n\n¹ÛÒôÆĞÈøÒ¡Í·Ì¾µÀ£º¸ÕÀëÃÔÕÏ£¬ÓÖÈëÄ§ÕÏ£¬ÊÀ¼ä¼²¿à£¬ºÎÈË¶ÈÖ®£¡\n\n", environment());
+        message("sound", "\n\nè§‚éŸ³è©è¨æ‘‡å¤´å¹é“ï¼šåˆšç¦»è¿·éšœï¼Œåˆå…¥é­”éšœï¼Œä¸–é—´ç–¾è‹¦ï¼Œä½•äººåº¦ä¹‹ï¼\n\n", environment());
         command("sigh");
-        message("sound", "\n¹ÛÒôÆĞÈø¼İÏéÔÆ£¬µÇ²ÊÎí£¬¾¶ÍùÎ÷·½È¥ÁË¡£¡£¡£\n\n", environment());
+        message("sound", "\nè§‚éŸ³è©è¨é©¾ç¥¥äº‘ï¼Œç™»å½©é›¾ï¼Œå¾„å¾€è¥¿æ–¹å»äº†ã€‚ã€‚ã€‚\n\n", environment());
         inv = all_inventory(this_object());
         for (i=0; i<sizeof(inv); i++) {
             if (inv[i]->query("no_drop")) continue;
@@ -110,24 +110,24 @@ int do_drop(object me, object obj)
         //d_mana>0 is for "bian". mon 11/05/97
         if ((obj->query_temp("d_mana"))>0) {
             if (obj->query_temp("is_living")==1)
-                message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
+                message_vision("$Nå°†$nä»èƒŒä¸Šæ”¾äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
             else {
                 message_vision(
-                    sprintf("$N¶ªÏÂÒ»%s$n¡£\n",
-                        undefinedp(obj->query_temp("unit"))?"¸ö":obj->query_temp("unit")
+                    sprintf("$Nä¸¢ä¸‹ä¸€%s$nã€‚\n",
+                        undefinedp(obj->query_temp("unit"))?"ä¸ª":obj->query_temp("unit")
                     ),
                     me, obj);
             }
         } else {
             if (obj->is_character())
-                    message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
+                    message_vision("$Nå°†$nä»èƒŒä¸Šæ”¾äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
             else {
                 message_vision(
-                    sprintf("$N¶ªÏÂÒ»%s$n¡£\n", obj->query("unit")),
+                    sprintf("$Nä¸¢ä¸‹ä¸€%s$nã€‚\n", obj->query("unit")),
                     me, obj);
                 if (!obj->query("value") && !obj->value()) {
                     tell_object(me,
-                        "ÒòÎªÕâÑù¶«Î÷²¢²»ÖµÇ®£¬ËùÒÔÈËÃÇ²¢²»»á×¢Òâµ½ËüµÄ´æÔÚ¡£\n");
+                        "å› ä¸ºè¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼é’±ï¼Œæ‰€ä»¥äººä»¬å¹¶ä¸ä¼šæ³¨æ„åˆ°å®ƒçš„å­˜åœ¨ã€‚\n");
                     destruct(obj);
                 }
             }

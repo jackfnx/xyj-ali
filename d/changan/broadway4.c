@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/broadway4.c
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "´ó¹ÙµÀ");
+  set ("short", "å¤§å®˜é“");
   set ("long", @LONG
 
-ÕâÊÇÒ»Ìõ¿íÀ«±ÊÖ±µÄ¹ÙµÀ£¬×ã¿ÉÈÝµÃÏÂÊ®Âí²¢³Û¡£ÍùÄÏÍ¨Ïò
-ÄÏ²¿ÑØº££¬Íù±±ÔòÖ±´ï´óÌÆ¹ú¶¼³¤°²³Ç¡£
+è¿™æ˜¯ä¸€æ¡å®½é˜”ç¬”ç›´çš„å®˜é“ï¼Œè¶³å¯å®¹å¾—ä¸‹åé©¬å¹¶é©°ã€‚å¾€å—é€šå‘
+å—éƒ¨æ²¿æµ·ï¼Œå¾€åŒ—åˆ™ç›´è¾¾å¤§å”å›½éƒ½é•¿å®‰åŸŽã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

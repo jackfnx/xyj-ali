@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÇÅÁºÊ¹Õß", ({"bridge guard", "guard"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("æ¡¥æ¢ä½¿è€…", ({"bridge guard", "guard"}));
+       set("gender", "ç”·æ€§");
        set("age", 25+random(10));
        set("attitude", "peaceful");
        set("shen_type", 1);
@@ -34,7 +34,7 @@ setup();
 
 int accept_fight(object me)
 {
-        command("say Äã»îµÃ²»ÄÍ·³ÁË£¿\n");
+        command("say ä½ æ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿ\n");
         kill_ob(me);
         return 1;
 }

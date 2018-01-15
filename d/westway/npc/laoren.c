@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 4/9/1997
@@ -10,10 +10,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("Çà÷×ÀÏÈË", ({"lao ren", "lao"}) );
-  set("gender", "ÄĞĞÔ" );
+  set_name("é’é«¯è€äºº", ({"lao ren", "lao"}) );
+  set("gender", "ç”·æ€§" );
   set("age", 81);
-  set("long","Ò»Î»ÃæÄ¿´ÈÏéµÄÇà÷×ÀÏÈË¡£\n");
+  set("long","ä¸€ä½é¢ç›®æ…ˆç¥¥çš„é’é«¯è€äººã€‚\n");
 
   set_skill("unarmed", 80);
   set_skill("dodge", 80);
@@ -26,8 +26,8 @@ void create()
         "book" : (: give_it :),
         "guide": (: give_it :),
         "story": (: give_it :),
-        "Êé"   : (: give_it :),
-        "´«Ëµ" : (: give_it :),
+        "ä¹¦"   : (: give_it :),
+        "ä¼ è¯´" : (: give_it :),
       ]));
   setup();
 }
@@ -50,7 +50,7 @@ void looking(object who)
   if (! who || environment(who) != environment())
     return;
 
-  message_vision ("$NÎ¢Î¢Õö¿ªÑÛ£¬¿´ÁË$nÒ»ÑÛ¡£\n",me,who);
+  message_vision ("$Nå¾®å¾®çå¼€çœ¼ï¼Œçœ‹äº†$nä¸€çœ¼ã€‚\n",me,who);
 }
 
 int give_it()
@@ -64,13 +64,13 @@ int give_it()
 
   if (who->query_temp("laoren_has_given"))
   {
-    message_vision ("$NÇáÇáÏò$nÒ¡ÁËÒ¡Í·£ºÒÑ¾­¸ø¹ıÄãÁË¡£\n",me,who);
+    message_vision ("$Nè½»è½»å‘$næ‘‡äº†æ‘‡å¤´ï¼šå·²ç»ç»™è¿‡ä½ äº†ã€‚\n",me,who);
   }
   else
   {
     story = new ("/d/obj/books-nonskill/book-qujing");
     story->move(who);
-    message_vision ("$NÔÚ¶´±Ú½ÇÂäÄÃ³öÒ»¾í¶«Î÷£¬µİ¸ø$n£¬È»ºóÂıÂı±ÕÉÏÑÛ¡£\n",me,who);
+    message_vision ("$Nåœ¨æ´å£è§’è½æ‹¿å‡ºä¸€å·ä¸œè¥¿ï¼Œé€’ç»™$nï¼Œç„¶åæ…¢æ…¢é—­ä¸Šçœ¼ã€‚\n",me,who);
     who->set_temp("laoren_has_given",1);
   }
   return 1;

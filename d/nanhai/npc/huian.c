@@ -1,22 +1,22 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// huian.c »İ°¶ĞĞÕß
+// huian.c æƒ å²¸è¡Œè€…
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-    set_name("»İ°¶ĞĞÕß", ({ "huian xingzhe", "huian", "xingzhe" }));
-    set("title", "¹ÛÒôÊ×Í½");   
+    set_name("æƒ å²¸è¡Œè€…", ({ "huian xingzhe", "huian", "xingzhe" }));
+    set("title", "è§‚éŸ³é¦–å¾’");   
     set("long", @LONG
-ÀîÌìÍõ¶ş¹«×ÓÄ¾²æ£¬±¾ÊÇÆÕÏÍÆĞÈøµÄµÜ×Ó£¬ºóÀ´×ªÍ¶¹ÛÒôÆĞÈøÃÅÏÂ¡£
+æå¤©ç‹äºŒå…¬å­æœ¨å‰ï¼Œæœ¬æ˜¯æ™®è´¤è©è¨çš„å¼Ÿå­ï¼Œåæ¥è½¬æŠ•è§‚éŸ³è©è¨é—¨ä¸‹ã€‚
 LONG);
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("age", 25);
     set("attitude", "peaceful");
-    set("rank_info/self", "Æ¶É®");
+    set("rank_info/self", "è´«åƒ§");
     set("class", "bonze");
     set("max_kee", 850);
     set("max_gin", 800);
@@ -57,7 +57,7 @@ LONG);
         (: cast_spell, "jingang" :)
     }) );
     
-    create_family("ÄÏº£ÆÕÍÓÉ½", 2, "µÜ×Ó");
+    create_family("å—æµ·æ™®é™€å±±", 2, "å¼Ÿå­");
 
     setup();
 //    carry_object("/obj/money/thousand-cash");
@@ -69,15 +69,15 @@ LONG);
 void attempt_apprentice(object ob)
 {
    if (!((string)ob->query("bonze/class") =="bonze" )) {
-     command("say " + RANK_D->query_respect(ob) + "Î´Èë·ğÃÅ£¬Ë¡Æ¶É®²»ÄÜ½ÓÄÉ¡£\n");
+     command("say " + RANK_D->query_respect(ob) + "æœªå…¥ä½›é—¨ï¼Œæ•è´«åƒ§ä¸èƒ½æ¥çº³ã€‚\n");
      return;
    }
    if (((int)ob->query_skill("buddhism", 1) < 50 )) {
-     command("say " + RANK_D->query_respect(ob) + "ÈôÓûÉîĞŞ£¬ĞèµÃÊì¶Á·ğ·¨¡£\n");
+     command("say " + RANK_D->query_respect(ob) + "è‹¥æ¬²æ·±ä¿®ï¼Œéœ€å¾—ç†Ÿè¯»ä½›æ³•ã€‚\n");
      return;
    }
    command("nod");
-   command("say ºÜºÃ£¬Æ¶É®¾ÍÊÕÏÂÄã£¬Ï£ÍûÄã¶à¼ÓÅ¬Á¦£¬Ôç³ÉÕı¹û¡£\n");
+   command("say å¾ˆå¥½ï¼Œè´«åƒ§å°±æ”¶ä¸‹ä½ ï¼Œå¸Œæœ›ä½ å¤šåŠ åŠªåŠ›ï¼Œæ—©æˆæ­£æœã€‚\n");
 
    command("recruit " + ob->query("id") );
    return;   

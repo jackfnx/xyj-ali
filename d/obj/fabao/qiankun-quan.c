@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // qiankun-quan.c, 4-12-98 bbs
@@ -30,12 +30,12 @@ void create()
     // item/npc you ever write, should have a space in it. that way you will
     // avoid a lot of potential trouble.
 
-    set_name(YEL "Ç¬À¤È¦" NOR,({"qiankun quan", "quan", "qiankunquan", "qiankun", "fabao"}));
+    set_name(YEL "ä¹¾å¤åœˆ" NOR,({"qiankun quan", "quan", "qiankunquan", "qiankun", "fabao"}));
     set_weight(10000);
     if(clonep())
    set_default_object(__FILE__);
     else {
-   set("unit","Ö»");
+   set("unit","åª");
    set("value",0);     //this is mainly to prevent selling
 
    // these are quite important in my opinion, since we don't want
@@ -44,12 +44,12 @@ void create()
    // unique which means once one person has it, there will not be
    // another copy in the mud.
 
-        set("no_drop","ÕâÃ´ºÃµÄ±¦Îï£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-        set("no_give","ÕâÃ´ºÃµÄ±¦Îï£¬Áô×Å×Ô¼ºÓÃ°É£¡\n");
+        set("no_drop","è¿™ä¹ˆå¥½çš„å®ç‰©ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+        set("no_give","è¿™ä¹ˆå¥½çš„å®ç‰©ï¼Œç•™ç€è‡ªå·±ç”¨å§ï¼\n");
         set("no_sell", 1);
 
    // this is very important, since as i've stressed many times,
-   // we don't want everyone in the mud running around with a À¦ÏÉË÷
+   // we don't want everyone in the mud running around with a æ†ä»™ç´¢
 
    set("is_monitored", 1);
 
@@ -75,9 +75,9 @@ void create()
    // here, things such as wield_msg and unwield_msg. if you want your
    // object to be fancier, look in other files for those properties.
 
-   set("long","Ò»Ö»´¿¸Ö´òÔìµÄ¸Ö»·£¬ºÜ½áÊµ¡£\n");
-   set("wield_msg","$NÄÃ³öÒ»Ö»$nÎÕÔÚÊÖÖĞ¡£\n");
-   set("unequip_msg", "$N½«ÊÖÖĞµÄ$nÊÕÈë±ªÆ¤ÄÒ¡£\n");
+   set("long","ä¸€åªçº¯é’¢æ‰“é€ çš„é’¢ç¯ï¼Œå¾ˆç»“å®ã€‚\n");
+   set("wield_msg","$Næ‹¿å‡ºä¸€åª$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+   set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¶å…¥è±¹çš®å›Šã€‚\n");
     }
     init_hammer(25);
     setup();
@@ -100,25 +100,25 @@ int ji(string target)
     // can read /cmds/std/ji.c
 
     if (!target)
-   return notify_fail("ÄãÏëÓÃ¶ÔË­ÓÃ"+objname+"£¿\n");
+   return notify_fail("ä½ æƒ³ç”¨å¯¹è°ç”¨"+objname+"ï¼Ÿ\n");
 
     // if indeed a target is needed we need to test whether the
     // target is around.
 
     if (!objectp(victim=present(target, environment(me))))
-   return notify_fail("ÕâÀïÃ»ÓĞ "+target+"¡£\n");
+   return notify_fail("è¿™é‡Œæ²¡æœ‰ "+target+"ã€‚\n");
 
     if(!living(victim))
-   return notify_fail("ÄãµÄÄ¿±ê²»ÊÇ»îÎï£¡\n");
+   return notify_fail("ä½ çš„ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
     if(!me->is_fighting(victim))
-   return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜ¼À"+objname+"¡£\n");  
+   return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­"+objname+"ã€‚\n");  
 
     // every fabao will have a mana cost and a sen cost.
 
     if( (int)me->query("mana") < 250)
-   return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+   return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if( (int)me->query("sen") < 100)
-   return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+   return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ï¼\n");
 
     // here, the real fun begins. i started this one with an introduction
     // message, showing the rope being "ji".
@@ -127,8 +127,8 @@ int ji(string target)
     // up front is much more convenient (in case you change the name) and
     // much cleaner.
 
-    msg="$NÌÍ³öÒ»Ö»"+objname+"£¬Ïò¿ÕÅ×Æğ£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬\n";
-    msg+=objname+"Ïò$nµÄÍ·¶¥ÔÒÈ¥¡£\n";
+    msg="$Næå‡ºä¸€åª"+objname+"ï¼Œå‘ç©ºæŠ›èµ·ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œ\n";
+    msg+=objname+"å‘$nçš„å¤´é¡¶ç ¸å»ã€‚\n";
 
     // here i call a function to determine the success of this ji.
     // i think all fabao should do this, just so the code is cleaner.
@@ -147,10 +147,10 @@ int ji(string target)
     switch(condition)
     {
       case 1:
-   msg+=HIR"$n±»"+objname+"ÔÒ¸öÕı×Å£¬Á¢²»ÎÈ½Å£¬µøÁËÒ»õÓ¡£\n" NOR;
+   msg+=HIR"$nè¢«"+objname+"ç ¸ä¸ªæ­£ç€ï¼Œç«‹ä¸ç¨³è„šï¼Œè·Œäº†ä¸€è·¤ã€‚\n" NOR;
    damage=random(me->query("mana_factor")*5/2)+10;
    damage*=me->query("sen")/me->query("max_sen");
-   msg+=COMBAT_D->damage_msg(damage,"ÔÒÉË");
+   msg+=COMBAT_D->damage_msg(damage,"ç ¸ä¼¤");
         victim->receive_damage("kee",damage);
         ratio=(int)victim->query("kee")*100/victim->query("max_kee");
         msg+="( $n"+COMBAT_D->status_msg(ratio)+")\n";
@@ -162,19 +162,19 @@ int ji(string target)
        tell_object(me, sprintf(GRN "damage: %d\n" NOR, damage));
    break;
       case 0:
-   msg+=HIB"$nÉìÊÖÒ»Ö¸£¬´óºÈÒ»Éù¡°Âä£¡¡±Ö»¼û"+objname+"Âä»Ø$NÊÖÖĞ¡£\n"NOR;
+   msg+=HIB"$nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°â€œè½ï¼â€åªè§"+objname+"è½å›$Næ‰‹ä¸­ã€‚\n"NOR;
    break;
       case -1:
-   msg+=HIB"$nÉìÊÖÒ»Ö¸£¬´óºÈÒ»Éù¡°»Ø£¡¡±Ö»¼û"+objname+"ÔÒÔÚÁË$NµÄÍ·ÉÏ£¡\n"NOR;
+   msg+=HIB"$nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°â€œå›ï¼â€åªè§"+objname+"ç ¸åœ¨äº†$Nçš„å¤´ä¸Šï¼\n"NOR;
    damage=random(victim->query("mana_factor")*5/2)+10;
    damage*=victim->query("sen")/victim->query("max_sen");
-   msg+=COMBAT_D->damage_msg(damage,"ÔÒÉË");
+   msg+=COMBAT_D->damage_msg(damage,"ç ¸ä¼¤");
         victim->receive_damage("kee",damage);
         ratio=(int)me->query("kee")*100/me->query("max_kee");
         msg+="( $N"+COMBAT_D->status_msg(ratio)+")\n";
    break;
       case -2:
-   msg+=HIB"$nÉìÊÖÒ»Ö¸£¬´óºÈÒ»Éù¡°ÊÕ£¡¡±Ö»¼û"+objname+"ÂäÈë$nÊÖÖĞ¡£\n"NOR;
+   msg+=HIB"$nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤§å–ä¸€å£°â€œæ”¶ï¼â€åªè§"+objname+"è½å…¥$næ‰‹ä¸­ã€‚\n"NOR;
    this_object()->move(victim);
    break;
     }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // eval.c
@@ -23,7 +23,7 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : eval <command>
+æŒ‡ä»¤æ ¼å¼ : eval <command>
 
 This command will return the evaluation cost for <command>.
 

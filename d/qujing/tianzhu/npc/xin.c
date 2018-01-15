@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/8/1997
@@ -9,8 +9,8 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("ĞÁ¶ùÄï", ({"xiner niang", "xiner", "niang"}));
-  set("gender", "Å®ĞÔ");
+  set_name("è¾›å„¿å¨˜", ({"xiner niang", "xiner", "niang"}));
+  set("gender", "å¥³æ€§");
   set("combat_exp", 2000);
   set("age", 28);
   set("per", 21);

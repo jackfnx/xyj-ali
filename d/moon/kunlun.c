@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/kunlun.c
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "À¥ÂØÉ½Çø");
+  set ("short", "æ˜†ä»‘å±±åŒº");
   set ("long", @LONG
 
-²ÔÃ£À¥ÂØ£¬ÃàÑÓÇ§Àï¡£·ÅÑÛÍûÈ¥£¬ÕýËùÎ½Ç§Àï±ù·â£¬ÍòÀïÑ©Æ®¡£Î÷ÃæÆæ·å
-ÈëÔÆ£¬ÄËÊÇÀ¥ÂØÖ÷·åÓñÅ®·å¡£¾ÝËµÎ÷ÍõÄ¸¾ÍÒþ¾ÓÔÚÓñÅ®·å¾ø¶¥´¦¡£¶«ÃæÔò
-ÊÇÒ»ÌõòêÑÑµÄÐ¡Â·¡£
+è‹èŒ«æ˜†ä»‘ï¼Œç»µå»¶åƒé‡Œã€‚æ”¾çœ¼æœ›åŽ»ï¼Œæ­£æ‰€è°“åƒé‡Œå†°å°ï¼Œä¸‡é‡Œé›ªé£˜ã€‚è¥¿é¢å¥‡å³°
+å…¥äº‘ï¼Œä¹ƒæ˜¯æ˜†ä»‘ä¸»å³°çŽ‰å¥³å³°ã€‚æ®è¯´è¥¿çŽ‹æ¯å°±éšå±…åœ¨çŽ‰å¥³å³°ç»é¡¶å¤„ã€‚ä¸œé¢åˆ™
+æ˜¯ä¸€æ¡èœ¿èœ’çš„å°è·¯ã€‚
 LONG);
 
   set("outdoors", 2);

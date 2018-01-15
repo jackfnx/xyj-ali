@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
-string *first_name = ({ "Çà÷­", "³àÀğ", "»Æöğ", "°×öè", "×Ïöë", "½ğ÷¡",
-"ÒøòÃ", "ÎÚöú"});
-string *name_words = ({ "Á¦Ê¿"});
+string *first_name = ({ "é’é³", "èµ¤é²¤", "é»„é²³", "ç™½é²¨", "ç´«é²­", "é‡‘é³Œ",
+"é“¶è›", "ä¹Œé³…"});
+string *name_words = ({ "åŠ›å£«"});
 
 void create()
 {
@@ -13,8 +13,8 @@ void create()
    name += name_words[random(sizeof(name_words))];
 
        set_name(name, ({"li shi", "shi"}));
-       set("gender", "ÄĞĞÔ");
-   set("title", "¹¬Ç°»¤ÎÀ");
+       set("gender", "ç”·æ€§");
+   set("title", "å®«å‰æŠ¤å«");
        set("age", 20+random(5));
    set("per", 10);
    set("str", 25);

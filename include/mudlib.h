@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 #ifndef __MUDLIB__
@@ -11,6 +11,6 @@
 #define MUDLIB_VERSION        (MUDLIB_NAME + " " + MUDLIB_VERSION_NUMBER)
 
 #define INTERMUD_MUD_NAME     "XYJ"
-#define INTERMUD_NAME                   "нВсн╪г"
+#define INTERMUD_NAME                   "Х╔©Ф╦╦Х╝╟"
 
 #endif

@@ -1,31 +1,31 @@
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡µÚÊ®¶ş½Ú£º¸÷ÀàÃüÁî
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ç¬¬åäºŒèŠ‚ï¼šå„ç±»å‘½ä»¤
 
-[Ì½ÏÕÓÃÖ¸Áî]
+[æ¢é™©ç”¨æŒ‡ä»¤]
   buy  close  drop  fly  get  give  go  hp  id  inventory 
   look  open   put  skills  score  team  follow  steal mount
   dismount obstacles quests
  
-[Õ½¶·ÓÃÖ¸Áî]
+[æˆ˜æ–—ç”¨æŒ‡ä»¤]
   cast  fight  kill  remove  surrender  unwield  wear  wield
   wimpy  exert ji
  
-[¹µÍ¨ÓÃÖ¸Áî]
+[æ²Ÿé€šç”¨æŒ‡ä»¤]
   ask  finger  reply  say  semote  shout  tell  tune  whisper
   who emote story
  
-[Îä¹¦]
+[æ­¦åŠŸ]
   enable  enchant  enforce  exercise  learn  meditate  practice
   study   perform abandon 
  
-[ÃÅÅÉ]
+[é—¨æ´¾]
   apprentice  expell  nick  recruit
  
-[ÆäËû]
+[å…¶ä»–]
   accuse  alias  help  passwd  quit  save  suicide  time  set 
   unset  to wizlist  uptime  version  scribe  title  quests  
   obstacles
  
-¡õ Èç¹ûÄãÊÇÎ×Ê¦µÄ»°£¬ÇëÓÃ help wizcmds ²éÑ¯Î×Ê¦×¨ÓÃÖ¸Áî¡£
+â–¡ å¦‚æœä½ æ˜¯å·«å¸ˆçš„è¯ï¼Œè¯·ç”¨ help wizcmds æŸ¥è¯¢å·«å¸ˆä¸“ç”¨æŒ‡ä»¤ã€‚
 
 

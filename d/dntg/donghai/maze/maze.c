@@ -5,12 +5,12 @@ void setup()
 {
     string *ways;
     
-    set("short", "º£µ×ÃÔ¹¬");
+    set("short", "æµ·åº•è¿·å®«");
     set("long", @LONG
 
-º£Ë®ÓÖ±äµÄÇå³ºÁË£¬µ«ÄãÒÑ¾­ºÜÄÑÕÒµ½·½ÏòÁË¡£
-ËÄÖÜµÄ¾°ÎïºÃÏó¶¼Ò»Ñù£¬ÒªÊÇÃ»ÈËÒıÂ·µÄ»°¿´À´
-ºÜÄÑ³öÈ¥ÁË¡£
+æµ·æ°´åˆå˜çš„æ¸…æ¾ˆäº†ï¼Œä½†ä½ å·²ç»å¾ˆéš¾æ‰¾åˆ°æ–¹å‘äº†ã€‚
+å››å‘¨çš„æ™¯ç‰©å¥½è±¡éƒ½ä¸€æ ·ï¼Œè¦æ˜¯æ²¡äººå¼•è·¯çš„è¯çœ‹æ¥
+å¾ˆéš¾å‡ºå»äº†ã€‚
 LONG );
 
     ways = query("ways");
@@ -37,7 +37,7 @@ void init()
     ||  this_player()->query("id") == "xiao hua yu"
     ||  this_player()->query("id") == "xiao jin yu"
     )
-        message_vision("$NÓÎÁË¹ıÀ´¡£\n", this_player());
+        message_vision("$Næ¸¸äº†è¿‡æ¥ã€‚\n", this_player());
 }
 
 int valid_leave(object me, string dir)
@@ -49,6 +49,6 @@ int valid_leave(object me, string dir)
     ||  this_player()->query("id") == "xiao hua yu"
     ||  this_player()->query("id") == "xiao jin yu"
     )
-        message_vision("$N°Ú×ÅÎ²°ÍÓÎ×ßÁË¡£\n", this_player());
+        message_vision("$Næ‘†ç€å°¾å·´æ¸¸èµ°äº†ã€‚\n", this_player());
     return ::valid_leave(me, dir);
 }

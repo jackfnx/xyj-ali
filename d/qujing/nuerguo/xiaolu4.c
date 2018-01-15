@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 4/4/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "С·");
+  set ("short", "小路");
   set ("long", @LONG
 
-����һ����ϸ�ֳ���ɽ��С����һ����ߣ�һ����͡�·��
-�����ǲ�֪����Ұ��Ұ�ݡ�����ٵ����ţ�����ɽ����һ��
-���͡�
+这是一条又细又长的山间小径，一会儿高，一会儿低。路的
+两边是不知名的野花野草。你快速地走着，觉得山势有一点
+陡峭。
 
 LONG);
 

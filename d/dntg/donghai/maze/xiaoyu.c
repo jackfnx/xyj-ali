@@ -3,11 +3,11 @@
 inherit NPC;
 
 string *names = ({
-    "Ğ¡ºìÓã",
-    "Ğ¡ÇàÓã",
-    "Ğ¡À¶Óã",
-    "Ğ¡°×Óã",
-    "Ğ¡»¨Óã",
+    "å°çº¢é±¼",
+    "å°é’é±¼",
+    "å°è“é±¼",
+    "å°ç™½é±¼",
+    "å°èŠ±é±¼",
 });
 
 string *ids = ({
@@ -24,19 +24,19 @@ void create()
 
     i = random(sizeof(names));
     set_name(names[i], ({ids[i], "xiao yu", "fish", "yu"}));
-    set("long", "Ò»Ìõ"+names[i]+"£¬ÕıÔÚº£ÖĞ×ÔÓÉ×ÔÔÚµÄÓÎ×Å¡£\n");
+    set("long", "ä¸€æ¡"+names[i]+"ï¼Œæ­£åœ¨æµ·ä¸­è‡ªç”±è‡ªåœ¨çš„æ¸¸ç€ã€‚\n");
 
-    set("race", "Ò°ÊŞ");
+    set("race", "é‡å…½");
     set("age", 2);
 
     set_skill("dodge", 60);
     set("combat_exp", 10);
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
     set("verbs", ({ "bite"}));
 
     set("chat_chance", 1);
     set("chat_msg", ({
-        names[i]+"°ÚÁË°ÚÎ²°Í¡£\n",
+        names[i]+"æ‘†äº†æ‘†å°¾å·´ã€‚\n",
         (: random_move :)
     }));
 

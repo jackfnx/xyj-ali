@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gargoyle.c
@@ -10,16 +10,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("Íõ·½Æ½", ({ "wang fangping", "wang", "fangping" }));
+        set_name("çŽ‹æ–¹å¹³", ({ "wang fangping", "wang", "fangping" }));
 
-set("long","Íõ·½Æ½±¾ÊÇÉ½ÖÐµÀÊ¿£¬ºóÔÚ·á¶¼É½Í¬Òõ³¤ÉúÍ¬ÐÞÁ¶³ÉÏÉ£¬Óù·â(¡¸¹íÍõ¡¹¡£\n");
+set("long","çŽ‹æ–¹å¹³æœ¬æ˜¯å±±ä¸­é“å£«ï¼ŒåŽåœ¨ä¸°éƒ½å±±åŒé˜´é•¿ç”ŸåŒä¿®ç‚¼æˆä»™ï¼Œå¾¡å°(ã€Œé¬¼çŽ‹ã€ã€‚\n");
         set("attitude", "peaceful");
    set("per", 30);
    set("str", 25);
    set("int", 25);
         set("age", 30);
-   set("title", "ÂÖ»ØË¾Ö÷");
-   set("nickname", "¹íÍõ");
+   set("title", "è½®å›žå¸ä¸»");
+   set("nickname", "é¬¼çŽ‹");
         set("combat_exp", 850000);
         set("max_gin", 1400);
         set("max_kee", 1400);
@@ -64,7 +64,7 @@ set("long","Íõ·½Æ½±¾ÊÇÉ½ÖÐµÀÊ¿£¬ºóÔÚ·á¶¼É½Í¬Òõ³¤ÉúÍ¬ÐÞÁ¶³ÉÏÉ£¬Óù·â(¡¸¹íÍõ¡¹¡£\n"
    set_temp("apply/armor", 50);
 
 
-create_family("ÑÖÂÞµØ¸®", 3, "ÄãºÃ");
+create_family("é˜Žç½—åœ°åºœ", 3, "ä½ å¥½");
 
         setup();
    carry_object("/d/obj/weapon/stick/wuchangbang")->wield();
@@ -78,8 +78,8 @@ void attempt_apprentice()
    me = this_player();
         command("grin");
 
-        command("say ºÜºÃ£¬" + RANK_D->query_respect(me) +
-"¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓÐ³É¡£\n");
+        command("say å¾ˆå¥½ï¼Œ" + RANK_D->query_respect(me) +
+"å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚\n");
        command("recruit " + me->query("id") );
         return;
 }

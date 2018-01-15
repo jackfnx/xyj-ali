@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/westree.c  snowcat moved to /d/qujing/wuji
@@ -6,7 +6,7 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "¶«´ó½Ö");
+  set ("short", "ä¸œå¤§è¡—");
   set ("long", @LONG
 
 east street

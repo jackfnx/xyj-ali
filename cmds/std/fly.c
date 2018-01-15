@@ -13,45 +13,45 @@ int main(object me, string arg)
     seteuid(getuid());
 
     if (me->is_fighting())
-        return notify_fail("ÄãÕýÔÚÕ½¶·£¬·É²»¿ª¡£\n");
+        return notify_fail("ä½ æ­£åœ¨æˆ˜æ–—ï¼Œé£žä¸å¼€ã€‚\n");
     if (me->is_busy() || me->query_temp("pending/exercising"))
-        return notify_fail("ÄãÕýÃ¦×ÅÄØ£¬Ã»¹¤·òÌÚÔÆ¼ÝÎí¡£\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ²¡å·¥å¤«è…¾äº‘é©¾é›¾ã€‚\n");
     if (!wizardp(me) && !environment(me)->query("outdoors"))
-        return notify_fail("ÖÜÎ§Ã»ÓÐÒ»Æ¬ÔÆ£¬Ã»°ì·¨ÌÚÔÆ¼ÝÎí¡£\n");
+        return notify_fail("å‘¨å›´æ²¡æœ‰ä¸€ç‰‡äº‘ï¼Œæ²¡åŠžæ³•è…¾äº‘é©¾é›¾ã€‚\n");
     if (me->is_ghost())
-        return notify_fail("×öÁË¹íÁË£¬¾ÍÀÏÊµµã°É£¡\n");
+        return notify_fail("åšäº†é¬¼äº†ï¼Œå°±è€å®žç‚¹å§ï¼\n");
     if (!arg)
-        return notify_fail("ÄãÒª·Éµ½ÄÄÀïÈ¥£¿\n");
+        return notify_fail("ä½ è¦é£žåˆ°å“ªé‡ŒåŽ»ï¼Ÿ\n");
     if (me->query_temp("no_move"))
-        return notify_fail("Äã±»¶¨×¡ÁË£¬ÄÄÀï·ÉµÃÆðÀ´£¡\n");
+        return notify_fail("ä½ è¢«å®šä½äº†ï¼Œå“ªé‡Œé£žå¾—èµ·æ¥ï¼\n");
 
     if ((int)me->query("combat_exp") < 10000) {
-        message_vision(HIY"$N·ÜÁ¦ÍûÉÏÒ»Ìø£¬ËÆºõÏë·ÉÆðÀ´¡£½á¹ûÀëµØ²»µ½Èý³ß¾ÍÒ»¸öµ¹ÔÔ´ÐË¤ÁËÏÂÀ´¡£\n"NOR, me);
-        return notify_fail("¿ÉÄÜÊÇÄãµÀÐÐ»¹²»¹»¡£\n");
+        message_vision(HIY"$Nå¥‹åŠ›æœ›ä¸Šä¸€è·³ï¼Œä¼¼ä¹Žæƒ³é£žèµ·æ¥ã€‚ç»“æžœç¦»åœ°ä¸åˆ°ä¸‰å°ºå°±ä¸€ä¸ªå€’æ ½è‘±æ‘”äº†ä¸‹æ¥ã€‚\n"NOR, me);
+        return notify_fail("å¯èƒ½æ˜¯ä½ é“è¡Œè¿˜ä¸å¤Ÿã€‚\n");
     }
     if ((int)me->query("mana") < 200) {
-        message_vision(HIY"$N·ÜÁ¦ÍûÉÏÒ»Ìø£¬ËÆºõÏë·ÉÆðÀ´¡£½á¹ûÀëµØ²»µ½Èý³ß¾ÍÒ»¸öµ¹ÔÔ´ÐË¤ÁËÏÂÀ´¡£\n"NOR, me);
-        return notify_fail("¿ÉÄÜÊÇÄã·¨Á¦»¹²»¹»¡£\n");
+        message_vision(HIY"$Nå¥‹åŠ›æœ›ä¸Šä¸€è·³ï¼Œä¼¼ä¹Žæƒ³é£žèµ·æ¥ã€‚ç»“æžœç¦»åœ°ä¸åˆ°ä¸‰å°ºå°±ä¸€ä¸ªå€’æ ½è‘±æ‘”äº†ä¸‹æ¥ã€‚\n"NOR, me);
+        return notify_fail("å¯èƒ½æ˜¯ä½ æ³•åŠ›è¿˜ä¸å¤Ÿã€‚\n");
     }
 
     if ((int)me->query("sen") * 100 / (int)me->query("max_sen") < 50)
-        return notify_fail("ÄãÏÖÔÚÍ·ÄÔ²»Ì«ÇåÐÑ£¬µ±ÐÄµôÏÂÀ´Ë¤ËÀ¡£\n");
+        return notify_fail("ä½ çŽ°åœ¨å¤´è„‘ä¸å¤ªæ¸…é†’ï¼Œå½“å¿ƒæŽ‰ä¸‹æ¥æ‘”æ­»ã€‚\n");
     if ((int)me->query("kee") * 100 / (int)me->query("max_kee") < 50)
-        return notify_fail("ÄãÏë·ÉÆðÀ´£¬¿ÉÊÇÌåÁ¦ËÆºõÓÐµã²»Ö§¡£\n");
+        return notify_fail("ä½ æƒ³é£žèµ·æ¥ï¼Œå¯æ˜¯ä½“åŠ›ä¼¼ä¹Žæœ‰ç‚¹ä¸æ”¯ã€‚\n");
 
     mana_cost=-(100-(int)me->query_skill("spells"))/4-40;
     if (mana_cost > 0) mana_cost=0;
 
-    if ((string)me->query("family/family_name") == "ÑÖÂÞµØ¸®") {
-        message_vision(HIY"$NÊÖÒ»Ö¸£¬Æ½µØ¼äÒ»¹ÉÒõ·ç¹ÎÆð£¬½«$N¹üÁËÆðÀ´£¬\n"+
-                            "ÔÙ´µÒ»Éù¿ÚÉÚ£¬ËæÖ®Æ®È¥²»¼ûÁË¡£¡£¡£\n\n"NOR, me);
-    } else if ((string)me->query("family/family_name") == "´óÑ©É½"
-            ||  (string)me->query("family/family_name") == "ÏÝ¿ÕÉ½ÎÞµ×¶´") {
-        message_vision(HIY"$NÊÖÒ»Ö¸£¬¡¸ºô¡¹µØÒ»Õó¿ñ·ç¹ÎÆð£¬´µµÄÈË¶¼Õö²»¿ªÑÛ¾¦£¬\n"+
-                            "ÔÙ´µÒ»Éù¿ÚÉÚ£¬ËæÖ®Æ®È¥²»¼ûÁË¡£¡£¡£\n\n"NOR, me);
+    if ((string)me->query("family/family_name") == "é˜Žç½—åœ°åºœ") {
+        message_vision(HIY"$Næ‰‹ä¸€æŒ‡ï¼Œå¹³åœ°é—´ä¸€è‚¡é˜´é£Žåˆ®èµ·ï¼Œå°†$Nè£¹äº†èµ·æ¥ï¼Œ\n"+
+                            "å†å¹ä¸€å£°å£å“¨ï¼Œéšä¹‹é£˜åŽ»ä¸è§äº†ã€‚ã€‚ã€‚\n\n"NOR, me);
+    } else if ((string)me->query("family/family_name") == "å¤§é›ªå±±"
+            ||  (string)me->query("family/family_name") == "é™·ç©ºå±±æ— åº•æ´ž") {
+        message_vision(HIY"$Næ‰‹ä¸€æŒ‡ï¼Œã€Œå‘¼ã€åœ°ä¸€é˜µç‹‚é£Žåˆ®èµ·ï¼Œå¹çš„äººéƒ½çä¸å¼€çœ¼ç›ï¼Œ\n"+
+                            "å†å¹ä¸€å£°å£å“¨ï¼Œéšä¹‹é£˜åŽ»ä¸è§äº†ã€‚ã€‚ã€‚\n\n"NOR, me);
     } else {   
-        message_vision(HIY"$NÊÖÒ»Ö¸£¬ÕÙÀ´Ò»¶äÔÆ²Ê£¬¸ß¸ßÐËÐËµØ×øÁËÉÏÈ¥£¬\n"+
-                            "ÔÙ´µÒ»Éù¿ÚÉÚ£¬ËæÖ®ÍùÉÏÈ½È½µØÉýÆð¡£¡£¡£\n\n"NOR, me);
+        message_vision(HIY"$Næ‰‹ä¸€æŒ‡ï¼Œå¬æ¥ä¸€æœµäº‘å½©ï¼Œé«˜é«˜å…´å…´åœ°åäº†ä¸ŠåŽ»ï¼Œ\n"+
+                            "å†å¹ä¸€å£°å£å“¨ï¼Œéšä¹‹å¾€ä¸Šå†‰å†‰åœ°å‡èµ·ã€‚ã€‚ã€‚\n\n"NOR, me);
     }
 
     me->add("mana", mana_cost);
@@ -67,22 +67,22 @@ int main(object me, string arg)
     else if (arg=="meishan") loc="/d/meishan/erlangwai";
     else if (arg=="penglai") {
         if (!wizardp(me)
-        &&  (!objectp(map = present("eastsea map", me)) || (string)map->query("unit") != "ÕÅ")) {
-            tell_object(me, "ÄãÔÚÌìÉÏ×ªÁË°ëÌìÒ²²»Öª¸ÃÍùÄÇ±ß·É¡£¡£¡£\n");
-            message_vision("\n$NÊ§ÍûµØ´ÓÔÆÉÏÌøÁËÏÂÀ´£¡\n", me);
+        &&  (!objectp(map = present("eastsea map", me)) || (string)map->query("unit") != "å¼ ")) {
+            tell_object(me, "ä½ åœ¨å¤©ä¸Šè½¬äº†åŠå¤©ä¹Ÿä¸çŸ¥è¯¥å¾€é‚£è¾¹é£žã€‚ã€‚ã€‚\n");
+            message_vision("\n$Nå¤±æœ›åœ°ä»Žäº‘ä¸Šè·³äº†ä¸‹æ¥ï¼\n", me);
             return 1;
         }
-//        write("Äã¼Ý×ÅÏéÔÆÏò¶«±ßº£ÖÐ·ÉÈ¥¡£¡£¡£\n\n");
+//        write("ä½ é©¾ç€ç¥¥äº‘å‘ä¸œè¾¹æµ·ä¸­é£žåŽ»ã€‚ã€‚ã€‚\n\n");
         loc="/d/penglai/penglai";
     }
     else if (arg=="xueshan") {
         if (!wizardp(me)
-        &&  (!objectp(map = present("xueshan map", me)) || (string)map->query("unit") != "ÕÅ")) {
-            tell_object(me, "ÄãÔÚÌìÉÏ×ªÁË°ëÌìÒ²²»Öª¸ÃÍùÄÇ±ß·É¡£¡£¡£\n");
-            message_vision("\n$NÊ§ÍûµØ´ÓÔÆÉÏÌøÁËÏÂÀ´£¡\n", me);
+        &&  (!objectp(map = present("xueshan map", me)) || (string)map->query("unit") != "å¼ ")) {
+            tell_object(me, "ä½ åœ¨å¤©ä¸Šè½¬äº†åŠå¤©ä¹Ÿä¸çŸ¥è¯¥å¾€é‚£è¾¹é£žã€‚ã€‚ã€‚\n");
+            message_vision("\n$Nå¤±æœ›åœ°ä»Žäº‘ä¸Šè·³äº†ä¸‹æ¥ï¼\n", me);
             return 1;
         }
-//        write("Äã¼Ý×ÅÏéÔÆÏò´óÑ©É½·ÉÈ¥¡£¡£¡£\n\n");
+//        write("ä½ é©¾ç€ç¥¥äº‘å‘å¤§é›ªå±±é£žåŽ»ã€‚ã€‚ã€‚\n\n");
         loc="/d/xueshan/binggu";
     }
     else if (arg=="baoxiang") {
@@ -190,28 +190,28 @@ int main(object me, string arg)
     }
 
     if (!loc) {
-        tell_object(me, "\n\nµ½ÁË£¡Äã°´ÏÂÔÆÍ·ÌøÁËÏÂÀ´¡£\n");
-        tell_object(me, "ß×£¿£®£®£®ÔõÃ´»¹ÔÚÔ­À´µÄµØ·½£¿\n");
+        tell_object(me, "\n\nåˆ°äº†ï¼ä½ æŒ‰ä¸‹äº‘å¤´è·³äº†ä¸‹æ¥ã€‚\n");
+        tell_object(me, "å’¦ï¼Ÿï¼Žï¼Žï¼Žæ€Žä¹ˆè¿˜åœ¨åŽŸæ¥çš„åœ°æ–¹ï¼Ÿ\n");
         return 1;
     }
 
     if (ridee = me->ride()) {
-        ridemsg = ridee->query("ride/msg")+"×Å"+ridee->name();
+        ridemsg = ridee->query("ride/msg")+"ç€"+ridee->name();
         ridee->move(loc);
     }  
     else  
         ridemsg = "";
 
     me->move(loc);
-    tell_object(me, "\n\nµ½ÁË£¡Äã°´ÏÂÔÆÍ·ÌøÁËÏÂÀ´¡£\n");
+    tell_object(me, "\n\nåˆ°äº†ï¼ä½ æŒ‰ä¸‹äº‘å¤´è·³äº†ä¸‹æ¥ã€‚\n");
 
-    if ((string)me->query("family/family_name")=="ÑÖÂÞµØ¸®") {
-        message_vision(HIY"\nÖ»¼ûÆ½µØ´µÆðÒ»ÕóÒõ·ç£¬$N"+ridemsg+"´ÓÀïÃæ×ßÁË³öÀ´¡£\n"NOR, me);
-    } else if ((string)me->query("family/family_name") == "´óÑ©É½"
-            ||  (string)me->query("family/family_name") == "ÏÝ¿ÕÉ½ÎÞµ×¶´") {
-        message_vision(HIY"\nÖ»¼û¿ñ·ç´ó×÷£¬$N"+ridemsg+"´ÓÀïÃæ×ßÁË³öÀ´¡£\n"NOR, me);
+    if ((string)me->query("family/family_name")=="é˜Žç½—åœ°åºœ") {
+        message_vision(HIY"\nåªè§å¹³åœ°å¹èµ·ä¸€é˜µé˜´é£Žï¼Œ$N"+ridemsg+"ä»Žé‡Œé¢èµ°äº†å‡ºæ¥ã€‚\n"NOR, me);
+    } else if ((string)me->query("family/family_name") == "å¤§é›ªå±±"
+            ||  (string)me->query("family/family_name") == "é™·ç©ºå±±æ— åº•æ´ž") {
+        message_vision(HIY"\nåªè§ç‹‚é£Žå¤§ä½œï¼Œ$N"+ridemsg+"ä»Žé‡Œé¢èµ°äº†å‡ºæ¥ã€‚\n"NOR, me);
     } else {
-        message_vision(HIY"\nÖ»¼û°ë¿ÕÖÐ½µÏÂÒ»¶äÔÆ²Ê£¬$N"+ridemsg+"´ÓÀïÃæ×ßÁË³öÀ´¡£\n" NOR, me);
+        message_vision(HIY"\nåªè§åŠç©ºä¸­é™ä¸‹ä¸€æœµäº‘å½©ï¼Œ$N"+ridemsg+"ä»Žé‡Œé¢èµ°äº†å‡ºæ¥ã€‚\n" NOR, me);
     }
 
     return 1;
@@ -220,38 +220,38 @@ int main(object me, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : fly|fei [Ä¿µÄµØ]
+æŒ‡ä»¤æ ¼å¼ : fly|fei [ç›®çš„åœ°]
 
-µ±ÄãµÄµÀÐÐºÍ·¨Á¦¸ßÇ¿Ê±£¬Äã¿ÉÒÔÌÚÔÆ¼ÝÎí¡£
+å½“ä½ çš„é“è¡Œå’Œæ³•åŠ›é«˜å¼ºæ—¶ï¼Œä½ å¯ä»¥è…¾äº‘é©¾é›¾ã€‚
 
-Ä¿Ç°Äã¿ÉÒÔ·Éµ½µÄµØ·½£º
-changan     ->³¤°²³Ç            kaifeng     ->¿ª·â³Ç
-stone       ->»¨¹ûÉ½ÏÉÊ¯        sky         ->ÄÏÌìÃÅ
-moon        ->À¥ÂØÉ½ÔÂ¹¬        penglai     ->ÅîÀ³ÏÉµº
-lingtai     ->ÁéÌ¨·½´çÉ½        putuo       ->ÄÏº£ÆÕÍÓÉ½
-xueshan     ->´óÑ©É½º®±ù¹È      meishan     ->Ã·É½¹à½­¿Ú
-wuzhuang    ->ÍòÊÙÉ½Îå×¯¹Û
+ç›®å‰ä½ å¯ä»¥é£žåˆ°çš„åœ°æ–¹ï¼š
+changan     ->é•¿å®‰åŸŽ            kaifeng     ->å¼€å°åŸŽ
+stone       ->èŠ±æžœå±±ä»™çŸ³        sky         ->å—å¤©é—¨
+moon        ->æ˜†ä»‘å±±æœˆå®«        penglai     ->è“¬èŽ±ä»™å²›
+lingtai     ->çµå°æ–¹å¯¸å±±        putuo       ->å—æµ·æ™®é™€å±±
+xueshan     ->å¤§é›ªå±±å¯’å†°è°·      meishan     ->æ¢…å±±çŒæ±Ÿå£
+wuzhuang    ->ä¸‡å¯¿å±±äº”åº„è§‚
 
-baoxiang    ->±¦Ïó¹ú            pingding    ->Æ½¶¥É½
-yalong      ->Ñ¹ÁúÉ½            wuji        ->ÎÚ¼¦¹ú
-chechi      ->³µ³Ù¹ú            tongtian    ->Í¨ÌìºÓ
-jindou      ->½ð¶µÉ½            nuerguo     ->Å®¶ù¹ú
-dudi        ->¶¾µÐÉ½            firemount   ->»ðÑæÉ½
-jilei       ->»ýÀ×É½            jisaiguo    ->¼ÀÈü¹ú
-jingjiling  ->¾£¼¬Áë            xiaoxitian  ->Ð¡Î÷Ìì
-zhuzi       ->Öì×Ï¹ú            qilin       ->÷è÷ëÉ½
-pansi       ->ÅÌË¿Áë            biqiu       ->±ÈÇð¹ú 
-qinghua     ->Çå»ª×¯            wudidong    ->ÎÞµ×¶´
-qinfa       ->ÇÕ·¨¹ú            fengxian    ->·ïÏÉ¿¤ 
-yinwu       ->ÒþÎíÉ½            yuhua       ->Óñ»ªÏØ 
-baotou      ->±ªÍ·É½            zhujie      ->Öñ½ÚÉ½
-jinping     ->½ðÆ½¸®            qinglong    ->ÇàÁúÉ½ 
-tianzhu     ->ÌìóÃ¹ú            maoying     ->Ã«Ó±É½ 
-lingshan    ->ÁéÉ½                   
+baoxiang    ->å®è±¡å›½            pingding    ->å¹³é¡¶å±±
+yalong      ->åŽ‹é¾™å±±            wuji        ->ä¹Œé¸¡å›½
+chechi      ->è½¦è¿Ÿå›½            tongtian    ->é€šå¤©æ²³
+jindou      ->é‡‘å…œå±±            nuerguo     ->å¥³å„¿å›½
+dudi        ->æ¯’æ•Œå±±            firemount   ->ç«ç„°å±±
+jilei       ->ç§¯é›·å±±            jisaiguo    ->ç¥­èµ›å›½
+jingjiling  ->è†æ£˜å²­            xiaoxitian  ->å°è¥¿å¤©
+zhuzi       ->æœ±ç´«å›½            qilin       ->éº’éºŸå±±
+pansi       ->ç›˜ä¸å²­            biqiu       ->æ¯”ä¸˜å›½ 
+qinghua     ->æ¸…åŽåº„            wudidong    ->æ— åº•æ´ž
+qinfa       ->é’¦æ³•å›½            fengxian    ->å‡¤ä»™éƒ¡ 
+yinwu       ->éšé›¾å±±            yuhua       ->çŽ‰åŽåŽ¿ 
+baotou      ->è±¹å¤´å±±            zhujie      ->ç«¹èŠ‚å±±
+jinping     ->é‡‘å¹³åºœ            qinglong    ->é’é¾™å±± 
+tianzhu     ->å¤©ç«ºå›½            maoying     ->æ¯›é¢–å±± 
+lingshan    ->çµå±±                   
 
-Èç¹ûÊÇ¡¶Î÷ÓÎ¼Ç¡·À©³ä°æ£¬Äã¿ÉÒÔ·Éµ½£º
-es          ->¶«·½¹ÊÊÂ          xkx         ->ÏÀ¿ÍÐÐ
-fy          ->·çÔÆ
+å¦‚æžœæ˜¯ã€Šè¥¿æ¸¸è®°ã€‹æ‰©å……ç‰ˆï¼Œä½ å¯ä»¥é£žåˆ°ï¼š
+es          ->ä¸œæ–¹æ•…äº‹          xkx         ->ä¾ å®¢è¡Œ
+fy          ->é£Žäº‘
 
 HELP
     );

@@ -6,18 +6,18 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "¼ÙÉ½");
+    set("short", "å‡å±±");
     set("long", @LONG
 
-Ìì¹¬ºóÔºµÄ¼ÙÉ½£¬ËÄ¼¾¶¼Ê¢¿ª×ÅÏÊ»¨£¬ÕâÀïÒ»²İÒ»Ä¾¶¼
-ÏÔÂ¶³öµÛÍõ·ç·¶¡£
+å¤©å®«åé™¢çš„å‡å±±ï¼Œå››å­£éƒ½ç››å¼€ç€é²œèŠ±ï¼Œè¿™é‡Œä¸€è‰ä¸€æœ¨éƒ½
+æ˜¾éœ²å‡ºå¸ç‹é£èŒƒã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 3 */
         "north"      : __DIR__"beitian",
     ]));
 
-    create_door("north", "±±ÌìÃÅ", "south", DOOR_CLOSED);
+    create_door("north", "åŒ—å¤©é—¨", "south", DOOR_CLOSED);
 
     set("objects", ([
     ]));

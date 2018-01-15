@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 4/8/1997
@@ -9,10 +9,10 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("Ì¯··", ({"tan fan","fan"}));
-  set("gender", "ÄĞĞÔ" );
+  set_name("æ‘Šè´©", ({"tan fan","fan"}));
+  set("gender", "ç”·æ€§" );
   set("age", 45);
-  set("long", "Ò»Î»ÀÁÑóÑóµÄÌ¯··¡£\n");
+  set("long", "ä¸€ä½æ‡’æ´‹æ´‹çš„æ‘Šè´©ã€‚\n");
   set("combat_exp", 1000);
   set("attitude", "peaceful");
   set("per", 15);

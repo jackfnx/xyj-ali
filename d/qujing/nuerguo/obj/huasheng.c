@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,26 +7,26 @@ inherit ITEM;
 inherit F_FOOD;
 
 string *names = ({
-  "ÓÍÕ¨»¨Éú",
-  "³´»¨Éú",
-  "Öó»¨Éú",
-  "ÎåÏã»¨Éú",
-  "ºæ»¨Éú",
-  "Â±»¨Éú",
-  "ÑÎË®»¨Éú",
-  "Ï¸ÌÇ»¨Éú",
+  "æ²¹ç‚¸èŠ±ç”Ÿ",
+  "ç‚’èŠ±ç”Ÿ",
+  "ç…®èŠ±ç”Ÿ",
+  "äº”é¦™èŠ±ç”Ÿ",
+  "çƒ˜èŠ±ç”Ÿ",
+  "å¤èŠ±ç”Ÿ",
+  "ç›æ°´èŠ±ç”Ÿ",
+  "ç»†ç³–èŠ±ç”Ÿ",
 });
 
 void create()
 {
-  set_name("¸÷Ê½»¨Éú", 
+  set_name("å„å¼èŠ±ç”Ÿ", 
           ({"hua sheng", "huasheng", "sheng", "peanut"}));
   set_weight(100);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ü»¨Éú¡£\n");
-    set("unit", "°ü");
+    set("long", "ä¸€åŒ…èŠ±ç”Ÿã€‚\n");
+    set("unit", "åŒ…");
     set("value", 90);
     set("food_remaining", 10);
     set("food_supply", 9);
@@ -36,7 +36,7 @@ void create()
 
 void init()
 {
-  if (query("name")=="¸÷Ê½»¨Éú")
+  if (query("name")=="å„å¼èŠ±ç”Ÿ")
     set_name(names[random(sizeof(names))], 
             ({"hua sheng", "huasheng", "sheng", "peanut"}));
   ::init();

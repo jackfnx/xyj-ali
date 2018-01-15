@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xiyouxiji.c
@@ -11,22 +11,22 @@ inherit BOOK;
 int do_read(string arg);
 void create()
 {
-   set_name("¡¼À¥ÂØ¼Ç¡½", ({"kunlun",}));
+   set_name("ã€–æ˜†ä»‘è®°ã€—", ({"kunlun",}));
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±¾");
+     set("unit", "æœ¬");
      set("long", "
 
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù
-¡ù"+HIY+"¡¡¡¡À¥ÂØ¼Ç¡¡¡¡"+NOR+"¡ù
-¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù
-¡ù×÷Õß: ²»Ïé¡¡¡¡¡ù
-¡ù×ªÂ¼: Ã÷¿Õ¡¡¡¡¡ù
-¡ùÊé¼Û: Ê®Á½°×Òø¡ù
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
+â€»â€»â€»â€»â€»â€»â€»â€»â€»
+â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»
+â€»"+HIY+"ã€€ã€€æ˜†ä»‘è®°ã€€ã€€"+NOR+"â€»
+â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»
+â€»ä½œè€…: ä¸ç¥¥ã€€ã€€â€»
+â€»è½¬å½•: æ˜Žç©ºã€€ã€€â€»
+â€»ä¹¦ä»·: åä¸¤ç™½é“¶â€»
+â€»â€»â€»â€»â€»â€»â€»â€»â€»
 \n\n
 ");
      set("material", "paper");
@@ -42,7 +42,7 @@ void init()
 int do_read(string arg)
 {
     if (!this_object()->id(arg))
-      return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+      return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
     read_book(this_player(), this_object()->query("id"));
     return 1;
 }

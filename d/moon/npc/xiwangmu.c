@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //xiwangmu.c
@@ -6,32 +6,32 @@ inherit NPC;
 
 void create()
 {
-    set_name("Î÷ÍõÄ¸", ({"xi wangmu", "xi", "wangmu","master"}));
+    set_name("è¥¿çŽ‹æ¯", ({"xi wangmu", "xi", "wangmu","master"}));
     set("long", @LONG
 
-Ò»¸ö³äÂú³ÉÊìÅ®ÈËÔÏÎ¶µÄÅ®×Ó¡£
-¿ÉÊÇ£¬Èç½ñµÄËýÈ´±»ÕøÄüµÄËøÁ´ËÀËÀµÄËø×Å£¬Ðü¹ÒÔÚ¿ÕÖÐ¡£ËýµÄÉíÉÏ
-¹ÒÂúÁËÒù¾ß£º
-ËýµÄÈé·¿ÉÏ¹Ì¶¨×ÅÒ»¶ÔÓû»ðÇ¯£¬ÆáºÚµÄ½ðÊô¼Ð×Ó¶ñ¶¾µÄËºÒ§×Å½¿ÄÛµÄ
-ÈéµÙ£¬²»Ê±»¹ÓÐÉÁµçÉÁÒ«×Å£¬»÷´òÔÚËýµÄÈé·å¶¥¶Ë£¬Ò»µÀµÀÈéÖ­²»ÓÉ
-×ÔÖ÷µÄÅçÉä³öÀ´£¬±»Ò»¸±Õ¥ÈéÆ÷ÊÕ¼¯ÆðÀ´£¬ÒÑ¾­¼¯ÁËºÃ¼¸´óÆ¿£¬ÏÔÈ»
-ËýÒÑ¾­±»Çô½ûºÜ¾ÃÁË£»
-ËýµÄÏÂÌåÖÐÔð±¸²åÈëÁËÒ»¸ù°´Ä¦°ô£¬·è¿ñµÄÔÚËýµÄÓñÃÅÖÐËÁÅ°×Å£¬¸ø
-Ëý´øÀ´ÁË¾Þ´óµÄ¿ì¸Ð£¬ÈÃËýµÄÒõ¾«²»Í£µÄÅçÉä×Å£¬Í¬Ñù±»Õ¥Ö­Æ÷ÊÕ¼¯
-ÆðÀ´£¬Ò²ÒÑ¾­¼¯ÁËºÃ¼¸´óÆ¿¡£
-ËýËùÔâÊÜµÄÒùÐÌÈÃÄãÉîÉîÕðº³£¬²»¹ý¸üÈ»ÄãÕðº³µÄÊÇÕâ¸öÅ®×ÓµÄÉíÌå
-ÖÐÒþÒþÍ¸³öµÄÁ¦Á¿£¬ÄÇ·Â·ðÊÇ»ÙÃðÒ»ÇÐµÄÁ¦Á¿¡£
-Äã²»½û¸Ðµ½²ïÒì£¬ÕâÑùÇ¿´óµÄµÄÅ®×ÓÓÖÔõÃ´»á±»·ýÂ²ÄØ£¿
+ä¸€ä¸ªå……æ»¡æˆç†Ÿå¥³äººéŸµå‘³çš„å¥³å­ã€‚
+å¯æ˜¯ï¼Œå¦‚ä»Šçš„å¥¹å´è¢«ç‹°ç‹žçš„é”é“¾æ­»æ­»çš„é”ç€ï¼Œæ‚¬æŒ‚åœ¨ç©ºä¸­ã€‚å¥¹çš„èº«ä¸Š
+æŒ‚æ»¡äº†æ·«å…·ï¼š
+å¥¹çš„ä¹³æˆ¿ä¸Šå›ºå®šç€ä¸€å¯¹æ¬²ç«é’³ï¼Œæ¼†é»‘çš„é‡‘å±žå¤¹å­æ¶æ¯’çš„æ’•å’¬ç€å¨‡å«©çš„
+ä¹³è’‚ï¼Œä¸æ—¶è¿˜æœ‰é—ªç”µé—ªè€€ç€ï¼Œå‡»æ‰“åœ¨å¥¹çš„ä¹³å³°é¡¶ç«¯ï¼Œä¸€é“é“ä¹³æ±ä¸ç”±
+è‡ªä¸»çš„å–·å°„å‡ºæ¥ï¼Œè¢«ä¸€å‰¯æ¦¨ä¹³å™¨æ”¶é›†èµ·æ¥ï¼Œå·²ç»é›†äº†å¥½å‡ å¤§ç“¶ï¼Œæ˜¾ç„¶
+å¥¹å·²ç»è¢«å›šç¦å¾ˆä¹…äº†ï¼›
+å¥¹çš„ä¸‹ä½“ä¸­è´£å¤‡æ’å…¥äº†ä¸€æ ¹æŒ‰æ‘©æ£’ï¼Œç–¯ç‹‚çš„åœ¨å¥¹çš„çŽ‰é—¨ä¸­è‚†è™ç€ï¼Œç»™
+å¥¹å¸¦æ¥äº†å·¨å¤§çš„å¿«æ„Ÿï¼Œè®©å¥¹çš„é˜´ç²¾ä¸åœçš„å–·å°„ç€ï¼ŒåŒæ ·è¢«æ¦¨æ±å™¨æ”¶é›†
+èµ·æ¥ï¼Œä¹Ÿå·²ç»é›†äº†å¥½å‡ å¤§ç“¶ã€‚
+å¥¹æ‰€é­å—çš„æ·«åˆ‘è®©ä½ æ·±æ·±éœ‡æ’¼ï¼Œä¸è¿‡æ›´ç„¶ä½ éœ‡æ’¼çš„æ˜¯è¿™ä¸ªå¥³å­çš„èº«ä½“
+ä¸­éšéšé€å‡ºçš„åŠ›é‡ï¼Œé‚£ä»¿ä½›æ˜¯æ¯ç­ä¸€åˆ‡çš„åŠ›é‡ã€‚
+ä½ ä¸ç¦æ„Ÿåˆ°è¯§å¼‚ï¼Œè¿™æ ·å¼ºå¤§çš„çš„å¥³å­åˆæ€Žä¹ˆä¼šè¢«ä¿˜è™å‘¢ï¼Ÿ
 LONG);
-    set("title", "±»ÇÜµÄ");
-    set("gender", "Å®ÐÔ");
+    set("title", "è¢«æ“’çš„");
+    set("gender", "å¥³æ€§");
     set("age", 30);
     set("class","xian");
     set("attitude", "friendly");
-    set("rank_info/respect", "·òÈË");
+    set("rank_info/respect", "å¤«äºº");
     set("cor", 30);
     set("per", 30);
-    set("looking", "ÉñÉ«À§¶Ù£¬ÎÞ¾«´ò²É¡£");
+    set("looking", "ç¥žè‰²å›°é¡¿ï¼Œæ— ç²¾æ‰“é‡‡ã€‚");
     set("max_kee", 4500);
     set("max_gin", 800);
     set("max_sen", 4500);
@@ -61,28 +61,28 @@ LONG);
     map_skill("parry", "snowsword");
     map_skill("dodge", "moondance");
     set("inquiry", ([
-        "name": "ÎÒ¡£¡£¡£ÎÒ¾ÍÊÇÔÂ¹¬×æÊ¦Î÷ÍõÄ¸¡£¡£¡£",
-        "here": "±¾×ùÒ²²»ÖªÕâÊÇÄÄÀï°¡¡£¡£¡£",
+        "name": "æˆ‘ã€‚ã€‚ã€‚æˆ‘å°±æ˜¯æœˆå®«ç¥–å¸ˆè¥¿çŽ‹æ¯ã€‚ã€‚ã€‚",
+        "here": "æœ¬åº§ä¹Ÿä¸çŸ¥è¿™æ˜¯å“ªé‡Œå•Šã€‚ã€‚ã€‚",
     ]));
 
-    set("no_get", "Î÷ÍõÄ¸±»ËøÁ´ÀÎÀÎµÄ¹Ì¶¨×Å£¬¸ù±¾½â²»ÏÂÀ´¡£\n");
+    set("no_get", "è¥¿çŽ‹æ¯è¢«é”é“¾ç‰¢ç‰¢çš„å›ºå®šç€ï¼Œæ ¹æœ¬è§£ä¸ä¸‹æ¥ã€‚\n");
     set_temp("no_move", 1);
     
-    create_family("ÔÂ¹¬", 1, "ºì");
+    create_family("æœˆå®«", 1, "çº¢");
     setup();
 }
 
 void attempt_apprentice(object ob)
 {
     command("sigh");
-    command("say ±¾×ùÈç½ñÒÑ¾­ÂäÈëÕâ²½ÌïµØÁË£¬ÄÄÀï»¹ÓÐÐÄË¼ÊÕÍ½£¿\n");
+    command("say æœ¬åº§å¦‚ä»Šå·²ç»è½å…¥è¿™æ­¥ç”°åœ°äº†ï¼Œå“ªé‡Œè¿˜æœ‰å¿ƒæ€æ”¶å¾’ï¼Ÿ\n");
 }
 
 int accept_fight(object me)
 {
     command("sigh");
     command("say " + RANK_D->query_respect(me)
-        + "¿ÉÕæÄÜ¿ªÍæÐ¦£¬±¾×ùÒÑ¾­ÂäÈëÕâ²½ÌïµØÁË£¬ÄÄÀï»¹ÄÜÓëÈË½»ÊÖ£¿\n");
+        + "å¯çœŸèƒ½å¼€çŽ©ç¬‘ï¼Œæœ¬åº§å·²ç»è½å…¥è¿™æ­¥ç”°åœ°äº†ï¼Œå“ªé‡Œè¿˜èƒ½ä¸Žäººäº¤æ‰‹ï¼Ÿ\n");
     return 0;
 }
 

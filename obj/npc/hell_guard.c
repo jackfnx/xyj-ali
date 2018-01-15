@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // hell_guard.c
@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-   string *order = ({"��", "��", "��", "î", "��", "��", "��", "δ", "��", "��", "��", "��"});
+   string *order = ({"子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"});
 
-   set_name( (order[random(12)]) + "������", ({ "hell guard", "guard" }) );
-   set("long", "����һλ����������ػ���ר�ŵ��λ���֮��\n");
+   set_name( (order[random(12)]) + "阴鬼卒", ({ "hell guard", "guard" }) );
+   set("long", "这是一位来自阴界的守护神，专门担任护法之责。\n");
    set("attitude", "friendly");
 
    set("max_gin", 1000);
@@ -32,7 +32,7 @@ void create()
 
    set("chat_chance", 15);
    set("chat_msg_combat", ({
-     name() + "�ȵ������ϣ����Ҹ���˾����ɡ�\n"
+     name() + "喝道：孽障！随我赴阴司受审吧。\n"
    }) );
 
    set_skill("fork", 90);
@@ -57,8 +57,8 @@ int heal_up()
 void leave()
 {
    message("vision",
-     HIB + name() + "˵����ĩ������ٻ��������Ѿ���ɻ������񣬾ʹ˸�ǣ�\n\n"
-     + name() + "�����η����İ������⣬������²����ˡ�\n" NOR, environment(),
+     HIB + name() + "说道：末将奉法主召唤，现在已经完成护法任务，就此告辞！\n\n"
+     + name() + "的身形发出幽暗的蓝光，沈入地下不见了。\n" NOR, environment(),
      this_object() );
    destruct(this_object());
 }
@@ -69,8 +69,8 @@ void invocation(object who)
    object *enemy;
 
    message("vision",
-     HIB "һ������ӵص����������г���һ����ִ�ֲ桢��Ŀ�����Ĺ��䡣\n\n"
-     + name() + "˵����ĩ������ٻ�������������\n" NOR,
+     HIB "一道蓝光从地底升起，蓝光中出现一个手执钢叉、面目狰狞的鬼卒。\n\n"
+     + name() + "说道：末将奉法主召唤，特来护法！\n" NOR,
      environment(), this_object() );
    enemy = who->query_enemy();
    i = sizeof(enemy);

@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("½­ºþÒÕÈË", ({"yiren"}));
+        set_name("æ±Ÿæ¹–è‰ºäºº", ({"yiren"}));
         set("age", 22);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Ò»¸ö´ò°ÑÊ½ÂôÒÕµÄ£¬ÕýÔÚ³¡ÖÐÁ·¹¦·ò¡£\n");
+"ä¸€ä¸ªæ‰“æŠŠå¼å–è‰ºçš„ï¼Œæ­£åœ¨åœºä¸­ç»ƒåŠŸå¤«ã€‚\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 10000);
@@ -22,10 +22,10 @@ void create()
         set_skill("force", 40);
         set("chat_chance", 8);
         set("chat_msg", ({
-"ÒÕÈËº°µÀ£º¸÷Î»¸¸ÀÏÏçÇ×£¬ÔÚÏÂ³õÀ´¹ó±¦µØ£¬¶à¶àÖ¸½Ì£¡\n",
-"ÒÕÈËÄÃÍ­ÂàÇÃÁËÇÃ£¬º°µ½£º¸÷Î»ÓÐÇ®µÄÅõ¸öÇ®³¡£¬Ã»Ç®µÄÅõ¸öÈË³¡£¡\n",
-"ÒÕÈËÎèÁË¸öµ¶»¨µÀ£ºÎÒÕâÌËµ¶£¬½ÐÎå»¢¶ÏÃÅµ¶£¡\n",
-"ÒÕÈËÖ¸×ÅÆì¸ËËµ£º»¹Ã»¼ûÒ»¸öÈËÅÀµ½¶¥µÄ£¡\n",
+"è‰ºäººå–Šé“ï¼šå„ä½çˆ¶è€ä¹¡äº²ï¼Œåœ¨ä¸‹åˆæ¥è´µå®åœ°ï¼Œå¤šå¤šæŒ‡æ•™ï¼\n",
+"è‰ºäººæ‹¿é“œé”£æ•²äº†æ•²ï¼Œå–Šåˆ°ï¼šå„ä½æœ‰é’±çš„æ§ä¸ªé’±åœºï¼Œæ²¡é’±çš„æ§ä¸ªäººåœºï¼\n",
+"è‰ºäººèˆžäº†ä¸ªåˆ€èŠ±é“ï¼šæˆ‘è¿™è¶Ÿåˆ€ï¼Œå«äº”è™Žæ–­é—¨åˆ€ï¼\n",
+"è‰ºäººæŒ‡ç€æ——æ†è¯´ï¼šè¿˜æ²¡è§ä¸€ä¸ªäººçˆ¬åˆ°é¡¶çš„ï¼\n",
 }) );
         setup();
    add_money("silver", 1+random(3));

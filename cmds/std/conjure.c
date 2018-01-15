@@ -10,20 +10,20 @@ int main(object me, string arg)
     seteuid(getuid());
 
     if (me->is_busy())
-        return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÊ©Õ¹ÉñÍ¨¡£)\n");
+        return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½å±•ç¥é€šã€‚)\n");
 
     if (!wizardp(me) && environment(me)->query("no_magic"))
-        return notify_fail("ÕâÀïÎŞ·¨Ê¹ÓÃÉñÍ¨¡£\n");
+        return notify_fail("è¿™é‡Œæ— æ³•ä½¿ç”¨ç¥é€šã€‚\n");
 
-    if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºconjure <ÉñÍ¨> [on <Ä¿±ê>]\n");
+    if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconjure <ç¥é€š> [on <ç›®æ ‡>]\n");
     if (sscanf(arg, "%s on %s", mgc, trg) == 2) {
         target = present(trg, environment(me));
         if (!target) target = present(trg, me);
-        if (!target) return notify_fail("ÕâÀïÃ»ÓĞ " + trg + "¡£\n");
+        if (!target) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + trg + "ã€‚\n");
         
         if (!"/adm/daemons/tempd"->valid_kill(me, target)) return 0;
         if (userp(me) && userp(target) && target->query_temp("netdead"))
-            return notify_fail("¶Ô·½ÕıÔÚ¶ÏÏßÖĞ£¬²»ÄÜ¶ÔÆäÊ©·¨¡£\n");
+            return notify_fail("å¯¹æ–¹æ­£åœ¨æ–­çº¿ä¸­ï¼Œä¸èƒ½å¯¹å…¶æ–½æ³•ã€‚\n");
     } else {
         mgc = arg;
         target = 0;
@@ -32,25 +32,25 @@ int main(object me, string arg)
     mgc = replace_string(mgc, " ", "_");
 
     if (stringp(magic = me->query_skill_mapped("magic"))) {
-        notify_fail("ÄãËùÑ§µÄÉñÍ¨ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+        notify_fail("ä½ æ‰€å­¦çš„ç¥é€šä¸­æ²¡æœ‰è¿™ç§åŠŸèƒ½ã€‚\n");
         if (!(int)SKILL_D(magic)->conjure_magic(me, mgc, target))
             return (int)SKILL_D("magic")->conjure_magic(me, mgc, target);
         return 1;
     }
 
-    return notify_fail("ÄãÇëÏÈÓÃ enable Ö¸ÁîÑ¡ÔñÄãÒªÊ¹ÓÃµÄÉñÍ¨Ïµ¡£\n");
+    return notify_fail("ä½ è¯·å…ˆç”¨ enable æŒ‡ä»¤é€‰æ‹©ä½ è¦ä½¿ç”¨çš„ç¥é€šç³»ã€‚\n");
 }
 
 int help (object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½£ºconjure <ÉñÍ¨Ãû³Æ> [on <Ê©Õ¹¶ÔÏó>]
+æŒ‡ä»¤æ ¼å¼ï¼šconjure <ç¥é€šåç§°> [on <æ–½å±•å¯¹è±¡>]
 
-Ê©Õ¹ÉñÍ¨£¬Äã±ØĞèÒªÖ¸¶¨<ÉñÍ¨Ãû³Æ>£¬<Ê©Õ¹¶ÔÏó>Ôò¿ÉÓĞ¿ÉÎŞ¡£
-ÔÚÄãÊ¹ÓÃÄ³Ò»¸öÉñÍ¨Ö®Ç°£¬Äã±ØĞëÏÈÓÃ enable Ö¸ÁîÀ´Ö¸¶¨ÄãÒªÊ¹ÓÃµÄÉñÍ¨Ïµ¡£
+æ–½å±•ç¥é€šï¼Œä½ å¿…éœ€è¦æŒ‡å®š<ç¥é€šåç§°>ï¼Œ<æ–½å±•å¯¹è±¡>åˆ™å¯æœ‰å¯æ— ã€‚
+åœ¨ä½ ä½¿ç”¨æŸä¸€ä¸ªç¥é€šä¹‹å‰ï¼Œä½ å¿…é¡»å…ˆç”¨ enable æŒ‡ä»¤æ¥æŒ‡å®šä½ è¦ä½¿ç”¨çš„ç¥é€šç³»ã€‚
 
-×¢£ºÈç¹ûÄã¸Ä±ä×Ô¼ºµÄÉñÍ¨Ïµ£¬ÄãÔ­±¾Ğî»ıµÄÕæÔª²¢²»ÄÜÖ±½Ó×ª»»¹ıÈ¥£¬±ØĞë
-    ´Ó 0 ¿ªÊ¼¡£
+æ³¨ï¼šå¦‚æœä½ æ”¹å˜è‡ªå·±çš„ç¥é€šç³»ï¼Œä½ åŸæœ¬è“„ç§¯çš„çœŸå…ƒå¹¶ä¸èƒ½ç›´æ¥è½¬æ¢è¿‡å»ï¼Œå¿…é¡»
+    ä» 0 å¼€å§‹ã€‚
 HELP
     );
     return 1;

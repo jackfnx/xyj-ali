@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // shanlu.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "���");
+  set ("short", "村口");
   set ("long", @LONG
 
-���˴�ڣ��������ȥ��ϡϡ����Ҳ�а�ʮ�����߷��������˶�
-ææµµ�ģ��˲��ϴ����㣬ֻ�м���Сͯ�ڴ��Եĳ���������
-���ǵ����š�
+到了村口，向村中望去，稀稀落落也有百十来间瓦房。村里人都
+忙忙碌碌的，顾不上搭理你，只有几个小童在村旁的池塘中无忧
+无虑的玩着。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"tulu",

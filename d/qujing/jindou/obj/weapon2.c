@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit DAGGER;
 
 void create()
 {
-  set_name("¶ÌÌú×¦", ({ "tie zhua", "zhua", "dagger" }) );
+  set_name("çŸ­é“çˆª", ({ "tie zhua", "zhua", "dagger" }) );
   init_dagger(25);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(300);
   if( clonep() )
      set_default_object(__FILE__);
@@ -17,7 +17,7 @@ void create()
     set("value", 280);
     set("material", "tron");
   }
-  set("wield_msg","$NÄÃÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ‹¿èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

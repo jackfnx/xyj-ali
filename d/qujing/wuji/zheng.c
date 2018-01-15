@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //    snowcat moved to /d/qujing/wuji
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���۱���");
+  set ("short", "大雄宝殿");
   set ("long", @LONG
 
-���۵����й��ŵ����ǹ����ն��Ϻ�֮�࣬��̬�Ȱ���������ά��
-άФ��������������һЩ�������񣬷���վ������̬���졣������
-�����ƣ����վ��ס�
+大雄殿正中供着的乃是观音普度南海之相，其态度安详宁静，维妙
+维肖。两边是其他的一些佛祖塑像，分排站立，神态各异。殿里香
+烟缭绕，气氛静谧。
 
 LONG);
 

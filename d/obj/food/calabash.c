@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bottle.c
@@ -8,13 +8,13 @@ inherit F_LIQUID;
 
 void create()
 {
-   set_name("ÇàºùÂ«", ({ "green calabash", "calabash" }) );
+   set_name("é’è‘«èŠ¦", ({ "green calabash", "calabash" }) );
    set_weight(400);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long", "ÕâÊÇÒ»¸ö±ÌÂÌÉ«µÄºùÂ«£¬ÇàÀïÍ¸»ÆÑÕÉ«Ê®·ÖÌÖÈËÏ²°®¡£\n");
-     set("unit", "¸ö");
+     set("long", "è¿™æ˜¯ä¸€ä¸ªç¢§ç»¿è‰²çš„è‘«èŠ¦ï¼Œé’é‡Œé€é»„é¢œè‰²ååˆ†è®¨äººå–œçˆ±ã€‚\n");
+     set("unit", "ä¸ª");
      set("value", 80);
      set("max_liquid", 60);
    }
@@ -23,7 +23,7 @@ void create()
    // in each cloned copy.
    set("liquid", ([
      "type": "water",
-     "name": "¸ÊÈªË®",
+     "name": "ç”˜æ³‰æ°´",
      "remaining": 60,
    ]) );
 }

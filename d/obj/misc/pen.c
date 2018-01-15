@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´óÏ´ÒÂÅè", ({"pen"}));
+        set_name("å¤§æ´—è¡£ç›†", ({"pen"}));
    set_max_encumbrance(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-        set("long", "Ò»¸ö´óÏ´ÒÂÅè£¬ÀïÃæ¶¼ÊÇÔàÒÂ·ş£®\n"),
+                set("unit", "ä¸ª");
+        set("long", "ä¸€ä¸ªå¤§æ´—è¡£ç›†ï¼Œé‡Œé¢éƒ½æ˜¯è„è¡£æœï¼\n"),
 
    set("no_get", 1);
    }

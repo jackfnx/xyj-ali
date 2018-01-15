@@ -14,16 +14,16 @@ int perform(object me, object target)
     if (!target
     ||  !target->is_character()
     ||  !me->is_fighting(target) )
-        return notify_fail("£Û¶áÃüÆß½££İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ï¼»å¤ºå‘½ä¸ƒå‰‘ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     extra = me->query_skill("qixiu-sword", 1);
-    if (extra < 80) return notify_fail("ÄãµÄ[ÆßĞŞ½£]»¹²»¹»´¿Êì£¡\n");
+    if (extra < 80) return notify_fail("ä½ çš„[ä¸ƒä¿®å‰‘]è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
     extra = me->query_skill("huntian-qigong", 1);
-    if (extra < 80) return notify_fail("ÄãµÄ[»ìÌìÆø¹¦]»¹²»¹»´¿Êì£¬ÎŞ·¨·¢»ÓÆßĞŞ½£µÄÍşÁ¦£¡\n");
-    if (me->query("family/family_name")!="Ïİ¿ÕÉ½ÎŞµ×¶´")
-        return notify_fail("Ö»ÓĞÎŞµ×¶´µÜ×Ó£¬²ÅÄÜÊ¹ÓÃ¶áÃüÆß½£¡£\n");
+    if (extra < 80) return notify_fail("ä½ çš„[æ··å¤©æ°”åŠŸ]è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼Œæ— æ³•å‘æŒ¥ä¸ƒä¿®å‰‘çš„å¨åŠ›ï¼\n");
+    if (me->query("family/family_name")!="é™·ç©ºå±±æ— åº•æ´")
+        return notify_fail("åªæœ‰æ— åº•æ´å¼Ÿå­ï¼Œæ‰èƒ½ä½¿ç”¨å¤ºå‘½ä¸ƒå‰‘ã€‚\n");
 
     weapon = me->query_temp("weapon");
-    msg = YEL "$N¿ñĞÔ´ó·¢£¬ÊÖÖĞµÄ"+ weapon->name()+ "¿ñ·ç±©Óê°ãµØÏò$nÏ®À´£¡" NOR;
+    msg = YEL "$Nç‹‚æ€§å¤§å‘ï¼Œæ‰‹ä¸­çš„"+ weapon->name()+ "ç‹‚é£æš´é›¨èˆ¬åœ°å‘$nè¢­æ¥ï¼" NOR;
     message_vision(msg, me, target);
     me->add_temp("apply/attack", extra/10);
     me->add_temp("apply/damage", extra/10);

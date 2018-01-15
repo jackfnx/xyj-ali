@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bboard.c
@@ -46,7 +46,7 @@ string short()
 
    notes = query("notes");
    if( !pointerp(notes) || !sizeof(notes) )
-     return ::short() + " [ Ã»ÓĞÈÎºÎÁôÑÔ ]";
+     return ::short() + " [ æ²¡æœ‰ä»»ä½•ç•™è¨€ ]";
 
    if( this_player() ) {
      last_read_time = (int)this_player()->query("board_last_read/" + (string)query("board_id"));
@@ -54,9 +54,9 @@ string short()
         if( notes[i]["time"] <= last_read_time ) break;
    }
    if( unread )
-     return sprintf("%s [ %d ÕÅÁôÑÔ£¬%d ÕÅÎ´¶Á ]", ::short(), sizeof(notes), unread);
+     return sprintf("%s [ %d å¼ ç•™è¨€ï¼Œ%d å¼ æœªè¯» ]", ::short(), sizeof(notes), unread);
    else
-     return sprintf("%s [ %d ÕÅÁôÑÔ ]", ::short(), sizeof(notes));
+     return sprintf("%s [ %d å¼ ç•™è¨€ ]", ::short(), sizeof(notes));
 }
 
 string long()
@@ -67,7 +67,7 @@ string long()
 
    notes = query("notes");
    msg = query("long");
-   msg = msg + "ÁôÑÔ°æµÄÊ¹ÓÃ·½·¨Çë¼û help board¡£\n";
+   msg = msg + "ç•™è¨€ç‰ˆçš„ä½¿ç”¨æ–¹æ³•è¯·è§ help boardã€‚\n";
    if( !pointerp(notes) || !sizeof(notes) ) return query("long");
 
    last_time_read = this_player()->query("board_last_read/" + (string)query("board_id"));
@@ -97,7 +97,7 @@ void done_post(object me, mapping note, string text)
      notes = notes[BOARD_CAPACITY / 5 .. BOARD_CAPACITY];
 
    set("notes", notes);
-   tell_object(me, "ÁôÑÔÍê±Ï¡£\n");
+   tell_object(me, "ç•™è¨€å®Œæ¯•ã€‚\n");
 
    save();
    return;
@@ -110,9 +110,9 @@ int do_post(string arg)
 
    me = this_player();
    if(!wizardp(me) && environment(me)->query("post_limit"))
-      return notify_fail("Ö»ÓĞÎ×Ê¦²Å¿ÉÒÔÔÚÕâÀïÁôÑÔ¡£\n");
+      return notify_fail("åªæœ‰å·«å¸ˆæ‰å¯ä»¥åœ¨è¿™é‡Œç•™è¨€ã€‚\n");
 
-   if(!arg) return notify_fail("ÁôÑÔÇëÖ¸¶¨Ò»¸ö±êÌâ¡£\n");
+   if(!arg) return notify_fail("ç•™è¨€è¯·æŒ‡å®šä¸€ä¸ªæ ‡é¢˜ã€‚\n");
    
    note = allocate_mapping(4);
    note["title"] = arg;
@@ -134,9 +134,9 @@ int do_read(string arg)
    notes = query("notes");
 
    if( !pointerp(notes) || !sizeof(notes) )
-     return notify_fail("ÁôÑÔ°åÉÏÄ¿Ç°Ã»ÓĞÈÎºÎÁôÑÔ¡£\n");
+     return notify_fail("ç•™è¨€æ¿ä¸Šç›®å‰æ²¡æœ‰ä»»ä½•ç•™è¨€ã€‚\n");
 
-   if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºread <ÁôÑÔ±àºÅ>|new|next\n");
+   if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šread <ç•™è¨€ç¼–å·>|new|next\n");
    if( arg=="new" || arg=="next" ) {
      if( !mapp(last_read_time) || undefinedp(last_read_time[myid]) )
         num = 1;
@@ -145,10 +145,10 @@ int do_read(string arg)
           if( notes[num-1]["time"] > last_read_time[myid] ) break;
         
    } else if( !sscanf(arg, "%d", num) )
-     return notify_fail("ÄãÒª¶ÁµÚ¼¸ÕÅÁôÑÔ£¿\n");
+     return notify_fail("ä½ è¦è¯»ç¬¬å‡ å¼ ç•™è¨€ï¼Ÿ\n");
 
    if( num < 1 || num > sizeof(notes) )
-     return notify_fail("Ã»ÓĞÕâÕÅÁôÑÔ¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™å¼ ç•™è¨€ã€‚\n");
    num--;
    this_player()->start_more( sprintf(
 "[%d] %-40s %s(%s)\n----------------------------------------------------------------------\n",
@@ -172,17 +172,17 @@ int do_discard(string arg)
    int num;
 
    if( !arg || sscanf(arg, "%d", num)!=1 )
-     return notify_fail("Ö¸Áî¸ñÊ½£ºdiscard <ÁôÑÔ±àºÅ>\n");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdiscard <ç•™è¨€ç¼–å·>\n");
    notes = query("notes");
    if( !arrayp(notes) || num < 1 || num > sizeof(notes) )
-     return notify_fail("Ã»ÓĞÕâÕÅÁôÑÔ¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™å¼ ç•™è¨€ã€‚\n");
    num--;
    if( notes[num]["author"] != 
      (string) this_player(1)->query("name")+
      "("+capitalize(this_player(1)->query("id"))+")"
 && (string)SECURITY_D->get_status(this_player(1)) !="(arch)"
    &&   (string)SECURITY_D->get_status(this_player(1)) != "(admin)" )
-     return notify_fail("Õâ¸öÁôÑÔ²»ÊÇÄãĞ´µÄ¡£\n");
+     return notify_fail("è¿™ä¸ªç•™è¨€ä¸æ˜¯ä½ å†™çš„ã€‚\n");
 
    if (num >0)
              notes = notes[0..num-1] + notes[num+1..sizeof(notes)-1];
@@ -190,7 +190,7 @@ int do_discard(string arg)
           notes =notes[num+1..sizeof(notes)-1];
    set("notes", notes);
    save();
-   write("É¾³ıµÚ " + (num+1) + " ºÅÁôÑÔ....Ok¡£\n");
+   write("åˆ é™¤ç¬¬ " + (num+1) + " å·ç•™è¨€....Okã€‚\n");
    return 1;
 }
 
@@ -206,7 +206,7 @@ int do_document(string arg)
    if( (string)SECURITY_D->get_status(this_player(1)) != "(admin)"
     && (string)SECURITY_D->get_status(this_player(1)) !="(arch)" 
     && (string)SECURITY_D->get_status(this_player(1)) !="(wizard)" )
-     return notify_fail("ÄãÃ»ÓĞ´æµµµÄÈ¨Á¦£¡\n");
+     return notify_fail("ä½ æ²¡æœ‰å­˜æ¡£çš„æƒåŠ›ï¼\n");
 
 //by mon. 9/6/97
         if(environment(this_player())->query("wiz_board"))
@@ -217,7 +217,7 @@ int do_document(string arg)
    argn=sscanf(arg, "%d %d %d", num, defmon, defyear);
 
         if(!arg || argn >3)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºdocument <ÁôÑÔ±àºÅ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdocument <ç•™è¨€ç¼–å·>\n");
 
    if (argn==3) {
      dirname = dirname + sprintf("%d",defyear)+"/";
@@ -240,7 +240,7 @@ int do_document(string arg)
      mon=ctime(time())[4..6];
      }
    if ( mon=="Null" ) {
-     if (month>12 || month<1) return notify_fail("Òª´æµÄÔÂ·İ²»´æÔÚ£¡\n");
+     if (month>12 || month<1) return notify_fail("è¦å­˜çš„æœˆä»½ä¸å­˜åœ¨ï¼\n");
      mon=strmon[month-1];
      }
    else switch (mon) {
@@ -258,12 +258,12 @@ int do_document(string arg)
                 case "Dec": month=12; break;
      }
 
-   if (month>12 || month<1) return notify_fail("Òª´æµÄÔÂ·İ²»´æÔÚ£¡\n");
+   if (month>12 || month<1) return notify_fail("è¦å­˜çš„æœˆä»½ä¸å­˜åœ¨ï¼\n");
 
 
    notes = query("notes");
    if( !arrayp(notes) || num < 1 || num > sizeof(notes) )
-     return notify_fail("Ã»ÓĞÕâÕÅÁôÑÔ¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™å¼ ç•™è¨€ã€‚\n");
    num--;
 
    cont_num=new("/obj/not.c");
@@ -271,18 +271,18 @@ int do_document(string arg)
         cont_num->restore();
 
    if (!objectp(cont_num) )
-                return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡\n");
+                return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼\n");
    nummonth=cont_num->query(mon);
    nummonth++;
    cont_num->set(mon, nummonth);
    if (!cont_num->save())
-     return notify_fail("´æµµÊ§°Ü£¡\n");
+     return notify_fail("å­˜æ¡£å¤±è´¥ï¼\n");
 
    content=new("/obj/not.c");
    content->set("file_name", dirname+"content."+mon);
    content->restore();
    if ( !objectp(content) )
-     return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡\n");
+     return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼\n");
    if (content->query("msg")) content->set("msg", content->query("msg")+ 
 sprintf("[%3d] %-40s %12s (%s)\n",
 nummonth, notes[num]["title"], notes[num]["author"], ctime(notes[num]["time"])[0..9])
@@ -290,19 +290,19 @@ nummonth, notes[num]["title"], notes[num]["author"], ctime(notes[num]["time"])[0
    else content->set("msg", sprintf("[%3d] %-40s %12s (%s)\n",nummonth, notes[num]["title"], notes[num]["author"], ctime(notes[num]["time"])[0..9]));
 
    if (!content->save())
-                return notify_fail("´æµµÊ§°Ü£¡\n");
+                return notify_fail("å­˜æ¡£å¤±è´¥ï¼\n");
 
    document=new("/obj/not.c");
    document->set("file_name", dirname+ sprintf("%s/doc%d.%d",mon,month, nummonth) );
    document->restore();
    if ( !objectp(document) )
-     return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡");
+     return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼");
    document->set("msg",
 sprintf("[%3d] %-40s %12s (%s)\n--------------------------------------------------------------------------------\n", nummonth, notes[num]["title"], notes[num]["author"], ctime(notes[num]["time"])[0..9])
 + notes[num]["msg"]
 );
    if (!document->save())
-     return notify_fail("´æµµÊ§°Ü£¡\n");
+     return notify_fail("å­˜æ¡£å¤±è´¥ï¼\n");
    write("OK.\n");
    
 /*

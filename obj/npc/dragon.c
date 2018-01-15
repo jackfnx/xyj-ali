@@ -1,11 +1,11 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
 
 inherit NPC;
-string *first_name = ({ "��Ƥ", "����", "��צ���", "��β���"});
-string *name_words = ({ "��"});
+string *first_name = ({ "花皮", "背苍", "八爪金角", "金尾虬髯"});
+string *name_words = ({ "龙"});
 
 void create()
 {
@@ -15,9 +15,9 @@ void create()
 
 
         set_name(name,({"dragon"}));
-        set("race", "Ұ��");
+        set("race", "野兽");
         set("age", 20);
-        set("long", "һֻģ���ߴ󣬼������Ƶ�����\n");
+        set("long", "一只模样高大，极有气势的龙。\n");
         set("str", 40);
         set("cor", 30);
    set("con", 30);
@@ -42,7 +42,7 @@ void create()
    map_skill("unarmed", "dragonfight");
    map_skill("dodge", "dragonstep");
    set("combat_exp", 100000);
-        set("limbs", ({ "ͷ��", "����", "ǰצ", "β��", "��Ƥ", "��צ"}) );
+        set("limbs", ({ "头部", "身体", "前爪", "尾巴", "肚皮", "后爪"}) );
         set("verbs", ({ "bite", "claw"}) );
    set_weight(500000);
 
@@ -74,7 +74,7 @@ int heal_up()
 void leave()
 {
         message("vision",
-                HIB + name() +"һ��ת�������򶫷�����Ӱ������ȥ�ˡ�\n"
+                HIB + name() +"一个转身，飞向东方，身影渐渐淡去了。\n"
 NOR,environment(),  this_object() );
         destruct(this_object());
 }
@@ -85,8 +85,8 @@ void invocation(object who)
 
    object me=this_object();
         copy_status(me,who);
-        message("vision", HIB"��Ȼ������������ֳ�һ��"+ name() +
-"����\n\n"NOR,environment(), this_object() );
+        message("vision", HIB"忽然狂风大做，半空现出一条"+ name() +
+"来！\n\n"NOR,environment(), this_object() );
         enemy = who->query_enemy();
         i = sizeof(enemy);
         while(i--) {

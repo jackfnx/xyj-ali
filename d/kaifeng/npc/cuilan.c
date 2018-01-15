@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 
@@ -12,8 +12,8 @@ int test_player();
 
 void create()
 {
-  set_name("´äÀ¼", ({"cui lan", "cui", "lan"}));
-  set("gender", "Å®ĞÔ");
+  set_name("ç¿ å…°", ({"cui lan", "cui", "lan"}));
+  set("gender", "å¥³æ€§");
   set("age", 23);
   set("per", 28);
   set("attitude", "peaceful");
@@ -39,19 +39,19 @@ void create()
   set("force_factor",20);
   set("chat_chance",10);
   set("chat_msg",({
-    "´äÀ¼¿©¿©Ò»Ğ¦£ºÄ¼¾èÀ´µÄ¼ÒÊ²¿É²»ÉÙÑ½¡£\n",
-    "´äÀ¼Íğ¶ûÒ»Ğ¦ËµµÀ£º¼Ò¾ß°ÚÁËÒ»ºóÔº£¬ÄÇĞ©¸öÏë³É¼ÒµÄÇîÈËÃÇ¿É²»ÓÃ³îÁË¡£\n",
-    "´äÀ¼ÓÖËµµÀ£ººÃÁËºÃÁË£¬¹ÃÄïÕâÓĞºÃ¶à¼ÒÊ²¿ÉÒÔËÍ¸ø×îĞèÒªµÄÈË¼ÒÁË¡£\n",
-    "´äÀ¼Ëµ£ºÃ÷¶ùÅÉÈËÈ¥Í¨ÖªÄÇĞ©Çî¼Ò×ÓÀ´ÌôÑ¡ÈçÒâ¼Ò¾ßÊ²ÎïÒ²¡£\n",
+    "ç¿ å…°å’¯å’¯ä¸€ç¬‘ï¼šå‹Ÿææ¥çš„å®¶ä»€å¯ä¸å°‘å‘€ã€‚\n",
+    "ç¿ å…°å®›å°”ä¸€ç¬‘è¯´é“ï¼šå®¶å…·æ‘†äº†ä¸€åé™¢ï¼Œé‚£äº›ä¸ªæƒ³æˆå®¶çš„ç©·äººä»¬å¯ä¸ç”¨æ„äº†ã€‚\n",
+    "ç¿ å…°åˆè¯´é“ï¼šå¥½äº†å¥½äº†ï¼Œå§‘å¨˜è¿™æœ‰å¥½å¤šå®¶ä»€å¯ä»¥é€ç»™æœ€éœ€è¦çš„äººå®¶äº†ã€‚\n",
+    "ç¿ å…°è¯´ï¼šæ˜å„¿æ´¾äººå»é€šçŸ¥é‚£äº›ç©·å®¶å­æ¥æŒ‘é€‰å¦‚æ„å®¶å…·ä»€ç‰©ä¹Ÿã€‚\n",
   }));
   set("inquiry", ([
-        "here":   "´ËÄË¸ßĞÕÀ¼Í¤¸®Ò²£¬¹ÃÄïÔÚ´ËÄ¼¾è¼ÒÊ²¡£\n",
-        "name":   "¸ß¼ÒĞ¡½ã´äÀ¼Ò²¡£\n",
+        "here":   "æ­¤ä¹ƒé«˜å§“å…°äº­åºœä¹Ÿï¼Œå§‘å¨˜åœ¨æ­¤å‹Ÿæå®¶ä»€ã€‚\n",
+        "name":   "é«˜å®¶å°å§ç¿ å…°ä¹Ÿã€‚\n",
         "furniture":   (: test_player() :),
-        "Ä¼¾è":   (: test_player() :),
-        "¼Ò¾ß":   (: test_player() :),
-        "¼ÒÊ²":   (: test_player() :),
-        "¾è":   (: test_player() :),
+        "å‹Ÿæ":   (: test_player() :),
+        "å®¶å…·":   (: test_player() :),
+        "å®¶ä»€":   (: test_player() :),
+        "æ":   (: test_player() :),
       ]));
   setup();
   carry_object("/d/obj/cloth/pinkskirt")->wear();
@@ -68,11 +68,11 @@ void init ()
 int test_player()
 {
   string *strs = ({
-    "$N¶Ô$nÒ»Ğ¦£º¹ÃÄïÏëÆğÓĞÈËÏëÒª",
-    "$N¶Ô$n¿©¿©µØĞ¦µÀ£ºÕıºÃÕıºÃ£¬¹ÃÄïÄ¼¾è£¬ÌıËµÓĞÈË´òÌıÄÜ·ñÑ°µÃ",
-    "$N¶Ô$nËµµÀ£ºÅ¶£¬¶ÔÁË£¬¹ÃÄïÏë°ïÈËÕÒÒ»ÕÒÊ²Ã´",
-    "$N¶Ô$nµãÍ·Ğ¦×ÅËµµÀ£ºĞ»Ğ»À²£¬¹ÃÄïÏëÌæÈËÕÒ",
-    "$NÎ¢Ğ¦×Å¶Ô$nÒ»µãÍ·ËµµÀ£ºÓĞÈËÔø´òÌıÊÇ·ñÓĞ",
+    "$Nå¯¹$nä¸€ç¬‘ï¼šå§‘å¨˜æƒ³èµ·æœ‰äººæƒ³è¦",
+    "$Nå¯¹$nå’¯å’¯åœ°ç¬‘é“ï¼šæ­£å¥½æ­£å¥½ï¼Œå§‘å¨˜å‹Ÿæï¼Œå¬è¯´æœ‰äººæ‰“å¬èƒ½å¦å¯»å¾—",
+    "$Nå¯¹$nè¯´é“ï¼šå“¦ï¼Œå¯¹äº†ï¼Œå§‘å¨˜æƒ³å¸®äººæ‰¾ä¸€æ‰¾ä»€ä¹ˆ",
+    "$Nå¯¹$nç‚¹å¤´ç¬‘ç€è¯´é“ï¼šè°¢è°¢å•¦ï¼Œå§‘å¨˜æƒ³æ›¿äººæ‰¾",
+    "$Nå¾®ç¬‘ç€å¯¹$nä¸€ç‚¹å¤´è¯´é“ï¼šæœ‰äººæ›¾æ‰“å¬æ˜¯å¦æœ‰",
   });  
   string str;
   object me = this_object();
@@ -84,15 +84,15 @@ int test_player()
 
   if (who->query("quest/reward") > 0)
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬¹ÃÄï¼ûÄãÉíÉÏÏéÔÆ»·ÈÆ£¬ºÎ²»È¥´ÓËÙ¸°³¤°²½ø¹¬ÇëÉÍ£¿\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œå§‘å¨˜è§ä½ èº«ä¸Šç¥¥äº‘ç¯ç»•ï¼Œä½•ä¸å»ä»é€Ÿèµ´é•¿å®‰è¿›å®«è¯·èµï¼Ÿ\n",me,who);
     return 1;
   }
 
   if (who->query("quest/pending/furniture"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬¹ÃÄï»¹ÅÎ×ÅÄúµÄ"+who->query("quest/pending/furniture/name")+"ÄØ£¡\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œå§‘å¨˜è¿˜ç›¼ç€æ‚¨çš„"+who->query("quest/pending/furniture/name")+"å‘¢ï¼\n",me,who);
     return 1;
   }
 
@@ -106,8 +106,8 @@ int test_player()
   i = quest_random_index (quest_keys, i, who, "quest/cache/furniture");
   if (i == -1)
   {
-    message_vision ("$N¶Ô$nÌ¾ÆøËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "¸Ã×öµÄÊÂ×öÁË²»ÉÙ£¬¹ÃÄï¿´Äú»¹ÊÇÒÔºóÔÙÀ´°É¡£\n",me,who);
+    message_vision ("$Nå¯¹$nå¹æ°”è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "è¯¥åšçš„äº‹åšäº†ä¸å°‘ï¼Œå§‘å¨˜çœ‹æ‚¨è¿˜æ˜¯ä»¥åå†æ¥å§ã€‚\n",me,who);
     return 1;
   }
   delay = MAXDELAY * i / sizeof(quest_keys) + DELAY_CONST + uptime();
@@ -118,8 +118,8 @@ int test_player()
   who->set("quest/pending/furniture/id", quest[IDX_ID]);
   who->set("quest/pending/furniture/time", delay);
   str = strs[random(sizeof(strs))]+quest[IDX_NAME]+
-        "£¬\nÕâÎ»"+RANK_D->query_respect(who)+
-        "ÄÜ·ñÌæ¹ÃÄïÏë¸ö°ì·¨£¿\n";
+        "ï¼Œ\nè¿™ä½"+RANK_D->query_respect(who)+
+        "èƒ½å¦æ›¿å§‘å¨˜æƒ³ä¸ªåŠæ³•ï¼Ÿ\n";
   message_vision (str,me,who);
   informing (me,who,str);
   return 1;
@@ -138,8 +138,8 @@ void check_player (object who)
 
   if (who->query("quest/reward") > 0)
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "ÉíÉÏÏéÔÆ»·ÈÆ£¬ÇëËÙ¸°³¤°²½ø¹¬ÇëÉÍ£¡\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "èº«ä¸Šç¥¥äº‘ç¯ç»•ï¼Œè¯·é€Ÿèµ´é•¿å®‰è¿›å®«è¯·èµï¼\n",me,who);
     return;
   }
 
@@ -153,7 +153,7 @@ void check_player (object who)
   if (who->query("quest/pending/furniture/name") != ob->query("name"))
     return;
 
-  message_vision ("$N¼û$nÊÖÉÏÄÃ×Å"+ob->query("name")+"£¬Ğ¦×ÅÁ¬Ã¦½ÓÁË¹ıÈ¥¡£\n",me,who);
+  message_vision ("$Nè§$næ‰‹ä¸Šæ‹¿ç€"+ob->query("name")+"ï¼Œç¬‘ç€è¿å¿™æ¥äº†è¿‡å»ã€‚\n",me,who);
   rewarding (who, ob);
   destruct (ob);
 }
@@ -165,14 +165,14 @@ int accept_object(object who, object ob)
 
   if (who->query("quest/reward") > 0)
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬¹ÃÄï¼ûÄãÉíÉÏÏéÔÆ»·ÈÆ£¬ºÎ²»È¥´ÓËÙ¸°³¤°²½ø¹¬ÇëÉÍ£¿\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œå§‘å¨˜è§ä½ èº«ä¸Šç¥¥äº‘ç¯ç»•ï¼Œä½•ä¸å»ä»é€Ÿèµ´é•¿å®‰è¿›å®«è¯·èµï¼Ÿ\n",me,who);
     return 0;
   }
 
   if (! who->query("quest/pending/furniture"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£º¹ÃÄïÔİÊ±²»ĞèÒªÕâ¸ö¡£\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šå§‘å¨˜æš‚æ—¶ä¸éœ€è¦è¿™ä¸ªã€‚\n",me,who);
     return 0;
   }
 
@@ -180,19 +180,19 @@ int accept_object(object who, object ob)
 
   if (who->query("quest/pending/furniture/name") != ob->query("name"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬¹ÃÄïËµ¹ıĞèÒª"+who->query("quest/pending/furniture/name")+
-                    "£¬Äúµ¹¸ø¹ÃÄï"+ob->query("name")+"£¬ºÃÍæºÃÍæ¡£\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œå§‘å¨˜è¯´è¿‡éœ€è¦"+who->query("quest/pending/furniture/name")+
+                    "ï¼Œæ‚¨å€’ç»™å§‘å¨˜"+ob->query("name")+"ï¼Œå¥½ç©å¥½ç©ã€‚\n",me,who);
     return 0;
   }
 
   if (who->query("quest/pending/furniture/id") != ob->query("id"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬¹ÃÄïÊÇÏëÒª"+who->query("quest/pending/furniture/name")+
-                    "£¬¶«Î÷µ¹Í¦Ïó£¬µ«²»ÊÇÍ¬Ò»¸ö»õ£»¹ÃÄïÒªµÄÊÇ("+
-                    who->query("quest/pending/furniture/id")+")£¬Äú¸øµÄÊÇ("+
-                    ob->query("id")+")£¡\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œå§‘å¨˜æ˜¯æƒ³è¦"+who->query("quest/pending/furniture/name")+
+                    "ï¼Œä¸œè¥¿å€’æŒºè±¡ï¼Œä½†ä¸æ˜¯åŒä¸€ä¸ªè´§ï¼›å§‘å¨˜è¦çš„æ˜¯("+
+                    who->query("quest/pending/furniture/id")+")ï¼Œæ‚¨ç»™çš„æ˜¯("+
+                    ob->query("id")+")ï¼\n",me,who);
     return 0;
   }
 
@@ -200,13 +200,13 @@ int accept_object(object who, object ob)
 
   if (t > uptime() && (t-MAXDELAY) <= uptime())
   {
-    message_vision ("$N¶Ô$nÒ¡Í·µÀ£ºÕâÃ´¿ì¾Í»ØÀ´ÁË£¿¹ÃÄïÏëÒªÕæ»õÒ²¡£\n",me,who);
-    message_vision ("$NÓÖ·Ô¸ÀµÀ£ºÄúÔÙ»¨¸ö"+chinese_number((t-uptime())/60+1)+
-                    "·ÖÖÓÈ¥Ñ°Ñ°¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡å¤´é“ï¼šè¿™ä¹ˆå¿«å°±å›æ¥äº†ï¼Ÿå§‘å¨˜æƒ³è¦çœŸè´§ä¹Ÿã€‚\n",me,who);
+    message_vision ("$Nåˆå©å’é“ï¼šæ‚¨å†èŠ±ä¸ª"+chinese_number((t-uptime())/60+1)+
+                    "åˆ†é’Ÿå»å¯»å¯»ã€‚\n",me,who);
     if (! DEBUG)
       return 0;
     else
-      tell_object (who,"NOW DEBUG MODE: ÈÃ¹ÃÄïÒªÏÂ¶«Î÷¡£\n");
+      tell_object (who,"NOW DEBUG MODE: è®©å§‘å¨˜è¦ä¸‹ä¸œè¥¿ã€‚\n");
   }
   rewarding (who, ob);
   call_out ("destruct_ob",1,ob);
@@ -224,15 +224,15 @@ void rewarding (object who, object ob)
   string reason;
   int reward;
 
-  reason = "Ìæ"+me->query("name")+"Ñ°µÃ"+ob->query("name")+"£¬";
-  message_vision ("$N¶Ô$nËµµÀ£º¶àĞ»ÕâÎ»"+RANK_D->query_respect(who)+
-                  reason+"¹ÃÄïºÃ¸ö¿ªĞÄ£¡\n",me,who);
+  reason = "æ›¿"+me->query("name")+"å¯»å¾—"+ob->query("name")+"ï¼Œ";
+  message_vision ("$Nå¯¹$nè¯´é“ï¼šå¤šè°¢è¿™ä½"+RANK_D->query_respect(who)+
+                  reason+"å§‘å¨˜å¥½ä¸ªå¼€å¿ƒï¼\n",me,who);
   reward = quest_reward(who, quests_furniture, "furniture");
   who->add("quest/reward",reward);
   who->set("quest/reason",reason);
   who->add("quest/furniture/times",1);
   who->add("quest/furniture/reward",reward);
-  reporting (who,reason, reward, "½±·Ö");
+  reporting (who,reason, reward, "å¥–åˆ†");
   who->delete("quest/pending/furniture");
   call_out ("quest_done",1,who);
 }

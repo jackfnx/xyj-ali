@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -6,17 +6,17 @@ inherit MACE;
 
 void create()
 {
-  set_name("¶ÌÈíÀÇÑÀ°ô", ({ "langya bang", "bang", "mace" }));
+  set_name("çŸ­è½¯ç‹¼ç‰™æ£’", ({ "langya bang", "bang", "mace" }));
   set_weight(6000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
-    set("long", "ÕâÊÇÒ»¸ùÓÖ¶ÌÓÖÈíµÄÀÇÑÀ°ô£¬¼«ÎªºÃÊ¹¡£\n");
+    set("unit", "æ ¹");
+    set("long", "è¿™æ˜¯ä¸€æ ¹åˆçŸ­åˆè½¯çš„ç‹¼ç‰™æ£’ï¼Œæä¸ºå¥½ä½¿ã€‚\n");
     set("value", 500);
     set("material", "bronze");
-    set("wield_msg", "$Nà²µØÎèÆğÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-    set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÏÂ¡£\n");
+    set("wield_msg", "$Nå—–åœ°èˆèµ·ä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+    set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾ä¸‹ã€‚\n");
   }
   init_mace(55);
   setup();

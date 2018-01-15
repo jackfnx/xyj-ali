@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // clone.c
@@ -17,7 +17,7 @@ int main(object me, string file)
 
    if (!file) file = me->query("cwf");
    if (!file)
-     return notify_fail("ÄãÒª¸´ÖÆÊ²Ã´Îï¼ş£¿\n");
+     return notify_fail("ä½ è¦å¤åˆ¶ä»€ä¹ˆç‰©ä»¶ï¼Ÿ\n");
 
    flag = "";
    if( sscanf( file, "%s %s", flag, afile ) == 2 && flag == "-f" )
@@ -27,55 +27,55 @@ int main(object me, string file)
    me->set("cwf", file);
 
    if( file_size(file) < 0 )
-     return notify_fail("Ã»ÓĞÕâ¸öµµ°¸(" + file + ")¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆ(" + file + ")ã€‚\n");
 
    if( !find_object(file) ) {
      err = catch(call_other(file, "???"));
      if (err) {
-        write("ÔØÈëÊ§°Ü£º" + err + "\n");
+        write("è½½å…¥å¤±è´¥ï¼š" + err + "\n");
         return 1;
      }
    }
 
     if( file->query_unique() )  {
-           write("Ä¿Ç°ÔÚ£Í£õ£äÖĞÓĞ"+file->query_number()+
-                        "¸ö¸´ÖÆ£¬Ó¦×î¶àÓĞ"+
-                        file->query_compare_number()+"¸ö¡£\n");
+           write("ç›®å‰åœ¨ï¼­ï½•ï½„ä¸­æœ‰"+file->query_number()+
+                        "ä¸ªå¤åˆ¶ï¼Œåº”æœ€å¤šæœ‰"+
+                        file->query_compare_number()+"ä¸ªã€‚\n");
       if( file->in_mud() && flag != "-f" )  {
-       write("¸ÃÎïÆ·Îª" + HIR + "Unique Item" + NOR + "£¬ÇëÓÃ clone -f À´Ç¿ĞĞ¸´ÖÆ¡£\n");
+       write("è¯¥ç‰©å“ä¸º" + HIR + "Unique Item" + NOR + "ï¼Œè¯·ç”¨ clone -f æ¥å¼ºè¡Œå¤åˆ¶ã€‚\n");
        return 1;
       }
    }
    err = catch(obj = new(file));
    if (err) {
-     write("¸´ÖÆÊ§°Ü£º" + err + "\n");
+     write("å¤åˆ¶å¤±è´¥ï¼š" + err + "\n");
      return 1;
    }
 
    if( !stringp(msg = me->query("env/msg_clone")) )
-     msg = "Ö»¼û$NÉìÊÖÁè¿ÕÒ»Ö¸£¬±ä³öÁË$n¡£\n";
+     msg = "åªè§$Nä¼¸æ‰‹å‡Œç©ºä¸€æŒ‡ï¼Œå˜å‡ºäº†$nã€‚\n";
 
    if( !obj->is_character() && obj->move(me) ) {
-     write(obj->query("name") + "¸´ÖÆ³É¹¦£¬·ÅÔÚÄãµÄÎïÆ·À¸¡£\n");
+     write(obj->query("name") + "å¤åˆ¶æˆåŠŸï¼Œæ”¾åœ¨ä½ çš„ç‰©å“æ ã€‚\n");
      if (msg != "") message_vision(msg + "\n", me, obj);
      return 1;
    }
    if( obj->move(environment(me)) ) {
-     write(obj->query("name") + "¸´ÖÆ³É¹¦£¬·ÅÔÚÕâ¸ö·¿¼ä¡£\n");
+     write(obj->query("name") + "å¤åˆ¶æˆåŠŸï¼Œæ”¾åœ¨è¿™ä¸ªæˆ¿é—´ã€‚\n");
      if (msg != "") message_vision(msg + "\n", me, obj);
      return 1;
    }
 
    destruct(obj);
-   return notify_fail("ÎŞ·¨¸´ÖÆ²»ÄÜÒÆ¶¯µÄÎï¼ş(" + file + ")¡£\n");
+   return notify_fail("æ— æ³•å¤åˆ¶ä¸èƒ½ç§»åŠ¨çš„ç‰©ä»¶(" + file + ")ã€‚\n");
 }
 
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : clone <µµÃû>
+æŒ‡ä»¤æ ¼å¼ : clone <æ¡£å>
 
-ÀûÓÃ´ËÖ¸Áî¿É¸´ÖÆÈÎºÎÄÜÒÆ¶¯Ö®Îï¼ş(º¬¹ÖÎï)¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯å¤åˆ¶ä»»ä½•èƒ½ç§»åŠ¨ä¹‹ç‰©ä»¶(å«æ€ªç‰©)ã€‚
 HELP
     );
     return 1;

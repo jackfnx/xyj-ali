@@ -1,8 +1,8 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // sword.c
 
 inherit SKILL;
 
-string name() { return "»ù±¾±Ş·¨"; }
+string name() { return "åŸºæœ¬é­æ³•"; }

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,13 +8,13 @@ int ok_to_push(object who);
         
 void create()
 {
-        set_name("ʯ��",({"table"}));
+        set_name("石桌",({"table"}));
         set_weight(5000000);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-                set("long","һ�Ű˽��ε�ʯ�����±��в��ٻ��ۣ��ƺ������ƶ�(push)��\n");
-                set("unit", "��");
+                set("long","一张八角形的石桌，下边有不少划痕，似乎可以推动(push)。\n");
+                set("unit", "张");
     }
  
         setup();
@@ -30,7 +30,7 @@ int do_push(string arg)
 {   object who=this_player();
                 
         if( !arg || arg!="table")
-                return notify_fail("��Ҫ��ʲô��\n");
+                return notify_fail("你要推什么？\n");
                 call_out("ok_to_push", 1, who);
      return 1;
 }
@@ -41,13 +41,13 @@ int fail_to_push(object who)
         ||      (int)who->query("force") < 100
         ||      (int)who->query_str() < 60 ) {
 
-     message_vision("$N����ȥ��ʯ������ʯ��ȴ�����˸�һ�㶯Ҳ������\n",who);
+     message_vision("$N试着去推石桌，可石桌却象扎了根一般动也不动。\n",who);
                 return 1;
         }
         who->receive_damage("kee", 80);
         who->add("force", -30);
 
-   message_vision("$N����ȥ��ʯ����ʯ��ֻ������ζ������£��ֻص�ԭλ��\n",who);
+   message_vision("$N试着去推石桌，石桌只是轻轻晃动了两下，又回到原位。\n",who);
         return 1;
 }
 int ok_to_push(object who)
@@ -73,35 +73,35 @@ int ok_to_push(object who)
                 call_out("succeed", 2, who);
      return 1;
         }
-   if ( (string)who->query_temp("enter_position") =="Ǭ" ) {
+   if ( (string)who->query_temp("enter_position") =="乾" ) {
                 call_out("qian", 2, who);
            return 1;
    }
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="坤" ) {
                 call_out("kun", 2, who);
            return 1;
    }
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="艮" ) {
                 call_out("gen", 2, who);
      return 1;
         }
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="兑" ) {
                 call_out("dui", 2, who);
      return 1;
         }
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="震" ) {
                 call_out("zhen", 2, who);
            return 1;
    } 
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="巽" ) {
                 call_out("gong", 2, who);
            return 1;
    }
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="坎" ) {
                 call_out("kan", 2, who);
            return 1;
    }
-   if ( (string)who->query_temp("enter_position") =="��" ) {
+   if ( (string)who->query_temp("enter_position") =="离" ) {
                 call_out("li", 2, who);
      return 1;
         }
@@ -111,8 +111,8 @@ int succeed(object who)
         if( !who || environment(who) !=environment(this_object()) ) return 1;
    if( m = new("/d/qujing/bibotan/obj/xiazi") ){
    m->move(who);
-   message_vision("$Nʹ��ȫ�������ƿ���ʯ����¶�������Ӳӵ�ϻ�ӡ�\n", who);
-   message_vision("$N���ֽ�ϻ�������˻��\n", who);
+   message_vision("$N使尽全身力气推开了石桌，露出个金光灿灿的匣子。\n", who);
+   message_vision("$N伸手将匣子揽到了怀里。\n", who);
    }
    this_object()->set("done", 1);
    return 1;
@@ -122,8 +122,8 @@ int qian(object who)
    i=(int)who->query("max_kee")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ����ʯ��ҡ��ҡ��Сͤһ��ȴ����������\n",who);
-        message_vision("\nСͤ��һ�����������$N���Դ��ϣ��ҵ�$Nͷ��Ѫ����\n", who);
+        message_vision("$N使出全身的力气去推那石桌，石桌摇了摇，小亭一角却掉了下来。\n",who);
+        message_vision("\n小亭的一角歪歪的砸在$N的脑袋上，砸的$N头破血流。\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 1, who);
         return 1;
@@ -138,13 +138,13 @@ int kun(object who)
    i=(int)who->query("max_kee")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ�������µĵ�ȴ��Ȼ�ݿ�һ���󶴡�\n",who);
-        message_vision("\n$Nһ��С��������ȥ��������������������\n", who);
+        message_vision("$N使出全身的力气去推那石桌，脚下的地却忽然陷开一个大洞。\n",who);
+        message_vision("\n$N一不小心陷了下去，又挣扎着爬了上来。\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
-        message_vision("\n$N���ϱ����ƺü�����һ���Ǳ����������ӡ�\n", who);
+        message_vision("\n$N身上被擦破好几处，一幅狼狈不堪的样子。\n", who);
         who->receive_wound("kee", i);
         COMBAT_D->report_status(who);  
         who->add("push_time", 1);   
@@ -155,13 +155,13 @@ int gen(object who)
    i=(int)who->query("max_kee")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ����ʯ���ƿ���ȴ¶��һ�Ѵ�ʯͷ��\n",who);
-   message_vision("\n$N�����µ�ʯͷ����������\n",who);
+        message_vision("$N使出全身的力气去推那石桌，石桌推开后却露出一堆大石头。\n",who);
+   message_vision("\n$N被滚下的石头埋了起来。\n",who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
-        message_vision("\n$N��ʯ�Ѵ����˳������ֽŶ��������ˡ�\n", who);
+        message_vision("\n$N从石堆从爬了出来，手脚都被砸破了。\n", who);
         who->receive_wound("kee", i);
         COMBAT_D->report_status(who);
         who->add("push_time", 1);   
@@ -172,13 +172,13 @@ int dui(object who)
    i=(int)who->query("max_sen")/5;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ����ʯ���º�Ȼ�ֳ�һ����̶����\n",who);
-        message_vision("\n$Nһ�����ȣ���������̶�У�����һ̲ϡ�ࡣ\n", who);
+        message_vision("$N使出全身的力气去推那石桌，石桌下忽然现出一个泥潭来。\n",who);
+        message_vision("\n$N一个不稳，掉到了泥潭中，溅起一滩稀泥。\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
-        message_vision("\n$N�����ش���̶�����˳������������൱�Ǳ���\n", who);
+        message_vision("\n$N慢慢地从泥潭中爬了出来，看起来相当狼狈。\n", who);
         who->receive_wound("sen", i);
         COMBAT_D->report_sen_status(who);
         who->add_temp("push_time", 1);   
@@ -189,13 +189,13 @@ int zhen(object who)
    i= (int)who->query("max_sen")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ����ͷ�Ϻ�Ȼը��һ�����ס�\n",who);
-        message_vision("\n�������Сͤ�ϻ���ֱ�䣬����Ҫ���˵����ӡ�\n", who);
+        message_vision("$N使出全身的力气去推那石桌，头上忽然炸起一声闷雷。\n",who);
+        message_vision("\n雷声震的小亭上灰土直落，好象要塌了的样子。\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
-        message_vision("\n$N�������ͷת��̱���ڵ��¡�\n", who);
+        message_vision("\n$N被震的晕头转向，瘫坐在地下。\n", who);
         who->receive_wound("sen", i);
         COMBAT_D->report_sen_status(who);
         who->add_temp("push_time", 1);   
@@ -206,13 +206,13 @@ int gong(object who)
         i= (int)who->query("max_sen")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-   message_vision("$Nʹ��ȫ��������ȥ����ʯ����ʯ�������ƿ��ˣ�¶���������һ�����ڡ�\n",who);
-        message_vision("\n�����к�Ȼ�γ�һ�����磬��ͷ���ԵĴ���$N��\n", who);
+   message_vision("$N使出全身的力气去推那石桌，石桌竟被推开了，露出黑黝黝的一个洞口。\n",who);
+        message_vision("\n洞口中忽然刮出一阵阴风，夹头夹脑的吹向$N！\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
-        message_vision("\n$N��������ͷת�򣬲�֪���롣\n", who);
+        message_vision("\n$N被吹的晕头转向，不知所措。\n", who);
         who->receive_wound("sen", i);
         COMBAT_D->report_sen_status(who);
         who->add_temp("push_time", 1);
@@ -223,13 +223,13 @@ int kan(object who)
         i= (int)who->query("max_kee")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ����ʯ�������ƿ��ˣ����������������\n",who);
-        message_vision("\n������һ�ţ���׼$N����������溮�ޱȵ�ˮ����\n", who);
+        message_vision("$N使出全身的力气去推那石桌，石桌竟被推开了，钻出两条冷龙来。\n",who);
+        message_vision("\n冷龙口一张，对准$N喷出了两股奇寒无比的水柱。\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
-        message_vision("\n$N��ˮ�����У��������¶�ʪ͸�ˣ�����ֱ����¡�\n", who);
+        message_vision("\n$N被水柱击中，浑身上下都湿透了，冻的直打哆嗦。\n", who);
         who->receive_wound("kee", i);
         COMBAT_D->report_status(who);
         who->add_temp("push_time", 1);   
@@ -240,14 +240,14 @@ int li(object who)
         i= (int)who->query("max_kee")/5 ;
         if( !who || environment(who) !=environment(this_object()) ) return 1;
 
-        message_vision("$Nʹ��ȫ��������ȥ����ʯ����ʯ�������ƿ��ˣ���������������\n",who);
-        message_vision("\n������һ�ţ���׼$N��������ɷ۽�����Ļ�����\n", who);
+        message_vision("$N使出全身的力气去推那石桌，石桌竟被推开了，钻出两条火龙来n",who);
+        message_vision("\n火龙口一张，对准$N喷出了两股粉金融玉的火柱。\n", who);
         if( (int)who->query_temp("push_time") > 3) {
                 call_out("faint_him", 0, who);
         return 1;
    }
 
-        message_vision("\n$N���յı������ˣ��Ҳ��̶á�\n", who);
+        message_vision("\n$N被烧的遍体粼伤，惨不忍睹。\n", who);
         who->receive_wound("kee",i);
         COMBAT_D->report_status(who);
         who->add_temp("push_time", 1);   

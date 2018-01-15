@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -9,10 +9,10 @@ int test_player (object who);
 
 void create()
 {
-  set_name("�Ϲٿ���", ({"shangguan junzhu", "junzhu", "zhu"}));
-  set("title", "���ɿ�");
-  set("long", "���ù����ɿ���һ��֮�\n");
-  set("gender", "����");
+  set_name("上官郡主", ({"shangguan junzhu", "junzhu", "zhu"}));
+  set("title", "凤仙郡");
+  set("long", "天竺国凤仙郡的一郡之侯。\n");
+  set("gender", "男性");
   set("age", 50);
   set("per", 25);
   set("attitude", "peaceful");
@@ -30,14 +30,14 @@ void create()
   set("eff_dx",15000);
   set("nkgain",90);
   set("inquiry", ([
-    "name" : "�Ϸ��˷��ɿ���Ϲ��˱���֮���ա�",
-    "�Ϲ�" : "�Ϸ��˷��ɿ���Ϲ��˱���֮���ա�",
-    "here" : "�������ù����ɿ�����ú����꼱Ѱ��ʦ�Լ�����������������Ҳ��",
+    "name" : "老夫乃凤仙郡侯，上官乃本郡之官姓。",
+    "上官" : "老夫乃凤仙郡侯，上官乃本郡之官姓。",
+    "here" : "此乃天竺国凤仙郡，因久旱无雨急寻法师以祭雨求雨祈雨救吾军民也。",
     "rain" : (: test_player :),
-    "��" : (: test_player :),
-    "����"   : (: test_player :),
-    "����" : (: test_player :),
-    "����" : (: test_player :),
+    "雨" : (: test_player :),
+    "祭雨"   : (: test_player :),
+    "求雨" : (: test_player :),
+    "祈雨" : (: test_player :),
   ]));
   setup();
   carry_object("/d/obj/cloth/choupao")->wear();
@@ -51,13 +51,13 @@ int test_player (object who)
 
   if (who->query("obstacle/fengxian")=="done")
   {
-    message_vision ("$N��æ��$n����һ�ݣ���л��\n",me,who);  
+    message_vision ("$N连忙对$n翻身一拜：多谢！\n",me,who);  
     return 1;
   }
 
-  message_vision ("$N˵�������ٴ�ʦǰ�����ɿ��ȼ�����"+
-                  "ȥ�������������̳������δ�й���\n",me);
-  message_vision ("$N��̾��һ������\n",me);
+  message_vision ("$N说道：多少大师前来凤仙郡救济灾民，"+
+                  "去各个庙宇道场祭坛，都尚未有果。\n",me);
+  message_vision ("$N轻叹了一口气。\n",me);
   return 1;
 }
 
@@ -87,10 +87,10 @@ void check_player (object who)
     return;
   if (environment(who) != environment(this_object()))
     return;
-  message_vision ("��������һ���ˣ�����$Nһ�ۡ�\n",who);
-  message_vision ("���˶�$Nһ��˵�����������Ͽ�����������������"+
-                  "��Ȼһ�����ꡣ\n",me);
-  message_vision ("\n�������¡�\n",me);
+  message_vision ("门外走来一官人，看了$N一眼。\n",who);
+  message_vision ("官人对$N一拜说道：方才天上狂风大作，电闪雷鸣，"+
+                  "果然一场好雨。\n",me);
+  message_vision ("\n官人退下。\n",me);
   command ("ah");
   command ("thank "+who->query("id"));
   call_out ("announce_success",3,who);
@@ -108,10 +108,10 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/fengxian","done");
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"���ɿ�Ȱ��ʩ�أ��ȵü���ǧǧ����");
-  command("chat "+who->query("name")+"˳������������һ�أ�");
-  tell_object (who,"��Ӯ����"+chinese_number(3)+"��"+
-               chinese_number(i/4)+"��"+
-               chinese_number((i-(i/4)*4)*3)+"ʱ���ĵ��У�\n");
+  command("chat "+who->query("name")+"凤仙郡劝善施霖，救得饥民千千万万！");
+  command("chat "+who->query("name")+"顺利闯过西行又一关！");
+  tell_object (who,"你赢得了"+chinese_number(3)+"年"+
+               chinese_number(i/4)+"天"+
+               chinese_number((i-(i/4)*4)*3)+"时辰的道行！\n");
   who->save();
 }

@@ -7,46 +7,46 @@ int exert(object me, object target)
 {
     object *ob;
     int i, skill, damage;
-    if (me->query("gender")!="Å®ĞÔ")
-        return notify_fail("²»ÊÇÅ®ÈË¾Í²»ÒªÏ¹²ôºõÁË¡£\n");
+    if (me->query("gender")!="å¥³æ€§")
+        return notify_fail("ä¸æ˜¯å¥³äººå°±ä¸è¦çæºä¹äº†ã€‚\n");
     if (!me->is_fighting())
-        return notify_fail("²»ÊÇÔÚÕ½¶·ÖĞ²»ÒªÂÒĞ¦£¬Ğ¡ĞÄÎóÉËËûÈË¡£\n");
+        return notify_fail("ä¸æ˜¯åœ¨æˆ˜æ–—ä¸­ä¸è¦ä¹±ç¬‘ï¼Œå°å¿ƒè¯¯ä¼¤ä»–äººã€‚\n");
     if ((int)me->query_skill("moondance", 1) < 60)
-        return notify_fail("ÄãµÄÀäÔÂÄıÏãÎè»ğºò²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†·æœˆå‡é¦™èˆç«å€™ä¸å¤Ÿã€‚\n");
     if ((int)me->query("sen") < 100)
-        return notify_fail("ÄãµÄ¾«ÉñÌ«²î£¬ÎŞ·¨Õ¹ÏÖ×ã¹»µÄ÷ÈÁ¦¡£\n");
+        return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®ï¼Œæ— æ³•å±•ç°è¶³å¤Ÿçš„é­…åŠ›ã€‚\n");
 
     skill = me->query_skill("moondance",1)*2+me->query_per()*2;
 
     me->receive_damage("sen", 10);
 
     me->start_busy(random(4));
-    tell_object(me, "Äã¾Û¾«»áÉñ¿ªÊ¼Ê©Õ¹¡ºÏú»êÒ»Ğ¦¡»¡£¡£¡£\n");
-    message_vision(HIM "$NÇáÆôÖì´½£¬Âü×ªÇï²¨£¬æÌÈ»Ò»Ğ¦¡£¡£¡£¡£¡£\n" NOR, me);
+    tell_object(me, "ä½ èšç²¾ä¼šç¥å¼€å§‹æ–½å±•ã€é”€é­‚ä¸€ç¬‘ã€ã€‚ã€‚ã€‚\n");
+    message_vision(HIM "$Nè½»å¯æœ±å”‡ï¼Œæ›¼è½¬ç§‹æ³¢ï¼Œå«£ç„¶ä¸€ç¬‘ã€‚ã€‚ã€‚ã€‚ã€‚\n" NOR, me);
 
     ob = all_inventory(environment(me));
     for (i=0; i<sizeof(ob); i++) {
         if (!living(ob[i]) || ob[i]==me 
-        || ob[i]->query("race")!="ÈËÀà" 
-        || ob[i]->query("gender")=="Å®ĞÔ")
+        || ob[i]->query("race")!="äººç±»" 
+        || ob[i]->query("gender")=="å¥³æ€§")
             continue;
         if (skill/2 + random(skill/2) < (int)ob[i]->query_cps() * 2) {
-            message_vision("$NÎŞ¶¯ÓÚÖÔ¡£¡£¡£\n",ob[i]);
+            message_vision("$Næ— åŠ¨äºè¡·ã€‚ã€‚ã€‚\n",ob[i]);
             continue;
         }
         damage = skill - ((int)ob[i]->query_cps() * 2);
         if (damage > 0) {
             if (damage > ob[i]->query("sen")) {
-                tell_object(ob[i], "Äã¾õµÃĞÄÖĞÒ»ÂÒ¡£¡£¡£¡£\n");
+                tell_object(ob[i], "ä½ è§‰å¾—å¿ƒä¸­ä¸€ä¹±ã€‚ã€‚ã€‚ã€‚\n");
                 tell_room(environment(me),ob[i]->query("name") +
-                        "ÂúÁ³Í¨ºì£¬Ò¡Ò¡»Î»ÎµØÏò"+me->query("name") +
-                        "×ßÁË¼¸²½£¬×ì´½¶¯ÁË¶¯£¬È´ÓÖ²»ÖªËµÊ²Ã´ºÃ¡£¡£¡£\n",
+                        "æ»¡è„¸é€šçº¢ï¼Œæ‘‡æ‘‡æ™ƒæ™ƒåœ°å‘"+me->query("name") +
+                        "èµ°äº†å‡ æ­¥ï¼Œå˜´å”‡åŠ¨äº†åŠ¨ï¼Œå´åˆä¸çŸ¥è¯´ä»€ä¹ˆå¥½ã€‚ã€‚ã€‚\n",
                     ob[i], ob[i]);
             }
             else {
-                tell_object(ob[i], "Äã¾õµÃÁ³ÉÏÒ»ÈÈ£¬ĞÄÖĞĞ¡Â¹ÂÒ×²£¬ÄÔÖĞÒ»Æ¬¿Õ°×£¬ÔªÉñ²»ÎÈ¡£¡£\n");
+                tell_object(ob[i], "ä½ è§‰å¾—è„¸ä¸Šä¸€çƒ­ï¼Œå¿ƒä¸­å°é¹¿ä¹±æ’ï¼Œè„‘ä¸­ä¸€ç‰‡ç©ºç™½ï¼Œå…ƒç¥ä¸ç¨³ã€‚ã€‚\n");
                 tell_room(environment(me),ob[i]->query("name") +
-                        "ÂúÁ³Í¨ºì£¬ÓĞµãÉñ²»ÊØÉáµÄÑù×Ó¡£\n",
+                        "æ»¡è„¸é€šçº¢ï¼Œæœ‰ç‚¹ç¥ä¸å®ˆèˆçš„æ ·å­ã€‚\n",
                     ob[i], ob[i]);  
             }
             ob[i]->receive_damage("sen", damage);

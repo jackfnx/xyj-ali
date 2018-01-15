@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <localtime.h>
@@ -31,7 +31,7 @@ int main()
     else 
       sec = sprintf("%d", lt[LT_SEC]);
 
-   output = sprintf("ÏÖÔÚÊ±¼ä %s %s %d %s:%s:%s %s %d\n",
+   output = sprintf("ç°åœ¨æ—¶é—´ %s %s %d %s:%s:%s %s %d\n",
      week_day[ lt[LT_WDAY] ], month[ lt[LT_MON] ], lt[LT_MDAY],
      hr, min, sec, lt[LT_ZONE], lt[LT_YEAR] );
    write( output );

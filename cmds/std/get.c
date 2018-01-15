@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
 
 // get.c
@@ -17,33 +17,33 @@ int main(object me, string arg)
     object obj, *inv, env, obj2,old_env;
     int i, amount;
 
-    if (!arg) return notify_fail("ÄãÒª¼ñÆğÊ²Ã´¶«Î÷£¿\n");
+    if (!arg) return notify_fail("ä½ è¦æ¡èµ·ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
     if (me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 
     // Check if a container is specified.
     if (sscanf(arg, "%s from %s", arg, from) == 2) {
         env = present(from, me);
         if (!env) env = present(from, environment(me));
-        if (!env) return notify_fail("ÄãÕÒ²»µ½ " + from + " ÕâÑù¶«Î÷¡£\n");
+        if (!env) return notify_fail("ä½ æ‰¾ä¸åˆ° " + from + " è¿™æ ·ä¸œè¥¿ã€‚\n");
         if (living(env) && (wiz_level(me) <= wiz_level(env)))
-            return notify_fail("ÄãµÄÎ×Ê¦µÈ¼¶±ØĞë±È¶Ô·½¸ß£¬²ÅÄÜËÑÉí¡£\n");
+            return notify_fail("ä½ çš„å·«å¸ˆç­‰çº§å¿…é¡»æ¯”å¯¹æ–¹é«˜ï¼Œæ‰èƒ½æœèº«ã€‚\n");
     } else env = environment(me);
 
 
     // Check if a certain amount is specified.
     if (sscanf(arg, "%d %s", amount, item)==2) {
         if (!objectp(obj = present(item, env)))
-            return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+            return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if (obj->query("no_get")
         &&  !(wizardp(me) && me->query("env/override")))
-            return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "Õâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£\n");
+            return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "è¿™ä¸ªä¸œè¥¿æ‹¿ä¸èµ·æ¥ã€‚\n");
         if (!obj->query_amount())
-            return notify_fail(obj->name() + "²»ÄÜ±»·Ö¿ªÄÃ×ß¡£\n");
+            return notify_fail(obj->name() + "ä¸èƒ½è¢«åˆ†å¼€æ‹¿èµ°ã€‚\n");
         if (amount < 1)
-            return notify_fail("¶«Î÷µÄ¸öÊıÖÁÉÙÊÇÒ»¸ö¡£\n");
+            return notify_fail("ä¸œè¥¿çš„ä¸ªæ•°è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
         if (amount > obj->query_amount())
-            return notify_fail("ÕâÀïÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+            return notify_fail("è¿™é‡Œæ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
         else if (amount == (int)obj->query_amount()) {
             return do_get(me, obj, 0);
         } else {
@@ -59,12 +59,12 @@ int main(object me, string arg)
 
     // Check if we are makeing a quick get.
     if (arg == "all") {
-        if (me->is_fighting()) return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ£¡Ö»ÄÜÒ»´ÎÄÃÒ»Ñù¡£\n");
-        if (!env->query_max_encumbrance()) return notify_fail("ÄÇ²»ÊÇÈİÆ÷¡£\n");
+        if (me->is_fighting()) return notify_fail("ä½ è¿˜åœ¨æˆ˜æ–—ä¸­ï¼åªèƒ½ä¸€æ¬¡æ‹¿ä¸€æ ·ã€‚\n");
+        if (!env->query_max_encumbrance()) return notify_fail("é‚£ä¸æ˜¯å®¹å™¨ã€‚\n");
 
         inv = all_inventory(env);
         if (!sizeof(inv))
-            return notify_fail("ÄÇÀïÃæÃ»ÓĞÈÎºÎ¶«Î÷¡£\n");
+            return notify_fail("é‚£é‡Œé¢æ²¡æœ‰ä»»ä½•ä¸œè¥¿ã€‚\n");
 
         for (i = 0; i < sizeof(inv); i++) {
             if (inv[i]->is_character()
@@ -73,44 +73,44 @@ int main(object me, string arg)
                 continue;
             do_get(me, inv[i], 0);
         }
-        write("Ok¡£\n");
+        write("Okã€‚\n");
         return 1;
     }
 
     // added by mon to incorporate the "bian" function.
     if (!objectp(obj = present(arg, env)) || obj==this_player())
-        return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+        return notify_fail("ä½ é™„è¿‘æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
     else {
         if((obj->query_temp("d_mana")) > 0) {
             if (obj->query_temp("is_living") == 1)
-                return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ é™„è¿‘æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
             else {
                 if (obj->query_temp("hide") == 1)
-                    return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                    return notify_fail("ä½ é™„è¿‘æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
                 if (obj->query("no_get")
                 &&  !(wizardp(me) && me->query("env/override")))
-                    return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "Õâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£\n");
+                    return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "è¿™ä¸ªä¸œè¥¿æ‹¿ä¸èµ·æ¥ã€‚\n");
                 old_env = environment(obj);
                 if (obj->move(me)) {
                     if(me->is_fighting()) me->start_busy(1);
-                    message_vision(sprintf("$N%sÒ»%s$n¡£\n",
-                        old_env==environment(me)?  "¼ñÆğ": (old_env->is_character() ?
-                            "´Ó" + old_env->name() + "ÉíÉÏ" + "ËÑ³ö":
-                            "´Ó" + old_env->name() + "ÖĞÄÃ³ö"),
-                        undefinedp(obj->query_temp("unit"))?"¸ö":obj->query_temp("unit")
+                    message_vision(sprintf("$N%sä¸€%s$nã€‚\n",
+                        old_env==environment(me)?  "æ¡èµ·": (old_env->is_character() ?
+                            "ä»" + old_env->name() + "èº«ä¸Š" + "æœå‡º":
+                            "ä»" + old_env->name() + "ä¸­æ‹¿å‡º"),
+                        undefinedp(obj->query_temp("unit"))?"ä¸ª":obj->query_temp("unit")
                         ), me, obj);
                     return 1; 
                 } else return 0;
             }
         } else {
             if (living(obj))
-                return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ é™„è¿‘æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         }
     }
 
     if (obj->query("no_get")
     &&  !(wizardp(me) && me->query("env/override")))
-        return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "Õâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£\n");
+        return notify_fail(stringp(obj->query("no_get")) ? obj->query("no_get") : "è¿™ä¸ªä¸œè¥¿æ‹¿ä¸èµ·æ¥ã€‚\n");
 
     return do_get(me, obj, 0);
 }
@@ -123,14 +123,14 @@ int do_get(object me, object obj, object old_env)
 /*
     inv = all_inventory(me);
     if (sizeof(inv) > 30)
-        return notify_fail("ÄãÉíÉÏÔÙÒ²×°²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+        return notify_fail("ä½ èº«ä¸Šå†ä¹Ÿè£…ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 */
     if (!obj) return 0;
     if (!old_env) old_env = environment(obj);
     if (obj->is_character()) {
         if (living(obj)) return 0;
         //    if(!userp(obj) && !obj->is_corpse())
-        //      return notify_fail("ÄãÖ»ÄÜ±³¸ºÆäËûÍæ¼ÒµÄÉíÌå¡£\n");
+        //      return notify_fail("ä½ åªèƒ½èƒŒè´Ÿå…¶ä»–ç©å®¶çš„èº«ä½“ã€‚\n");
         // If we try to save someone from combat, take the risk :P
     } else {
         if (obj->query("no_get")) return 0;
@@ -139,14 +139,14 @@ int do_get(object me, object obj, object old_env)
     if (obj->move(me)) {
         if (me->is_fighting()) me->start_busy(1);
         if (obj->is_character())
-            message_vision("$N½«$n·öÁËÆğÀ´±³ÔÚ±³ÉÏ¡£\n", me, obj);
+            message_vision("$Nå°†$næ‰¶äº†èµ·æ¥èƒŒåœ¨èƒŒä¸Šã€‚\n", me, obj);
         else
-            message_vision(sprintf("$N%sÒ»%s$n¡£\n",
-                (!old_env || old_env==environment(me))? "¼ñÆğ":
+            message_vision(sprintf("$N%sä¸€%s$nã€‚\n",
+                (!old_env || old_env==environment(me))? "æ¡èµ·":
                 (old_env->is_character() ?
-                    "´Ó" + old_env->name() + "ÉíÉÏ" + (equipped? "³ıÏÂ" : "ËÑ³ö"):
-                    "´Ó" + old_env->name() + "ÖĞÄÃ³ö"),
-                undefinedp(obj->query("unit"))?"¸ö":obj->query("unit")
+                    "ä»" + old_env->name() + "èº«ä¸Š" + (equipped? "é™¤ä¸‹" : "æœå‡º"):
+                    "ä»" + old_env->name() + "ä¸­æ‹¿å‡º"),
+                undefinedp(obj->query("unit"))?"ä¸ª":obj->query("unit")
                 ), me, obj);
         return 1;
     }
@@ -156,9 +156,9 @@ int do_get(object me, object obj, object old_env)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : get <ÎïÆ·Ãû³Æ> [from <ÈİÆ÷Ãû>]
+æŒ‡ä»¤æ ¼å¼ : get <ç‰©å“åç§°> [from <å®¹å™¨å>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¼ñÆğµØÉÏ»òÈİÆ÷ÄÚµÄÄ³ÑùÎïÆ·.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æ¡èµ·åœ°ä¸Šæˆ–å®¹å™¨å†…çš„æŸæ ·ç‰©å“.
 
 HELP
     );

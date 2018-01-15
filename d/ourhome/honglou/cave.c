@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/cave
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ş¤Í¡»¨äÓ");
+  set ("short", "è“¼æ±€èŠ±æº†");
   set ("long", @LONG
 
-¡¡¡¡Ë®ÉùäıäıĞº³ö£¬Ê¯¶´ÉÏÔòÂÜŞµµ¹´¹£¬ÏÂÔòÂä»¨¸¡µ´¡£
+ã€€ã€€æ°´å£°æ½ºæ½ºæ³»å‡ºï¼ŒçŸ³æ´ä¸Šåˆ™èè–œå€’å‚ï¼Œä¸‹åˆ™è½èŠ±æµ®è¡ã€‚
 
 LONG);
 
@@ -30,7 +30,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
    if( dir=="up" && !wizardp(me) )
-     return notify_fail("Â¥ÉÏÏĞÈËÃâ½ø¡£\n");
+     return notify_fail("æ¥¼ä¸Šé—²äººå…è¿›ã€‚\n");
    return ::valid_leave(me, dir);
 }
 

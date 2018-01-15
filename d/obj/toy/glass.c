@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // glass.c
@@ -7,16 +7,16 @@ inherit EQUIP;
 
 void create()
 {
-   set_name("Õ½¶·Á¦Ì½²âÆ÷", ({ "detector", "glass", "device" }) );
+   set_name("æˆ˜æ–—åŠ›æŽ¢æµ‹å™¨", ({ "detector", "glass", "device" }) );
    set_weight(300);
-   set("unit", "¸ö");
+   set("unit", "ä¸ª");
    set("long",
-     "ÕâÊÇÀ´×Ô¡¸ÆßÁúÖé¡¹µÄÕ½¶·Á¦Ì½²âÆ÷£¬Äã¿ÉÒÔÓÃËüÀ´Ì½²â(detect)±ðÈË\n"
-     "µÄÕ½¶·Á¦¡£\n");
+     "è¿™æ˜¯æ¥è‡ªã€Œä¸ƒé¾™ç ã€çš„æˆ˜æ–—åŠ›æŽ¢æµ‹å™¨ï¼Œä½ å¯ä»¥ç”¨å®ƒæ¥æŽ¢æµ‹(detect)åˆ«äºº\n"
+     "çš„æˆ˜æ–—åŠ›ã€‚\n");
    set("value", 500);
    set("type", "misc");
    set("apply", ([
-     "Í·²¿":   0,
+     "å¤´éƒ¨":   0,
    ]) );
 }
 
@@ -34,7 +34,7 @@ int do_detect(string arg)
    if( arg ) ob = present(arg, environment(this_player()));
    else ob = this_player()->query_opponent();
 
-   if( !ob ) return notify_fail("ÄãÒªÌ½²âË­µÄÕ½¶·Á¦£¿\n");
+   if( !ob ) return notify_fail("ä½ è¦æŽ¢æµ‹è°çš„æˆ˜æ–—åŠ›ï¼Ÿ\n");
 
    sen = (int)ob->query("sen");
    if( stringp(skill = ob->query("attack_skill")) )
@@ -42,7 +42,7 @@ int do_detect(string arg)
    else
      sk = 0;
 
-   printf("Ì½²âÆ÷ÏÔÊ¾%sµÄÕ½¶·Á¦ÊÇ£º%d\n",
+   printf("æŽ¢æµ‹å™¨æ˜¾ç¤º%sçš„æˆ˜æ–—åŠ›æ˜¯ï¼š%d\n",
      ob->query("name"), 
      (sk*sk*sk) * (100 + sen) / 100 + (int)ob->query("combat_exp") );
 

@@ -6,14 +6,14 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "½ÓÒýµî");
+    set("short", "æŽ¥å¼•æ®¿");
     set("long", @LONG
 
-½øÁËÄÏÌìÃÅ£¬ÒÑ¾­¿ÉÒÔ¿´µ½Ò»×ù×ùÌì¹¬·Å×ÅÆß²ÊÏ¼¹â£¬ºöÒþºöÏÖ
-ÓÚÔÆÕÚÎíÈÆÖ®ÖÐ¡£Àï±ÚÏáÓÐ¼¸¸ù´óÖù£¬ÖùÉÏ²øÈÆ×Å½ðÁÛÒ«ÈÕ³àÐë
-Áú£»Ò»×ù°×ÓñÇÅÍäÍäÇúÇúµØÏò±±ÑÓÉì£¬¶«Î÷Á½±ß¸÷ÓÐÒ»×ù´óµî£¬
-Ò²²»ÖªÊÇ¸ÉÊ²Ã´ÓÃµÄ£¬Äã¿ÉÒÔÒþÔ¼Ìýµ½¶«±ßµîÖÐÓÐÐú»©Ö®Éù£¬ËÆ
-ºõÈË²»ÉÙ¡£
+è¿›äº†å—å¤©é—¨ï¼Œå·²ç»å¯ä»¥çœ‹åˆ°ä¸€åº§åº§å¤©å®«æ”¾ç€ä¸ƒå½©éœžå…‰ï¼Œå¿½éšå¿½çŽ°
+äºŽäº‘é®é›¾ç»•ä¹‹ä¸­ã€‚é‡Œå£åŽ¢æœ‰å‡ æ ¹å¤§æŸ±ï¼ŒæŸ±ä¸Šç¼ ç»•ç€é‡‘é³žè€€æ—¥èµ¤é¡»
+é¾™ï¼›ä¸€åº§ç™½çŽ‰æ¡¥å¼¯å¼¯æ›²æ›²åœ°å‘åŒ—å»¶ä¼¸ï¼Œä¸œè¥¿ä¸¤è¾¹å„æœ‰ä¸€åº§å¤§æ®¿ï¼Œ
+ä¹Ÿä¸çŸ¥æ˜¯å¹²ä»€ä¹ˆç”¨çš„ï¼Œä½ å¯ä»¥éšçº¦å¬åˆ°ä¸œè¾¹æ®¿ä¸­æœ‰å–§å“—ä¹‹å£°ï¼Œä¼¼
+ä¹Žäººä¸å°‘ã€‚
 
 LONG);
 
@@ -24,7 +24,7 @@ LONG);
         "east" : __DIR__"jinlongdian",
     ]));
 
-    create_door("south", "ÄÏÌìÃÅ", "north", DOOR_CLOSED);
+    create_door("south", "å—å¤©é—¨", "north", DOOR_CLOSED);
     setup();
 }
 

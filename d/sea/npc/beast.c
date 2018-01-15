@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 inherit NPC;
-string *first_name = ({ "»¨Æ¤", "±³²Ô", "°Ë×¦½ğ½Ç", "½ğÎ²ò°÷×"});
-string *name_words = ({ "Áú"});
+string *first_name = ({ "èŠ±çš®", "èƒŒè‹", "å…«çˆªé‡‘è§’", "é‡‘å°¾è™¬é«¯"});
+string *name_words = ({ "é¾™"});
 
 
 void create()
@@ -17,8 +17,8 @@ void create()
         set_name(name,({"dragon"}));
 
 
-   set("race", "Ò°ÊŞ");
-        set("long", "Ò»Ö»Ä£Ñù¸ß´ó£¬¼«ÓĞÆøÊÆµÄÁú¡£\n");
+   set("race", "é‡å…½");
+        set("long", "ä¸€åªæ¨¡æ ·é«˜å¤§ï¼Œææœ‰æ°”åŠ¿çš„é¾™ã€‚\n");
         set("str", 40);
         set("cor", 30);
         set("con", 30);
@@ -43,7 +43,7 @@ void create()
         map_skill("unarmed", "dragonfight");
         map_skill("dodge", "dragonstep");
         set("combat_exp", 100000);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°×¦", "Î²°Í", "¶ÇÆ¤", "ºó×¦"}) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰çˆª", "å°¾å·´", "è‚šçš®", "åçˆª"}) );
         set("verbs", ({ "bite", "claw"}) );
         set_weight(500000);
    set("bellicosity",1000);
@@ -63,14 +63,14 @@ int do_train()
    who=this_player();
 
    if(me->is_fighting())
-     return notify_fail("ÕâÖ»ÁúÕıÔÚÕ½¶·¡£\n");
-   if((string)who->query("family/family_name")!="¶«º£Áú¹¬")
-     return notify_fail("Ê²Ã´£¿\n");
+     return notify_fail("è¿™åªé¾™æ­£åœ¨æˆ˜æ–—ã€‚\n");
+   if((string)who->query("family/family_name")!="ä¸œæµ·é¾™å®«")
+     return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
    
    call_out("reset_skill",1,who);
 
-   message_vision("$N¶Ô$n´óº°Ò»Éù£ºÄõĞó£¬¿´Äã²ş¿ñµ½¼¸Ê±£¡\n\n", who,me);
-   message_vision("$nÒ»Éú³¤Ò÷£¬ÆËÉÏÀ´ºÍ$nÅ¤´òµ½Ò»Æğ¡£\n",me,who);
+   message_vision("$Nå¯¹$nå¤§å–Šä¸€å£°ï¼šå­½ç•œï¼Œçœ‹ä½ çŒ–ç‹‚åˆ°å‡ æ—¶ï¼\n\n", who,me);
+   message_vision("$nä¸€ç”Ÿé•¿åŸï¼Œæ‰‘ä¸Šæ¥å’Œ$næ‰­æ‰“åˆ°ä¸€èµ·ã€‚\n",me,who);
    me->kill_ob(who);
    who->kill_ob(me);
         COMBAT_D->do_attack(me, who, query_temp("weapon"));
@@ -148,11 +148,11 @@ void die()
    if(owner_ob &&  (object)query_temp("last_damage_from") == owner_ob ) {
      if( (int)owner_ob->query_skill("seashentong",1) <=180 
      && (int)owner_ob->query_skill("spells",1) <=180 ) {
-     tell_object(owner_ob, "\nÄãÑ±·şÁË¶ñÁú£¬²¢ÇÒ´ÓÖĞÎòµ½ÁËÒ»Ğ©ÖäÊõµÄµÀÀí¡£\n");
+     tell_object(owner_ob, "\nä½ é©¯æœäº†æ¶é¾™ï¼Œå¹¶ä¸”ä»ä¸­æ‚Ÿåˆ°äº†ä¸€äº›å’’æœ¯çš„é“ç†ã€‚\n");
      owner_ob->improve_skill("spells", random(owner_ob->query("spi"))+1);
      owner_ob->improve_skill("seashentong", random(owner_ob->query("spi"))+1);
      owner_ob->set_temp("dragonforce_practice", owner_ob->query("spi")*5);
-     message_vision("$NµÍÍ·ËõÎ²£¬ÒÔÊ¾½µ·ş¡£\n",this_object());
+     message_vision("$Nä½å¤´ç¼©å°¾ï¼Œä»¥ç¤ºé™æœã€‚\n",this_object());
      destruct(this_object());
      return;
      }

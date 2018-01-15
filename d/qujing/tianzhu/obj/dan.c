@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/2/1997
@@ -9,16 +9,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "ÑøÉíµ¤" , ({"yangshen dan", "dan"}));
+  set_name( "å…»èº«ä¸¹" , ({"yangshen dan", "dan"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿ÅºÚÓÍÓÍµÄÑøÉíµ¤¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—é»‘æ²¹æ²¹çš„å…»èº«ä¸¹ã€‚\n");
     set("value", 800);
     set("no_sell", 1);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   setup();
   call_out ("becoming_old",1800);
@@ -47,8 +47,8 @@ int do_eat(string arg)
   
   me->set("food", (int)me->max_food_capacity()*3+random(120));
   me->set("water", (int)me->max_water_capacity()*3+random(120));
-  message_vision(HIG "$NÄóÆğÒ»¿ÅÑøÉíµ¤ËÍ½ø×ìÀïÍÌÏÂ¡£\n" NOR, me);
-  tell_object(me, "¶ÙÊ±Äã¾õµÃ¸¹ÖĞÉúÈÈ£¬Æ®Æ®ÓûÏÉ£¡\n");
+  message_vision(HIG "$Næèµ·ä¸€é¢—å…»èº«ä¸¹é€è¿›å˜´é‡Œåä¸‹ã€‚\n" NOR, me);
+  tell_object(me, "é¡¿æ—¶ä½ è§‰å¾—è…¹ä¸­ç”Ÿçƒ­ï¼Œé£˜é£˜æ¬²ä»™ï¼\n");
   destruct(this_object());
   return 1;
 }

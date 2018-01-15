@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// jinchuang.c ½ğ´´Ò©
+// jinchuang.c é‡‘åˆ›è¯
 
 inherit ITEM;
 
@@ -15,14 +15,14 @@ void init()
 
 void create()
 {
-        set_name("µø´òÍè", ({"dieda wan", "wan", "yao"}));
+        set_name("è·Œæ‰“ä¸¸", ({"dieda wan", "wan", "yao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÖÎÉËµÄµø´òÒ©¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯ä¸€é¢—æ²»ä¼¤çš„è·Œæ‰“è¯ã€‚\n");
                 set("value", 1500);
-          set("drug_type", "Á¼Ò©");
+          set("drug_type", "è‰¯è¯");
         }
         setup();
 }
@@ -30,13 +30,13 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´Ò©£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆè¯ï¼Ÿ\n");
         if ((int)this_player()->query("eff_kee") == 
             (int)this_player()->query("max_kee"))
-                return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃµø´òÒ©¡£\n");
+                return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨è·Œæ‰“è¯ã€‚\n");
         else {
                 this_player()->receive_curing("kee", 30);
-                message_vision("$N³ÔÏÂÒ»¿Åµø´òÍè£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n",this_player());
+                message_vision("$Nåƒä¸‹ä¸€é¢—è·Œæ‰“ä¸¸ï¼Œæ°”è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n",this_player());
                 destruct(this_object());
                 return 1;
         }

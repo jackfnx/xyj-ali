@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit BLADE;
 
 void create()
 {
-  set_name("Å£Í·µ¶", ({ "niutou dao", "dao", "blade" }) );
+  set_name("ç‰›å¤´åˆ€", ({ "niutou dao", "dao", "blade" }) );
   init_blade(35);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(700);
   if( clonep() )
      set_default_object(__FILE__);

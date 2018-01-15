@@ -11,13 +11,13 @@ void transform();
 
 void create()
 {
-    set_name("ÓñÍÃ", ({"yu tu", "tu", "rabbit", "jade rabbit"}));
-    set("title", "ÔÂ¹¬");
-    set("long", "Ò»Ö»»îÆÃ¿É°®µÄĞ¡°×ÍÃ£¬ºìÑÛ¾¦£¬Èı°ê×ì£¬Á½Ö»¶ú¶ä³¤ºõºõ¡£\n");
-    set("gender", "Å®ĞÔ");
+    set_name("ç‰å…”", ({"yu tu", "tu", "rabbit", "jade rabbit"}));
+    set("title", "æœˆå®«");
+    set("long", "ä¸€åªæ´»æ³¼å¯çˆ±çš„å°ç™½å…”ï¼Œçº¢çœ¼ç›ï¼Œä¸‰ç“£å˜´ï¼Œä¸¤åªè€³æœµé•¿ä¹ä¹ã€‚\n");
+    set("gender", "å¥³æ€§");
     set("age", 10);
     set("class", "xian");
-    set("rank/respect", "ÏÉÍÃ");
+    set("rank/respect", "ä»™å…”");
     set("per", 999);
     set("str", 30+random(10));
     set("cor", 40);
@@ -35,7 +35,7 @@ void create()
     map_skill("unarmed", "flower-hand");
     set_skill("dodge", 20);
 
-    create_family("ÔÂ¹¬", 2, "µÜ×Ó");
+    create_family("æœˆå®«", 2, "å¼Ÿå­");
     setup();
     set("renxing", 0);
 
@@ -48,7 +48,7 @@ void create()
     set("chat_chance", 3);
     set("chat_chance_combat", 4);
     set("chat_msg_combat", ({
-            (CYN "ÓñÍÃÔ½´òÔ½¸ßĞË£¬¿ÚÖĞÁ¬ºô£º¡°ºÃÍæ£¬ºÃÍæ£¡ÔÙ´ò£¬ÔÙ´ò£¡¡±\n" NOR),
+            (CYN "ç‰å…”è¶Šæ‰“è¶Šé«˜å…´ï¼Œå£ä¸­è¿å‘¼ï¼šâ€œå¥½ç©ï¼Œå¥½ç©ï¼å†æ‰“ï¼Œå†æ‰“ï¼â€\n" NOR),
             (: endfight :),
     }));
 }
@@ -58,25 +58,25 @@ void transform()
     object me = this_object();
     object luoyi = present("luoyi", me);
     if (query("renxing")) {
-        message_vision(MAG "$NÉíĞÎÒ»»Î£¬ÏÔ³öÁËÔ­ĞÍ£¬Ô­À´ÊÇÒ»¸ö»îÆÃ¿É°®µÄĞ¡°×ÍÃ¡£\n" NOR, me);
-        set("long", "Ò»Ö»»îÆÃ¿É°®µÄĞ¡°×ÍÃ£¬ºìÑÛ¾¦£¬Èı°ê×ì£¬Á½Ö»¶ú¶ä³¤ºõºõ¡£\n");
+        message_vision(MAG "$Nèº«å½¢ä¸€æ™ƒï¼Œæ˜¾å‡ºäº†åŸå‹ï¼ŒåŸæ¥æ˜¯ä¸€ä¸ªæ´»æ³¼å¯çˆ±çš„å°ç™½å…”ã€‚\n" NOR, me);
+        set("long", "ä¸€åªæ´»æ³¼å¯çˆ±çš„å°ç™½å…”ï¼Œçº¢çœ¼ç›ï¼Œä¸‰ç“£å˜´ï¼Œä¸¤åªè€³æœµé•¿ä¹ä¹ã€‚\n");
         set("limbs", ({
-                "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "Î²°Í", "¶ú¶ä",
-                "×ó×¦", "ÓÒ×¦", "Ñü¼ä", "Ğ¡¸¹", "Ç°ÍÈ", "ºóÍÈ",
-                "Ç°×¦", "ºó×¦" }));
+                "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å°¾å·´", "è€³æœµ",
+                "å·¦çˆª", "å³çˆª", "è…°é—´", "å°è…¹", "å‰è…¿", "åè…¿",
+                "å‰çˆª", "åçˆª" }));
         set("age", 10);
-        set("rank/respect", "ÏÉÍÃ");
+        set("rank/respect", "ä»™å…”");
         setup();
         set("renxing", 0);
         if (luoyi) luoyi->unequip();
     } else {
-        message_vision(MAG "$NÉíĞÎÒ»»Î£¬»¯×÷ÁËÈËĞÎ£¬±ä³ÉÁËÒ»¸öÍ¤Í¤ÓñÁ¢µÄÉÙÅ®¡£\n" NOR, me);
+        message_vision(MAG "$Nèº«å½¢ä¸€æ™ƒï¼ŒåŒ–ä½œäº†äººå½¢ï¼Œå˜æˆäº†ä¸€ä¸ªäº­äº­ç‰ç«‹çš„å°‘å¥³ã€‚\n" NOR, me);
         set("long",
-"ËıÔ­±¾Ö»ÊÇæÏ¶ğµÄ³èÎï£¬Òò³ÔÁËæÏ¶ğµôÔÚµØÉÏµÄÁéÒ©¶ø³ÉÈËĞÎ¡£Ëı\n"
-"ÒòÁéÒ©Ö®ÊÂ±»ÍõÄ¸·£È¥µ·Ò©£¬¾Ã¶ø¾ÃÖ®¾¹ÆÄÍ¨Ò©µÀ¡£\n");
+"å¥¹åŸæœ¬åªæ˜¯å«¦å¨¥çš„å® ç‰©ï¼Œå› åƒäº†å«¦å¨¥æ‰åœ¨åœ°ä¸Šçš„çµè¯è€Œæˆäººå½¢ã€‚å¥¹\n"
+"å› çµè¯ä¹‹äº‹è¢«ç‹æ¯ç½šå»æ£è¯ï¼Œä¹…è€Œä¹…ä¹‹ç«Ÿé¢‡é€šè¯é“ã€‚\n");
         delete("limbs");
         set("age", 16);
-        set("rank/respect", "ÏÉ×Ó");
+        set("rank/respect", "ä»™å­");
         setup();
         set("renxing", 1);
         if (luoyi) luoyi->wear();
@@ -86,7 +86,7 @@ void transform()
 void attempt_apprentice(object ob)
 {
     command("shake");
-    command("say ²»ÊÕ£¡²»ÊÕ£¡ÊÕÍ½²»ºÃÍæ£¡\n");
+    command("say ä¸æ”¶ï¼ä¸æ”¶ï¼æ”¶å¾’ä¸å¥½ç©ï¼\n");
 }
 
 int recruit_apprentice(object ob)
@@ -98,8 +98,8 @@ int recruit_apprentice(object ob)
 void welcome(object ob)
 {
     command("xixi " + ob->query("id"));
-    message_vision(CYN "$NÍá×ÅÄÔ´üËµµÀ£ºÄãÊÇË­°¡£¿¸ÉÂïÀ´ÔÂ¹¬°¡£¿\n" NOR, this_object());
-    tell_object(ob, GRN "Äã¿ÉÒÔ»Ø´ğ(answer): 1.Íæ 2.°İÊ¦ 3.×ßÇ×Æİ\n" NOR);
+    message_vision(CYN "$Næ­ªç€è„‘è¢‹è¯´é“ï¼šä½ æ˜¯è°å•Šï¼Ÿå¹²å˜›æ¥æœˆå®«å•Šï¼Ÿ\n" NOR, this_object());
+    tell_object(ob, GRN "ä½ å¯ä»¥å›ç­”(answer): 1.ç© 2.æ‹œå¸ˆ 3.èµ°äº²æˆš\n" NOR);
     ob->set_temp("wait_answer/yutu", 1);
 }
 
@@ -111,47 +111,47 @@ int do_answer(string arg)
     if (!ob || !ob->query_temp("wait_answer/yutu")) return 0;
     if (arg == "1") {
         ob->set_temp("wait_answer/yutu", 0);
-        message_vision(CYN "$N´ğµÀ£ºÎÒÀ´Íæ£¡\n\n" NOR, ob);
+        message_vision(CYN "$Nç­”é“ï¼šæˆ‘æ¥ç©ï¼\n\n" NOR, ob);
         command("wink " + ob->query("id"));
-        message_vision("$NÃÔ»óµÄÍû×Å$n£¬×ÔÑÔ×ÔÓïµÀ£ºÔÂ¹¬ÓĞÊ²Ã´ºÃÍæµÄ£¿ÀäÀäÇåÇåµÄ¡£\n", me, ob);
-        command("say ºÃ°É£¬Äã½Ó×ÅÍæ°É¡£");
+        message_vision("$Nè¿·æƒ‘çš„æœ›ç€$nï¼Œè‡ªè¨€è‡ªè¯­é“ï¼šæœˆå®«æœ‰ä»€ä¹ˆå¥½ç©çš„ï¼Ÿå†·å†·æ¸…æ¸…çš„ã€‚\n", me, ob);
+        command("say å¥½å§ï¼Œä½ æ¥ç€ç©å§ã€‚");
         call_out("disappearing", 3);
         return 1;
     }
     else if (arg == "2") {
         ob->set_temp("wait_answer/yutu", 0);
-        message_vision(CYN "$N´ğµÀ£ºÎÒÀ´°İÊ¦£¡\n\n" NOR, ob);
+        message_vision(CYN "$Nç­”é“ï¼šæˆ‘æ¥æ‹œå¸ˆï¼\n\n" NOR, ob);
         command("look " + ob->query("id"));
-        if (ob->query("gender") != "Å®ĞÔ") {
+        if (ob->query("gender") != "å¥³æ€§") {
             command("shake");
-            command("say ÔÂ¹¬Àï¶¼ÊÇÅ®º¢×Ó£¬" + RANK_D->query_respect(ob) + "Ò»¸ö´óÄĞÈËÀ´°İÊ²Ã´Ê¦°¡£¿\n");
+            command("say æœˆå®«é‡Œéƒ½æ˜¯å¥³å­©å­ï¼Œ" + RANK_D->query_respect(ob) + "ä¸€ä¸ªå¤§ç”·äººæ¥æ‹œä»€ä¹ˆå¸ˆå•Šï¼Ÿ\n");
             command("sigh");
-            command("say ²»Ô¸Ëµ¾ÍËãÁË");
+            command("say ä¸æ„¿è¯´å°±ç®—äº†");
             call_out("disappearing", 3);
             return 1;
         } else if (ob->query_skill("dodge", 1) > 120 || ob->query_skill("moondance", 1) > 120) {
             command("jump");
-            command("say " + RANK_D->query_respect(ob) + "£¬ÄãºÃÀ÷º¦°¡£¡ÓĞÄãÕâÑùµÄÈË²Å¼ÓÈë£¬ÎÒÃÇÔÂ¹¬Ò»¶¨¿ÉÒÔ´ò°ÜĞùÔ¯¹ÅÄ¹µÄ¡£");
+            command("say " + RANK_D->query_respect(ob) + "ï¼Œä½ å¥½å‰å®³å•Šï¼æœ‰ä½ è¿™æ ·çš„äººæ‰åŠ å…¥ï¼Œæˆ‘ä»¬æœˆå®«ä¸€å®šå¯ä»¥æ‰“è´¥è½©è¾•å¤å¢“çš„ã€‚");
             call_out("disappearing", 3);
             return 1;
         } else {
             command("jump");
-            command("say ÒÔºóÓÖÓĞĞÂ»ï°éÁË¡£");
-            command("say àÅ£¬ÎÒ¿´ÄãÉÏÈ¥¿ÖÅÂÍ¦·Ñ¾¢µÄ£¬²»Èç°ïÄãÒ»°Ñ°É¡£\n");
-            message_vision("$NÉíĞÎÍ»È»·ÉÆğ£¬×ê½øÁËÖ¦Ò¶¼ä¡£\n", ob);
+            command("say ä»¥ååˆæœ‰æ–°ä¼™ä¼´äº†ã€‚");
+            command("say å—¯ï¼Œæˆ‘çœ‹ä½ ä¸Šå»ææ€•æŒºè´¹åŠ²çš„ï¼Œä¸å¦‚å¸®ä½ ä¸€æŠŠå§ã€‚\n");
+            message_vision("$Nèº«å½¢çªç„¶é£èµ·ï¼Œé’»è¿›äº†æå¶é—´ã€‚\n", ob);
             ob->move("/d/moon/ontop");
-            message_vision("$NÍ»È»´Ó¹ğÊ÷Ö¦Ò¶¼ä·É³ö£¬ÇáÆ®Æ®µÄÂäÔÚµØÉÏ¡£\n", ob);
+            message_vision("$Nçªç„¶ä»æ¡‚æ ‘æå¶é—´é£å‡ºï¼Œè½»é£˜é£˜çš„è½åœ¨åœ°ä¸Šã€‚\n", ob);
             call_out("disappearing", 3);
             return 1;
         }
     }
     else if (arg == "3") {
         ob->set_temp("wait_answer/yutu", 0);
-        message_vision(CYN "$N´ğµÀ£ºÎÒÀ´×ßÇ×Æİ£¡\n\n" NOR, ob);
+        message_vision(CYN "$Nç­”é“ï¼šæˆ‘æ¥èµ°äº²æˆšï¼\n\n" NOR, ob);
         command("wink " + ob->query("id"));
-        message_vision("$NÃÔ»óµÄÍû×Å$n£¬×ÔÑÔ×ÔÓïµÀ£º×ßÇ×Æİ£¿Ã»ÌıËµ¹ıÔÂ¹¬ÉÏË­»¹ÓĞÇ×Æİ°¡£¿\n", me, ob);
-        command("say ¸Ã²»»á¡£¡£¡£ÊÇÄÇ¸öÈËµÄÇ×Æİ°É£¿");
-        message_vision("$NºÃÏñÍ»È»ÏëÆğÊ²Ã´ËÆµÄ£¬Á³ÉÏÂ¶³ö¿Ö¾åµÄÉñÇé£¬¼±Ã¦±Õ×ì²»Ëµ»°ÁË¡£\n", me);
+        message_vision("$Nè¿·æƒ‘çš„æœ›ç€$nï¼Œè‡ªè¨€è‡ªè¯­é“ï¼šèµ°äº²æˆšï¼Ÿæ²¡å¬è¯´è¿‡æœˆå®«ä¸Šè°è¿˜æœ‰äº²æˆšå•Šï¼Ÿ\n", me, ob);
+        command("say è¯¥ä¸ä¼šã€‚ã€‚ã€‚æ˜¯é‚£ä¸ªäººçš„äº²æˆšå§ï¼Ÿ");
+        message_vision("$Nå¥½åƒçªç„¶æƒ³èµ·ä»€ä¹ˆä¼¼çš„ï¼Œè„¸ä¸Šéœ²å‡ºææƒ§çš„ç¥æƒ…ï¼Œæ€¥å¿™é—­å˜´ä¸è¯´è¯äº†ã€‚\n", me);
         call_out("disappearing", 1);
         return 1;
     } else
@@ -161,7 +161,7 @@ int do_answer(string arg)
 void disappearing()
 {
     if (!is_fighting()) {
-        message_vision("$N±Ä±ÄÌøÌøµÄÀë¿ªÁË¡£\n", this_object());
+        message_vision("$Nè¹¦è¹¦è·³è·³çš„ç¦»å¼€äº†ã€‚\n", this_object());
         destruct(this_object());
     }
     remove_call_out("disappearing");
@@ -172,10 +172,10 @@ void endfight()
 {
     command("surrender");
     if (random(2)) {
-        command("say Äã´òµÄÎÒºÃÍ´£¬²»ºÍÄãÍæÁË¡£");
+        command("say ä½ æ‰“çš„æˆ‘å¥½ç—›ï¼Œä¸å’Œä½ ç©äº†ã€‚");
         command("angry");
     } else {
-        command("say ²»´òÁË£¬²»´òÁË£¬ÄãÌ«²»¾­´òÁË¡£");
+        command("say ä¸æ‰“äº†ï¼Œä¸æ‰“äº†ï¼Œä½ å¤ªä¸ç»æ‰“äº†ã€‚");
         command("sigh");
     }
     random_move();
@@ -194,7 +194,7 @@ void init()
 int accept_fight(object me)
 {
     command("jump");
-    command("say ×ÜËãÓĞÈËÅãÎÒÍæÁË¡£");
+    command("say æ€»ç®—æœ‰äººé™ªæˆ‘ç©äº†ã€‚");
     kill_ob(me);
     return 1;
 }

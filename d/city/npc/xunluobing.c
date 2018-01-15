@@ -1,21 +1,21 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ñ²Âß¹Ù±ø", ({ "xunluo guanbing","guanbing", "bing" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å·¡é€»å®˜å…µ", ({ "xunluo guanbing","guanbing", "bing" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 20);
         set("str", 25);
    set("con", 25);
    set("spi", 25);
    set("dex", 25);
    set("int", 25);
-        set("long", "ËûÍş·çÁİÁİ£¬É±ÆøÌÚÌÚ£¬¸ºÔğ³ÇÄÚÉÌ¼Ò°²È«¡£\n");
+        set("long", "ä»–å¨é£å‡›å‡›ï¼Œæ€æ°”è…¾è…¾ï¼Œè´Ÿè´£åŸå†…å•†å®¶å®‰å…¨ã€‚\n");
         set("combat_exp", 50000);
    set("class", "fighter");
         set("attitude", "herosim");
@@ -42,7 +42,7 @@ void create()
 
 int accept_fight(object me)
 {
-        message_vision("Ñ²Âß¹Ù±ø¶Ô$N°ÑÑÛÒ»µÉ£¬ºÈµÀ£ºß¾£¬´óµ¨£¬»¹²»ÍËÏÂ£¡\n\n", me);
+        message_vision("å·¡é€»å®˜å…µå¯¹$NæŠŠçœ¼ä¸€çªï¼Œå–é“ï¼šå‘”ï¼Œå¤§èƒ†ï¼Œè¿˜ä¸é€€ä¸‹ï¼\n\n", me);
         return 0;
 }
 
@@ -62,8 +62,8 @@ void leave()
 
         this_object()->add("time", 1);
         if( (int)this_object()->query("time") >= 3 ) {
-        message("vision",name() + "ÍÂÁË¿ÚÍÙÄ­£¬ÂîµÀ£ºÏÂ´Î±ğ½ĞÀÏ×ÓÅöµ½£¡
-Ñ²Âß¹Ù±ø×ßÁË³öÈ¥¡£\n", environment(),this_object() );
+        message("vision",name() + "åäº†å£å”¾æ²«ï¼Œéª‚é“ï¼šä¸‹æ¬¡åˆ«å«è€å­ç¢°åˆ°ï¼
+å·¡é€»å®˜å…µèµ°äº†å‡ºå»ã€‚\n", environment(),this_object() );
         destruct(this_object());
 
         }

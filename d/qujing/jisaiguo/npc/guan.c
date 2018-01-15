@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-       set_name("»ÆÃÅ¹Ù", ({"huangmen guan", "guan"}));
-       set("gender", "ÄÐÐÔ");
+       set_name("é»„é—¨å®˜", ({"huangmen guan", "guan"}));
+       set("gender", "ç”·æ€§");
        set("age", 30);
-        set("long", "Ò»¸öÉí¸ßÐØÀ«µÄµîÇ°ÎäÊ¿£¬Õý×ßÀ´×ßÈ¥Ñ²ÊÓ×Å¡£\n");
+        set("long", "ä¸€ä¸ªèº«é«˜èƒ¸é˜”çš„æ®¿å‰æ­¦å£«ï¼Œæ­£èµ°æ¥èµ°åŽ»å·¡è§†ç€ã€‚\n");
        set("attitude", "heroism");
        set("shen_type", 1);
        set("per", 18);
@@ -36,11 +36,11 @@ void die()
 {
    object ob;
         if( environment() ) {
-        message("sound", "\n»ÆÃÅ¹Ù´ó½Ð£ºÓÐ´Ì¿Í£¬¿ìÀ´±£»¤»ÊÉÏ£¡\n", environment());
+        message("sound", "\né»„é—¨å®˜å¤§å«ï¼šæœ‰åˆºå®¢ï¼Œå¿«æ¥ä¿æŠ¤çš‡ä¸Šï¼\n", environment());
    seteuid(getuid());
         if (!objectp(present("guan 2", environment(this_object())))){
    if( ob=new("/d/qujing/jisaiguo/npc/guan"))
-        message("sound", "\n¼¸¸ö»ÆÃÅ¹Ù´ÓÌ¨ÏÂÅÜÁËÉÏÀ´¡£\n", environment());
+        message("sound", "\nå‡ ä¸ªé»„é—¨å®˜ä»Žå°ä¸‹è·‘äº†ä¸Šæ¥ã€‚\n", environment());
      ob->move("/d/qujing/jisaiguo/yunqi");
            }
    }

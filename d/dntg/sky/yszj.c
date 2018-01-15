@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("ÓÓÊ¥Õæ¾ı",({"yousheng zhenjun", "zhenjun", "jun"}));
-    set("gender", "ÄĞĞÔ");
+    set_name("ä½‘åœ£çœŸå›",({"yousheng zhenjun", "zhenjun", "jun"}));
+    set("gender", "ç”·æ€§");
     set("age", 45);
-    set("long", "    \n¸ºÔğ±£»¤Óñ»Ê´óµÛµÄÌìÉñ£¬ÊÖÏÂ¼¸¸öÁé¹Ù\næçÓÂÎŞ±È¡£\n");
+    set("long", "    \nè´Ÿè´£ä¿æŠ¤ç‰çš‡å¤§å¸çš„å¤©ç¥ï¼Œæ‰‹ä¸‹å‡ ä¸ªçµå®˜\néªå‹‡æ— æ¯”ã€‚\n");
 
     set("attitude", "heroism");
     set("class", "xian");

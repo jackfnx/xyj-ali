@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bintiegun.c
@@ -9,17 +9,17 @@ inherit STICK;
 
 void create()
 {
-   set_name("ïÙÌú¹÷", ({ "bintiegun","tiegun","gun", "bang" }) );
+   set_name("é•”é“æ£", ({ "bintiegun","tiegun","gun", "bang" }) );
    set_weight(10000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¸ù");
+     set("unit", "æ ¹");
      set("value", 2000);
      set("material", "steel");
-     set("long", "Ò»¸ù³ÁµéµéºÚ÷î÷îµÄïÙÌú¹÷¡£\n");
-     set("wield_msg", "$NÄÃÆğÒ»¸ù$n£¬Ë³ÊÖÎèÁË¸ö¹÷»¨¡£\n");
-     set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+     set("long", "ä¸€æ ¹æ²‰ç”¸ç”¸é»‘é»é»çš„é•”é“æ£ã€‚\n");
+     set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$nï¼Œé¡ºæ‰‹èˆäº†ä¸ªæ£èŠ±ã€‚\n");
+     set("unwield_msg", "$Nå“¼äº†ä¸€å£°ï¼Œå°†$næ’å›åè…°ã€‚\n");
    }
    init_stick(35);
    setup();

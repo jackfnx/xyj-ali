@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "杏林");
   set ("long", @LONG
 
-�����и�ɫ�ӻ�ŭ�ţ������˱ǣ�����Ҫ���������ˡ����۱���
-��ڴ�Ļ��䣬��ɫ�ʶ�䣬��֮��Ů��֮Ц������ľ�Գ���ɫ
-��ī������һ�����⡣
+杏林中各色杏花怒放，香气扑鼻，几乎要将人醉倒了。望眼遍是
+碗口大的花朵，且色彩多变，望之如女子之笑脸。树木皆成深色
+如墨，而无一花瓣凋解。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

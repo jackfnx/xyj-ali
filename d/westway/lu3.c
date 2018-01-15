@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "大厅");
   set ("long", @LONG
 
-����֮�ϻ��Ƿǳ���������Χǽ�ϵ��Ŵִ���͵ƣ��Ѵ�����
-��ͨ�������и�̨�Ϸ�������̫ʦ�Σ�����С�������߶���
+大厅之上还是非常宽敞，周围墙上点着粗大的油灯，把大厅照
+的通亮。厅中高台上放着三把太师椅，几个小妖来回走动。
 LONG);
 
   set("exits", ([

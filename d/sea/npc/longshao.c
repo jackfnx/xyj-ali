@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Changed by sjmao  09-11-97
@@ -7,16 +7,16 @@ string expell_me(object me);
 
 void create()
 {
-    set_name("ÁúÉÙÒ¯", ({"long shaoye","shaoye","taizi","long","prince"}));
+    set_name("é¾™å°‘çˆ·", ({"long shaoye","shaoye","taizi","long","prince"}));
 
-    set("long","ÁúÍõµÄ¶ù×Ó£¬¿´ÉÏÈ¥¾ÍÊÇÒ»¸ö´óÉÙÒ¯£®\n");
-    set("gender", "ÄÐÐÔ");
+    set("long","é¾™çŽ‹çš„å„¿å­ï¼Œçœ‹ä¸ŠåŽ»å°±æ˜¯ä¸€ä¸ªå¤§å°‘çˆ·ï¼Ž\n");
+    set("gender", "ç”·æ€§");
     set("int", 25);
     set("age", 17);
-    set("title", "Áú¹¬Ì«×Ó");
+    set("title", "é¾™å®«å¤ªå­");
     set("attitude", "peaceful");
     set("combat_exp", 450000);
-    set("rank_info/respect", "µîÏÂ");
+    set("rank_info/respect", "æ®¿ä¸‹");
     set("class","dragon");
     set("per", 15);
     set("max_kee", 1000);
@@ -48,12 +48,12 @@ void create()
     map_skill("dodge", "dragonstep");
 
     set("inquiry", ([
-        "°½ð½": "°½ð½½ã½ã²»ÖªµÀÄÄÈ¥ÁË£¬ÎÒ»¹ÏëÕÒËýÍæÄØ¡£\n",
-        "Àë¹¬": (: expell_me :),
+        "æ•–é¸¾": "æ•–é¸¾å§å§ä¸çŸ¥é“å“ªåŽ»äº†ï¼Œæˆ‘è¿˜æƒ³æ‰¾å¥¹çŽ©å‘¢ã€‚\n",
+        "ç¦»å®«": (: expell_me :),
         "leave": (: expell_me :),
         ]) );
 
-    create_family("¶«º£Áú¹¬", 3, "Ë®×å");
+    create_family("ä¸œæµ·é¾™å®«", 3, "æ°´æ—");
     setup();
 
     carry_object("/d/ourhome/obj/choupao")->wear();
@@ -62,16 +62,16 @@ void create()
 void attempt_apprentice(object ob)
 {
     command("look " + ob->query("id"));
-    if ((string)ob->query("gender")=="ÄÐÐÔ") {
+    if ((string)ob->query("gender")=="ç”·æ€§") {
         command("kick " + ob->query("id"));
-        command("say ÎÒÃ»¹¦·ò½ÌÄã£¡\n");
+        command("say æˆ‘æ²¡åŠŸå¤«æ•™ä½ ï¼\n");
         return;
     }
 
     command("sister " + ob->query("id"));
     command("recruit " + ob->query("id"));
-    command("say ºÙºÙ£¬Ö»Òª" + RANK_D->query_respect(ob) +
-        "°ÑÊ¦¸¸ÎÒÅª¸ßÐËÁË£¬±£ÄãÈÙ»ª¸»¹óÏíÊÜ²»¾¡¡£\n");
+    command("say å˜¿å˜¿ï¼Œåªè¦" + RANK_D->query_respect(ob) +
+        "æŠŠå¸ˆçˆ¶æˆ‘å¼„é«˜å…´äº†ï¼Œä¿ä½ è£åŽå¯Œè´µäº«å—ä¸å°½ã€‚\n");
     return;
 }
 
@@ -83,14 +83,14 @@ int recruit_apprentice(object ob)
 string expell_me(object me)
 {
     me = this_player();
-    if ((string)me->query("family/family_name")=="¶«º£Áú¹¬") {
-        if ((string)me->query("gender")=="ÄÐÐÔ") {
+    if ((string)me->query("family/family_name")=="ä¸œæµ·é¾™å®«") {
+        if ((string)me->query("gender")=="ç”·æ€§") {
             command("slap " + me->query("id"));
-            return ("ÈÂÊ²Ã´ÈÂ£¡Òª¹öµ°È¥ÎÊÎÒÃÇ¼ÒÀÏÍ·×Ó£¡\n");
+            return ("åš·ä»€ä¹ˆåš·ï¼è¦æ»šè›‹åŽ»é—®æˆ‘ä»¬å®¶è€å¤´å­ï¼\n");
         }
 
-        message_vision("ÁúÉÙÒ¯ÑÛÀáÍôÍôµØÍû×Å$N£¬Éì³öÊÖÏëÀ­×¡$N£¬µ«ÓÖËõÁË»ØÀ´¡£\n", me);
-        return ("ÄãÈ¥ÎÊÎÒ¸¸Íõ°É¡£¡£¡£ÎÒÔõÃ´ÖªµÀ£¿\n");
+        message_vision("é¾™å°‘çˆ·çœ¼æ³ªæ±ªæ±ªåœ°æœ›ç€$Nï¼Œä¼¸å‡ºæ‰‹æƒ³æ‹‰ä½$Nï¼Œä½†åˆç¼©äº†å›žæ¥ã€‚\n", me);
+        return ("ä½ åŽ»é—®æˆ‘çˆ¶çŽ‹å§ã€‚ã€‚ã€‚æˆ‘æ€Žä¹ˆçŸ¥é“ï¼Ÿ\n");
     }
-    return ("²»ÖªµÀ£¡\n");
+    return ("ä¸çŸ¥é“ï¼\n");
 }

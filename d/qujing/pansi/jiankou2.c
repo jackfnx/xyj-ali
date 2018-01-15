@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 11/16/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "涧口");
   set ("long", @LONG
 
-ɽ����һ��ϸ�����Ѷ��£�����һϪɽ���ڽ�����ʯ���̿���
-�򶫱��Ƶ�������ȥ������������һƽ̨����������һ����ɽ��
-�羰����������ȴ��������ġ�
+山岩上一道细瀑蜿蜒而下，流作一溪山涧在脚下碎石中铺开，
+向东边绕道涧底流去。东边向上是一平台，对面是另一座高山，
+风景格外秀丽，却是咫尺天涯。
 
 LONG);
 
@@ -32,7 +32,7 @@ int do_jump ()
 {
   object who = this_player();
 
-  message_vision ("$N�����۾�һ����ವ�һ��Ծ�˹�ȥ��\n",who);
+  message_vision ("$N闭上眼睛一跳，嗖地一声跃了过去。\n",who);
   who->move(__DIR__"jiankou1");
   return 1;
 }

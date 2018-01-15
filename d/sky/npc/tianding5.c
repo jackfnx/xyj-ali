@@ -5,5 +5,5 @@ inherit __DIR__"tianding.c";
 void create()
 {
     ::create();
-    set_name("µË¹úÑÒ",({ "deng guo yan", "tian ding", "ding", "tianding" }));
+    set_name("é‚“å›½å²©",({ "deng guo yan", "tian ding", "ding", "tianding" }));
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,9 +6,9 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("Àä×ÓĞË", ({"leng zixing","leng","zixing"}));
-  set("title", "¹Å¶­ÉÌ");
-  set("gender", "ÄĞĞÔ");
+  set_name("å†·å­å…´", ({"leng zixing","leng","zixing"}));
+  set("title", "å¤è‘£å•†");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 10000);
   set("age", 46);
   set("attitude", "friendly");

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -10,18 +10,18 @@ inherit WHIP;
 
 void create()
 {
-        set_name("ÇéË¿", ({"silk whip", "whip"}));
+        set_name("æƒ…ä¸", ({"silk whip", "whip"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 
-set("long","Ò»ÌõÀ¶É«µÄ³¤´ø£¬Ï¸¿´ÓÉÎŞÊıÏ¸ÈçÃ«·¢µÄ³¤Ë¿¾Û³É£¬ËäÇáÈôÎŞÎï£¬È´ÎŞ¿×²»Èë¡£\n");
-                set("unit", "Ìõ");
+set("long","ä¸€æ¡è“è‰²çš„é•¿å¸¦ï¼Œç»†çœ‹ç”±æ— æ•°ç»†å¦‚æ¯›å‘çš„é•¿ä¸èšæˆï¼Œè™½è½»è‹¥æ— ç‰©ï¼Œå´æ— å­”ä¸å…¥ã€‚\n");
+                set("unit", "æ¡");
    set("replace_file", "/d/obj/weapon/whip/pibian");
                 set("value", 12000);
-     set("wield_msg", "$N×óÊÖÇáÑï£¬Ò»ÌõÀ¶É«³ñ´øºöµØË¦ÁË³öÀ´\n");
-     set("unwield_msg", "$N°ÑÊÖÖĞ$n²ø»ØÑü¼ä£®\n");
+     set("wield_msg", "$Nå·¦æ‰‹è½»æ‰¬ï¼Œä¸€æ¡è“è‰²ç»¸å¸¦å¿½åœ°ç”©äº†å‡ºæ¥\n");
+     set("unwield_msg", "$NæŠŠæ‰‹ä¸­$nç¼ å›è…°é—´ï¼\n");
      set("weapon_prop/courage", 5);
         }
         init_whip(60);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name("ÌìÊ¦·¨¹Ú", ({ "loyal bonnet", "bonnet", "hat" }) );
+        set_name("å¤©å¸ˆæ³•å† ", ({ "loyal bonnet", "bonnet", "hat" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-     set("long", "Ò»¶¥»ÆÉ«ÏóÑÀÓñ·¨¹Ú¡£\n");
+                set("unit", "é¡¶");
+     set("long", "ä¸€é¡¶é»„è‰²è±¡ç‰™ç‰æ³•å† ã€‚\n");
                 set("material", "steel");
                 set("value", 1000);
      set("no_sell", 1);

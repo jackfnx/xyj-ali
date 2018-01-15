@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ˮ");
+  set ("short", "泾水");
   set ("long", @LONG
 
-��Χ��������ĺ�ˮ�������ܵľ�ɫ����������ڳ������ϣ���
-ˮ֮�У���ˮ�峺���ף�Զ�����м���С����
+周围是齐腰深的河水，从四周的景色来看大概是在长安城南，泾
+水之中．流水清澈见底，远处还有几条小船．
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bbsboard.c
@@ -66,9 +66,9 @@ string short()
 
    news = query("news");
    if( !pointerp(news) || !sizeof(news) )
-     return ::short() + " [ Ä¿Ç°Ã»ÓĞÈÎºÎĞÂÎÅ×é ]";
+     return ::short() + " [ ç›®å‰æ²¡æœ‰ä»»ä½•æ–°é—»ç»„ ]";
      
-   return sprintf("%s [ Ä¿Ç°¹²ÓĞ %d ¸öĞÂÎÅ×é ]", ::short(), sizeof(news));   
+   return sprintf("%s [ ç›®å‰å…±æœ‰ %d ä¸ªæ–°é—»ç»„ ]", ::short(), sizeof(news));   
 }
 
 string long()
@@ -79,7 +79,7 @@ string long()
 
    news = query("news");
    msg = query("long");
-   msg = msg + "ĞÂÎÅ°æµÄÊ¹ÓÃ·½·¨Çë¼û help bbsboard¡£\n";
+   msg = msg + "æ–°é—»ç‰ˆçš„ä½¿ç”¨æ–¹æ³•è¯·è§ help bbsboardã€‚\n";
    if( !pointerp(news) || !sizeof(news) ) return query("long");
 
    for(i=0; i<sizeof(news); i++)   {
@@ -118,7 +118,7 @@ void done_postnews(object ob, int idx, int sidx, mapping note, string text)
          news[idx]["index"] = news[idx]["index"][50..100];
 
      set("news", news);
-     tell_object(ob, "ÁôÑÔÍê±Ï¡£\n\n\n");
+     tell_object(ob, "ç•™è¨€å®Œæ¯•ã€‚\n\n\n");
      
      save();
      
@@ -168,12 +168,12 @@ void inside_group(string line, object ob, int idx, int sidx)
     else if(line[0..1] == "p ")  {
         sscanf(line, "%s %s", cmds, title);
         if(!title)
-            write("ÁôÑÔÇëÖ¸¶¨Ò»¸ö±êÌâ¡£\n");
+            write("ç•™è¨€è¯·æŒ‡å®šä¸€ä¸ªæ ‡é¢˜ã€‚\n");
         else   
             do_postnews(ob, idx, sidx,  title);
     }
     else  {
-       write("\nÏëÁôÑÔÂğ£¿(q ÍË³ö p ÁôÑÔ)");
+       write("\næƒ³ç•™è¨€å—ï¼Ÿ(q é€€å‡º p ç•™è¨€)");
         input_to("inside_group", ob, idx, sidx);
     }    
 }
@@ -221,7 +221,7 @@ void do_readarticle(object ob, int idx, int sidx)
     //write(msg); 
     do_startmore("", explode(msg, "\n"), 0, ob, idx, sidx);
 
-    /*write("\nÏëÁôÑÔÂğ£¿(q ÍË³ö p ÁôÑÔ)");
+    /*write("\næƒ³ç•™è¨€å—ï¼Ÿ(q é€€å‡º p ç•™è¨€)");
      input_to("inside_group", ob, idx, sidx); */
     return;
 }
@@ -246,16 +246,16 @@ void  in_group(string line, object ob, int idx, int restricted)
     else if( line[0..1] == "d " && !restricted )  {
        sscanf(line, "%s %d", cmds, num);
        if( num < 1 || num > sizeof(news[idx]["index"]) )  {
-          write("Ã»ÓĞÕâ¸öÁôÑÔ¡£\n");
+          write("æ²¡æœ‰è¿™ä¸ªç•™è¨€ã€‚\n");
        }
        else if( news[idx]["index"][num-1]["used"] > 0) {
-          write("Õâ¸öÁôÑÔÕı±»ÈËÊ¹ÓÃ£¬Äã²»ÄÜÉ¾È¥£¡\n");
+          write("è¿™ä¸ªç•™è¨€æ­£è¢«äººä½¿ç”¨ï¼Œä½ ä¸èƒ½åˆ å»ï¼\n");
        }
        else {
           myid = ob->query("name")+"("+capitalize(ob->query("id"))+")";
           if(wizhood(ob) != "(admin)" && 
              myid != news[idx]["index"][num-1]["author"])  {
-             write("Äã²»ÄÜÉ¾È¥Õâ¸öÁôÑÔ£¡£¡\n");
+             write("ä½ ä¸èƒ½åˆ å»è¿™ä¸ªç•™è¨€ï¼ï¼\n");
           }
           else {
              nnews = ({ });
@@ -277,7 +277,7 @@ void  in_group(string line, object ob, int idx, int restricted)
              
              news[idx]["index"] = nnews;
           
-             msg = sprintf("É¾³ıµÚ %d ºÅÁôÑÔ....Ok¡£", num);  
+             msg = sprintf("åˆ é™¤ç¬¬ %d å·ç•™è¨€....Okã€‚", num);  
              tell_object(ob, msg); 
              set("news", news);
              save();                                
@@ -288,7 +288,7 @@ void  in_group(string line, object ob, int idx, int restricted)
     else if( line[0..1] == "p " ) {
        sscanf(line, "%s %s", cmds, title);
        if(!title)  {
-          write("ÁôÑÔÇëÖ¸¶¨Ò»¸ö±êÌâ¡£\n");
+          write("ç•™è¨€è¯·æŒ‡å®šä¸€ä¸ªæ ‡é¢˜ã€‚\n");
           do_readnewsgroup(ob, idx);   
        }   
        else   
@@ -297,7 +297,7 @@ void  in_group(string line, object ob, int idx, int restricted)
     else { 
        sscanf(line, "%d", num);
        if( num < 1 || num > sizeof(news[idx]["index"]) )  {
-          write("Ã»ÓĞÕâ¸öÁôÑÔ¡£\n");
+          write("æ²¡æœ‰è¿™ä¸ªç•™è¨€ã€‚\n");
           do_readnewsgroup(ob, idx);
        }
        else {
@@ -325,11 +325,11 @@ void do_readnewsgroup(object ob, int idx)
         last_time = last_read_time[news[idx]["id"]];
  
     write("\n"+HIR+"******************************************************************"+NOR+"\n");
-    write("»¶Ó­À´µ½"+HIC+news[idx]["name"]+NOR+"ĞÂÎÅ×é£¡£¡£¡\n");
+    write("æ¬¢è¿æ¥åˆ°"+HIC+news[idx]["name"]+NOR+"æ–°é—»ç»„ï¼ï¼ï¼\n");
     write(HIR+"******************************************************************"+NOR+"\n");
     if(!sizeof(news[idx]["index"]))  {
-       write("Õâ¸öĞÂÎÅ×éÄ¿Ç°Ã»ÓĞÈÎºÎÁôÑÔ¡£\n");
-       write("ÄãÒªÁôÑÔÂğ£¿(p ÁôÑÔ  q ÍË³ö)");
+       write("è¿™ä¸ªæ–°é—»ç»„ç›®å‰æ²¡æœ‰ä»»ä½•ç•™è¨€ã€‚\n");
+       write("ä½ è¦ç•™è¨€å—ï¼Ÿ(p ç•™è¨€  q é€€å‡º)");
        input_to("in_group", ob, idx, 1);
     }
     else {
@@ -356,7 +356,7 @@ void do_readnewsgroup(object ob, int idx)
           } 
        }
        write("\n");
-       write("ÇëÑ¡ÔñÒª¶ÁµÄÁôÑÔ£º(q ÍË³ö l ÖØÁĞ  p ÌùÎÄ d É¾È¥ ºÅÂë½øÈë)");
+       write("è¯·é€‰æ‹©è¦è¯»çš„ç•™è¨€ï¼š(q é€€å‡º l é‡åˆ—  p è´´æ–‡ d åˆ å» å·ç è¿›å…¥)");
        input_to("in_group", ob, idx, 0);
     }
 }
@@ -369,10 +369,10 @@ int do_makegroup(string arg)
    string name, id;
    
    if(wizhood(this_player()) != "(admin)")
-      return notify_fail("ÄãÃ»ÓĞ´´½¨ĞÂÎÅ×éµÄÈ¨Àû£¡\n");
+      return notify_fail("ä½ æ²¡æœ‰åˆ›å»ºæ–°é—»ç»„çš„æƒåˆ©ï¼\n");
       
    if(sscanf(arg, "%s %s", name, id) != 2)
-     return notify_fail("ÇëÓÃ mkgroup ĞÂÎÅ×éÖĞÎÄÃû ĞÂÎÅ×éÓ¢ÎÄÃû\nÈ¥´´½¨Ò»¸öĞÂµÄĞÂÎÅ×é¡£\n");
+     return notify_fail("è¯·ç”¨ mkgroup æ–°é—»ç»„ä¸­æ–‡å æ–°é—»ç»„è‹±æ–‡å\nå»åˆ›å»ºä¸€ä¸ªæ–°çš„æ–°é—»ç»„ã€‚\n");
      
    news = query("news");
    if( !pointerp(news) || !sizeof(news) )
@@ -381,11 +381,11 @@ int do_makegroup(string arg)
      num = sizeof(news);
      
    if( num == BOARD_CAPACITY )
-      return notify_fail("ÒÑ¾­ÓĞÌ«¶àµÄĞÂÎÅ×é£¬ÇëÏÈÓÃ rmgroup É¾È¥Ò»Ğ©²»³£ÓÃµÄ¡£\n");
+      return notify_fail("å·²ç»æœ‰å¤ªå¤šçš„æ–°é—»ç»„ï¼Œè¯·å…ˆç”¨ rmgroup åˆ å»ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");
   
    for(i=0; i<num; i++)   {
      if(news[i]["id"] == id)
-      return notify_fail("¸ÃĞÂÎÅ×éÒÑ´æÔÚ¡£\n");
+      return notify_fail("è¯¥æ–°é—»ç»„å·²å­˜åœ¨ã€‚\n");
    }
       
    one_news = allocate_mapping(6);
@@ -402,7 +402,7 @@ int do_makegroup(string arg)
       news += ({ one_news });    
       
    set("news", news);
-   tell_object(this_player(), "ĞÂÎÅ×é´´½¨³É¹¦£¡\n");
+   tell_object(this_player(), "æ–°é—»ç»„åˆ›å»ºæˆåŠŸï¼\n");
    
    save();
    return 1; 
@@ -419,10 +419,10 @@ int do_rmgroup(string arg)
    string msg;
    
    if(wizhood(this_player()) != "(admin)")
-      return notify_fail("ÄãÃ»ÓĞÉ¾ĞÂÎÅ×éµÄÈ¨Àû£¡\n");
+      return notify_fail("ä½ æ²¡æœ‰åˆ æ–°é—»ç»„çš„æƒåˆ©ï¼\n");
       
    if(!arg)
-     return notify_fail("ÇëÓÃ rmgroup ĞÂÎÅ×éÓ¢ÎÄÃû È¥É¾Ò»¸öĞÂÎÅ×é¡£\n");
+     return notify_fail("è¯·ç”¨ rmgroup æ–°é—»ç»„è‹±æ–‡å å»åˆ ä¸€ä¸ªæ–°é—»ç»„ã€‚\n");
      
    news = query("news");
    if( !pointerp(news) || !sizeof(news) )
@@ -433,8 +433,8 @@ int do_rmgroup(string arg)
    for(i=0; i<num; i++)   {
      if(news[i]["id"] == arg)  {
          if( news[i]["used"] > 0 )  {
-            msg = sprintf("%s%d%s", "Ä¿Ç°¹²ÓĞ", news[i]["used"], 
-               "ÈËÊ¹ÓÃ"+HIC+news[i]["name"]+NOR+"ĞÂÎÅ×é£¬ÇëÉ÷ÖØ¿¼ÂÇ£¡");
+            msg = sprintf("%s%d%s", "ç›®å‰å…±æœ‰", news[i]["used"], 
+               "äººä½¿ç”¨"+HIC+news[i]["name"]+NOR+"æ–°é—»ç»„ï¼Œè¯·æ…é‡è€ƒè™‘ï¼");
             write(msg);
             return 0;
         }
@@ -450,9 +450,9 @@ int do_rmgroup(string arg)
         delflag = 1; 
    }
    if(delflag)        
-      tell_object(this_player(), "ĞÂÎÅ×éÉ¾È¥³É¹¦£¡\n");
+      tell_object(this_player(), "æ–°é—»ç»„åˆ å»æˆåŠŸï¼\n");
    else
-      tell_object(this_player(), "Ã»ÓĞÕâ¸öĞÂÎÅ×é£¡\n");
+      tell_object(this_player(), "æ²¡æœ‰è¿™ä¸ªæ–°é—»ç»„ï¼\n");
      
    set("news", nnews);    
    save();         
@@ -469,7 +469,7 @@ void enter_group(string line)
     
     me = this_player(); 
     if( line == "q")  {
-       write("ÍË³ö " + HIG + "BBS "+NOR+"°å¡£\n");
+       write("é€€å‡º " + HIG + "BBS "+NOR+"æ¿ã€‚\n");
        return;
     }
     else if( line == "l" ) {
@@ -478,8 +478,8 @@ void enter_group(string line)
     else  {
        sscanf(line, "%d", num);
        if( num < 1 || num > sizeof(news) )  {
-           write("\nÃ»ÓĞÕâ¸öĞÂÎÅ×é¡£\n");
-           write("\nÇëÑ¡ÔñÒªÔÄ¶ÁµÄĞÂÎÅ×é£º(q ÍË³ö ºÅÂë½øÈë)");
+           write("\næ²¡æœ‰è¿™ä¸ªæ–°é—»ç»„ã€‚\n");
+           write("\nè¯·é€‰æ‹©è¦é˜…è¯»çš„æ–°é—»ç»„ï¼š(q é€€å‡º å·ç è¿›å…¥)");
            input_to("enter_group");
            return;
        }
@@ -502,12 +502,12 @@ int do_readgroup(string arg)
     news = query("news");
     
     if( !pointerp(news) || !sizeof(news) )
-       return notify_fail(HIG+" BBS " + NOR + "°åÃ»ÓĞÈÎºÎĞÂÎÅ×é¡£\n");
+       return notify_fail(HIG+" BBS " + NOR + "æ¿æ²¡æœ‰ä»»ä½•æ–°é—»ç»„ã€‚\n");
        
-    if( !arg || arg != "board") return notify_fail("Ö¸Áî¸ñÊ½£ºread board\n");
+    if( !arg || arg != "board") return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šread board\n");
    
     write("\n"+HIR+"=================================================================="+NOR+"\n");
-    write("»¶Ó­Ê¹ÓÃº¦³æ¾ãÀÖ²¿ " + HIG + "BBS " + NOR + "°å£¡\n");
+    write("æ¬¢è¿ä½¿ç”¨å®³è™«ä¿±ä¹éƒ¨ " + HIG + "BBS " + NOR + "æ¿ï¼\n");
     write(HIR+"=================================================================="+NOR+"\n");
     for(i=0; i<sizeof(news); i++)   {
        if( !mapp(last_read_time) )  last_read = 0;
@@ -518,7 +518,7 @@ int do_readgroup(string arg)
          i+1, sizeof(news[i]["index"]), news[i]["name"], news[i]["id"]);
        write(msg); 
     }
-    write("\nÇëÑ¡ÔñÒªÔÄ¶ÁµÄĞÂÎÅ×é£º(q ÍË³ö l ÖØÁĞ ºÅÂë½øÈë)");
+    write("\nè¯·é€‰æ‹©è¦é˜…è¯»çš„æ–°é—»ç»„ï¼š(q é€€å‡º l é‡åˆ— å·ç è¿›å…¥)");
     input_to("enter_group");
     return 1;
 }
@@ -531,11 +531,11 @@ int do_cpbboard(string arg)
     int     i, j, k;
     
     if( sscanf(arg, "%s %s", bb, newsgroup) != 2 )
-     return notify_fail("Ö¸Áî¸ñÊ½£ºcpbboard b_board newsgroup\n");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcpbboard b_board newsgroup\n");
    
     bb_file = "/obj/board/" + bb;        
     if( file_size(bb_file+".c") <= 0 ) 
-       return notify_fail("ÕÒ²»µ½ " + bb_file + ".c Õâ¸öÎÄ¼ş¡£\n");
+       return notify_fail("æ‰¾ä¸åˆ° " + bb_file + ".c è¿™ä¸ªæ–‡ä»¶ã€‚\n");
     
     news = query("news"); 
    if( !pointerp(news) || !sizeof(news) )
@@ -549,7 +549,7 @@ int do_cpbboard(string arg)
       }
    } 
    if(k == -1)
-      return notify_fail("Ã»ÓĞ "+ newsgroup + " Õâ¸öĞÂÎÅ×é¡£\n");
+      return notify_fail("æ²¡æœ‰ "+ newsgroup + " è¿™ä¸ªæ–°é—»ç»„ã€‚\n");
       
     notes = bb_file->query("notes");
    if( !pointerp(notes) || !sizeof(notes) )
@@ -569,7 +569,7 @@ int do_cpbboard(string arg)
     }
     
     set("news", news);
-    tell_object(this_player(), "¿½±´Íê±Ï£¡\n");
+    tell_object(this_player(), "æ‹·è´å®Œæ¯•ï¼\n");
     
     save();
     return 1;
@@ -584,7 +584,7 @@ void do_startmore(string cmd, string *text, int line, object ob, int idx, int si
             for(i=line + 23; line<sizeof(text) && line<i; line++)
                 write(text[line] + "\n");
             if( line>=sizeof(text) )  { 
-           write("\nÏëÁôÑÔÂğ£¿(q ÍË³ö p ÁôÑÔ)");
+           write("\næƒ³ç•™è¨€å—ï¼Ÿ(q é€€å‡º p ç•™è¨€)");
            input_to("inside_group", ob, idx, sidx);
      return;
             }
@@ -596,11 +596,11 @@ void do_startmore(string cmd, string *text, int line, object ob, int idx, int si
                write(text[line]+"\n");
             break;
         case "q":
-       write("\nÏëÁôÑÔÂğ£¿(q ÍË³ö p ÁôÑÔ)");
+       write("\næƒ³ç•™è¨€å—ï¼Ÿ(q é€€å‡º p ç•™è¨€)");
        input_to("inside_group", ob, idx, sidx);
             return;
     }
-    printf("== Î´Íê¼ÌĞø " HIY "%d%%" NOR " == (ENTER ¼ÌĞøÏÂÒ»Ò³£¬q Àë¿ª£¬b Ç°Ò»Ò³)",
+    printf("== æœªå®Œç»§ç»­ " HIY "%d%%" NOR " == (ENTER ç»§ç»­ä¸‹ä¸€é¡µï¼Œq ç¦»å¼€ï¼Œb å‰ä¸€é¡µ)",
         (line*100/sizeof(text)) );
     input_to("do_startmore", text, line, ob, idx, sidx);
 

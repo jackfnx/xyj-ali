@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/2/1997
@@ -9,16 +9,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "·¢ºÚµÄ±Ù¹ÈÍè" , ({"pigu wan", "wan"}));
+  set_name( "å‘é»‘çš„è¾Ÿè°·ä¸¸" , ({"pigu wan", "wan"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿Å°µ»ÆÉ«µÄ±Ù¹ÈÍè£¬ÉÏÃæÈ«ÊÇºÚ°ß¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—æš—é»„è‰²çš„è¾Ÿè°·ä¸¸ï¼Œä¸Šé¢å…¨æ˜¯é»‘æ–‘ã€‚\n");
     set("value", 0);
     set("no_sell", 1);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   setup();
 }
@@ -34,7 +34,7 @@ int do_eat(string arg)
   if (arg!="pigu wan" && arg!="wan") 
     return 0;
   
-  tell_object(me, "»µÒ©»¹ÄÜ³ÔÂğ£¿\n");
+  tell_object(me, "åè¯è¿˜èƒ½åƒå—ï¼Ÿ\n");
   return 1;
 }
 

@@ -1,16 +1,16 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 void create()
 {
-        set_name("б╚дО", ({"lu niang"}));
+        set_name("Х┼╕Е╗≤", ({"lu niang"}));
         set("long",
-"кЩм╥ио╡Еве╪╦╤Д╟ви╚б╚╩╗ё╛хщяукДх╩гнюЖё╛х╢яз╡╩в║иМио╣дяЩфЬ║ё\n");
+"Е╔╧Е╓╢Д╦┼Ф▐▓Г²─Е┤═Ф°╣Г≥╫Х┴╡Х┼╕Х┼╠О╪▄Е╝╧И╒°Х≥╫Г└╤Д©▐Д╦╫О╪▄Е█╢Ф▌╘Д╦█Д╫▐Х╨╚Д╦┼Г └Е╕√Ф╟■Ц─┌\n");
         set("age", 20);
-   set("title", "б╚╩╗╬╚");
+   set("title", "Х┼╕Х┼╠Г╡╬");
         set("attitude", "friendly");
-        set("gender", "е╝пт");
+        set("gender", "Е╔ЁФ─╖");
    set("class", "yaomo");
         set("str", 20);
         set("int", 20);
@@ -61,14 +61,14 @@ void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
    
-   if((string)ob->query("family/family_name")=="ощ©уи╫нч╣в╤╢" 
-   && (string)ob->query("family/family_name")=="брй╞и╫╠л╡╗л╤"
-        && (string)ob->query("family/family_name")=="╢Ся╘и╫") {
+   if((string)ob->query("family/family_name")=="И≥╥Г╘╨Е╠╠Ф≈═Е╨∙Ф╢·" 
+   && (string)ob->query("family/family_name")=="Д╧╠Г÷ЁЕ╠╠Г╒╖ФЁ╒Ф╫╜"
+        && (string)ob->query("family/family_name")=="Е╓╖И⌡╙Е╠╠") {
    command("xixi " + ob->query("id"));
    return;
    }
    command("look " + ob->query("id") );
-   command("say сж╟всжежё╛уЩ╨оюодОн╦©з║ё");
+   command("say Е▐┬Г≥╫Е▐┬Х┐√О╪▄Ф╜ёЕ░┬Х─│Е╗≤Х┐┐Е▐ёЦ─┌");
    command("chan " + ob->query("id") );
    kill_ob(ob);
    ob->fight_ob(this_object());

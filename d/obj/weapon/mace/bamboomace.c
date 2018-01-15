@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,12 +7,12 @@ inherit MACE;
 
 void create()
 {
-        set_name("Öñ½Ú±Ş", ({"bamboo mace", "mace"}));
+        set_name("ç«¹èŠ‚é­", ({"bamboo mace", "mace"}));
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 500);
                 set("material", "wood");
         }

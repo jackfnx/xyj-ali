@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/shiwu.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "Ê¯ÎÝ");
+  set ("short", "çŸ³å±‹");
   set ("long", @LONG
 
-ÎÝÄÚ¹âÏß°µµ­£¬ÒþÒþ¿´µ½ËÄÖÜÇ½ÉÏ»­×ÅÐ©°ËØÔÖ®ÀàµÄÍ¼ÐÎ¡£¼Ò
-ÀïµÄÖ÷ÈËÊÇ³ÇÄÚÓÐÃûµÄ°¢ÆßÆÅ£¬·²ÓÐÇó»ê¸æµ»£¬¿´·çË®£¬Ëã»Æ
-µÀ¼ªÈÕµÄÊÂ×ÜÉÙ²»ÁËËý¡£Ò²ÌýËµËý»áËãÃü£¬²»ÖªÁé²»Áé¡£
+å±‹å†…å…‰çº¿æš—æ·¡ï¼Œéšéšçœ‹åˆ°å››å‘¨å¢™ä¸Šç”»ç€äº›å…«å¦ä¹‹ç±»çš„å›¾å½¢ã€‚å®¶
+é‡Œçš„ä¸»äººæ˜¯åŸŽå†…æœ‰åçš„é˜¿ä¸ƒå©†ï¼Œå‡¡æœ‰æ±‚é­‚å‘Šç¥·ï¼Œçœ‹é£Žæ°´ï¼Œç®—é»„
+é“å‰æ—¥çš„äº‹æ€»å°‘ä¸äº†å¥¹ã€‚ä¹Ÿå¬è¯´å¥¹ä¼šç®—å‘½ï¼Œä¸çŸ¥çµä¸çµã€‚
 LONG);
   set("objects", ([ /* sizeof() == 1 */
   __DIR__"npc/aqi" : 1,

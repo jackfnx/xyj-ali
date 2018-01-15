@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,20 +7,20 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name("»¢Æ¤Åû·ç", ({ "tiger surcoat","surcoat" }) );
+        set_name("è™çš®æŠ«é£", ({ "tiger surcoat","surcoat" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-     set("long", "Ò»¼ş»¢Æ¤µÄÅû·ç£¬´©ÆğÀ´Ïë±ØÊÇÏàµ±Íş·ç¡£\n");
+     set("long", "ä¸€ä»¶è™çš®çš„æŠ«é£ï¼Œç©¿èµ·æ¥æƒ³å¿…æ˜¯ç›¸å½“å¨é£ã€‚\n");
                 set("material", "cloth");
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("armor_prop/armor", 5);
      set("armor_prop/dodge", 5);
      set("armor_prop/armor_vs_force", 50);
      set("armor_prop/armor_vs_spells", 50);
-     set("msg_wear", "$NÅûÉÏÒ»¼ş$n¡£\n");
-     set("msg_remove", "$N½âÏÂ$n¡£\n");
+     set("msg_wear", "$NæŠ«ä¸Šä¸€ä»¶$nã€‚\n");
+     set("msg_remove", "$Nè§£ä¸‹$nã€‚\n");
      set("armor_prop/personality", 3);
                 set("armor_prop/spirituality", 3);
         }

@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// nichang.c ±ÌË®ÄŞÉÑ
+// nichang.c ç¢§æ°´éœ“è£³
 
 #include <armor.h>
 
@@ -9,13 +9,13 @@ inherit CLOTH;
 
 void create()
 {
-   set_name("±ÌË®ÄŞÉÑ", ({ "nichang", "cloth" }) );
+   set_name("ç¢§æ°´éœ“è£³", ({ "nichang", "cloth" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long", "Ò»Ìõ±¡Èç²õÒí£¬ÓÄÏãÇßÈËµÄ±ÌÉ«³¤È¹£¬Çá²ü²üµØ²»ÖªÓÉÊ²Ã´²¼ÁÏ×ö³É¡£\n");
-     set("unit", "Ìõ");
+     set("long", "ä¸€æ¡è–„å¦‚è‰ç¿¼ï¼Œå¹½é¦™æ²äººçš„ç¢§è‰²é•¿è£™ï¼Œè½»é¢¤é¢¤åœ°ä¸çŸ¥ç”±ä»€ä¹ˆå¸ƒæ–™åšæˆã€‚\n");
+     set("unit", "æ¡");
      set("value", 8000);
      set("material", "cloth");
      set("armor_prop/armor", 1);

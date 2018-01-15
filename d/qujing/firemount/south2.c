@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Сɽ����");
+  set ("short", "小山南坡");
   set ("long", @LONG
 
-ɽ������ʯ�������������ǵس���Щ�Ӳݣ���ʱ���м�ֻҰ�ô�ʯ��
-��Ծ�������ϲ�Զ����һ��С��������Ъ�ŵĺ�ȥ����
+山坡上乱石丛生，零零星星地长着些杂草，不时会有几只野兔从石堆
+中跃出。东南不远处是一座小庙，似是歇脚的好去处。
 
 LONG);
 

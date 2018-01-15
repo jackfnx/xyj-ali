@@ -1,7 +1,7 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
-// zhangchu.c уфЁЬи╝
+// zhangchu.c Ф▌▄Е▌╗Е┐╖
 // By Dream Dec. 20, 1996
 
 inherit NPC;
@@ -10,8 +10,8 @@ string ask_dan(object who);
 
 void create()
 {
-    set_name("уфЁЬи╝", ({ "zhangchu seng", "seng" }));
-    set("gender", "дппт");
+    set_name("Ф▌▄Е▌╗Е┐╖", ({ "zhangchu seng", "seng" }));
+    set("gender", "Г■╥Ф─╖");
     set("age", 25);
     set("attitude", "peaceful");
     set("class", "bonze");
@@ -40,13 +40,13 @@ void create()
 //   }) );
 
     set("inquiry", ([
-        "тфдо╟вр╘": (: ask_yao :),
-        "аИ╣╓": (: ask_dan :),
+        "Д╨▒Е█≈Г≥╫Х█╞": (: ask_yao :),
+        "Г│╣Д╦╧": (: ask_dan :),
     ]) );
     set("apply/yaono", 10);
     set("apply/danno", 10);
 
-    create_family("до╨ёфумси╫", 4, "╣эвс");
+    create_family("Е█≈Ф╣╥Ф≥╝И≥─Е╠╠", 4, "Е╪÷Е╜░");
 
     setup();
     add_money("silver", 20);
@@ -58,18 +58,18 @@ string ask_yao(object me)
     object ob, who = this_player();
     int number;
 
-    if (who->query("family/family_name") != "до╨ёфумси╫") 
-        return RANK_D->query_respect(who) +"сК╠╬це╨анчт╗т╢ё╛н╙й╡ц╢нйфПуБ╦Жё©\n";
+    if (who->query("family/family_name") != "Е█≈Ф╣╥Ф≥╝И≥─Е╠╠") 
+        return RANK_D->query_respect(who) +"Д╦▌Ф°╛И≈╗Ф╞╚Ф≈═Ф╦┼Ф╨░О╪▄Д╦╨Д╩─Д╧┬И≈╝Х╣╥Х©≥Д╦╙О╪÷\n";
 
-    if (present("yunnan baiyao", who)) return "дЦиМио╡╩йгря╬╜сптфдо╟вр╘акбПё╛тУц╢сжю╢р╙ё©\n";
+    if (present("yunnan baiyao", who)) return "Д╫═Х╨╚Д╦┼Д╦█Ф≤╞Е╥╡Г╩▐Ф°┴Д╨▒Е█≈Г≥╫Х█╞Д╨├Е░≈О╪▄Ф─▌Д╧┬Е▐┬Ф²╔Х╕│О╪÷\n";
 
-    if (!(number = me->query("apply/yaono"))) return "╤т╡╩фПё╛тфдо╟вр╘ря╬╜х╚╡©╥╒╥еЁЖх╔ак║ё\n";
+    if (!(number = me->query("apply/yaono"))) return "Е╞╧Д╦█Х╣╥О╪▄Д╨▒Е█≈Г≥╫Х█╞Е╥╡Г╩▐Е┘╗И┐╗Е▐▒Ф■╬Е┤╨Е▌╩Д╨├Ц─┌\n";
     set("apply/yaono", --number);
 
     ob = new("/d/ourhome/obj/yunnandrug");
     ob->move(me);
     command("give " + who->query("id") + " yunnan baiyao");
-    return "тфдо╟вр╘╣цж╝╡╩рвё╛р╙╫зт╪весц║ё\n";
+    return "Д╨▒Е█≈Г≥╫Х█╞Е╬≈Д╧▀Д╦█Ф≤⌠О╪▄Х╕│Х┼┌Г╨╕Г²─Г■╗Ц─┌\n";
 }
 
 string ask_dan(object me)
@@ -77,17 +77,17 @@ string ask_dan(object me)
     object ob, who = this_player();
     int number;
 
-    if (who->query("family/family_name") != "до╨ёфумси╫")
-        return RANK_D->query_respect(who) +"сК╠╬це╨анчт╗т╢ё╛н╙й╡ц╢нйфПуБ╦Жё©\n";
+    if (who->query("family/family_name") != "Е█≈Ф╣╥Ф≥╝И≥─Е╠╠")
+        return RANK_D->query_respect(who) +"Д╦▌Ф°╛И≈╗Ф╞╚Ф≈═Ф╦┼Ф╨░О╪▄Д╦╨Д╩─Д╧┬И≈╝Х╣╥Х©≥Д╦╙О╪÷\n";
 
-    if (present("lingdan", who)) return "дЦиМио╡╩йгря╬╜спаИ╣╓акбПё╛тУц╢сжю╢р╙ё©\n";
+    if (present("lingdan", who)) return "Д╫═Х╨╚Д╦┼Д╦█Ф≤╞Е╥╡Г╩▐Ф°┴Г│╣Д╦╧Д╨├Е░≈О╪▄Ф─▌Д╧┬Е▐┬Ф²╔Х╕│О╪÷\n";
 
-    if (!(number = me->query("apply/danno"))) return "╤т╡╩фПё╛аИ╣╓ря╬╜х╚╡©╥╒╥еЁЖх╔ак║ё\n";
+    if (!(number = me->query("apply/danno"))) return "Е╞╧Д╦█Х╣╥О╪▄Г│╣Д╦╧Е╥╡Г╩▐Е┘╗И┐╗Е▐▒Ф■╬Е┤╨Е▌╩Д╨├Ц─┌\n";
     set("apply/danno", --number);
 
     ob = new("/d/nanhai/obj/lingdan");
     ob->move(me);
     command("give " + who->query("id") + " lingdan");
-    return "аИ╣╓╣цж╝╡╩рвё╛р╙╫зт╪весц║ё\n";
+    return "Г│╣Д╦╧Е╬≈Д╧▀Д╦█Ф≤⌠О╪▄Х╕│Х┼┌Г╨╕Г²─Г■╗Ц─┌\n";
 }
 

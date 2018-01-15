@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ú¤ºÓÀÏ×æ", ({"minghe laozu", "minghe", "laozu"}));
-    set("long", "Ú¤ºÓÀÏ×æÊÇÈý½çÓÐÃûµÄÉ±µÀÖ®×æ£¬¿ÉÊÇËû±¾ÈË¿´ÉÏÈ¥È´ºÁÎÞÐ×¶ñÖ®Æø¡£\n");
-    set("gender", "ÄÐÐÔ");
+    set_name("å†¥æ²³è€ç¥–", ({"minghe laozu", "minghe", "laozu"}));
+    set("long", "å†¥æ²³è€ç¥–æ˜¯ä¸‰ç•Œæœ‰åçš„æ€é“ä¹‹ç¥–ï¼Œå¯æ˜¯ä»–æœ¬äººçœ‹ä¸ŠåŽ»å´æ¯«æ— å‡¶æ¶ä¹‹æ°”ã€‚\n");
+    set("gender", "ç”·æ€§");
     set("class", "asura");
-    set("title", "°¢ÐÞÂÞÖ®×æ");
+    set("title", "é˜¿ä¿®ç½—ä¹‹ç¥–");
     set("age", 70);
     set("attitude", "friendly");
     set("shen_type", 1);
@@ -67,7 +67,7 @@ void create()
     set_temp("apply/armor", 50);
     set_temp("apply/dodge", 50);
 
-    create_family("ÐÞÂÞ½Ì", 1, "½ÌÖ÷");
+    create_family("ä¿®ç½—æ•™", 1, "æ•™ä¸»");
     setup();
 
     carry_object("/d/obj/cloth/baipao")->wear();
@@ -77,16 +77,16 @@ void create()
 void attempt_apprentice(object ob, object me)
 {
     if ((int)ob->query("combat_exp") < 150000) {
-        command("say " + RANK_D->query_rude(ob) + "ÕâµãÈý½ÅÃ¨µÄ°ÑÊ½Ò²¸Òµ½ÎÒÕâÀï¶ªÈËÏÖÑÛ£¿");
+        command("say " + RANK_D->query_rude(ob) + "è¿™ç‚¹ä¸‰è„šçŒ«çš„æŠŠå¼ä¹Ÿæ•¢åˆ°æˆ‘è¿™é‡Œä¸¢äººçŽ°çœ¼ï¼Ÿ");
         return;
     }
     if (((int)ob->query("MKS")+ob->query("PKS") * 2) < 200
     ||  (int)ob->query("bellicosity") < 200) {
-        command("say É±ÈËÕâÃ´ÉÙ£¬·ÇÎÒµÀÖÐÈË¡£");
+        command("say æ€äººè¿™ä¹ˆå°‘ï¼Œéžæˆ‘é“ä¸­äººã€‚");
         return;
     }
     command("grin");
-    command("say ²»´í£¬ÓÐÇ°Í¾¡£");
+    command("say ä¸é”™ï¼Œæœ‰å‰é€”ã€‚");
     command("recruit " + ob->query("id"));
     return;
 }

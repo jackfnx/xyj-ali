@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -8,12 +8,12 @@ string heal_me(object me);
 
 void create()
 {
-        set_name("����˳", ({"yang zhongshun", "yang", "boss"}));
-        set("title", "ҩ���ƹ�");
-        set("gender", "����");
+        set_name("杨中顺", ({"yang zhongshun", "yang", "boss"}));
+        set("title", "药铺掌柜");
+        set("gender", "男性");
         set("age", 37);
         set("long",
-"���ϰ��ǳ��������洫����ҽ����Ȼ���ᣬȴ�����������⡣\n");
+"杨老板是长安城里祖传的名医。虽然年轻，却早已名声在外。\n");
         set("kee", 300); 
         set("max_kee", 300);
         set("sen", 200);
@@ -23,9 +23,9 @@ void create()
         set("env/wimpy", 50);
 
         set("inquiry", ([
-                "����": (: heal_me :),
-                "����": (: heal_me :),
-                "��ҩ": (: heal_me :),
+                "治伤": (: heal_me :),
+                "疗伤": (: heal_me :),
+                "开药": (: heal_me :),
         ]) );
 
         set("vendor_goods", ([
@@ -53,11 +53,11 @@ string heal_me(object ob)
         ratio = (int)me->query("eff_kee") * 100 /
 (int)me->query("max_kee");
         if( ratio >= 100 )
-                return "��λ" + RANK_D->query_respect(me) +
-"������������ɫ�ܺð������������˵����ӡ�";
+                return "这位" + RANK_D->query_respect(me) +
+"，您看起来气色很好啊，不像有受伤的样子。";
         if( ratio >= 95 )
                 return
-"Ŷ....�ҿ���....ֻ��ЩƤ��С�ˣ��������ҩ��ȥ����û���ˡ�";
+"哦....我看看....只是些皮肉小伤，您买包金创药回去敷敷就没事了。";
 
 }
 
@@ -86,7 +86,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\n��Ȼ������������Ѳ�߹ٱ�����$N��һ������ʲô����ɱ��ı��ô��\n\n",me);        
+        message_vision("\n忽然从门外冲进来个巡逻官兵，对$N大喊一声“干什么？想杀人谋财么！\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

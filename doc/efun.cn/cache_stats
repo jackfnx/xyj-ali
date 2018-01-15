@@ -1,19 +1,19 @@
 
         cache_stats(3)          LP MudOSv21c7           (7 Jul 1996)
 
-        º¯ÊıÃû³Æ:
-                cache_stats() - ±¨¸æÇı¶¯³ÌÊ½ (driver) ºÍ Mud º¯Ê½¿â
-                                (mudlib) µÄ±ä»¯Í³¼Æ×ÊÁÏ.
-        º¯ÊıÓï·¨:
+        å‡½æ•°åç§°:
+                cache_stats() - æŠ¥å‘Šé©±åŠ¨ç¨‹å¼ (driver) å’Œ Mud å‡½å¼åº“
+                                (mudlib) çš„å˜åŒ–ç»Ÿè®¡èµ„æ–™.
+        å‡½æ•°è¯­æ³•:
                 void cache_stats( void );
 
-                ÎŞ´«»ØÖµ cache_stats( void );
-        º¯ÊıÓÃ·¨:
-                Õâ¸öº¯Ê½Ö»ÓĞÔÚ±àÒëÇı¶¯³ÌÊ½Ê±, options.h ÖĞÓĞ¶¨Òå
-                CACHE_STATS ²ÅÓĞÓÃ. Õâ¸ö³¬Ô½º¯Ê½ (emulated function
-                , ¼´ efun)  »áÁĞ³ö call_other() µÄ¿ìÈ¡ (cache)
-                Ğ§ÂÊ.
-        ²Î¿¼º¯Êı:
+                æ— ä¼ å›å€¼ cache_stats( void );
+        å‡½æ•°ç”¨æ³•:
+                è¿™ä¸ªå‡½å¼åªæœ‰åœ¨ç¼–è¯‘é©±åŠ¨ç¨‹å¼æ—¶, options.h ä¸­æœ‰å®šä¹‰
+                CACHE_STATS æ‰æœ‰ç”¨. è¿™ä¸ªè¶…è¶Šå‡½å¼ (emulated function
+                , å³ efun)  ä¼šåˆ—å‡º call_other() çš„å¿«å– (cache)
+                æ•ˆç‡.
+        å‚è€ƒå‡½æ•°:
                 opcprof(3), mud_status(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Œç¿»è¯‘:
                 Phoebus@ZH      1997.Aug.16.            (Writen 5/23/97)

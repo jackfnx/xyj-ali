@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,8 +6,8 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("µêĞ¡¶ş", ({"xiao er","xiaoer","xiao","waiter","er"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("åº—å°äºŒ", ({"xiao er","xiaoer","xiao","waiter","er"}));
+       set("gender", "ç”·æ€§");
         set("combat_exp", 1000);
        set("age", 26);
        set("per", 14);
@@ -41,9 +41,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say(name()+ "Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say(name()+ "ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ĞªĞª½Å£¬ºÈÁ½ÖÑ°É¡£\n");
+                                + "ï¼Œè¿›æ¥æ­‡æ­‡è„šï¼Œå–ä¸¤ç›…å§ã€‚\n");
                         break;
         }
 }
@@ -56,7 +56,7 @@ int accept_object(object me,object ob)
      command("hehe " + this_player()->query("id") );
      m=new("/d/obj/food/jitui");
      m->move(this_player());
-     message_vision(name()+"ÍµÍµÈû¸ø$NÒ»¸ù¿¾¼¦ÍÈ¡£\n", this_player());
+     message_vision(name()+"å·å·å¡ç»™$Nä¸€æ ¹çƒ¤é¸¡è…¿ã€‚\n", this_player());
            call_out("destroy", 1, ob);
         return 1;
         }

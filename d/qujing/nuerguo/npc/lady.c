@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/4/1997 by snowcat
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ã·Ô§Ñì", ({"mei yuanyan", "mei"}));
-  set("title", "»¤¹¬Å®Ê¹");
-  set("gender", "Å®ĞÔ");
+  set_name("æ¢…é¸³é¸¯", ({"mei yuanyan", "mei"}));
+  set("title", "æŠ¤å®«å¥³ä½¿");
+  set("gender", "å¥³æ€§");
   set("age", 42);
-  set("long", "Ò»Î»¿´»¤Î÷Áº¹¬µîµÄÅ®Ê¹³¼¡£\n");
+  set("long", "ä¸€ä½çœ‹æŠ¤è¥¿æ¢å®«æ®¿çš„å¥³ä½¿è‡£ã€‚\n");
   set("combat_exp", 30000);
   set_skill("snowsword", 40);
   set_skill("sword", 40);

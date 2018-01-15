@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -13,13 +13,13 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("°×É«ºÁÃ«", ({ "white hair", "whitehair", "hair" }) );
+  set_name("ç™½è‰²æ¯«æ¯›", ({ "white hair", "whitehair", "hair" }) );
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»°Ñ´¿°×É«µÄºÁÃ«£¬¿ÉÒÔÓÃÀ´±ä³ÉÒûÁÏ£¨transform£©¡£\n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠçº¯ç™½è‰²çš„æ¯«æ¯›ï¼Œå¯ä»¥ç”¨æ¥å˜æˆé¥®æ–™ï¼ˆtransformï¼‰ã€‚\n");
+    set("unit", "æŠŠ");
     set("value",10000);
   }
   set("no_drop",1);
@@ -31,18 +31,18 @@ void create()
 string name_suffix()
 {
   string *strs = ({
-    "Ë®",
-    "ÌÀ",
-    "¾Æ",
-    "Ö­",
-    "Â¶",
+    "æ°´",
+    "æ±¤",
+    "é…’",
+    "æ±",
+    "éœ²",
   });
   return strs[random(sizeof(strs))];
 }
 
 string new_unit()
 {
-  return "Íë";
+  return "ç¢—";
 }
 
 int init ()  
@@ -60,11 +60,11 @@ int do_drink (string arg)
   if (!arg || present (arg,environment(ob))!=ob)
     return 0; // to invoke standard function
   if (!ob->query("has_transformed")) {
-    tell_object (me,"ÇëÏÈ½«Ëü±ä³ÉÄãËùĞèÒªµÄÒûÁÏ¡£\n");
+    tell_object (me,"è¯·å…ˆå°†å®ƒå˜æˆä½ æ‰€éœ€è¦çš„é¥®æ–™ã€‚\n");
     return 1;
   }
   me->set("water", (int)me->max_water_capacity());
-  message_vision ("$NÄÃÆğ$nÒ»¿ÚÆøºÈÁËÏÂÈ¥£¬ÂúÒâµØÅÄÅÄ¶Ç×Ó¡£\n",me,ob);
+  message_vision ("$Næ‹¿èµ·$nä¸€å£æ°”å–äº†ä¸‹å»ï¼Œæ»¡æ„åœ°æ‹æ‹è‚šå­ã€‚\n",me,ob);
   destruct(ob);
   return 1;
 }

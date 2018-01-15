@@ -4,20 +4,20 @@ inherit HAMMER;
 
 void create()
 {
-    set_name("°ËÀãÃ·»¨ÁÁÒø´¸", ({"mei hua chui", "hammer", "chui"}));
+    set_name("å…«æ¥æ¢…èŠ±äº®é“¶é”¤", ({"mei hua chui", "hammer", "chui"}));
     set_weight(8000);
     
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "¶Ô");
-        set("long", "Ò»¶ÔÁÁÒø´¸£¬ÉÏ¿Ì£º£¢°ËÀãÃ·»¨ÁÁÒø´¸£¬ÖØÎåÇ§ËÄ°Ù½ï£¬¶«º£Áú¹¬´òÖÆ£¢¡£\n");
+        set("unit", "å¯¹");
+        set("long", "ä¸€å¯¹äº®é“¶é”¤ï¼Œä¸Šåˆ»ï¼šï¼‚å…«æ¥æ¢…èŠ±äº®é“¶é”¤ï¼Œé‡äº”åƒå››ç™¾æ–¤ï¼Œä¸œæµ·é¾™å®«æ‰“åˆ¶ï¼‚ã€‚\n");
         set("value", 100000);
-        set("no_give", "ÕâÖÖ±¦±´ÔõÄÜËæ±ã¸øÈË£¿\n");
-        set("no_sell", "ÕÆ¹ñµÄÒ¡Ò¡Í·Ëµ£ºÕâ¿ÉÊÇÁú¹¬µÄ±¦±´£¬Ğ¡µê²»¸ÒÊÕ¡£\n");
+        set("no_give", "è¿™ç§å®è´æ€èƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+        set("no_sell", "æŒæŸœçš„æ‘‡æ‘‡å¤´è¯´ï¼šè¿™å¯æ˜¯é¾™å®«çš„å®è´ï¼Œå°åº—ä¸æ•¢æ”¶ã€‚\n");
         set("material", "gold");
-        set("wield_msg", "$NÔË×ãÁ¦ÆøÆø½«$nÌáÁËÆğÀ´¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÁËÏÂÀ´¡£\n");
+        set("wield_msg", "$Nè¿è¶³åŠ›æ°”æ°”å°†$næäº†èµ·æ¥ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾äº†ä¸‹æ¥ã€‚\n");
         set("weapon_prop/dodge", -40);
         set("weapon_prop/hammer", -40);
     }

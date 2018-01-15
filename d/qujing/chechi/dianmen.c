@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/21/1997
@@ -9,12 +9,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "µîÃÅ");
+  set ("short", "æ®¿é—¨");
   set ("long", @LONG
 
-ÕâÀïÊÇÈýÇå¹ÛµÄµîÃÅ£¬µîÃÅºìÄ¾ÇàéÜ·­ÐÞÒ»ÐÂ£¬ÃÅ¿ÚÖ¯½õ¹üÖù
-ÇÒÐåÓÐ¶þÊ®¶þ¸ö´ó×Ö£º¡°ÓêË³·çµ÷£¬Ô¸×£Ìì×ðÎÞÁ¿·¨£»ºÓÇåº£
-êÌ£¬ÆíÇóÍòËêÓÐÓàÄê¡£¡±
+è¿™é‡Œæ˜¯ä¸‰æ¸…è§‚çš„æ®¿é—¨ï¼Œæ®¿é—¨çº¢æœ¨é’æªç¿»ä¿®ä¸€æ–°ï¼Œé—¨å£ç»‡é”¦è£¹æŸ±
+ä¸”ç»£æœ‰äºŒåäºŒä¸ªå¤§å­—ï¼šâ€œé›¨é¡ºé£Žè°ƒï¼Œæ„¿ç¥å¤©å°Šæ— é‡æ³•ï¼›æ²³æ¸…æµ·
+æ™ï¼Œç¥ˆæ±‚ä¸‡å²æœ‰ä½™å¹´ã€‚â€
 
 LONG);
 
@@ -31,7 +31,7 @@ LONG);
         __DIR__"npc/daozhang"    : 1,
       ]));
   set("outdoors","/d/qujing/chechi");
-  create_door("east", "Ð¡ÃÅ", "west", DOOR_CLOSED);
+  create_door("east", "å°é—¨", "west", DOOR_CLOSED);
   setup();
 
 }

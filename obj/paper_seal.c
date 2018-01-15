@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // paper_seal.c
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-   set_name("ÌÒ·ûÖ½", ({"paper seal", "seal", "paper"}));
+   set_name("æ¡ƒç¬¦çº¸", ({"paper seal", "seal", "paper"}));
    set_weight(100);
    if( clonep() )
                 set_default_object(__FILE__);
         else {
-   set("long","ÕâÊÇÕÅÓÃÀ´»­·ûµÄ·ûÖ½£¬¾ßÓĞ·â´æ·¨Á¦µÄ¹¦ÓÃ¡£\n");
-   set("unit", "µş");
+   set("long","è¿™æ˜¯å¼ ç”¨æ¥ç”»ç¬¦çš„ç¬¦çº¸ï¼Œå…·æœ‰å°å­˜æ³•åŠ›çš„åŠŸç”¨ã€‚\n");
+   set("unit", "å ");
    set("value", 10);
    }
    setup();

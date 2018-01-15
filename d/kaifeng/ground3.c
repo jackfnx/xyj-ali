@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -13,14 +13,14 @@ int do_report3()
   string msg = line;
   
   msg += "\n";
-  msg += "´ó»á½áÊø½×¶Î£º\n";
+  msg += "å¤§ä¼šç»“æŸé˜¶æ®µï¼š\n";
   msg += "\n";
-  msg += "[²ì¿´±ÈÈü×Ü³É¼¨£ºexam]\n";
-  msg += "[Ğû²¼±ÈÈü×Ü³É¼¨£ºpost]\n";
+  msg += "[å¯Ÿçœ‹æ¯”èµ›æ€»æˆç»©ï¼šexam]\n";
+  msg += "[å®£å¸ƒæ¯”èµ›æ€»æˆç»©ï¼špost]\n";
   msg += "\n";
-  msg += "[´æ´¢±ÈÈü³É¼¨µµ°¸£ºsave]\n";
+  msg += "[å­˜å‚¨æ¯”èµ›æˆç»©æ¡£æ¡ˆï¼šsave]\n";
   msg += "\n";
-  msg += "[Ğû²¼´ó»á±ÕÄ»£ºclose]\n";
+  msg += "[å®£å¸ƒå¤§ä¼šé—­å¹•ï¼šclose]\n";
   msg += "\n";
   msg += line;
   this_player()->start_more(msg);
@@ -85,14 +85,14 @@ varargs string report_reward (mapping team, int no_team_name, int team_nb)
 
   if (! no_team_name)
   {
-    name = "¡°"+team["info"]["team_name"]+"¡±¶Ó";
-    msg += "  µÚ"+chinese_number(team_nb)+"Ãû"+name+"£º";
-    msg += "»ı·Ö"+chinese_number(team["info"]["score"])+"£¬";
-    msg += "£¨Ó®ÁË"+chinese_number(team["info"]["wins"])+"³¡£¬";
-    msg += "ÊäÁË"+chinese_number(team["info"]["loses"])+"³¡£©¡£\n";
+    name = "â€œ"+team["info"]["team_name"]+"â€é˜Ÿ";
+    msg += "  ç¬¬"+chinese_number(team_nb)+"å"+name+"ï¼š";
+    msg += "ç§¯åˆ†"+chinese_number(team["info"]["score"])+"ï¼Œ";
+    msg += "ï¼ˆèµ¢äº†"+chinese_number(team["info"]["wins"])+"åœºï¼Œ";
+    msg += "è¾“äº†"+chinese_number(team["info"]["loses"])+"åœºï¼‰ã€‚\n";
   }
     
-  msg += "    »ñ½±Ç±ÄÜ£º";
+  msg += "    è·å¥–æ½œèƒ½ï¼š";
   for (j = 0; j < team["number"]; j++)
   {
     mapping member = team[j];
@@ -132,7 +132,7 @@ string report_score ()
   if (! teams["report_events"])
     teams["report_events"] = report_events (teams);
     
-  msg += "±ÈÈü·½Ê½£º¡°"+modes[mode]+"¡±¡£\n";
+  msg += "æ¯”èµ›æ–¹å¼ï¼šâ€œ"+modes[mode]+"â€ã€‚\n";
   switch (mode)
   {
     case MODE_SINGLE_SD:
@@ -143,8 +143,8 @@ string report_score ()
     }
     case MODE_SINGLE_LT:
     {
-      msg += "ÀŞÖ÷ÊÇ"+teams["current_winner_name"]+
-             "("+teams["current_winner_id"]+")¡£\n";
+      msg += "æ“‚ä¸»æ˜¯"+teams["current_winner_name"]+
+             "("+teams["current_winner_id"]+")ã€‚\n";
 
       msg += report_reward (teams[0],1);
       msg += teams["report_events"];
@@ -153,11 +153,11 @@ string report_score ()
     case MODE_TEAM_LT:
     {
       team = find_teams_team(teams,teams["current_winner_id"]);
-      name = "¡°"+team["info"]["team_name"]+"¡±¶Ó";
-      msg += "ÀŞÌ¨»ñÊ¤µÄ¶ÓÊÇ"+name+"£¬";
-      msg += "ÀŞÖ÷ÊÇ"+teams["current_winner_name"]+
-             "("+teams["current_winner_id"]+")¡£\n";
-      msg += "¸÷¶ÓÕ½¿ö£º\n";
+      name = "â€œ"+team["info"]["team_name"]+"â€é˜Ÿ";
+      msg += "æ“‚å°è·èƒœçš„é˜Ÿæ˜¯"+name+"ï¼Œ";
+      msg += "æ“‚ä¸»æ˜¯"+teams["current_winner_name"]+
+             "("+teams["current_winner_id"]+")ã€‚\n";
+      msg += "å„é˜Ÿæˆ˜å†µï¼š\n";
       team["info"]["bonus"] = (teams["number"]-1)*team["number"];
       teams["bonus"] = (teams["number"]-1)*team["number"];
       order_teams (teams);
@@ -174,9 +174,9 @@ string report_score ()
       int total = teams["total"];
       int index = teams["index"];
    
-      msg += "×Ü¹²ÓĞ"+chinese_number(cycles)+"ÂÖ£¬Ã¿ÂÖÓĞ"+
-              chinese_number(sessions)+"³¡±ÈÈü¡£\n";
-      msg += "¸÷¶ÓÕ½¿ö£º\n";
+      msg += "æ€»å…±æœ‰"+chinese_number(cycles)+"è½®ï¼Œæ¯è½®æœ‰"+
+              chinese_number(sessions)+"åœºæ¯”èµ›ã€‚\n";
+      msg += "å„é˜Ÿæˆ˜å†µï¼š\n";
       teams["bonus"] = sessions * cycles;
       order_teams (teams);
       for (i = 0; i < teams["number"]; i++)
@@ -195,10 +195,10 @@ int do_exam ()
 
   if (step != STEP_FINISH)
   {  
-    write ("±ÈÈü»¹Ã»ÓĞ½áÊø£¡\n\n");
+    write ("æ¯”èµ›è¿˜æ²¡æœ‰ç»“æŸï¼\n\n");
     return 1;
   }
-  inform (who, report_score(), "ÎºÕ÷¸æËß$NËµ£¬±ÈÈü³É¼¨×Ü½áÈçÏÂ£º\n");
+  inform (who, report_score(), "é­å¾å‘Šè¯‰$Nè¯´ï¼Œæ¯”èµ›æˆç»©æ€»ç»“å¦‚ä¸‹ï¼š\n");
   return 1;
 }
 
@@ -209,7 +209,7 @@ int do_post ()
 
   if (step != STEP_FINISH)
   {  
-    write ("±ÈÈü»¹Ã»ÓĞ½áÊø£¡\n\n");
+    write ("æ¯”èµ›è¿˜æ²¡æœ‰ç»“æŸï¼\n\n");
     return 1;
   }
   announce (report_score());
@@ -225,18 +225,18 @@ int do_save ()
 
   if (step != STEP_FINISH)
   {  
-    write ("±ÈÈü»¹Ã»ÓĞ½áÊø£¡\n\n");
+    write ("æ¯”èµ›è¿˜æ²¡æœ‰ç»“æŸï¼\n\n");
     return 1;
   }
 
-  msg = "\n           ¡ª¡ª  ¡ù  ¡ª¡ª  ¡ù  ¡ª¡ª  ¡ù  ¡ª¡ª  ¡ù  ¡ª¡ª  \n";
-  msg += "\n±ÈÈüÊ±¼ä£º"+ctime(time())+"\n";
+  msg = "\n           â€”â€”  â€»  â€”â€”  â€»  â€”â€”  â€»  â€”â€”  â€»  â€”â€”  \n";
+  msg += "\næ¯”èµ›æ—¶é—´ï¼š"+ctime(time())+"\n";
   msg += report_score();  
   msg += "\n\n";
   log_file("shuiludahui",msg);
   //write_file ("/data/shuiludahui/shdl_result",msg,1);
   teams["save"] = 1;
-  inform (who, "±ÈÈü³É¼¨´æµµÍê±Ï¡£\n");
+  inform (who, "æ¯”èµ›æˆç»©å­˜æ¡£å®Œæ¯•ã€‚\n");
   return 1;
 }
 
@@ -244,13 +244,13 @@ void closing (string arg, object who)
 {
   if (arg == "y" || arg == "Y")
   {
-    inform (who, "±ÈÈü³É¼¨²»´æµµ¡£\n");
-    announce ("±ÈÎä´ó»á±ÕÄ»£¡\n");
+    inform (who, "æ¯”èµ›æˆç»©ä¸å­˜æ¡£ã€‚\n");
+    announce ("æ¯”æ­¦å¤§ä¼šé—­å¹•ï¼\n");
     this_room()->delete("match");
   }
   else
   {
-    write("ºÃ£¬´ó»áÔİ²»±ÕÄ»¡£\n");
+    write("å¥½ï¼Œå¤§ä¼šæš‚ä¸é—­å¹•ã€‚\n");
   }
 }
 
@@ -262,19 +262,19 @@ int do_close ()
 
   if (step != STEP_FINISH)
   {  
-    write ("±ÈÈü»¹Ã»ÓĞ½áÊø£¡\n\n");
+    write ("æ¯”èµ›è¿˜æ²¡æœ‰ç»“æŸï¼\n\n");
     return 1;
   }
   
   if (! teams["save"])
   {
-    write ("±ÈÈü³É¼¨ÉĞÎ´´æµµ£¬ÄúÕæµÄÒªĞû²¼±ÕÄ»£¿(Y/N)\n");
+    write ("æ¯”èµ›æˆç»©å°šæœªå­˜æ¡£ï¼Œæ‚¨çœŸçš„è¦å®£å¸ƒé—­å¹•ï¼Ÿ(Y/N)\n");
     input_to ((: closing :), who);
     return 1;
   }
   else
   {
-    announce ("±ÈÎä´ó»á±ÕÄ»£¡\n");
+    announce ("æ¯”æ­¦å¤§ä¼šé—­å¹•ï¼\n");
   }
   this_room()->delete("match");
   return 1;

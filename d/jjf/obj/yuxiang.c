@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 5-15-97 pickle
@@ -8,14 +8,14 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("ÓãÏãÈâË¿", ({"yuxiang rousi", "rousi", "rou"}));
+  set_name("é±¼é¦™è‚‰ä¸", ({"yuxiang rousi", "rousi", "rou"}));
   set_weight(200);
   if (clonep())
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»ÅÌÏãÅçÅçµØÓãÏãÈâË¿¡£\n");
-    set("unit", "ÅÌ");
+    set("long", "ä¸€ç›˜é¦™å–·å–·åœ°é±¼é¦™è‚‰ä¸ã€‚\n");
+    set("unit", "ç›˜");
     set("value", 0);
     set("food_remaining", 5);
     set("food_supply", 40);

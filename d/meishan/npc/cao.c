@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //copy from snowcat :P
@@ -10,14 +10,14 @@ inherit NPC;
 void create()
 {
 
-  set_name("��ͷ��", ({"caotou shen","shen"}));
-  set("gender", "����");
+  set_name("草头神", ({"caotou shen","shen"}));
+  set("gender", "男性");
   set("age", 20+random(20));
   set("con", 20);
   set("cor", 20);
   set("int", 20);
   set("per", 20);
-  set("long", "���Ƕ����������һǧ���ٸ���ͷ���е�һ����\n");
+  set("long", "他是二郎神君帐下一千二百个草头神中的一个。\n");
   set("attitude", "peaceful");
   set("combat_exp", 160000);
   set_skill("dodge", 70);
@@ -54,7 +54,7 @@ int allow_split()
   object who = this_player();
 
   me->set_temp("split",1);
-  message_vision ("$NһЦ����һ���͹���ʰ���ˡ�\n",me);
+  message_vision ("$N一笑：我一个就够收拾你了。\n",me);
   return 1;
 }
 
@@ -64,7 +64,7 @@ void init()
 
   ::init();
   set("inquiry", ([
-       "һǧ���ٸ���ͷ��": (: allow_split :),
+       "一千二百个草头神": (: allow_split :),
       ]));
 }
 
@@ -92,7 +92,7 @@ int accept_fight (object me)
     ob2 = new(str);
     ob2->setup();
     ob2->move(environment(ob));
-    message_vision ("����𡱼������죬�Ӳ�����������$N��$n����Χס��\n",ob, me);
+    message_vision ("“梆梆”几声锣响，从草中跳出几个$N把$n团团围住。\n",ob, me);
     ob->set("kee",ob->query("max_kee")/10*12);
     ob->set("triplicate",1);
     ob1->set("triplicate",1);

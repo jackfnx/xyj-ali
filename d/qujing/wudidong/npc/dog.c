@@ -1,20 +1,20 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // wilddog.c
 inherit NPC; 
 void create()
 {
-        set_name("Ò°¹·", ({ "dog", "gou"}));
-        set("race", "Ò°ÊŞ");
+        set_name("é‡ç‹—", ({ "dog", "gou"}));
+        set("race", "é‡å…½");
         set("age", 4);
         set("long",
-                "Ò»ÌõÔàÙâÙâµÄÒ°¹·£¬¿´µ½Äã¾ÍÅÜÀ´¿´¿´ÓĞÊ²Ã´³ÔµÄ¸øËü¡£\n");
+                "ä¸€æ¡è„å…®å…®çš„é‡ç‹—ï¼Œçœ‹åˆ°ä½ å°±è·‘æ¥çœ‹çœ‹æœ‰ä»€ä¹ˆåƒçš„ç»™å®ƒã€‚\n");
         set("attitude", "friendly");
    set("str", 26);
    set("cor", 30);
    set("chat_chance", 40);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set_temp("apply/attack", 5);
         set_temp("apply/damage", 10);

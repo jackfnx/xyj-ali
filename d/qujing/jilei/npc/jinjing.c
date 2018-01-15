@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-  set_name("½ğ¾¦ÊŞ", ({"jinjing shou", "shou"}));
-  set("long", "Ò»Í·Ë«íø·Å¹â£¬ÒøÕÆÓñ°°µÄ½ğ¾¦ÊŞ¡£\n");
-  set("race", "Ò°ÊŞ");
+  set_name("é‡‘ç›å…½", ({"jinjing shou", "shou"}));
+  set("long", "ä¸€å¤´åŒçœ¸æ”¾å…‰ï¼Œé“¶æŒç‰éçš„é‡‘ç›å…½ã€‚\n");
+  set("race", "é‡å…½");
   set("age", 10);
   set("age", 30);
   set("combat_exp", 200000);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
-  set("ride/msg", "Æï");
+  set("ride/msg", "éª‘");
   set("ride/dodge", 35);
   set_temp("apply/attack", 80);
   set_temp("apply/armor", 80);

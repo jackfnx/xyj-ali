@@ -38,7 +38,7 @@ void die()
 void do_kill(object who, object ob)
 {
    if (!random(4))
-   message_vision("$n¶Ô$NºÙºÙÀäÐ¦ÁËÁ½Éù:²»ÖªÌì¸ßµÍºñµÄ¶«Î÷,¾¹È»¸Ò´³ÁéÏöµî!\n",who,ob);
+   message_vision("$nå¯¹$Nå˜¿å˜¿å†·ç¬‘äº†ä¸¤å£°:ä¸çŸ¥å¤©é«˜ä½ŽåŽšçš„ä¸œè¥¿,ç«Ÿç„¶æ•¢é—¯çµéœ„æ®¿!\n",who,ob);
    ob->kill_ob(who);
    who->kill_ob(ob);
    return;

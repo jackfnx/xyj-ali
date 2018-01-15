@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // vendor.c
@@ -26,11 +26,11 @@ int complete_trade(object me, string what)
     if (stringp(ob_file = query("vendor_goods/" + what))) {
         ob = new(ob_file);
         if (ob->move(me)) {
-            message_vision("$NоР$nбРобр╩" + 
-                ob->query("unit") + ob->query("name") + "║ё\n", me, this_object() );
+            message_vision("$NЕ░▒$nД╧╟Д╦▀Д╦─" + 
+                ob->query("unit") + ob->query("name") + "Ц─┌\n", me, this_object() );
             return 1;
         }
-        return notify_fail("ц╩спуБяЫ╤╚нВбТ║ё\n");
+        return notify_fail("Ф╡║Ф°┴Х©≥Ф═╥Д╦°Х╔©Е█√Ц─┌\n");
     }
 }
 
@@ -40,13 +40,13 @@ string price_string(int v)
     int val;
 
     val = v / 10000;
-    if (val) str += chinese_number(val) + "а╫╩ф╫П";
+    if (val) str += chinese_number(val) + "Д╦╓И╩└И┤▒";
     val = (v % 10000) / 100;
-    if (val) str += chinese_number(val) + "а╫рЬвс";
+    if (val) str += chinese_number(val) + "Д╦╓И⌠╤Е╜░";
     val = (v % 100);
-    if (val) str += chinese_number(val) + "ндг╝";
+    if (val) str += chinese_number(val) + "Ф√┤И▓╠";
 
-    if (str=="") str = "аЦндг╝";
+    if (str=="") str = "И⌡╤Ф√┤И▓╠";
     return str;
 }
 
@@ -60,10 +60,10 @@ int do_vendor_list(string arg)
     if (!mapp(goods = query("vendor_goods"))) return 0;
     if (arg && !this_object()->id(arg)) return 0;
     name = keys(goods);
-    list = "дЦ©ирт╧╨бРобапуБп╘╤╚нВё╨\n";
+    list = "Д╫═Е▐╞Д╩╔Х╢╜Д╧╟Д╦▀Е┬≈Х©≥Д╨⌡Д╦°Х╔©О╪ \n";
     for (i=0; i<sizeof(name); i++)  {
         tlist = sprintf("%s(%s)", goods[name[i]]->query("name"), name[i]);
-        list += sprintf("%-30sё╨%s\n", tlist,
+        list += sprintf("%-30sО╪ %s\n", tlist,
                     price_string(goods[name[i]]->query("value"))
                 );
     }

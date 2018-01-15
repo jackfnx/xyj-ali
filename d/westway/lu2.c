@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ����");
+  set ("short", "山洞内");
   set ("long", @LONG
 
-ɽ����ں����ģ��������������ȳ�ζ������ɽ�������ͨ��
-������������˿���֣��ƺ��ڿ����硣
+山洞里黑乎乎的，到处都发出股腥臭味。北边山洞弯弯地通向
+深处。洞深处传出几丝铉乐，似乎在开大宴。
 LONG);
 
   set("exits", ([

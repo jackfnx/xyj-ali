@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // nick.c
@@ -11,7 +11,7 @@ int main(object me, string arg)
 {
    int i;
    
-   if( !arg ) return notify_fail("��Ҫ���Լ�ȡʲô�ºţ�\n");
+   if( !arg ) return notify_fail("你要替自己取什么绰号？\n");
    
    if( arg=="none" ) {
    me->delete("nickname");
@@ -19,11 +19,11 @@ int main(object me, string arg)
    }
 
    if ( (i = strlen(arg)) > 30 )
-     return notify_fail("��Ĵº�̫���ˣ���һ����һ��ġ�����һ��ġ�\n");
+     return notify_fail("你的绰号太长了，想一个短一点的、响亮一点的。\n");
 
    while(i--) {
                   if( arg[i]<' ' ) {
-                          return notify_fail("�Բ������ͷ�β����ÿ�����Ԫ��\n");
+                          return notify_fail("对不起，你的头衔不能用控制字元。\n");
                   }
           }
 
@@ -51,22 +51,22 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : nick <���, �º�>
-      nick none   ȡ��
+指令格式 : nick <外号, 绰号>
+      nick none   取消
  
-���ָ���������Ϊ�Լ�ȡһ�����������Ż�ͷ�Σ������ϣ���ڴº���
-ʹ�� ANSI �Ŀ�����Ԫ�ı���ɫ�����������µĿ����ִ���
+这个指令可以让你为自己取一个响亮的名号或头衔，你如果希望在绰号中
+使用 ANSI 的控制字元改变颜色，可以用以下的控制字串：
 
-$BLK$ - ��ɫ     $NOR$ - �ָ�������ɫ
-$RED$ - ��ɫ     $HIR$ - ����ɫ
-$GRN$ - ��ɫ     $HIG$ - ����ɫ
-$YEL$ - ����ɫ     $HIY$ - ��ɫ
-$BLU$ - ����ɫ     $HIB$ - ��ɫ
-$MAG$ - ǳ��ɫ     $HIM$ - �ۺ�ɫ
-$CYN$ - ����ɫ     $HIC$ - ����ɫ
-$WHT$ - ǳ��ɫ     $HIW$ - ��ɫ
+$BLK$ - 黑色     $NOR$ - 恢复正常颜色
+$RED$ - 红色     $HIR$ - 亮红色
+$GRN$ - 绿色     $HIG$ - 亮绿色
+$YEL$ - 土黄色     $HIY$ - 黄色
+$BLU$ - 深蓝色     $HIB$ - 蓝色
+$MAG$ - 浅紫色     $HIM$ - 粉红色
+$CYN$ - 蓝绿色     $HIC$ - 天青色
+$WHT$ - 浅灰色     $HIW$ - 白色
  
-����ϵͳ�Զ������ִ�β�˼�һ�� $NOR$��
+其中系统自动会在字串尾端加一个 $NOR$。
 
 HELP
         );

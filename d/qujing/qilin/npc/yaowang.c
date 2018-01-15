@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat 11/6/1997
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÑıÍõ", ({"yao wang", "wang" }));
-  set("title","ÈüÌ«Ëê");
-  set("gender", "ÄĞĞÔ");
+  set_name("å¦–ç‹", ({"yao wang", "wang" }));
+  set("title","èµ›å¤ªå²");
+  set("gender", "ç”·æ€§");
   set("age", 80);
   set("attitude", "peaceful");
   set("shen_type", 1);
@@ -59,8 +59,8 @@ void die()
 
   if (where)
   {
-    message("sound","\n\nÖ»ÌıµÃ°ë¿ÕÀ÷Éù¸ß½Ğ£º¡°ÊÖÏÂÁôÇé£¬¹ÛÒôÀ´Ò²£¡¡±\n",where);
-    message("sound", "\nÑıÍõ´òÁËÒ»¸ö¹ö£¬ÏÖÁË½ğÃ«ÊŞÔ­ĞÎ£¬±»Ò»µÀ½ğ¹âÕÖÈ¥¡£\n\n", 
+    message("sound","\n\nåªå¬å¾—åŠç©ºå‰å£°é«˜å«ï¼šâ€œæ‰‹ä¸‹ç•™æƒ…ï¼Œè§‚éŸ³æ¥ä¹Ÿï¼â€\n",where);
+    message("sound", "\nå¦–ç‹æ‰“äº†ä¸€ä¸ªæ»šï¼Œç°äº†é‡‘æ¯›å…½åŸå½¢ï¼Œè¢«ä¸€é“é‡‘å…‰ç½©å»ã€‚\n\n", 
             where);
   }
   if (ob)

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/dong1.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "洞门");
   set ("long", @LONG
 
-������Σ���ʼ�ŵء���Ŵ�����խ�����ڳ�����ɭɭҲ�����������
-ֻ�����ű������ſ��(shibei)���ʼ�ȴ��Ϊ���㡣���Ǳ���������
-����Ц��������չ�͸�롣
+下落半晌，方始着地。落脚处甚是窄狭，黑沉沉阴森森也看不甚清楚，
+只见拱门边上立着块大碑(shibei)，笔迹却颇为娟秀。门那边隐隐传来
+阵阵笑语，又似有日光透入。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -21,12 +21,12 @@ LONG);
 ]));
   set("item_desc", ([ /* sizeof() == 1 */
   "shibei" : "
-\t\t\t��
-\t\t\t��
-\t\t\tɽ
-\t\t\t��
-\t\t\t��
-\t\t\t��
+\t\t\t陷
+\t\t\t空
+\t\t\t山
+\t\t\t无
+\t\t\t底
+\t\t\t洞
  
 ",
 ]));

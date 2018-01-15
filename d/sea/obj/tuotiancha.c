@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gangcha.c
@@ -10,17 +10,17 @@ int do_read(string arg);
 
 void create()
 {
-        set_name("¾Å¹ÉÍĞÌì²æ", ({ "tuotian fork","fork", "cha"}) );
+        set_name("ä¹è‚¡æ‰˜å¤©å‰", ({ "tuotian fork","fork", "cha"}) );
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 5000);
      set("no_sell", 1);
-     set("long", "Ò»¸ù¾Å¹ÉÅÌÁúÌÙÅ¤³ÉµÄÀû²æ£¬ÉÏÃæ¿ÌÁËĞ©·û×­¡£\n");
-     set("wield_msg", "$N´Ó±³ºóÄÃ³ö°Ñ»©»©×öÏìµÄÌú²æÀ´¡£\n");
-     set("unwield_msg", "$N°Ñ$nÓÖ·Å»Ø±³ºó¡£\n");
+     set("long", "ä¸€æ ¹ä¹è‚¡ç›˜é¾™è—¤æ‰­æˆçš„åˆ©å‰ï¼Œä¸Šé¢åˆ»äº†äº›ç¬¦ç¯†ã€‚\n");
+     set("wield_msg", "$Nä»èƒŒåæ‹¿å‡ºæŠŠå“—å“—åšå“çš„é“å‰æ¥ã€‚\n");
+     set("unwield_msg", "$NæŠŠ$nåˆæ”¾å›èƒŒåã€‚\n");
                 set("material", "iron");
         }
         init_fork(60);
@@ -57,30 +57,30 @@ int do_read(string arg)
         object ob=this_object();
 
         if(! ob->query("OK_to_STUDY"))
-                return notify_fail("ÄãÎŞ·¨´ÓÕâÑù¶«Î÷ÉÏÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ— æ³•ä»è¿™æ ·ä¸œè¥¿ä¸Šå­¦åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
         if( ob->query("transferred"))
-                return notify_fail("ÄãÎŞ·¨´ÓÕâÑù¶«Î÷ÉÏÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ— æ³•ä»è¿™æ ·ä¸œè¥¿ä¸Šå­¦åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
 
         if( (int)me->query_skill("fork", 1) >= 60)
-                return notify_fail("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË¡£\n");
+                return notify_fail("ä½ ç ”è¯»äº†ä¸€ä¼šå„¿ï¼Œä½†æ˜¯å‘ç°ä¸Šé¢æ‰€è¯´çš„å¯¹ä½ è€Œè¨€éƒ½å¤ªæµ…äº†ã€‚\n");
         if( (int)me->query_skill("spells", 1) < 20)
-                return notify_fail("¿ÉÄÜÊÇÄã·¨Êõ²»¾«£¬ÎŞ·¨Áì»áÉÏÃæµÄ·ûÖä¡£\n");
+                return notify_fail("å¯èƒ½æ˜¯ä½ æ³•æœ¯ä¸ç²¾ï¼Œæ— æ³•é¢†ä¼šä¸Šé¢çš„ç¬¦å’’ã€‚\n");
 
         if( (int)me->query_skill("spells", 1) < (int)me->query_skill("fork", 1) )
-                return notify_fail("¿ÉÄÜÊÇÄã·¨ÊõÁì»á»¹²»Éî£¬ÔİÊ±»¹ÁìÎò²»³ö¸üÉîÒ»²ãµÄ²æ·¨¡£\n");
+                return notify_fail("å¯èƒ½æ˜¯ä½ æ³•æœ¯é¢†ä¼šè¿˜ä¸æ·±ï¼Œæš‚æ—¶è¿˜é¢†æ‚Ÿä¸å‡ºæ›´æ·±ä¸€å±‚çš„å‰æ³•ã€‚\n");
 
         if( (int)me->query("kee") < 30)
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ĞªĞªÔÙÀ´°É¡£\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ­‡æ­‡å†æ¥å§ã€‚\n");
         if( (int)me->query("sen") < 30)
-                return notify_fail("ÄãÌ«Æ£ÀÍÁË£¬ĞªĞªÔÙÀ´°É¡£\n");
+                return notify_fail("ä½ å¤ªç–²åŠ³äº†ï¼Œæ­‡æ­‡å†æ¥å§ã€‚\n");
         gain= (int)me->query_skill("spells", 1)/3 + 1 + random((int)me->query_int());
 
         me->improve_skill("fork", gain);
    me->receive_damage("kee", 30);
    me->receive_damage("sen", 30);
 
-        write("ÄãÈÏÕæ´§Ä¦×Å¾Å¹ÉÍĞÌì²æÉÏµÄÅÌÁú·ûÓ°£¬ËÆºõ¶Ô¡¸»ù±¾²æ·¨¡¹ÓÖÓĞËùÁË½â¡£\n");
-        tell_room( environment(me), me->name() +"Ë«ÑÛ¶¢×Å¾Å¹ÉÍĞÌì²æ£¬ÊÖÀï»¹²»ÖªÔÚ±È»®Ê²Ã´¡£\n", ({me}));
+        write("ä½ è®¤çœŸæ£æ‘©ç€ä¹è‚¡æ‰˜å¤©å‰ä¸Šçš„ç›˜é¾™ç¬¦å½±ï¼Œä¼¼ä¹å¯¹ã€ŒåŸºæœ¬å‰æ³•ã€åˆæœ‰æ‰€äº†è§£ã€‚\n");
+        tell_room( environment(me), me->name() +"åŒçœ¼ç›¯ç€ä¹è‚¡æ‰˜å¤©å‰ï¼Œæ‰‹é‡Œè¿˜ä¸çŸ¥åœ¨æ¯”åˆ’ä»€ä¹ˆã€‚\n", ({me}));
         return 1;
 }
 

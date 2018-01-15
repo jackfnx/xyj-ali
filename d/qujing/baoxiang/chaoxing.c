@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/14/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���ǹ�");
+  set ("short", "潮星谷");
   set ("long", @LONG
 
-��Χ����¡���ɽ�£������°����������������״����С��ʯ
-�ʰ���ɫ��������ɫ̦޺��������һЩ���˸ߵĹ�ľ�����дִ�
-����״ֲ�
+周围是略隆起的山坡，中心下凹地面柔软，行如谷状。大小岩石
+呈暗红色，长满绿色苔藓。东边有一些半人高的灌木，爬有粗粗
+的藤状植物。
 
 LONG);
 
@@ -42,7 +42,7 @@ int do_sink(string arg)
   if (arg)
     return 0;
 
-  tell_object (who,"�����һ����\n");
+  tell_object (who,"你脚下一软！\n");
   who->move(__DIR__"shanc");
   return 1;
 }
@@ -54,7 +54,7 @@ int do_down(string arg)
   if (arg)
     return 0;
 
-  tell_object (who,"�����һ����\n");
+  tell_object (who,"你脚下一软！\n");
   if (random(2))
     who->move(__DIR__"shana");
   else  

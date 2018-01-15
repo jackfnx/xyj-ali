@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/20/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("��ͷ", ({ "chai tou", "chai", "tou" }));
-  set("title", "�߽���");   
-  set("long", "һλ��ϼ���촽��ü���޵���Ů�ӡ�\n");
-  set("gender", "Ů��");
+  set_name("钗头", ({ "chai tou", "chai", "tou" }));
+  set("title", "七姐妹");   
+  set("long", "一位红霞脸朱唇蛾眉蝉鬓的美女子。\n");
+  set("gender", "女性");
   set("age", 20);
   set("attitude", "heroism");
   set("per", 30);
@@ -54,8 +54,8 @@ void die ()
     ob->set_temp("obstacle/pansi_killed_"+me->query("name"),1);
     ob->add_temp("obstacle/pansi_killed",1);
   }
-  message_vision ("\n$N����һ��������ͷ����֩�뾫��ԭ�Ρ�\n",me);
-  me->set_name("֩�뾫", ({"zhizhu jing", "zhizhu", "jing"}));
+  message_vision ("\n$N浑身一软，攒着头现了蜘蛛精的原形。\n",me);
+  me->set_name("蜘蛛精", ({"zhizhu jing", "zhizhu", "jing"}));
   ::die();
 }
 
@@ -76,14 +76,14 @@ void kill_ob (object ob)
 void hurting (object me, object ob)
 {
   string *msgs = ({
-    "$N����һ��¶����Ƥ��һ�ɴִֵİ�˿�罫������$nһ����\n",
-    "$N�ǿ��·�����һֻͦ���ɹɰ�˿����$n��\n",
-    "$N�����½ǣ������������һ�ɴְ�˿��$n��ȥ��\n",
+    "$N将衣一掀露出肚皮，一股粗粗的白丝喷将出来将$n一缠！\n",
+    "$N扒开衣服肚子一挺只见股股白丝射向$n！\n",
+    "$N撩起衣角，从脐眼里射出一股粗白丝向$n缠去！\n",
   });
   string *strs = ({
-    "( $N��ʱһ���ĵأ�ɲ�Ǽ�ˤ�����ذ��� )\n",
-    "( $N����������ڵ��ϣ���ҡ�������������� )\n",
-    "( $N�Ļ����̣������ŵ����ڵ��ϣ� )\n",
+    "( $N顿时一个磕地，刹那间摔个天昏地暗！ )\n",
+    "( $N身麻脚软扑在地上，又摇晃着爬将起来！ )\n",
+    "( $N心慌气短，踉跄着倒砸在地上！ )\n",
   });
   int damage;
 

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //mingyue.c
@@ -8,14 +8,14 @@ inherit NPC;
 int max_tea = 20;
 void create()
 {
-   set_name("����", ({"ming yue", "mingyue"}));
-   set("gender", "����" );
+   set_name("明月", ({"ming yue", "mingyue"}));
+   set("gender", "男性" );
    set("age", 16);
-   set("long", "һ������ϲ����С��ͯ��\n");
+   set("long", "一个讨人喜欢的小仙童。\n");
    set("class", "xian");
    set("combat_exp", 10000);
    set("attitude", "peaceful");
-   set("title", "С��ͯ");
+   set("title", "小仙童");
    set_skill("unarmed", 40);
    set_skill("dodge", 40);
    set_skill("parry", 40);
@@ -33,7 +33,7 @@ void init()
 
    ::init();
 
-   if ( ((int)ob->query("env/invisibility")  == 0) && ((string)environment(me)->query("short")=="��ƫ��") )
+   if ( ((int)ob->query("env/invisibility")  == 0) && ((string)environment(me)->query("short")=="东偏殿") )
    {
      remove_call_out("greeting");
      call_out("greeting", 1, ob);

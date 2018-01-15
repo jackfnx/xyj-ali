@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // callouts.c
@@ -11,7 +11,7 @@ int main(object me, string arg)
    int i;
    string output;
 
-   output = sprintf("%-30s %-20s %5s %s\n", "Îï¼ş", "º¯Êı", "ÑÓ³ÙÊ±¼ä", "²ÎÊı"); 
+   output = sprintf("%-30s %-20s %5s %s\n", "ç‰©ä»¶", "å‡½æ•°", "å»¶è¿Ÿæ—¶é—´", "å‚æ•°"); 
    if( arg && arg!="" )
      info = filter_array(call_out_info(), (: $1[1]==$2 :), arg);
    else
@@ -33,7 +33,7 @@ int main(object me, string arg)
 int help()
 {
    write(@LONG
-Ö¸Áî¸ñÊ½£ºcallouts [<º¯ÊıÃû³Æ>]
+æŒ‡ä»¤æ ¼å¼ï¼šcallouts [<å‡½æ•°åç§°>]
 
 List all the system callouts, or, a particular callouts 
 specified as a parameter.

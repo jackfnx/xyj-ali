@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // wizard_b.c
@@ -7,11 +7,11 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-   set_name("Î×Ê¦ÁôÑÔ°å", ({ "board" }) );
+   set_name("å·«å¸ˆç•™è¨€æ¿", ({ "board" }) );
    set("location", "/d/wiz/wizroom");
    set("board_id", "wizard_b");
    set("long",
-     "ÕâÊÇÒ»¸ö¹©ÈËÁôÑÔ¼ÇÊÂµÄÁôÑÔ°å¡£\n" );
+     "è¿™æ˜¯ä¸€ä¸ªä¾›äººç•™è¨€è®°äº‹çš„ç•™è¨€æ¿ã€‚\n" );
    setup();
    set("capacity", 200);
    set("env/invisibility",1);

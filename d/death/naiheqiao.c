@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÄÎºÎÇÅ");
+  set ("short", "å¥ˆä½•æ¡¥");
   set ("long", @LONG
 
-ÕâÊÇÒ»×ù½öÊý´çÖ®¿í£¬Êý³¤Ö®³¤µÄÊ¯ÇÅ¡£ÉÏÓÐº®·ç¹ö¹ö£¬ÏÂÊÇ
-ÑªÀËÌÏÌÏ¡£ÇÅÉÏ×óÓÒÎÞ·öÊÖ£¬ÏÕ¾þÖ®Â·ÈçÍ¬Æ¥Á·´î³¤½­£¬ÇÅÏÂ
-Ö®Ë®ÒõÆø±ÆÈË£¬ÐÈ·çÆË±Ç¡£
+è¿™æ˜¯ä¸€åº§ä»…æ•°å¯¸ä¹‹å®½ï¼Œæ•°é•¿ä¹‹é•¿çš„çŸ³æ¡¥ã€‚ä¸Šæœ‰å¯’é£Žæ»šæ»šï¼Œä¸‹æ˜¯
+è¡€æµªæ»”æ»”ã€‚æ¡¥ä¸Šå·¦å³æ— æ‰¶æ‰‹ï¼Œé™©å³»ä¹‹è·¯å¦‚åŒåŒ¹ç»ƒæ­é•¿æ±Ÿï¼Œæ¡¥ä¸‹
+ä¹‹æ°´é˜´æ°”é€¼äººï¼Œè…¥é£Žæ‰‘é¼»ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -35,10 +35,10 @@ int do_jump(string arg)
         me=this_player();
 
         if ( !arg || ((arg != "bridge") ))
-                return notify_fail("ÄãÒªÍùÄÄÌø£¿ÍùÇÅÏÂÌø×¼ËÀ£®£®£®\n");
+                return notify_fail("ä½ è¦å¾€å“ªè·³ï¼Ÿå¾€æ¡¥ä¸‹è·³å‡†æ­»ï¼Žï¼Žï¼Ž\n");
         else
 
-message_vision("$N²»¹ËÒ»ÇÐµÄÍùÇÅÏÂÌøÈ¥£®£®£®\n",me);
+message_vision("$Nä¸é¡¾ä¸€åˆ‡çš„å¾€æ¡¥ä¸‹è·³åŽ»ï¼Žï¼Žï¼Ž\n",me);
                 me->move("/d/diyu/gufen");
                 me->die();
                 return 1;

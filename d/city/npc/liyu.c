@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,11 +6,11 @@ string fan_me(object me);
 
 void create()
 {
-        set_name("������", ({"li yuniang", "li"}));
+        set_name("李玉娘", ({"li yuniang", "li"}));
         set("age", 28);
-        set("gender", "Ů��");
+        set("gender", "女性");
         set("long",
-"��������Ԭ������ţ�����ϴ��������\n");
+"李玉娘是袁天罡的老婆，正在洗菜做饭。\n");
         set("attitude", "friendly");
    set("per", 25);
         set("combat_exp", 4000);
@@ -19,8 +19,8 @@ void create()
    set_skill("parry", 20);
         set_skill("dodge", 40);
         set("inquiry", ([
-"Ԭ���": "�������ˣ���ô����Ҳ���ؼҳԷ���Ҳ�Ҳ������˰ѷ���ȥ��\n",
-"�ͷ�": (: fan_me :),
+"袁天罡": "气死人了，这么晚了也不回家吃饭！也找不到个人把饭送去！\n",
+"送饭": (: fan_me :),
 ]));
 
    setup();
@@ -33,10 +33,10 @@ string fan_me(object me)
    who=this_player();
    
    if(!present("fan he", me)){
-   return "�����·Զ�ģ����˰ɣ���л�ˣ�\n";
+   return "这天黑路远的，算了吧，多谢了！\n";
    }
    if(present("fan he", me)){
    command("give fan to " + who->query("id"));
-   return "��л�ˣ���ȥ�ɣ�";
+   return "多谢了，快去吧！";
    }
 }

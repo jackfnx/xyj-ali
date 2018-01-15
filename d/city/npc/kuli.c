@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("¿àÁ¦", ({"kuli"}));
+        set_name("è‹¦åŠ›", ({"kuli"}));
         set("age", 22);
-        set("gender", "ÄĞĞÔ");
-        set("long","Ò»¸öÒÂÉÀÆÆ¾ÉµÄ¿àÁ¦ÈË¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long","ä¸€ä¸ªè¡£è¡«ç ´æ—§çš„è‹¦åŠ›äººã€‚\n");
         set("attitude", "heroism");
 
         set("combat_exp", 5000+random(1000));

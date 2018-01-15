@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("Öìºì¹ñ×Ó", ({"zhuhong guizi", "guizi"}));
+  set_name("æœ±çº¢æŸœå­", ({"zhuhong guizi", "guizi"}));
   set_weight(6000000);
   set_max_encumbrance(100000000000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ïä");
-    set("long", "Ò»ÏäÖìºìÆáÇ¶Óñ½ğËø´ó¹ñ×Ó¡£\n"),
+    set("unit", "ç®±");
+    set("long", "ä¸€ç®±æœ±çº¢æ¼†åµŒç‰é‡‘é”å¤§æŸœå­ã€‚\n"),
     set("value", 50000);
   }
   setup();
@@ -49,7 +49,7 @@ void autoleave (object me, object who, int i)
     return;
   }
   who->move(environment(me));
-  message_vision ("Ö»¼û$NÃæÈçËÀ»ÒµØ±»ÄÚ¹ÙÍÏÁË³öÀ´¡£\n",who);
+  message_vision ("åªè§$Né¢å¦‚æ­»ç°åœ°è¢«å†…å®˜æ‹–äº†å‡ºæ¥ã€‚\n",who);
   if (interactive(who))
     who->unconcious();
 }
@@ -57,22 +57,22 @@ void autoleave (object me, object who, int i)
 int do_command (string arg)
 {
   string *strs = ({
-    "ÄãÌı¼û",
-    "ÄãºÃÏñÌı¼ûÀïÃæ",
-    "¹ñ×ÓÀï",
-    "¹ñ×ÓÀïËÆºõ",
+    "ä½ å¬è§",
+    "ä½ å¥½åƒå¬è§é‡Œé¢",
+    "æŸœå­é‡Œ",
+    "æŸœå­é‡Œä¼¼ä¹",
   });
   string *msgs = ({
-    "$NÔÚºÚ°µÖĞºúÂÒÌß´òÁË¼¸ÏÂ¡£\n",
-    "$NÅéµØ×²ÔÚ¹ñ¶¥ÉÏ¡£\n",
-    "$NµßÈıµ¹ËÄµØ·¢³öÔëÒô¡£\n",
-    "$NºúÂÒÕõÔú×Å¡£\n",
-    "$NÃşÃşË÷Ë÷µØÕÛÌÚ×Å¡£\n",
-    "$N·¢³öÒ»Éù°§Ãù¡£\n",
-    "$NºİºİµØ×²ÔÚ¹ñ±ÚÉÏ¡£\n",
-    "$N²»ÖªËù´ëµØÔÚºÚ°µÖĞÌß´ò×Å¡£\n",
-    "$N·¢³ö±¿ÖØµÄ×²»÷Éù¡£\n",
-    "$NÍ·×²ÔÚ±Ú°åÉÏ£¬·¢³ö³ÁÃÆµÄÒ»ÉùÏì¡£\n",
+    "$Nåœ¨é»‘æš—ä¸­èƒ¡ä¹±è¸¢æ‰“äº†å‡ ä¸‹ã€‚\n",
+    "$Nç °åœ°æ’åœ¨æŸœé¡¶ä¸Šã€‚\n",
+    "$Né¢ ä¸‰å€’å››åœ°å‘å‡ºå™ªéŸ³ã€‚\n",
+    "$Nèƒ¡ä¹±æŒ£æ‰ç€ã€‚\n",
+    "$Næ‘¸æ‘¸ç´¢ç´¢åœ°æŠ˜è…¾ç€ã€‚\n",
+    "$Nå‘å‡ºä¸€å£°å“€é¸£ã€‚\n",
+    "$Nç‹ ç‹ åœ°æ’åœ¨æŸœå£ä¸Šã€‚\n",
+    "$Nä¸çŸ¥æ‰€æªåœ°åœ¨é»‘æš—ä¸­è¸¢æ‰“ç€ã€‚\n",
+    "$Nå‘å‡ºç¬¨é‡çš„æ’å‡»å£°ã€‚\n",
+    "$Nå¤´æ’åœ¨å£æ¿ä¸Šï¼Œå‘å‡ºæ²‰é—·çš„ä¸€å£°å“ã€‚\n",
   });
   string str = strs[random(sizeof(strs))];
   string msg = msgs[random(sizeof(msgs))];
@@ -124,7 +124,7 @@ int do_put (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }
 
@@ -141,6 +141,6 @@ int do_get (string arg)
   if (me != present(id,where))
     return 0;
 
-  tell_object(who,"ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+  tell_object(who,"è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
   return 1;
 }

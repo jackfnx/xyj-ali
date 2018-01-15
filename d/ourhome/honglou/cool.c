@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/cool
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ˮ�");
+  set ("short", "云水深处");
   set ("long", @LONG
 
-��������С�ţ���ˮ���˼ҡ���
+　　　　小桥，流水，人家……
 
 LONG);
 

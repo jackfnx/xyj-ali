@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/15/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "р╩╤╢це");
+  set ("short", "Д╦─Ф╢·И≈╗");
   set ("long", @LONG
 
-р╩╦ЖлЛх╩пнЁи╣дй╞м╥цеё╛цеио╣дй╞геиосплыбШ╧робю╢ё╛це╣да╫
-╠ъЁ╓вефФки╧ж╟ьё╛╢сюОцФбЧЁЖр╩╧и╧ие╗ар╣дйчяЩфЬё╛й╧хксп╣Ц
-м╥╩Хд©яё║ё
+Д╦─Д╦╙Е╓╘Г└╤Е╫╒Ф┬░Г └Г÷ЁЕ╓╢И≈╗О╪▄И≈╗Д╦┼Г └Г÷ЁФ║╔Д╦┼Ф°┴Х≈╓Х■⌠Ф▄┌Д╦▀Ф²╔О╪▄И≈╗Г └Д╦╓
+Х╬╧И∙©Г²─Е╔┤Ф²╬Ф─╙Ф÷▐О╪▄Д╩▌И┤▄И²╒Ф╪╚Е┤╨Д╦─Х┌║Х┌║Ф╣⌠Г┐┬Г └Е┘╫Е╕√Ф╟■О╪▄Д╫©Д╨╨Ф°┴Г┌╧
+Е╓╢Ф≤▐Г⌡╝Г°╘Ц─┌
 
 LONG);
 
@@ -34,7 +34,7 @@ int valid_leave (object who, string dir)
   if (yao && 
       living (yao) &&
       dir == "southwest")
-    return notify_fail (yao->query("name")+"ю╜ю╜Ё╤Ё╤╬╬в║дЦ╡╩╥е║ё\n");
+    return notify_fail (yao->query("name")+"Ф▀┴Ф▀┴Ф┴╞Ф┴╞Ф▐╙Д╫▐Д╫═Д╦█Ф■╬Ц─┌\n");
   return ::valid_leave(who, dir);
 }
 
@@ -51,17 +51,17 @@ int do_break ()
 
   if (! weapon)
   {
-    message_vision ("$NЁЮ╡╡иоуСдСвех╜м╥мЫй╞цеиор╩трё║\n",who);
-    message_vision ("ер╣ьр╩иЫ$Nж╩╬У╣ц╧гм╥╤╪уПкИакё║\n",who);
+    message_vision ("$NХ╣╓Х├┼Д╦┼И≤╣Ф█▐Г²─Ф▀ЁЕ╓╢Е╬─Г÷ЁИ≈╗Д╦┼Д╦─Г═╦О╪│\n",who);
+    message_vision ("Д╧⌠Е°╟Д╦─Её╟$NЕ▐╙Х╖┴Е╬≈И╙╗Е╓╢И┐╫И°┤Г╒▌Д╨├О╪│\n",who);
     who->unconcious();
   }
   else
   {
-    message_vision ("$NткфЬвт╣╓лОё╛╦ъ╬ы$nмЫцеиор╩трё║\n",who,weapon);
+    message_vision ("$NХ©░Ф╟■Х┤╙Д╦╧Г■╟О╪▄И╚≤Д╦╬$nЕ╬─И≈╗Д╦┼Д╦─Г═╦О╪│\n",who,weapon);
     if (! this_object()->query("exits/southwest"))
-      message_vision ("ер╣ьр╩иЫце©╙акё║\n",who);
+      message_vision ("Д╧⌠Е°╟Д╦─Её╟И≈╗Е╪─Д╨├О╪│\n",who);
     else
-      message_vision ("ер╣ьр╩иЫтртзря╬╜╢Р©╙╣дцеиоё║\n",who);
+      message_vision ("Д╧⌠Е°╟Д╦─Её╟Г═╦Е°╗Е╥╡Г╩▐Ф┴⌠Е╪─Г └И≈╗Д╦┼О╪│\n",who);
     if (who->query("force") <= 200 ||
         who->query("mana") <= 200)        
       who->unconcious();
@@ -80,6 +80,6 @@ int do_break ()
 void close ()
 {
   if (this_object()->query("exits/southwest"))
-    tell_room (this_object(),"ер╣ьр╩иЫцесж╧ькюакё║\n");
+    tell_room (this_object(),"Д╧⌠Е°╟Д╦─Её╟И≈╗Е▐┬Е┘ЁФ╜╩Д╨├О╪│\n");
   this_object()->delete("exits/southwest");
 }

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /city/erlou.c  snowcat moved to /d/qujing/wuji
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-set("short", "��¥�ͷ�");
+set("short", "二楼客房");
 set("long", @LONG
 
-�ͷ�������󷽣����ܷ��Ŵ��̺͵�ľС�����ٽ���һ�Ŵ��ӣ���
-�ű��������Ǹ�Ъ����Ϣ�ĺõط���
+客房里整齐大方，四周放着床铺和雕木小几。临街是一排窗子，挂
+着薄窗帘，是个歇脚休息的好地方。
 
 LONG);
 

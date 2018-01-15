@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rankd.c
@@ -9,254 +9,254 @@ string query_rank(object ob)
 {
     // need this default, otherwise looks too ugly sometimes.
     if (strlen(ob->query("added_title"))<1)
-        ob->set("added_title", "Ä³Ä³");
+        ob->set("added_title", "æŸæŸ");
 
-    if (ob->is_ghost()) return HIB "¡¾ ¹í  »ê ¡¿" NOR;
-    if (wizardp(ob)) return HIW "¡¾ Î×  Ê¦ ¡¿" NOR;
+    if (ob->is_ghost()) return HIB "ã€ é¬¼  é­‚ ã€‘" NOR;
+    if (wizardp(ob)) return HIW "ã€ å·«  å¸ˆ ã€‘" NOR;
 
     switch (ob->query("gender"))
     {
-// begin Å®ĞÔ£º
-        case "Å®ĞÔ":
+// begin å¥³æ€§ï¼š
+        case "å¥³æ€§":
             switch (ob->query("class"))
             {
 //------------------rank for girls--------------------
 case "xian":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Å®ÏÉÍ¯ ¡¿" NOR;
+        return GRN "ã€ å¥³ä»™ç«¥ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ Ğ¡ÏÉÅ® ¡¿" NOR;
+        return GRN "ã€ å°ä»™å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ ÏÉ  Å® ¡¿" NOR;
+        return GRN "ã€ ä»™  å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "¡¾"+ob->query("added_title")+"ÏÉ×Ó¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"ä»™å­ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return GRN "¡¾"+ob->query("added_title")+"Ê¥Å®¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"åœ£å¥³ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"Å®Éñ¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¥³ç¥ã€‘" NOR;
     break;
 case "taoist":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Å®µÀÍ¯ ¡¿" NOR;
+        return GRN "ã€ å¥³é“ç«¥ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ Å®µÀÊ¿ ¡¿" NOR;
+        return GRN "ã€ å¥³é“å£« ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ Ğş  Å® ¡¿" NOR;
+        return GRN "ã€ ç„  å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "¡¾"+ob->query("added_title")+"ĞşÅ®¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"ç„å¥³ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"ÌìÅ®¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¤©å¥³ã€‘" NOR;
     break;
 case "bonze":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Ğ¡Äá¹Ã ¡¿" NOR;
+        return GRN "ã€ å°å°¼å§‘ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ Äá  ¹Ã ¡¿" NOR;
+        return GRN "ã€ å°¼  å§‘ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ ±ÈÇğÄá ¡¿" NOR;
+        return GRN "ã€ æ¯”ä¸˜å°¼ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "¡¾"+ob->query("added_title")+"ÉñÄá¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"ç¥å°¼ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"ÆĞÈø¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"è©è¨ã€‘" NOR;
     break;
 case "dragon":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Ğ¡¹¬¶ğ ¡¿" NOR;
+        return GRN "ã€ å°å®«å¨¥ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ ¹¬  Å® ¡¿" NOR;
+        return GRN "ã€ å®«  å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ Ğ¡ÁúÅ® ¡¿" NOR;
+        return GRN "ã€ å°é¾™å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "¡¾"+ob->query("added_title")+"ÁúÅ®¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"é¾™å¥³ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"¹«Ö÷¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å…¬ä¸»ã€‘" NOR;
     break;
 case "ghost":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Ğ¡  ¹í ¡¿" NOR;
+        return GRN "ã€ å°  é¬¼ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ Å®  ¹í ¡¿" NOR;
+        return GRN "ã€ å¥³  é¬¼ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ Å®ÅĞ¹Ù ¡¿" NOR;
+        return GRN "ã€ å¥³åˆ¤å®˜ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return GRN "¡¾"+ob->query("added_title")+"Ìì¹í¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¤©é¬¼ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"Å®Íõ¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¥³ç‹ã€‘" NOR;
     break;
 case "yaomo":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Ğ¡ÑıÅ® ¡¿" NOR;
+        return GRN "ã€ å°å¦–å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ Ñı  Å® ¡¿" NOR;
+        return GRN "ã€ å¦–  å¥³ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ Ñı  ¾« ¡¿" NOR;
+        return GRN "ã€ å¦–  ç²¾ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "¡¾"+ob->query("added_title")+"¹«Ö÷¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å…¬ä¸»ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return GRN "¡¾"+ob->query("added_title")+"Ä§Å®¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"é­”å¥³ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"Å®Íõ¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¥³ç‹ã€‘" NOR;
     break;
 case "fighter":
     if ((int)ob->query("combat_exp")<1000)
-        return GRN "¡¾ Å®  ±ø ¡¿" NOR;
+        return GRN "ã€ å¥³  å…µ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return GRN "¡¾ Å®Ğ£Î¾ ¡¿" NOR;
+        return GRN "ã€ å¥³æ ¡å°‰ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return GRN "¡¾ Å®½«¾ü ¡¿" NOR;
+        return GRN "ã€ å¥³å°†å†› ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return GRN "¡¾"+ob->query("added_title")+"½«¾ü¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å°†å†›ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return GRN "¡¾"+ob->query("added_title")+"´ó½«¾ü¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¤§å°†å†›ã€‘" NOR;
     else
-        return GRN "¡¾"+ob->query("added_title")+"´óÔªË§¡¿" NOR;
+        return GRN "ã€"+ob->query("added_title")+"å¤§å…ƒå¸…ã€‘" NOR;
     break;
 case "scholar":
-    if ((string)ob->query("added_title")=="Ä³Ä³") {
+    if ((string)ob->query("added_title")=="æŸæŸ") {
         if ((int)ob->query_skill("literate", 1)<20)
-            return GRN "¡¾ Å®Ñ§Í¯ ¡¿" NOR;
+            return GRN "ã€ å¥³å­¦ç«¥ ã€‘" NOR;
         else if ((int)ob->query_skill("literate", 1)<100)
-            return GRN "¡¾ ²Å  Å® ¡¿" NOR;
+            return GRN "ã€ æ‰  å¥³ ã€‘" NOR;
         else
-            return GRN "¡¾ Å®Ñ§Ê¿ ¡¿" NOR;
+            return GRN "ã€ å¥³å­¦å£« ã€‘" NOR;
     } else {
      if ((int)ob->query_skill("literate", 1)<20)
-         return GRN "¡¾ Å®Ñ§Í¯ ¡¿" NOR;
+         return GRN "ã€ å¥³å­¦ç«¥ ã€‘" NOR;
      else if ((int)ob->query_skill("literate", 1)<100)
-         return GRN "¡¾"+ob->query("added_title")+"Ğã²Å¡¿" NOR;
+         return GRN "ã€"+ob->query("added_title")+"ç§€æ‰ã€‘" NOR;
      else
-         return GRN "¡¾"+ob->query("added_title")+"Ñ§Ê¿¡¿" NOR;
+         return GRN "ã€"+ob->query("added_title")+"å­¦å£«ã€‘" NOR;
     }
     break;
 case "dancer":
-    return GRN "¡¾ Îè  ¼Ë ¡¿" NOR;
+    return GRN "ã€ èˆ  å¦“ ã€‘" NOR;
     break;
 default:
-    return MAG "¡¾ Æ½  Ãñ ¡¿" NOR;
+    return MAG "ã€ å¹³  æ°‘ ã€‘" NOR;
 //------------------end rank for girls--------------------
             }
-// begin ÄĞĞÔ£º
+// begin ç”·æ€§ï¼š
         default:
         switch (ob->query("class"))
         {
 //------------------rank for men--------------------
 case "xian":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ ÏÉ  Í¯ ¡¿" NOR;
+        return RED "ã€ ä»™  ç«¥ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾ É¢  ÏÉ ¡¿" NOR;
+        return RED "ã€ æ•£  ä»™ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾ ´ó  ÏÉ ¡¿" NOR;
+        return RED "ã€ å¤§  ä»™ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾"+ob->query("added_title")+"´óÏÉ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤§ä»™ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"´óÏÉ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤§ä»™ã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"Ìì×ğ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤©å°Šã€‘" NOR;
     break;
 case "taoist":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ µÀ  Í¯ ¡¿" NOR;
+        return RED "ã€ é“  ç«¥ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾ µÀ  Ê¿ ¡¿" NOR;
+        return RED "ã€ é“  å£« ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾ µÀ  ³¤ ¡¿" NOR;
+        return RED "ã€ é“  é•¿ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾"+ob->query("added_title")+"ÌìÊ¦¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤©å¸ˆã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"ÕæÈË¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"çœŸäººã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"Ìì×ğ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤©å°Šã€‘" NOR;
     break;
 case "bonze":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ Ğ¡É³ÃÖ ¡¿" NOR;
+        return RED "ã€ å°æ²™å¼¥ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾ ºÍ  ÉĞ ¡¿" NOR;
+        return RED "ã€ å’Œ  å°š ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾ Ê¥  É® ¡¿" NOR;
+        return RED "ã€ åœ£  åƒ§ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾"+ob->query("added_title")+"×ğÕß¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å°Šè€…ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"ÂŞºº¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"ç½—æ±‰ã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"ÆĞÈø¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"è©è¨ã€‘" NOR;
     break;
 case "dragon":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ Ïº  ±ø ¡¿" NOR;
+        return RED "ã€ è™¾  å…µ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾ Ğ·  ½« ¡¿" NOR;
+        return RED "ã€ èŸ¹  å°† ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾Ñ²º£Ò¹²æ¡¿" NOR;
+        return RED "ã€å·¡æµ·å¤œå‰ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾"+ob->query("added_title")+"òÔÁú¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"è›Ÿé¾™ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"Áú¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"é¾™ã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"ÁúÍõ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"é¾™ç‹ã€‘" NOR;
     break;
 case "ghost":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ Ğ¡  ¹í ¡¿" NOR;
+        return RED "ã€ å°  é¬¼ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾   ¹í   ¡¿" NOR;
+        return RED "ã€   é¬¼   ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾ ÅĞ  ¹Ù ¡¿" NOR;
+        return RED "ã€ åˆ¤  å®˜ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾"+ob->query("added_title")+"ÎŞ³£¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"æ— å¸¸ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"¹íÍõ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"é¬¼ç‹ã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"Íõ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"ç‹ã€‘" NOR;
     break;
 case "yaomo":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ Ğ¡  Ñı ¡¿" NOR;
+        return RED "ã€ å°  å¦– ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾ Ñı  ¹Ö ¡¿" NOR;
+        return RED "ã€ å¦–  æ€ª ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾ Ñı  ÏÉ ¡¿" NOR;
+        return RED "ã€ å¦–  ä»™ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾ "+ob->query("added_title")+"ÀÏÄ§ ¡¿" NOR;
+        return RED "ã€ "+ob->query("added_title")+"è€é­” ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"Ä§Íõ¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"é­”ç‹ã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"´óÊ¥¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤§åœ£ã€‘" NOR;
     break;
 case "fighter":
     if ((int)ob->query("combat_exp")<1000)
-        return RED "¡¾ Ğ¡  ±ø ¡¿" NOR;
+        return RED "ã€ å°  å…µ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<10000)
-        return RED "¡¾ Ğ¡  Ğ£ ¡¿" NOR;
+        return RED "ã€ å°  æ ¡ ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<100000)
-        return RED "¡¾ ²Î  ½« ¡¿" NOR;
+        return RED "ã€ å‚  å°† ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<500000)
-        return RED "¡¾"+ob->query("added_title")+"½«¾ü¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å°†å†›ã€‘" NOR;
     else if ((int)ob->query("combat_exp")<1000000)
-        return RED "¡¾"+ob->query("added_title")+"´ó½«¾ü¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤§å°†å†›ã€‘" NOR;
     else
-        return RED "¡¾"+ob->query("added_title")+"´óÔªË§¡¿" NOR;
+        return RED "ã€"+ob->query("added_title")+"å¤§å…ƒå¸…ã€‘" NOR;
     break;
 case "scholar":
-    if ((string)ob->query("added_title")=="Ä³Ä³") {
+    if ((string)ob->query("added_title")=="æŸæŸ") {
         if ((int)ob->query_skill("literate", 1)<20)
-            return RED "¡¾ Í¯  Éú ¡¿" NOR;
+            return RED "ã€ ç«¥  ç”Ÿ ã€‘" NOR;
         else if ((int)ob->query_skill("literate", 1)<100)
-            return RED "¡¾ Ğã  ²Å ¡¿" NOR;
+            return RED "ã€ ç§€  æ‰ ã€‘" NOR;
         else
-            return RED "¡¾ ´óÑ§Ê¿ ¡¿" NOR;
+            return RED "ã€ å¤§å­¦å£« ã€‘" NOR;
     } else {
         if ((int)ob->query_skill("literate", 1)<20)
-            return RED "¡¾ Í¯  Éú ¡¿" NOR;
+            return RED "ã€ ç«¥  ç”Ÿ ã€‘" NOR;
         else if ((int)ob->query_skill("literate", 1)<100)
-            return RED "¡¾"+ob->query("added_title")+"Ğã²Å¡¿" NOR;
+            return RED "ã€"+ob->query("added_title")+"ç§€æ‰ã€‘" NOR;
         else
-            return RED "¡¾"+ob->query("added_title")+"Ñ§Ê¿¡¿" NOR;
+            return RED "ã€"+ob->query("added_title")+"å­¦å£«ã€‘" NOR;
     }
     break;
 default:
-    return "¡¾ Æ½  Ãñ ¡¿";
+    return "ã€ å¹³  æ°‘ ã€‘";
 //------------------end rank for men--------------------
         }
     }
@@ -282,67 +282,67 @@ string query_respect(object ob)
     age = query_age(ob);
     switch (ob->query("gender"))
     {
-        case "Å®ĞÔ":
+        case "å¥³æ€§":
         switch (ob->query("class"))
         {
 case "bonze":
-    if (age < 18) return "Ğ¡Ê¦Ì«";
-    else return "Ê¦Ì«";
+    if (age < 18) return "å°å¸ˆå¤ª";
+    else return "å¸ˆå¤ª";
     break;
 case "taoist":
-    if (age < 18) return "Ğ¡ÏÉÅ®";
-    else return "ÏÉ×Ó";
+    if (age < 18) return "å°ä»™å¥³";
+    else return "ä»™å­";
     break;
 case "xian":
-    if (age < 18) return "Ğ¡ÏÉÅ®";
-    else return "ÏÉ×Ó";
+    if (age < 18) return "å°ä»™å¥³";
+    else return "ä»™å­";
     break;
 default:
-    if (age < 18) return "Ğ¡¹ÃÄï";
-    else if (age < 50) return "¹ÃÄï";
-    else return "ÆÅÆÅ";
+    if (age < 18) return "å°å§‘å¨˜";
+    else if (age < 50) return "å§‘å¨˜";
+    else return "å©†å©†";
     break;
         }
-        case "ÄĞĞÔ":
+        case "ç”·æ€§":
         default:
         switch (ob->query("class"))
         {
 case "xian":
-    if (age < 18) return "Ğ¡ÉñÏÉ";
-    else if (age < 50) return "ÏÉĞÖ";
-    else return "ÀÏÉñÏÉ";
+    if (age < 18) return "å°ç¥ä»™";
+    else if (age < 50) return "ä»™å…„";
+    else return "è€ç¥ä»™";
     break;
 case "bonze":
-    if (age < 18) return "Ğ¡Ê¦¸¸";
-    else if (age < 50) return "´óÊ¦";
-    else return "³¤ÀÏ";
+    if (age < 18) return "å°å¸ˆçˆ¶";
+    else if (age < 50) return "å¤§å¸ˆ";
+    else return "é•¿è€";
     break;
 case "taoist":
-    if (age < 18) return "Ğ¡µÀÒ¯";
-    else if (age < 50) return "µÀĞÖ";
-    else return "µÀ³¤";
+    if (age < 18) return "å°é“çˆ·";
+    else if (age < 50) return "é“å…„";
+    else return "é“é•¿";
     break;
 case "fighter":
-    if (age < 18) return "Ğ¡½«¾ü";
-    else if (age < 50) return "´ó½«¾ü";
-    else return "ÀÏ½«¾ü";
+    if (age < 18) return "å°å°†å†›";
+    else if (age < 50) return "å¤§å°†å†›";
+    else return "è€å°†å†›";
     break;
 case "scholar":
-    if (age < 18) return "Ğ¡Ïà¹«";
-    else if (age < 50) return "Ïà¹«";
-    else return "ÀÏÏÈÉú";
+    if (age < 18) return "å°ç›¸å…¬";
+    else if (age < 50) return "ç›¸å…¬";
+    else return "è€å…ˆç”Ÿ";
     break;
 /*
 case "swordsman":
-    if (age < 18) return "Ğ¡ÀÏµÜ";
-    else if (age < 50) return "×³Ê¿";
-    else return "ÀÏÇ°±²";
+    if (age < 18) return "å°è€å¼Ÿ";
+    else if (age < 50) return "å£®å£«";
+    else return "è€å‰è¾ˆ";
     break;
 */
 default:
-    if (age < 18) return "Ğ¡ĞÖµÜ";
-    else if (age < 50) return "×³Ê¿";
-    else return "ÀÏÒ¯×Ó";
+    if (age < 18) return "å°å…„å¼Ÿ";
+    else if (age < 50) return "å£®å£«";
+    else return "è€çˆ·å­";
     break;
         }
     }
@@ -359,63 +359,63 @@ string query_rude(object ob)
     age = query_age(ob);
     switch (ob->query("gender"))
     {
-        case "Å®ĞÔ":
+        case "å¥³æ€§":
         switch (ob->query("class"))
         {
 case "xian":
-    if (age < 30) return "Ğ¡Ñı¾«";
-    else if (age < 50) return "ÑıÅ®";
-    else return "ÀÏÑıÆÅ";
+    if (age < 30) return "å°å¦–ç²¾";
+    else if (age < 50) return "å¦–å¥³";
+    else return "è€å¦–å©†";
     break;
 case "yaomo":
-    if (age < 30) return "Ğ¡ÑıÅ®";
-    else if (age < 50) return "ÑıÅ®";
-    else return "ÀÏÑıÆÅ";
+    if (age < 30) return "å°å¦–å¥³";
+    else if (age < 50) return "å¦–å¥³";
+    else return "è€å¦–å©†";
     break;
 case "bonze":
-    if (age < 30) return "Ğ¡ÔôÄá";
-    else if (age < 50) return "ÔôÄá";
-    else return "ÀÏÔôÄá";
+    if (age < 30) return "å°è´¼å°¼";
+    else if (age < 50) return "è´¼å°¼";
+    else return "è€è´¼å°¼";
     break;
 case "taoist":
-    if (age < 30) return "Ğ¡ÑıÅ®";
-    else if (age < 50) return "ÑıÅ®";
-    else return "ÀÏÑıÆÅ";
+    if (age < 30) return "å°å¦–å¥³";
+    else if (age < 50) return "å¦–å¥³";
+    else return "è€å¦–å©†";
     break;
 default:
-    if (age < 30) return "Ğ¡¼úÈË";
-    else if (age < 50) return "¼úÈË";
-    else return "ËÀÀÏÌ«ÆÅ";
+    if (age < 30) return "å°è´±äºº";
+    else if (age < 50) return "è´±äºº";
+    else return "æ­»è€å¤ªå©†";
     break;
         }
-        case "ÄĞĞÔ":
+        case "ç”·æ€§":
         default:
         switch (ob->query("class"))
         {
 case "xian":
-    if (age < 50) return "ËÀÑı¹Ö";
-    else return "ÀÏÑı¹Ö";
+    if (age < 50) return "æ­»å¦–æ€ª";
+    else return "è€å¦–æ€ª";
     break;
 case "yaomo":
-    if (age < 50) return "ËÀÑı¹Ö";
-    else return "ÀÏÑı¹Ö";
+    if (age < 50) return "æ­»å¦–æ€ª";
+    else return "è€å¦–æ€ª";
     break;
 case "bonze":
-    if (age < 50) return "ËÀÍºÂ¿";
-    else return "ÀÏÍºÂ¿";
+    if (age < 50) return "æ­»ç§ƒé©´";
+    else return "è€ç§ƒé©´";
     break;
 case "taoist":
-    return "ËÀÅ£±Ç×Ó";
+    return "æ­»ç‰›é¼»å­";
     break;
 case "scholar":
-    if (age < 18) return "Ğ¡Êé´ô×Ó";
-    else if (age < 50) return "³ôÊé´ô×Ó";
-    else return "ÀÏÍ¯Éú";
+    if (age < 18) return "å°ä¹¦å‘†å­";
+    else if (age < 50) return "è‡­ä¹¦å‘†å­";
+    else return "è€ç«¥ç”Ÿ";
     break;
 default:
-    if (age < 18) return "Ğ¡Íõ°Ëµ°";
-    else if (age < 50) return "³ôÔô";
-    else return "ÀÏÆ¥·ò";
+    if (age < 18) return "å°ç‹å…«è›‹";
+    else if (age < 50) return "è‡­è´¼";
+    else return "è€åŒ¹å¤«";
     break;
         }
     }
@@ -432,39 +432,39 @@ string query_self(object ob)
     age = query_age(ob);
     switch (ob->query("gender"))
     {
-        case "Å®ĞÔ":
+        case "å¥³æ€§":
         switch (ob->query("class"))
         {
 case "bonze":
-    if (age < 50) return "Æ¶Äá";
-    else return "ÀÏÄá";
+    if (age < 50) return "è´«å°¼";
+    else return "è€å°¼";
     break;
 case "taoist":
-    return "Æ¶µÀ";
+    return "è´«é“";
     break;
 default:
-    if (age < 30) return "Ğ¡Å®×Ó";
-    else return "æªÉí";
+    if (age < 30) return "å°å¥³å­";
+    else return "å¦¾èº«";
     break;
         }
-        case "ÄĞĞÔ":
+        case "ç”·æ€§":
         default:
         switch (ob->query("class"))
         {
 case "bonze":
-    if (age < 50) return "Æ¶É®";
-    else return "ÀÏÄÉ";
+    if (age < 50) return "è´«åƒ§";
+    else return "è€çº³";
     break;
 case "taoist":
-    return "Æ¶µÀ";
+    return "è´«é“";
     break;
 case "scholar":
-    if (age < 30) return "ÍíÉú";
-    else return "²»²Å";
+    if (age < 30) return "æ™šç”Ÿ";
+    else return "ä¸æ‰";
     break;
 default:
-    if (age < 50) return "ÔÚÏÂ";
-    else return "ÀÏÍ·×Ó";
+    if (age < 50) return "åœ¨ä¸‹";
+    else return "è€å¤´å­";
     break;
         }
     }
@@ -481,37 +481,37 @@ string query_self_rude(object ob)
     age = query_age(ob);
     switch (ob->query("gender"))
     {
-        case "Å®ĞÔ":
+        case "å¥³æ€§":
         switch (ob->query("class"))
         {
 case "bonze":
-    if (age < 50) return "Æ¶Äá";
-    else return "ÀÏÄá";
+    if (age < 50) return "è´«å°¼";
+    else return "è€å°¼";
     break;
 default:
-    if (age < 50) return "±¾¹ÃÄï";
-    else return "ÀÏÄï";
+    if (age < 50) return "æœ¬å§‘å¨˜";
+    else return "è€å¨˜";
     break;
         }
-        case "ÄĞĞÔ":
+        case "ç”·æ€§":
         default:
         switch (ob->query("class"))
         {
 case "bonze":
-    if (age < 50) return "´óºÍÉĞÎÒ";
-    else return "ÀÏºÍÉĞÎÒ";
+    if (age < 50) return "å¤§å’Œå°šæˆ‘";
+    else return "è€å’Œå°šæˆ‘";
     break;
 case "taoist":
-    return "µÀÒ¯ÎÒ";
+    return "é“çˆ·æˆ‘";
     break;
 case "scholar":
-    if (age < 50) return "±¾Ïà¹«";
-    else return "ÀÏ·ò×ÓÎÒ";
+    if (age < 50) return "æœ¬ç›¸å…¬";
+    else return "è€å¤«å­æˆ‘";
     break;
 default:
-    if (age < 18) return "Äã¼ÒĞ¡Ò¯ÎÒ";
-    else if (age < 50) return "´óÒ¯ÎÒ";
-    else return "ÄãÒ¯Ò¯ÎÒ";
+    if (age < 18) return "ä½ å®¶å°çˆ·æˆ‘";
+    else if (age < 50) return "å¤§çˆ·æˆ‘";
+    else return "ä½ çˆ·çˆ·æˆ‘";
     break;
         }
     }
@@ -521,209 +521,209 @@ default:
 
 //note, be careful with the size of this list, exp increases as n^3. 
 string *exp_level_desc = ({
-        BLU "ĞÂÈëµÀÍ¾" NOR, //in unit of year 
-        BLU "ÎÅµÀÔòÏ²" NOR, //1x2=2   
-        BLU "³õÁìÃîµÀ" NOR, //8x2=16
-        BLU "ÂÔÍ¨µÀĞĞ" NOR, //27x2=56    
-        HIB "½¥Èë¼Ñ¾³" NOR, //64x2=128
-        HIB "ÔªÉñ³õ¾ß" NOR, //125x2=250
-        HIB "µÀĞÄÎÈ¹Ì" NOR, //216x2=432    
-        HIB "Ò»ÈÕÇ§Àï" NOR, //343x2=686
-        CYN "µÀ¸ßµÂÂ¡" NOR, //512x2=1024
-        CYN "ÍÑÌ¥»»¹Ç" NOR, //729x2=1458    
-        CYN "Ï¼¾Ù·ÉÉı" NOR, //1000x2=2000
-        CYN "µÀÂú¸ù¹é" NOR, //1331x2=2662    
-        HIC "²»¶éÂÖ»Ø" NOR, //1728x2=3456
-        HIC "ÒÑÖ¤´óµÀ" NOR, //2197x2=4394    
-        HIC "·´è±¹éÕæ" NOR, //2744x2=5688 
-        HIW "ÌìÈËºÏÒ»" NOR  //3375x2=6750
+        BLU "æ–°å…¥é“é€”" NOR, //in unit of year 
+        BLU "é—»é“åˆ™å–œ" NOR, //1x2=2   
+        BLU "åˆé¢†å¦™é“" NOR, //8x2=16
+        BLU "ç•¥é€šé“è¡Œ" NOR, //27x2=56    
+        HIB "æ¸å…¥ä½³å¢ƒ" NOR, //64x2=128
+        HIB "å…ƒç¥åˆå…·" NOR, //125x2=250
+        HIB "é“å¿ƒç¨³å›º" NOR, //216x2=432    
+        HIB "ä¸€æ—¥åƒé‡Œ" NOR, //343x2=686
+        CYN "é“é«˜å¾·éš†" NOR, //512x2=1024
+        CYN "è„±èƒæ¢éª¨" NOR, //729x2=1458    
+        CYN "éœä¸¾é£å‡" NOR, //1000x2=2000
+        CYN "é“æ»¡æ ¹å½’" NOR, //1331x2=2662    
+        HIC "ä¸å •è½®å›" NOR, //1728x2=3456
+        HIC "å·²è¯å¤§é“" NOR, //2197x2=4394    
+        HIC "åç’å½’çœŸ" NOR, //2744x2=5688 
+        HIW "å¤©äººåˆä¸€" NOR  //3375x2=6750
 });
 
 string *mana_level_desc = ({
-        BLU "³õ¾ß·¨Á¦" NOR, //    
-        BLU "ÂÔÏş±ä»¯" NOR, //1x40=40
-        BLU "½µÁú·ü»¢" NOR, //4x40=160
-        HIB "ÌÚÔÆ¼İÎí" NOR, //9x40=360   
-        HIB "Éñ³ö¹íÃ»" NOR, //16x40=640
-        HIB "Ô¤Öª»ö¸£" NOR, //25x40=1000
-        HIB "ÃîÁìÌì»ú" NOR, //36x40=1440    
-        CYN "ºô·ç»½Óê" NOR, //49x40=1960
-        CYN "¸ºº£µ£É½" NOR, //64x40=2560    
-        CYN "ÒÆĞÇ»»¶·" NOR, //81x40=3240
-        CYN "°üÂŞÍòÏó" NOR, //100x40=4000
-        HIC "ËæĞÄËùÓû" NOR, //121x40=4840    
-        HIC "±ä»»Äª²â" NOR, //144x40=5760
-        HIW "·¨Á¦ÎŞ±ß" NOR  //169x40=6760
+        BLU "åˆå…·æ³•åŠ›" NOR, //    
+        BLU "ç•¥æ™“å˜åŒ–" NOR, //1x40=40
+        BLU "é™é¾™ä¼è™" NOR, //4x40=160
+        HIB "è…¾äº‘é©¾é›¾" NOR, //9x40=360   
+        HIB "ç¥å‡ºé¬¼æ²¡" NOR, //16x40=640
+        HIB "é¢„çŸ¥ç¥¸ç¦" NOR, //25x40=1000
+        HIB "å¦™é¢†å¤©æœº" NOR, //36x40=1440    
+        CYN "å‘¼é£å”¤é›¨" NOR, //49x40=1960
+        CYN "è´Ÿæµ·æ‹…å±±" NOR, //64x40=2560    
+        CYN "ç§»æ˜Ÿæ¢æ–—" NOR, //81x40=3240
+        CYN "åŒ…ç½—ä¸‡è±¡" NOR, //100x40=4000
+        HIC "éšå¿ƒæ‰€æ¬²" NOR, //121x40=4840    
+        HIC "å˜æ¢è«æµ‹" NOR, //144x40=5760
+        HIW "æ³•åŠ›æ— è¾¹" NOR  //169x40=6760
 });
 
 string *skill_level_desc = ({
-        BLU "³õÑ§Õ§Á·" NOR,
-        BLU "³õ¿úÃÅ¾¶" NOR,
-        BLU "´ÖÍ¨Æ¤Ã«" NOR,
-        HIB "ÂÔÖªÒ»¶ş" NOR,
-        HIB "ÂÔÓĞËùµÃ" NOR,
-        HIB "°ëÉú²»Êì" NOR,
-        YEL "ÂíÂí»¢»¢" NOR,
-        YEL "Æ½µ­ÎŞÆæ" NOR,
-        YEL "Æ½Æ½³£³£" NOR,
-        HIY "ĞÄÁìÉñ»á" NOR,
-        HIY "´¥ÀàÅÔÍ¨" NOR,
-        HIY "ÉîÈëÇ³³ö" NOR,
-        HIM "»ÓÈ÷×ÔÈç" NOR,
-        HIM "¼İÇá¾ÍÊì" NOR,
-        HIM "ÁËÈ»ÓÚĞØ" NOR,
-        HIR "³öÀà°ÎİÍ" NOR,
-        HIR "½¥Èë¼Ñ¾³" NOR,
-        HIR "»íÈ»¹áÍ¨" NOR,
-        MAG "µÇ·åÔì¼«" NOR,
-        MAG "³öÉñÈë»¯" NOR,
-        MAG "ÉñºõÆä¼¼" NOR,
-        CYN "³¬Èº¾øÂ×" NOR,
-        CYN "¶À²½ÌìÏÂ" NOR,
-        CYN "×¿È»´ó¼Ò" NOR,
-        HIC "Ò»´ú×ÚÊ¦" NOR,
-        HIC "¿ÕÇ°¾øºó" NOR,
-        HIC "¿õ¹Å¾øÂ×" NOR,
-        WHT "Õğ¹Åîå½ñ" NOR,
-        WHT "³¬·²ÈëÊ¥" NOR,
-        WHT "·µè±¹éÕæ" NOR,
-        HIW "Éî²»¿É²â" NOR
+        BLU "åˆå­¦ä¹ç»ƒ" NOR,
+        BLU "åˆçª¥é—¨å¾„" NOR,
+        BLU "ç²—é€šçš®æ¯›" NOR,
+        HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+        HIB "ç•¥æœ‰æ‰€å¾—" NOR,
+        HIB "åŠç”Ÿä¸ç†Ÿ" NOR,
+        YEL "é©¬é©¬è™è™" NOR,
+        YEL "å¹³æ·¡æ— å¥‡" NOR,
+        YEL "å¹³å¹³å¸¸å¸¸" NOR,
+        HIY "å¿ƒé¢†ç¥ä¼š" NOR,
+        HIY "è§¦ç±»æ—é€š" NOR,
+        HIY "æ·±å…¥æµ…å‡º" NOR,
+        HIM "æŒ¥æ´’è‡ªå¦‚" NOR,
+        HIM "é©¾è½»å°±ç†Ÿ" NOR,
+        HIM "äº†ç„¶äºèƒ¸" NOR,
+        HIR "å‡ºç±»æ‹”èƒ" NOR,
+        HIR "æ¸å…¥ä½³å¢ƒ" NOR,
+        HIR "è±ç„¶è´¯é€š" NOR,
+        MAG "ç™»å³°é€ æ" NOR,
+        MAG "å‡ºç¥å…¥åŒ–" NOR,
+        MAG "ç¥ä¹å…¶æŠ€" NOR,
+        CYN "è¶…ç¾¤ç»ä¼¦" NOR,
+        CYN "ç‹¬æ­¥å¤©ä¸‹" NOR,
+        CYN "å“ç„¶å¤§å®¶" NOR,
+        HIC "ä¸€ä»£å®—å¸ˆ" NOR,
+        HIC "ç©ºå‰ç»å" NOR,
+        HIC "æ—·å¤ç»ä¼¦" NOR,
+        WHT "éœ‡å¤é“„ä»Š" NOR,
+        WHT "è¶…å‡¡å…¥åœ£" NOR,
+        WHT "è¿”ç’å½’çœŸ" NOR,
+        HIW "æ·±ä¸å¯æµ‹" NOR
 /* from xyj2000
-        BLU "³õÑ§Õ§Á·" NOR,
-        BLU "²»ÖªËùÒÔ" NOR,
-        BLU "´ÖÍ¨Æ¤Ã«" NOR,
-        HIB "ÂÔÊ¶Ö®ÎŞ" NOR,
-        HIB "½¥ÓĞËùÎò" NOR,
-        HIB "°ëÉú²»Êì" NOR,
-        YEL "ÂíÂí»¢»¢" NOR,
-        YEL "Æ½µ­ÎŞÆæ" NOR,
-        YEL "Æ½Æ½³£³£" NOR,
-        HIY "´¥ÀàÅÔÍ¨" NOR,
-        HIY "ĞÄÁìÉñ»á" NOR,
-        HIY "ÉîÈëÇ³³ö" NOR,
-        HIM "»ÓÈ÷×ÔÈç" NOR,
-        HIM "¼İÇá¾ÍÊì" NOR,
-        HIM "³öÀà°ÎİÍ" NOR,
-        HIR "³õÈë¼Ñ¾³" NOR,
-        HIR "ÉñºõÆä¼¼" NOR,
-        HIR "Íş²»¿Éµ±" NOR,
-        MAG "³öÉñÈë»¯" NOR,
-        MAG "»íÈ»¹áÍ¨" NOR,
-        MAG "³¬Èº¾øÂ×" NOR,
-        CYN "µÇ·åÔì¼«" NOR,
-        CYN "×¿È»´ó¼Ò" NOR,
-        CYN "Ò»´ú×ÚÊ¦" NOR,
-        HIC "¶À²½ÌìÏÂ" NOR,
-        HIC "¿ÕÇ°¾øºó" NOR,
-        HIC "¿õ¹Å¾øÂ×" NOR,
-        WHT "Õğ¹Åîå½ñ" NOR,
-        WHT "³¬·²ÈëÊ¥" NOR,
-        WHT "·µè±¹éÕæ" NOR,
-        HIW "Éî²»¿É²â" NOR
+        BLU "åˆå­¦ä¹ç»ƒ" NOR,
+        BLU "ä¸çŸ¥æ‰€ä»¥" NOR,
+        BLU "ç²—é€šçš®æ¯›" NOR,
+        HIB "ç•¥è¯†ä¹‹æ— " NOR,
+        HIB "æ¸æœ‰æ‰€æ‚Ÿ" NOR,
+        HIB "åŠç”Ÿä¸ç†Ÿ" NOR,
+        YEL "é©¬é©¬è™è™" NOR,
+        YEL "å¹³æ·¡æ— å¥‡" NOR,
+        YEL "å¹³å¹³å¸¸å¸¸" NOR,
+        HIY "è§¦ç±»æ—é€š" NOR,
+        HIY "å¿ƒé¢†ç¥ä¼š" NOR,
+        HIY "æ·±å…¥æµ…å‡º" NOR,
+        HIM "æŒ¥æ´’è‡ªå¦‚" NOR,
+        HIM "é©¾è½»å°±ç†Ÿ" NOR,
+        HIM "å‡ºç±»æ‹”èƒ" NOR,
+        HIR "åˆå…¥ä½³å¢ƒ" NOR,
+        HIR "ç¥ä¹å…¶æŠ€" NOR,
+        HIR "å¨ä¸å¯å½“" NOR,
+        MAG "å‡ºç¥å…¥åŒ–" NOR,
+        MAG "è±ç„¶è´¯é€š" NOR,
+        MAG "è¶…ç¾¤ç»ä¼¦" NOR,
+        CYN "ç™»å³°é€ æ" NOR,
+        CYN "å“ç„¶å¤§å®¶" NOR,
+        CYN "ä¸€ä»£å®—å¸ˆ" NOR,
+        HIC "ç‹¬æ­¥å¤©ä¸‹" NOR,
+        HIC "ç©ºå‰ç»å" NOR,
+        HIC "æ—·å¤ç»ä¼¦" NOR,
+        WHT "éœ‡å¤é“„ä»Š" NOR,
+        WHT "è¶…å‡¡å…¥åœ£" NOR,
+        WHT "è¿”ç’å½’çœŸ" NOR,
+        HIW "æ·±ä¸å¯æµ‹" NOR
 */
 /* /cmds/std/check.c
-    BLU "³õÑ§Õ§Á·" NOR,   BLU "³õ¿úÃÅ¾¶" NOR,
-    HIB "´ÖÍ¨Æ¤Ã«" NOR,   HIB "ÂÔÖªÒ»¶ş" NOR,
-    YEL "°ëÉú²»Êì" NOR,   YEL "ÂíÂí»¢»¢" NOR,
-    HIY "ÒÑÓĞĞ¡³É" NOR,   HIY "½¥Èë¼Ñ¾³" NOR,
-    HIM "¼İÇá¾ÍÊì" NOR,   HIM "ÁËÈ»ÓÚĞØ" NOR,
-    HIR "³öÀà°ÎİÍ" NOR,   HIR "ĞÄÁìÉñ»á" NOR,
-    MAG "ÉñºõÆä¼¼" NOR,   MAG "³öÉñÈë»¯" NOR,
-    CYN "»íÈ»¹áÍ¨" NOR,   CYN "µÇ·åÔì¼«" NOR,
-    HIC "¾ÙÊÀÎŞË«" NOR,   HIC "Ò»´ú×ÚÊ¦" NOR,
-    HIC "Õğ¹Åîå½ñ" NOR,   HIW "Éî²»¿É²â" NOR
+    BLU "åˆå­¦ä¹ç»ƒ" NOR,   BLU "åˆçª¥é—¨å¾„" NOR,
+    HIB "ç²—é€šçš®æ¯›" NOR,   HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+    YEL "åŠç”Ÿä¸ç†Ÿ" NOR,   YEL "é©¬é©¬è™è™" NOR,
+    HIY "å·²æœ‰å°æˆ" NOR,   HIY "æ¸å…¥ä½³å¢ƒ" NOR,
+    HIM "é©¾è½»å°±ç†Ÿ" NOR,   HIM "äº†ç„¶äºèƒ¸" NOR,
+    HIR "å‡ºç±»æ‹”èƒ" NOR,   HIR "å¿ƒé¢†ç¥ä¼š" NOR,
+    MAG "ç¥ä¹å…¶æŠ€" NOR,   MAG "å‡ºç¥å…¥åŒ–" NOR,
+    CYN "è±ç„¶è´¯é€š" NOR,   CYN "ç™»å³°é€ æ" NOR,
+    HIC "ä¸¾ä¸–æ— åŒ" NOR,   HIC "ä¸€ä»£å®—å¸ˆ" NOR,
+    HIC "éœ‡å¤é“„ä»Š" NOR,   HIW "æ·±ä¸å¯æµ‹" NOR
 */
 /* /cmds/usr/skills.c
-    BLU "³õÑ§Õ§Á·" NOR,
-    BLU "³õ¿úÃÅ¾¶" NOR,
-    HIB "´ÖÍ¨Æ¤Ã«" NOR,
-    HIB "ÂÔÖªÒ»¶ş" NOR,
-    YEL "°ëÉú²»Êì" NOR,
-    YEL "ÂíÂí»¢»¢" NOR,
-    HIY "ÒÑÓĞĞ¡³É" NOR,
-    HIY "½¥Èë¼Ñ¾³" NOR,
-    HIM "¼İÇá¾ÍÊì" NOR,
-    HIM "ÁËÈ»ÓÚĞØ" NOR,
-    HIR "³öÀà°ÎİÍ" NOR,
-    HIR "ĞÄÁìÉñ»á" NOR,
-    MAG "ÉñºõÆä¼¼" NOR,
-    MAG "³öÉñÈë»¯" NOR,
-    CYN "»íÈ»¹áÍ¨" NOR,
-    CYN "µÇ·åÔì¼«" NOR,
-    HIC "¾ÙÊÀÎŞË«" NOR,
-    HIC "Ò»´ú×ÚÊ¦" NOR,
-    HIC "Õğ¹Åîå½ñ" NOR,
-    HIW "Éî²»¿É²â" NOR
+    BLU "åˆå­¦ä¹ç»ƒ" NOR,
+    BLU "åˆçª¥é—¨å¾„" NOR,
+    HIB "ç²—é€šçš®æ¯›" NOR,
+    HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+    YEL "åŠç”Ÿä¸ç†Ÿ" NOR,
+    YEL "é©¬é©¬è™è™" NOR,
+    HIY "å·²æœ‰å°æˆ" NOR,
+    HIY "æ¸å…¥ä½³å¢ƒ" NOR,
+    HIM "é©¾è½»å°±ç†Ÿ" NOR,
+    HIM "äº†ç„¶äºèƒ¸" NOR,
+    HIR "å‡ºç±»æ‹”èƒ" NOR,
+    HIR "å¿ƒé¢†ç¥ä¼š" NOR,
+    MAG "ç¥ä¹å…¶æŠ€" NOR,
+    MAG "å‡ºç¥å…¥åŒ–" NOR,
+    CYN "è±ç„¶è´¯é€š" NOR,
+    CYN "ç™»å³°é€ æ" NOR,
+    HIC "ä¸¾ä¸–æ— åŒ" NOR,
+    HIC "ä¸€ä»£å®—å¸ˆ" NOR,
+    HIC "éœ‡å¤é“„ä»Š" NOR,
+    HIW "æ·±ä¸å¯æµ‹" NOR
 */
 });
 
 string *knowledge_level_desc = ({
-        BLU "ĞÂÑ§Õ§ÓÃ" NOR,
-        BLU "²»ÉõÁËÁË" NOR,
-        HIB "³õÊ¶¶ËÄß" NOR,
-        HIB "³õ¿úÃÅ¾¶" NOR,
-        YEL "ÂÔÖªÒ»¶ş" NOR,
-        YEL "Ã©Èû¶Ù¿ª" NOR,
-        HIY "ÂíÂí»¢»¢" NOR,
-        HIY "¹ö¹ÏÀÃÊì" NOR,
-        HIM "ÔËÓÃ×ÔÈç" NOR,
-        HIM "´¥ÀàÅÔÍ¨" NOR,
-        HIR "ÉîÈëÇ³³ö" NOR,
-        HIR "ÒÑÓĞĞ¡³É" NOR,
-        MAG "ĞÄÁìÉñ»á" NOR,
-        MAG "ÁËÈ»ÓÚĞØ" NOR,
-        CYN "×¿¶û²»Èº" NOR,
-        CYN "Âú¸¹¾­ÂÚ" NOR,
-        HIC "»íÈ»¹áÍ¨" NOR,
-        HIC "²©¹ÅÍ¨½ñ" NOR,
-        WHT "¾ÙÊÀÎŞË«" NOR,
-        WHT "Õğ¹Åîå½ñ" NOR,
-        HIW "Éî²»¿É²â" NOR
+        BLU "æ–°å­¦ä¹ç”¨" NOR,
+        BLU "ä¸ç”šäº†äº†" NOR,
+        HIB "åˆè¯†ç«¯å€ª" NOR,
+        HIB "åˆçª¥é—¨å¾„" NOR,
+        YEL "ç•¥çŸ¥ä¸€äºŒ" NOR,
+        YEL "èŒ…å¡é¡¿å¼€" NOR,
+        HIY "é©¬é©¬è™è™" NOR,
+        HIY "æ»šç“œçƒ‚ç†Ÿ" NOR,
+        HIM "è¿ç”¨è‡ªå¦‚" NOR,
+        HIM "è§¦ç±»æ—é€š" NOR,
+        HIR "æ·±å…¥æµ…å‡º" NOR,
+        HIR "å·²æœ‰å°æˆ" NOR,
+        MAG "å¿ƒé¢†ç¥ä¼š" NOR,
+        MAG "äº†ç„¶äºèƒ¸" NOR,
+        CYN "å“å°”ä¸ç¾¤" NOR,
+        CYN "æ»¡è…¹ç»çº¶" NOR,
+        HIC "è±ç„¶è´¯é€š" NOR,
+        HIC "åšå¤é€šä»Š" NOR,
+        WHT "ä¸¾ä¸–æ— åŒ" NOR,
+        WHT "éœ‡å¤é“„ä»Š" NOR,
+        HIW "æ·±ä¸å¯æµ‹" NOR
 /* xyj2000
-        BLU "ĞÂÑ§Õ§ÓÃ" NOR,
-        BLU "²»ÉõÁËÁË" NOR,
-        BLU "²»Öª¶ËÄß" NOR,
-        HIB "Æ½µ­ÎŞÆæ" NOR,
-        HIB "Ë¾¿Õ¼û¹ß" NOR,
-        HIB "³õ¿úÃÅ¾¶" NOR,
-        YEL "ÂÔÖªÒ»¶ş" NOR,
-        YEL "Ã©Èû¶Ù¿ª" NOR,
-        YEL "ÂÔÊ¶Ö®ÎŞ" NOR,
-        HIY "¹ö¹ÏÀÃÊì" NOR,
-        HIY "ÂíÂí»¢»¢" NOR,
-        HIY "Çá³µÊìÂ·" NOR,
-        HIM "ÔËÓÃ×ÔÈç" NOR,
-        HIM "´¥ÀàÅÔÍ¨" NOR,
-        HIM "ÉîÈëÇ³³ö" NOR,
-        HIR "ÒÑÓĞĞ¡³É" NOR,
-        HIR "ĞÄÁìÉñ»á" NOR,
-        HIR "ÁËÈ»ÓÚĞØ" NOR,
-        MAG "¼û¶àÊ¶¹ã" NOR,
-        MAG "ÎŞËù²»Í¨" NOR,
-        MAG "×¿¶û²»Èº" NOR,
-        CYN "Âú¸¹¾­ÂÚ" NOR,
-        CYN "»íÈ»¹áÍ¨" NOR,
-        CYN "²©¹ÅÍ¨½ñ" NOR,
-        HIC "²©´ó¾«Éî" NOR,
-        HIC "³¬Èº¾øÂ×" NOR,
-        HIC "¾ÙÊÀÎŞË«" NOR,
-        WHT "¶À²½ÌìÏÂ" NOR,
-        WHT "Õğ¹Åîå½ñ" NOR,
-        WHT "³¬·²ÈëÊ¥" NOR,
-        HIW "Éî²»¿É²â" NOR
+        BLU "æ–°å­¦ä¹ç”¨" NOR,
+        BLU "ä¸ç”šäº†äº†" NOR,
+        BLU "ä¸çŸ¥ç«¯å€ª" NOR,
+        HIB "å¹³æ·¡æ— å¥‡" NOR,
+        HIB "å¸ç©ºè§æƒ¯" NOR,
+        HIB "åˆçª¥é—¨å¾„" NOR,
+        YEL "ç•¥çŸ¥ä¸€äºŒ" NOR,
+        YEL "èŒ…å¡é¡¿å¼€" NOR,
+        YEL "ç•¥è¯†ä¹‹æ— " NOR,
+        HIY "æ»šç“œçƒ‚ç†Ÿ" NOR,
+        HIY "é©¬é©¬è™è™" NOR,
+        HIY "è½»è½¦ç†Ÿè·¯" NOR,
+        HIM "è¿ç”¨è‡ªå¦‚" NOR,
+        HIM "è§¦ç±»æ—é€š" NOR,
+        HIM "æ·±å…¥æµ…å‡º" NOR,
+        HIR "å·²æœ‰å°æˆ" NOR,
+        HIR "å¿ƒé¢†ç¥ä¼š" NOR,
+        HIR "äº†ç„¶äºèƒ¸" NOR,
+        MAG "è§å¤šè¯†å¹¿" NOR,
+        MAG "æ— æ‰€ä¸é€š" NOR,
+        MAG "å“å°”ä¸ç¾¤" NOR,
+        CYN "æ»¡è…¹ç»çº¶" NOR,
+        CYN "è±ç„¶è´¯é€š" NOR,
+        CYN "åšå¤é€šä»Š" NOR,
+        HIC "åšå¤§ç²¾æ·±" NOR,
+        HIC "è¶…ç¾¤ç»ä¼¦" NOR,
+        HIC "ä¸¾ä¸–æ— åŒ" NOR,
+        WHT "ç‹¬æ­¥å¤©ä¸‹" NOR,
+        WHT "éœ‡å¤é“„ä»Š" NOR,
+        WHT "è¶…å‡¡å…¥åœ£" NOR,
+        HIW "æ·±ä¸å¯æµ‹" NOR
 */
 /* /cmds/usr/skills.c
-        BLU "ĞÂÑ§Õ§ÓÃ" NOR,
-        HIB "³õ¿úÃÅ¾¶" NOR,
-        HIB "ÂÔÖªÒ»¶ş" NOR,
-        YEL "ÂíÂí»¢»¢" NOR,
-        YEL "ÒÑÓĞĞ¡³É" NOR,
-        CYN "ĞÄÁìÉñ»á" NOR,
-        CYN "ÁËÈ»ÓÚĞØ" NOR,
-        CYN "»íÈ»¹áÍ¨" NOR,
-        HIC "¾ÙÊÀÎŞË«" NOR,
-        HIC "Õğ¹Åîå½ñ" NOR,
-        HIW "Éî²»¿É²â" NOR
+        BLU "æ–°å­¦ä¹ç”¨" NOR,
+        HIB "åˆçª¥é—¨å¾„" NOR,
+        HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+        YEL "é©¬é©¬è™è™" NOR,
+        YEL "å·²æœ‰å°æˆ" NOR,
+        CYN "å¿ƒé¢†ç¥ä¼š" NOR,
+        CYN "äº†ç„¶äºèƒ¸" NOR,
+        CYN "è±ç„¶è´¯é€š" NOR,
+        HIC "ä¸¾ä¸–æ— åŒ" NOR,
+        HIC "éœ‡å¤é“„ä»Š" NOR,
+        HIW "æ·±ä¸å¯æµ‹" NOR
 */
 });
 
@@ -757,7 +757,7 @@ string describe_skills(mapping skills)
 {
     int grade, lvl, i;
     string *sk;
-    if (!sizeof(skills)) return BLU "Ò»ÇÏ²»Í¨" NOR;
+    if (!sizeof(skills)) return BLU "ä¸€çªä¸é€š" NOR;
     sk = keys(skills);
     for (i = 0; i < sizeof(sk); i++) {
         if (SKILL_D(sk[i])->type() == "knowledge") continue;
@@ -795,17 +795,17 @@ string describe_force(int value)
     left = year % 60;
 
     if (year <= 0) {
-        line = HIB "²»µ½Ò»Äê" NOR;
+        line = HIB "ä¸åˆ°ä¸€å¹´" NOR;
         return line;
     }
     
     if (sixty > 0)
         if (left != 0)
-            line = HIW + chinese_number(sixty) + "¼××Ó" + NOR + "ÓÖ" +  HIR + chinese_number(left) + "Äê" + NOR;
+            line = HIW + chinese_number(sixty) + "ç”²å­" + NOR + "åˆ" +  HIR + chinese_number(left) + "å¹´" + NOR;
         else
-            line = HIW + chinese_number(sixty) + "¼××Ó"  + NOR;
+            line = HIW + chinese_number(sixty) + "ç”²å­"  + NOR;
     else 
-        line = HIR + chinese_number(year)+"Äê" + NOR;
+        line = HIR + chinese_number(year)+"å¹´" + NOR;
 
     return line;
 }

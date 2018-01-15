@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tao
 inherit SPELLS;
 
-string name() { return "Õı×ÚµÀ·¨"; }
+string name() { return "æ­£å®—é“æ³•"; }
 
 int query_basic_limit() { return 20; }
 

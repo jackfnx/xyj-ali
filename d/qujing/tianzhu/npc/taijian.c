@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 9 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ì«¼à", ({"tai jian", "jian"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å¤ªç›‘", ({"tai jian", "jian"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 40000);
   set("age", 40);
   set("per", 25);

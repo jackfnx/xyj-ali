@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // demongorgon.c
@@ -9,11 +9,11 @@ inherit NPC;
 
 void create()
 {
-   set_name( HIW "ËïÎò¿Õ" NOR, ({ "sun wukong" }) );
+   set_name( HIW "å­™æ‚Ÿç©º" NOR, ({ "sun wukong" }) );
    set("long",
-     "Ò»¸öÉí²»×ãÎå³ß£¬ÊÝÊÝ¸É¸É£¬ÂúÉí»ÆÃ«µÄâ©áø¡£\n");
-//     "¿ÉÅÂÉ±ÆøÕýÑ¹µÃÄã¼¸ºõ´­²»¹ýÆøÀ´£¬ÄãµÄÐÄÀïËÆºõÓÐÒ»¸öÉùÒôÔÚ¸æ\n"
-//     "ËßÄã£º¡¸ ¿ì ÌÓ £¡£¡¡¹\n");
+     "ä¸€ä¸ªèº«ä¸è¶³äº”å°ºï¼Œç˜¦ç˜¦å¹²å¹²ï¼Œæ»¡èº«é»„æ¯›çš„çŒ¢ç‹²ã€‚\n");
+//     "å¯æ€•æ€æ°”æ­£åŽ‹å¾—ä½ å‡ ä¹Žå–˜ä¸è¿‡æ°”æ¥ï¼Œä½ çš„å¿ƒé‡Œä¼¼ä¹Žæœ‰ä¸€ä¸ªå£°éŸ³åœ¨å‘Š\n"
+//     "è¯‰ä½ ï¼šã€Œ å¿« é€ƒ ï¼ï¼ã€\n");
 
    set("age", 30);
    set("pursuer", 1);
@@ -60,11 +60,11 @@ void start_shutdown()
    if( geteuid(previous_object()) != ROOT_UID ) return;
 
    message("system",
-     HIR "\nÄãÌýµ½ÓÐÈË¹Ö½ÐÁË¼¸Éù¡­¡­\n\n"
-     HIW   "ËïÎò¿Õ" HIR "ºÈµÀ£ºÓñµÛÀÏ¶ù£¬ÓëÎÒÌýÁË£¡\n\n"
-        "\t\t½«ÌìÓë°³ÀÏËï×°ÉÏ°ë¸öÊ±³½£¬Öú°³³É¹¦£¡\n\n"
-//        "\t\tÏÞÄãÃÇÊ®Îå·ÖÖÓÄÚ°ÑÎÒµÄÍ·Â­½»³öÀ´ £¡\n\n"
-        "\t\tÈôµÀ°ëÉù²»¿Ï£¬¼´ÉÏÁéÏöµî£¬¶¯Æðµ¶±ø£¡\n\n" NOR,
+     HIR "\nä½ å¬åˆ°æœ‰äººæ€ªå«äº†å‡ å£°â€¦â€¦\n\n"
+     HIW   "å­™æ‚Ÿç©º" HIR "å–é“ï¼šçŽ‰å¸è€å„¿ï¼Œä¸Žæˆ‘å¬äº†ï¼\n\n"
+        "\t\tå°†å¤©ä¸Žä¿ºè€å­™è£…ä¸ŠåŠä¸ªæ—¶è¾°ï¼ŒåŠ©ä¿ºæˆåŠŸï¼\n\n"
+//        "\t\té™ä½ ä»¬åäº”åˆ†é’Ÿå†…æŠŠæˆ‘çš„å¤´é¢…äº¤å‡ºæ¥ ï¼\n\n"
+        "\t\tè‹¥é“åŠå£°ä¸è‚¯ï¼Œå³ä¸Šçµéœ„æ®¿ï¼ŒåŠ¨èµ·åˆ€å…µï¼\n\n" NOR,
      users() );
    call_out("countdown", 60, 15);
 }
@@ -74,16 +74,16 @@ private void countdown(int min)
    min--;
    if( min ) {
      message("system",
-        HIW "\nËïÎò¿Õ" HIR "ÓÃÕð¶úÓûÁûµÄÉùÒôºÈµÀ£º\n\n"
-          "\t\tÄãÃÇ»¹ÓÐ" + chinese_number(min) + "·ÖÖÓµÄÊ±¼ä£¡\n\n"
-          "\t\tµ½Ê±Äª¹Ö°³ÀÏËï·­Á³ÎÞÇé£¬¶àÉúÊÂ¶Ë£¡\n\n" NOR,
+        HIW "\nå­™æ‚Ÿç©º" HIR "ç”¨éœ‡è€³æ¬²è‹çš„å£°éŸ³å–é“ï¼š\n\n"
+          "\t\tä½ ä»¬è¿˜æœ‰" + chinese_number(min) + "åˆ†é’Ÿçš„æ—¶é—´ï¼\n\n"
+          "\t\tåˆ°æ—¶èŽ«æ€ªä¿ºè€å­™ç¿»è„¸æ— æƒ…ï¼Œå¤šç”Ÿäº‹ç«¯ï¼\n\n" NOR,
         users() );
      call_out("countdown", 60, min);
    } else {
      message("system",
-        HIW "\nËïÎò¿Õ" HIR "ÓÃÕð¶úÓûÁûµÄÉùÒôºÈµÀ£º\n\n"
-          "\t\t¿ÉºÞ.....ÕæÊÇ¿ÉºÞ....\n\n"
-          "\t\t²ÔÌì°¡¡« ´óµØ°¡¡«  º£Ñó°¡¡«  ÖÚÉú°¡¡«\n\n" NOR,
+        HIW "\nå­™æ‚Ÿç©º" HIR "ç”¨éœ‡è€³æ¬²è‹çš„å£°éŸ³å–é“ï¼š\n\n"
+          "\t\tå¯æ¨.....çœŸæ˜¯å¯æ¨....\n\n"
+          "\t\tè‹å¤©å•Šï½ž å¤§åœ°å•Šï½ž  æµ·æ´‹å•Šï½ž  ä¼—ç”Ÿå•Šï½ž\n\n" NOR,
         users() );
      call_out("do_shutdown", 3);
    }
@@ -92,9 +92,9 @@ private void countdown(int min)
 private void do_shutdown()
 {
    message("system",
-     HIW "\n\nËïÎò¿Õ" HIR "¸ßÉùºÈµÀ£º×°Ìì£¡£¡£¡\n\n"
-        "\t\tËùÓÐµÄÒ»ÇÐ¶¼ÔÚË²¼äÏÝÈëºÚ°µ....\n\n"
-        "\t\tÈ»ºóÄãµÄÑÛÇ°ÊÇÒ»Æ¬ºÚ°µ....ÎÞÖ¹¾¡µÄºÚ°µ....\n\n" NOR,
+     HIW "\n\nå­™æ‚Ÿç©º" HIR "é«˜å£°å–é“ï¼šè£…å¤©ï¼ï¼ï¼\n\n"
+        "\t\tæ‰€æœ‰çš„ä¸€åˆ‡éƒ½åœ¨çž¬é—´é™·å…¥é»‘æš—....\n\n"
+        "\t\tç„¶åŽä½ çš„çœ¼å‰æ˜¯ä¸€ç‰‡é»‘æš—....æ— æ­¢å°½çš„é»‘æš—....\n\n" NOR,
      users() );
    shutdown(0);
 }
@@ -109,9 +109,9 @@ void die()
    if( !ob ) return;
 
    message("system",
-     HIR "\n\nÄãÌýµ½Ò»Éù´ø×Å·ßºÞ¡¢¾ª¿Ö¡¢ÓëÒ°ÊÞ°ãµÄÅØÏøÉùÏì³¹Õû¸öÌì¿Õ¡£\n\n"
-     HIW "ËïÎò¿Õ" HIR "Ë»ÑÆµØºð×Å£º¿É¶ñµÄ" + ob->name(1) + "£¬ÎÒÒ»¶¨»á±¨³ðµÄ¡«¡«¡«\n\n"
-        "È»ºóÒ»µÀºÚÉ«»ðÑæºôÐ¥×Å³åÉÏÔÆ¶Ë£¬´óµØÓÖ»Ö¸´ÁËÄþ¾²¡£\n\n" NOR,
+     HIR "\n\nä½ å¬åˆ°ä¸€å£°å¸¦ç€æ„¤æ¨ã€æƒŠæã€ä¸Žé‡Žå…½èˆ¬çš„å’†å“®å£°å“å½»æ•´ä¸ªå¤©ç©ºã€‚\n\n"
+     HIW "å­™æ‚Ÿç©º" HIR "å˜¶å“‘åœ°å¼ç€ï¼šå¯æ¶çš„" + ob->name(1) + "ï¼Œæˆ‘ä¸€å®šä¼šæŠ¥ä»‡çš„ï½žï½žï½ž\n\n"
+        "ç„¶åŽä¸€é“é»‘è‰²ç«ç„°å‘¼å•¸ç€å†²ä¸Šäº‘ç«¯ï¼Œå¤§åœ°åˆæ¢å¤äº†å®é™ã€‚\n\n" NOR,
      users() );
    destruct(this_object());
 }

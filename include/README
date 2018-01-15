@@ -1,6 +1,6 @@
-¡õ ÏµÍ³±íÍ·µµ(Header files)
+â–¡ ç³»ç»Ÿè¡¨å¤´æ¡£(Header files)
 
-Õâ¸öÄ¿Â¼ÏÂ´æ·ÅµÄ¶¼ÊÇÓÃÀ´ #include µÄ±íÍ·µµ£¬ÆäÖĞ globals.h »á±»×Ô¶¯ÒıÈë( Éè¶¨
-ÔÚ MudOS µÄ runtime config ÖĞ¡£
+è¿™ä¸ªç›®å½•ä¸‹å­˜æ”¾çš„éƒ½æ˜¯ç”¨æ¥ #include çš„è¡¨å¤´æ¡£ï¼Œå…¶ä¸­ globals.h ä¼šè¢«è‡ªåŠ¨å¼•å…¥( è®¾å®š
+åœ¨ MudOS çš„ runtime config ä¸­ã€‚
 
 By Annihilator(07/10/95)

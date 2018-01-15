@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xiaojie.c
@@ -6,9 +6,9 @@
 inherit NPC;
 void create()
 {
-       set_name("Ð£Î¾", ({"xiao wei", "wei", "xiao"}));
-       set("long","½«¾ü¸®µÄ¼Ò½«£¬¿´ÆðÀ´ÉñÆøÁÝÈ»£®\n");
-       set("gender", "ÄÐÐÔ");
+       set_name("æ ¡å°‰", ({"xiao wei", "wei", "xiao"}));
+       set("long","å°†å†›åºœçš„å®¶å°†ï¼Œçœ‹èµ·æ¥ç¥žæ°”å‡›ç„¶ï¼Ž\n");
+       set("gender", "ç”·æ€§");
        set("age", 28);
        set("attitude", "peaceful");
         set("per", 25);
@@ -46,11 +46,11 @@ void init()
 void greeting(object ob)
 {
   if( !ob || environment(ob) != environment() ) return;
-  if (ob->query_temp("mark/½«¾ü½ûµØ"))
+  if (ob->query_temp("mark/å°†å†›ç¦åœ°"))
     {
       switch( random(1) ) {
       case 0:
-   command("say ¾¹¸ÒË½´³½ûµØ£¬É±ÎÞÉâ£¡\n");
+   command("say ç«Ÿæ•¢ç§é—¯ç¦åœ°ï¼Œæ€æ— èµ¦ï¼\n");
    command("kill "+(string)(ob->query("id")));
    break;
       }

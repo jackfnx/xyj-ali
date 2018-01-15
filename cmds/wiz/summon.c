@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // summon command..
@@ -11,21 +11,21 @@ int main(object me, string str)
    int i;
    if (!str) return notify_fail("<Syntax>: Summon <player id>\n");
    ob = LOGIN_D->find_body(str);
-   if (!ob) return notify_fail("ß×£®£®£® ÓĞÕâ¸öÈËÂğ£¿\n");
+   if (!ob) return notify_fail("å’¦ï¼ï¼ï¼ æœ‰è¿™ä¸ªäººå—ï¼Ÿ\n");
 
 //    if(wizardp(ob) && wiz_level(me) < wiz_level(ob))
-//      return notify_fail("Äã²»ÄÜ×¥µÈ¼¶±ÈÄã¸ßµÄÎ×Ê¦¡£\n");
+//      return notify_fail("ä½ ä¸èƒ½æŠ“ç­‰çº§æ¯”ä½ é«˜çš„å·«å¸ˆã€‚\n");
             
    // moving
-   tell_room(environment(ob),"Ìì¿ÕÖĞÉì³öÒ»Ö»´óÊÖ°Ñ"+
-   (string)ob->query("name")+"×¥ÁËÆğÀ´£¬È»ºó²»¼ûÁË¡£\n", ob);
-   tell_object(ob,"Ò»Ö»ÊÖ°ÑÄã×¥ÁËÆğÀ´£¬ÄãÑÛÇ°Ò»ÕóºÚ£®£®£®\n");
+   tell_room(environment(ob),"å¤©ç©ºä¸­ä¼¸å‡ºä¸€åªå¤§æ‰‹æŠŠ"+
+   (string)ob->query("name")+"æŠ“äº†èµ·æ¥ï¼Œç„¶åä¸è§äº†ã€‚\n", ob);
+   tell_object(ob,"ä¸€åªæ‰‹æŠŠä½ æŠ“äº†èµ·æ¥ï¼Œä½ çœ¼å‰ä¸€é˜µé»‘ï¼ï¼ï¼\n");
    ob->move(environment(me));
-        tell_object(me, "Äã°Ñ"+(string)ob->query("name")+"×¥µ½ÄãµÄÃæÇ°¡£\n");
-   tell_object(ob,"£®£®£® ĞÑÀ´Ê±·¢ÏÖÊÇ"+(string)me->query("name")+
-   "°ÑÄãÅª¹ıÀ´µÄ¡£\n");
-   tell_room(environment(ob),(string)ob->query("name")+"Í»È»³öÏÖ"+
-   "ÔÚÄãÑÛÇ°¡£\n",({me,ob}));
+        tell_object(me, "ä½ æŠŠ"+(string)ob->query("name")+"æŠ“åˆ°ä½ çš„é¢å‰ã€‚\n");
+   tell_object(ob,"ï¼ï¼ï¼ é†’æ¥æ—¶å‘ç°æ˜¯"+(string)me->query("name")+
+   "æŠŠä½ å¼„è¿‡æ¥çš„ã€‚\n");
+   tell_room(environment(ob),(string)ob->query("name")+"çªç„¶å‡ºç°"+
+   "åœ¨ä½ çœ¼å‰ã€‚\n",({me,ob}));
    // ok ..
    return 1;
 }
@@ -33,9 +33,9 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : summon <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : summon <æŸäºº>
 
-´ËÖ¸Áî¿ÉÈÃÄã½«Ä³ÈË×¥µ½ÄãÃæÇ°¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ å°†æŸäººæŠ“åˆ°ä½ é¢å‰ã€‚
 HELP
     );
     return 1;

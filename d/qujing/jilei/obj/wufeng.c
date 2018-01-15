@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,16 +8,16 @@ inherit MACE;
 
 void create()
 {
-  set_name("ÎÚ·ïïµ", ({ "wufeng jian", "jian", "mace" }) );
+  set_name("ä¹Œå‡¤é”", ({ "wufeng jian", "jian", "mace" }) );
   set_weight(7000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
+    set("unit", "æ ¹");
     set("value", 1000);
     set("material", "steal");
-    set("long", "Ò»¸ùÉî÷ìÉ«·ïôáÓñ±úÎÚ·ïïµ¡£\n");
-    set("wield_msg", "$NÎÕÆğ$n£¬´óºÈÁËÒ»Éù£ººÃïµ¡£\n");
+    set("long", "ä¸€æ ¹æ·±é»›è‰²å‡¤ç¿ç‰æŸ„ä¹Œå‡¤é”ã€‚\n");
+    set("wield_msg", "$Næ¡èµ·$nï¼Œå¤§å–äº†ä¸€å£°ï¼šå¥½é”ã€‚\n");
   }
   init_mace(65);
   setup();

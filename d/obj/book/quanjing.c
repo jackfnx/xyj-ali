@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼È­¾­¡½", ({"quan jing", "jing", "book"}));
+        set_name("ã€–æ‹³ç»ã€—", ({"quan jing", "jing", "book"}));
         set_weight(400);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
      set("value", 600);
-   set("long", "Ò»±¾±¡±¡µÄµÄĞ¡²á×Ó£¬»­ÁËĞ©ÊÖ·¨¡£
-ÅÔ×¢Ğ¡×Ö£º·¶ÇàÆ½»İ´æ\n");
+   set("long", "ä¸€æœ¬è–„è–„çš„çš„å°å†Œå­ï¼Œç”»äº†äº›æ‰‹æ³•ã€‚
+æ—æ³¨å°å­—ï¼šèŒƒé’å¹³æƒ å­˜\n");
         set("material", "paper");
         set("skill", ([
                         "name": "unarmed",

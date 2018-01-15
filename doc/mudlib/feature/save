@@ -1,11 +1,11 @@
 
-¡õ F_SAVE
+â–¡ F_SAVE
 
 int save()
-ÅÐ¶¨Îï¼þµÄ´æµµµµÃû²¢½«¸ÃÎï¼þ´æµµ¡£
+åˆ¤å®šç‰©ä»¶çš„å­˜æ¡£æ¡£åå¹¶å°†è¯¥ç‰©ä»¶å­˜æ¡£ã€‚
 
 int restore()
-½«Îï¼þµÄ×ÊÁÏÓÉµµ°¸ÄÚÔØÈë¡£
+å°†ç‰©ä»¶çš„èµ„æ–™ç”±æ¡£æ¡ˆå†…è½½å…¥ã€‚
 
 Elon@ES2
 06-06-95 drafted.

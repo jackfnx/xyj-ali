@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,12 +9,12 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Âà´¸", ({"luochui", "hammer"}));
+        set_name("é”£é”¤", ({"luochui", "hammer"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
         }
         init_hammer(1);
         setup();

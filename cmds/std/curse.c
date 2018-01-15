@@ -9,23 +9,23 @@ int main(object me, string arg)
 	seteuid(getuid());
 
 	if( me->is_busy() )
-		return notify_fail(" 你上一个动作还没有完成，不能下降头。\n");
+		return notify_fail(" 浣犱笂涓�涓姩浣滆繕娌℃湁瀹屾垚锛屼笉鑳戒笅闄嶅ご銆俓n");
 
 	if( environment(me)->query("no_magic") )
-		return notify_fail("这里不准下降头。\n");
+		return notify_fail("杩欓噷涓嶅噯涓嬮檷澶淬�俓n");
 
-	if( !arg ) return notify_fail("指令格式：curse <降头> [on <目标>]\n");
+	if( !arg ) return notify_fail("鎸囦护鏍煎紡锛歝urse <闄嶅ご> [on <鐩爣>]\n");
 	if( sscanf(arg, "%s on %s", spl, trg)==2 ) {
 		target = present(trg, environment(me));
                 if(!objectp(target)) 
-	 		return notify_fail(" 你的降头要用在谁身上？\n");
+	 		return notify_fail(" 浣犵殑闄嶅ご瑕佺敤鍦ㄨ皝韬笂锛焅n");
 //        if( userp(target) &&
 //                (int) target->query("combat_exp") < LOWER_LIMIT &&
 //                !me->query("licensed_to_kill")
 //          )
-//                return notify_fail("唉！你可不可以改掉以强凌弱的恶习？\n");
+//                return notify_fail("鍞夛紒浣犲彲涓嶅彲浠ユ敼鎺変互寮哄噷寮辩殑鎭朵範锛焅n");
 		if( !target ) target = present(trg, me);
-		if( !target ) return notify_fail("这里没有 " + trg + "。\n");
+		if( !target ) return notify_fail("杩欓噷娌℃湁 " + trg + "銆俓n");
 	} else {
 		spl = arg;
 		target = 0;
@@ -35,13 +35,13 @@ int main(object me, string arg)
 	if( stringp(curse= me->query_skill_mapped("cursism")) )
 		return (int)SKILL_D(curse)->curse_curses(me, spl, target);
 		
-	return notify_fail("你请先用 enable curse指令选择你要使用的降头术体系。\n");
+	return notify_fail("浣犺鍏堢敤 enable curse鎸囦护閫夋嫨浣犺浣跨敤鐨勯檷澶存湳浣撶郴銆俓n");
 }
 
 int help (object me)
 {
         write(@HELP
-指令格式：curse <降头> [on <目标>]
+鎸囦护鏍煎紡锛歝urse <闄嶅ご> [on <鐩爣>]
  
 HELP
         );

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/eaststreet  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ԫ��");
+  set ("short", "坤元街");
   set ("long", @LONG
 
-��Ԫ�����ڼ��������һ���֡������������ò����֡�������һ
-�Ҳ�ݣ��ϱ���һ��ˮ���ꡣ
+坤元街是乌鸡国最繁华的一条街。人来人往，好不热闹。北边是一
+家茶馆，南边是一家水果店。
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */

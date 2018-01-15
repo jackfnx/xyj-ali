@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/temple-gate.c
@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "������");
+   set("short", "华严寺");
    set("long", @LONG
 
-ת����������ɽ�����������ƣ����������ɾ��� ��ǰ��һ��
-��Ժ�εض���������һ����ң����顸�����¡�������֪
-Ϊ�Σ����Ž��գ����ұ�أ��ƺ��ܾ�û���˳����ˡ� ��ǰ
-һ��С·������������ȥ��
+转眼你已来至山顶，云雾缭绕，如似蓬莱仙境。 眼前，一座
+寺院拔地而起，寺门上一块横匾，上书「华严寺」。但不知
+为何，寺门紧闭，尘灰遍地，似乎很久没有人出落了。 门前
+一道小路，继续往西而去。
 LONG
    );
    set("exits", ([ /* sizeof() == 1 */

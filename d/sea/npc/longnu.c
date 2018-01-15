@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Changed by sjmao  09-11-97
@@ -8,16 +8,16 @@ string expell_me(object me);
 
 void create()
 {
-    set_name("ÁúÅ®", ({"long nu","gongzhu","long","princess"}));
+    set_name("é¾™å¥³", ({"long nu","gongzhu","long","princess"}));
 
-    set("long","×ÏÔÆ¹¬Ö÷ÈË£¬°½¹ãµÄÅ®¶ù£®\n¿´ÉÏÈ¥¾ÍÊÇÒ»¸ö½¿µÎµÎµÄ´óĞ¡½ã£®\n");
-    set("gender", "Å®ĞÔ");
+    set("long","ç´«äº‘å®«ä¸»äººï¼Œæ•–å¹¿çš„å¥³å„¿ï¼\nçœ‹ä¸Šå»å°±æ˜¯ä¸€ä¸ªå¨‡æ»´æ»´çš„å¤§å°å§ï¼\n");
+    set("gender", "å¥³æ€§");
     set("age", 20);
     set("int", 25+random(5));
-    set("title", "×ÏÔÆ¹«Ö÷");
+    set("title", "ç´«äº‘å…¬ä¸»");
     set("attitude", "peaceful");
     set("combat_exp", 350000);
-    set("rank_info/respect", "¹«Ö÷µîÏÂ");
+    set("rank_info/respect", "å…¬ä¸»æ®¿ä¸‹");
     set("class","dragon");
     set("per", 30);
     set("max_kee", 900);
@@ -48,12 +48,12 @@ void create()
     map_skill("dodge", "dragonstep");
 
     set("inquiry", ([
-            "°½ğ½": "°½ğ½ÄÇ¸ö¼úÈË£¿ÄãÎÊËı¸ÉÊ²Ã´£¿\n",
-            "Àë¹¬": (: expell_me :),
+            "æ•–é¸¾": "æ•–é¸¾é‚£ä¸ªè´±äººï¼Ÿä½ é—®å¥¹å¹²ä»€ä¹ˆï¼Ÿ\n",
+            "ç¦»å®«": (: expell_me :),
             "leave": (: expell_me :),
     ]) );
 
-    create_family("¶«º£Áú¹¬", 3, "Ë®×å");
+    create_family("ä¸œæµ·é¾™å®«", 3, "æ°´æ—");
     setup();
 
     carry_object("/d/obj/cloth/pinkskirt")->wear();
@@ -63,7 +63,7 @@ void create()
 void attempt_apprentice(object ob)
 {
     command("jump");
-    command("say ÎÒÓÖ¶àÁËÒ»¸öµÜ×ÓÒ®£¡\n");
+    command("say æˆ‘åˆå¤šäº†ä¸€ä¸ªå¼Ÿå­è€¶ï¼\n");
     command("recruit " + ob->query("id") );
     return;
 }
@@ -76,9 +76,9 @@ int recruit_apprentice(object ob)
 string expell_me(object me)
 {
     me = this_player();
-    if ((string)me->query("family/family_name")=="¶«º£Áú¹¬") {
-        message_vision("×ÏÔÆ¹«Ö÷Ğ±ÑÛÍû×Å$N£¬Ò»¸±²»ÄÍ·³µÄÉñÉ«¡£\n", me);
-        return ("ÄãÈ¥ÎÊÎÒ¸¸Íõ°É¡£\n");
+    if ((string)me->query("family/family_name")=="ä¸œæµ·é¾™å®«") {
+        message_vision("ç´«äº‘å…¬ä¸»æ–œçœ¼æœ›ç€$Nï¼Œä¸€å‰¯ä¸è€çƒ¦çš„ç¥è‰²ã€‚\n", me);
+        return ("ä½ å»é—®æˆ‘çˆ¶ç‹å§ã€‚\n");
     }
-    return ("È¥ÎÊÎÊ±ğÈË°É£¡ÎÒÔõÃ´»áÖªµÀ£¡¡\n");
+    return ("å»é—®é—®åˆ«äººå§ï¼æˆ‘æ€ä¹ˆä¼šçŸ¥é“ï¼î“¢n");
 }

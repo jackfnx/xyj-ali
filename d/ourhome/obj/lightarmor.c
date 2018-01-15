@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // lightarmor.c
@@ -6,13 +6,13 @@ inherit EQUIP;
 
 void create()
 {
-        set_name("ÌÙ¼×", ({"teng jia","tengjia","jia","armor"}));
+        set_name("è—¤ç”²", ({"teng jia","tengjia","jia","armor"}));
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-       set("long", "Ò»¼şÇá±ãÌÙ¼×¡£\n");
+                set("unit", "ä»¶");
+       set("long", "ä¸€ä»¶è½»ä¾¿è—¤ç”²ã€‚\n");
                 set("value", 5000);
                 set("material", "wood");
                 set("armor_type", "cloth");

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // zhadao.c
@@ -9,15 +9,15 @@ inherit BLADE;
 
 void create()
 {
-        set_name("Õ¡µ¶", ({ "zhadao", "blade", "dao" }) );
+        set_name("é“¡åˆ€", ({ "zhadao", "blade", "dao" }) );
         set_weight(3500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°ÑÓÃÀ´Õ¡²İ£¬¿³Ğ¡Ê÷Ö¦µÄÕ¡µ¶¡£\n");
-                set("unit", "°Ñ");
-       set("wield_msg", "$N³é³öÒ»±ú$nºáÎÕÔÚÊÖÖĞ£¬µ½Ò²Íş·çÁİÁİ¡£\n");
-       set("unwield_msg", "$N·ÅÏÂÊÖÖĞ$n£¬ÄÑµ½ÒªÁ¢µØ³É·ğ£¿\n");
+                set("long", "ä¸€æŠŠç”¨æ¥é“¡è‰ï¼Œç å°æ ‘æçš„é“¡åˆ€ã€‚\n");
+                set("unit", "æŠŠ");
+       set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„$næ¨ªæ¡åœ¨æ‰‹ä¸­ï¼Œåˆ°ä¹Ÿå¨é£å‡›å‡›ã€‚\n");
+       set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­$nï¼Œéš¾åˆ°è¦ç«‹åœ°æˆä½›ï¼Ÿ\n");
                 set("value", 400);
                 set("material","wood");
         }

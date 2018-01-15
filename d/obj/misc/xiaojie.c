@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,14 +6,14 @@ inherit NECK;
 
 void create()
 {
-        set_name("ÓñÅå", ({"yu pei"}));
+        set_name("ç‰ä½©", ({"yu pei"}));
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
      set("value", 2000);
-     set("long", "Ò»Ã¶ÓñÅå£¬ÉÏÃæ»¹¿Ì×ÅÒ»Ğ©Í¼°¸£®\n");
+     set("long", "ä¸€æšç‰ä½©ï¼Œä¸Šé¢è¿˜åˆ»ç€ä¸€äº›å›¾æ¡ˆï¼\n");
      set("no_sell", 1);
      set("material", "steel");
      set("armor_prop/spells", 5);

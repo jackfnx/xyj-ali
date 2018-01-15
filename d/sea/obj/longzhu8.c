@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 # include <skill.h>
@@ -7,17 +7,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name("À¶ÁúÖé", ({"lan longzhu", "longzhu", "pearl"}));
+        set_name("è“é¾™ç ", ({"lan longzhu", "longzhu", "pearl"}));
    set_weight(100);
    if( clonep() )
          set_default_object(__FILE__);
      else {
      set("no_sell",1);
      set("value",0);
-     set("unit","¿Å");
+     set("unit","é¢—");
      set("long",
-"Ò»¿Å¶·´óÔ²ÈóµÄÕäÖé£¬´«ËµÖ»ÓĞµÃµÀµÄÕæÁú²Å»áÓĞ¡£
-ÄÚÓĞ¹âÓ°ÓÎ¶¯£¬ËÆºõ´¥Ãş(touch)Ö®ÏÂ»á·¢³öÒì²Ê¡£\n");
+"ä¸€é¢—æ–—å¤§åœ†æ¶¦çš„çç ï¼Œä¼ è¯´åªæœ‰å¾—é“çš„çœŸé¾™æ‰ä¼šæœ‰ã€‚
+å†…æœ‰å…‰å½±æ¸¸åŠ¨ï¼Œä¼¼ä¹è§¦æ‘¸(touch)ä¹‹ä¸‹ä¼šå‘å‡ºå¼‚å½©ã€‚\n");
    }
    setup();
 }
@@ -48,7 +48,7 @@ void destruct_me(object where, object me)
    object pearl;
         if( pearl=new("/d/sea/obj/pearl"))
            pearl->move(where);
-   message_vision("$NÊÖÖĞµÄ$nÍ»·¢Æß²ÊÖ®¹â£¬Ò»µÀÏ¼¹â¹ıºó±ãÊ§È¥ÁËÑÕÉ«¡£\n",where,me);
+   message_vision("$Næ‰‹ä¸­çš„$nçªå‘ä¸ƒå½©ä¹‹å…‰ï¼Œä¸€é“éœå…‰è¿‡åä¾¿å¤±å»äº†é¢œè‰²ã€‚\n",where,me);
    destruct(me);
 }
 
@@ -61,23 +61,23 @@ int do_study(string arg)
    if( !arg || (arg!="lan longzhu"
         && arg!="longzhu"
         && arg!="pearl") )
-     return notify_fail("ÄãÒªÃşÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦æ‘¸ä»€ä¹ˆï¼Ÿ\n");
 
    if( (int)me->query_skill("force",1) < 100)
-     return notify_fail("ÄãµÄÄÚ¹¦ĞÄ·¨²»¹»£¬»¹¸ĞÊÜ²»µ½ÁúÖéÄÚµÄÄ§Á¦¡£\n");
+     return notify_fail("ä½ çš„å†…åŠŸå¿ƒæ³•ä¸å¤Ÿï¼Œè¿˜æ„Ÿå—ä¸åˆ°é¾™ç å†…çš„é­”åŠ›ã€‚\n");
    if( (int)me->query_skill("force",1) >= 150)
-     return notify_fail("ÄãµÄÄÚ¹¦ĞÄ·¨¹ı¸ß£¬ÁúÖéÄÚµÄÄ§Á¦ÒÔ¶ÔÄãºÀÎŞ×÷ÓÃÁË¡£\n");
+     return notify_fail("ä½ çš„å†…åŠŸå¿ƒæ³•è¿‡é«˜ï¼Œé¾™ç å†…çš„é­”åŠ›ä»¥å¯¹ä½ è±ªæ— ä½œç”¨äº†ã€‚\n");
    if( (int)me->query_skill("spells",1) < 50)
-     return notify_fail("ÄãµÄ·¨ÊõĞİÑø²»¹»£¬»¹ÁìÎò²»µ½ÁúÖéÄÚµÄÄ§Á¦¡£\n");
+     return notify_fail("ä½ çš„æ³•æœ¯ä¼‘å…»ä¸å¤Ÿï¼Œè¿˜é¢†æ‚Ÿä¸åˆ°é¾™ç å†…çš„é­”åŠ›ã€‚\n");
    if( (int)me->query("kee") < 50)
-     return notify_fail("ÄãµÄÆøÑª²»×ã£¬ÔÙÁ·»áÔÎµ¹¹ıÈ¥¡£\n");
+     return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ï¼Œå†ç»ƒä¼šæ™•å€’è¿‡å»ã€‚\n");
    if( (int)me->query("sen") < 50)
-     return notify_fail("ÄãµÄ¾«Éñ²»¼Ã£¬ÔÙÁ·»á»èÃÔ¹ıÈ¥¡£\n");
+     return notify_fail("ä½ çš„ç²¾ç¥ä¸æµï¼Œå†ç»ƒä¼šæ˜è¿·è¿‡å»ã€‚\n");
    if( (int)me->query("force") <50)
-     return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÔÙÁ·ÓĞº¦ÎŞÒæ¡£\n");
+     return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œå†ç»ƒæœ‰å®³æ— ç›Šã€‚\n");
 
    if( (int)this_object()->query("learned") >= (int)me->query("spi")) {
-     message_vision("$NÊÖÖĞµÄ$nÍ»·¢Æß²ÊÖ®¹â£¬Ò»µÀÏ¼¹â¹ıºó±ãÊ§È¥ÁËÑÕÉ«¡£\n",me,this_object());
+     message_vision("$Næ‰‹ä¸­çš„$nçªå‘ä¸ƒå½©ä¹‹å…‰ï¼Œä¸€é“éœå…‰è¿‡åä¾¿å¤±å»äº†é¢œè‰²ã€‚\n",me,this_object());
      if( pearl=new("/d/sea/obj/pearl")){
         pearl->move(me);
      }
@@ -85,12 +85,12 @@ int do_study(string arg)
      return 1;
    }
 
-   message_vision("$NË«ÊÖÇáÎÕ$n£¬Ö»¼ûÒ»Ë¿µ­µ­Ï¼¹âÁ÷ÈëÕÆÖĞ¡£\n",me,this_object());
+   message_vision("$NåŒæ‰‹è½»æ¡$nï¼Œåªè§ä¸€ä¸æ·¡æ·¡éœå…‰æµå…¥æŒä¸­ã€‚\n",me,this_object());
    me->improve_skill("force", random((int)me->query_int()/2 + (int)me->query_spi()/2)+1+random(3));
    me->receive_damage("kee",30);
    me->receive_damage("sen",30);
    me->add("force",-10);
    this_object()->add("learned",1+random(2));
-   write("Äã¶ÔÄÚ¹¦ĞÄ·¨µÄÁìÎòËÆºõÓÖÉîÁËÒ»²ã¡£\n");
+   write("ä½ å¯¹å†…åŠŸå¿ƒæ³•çš„é¢†æ‚Ÿä¼¼ä¹åˆæ·±äº†ä¸€å±‚ã€‚\n");
    return 1;
 }

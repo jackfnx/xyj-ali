@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 12/2/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ӫ");
+  set ("short", "军营");
   set ("long", @LONG
 
-ľ�Ƶľ�Ӫ��䱸ɭ�ϣ���������һ��ʿ������һ���������
-����վ����Ŀ��б�ӡ�Ӫ����Լ������ս��˻������ʱ��ͭ��
-��������
+木制的军营里戒备森严，门廊里有一列士兵盔甲一身贝插彩旗
+整齐站立，目不斜视。营内隐约可听见战马嘶鸣，不时有铜鼓
+声传来。
 
 LONG);
 

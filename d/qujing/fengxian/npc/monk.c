@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("´È±¯ºÍÉĞ", ({"cibei heshang", "heshang", "shang", "monk"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("æ…ˆæ‚²å’Œå°š", ({"cibei heshang", "heshang", "shang", "monk"}));
+  set("gender", "ç”·æ€§");
   set("age", 50);
   set("per", 25);
   set("attitude", "peaceful");
@@ -39,17 +39,17 @@ int accept_object (object who, object ob)
 
   if (value == 0)
   {
-    message_vision ("$NÒ¡ÁËÒ»ÏÂÍ·£¬ËµµÀ£ºËÂÀï¼±Ğè½ğÇ®ÒÔ¾È¼ÃÇ§ÍòÔÖÃñ¡£\n",me);
+    message_vision ("$Næ‘‡äº†ä¸€ä¸‹å¤´ï¼Œè¯´é“ï¼šå¯ºé‡Œæ€¥éœ€é‡‘é’±ä»¥æ•‘æµåƒä¸‡ç¾æ°‘ã€‚\n",me);
     call_out ("return_ob",1,ob,who);
     return 1;
   }
   if (value < required)
   {
-    message_vision ("$NËµµÀ£ºÒÀÊ©Ö÷µÄ¸£Ôµ£¬ÕâĞ©Ç®ÅÂÊÇ²»¹»¡£\n",me);
+    message_vision ("$Nè¯´é“ï¼šä¾æ–½ä¸»çš„ç¦ç¼˜ï¼Œè¿™äº›é’±æ€•æ˜¯ä¸å¤Ÿã€‚\n",me);
     return 0;
   }
-  message_vision ("$NËµµÀ£º¶àĞ»Ê©Ö÷£¡\n",me);
-  message_vision ("$NÏò$nÉîÉîÒ»°İ¡£\n",me,who);
+  message_vision ("$Nè¯´é“ï¼šå¤šè°¢æ–½ä¸»ï¼\n",me);
+  message_vision ("$Nå‘$næ·±æ·±ä¸€æ‹œã€‚\n",me,who);
   who->set_temp("obstacle/fengxian_donated",1);
   call_out ("destruct_me",1,ob);
   return 1;

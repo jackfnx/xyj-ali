@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-  set_name("ÌÆÌ«×Ú", ({"tang taizong", "tang", "tai zong", "zong", "king", "emperor"}));
-  set("long", "´óÌÆ¹úÖ®»ÊµÛÌÆÌ«×Ú¡£\n");
-  set("title", "´óÌÆ¹ú");
-  set("gender", "ÄĞĞÔ");
-  set("rank_info/respect", "±İÏÂ");
+  set_name("å”å¤ªå®—", ({"tang taizong", "tang", "tai zong", "zong", "king", "emperor"}));
+  set("long", "å¤§å”å›½ä¹‹çš‡å¸å”å¤ªå®—ã€‚\n");
+  set("title", "å¤§å”å›½");
+  set("gender", "ç”·æ€§");
+  set("rank_info/respect", "é™›ä¸‹");
   set("age", 80);
   set("attitude", "peaceful");
   set("shen_type", 1);
@@ -50,10 +50,10 @@ void init ()
 }
 
 string *strs = ({
-  "$N¶Ô$n¾ªÌ¾µÀ£º",
-  "$N¶Ô$nÔŞÉÍµÀ£º",
-  "$NÎ¢Ğ¦×Å¶Ô$nËµµÀ£º",
-  "$NÔŞĞíµØ¶Ô$nËµµÀ£º",
+  "$Nå¯¹$næƒŠå¹é“ï¼š",
+  "$Nå¯¹$nèµèµé“ï¼š",
+  "$Nå¾®ç¬‘ç€å¯¹$nè¯´é“ï¼š",
+  "$Nèµè®¸åœ°å¯¹$nè¯´é“ï¼š",
 });
 
 void test_player (object who)
@@ -66,7 +66,7 @@ void test_player (object who)
   if (who->query("quest/reward") < 1)
     return;
 
-  message_vision ("\nÒ»½ø´óµî£¬$NÉíÉÏÓ¿Æğµ­µ­µÄÏéÔÆ¡£\n",who);
+  message_vision ("\nä¸€è¿›å¤§æ®¿ï¼Œ$Nèº«ä¸Šæ¶Œèµ·æ·¡æ·¡çš„ç¥¥äº‘ã€‚\n",who);
   while (i--)
   {
     string str = "da chen 1";
@@ -114,22 +114,22 @@ void test_player (object who)
   if (! dachen ||
       interactive (dachen))
   {
-    message_vision ("$N¶Ô$nËµµÀ£º´ó³¼ÃÇ²»ÔÚ£¬"+RANK_D->query_respect(who)+
-                    "ÉÔºòÒ²¡£\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šå¤§è‡£ä»¬ä¸åœ¨ï¼Œ"+RANK_D->query_respect(who)+
+                    "ç¨å€™ä¹Ÿã€‚\n",me,who);
     return;
   }
   message_vision (strs[random(sizeof(strs))]+RANK_D->query_respect(who)+
-                  "ÏéÔÆçÔÈÆ£¬ÃæÉúÈğÆø£¬ëŞ¹ûÈ»ÓĞÉÍÓù´ÍÓëÄã£¡\n",me,who);
-  message_vision ("\n$N×ßÉÏÇ°£¬¸Ï½ôÔÚ$nµÄµîÇ°¸©Éí¹òÏÂ¡£\n",who,me);
+                  "ç¥¥äº‘ç¼­ç»•ï¼Œé¢ç”Ÿç‘æ°”ï¼Œæœ•æœç„¶æœ‰èµå¾¡èµä¸ä½ ï¼\n",me,who);
+  message_vision ("\n$Nèµ°ä¸Šå‰ï¼Œèµ¶ç´§åœ¨$nçš„æ®¿å‰ä¿¯èº«è·ªä¸‹ã€‚\n",who,me);
   who->start_busy (3,3);
   call_out ("reward_player",2,me,who,dachen);
 }
 
 void reward_player (object me, object who, object dachen)
 {
-  message_vision ("\nÅÔ±ßÉÁ¹ı´ó³¼$NµÍÉùÏò$nËµÁË¼¸¾ä£¬$nµãÁËµãÍ·¡£\n",dachen,me);
+  message_vision ("\næ—è¾¹é—ªè¿‡å¤§è‡£$Nä½å£°å‘$nè¯´äº†å‡ å¥ï¼Œ$nç‚¹äº†ç‚¹å¤´ã€‚\n",dachen,me);
   dachen->reward(who);
-  message_vision ("\n$NÁ¬Ã¦¸©ÉíÒ»°İ£¬Ğ¡ĞÄÒíÒíµØÕ¾ÆğÀ´¡£\n",who,me);
+  message_vision ("\n$Nè¿å¿™ä¿¯èº«ä¸€æ‹œï¼Œå°å¿ƒç¿¼ç¿¼åœ°ç«™èµ·æ¥ã€‚\n",who,me);
   who->delete("quest/reward");
   who->interrupt_me();
 }

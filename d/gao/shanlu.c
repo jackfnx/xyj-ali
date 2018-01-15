@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // shanlu.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ɽ·");
+  set ("short", "山路");
   set ("long", @LONG
 
-�ò������߳���С�֣�������һ��ɽ��С·��Խ������Խ�ܣ�����
-��������������Ҳ��ð߰ߵ�㡣é�ݽ��񣬹�ľ�������Ӷ�����
-�����������磬����ë����Ȼ��
+好不容易走出了小林，迈上了一条山间小路。越走树林越密，树缝
+中洒下来的阳光也变得斑斑点点。茅草渐厚，灌木丛生。从东北方
+吹来阵阵的冷风，令人毛骨耸然。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "west" : __DIR__"xiaolin1",

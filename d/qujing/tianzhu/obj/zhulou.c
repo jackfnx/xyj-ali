@@ -1,24 +1,24 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit EQUIP;
 
 void create()
 {
-  set_name("Ï¸ÌõÖñÂ¨", ({ "zhu lou","zhulou","lou","basket"}) );
+  set_name("ç»†æ¡ç«¹ç¯“", ({ "zhu lou","zhulou","lou","basket"}) );
   set_weight(500);
   set_max_encumbrance(8000);
   set_max_items(12);
   if( clonep() ){
     set_default_object(__FILE__);
   } else {
-    set("unit", "Ö»");
-    set("long", "ÕâÊÇÒ»Ö»Æ¯ÁÁµÄÏ¸ÌõÖñÂ¨¡£\n");
+    set("unit", "åª");
+    set("long", "è¿™æ˜¯ä¸€åªæ¼‚äº®çš„ç»†æ¡ç«¹ç¯“ã€‚\n");
     set("value", 200);
   }
   set("armor_prop/armor", 1);
   set("armor_type", "basket");
-  set("wear_msg", "$NÌáÆğÏ¸ÌõÖñÂ¨£¬ÇáÇÉµØ±³ÔÚÉíÉÏ¡£\n");
-  set("unequip_msg", "$N½«Ï¸ÌõÖñÂ¨´Ó±³ºóĞ¶ÏÂÀ´£¬±§ÔÚ»³Àï¡£\n");
+  set("wear_msg", "$Næèµ·ç»†æ¡ç«¹ç¯“ï¼Œè½»å·§åœ°èƒŒåœ¨èº«ä¸Šã€‚\n");
+  set("unequip_msg", "$Nå°†ç»†æ¡ç«¹ç¯“ä»èƒŒåå¸ä¸‹æ¥ï¼ŒæŠ±åœ¨æ€€é‡Œã€‚\n");
 }
 

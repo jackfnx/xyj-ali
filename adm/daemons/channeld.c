@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // channeld.c
@@ -12,54 +12,54 @@
 inherit F_DBASE;
 
 mapping channels = ([
-   "sys":   ([   "msg_speak": HIG "¡¾ÏµÍ³¡¿%s£º%s\n" NOR, "wiz_only": 1 ]),
-   "wiz":   ([   "msg_speak": HIY "¡¾Î×Ê¦¡¿%s£º%s\n" NOR,
-          "msg_emote": HIY "¡¾Î×Ê¦¡¿%s\n" NOR,
+   "sys":   ([   "msg_speak": HIG "ã€ç³»ç»Ÿã€‘%sï¼š%s\n" NOR, "wiz_only": 1 ]),
+   "wiz":   ([   "msg_speak": HIY "ã€å·«å¸ˆã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIY "ã€å·«å¸ˆã€‘%s\n" NOR,
           "color": HIY,
           "wiz_only": 1
         ]),
-   "gwiz":   ([   "msg_speak": BGRN "¡¾Íø¼ÊÎ×Ê¦¡¿%s£º%s\n" NOR,
-          "msg_emote": BGRN "¡¾Íø¼ÊÎ×Ê¦¡¿%s\n" NOR,
+   "gwiz":   ([   "msg_speak": BGRN "ã€ç½‘é™…å·«å¸ˆã€‘%sï¼š%s\n" NOR,
+          "msg_emote": BGRN "ã€ç½‘é™…å·«å¸ˆã€‘%s\n" NOR,
           "color": BGRN,
           "wiz_only": 1, "intermud": GWIZ, "channel": "CREATOR",
           "filter": 1,
           "intermud_emote": 1 ]),
-   "xyj":   ([   "msg_speak": HIR "¡¾Î÷ÓÎ¼Ç¡¿%s£º%s\n" NOR,
-          "msg_emote": HIR "¡¾Î÷ÓÎ¼Ç¡¿%s\n" NOR,
+   "xyj":   ([   "msg_speak": HIR "ã€è¥¿æ¸¸è®°ã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIR "ã€è¥¿æ¸¸è®°ã€‘%s\n" NOR,
           "color": HIR,
           "intermud": GCHANNEL, "channel": "xyj",
           "filter": (:$1["MUDLIB"]=="A Journey to the West" :) ]),
-   "es":   ([   "msg_speak": HIR "¡¾Íø¼ÊÏĞÁÄ¡¿%s£º%s\n" NOR,
-          "msg_emote": HIR "¡¾Íø¼ÊÏĞÁÄ¡¿%s\n" NOR,
+   "es":   ([   "msg_speak": HIR "ã€ç½‘é™…é—²èŠã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIR "ã€ç½‘é™…é—²èŠã€‘%s\n" NOR,
           "color": HIR,
           "intermud": GCHANNEL, "channel": "es",
           "filter": 1 ]), //keep the channel name
           //as "es" to be compatible with other
           //ES2 type muds.
-        "sldh": ([      "msg_speak": HIC "¡¾Ë®Â½´ó»á¡¿%s£º%s\n" NOR,
-                                "msg_emote": HIC "¡¾Ë®Â½´ó»á¡¿%s\n" NOR,
+        "sldh": ([      "msg_speak": HIC "ã€æ°´é™†å¤§ä¼šã€‘%sï¼š%s\n" NOR,
+                                "msg_emote": HIC "ã€æ°´é™†å¤§ä¼šã€‘%s\n" NOR,
                          ]),
 
-/*   "es":   ([   "msg_speak": HIR "¡¾¶«·½¹ÊÊÂ¡¿%s£º%s\n" NOR,
-          "msg_emote": HIR "¡¾¶«·½¹ÊÊÂ¡¿%s" NOR,
+/*   "es":   ([   "msg_speak": HIR "ã€ä¸œæ–¹æ•…äº‹ã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIR "ã€ä¸œæ–¹æ•…äº‹ã€‘%s" NOR,
           "intermud": GCHANNEL, "channel": "es",
           "filter": (: $1["MUDLIB"]=="Eastern Stories" :) ]),
-   "twiz":   ([   "msg_speak": HIW "¡¾Ì¨ÍåÎ×Ê¦¡¿%s£º%s\n" NOR,
-          "msg_emote": HIW "¡¾Ì¨ÍåÎ×Ê¦¡¿%s" NOR,
+   "twiz":   ([   "msg_speak": HIW "ã€å°æ¹¾å·«å¸ˆã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIW "ã€å°æ¹¾å·«å¸ˆã€‘%s" NOR,
           "wiz_only":1, "intermud": GCHANNEL, "channel": "twiz",
           "filter": (: $1["HOSTADDRESS"][0..2]=="140" :) ]),
 */
-   "chat":   ([   "msg_speak": HIC "¡¾ÏĞÁÄ¡¿%s£º%s\n" NOR,
-          "msg_emote": HIC "¡¾ÏĞÁÄ¡¿%s\n" NOR,
+   "chat":   ([   "msg_speak": HIC "ã€é—²èŠã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIC "ã€é—²èŠã€‘%s\n" NOR,
           "color": HIC,
          ]),
-   "rumor":([   "msg_speak": HIM "¡¾Ò¥ÑÔ¡¿%s£º%s\n" NOR,
-          "msg_emote": HIM "¡¾Ò¥ÑÔ¡¿%s\n" NOR,
+   "rumor":([   "msg_speak": HIM "ã€è°£è¨€ã€‘%sï¼š%s\n" NOR,
+          "msg_emote": HIM "ã€è°£è¨€ã€‘%s\n" NOR,
           "color": HIM,
-          "anonymous": "Ä³ÈË"
+          "anonymous": "æŸäºº"
         ]),
-/*   "music":([   "msg_speak": WHT "¡¾ĞÄóÏÀÖ¸®¡¿%s³ª×Å£º%s\n" NOR,
-          "msg_speak": WHT "¡¾ĞÄóÏÀÖ¸®¡¿%s" NOR
+/*   "music":([   "msg_speak": WHT "ã€å¿ƒç¬™ä¹åºœã€‘%så”±ç€ï¼š%s\n" NOR,
+          "msg_speak": WHT "ã€å¿ƒç¬™ä¹åºœã€‘%s" NOR
          ]),
 */
 ]);
@@ -67,7 +67,7 @@ mapping channels = ([
 void create()
 {
    seteuid(getuid());   // This is required to pass intermud access check.
-        set("channel_id", "ÆµµÀ¾«Áé");
+        set("channel_id", "é¢‘é“ç²¾çµ");
 }
 
 varargs int do_channel(object me, string verb, string arg, int emote)
@@ -95,7 +95,7 @@ varargs int do_channel(object me, string verb, string arg, int emote)
      time=time();
      if(me->query("channel/chat_block") &&
        (time-me->query("channel/chat_block"))<0 )
-        return notify_fail("ÄãµÄ½»Ì¸ÆµµÀ±»ÔİÊ±¹Ø±ÕÁË¡£\n");
+        return notify_fail("ä½ çš„äº¤è°ˆé¢‘é“è¢«æš‚æ—¶å…³é—­äº†ã€‚\n");
               
            count=me->query("channel/chat_count");
                 count++;
@@ -105,13 +105,13 @@ varargs int do_channel(object me, string verb, string arg, int emote)
        me->set("channel/last_chat",time);
        if (time==last_chat) {
          me->set("channel/chat_block",time+180);
-         return notify_fail("ÒòÎªÒ»´Î½²»°Ì«¶à£¬ÄãµÄ½»Ì¸ÆµµÀ±»ÔİÊ±¹Ø±ÕÁË¡£\n");
+         return notify_fail("å› ä¸ºä¸€æ¬¡è®²è¯å¤ªå¤šï¼Œä½ çš„äº¤è°ˆé¢‘é“è¢«æš‚æ—¶å…³é—­äº†ã€‚\n");
        }
            }
      me->set("channel/chat_count",count);
 
      if( arg==(string)me->query_temp("last_channel_msg") )
-        return notify_fail("ÓÃ½»Ì¸ÆµµÀËµ»°Çë²»ÒªÖØ¸´ÏàÍ¬µÄÑ¶Ï¢¡£\n");
+        return notify_fail("ç”¨äº¤è°ˆé¢‘é“è¯´è¯è¯·ä¸è¦é‡å¤ç›¸åŒçš„è®¯æ¯ã€‚\n");
 
      // If we speaks something in this channel, then must tune it in.
      tuned_ch = me->query("channels");
@@ -156,7 +156,7 @@ varargs int do_channel(object me, string verb, string arg, int emote)
      who = channels[verb]["anonymous"];
      if (userp(me))
                 do_channel( this_object(), "sys", 
-       sprintf("Ò¥ÑÔ£º%s(%s)¡£", me->name(),me->query("id")));
+       sprintf("è°£è¨€ï¼š%s(%s)ã€‚", me->name(),me->query("id")));
    }
    else if( userp(me) || !stringp(who = me->query("channel_id")) ) {
      who = me->query("name");
@@ -167,7 +167,7 @@ varargs int do_channel(object me, string verb, string arg, int emote)
    // Ok, now send the message to those people listening us.
 
    ob = filter_array( users(), "filter_listener", this_object(), channels[verb] );
-   if( !arg ) arg = "£®£®£®";
+   if( !arg ) arg = "ï¼ï¼ï¼";
 
    len=strlen(arg);
    while(len>1 && arg[len-1]=='\n')

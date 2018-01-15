@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/21/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ʯ��·");
+  set ("short", "石板路");
   set ("long", @LONG
 
-�ϳǵ�С�����������������һ��ʯ��·��·���������Ű�����
-�����滨��ݡ�������֦��Ҷ��������죬ǡ��ʮ�����ˡ�
+南城的小丘上整整齐齐地铺着一条石板路，路边种有两排矮树，
+间有奇花异草。矮树绿枝碧叶，清风徐徐，恰是十分宜人。
 
 LONG);
 

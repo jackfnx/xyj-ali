@@ -1,33 +1,33 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Ñı·¨£­£­»ÃÓ°
+// å¦–æ³•ï¼ï¼å¹»å½±
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
 mapping default_dirs = ([
-        "north":        "±±",
-        "south":        "ÄÏ",
-        "east":         "¶«",
-        "west":         "Î÷",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "enter":        "Àï",
+        "north":        "åŒ—",
+        "south":        "å—",
+        "east":         "ä¸œ",
+        "west":         "è¥¿",
+        "northup":      "åŒ—è¾¹",
+        "southup":      "å—è¾¹",
+        "eastup":       "ä¸œè¾¹",
+        "westup":       "è¥¿è¾¹",
+        "northdown":    "åŒ—è¾¹",
+        "southdown":    "å—è¾¹",
+        "eastdown":     "ä¸œè¾¹",
+        "westdown":     "è¥¿è¾¹",
+        "northeast":    "ä¸œåŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "ä¸œå—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "enter":        "é‡Œ",
 ]);
 
 int cast(object me, object target)
@@ -47,31 +47,31 @@ int cast(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹Õâ¸ö·¨Êõ£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸ªæ³•æœ¯ï¼Ÿ\n");
 
    if( !me->is_fighting(target))
-     return notify_fail(target->query("name")+"¶¼Ã»ÔÚÓëÄãÕ½¶·£¬ĞèÒªÓÃ»ÃÓ°Êõ¾ÈÃüÂğ£¿\n");
+     return notify_fail(target->query("name")+"éƒ½æ²¡åœ¨ä¸ä½ æˆ˜æ–—ï¼Œéœ€è¦ç”¨å¹»å½±æœ¯æ•‘å‘½å—ï¼Ÿ\n");
 
    if(target->query_temp("no_move"))
-     return notify_fail(target->query("name")+"ÒÑ¾­¶¯µ¯²»µÃÁË£¡\n");
+     return notify_fail(target->query("name")+"å·²ç»åŠ¨å¼¹ä¸å¾—äº†ï¼\n");
 
    if(me->is_busy())
-     return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬¹ı»á¶ùÔÙÄîÖä°É£¡\n");
+     return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œè¿‡ä¼šå„¿å†å¿µå’’å§ï¼\n");
 
    if((int)me->query_skill("spells") < 100 || (int)me->query_skill("yaofa", 1) < 50)
-     return notify_fail("Äã»¹Ã»Ñ§»á»ÃÓ°Êõ¡£\n");
+     return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šå¹»å½±æœ¯ã€‚\n");
 
         if( mymana < cost )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");
 
    if((int)me->query("sen") < 10 )
-                return notify_fail("ÄãµÄ¾«ÉñÃ»ÓĞ°ì·¨ÓĞĞ§¼¯ÖĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥æ²¡æœ‰åŠæ³•æœ‰æ•ˆé›†ä¸­ï¼\n");
 
    env = environment(me);
    exit = env->query("exits");
 
    if( !mapp(exit)) 
-     return notify_fail("ÄãÏë½«"+target->query("name")+"Òıµ½ÄÇ¶ùÈ¥£¿\n");
+     return notify_fail("ä½ æƒ³å°†"+target->query("name")+"å¼•åˆ°é‚£å„¿å»ï¼Ÿ\n");
 
    dirs = keys(exit);
    n = sizeof(exit);
@@ -84,13 +84,13 @@ int cast(object me, object target)
                 target_dir = dirs[i];
 
    if(!(obj = load_object(dest)) )
-     return notify_fail("ÎŞ·¨×ß£¡\n");
+     return notify_fail("æ— æ³•èµ°ï¼\n");
 
    me->add("mana", -cost);
    me->receive_damage("sen", 10);
 
-   msg = HIC "$N¿ÚÖĞÄîÁË¾äÖäÎÄ£¬ÕÅ¿ÚÅç³öÒ»¹ÉÇàÑÌ¡£\n" NOR;
-   msg += HIC "ÑÌÎíÖĞÖ»¼ûÒ»ÌõÈËÓ°Ïò" + target_dir + "ÌÓÈ¥¡£\n" NOR;
+   msg = HIC "$Nå£ä¸­å¿µäº†å¥å’’æ–‡ï¼Œå¼ å£å–·å‡ºä¸€è‚¡é’çƒŸã€‚\n" NOR;
+   msg += HIC "çƒŸé›¾ä¸­åªè§ä¸€æ¡äººå½±å‘" + target_dir + "é€ƒå»ã€‚\n" NOR;
 
    success = 1;
         ap = me->query_skill("spells");
@@ -108,17 +108,17 @@ int cast(object me, object target)
         if( random(ap + dp) < dp ) success = 0;
 
    if(success == 1) {
-     msg += HIR "$nÏò" + target_dir + "×·È¥¡£\n" NOR;
+     msg += HIR "$nå‘" + target_dir + "è¿½å»ã€‚\n" NOR;
    }
    else {
-     msg += HIR "$n²»ÎªËù¶¯£¬»ÃÓ°ÊõÊ§°ÜÁË¡£\n" NOR;
+     msg += HIR "$nä¸ä¸ºæ‰€åŠ¨ï¼Œå¹»å½±æœ¯å¤±è´¥äº†ã€‚\n" NOR;
    }
 
    message_vision(msg, me, target);
 
    if(success == 1) {
      if( target->move(obj) ) {
-        msg = HIR "Ö»¼û"+target->name()+"ÅÜÁË½øÀ´£¬ËÄ´¦ÕÅÍû£¬È´Ê²Ã´¶¼Ã»·¢ÏÖ¡£\n" NOR;
+        msg = HIR "åªè§"+target->name()+"è·‘äº†è¿›æ¥ï¼Œå››å¤„å¼ æœ›ï¼Œå´ä»€ä¹ˆéƒ½æ²¡å‘ç°ã€‚\n" NOR;
                    message( "vision", msg, environment(target), ({target}));
                    return 1;
             }

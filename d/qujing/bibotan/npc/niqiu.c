@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("Ìì²¨¶ùĞ¦", ({"tianboer xiao", "xiao"}));
-        set("long", "ËûÊÇÂÒÊ¯É½±Ì²¨Ì¶µÄĞ¡Ñı¡£\n");
+        set_name("å¤©æ³¢å„¿ç¬‘", ({"tianboer xiao", "xiao"}));
+        set("long", "ä»–æ˜¯ä¹±çŸ³å±±ç¢§æ³¢æ½­çš„å°å¦–ã€‚\n");
         set("age", 30);
-   set("title", "Äàöú¾«");
+   set("title", "æ³¥é³…ç²¾");
         set("attitude", "friendly");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
    set("class", "dragon");
         set("str", 30);
         set("int", 20);
@@ -40,10 +40,10 @@ void create()
 }
 void relay_emote(object ob,string verb)
 {
-   if( ob->query("name")!="Ğ¦²¨¶ùÌì" ) return;
+   if( ob->query("name")!="ç¬‘æ³¢å„¿å¤©" ) return;
         switch(verb) {
         case "kick":
-                        command("say ¹·ÍÈÓÖ·¢Ñ÷ÁË...\n");
+                        command("say ç‹—è…¿åˆå‘ç—’äº†...\n");
                 break;
         case "wake":
                         command("wake");

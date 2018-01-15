@@ -1,21 +1,21 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create()
 {
-  set ("short", "³¤°²Îä¹Ý");
+  set ("short", "é•¿å®‰æ­¦é¦†");
   set ("long", @LONG
 
-³¤°²Îä¹ÝµÄÄÚÌÃ£¬Ò»ÇÐ¶¼°²°²¾²¾²£¬ÎÝÀïÃ»ÓÐµãÖò£¬Ê²Ã´Ò²¿´²»Çå³þ¡£
-ÒþÔ¼¿´µ½Á½ÅÅ³¤ÒÎ£¬ÕýÃæÇ½ÉÏ¹ÒÒ»´óÆì(qi)¡£
+é•¿å®‰æ­¦é¦†çš„å†…å ‚ï¼Œä¸€åˆ‡éƒ½å®‰å®‰é™é™ï¼Œå±‹é‡Œæ²¡æœ‰ç‚¹çƒ›ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šã€‚
+éšçº¦çœ‹åˆ°ä¸¤æŽ’é•¿æ¤…ï¼Œæ­£é¢å¢™ä¸ŠæŒ‚ä¸€å¤§æ——(qi)ã€‚
 LONG);
 set("item_desc",(["qi":"
-        £ª£ª£ª£ª£ª£ª£ª£ª
-        £ª£ªÈ­¸ÇÈýÊ¡£ª£ª
-        £ª£ªÎÞÈËÄÜµÐ£ª£ª
-        £ª£ª£ª£ª£ª£ª£ª£ª\n"
+        ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š
+        ï¼Šï¼Šæ‹³ç›–ä¸‰çœï¼Šï¼Š
+        ï¼Šï¼Šæ— äººèƒ½æ•Œï¼Šï¼Š
+        ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š\n"
 ]));
         set("objects", ([
                 __DIR__"npc/fan": 1, 

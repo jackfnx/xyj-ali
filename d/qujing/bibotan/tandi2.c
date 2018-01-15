@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "̶��С��");
+  set ("short", "潭底小径");
   set ("long", @LONG
 
-�����Ǳ̲�̶��ϸɳ�̾͵�һ��С��������ˮ���ܲ�������ˮ��
-����Ʈ�ڡ�̶ˮ�ɱ���ɫ��ˮ�¹��߲��Ǻܺã���·�ѱ硣
+这里是碧波潭底细沙铺就的一条小径，左右水草密布，随着水波
+来回飘摆。潭水成碧绿色，水下光线不是很好，道路难辩。
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 

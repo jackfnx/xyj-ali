@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,16 +7,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name("¡¼ÎŞ×Ö¾­¡½", ({"wuzi jing", "jing", "book"}));
+  set_name("ã€–æ— å­—ç»ã€—", ({"wuzi jing", "jing", "book"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else
   {
-    set("unit", "±¾");
+    set("unit", "æœ¬");
     set("material", "paper");
     set("value", 0);
-    set("long", "Ò»±¾±¡±¡µÄÎŞ×Ö¾­¡£\n");
+    set("long", "ä¸€æœ¬è–„è–„çš„æ— å­—ç»ã€‚\n");
   }
 }
 
@@ -47,26 +47,26 @@ void set_skill (string str)
 }
 
 mapping skills = ([
-  "archery": "»ù±¾¹­¼ı",
-  "axe": "»ù±¾¸«·¨",
-  "blade": "»ù±¾µ¶·¨",
-  "dagger": "¶Ì±øÈĞ",
-  "dodge": "»ù±¾Çá¹¦",
-  "fork": "»ù±¾²æ·¨",
-  "hammer": "»ù±¾´¸·¨",
-  "mace": "»ù±¾ïµ·¨",
-  "parry": "²ğÕĞĞ¶Á¦Ö®·¨",
-  "rack": "»ù±¾îÙ·¨",
-  "spear": "»ù±¾Ç¹·¨",
-  "staff": "»ù±¾ÕÈ·¨",
-  "stick": "»ù±¾¹÷·¨",
-  "sword": "»ù±¾½£Êõ",
-  "throwing": "°µÆ÷Ê¹ÓÃ",
-  "whip": "»ù±¾±ŞÊõ",
-  "unarmed": "ÆË»÷¸ñ¶·Ö®¼¼",
-  "force": "ÄÚ¹¦ĞÄ·¨",
-  "spells": "·¨Êõ",
-  "literate": "¶ÁÊéÊ¶×Ö",
+  "archery": "åŸºæœ¬å¼“ç®­",
+  "axe": "åŸºæœ¬æ–§æ³•",
+  "blade": "åŸºæœ¬åˆ€æ³•",
+  "dagger": "çŸ­å…µåˆƒ",
+  "dodge": "åŸºæœ¬è½»åŠŸ",
+  "fork": "åŸºæœ¬å‰æ³•",
+  "hammer": "åŸºæœ¬é”¤æ³•",
+  "mace": "åŸºæœ¬é”æ³•",
+  "parry": "æ‹†æ‹›å¸åŠ›ä¹‹æ³•",
+  "rack": "åŸºæœ¬é’¯æ³•",
+  "spear": "åŸºæœ¬æªæ³•",
+  "staff": "åŸºæœ¬æ–æ³•",
+  "stick": "åŸºæœ¬æ£æ³•",
+  "sword": "åŸºæœ¬å‰‘æœ¯",
+  "throwing": "æš—å™¨ä½¿ç”¨",
+  "whip": "åŸºæœ¬é­æœ¯",
+  "unarmed": "æ‰‘å‡»æ ¼æ–—ä¹‹æŠ€",
+  "force": "å†…åŠŸå¿ƒæ³•",
+  "spells": "æ³•æœ¯",
+  "literate": "è¯»ä¹¦è¯†å­—",
 ]);
 
 void show_skills ()
@@ -75,7 +75,7 @@ void show_skills ()
   int size = sizeof (skills);
   string *strs = keys(skills);
 
-  write ("Äã¿ÉÒÔÑ¡ÔñÈçÏÂ¼¼ÄÜ£º\n");
+  write ("ä½ å¯ä»¥é€‰æ‹©å¦‚ä¸‹æŠ€èƒ½ï¼š\n");
   strs = (string *)sort_array (strs, 1);
   for (i = 0; i < size; i++)
   {
@@ -94,14 +94,14 @@ int do_decide (string arg)
  
   if (me->query("my_owner") != who->query("id"))
   {
-    tell_object (who,"Õâ±¾¾­Êé²»ÊÇÄãµÄ¡£\n");
+    tell_object (who,"è¿™æœ¬ç»ä¹¦ä¸æ˜¯ä½ çš„ã€‚\n");
     return 1;
   }
 
   if (who->query("obstacle/book"))
   {
     str = skills[who->query("obstacle/book")];
-    tell_object (who,"ÄãÔçÒÑ¾ö¶¨ÓÃÎŞ×Ö¾­Ñ§Ï°"+str+"ÁË¡£\n");
+    tell_object (who,"ä½ æ—©å·²å†³å®šç”¨æ— å­—ç»å­¦ä¹ "+str+"äº†ã€‚\n");
     return 1;
   }
 
@@ -122,8 +122,8 @@ int do_decide (string arg)
 
   who->set("obstacle/book",arg);
   me->set_skill(arg);
-  tell_object (who,"Äã¾ö¶¨´Ó´ËÓÃÎŞ×Ö¾­Ñ§Ï°"+str+"¡£\n");
-  tell_object (who,"Äã¿ÉÒÔ½«"+str+"Ñ§Ï°µ½¶ş°Ù¼¶¡£\n");
+  tell_object (who,"ä½ å†³å®šä»æ­¤ç”¨æ— å­—ç»å­¦ä¹ "+str+"ã€‚\n");
+  tell_object (who,"ä½ å¯ä»¥å°†"+str+"å­¦ä¹ åˆ°äºŒç™¾çº§ã€‚\n");
   who->save();
   return 1;
 }
@@ -135,18 +135,18 @@ int reading (object me, object book)
 
   if (environment(me)->query("no_fight") && 
       environment(me)->query("no_magic"))
-    return notify_fail("°²È«ÇøÄÚ½ûÖ¹Á·¹¦¡£\n");
+    return notify_fail("å®‰å…¨åŒºå†…ç¦æ­¢ç»ƒåŠŸã€‚\n");
                     
   if (me->is_fighting())
-    return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+    return notify_fail("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ï¼\n");
 
   if (me->is_busy() || me->query_temp("pending/exercising"))
-    return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+    return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
   if( !me->query_skill("literate", 1) )
-    return notify_fail("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§Ñ§¶ÁÊéÊ¶×Ö(literate)°É¡£\n");
+    return notify_fail("ä½ æ˜¯ä¸ªæ–‡ç›²ï¼Œå…ˆå­¦å­¦è¯»ä¹¦è¯†å­—(literate)å§ã€‚\n");
 
-  message_vision ("$NÕı×¨ĞÄµØÑĞ¶Á$n¡£\n",me,book);
+  message_vision ("$Næ­£ä¸“å¿ƒåœ°ç ”è¯»$nã€‚\n",me,book);
   
   skill = book->query("skill");
   my_skill=me->query_skill(skill["name"],1);
@@ -155,11 +155,11 @@ int reading (object me, object book)
       ((string)SKILL_D(skill["name"])->type()=="martial"
       && my_skill*my_skill*my_skill/10>(int)me->query("combat_exp")))
   {
-    write("ÄãµÄµÀĞĞ²»¹»£¬ÔÙÔõÃ´¶ÁÒ²Ã»ÓÃ¡£\n");
+    write("ä½ çš„é“è¡Œä¸å¤Ÿï¼Œå†æ€ä¹ˆè¯»ä¹Ÿæ²¡ç”¨ã€‚\n");
     return 1;
   }
 
-  notify_fail("ÒÔÄãÄ¿Ç°µÄÄÜÁ¦£¬»¹Ã»ÓĞ°ì·¨Ñ§Õâ¸ö¼¼ÄÜ¡£\n");
+  notify_fail("ä»¥ä½ ç›®å‰çš„èƒ½åŠ›ï¼Œè¿˜æ²¡æœ‰åŠæ³•å­¦è¿™ä¸ªæŠ€èƒ½ã€‚\n");
   if (!SKILL_D(skill["name"])->valid_learn(me))
     return 0;
 
@@ -167,13 +167,13 @@ int reading (object me, object book)
          * (skill["difficulty"] - (int)me->query_int())/20;
   if ((int)me->query("sen") < cost)
   {
-    write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+    write("ä½ ç°åœ¨è¿‡äºç–²å€¦ï¼Œæ— æ³•ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ã€‚\n");
     return 1;
   }
 
   if( me->query_skill(skill["name"], 1) > skill["max_skill"] )
   {
-    write("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË£¬Ã»ÓĞÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+    write("ä½ ç ”è¯»äº†ä¸€ä¼šå„¿ï¼Œä½†æ˜¯å‘ç°ä¸Šé¢æ‰€è¯´çš„å¯¹ä½ è€Œè¨€éƒ½å¤ªæµ…äº†ï¼Œæ²¡æœ‰å­¦åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
     return 1;
   }
 
@@ -182,7 +182,7 @@ int reading (object me, object book)
   if (!me->query_skill(skill["name"], 1))
     me->set_skill(skill["name"], 0);
   me->improve_skill(skill["name"], (int)me->query_skill("literate", 1)/5+5);
-  write("ÄãÑĞ¶ÁÓĞ¹Ø" + SKILL_D(skill["name"])->name() + "µÄ¼¼ÇÉ£¬ËÆºõÓĞµãĞÄµÃ¡£\n");
+  write("ä½ ç ”è¯»æœ‰å…³" + SKILL_D(skill["name"])->name() + "çš„æŠ€å·§ï¼Œä¼¼ä¹æœ‰ç‚¹å¿ƒå¾—ã€‚\n");
   return 1;
 }
 
@@ -193,11 +193,11 @@ int do_read (string arg)
 
   if (! arg ||
       present (arg,who) != me)
-    return notify_fail ("ÄãÒª¶ÁÊ²Ã´£¿\n");
+    return notify_fail ("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
 
   if (me->query("my_owner") != who->query("id"))
   {
-    tell_object (who,"Õâ±¾¾­Êé²»ÊÇÄãµÄ¡£\n");
+    tell_object (who,"è¿™æœ¬ç»ä¹¦ä¸æ˜¯ä½ çš„ã€‚\n");
     return 1;
   }
 
@@ -207,7 +207,7 @@ int do_read (string arg)
       me->set_skill(who->query("obstacle/book"));
     else
     {
-      tell_object (who,"ÇëÊ¹ÓÃdecideÀ´¾ö¶¨ÄãÏëÓÃ¾­ÊéÑ§Ï°Ê²Ã´¡£\n");
+      tell_object (who,"è¯·ä½¿ç”¨decideæ¥å†³å®šä½ æƒ³ç”¨ç»ä¹¦å­¦ä¹ ä»€ä¹ˆã€‚\n");
       return 1;
     }
   }

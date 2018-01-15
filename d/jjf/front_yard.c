@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/front_yard.c
@@ -7,21 +7,21 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Á·Îä³¡");
+  set ("short", "ç»ƒæ­¦åœº");
   set ("long", @LONG
-¿ÕÀ«µÄ³¡µØÉÏÆÌÂúÁËÏ¸Ï¸µÄ»ÆÍÁ£¬ÕıºÃÊÊºÏÑİÎä¡£ËÄÃæÓĞ¼¸¸ö
-ÇØ¸®¼Ò½«ÕıÔÚÁ·Îä¡£Ê÷ÒñÀï£¬Ò»Î»¹Ü¼Ò´ò°çµÄÈËÕıÔÚ±³×ÅÊÖ¹Û¿´£¬
-»¹²»Ê±×ßÉÏÇ°È¥Ö¸µãÒ»¶ş¡£³¡µØ±ßÉÏ¹Ò×Å¼¸¸ö´óÉ³´ü(sandbags)£¬
-²»ÖªÓĞÊ²Ã´ÓÃ´¦¡£Î÷ÃæÓĞ¼äÆÆ°ÜµÄĞ¡Îİ£¬ÃÅ´°¶¼·âËÀÁË£¬Óë½«¾ü¸®
-ÀïÆäËüµÄ·¿Éá¸ñ¸ñ²»Èë¡£
+ç©ºé˜”çš„åœºåœ°ä¸Šé“ºæ»¡äº†ç»†ç»†çš„é»„åœŸï¼Œæ­£å¥½é€‚åˆæ¼”æ­¦ã€‚å››é¢æœ‰å‡ ä¸ª
+ç§¦åºœå®¶å°†æ­£åœ¨ç»ƒæ­¦ã€‚æ ‘è«é‡Œï¼Œä¸€ä½ç®¡å®¶æ‰“æ‰®çš„äººæ­£åœ¨èƒŒç€æ‰‹è§‚çœ‹ï¼Œ
+è¿˜ä¸æ—¶èµ°ä¸Šå‰å»æŒ‡ç‚¹ä¸€äºŒã€‚åœºåœ°è¾¹ä¸ŠæŒ‚ç€å‡ ä¸ªå¤§æ²™è¢‹(sandbags)ï¼Œ
+ä¸çŸ¥æœ‰ä»€ä¹ˆç”¨å¤„ã€‚è¥¿é¢æœ‰é—´ç ´è´¥çš„å°å±‹ï¼Œé—¨çª—éƒ½å°æ­»äº†ï¼Œä¸å°†å†›åºœ
+é‡Œå…¶å®ƒçš„æˆ¿èˆæ ¼æ ¼ä¸å…¥ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 3 */
-  "window" : "ÃÅ´°¶¼±»·âËÀÁË£¬Ç½ÉÏºÃÏóÓĞĞ©´¸ÔÒµÄºÛ¼££®\n",
+  "window" : "é—¨çª—éƒ½è¢«å°æ­»äº†ï¼Œå¢™ä¸Šå¥½è±¡æœ‰äº›é”¤ç ¸çš„ç—•è¿¹ï¼\n",
   "door" : "
-ÃÅ´°¶¼±»·âËÀÁË£¬Ç½ÉÏºÃÏóÓĞĞ©´¸ÔÒµÄºÛ¼££®\n",
+é—¨çª—éƒ½è¢«å°æ­»äº†ï¼Œå¢™ä¸Šå¥½è±¡æœ‰äº›é”¤ç ¸çš„ç—•è¿¹ï¼\n",
   "sandbags" : "
-¼¸¸ö³ÁÖØµÄÉ³´ü£¬¿ÉÒÔÊÔ×Å´ò´ò(da)¿´¡£\n",
+å‡ ä¸ªæ²‰é‡çš„æ²™è¢‹ï¼Œå¯ä»¥è¯•ç€æ‰“æ‰“(da)çœ‹ã€‚\n",
 ]));
   set("outdoors", 1);
   set("exits", ([ /* sizeof() == 4 */
@@ -51,32 +51,32 @@ int do_da(string arg)
   int unarmedskll=(int)(me->query_skill("unarmed", 1)/2);
   int maxlevel, exp=(int)me->query("combat_exp");
  
-  if( !arg || !((arg == "sandbags") || (arg == "É³´ü")))
-    return notify_fail("ÄãÒª´òÊ²Ã´£¿\n");
+  if( !arg || !((arg == "sandbags") || (arg == "æ²™è¢‹")))
+    return notify_fail("ä½ è¦æ‰“ä»€ä¹ˆï¼Ÿ\n");
   if( me->query("kee") < (int)(me->query("max_kee")/5))
-    return notify_fail("ÔÙ´òÏÂÈ¥Äã»áÀÛËÀµÄ£¡\n");
+    return notify_fail("å†æ‰“ä¸‹å»ä½ ä¼šç´¯æ­»çš„ï¼\n");
   if( me->query_temp("weapon") || me->query_temp("secondary_weapon") )
-    return notify_fail("ÓÃ±øÆ÷»á°ÑÉ³´ü´ò»µµÄ£¡\n");
-  if (!((string)me->query("family/family_name")=="½«¾ü¸®"))
+    return notify_fail("ç”¨å…µå™¨ä¼šæŠŠæ²™è¢‹æ‰“åçš„ï¼\n");
+  if (!((string)me->query("family/family_name")=="å°†å†›åºœ"))
     {
-      message_vision("$NÒ»È­ÏòÉ³´ü´òÈ¥£¬¿ÉÊÇÉ³´üÒ»¶¯²»¶¯¡£\n", me);
+      message_vision("$Nä¸€æ‹³å‘æ²™è¢‹æ‰“å»ï¼Œå¯æ˜¯æ²™è¢‹ä¸€åŠ¨ä¸åŠ¨ã€‚\n", me);
     }
   else
     {
-      message_vision("$NÓÃ¾¡Á¦ÆøÏòÉ³´ü´òÈ¥£¬´òµÃÉ³´üÖ±»Î¡£\n", me);
+      message_vision("$Nç”¨å°½åŠ›æ°”å‘æ²™è¢‹æ‰“å»ï¼Œæ‰“å¾—æ²™è¢‹ç›´æ™ƒã€‚\n", me);
       if (exp*10 <= (unarmedskll*unarmedskll*unarmedskll))
    {
      me->receive_damage("kee", (int)me->query("max_kee")/10);
-     return notify_fail("ÄãµÄµÀĞĞ²»¹»¸ß£¬²»ÄÜ´Ó´òÉ³´üÖĞÑ§µ½ĞÂÖª¡£\n");
+     return notify_fail("ä½ çš„é“è¡Œä¸å¤Ÿé«˜ï¼Œä¸èƒ½ä»æ‰“æ²™è¢‹ä¸­å­¦åˆ°æ–°çŸ¥ã€‚\n");
    }
       if (unarmedskll*2<((int)me->query("con")+(int)me->query("str"))/2)
    {
      me->improve_skill("unarmed", random((int)(me->query("con")+me->query("str"))/2));
-     tell_object(me, "ÄãÁìÎò³öÒ»Ğ©»ù±¾È­½Å·½ÃæµÄÇÏÃÅ¡£\n");
+     tell_object(me, "ä½ é¢†æ‚Ÿå‡ºä¸€äº›åŸºæœ¬æ‹³è„šæ–¹é¢çš„çªé—¨ã€‚\n");
    }
       else
    {
-     tell_object(me, "ÄãÔÚÉ³´üÉÏ·ÑÁË°ëÌì¾¢£¬¿ÉÊÇÊ²Ã´Ò²Ã»ÓĞÑ§µ½¡£\n");
+     tell_object(me, "ä½ åœ¨æ²™è¢‹ä¸Šè´¹äº†åŠå¤©åŠ²ï¼Œå¯æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å­¦åˆ°ã€‚\n");
    }
     }
   me->receive_damage("kee", (int)me->query("max_kee")/10);
@@ -88,20 +88,20 @@ int do_hammer(string arg)
   object me;
   me=this_player();
   if ( !present("hammer", me) || (arg != "door"))
-    return notify_fail("Äã»ÓÆğÈ­Í·ÍùÇ½ÉÏÔÒÈ¥£¬ßÀ£®£®£®£®ºÃÏóÍ¦ÌÛ£¡\n");
+    return notify_fail("ä½ æŒ¥èµ·æ‹³å¤´å¾€å¢™ä¸Šç ¸å»ï¼Œå‘ƒï¼ï¼ï¼ï¼å¥½è±¡æŒºç–¼ï¼\n");
   else
-    message_vision("$N»ÓÎè´ó´¸£¬ÍùÇ½ÉÏÔÒÈ¥£®\n", me);
-  if((int)me->query_temp("mark/½«¾ü") < 1)
+    message_vision("$NæŒ¥èˆå¤§é”¤ï¼Œå¾€å¢™ä¸Šç ¸å»ï¼\n", me);
+  if((int)me->query_temp("mark/å°†å†›") < 1)
     {
-    me->set_temp("mark/½«¾ü", 1);
+    me->set_temp("mark/å°†å†›", 1);
   }
-  me->add_temp("mark/½«¾ü", 1);
+  me->add_temp("mark/å°†å†›", 1);
   me->receive_damage("kee", 40);
-  if((int)me->query_temp("mark/½«¾ü") > 5)
+  if((int)me->query_temp("mark/å°†å†›") > 5)
     {
-    message_vision("$N°ÑÇ½ÔÒ¿ªÁËÒ»¸ö¶´£¬Á¬Ã¦×êÁË½øÈ¥£®\n", me);
-    me->set_temp("mark/½«¾ü", 1);
-    me->set_temp("mark/½«¾ü½ûµØ", 1);
+    message_vision("$NæŠŠå¢™ç ¸å¼€äº†ä¸€ä¸ªæ´ï¼Œè¿å¿™é’»äº†è¿›å»ï¼\n", me);
+    me->set_temp("mark/å°†å†›", 1);
+    me->set_temp("mark/å°†å†›ç¦åœ°", 1);
     me->move("/d/jjf/mishi");
     return 1;
   }

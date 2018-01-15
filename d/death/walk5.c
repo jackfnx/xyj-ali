@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // zhting.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��˾");
+  set ("short", "幽司");
   set ("long", @LONG
 
-����һ�����������ȣ�û��ʲô���߶�����ΧҲû��ʲô������һ��
-���Ǿ����ĵġ�������һ������שʯ�Ĺ������һ������֮�С�
+这是一条长长的厢廊，没有什么人走动。周围也没有什么动静，一切
+都是静悄悄的。北面有一座青紫砖石的宫殿，笼在一股青烟之中。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

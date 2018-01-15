@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���¥");
+  set ("short", "五凤楼");
   set ("long", @LONG
 
-һ��С�ɵĲ�¥��ÿ���Ƶ����գ����������������Ⱥ����ż��
-Ҳ��������Ӽ������ʹ�ߡ��������ź���Ư���ĵ�̺������û
-�����Σ����еĿ��˶����ڵ��¡�
+一座小巧的彩楼，每到黄道吉日，国王便在这里大宴群臣，偶尔
+也会在这里接见外国的使者。地下铺着豪华漂亮的地毯，两边没
+有桌椅，所有的客人都坐在地下。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

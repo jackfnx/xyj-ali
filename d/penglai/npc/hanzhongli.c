@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hanzhongli.c...weiqi, 98.02.24.
@@ -6,12 +6,12 @@
 inherit NPC;
 void create()
 {
-    set_name("ººÖÓÀë", ({"han zhongli", "han", "zhongli"}));
-    set("title", "°ËÏÉÖ®");
-    set("gender", "ÄĞĞÔ" );
+    set_name("æ±‰é’Ÿç¦»", ({"han zhongli", "han", "zhongli"}));
+    set("title", "å…«ä»™ä¹‹");
+    set("gender", "ç”·æ€§" );
     set("age", 50);
     set("per", 20);
-    set("long", "Ò»Î»´ó¸¹±ã±ãµÄÅÖÀÏÍ·¡£´ó¸Å×ÜÊÇ¾õµÃÌ«ÈÈ£¬Ê±²»Ê±µØÒªÉÈ¼¸ÉÈ¡£\n");
+    set("long", "ä¸€ä½å¤§è…¹ä¾¿ä¾¿çš„èƒ–è€å¤´ã€‚å¤§æ¦‚æ€»æ˜¯è§‰å¾—å¤ªçƒ­ï¼Œæ—¶ä¸æ—¶åœ°è¦æ‰‡å‡ æ‰‡ã€‚\n");
     set("class", "xian");
     set("combat_exp", 120000);
     set("attitude", "peaceful");

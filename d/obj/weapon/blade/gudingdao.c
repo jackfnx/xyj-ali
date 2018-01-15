@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,12 +9,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-   set_name("¹Å¶§µ¶", ({"guding dao", "dao", "blade", }) );
+   set_name("å¤é”­åˆ€", ({"guding dao", "dao", "blade", }) );
    set_weight(10000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 0);
 //     set("is_monitored", 1);
      set("no_sell", 1);
@@ -22,9 +22,9 @@ void create()
      set("no_drop", 1);
      set("no_put", 1);
      set("material", "steel");
-     set("long", "Ò»°ÑĞâ¼£°ß²µµÄ³¤µ¶£¬·İÁ¿Ïàµ±µÄ³ÁÖØ¡£\n");
-     set("wield_msg", "$NÄ¨ÁËÄ¨$nÉÏµÄ»Ò³¾£¬ÎÕÔÚÊÖÀï¡£\n");
-     set("unequip_msg", "$N½«$n°óµ½Éíºó¡£\n");
+     set("long", "ä¸€æŠŠé”ˆè¿¹æ–‘é©³çš„é•¿åˆ€ï¼Œä»½é‡ç›¸å½“çš„æ²‰é‡ã€‚\n");
+     set("wield_msg", "$NæŠ¹äº†æŠ¹$nä¸Šçš„ç°å°˜ï¼Œæ¡åœ¨æ‰‹é‡Œã€‚\n");
+     set("unequip_msg", "$Nå°†$nç»‘åˆ°èº«åã€‚\n");
    }
    init_blade(60);
    setup();

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // update.c
@@ -19,11 +19,11 @@ int main(object me, string file)
 
    if (!file) file = me->query("cwf");
    if (!file)
-     return notify_fail("ÄãÒªÖØĞÂ±àÒëÊ²Ã´µµ°¸£¿\n");
+     return notify_fail("ä½ è¦é‡æ–°ç¼–è¯‘ä»€ä¹ˆæ¡£æ¡ˆï¼Ÿ\n");
 
    if( (obj = present(file, environment(me))) && interactive(obj) ) {
        if(wizardp(obj) && wiz_level(me) < wiz_level(obj))
-           return notify_fail("Äã²»ÄÜ¸üĞÂµÈ¼¶±ÈÄã¸ßµÄÎ×Ê¦×´Ì¬¡£\n");
+           return notify_fail("ä½ ä¸èƒ½æ›´æ–°ç­‰çº§æ¯”ä½ é«˜çš„å·«å¸ˆçŠ¶æ€ã€‚\n");
      return update_player(obj);
     }
            
@@ -35,14 +35,14 @@ int main(object me, string file)
    }
 
    if( file_size(file)==-1 )
-     return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 
    me->set("cwf", file);
 
    if (obj = find_object(file)) {
      if( obj==environment(me) ) {
         if( file_name(obj)==VOID_OB )
-          return notify_fail("Äã²»ÄÜÔÚ VOID_OB ÀïÖØĞÂ±àÒë VOID_OB¡£\n");
+          return notify_fail("ä½ ä¸èƒ½åœ¨ VOID_OB é‡Œé‡æ–°ç¼–è¯‘ VOID_OBã€‚\n");
         inv = all_inventory(obj);
         i = sizeof(inv);
         while(i--)
@@ -52,14 +52,14 @@ int main(object me, string file)
      destruct(obj);
    }
 
-   if (obj) return notify_fail("ÎŞ·¨Çå³ı¾É³ÌÊ½Âë¡£\n");
+   if (obj) return notify_fail("æ— æ³•æ¸…é™¤æ—§ç¨‹å¼ç ã€‚\n");
 
-    write("ÖØĞÂ±àÒë " + file + "£º");
+    write("é‡æ–°ç¼–è¯‘ " + file + "ï¼š");
    err = catch( call_other(file, "???") );
    if (err)
-     printf( "·¢Éú´íÎó£º\n%s\n", err );
+     printf( "å‘ç”Ÿé”™è¯¯ï¼š\n%s\n", err );
    else {
-     write("³É¹¦£¡\n");
+     write("æˆåŠŸï¼\n");
      if( (i=sizeof(inv)) && (obj = find_object(file))) {
         while(i--)
           if( inv[i] && userp(inv[i]) ) inv[i]->move(obj, 1);
@@ -89,7 +89,7 @@ int update_player(object me)
    obj->restore();
    LOGIN_D->enter_world(link_ob, obj, 1);
 
-   write("ÉíÌå¸üĞÂÍê±Ï¡£\n\n");
+   write("èº«ä½“æ›´æ–°å®Œæ¯•ã€‚\n\n");
    obj->move(env,1);
    obj->write_prompt();
 
@@ -99,11 +99,11 @@ int update_player(object me)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : update <µµÃû|here|me|Íæ¼ÒÃû>
+æŒ‡ä»¤æ ¼å¼ : update <æ¡£å|here|me|ç©å®¶å>
  
-Õâ¸öÖ¸Áî¿ÉÒÔ¸üĞÂµµ°¸, ²¢½«ĞÂµµµÄÄÚÈİÔØÈë¼ÇÒäÌåÄÚ. ÈôÄ¿±êÎª
-'here' Ôò¸üĞÂËùÔÚ»·¾³. ÈôÄ¿±êÎª 'me' Ôò¸üĞÂ×Ô¼ºµÄÈËÎï. ÈôÄ¿
-±êÎªÍæ¼ÒÔò¿É¸üĞÂÍæ¼ÒÎï¼ş.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ›´æ–°æ¡£æ¡ˆ, å¹¶å°†æ–°æ¡£çš„å†…å®¹è½½å…¥è®°å¿†ä½“å†…. è‹¥ç›®æ ‡ä¸º
+'here' åˆ™æ›´æ–°æ‰€åœ¨ç¯å¢ƒ. è‹¥ç›®æ ‡ä¸º 'me' åˆ™æ›´æ–°è‡ªå·±çš„äººç‰©. è‹¥ç›®
+æ ‡ä¸ºç©å®¶åˆ™å¯æ›´æ–°ç©å®¶ç‰©ä»¶.
  
 HELP
     );

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/wroom.c
@@ -9,17 +9,17 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÐÝÏ¢ÊÒ");
+  set ("short", "ä¼‘æ¯å®¤");
   set ("long", @LONG
 
-ÀÁÀÁµÄÑô¹âÍ¸¹ý´°èù£¬ÓÐÒâÎÞÒâµØÈ÷ÂäÂúÊÒ£¬ÔÙÓÐºìÈïÏ¸Ö¦µã×º¼¸´¦£¬Õû
-¼äÏá·¿±ãËÆãåÔ¡ÔÚÉÎÎçµÄ¹âö°»¨ÆøÖÐ£¬´¦´¦¸¡Òç×ÅÒ»ÖÖÌñ¾²µÄ¸Ð¾õ¡£ÎÝ½Ç
-ÓÐÒ»ÕÅÐ¡´²£¬Á½±ßÇ½ÉÏ¸÷ÓÐÒ»ÅÅÍ­¶¤£¬ÔÚÑô¹âÏÂ·º×ÅÈáºÍµÄ½ðÉ«¡£
+æ‡’æ‡’çš„é˜³å…‰é€è¿‡çª—æ£‚ï¼Œæœ‰æ„æ— æ„åœ°æ´’è½æ»¡å®¤ï¼Œå†æœ‰çº¢è•Šç»†æžç‚¹ç¼€å‡ å¤„ï¼Œæ•´
+é—´åŽ¢æˆ¿ä¾¿ä¼¼æ²æµ´åœ¨æ™Œåˆçš„å…‰éœ­èŠ±æ°”ä¸­ï¼Œå¤„å¤„æµ®æº¢ç€ä¸€ç§æ¬é™çš„æ„Ÿè§‰ã€‚å±‹è§’
+æœ‰ä¸€å¼ å°åºŠï¼Œä¸¤è¾¹å¢™ä¸Šå„æœ‰ä¸€æŽ’é“œé’‰ï¼Œåœ¨é˜³å…‰ä¸‹æ³›ç€æŸ”å’Œçš„é‡‘è‰²ã€‚
 LONG);
 
   set("no_fight", 1);
   set("item_desc", ([ /* sizeof() == 1 */
-  "bed" : "Ë¯¾õÓÃµÄ´²ÆÌ(gosleep,gobed,bed)¡£ 
+  "bed" : "ç¡è§‰ç”¨çš„åºŠé“º(gosleep,gobed,bed)ã€‚ 
 ",
 ]));
   set("exits", ([ /* sizeof() == 1 */
@@ -40,9 +40,9 @@ void init()
 int do_bed()
 {       object me;
         me=this_player();
-        message_vision(HIY "$NÏÆ¿ªÉ´ÕÊ£¬×¼±¸ÉÏ´²ÁË¡£\n\n" NOR, me);
+        message_vision(HIY "$NæŽ€å¼€çº±å¸ï¼Œå‡†å¤‡ä¸ŠåºŠäº†ã€‚\n\n" NOR, me);
         me->move(__DIR__"bed_moon");
-            message_vision(HIY "\nÉ´ÕÊÇáÇáÒ»¶¯£¬$N×êÁË½øÀ´¡£\n" NOR, me);
+            message_vision(HIY "\nçº±å¸è½»è½»ä¸€åŠ¨ï¼Œ$Né’»äº†è¿›æ¥ã€‚\n" NOR, me);
                 return 1;
 }
 

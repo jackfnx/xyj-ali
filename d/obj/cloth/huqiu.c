@@ -1,6 +1,6 @@
 // ALi by NewX
 
-// huqiu.c Ç§ºüôÃ
+// huqiu.c åƒç‹è£˜
 
 #include <armor.h>
 
@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-   set_name("Ç§ºüôÃ", ({ "huqiu", "cloth" }) );
+   set_name("åƒç‹è£˜", ({ "huqiu", "cloth" }) );
    set_weight(1000);
    if (clonep())
        set_default_object(__FILE__);
    else {
-       set("long", "Ò»ÌõÑ©°×µÄºüôÃÍâÅÛ£¬ÖÊµØ¼«Èá¡£´«Ëµ¼¯Ò¸³ÉôÃ£¬ÉÏµÈµÄºüôÃÖ»ÄÜÈ¡×ÔÍ¨Áé´ÆºüµÄÒ¸ÏÂ£¬ÕâÑùÒ»ÌõºüôÃ²»ÖªÒªÊÕ¼¯¶àÉÙÁéºüµÄºüôÃ¡£\n");
-       set("unit", "Ìõ");
+       set("long", "ä¸€æ¡é›ªç™½çš„ç‹è£˜å¤–è¢ï¼Œè´¨åœ°ææŸ”ã€‚ä¼ è¯´é›†è…‹æˆè£˜ï¼Œä¸Šç­‰çš„ç‹è£˜åªèƒ½å–è‡ªé€šçµé›Œç‹çš„è…‹ä¸‹ï¼Œè¿™æ ·ä¸€æ¡ç‹è£˜ä¸çŸ¥è¦æ”¶é›†å¤šå°‘çµç‹çš„ç‹è£˜ã€‚\n");
+       set("unit", "æ¡");
        set("value", 8000);
        set("material", "cloth");
        set("armor_prop/armor", 1);

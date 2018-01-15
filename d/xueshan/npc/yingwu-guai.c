@@ -7,11 +7,11 @@ inherit NPC;
 // from drooler file, some global variables
 
 string *rnd_say = ({
-    "ÎÒÑ©É½ÅÉµÜ×Ó¸÷¸öÉñÓÂÎŞ±È£¬ÌìÏÂÎŞµĞ£¡",
-    "¡¸¸Â¡«¡«¸Â¡«¡«¡¹",
-    "É±Èë´óÀ×ÒôËÂ£¬ÇÀÁËËûµÄÁ«»¨±¦×ù£¡",
-    "ÄãÃÇ¶¼ÒªºÃºÃÁ·¹¦£¡²»Òª¹¼¸ºÁËÃ÷ÍõµÄÒ»Æ¬¿àĞÄ£¡",
-    "´ó¼ÒºÃ£¡",
+    "æˆ‘é›ªå±±æ´¾å¼Ÿå­å„ä¸ªç¥å‹‡æ— æ¯”ï¼Œå¤©ä¸‹æ— æ•Œï¼",
+    "ã€Œå˜ï½ï½å˜ï½ï½ã€",
+    "æ€å…¥å¤§é›·éŸ³å¯ºï¼ŒæŠ¢äº†ä»–çš„è²èŠ±å®åº§ï¼",
+    "ä½ ä»¬éƒ½è¦å¥½å¥½ç»ƒåŠŸï¼ä¸è¦è¾œè´Ÿäº†æ˜ç‹çš„ä¸€ç‰‡è‹¦å¿ƒï¼",
+    "å¤§å®¶å¥½ï¼",
 });
 
 varargs void drool(string msg, string who);
@@ -19,17 +19,17 @@ varargs void drool(string msg, string who);
 /************************************************************/
 void create()
 {
-    set_name("ğĞğÄ½«¾ü", ({"yingwu jiangjun", "yingwu", "jiangjun"}));
-    set("gender", "ÄĞĞÔ" );
+    set_name("é¹¦é¹‰å°†å†›", ({"yingwu jiangjun", "yingwu", "jiangjun"}));
+    set("gender", "ç”·æ€§" );
     set("age", 23);
     set("per", 112);//no rongmao description.
 
-    set("long", "Ñ©É½ÃÅÏÂÓĞÃûµÄ¸ßÊÖÖ®Ò»ğĞğÄ½«¾ü¡£\n"
-        "ËûÔ¶¿´»¹²»´í£¬×ß½üÁË²Å·¢ÏÖËû³¤×Å³¤³¤µÄÒ»ÕÅÄñ×ì¡£\n");
+    set("long", "é›ªå±±é—¨ä¸‹æœ‰åçš„é«˜æ‰‹ä¹‹ä¸€é¹¦é¹‰å°†å†›ã€‚\n"
+        "ä»–è¿œçœ‹è¿˜ä¸é”™ï¼Œèµ°è¿‘äº†æ‰å‘ç°ä»–é•¿ç€é•¿é•¿çš„ä¸€å¼ é¸Ÿå˜´ã€‚\n");
     set("class", "yaomo");
     set("combat_exp", 100000);
     set("attitude", "peaceful");
-    create_family("´óÑ©É½", 3, "µÜ×Ó");
+    create_family("å¤§é›ªå±±", 3, "å¼Ÿå­");
     set_skill("unarmed", 50);
     set_skill("raptor-talon", 50);
     set_skill("pressheart-hand", 30);
@@ -76,20 +76,20 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-    if ((string)ob->query("family/family_name")=="´óÑ©É½") {
+    if ((string)ob->query("family/family_name")=="å¤§é›ªå±±") {
         if ((int)ob->query("family/generation") < 3) {
-            command("say ²»¸Ò£¬²»¸Ò¡£ÎÒ¸Ã°İ" + RANK_D->query_respect(ob) + "ÄúÎªÊ¦²ÅÊÇ¡£\n");
+            command("say ä¸æ•¢ï¼Œä¸æ•¢ã€‚æˆ‘è¯¥æ‹œ" + RANK_D->query_respect(ob) + "æ‚¨ä¸ºå¸ˆæ‰æ˜¯ã€‚\n");
         } else if ((int)ob->query("family/generation") == 3) {
-            command("say ÄãÕâ¸ö" + RANK_D->query_rude(ob) + "±ğÀ´ÏûÇ²´óÒ¯ÎÒÁË£¡\n");
+            command("say ä½ è¿™ä¸ª" + RANK_D->query_rude(ob) + "åˆ«æ¥æ¶ˆé£å¤§çˆ·æˆ‘äº†ï¼\n");
         } else {
             command(":D");
-            command("say ÄãÕâ¸ö" + RANK_D->query_rude(ob) + "Ôç¾Í¸ÃÀ´°İÎÒÎªÊ¦£¡ÄãÄÇ¸öÆÆÊ¦¸¸Ê²Ã´¶¼²»¶®...\n");
+            command("say ä½ è¿™ä¸ª" + RANK_D->query_rude(ob) + "æ—©å°±è¯¥æ¥æ‹œæˆ‘ä¸ºå¸ˆï¼ä½ é‚£ä¸ªç ´å¸ˆçˆ¶ä»€ä¹ˆéƒ½ä¸æ‡‚...\n");
             command("recruit " + ob->query("id") );
         }
     }
     else {
         command(":D ");
-        command("say ºÃ£¬µ½ÎÒÃÇ´óÑ©É½À´Ñ§ÒÕ£¬ÓÖÕÒÁË¸öºÃÊ¦¸¸¡£" + RANK_D->query_respect(ob) + "¿ÉÒÔËµÊÇÇ°Í¾ÎŞÁ¿°¡£¡\n");
+        command("say å¥½ï¼Œåˆ°æˆ‘ä»¬å¤§é›ªå±±æ¥å­¦è‰ºï¼Œåˆæ‰¾äº†ä¸ªå¥½å¸ˆçˆ¶ã€‚" + RANK_D->query_respect(ob) + "å¯ä»¥è¯´æ˜¯å‰é€”æ— é‡å•Šï¼\n");
         command("recruit " + ob->query("id") );
     }
 
@@ -106,18 +106,18 @@ int recruit_apprentice(object ob)
 
 // the following copies some functions of the drooler
 // from /obj/example/drooler to allow the yingwu to
-// repeat what a human says, as a ğĞğÄ's nature is.
+// repeat what a human says, as a é¹¦é¹‰'s nature is.
 
 int add_phrase(string who, string msg)
 {
     msg = replace_string(msg, "?", "");
-    msg = replace_string(msg, "£¿", "");
+    msg = replace_string(msg, "ï¼Ÿ", "");
     msg = replace_string(msg, "!", "");
-    msg = replace_string(msg, "£¡", "");
-    msg = replace_string(msg, "°¡", "");
-    msg = replace_string(msg, "Âğ", "");
-    msg = replace_string(msg, "Ò®", "");
-    msg = replace_string(msg, "°É", "");
+    msg = replace_string(msg, "ï¼", "");
+    msg = replace_string(msg, "å•Š", "");
+    msg = replace_string(msg, "å—", "");
+    msg = replace_string(msg, "è€¶", "");
+    msg = replace_string(msg, "å§", "");
 
     if (msg!="") {
         add("memory/" + who, ({ msg }));
@@ -164,12 +164,12 @@ void relay_emote(object ob, string verb)
     switch(verb) {
     case "kick":
         if (random(10)<5) {
-            command("say ¹·ÍÈÓÖ·¢Ñ÷ÁË...\n");
+            command("say ç‹—è…¿åˆå‘ç—’äº†...\n");
         }
         break;
     case "pat":
         if (random(10)<5) {
-            command("say ²»ĞíÅÄ£¡ÔÙÅÄÄãÒ¯Ò¯ÎÒ°ÑÄãµÄ×¦×Ó¶çÏÂÀ´£¡\n");
+            command("say ä¸è®¸æ‹ï¼å†æ‹ä½ çˆ·çˆ·æˆ‘æŠŠä½ çš„çˆªå­å‰ä¸‹æ¥ï¼\n");
         }
         break;
     default:
@@ -194,68 +194,68 @@ varargs void drool(string msg, string who)
         msg = mem[who][random(sizeof(mem[who]))];
     }
 
-    if ((strsrch(msg, "ÎªÊ²Ã´") >= 0) ) {
-        if (sscanf(msg, "%*sÎªÊ²Ã´%s", msg)==2 ) msg = "ÎªÊ²Ã´" + msg;
+    if ((strsrch(msg, "ä¸ºä»€ä¹ˆ") >= 0) ) {
+        if (sscanf(msg, "%*sä¸ºä»€ä¹ˆ%s", msg)==2 ) msg = "ä¸ºä»€ä¹ˆ" + msg;
         switch(random(8)) {
-            case 0: command("say " + who + "£¬ÄãÊÇÔÚÎÊÎÒÂğ£¿"); break;
-            case 1: command("say ¹ØÓÚ" + msg + "¡­¡­"); break;
-            case 2: command("say ßÀ¡­¡­"); drool(); break;
-            case 3: command("say Õâ¸öÎÊÌâÂï¡­¡­"); break;
-            case 4: command("say " + who + "£¬ÖªµÀÕâ¸öÎÊÌâµÄ´ğ°¸¶ÔÄãÄÇÃ´ÖØÒªÂğ£¿"); break;
-            case 5: command("say " + msg + "£¿"); break;
-            case 6: command("say " + who + "ÄãÄÜ²»ÄÜËµÇå³şÒ»µã£¿"); break;
-            case 7: command("say " + who + "£¬ÎÒ²»¶®ÄãÎÊµÄÎÊÌâ¡£"); break;
+            case 0: command("say " + who + "ï¼Œä½ æ˜¯åœ¨é—®æˆ‘å—ï¼Ÿ"); break;
+            case 1: command("say å…³äº" + msg + "â€¦â€¦"); break;
+            case 2: command("say å‘ƒâ€¦â€¦"); drool(); break;
+            case 3: command("say è¿™ä¸ªé—®é¢˜å˜›â€¦â€¦"); break;
+            case 4: command("say " + who + "ï¼ŒçŸ¥é“è¿™ä¸ªé—®é¢˜çš„ç­”æ¡ˆå¯¹ä½ é‚£ä¹ˆé‡è¦å—ï¼Ÿ"); break;
+            case 5: command("say " + msg + "ï¼Ÿ"); break;
+            case 6: command("say " + who + "ä½ èƒ½ä¸èƒ½è¯´æ¸…æ¥šä¸€ç‚¹ï¼Ÿ"); break;
+            case 7: command("say " + who + "ï¼Œæˆ‘ä¸æ‡‚ä½ é—®çš„é—®é¢˜ã€‚"); break;
         }
     }
-    else if ((strsrch(msg, "Äã") >= 0)
+    else if ((strsrch(msg, "ä½ ") >= 0)
     ||  (strsrch(msg, "drooler") >= 0)
     ||  (strsrch(msg, "Drooler") >= 0)) {
-        if (sscanf(msg, "%*sÄã%s", msg) == 2 ) msg = "Äã" + msg;
-        msg = replace_string(msg, "Äã", "ÎÒ");
+        if (sscanf(msg, "%*sä½ %s", msg) == 2 ) msg = "ä½ " + msg;
+        msg = replace_string(msg, "ä½ ", "æˆ‘");
         switch(random(10)) {
-            case 0:   command("say " + who + "£¬ÄãÊÇËµ" + msg + "Âğ£¿");   break;
-            case 1:   command("say ÄãÈ·¶¨" + msg + "£¿");   break;
-            case 2:   command("say " + msg + "¸úÄãÓĞÊ²Ã´¹ØÏµ£¿");   break;
-            case 3:   command("say àÅ¡­¡­" + who + "ËµµÃºÃ"); break;
-            case 4:   command("say " + who + "ÄãÎªÊ²Ã´¶Ô" + msg + "ÕâÃ´ÓĞĞËÈ¤£¿"); break;
-            case 5:   command("say ÎªÊ²Ã´ÄãÈÏÎª" + msg + "£¿"); break;
-            case 6:   command("say »»¸ö»°Ìâ°É¡£"); drool(); break;
-            case 7:   command("say ²Å¹Ö£¡"); break;
-            case 8:   command("say ²»Ò»¶¨°É£¿"); break;
-            case 9:   command("say ÓĞÕâ¸ö¿ÉÄÜ¡­¡­"); break;
+            case 0:   command("say " + who + "ï¼Œä½ æ˜¯è¯´" + msg + "å—ï¼Ÿ");   break;
+            case 1:   command("say ä½ ç¡®å®š" + msg + "ï¼Ÿ");   break;
+            case 2:   command("say " + msg + "è·Ÿä½ æœ‰ä»€ä¹ˆå…³ç³»ï¼Ÿ");   break;
+            case 3:   command("say å—¯â€¦â€¦" + who + "è¯´å¾—å¥½"); break;
+            case 4:   command("say " + who + "ä½ ä¸ºä»€ä¹ˆå¯¹" + msg + "è¿™ä¹ˆæœ‰å…´è¶£ï¼Ÿ"); break;
+            case 5:   command("say ä¸ºä»€ä¹ˆä½ è®¤ä¸º" + msg + "ï¼Ÿ"); break;
+            case 6:   command("say æ¢ä¸ªè¯é¢˜å§ã€‚"); drool(); break;
+            case 7:   command("say æ‰æ€ªï¼"); break;
+            case 8:   command("say ä¸ä¸€å®šå§ï¼Ÿ"); break;
+            case 9:   command("say æœ‰è¿™ä¸ªå¯èƒ½â€¦â€¦"); break;
         }
     }
-    else if ((strsrch(msg, "ÎÒ") >= 0)) {
-        if (sscanf(msg, "%*sÎÒ%s", msg) == 2 ) msg = "ÎÒ" + msg;
-        msg = replace_string(msg, "ÎÒ", "Äã");
+    else if ((strsrch(msg, "æˆ‘") >= 0)) {
+        if (sscanf(msg, "%*sæˆ‘%s", msg) == 2 ) msg = "æˆ‘" + msg;
+        msg = replace_string(msg, "æˆ‘", "ä½ ");
         msg = replace_string(msg, "?", "");
         switch(random(8)) {
-            case 0:   command("say ÄãÊÇËµ" + msg + "Âğ£¿"); break;
-            case 1:   command("say ÕæµÄ£¿" + msg + "£¿");   break;
-            case 2:   command("say Èç¹û" + msg + "£¬ÎÒÄÜ°ïÄãÊ²Ã´Ã¦Âğ£¿");   break;
+            case 0:   command("say ä½ æ˜¯è¯´" + msg + "å—ï¼Ÿ"); break;
+            case 1:   command("say çœŸçš„ï¼Ÿ" + msg + "ï¼Ÿ");   break;
+            case 2:   command("say å¦‚æœ" + msg + "ï¼Œæˆ‘èƒ½å¸®ä½ ä»€ä¹ˆå¿™å—ï¼Ÿ");   break;
             case 3:   command("hmm");   break;
-            case 4:   command("say ÄãÈÏÎª" + msg + "£¿"); break;
-            case 5:   command("say ÎÒÓĞÍ¬¸Ğ"); break;
-            case 6:   command("say ÄãËµµÄ¡¸" + msg + "¡¹ÎÒ²»ÄÜ¹¶Í¬£¡"); break;
-            case 7:   command("say ÓĞ¹Ø¡¸" + msg + "¡¹µÄ»°Ìâµ½´ËÎªÖ¹ºÃÂğ£¿"); break;
+            case 4:   command("say ä½ è®¤ä¸º" + msg + "ï¼Ÿ"); break;
+            case 5:   command("say æˆ‘æœ‰åŒæ„Ÿ"); break;
+            case 6:   command("say ä½ è¯´çš„ã€Œ" + msg + "ã€æˆ‘ä¸èƒ½è‹ŸåŒï¼"); break;
+            case 7:   command("say æœ‰å…³ã€Œ" + msg + "ã€çš„è¯é¢˜åˆ°æ­¤ä¸ºæ­¢å¥½å—ï¼Ÿ"); break;
         }
     } else {
         switch(random(20)) {
-            case 0: command("say ÎªÊ²Ã´Ëµ" + msg + "£¿"); break;
-            case 1: command("say ¡¸" + msg + "¡¹ÊÇÊ²Ã´ÒâË¼£¿"); break;
-            case 2: command("say " + msg + "£¿"); break;
+            case 0: command("say ä¸ºä»€ä¹ˆè¯´" + msg + "ï¼Ÿ"); break;
+            case 1: command("say ã€Œ" + msg + "ã€æ˜¯ä»€ä¹ˆæ„æ€ï¼Ÿ"); break;
+            case 2: command("say " + msg + "ï¼Ÿ"); break;
             case 3: command("hehe"); break;
             case 4: command("sister"); break;
             case 5: command("?"); break;
-            case 6: command("say ¡­¡­"); break;
+            case 6: command("say â€¦â€¦"); break;
             case 7: command("hmm"); break;
             case 8: command("say " + rnd_say[random(sizeof(rnd_say))]); break;
-            case 9: command("say ÄãÔõÃ´ÖªµÀ" + msg + "£¿"); break;
-            case 10: command("say ¸Õ¸Õ" + who + "²»ÊÇËµÁË£¬" + msg); break;
-            case 11: command("say ÎÒµ±È»ÖªµÀ£¬" + msg); break;
-            case 12: command("say È»ºóÄØ£¿"); break;
-            case 13: command("say ÕæµÄÂğ£¿"); break;
-            case 14: command("say ÎÒ²»ÕâÃ´ÈÏÎª¡£"); break;
+            case 9: command("say ä½ æ€ä¹ˆçŸ¥é“" + msg + "ï¼Ÿ"); break;
+            case 10: command("say åˆšåˆš" + who + "ä¸æ˜¯è¯´äº†ï¼Œ" + msg); break;
+            case 11: command("say æˆ‘å½“ç„¶çŸ¥é“ï¼Œ" + msg); break;
+            case 12: command("say ç„¶åå‘¢ï¼Ÿ"); break;
+            case 13: command("say çœŸçš„å—ï¼Ÿ"); break;
+            case 14: command("say æˆ‘ä¸è¿™ä¹ˆè®¤ä¸ºã€‚"); break;
             default:
             break;
         }

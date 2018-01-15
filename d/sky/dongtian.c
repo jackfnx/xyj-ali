@@ -5,13 +5,13 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "¶«ÌìÃÅ");
+    set("short", "ä¸œå¤©é—¨");
     set("long", @LONG
 
-ÕâÀïÊÇÌì¹¬µÄ¶«ÃÅ¡£ÓÉËÄ´óÌìÍõÖ®Ò»µÄÄ§Àñºì¸ºÔð±£ÊØ¡£±ÈÆð
-ÄÏÌìÃÅÀ´£¬±±±ß¿É¾ÍÀäÇå¶àÁË¡£ËäÈ»Èç´Ë£¬¶«ÌìÃÅÔìµÄ¿ÉË¿ºÁ
-²»º¬ºý¡£ÏÊºìµÄ´óÃÅÉÏÏâ×ÅÉÁÉÁ·¢¹âµÄÍ­¶¤£¬ÏÔµÃÍþÎä·Ç·²¡£
-´óÁ¦Ìì¶¡ºÍÖÚÌì±ø£¬Ò»Ë¿²»¹¶µÄÑ²Âß×Å¡£
+è¿™é‡Œæ˜¯å¤©å®«çš„ä¸œé—¨ã€‚ç”±å››å¤§å¤©çŽ‹ä¹‹ä¸€çš„é­”ç¤¼çº¢è´Ÿè´£ä¿å®ˆã€‚æ¯”èµ·
+å—å¤©é—¨æ¥ï¼ŒåŒ—è¾¹å¯å°±å†·æ¸…å¤šäº†ã€‚è™½ç„¶å¦‚æ­¤ï¼Œä¸œå¤©é—¨é€ çš„å¯ä¸æ¯«
+ä¸å«ç³Šã€‚é²œçº¢çš„å¤§é—¨ä¸Šé•¶ç€é—ªé—ªå‘å…‰çš„é“œé’‰ï¼Œæ˜¾å¾—å¨æ­¦éžå‡¡ã€‚
+å¤§åŠ›å¤©ä¸å’Œä¼—å¤©å…µï¼Œä¸€ä¸ä¸è‹Ÿçš„å·¡é€»ç€ã€‚
 
 LONG);
 
@@ -21,7 +21,7 @@ LONG);
         "north"      : __DIR__"tgqe5",
     ]));
 
-    create_door("west", "¶«ÌìÃÅ", "east", DOOR_CLOSED);
+    create_door("west", "ä¸œå¤©é—¨", "east", DOOR_CLOSED);
 
     set("objects", ([
         __DIR__"npc/moli-hong"   : 1,

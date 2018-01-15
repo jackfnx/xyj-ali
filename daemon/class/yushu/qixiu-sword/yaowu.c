@@ -14,23 +14,23 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕÐ¡¸ÑýÎí³åÌì¡¹£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œå¦–é›¾å†²å¤©ã€ï¼Ÿ\n");
     weapon = me->query_temp("weapon");
     if (!me->is_fighting(target))
-        return notify_fail("¡¸ÑýÎí³åÌì¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ!\n");
-    if (me->query("family/family_name")!="ÏÝ¿ÕÉ½ÎÞµ×¶´")
-        return notify_fail("¡¸ÑýÎí³åÌì¡¹Ö»ÓÐÎÞµ×¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+        return notify_fail("ã€Œå¦–é›¾å†²å¤©ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨!\n");
+    if (me->query("family/family_name")!="é™·ç©ºå±±æ— åº•æ´ž")
+        return notify_fail("ã€Œå¦–é›¾å†²å¤©ã€åªæœ‰æ— åº•æ´žé—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
     if ((int)me->query("max_force") < 1500)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query("force") < 500)
-        return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
     if (!weapon || weapon->query("skill_type") != "sword")
-        return notify_fail("Äã±ØÐëÔÚÊ¹ÓÃ±øÆ÷Ê±²ÅÄÜÊ¹ÓÃ£¡\n");
+        return notify_fail("ä½ å¿…é¡»åœ¨ä½¿ç”¨å…µå™¨æ—¶æ‰èƒ½ä½¿ç”¨ï¼\n");
     if ((int)me->query_skill("qixiu-sword", 1) < 120)
-        return notify_fail("ÄãµÄÆßÐÞ½£µÈ¼¶»¹²»¹»!!\n");
+        return notify_fail("ä½ çš„ä¸ƒä¿®å‰‘ç­‰çº§è¿˜ä¸å¤Ÿ!!\n");
 
 
-    msg = MAG"\n$NÒõÒõÒ»Ð¦£¬ÊÖÖÐµÄ"+weapon->name()+MAG"ÇáÇáÒ»»Ó£¬µÇÊ±·ÉÉ³×ßÊ¯£¬ÑýÎíÖ±³åÌì¼Ê£¡£¡\n"NOR;
+    msg = MAG"\n$Né˜´é˜´ä¸€ç¬‘ï¼Œæ‰‹ä¸­çš„"+weapon->name()+MAG"è½»è½»ä¸€æŒ¥ï¼Œç™»æ—¶é£žæ²™èµ°çŸ³ï¼Œå¦–é›¾ç›´å†²å¤©é™…ï¼ï¼\n"NOR;
     message_vision(msg, me, target);
     me_brief = me->delete("env/brief_message");
     target_brief = target->delete("env/brief_message");

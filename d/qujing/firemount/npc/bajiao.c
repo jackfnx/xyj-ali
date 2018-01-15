@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 4/25/1997 by snowcat
@@ -10,14 +10,14 @@ void create()
 {
   string dir;
 
-  set_name("�Ž���", ({"bajiao guai", "guai"}));
-  set("gender", "����");
+  set_name("芭蕉怪", ({"bajiao guai", "guai"}));
+  set("gender", "男性");
   set("age", 40+random(30));
   set("con", 20);
   set("cor", 20);
   set("int", 20);
   set("per", 20);
-  set("long", "�Ž��֡�\n");
+  set("long", "芭蕉怪。\n");
   set("attitude", "peaceful");
   set("combat_exp", 70000);
   set_skill("dodge", 12);
@@ -60,7 +60,7 @@ int allow_split()
   object who = this_player();
 
   me->set_temp("split",1);
-  message_vision ("$Nһ㶣��漴���صس�$n��ͷһЦ��\n",me,who);
+  message_vision ("$N一愣，随即神秘地朝$n点头一笑。\n",me,who);
   return 1;
 }
 
@@ -70,7 +70,7 @@ void init()
 
   ::init();
   set("inquiry", ([
-       "������": (: allow_split :),
+       "分身术": (: allow_split :),
       ]));
 }
 
@@ -104,7 +104,7 @@ int accept_fight (object me)
     //ob3 = new(str);
     //ob3->setup();
     //ob3->move(environment(ob));
-    message_vision ("$N���һ����������ͻȻ��������$N��\n",ob);
+    message_vision ("$N大喝一声，从身后突然闪出两个$N！\n",ob);
     ob->set("kee",ob->query("max_kee")/10*12);
     ob->set("triplicate",1);
     ob1->set("triplicate",1);

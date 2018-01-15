@@ -12,32 +12,32 @@ int main(object me, string arg)
 	int i;
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("���ﲻ׼ս����\n");
+		return notify_fail("这里不准战斗。\n");
 
 	if( !arg )
-		return notify_fail("����ɱ˭��\n");
+		return notify_fail("你想杀谁？\n");
 
 	if(!objectp(obj = present(arg, environment(me))))
-		return notify_fail("����û������ˡ�\n");
+		return notify_fail("这里没有这个人。\n");
 
 	if( !obj->is_character() || obj->is_corpse() )
-		return notify_fail("�����һ�㣬�ǲ����ǻ��\n");
+		return notify_fail("看清楚一点，那并不是活物。\n");
 
 	if(obj==me)
-		return notify_fail("�� suicide ָ���ȽϿ�:P��\n");
+		return notify_fail("用 suicide 指令会比较快:P。\n");
 
 	callname = RANK_D->query_rude(obj);
         t = me->query_team();
 	if(sizeof(t) <=1)
-	return notify_fail("�����ڲ�û�вμ��κζ�������ֻ��һ���ˡ�(use kill)\n");
+	return notify_fail("你现在并没有参加任何队伍或队伍只你一个人。(use kill)\n");
 	if( userp(obj) )
-		return notify_fail("������ɲ����Ըĵ������۹ѵĶ�ϰ��\n");
+		return notify_fail("唉！你可不可以改掉以众欺寡的恶习？\n");
 	for(i=0;i<sizeof(t);i++)
 	if( t[i])
 	if( environment(me) != environment(t[i]))
-		return notify_fail("��Ա�����ڳ���(use kill)\n");		
-	message_vision("\n$N����$n�ȵ�����" 
-		+ callname + "�����ղ��������������ǻ��\n\n", me, obj);
+		return notify_fail("队员不都在场。(use kill)\n");		
+	message_vision("\n$N对著$n喝道：「" 
+		+ callname + "！今日不是你死就是我们活！」\n\n", me, obj);
         for(i=0;i<sizeof(t);i++)
 	{
 	if(t[i]){
@@ -51,11 +51,11 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-ָ���ʽ : teamkill <����>
+指令格式 : teamkill <人物>
  
-���ָ������Ķ�����������һ��������ý��������ж�Ա����֣�
-���������õ�����Ķ�Ա����ɱ�����У�
-�������ָ��: team,fight,kill
+这个指令让你的队伍主动攻击一个人物．所得奖励在所有队员间均分．
+但必需是拿到任务的队员亲手杀死才行．
+其他相关指令: team,fight,kill
 
 HELP
     );

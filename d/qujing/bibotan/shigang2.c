@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ʯ��");
+  set ("short", "乱石冈");
   set ("long", @LONG
 
-��ʯɽ����ʯ��أ����С�ĵ������ǡ����ϼ����������ľ
-Ψ�к���������ɽ������һ�ź��ơ��ϱ�����ȥ��ɽ��������̶
-ˮ���̣���ͬů�������ɽ�С�
+乱石山上乱石遍地，大的小的到处都是。坡上极干燥，所生草木
+唯有红柳，如在山上笼了一团红云。南边向上去是山顶，东边潭
+水碧绿，如同暖玉般卧在山中。
 LONG);
   set("objects", ([ /* sizeof() == 1*/ 
   __DIR__"npc/shanyao" : 1,

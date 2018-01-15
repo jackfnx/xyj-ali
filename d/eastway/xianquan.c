@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 4/20/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-    set ("short", "ÏÉÈª");
+    set ("short", "ä»™æ³‰");
     set ("long", @LONG
 
-Ò»¹ÉÈÈÆøÌÚÌÚµÄ°×Îí½«ÄãÍÅÍÅÎ§×¡£¬ÄãÒÑ¾­À´µ½ÁËÏÉÈª±ß¡£ÈªÖÐ
-ÇåË®±Ì²¨µ´Ñú£¬Ë®ÃæÎíÆøçÔÈÆ£¬ÓÐÐí¶àÈËÕýÔÚÀïÃæ±ÕÄ¿×øÔ¡¡£
+ä¸€è‚¡çƒ­æ°”è…¾è…¾çš„ç™½é›¾å°†ä½ å›¢å›¢å›´ä½ï¼Œä½ å·²ç»æ¥åˆ°äº†ä»™æ³‰è¾¹ã€‚æ³‰ä¸­
+æ¸…æ°´ç¢§æ³¢è¡æ¼¾ï¼Œæ°´é¢é›¾æ°”ç¼­ç»•ï¼Œæœ‰è®¸å¤šäººæ­£åœ¨é‡Œé¢é—­ç›®åæµ´ã€‚
 LONG);
 
     set("exits", ([
@@ -40,29 +40,29 @@ int init ()
 int do_bath (string arg)
 {
     string *msgs = ({
-        "$NÔÚÈªÖÐÏ´ÁËÆðÀ´¡£\n",
-        "$NÓÃÈªË®Ï´ÁËÏ´×Ô¼º¡£\n",
-        "$NÔÚÈªÖÐÈÈÆøÌÚÌÚµØÏ´ÁËÆðÀ´¡£\n",
-        "$NÓÃÈÈÈÈµÄÈªË®Ï´ÁËÏ´×Ô¼º¡£\n",
+        "$Nåœ¨æ³‰ä¸­æ´—äº†èµ·æ¥ã€‚\n",
+        "$Nç”¨æ³‰æ°´æ´—äº†æ´—è‡ªå·±ã€‚\n",
+        "$Nåœ¨æ³‰ä¸­çƒ­æ°”è…¾è…¾åœ°æ´—äº†èµ·æ¥ã€‚\n",
+        "$Nç”¨çƒ­çƒ­çš„æ³‰æ°´æ´—äº†æ´—è‡ªå·±ã€‚\n",
     });
     string *actions = ({
-        "Äã¸Ð¾õµ½ÈªË®ÓÐÒ»ÖÖËµ²»³öÀ´µÄµÄÉñÁ¦¡£\n",
-        "Äã·Â·ð¾õµÃÈªË®ÓÐÒ»ÖÖÉñÃØµÄ·¨Á¦ÂýÂýÉø½øÄãµÄÌåÄÚ¡£\n",
-        "ÄãËÆºõ¸Ð¾õµ½ÓÐÒ»ÖÖÉñÁ¦Éø½øÌåÄÚ¡£\n",
-        "Äã»Ðã±¾õµÃÓÐÒ»ÖÖÉñÃØµÄ·¨Á¦½«ÄãÁýÕÖ¡£\n",
-        "ËÆºõÓÐÒ»ÖÖÉñÃØµÄ·¨Á¦Éø½øÄãµÄÌåÄÚ¡£\n",
+        "ä½ æ„Ÿè§‰åˆ°æ³‰æ°´æœ‰ä¸€ç§è¯´ä¸å‡ºæ¥çš„çš„ç¥žåŠ›ã€‚\n",
+        "ä½ ä»¿ä½›è§‰å¾—æ³‰æ°´æœ‰ä¸€ç§ç¥žç§˜çš„æ³•åŠ›æ…¢æ…¢æ¸—è¿›ä½ çš„ä½“å†…ã€‚\n",
+        "ä½ ä¼¼ä¹Žæ„Ÿè§‰åˆ°æœ‰ä¸€ç§ç¥žåŠ›æ¸—è¿›ä½“å†…ã€‚\n",
+        "ä½ ææƒšè§‰å¾—æœ‰ä¸€ç§ç¥žç§˜çš„æ³•åŠ›å°†ä½ ç¬¼ç½©ã€‚\n",
+        "ä¼¼ä¹Žæœ‰ä¸€ç§ç¥žç§˜çš„æ³•åŠ›æ¸—è¿›ä½ çš„ä½“å†…ã€‚\n",
     });
     object me = this_player();
     
     if (me->query("kee")<10 ||
         me->query("sen")<10)
     {
-        tell_object (me,"ÄãÌ«ÐéÈõÁË£¬Ï´ÈÈË®Ô¡ÓÐÎ£ÏÕ£¡\n");
+        tell_object (me,"ä½ å¤ªè™šå¼±äº†ï¼Œæ´—çƒ­æ°´æµ´æœ‰å±é™©ï¼\n");
         me->unconcious();
         return 1;
     }
     if (me->is_busy())
-        return notify_fail ("ÄãÕýÔÚÈÈÈªÖÐÃ¦×ÅÄØ£¡\n");
+        return notify_fail ("ä½ æ­£åœ¨çƒ­æ³‰ä¸­å¿™ç€å‘¢ï¼\n");
     message_vision (msgs[random(sizeof(msgs))],me);
     me->add("kee",-10);
     me->add("sen",-10);
@@ -75,24 +75,24 @@ int do_bath (string arg)
 int do_cure (string arg)
 {
     string *msgs = ({
-        "$NÅõÆðÈªË®ÍùÉíÉÏÂýÂýµØ½½ÏÂÀ´¡£\n",
-        "$NÓÃÈÈÈªË®Íù×Ô¼ºÉíÉÏÒ»½½¡£\n",
-        "$NÒ¨ÆðÈÈÈÈµÄÈªË®£¬ÍùÉíÉÏ½½ÏÂÀ´¡£\n",
-        "$NÌÉÔÚÈÈÈªË®ÖÐ£¬ÅÝ×Å×Ô¼ºµÄÉíÌå¡£\n",
-        "$N×ø½øÈÈÆøÌÚÌÚµÄÈªË®¡£\n",
-        "$NÅÝÔÚÈÈÈªË®ÖÐ£¬ÂýÂýµØ×øÔ¡¡£\n",
+        "$Næ§èµ·æ³‰æ°´å¾€èº«ä¸Šæ…¢æ…¢åœ°æµ‡ä¸‹æ¥ã€‚\n",
+        "$Nç”¨çƒ­æ³‰æ°´å¾€è‡ªå·±èº«ä¸Šä¸€æµ‡ã€‚\n",
+        "$Nèˆ€èµ·çƒ­çƒ­çš„æ³‰æ°´ï¼Œå¾€èº«ä¸Šæµ‡ä¸‹æ¥ã€‚\n",
+        "$Nèººåœ¨çƒ­æ³‰æ°´ä¸­ï¼Œæ³¡ç€è‡ªå·±çš„èº«ä½“ã€‚\n",
+        "$Nåè¿›çƒ­æ°”è…¾è…¾çš„æ³‰æ°´ã€‚\n",
+        "$Næ³¡åœ¨çƒ­æ³‰æ°´ä¸­ï¼Œæ…¢æ…¢åœ°åæµ´ã€‚\n",
     });
     object me = this_player();
     
     if (me->is_busy())
-        return notify_fail ("ÄãÕýÔÚÈÈÈªÖÐÃ¦×ÅÄØ£¡\n");
+        return notify_fail ("ä½ æ­£åœ¨çƒ­æ³‰ä¸­å¿™ç€å‘¢ï¼\n");
     message_vision (msgs[random(sizeof(msgs))],me);
     me->start_busy(1,1);
     if ((me->query("kar")+me->query_temp("spring/cure_times")) > 60)
     {
         if (! me->update_condition())
         return 1;
-        message_vision ("$Nºì¹âÂúÃæµØÕ¾ÁËÆðÀ´£¬×ßµ½Èª±ß¡£\n",me);
+        message_vision ("$Nçº¢å…‰æ»¡é¢åœ°ç«™äº†èµ·æ¥ï¼Œèµ°åˆ°æ³‰è¾¹ã€‚\n",me);
         me->clear_condition();
         me->unconcious();
     }

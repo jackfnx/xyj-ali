@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 12/2/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ƫ��");
+  set ("short", "偏堂");
   set ("long", @LONG
 
-ƫ���������ಣ���Ѩ�յ����ұ�Ȯ��������ʯ������������
-�ż�С�������������Ѭ�ˡ�����ͨ�����ã���������һɽ
-��ͨ���⡣
+偏堂里阴风嗖嗖，洞穴空荡，岩壁犬牙交错乱石丛生。堂里生
+着几小堆篝火，烟气层层熏人。东边通向中堂，西北面有一山
+门通向洞外。
 
 LONG);
 

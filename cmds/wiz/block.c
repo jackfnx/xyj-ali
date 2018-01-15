@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // block.c
@@ -12,32 +12,32 @@ int main(object me, string arg)
    object obj;
    string option, target;
 
-   if( !arg) return notify_fail("ÄãÒª¹Øµô£¯»ò´ò¿ªË­µÄÆµµÀ£¿\n");
+   if( !arg) return notify_fail("ä½ è¦å…³æ‰ï¼æˆ–æ‰“å¼€è°çš„é¢‘é“ï¼Ÿ\n");
 
         if( sscanf(arg, "%s %s", option, target)!=2 ) target = arg;
    if ( option != "-s" && option != "-u" ) target = arg;
 
    obj = find_player(target);
-        if(!obj) return notify_fail("Ã»ÓĞÕâ¸öÈË£®£®£®\n");
+        if(!obj) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººï¼ï¼ï¼\n");
 
    if(option=="-s") {  // say, tell, reply, emote and whisper
-     if( wizardp(obj)) return notify_fail("ÓĞ±ØÒªÂğ£¿\n");
+     if( wizardp(obj)) return notify_fail("æœ‰å¿…è¦å—ï¼Ÿ\n");
      obj->set("channel/tell_block",time()+86400);
-     tell_object(obj, "ÄãµÄ½»Ì¸ÆµµÀ±»ÔİÊ±¹Ø±ÕÁË£¡\n");
-     write( "Ê¹ÓÃÕß" + obj->query("name") + "µÄ½»Ì¸ÆµµÀ±»¹Ø±ÕÁË£¡\n");
+     tell_object(obj, "ä½ çš„äº¤è°ˆé¢‘é“è¢«æš‚æ—¶å…³é—­äº†ï¼\n");
+     write( "ä½¿ç”¨è€…" + obj->query("name") + "çš„äº¤è°ˆé¢‘é“è¢«å…³é—­äº†ï¼\n");
      
         } else if(option=="-u") { // open channel
           obj->delete("channel/tell_block");
           obj->delete("channel/chat_block");
-     tell_object(obj, "ÄãµÄÆµµÀ±»´ò¿ªÁË£¡\n");
-     write( "Ê¹ÓÃÕß" + obj->query("name") + "µÄÆµµÀ±»´ò¿ªÁË£¡\n");
+     tell_object(obj, "ä½ çš„é¢‘é“è¢«æ‰“å¼€äº†ï¼\n");
+     write( "ä½¿ç”¨è€…" + obj->query("name") + "çš„é¢‘é“è¢«æ‰“å¼€äº†ï¼\n");
 
    } else {  // chat and rumor
      // block chat and rumor for 24 hours. (24*3600 sec).
-     if( wizardp(obj)) return notify_fail("ÓĞ±ØÒªÂğ£¿\n");
+     if( wizardp(obj)) return notify_fail("æœ‰å¿…è¦å—ï¼Ÿ\n");
           obj->set("channel/chat_block",time()+86400);
-     tell_object(obj, "ÄãµÄ¹«ÓÃÆµµÀ±»ÔİÊ±¹Ø±ÕÁË£¡\n");
-     write( "Ê¹ÓÃÕß" + obj->query("name") + "µÄ¹«ÓÃÆµµÀ±»¹Ø±ÕÁË£¡\n");   
+     tell_object(obj, "ä½ çš„å…¬ç”¨é¢‘é“è¢«æš‚æ—¶å…³é—­äº†ï¼\n");
+     write( "ä½¿ç”¨è€…" + obj->query("name") + "çš„å…¬ç”¨é¢‘é“è¢«å…³é—­äº†ï¼\n");   
         }
 
    return 1;
@@ -47,9 +47,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£º block <Ä³ÈË>     ÔİÊ±¹ØµôÄ³ÈËµÄchatºÍrumorÆµµÀ¡£
-           block -s <Ä³ÈË>  ÔİÊ±¹ØµôÄ³ÈËµÄsay£¬reply£¬emote£¬tellºÍwhisper¡£
-           block -u <Ä³ÈË>  »Ö¸´Ä³ÈËµÄËùÓĞÍ¨µÀ¡£
+æŒ‡ä»¤æ ¼å¼ï¼š block <æŸäºº>     æš‚æ—¶å…³æ‰æŸäººçš„chatå’Œrumoré¢‘é“ã€‚
+           block -s <æŸäºº>  æš‚æ—¶å…³æ‰æŸäººçš„sayï¼Œreplyï¼Œemoteï¼Œtellå’Œwhisperã€‚
+           block -u <æŸäºº>  æ¢å¤æŸäººçš„æ‰€æœ‰é€šé“ã€‚
 
 HELP
    );

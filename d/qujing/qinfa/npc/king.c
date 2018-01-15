@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -9,10 +9,10 @@ int test_player (object who);
 
 void create()
 {
-  set_name("¹úÍõ", ({"guo wang", "wang", "king"}));
-  set("long", "ÇÕ·¨¹ú¹úÍõ£¬ÉíÅûÁúÅÛ£¬ÉñÌ¬×¯ÑÏ¡£\n");
-  set("title", "ÇÕ·¨¹ú");
-  set("gender", "ÄĞĞÔ");
+  set_name("å›½ç‹", ({"guo wang", "wang", "king"}));
+  set("long", "é’¦æ³•å›½å›½ç‹ï¼Œèº«æŠ«é¾™è¢ï¼Œç¥æ€åº„ä¸¥ã€‚\n");
+  set("title", "é’¦æ³•å›½");
+  set("gender", "ç”·æ€§");
   set("age", 50);
   set("per", 25);
   set("attitude", "peaceful");
@@ -32,12 +32,12 @@ void create()
   set("inquiry", ([
     "buddhism" : (: test_player :),
     "monk" : (: test_player :),
-    "·ğ"   : (: test_player :),
-    "·ğ½Ì" : (: test_player :),
-    "ºÍÉĞ" : (: test_player :),
-    "°İ·ğ" : (: test_player :),
-    "Èë·ğ" : (: test_player :),
-    "Èë·ğÃÅ" : (: test_player :),
+    "ä½›"   : (: test_player :),
+    "ä½›æ•™" : (: test_player :),
+    "å’Œå°š" : (: test_player :),
+    "æ‹œä½›" : (: test_player :),
+    "å…¥ä½›" : (: test_player :),
+    "å…¥ä½›é—¨" : (: test_player :),
   ]));
   set("can_sleep",1);
   setup();
@@ -48,7 +48,7 @@ void check_hair ()
 {
   object me = this_object();
 
-  if (me->query("disable_type") == "<Ë¯ÃÎÖĞ>" &&
+  if (me->query("disable_type") == "<ç¡æ¢¦ä¸­>" &&
       me->query_temp("disabled"))
   {
     call_out("check_hair",1);
@@ -58,8 +58,8 @@ void check_hair ()
   if (me->query_temp("has_said"))
     return;
 
-  message_vision ("$NÍ»È»ÏÂÒâÊ¶µØÃşÁËÃşÍ·£ºÌìÄÅ£¬ÄÔ´üÈ«Ìê¹âÁË£¡\n",me);
-  message_vision ("$NÒ»ÕóÑ£ÔÎ£¬²îµãË¤µ¹ÔÚµØ£¡\n",me);
+  message_vision ("$Nçªç„¶ä¸‹æ„è¯†åœ°æ‘¸äº†æ‘¸å¤´ï¼šå¤©å‘ï¼Œè„‘è¢‹å…¨å‰ƒå…‰äº†ï¼\n",me);
+  message_vision ("$Nä¸€é˜µçœ©æ™•ï¼Œå·®ç‚¹æ‘”å€’åœ¨åœ°ï¼\n",me);
   me->set_temp("has_said",1);
 }
 
@@ -69,18 +69,18 @@ int accept_object (object who, object ob)
 
   if (ob->query("id") != "jingang")
   {
-    message_vision ("$NËµµÀ£ºÊ²Ã´ÍæÒâ£¬ëŞ½­É½ÒÑÓĞ£¬ÆñÈ±´ËÀÃ»õ£¡\n",me);
+    message_vision ("$Nè¯´é“ï¼šä»€ä¹ˆç©æ„ï¼Œæœ•æ±Ÿå±±å·²æœ‰ï¼Œå²‚ç¼ºæ­¤çƒ‚è´§ï¼\n",me);
     return 0;
   }
   if (! query_temp("has_said"))
   {
-    message_vision ("$NËµµÀ£ºÕıºÃ£¬ëŞÒªÉ±¾¡Ò»ÍòºÍÉĞ£¡\n",me);
+    message_vision ("$Nè¯´é“ï¼šæ­£å¥½ï¼Œæœ•è¦æ€å°½ä¸€ä¸‡å’Œå°šï¼\n",me);
     me->kill_ob(who);
     return 1;
   }
   if (who->query_temp("obstacle/qinfa_cut_times")<4)
   {
-    message_vision ("$NËµµÀ£ºÄã¸ö³ô·ğ¶ù£¡ëŞÒªÉ±¾¡Ò»ÍòºÍÉĞ£¡\n",me);
+    message_vision ("$Nè¯´é“ï¼šä½ ä¸ªè‡­ä½›å„¿ï¼æœ•è¦æ€å°½ä¸€ä¸‡å’Œå°šï¼\n",me);
     me->kill_ob(who);
     return 1;
   }
@@ -98,16 +98,16 @@ void reading ()
 
   if (! living (me))
   {
-    message_vision ("$N·­ÁË·­°×ÑÛ¡£\n",me);  
+    message_vision ("$Nç¿»äº†ç¿»ç™½çœ¼ã€‚\n",me);  
     return;
   }
   if (! book)
   {
-    message_vision ("$N³ÁË¼Æ¬¿Ì¡£\n",me);  
+    message_vision ("$Næ²‰æ€ç‰‡åˆ»ã€‚\n",me);  
     return;
   }
 
-  message_vision ("$NÅõÆğ"+book+"£¬¾Û¾«»áÉñµØ¶ÁÁËÆğÀ´¡£\n",
+  message_vision ("$Næ§èµ·"+book+"ï¼Œèšç²¾ä¼šç¥åœ°è¯»äº†èµ·æ¥ã€‚\n",
                   me);  
   me->set_temp("can_believe",1);
   if (random(4))
@@ -123,25 +123,25 @@ int test_player (object who)
   who = this_player();
   if (! me->query_temp("can_believe")) 
   {
-    message_vision ("$NËµµÀ£ºëŞÒªÉ±¾¡Ò»ÍòºÍÉĞ£¡\n",me);
+    message_vision ("$Nè¯´é“ï¼šæœ•è¦æ€å°½ä¸€ä¸‡å’Œå°šï¼\n",me);
     return 1;
   }    
   if (who->query("combat_exp") < 10000)
   {
-    message_vision ("$NËµµÀ£ºÄã£¬µÀĞĞ²»×ã£¬Æñ¿É¶à×ì£¡\n",me);
+    message_vision ("$Nè¯´é“ï¼šä½ ï¼Œé“è¡Œä¸è¶³ï¼Œå²‚å¯å¤šå˜´ï¼\n",me);
     return 1;
   }    
   if (who->query_temp("obstacle/qinfa_cut_times")<4)
   {
-    message_vision ("$NËµµÀ£ºëŞÔø±»É®Ëù°ùÒ²¡£\n",me);
+    message_vision ("$Nè¯´é“ï¼šæœ•æ›¾è¢«åƒ§æ‰€è°¤ä¹Ÿã€‚\n",me);
     return 1;
   }    
   if (who->query("obstacle/qinfa") == "done")
   {
-    message_vision ("$NËµµÀ£º¾ÃÑö¾ÃÑö£¡\n",me);
+    message_vision ("$Nè¯´é“ï¼šä¹…ä»°ä¹…ä»°ï¼\n",me);
     return 1;
   }    
-  message_vision ("$N³ÁÄ¬¼¸Ğí£¬µãÁËÒ»ÏÂÍ·¡£\n\n",me);
+  message_vision ("$Næ²‰é»˜å‡ è®¸ï¼Œç‚¹äº†ä¸€ä¸‹å¤´ã€‚\n\n",me);
   remove_call_out ("saying1");
   call_out ("saying1",3,who);  
   return 1;
@@ -150,7 +150,7 @@ int test_player (object who)
 void saying1 (object who)
 {
   object me = this_object();
-  message_vision ("$NËµµÀ£ºëŞÔøÒòÉ®°ùÁËëŞ£¬ĞíÌìÔ¸ÒªÉ±Ò»ÍòºÍÉĞ×öÔ²Âú¡£\n\n",me);
+  message_vision ("$Nè¯´é“ï¼šæœ•æ›¾å› åƒ§è°¤äº†æœ•ï¼Œè®¸å¤©æ„¿è¦æ€ä¸€ä¸‡å’Œå°šåšåœ†æ»¡ã€‚\n\n",me);
   remove_call_out ("saying2");
   call_out ("saying2",3,who);  
 }
@@ -158,7 +158,7 @@ void saying1 (object who)
 void saying2 (object who)
 {
   object me = this_object();
-  message_vision ("$NËµµÀ£º²»ÆÚ½ñÒ¹¹éÒÀ£¬½ÌëŞµÈÎªÉ®¡£\n\n",me);
+  message_vision ("$Nè¯´é“ï¼šä¸æœŸä»Šå¤œå½’ä¾ï¼Œæ•™æœ•ç­‰ä¸ºåƒ§ã€‚\n\n",me);
   remove_call_out ("saying3");
   call_out ("saying3",5,who);  
 }
@@ -166,7 +166,7 @@ void saying2 (object who)
 void saying3 (object who)
 {
   object me = this_object();
-  message_vision ("$NËµµÀ£ºÈç½ñ·¢¶¼ÌêÂäÁË£¬ëŞÔ¸Èë·ğÃÅ¡£\n\n",me);
+  message_vision ("$Nè¯´é“ï¼šå¦‚ä»Šå‘éƒ½å‰ƒè½äº†ï¼Œæœ•æ„¿å…¥ä½›é—¨ã€‚\n\n",me);
   remove_call_out ("saying4");
   call_out ("saying4",5,who);  
 }
@@ -174,7 +174,7 @@ void saying3 (object who)
 void saying4 (object who)
 {
   object me = this_object();
-  message_vision ("$NÓÖËµµÀ£º´ËÄËÌìÒâÒ²¡£\n\n",me);
+  message_vision ("$Nåˆè¯´é“ï¼šæ­¤ä¹ƒå¤©æ„ä¹Ÿã€‚\n\n",me);
   remove_call_out ("announce_success");
   call_out ("announce_success",5,who);  
 }
@@ -191,10 +191,10 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/qinfa","done");
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"Ãğ·¨¹úÈ°ëŞ¹éÒÀ·ğÃÅ£¬ëŞ¸Ä¹úºÅÎªÇÕ·¨¹ú£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ıÎ÷ĞĞÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀĞĞ£¡\n");
+  command("chat "+who->query("name")+"ç­æ³•å›½åŠæœ•å½’ä¾ä½›é—¨ï¼Œæœ•æ”¹å›½å·ä¸ºé’¦æ³•å›½ï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }

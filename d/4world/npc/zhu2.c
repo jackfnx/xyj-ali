@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,9 +6,9 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("ÖñĞ¡µÜ", ({"bamboo kid", "kid"}));
-       set("long", "ËûÊÇÖñÀÏ´ó¼ñÀ´Ñø´óµÄ£¬ÈËÈË¶¼½ĞËûĞ¡µÜ¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("ç«¹å°å¼Ÿ", ({"bamboo kid", "kid"}));
+       set("long", "ä»–æ˜¯ç«¹è€å¤§æ¡æ¥å…»å¤§çš„ï¼Œäººäººéƒ½å«ä»–å°å¼Ÿã€‚\n");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 2000);
    set("per", 18);
        set("age", 16);

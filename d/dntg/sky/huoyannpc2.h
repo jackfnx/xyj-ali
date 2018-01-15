@@ -37,7 +37,7 @@ void die()
    if (!ob->query("huoyan/tianwang_killed")) ob->set("huoyan/tianwang_killed",0);
    ob->add("huoyan/tianwang_killed", 1);
    if (me->query("id")=="xusheng zhenjun")return ::die();
-   message_vision("$NÏÅµÃ²Ö»ÊÌÓ×ßÁË£¡\n",me);
+   message_vision("$Nå“å¾—ä»“çš‡é€ƒèµ°äº†ï¼\n",me);
    destruct(me);
    return;
 }

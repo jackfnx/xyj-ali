@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // ghost.c
@@ -7,7 +7,7 @@ inherit NPC;
 
 void create()
 {
-   set_name("¹Â»êÒ°¹í", ({ "wandering ghost", "ghost" }) );
+   set_name("å­¤é­‚é‡é¬¼", ({ "wandering ghost", "ghost" }) );
    set("age", 45);
    
    set("str", 24);

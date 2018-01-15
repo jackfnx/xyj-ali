@@ -1,7 +1,7 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// �׷���, bookseller.
+// 孔方兄, bookseller.
 // 5-3-97, pickle
 
 inherit NPC;
@@ -9,18 +9,18 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("�׷���", ({ "kong fang", "kongfang", "kong", "fang", "bookseller", "seller", "vendor" }) );
-  set("gender", "����" );
+  set_name("孔方兄", ({ "kong fang", "kongfang", "kong", "fang", "bookseller", "seller", "vendor" }) );
+  set("gender", "男性" );
   set("age", 37);
-  set("title", "����ϰ�");
-  set("long","������뾩�Ͽ���ڣ��̲��þ����޷����磬\n�������ڳ�����һ����ꡣ��˵���������ˣ�\nѧ��һЩ����֮����\n");
+  set("title", "书店老板");
+  set("long","孔秀才入京赶考落第，盘缠用尽，无法还乡，\n不得已在长安开一家书店。传说他曾遇异人，\n学得一些防身之术。\n");
   set("combat_exp", 40000);
   set_skill("dodge", 50);
   set_skill("parry", 50);
   set_skill("unarmed", 50);
   set_skill("literate", 70);
   set("attitude", "friendly");
-  set("rank_info/respect", "�����");
+  set("rank_info/respect", "孔秀才");
   set("per",25);
   set("vendor_goods", ([
 //    "xiji": "/d/obj/books-nonskill/xiji",
@@ -49,7 +49,7 @@ void init()
 void greeting(object ob)
 {
   if( !ob || !visible(ob) || environment(ob) != environment() ) return;
-  command("say ��λ" + RANK_D->query_respect(ob) +"��������");
+  command("say 这位" + RANK_D->query_respect(ob) +"请进请进。");
 }
 
 mixed buy_object (object who, object item)
@@ -68,13 +68,13 @@ mixed buy_object (object who, object item)
      }
    else
      {
-       return notify_fail(name()+"˵�����Բ�������Ҫ���������ˣ�������һ�������ɡ�\n");
+       return notify_fail(name()+"说道：对不起，您老要的书卖完了！您等下一批进货吧。\n");
      }
    //npc->add_temp("total_books", 1);
       }
       else
       {
-   return notify_fail(name()+"˵����С�걾С�������Խ���������ˡ����ϵ���һ���ɡ�\n");
+   return notify_fail(name()+"说道：小店本小，今日以将存货卖完了。您老等下一批吧。\n");
       }
 }
 
@@ -91,7 +91,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\n��Ȼ������������Ѳ�߹ٱ�����$N��һ������ʲô����ɱ��ı��ô��\n\n",me);        
+        message_vision("\n忽然从门外冲进来个巡逻官兵，对$N大喊一声“干什么？想杀人谋财么！\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

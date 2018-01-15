@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // reply.c
@@ -19,26 +19,26 @@ int main(object me, string arg)
         if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    if( !arg || arg=="" )
-     return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦å›ç­”ä»€ä¹ˆï¼Ÿ\n");
 
    if( !stringp(target = me->query_temp("reply")) )
-     return notify_fail("¸Õ²ÅÃ»ÓĞÈËºÍÄãËµ¹ı»°¡£\n");
+     return notify_fail("åˆšæ‰æ²¡æœ‰äººå’Œä½ è¯´è¿‡è¯ã€‚\n");
 
    if( sscanf(target, "%s@%s", target, mud)==2 ) {
      GTELL->send_gtell(lower_case(mud), lower_case(target), me, arg);
-     write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n");
+     write("ç½‘è·¯è®¯æ¯å·²é€å‡ºï¼Œå¯èƒ½è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›åº”ã€‚\n");
      return 1;
    }
 
    obj = find_player(target);
    if( !obj ) return notify_fail(
-     "¸Õ²ÅºÍÄãËµ»°µÄÈËÏÖÔÚÎŞ·¨Ìı¼ûÄã£¬»òÕßÒÑ¾­Àë¿ªÓÎÏ·ÁË¡£\n");
+     "åˆšæ‰å’Œä½ è¯´è¯çš„äººç°åœ¨æ— æ³•å¬è§ä½ ï¼Œæˆ–è€…å·²ç»ç¦»å¼€æ¸¸æˆäº†ã€‚\n");
      
    if(!living(obj) || obj->query_temp("netdead")) 
-     return notify_fail(obj->name(1)+"ÏÖÔÚÌı²»¼ûÄãËµµÄ»°¡£\n");
+     return notify_fail(obj->name(1)+"ç°åœ¨å¬ä¸è§ä½ è¯´çš„è¯ã€‚\n");
        
-   write(GRN "Äã»Ø´ğ" + obj->name(1) + "£º" + arg + "\n" NOR);
-   tell_object(obj, sprintf(GRN"%s»Ø´ğÄã£º%s\n"NOR,
+   write(GRN "ä½ å›ç­”" + obj->name(1) + "ï¼š" + arg + "\n" NOR);
+   tell_object(obj, sprintf(GRN"%så›ç­”ä½ ï¼š%s\n"NOR,
      me->name(1), arg ));
 
    obj->set_temp("reply", me->query("id"));
@@ -48,9 +48,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£ºreply|huida <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼šreply|huida <è®¯æ¯>
 
-Äã¿ÉÒÔÓÃÕâ¸öÖ¸ÁîºÍ¸Õ²ÅÓÃ tell ºÍÄãËµ»°µÄÊ¹ÓÃÕßËµ»°¡£
+ä½ å¯ä»¥ç”¨è¿™ä¸ªæŒ‡ä»¤å’Œåˆšæ‰ç”¨ tell å’Œä½ è¯´è¯çš„ä½¿ç”¨è€…è¯´è¯ã€‚
 
 see also : tell
 HELP

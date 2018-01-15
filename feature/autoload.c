@@ -42,7 +42,7 @@ void restore_autoload()
         if ( err || !ob ||
                 (file[0..2]=="/u/"&&!wizardp(this_object())) ) {
             //mon 1/20/98
-            write("������ƺ�ʧ����ʲô��Ҫ�Ķ��������֪ͨһ����ʦ��\n");
+            write("你觉得似乎失落了什么重要的东西，最好通知一下巫师。\n");
             log_file("AUTOLOAD", sprintf(
                         "Fail to autoload %s of %s, error %s on %s\n",
                         file, this_object()->query("id"), err, ctime(time())));

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hexiangu.c...weiqi, 98.02.24.
@@ -6,12 +6,12 @@
 inherit NPC;
 void create()
 {
-    set_name("ºÎÏÉ¹Ã", ({"he xiangu", "he", "xiangu"}));
-    set("title", "°ËÏÉÖ®");
-    set("gender", "Å®ĞÔ" );
+    set_name("ä½•ä»™å§‘", ({"he xiangu", "he", "xiangu"}));
+    set("title", "å…«ä»™ä¹‹");
+    set("gender", "å¥³æ€§" );
     set("age", 25);
     set("per", 20);
-    set("long", "ºÎÏÉ¹ÃÊÇ°ËÏÉÖĞÎ¨Ò»µÄÅ®ĞÔ£¬°ËÏÉÖĞÆäËûÈË¶¼ºÜÕÕ¹ËËı¡£\n");
+    set("long", "ä½•ä»™å§‘æ˜¯å…«ä»™ä¸­å”¯ä¸€çš„å¥³æ€§ï¼Œå…«ä»™ä¸­å…¶ä»–äººéƒ½å¾ˆç…§é¡¾å¥¹ã€‚\n");
     set("class", "xian");
     set("combat_exp", 120000);
     set("attitude", "peaceful");

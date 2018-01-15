@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ì«Æ½ÊÀ½ç",({"star taiping","taiping","star"}));
-  set("gender", "ÄĞĞÔ");
-  set("title", "»şË®ĞÇ¹Ù");
+  set_name("å¤ªå¹³ä¸–ç•Œ",({"star taiping","taiping","star"}));
+  set("gender", "ç”·æ€§");
+  set("title", "ç®•æ°´æ˜Ÿå®˜");
   set("age", 53);
-  set("long", "    \n·½´çÉ½ÈıĞÇ¶´µÚÈı´úµÜ×Ó  Ì«Æ½ÊÀ½ç(Taiping)\n");
+  set("long", "    \næ–¹å¯¸å±±ä¸‰æ˜Ÿæ´ç¬¬ä¸‰ä»£å¼Ÿå­  å¤ªå¹³ä¸–ç•Œ(Taiping)\n");
 
   set("attitude", "heroism");
   set("class", "taoist");
@@ -41,9 +41,9 @@ void init()
   string armor1_id="ring",armor2_id="shoes";
   ::init();
   if (my_weapon=present(weapon_id, me))
-       my_weapon->set("name",HIY"Ì«Æ½½ğÕë"NOR);
+       my_weapon->set("name",HIY"å¤ªå¹³é‡‘é’ˆ"NOR);
   if (my_armor1=present(armor1_id, me))
-       my_armor1->set("name",HIY"Ì«Æ½ÊÖ±í"NOR);
+       my_armor1->set("name",HIY"å¤ªå¹³æ‰‹è¡¨"NOR);
   if (my_armor2=present(armor2_id, me))
-       my_armor2->set("name",HIY"Ì«Æ½·ÉÑ¥"NOR);
+       my_armor2->set("name",HIY"å¤ªå¹³é£é´"NOR);
 }

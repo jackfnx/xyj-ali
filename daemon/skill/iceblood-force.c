@@ -1,8 +1,8 @@
 
-// iceblood-force.c  ¡¾±ù¹ÈÄıÑª¹¦¡¿
+// iceblood-force.c  ã€å†°è°·å‡è¡€åŠŸã€‘
 inherit FORCE;
 
-string name() { return "±ù¹ÈÄıÑª¹¦"; }
+string name() { return "å†°è°·å‡è¡€åŠŸ"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 

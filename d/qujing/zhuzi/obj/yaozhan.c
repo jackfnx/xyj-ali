@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/22/1997
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÒøÒ©Õµ", ({ "yin yaozhan","yaozhan","zhan"}) );
+  set_name("é“¶è¯ç›", ({ "yin yaozhan","yaozhan","zhan"}) );
   set_weight(500);
   set_max_encumbrance(8000);
   set_max_items(5);
   if( clonep() ){
     set_default_object(__FILE__);
   }  else {
-    set("unit", "Ö»");
-    set("long", "ÕâÊÇÒ»Ö»ïÎ»¨ÒøÒ©Õµ¡£\n");
+    set("unit", "åª");
+    set("long", "è¿™æ˜¯ä¸€åªé•‚èŠ±é“¶è¯ç›ã€‚\n");
     set("value", 1000);
   }
 }
@@ -49,7 +49,7 @@ int do_fill (string arg)
   if (interactive(horse))
     return 0;
 
-  message_vision ("$N½«ÒøÒ©Õµ·ÅÔÚ$nµÄ¶ÇÆ¤µ×ÏÂ£¬½ÓÁË¼¸µÎÄòÖ­¡£\n",who,horse);
+  message_vision ("$Nå°†é“¶è¯ç›æ”¾åœ¨$nçš„è‚šçš®åº•ä¸‹ï¼Œæ¥äº†å‡ æ»´å°¿æ±ã€‚\n",who,horse);
   me->set_temp("has_liquid",1);
   return 1;
 }
@@ -59,7 +59,7 @@ int check_valid_drug (object yao, string name)
 {
   if (yao->query_temp("is_invalid"))
     return 0;
-  if ((name=="´ó»Æ" || name=="°Í¶¹" || name=="°×ÜÆ") &&
+  if ((name=="å¤§é»„" || name=="å·´è±†" || name=="ç™½èŠ·") &&
       (! yao->query_temp("mixture/"+name)))
   {
     yao->set_temp("mixture/"+name,1);
@@ -69,9 +69,9 @@ int check_valid_drug (object yao, string name)
     yao->set_temp("is_invalid",1);
     return 0;
   }
-  if (yao->query_temp("mixture/´ó»Æ") &&
-      yao->query_temp("mixture/°Í¶¹") &&
-      yao->query_temp("mixture/°×ÜÆ"))
+  if (yao->query_temp("mixture/å¤§é»„") &&
+      yao->query_temp("mixture/å·´è±†") &&
+      yao->query_temp("mixture/ç™½èŠ·"))
   {
     yao->set_temp("is_ready",1);
   }
@@ -92,32 +92,32 @@ void make_drug ()
   name1 = yao1->query("name");
   name2 = yao2->query("name");
   call_out ("display_message",1,who);
-  yao1->set("name","Ò©");
+  yao1->set("name","è¯");
   call_out("destruct_drug",1,yao1);
   if (! me->query_temp("has_liquid"))
   {
     yao2->set_temp("is_invalid",1);
-    yao2->set("name","Ò©");
-    yao2->set("unit","¼Á");
+    yao2->set("name","è¯");
+    yao2->set("unit","å‰‚");
     return;
   }
-  if (name1=="Ò©")
+  if (name1=="è¯")
   {
     yao2->set_temp("is_invalid",1);
-    yao2->set("name","Ò©");
-    yao2->set("unit","¼Á");
+    yao2->set("name","è¯");
+    yao2->set("unit","å‰‚");
     return;
   }
-  if (name2!="Ò©")
+  if (name2!="è¯")
     check_valid_drug (yao2,name2);
   check_valid_drug (yao2,name1);  
-  yao2->set("name","Ò©");
-  yao2->set("unit","¼Á");
+  yao2->set("name","è¯");
+  yao2->set("unit","å‰‚");
 }
 
 void display_message (object who)
 {
-  message_vision ("$N½«ÒøÒ©ÕµÀïµÄÒ©»ìºÏÔÚÒ»Æğ£¬½Á°è¾ùÔÈ¡£\n",who);
+  message_vision ("$Nå°†é“¶è¯ç›é‡Œçš„è¯æ··åˆåœ¨ä¸€èµ·ï¼Œæ…æ‹Œå‡åŒ€ã€‚\n",who);
 }
 
 void destruct_drug (object yao)

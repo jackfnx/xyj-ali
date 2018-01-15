@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-    set_name("Áú±íµÜ", ({"long biaodi", "long", "biaodi"}));
+    set_name("é¾™è¡¨å¼Ÿ", ({"long biaodi", "long", "biaodi"}));
 
-    set("long","ÁúÉÙÒ¯µÄ±íµÜºÍËÀµ³£®\n");
-    set("gender", "ÄĞĞÔ");
+    set("long","é¾™å°‘çˆ·çš„è¡¨å¼Ÿå’Œæ­»å…šï¼\n");
+    set("gender", "ç”·æ€§");
     set("age", 16);
     set("per", 15);
     set("attitude", "peaceful");

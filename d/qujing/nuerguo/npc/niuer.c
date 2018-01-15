@@ -1,9 +1,9 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat.c 4/4/1997
 // niuer.c
-#define NAME "ţ������"
+#define NAME "牛二先生"
 
 inherit NPC;
 
@@ -13,10 +13,10 @@ int is_empty;
 void create()
 {
   set_name(NAME, ({"niuer","xiansheng","daoshi"}));
-  set("gender", "����" );
+  set("gender", "男性" );
   set("age", 53);
-  set("title", "��������");
-  set("long", "ţ��������ţħ���ĵܵܡ�������һ��ϲ�����˽���\nţ����������ϲ������������������");
+  set("title", "如意真仙");
+  set("long", "牛二先生是牛魔王的弟弟。不过他一向不喜欢别人叫他\n牛二先生，而喜欢被叫作如意先生。");
   set("class","taoist");
   set("combat_exp", 500000);
   set("attitude", "peaceful");
@@ -31,9 +31,9 @@ void create()
   set("force", 500);
   set("max_force", 500);
   set("inquiry", ([
-        "name": "����ţħ���ĵܵܣ����˽�������������\n",
-        "��������": "���⣬���⣬����ʱ�򳣳���һЩ���Ӳ������ë����\n",
-        "����": "�����ͣ����Ӵ󣬶���ʹ�Ҷ�������һ�ԡ�\n",
+        "name": "我是牛魔王的弟弟，别人叫我如意先生。\n",
+        "如意先生": "如意，如意，我有时候常常治一些肚子不舒服的毛病。\n",
+        "肚子": "肚子胀，肚子大，肚子痛我都可以试一试。\n",
       ]));
   setup();
   carry_object("/d/obj/cloth/taijicloth")->wear();
@@ -69,7 +69,7 @@ void return_object (object who, object ob, string id, int amount)
     if (ob)
     {
       ob->move(who);
-      tell_object(who,NAME+"��һЩ"+ob->query("name")+"�����㡣\n");
+      tell_object(who,NAME+"将一些"+ob->query("name")+"还给你。\n");
     }
   }
   else
@@ -81,7 +81,7 @@ int accept_object (object who, object ob)
   object queen;
   string msg, id;
   int amount;
-  msg = NAME+"���ֵ�����λ"+RANK_D->query_respect(who);
+  msg = NAME+"拱手道：这位"+RANK_D->query_respect(who);
 
   amount = ob->value(); 
   id = ob->query("money_id");
@@ -89,7 +89,7 @@ int accept_object (object who, object ob)
   {
     id = ob->query("id");
     amount = 1;
-    say(msg+"���������л��л�����ز�������\n");
+    say(msg+"真客气。多谢多谢，不必不必啦。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }
@@ -99,53 +99,53 @@ int accept_object (object who, object ob)
     queen = new (__DIR__"queen");
     queen->refuse_player (who);
     destruct (queen);
-    say(msg+"���ȡ���˵��Ҳ�ǡ�\n");
+    say(msg+"，咳……说的也是。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }  
 
   if (who->query("obstacle/nuerguo") == "marriage")
   {
-    say(msg+"������ȥ�������ɡ�\n");
+    say(msg+"还是先去见公主吧。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }  
 
   if (who->query("obstacle/nuerguo") == "company")
   {
-    say(msg+"������ȥ�������ɡ�\n");
+    say(msg+"还是先去见公主吧。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }  
 
   if (who->query("obstacle/nuerguo") != "stomachache")
   {
-    say(msg+"����ûʲôë����\n");
+    say(msg+"看来没什么毛病。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }
   
   if ( ob->value() < 30000) 
   {
-    say(msg+"���ȡ�������������ǲ��װɡ�\n");
+    say(msg+"，咳……这个……怕是不妥吧。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }  
 
   if (is_busy)
   {
-    say(msg+"����Բ����Ҳ�����æ���β���\n");
+    say(msg+"，真对不起，我不正在忙着治病吗？\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }  
   if (is_empty)
   {
-    say(msg+"���Բ����β���Ȫˮ�����ˣ���һ��������ɡ�\n");
+    say(msg+"，对不起，治病的泉水用完了，等一会儿再来吧。\n");
     call_out ("return_object",1,who,ob,id,amount);
     return 1;
   }  
 
-  say(msg+"����̫�����ˣ�����͸����β���\n");
+  say(msg+"真是太客气了，我这就给您治病。\n");
   is_busy = 1;
   is_empty = 1;
   call_out("get_water",1,who);
@@ -163,7 +163,7 @@ void get_water (object who)
 {
   if (who)
   {
-    say ("\n"+NAME+"�����Ƶ��߹�ȥ��֨֨�¸µ�ҡ��һͰȪˮ��\n\n");
+    say ("\n"+NAME+"慢悠悠地走过去，吱吱嘎嘎地摇上一桶泉水。\n\n");
     call_out("pour_water",1,who);
   }
 }
@@ -172,8 +172,8 @@ void pour_water (object who)
 {
   if (who)
   {
-    say (NAME+"����һֻ��ҩ�ѣ����������дʡ�\n");
-    say ("ֻ������һ��Ͱˮ��Ȼȫ��������Сҩ���\n\n");
+    say (NAME+"拿起一只金药盅，口中念念有词。\n");
+    say ("只见满满一大桶水居然全部都倒进小药盅里！\n\n");
     call_out("feed_water",1,who);
     call_out("feed_water",2,who);
     call_out("feed_water",3,who);
@@ -184,8 +184,8 @@ void feed_water (object who)
 {
   if (who)
   {
-    message_vision (NAME+"�����ҩ�ѣ���Ȫˮ�������$N�����\n",who);
-    message_vision ("һ����������$N�����ڣ�$N�Ķ����ﶯ��һ�¡�\n",who);
+    message_vision (NAME+"捧起金药盅，将泉水慢慢灌进$N的嘴里。\n",who);
+    message_vision ("一股凉意流进$N的体内，$N的肚子里动了一下。\n",who);
   }
 }
 
@@ -198,12 +198,12 @@ void heal_stomach (object who)
 
   if (random(10)==0)
   {
-    message_vision ("\n$N�Ϳ��˼��£�����Ǻ��һЩ����ɫ��ˮ��\n",who);
+    message_vision ("\n$N猛咳了几下，嘴里呛出一些淡黄色的水！\n",who);
     res = 1;
   }
   else
   {
-    message_vision ("\n$N�����������죬��ȳ�ʲô����ʲô��û�ȳ�����\n",who);
+    message_vision ("\n$N奋力张了张嘴，想咳出什么，可什么都没咳出来。\n",who);
     res = 0;
   }
   call_out("check_result",1,who,res);
@@ -218,14 +218,14 @@ void check_result (object who, int res)
 
   if (res)
   {
-    say (NAME+"����¶����΢Ц��������ҩ�Լ��ѣ��κ��ˡ�\n");
+    say (NAME+"脸上露出了微笑：看样子药性极佳，治好了。\n");
     queen = new (__DIR__"queen");
-    queen->announce_success (who,"�κ��˸�ˮ��");
+    queen->announce_success (who,"治好了腹水孕");
     destruct (queen);
   }
   else
   {
-    say (NAME+"̾��һ�������ţ�û���κã�����������һ�Ρ�\n");
+    say (NAME+"叹了一口气：嗯，没有治好，还得再来看一次。\n");
   }
   who->interrupt_me();
 }

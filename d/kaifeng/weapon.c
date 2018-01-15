@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -7,25 +7,25 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "兵器库");
   set ("long", @LONG
 
-��������һ�Ż��̴ľ���Ϸ��Ÿ��ָ����ı�׼�����������
-������������ʦ��ȡ���ֵı�������ʦ�ɴ�̴ľ��������(take)
-�����ַ����μӴ������֡������Ϸ��У�
-  ��師��    axe
-  �ֵ���      blade
-  �ֲ棺      fork
-  ��ͭﵣ�    mace
-  �ְң�      rake
-  ��ǹ��      spear
-  ���ȣ�      staff
-  ��������    stick
-  ������      sword
-  ���ʯ��    throwing
-  Ƥ�ޣ�      whip
-  ذ�ף�      dagger
-  ������      hammer
+兵器库里一排绘金檀木架上放着各种各样的标准兵器，比武的
+人来这里向巫师领取称手的兵器。巫师可从檀木架子上拿(take)
+武器分发给参加大会的赛手。架子上放有：
+  大板斧：    axe
+  钢刀：      blade
+  钢叉：      fork
+  熟铜锏：    mace
+  钢耙：      rake
+  长枪：      spear
+  禅杖：      staff
+  镔铁棍：    stick
+  长剑：      sword
+  飞璜石：    throwing
+  皮鞭：      whip
+  匕首：      dagger
+  铁锤：      hammer
 
 LONG);
 
@@ -48,10 +48,10 @@ int do_take (string arg)
   object ob;
 
   if (! wizardp(who))
-    return notify_fail ("�Բ���������ʦ�������ö�����\n");
+    return notify_fail ("对不起，请让巫师替您来拿东西。\n");
 
   if (! arg)
-    return notify_fail ("��Ҫ��ʲô��\n");
+    return notify_fail ("您要拿什么？\n");
   if (arg == "axe")
     ob = new ("/d/obj/weapon/standard/axe");    
   else if (arg == "blade")
@@ -79,8 +79,8 @@ int do_take (string arg)
   else if (arg == "whip")
     ob = new ("/d/obj/weapon/standard/whip");    
   else
-    return notify_fail ("��Ҫ��ʲô��\n");
-  message_vision ("$N�Ӽ���������$n��\n",who,ob);
+    return notify_fail ("您要拿什么？\n");
+  message_vision ("$N从架子上拿起$n。\n",who,ob);
   ob->move(who);
   return 1;
 }

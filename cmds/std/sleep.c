@@ -11,27 +11,27 @@ int main(object me, string arg)
 
     //mon 12/18/97, allow forced sleep by "keshui chong".
     if (!where->query("sleep_room") && !me->query_temp("force_sleep"))
-        return notify_fail("ÕâÀï²»ÊÇË¯¾õµÄµØ·½¡£\n");
+        return notify_fail("è¿™é‡Œä¸æ˜¯ç¡è§‰çš„åœ°æ–¹ã€‚\n");
     if (me->is_busy())
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
     if (me->is_fighting())
-        return notify_fail("Õ½¶·ÖĞ²»ÄÜË¯¾õ£¡\n");   
+        return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç¡è§‰ï¼\n");   
     if ((time() - me->query("last_sleep")) < 90)
-        return notify_fail("Äã¸ÕË¯¹ıÒ»¾õ, ÏÈ»î¶¯»î¶¯°É¡£\n");
+        return notify_fail("ä½ åˆšç¡è¿‡ä¸€è§‰, å…ˆæ´»åŠ¨æ´»åŠ¨å§ã€‚\n");
 
     if (where->query("if_bed")) {
-        write("ÄãÍù±»ÖĞÒ»×ê£¬¿ªÊ¼Ë¯¾õ¡£\n");
-        write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+        write("ä½ å¾€è¢«ä¸­ä¸€é’»ï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+        write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
         me->set("last_sleep",time());
         me->set_temp("block_msg/all",1);
-        message_vision(HIY "$NÍù±»ÖĞÒ»×ê£¬²»Ò»»á±ã÷ıÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n" NOR,me);
+        message_vision(HIY "$Nå¾€è¢«ä¸­ä¸€é’»ï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n" NOR,me);
     }
     else { 
-        write("Äã¾ÍµØÒ»ÌÉ£¬¿ªÊ¼Ë¯¾õ¡£\n");
-        write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+        write("ä½ å°±åœ°ä¸€èººï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+        write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
         me->set("last_sleep",time());
         me->set_temp("block_msg/all",1);
-        message_vision(HIY "$N¾ÍµØÒ»ÌÉ£¬²»Ò»»á±ã÷ıÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n" NOR,me);
+        message_vision(HIY "$Nå°±åœ°ä¸€èººï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n" NOR,me);
     }
 
     if (me->query_temp("ridee"))
@@ -39,7 +39,7 @@ int main(object me, string arg)
     me->set_temp("ridee",0);
     me->add_temp("apply/dodge", -me->query_temp("ride/dodge"));
     me->set_temp("ride/dodge", 0);
-    me->disable_player("<Ë¯ÃÎÖĞ>");
+    me->disable_player("<ç¡æ¢¦ä¸­>");
 
     call_out("wakeup", random(45 - me->query("con")) + 10, me, where);
     return 1;
@@ -64,18 +64,18 @@ void wakeup(object me,object where)
         me->move("/d/ourhome/honglou/kat");
     }
     else{
-        message_vision(HIY "$NÒ»¾õĞÑÀ´£¬¾«Á¦³äÅæµØ»î¶¯ÁËÒ»ÏÂ½î¹Ç¡£\n" NOR,me);
+        message_vision(HIY "$Nä¸€è§‰é†’æ¥ï¼Œç²¾åŠ›å……æ²›åœ°æ´»åŠ¨äº†ä¸€ä¸‹ç­‹éª¨ã€‚\n" NOR,me);
         me->set_temp("block_msg/all", 0);
-        write("ÄãÒ»¾õĞÑÀ´£¬Ö»¾õ¾«Á¦³äÅæ¡£¸Ã»î¶¯Ò»ÏÂÁË¡£\n");
+        write("ä½ ä¸€è§‰é†’æ¥ï¼Œåªè§‰ç²¾åŠ›å……æ²›ã€‚è¯¥æ´»åŠ¨ä¸€ä¸‹äº†ã€‚\n");
     }
 }
 
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : sleep
+æŒ‡ä»¤æ ¼å¼ : sleep
  
-¹ËÃûË¼Òå£¬Õâ¸öÖ¸ÁîÊÇÓÃÀ´Ë¯¾õµÄ¡£
+é¡¾åæ€ä¹‰ï¼Œè¿™ä¸ªæŒ‡ä»¤æ˜¯ç”¨æ¥ç¡è§‰çš„ã€‚
 HELP
     );
     return 1;

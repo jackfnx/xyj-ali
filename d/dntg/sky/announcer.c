@@ -1,13 +1,13 @@
 // sgzl
 #include <ansi.h>
-#define NAME "ÌìÅîÔªË§"
+#define NAME "å¤©è“¬å…ƒå¸…"
 
 inherit NPC;
 
 void create()
 {
     set_name(NAME, ({"tian peng yuan shuai"}));
-    set("male", "ÄÐÐÔ");
+    set("male", "ç”·æ€§");
     set("age", 23);
 
     setup();
@@ -26,9 +26,8 @@ void announce_success(object who)
   who->add("dntg/number", 1);
   who->set("dntg/donghai", "done");
   who->add("daoxing",i+3000);
-  command("chat ´óµ¨"+who->query("name")+"£¡Äã²»ºÃºÃ×÷ÄãµÄåöÂíÎÂ£¬È´µ½ÌìºÓÀ´µ·ÂÒ£¬»¹¸ÒµÃ×ïÉÏ¹Ù£¬Äã¸øÎÒ×ß×ÅÇÆ£¡£¡");
-  tell_object(who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+chinese_number(i/4)+"Ìì"+chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀÐÐ£¡\n");
+  command("chat å¤§èƒ†"+who->query("name")+"ï¼ä½ ä¸å¥½å¥½ä½œä½ çš„å¼¼é©¬æ¸©ï¼Œå´åˆ°å¤©æ²³æ¥æ£ä¹±ï¼Œè¿˜æ•¢å¾—ç½ªä¸Šå®˜ï¼Œä½ ç»™æˆ‘èµ°ç€çž§ï¼ï¼");
+  tell_object(who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+chinese_number(i/4)+"å¤©"+chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }
 
-ÿÿ

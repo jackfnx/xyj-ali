@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // qianmian guai
@@ -28,8 +28,8 @@ void do_steal(object me, object user);
 
 void create()
 {
-   set_name("Ç§Ãæ¹Ö", ({ "qianmian guai", "guai", "qianmian", "qm" }) );
-   set("gender", "ÄĞĞÔ" );
+   set_name("åƒé¢æ€ª", ({ "qianmian guai", "guai", "qianmian", "qm" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 30);
    set("long", "\n");
    set("attitude", "heroism");
@@ -247,7 +247,7 @@ void find_newplace()
     command("drop "+ 
       check_give(inv[random(size)]));
   }
-  message_vision("$NÏòµØÀïÒ»×ê£¬ÏûÊ§µÃÎŞÓ°ÎŞ×ÙÁË¡£\n",me);
+  message_vision("$Nå‘åœ°é‡Œä¸€é’»ï¼Œæ¶ˆå¤±å¾—æ— å½±æ— è¸ªäº†ã€‚\n",me);
   
   if(find_user() && 
     me->move(curr_env=environment(new_user))) {
@@ -262,7 +262,7 @@ void find_newplace()
   }
 
   me->remove_all_killer();
-  message_vision("$N×ßÁË¹ıÀ´¡£\n",me);
+  message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
 
   return;
 }

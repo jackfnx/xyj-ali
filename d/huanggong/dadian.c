@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "´óµî");
+  set ("short", "å¤§æ®¿");
   set ("long", @LONG
 
-»Ê¹¬´óµîÀï½ð¹âÉÁË¸Èðö°ÈçÔÆ×ÏÆø»·ÈÆ£¬µîÖÐÊÇµñÁú»æ·ïÏéÔÆ¶ä
-¶ä£¬µîÐÄÓÐÒ»°×ÓñÌ¨½×£¬ÕýÖÐÊÇ½ðÒø±¦×ù£¬ÌÆÌ«×ÚâùÈ»¸ß×ø¡£Á½
-±ßÎÄÎä¹ÙÛÍËàÈ»ØùÁ¢£¬ÉñÌ¬×¯ÑÏ¡£
+çš‡å®«å¤§æ®¿é‡Œé‡‘å…‰é—ªçƒç‘žéœ­å¦‚äº‘ç´«æ°”çŽ¯ç»•ï¼Œæ®¿ä¸­æ˜¯é›•é¾™ç»˜å‡¤ç¥¥äº‘æœµ
+æœµï¼Œæ®¿å¿ƒæœ‰ä¸€ç™½çŽ‰å°é˜¶ï¼Œæ­£ä¸­æ˜¯é‡‘é“¶å®åº§ï¼Œå”å¤ªå®—æ€¡ç„¶é«˜åã€‚ä¸¤
+è¾¹æ–‡æ­¦å®˜å¼è‚ƒç„¶ä¼«ç«‹ï¼Œç¥žæ€åº„ä¸¥ã€‚
 
 LONG);
 
@@ -42,7 +42,7 @@ int valid_leave (object who, string dir)
       dir == "west" ||
       dir == "north")
   {
-    message_vision ("$N½«Í·ÍùµîÀïÒ»Ì½£¬ÀïÃæ¼¸¸öÍþÎäÎäÛÍ½«$N¼Ü³ö¡£\n",who);
+    message_vision ("$Nå°†å¤´å¾€æ®¿é‡Œä¸€æŽ¢ï¼Œé‡Œé¢å‡ ä¸ªå¨æ­¦æ­¦å¼å°†$Næž¶å‡ºã€‚\n",who);
     return notify_fail("");
   }
   return 1;

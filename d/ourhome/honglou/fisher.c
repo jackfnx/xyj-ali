@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/fisher
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����̨");
+  set ("short", "钓鱼台");
   set ("long", @LONG
 
-����̨���Ϸ���һ�������㡣
+　　台面上放着一碟清蒸鱼。
 
 LONG);
 

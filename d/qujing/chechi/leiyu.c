@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/21/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�����");
+  set ("short", "雷雨殿");
   set ("long", @LONG
 
-���﹩��ʯ�񣬷ֱ�Ϊ����֮�񡣵�����һ��Ƕ�������������
-������ǩ�����߷������ĸ��廨�������ţ��Թ����ҹ�������ʱ
-ʹ�á�
+殿里供着石像，分别为雷雨之神。殿心有一张嵌玉桌，上面插有
+祈牌祈签。桌边放置有四个绣花软面蒲团，以供王室贵族祈祷时
+使用。
 
 LONG);
 

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,24 +6,24 @@ inherit BANK;
 
 void create ()
 {
-  set ("short", "���Ǯׯ");
+  set ("short", "杨记钱庄");
   set ("long", @LONG
 
-���Ǯׯ��������һ�������ƣ������Ǯׯ��������������һ���߸�
-����ľ��̨�����ϰ���һ�����������ڹ�̨�Ͻ��ʡ�Ǯׯ������ǽͷ
-����һ��(bian)�������Ǵ��ţ�ͨ��˴����֡�
+杨记钱庄门外挑着一大字招牌：“杨记钱庄”。屋子里面是一个高高
+的紫木柜台，杨老板正一本正经地坐在柜台上结帐。钱庄的西面墙头
+挂有一匾(bian)。东面是大门，通向舜王大街。
 
 LONG);
 
   set("item_desc", ([
     "bian": @TEXT
 
-�ͻ������ڱ�Ǯׯ��
+客户可以在本钱庄：
 
-account         ���ʡ�
-deposit         ��
-withdraw        ȡ�
-convert         �һ�Ǯ�ҡ�
+account         查帐。
+deposit         存款。
+withdraw        取款。
+convert         兑换钱币。
 
 TEXT
   ]) );

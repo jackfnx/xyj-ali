@@ -2,14 +2,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("»ìÊÀÄ§Íõ", ({ "hunshi mowang", "mowang"}));
-    set("gender", "ÄĞĞÔ");
+    set_name("æ··ä¸–é­”ç‹", ({ "hunshi mowang", "mowang"}));
+    set("gender", "ç”·æ€§");
     set("long", @LONG
-Ö»¼ûÕâÄ§Íõ£º
-¡¡¡¡Í·´÷ÎÚ½ğ¿ø£¬Ó³ÈÕ¹âÃ÷£»Éí¹ÒÔíÂŞÅÛ£¬Ó­·çÆ®µ´¡£
-¡¡¡¡ÏÂ´©×ÅºÚÌú¼×£¬½ôÀÕÆ¤Ìõ£»×ãÌ¤×Å»¨ñŞÑ¥£¬ĞÛÈçÉÏ½«¡£
-¡¡¡¡Ñü¹ãÊ®Î§£¬Éí¸ßÈıÕÉ£¬ÊÖÖ´Ò»¿Úµ¶£¬·æÈĞ¶àÃ÷ÁÁ¡£
-¡¡¡¡³ÆÎª»ìÊÀÄ§£¬ÀÚÂäĞ×Ä£Ñù¡£
+åªè§è¿™é­”ç‹ï¼š
+ã€€ã€€å¤´æˆ´ä¹Œé‡‘ç›”ï¼Œæ˜ æ—¥å…‰æ˜ï¼›èº«æŒ‚çš‚ç½—è¢ï¼Œè¿é£é£˜è¡ã€‚
+ã€€ã€€ä¸‹ç©¿ç€é»‘é“ç”²ï¼Œç´§å‹’çš®æ¡ï¼›è¶³è¸ç€èŠ±è¤¶é´ï¼Œé›„å¦‚ä¸Šå°†ã€‚
+ã€€ã€€è…°å¹¿åå›´ï¼Œèº«é«˜ä¸‰ä¸ˆï¼Œæ‰‹æ‰§ä¸€å£åˆ€ï¼Œé”‹åˆƒå¤šæ˜äº®ã€‚
+ã€€ã€€ç§°ä¸ºæ··ä¸–é­”ï¼Œç£Šè½å‡¶æ¨¡æ ·ã€‚
 LONG );
     set("age", 30);
     set("str", 30);
@@ -60,7 +60,7 @@ void kill_ob(object ob)
 {
     object me = this_object();
     set_temp("my_killer", ob);
-    message_vision("$NºÈµÀ£ºÕâµØÅÌÀÏ×ÓÕ¼ÁË£¬À´ÕÒËÀÂï£¡\n", me);
+    message_vision("$Nå–é“ï¼šè¿™åœ°ç›˜è€å­å äº†ï¼Œæ¥æ‰¾æ­»å˜›ï¼\n", me);
     ::kill_ob(ob);
 }
 
@@ -70,7 +70,7 @@ void die()
     object me = this_object();
 
     if (ob) {
-        message_vision("\n$N²Ò½ĞÒ»Éù£¬±»¿³ÎªÁ½¶Î¡£\n",me);
+        message_vision("\n$Næƒ¨å«ä¸€å£°ï¼Œè¢«ç ä¸ºä¸¤æ®µã€‚\n",me);
         call_out("announcer_appearing", 1, ob);
         load_object("/obj/empty");
         move("/obj/empty");
@@ -85,13 +85,13 @@ void announcer_appearing(object me)
     object panzi;
     int i = 0;
     
-    message_vision("\nÖÚºï×Ó¿´µ½¿´µ½$n±»Õ¶£¬¸ßĞËµÄÌøÁËÆğÀ´¡£\n", me, this_object());
+    message_vision("\nä¼—çŒ´å­çœ‹åˆ°çœ‹åˆ°$nè¢«æ–©ï¼Œé«˜å…´çš„è·³äº†èµ·æ¥ã€‚\n", me, this_object());
     announcer = new(__DIR__"announcer");
-    message_vision("\nºï×ÓÍ·Áì"+ announcer->name() +"´Óºï×ÓÈºÖĞÅÜÁË³öÀ´¡£\n", me);
+    message_vision("\nçŒ´å­å¤´é¢†"+ announcer->name() +"ä»çŒ´å­ç¾¤ä¸­è·‘äº†å‡ºæ¥ã€‚\n", me);
     if (me->query("dntg/huaguo") != "done" && userp(me)) {
         announcer->announce_success(me);
     }
-    message_vision("\n"+ announcer->name() +"´ø×ÅÖÚºï×ÓÆßÊÖ°Ë½ÅµÄ°ÑÄ§ÍõºÍÑı¾«ÃÇµÄÊ¬ÌåÍÏÁË³öÈ¥¡£\n", me);
+    message_vision("\n"+ announcer->name() +"å¸¦ç€ä¼—çŒ´å­ä¸ƒæ‰‹å…«è„šçš„æŠŠé­”ç‹å’Œå¦–ç²¾ä»¬çš„å°¸ä½“æ‹–äº†å‡ºå»ã€‚\n", me);
     foreach (object ob in all_inventory(environment(me)))
         if (ob->is_corpse()) destruct(ob);
     destruct(announcer);
@@ -113,6 +113,6 @@ int override_move(string dir)
     if (killer != this_player()) return 0;
     if (!environment()->query("exits/" + dir)) return 0;
 
-    tell_object(killer, name() + "³å×ÅÄãÀäĞ¦µ½£º¡°Ïë×ß£¿Ã»ÄÇÃ´ÈİÒ×°É£¡¡±\n");
+    tell_object(killer, name() + "å†²ç€ä½ å†·ç¬‘åˆ°ï¼šâ€œæƒ³èµ°ï¼Ÿæ²¡é‚£ä¹ˆå®¹æ˜“å§ï¼â€\n");
     return 1;
 }

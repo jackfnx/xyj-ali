@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //
@@ -21,7 +21,7 @@ object connect()
    err = catch(login_ob = new(LOGIN_OB));
 
    if (err) {
-     write("ÏÖÔÚÓĞÈËÕıÔÚĞŞ¸ÄÊ¹ÓÃÕßÁ¬Ïß²¿·İµÄ³ÌÊ½£¬Çë´ı»áÔÙÀ´¡£\n");
+     write("ç°åœ¨æœ‰äººæ­£åœ¨ä¿®æ”¹ä½¿ç”¨è€…è¿çº¿éƒ¨ä»½çš„ç¨‹å¼ï¼Œè¯·å¾…ä¼šå†æ¥ã€‚\n");
      write(err);
      destruct(this_object());
    }
@@ -50,8 +50,8 @@ static void crash(string error, object command_giver, object current_object)
         string msg;
    int i,j=0;
 
-   efun::shout("ÏµÍ³ºËĞÄ·¢³öÒ»Éù²Ò½Ğ£ºÍÛ¡ªÁ¨¡ªßÖ¡ª\n");
-   efun::shout("ÏµÍ³ºËĞÄ¸æËßÄã£ºÒªµ±»úÁË£¬×Ô¼º±£ÖØ°É£¡\n");
+   efun::shout("ç³»ç»Ÿæ ¸å¿ƒå‘å‡ºä¸€å£°æƒ¨å«ï¼šå“‡â€”å“©â€”å’§â€”\n");
+   efun::shout("ç³»ç»Ÿæ ¸å¿ƒå‘Šè¯‰ä½ ï¼šè¦å½“æœºäº†ï¼Œè‡ªå·±ä¿é‡å§ï¼\n");
    log_file("static/CRASHES", MUD_NAME + " crashed on: " + ctime(time()) +
      ", error: " + error + "\n");
    if (command_giver)
@@ -143,7 +143,7 @@ void log_error(string file, string message)
 
    if(this_player(1)) {
        if(wizardp(this_player(1)))
-     efun::write("±àÒëÊ±¶Î´íÎó£º" + message+"\n");
+     efun::write("ç¼–è¯‘æ—¶æ®µé”™è¯¯ï¼š" + message+"\n");
        else
      efun::write(get_config(__DEFAULT_ERROR_MESSAGE__)+"\n");
    }
@@ -186,7 +186,7 @@ void destruct_env_of(object ob)
 {
    if (!interactive(ob))
      return;
-   tell_object(ob, "ÄãËù´æÔÚµÄ¿Õ¼ä±»»ÙÃğÁË¡£\n");
+   tell_object(ob, "ä½ æ‰€å­˜åœ¨çš„ç©ºé—´è¢«æ¯ç­äº†ã€‚\n");
    ob->move(VOID_OB);
 }
 
@@ -240,8 +240,8 @@ string standard_trace(mapping error, int caught)
 
     /* keep track of number of errors per object...if you're into that */
 
-    res = (caught) ? "´íÎóÑ¶Ï¢±»À¹½Ø£º" : "";
-    res = sprintf("%s\nÖ´ĞĞÊ±¶Î´íÎó£º%s\n³ÌĞò£º%s µÚ %i ĞĞ\nÎï¼ş£º%s\n",
+    res = (caught) ? "é”™è¯¯è®¯æ¯è¢«æ‹¦æˆªï¼š" : "";
+    res = sprintf("%s\næ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š%s\nç¨‹åºï¼š%s ç¬¬ %i è¡Œ\nç‰©ä»¶ï¼š%s\n",
        res, error["error"],
         (undefinedp(error["program"])?
       "(none)":error["program"]), 
@@ -251,18 +251,18 @@ string standard_trace(mapping error, int caught)
 
     if(sizeof(error["trace"])>0)
       for (i=0, s = sizeof(error["trace"]); i < s; i++) {
-       res = sprintf("%sºô½ĞÀ´×Ô£º%s µÄ %s() µÚ %i ĞĞ£¬Îï¼ş£º %O\n",
+       res = sprintf("%så‘¼å«æ¥è‡ªï¼š%s çš„ %s() ç¬¬ %i è¡Œï¼Œç‰©ä»¶ï¼š %O\n",
         res,
         error["trace"][i]["program"],
             error["trace"][i]["function"],
             error["trace"][i]["line"],
             error["trace"][i]["object"] );
        
-       res+="µ÷ÓÃ²ÎÊı£º"+
+       res+="è°ƒç”¨å‚æ•°ï¼š"+
      error["trace"][i]["function"]+"("+
      print_vars(error["trace"][i]["arguments"])+
      ")\n";
-       res+="¾Ö²¿±äÁ¿£º"+
+       res+="å±€éƒ¨å˜é‡ï¼š"+
      print_vars(error["trace"][i]["locals"])+
      "\n";
       }
@@ -343,7 +343,7 @@ string error_handler( mapping error, int caught )
 void report_error(mapping error)
 {
        CHANNEL_D->do_channel(this_object(), "sys",
-               sprintf("%s µÚ %i ĞĞ£¬Îï¼ş£º%s\n        %s",
+               sprintf("%s ç¬¬ %i è¡Œï¼Œç‰©ä»¶ï¼š%s\n        %s",
                (undefinedp(error["program"])?
           "(none)":error["program"]), 
           error["line"],
@@ -463,7 +463,7 @@ void create()
 
 string query(string id) {
     if(id=="channel_id")
-   return "Ö´ĞĞÊ±¶Î´íÎó";
+   return "æ‰§è¡Œæ—¶æ®µé”™è¯¯";
     else return 0;
 }
 

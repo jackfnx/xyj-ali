@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("��ü�Ϸ�", ({ "huangmei laofo", "huangmei", "laofo", "fo" }));
-  set("title", "С������");   
-  set("long", "һλ���ޱ���ȴ�־���������Ϸ�\n");
-  set("gender", "����");
+  set_name("黄眉老佛", ({ "huangmei laofo", "huangmei", "laofo", "fo" }));
+  set("title", "小雷音寺");   
+  set("long", "一位面无表情却又精神焕发的老佛。\n");
+  set("gender", "男性");
   set("age", 80);
   set("attitude", "heroism");
   set("per", 30);
@@ -68,16 +68,16 @@ void die ()
     ob->set_temp("obstacle/xiaoxitian_killed",1);
     call_out ("mile_appearing",1,ob);
   }
-  message_vision ("\n������֣����շ������˽�����\n",me);
-  message_vision ("\n$N��æ���Ź���������ȴ������һ��üСͯ��\n",me);
-  message_vision ("���շ������Ż�üСͯ���˳�ȥ",me);
+  message_vision ("\n旋风出现，弥勒佛祖走了进来。\n",me);
+  message_vision ("\n$N连忙慌着跪了下来，却还身作一黄眉小童。\n",me);
+  message_vision ("弥勒佛祖领着黄眉小童走了出去",me);
   if (fabao)
   {
-     message_vision ("������һֻ$n��\n",me,fabao);
+     message_vision ("，丢下一只$n。\n",me,fabao);
      fabao->move(environment(me));
   }
   else
-    message_vision ("��\n",me);
+    message_vision ("。\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

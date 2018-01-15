@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,18 +9,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Çàºç½£", ({"qinghong sword", "sword", "jian",
+        set_name("é’è™¹å‰‘", ({"qinghong sword", "sword", "jian",
 "qinghong"}));
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»°ÑÕòÑı½µÄ§µÄ±¦½£¡£\n");
-                set("unit", "°Ñ");
+                set("long","ä¸€æŠŠé•‡å¦–é™é­”çš„å®å‰‘ã€‚\n");
+                set("unit", "æŠŠ");
      set("wield_msg",
-"$n¡¸à§¡¹µØ´Ó½£ÇÊÖĞµ¯³ö£¬ÂäÈë$NµÄÊÖÖĞ£¬½£¼â»¹Ø£×ÔÉÁ¸ö²»Í£¡£\n");
+"$nã€Œå”°ã€åœ°ä»å‰‘é˜ä¸­å¼¹å‡ºï¼Œè½å…¥$Nçš„æ‰‹ä¸­ï¼Œå‰‘å°–è¿˜å…€è‡ªé—ªä¸ªä¸åœã€‚\n");
      set("unwield_msg",
-"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä£¬Á³É«¸ü¼ÓÒõ³ÁÁË£¡\n");
+"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ï¼Œè„¸è‰²æ›´åŠ é˜´æ²‰äº†ï¼\n");
                 set("value", 5000);
      set("weapon_prop/courage", 10);
         }

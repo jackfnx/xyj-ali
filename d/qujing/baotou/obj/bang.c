@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -10,21 +10,21 @@ inherit STICK;
 
 void create()
 {
-  set_name("Ğ¡½ğ¹¿°ô", ({ "xiao jingu bang", "jingubang", "bang", "stick" }) );
+  set_name("å°é‡‘ç®æ£’", ({ "xiao jingu bang", "jingubang", "bang", "stick" }) );
   set_weight(10000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ìõ");
+    set("unit", "æ¡");
     set("value", 2000);
     set("material", "iron");
     set("no_sell", 1);
     set("no_drop", 1);
     set("is_monitored", 1);
     set("replace_file", "/d/obj/weapon/stick/bintiegun");
-    set("long", "´Ë°ôÒÔÒøÎª¹¿£¬ÖĞ¼äÄËÒ»¶ÎÎÚÌú¡£ÉÏÖıĞ¡×Ö£º¡°Ğ¡½ğ¹¿°ô¡±¡£\n");
-    set("wield_msg", "$NÄÃÆğ$n£¬Ó­·çÒ»»Î¡£\n");
-    set("unwield_msg", "$NÊÕÆğ$n£¬$n¶ÙÊ±Ò»ÉÁ²»¼ûÁË¡£\n");
+    set("long", "æ­¤æ£’ä»¥é“¶ä¸ºç®ï¼Œä¸­é—´ä¹ƒä¸€æ®µä¹Œé“ã€‚ä¸Šé“¸å°å­—ï¼šâ€œå°é‡‘ç®æ£’â€ã€‚\n");
+    set("wield_msg", "$Næ‹¿èµ·$nï¼Œè¿é£ä¸€æ™ƒã€‚\n");
+    set("unwield_msg", "$Næ”¶èµ·$nï¼Œ$né¡¿æ—¶ä¸€é—ªä¸è§äº†ã€‚\n");
   }
   init_stick(65);
   setup();
@@ -32,7 +32,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("Ò»µÀ×ÏÆøÉÁ¹ı£¬$n±»Í»ÈçÆäÀ´µÄÏ¼¹âÊÕ×ßÁË£¡\n",where,me);
+  message_vision("ä¸€é“ç´«æ°”é—ªè¿‡ï¼Œ$nè¢«çªå¦‚å…¶æ¥çš„éœå…‰æ”¶èµ°äº†ï¼\n",where,me);
   destruct (me);
 }
 

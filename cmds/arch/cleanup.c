@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // cleanup.c
@@ -10,7 +10,7 @@ int main(object me, string str)
    object ob, where, *ob_list;
    int old_size, i;
 
-   if (!str) return notify_fail("Ö¸Áî¸ñÊ½£ºcleanup <µµÃû>\n"); 
+   if (!str) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcleanup <æ¡£å>\n"); 
 
    str = resolve_path(me->query("cwd"), str);
    ob_list = children(str);
@@ -20,17 +20,17 @@ int main(object me, string str)
      if( ob_list[i] && clonep(ob_list[i]) && !environment(ob_list[i]) )
         destruct(ob_list[i]);
    ob_list -= ({ 0 });
-   printf("Çå³ı %d ¸öÎï¼ş¡£\n", old_size - sizeof(ob_list));
+   printf("æ¸…é™¤ %d ä¸ªç‰©ä»¶ã€‚\n", old_size - sizeof(ob_list));
    return 1;
 }
 
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£ºcleanup <µµÃû>
+æŒ‡ä»¤æ ¼å¼ï¼šcleanup <æ¡£å>
 
-¶ÔËùÓĞÖ¸¶¨µµÃûµÄÎï¼şºô½Ğ clean_up£¬²¢ÇÒÇå³ıËùÓĞ±»¸´ÖÆ³öÀ´µÄ£¬µ«ÊÇÓÖÃ»ÓĞ
-±»·ÅÔÚÁíÒ»¸öÎï¼şÖĞµÄÉ¢Ê§Îï¼ş¡£
+å¯¹æ‰€æœ‰æŒ‡å®šæ¡£åçš„ç‰©ä»¶å‘¼å« clean_upï¼Œå¹¶ä¸”æ¸…é™¤æ‰€æœ‰è¢«å¤åˆ¶å‡ºæ¥çš„ï¼Œä½†æ˜¯åˆæ²¡æœ‰
+è¢«æ”¾åœ¨å¦ä¸€ä¸ªç‰©ä»¶ä¸­çš„æ•£å¤±ç‰©ä»¶ã€‚
 HELP
    );
    return 1;

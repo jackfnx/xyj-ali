@@ -1,8 +1,8 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 10/05/1997
-// wu??.c Îä½øÊ¿
+// wu??.c æ­¦è¿›å£«
 
 inherit NPC;
 inherit F_SAVE;
@@ -21,10 +21,10 @@ int get_position_int ()
 
 void create()
 {
-  set_name("Îä½øÊ¿", ({ "jin shi", "jin", "shi" }) );
+  set_name("æ­¦è¿›å£«", ({ "jin shi", "jin", "shi" }) );
   set("title", get_respect_str());
-  set("gender", "ÄĞĞÔ" );
-  set("long",get_respect_str()+"¡£\n");
+  set("gender", "ç”·æ€§" );
+  set("long",get_respect_str()+"ã€‚\n");
   set("current_player","none of us");
 
   setup();

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,14 +8,14 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "»ğÑæÉ½");
+  set ("short", "ç«ç„°å±±");
   set ("long", @LONG
 
-»ğ£¬»ğ£¬»ğ£¡£¡£¡
+ç«ï¼Œç«ï¼Œç«ï¼ï¼ï¼
 
-´ó»ğÃàÑÓ°Ë°ÙÀï£¬ËÄÖÜ´ç²İ²»Éú¡£¾İËµµ±ÄêÌ«ÉÏÀÏ¾ıµÄÁ¶µ¤Â¯±»µÅ
-·­£¬¼¸¿éÂ¯×©µôÔÚ´Ë´¦£¬¼´»¯Îª»ğÑæÉ½¡£ÈËÒ»×ß½øÈ¥¼È³ÉÑÌ»Ò£¬¸ü
-ÎğÌá¶«ÄÏÎ÷±±¡£
+å¤§ç«ç»µå»¶å…«ç™¾é‡Œï¼Œå››å‘¨å¯¸è‰ä¸ç”Ÿã€‚æ®è¯´å½“å¹´å¤ªä¸Šè€å›çš„ç‚¼ä¸¹ç‚‰è¢«è¹¬
+ç¿»ï¼Œå‡ å—ç‚‰ç –æ‰åœ¨æ­¤å¤„ï¼Œå³åŒ–ä¸ºç«ç„°å±±ã€‚äººä¸€èµ°è¿›å»æ—¢æˆçƒŸç°ï¼Œæ›´
+å‹¿æä¸œå—è¥¿åŒ—ã€‚
 
 LONG);
 
@@ -46,7 +46,7 @@ int do_fly (string arg)
   if (! this_object()->query("burning_mount"))
     return 0;
 
-  message_vision("Ö»¼û$NÏòÉÏÒ»·É£¬ÓÖ±»Ò»¸öÈÈÀËÖØÖØµØ´òÁËÏÂÀ´¡£\n", me);
+  message_vision("åªè§$Nå‘ä¸Šä¸€é£ï¼Œåˆè¢«ä¸€ä¸ªçƒ­æµªé‡é‡åœ°æ‰“äº†ä¸‹æ¥ã€‚\n", me);
   return 1;
 }
 
@@ -66,9 +66,9 @@ void burnt (object me)
 
   if (random(8) == 0)
   {
-    message_vision("Ò»¹ÉÈÈÀËÏ®À´£¬½«$NÍùÉÏÒ»Å×£¬$N·ÉÁË³öÈ¥£¡\n",me);
+    message_vision("ä¸€è‚¡çƒ­æµªè¢­æ¥ï¼Œå°†$Nå¾€ä¸Šä¸€æŠ›ï¼Œ$Né£äº†å‡ºå»ï¼\n",me);
     me->move(__DIR__"shanbian");
-    message_vision("$NÃ°×ÅÅ¨ÑÌ´ÓÉ½ÉÏ¹öÁËÏÂÀ´£¡\n",me);
+    message_vision("$Nå†’ç€æµ“çƒŸä»å±±ä¸Šæ»šäº†ä¸‹æ¥ï¼\n",me);
     me->unconcious();
     me->set_temp("burnt_in_mount",0);
     me->set_temp("fanned_in_mount",0);
@@ -87,7 +87,7 @@ void burnt (object me)
     {
       if (ob->move(this_object()))
       {
-        message_vision("Ö»¼û»ğÑæÒ»Ìò£¬$NµÄ$n¶ÙÊ±»¯Îª»Ò½ı£¡\n",me,ob);
+        message_vision("åªè§ç«ç„°ä¸€èˆ”ï¼Œ$Nçš„$né¡¿æ—¶åŒ–ä¸ºç°çƒ¬ï¼\n",me,ob);
         destruct(ob);
       }
     }
@@ -97,13 +97,13 @@ void burnt (object me)
     switch (random(4))
     {
       case 0:
-        { message_vision("$NµÄÍ··¢Ã°ÆğÒ»¹ÉÇàÑÌ£¡\n",me); break; }
+        { message_vision("$Nçš„å¤´å‘å†’èµ·ä¸€è‚¡é’çƒŸï¼\n",me); break; }
       case 1:
-        { message_vision("$NÉíÉÏ×Ì×Ì×÷Ïì£¡\n",me); break; }
+        { message_vision("$Nèº«ä¸Šæ»‹æ»‹ä½œå“ï¼\n",me); break; }
       case 2:
-        { message_vision("$NµÄÁ³ÉÏÅòÆğ¼¸¸ö´óË®ğå£¡\n",me); break; }
+        { message_vision("$Nçš„è„¸ä¸Šè†¨èµ·å‡ ä¸ªå¤§æ°´ç–±ï¼\n",me); break; }
       case 3:
-        { message_vision("$N·¢³öÒ»¹É½¹Î¶£¡\n",me); break; }
+        { message_vision("$Nå‘å‡ºä¸€è‚¡ç„¦å‘³ï¼\n",me); break; }
     }
   }
   if(me->query("kee") > 15)
@@ -144,17 +144,17 @@ void announce_success (object me)
 void success_quest (object me)
 {
   object where = this_object();
-  message_vision("\nÉ²ÄÇ¼äÌì»èµØ°µ£¬ºäÂ¡Â¡¼¸Éù¾çÏìÖ®ºó£¬Ò»ÇĞ¶¼Æ½¾²ÁË£¡\n", me);
-  message_vision("$NÒÖÖÆ×¡ÅéÅéĞÄÌø£¬¶¨¾¦Ò»¿´£º´ó»ğÒÑ¾­±»ÆËÃğÁË£¡\n", me);
+  message_vision("\nåˆ¹é‚£é—´å¤©æ˜åœ°æš—ï¼Œè½°éš†éš†å‡ å£°å‰§å“ä¹‹åï¼Œä¸€åˆ‡éƒ½å¹³é™äº†ï¼\n", me);
+  message_vision("$NæŠ‘åˆ¶ä½ç °ç °å¿ƒè·³ï¼Œå®šç›ä¸€çœ‹ï¼šå¤§ç«å·²ç»è¢«æ‰‘ç­äº†ï¼\n", me);
   where->set ("long", @LONG
 
-´ó»ğÒÑ¾­±»ÈËÆËÃğÁË£¬ËÄ´¦»¹Ã°×ÅÒ»Ë¿Ë¿µÄ²ĞÑÌ¡£
+å¤§ç«å·²ç»è¢«äººæ‰‘ç­äº†ï¼Œå››å¤„è¿˜å†’ç€ä¸€ä¸ä¸çš„æ®‹çƒŸã€‚
 
-Ôø¼¸ºÎÊ±ÕâÀïµÄ´ó»ğÃàÑÓ°Ë°ÙÀï£¬ËÄÖÜ´ç²İ²»Éú¡£¾İËµµ±ÄêÌ«ÉÏÀÏ
-¾ıµÄÁ¶µ¤Â¯±»µÅ·­£¬¼¸¿éÂ¯×©µôÔÚ´Ë´¦£¬¼´»¯Îª»ğÑæÉ½¡£ÈËÒ»×ß½ø
-È¥¼È³ÉÑÌ»Ò£¬¸üÎğÌá¶«ÄÏÎ÷±±¡£
+æ›¾å‡ ä½•æ—¶è¿™é‡Œçš„å¤§ç«ç»µå»¶å…«ç™¾é‡Œï¼Œå››å‘¨å¯¸è‰ä¸ç”Ÿã€‚æ®è¯´å½“å¹´å¤ªä¸Šè€
+å›çš„ç‚¼ä¸¹ç‚‰è¢«è¹¬ç¿»ï¼Œå‡ å—ç‚‰ç –æ‰åœ¨æ­¤å¤„ï¼Œå³åŒ–ä¸ºç«ç„°å±±ã€‚äººä¸€èµ°è¿›
+å»æ—¢æˆçƒŸç°ï¼Œæ›´å‹¿æä¸œå—è¥¿åŒ—ã€‚
 
-ÏÖÔÚÒ»ÇĞ¶¼ºÜÆ½¾²ÁË£¬Äã×ßÔÚÕâÀï£¬¸ĞÌ¾²»ÒÑ¡£
+ç°åœ¨ä¸€åˆ‡éƒ½å¾ˆå¹³é™äº†ï¼Œä½ èµ°åœ¨è¿™é‡Œï¼Œæ„Ÿå¹ä¸å·²ã€‚
 
 LONG);
 
@@ -176,7 +176,7 @@ void test_result (object me)
     success_quest(me);
     return;
   }
-  message_vision("\n»©À²À²£¬É½ÉÏµÄ»ğÑæÍËÈ¥Ò»´óÆ¬£¬ÓÖÂıÂıÂûÑÓ»Øµ½½Å±ß¡£\n", me);
+  message_vision("\nå“—å•¦å•¦ï¼Œå±±ä¸Šçš„ç«ç„°é€€å»ä¸€å¤§ç‰‡ï¼Œåˆæ…¢æ…¢è”“å»¶å›åˆ°è„šè¾¹ã€‚\n", me);
 }
 
 void can_fan (object me)
@@ -198,22 +198,22 @@ int do_extinguish (string arg)
 
   if (! this_object()->query("burning_mount"))
   {
-    message_vision("¼ûµ½É½ÉÏÒÑÃ»ÓĞ»ğÁË£¬$NÉÈÁËÉÈ×Ô¼ºµÄÀäº¹¡£\n", me);
+    message_vision("è§åˆ°å±±ä¸Šå·²æ²¡æœ‰ç«äº†ï¼Œ$Næ‰‡äº†æ‰‡è‡ªå·±çš„å†·æ±—ã€‚\n", me);
     return 1;
   }
 
   call_out ("get_burnt",random(2)+10,me);
 
-  message_vision("Ö»¼û$NÆ´ÃüµØÂÕÆğ´óÌúÉÈÖ»Ò»ÉÈ¡£\n", me);
+  message_vision("åªè§$Næ‹¼å‘½åœ°æŠ¡èµ·å¤§é“æ‰‡åªä¸€æ‰‡ã€‚\n", me);
   if (me->query_temp("fanned_in_mount"))
   {
-    message_vision("¿ÉÏ§·çÁ¦²»×ã£¬Ê²Ã´Ææ¼£¶¼Ã»·¢Éú¡£\n", me);
+    message_vision("å¯æƒœé£åŠ›ä¸è¶³ï¼Œä»€ä¹ˆå¥‡è¿¹éƒ½æ²¡å‘ç”Ÿã€‚\n", me);
     return 1;
   }
 
   me->set_temp("fanned_in_mount",1);
   me->set_temp("fan_times_in_mount",me->query_temp("fan_times_in_mount")+1);
-  message_vision("Ò»¹É¿ñì­Ï¯µØ¶øÆğ£¬ÅÅÉ½µ¹º£°ãµØ¾íÏòÂşÉ½±éÒ°µÄ»ğÑæ£¡\n", me);
+  message_vision("ä¸€è‚¡ç‹‚é£™å¸­åœ°è€Œèµ·ï¼Œæ’å±±å€’æµ·èˆ¬åœ°å·å‘æ¼«å±±éé‡çš„ç«ç„°ï¼\n", me);
   call_out ("test_result",1,me);
   call_out ("can_fan",random(2)+3,me);
   return 1;

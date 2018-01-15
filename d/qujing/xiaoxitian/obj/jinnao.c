@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/17/1997
@@ -10,16 +10,16 @@ inherit ITEM;
  
 void create()
 {
-  set_name("����",({"jin nao", "nao"}));
+  set_name("金铙",({"jin nao", "nao"}));
   set_weight(9000000);
   set_max_encumbrance(100000000000);
   if(clonep())
     set_default_object(__FILE__);
   else {
-    set("unit","ֻ");
+    set("unit","只");
     set("value", 100000);
     set("material","gold");
-    set("long", "һֻ���ɰѸߵľ޴����\n");
+    set("long", "一只有丈把高的巨大金铙。\n");
   }
   set("no_fight", 1);
   set("no_magic", 1);
@@ -44,19 +44,19 @@ int do_out ()
   if (who->query_temp("no_move") ||
       who->is_busy())
   {
-    tell_object (who, "���ںڰ���������������������һ��ײ�ڽ����ϡ�\n");
+    tell_object (who, "你在黑暗中摸索着向上爬，当地一声撞在金铙上。\n");
     return 1;
   }
   if (random (10))
   {
-    tell_object (who, "���ͷ����һ��ײ�ڽ�����ϡ�\n");
+    tell_object (who, "你的头当地一声撞在金铙壁上。\n");
     return 1;
   }
-  tell_object (who, "�㽫��������һ���죬������ȥ��\n",who,me);
+  tell_object (who, "你将金铙掀起一道缝，往外爬去。\n",who,me);
   if (room->is_character())
     room = environment (room);
   who->move(room);
-  message_vision ("���󱻶���������$N��������������˳�����\n",who,me);
+  message_vision ("金铙被顶了起来，$N从里面吃力地爬了出来。\n",who,me);
   return 1;
 }
 

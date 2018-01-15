@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -54,10 +54,10 @@ int main(object me, string arg)
   string info;
 
   if (!wizardp(me))
-    return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+    return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 
   if (!arg || sscanf(arg,"%d",exp) != 1)
-    return notify_fail("Ö¸Áî¸ñÊ½£ºsearch <combat_exp>\n");
+    return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šsearch <combat_exp>\n");
 
 
   count = 0;
@@ -110,7 +110,7 @@ void display_result (int count, object *list, object me)
   string info;
 
   wizs = SECURITY_D->query_wizlist();
-  tell_object (me,"\n¹²ÓĞ"+(count)+"Î»Ê¹ÓÃÕß.\n");
+  tell_object (me,"\nå…±æœ‰"+(count)+"ä½ä½¿ç”¨è€….\n");
   for(i=0; i<count; i++) {
     string wizstatus = " ";
     reset_eval_cost();
@@ -131,7 +131,7 @@ void display_result (int count, object *list, object me)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£º search <combat_exp>
+æŒ‡ä»¤æ ¼å¼ï¼š search <combat_exp>
 
 Search for all the players (on-line and off-line) who have combat_exp
 greater than <combat_exp>, and sort them out to display.

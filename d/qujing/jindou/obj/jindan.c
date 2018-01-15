@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 4/25/97
@@ -9,13 +9,13 @@ inherit THROWING;
 
 void create()
 {
-  set_name("¡ñ½ğµ¤É°¡ñ", ({"jindan sha", "sha"}));
+  set_name("â—é‡‘ä¸¹ç ‚â—", ({"jindan sha", "sha"}));
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»Ğ©ÉÁÉÁ·¢¹âµÄ½ğµ¤É°¡£\n");
-    set("unit", "Ğ©");
-    set("base_unit", "¿Å");
+    set("long", "ä¸€äº›é—ªé—ªå‘å…‰çš„é‡‘ä¸¹ç ‚ã€‚\n");
+    set("unit", "äº›");
+    set("base_unit", "é¢—");
     set("base_weight", 40);
     set("base_value", 1);
   }

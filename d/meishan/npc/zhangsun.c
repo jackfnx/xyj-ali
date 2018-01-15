@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 void create()
 {
-       set_name("ÕÅË³", ({"zhang shun", "zhang"}));
-   set("long", "Ò»Î»Ç¿×³µÄÓæ·ò£¬³îÃ¼¿àÁ³£¬ÏóÊÇÓöµ½ÁËÊ²Ã´ÄÑÊÂ¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("å¼ é¡º", ({"zhang shun", "zhang"}));
+   set("long", "ä¸€ä½å¼ºå£®çš„æ¸”å¤«ï¼Œæ„çœ‰è‹¦è„¸ï¼Œè±¡æ˜¯é‡åˆ°äº†ä»€ä¹ˆéš¾äº‹ã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 36);
-       set("title", "Óæ·ò");
+       set("title", "æ¸”å¤«");
        set("attitude", "peaceful");
        set("shen_type", 1);
         set("combat_exp", 10000);
@@ -27,11 +27,11 @@ int accept_object(object who,object ob)
         int val;
         val = ob->value();
         if( !val )
-                return notify_fail("ÕÅË³ÄÑ¹ıµÄËµ£ºÎÒÖ»ÒªÇ®£¡\n");
+                return notify_fail("å¼ é¡ºéš¾è¿‡çš„è¯´ï¼šæˆ‘åªè¦é’±ï¼\n");
         else if( val >= 5000 ) {
      command("jump");
-     say("ÕÅË³Ëµµ½£º" + RANK_D->query_respect(who) + "¾Í°Ñ°¢»¨Ç£×ß°É£¡\n");
-     say("ÕÅË³ÅÜµ½ºóÔºÇ£³öÍ·ÀÏÄ¸ÖíÀ´¡£\n");
+     say("å¼ é¡ºè¯´åˆ°ï¼š" + RANK_D->query_respect(who) + "å°±æŠŠé˜¿èŠ±ç‰µèµ°å§ï¼\n");
+     say("å¼ é¡ºè·‘åˆ°åé™¢ç‰µå‡ºå¤´è€æ¯çŒªæ¥ã€‚\n");
      m=new("/d/meishan/npc/pigg");
      seteuid(getuid());
      m->move(environment(who));
@@ -40,7 +40,7 @@ int accept_object(object who,object ob)
            return 1;
 
         }
-   say("ÕÅË³Ëµµ½£º¶àĞ»£¬¶àĞ»£¡\n");
+   say("å¼ é¡ºè¯´åˆ°ï¼šå¤šè°¢ï¼Œå¤šè°¢ï¼\n");
    call_out("destroy", 1, ob);
         return 1;
 
@@ -48,7 +48,7 @@ int accept_object(object who,object ob)
 void leave()
 {
         message("vision",
-               name() + "Ëµ£ºÔÚÏÂ»¹Òª´òÓã£¬²»ÅãÁË¡£\nÕÅË³×ßÁË³öÈ¥¡£\n",environment(),
+               name() + "è¯´ï¼šåœ¨ä¸‹è¿˜è¦æ‰“é±¼ï¼Œä¸é™ªäº†ã€‚\nå¼ é¡ºèµ°äº†å‡ºå»ã€‚\n",environment(),
                 this_object() );
         destruct(this_object());
 }

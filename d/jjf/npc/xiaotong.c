@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// jiading.c ¼Ò¶¡
+// jiading.c å®¶ä¸
 
 inherit NPC;
 
 void create()
 {
-  set_name("Ğ¡Í¯", ({ "xiao tong", "xiaotong", "tong", "xiao"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å°ç«¥", ({ "xiao tong", "xiaotong", "tong", "xiao"}));
+  set("gender", "ç”·æ€§");
   set("age", 7+random(8));
-  set("long", "ÇØ¸®µÄĞ¡Í¯¶¼ÊÇ×ÔĞ¡¾Í´òºÃÁËÎä¹¦¸ùµ×£¬¸ö¸öÊÖÏÂ¶¼ÓĞµã¹¦·ò¡£\n");
+  set("long", "ç§¦åºœçš„å°ç«¥éƒ½æ˜¯è‡ªå°å°±æ‰“å¥½äº†æ­¦åŠŸæ ¹åº•ï¼Œä¸ªä¸ªæ‰‹ä¸‹éƒ½æœ‰ç‚¹åŠŸå¤«ã€‚\n");
 
   set("combat_exp", 4000);
   set_skill("dodge", 20);

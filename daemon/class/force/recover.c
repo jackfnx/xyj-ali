@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // recover.c
@@ -9,17 +9,17 @@ int exert(object me, object target)
 {
    int diff, neilineed;
 
-   if( target != me ) return notify_fail("ÄãÖ»ÄÜÓÃÄÚ¹¦µ÷ÔÈ×Ô¼ºµÄÆøÏ¢¡£\n");
+   if( target != me ) return notify_fail("ä½ åªèƒ½ç”¨å†…åŠŸè°ƒåŒ€è‡ªå·±çš„æ°”æ¯ã€‚\n");
 
    if( (int)me->query("force") < 20 )
-     return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+     return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     if( (int)me->query_skill("force") < 10 )
-     return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»¡£\n"); 
+     return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿã€‚\n"); 
 
    diff = me->query("eff_kee") - me->query("kee");
    neilineed = diff * 50 / (int)me->query_skill("force");
     if(neilineed < 1)
-      return notify_fail("ÄãÏÖÔÚÆøÁ¦³äÅæ£¬²»ĞèÎüÆø¡£\n");
+      return notify_fail("ä½ ç°åœ¨æ°”åŠ›å……æ²›ï¼Œä¸éœ€å¸æ°”ã€‚\n");
     
    if(neilineed > me->query("force")) neilineed = me->query("force");
     diff = neilineed * (int)me->query_skill("force") / 50;
@@ -27,7 +27,7 @@ int exert(object me, object target)
    me->receive_heal("kee", diff );
    me->add("force", -neilineed);
 
-   message_vision("$NÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆğÀ´ºÃ¶àÁË¡£\n", me);
+   message_vision("$Næ·±æ·±å¸äº†å‡ å£æ°”ï¼Œè„¸è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n", me);
 
    if( me->is_fighting() ) me->start_busy(1);
 

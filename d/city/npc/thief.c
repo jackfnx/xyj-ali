@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("ÊİÀÏÍ·", ({"lao tou","lao", "tou"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç˜¦è€å¤´", ({"lao tou","lao", "tou"}));
+        set("gender", "ç”·æ€§" );
         set("age", 55+random(10));
         set("long",
-"¿´ÆğÀ´ÓÖ¸ÉÓÖÊİ£¬ÔôÃ¼ÊóÑÛ¡£
-ËûÒ²ÕıÔÚÉÏÏÂ´òÁ¿×ÅÄã¡£\n");
+"çœ‹èµ·æ¥åˆå¹²åˆç˜¦ï¼Œè´¼çœ‰é¼ çœ¼ã€‚
+ä»–ä¹Ÿæ­£åœ¨ä¸Šä¸‹æ‰“é‡ç€ä½ ã€‚\n");
 
         set("combat_exp", 8000+random(1000));
         set("per", 10);
@@ -23,7 +23,7 @@ void create()
    set_skill("dodge", 40);
         set("chat_msg",
         ({
-                "ÀÏÍ·Ğ¦ÎûÎûµØ£¬²»»³ºÃÒâµØ´òÁ¿×ÅÄã¡£\n",
+                "è€å¤´ç¬‘å˜»å˜»åœ°ï¼Œä¸æ€€å¥½æ„åœ°æ‰“é‡ç€ä½ ã€‚\n",
                 (: random_move :),
         }));
         set("chat_chance_combat", 40);
@@ -54,7 +54,7 @@ void greeting(object ob)
 
         switch( random(6) ) {
                 case 0:
-                        say( "ÀÏÍ·×ìÀï²»ÖªËµ×ÅÊ²Ã´¡£\n");
+                        say( "è€å¤´å˜´é‡Œä¸çŸ¥è¯´ç€ä»€ä¹ˆã€‚\n");
                         break;
                 case 1:
                         command ("steal silver from " + ob->query("id") );
@@ -78,7 +78,7 @@ void greeting(object ob)
 
 int accept_fight(object me)
 {
-        command("say ´ò¼Ü£¿ÎÒÀÏÍ·ÄÇÊÇÄúµÄ¶ÔÊÖ£¡\n");
+        command("say æ‰“æ¶ï¼Ÿæˆ‘è€å¤´é‚£æ˜¯æ‚¨çš„å¯¹æ‰‹ï¼\n");
         return 0;
 }
 

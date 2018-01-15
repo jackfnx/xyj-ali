@@ -11,33 +11,33 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("³¬Éú¶É»¯Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("è¶…ç”Ÿæ¸¡åŒ–åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if (me->query_temp("lastchaodu")+15>time())
-	  return notify_fail("Äã¸Õ¸ÕÊ¹¹ý³¬¶É¾øÕÐ£¬»¹ÊÇÐª»á¶ù°É¡£\n");
+	  return notify_fail("ä½ åˆšåˆšä½¿è¿‡è¶…æ¸¡ç»æ‹›ï¼Œè¿˜æ˜¯æ­‡ä¼šå„¿å§ã€‚\n");
 //      if (!(me->query("id")=="bell" || "xiaoxiao"))
-//       return notify_fail("Ö»ÓÐ·çÁå²Å¿ÉÒÔÊ¹³¬¶È¾øÕÐ.\n");
+//       return notify_fail("åªæœ‰é£Žé“ƒæ‰å¯ä»¥ä½¿è¶…åº¦ç»æ‹›.\n");
 	if (me->query("force")<100)
-	 return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+	 return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 /*          extra = me->query_skill("lunhui-staff",1) * 10;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 */
 	me->add("force",-100);
-  msg = HIR "$N»º»ºËµµÀ:·ðÔ»,ÒÔÉ±Ö¹É±!ÎÒ½ñÌì¾Í´ó¿ªÉ±½ä.´ú±í·ðÀ´³Í·£ÄãÃÇÕâÐ©Íç¶ñÖ®Í½!\n" NOR;
+  msg = HIR "$Nç¼“ç¼“è¯´é“:ä½›æ›°,ä»¥æ€æ­¢æ€!æˆ‘ä»Šå¤©å°±å¤§å¼€æ€æˆ’.ä»£è¡¨ä½›æ¥æƒ©ç½šä½ ä»¬è¿™äº›é¡½æ¶ä¹‹å¾’!\n" NOR;
 	message_vision(msg, me, target);
-  msg =  HIY "ÌìÀíÑ­»·£¬±¨Ó¦²»Ë¬£¡\n"NOR;
+  msg =  HIY "å¤©ç†å¾ªçŽ¯ï¼ŒæŠ¥åº”ä¸çˆ½ï¼\n"NOR;
          message_vision(msg, me, target);
 	me->set_temp("LUNHUI_perform",0);
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"));
-  msg =  HIC "ÌìÍø»Ö»Ö£¬Êè¶ø²»Â©£¡\n"NOR;
+  msg =  HIC "å¤©ç½‘æ¢æ¢ï¼Œç–è€Œä¸æ¼ï¼\n"NOR;
           message_vision(msg, me, target);
 	me->set_temp("LUNHUI_perform",3);
          COMBAT_D->do_attack(me,target, me->query_temp("weapon"));
-  msg =  HIG "·ÅÏÂÍÀµ¶£¬Á¢µØ³É·ð£¡\n"NOR;
+  msg =  HIG "æ”¾ä¸‹å± åˆ€ï¼Œç«‹åœ°æˆä½›ï¼\n"NOR;
          message_vision(msg, me, target);
 	me->set_temp("LUNHUI_perform",5);
            COMBAT_D->do_attack(me,target, me->query_temp("weapon"));
- msg =  HIW "$nºÃÏóÒÑ¾­µ½ÁË¼«ÀÖÊÀ½ç£®£®£®£®\n"NOR;
+ msg =  HIW "$nå¥½è±¡å·²ç»åˆ°äº†æžä¹ä¸–ç•Œï¼Žï¼Žï¼Žï¼Ž\n"NOR;
 	message_vision(msg, me, target);
 /*	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // forrest.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "������");
+  set ("short", "松树林");
   set ("long", @LONG
 
-����֮�зǳ��İ�������ȫ����ɡ��ǵ���֦��ס�����²�
-����֦��ÿ��һ�����ᷢ���ܴ����������ʱ�ɿ���������
-��ĵ�ʿ��
+松林之中非常的暗，光线全被如伞如盖的树枝挡住。地下布
+满枯枝，每走一步都会发出很翠的响声，不时可看到几个砍
+柴的道士。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"lantao",

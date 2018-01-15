@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // buddhism.c
 
 inherit SPELLS;
 
-string name() { return "´ó³Ë·ğ·¨"; }
+string name() { return "å¤§ä¹˜ä½›æ³•"; }
 
 int valid_enable(string usage) { return usage=="spells"; }
 
 int valid_learn(object me)
 {
     if ((int)me->query("bellicosity") > 100)
-        return notify_fail("ÄãµÄÉ±ÆøÌ«ÖØ£¬ÎŞ·¨ĞŞÁ¶´ó³Ë·ğ·¨¡£\n");
+        return notify_fail("ä½ çš„æ€æ°”å¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼å¤§ä¹˜ä½›æ³•ã€‚\n");
     return ::valid_learn(me);
 }
 

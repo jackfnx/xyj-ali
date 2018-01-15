@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // boy1.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�����");
+  set ("short", "沁玉殿");
   set ("long", @LONG
 
-��������̫��ס�Ĺ���������򵥣�����һ�����Ρ�̫��ƽ
-ʱҲ����������ϵ����齫�����յ�һƬͨ����
+这里是龙太子住的宫殿。屋里摆设简单，仅有一桌四椅。太子平
+时也不在这里，柱上的明珠将屋中照得一片通明。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "southwest" : __DIR__"inside1",

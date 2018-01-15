@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // ice_poison.c
@@ -18,15 +18,15 @@ int update_condition(object me, int duration)
                                                    
    me->receive_wound("sen", damage_sen);
    me->receive_wound("kee", damage_kee);
-   me->set_temp("death_msg","º®¶¾·¢×÷ËÀÁË¡£\n");
+   me->set_temp("death_msg","å¯’æ¯’å‘ä½œæ­»äº†ã€‚\n");
    me->apply_condition("ice_poison", duration - 1);
 
    if( (int)me->query("kee") < (int)me->query("max_kee")/4 )
-     message_vision("$N×ì´½ÎÚÇà·¢ÁÁ£¬»ëÉí¶¶¸ö²»Í££¬²»ÖªµÀÖĞÁËÊ²Ã´Ğ°¡£\n", me);
+     message_vision("$Nå˜´å”‡ä¹Œé’å‘äº®ï¼Œæµ‘èº«æŠ–ä¸ªä¸åœï¼Œä¸çŸ¥é“ä¸­äº†ä»€ä¹ˆé‚ªã€‚\n", me);
    else if( (int)me->query("kee") < (int)me->query("max_kee")/2 )
-     message_vision("$N×ì´½·¢Çà£¬Éí×ÓÎ¢Î¢·¢¶¶£¬ºÃÏóÀäµÃÀ÷º¦¡£\n", me);     
+     message_vision("$Nå˜´å”‡å‘é’ï¼Œèº«å­å¾®å¾®å‘æŠ–ï¼Œå¥½è±¡å†·å¾—å‰å®³ã€‚\n", me);     
    else 
-     message_vision("$N´òÁË¸öº®²ü¡£\n", me);
+     message_vision("$Næ‰“äº†ä¸ªå¯’é¢¤ã€‚\n", me);
      
    if( duration < 1 ) return 0;
    return 1;

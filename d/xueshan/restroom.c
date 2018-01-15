@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "ĞİÏ¢ÊÒ");
+   set ("short", "ä¼‘æ¯å®¤");
    set ("long", @LONG
 
-ÕâÀïÊÇÑ©É½µÜ×ÓÆ½Ê±ĞİÏ¢µÄµØ·½¡£ÎİÖĞÑëÓĞÒ»ÕÅ´óÊ¯×À£¬ÉÏÃæ°Ú
-×ÅÒ»Ğ©Ë®¹ûµãĞÄ¡£±ßÉÏ»¹ÓĞÁ½¸öÀï¼ä¡£ÆäÖĞ¿¿ÄÏµÄÒ»¼äÃÅÉÏ¹Ò×Å
-Ò»ÕÅÅÆ×Ó(paizi)¡£¶øÇ½ÉÏÔòÂÒÆß°ËÔãµØĞ´ÂúÁË×Ö¡£
+è¿™é‡Œæ˜¯é›ªå±±å¼Ÿå­å¹³æ—¶ä¼‘æ¯çš„åœ°æ–¹ã€‚å±‹ä¸­å¤®æœ‰ä¸€å¼ å¤§çŸ³æ¡Œï¼Œä¸Šé¢æ‘†
+ç€ä¸€äº›æ°´æœç‚¹å¿ƒã€‚è¾¹ä¸Šè¿˜æœ‰ä¸¤ä¸ªé‡Œé—´ã€‚å…¶ä¸­é å—çš„ä¸€é—´é—¨ä¸ŠæŒ‚ç€
+ä¸€å¼ ç‰Œå­(paizi)ã€‚è€Œå¢™ä¸Šåˆ™ä¹±ä¸ƒå…«ç³Ÿåœ°å†™æ»¡äº†å­—ã€‚
 LONG);
 
-   set("item_desc", (["paizi" : "Å®µÜ×ÓÎÔ·¿£¬ÄĞ×ÓÑÏ½ûÈëÄÚ¡£\n", ]));
+   set("item_desc", (["paizi" : "å¥³å¼Ÿå­å§æˆ¿ï¼Œç”·å­ä¸¥ç¦å…¥å†…ã€‚\n", ]));
    //for look something.
 
    set("exits", 
@@ -52,16 +52,16 @@ int do_sit(string arg)
    me=this_player();
 
    if ( !arg || ((arg != "seat")&&(arg != "table") ))
-     return notify_fail("ÄãÒª×øÔÚÊ²Ã´ÉÏÃæ£¿\n");   
+     return notify_fail("ä½ è¦ååœ¨ä»€ä¹ˆä¸Šé¢ï¼Ÿ\n");   
    
    if (this_player()->query_temp("marks/sit"))
-     return notify_fail("ÄãÒÑ¾­×øÏÂÁË¡£\n");   
+     return notify_fail("ä½ å·²ç»åä¸‹äº†ã€‚\n");   
       
    if ( arg != "seat")   
-     return notify_fail("×ø×À×ÓÉÏ£¿Ì«²»ÑÅ¹ÛÁË°É¡£\n");
+     return notify_fail("åæ¡Œå­ä¸Šï¼Ÿå¤ªä¸é›…è§‚äº†å§ã€‚\n");
            
    this_player()->set_temp("marks/sit", 1);
-   message_vision("$NÊæÊæ·ş·şµØÔÚÊ¯µÊÉÏ×øÏÂÀ´£¬ÇÌÆğÁË¶şÀÉÍÈ¡£\n",me);
+   message_vision("$Nèˆ’èˆ’æœæœåœ°åœ¨çŸ³å‡³ä¸Šåä¸‹æ¥ï¼Œç¿˜èµ·äº†äºŒéƒè…¿ã€‚\n",me);
    return 1;   
 }
 
@@ -71,10 +71,10 @@ int do_stand(string arg)
    me=this_player();
 
    if (!this_player()->query_temp("marks/sit"))
-     return notify_fail("Äã±¾À´¾ÍÕ¾×Å¡£\n");
+     return notify_fail("ä½ æœ¬æ¥å°±ç«™ç€ã€‚\n");
 
    this_player()->set_temp("marks/sit", 0);
-   message_vision("$NÉìÁË¸öÀÁÑü£¬Õ¾ÁËÆğÀ´¡£\n", me);
+   message_vision("$Nä¼¸äº†ä¸ªæ‡’è…°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
    return 1;
 }
 

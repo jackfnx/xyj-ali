@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit BULLETIN_BOARD;
 
 void create()
 {
-  set_name("ÌúËşÁôÑÔ±Ú", ({"board"}) );
+  set_name("é“å¡”ç•™è¨€å£", ({"board"}) );
   set("location", "/d/kaifeng/tieta");
   set("board_id", "kaifeng_b");
   set("capacity", 100);
-  set("long", "ÌúËşÏÂÒ»¿éÁôÑÔ±Ú£¬ÉÏÃæĞ´ÂúÁËÁôÑÔ¡£\n");
+  set("long", "é“å¡”ä¸‹ä¸€å—ç•™è¨€å£ï¼Œä¸Šé¢å†™æ»¡äº†ç•™è¨€ã€‚\n");
   setup();
   replace_program(BULLETIN_BOARD);
 }

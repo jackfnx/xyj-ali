@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/school2.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Îä¹Ý½ÌÁ·³¡");
+  set ("short", "æ­¦é¦†æ•™ç»ƒåœº");
   set ("long", @LONG
 
-ÕâÀïÊÇ·½·½ÕýÕýµÄÒ»¸ö½ÌÁ·³¡£¬µØÉÏÆÌ×Å»ÆÉ«µÄÏ¸É°£¬Ðí¶àµÜ×ÓÕý
-ÔÚÔÚÕâÀïÅ¬Á¦µØ²ÙÁ·×Å¡£¶«±ßÒ»¼ä²»ÆðÑÛµÄÐ¡ÎÝ£¬²ñÃÅ°ëÑÚ¡£Íù±±
-ÔòÊÇÎä¹ÝÊ¦¸¸ÃÇÐÝÏ¢µÄ´óÌü¡£
+è¿™é‡Œæ˜¯æ–¹æ–¹æ­£æ­£çš„ä¸€ä¸ªæ•™ç»ƒåœºï¼Œåœ°ä¸Šé“ºç€é»„è‰²çš„ç»†ç ‚ï¼Œè®¸å¤šå¼Ÿå­æ­£
+åœ¨åœ¨è¿™é‡ŒåŠªåŠ›åœ°æ“ç»ƒç€ã€‚ä¸œè¾¹ä¸€é—´ä¸èµ·çœ¼çš„å°å±‹ï¼ŒæŸ´é—¨åŠæŽ©ã€‚å¾€åŒ—
+åˆ™æ˜¯æ­¦é¦†å¸ˆçˆ¶ä»¬ä¼‘æ¯çš„å¤§åŽ…ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */
@@ -40,19 +40,19 @@ int do_skills(string arg)
         me=this_player();
    if(!me->query("newbie/learn") )
                 return
-notify_fail("Ö»ÓÐÎ×Ê¦»òÓÐÊ¦Í½¹ØÏµµÄÈËÄÜ²ì¿´ËûÈËµÄ¼¼ÄÜ¡£\n");
+notify_fail("åªæœ‰å·«å¸ˆæˆ–æœ‰å¸ˆå¾’å…³ç³»çš„äººèƒ½å¯Ÿçœ‹ä»–äººçš„æŠ€èƒ½ã€‚\n");
         if ( (arg != "dongfang cong"))
                 return
-notify_fail("Ö»ÓÐÎ×Ê¦»òÓÐÊ¦Í½¹ØÏµµÄÈËÄÜ²ì¿´ËûÈËµÄ¼¼ÄÜ¡£\n");
+notify_fail("åªæœ‰å·«å¸ˆæˆ–æœ‰å¸ˆå¾’å…³ç³»çš„äººèƒ½å¯Ÿçœ‹ä»–äººçš„æŠ€èƒ½ã€‚\n");
         else
 write("
-¶«·½´ÏÄ¿Ç°ËùÑ§¹ýµÄ¼¼ÄÜ£º
+ä¸œæ–¹èªç›®å‰æ‰€å­¦è¿‡çš„æŠ€èƒ½ï¼š
 
-  »ù±¾Çá¹¦ (dodge)                         - ÂíÂí»¢»¢  50/    0
-  ÄÚ¹¦ÐÄ·¨ (force)                         - °ëÉú²»Êì  40/    0
-  ²ðÕÐÐ¶Á¦Ö®·¨ (parry)                     - ÂíÂí»¢»¢  50/    0
-  »ù±¾¹÷·¨ (stick)                         - ÂíÂí»¢»¢  50/    0
-  ÆË»÷¸ñ¶·Ö®¼¼ (unarmed)                   - ÂíÂí»¢»¢  50/    0
+  åŸºæœ¬è½»åŠŸ (dodge)                         - é©¬é©¬è™Žè™Ž  50/    0
+  å†…åŠŸå¿ƒæ³• (force)                         - åŠç”Ÿä¸ç†Ÿ  40/    0
+  æ‹†æ‹›å¸åŠ›ä¹‹æ³• (parry)                     - é©¬é©¬è™Žè™Ž  50/    0
+  åŸºæœ¬æ£æ³• (stick)                         - é©¬é©¬è™Žè™Ž  50/    0
+  æ‰‘å‡»æ ¼æ–—ä¹‹æŠ€ (unarmed)                   - é©¬é©¬è™Žè™Ž  50/    0
 
 \n");
                 return 1;

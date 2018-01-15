@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // zombie.c
@@ -11,9 +11,9 @@ void do_bite();
 
 void create()
 {
-   set_name("½©Ê¬", ({ "zombie" }) );
+   set_name("åƒµå°¸", ({ "zombie" }) );
    set("long",
-     "ÕâÊÇÒ»¾ß±»ÈËÓÃ·ûÖä¿ØÖÆµÄ½©Ê¬£¬´ÓËü²Ô°×µÄÁ³ÉÏ¿´²»³öÈÎºÎÏ²Å­°§ÀÖ¡£\n");
+     "è¿™æ˜¯ä¸€å…·è¢«äººç”¨ç¬¦å’’æ§åˆ¶çš„åƒµå°¸ï¼Œä»å®ƒè‹ç™½çš„è„¸ä¸Šçœ‹ä¸å‡ºä»»ä½•å–œæ€’å“€ä¹ã€‚\n");
    set("max_kee", 500);
    set("max_sen", 500);
    set("max_mana", 200);
@@ -25,9 +25,9 @@ void create()
    set("cor", 30);
    set("chat_chance", 15);
    set("chat_msg_combat", ({
-     "½©Ê¬¿ÚÖĞ·¢³öºÉºÉµÄ½ĞÉù¡£\n",
-     "½©Ê¬µÄÁ³ÉÏ¿ªÊ¼¾·ÂÎ£¬Ò»Õó³é´¤£¬·¢¿ñËÆµØ´ó½Ğ¡£\n",
-     "½©Ê¬ÎåÖ¸»şÕÅ£¬Ò§ÑÀÇĞ³İ£¬Â¶³öÕøÄüµÄĞ¦Èİ¡£\n",
+     "åƒµå°¸å£ä¸­å‘å‡ºè·è·çš„å«å£°ã€‚\n",
+     "åƒµå°¸çš„è„¸ä¸Šå¼€å§‹ç—‰æŒ›ï¼Œä¸€é˜µæŠ½æï¼Œå‘ç‹‚ä¼¼åœ°å¤§å«ã€‚\n",
+     "åƒµå°¸äº”æŒ‡ç®•å¼ ï¼Œå’¬ç‰™åˆ‡é½¿ï¼Œéœ²å‡ºç‹°ç‹çš„ç¬‘å®¹ã€‚\n",
      (: do_bite :),
    }) );
    set_skill("unarmed", 30);
@@ -50,7 +50,7 @@ void die()
 {
    object corpse;
         if( environment() ) {
-                message("sound", "½©Ê¬ÂıÂıµØµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»Ì²ÑªË®¡£\n", environment());
+                message("sound", "åƒµå°¸æ…¢æ…¢åœ°å€’äº†ä¸‹å»ï¼ŒåŒ–ä¸ºä¸€æ»©è¡€æ°´ã€‚\n", environment());
         }
 
    destruct(this_object());
@@ -64,7 +64,7 @@ int heal_up()
    &&   (int)master->query("mana") > 100 
    &&   (int)master->query("kee") > 100) {
      message("tell",
-        HIR + name() + "¸æËßÄã£ºÎÒ...Ğè...Òª...Äã...µÄ...Á¦...Á¿...\n" NOR,
+        HIR + name() + "å‘Šè¯‰ä½ ï¼šæˆ‘...éœ€...è¦...ä½ ...çš„...åŠ›...é‡...\n" NOR,
         master );
      master->add("mana", -50);
      master->receive_damage("sen", 50);
@@ -80,7 +80,7 @@ void do_bite()
 {
    object *enemy;
 
-   say( name() + "¿ÚÖĞÅç³öÒ»¹ÉÖĞÈËÓûÅ»µÄ³ôÆø£¬Ê¹Äã¾õµÃÍ·ÔÎÄÔÕÍ¡£\n" );
+   say( name() + "å£ä¸­å–·å‡ºä¸€è‚¡ä¸­äººæ¬²å‘•çš„è‡­æ°”ï¼Œä½¿ä½ è§‰å¾—å¤´æ™•è„‘èƒ€ã€‚\n" );
    enemy = query_enemy();
    for(int i=0; i<sizeof(enemy); i++) {
      if( !enemy[i] ) continue;
@@ -100,20 +100,20 @@ int do_attack(string arg)
    if( wizardp(this_player()) )
      master = this_player();
    if( (string)this_player()->query("name")!=(string)master->query("name") ) 
-   return notify_fail("½©Ê¬¿ÚÖĞÎØÎØÁ½Éù£¬ºÃÏñ²»Ô¸ÀíÄã£¡\n");
+   return notify_fail("åƒµå°¸å£ä¸­å‘œå‘œä¸¤å£°ï¼Œå¥½åƒä¸æ„¿ç†ä½ ï¼\n");
 
    if(!arg || !objectp(obj=present(arg,environment(this_player()))))
-           return notify_fail("ÄãÏëÈÃ½©Ê¬¹¥»÷Ë­£¿\n");
+           return notify_fail("ä½ æƒ³è®©åƒµå°¸æ”»å‡»è°ï¼Ÿ\n");
 
         if( !obj->is_character() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇÉúÎï¡£\n");
-   message_vision("$N¸½¶ú¶Ô$nËµÁËĞ©Ê²Ã´¡£\n", master, this_object());
-   message_vision("$N¶Ô$nº°µÀ£ºÈ¥ËÀ°É!\n", this_object(), obj);
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯ç”Ÿç‰©ã€‚\n");
+   message_vision("$Né™„è€³å¯¹$nè¯´äº†äº›ä»€ä¹ˆã€‚\n", master, this_object());
+   message_vision("$Nå¯¹$nå–Šé“ï¼šå»æ­»å§!\n", this_object(), obj);
    this_object()->set("combat_exp", (int)this_player()->query("combat_exp")*2);
    this_object()->set_skill("unarmed", (int)this_player()->query_skill("unarmed")+(int)this_player()->query("kar"));
         this_object()->set_skill("parry", (int)this_player()->query_skill("parry")+(int)this_player()->query("kar"));
         this_object()->set_skill("dodge", (int)this_player()->query_skill("dodge")+(int)this_player()->query("kar"));
-   message_vision("\n$N´óºÈÒ»Éù£¬»ÓÈ­¾ÍÏò$n´òÈ¥£¡\n\n", this_object(), obj);
+   message_vision("\n$Nå¤§å–ä¸€å£°ï¼ŒæŒ¥æ‹³å°±å‘$næ‰“å»ï¼\n\n", this_object(), obj);
    // fixed by snowcat: don't use kill_ob (too easy to cause bugs!)
    command("kill "+obj->query("id"));
    return 1;

@@ -14,28 +14,28 @@ int perform(object me, object target)
 
     if (!target) target = offensive_target(me);
     if (!weapon = me->query_temp("weapon"))
-        return notify_fail("ÄãÃ»ÄÃ±Þ×Ó£¬ÓÃÊ²Ã´ÇéÍø°¡£¿\n");
+        return notify_fail("ä½ æ²¡æ‹¿éž­å­ï¼Œç”¨ä»€ä¹ˆæƒ…ç½‘å•Šï¼Ÿ\n");
     if ((int)me->query_skill("spells") < 100
     ||  (int)me->query_skill("loveless-whip",1) < 100)
-        return notify_fail("ÄãµÄ¹¦·òµÈ¼¶»¹²»¹»£¬Ê¹²»³öÇéÍø£¡\n");
+        return notify_fail("ä½ çš„åŠŸå¤«ç­‰çº§è¿˜ä¸å¤Ÿï¼Œä½¿ä¸å‡ºæƒ…ç½‘ï¼\n");
     if (!target
     ||  !target->is_character()
     ||  !me->is_fighting(target)
     ||  !living(target))
-        return notify_fail(HIW"ÄãÖ»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡¸ÇéÍø¡¹¡£\n"NOR);
+        return notify_fail(HIW"ä½ åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€Œæƒ…ç½‘ã€ã€‚\n"NOR);
     if (target->query_temp("no_move"))
-        return notify_fail(target->query("name")+"ÒÑ¾­¶¯²»ÁËÁË£¡\n");
+        return notify_fail(target->query("name")+"å·²ç»åŠ¨ä¸äº†äº†ï¼\n");
 
     if ((int)me->query("mana") < 200)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query("sen") < 10)
-        return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+        return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
     me->add("mana", -200);
     me->receive_damage("sen", 10);
 
-    msg = HIB"$N½«ÊÖÖÐ"+weapon->query("name")+HIB"Îè³ÉÒ»ÍÅ£¬ÇáÉùÒ÷µÀ£º¡¸¼ô²»¶Ï£¬Àí»¹ÂÒ£¬ÊÇÀë³î¡­¡­¡­¡­¡­¡­¡¹\n\n"NOR;
-    msg += HIB"$NÊÖÖÐµÄ±ÞÍøÏò$n"+HIB"µ±Í·ÕÖÏÂ£¡\n"NOR;
+    msg = HIB"$Nå°†æ‰‹ä¸­"+weapon->query("name")+HIB"èˆžæˆä¸€å›¢ï¼Œè½»å£°åŸé“ï¼šã€Œå‰ªä¸æ–­ï¼Œç†è¿˜ä¹±ï¼Œæ˜¯ç¦»æ„â€¦â€¦â€¦â€¦â€¦â€¦ã€\n\n"NOR;
+    msg += HIB"$Næ‰‹ä¸­çš„éž­ç½‘å‘$n"+HIB"å½“å¤´ç½©ä¸‹ï¼\n"NOR;
 
     success = 1;
     ap = (me->query_skill("spells")+me->query_skill("loveless-whip")) / 2;
@@ -46,14 +46,14 @@ int perform(object me, object target)
     dp += (int)target->query("combat_exp");
     if (ap < dp) success = 0;
     if (success == 1) {
-        msg +=  HIB"$n"HIB"ÄÔ×ÓÀïÒ»Æ¬»ìÂÒ£¬¹íÊ¹Éñ²î°ãÍ»È»·¢´ô£¬ÉõÖÁÍü¼ÇÁË¶ãÉÁ£¬±»ÇéÍøµ±Í·ÕÖ×¡¡£\n"NOR;
+        msg +=  HIB"$n"HIB"è„‘å­é‡Œä¸€ç‰‡æ··ä¹±ï¼Œé¬¼ä½¿ç¥žå·®èˆ¬çªç„¶å‘å‘†ï¼Œç”šè‡³å¿˜è®°äº†èº²é—ªï¼Œè¢«æƒ…ç½‘å½“å¤´ç½©ä½ã€‚\n"NOR;
         target->set_temp("no_move", 1);
         howlong = random((me->query_skill("spells") - 100)) + 1;
         if (howlong > 60) howlong = 60;
         call_out("free", howlong, target);
     }        
     else {
-        msg +=  HIG"$n"HIG"ÉñÖÇÇåÐÑ£¬²»ÎªÇéËùÀ§£¬ÇáÇáÏòÅÔÒ»Ô¾£¬¶ã¹ýÁËÇéÍøµÄÏ®»÷¡£\n"NOR;
+        msg +=  HIG"$n"HIG"ç¥žæ™ºæ¸…é†’ï¼Œä¸ä¸ºæƒ…æ‰€å›°ï¼Œè½»è½»å‘æ—ä¸€è·ƒï¼Œèº²è¿‡äº†æƒ…ç½‘çš„è¢­å‡»ã€‚\n"NOR;
         if (living(target)) target->kill_ob(me);
         me->start_busy(2);
     } 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // poison_dust.c
@@ -7,15 +7,15 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-   set_name("¼«ÀÖåĞÒ£É¢", ({ "poison dust", "dust" }) );
+   set_name("æä¹é€é¥æ•£", ({ "poison dust", "dust" }) );
    if( clonep() )
      set_default_object(__FILE__);
    else {
      set("long",
-        "ÕâÊÇÒ»ÖÖ¶¾ĞÔÃÍÁÒµÄ´ºÒ©£¬Äã¿ÉÒÔ°ÑËüµ¹(pour)ÔÚ¾ÆË®Ö®ÖĞÊ¹ÓÃ¡£\n" );
-     set("unit", "°ü");
+        "è¿™æ˜¯ä¸€ç§æ¯’æ€§çŒ›çƒˆçš„æ˜¥è¯ï¼Œä½ å¯ä»¥æŠŠå®ƒå€’(pour)åœ¨é…’æ°´ä¹‹ä¸­ä½¿ç”¨ã€‚\n" );
+     set("unit", "åŒ…");
      set("base_value", 700);
-     set("base_unit", "·İ");
+     set("base_unit", "ä»½");
      set("base_weight", 30);
    }
    set_amount(1);
@@ -35,18 +35,18 @@ int do_pour(string arg)
    if( !arg
    ||   sscanf(arg, "%s in %s", me, what)!=2
    ||   !id(me) )
-     return notify_fail("Ö¸Áî¸ñÊ½: pour <Ò©·Û> in <ÎïÆ·>\n");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼: pour <è¯ç²‰> in <ç‰©å“>\n");
 
    ob = present(what, this_player());
    if( !ob )
-     return notify_fail("ÄãÉíÉÏÃ»ÓĞ " + what + " ÕâÑù¶«Î÷¡£\n");
+     return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰ " + what + " è¿™æ ·ä¸œè¥¿ã€‚\n");
    if( !ob->query("liquid/remaining") )
-     return notify_fail(ob->name() + "ÀïÊ²Ã´Ò²Ã»ÓĞ£¬ÏÈ×°Ğ©Ë®¾Æ²ÅÄÜÈÜ»¯Ò©·Û¡£\n");
+     return notify_fail(ob->name() + "é‡Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ï¼Œå…ˆè£…äº›æ°´é…’æ‰èƒ½æº¶åŒ–è¯ç²‰ã€‚\n");
    f = (: call_other, __FILE__, "drink_drug" :);
    ob->set("liquid/drink_func", bind(f, ob));
    ob->add("liquid/slumber_effect", 100);
-   message_vision("$N½«Ò»Ğ©" + name() + "µ¹½ø" + ob->name() 
-     + "£¬Ò¡»ÎÁË¼¸ÏÂ¡£\n", this_player());
+   message_vision("$Nå°†ä¸€äº›" + name() + "å€’è¿›" + ob->name() 
+     + "ï¼Œæ‘‡æ™ƒäº†å‡ ä¸‹ã€‚\n", this_player());
    add_amount(-1);
    return 1;
 }

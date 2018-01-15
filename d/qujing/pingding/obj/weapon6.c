@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit RAKE;
 
 void create()
 {
-  set_name("ÖşÉ½°Ò", ({ "zhushan pa", "pa", "rake" }) );
+  set_name("ç­‘å±±è€™", ({ "zhushan pa", "pa", "rake" }) );
   init_rake(35);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(1000);
   if( clonep() )
      set_default_object(__FILE__);

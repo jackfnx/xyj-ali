@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/6/1997 by snowcat
@@ -8,12 +8,12 @@ inherit NPC;
 void create()
 {
   string dir;
-  set_name("������", ({"pilan po", "po", "daogu"}));
-  set("title", "����");
-  set("gender", "Ů��");
+  set_name("毗蓝婆", ({"pilan po", "po", "daogu"}));
+  set("title", "道姑");
+  set("gender", "女性");
   set("age", 58);
   set("per", 26);
-  set("rank_info/respect", "����");
+  set("rank_info/respect", "菩萨");
   set("combat_exp", 1000000);
   set_skill("snowsword", 90);
   set_skill("sword", 90);
@@ -54,10 +54,10 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/pansi","done");
   who->add("combat_exp",i+4000);
-  command("chat "+who->query("name")+"��˿�뾡��֩�뾫�ƻ��۽�����򼾫��");
-  command("chat "+who->query("name")+"˳������������һ�أ�");
-  tell_object (who,"��Ӯ����"+chinese_number(4)+"��"+
-               chinese_number(i/4)+"��"+
-               chinese_number((i-(i/4)*4)*3)+"ʱ���ĵ��У�\n");
+  command("chat "+who->query("name")+"盘丝岭尽除蜘蛛精黄花观降服蜈蚣精！");
+  command("chat "+who->query("name")+"顺利闯过西行又一关！");
+  tell_object (who,"你赢得了"+chinese_number(4)+"年"+
+               chinese_number(i/4)+"天"+
+               chinese_number((i-(i/4)*4)*3)+"时辰的道行！\n");
   who->save();
 }

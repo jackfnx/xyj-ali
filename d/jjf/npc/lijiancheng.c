@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Àî½¨³É npc: /d/jjf/npc/lijiancheng.c
+// æå»ºæˆ npc: /d/jjf/npc/lijiancheng.c
 // created 5-20-97 pickle
  
 inherit NPC;
@@ -9,15 +9,15 @@ string expell_me(object me);
  
 void create()
 {
-  set_name("Àî½¨³É", ({"li jiancheng", "li", "jiancheng", "lijiancheng", "qiwang", "qi wang", "wang", "qi"}));
+  set_name("æå»ºæˆ", ({"li jiancheng", "li", "jiancheng", "lijiancheng", "qiwang", "qi wang", "wang", "qi"}));
   set ("long", @LONG
-Àî½¨³ÉÄËÊÇÌÆ¸ß×æÀîÔ¨µÄ´ó¶ù×Ó£¬ÊÜ·âÌ«×Ó£¬Ëæ¸ß×æÄÏÕ÷±±Õ½
-Ê±ÆÄÁ¢Õ½¹¦¡£ËäÎŞ¶şµÜÀîÊÀÃñÏÔºÕ£¬µ«Ò²·ÇÀÏÈıÀîÔª¼ªÒ»°ãÂÅ
-³Ô°ÜÕÌ¡£
+æå»ºæˆä¹ƒæ˜¯å”é«˜ç¥–ææ¸Šçš„å¤§å„¿å­ï¼Œå—å°å¤ªå­ï¼Œéšé«˜ç¥–å—å¾åŒ—æˆ˜
+æ—¶é¢‡ç«‹æˆ˜åŠŸã€‚è™½æ— äºŒå¼Ÿæä¸–æ°‘æ˜¾èµ«ï¼Œä½†ä¹Ÿéè€ä¸‰æå…ƒå‰ä¸€èˆ¬å±¡
+åƒè´¥ä»—ã€‚
 LONG);
  
-  set("title", "Ì«×Ó");
-  set("gender", "ÄĞĞÔ");
+  set("title", "å¤ªå­");
+  set("gender", "ç”·æ€§");
   set("age", 36);
   set("str", 25);
   set("per", 25);
@@ -54,21 +54,21 @@ int accept_fight(object me)
   string myrude=RANK_D->query_rude(me), player=me->query("id");
   int kar=(int)me->query_kar();
 
-  if ((string)me->query("family/family_name") == "½«¾ü¸®")
+  if ((string)me->query("family/family_name") == "å°†å†›åºœ")
     {
-      command("say ÀÏ×Ó×îºŞµÄ¾ÍÊÇ½«¾ü¸®µÜ×Ó£¡Äã¸ö"+myrude+"¾¹È»×Ô¼ºËÍÉÏÃÅÀ´£¡");
-      command("emote ³ì³ùµÀ£ºÉ±»¹ÊÇ²»É±£¿");
+      command("say è€å­æœ€æ¨çš„å°±æ˜¯å°†å†›åºœå¼Ÿå­ï¼ä½ ä¸ª"+myrude+"ç«Ÿç„¶è‡ªå·±é€ä¸Šé—¨æ¥ï¼");
+      command("emote è¸Œèº‡é“ï¼šæ€è¿˜æ˜¯ä¸æ€ï¼Ÿ");
       if (random(kar-10) > 10)
        {
          command("sneer "+player);
-         command("say ÀÏ×Ó½ñÌìĞÄÇéºÃ£¬Äã¸ö"+myrude+"³ÃÔç¸øÎÒ¹ö£¡");
+         command("say è€å­ä»Šå¤©å¿ƒæƒ…å¥½ï¼Œä½ ä¸ª"+myrude+"è¶æ—©ç»™æˆ‘æ»šï¼");
          me->move("/d/jjf/zuixing");
-         return notify_fail("ĞÒ¿÷ÄãÔËÆøºÃ£¬·ñÔò¡£¡£¡£\n");
+         return notify_fail("å¹¸äºä½ è¿æ°”å¥½ï¼Œå¦åˆ™ã€‚ã€‚ã€‚\n");
        }
-      command("emote ºÈµÀ£ºÉ±£¡");
+      command("emote å–é“ï¼šæ€ï¼");
       command("kill "+player);
       return 1;
     }
-    command("say µ¶½£ÎŞÇé£¬±¾ÍõÈôÊÇÉËÁËÄãÔõÃ´°ì£¿\n");
+    command("say åˆ€å‰‘æ— æƒ…ï¼Œæœ¬ç‹è‹¥æ˜¯ä¼¤äº†ä½ æ€ä¹ˆåŠï¼Ÿ\n");
   return 0;
 }

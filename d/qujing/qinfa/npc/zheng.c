@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -9,8 +9,8 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("֣�Ѹ�", ({"zheng guafu", "zheng", "guafu", "fu"}));
-  set("gender", "Ů��");
+  set_name("郑寡妇", ({"zheng guafu", "zheng", "guafu", "fu"}));
+  set("gender", "女性");
   set("combat_exp", 5000);
   set("age", 30);
   set("per", 21);
@@ -45,7 +45,7 @@ int buy_object (object who, string item)
 
   if (me->query_temp("no_guo"))
   {
-    message_vision ("$N��$n˵�����Բ�����Ұ�ι���һ�������������\n",me,who);
+    message_vision ("$N对$n说：“对不起，新野参果待一会才能送来。”\n",me,who);
     return -1;
   }
   me->set_temp("no_guo",1);

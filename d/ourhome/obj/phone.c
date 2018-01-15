@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // phone.c 
@@ -14,16 +14,16 @@ void init();
 
 void create()
 {
-   set_name(HIG "¿Õ¼ä´«ËÍÆ÷" NOR, ({ "space phone", "phone", "space"}) );
+   set_name(HIG "ç©ºé—´ä¼ é€å™¨" NOR, ({ "space phone", "phone", "space"}) );
    set_weight(50);
    set_max_encumbrance(50);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "Ì¨");
+     set("unit", "å°");
                 set("long", @LONG
-ÕâÊÇ¸öËæÉíÌıÄÇÃ´´ó¸öµÄ¶«Î÷¡£²»ÖªÊÇÊ²Ã´×÷µÄÈ´·¢×Å½ğÊôµÄ¹âÔó¡£
-²¦ÄãÏëÈ¥ÈË¼ÒµÄºÅÂë£¬Ëü¾Í»á°ÑÄãËÍµ¹ÄÇ¶ù¡£ dial <someone>
+è¿™æ˜¯ä¸ªéšèº«å¬é‚£ä¹ˆå¤§ä¸ªçš„ä¸œè¥¿ã€‚ä¸çŸ¥æ˜¯ä»€ä¹ˆä½œçš„å´å‘ç€é‡‘å±çš„å…‰æ³½ã€‚
+æ‹¨ä½ æƒ³å»äººå®¶çš„å·ç ï¼Œå®ƒå°±ä¼šæŠŠä½ é€å€’é‚£å„¿ã€‚ dial <someone>
 LONG
                 );
 
@@ -52,18 +52,18 @@ int do_dial(string arg)
 
    if (!arg)
    {
-     return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");   
+     return notify_fail("ä½ è¦å»å“ªé‡Œï¼Ÿ\n");   
    }
    if ( file_size("/u/"+arg+"/workroom.c")<0)
    {
-      message_vision("¿Õ¼ä´«ËÍÆ÷¶Ô$NËµµÀ£ºÃ»ÓĞÕâ¼Ò¡£\n",me);
+      message_vision("ç©ºé—´ä¼ é€å™¨å¯¹$Nè¯´é“ï¼šæ²¡æœ‰è¿™å®¶ã€‚\n",me);
          return notify_fail(""); 
    }
 
-      message_vision("¿Õ¼ä´«ËÍÆ÷¶Ô$NËµµÀ£º½ÓÍ¨À²£¡\n", me);
+      message_vision("ç©ºé—´ä¼ é€å™¨å¯¹$Nè¯´é“ï¼šæ¥é€šå•¦ï¼\n", me);
    
       me->move("/u/"+arg+"/workroom.c");
       
-      message_vision("¿Õ¼ä´«ËÍÆ÷¶Ô$NËµµÀ£ºÄãµ½ÁË¡£\n", me);
+      message_vision("ç©ºé—´ä¼ é€å™¨å¯¹$Nè¯´é“ï¼šä½ åˆ°äº†ã€‚\n", me);
    return 1;
 }

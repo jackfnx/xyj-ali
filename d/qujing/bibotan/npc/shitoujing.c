@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 void create()
 {
-        set_name("ʯͷ��", ({"shitou jing", "jing"}));
-        set("long", "һ���������ɵĴ���ʯ��ֻ�Ƕ�����ֽź��Դ���\n");
+        set_name("石头精", ({"shitou jing", "jing"}));
+        set("long", "一个高有数丈的大顽石，只是多出了手脚和脑袋。\n");
         set("age", 30);
         set("attitude", "herosim");
-        set("gender", "����");
+        set("gender", "男性");
    set("class", "yaomo");
         set("str", 30);
         set("int", 20);
         set("per", 10);
-   set("looking", "�������¾���ʯͷ��������ʲô��ò��");
+   set("looking", "浑身上下就是石头，那里有什么容貌。");
         set("con", 30);
         set("max_kee",800);
         set("max_sen", 800);
@@ -55,7 +55,7 @@ void leave()
    
    this_object()->add("time", 1);
    if( (int)this_object()->query("time") >= 8 ) {
-        message("vision",name() + "���˸����������ɵ��ڵ��¡�\n", environment(),this_object() );
+        message("vision",name() + "伸了个懒腰，又躺倒在地下。\n", environment(),this_object() );
    seteuid(getuid());
    if(stone=new("/d/qujing/bibotan/npc/stone"))
    stone->move(environment(this_object()));
@@ -69,7 +69,7 @@ void relay_emote(object ob,string verb)
 {
         switch(verb) {
         case "kick":
-                        command("say ���ߣ��������үս�����ٻغϡ�\n");
+                        command("say 还踢！？来与大爷战上三百回合。\n");
         this_object()->fight_ob(ob);
         ob->fight_ob(this_object());
                 break;

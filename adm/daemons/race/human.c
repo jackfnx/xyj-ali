@@ -8,52 +8,52 @@
 inherit F_DBASE;
 
 mapping *combat_action = ({
-    ([   "action":     "$N»ÓÈ­¹¥»÷$nµÄ$l",
-     "damage_type":   "ğöÉË",
+    ([   "action":     "$NæŒ¥æ‹³æ”»å‡»$nçš„$l",
+     "damage_type":   "ç˜€ä¼¤",
      ]),
-    ([   "action":     "$NÍù$nµÄ$lÒ»×¥",
-     "damage_type":   "×¥ÉË",
+    ([   "action":     "$Nå¾€$nçš„$lä¸€æŠ“",
+     "damage_type":   "æŠ“ä¼¤",
      ]),
-    ([   "action":     "$NÍù$nµÄ$lºİºİµØÌßÁËÒ»½Å",
-     "damage_type":   "ğöÉË",
+    ([   "action":     "$Nå¾€$nçš„$lç‹ ç‹ åœ°è¸¢äº†ä¸€è„š",
+     "damage_type":   "ç˜€ä¼¤",
      ]),
-    ([   "action":     "$NÌáÆğÈ­Í·Íù$nµÄ$l´·È¥",
-     "damage_type":   "ÔÒÉË",
+    ([   "action":     "$Næèµ·æ‹³å¤´å¾€$nçš„$læ¶å»",
+     "damage_type":   "ç ¸ä¼¤",
      ]),
-    ([   "action":     "$N¶Ô×¼$nµÄ$lÓÃÁ¦»Ó³öÒ»È­",
-     "damage_type":   "ğöÉË",
+    ([   "action":     "$Nå¯¹å‡†$nçš„$lç”¨åŠ›æŒ¥å‡ºä¸€æ‹³",
+     "damage_type":   "ç˜€ä¼¤",
      ]),
 });
 
 mapping *sex_action = ({
     ([
-     "action": "$NÇáÇá¸§Ãş$nµÄ$s",
+     "action": "$Nè½»è½»æŠšæ‘¸$nçš„$s",
      "limb": "all",
      "enjoy": 2,
      "self_enjoy": 1,
      "cost": 1,
      ]),
     ([
-     "action": "$NÇáÇáÌòÁËÒ»¿Ú$nµÄ$s",
+     "action": "$Nè½»è½»èˆ”äº†ä¸€å£$nçš„$s",
      "limb": "all",
      "enjoy": 2,
      "self_enjoy": 1,
      "cost": 1,
      ]),
     ([
-     "action": "$NÉì³öÊÖÖ¸£¬Ä¨ÏòÁË$nµÄ$l",
+     "action": "$Nä¼¸å‡ºæ‰‹æŒ‡ï¼ŒæŠ¹å‘äº†$nçš„$l",
      "limb": "pussy",
      "min_enjoy": 50,
-     "effect": "Ä¨µ½ÁËÂúÊÖµÄÃÛÖ­",
+     "effect": "æŠ¹åˆ°äº†æ»¡æ‰‹çš„èœœæ±",
      "enjoy": 4,
      "self_enjoy": 2,
      "cost": 1,
      ]),
     ([
-     "action": "$NÒ»°Ñ×¥×¡ÁË$nµÄ$b",
+     "action": "$Nä¸€æŠŠæŠ“ä½äº†$nçš„$b",
      "limb": "breast",
      "min_enjoy": 80,
-     "effect": "¾¹¼·³öÁË´óÁ¿ÏãÌğµÄÈéÖ­",
+     "effect": "ç«ŸæŒ¤å‡ºäº†å¤§é‡é¦™ç”œçš„ä¹³æ±",
      "enjoy": 8,
      "self_enjoy": 5,
      "cost": 2,
@@ -62,12 +62,12 @@ mapping *sex_action = ({
 
 mapping *sex_fuck_action = ({
     ([
-     "action": "$NÓÃ³ö¾ÅÇ³Ò»ÉîÖ®·¨£¬½«$LÔÚ$nµÄ$lÀïÂıÂıµÄÄ¥²ä£¬Ö±½«$nÑ÷µÃĞÄ¸¡ÆøÔê£¬ÒùË®¿ñÅç¡£\n",
+     "action": "$Nç”¨å‡ºä¹æµ…ä¸€æ·±ä¹‹æ³•ï¼Œå°†$Låœ¨$nçš„$lé‡Œæ…¢æ…¢çš„ç£¨è¹­ï¼Œç›´å°†$nç—’å¾—å¿ƒæµ®æ°”èºï¼Œæ·«æ°´ç‹‚å–·ã€‚\n",
      "enjoy": 30,
      "self_enjoy": 3,
      ]),
     ([
-     "action": "$NÆÁ×¡Ò»¿ÚÆø£¬½«$LµÖÔÚ$nµÄ»¨ĞÄÉÏ£¬·è¿ñµÄ¿ñ³éÃÍ²å£¬²åµÃ$nÖ±·­°×ÑÛ£¬Ë¬µÃ·Éµ½ÁËÌìÉÏÈ¥ÁË¡£\n",
+     "action": "$Nå±ä½ä¸€å£æ°”ï¼Œå°†$LæŠµåœ¨$nçš„èŠ±å¿ƒä¸Šï¼Œç–¯ç‹‚çš„ç‹‚æŠ½çŒ›æ’ï¼Œæ’å¾—$nç›´ç¿»ç™½çœ¼ï¼Œçˆ½å¾—é£åˆ°äº†å¤©ä¸Šå»äº†ã€‚\n",
      "enjoy": 50,
      "self_enjoy": 10,
      ]),
@@ -146,15 +146,15 @@ void setup_human(object ob)
         if ( my["max_gin"] < 1 ) my["max_gin"] = 1; //mon 1/28/98
    }
 
-    if ( undefinedp(my["unit"])) my["unit"]="Î»";
-    if ( undefinedp(my["gender"])) my["gender"]="ÄĞĞÔ";
+    if ( undefinedp(my["unit"])) my["unit"]="ä½";
+    if ( undefinedp(my["gender"])) my["gender"]="ç”·æ€§";
     if ( undefinedp(my["can_speak"])) my["can_speak"]=1;
     if ( undefinedp(my["attitude"])) my["attitude"]="peaceful";
     if ( undefinedp(my["sexuality"])) my["sexuality"]="pudency";
     if ( undefinedp(my["limbs"])) my["limbs"]=({
-        "Í·²¿",   "¾±²¿",   "ĞØ¿Ú",   "ºóĞÄ",   "×ó¼ç",   "ÓÒ¼ç",   "×ó±Û",
-        "ÓÒ±Û",   "×óÊÖ",   "ÓÒÊÖ",   "Ñü¼ä",   "Ğ¡¸¹",   "×óÍÈ",   "ÓÒÍÈ",
-        "×ó½Å",   "ÓÒ½Å"
+        "å¤´éƒ¨",   "é¢ˆéƒ¨",   "èƒ¸å£",   "åå¿ƒ",   "å·¦è‚©",   "å³è‚©",   "å·¦è‡‚",
+        "å³è‡‚",   "å·¦æ‰‹",   "å³æ‰‹",   "è…°é—´",   "å°è…¹",   "å·¦è…¿",   "å³è…¿",
+        "å·¦è„š",   "å³è„š"
         }) ;
 
 //   ob->set_default_object(__FILE__);
@@ -174,11 +174,11 @@ mapping query_sex_action(object me)
     mapping act;
     if (objectp(me->query_temp("sex/fuck_ob"))) {
         ob = me->query_temp("sex/fuck_ob");
-        female = ob->query("gender") == "Å®ĞÔ";
+        female = ob->query("gender") == "å¥³æ€§";
     }
     else if (objectp(me->query_temp("sex/makelove_ob"))) {
         ob = me->query_temp("sex/makelove_ob");
-        female = ob->query("gender") == "Å®ĞÔ";
+        female = ob->query("gender") == "å¥³æ€§";
     }
     for (act = sex_action[random(sizeof(sex_action))];
         !female && (act["limb"]=="pussy"||act["limb"]=="breast");

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit AXE;
 
 void create()
 {
-  set_name("¿ªÉ½¸«", ({ "kaishan fu", "fu", "axe" }) );
+  set_name("å¼€å±±æ–§", ({ "kaishan fu", "fu", "axe" }) );
   init_axe(35);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(1100);
   if( clonep() )
      set_default_object(__FILE__);

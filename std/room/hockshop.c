@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hockshop.c
@@ -7,9 +7,9 @@
 inherit ROOM;
 
 string *sell_msg = ({
-     "ÆÆÆÆÀÃÀÃ£¬Ò»ÎÄ²»Öµ",
-     "ÖÊµØµÍÁÓ£¬ÄÑ¿´Ö®¼«",
-     "ÓÖÔàÓÖÆÆ£¬³ôÆøÑ¬Ìì",
+     "ç ´ç ´çƒ‚çƒ‚ï¼Œä¸€æ–‡ä¸å€¼",
+     "è´¨åœ°ä½åŠ£ï¼Œéš¾çœ‹ä¹‹æ",
+     "åˆè„åˆç ´ï¼Œè‡­æ°”ç†å¤©",
 });
 
 object shop_box;
@@ -45,10 +45,10 @@ string value_string(int value)
 {
    if( value < 1 ) value = 1;
    else if( value < 100 )
-     return chinese_number(value) + "ÎÄÇ®";
+     return chinese_number(value) + "æ–‡é’±";
    else
-     return chinese_number(value/100) + "Á½°×Òø"
-        + (value%100? "ÓÖ" + chinese_number(value%100) + "ÎÄÇ®": "");
+     return chinese_number(value/100) + "ä¸¤ç™½é“¶"
+        + (value%100? "åˆ" + chinese_number(value%100) + "æ–‡é’±": "");
 }
 
 void pay_player(object who, int amount)
@@ -77,18 +77,18 @@ int do_value(string arg)
    int value, sale;
 
    if( !arg || !(ob = present(arg, this_player())) )
-     return notify_fail("ÄãÒªÄÃÊ²Ã´ÎïÆ·¸øµ±ÆÌ¹À¼Û£¿\n");
+     return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆç‰©å“ç»™å½“é“ºä¼°ä»·ï¼Ÿ\n");
 
    if( ob->query("money_id") )
-     return notify_fail("ÕâÊÇ¡¸Ç®¡¹£¬ÄãÃ»¼û¹ıÂğ£¿\n");
+     return notify_fail("è¿™æ˜¯ã€Œé’±ã€ï¼Œä½ æ²¡è§è¿‡å—ï¼Ÿ\n");
 
    value = ob->query("value");
    sale=ob->query_temp("sale_price");
    if(sale>0 && sale<value) value=sale;
 
-   if( !value) printf("%sÒ»ÎÄ²»Öµ¡£\n", ob->query("name"));
+   if( !value) printf("%sä¸€æ–‡ä¸å€¼ã€‚\n", ob->query("name"));
    else 
-     printf("%s¼ÛÖµ%s¡£\nÈç¹ûÄãÒªµäµ±(pawn)£¬¿ÉÒÔÄÃµ½%s¼°Ò»ÕÅµ±Æ±¡£\nÈç¹ûÂô¶Ï(sell)£¬¿ÉÒÔÄÃµ½%s¡£\n",
+     printf("%sä»·å€¼%sã€‚\nå¦‚æœä½ è¦å…¸å½“(pawn)ï¼Œå¯ä»¥æ‹¿åˆ°%såŠä¸€å¼ å½“ç¥¨ã€‚\nå¦‚æœå–æ–­(sell)ï¼Œå¯ä»¥æ‹¿åˆ°%sã€‚\n",
         ob->query("name"), value_string(value),
         value_string(value * 60 / 100), value_string(value * 80 / 100));
 
@@ -103,41 +103,41 @@ int do_pawn(string arg)
    int  i;
 
    if( this_player()->is_busy() )
-     return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+     return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
    if( !arg || !(ob = present(arg, this_player())) )
-     return notify_fail("ÄãÒªµäµ±Ê²Ã´ÎïÆ·£¿\n");
+     return notify_fail("ä½ è¦å…¸å½“ä»€ä¹ˆç‰©å“ï¼Ÿ\n");
 
-   if( ob->query("money_id") )   return notify_fail("ÄãÒªµ±¡¸Ç®¡¹£¿\n");
+   if( ob->query("money_id") )   return notify_fail("ä½ è¦å½“ã€Œé’±ã€ï¼Ÿ\n");
 
    if( ob->query("material") == "ice" )
-     return notify_fail("ÕÆ¹ñµÄËµ£º±ùµÄ¶«Î÷ÎÒÃÇÕâÀïÃ»·¨´æ·Å¡£\n");
+     return notify_fail("æŒæŸœçš„è¯´ï¼šå†°çš„ä¸œè¥¿æˆ‘ä»¬è¿™é‡Œæ²¡æ³•å­˜æ”¾ã€‚\n");
    //cuz ice melts, will cause problem, so disabled...weiqi, 970930.
 
    value = ob->query("value");
    sale=ob->query_temp("sale_price");
    if(sale>0 && sale<value) value=sale;
 
-   if( !value || value < 10) return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+   if( !value || value < 10) return notify_fail("è¿™æ ·ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
         if(ob->query("no_sell"))
-      return notify_fail("ÕâÑù¶«Î÷²»ÄÜÂòÂô¡£\n");
+      return notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½ä¹°å–ã€‚\n");
 
-   write("ÕÆ¹ñµÄ³ªµÀ£º"+ sell_msg[random(sizeof(sell_msg))] +
-     ob->query("name") + "Ò»" + ob->query("unit") + "£¬Ñº"+
-      value_string(value*60/100)+ "¡£\n");
-   message_vision("$N°ÑÉíÉÏµÄ" + ob->query("name") + "ÄÃ³öÀ´µäµ±ÁË"
-     + value_string(value * 60 / 100) + "¡£\n", this_player());
+   write("æŒæŸœçš„å”±é“ï¼š"+ sell_msg[random(sizeof(sell_msg))] +
+     ob->query("name") + "ä¸€" + ob->query("unit") + "ï¼ŒæŠ¼"+
+      value_string(value*60/100)+ "ã€‚\n");
+   message_vision("$NæŠŠèº«ä¸Šçš„" + ob->query("name") + "æ‹¿å‡ºæ¥å…¸å½“äº†"
+     + value_string(value * 60 / 100) + "ã€‚\n", this_player());
 
         stamp_ob = new("/obj/stamps");
 
    stamp_ob->set_temp("file", ob);
    stamp_ob->set_temp("value", value*70/100);
    stamp_ob->set_temp("player", this_player()->query("id"));
-   stamp_ob->set_temp("long_1", this_player()->name()+"µäµ±" +
-      ob->query("name") + "Ò»" + ob->query("unit") +
-      "Æı£¬ÆÆÀÃÈ±Ëğ²»¿°¡£");
-        stamp_ob->set_temp("long_2", "Êê»ØÓ¦¸¶"+
-     value_string(value*70/100)+"Õû£¬Ò»ÊÖ½»Ç®£¬Ò»ÊÖ½»»õ¡£");
+   stamp_ob->set_temp("long_1", this_player()->name()+"å…¸å½“" +
+      ob->query("name") + "ä¸€" + ob->query("unit") +
+      "è®«ï¼Œç ´çƒ‚ç¼ºæŸä¸å ªã€‚");
+        stamp_ob->set_temp("long_2", "èµå›åº”ä»˜"+
+     value_string(value*70/100)+"æ•´ï¼Œä¸€æ‰‹äº¤é’±ï¼Œä¸€æ‰‹äº¤è´§ã€‚");
 
    this_player()->start_busy(1);
    pay_player(this_player(), value * 60 / 100);
@@ -158,27 +158,27 @@ int do_sell(string arg)
    string index;
 
    if( this_player()->is_busy() )
-     return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+     return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
    if( !arg || !(ob = present(arg, this_player())) )
-     return notify_fail("ÄãÒªÂô¶ÏÊ²Ã´ÎïÆ·£¿\n");
+     return notify_fail("ä½ è¦å–æ–­ä»€ä¹ˆç‰©å“ï¼Ÿ\n");
 
-   if( ob->query("money_id") )   return notify_fail("ÄãÒªÂô¡¸Ç®¡¹£¿\n");
+   if( ob->query("money_id") )   return notify_fail("ä½ è¦å–ã€Œé’±ã€ï¼Ÿ\n");
    value = ob->query("value");
    sale=ob->query_temp("sale_price");
    if(sale>0 && sale<value) value=sale;
-   if( !value ) return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+   if( !value ) return notify_fail("è¿™æ ·ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
         if(ob->query("no_sell"))
-      return notify_fail("ÕâÑù¶«Î÷²»ÄÜÂòÂô¡£\n");
+      return notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½ä¹°å–ã€‚\n");
 
    if( ob->query("material") == "ice" )
-     return notify_fail("ÕÆ¹ñµÄËµ£º±ùµÄ¶«Î÷ÎÒÃÇÕâÀïÃ»·¨´æ·Å¡£\n");
+     return notify_fail("æŒæŸœçš„è¯´ï¼šå†°çš„ä¸œè¥¿æˆ‘ä»¬è¿™é‡Œæ²¡æ³•å­˜æ”¾ã€‚\n");
    //cuz ice melts, will cause problem, so disabled...weiqi, 970930.
 
-   write("ÕÆ¹ñµÄ³ªµÀ£º"+ sell_msg[random(sizeof(sell_msg))] +
-     ob->query("name") + "Ò»" + ob->query("unit") + "£¬µ±"+
-      value_string(value*80/100)+ "¡£\n");
-   message_vision("$N°ÑÉíÉÏµÄ" + ob->query("name") + "Âôµô¡£\n",
+   write("æŒæŸœçš„å”±é“ï¼š"+ sell_msg[random(sizeof(sell_msg))] +
+     ob->query("name") + "ä¸€" + ob->query("unit") + "ï¼Œå½“"+
+      value_string(value*80/100)+ "ã€‚\n");
+   message_vision("$NæŠŠèº«ä¸Šçš„" + ob->query("name") + "å–æ‰ã€‚\n",
      this_player());
 
         index=ob->query("name")+"("+ob->query("id")+")";
@@ -207,42 +207,42 @@ int do_retrieve(string arg)
    object pawn_ob;
 
    if( this_player()->is_busy() )
-     return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+     return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
    if( !arg || !(ob = present(arg, this_player())) )
-     return notify_fail("ÄãÒªÊê»ØÊ²Ã´ÎïÆ·¡£\n");
+     return notify_fail("ä½ è¦èµå›ä»€ä¹ˆç‰©å“ã€‚\n");
 
    if( ob->query("id") != "pawn stamp")
-      return notify_fail("ÄãÒªÓÃµ±Æ±²ÅÄÜÊê»ØÎïÆ·¡£\n");
+      return notify_fail("ä½ è¦ç”¨å½“ç¥¨æ‰èƒ½èµå›ç‰©å“ã€‚\n");
 
    value = ob->query_temp("value");
    if(!value) 
-      return notify_fail("ÓÃ¿Õ°×µ±Æ±À´ÊêÎï£¬¹âÌì»¯ÈÕÖ®ÏÂÏë´ò½Ù²»³É£¡\n");
+      return notify_fail("ç”¨ç©ºç™½å½“ç¥¨æ¥èµç‰©ï¼Œå…‰å¤©åŒ–æ—¥ä¹‹ä¸‹æƒ³æ‰“åŠ«ä¸æˆï¼\n");
 
    if( !(afford = this_player()->can_afford(value)) )  {
-      return notify_fail("ÄãÃ»ÓĞ×ã¹»µÄÇ®À´Êê»Ø¡£\n");
+      return notify_fail("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é’±æ¥èµå›ã€‚\n");
    }
    else if( afford == 2 )
-       return notify_fail("ÄãÃ»ÓĞ×ã¹»µÄÁãÇ®£¬¶øÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+       return notify_fail("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é›¶é’±ï¼Œè€Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
 
    if( ob->query_temp("player") != this_player()->query("id"))
-      return notify_fail("ÓÖ²»ÊÇÄãµ±µÄ£¬Ïë³Ã»ğ´ò½Ù°¡£¡\n");
+      return notify_fail("åˆä¸æ˜¯ä½ å½“çš„ï¼Œæƒ³è¶ç«æ‰“åŠ«å•Šï¼\n");
 
    pawn_ob = ob->query_temp("file");
    if(!pawn_ob) {
      destruct(ob);
      return notify_fail
-       ("ÕÆ¹ñµÄ¾ªµÀ£ºÔã¸â£¡ÄãÒªµÄ¶«Î÷ÕÒ²»×ÅÁË¡£\n");
+       ("æŒæŸœçš„æƒŠé“ï¼šç³Ÿç³•ï¼ä½ è¦çš„ä¸œè¥¿æ‰¾ä¸ç€äº†ã€‚\n");
         }
 
    if(!pawn_ob->move(this_player())) return 0;
    destruct(ob);
 
-   write("ÕÆ¹ñµÄ³ªµÀ£º"+ sell_msg[random(sizeof(sell_msg))] +
-     pawn_ob->query("name") + "Ò»" + pawn_ob->query("unit") + "£¬ÊêÒø"+
-      value_string(value)+ "¡£\n");
-   message_vision("$NÓÃµ±Æ±Êê»ØÒ»"+pawn_ob->query("unit")+
-      pawn_ob->query("name")+"¡£\n", this_player());
+   write("æŒæŸœçš„å”±é“ï¼š"+ sell_msg[random(sizeof(sell_msg))] +
+     pawn_ob->query("name") + "ä¸€" + pawn_ob->query("unit") + "ï¼Œèµé“¶"+
+      value_string(value)+ "ã€‚\n");
+   message_vision("$Nç”¨å½“ç¥¨èµå›ä¸€"+pawn_ob->query("unit")+
+      pawn_ob->query("name")+"ã€‚\n", this_player());
 
         this_player()->start_busy(1);
    this_player()->pay_money(value);
@@ -261,13 +261,13 @@ int do_list(string arg)
    object me=this_player();
 
    if( !mapp(goods = findbox()->query_temp("goods")) )
-     return notify_fail("µ±ÆÌÄ¿Ç°Ã»ÓĞÈÎºÎ»õÎï¿ÉÂô¡£\n");
+     return notify_fail("å½“é“ºç›®å‰æ²¡æœ‰ä»»ä½•è´§ç‰©å¯å–ã€‚\n");
    name = keys(goods);
    if(!sizeof(goods)) 
-     return notify_fail("µ±ÆÌÄ¿Ç°Ã»ÓĞÈÎºÎ»õÎï¿ÉÂô¡£\n");
+     return notify_fail("å½“é“ºç›®å‰æ²¡æœ‰ä»»ä½•è´§ç‰©å¯å–ã€‚\n");
 
    if( !arg )   {
-      list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n";
+      list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n";
       write(list);
       i=sizeof(goods);
       while(i--) {
@@ -280,7 +280,7 @@ int do_list(string arg)
         //after being sold.
 
         tlist = get_name(name[i]);
-        list = sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+        list = sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
           value_string(goods[name[i]]->query("value")),
           chinese_number(findbox()->query_temp("numbers/"+name[i])),
           goods[name[i]]->query("unit") );
@@ -299,16 +299,16 @@ int do_list(string arg)
 
            if( mapp(goods[name[i]]->query("skill")) )   {
            tlist = get_name(name[i]);
-           list += sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+           list += sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
              value_string(goods[name[i]]->query("value")),
              chinese_number(findbox()->query_temp("numbers/"+name[i])),
              goods[name[i]]->query("unit") );
       }
      }
       if( list == "" )
-      write("µ±ÆÌÄ¿Ç°Ã»ÓĞÕâÖÖ»õÆ·£®\n");
+      write("å½“é“ºç›®å‰æ²¡æœ‰è¿™ç§è´§å“ï¼\n");
       else {
-   list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n"+list;
+   list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n"+list;
    me->start_more(list);
       }
    }
@@ -323,16 +323,16 @@ int do_list(string arg)
              }
       if( goods[name[i]]->query("drug_type") )   {
            tlist = get_name(name[i]);
-           list += sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+           list += sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
              value_string(goods[name[i]]->query("value")),
              chinese_number(findbox()->query_temp("numbers/"+name[i])),
              goods[name[i]]->query("unit") );
       }
      }
       if( list == "" )
-      write("µ±ÆÌÄ¿Ç°Ã»ÓĞÕâÖÖ»õÆ·£®\n");
+      write("å½“é“ºç›®å‰æ²¡æœ‰è¿™ç§è´§å“ï¼\n");
       else {
-   list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n"+list;
+   list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n"+list;
    me->start_more(list);
       }
    }
@@ -351,16 +351,16 @@ int do_list(string arg)
 
       if( goods[name[i]]->query("skill_type") == arg )   {
            tlist = get_name(name[i]);
-           list += sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+           list += sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
              value_string(goods[name[i]]->query("value")),
              chinese_number(findbox()->query_temp("numbers/"+name[i])),
              goods[name[i]]->query("unit") );
       }
      }
       if( list == "" )
-      write("µ±ÆÌÄ¿Ç°Ã»ÓĞÕâÖÖ»õÆ·£®\n");
+      write("å½“é“ºç›®å‰æ²¡æœ‰è¿™ç§è´§å“ï¼\n");
       else {
-   list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n"+list;
+   list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n"+list;
    me->start_more(list);
       }
    }
@@ -375,16 +375,16 @@ int do_list(string arg)
              }
       if( goods[name[i]]->query("apply/skill_type") == arg )   {
            tlist = get_name(name[i]);
-           list += sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+           list += sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
              value_string(goods[name[i]]->query("value")),
              chinese_number(findbox()->query_temp("numbers/"+name[i])),
              goods[name[i]]->query("unit") );
       }
      }
       if( list == "" )
-      write("µ±ÆÌÄ¿Ç°Ã»ÓĞÕâÖÖ»õÆ·£®\n");
+      write("å½“é“ºç›®å‰æ²¡æœ‰è¿™ç§è´§å“ï¼\n");
       else {
-   list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n"+list;
+   list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n"+list;
    me->start_more(list);
       }
    }
@@ -402,16 +402,16 @@ int do_list(string arg)
              }
       if( goods[name[i]]->query("armor_type") == arg )   {
            tlist = get_name(name[i]);
-           list += sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+           list += sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
              value_string(goods[name[i]]->query("value")),
              chinese_number(findbox()->query_temp("numbers/"+name[i])),
              goods[name[i]]->query("unit") );
       }
      }
       if( list == "" )
-      write("µ±ÆÌÄ¿Ç°Ã»ÓĞÕâÖÖ»õÆ·£®\n");
+      write("å½“é“ºç›®å‰æ²¡æœ‰è¿™ç§è´§å“ï¼\n");
       else {
-   list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n"+list;
+   list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n"+list;
    me->start_more(list);
       }
    }
@@ -426,16 +426,16 @@ int do_list(string arg)
              }
       if( member_array(arg, goods[name[i]]->parse_command_id_list()) != -1 )   {
            tlist = get_name(name[i]);
-           list += sprintf("%-30s£º%-20s£º»¹Ê£%s%s\n", tlist,
+           list += sprintf("%-30sï¼š%-20sï¼šè¿˜å‰©%s%s\n", tlist,
              value_string(goods[name[i]]->query("value")),
              chinese_number(findbox()->query_temp("numbers/"+name[i])),
              goods[name[i]]->query("unit") );
       }
      }
       if( list == "" )
-      write("µ±ÆÌÄ¿Ç°Ã»ÓĞÕâÖÖ»õÆ·£®\n");
+      write("å½“é“ºç›®å‰æ²¡æœ‰è¿™ç§è´§å“ï¼\n");
       else {
-   list = "Äã¿ÉÒÔ¹ºÂòÏÂÁĞÕâĞ©¶«Î÷£º\n"+list;
+   list = "ä½ å¯ä»¥è´­ä¹°ä¸‹åˆ—è¿™äº›ä¸œè¥¿ï¼š\n"+list;
    me->start_more(list);
       }
    }
@@ -456,10 +456,10 @@ int do_buy(string arg)
    string arg1, arg2;
 
    if( this_player()->is_busy() )
-     return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+     return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
    if( !arg )  {
-      write("Ö¸Áî¸ñÊ½£ºbuy <Ä³Îï>\n");
+      write("æŒ‡ä»¤æ ¼å¼ï¼šbuy <æŸç‰©>\n");
       return 1;
    }
 
@@ -474,10 +474,10 @@ int do_buy(string arg)
    }
 
    if( !mapp(goods = findbox()->query_temp("goods")) )
-     return notify_fail("µ±ÆÌÄ¿Ç°Ã»ÓĞÈÎºÎ»õÎï¿ÉÂô¡£\n");
+     return notify_fail("å½“é“ºç›®å‰æ²¡æœ‰ä»»ä½•è´§ç‰©å¯å–ã€‚\n");
    name = keys(goods);
    if(!sizeof(goods)) 
-     return notify_fail("µ±ÆÌÄ¿Ç°Ã»ÓĞÈÎºÎ»õÎï¿ÉÂô¡£\n");
+     return notify_fail("å½“é“ºç›®å‰æ²¡æœ‰ä»»ä½•è´§ç‰©å¯å–ã€‚\n");
 
    j = 0;
    i=sizeof(name);
@@ -491,11 +491,11 @@ int do_buy(string arg)
        obj_file = goods[name[i]];
           value = obj_file->query("value"); 
           if( !(afford=this_player()->can_afford(value)) )  {
-             write("ÄãÃ»ÓĞ×ã¹»µÄÇ®¡£\n");
+             write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é’±ã€‚\n");
              return 1; 
           }
           else if( afford == 2 )  {
-              write("ÄãÃ»ÓĞ×ã¹»µÄÁãÇ®£¬¶øÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+              write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é›¶é’±ï¼Œè€Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
              return 1;
           }
 
@@ -524,15 +524,15 @@ int do_buy(string arg)
 
           this_player()->pay_money(value);
      
-          message_vision("$NÏòµ±ÆÌÂòÏÂÒ»" +
-        ob->query("unit") + ob->query("name") + "¡£\n", this_player() );
+          message_vision("$Nå‘å½“é“ºä¹°ä¸‹ä¸€" +
+        ob->query("unit") + ob->query("name") + "ã€‚\n", this_player() );
 
        this_player()->save();
        return 1;
      }
    }
 
-   write("µ±ÆÌÀïÃ»ÓĞÕâÖÖ»õÆ·¡£\n");
+   write("å½“é“ºé‡Œæ²¡æœ‰è¿™ç§è´§å“ã€‚\n");
 
    return 1;
 }

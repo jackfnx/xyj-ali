@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/south
@@ -6,17 +6,17 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ºóµî");
+  set ("short", "åæ®¿");
   set ("long", @LONG
 
-ºóµî¾Í¸ü¼ÓÆÆ°ÜÁË¡£Ò»ÃæÇ½±ÚÇ°»¹¹©×ÅÒ»×ğÆĞÈøÏñ(statue)£¬µ«ÄàËÜ
-ÉÏµÄÆáÔçÒÑ°şÂä£¬ÏÔÈ»¾­¹ıÁËÎŞÊı·ç·çÓêÓê¡£´åÀïÈË¶¼ËµÕâÀïÄÖ¹í£¬
-Ò²²»ÖªÊÇÕæÊÇ¼Ù¡£×ĞÏ¸¿´¿´£¬ËÄ´¦ÓĞ²»ÉÙÀÏÊó³öÃ»µÄºÛ¼£¡£µ«³ı´ËÒ²
-Ã»Ê²Ã´±ğµÄ¿ÉÒÉÖ®´¦¡£
+åæ®¿å°±æ›´åŠ ç ´è´¥äº†ã€‚ä¸€é¢å¢™å£å‰è¿˜ä¾›ç€ä¸€å°Šè©è¨åƒ(statue)ï¼Œä½†æ³¥å¡‘
+ä¸Šçš„æ¼†æ—©å·²å‰¥è½ï¼Œæ˜¾ç„¶ç»è¿‡äº†æ— æ•°é£é£é›¨é›¨ã€‚æ‘é‡Œäººéƒ½è¯´è¿™é‡Œé—¹é¬¼ï¼Œ
+ä¹Ÿä¸çŸ¥æ˜¯çœŸæ˜¯å‡ã€‚ä»”ç»†çœ‹çœ‹ï¼Œå››å¤„æœ‰ä¸å°‘è€é¼ å‡ºæ²¡çš„ç—•è¿¹ã€‚ä½†é™¤æ­¤ä¹Ÿ
+æ²¡ä»€ä¹ˆåˆ«çš„å¯ç–‘ä¹‹å¤„ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
-  "statue" : "ÕâÃíËÆºõ¹©µÄÊÇ¹ÛÒôÆĞÈø¡£\n",
+  "statue" : "è¿™åº™ä¼¼ä¹ä¾›çš„æ˜¯è§‚éŸ³è©è¨ã€‚\n",
 ]));
   set("light_up", 1);
   set("exits", ([ /* sizeof() == 1 */
@@ -34,33 +34,33 @@ int do_push(string arg)
   int myeffstr=me->query("str")+me->query_skill("unarmed", 1)/10-2;
   int mykar=me->query_kar(), diff=40-mykar, percentage;
   int mymaxkee=me->query("max_kee"), mymaxsen=me->query("max_sen");
-  if ((arg != "statue" && arg != "ÆĞÈøÏñ") || !arg)
-    return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
-  if (me->is_busy()) return notify_fail("ÄãÃ¦×ÅÄØ£¡\n");
-  if (me->query_temp("no_move")) return notify_fail("Äã±»¶¨×¡ÁË£¬Ê²Ã´Ò²¸É²»ÁË¡£\n");
+  if ((arg != "statue" && arg != "è©è¨åƒ") || !arg)
+    return notify_fail("ä½ è¦æ¨ä»€ä¹ˆï¼Ÿ\n");
+  if (me->is_busy()) return notify_fail("ä½ å¿™ç€å‘¢ï¼\n");
+  if (me->query_temp("no_move")) return notify_fail("ä½ è¢«å®šä½äº†ï¼Œä»€ä¹ˆä¹Ÿå¹²ä¸äº†ã€‚\n");
   if (me->query_skill("yaofa", 1) > 15
-   && me->query("family/family_name") == "Ïİ¿ÕÉ½ÎŞµ×¶´")
+   && me->query("family/family_name") == "é™·ç©ºå±±æ— åº•æ´")
   {
-      message_vision("$NÆşÖ¸Äî¾äÖäÓï£¬½èÍÁ¶İ×ßÁË£¡\n", me);
+      message_vision("$NææŒ‡å¿µå¥å’’è¯­ï¼Œå€ŸåœŸéèµ°äº†ï¼\n", me);
       me->move(__DIR__"shanlu1");
       return 1;
   }
   if (me->query_str()<40||myeffstr<20)
     {
-      message_vision("$N±§×ÅÄàÏñ×óÓÒÍÆ¶¯£¬µ«·Ñ¾¡¾ÅÅ£¶ş»¢Ö®Á¦£¬Ò²¶¯²»µÃ·ÖºÁ¡£\n", me);
+      message_vision("$NæŠ±ç€æ³¥åƒå·¦å³æ¨åŠ¨ï¼Œä½†è´¹å°½ä¹ç‰›äºŒè™ä¹‹åŠ›ï¼Œä¹ŸåŠ¨ä¸å¾—åˆ†æ¯«ã€‚\n", me);
       return 1;
     }
   if(random(diff)>4)
     {
-      message_vision("Ö»Ìı¡°»©À²¡±Ò»Éù£¬·¿¶¥ÂäÏÂÒ»¶Ñ×©Íß£¬ÕıÔÒÔÚ$NÍ·¶¥£¡\n", me);
-      message_vision("$NÉËµÃÆÄÖØ£¬¶øÇÒÉñÖ¾Ò²ÓĞµã²»ÇåÁË¡£\n", me);
+      message_vision("åªå¬â€œå“—å•¦â€ä¸€å£°ï¼Œæˆ¿é¡¶è½ä¸‹ä¸€å †ç –ç“¦ï¼Œæ­£ç ¸åœ¨$Nå¤´é¡¶ï¼\n", me);
+      message_vision("$Nä¼¤å¾—é¢‡é‡ï¼Œè€Œä¸”ç¥å¿—ä¹Ÿæœ‰ç‚¹ä¸æ¸…äº†ã€‚\n", me);
       percentage=diff*2;
       me->receive_wound("kee", mymaxkee*percentage/100);
       me->receive_damage("sen", mymaxsen*percentage/100);
       return 1;
     }
-  message_vision("$NÓÃÁ¦ÍÆ¶¯ÄàÏñ£¬Ö»ÌıÒ»Õó¡°ÔşÔş¡±Éù¹ıºó£¬ÄàÏñÇ°Â¶³öÒ»¸ö´ó¶´¡£\n", me);
-  message_vision("$N×İÉíÒ»Ô¾£¬ÌøÁË½øÈ¥£¬´ó¶´Ëæ¼´ÓÖºÏÉÏÁË¡£\n", me);
+  message_vision("$Nç”¨åŠ›æ¨åŠ¨æ³¥åƒï¼Œåªå¬ä¸€é˜µâ€œè½§è½§â€å£°è¿‡åï¼Œæ³¥åƒå‰éœ²å‡ºä¸€ä¸ªå¤§æ´ã€‚\n", me);
+  message_vision("$Nçºµèº«ä¸€è·ƒï¼Œè·³äº†è¿›å»ï¼Œå¤§æ´éšå³åˆåˆä¸Šäº†ã€‚\n", me);
   me->move(__DIR__"shanlu1");
   return 1;
 }

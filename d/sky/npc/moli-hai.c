@@ -2,14 +2,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ä§Àñº£", ({ "moli hai", "duowen tianwang", "hai", "tianwang" }));
-    set("gender", "ÄĞĞÔ");
+    set_name("é­”ç¤¼æµ·", ({ "moli hai", "duowen tianwang", "hai", "tianwang" }));
+    set("gender", "ç”·æ€§");
     set("long",
-        "Ä§¼ÒËÄ½«Ö®Ò»£¬Ê¹Ò»¸ùÅÌÁú¹÷£¬±³ÉÏÒ»ÃæÅıÅÃ£¬ÉÏÓĞËÄÌõÏÒ£»Ò²°´\n"
-        "µØ¡¢Ë®¡¢»ğ¡¢·ç£¬²¦¶¯ÏÒÉù£¬·ç»ğÆëÖÁ£¬ÈçÇàÔÆ½£Ò»°ã¡£\n"
+        "é­”å®¶å››å°†ä¹‹ä¸€ï¼Œä½¿ä¸€æ ¹ç›˜é¾™æ£ï¼ŒèƒŒä¸Šä¸€é¢çµç¶ï¼Œä¸Šæœ‰å››æ¡å¼¦ï¼›ä¹ŸæŒ‰\n"
+        "åœ°ã€æ°´ã€ç«ã€é£ï¼Œæ‹¨åŠ¨å¼¦å£°ï¼Œé£ç«é½è‡³ï¼Œå¦‚é’äº‘å‰‘ä¸€èˆ¬ã€‚\n"
     );
     set("age", 50);
-    set("title", "¶àÎÅÌìÍõ");
+    set("title", "å¤šé—»å¤©ç‹");
     set("attitude", "heroism");
     set("str", 40);
     set("int", 30);
@@ -41,8 +41,8 @@ void create()
     map_skill("spear", "keening-stick");
     map_skill("unarmed", "raptor-talon");
     set("inquiry", ([
-        "name" : "ÔÚÏÂ¶àÎÅÌìÍõÄ§Àñº££¬·îÊ¥ÚÍ°ÑÊØÎ÷ÌìÃÅ¡£",
-        "here" : "ÕâÀï¾ÍÊÇÎ÷ÌìÃÅ, ÈëÄÚ¾ÍÊÇÌì½çÁË¡£",
+        "name" : "åœ¨ä¸‹å¤šé—»å¤©ç‹é­”ç¤¼æµ·ï¼Œå¥‰åœ£è°•æŠŠå®ˆè¥¿å¤©é—¨ã€‚",
+        "here" : "è¿™é‡Œå°±æ˜¯è¥¿å¤©é—¨, å…¥å†…å°±æ˜¯å¤©ç•Œäº†ã€‚",
     ]));
 
     setup();
@@ -58,6 +58,6 @@ void kill_ob (object ob)
     set("kee", 1100);
     set("sen", 1100);
     set("eff_sen", 1100);
-    message_vision ("$NËµµ½£ºËÍÄãÉÏÎ÷Ìì£¡\n",me);
+    message_vision ("$Nè¯´åˆ°ï¼šé€ä½ ä¸Šè¥¿å¤©ï¼\n",me);
     ::kill_ob(ob);
 }

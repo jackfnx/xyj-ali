@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/4/1997 by snowcat
@@ -10,10 +10,10 @@ inherit F_VENDOR;
 void create()
 {
   string dir;
-  set_name("ÀÏÆÅÆÅ", ({"old woman", "woman"}));
-  set("gender", "Å®ĞÔ" );
+  set_name("è€å©†å©†", ({"old woman", "woman"}));
+  set("gender", "å¥³æ€§" );
   set("age", 65);
-  set("long", "Ò»Î»°×·¢²Ô²Ô£¬ÂúÃæ·çËªµÄÀÏÆÅÆÅ¡£\n");
+  set("long", "ä¸€ä½ç™½å‘è‹è‹ï¼Œæ»¡é¢é£éœœçš„è€å©†å©†ã€‚\n");
   set("combat_exp", 100);
   set("attitude", "peaceful");
   set("per", 15);

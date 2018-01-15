@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // arrow.c
@@ -18,25 +18,25 @@ int cast(object me, object target)
     || !target->is_character()
     || target->is_corpse()
     || target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÂäÈÕÉñ¼ı£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•è½æ—¥ç¥ç®­ï¼Ÿ\n");
 
     if ((int)me->query("mana") < 25+(int)me->query("mana_factor"))
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
     if ((int)me->query("sen") < 10)
-        return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦Ãé×¼£¡\n");
+        return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ç„å‡†ï¼\n");
 
     me->add("mana", -25-(int)me->query("mana_factor"));
     me->receive_damage("sen", 10);
 
     if (random(me->query("max_mana")) < 50) {
-        write("ÄãÊ§°ÜÁË£¡\n");
+        write("ä½ å¤±è´¥äº†ï¼\n");
         return 1;
     }
 
     msg = HIC
-"$N¿ÚÖĞÄîÁË¼¸¾äÖäÎÄ£¬Ëæ×ÅÒ»Éù¡°ááôàÔÚ´Ë£¡¡±°ë¿ÕÖĞÏÖ³öÒ»Î»ÉíÅû»¢Æ¤µÄ´óºº¡£\n"
-"Ö»¼ûËûÕÅ¹­´î¼ı£¬¡°à²¡±µÄÒ»Éù£¬Ò»Ö»À¶ÍôÍôµÄ³¤¼ı¼¤Éä$n£¡\n" NOR;
+"$Nå£ä¸­å¿µäº†å‡ å¥å’’æ–‡ï¼Œéšç€ä¸€å£°â€œå¾Œç¾¿åœ¨æ­¤ï¼â€åŠç©ºä¸­ç°å‡ºä¸€ä½èº«æŠ«è™çš®çš„å¤§æ±‰ã€‚\n"
+"åªè§ä»–å¼ å¼“æ­ç®­ï¼Œâ€œå—–â€çš„ä¸€å£°ï¼Œä¸€åªè“æ±ªæ±ªçš„é•¿ç®­æ¿€å°„$nï¼\n" NOR;
 
     ap = me->query_skill("spells");
     ap = ( ap * ap * ap / (4 * 400) ) * (int)me->query("sen");
@@ -55,7 +55,7 @@ int cast(object me, object target)
         if( damage > 0 ) {
             //finally damage also depends on enabled spells level.
             damage += random((damage*(int)me->query_skill("spells"))/100);
-            msg += HIC "½á¹û³¤¼ı´Ó$nÉíÉÏÍ¸Ìå¶ø¹ı£¬¶ÙÊ±Ñª»¨·É½¦£¡\n" NOR;
+            msg += HIC "ç»“æœé•¿ç®­ä»$nèº«ä¸Šé€ä½“è€Œè¿‡ï¼Œé¡¿æ—¶è¡€èŠ±é£æº…ï¼\n" NOR;
             target->receive_damage("sen", damage, me);
             target->receive_wound("sen", damage/3, me);
             target->receive_damage("kee", damage, me);
@@ -65,7 +65,7 @@ int cast(object me, object target)
         else {
             //here, cast failed and the target's mana_factor will be added to the previous 
             //damage to hurt yourself:(...note, damage<0.
-            msg += HIC "½á¹û³¤¼ı±»$nÒÔ·¨Á¦·´¼¤£¬·´¶øÉäÖĞÁË$N£¡\n" NOR;
+            msg += HIC "ç»“æœé•¿ç®­è¢«$nä»¥æ³•åŠ›åæ¿€ï¼Œåè€Œå°„ä¸­äº†$Nï¼\n" NOR;
             damage -= (int)target->query("mana_factor");
             damage -= random((-damage*(int)target->query_skill("spells"))/100);
             me->receive_damage("sen", -damage, target);
@@ -76,12 +76,12 @@ int cast(object me, object target)
         }
     } 
     else
-        msg += "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n";
+        msg += "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n";
 
     message_vision(msg, me, target);
     if (damage > 0) COMBAT_D->report_status(target);
     else if (damage < 0) COMBAT_D->report_status(me);
-    //damage=0 corresponding to "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n"--no report.   
+    //damage=0 corresponding to "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n"--no report.   
 
     if (!target->is_fighting(me)) {
         if (living(target)) {

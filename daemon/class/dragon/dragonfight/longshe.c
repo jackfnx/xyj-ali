@@ -1,4 +1,4 @@
-//ÁúÉßºÏ»÷
+//é¾™è›‡åˆå‡»
 
 #include <ansi.h>
 #include <skill.h>
@@ -18,7 +18,7 @@ int perform(object leader, object target)
 
         member = leader->query_team();
         if( sizeof(member) != 2 )
-                return notify_fail("Ò»ÌõÁúÔõÃ´Ï·£¿\n");
+                return notify_fail("ä¸€æ¡é¾™æ€ä¹ˆæˆï¼Ÿ\n");
 
         j=sizeof (member);
         for (i=0;i<j;i++)
@@ -26,39 +26,39 @@ int perform(object leader, object target)
                 ob=member[i];
                 if (!ob||!living(ob)||!ob->is_character())
                 {
-                        return notify_fail("ÄãÏëºÍË­Ò»ÆëÊ¹ÓÃË«ÁúÏ·Öé£¿\n");
+                        return notify_fail("ä½ æƒ³å’Œè°ä¸€é½ä½¿ç”¨åŒé¾™æˆç ï¼Ÿ\n");
                 }
                 if (ob->query_temp("array/name"))
                 {
-                        return notify_fail("Ë«ÁúºÏÌåÁË¡£\n");
+                        return notify_fail("åŒé¾™åˆä½“äº†ã€‚\n");
                 }
                 if (environment(leader)!=environment(ob))
                 {
-                        return notify_fail("ÈËÊı²»¹»Á½ÈË¡£\n");
+                        return notify_fail("äººæ•°ä¸å¤Ÿä¸¤äººã€‚\n");
                 }
                 if (!ob->query_skill("dragonfight",1))
                 {
-                        return notify_fail(ob->name()+"»¹²»»áÁúĞÎ²«»÷ÄØ£¡\n");
+                        return notify_fail(ob->name()+"è¿˜ä¸ä¼šé¾™å½¢æå‡»å‘¢ï¼\n");
                 }
                 if (ob->is_ghost())
                 {
-                        return notify_fail("Ö»ÓĞÑô¼äµÄÈË²ÅÄÜÔÙÏÖË«ÁúºÏÌå¡£\n");
+                        return notify_fail("åªæœ‰é˜³é—´çš„äººæ‰èƒ½å†ç°åŒé¾™åˆä½“ã€‚\n");
                 }
 
                 if( (int)ob->query("max_force") < 50 )
-                        return notify_fail(ob->query("name")+"µÄÄÚÁ¦²»¹»¡£\n");
+                        return notify_fail(ob->query("name")+"çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
                 if( (string)ob->query_skill_mapped("force")!= "dragonforce")
-                        return notify_fail(ob->query("name")+"Ã»ÓĞÊ¹ÓÃÁúÉñĞÄ·¨¡£\n");
+                        return notify_fail(ob->query("name")+"æ²¡æœ‰ä½¿ç”¨é¾™ç¥å¿ƒæ³•ã€‚\n");
 
                 if( !(weapon = ob->query_temp("weapon")))
-                        return notify_fail(ob->query("name")+"±ØĞë¿ÕÊÖ¡£\n");
+                        return notify_fail(ob->query("name")+"å¿…é¡»ç©ºæ‰‹ã€‚\n");
 
                 if( (int)ob->query_skill("dragonfight",1)<30)
-                        return notify_fail(ob->query("name")+"µÄÁúĞÎ²«»÷»¹²»¹»ÊìÁ·¡£\n");
+                        return notify_fail(ob->query("name")+"çš„é¾™å½¢æå‡»è¿˜ä¸å¤Ÿç†Ÿç»ƒã€‚\n");
 
                 if( (string)ob->query_skill_mapped("unarmed")!="dragonfight")
-                        return notify_fail(ob->query("name")+"±ØĞëÊ¹ÓÃÁúĞÎ²«»÷¡£\n");
+                        return notify_fail(ob->query("name")+"å¿…é¡»ä½¿ç”¨é¾™å½¢æå‡»ã€‚\n");
         }
 
 //get the average array skill of the team
@@ -99,7 +99,7 @@ int perform(object leader, object target)
                 ob->add_temp("apply/damage",n);
                 ob->add_temp("apply/armor", n);
         }
-        message_vision( HIG "$NÓë$NÁ½Ìõ·ÉÁúÒ£·É¾ÅÌì£¬Ë«ÁúºÏÌåÁË£¡\n" NOR, leader);
+        message_vision( HIG "$Nä¸$Nä¸¤æ¡é£é¾™é¥é£ä¹å¤©ï¼ŒåŒé¾™åˆä½“äº†ï¼\n" NOR, leader);
         return 1;
 }
 
@@ -119,7 +119,7 @@ int dismiss_array(object person)
                 ob->add_temp("apply/damage",-n);
                 ob->add_temp("apply/defense",-n);
                 ob->add_temp("apply/armor", -n);
-                tell_object(ob,"Ë«ÁúÀëÎ»£¡\n");
+                tell_object(ob,"åŒé¾™ç¦»ä½ï¼\n");
         }
 }
 

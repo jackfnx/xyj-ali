@@ -1,9 +1,9 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 // caishen.c, weiqi...97/12/21.
-//²ÆÉñÒ¯ÕÔ¹«Ã÷, this guy is used to steal money from players.
+//è´¢ç¥žçˆ·èµµå…¬æ˜Ž, this guy is used to steal money from players.
 //a player is allowed to carry 200-2000 gold depending on his/her dao-xing.
 
 inherit NPC;
@@ -16,9 +16,9 @@ int i=0;
 
 void create()
 {
-   set_name("ÕÔ¹«Ã÷", ({ "zhao gongming", "zhao", "caishenye", "caishen" }) );
-   set("long", "²ÆÉñÒ¯ÕÔ¹«Ã÷£¬ÌìÏÂÈËÎÞ²»Ïë¼ûµÄ´óÃûÈË¡£\n");
-   set("title", "²ÆÉñÒ¯");
+   set_name("èµµå…¬æ˜Ž", ({ "zhao gongming", "zhao", "caishenye", "caishen" }) );
+   set("long", "è´¢ç¥žçˆ·èµµå…¬æ˜Žï¼Œå¤©ä¸‹äººæ— ä¸æƒ³è§çš„å¤§åäººã€‚\n");
+   set("title", "è´¢ç¥žçˆ·");
    set("attitude", "friendly");
    set("class", "xian");
    set("age", 41);
@@ -122,9 +122,9 @@ void check_one(object player)
           gold->move(environment(player));
             }
 
-            message_vision("\nÖ»¼ûÒ»µÀ½ð¹âÉÁ¹ý£¬²ÆÉñÒ¯ÕÔ¹«Ã÷ÌøÁË³öÀ´£¡\nÕÔ¹«Ã÷¶Ô$N¹°ÁË¹°ÊÖµÀ£º´øÇ®Ì«¶à¿ÖÓÐÒÅÊ§£¬ÎÒÒÑÌæÄú±£¹ÜÁËÒ»²¿·Ý¡£\n", player);
-            log_file("MONEY_RESET", ctime( time() )+"£º²ÆÉñÒ¯Ìæ"+player->query("name")+"("+player->query("id")+")"+"±£¹ÜÁË"+removed+"Á½»Æ½ð¡£\n");
-            MONITOR_D->report_system_object_msg (player, "ÓÐ"+removed+"Á½»Æ½ðÉÏ½É²ÆÉñÒ¯¡£"); 
+            message_vision("\nåªè§ä¸€é“é‡‘å…‰é—ªè¿‡ï¼Œè´¢ç¥žçˆ·èµµå…¬æ˜Žè·³äº†å‡ºæ¥ï¼\nèµµå…¬æ˜Žå¯¹$Næ‹±äº†æ‹±æ‰‹é“ï¼šå¸¦é’±å¤ªå¤šææœ‰é—å¤±ï¼Œæˆ‘å·²æ›¿æ‚¨ä¿ç®¡äº†ä¸€éƒ¨ä»½ã€‚\n", player);
+            log_file("MONEY_RESET", ctime( time() )+"ï¼šè´¢ç¥žçˆ·æ›¿"+player->query("name")+"("+player->query("id")+")"+"ä¿ç®¡äº†"+removed+"ä¸¤é»„é‡‘ã€‚\n");
+            MONITOR_D->report_system_object_msg (player, "æœ‰"+removed+"ä¸¤é»„é‡‘ä¸Šç¼´è´¢ç¥žçˆ·ã€‚"); 
         }   
      }
 }

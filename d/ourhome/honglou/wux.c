@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/wux
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÐÇÍ¤");
+  set ("short", "æ˜Ÿäº­");
   set ("long", @LONG
 
-¡¡¡¡¡¡¡¡ÌìÉÏÐÇÐÇÁÁ¾§¾§¡£
+ã€€ã€€ã€€ã€€å¤©ä¸Šæ˜Ÿæ˜Ÿäº®æ™¶æ™¶ã€‚
 
 LONG);
 

@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-    set_name("Ä»ºó²Ù×ÝÕß", ({"wire-puller"}));
+    set_name("å¹•åŽæ“çºµè€…", ({"wire-puller"}));
     set("env/invisibility", 1);
     set_weight(100);
     set("no_get", 1);
@@ -16,8 +16,8 @@ void create()
 string short()
 {
     object owner = query("owner");
-    if (!owner) return "Ä»ºó²Ù×ÝÕß";
-    else return sprintf("Ä»ºó²Ù×ÝÕß(owner: %s)", geteuid(owner));
+    if (!owner) return "å¹•åŽæ“çºµè€…";
+    else return sprintf("å¹•åŽæ“çºµè€…(owner: %s)", geteuid(owner));
 }
 
 void start_testing()
@@ -36,7 +36,7 @@ void start_testing()
     if (!ao->query("dntg_questing")) {
         ao->set("inquiry/weapon", (: call_other, this_object(), "ask_for_testing" :));
         ao->set("inquiry/bingqi", (: call_other, this_object(), "ask_for_testing" :));
-        ao->set("inquiry/±øÆ÷", (: call_other, this_object(), "ask_for_testing" :));
+        ao->set("inquiry/å…µå™¨", (: call_other, this_object(), "ask_for_testing" :));
         ao->set_temp("wire-puller", this_object());
     }
     set("ao", ao);
@@ -53,44 +53,44 @@ int ask_for_testing()
     if (!ao || who != query("owner")) return 0;
 
     if (who->query("dntg/donghai") == "begin")
-        { weapon_name="´ó¿³µ¶"; weapon_id="da kan dao"; weapon_unit="±ú"; trying="try_dao"; }
+        { weapon_name="å¤§ç åˆ€"; weapon_id="da kan dao"; weapon_unit="æŸ„"; trying="try_dao"; }
     else if (who->query("dntg/donghai") == "da kan dao")
-        { weapon_name="¾Å¹É²æ"; weapon_id="jiu gu cha"; weapon_unit="Ö§"; trying="try_cha"; }
+        { weapon_name="ä¹è‚¡å‰"; weapon_id="jiu gu cha"; weapon_unit="æ”¯"; trying="try_cha"; }
     else if (who->query("dntg/donghai") == "jiu gu cha")
-        { weapon_name="Ã·»¨´¸"; weapon_id="mei hua chui"; weapon_unit="¶Ô"; trying="try_chui"; }
+        { weapon_name="æ¢…èŠ±é”¤"; weapon_id="mei hua chui"; weapon_unit="å¯¹"; trying="try_chui"; }
     else if (who->query("dntg/donghai") == "mei hua chui")
-        { weapon_name="»­¸Ëêª"; weapon_id="hua gan ji"; weapon_unit="±ú"; trying="try_ji"; }
+        { weapon_name="ç”»æ†æˆŸ"; weapon_id="hua gan ji"; weapon_unit="æŸ„"; trying="try_ji"; }
     else if (who->query("dntg/donghai") == "hua gan ji") {
         ao->command_function("consider");
-        message_vision("´Óºó¹¬ÅÜÀ´Ò»¸öÁúÆÅ£¬ÔÚ$N¶ú±ßÐ¡ÉùËµÁË¼¸¾ä»°¡£\n", ao);
+        message_vision("ä»ŽåŽå®«è·‘æ¥ä¸€ä¸ªé¾™å©†ï¼Œåœ¨$Nè€³è¾¹å°å£°è¯´äº†å‡ å¥è¯ã€‚\n", ao);
         call_out("sendto_maze", 3);
         return 1;
     } else if (who->query("dntg/donghai")=="done")
         return 0;
     else {
         ao->command_function("nod");
-        message_vision("$NÀÁÑóÑóµÄËµ£º¡°Òª±øÆ÷°¡£¿°ÁÀ´¹úÓÐµÄÊÇ£¬È¥ÄÇÀïÅªÐ©°É¡£¡±\n", ao);
-        message_vision("$N¶ÙÁË¶Ù£¬ÓÖËµ£º¡°ÎÒÁú¹¬µÄ±øÆ÷£¬ÁÂÄãÃÇÕâÐ©·²·òË××ÓÒ²Ê¹²»ÁË¡£¡±\n", ao);
+        message_vision("$Næ‡’æ´‹æ´‹çš„è¯´ï¼šâ€œè¦å…µå™¨å•Šï¼Ÿå‚²æ¥å›½æœ‰çš„æ˜¯ï¼ŒåŽ»é‚£é‡Œå¼„äº›å§ã€‚â€\n", ao);
+        message_vision("$Né¡¿äº†é¡¿ï¼Œåˆè¯´ï¼šâ€œæˆ‘é¾™å®«çš„å…µå™¨ï¼Œè°…ä½ ä»¬è¿™äº›å‡¡å¤«ä¿—å­ä¹Ÿä½¿ä¸äº†ã€‚â€\n", ao);
         ao->command_function("wave");
         return 1;
     }
 
     fighter = present("ye cha", environment());
     if (present(weapon_id, this_player()) && fighter)
-        message_vision("$NµÀ£ºÄúÏÈÄÃÕâ"+weapon_unit+weapon_name+"ºÍ$nÁ·Á·°É£¡\n", ao, fighter);
+        message_vision("$Né“ï¼šæ‚¨å…ˆæ‹¿è¿™"+weapon_unit+weapon_name+"å’Œ$nç»ƒç»ƒå§ï¼\n", ao, fighter);
     else if (present(weapon_id, environment()) && fighter)
-        message_vision("$NµÀ£ºÄúÏÈÄÃÕâ"+weapon_unit+weapon_name+"ºÍ$nÁ·Á·°É£¡\n", ao, fighter);
+        message_vision("$Né“ï¼šæ‚¨å…ˆæ‹¿è¿™"+weapon_unit+weapon_name+"å’Œ$nç»ƒç»ƒå§ï¼\n", ao, fighter);
     else if (present(weapon_id, this_player()) || present(weapon_id, environment())) {
         fighter = new(__DIR__"fighter");
         fighter->move(environment());
-        message_vision("$NËµµÀ£ºÈÃÎÒÕÒ¸öÈËÏÈÅãÄúÁ·Á·£¿\n", ao);
-        message_vision("$NÒ»ÕÐÊÖ£¬Ò»¸ö$n×ßÁË¹ýÀ´¡£\n", ao, fighter);
+        message_vision("$Nè¯´é“ï¼šè®©æˆ‘æ‰¾ä¸ªäººå…ˆé™ªæ‚¨ç»ƒç»ƒï¼Ÿ\n", ao);
+        message_vision("$Nä¸€æ‹›æ‰‹ï¼Œä¸€ä¸ª$nèµ°äº†è¿‡æ¥ã€‚\n", ao, fighter);
     } else if (fighter)
-        message_vision("$NµÀ£ºß×£¿²»ÖªÄÇ"+weapon_unit+weapon_name+"±»Ë­ÄÃÈ¥ÁË£¡\n", ao);
+        message_vision("$Né“ï¼šå’¦ï¼Ÿä¸çŸ¥é‚£"+weapon_unit+weapon_name+"è¢«è°æ‹¿åŽ»äº†ï¼\n", ao);
     else {
         respect = RANK_D->query_respect(who);
-        message_vision("$NÁ¬Ã¦ÆðÉíËµµÀ£º"+respect+"ÉÔºî£¬´ýÎÒÏëÏë£¿\n", ao,who);
-        message_vision("ÎÒÕâÁú¹¬ÖÐÓÐ"+weapon_unit+weapon_name+"»¹´ÕºÏ×ÅÄÜÊ¹£¬"+respect+"Èô²»ÏÓÆú£¬¾ÍËÍÓë"+respect+"ÓÃ°É£¡\n", who);
+        message_vision("$Nè¿žå¿™èµ·èº«è¯´é“ï¼š"+respect+"ç¨ä¾¯ï¼Œå¾…æˆ‘æƒ³æƒ³ï¼Ÿ\n", ao,who);
+        message_vision("æˆ‘è¿™é¾™å®«ä¸­æœ‰"+weapon_unit+weapon_name+"è¿˜å‡‘åˆç€èƒ½ä½¿ï¼Œ"+respect+"è‹¥ä¸å«Œå¼ƒï¼Œå°±é€ä¸Ž"+respect+"ç”¨å§ï¼\n", who);
         who->set_temp("dntg/donghai", trying);
         call_out("fight_quest", 2, trying);
     }
@@ -105,21 +105,21 @@ void fight_quest(string trying)
     string weapon_name, weapon_unit;
 
     if (trying == "try_dao")
-        { weapon_name="´ó¿³µ¶"; weapon = new(__DIR__"dakandao"); weapon_unit="±ú"; }
+        { weapon_name="å¤§ç åˆ€"; weapon = new(__DIR__"dakandao"); weapon_unit="æŸ„"; }
     else if (trying == "try_cha")
-        { weapon_name="¾Å¹É²æ"; weapon = new(__DIR__"jiugucha"); weapon_unit="Ö§"; }
+        { weapon_name="ä¹è‚¡å‰"; weapon = new(__DIR__"jiugucha"); weapon_unit="æ”¯"; }
     else if (trying == "try_chui")
-        { weapon_name="Ã·»¨´¸"; weapon = new(__DIR__"meihuachui"); weapon_unit="¶Ô"; }
+        { weapon_name="æ¢…èŠ±é”¤"; weapon = new(__DIR__"meihuachui"); weapon_unit="å¯¹"; }
     else if (trying == "try_ji")
-        { weapon_name="»­¸Ëêª"; weapon = new(__DIR__"huaganji"); weapon_unit="±ú"; }
+        { weapon_name="ç”»æ†æˆŸ"; weapon = new(__DIR__"huaganji"); weapon_unit="æŸ„"; }
     else
         return;
 
     fighter = new(__DIR__"fighter");
     fighter->move(environment());
     weapon->move(environment());
-    message_vision("$NÒ»ÕÐÊÖ£¬Ò»¸ö$nÌ§¹ýÒ»"+weapon_unit+weapon_name+"¡£\n", ao, fighter);
-    message_vision("$NËµµÀ£º£¢Òª²»ÒªºÍÎÒµÄÊÖÏÂÏÈÁ·Á·£¿£¢\n", ao);
+    message_vision("$Nä¸€æ‹›æ‰‹ï¼Œä¸€ä¸ª$næŠ¬è¿‡ä¸€"+weapon_unit+weapon_name+"ã€‚\n", ao, fighter);
+    message_vision("$Nè¯´é“ï¼šï¼‚è¦ä¸è¦å’Œæˆ‘çš„æ‰‹ä¸‹å…ˆç»ƒç»ƒï¼Ÿï¼‚\n", ao);
 }
 
 void sendto_maze()
@@ -131,7 +131,7 @@ void sendto_maze()
         return;
     }
 
-    message_vision("$NËµµÀ£º"+RANK_D->query_respect(who)+"Îä¹¦¸ÇÊÀ£¬¿Éµ½ºóÃæµÄº£²ØÖÐÊÔÒ»ÊÔ¶¨º£ÉñÕëÌú¡£\n",ao,who);
+    message_vision("$Nè¯´é“ï¼š"+RANK_D->query_respect(who)+"æ­¦åŠŸç›–ä¸–ï¼Œå¯åˆ°åŽé¢çš„æµ·è—ä¸­è¯•ä¸€è¯•å®šæµ·ç¥žé’ˆé“ã€‚\n",ao,who);
     call_out("send_maze", 3);
 }
 
@@ -145,11 +145,11 @@ void send_maze()
         return;
     }
 
-    message_vision("Ëµ×Å£¬$N°Ñ$nËÍµ½ÁËÒ»¸öµØ·½¡£\n", ao, who);
+    message_vision("è¯´ç€ï¼Œ$NæŠŠ$né€åˆ°äº†ä¸€ä¸ªåœ°æ–¹ã€‚\n", ao, who);
     who->move(__DIR__"maze/hdmg");
     ao->move(__DIR__"maze/hdmg");
-    message_vision("$NÒ»¹°ÊÖµÀ£º"+RANK_D->query_respect(who)+"ÏòÇ°×ß¼´¿É¿´µ½ÄÇÉñÌú£¬Ë¡ÀÏ·ò²»·îÅãÁË¡£\n", ao, who);
-    message_vision("Ëµ°Õ£¬$N×ªÉí»Ø¹¬ÁË¡£\n", ao);
+    message_vision("$Nä¸€æ‹±æ‰‹é“ï¼š"+RANK_D->query_respect(who)+"å‘å‰èµ°å³å¯çœ‹åˆ°é‚£ç¥žé“ï¼Œæ•è€å¤«ä¸å¥‰é™ªäº†ã€‚\n", ao, who);
+    message_vision("è¯´ç½¢ï¼Œ$Nè½¬èº«å›žå®«äº†ã€‚\n", ao);
     ao->move(environment());
     call_out("make_shentie", 1);
 }
@@ -175,7 +175,7 @@ void remove()
     if (ao && ao->query_temp("wire-puller") == this_object()) {
         ao->delete("inquiry/weapon");
         ao->delete("inquiry/bingqi");
-        ao->delete("inquiry/±øÆ÷");
+        ao->delete("inquiry/å…µå™¨");
     }
 }
 

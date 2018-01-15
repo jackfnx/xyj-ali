@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // follow.c
@@ -9,7 +9,7 @@ int main(object me, string arg)
 {
    object ob;
 
-   if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºfollow <Ä³ÈË>|none¡£\n");
+   if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šfollow <æŸäºº>|noneã€‚\n");
 
    if( arg=="none")
      if( me->query_leader() ) {
@@ -17,23 +17,23 @@ int main(object me, string arg)
         write("Ok.\n");
         return 1;
      } else {
-        write("ÄãÏÖÔÚ²¢Ã»ÓĞ¸úËæÈÎºÎÈË¡£\n");
+        write("ä½ ç°åœ¨å¹¶æ²¡æœ‰è·Ÿéšä»»ä½•äººã€‚\n");
         return 1;
      }
 
    if( !objectp(ob = present(arg, environment(me))) )
-     return notify_fail("ÕâÀïÃ»ÓĞ " + arg + "¡£\n");
+     return notify_fail("è¿™é‡Œæ²¡æœ‰ " + arg + "ã€‚\n");
 
    if( !ob->is_character() )
-     return notify_fail("Ê²Ã´£¿¸úËæ...." + ob->name() + "¡£\n");
+     return notify_fail("ä»€ä¹ˆï¼Ÿè·Ÿéš...." + ob->name() + "ã€‚\n");
 
    if( ob==me )
-     return notify_fail("¸úËæ×Ô¼º£¿\n");
+     return notify_fail("è·Ÿéšè‡ªå·±ï¼Ÿ\n");
 
    me->set_leader(ob);
-   tell_object(me, "Äã¾ö¶¨¿ªÊ¼¸úËæ" + ob->name() +"Ò»ÆğĞĞ¶¯¡£\n");
+   tell_object(me, "ä½ å†³å®šå¼€å§‹è·Ÿéš" + ob->name() +"ä¸€èµ·è¡ŒåŠ¨ã€‚\n");
    if (ob->visible(me)) 
-     tell_object(ob, me->name() + "¾ö¶¨¿ªÊ¼¸úËæÄãÒ»ÆğĞĞ¶¯¡£\n");
+     tell_object(ob, me->name() + "å†³å®šå¼€å§‹è·Ÿéšä½ ä¸€èµ·è¡ŒåŠ¨ã€‚\n");
 
    return 1;
 }
@@ -41,10 +41,10 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : follow|gen [<ÉúÎï>|none]
+æŒ‡ä»¤æ ¼å¼ : follow|gen [<ç”Ÿç‰©>|none]
  
-Õâ¸öÖ¸ÁîÈÃÄãÄÜ¸úËæÄ³ÈË»òÉúÎï¡£
-Èç¹ûÊäÈë follow none ÔòÍ£Ö¹¸úËæ¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ èƒ½è·ŸéšæŸäººæˆ–ç”Ÿç‰©ã€‚
+å¦‚æœè¾“å…¥ follow none åˆ™åœæ­¢è·Ÿéšã€‚
  
 HELP
 );

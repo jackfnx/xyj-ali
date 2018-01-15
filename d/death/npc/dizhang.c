@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("�ز�������", ({"dizang pusa", "pusa"}));
-  set("long", "�������񣬴�����磬һ���ྲ��
-�������������ܵظ������¹���ĵز���������\n");
-  set("gender", "����");
+  set_name("地藏王菩萨", ({"dizang pusa", "pusa"}));
+  set("long", "面如朱玉，大耳垂肩，一脸肃静．
+他便是主管阴曹地府，天下鬼魂的地藏王菩萨．\n");
+  set("gender", "男性");
   set("class", "ghost");
   set("age", 70);
   set("attitude", "friendly");
@@ -63,7 +63,7 @@ void create()
   set_temp("apply/dodge", 50);
 
   
-  create_family("���޵ظ�", 1, "���");
+  create_family("阎罗地府", 1, "你好");
   setup();
   
   carry_object("/d/obj/cloth/baipao")->wear();
@@ -72,20 +72,20 @@ void create()
 
 void attempt_apprentice(object ob, object me)
 {
-  if ( (string)ob->query("family/family_name")=="���޵ظ�") {
+  if ( (string)ob->query("family/family_name")=="阎罗地府") {
     if (((int)ob->query("combat_exp") < 350000 )) {
-      command("say " + RANK_D->query_rude(ob) + "�������è�İ�ʽҲ�ҵ������ﶪ�����ۣ�");
+      command("say " + RANK_D->query_rude(ob) + "这点三脚猫的把式也敢到我这里丢人现眼？");
       return;
     }
     command("grin");
-    command("say �ܺã�" + RANK_D->query_respect(ob) +
-       "���Ŭ�������ձض��гɡ�\n");
+    command("say 很好，" + RANK_D->query_respect(ob) +
+       "多加努力，他日必定有成。\n");
     command("recruit " + ob->query("id") );
     return;
   }
   command("shake");
   command("say " + RANK_D->query_respect(ob) +
-     "������ȥѧЩ��������ɣ�\n");
+     "还是先去学些基础功夫吧！\n");
   return;
 }
 

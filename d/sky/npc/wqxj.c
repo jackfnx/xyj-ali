@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("ÎäÇúĞÇ¾ı",({"wuqu xingjun", "xingjun"}));
-    set("gender", "ÄĞĞÔ");
+    set_name("æ­¦æ›²æ˜Ÿå›",({"wuqu xingjun", "xingjun"}));
+    set("gender", "ç”·æ€§");
     set("age", 40);
-    set("long", "    \nÌì¹¬µÄÎäÇúĞÇ¾ı¡£\n");
+    set("long", "    \nå¤©å®«çš„æ­¦æ›²æ˜Ÿå›ã€‚\n");
 
     set("attitude", "peaceful");
     set("class", "xian");
@@ -35,7 +35,7 @@ void create()
 
     map_skill("sword", "xiaofeng-sword");
     set("inquiry", ([
-        "name"   : "ÎäÇúĞÇ¾ı¡£",
+        "name"   : "æ­¦æ›²æ˜Ÿå›ã€‚",
     ]));
 
     setup();

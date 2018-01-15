@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 12/5/1997
@@ -9,10 +9,10 @@ void create()
 {
   string str;
   int i = random(4)+1;
-  set_name("Ñý¾«", ({"yao jing","yao", "jing"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("å¦–ç²¾", ({"yao jing","yao", "jing"}));
+  set("gender", "ç”·æ€§");
   set("age", 20*i);
-  set("long","Ò»¸öÊØ¶´µÄÑý¾«¡£\n");
+  set("long","ä¸€ä¸ªå®ˆæ´žçš„å¦–ç²¾ã€‚\n");
   set("combat_exp", 20000*i);
   set("per", 15);
   set_skill("parry", 20*i);
@@ -56,13 +56,13 @@ void die ()
     bone->move(where);
   }
 
-  message_vision ("\n$Nµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»¶ÑÊÞ¹Ç¡£\n",me);  
+  message_vision ("\n$Nå€’äº†ä¸‹åŽ»ï¼ŒåŒ–ä¸ºä¸€å †å…½éª¨ã€‚\n",me);  
   if (! present("shan yao 4",where) &&
-      where->query("short")=="°þÆ¤Í¤")
+      where->query("short")=="å‰¥çš®äº­")
   {
     object ob = new ("/d/qujing/yinwu/npc/yaojing");
     ob->move(where);
-    message_vision ("\n½ô½Ó×Å´ÓÍ¤ÖùºóÓÖÉÁ³öÒ»Î»ÊØÍ¤µÄÑý¾«£¡\n",me);   
+    message_vision ("\nç´§æŽ¥ç€ä»Žäº­æŸ±åŽåˆé—ªå‡ºä¸€ä½å®ˆäº­çš„å¦–ç²¾ï¼\n",me);   
   }
   destruct (me);  
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 /* ftpdconf.h: ftpd configuration */
@@ -46,7 +46,7 @@
 #define LOGIN_MSG       "/adm/etc/ftpd_welcome"
 
 /* the name of the MUD */
-#define THE_MUD_NAME    "Î÷ÓÎ¼Ç"
+#define THE_MUD_NAME    "è¥¿æ¸¸è®°"
 
 /* Maximum number of simultaneous ftp users. */
 #define FTPD_MAX_USERS 4 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tieguai.c
@@ -9,13 +9,13 @@ inherit STAFF;
 
 void create()
 {
-   set_name( "Ìú¹Õ", ({ "tie guai", "tieguai", "guai" }) );
+   set_name( "é“æ‹", ({ "tie guai", "tieguai", "guai" }) );
    set_weight(8000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¸ù");
-     set("long", "Ò»ÌõÌú¹Õ£¬¿´ÆğÀ´ºÚ÷î÷îµÄ£¬·ÖÁ¿¿Ï¶¨²»Çá¡£\n");
+     set("unit", "æ ¹");
+     set("long", "ä¸€æ¡é“æ‹ï¼Œçœ‹èµ·æ¥é»‘é»é»çš„ï¼Œåˆ†é‡è‚¯å®šä¸è½»ã€‚\n");
      set("value", 1000);
      set("material", "steel");
    }

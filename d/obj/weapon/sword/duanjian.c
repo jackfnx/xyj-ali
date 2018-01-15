@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -6,17 +6,17 @@ inherit SWORD;
 
 void create()
 {
-   set_name("¶Ì½£", ({ "duan jian", "sword", "duanjian", "jian" }));
+   set_name("çŸ­å‰‘", ({ "duan jian", "sword", "duanjian", "jian" }));
    set_weight(2000);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
-     set("long", "ÕâÊÇÒ»±ú½£Éí¶ÌĞ¡µÄ¾«¸Ö½£¡£\n");
+     set("unit", "æŸ„");
+     set("long", "è¿™æ˜¯ä¸€æŸ„å‰‘èº«çŸ­å°çš„ç²¾é’¢å‰‘ã€‚\n");
      set("value", 500);
      set("material", "steel");
-     set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-     set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+     set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›å‰‘é˜ã€‚\n");
    }
    init_sword(15);
    setup();

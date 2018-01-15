@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-    set_name("水蛇", ({"shui she","she","snake"}));
-    set("race", "野兽");
-    set("long", "一条水蛇，钻在岸边的水草中游来游去。\n");
+    set_name("姘磋泧", ({"shui she","she","snake"}));
+    set("race", "閲庡吔");
+    set("long", "涓�鏉℃按铔囷紝閽诲湪宀歌竟鐨勬按鑽変腑娓告潵娓稿幓銆俓n");
     set("age", 20);
     set("combat_exp", 50000);
-    set("limbs", ({"头部","七寸", "身体", "尾巴" }));
+    set("limbs", ({"澶撮儴","涓冨", "韬綋", "灏惧反" }));
     set("verbs", ({"bite"}));
 
     set_skill("dodge", 20);

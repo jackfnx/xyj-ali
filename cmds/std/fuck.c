@@ -11,63 +11,63 @@ int main(object me, string arg)
     object obj, old_target;
 
     if ( !wizardp(me) && environment(me)->query("no_fight") )
-        return notify_fail("’‚¿ÔΩ˚÷π’Ω∂∑°£\n");
+        return notify_fail("ËøôÈáåÁ¶ÅÊ≠¢ÊàòÊñó„ÄÇ\n");
 
     if (!arg || !objectp(obj = present(arg, environment(me))))
-        return notify_fail("ƒ„œÎXXÀ≠£ø\n");
+        return notify_fail("‰Ω†ÊÉ≥XXË∞ÅÔºü\n");
 
     if ( !obj->is_character() )
-        return notify_fail("ø¥«Â≥˛“ªµ„£¨ƒ«≤¢≤ª «…˙ŒÔ°£\n");
+        return notify_fail("ÁúãÊ∏ÖÊ•ö‰∏ÄÁÇπÔºåÈÇ£Âπ∂‰∏çÊòØÁîüÁâ©„ÄÇ\n");
 
     if ( obj->is_fucking(me) )
-        return notify_fail("º””Õ£°º””Õ£°º””Õ£°\n");
+        return notify_fail("Âä†Ê≤πÔºÅÂä†Ê≤πÔºÅÂä†Ê≤πÔºÅ\n");
 
     if (obj==me)
-        return notify_fail("ƒ„≤ªƒ‹fuck◊‘º∫°£\n");
+        return notify_fail("‰Ω†‰∏çËÉΩfuckËá™Â∑±„ÄÇ\n");
 
     if (me->is_busy())
-        return notify_fail("ƒ„œ÷‘⁄’˝√¶◊≈ƒÿ°£\n");
+        return notify_fail("‰Ω†Áé∞Âú®Ê≠£ÂøôÁùÄÂë¢„ÄÇ\n");
 
     if (!obj->query("can_speak"))
-        return notify_fail(" ﬁΩª£øƒø«∞ªπ≤ªÃ·π©’‚÷÷∑˛ŒÒ°£\n");
+        return notify_fail("ÂÖΩ‰∫§ÔºüÁõÆÂâçËøò‰∏çÊèê‰æõËøôÁßçÊúçÂä°„ÄÇ\n");
 
     if (userp(obj))
-        return notify_fail("œÎ∏˙ÕÊº“xx£øƒ« «≤ªø…ƒ‹µƒ°£\n");
+        return notify_fail("ÊÉ≥Ë∑üÁé©ÂÆ∂xxÔºüÈÇ£ÊòØ‰∏çÂèØËÉΩÁöÑ„ÄÇ\n");
 
-    message_vision("\n$N∂‘$nÀµµ¿£∫"
+    message_vision("\n$NÂØπ$nËØ¥ÈÅìÔºö"
             + RANK_D->query_self(me)
-            + me->name() + "£¨‘∏”Î"
-            + RANK_D->query_respect(obj) + "Õ¨µ«º´¿÷£¨≤ª÷™"
-            + RANK_D->query_respect(obj) + " «∑Ò‘∏“‚£°\n\n", me, obj);
+            + me->name() + "ÔºåÊÑø‰∏é"
+            + RANK_D->query_respect(obj) + "ÂêåÁôªÊûÅ‰πêÔºå‰∏çÁü•"
+            + RANK_D->query_respect(obj) + "ÊòØÂê¶ÊÑøÊÑèÔºÅ\n\n", me, obj);
 
     if (!userp(obj)) {
         if (obj->query("sexuality") == "virgin") {
             if (obj->query("class") == "yaomo") {
-                message_vision("$N∫ﬂ¡À“ª…˘£¨∂‘$nÀµ£∫"
-                        + RANK_D->query_rude(me) + "£°∑÷√˜ «œÎµ¡»°"
-                        + RANK_D->query_self_rude(obj) + "µƒ"
-                        + (obj->query("gender")=="ƒ––‘" ? "’Ê—Ù£°" : "’Ê“ı£°")
-                        + RANK_D->query_self_rude(obj) + "»ƒ≤ª¡Àƒ„£°\n",
+                message_vision("$NÂìº‰∫Ü‰∏ÄÂ£∞ÔºåÂØπ$nËØ¥Ôºö"
+                        + RANK_D->query_rude(me) + "ÔºÅÂàÜÊòéÊòØÊÉ≥ÁõóÂèñ"
+                        + RANK_D->query_self_rude(obj) + "ÁöÑ"
+                        + (obj->query("gender")=="Áî∑ÊÄß" ? "ÁúüÈò≥ÔºÅ" : "ÁúüÈò¥ÔºÅ")
+                        + RANK_D->query_self_rude(obj) + "È•∂‰∏ç‰∫Ü‰Ω†ÔºÅ\n",
                         obj, me);
             } else {
-                message_vision("$N¡≥…´¥Û±‰£¨≈≠∫»µ¿£∫"
-                        + RANK_D->query_rude(me) + "£°"
+                message_vision("$NËÑ∏Ëâ≤Â§ßÂèòÔºåÊÄíÂñùÈÅìÔºö"
+                        + RANK_D->query_rude(me) + "ÔºÅ"
                         + RANK_D->query_self_rude(obj)
-                        + "√Ê«∞æπ»ªÀµ≥ˆ»Á¥Àœ¬¡˜—‘”Ô£¨Œ“ø¥ƒ„ªÓµ√≤ªƒÕ∑≥¡À£°\n",
+                        + "Èù¢ÂâçÁ´üÁÑ∂ËØ¥Âá∫Â¶ÇÊ≠§‰∏ãÊµÅË®ÄËØ≠ÔºåÊàëÁúã‰Ω†Ê¥ªÂæó‰∏çËÄêÁÉ¶‰∫ÜÔºÅ\n",
                         obj, me);
             }
             me->fuck_ob(obj);
             obj->kill_ob(me);
         } else if (obj->query("sexuality") == "carnality") {
-            message_vision("$N–¶µ¿£∫"
+            message_vision("$NÁ¨ëÈÅìÔºö"
                     + RANK_D->query_self(obj)
-                    + "«Û÷Æ≤ªµ√£°\n", obj);
+                    + "Ê±Ç‰πã‰∏çÂæóÔºÅ\n", obj);
             me->fuck_ob(obj);
             obj->fuck_ob(me);
         //} else if (obj->query("sexuality") == "pudency") {
         } else {
-            message_vision("$N∂Ÿ ±¡≥…œ“ª∫Ï£¨≤ª÷™∏√»Á∫Œ «∫√°£\n", obj);
-            tell_object(obj, HIM + me->name() + "∂¢◊≈ƒ„∑¢≥ˆ“ª’Û“˘–¶£¨œ‘»ª√ª∞≤ ≤√¥∫√–ƒ£°\n" NOR);
+            message_vision("$NÈ°øÊó∂ËÑ∏‰∏ä‰∏ÄÁ∫¢Ôºå‰∏çÁü•ËØ•Â¶Ç‰ΩïÊòØÂ•Ω„ÄÇ\n", obj);
+            tell_object(obj, HIM + me->name() + "ÁõØÁùÄ‰Ω†ÂèëÂá∫‰∏ÄÈòµÊ∑´Á¨ëÔºåÊòæÁÑ∂Ê≤°ÂÆâ‰ªÄ‰πàÂ•ΩÂøÉÔºÅ\n" NOR);
             me->fuck_ob(obj);
             obj->fight_ob(me);
         }
@@ -79,7 +79,7 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-÷∏¡Ó∏Ò Ω : fuck <»ÀŒÔ>
+Êåá‰ª§Ê†ºÂºè : fuck <‰∫∫Áâ©>
 
 HELP
     );

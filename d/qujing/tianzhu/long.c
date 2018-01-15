@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "龙阁");
   set ("long", @LONG
 
-����¥��Ϊ���ɫ�����ڵ���ǽ���о޴������ש����Ϸ�飬
-¥������ĵ������Ű���ɫ�Ļ�ʯ������������һ��������
-�廨��̺��
+整个楼阁为金黄色，阁内的西墙上有巨大的琉璃砖二龙戏珠，
+楼阁里面的地上铺着暗红色的火方石，上面再铺设一条长长的
+绣花地毯。
 
 LONG);
 

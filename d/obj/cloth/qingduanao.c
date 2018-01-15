@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // magua.c
@@ -9,12 +9,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("Çà¶Ğ°À", ({"qingduan ao", "ao"}));
+        set_name("é’ç¼è¢„", ({"qingduan ao", "ao"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 250);
                 set("material", "cloth");
                 set("armor_prop/armor", 2);

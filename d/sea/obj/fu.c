@@ -1,21 +1,21 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 int do_apply (string arg);
 void create()
 {
-  set_name("½ðÁú·û", ({"jinlong fu", "jinglong", "fu"}));
+  set_name("é‡‘é¾™ç¬¦", ({"jinlong fu", "jinglong", "fu"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("no_sell", 1);
     set("no_drop", 1);
-    set("unit", "ÕÅ");
+    set("unit", "å¼ ");
   
-  set("long", "Ò»ÕÅ»ÆÉ«µÄÖ½·û£¬ÉÏÃæ»­ÁËÎ²ÅçÔÆÍÂÎíµÄ½ðÁú¡£
-¿ÉÓÃÀ´ÏÔ»¯(apply)ÖäÓï¡£\n");
+  set("long", "ä¸€å¼ é»„è‰²çš„çº¸ç¬¦ï¼Œä¸Šé¢ç”»äº†å°¾å–·äº‘åé›¾çš„é‡‘é¾™ã€‚
+å¯ç”¨æ¥æ˜¾åŒ–(apply)å’’è¯­ã€‚\n");
     }
     setup();
 }
@@ -34,23 +34,23 @@ int do_apply (string arg)
      ! (ob = present(arg, who)))&&
    (! arg || ! (ob = present(arg, where))))
   {
-    return notify_fail("ÄãÒª½«½ðÁú·û×öÊ²Ã´ÓÃ£¿\n");
+    return notify_fail("ä½ è¦å°†é‡‘é¾™ç¬¦åšä»€ä¹ˆç”¨ï¼Ÿ\n");
   }
   if (ob == who)
   {
-    message_vision ("$NÄÃÆð½ðÁú·ûÍù×Ô¼ºÄÔÃÅÉÏÒ»Ìû£¬½ðÁú·û¡°ºä¡±µÄÒ»Éù¾Í×ÅÁËÆðÀ´¡£\n",who);
-    message_vision ("¶ÙÊ±$NÖ»¾õµÃÒ»¹É¾«ÆøÈëËèÆßÇÏÉúÑÌ£¬Ç¬À¤µ¹ÖÃ£¡\n",who);
+    message_vision ("$Næ‹¿èµ·é‡‘é¾™ç¬¦å¾€è‡ªå·±è„‘é—¨ä¸Šä¸€å¸–ï¼Œé‡‘é¾™ç¬¦â€œè½°â€çš„ä¸€å£°å°±ç€äº†èµ·æ¥ã€‚\n",who);
+    message_vision ("é¡¿æ—¶$Nåªè§‰å¾—ä¸€è‚¡ç²¾æ°”å…¥é«“ä¸ƒçªç”ŸçƒŸï¼Œä¹¾å¤å€’ç½®ï¼\n",who);
     who->unconcious();
   }
-  else if ((string)ob->query("name") != "°Ë°êÃ·»¨´¸" &&
-   (string)ob->query("name")!="¾Å¹ÉÍÐÌì²æ" ) {
+  else if ((string)ob->query("name") != "å…«ç“£æ¢…èŠ±é”¤" &&
+   (string)ob->query("name")!="ä¹è‚¡æ‰˜å¤©å‰" ) {
 
-    message_vision ("$NÄÃÆð½ðÁú·ûÍù$nÉÏÒ»Ìû£¬½ðÁú·û¡°ºä¡±µÄÒ»Éù¾Í×ÅÁËÆðÀ´¡£\n",who,ob);
+    message_vision ("$Næ‹¿èµ·é‡‘é¾™ç¬¦å¾€$nä¸Šä¸€å¸–ï¼Œé‡‘é¾™ç¬¦â€œè½°â€çš„ä¸€å£°å°±ç€äº†èµ·æ¥ã€‚\n",who,ob);
   }
   else
   {
-   message_vision("$NÄÃÆð½ðÁú·ûÍù$nÉÏÒ»Ìû£¬½ðÁú·û¡°ºä¡±µÄÒ»Éù¾Í×ÅÁËÆðÀ´¡£\n
-Ö»¼û$nÉÏÏÂ¹âÓ°ÓÎ¶¯£¬ÖÜÉíÉÏÏÂÏÖ³öÅÌÁú°ãµÄ×­Öä¡£\n",who,ob);
+   message_vision("$Næ‹¿èµ·é‡‘é¾™ç¬¦å¾€$nä¸Šä¸€å¸–ï¼Œé‡‘é¾™ç¬¦â€œè½°â€çš„ä¸€å£°å°±ç€äº†èµ·æ¥ã€‚\n
+åªè§$nä¸Šä¸‹å…‰å½±æ¸¸åŠ¨ï¼Œå‘¨èº«ä¸Šä¸‹çŽ°å‡ºç›˜é¾™èˆ¬çš„ç¯†å’’ã€‚\n",who,ob);
    ob->set("OK_to_STUDY", 1);
   }
   destruct (me);

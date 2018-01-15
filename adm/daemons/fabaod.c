@@ -77,49 +77,49 @@ mapping upgrades = ([
 
 mapping props = ([
     "weapon" : ({
-        ([ "id": "damage", "name" : HIG "ÉË º¦ Á¦" NOR, "init_val" : 10 ])
+        ([ "id": "damage", "name" : HIG "ä¼¤ å®³ åŠ›" NOR, "init_val" : 10 ])
     }),
     "armor" : ({
-        ([ "id" : "armor", "name" : HIG "·À »¤ Á¦" NOR, "init_val" : 5 ]),
-        ([ "id" : "dodge", "name" : HIY "Çá¹¦¼Ó³É" NOR ]),
-        ([ "id" : "force", "name" : HIB "ÄÚ¹¦¼Ó³É" NOR ]),
-        ([ "id" : "armor_vs_force", "name" : HIM "ÄÚÁ¦·À»¤" NOR ]),
-        ([ "id" : "spells", "name" : HIC "·¨Êõ¼Ó³É" NOR ]),
-        ([ "id" : "armor_vs_spells", "name" : HIW "·¨Á¦·À»¤" NOR ]),
+        ([ "id" : "armor", "name" : HIG "é˜² æŠ¤ åŠ›" NOR, "init_val" : 5 ]),
+        ([ "id" : "dodge", "name" : HIY "è½»åŠŸåŠ æˆ" NOR ]),
+        ([ "id" : "force", "name" : HIB "å†…åŠŸåŠ æˆ" NOR ]),
+        ([ "id" : "armor_vs_force", "name" : HIM "å†…åŠ›é˜²æŠ¤" NOR ]),
+        ([ "id" : "spells", "name" : HIC "æ³•æœ¯åŠ æˆ" NOR ]),
+        ([ "id" : "armor_vs_spells", "name" : HIW "æ³•åŠ›é˜²æŠ¤" NOR ]),
     })
 ]);
 
 mapping subtypes = ([
     "weapon" : ({
-        ([ "id" : "axe", "name" : "¸«", "default_file" : "axe/bigaxe" ]),
-        ([ "id" : "blade", "name" : "µ¶", "default_file" : "blade/blade" ]),
-        ([ "id" : "fork", "name" : "²æ", "default_file" : "fork/gangcha" ]),
-        ([ "id" : "hammer", "name" : "´¸", "default_file" : "hammer/hammer" ]),
-        ([ "id" : "mace", "name" : "ïµ", "default_file" : "mace/ironmace" ]),
-        ([ "id" : "spear", "name" : "Ç¹", "default_file" : "spear/gangqiang" ]),
-        ([ "id" : "staff", "name" : "ÕÈ", "default_file" : "staff/muzhang" ]),
-        ([ "id" : "stick", "name" : "¹÷", "default_file" : "stick/qimeigun" ]),
-        ([ "id" : "sword", "name" : "½£", "default_file" : "sword/changjian" ]),
-        ([ "id" : "whip", "name" : "±Ş", "default_file" : "whip/pibian" ])
+        ([ "id" : "axe", "name" : "æ–§", "default_file" : "axe/bigaxe" ]),
+        ([ "id" : "blade", "name" : "åˆ€", "default_file" : "blade/blade" ]),
+        ([ "id" : "fork", "name" : "å‰", "default_file" : "fork/gangcha" ]),
+        ([ "id" : "hammer", "name" : "é”¤", "default_file" : "hammer/hammer" ]),
+        ([ "id" : "mace", "name" : "é”", "default_file" : "mace/ironmace" ]),
+        ([ "id" : "spear", "name" : "æª", "default_file" : "spear/gangqiang" ]),
+        ([ "id" : "staff", "name" : "æ–", "default_file" : "staff/muzhang" ]),
+        ([ "id" : "stick", "name" : "æ£", "default_file" : "stick/qimeigun" ]),
+        ([ "id" : "sword", "name" : "å‰‘", "default_file" : "sword/changjian" ]),
+        ([ "id" : "whip", "name" : "é­", "default_file" : "whip/pibian" ])
     }),
     "armor" : ({
-        ([ "id" : "armor", "name" : "»¤¼×", "default_file" : "armor/tenjia" ]),
-        ([ "id" : "cloth", "name" : "ÒÂ·ş", "default_file" : "cloth/linen" ]),
-        ([ "id" : "head", "name" : "Ã±×Ó", "default_file" : "cloth/hat" ]),
-        ([ "id" : "waist", "name" : "Ñü´ø", "default_file" : "cloth/belt" ]),
-        ([ "id" : "surcoat", "name" : "Åû·ç", "default_file" : "cloth/surcoat" ]),
-        ([ "id" : "wrists", "name" : "»¤Íó", "default_file" : "cloth/wrists" ]),
-        ([ "id" : "hands", "name" : "ÊÖÌ×", "default_file" : "cloth/gloves" ]),
-        ([ "id" : "boots", "name" : "Ñ¥×Ó", "default_file" : "cloth/buxie" ]),
-        ([ "id" : "shield", "name" : "¶ÜÅÆ", "default_file" : "armor/niupi" ]),
-        ([ "id" : "finger", "name" : "½äÖ¸", "default_file" : "cloth/ring" ]),
-        ([ "id" : "neck", "name" : "ÏîÁ´", "default_file" : "cloth/necklece" ]),
+        ([ "id" : "armor", "name" : "æŠ¤ç”²", "default_file" : "armor/tenjia" ]),
+        ([ "id" : "cloth", "name" : "è¡£æœ", "default_file" : "cloth/linen" ]),
+        ([ "id" : "head", "name" : "å¸½å­", "default_file" : "cloth/hat" ]),
+        ([ "id" : "waist", "name" : "è…°å¸¦", "default_file" : "cloth/belt" ]),
+        ([ "id" : "surcoat", "name" : "æŠ«é£", "default_file" : "cloth/surcoat" ]),
+        ([ "id" : "wrists", "name" : "æŠ¤è…•", "default_file" : "cloth/wrists" ]),
+        ([ "id" : "hands", "name" : "æ‰‹å¥—", "default_file" : "cloth/gloves" ]),
+        ([ "id" : "boots", "name" : "é´å­", "default_file" : "cloth/buxie" ]),
+        ([ "id" : "shield", "name" : "ç›¾ç‰Œ", "default_file" : "armor/niupi" ]),
+        ([ "id" : "finger", "name" : "æˆ’æŒ‡", "default_file" : "cloth/ring" ]),
+        ([ "id" : "neck", "name" : "é¡¹é“¾", "default_file" : "cloth/necklece" ]),
     })
 ]);
 
-mapping minerals = ([ "wuse tu" : "ÎåÉ«ÍÁ", "jiuyin xuantie" : "¾ÅÒõĞşÌú", "wuse tu" : "ÁùÑôÎÙ¸Ö" ]);
+mapping minerals = ([ "wuse tu" : "äº”è‰²åœŸ", "jiuyin xuantie" : "ä¹é˜´ç„é“", "wuse tu" : "å…­é˜³é’¨é’¢" ]);
 
-mapping elements = ([ "gold" : "½ğ", "wood" : "Ä¾", "water" : "Ë®", "fire" : "»ğ", "soil" : "ÍÁ" ]);
+mapping elements = ([ "gold" : "é‡‘", "wood" : "æœ¨", "water" : "æ°´", "fire" : "ç«", "soil" : "åœŸ" ]);
 
 mapping formulas = ([
     "" : ([
@@ -162,7 +162,7 @@ string show_subtypes(string fabao_type);
 void create()
 {
     seteuid(getuid());
-    set("channel_id", "·¨±¦¾«Áé");
+    set("channel_id", "æ³•å®ç²¾çµ");
     set("id", "fabaod");
 }
 
@@ -172,12 +172,12 @@ void show_upgrade_cost(object ob, object me)
     string str;
     
     if (!objectp(ob)) {
-        write("¡º·¨±¦Á¶ÖÆÖ¸ÄÏ¡»\n");
+        write("ã€æ³•å®ç‚¼åˆ¶æŒ‡å—ã€\n");
         write("\n");
-        write("³õÊ¼Á¶ÖÆ£º\n");
-        write("²ÄÁÏ£ºÎåÉ«ÍÁ£¬¾ÅÒõĞşÌú£¬ÁùÑôÎÙ¸Ö\n");
-        write("ÒªÇó£ºµÀĞĞ´óÓÚ20Äê£¬ÄÚÁ¦·¨Á¦´óÓÚ300\n");
-        write("»¨·Ñ£ºÄÚÁ¦50µã£¬·¨Á¦50µã\n");
+        write("åˆå§‹ç‚¼åˆ¶ï¼š\n");
+        write("ææ–™ï¼šäº”è‰²åœŸï¼Œä¹é˜´ç„é“ï¼Œå…­é˜³é’¨é’¢\n");
+        write("è¦æ±‚ï¼šé“è¡Œå¤§äº20å¹´ï¼Œå†…åŠ›æ³•åŠ›å¤§äº300\n");
+        write("èŠ±è´¹ï¼šå†…åŠ›50ç‚¹ï¼Œæ³•åŠ›50ç‚¹\n");
         return;
     }
     
@@ -188,7 +188,7 @@ void show_upgrade_cost(object ob, object me)
         int stars = ob->query("stars/" + prop["id"]);
         int upgraded = ob->query("upgraded/" + prop["id"]);
         if (stars == 5)
-            str += (prop["name"] + "(" + prop["id"] + ")Éı¼¶Ìõ¼ş£º\n"HIC"    ÒÑ¾­´ïµ½ÁË¶¥¼¶¡£\n"NOR);
+            str += (prop["name"] + "(" + prop["id"] + ")å‡çº§æ¡ä»¶ï¼š\n"HIC"    å·²ç»è¾¾åˆ°äº†é¡¶çº§ã€‚\n"NOR);
         else {
             mapping *costs = upgrades[fabao_type][prop["id"]];
             int min_exp = costs[stars]["min_exp"]
@@ -199,18 +199,18 @@ void show_upgrade_cost(object ob, object me)
             int mana = costs[stars]["mana"];
             int exp = costs[stars]["exp"];
             
-            str += (prop["name"] + "(" + prop["id"] + ")Éı¼¶Ìõ¼ş£º");
+            str += (prop["name"] + "(" + prop["id"] + ")å‡çº§æ¡ä»¶ï¼š");
             if (min_exp <= me->query("combat_exp")
             &&  min_force <= me->query("max_force")
             &&  min_mana <= me->query("max_mana"))
-                str += (HIY"¡º¿ÉÒÔÉı¼¶¡»"NOR);
+                str += (HIY"ã€å¯ä»¥å‡çº§ã€"NOR);
             str += ("\n");
-            if (min_exp > 0) str += ("    µÀĞĞ" + COMBAT_D->chinese_daoxing(min_exp) + "ÒÔÉÏ\n");
-            if (min_force > 0) str += ("    ÄÚÁ¦" + chinese_number(min_force) + "ÒÔÉÏ\n");
-            if (min_mana > 0) str += ("    ·¨Á¦" + chinese_number(min_mana) + "ÒÔÉÏ\n");
-            if (force > 0) str += ("    ÏûºÄ×î´óÄÚÁ¦" + chinese_number(force) + "µã\n");
-            if (mana > 0) str += ("    ÏûºÄ×î´ó·¨Á¦" + chinese_number(mana) + "µã\n");
-            if (exp > 0) str += ("    ÏûºÄµÀĞĞ" + COMBAT_D->chinese_daoxing(exp) + "\n");
+            if (min_exp > 0) str += ("    é“è¡Œ" + COMBAT_D->chinese_daoxing(min_exp) + "ä»¥ä¸Š\n");
+            if (min_force > 0) str += ("    å†…åŠ›" + chinese_number(min_force) + "ä»¥ä¸Š\n");
+            if (min_mana > 0) str += ("    æ³•åŠ›" + chinese_number(min_mana) + "ä»¥ä¸Š\n");
+            if (force > 0) str += ("    æ¶ˆè€—æœ€å¤§å†…åŠ›" + chinese_number(force) + "ç‚¹\n");
+            if (mana > 0) str += ("    æ¶ˆè€—æœ€å¤§æ³•åŠ›" + chinese_number(mana) + "ç‚¹\n");
+            if (exp > 0) str += ("    æ¶ˆè€—é“è¡Œ" + COMBAT_D->chinese_daoxing(exp) + "\n");
         }
     }
     {
@@ -223,26 +223,26 @@ void show_upgrade_cost(object ob, object me)
             else if (points <= 0)
                 zero += ({ elem });
         }
-        str += ("ÎåĞĞÊôĞÔ£º\n");
+        str += ("äº”è¡Œå±æ€§ï¼š\n");
         foreach (string elem in keys(elements)) {
-            str += ("    " + elements[elem] + "£º ");
+            str += ("    " + elements[elem] + "ï¼š ");
             if (member_array(elem, comp) != -1)
-                str += (HIY"Ô²Âú"NOR);
+                str += (HIY"åœ†æ»¡"NOR);
             else if (member_array(elem, zero) != -1) {
                 if (sizeof(comp) < f_stars
                 &&  (sizeof(comp) + sizeof(zero)) == 5)
-                    str += (HIG"¿ÉÉı¼¶"NOR);
+                    str += (HIG"å¯å‡çº§"NOR);
                 else
-                    str += (CYN"ÎŞ"NOR);
+                    str += (CYN"æ— "NOR);
             }
             else
-                str += (HIR"Éı¼¶ÖĞ"NOR);
+                str += (HIR"å‡çº§ä¸­"NOR);
             str += ("\n");
         }
         str += "\n";
-        str += "¹ØÓÚÎåĞĞÊôĞÔµÄÇ¿»¯(enhance)£¬ĞèÒª¼ÓÈëÎåĞĞÖ®¾«¡£\n";
-        str += "ÎåĞĞÖ®¾«°üÀ¨£º\n";
-        str += "    Àë»ğÖ®¾«£¬¿²Ë®Ö®¾«£¬°×½ğÀ×ÆÇ£¬ÇàÄ¾·ç»ê£¬ÎìÍÁÖ®Áé¡£\n";
+        str += "å…³äºäº”è¡Œå±æ€§çš„å¼ºåŒ–(enhance)ï¼Œéœ€è¦åŠ å…¥äº”è¡Œä¹‹ç²¾ã€‚\n";
+        str += "äº”è¡Œä¹‹ç²¾åŒ…æ‹¬ï¼š\n";
+        str += "    ç¦»ç«ä¹‹ç²¾ï¼Œåæ°´ä¹‹ç²¾ï¼Œç™½é‡‘é›·é­„ï¼Œé’æœ¨é£é­‚ï¼ŒæˆŠåœŸä¹‹çµã€‚\n";
     }
     me->start_more(str);
 }
@@ -265,10 +265,10 @@ string show_fabao_status(object ob)
     }
     
     if (fabao_type == "weapon")
-        str += NOR"ÊôĞÔÉËº¦       ";
+        str += NOR"å±æ€§ä¼¤å®³       ";
     else if (fabao_type == "armor")
-        str += NOR"ÊôĞÔ·À»¤       ";
-    str += sprintf("%s½ğ%sÄ¾%sË®%s»ğ%sÍÁ%s\n",
+        str += NOR"å±æ€§é˜²æŠ¤       ";
+    str += sprintf("%sé‡‘%sæœ¨%sæ°´%sç«%såœŸ%s\n",
         ob->query(fabao_type + "_prop/gold") ? HIW : WHT,
         ob->query(fabao_type + "_prop/wood") ? HIG : GRN,
         ob->query(fabao_type + "_prop/water") ? HIB : BLU,
@@ -280,7 +280,7 @@ string show_fabao_status(object ob)
         int subtype_zero, subtype;
         
         subtype_zero = ob->query("fabao_subtype/0");
-        str += HIB "ĞÍ    Ì¬       " NOR;
+        str += HIB "å‹    æ€       " NOR;
         for (int j = 1; subtype = ob->query("fabao_subtype/" + j); j++) {
             if (subtype == subtype_zero) str += HIY;
             else str += YEL;
@@ -294,11 +294,11 @@ string show_fabao_status(object ob)
 string display_stars(int stars)
 {
     return sprintf("%s%s%s%s%s%s%s", HIR,
-                stars > 0 ? "¡ï" : "¡¡",
-                stars > 1 ? "¡ï" : "¡¡",
-                stars > 2 ? "¡ï" : "¡¡",
-                stars > 3 ? "¡ï" : "¡¡",
-                stars > 4 ? "¡ï" : "¡¡",
+                stars > 0 ? "â˜…" : "ã€€",
+                stars > 1 ? "â˜…" : "ã€€",
+                stars > 2 ? "â˜…" : "ã€€",
+                stars > 3 ? "â˜…" : "ã€€",
+                stars > 4 ? "â˜…" : "ã€€",
                 NOR);
 }
 
@@ -310,11 +310,11 @@ int varify_formula(string formula_type, object smelter)
     foreach (object ob in all_inventory(smelter)) {
         if (ob->query("owner_id") && ob->query("series_no")) {
             if (objectp(fabao_ob))
-                return notify_fail("Äãµ½µ×ÏëÇ¿»¯ÄÄÒ»¼ş·¨±¦£¿\n");
+                return notify_fail("ä½ åˆ°åº•æƒ³å¼ºåŒ–å“ªä¸€ä»¶æ³•å®ï¼Ÿ\n");
             fabao_ob = ob;
         }
         else if (!ob->query("is_mineral"))
-            return notify_fail("ÓĞÆäËûÔÓÖÊ£¬Á¶»¯ÎŞ·¨½øĞĞ¡£\n");
+            return notify_fail("æœ‰å…¶ä»–æ‚è´¨ï¼Œç‚¼åŒ–æ— æ³•è¿›è¡Œã€‚\n");
         else {
             mapping element_prop;
             if (!mapp(element_prop = ob->query("elements")))
@@ -330,7 +330,7 @@ int varify_formula(string formula_type, object smelter)
     }
     
     if (formula_type != "" && !objectp(fabao_ob))
-        return notify_fail("ÄãÃ»ÓĞ·ÅÈë·¨±¦¡£\n");
+        return notify_fail("ä½ æ²¡æœ‰æ”¾å…¥æ³•å®ã€‚\n");
     
     if (formula_type == "enhance") {
         string half, *zero = ({}), enhance_type;
@@ -338,10 +338,10 @@ int varify_formula(string formula_type, object smelter)
         int stars, comp = 0, enhance_point = 0;
         
         if (sizeof(minerals_ob))
-            return notify_fail("ÓĞÆäËûÔÓÖÊ£¬Á¶»¯ÎŞ·¨½øĞĞ¡£\n");
+            return notify_fail("æœ‰å…¶ä»–æ‚è´¨ï¼Œç‚¼åŒ–æ— æ³•è¿›è¡Œã€‚\n");
         if (!sizeof(elements_ob))
-            return notify_fail("Çë·ÅÈëÖÁÉÙÒ»ÖÖÎåĞĞÖ®¾«£¬Èç¹û·¨±¦Ç¡ºÃ´¦ÓÚÄ³Ò»¼¶µÄ¿ªÊ¼½×¶Î"
-                        "£¨»¹Ã»ÓĞÈ·¶¨·¢Õ¹·½Ïò£©£¬ÔòÖ»ÄÜ·ÅÈëÒ»ÖÖÎåĞĞÖ®¾«¡£\n");
+            return notify_fail("è¯·æ”¾å…¥è‡³å°‘ä¸€ç§äº”è¡Œä¹‹ç²¾ï¼Œå¦‚æœæ³•å®æ°å¥½å¤„äºæŸä¸€çº§çš„å¼€å§‹é˜¶æ®µ"
+                        "ï¼ˆè¿˜æ²¡æœ‰ç¡®å®šå‘å±•æ–¹å‘ï¼‰ï¼Œåˆ™åªèƒ½æ”¾å…¥ä¸€ç§äº”è¡Œä¹‹ç²¾ã€‚\n");
         
         foreach (string elem in keys(elements)) {
             int elem_prop = fabao_ob->query(fabao_type + "_prop/" + elem);
@@ -356,16 +356,16 @@ int varify_formula(string formula_type, object smelter)
         stars = fabao_ob->query("stars/" + props[fabao_type][0]["id"]);
         if (stringp(half)) {
             if (sizeof(zero))
-                return notify_fail(fabao_ob->name() + "µÄ¡º"
-                            + elements[half] + "¡»ÊôĞÔ»¹Ã»ÓĞÉı¼¶Íê£¬²»Òª·ÅÈëÆäËûÔÓÖÊ¡£\n");
+                return notify_fail(fabao_ob->name() + "çš„ã€"
+                            + elements[half] + "ã€å±æ€§è¿˜æ²¡æœ‰å‡çº§å®Œï¼Œä¸è¦æ”¾å…¥å…¶ä»–æ‚è´¨ã€‚\n");
         }
         else if (sizeof(zero) > 1)
-            return notify_fail(fabao_ob->name() + "µÄ·¢Õ¹·½Ïò»¹Ã»ÓĞÈ·¶¨£¬Çë·ÅÈëµ¥Ò»ÖÖÀàµÄÎåĞĞÖ®¾«¡£\n");
+            return notify_fail(fabao_ob->name() + "çš„å‘å±•æ–¹å‘è¿˜æ²¡æœ‰ç¡®å®šï¼Œè¯·æ”¾å…¥å•ä¸€ç§ç±»çš„äº”è¡Œä¹‹ç²¾ã€‚\n");
         else if (sizeof(zero) < 1)
-            return notify_fail(fabao_ob->name() + "µÄÕâĞ©ÊôĞÔ¶¼ÒÑ¾­ÉıÂúÁË¡£\n");
+            return notify_fail(fabao_ob->name() + "çš„è¿™äº›å±æ€§éƒ½å·²ç»å‡æ»¡äº†ã€‚\n");
         else {
             if (comp + 1 > stars)
-                return notify_fail(fabao_ob->name() + "µÄµÈ¼¶²»¹»£¬ÎŞ·¨Ç¿»¯ĞÂµÄÊôĞÔ¡£\n");
+                return notify_fail(fabao_ob->name() + "çš„ç­‰çº§ä¸å¤Ÿï¼Œæ— æ³•å¼ºåŒ–æ–°çš„å±æ€§ã€‚\n");
             enhance_type = zero[0];
         }
         
@@ -386,18 +386,18 @@ int varify_formula(string formula_type, object smelter)
             fabao_type = fabao_ob->query("fabao_type");
         
         if (undefinedp(formulas[fabao_type][formula_type]))
-            return notify_fail("·¨±¦Ã»ÓĞÕâÒ»Ïî¿ÉÉı¼¶ÊôĞÔ¡£\n");
+            return notify_fail("æ³•å®æ²¡æœ‰è¿™ä¸€é¡¹å¯å‡çº§å±æ€§ã€‚\n");
         
         foreach (string m in keys(formulas[fabao_type][formula_type])) {
             if (undefinedp(minerals_ob[m]))
-                return notify_fail("È±ÉÙ²ÄÁÏ¡º" + minerals[m] + "¡»¡£\n");
+                return notify_fail("ç¼ºå°‘ææ–™ã€" + minerals[m] + "ã€ã€‚\n");
             if (minerals_ob[m]->query_amount() < formulas[fabao_type][formula_type][m])
-                return notify_fail("²ÄÁÏ¡º" + minerals[m] + "¡»²»×ã¡£\n");
+                return notify_fail("ææ–™ã€" + minerals[m] + "ã€ä¸è¶³ã€‚\n");
         }
         
         foreach (string m in keys(minerals_ob)) {
             if (undefinedp(formulas[fabao_type][formula_type]))
-                return notify_fail("ÓĞÆäËûÔÓÖÊ£¬Á¶»¯ÎŞ·¨½øĞĞ¡£\n");
+                return notify_fail("æœ‰å…¶ä»–æ‚è´¨ï¼Œç‚¼åŒ–æ— æ³•è¿›è¡Œã€‚\n");
         }
         
         if (objectp(fabao_ob)) {
@@ -424,18 +424,18 @@ varargs int varify_player(string prop, object me, object smelter)
     fabao_ob = smelter->query_temp("fabao_ob");
     if (!objectp(fabao_ob)) {
         if (me->query("combat_exp") < 20000)
-            return notify_fail("ÄãµÄµÀĞĞÌ«Ç³£¬ÎŞ·¨Àí½âÁ¶ÖÆ·¨±¦µÄĞşÃî¡£\n");
+            return notify_fail("ä½ çš„é“è¡Œå¤ªæµ…ï¼Œæ— æ³•ç†è§£ç‚¼åˆ¶æ³•å®çš„ç„å¦™ã€‚\n");
         if (me->query("max_force") < 300)
-            return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ö§³ÖÁ¶ÖÆ·¨±¦µÄ¾Ş´óÏûºÄ¡£\n");
+            return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ”¯æŒç‚¼åˆ¶æ³•å®çš„å·¨å¤§æ¶ˆè€—ã€‚\n");
         if (me->query("max_mana") < 300)
-            return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬ÎŞ·¨Ö§³ÖÁ¶ÖÆ·¨±¦µÄ¾Ş´óÏûºÄ¡£\n");
+            return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ”¯æŒç‚¼åˆ¶æ³•å®çš„å·¨å¤§æ¶ˆè€—ã€‚\n");
         if (me->query("force") < (me->query("max_force") + 100))
-            return notify_fail("Á¶ÖÆ·¨±¦Ê±£¬Äã±ØĞë´¦ÓÚÕæÆø³äÓ¯µÄ×´Ì¬¡£\n");
+            return notify_fail("ç‚¼åˆ¶æ³•å®æ—¶ï¼Œä½ å¿…é¡»å¤„äºçœŸæ°”å……ç›ˆçš„çŠ¶æ€ã€‚\n");
         if (me->query("mana") < (me->query("max_mana") + 100))
-            return notify_fail("Á¶ÖÆ·¨±¦Ê±£¬Äã±ØĞë´¦ÓÚÁéÆø³äÓ¯µÄ×´Ì¬¡£\n");
+            return notify_fail("ç‚¼åˆ¶æ³•å®æ—¶ï¼Œä½ å¿…é¡»å¤„äºçµæ°”å……ç›ˆçš„çŠ¶æ€ã€‚\n");
         if (count_fabao(me, "weapon") >= MAX_WEAPON
         &&  count_fabao(me, "armor") >= MAX_ARMOR)
-            return notify_fail("ÄãµÄ·¨±¦ÊıÒÑ¾­´ïµ½ÁË¼«ÏŞ£¬ÔÙ¶àÒ²Ã»·¨¿ØÖÆÁË¡£\n");
+            return notify_fail("ä½ çš„æ³•å®æ•°å·²ç»è¾¾åˆ°äº†æé™ï¼Œå†å¤šä¹Ÿæ²¡æ³•æ§åˆ¶äº†ã€‚\n");
 
         me->delete_temp("fabaod");
         me->set_temp("fabaod/max_force", 50);
@@ -450,12 +450,12 @@ varargs int varify_player(string prop, object me, object smelter)
 
     fabao_type = fabao_ob->query("fabao_type");
     if (!mapp(p_info = query_prop(fabao_type, prop)))
-        return notify_fail("Ã»ÓĞÕâÏîÊôĞÔ¡£\n");
+        return notify_fail("æ²¡æœ‰è¿™é¡¹å±æ€§ã€‚\n");
 
     stars = fabao_ob->query("stars/" + prop);
     upgraded = fabao_ob->query("upgraded/" + prop);
     if (stars >= 5)
-        return notify_fail("ÌØĞÔ¡º" + p_info["name"] + "¡»ÒÑ¾­²»ÄÜÉı¼¶ÁË£¡\n");
+        return notify_fail("ç‰¹æ€§ã€" + p_info["name"] + "ã€å·²ç»ä¸èƒ½å‡çº§äº†ï¼\n");
 
     costs = upgrades[fabao_type][prop];
     min_exp = costs[stars]["min_exp"];
@@ -465,12 +465,12 @@ varargs int varify_player(string prop, object me, object smelter)
     if (min_exp > me->query("combat_exp")
     ||  min_force > me->query("max_force")
     ||  min_mana > me->query("max_mana"))
-        return notify_fail("ÄÜÁ¦²»×ã£¬ÎŞ·¨¼ÌĞøÉı¼¶·¨±¦¡££¨ÇëÓÃcostÖ¸Áî²éÑ¯Éı¼¶Ìõ¼ş¡££©\n");
+        return notify_fail("èƒ½åŠ›ä¸è¶³ï¼Œæ— æ³•ç»§ç»­å‡çº§æ³•å®ã€‚ï¼ˆè¯·ç”¨costæŒ‡ä»¤æŸ¥è¯¢å‡çº§æ¡ä»¶ã€‚ï¼‰\n");
 
     elem_comp = smelter->query_temp("elem_comp");
     if (elem_comp < stars)
-        return notify_fail(fabao_ob->name() + "µÄµÚ" + chinese_number(elem_comp + 1)
-                    + "ÖÖÎåĞĞÊôĞÔÉĞÃ»ÓĞÔ²Âú£¬ÎŞ·¨¼ÌĞøÉı¼¶¡£\n");
+        return notify_fail(fabao_ob->name() + "çš„ç¬¬" + chinese_number(elem_comp + 1)
+                    + "ç§äº”è¡Œå±æ€§å°šæ²¡æœ‰åœ†æ»¡ï¼Œæ— æ³•ç»§ç»­å‡çº§ã€‚\n");
     me->delete_temp("fabaod");
     me->set_temp("fabaod/max_force", costs[stars]["force"]);
     me->set_temp("fabaod/max_mana", costs[stars]["mana"]);
@@ -490,15 +490,15 @@ mixed query_prop(string fabao_type, string prop)
 
 void start_make_fabao(object ob, object smelter)
 {
-    write("ÄúÒªÁ¶ÔìÄÄÀà·¨±¦£º\n");
+    write("æ‚¨è¦ç‚¼é€ å“ªç±»æ³•å®ï¼š\n");
     if (count_fabao(ob, "weapon") < MAX_WEAPON)
-        write("w. ÎäÆ÷\n");
+        write("w. æ­¦å™¨\n");
     if (count_fabao(ob, "armor") < MAX_ARMOR)
-        write("a. ·À¾ß\n");
-    write("o. ÆäËû(ÔİÈ±)\n");
+        write("a. é˜²å…·\n");
+    write("o. å…¶ä»–(æš‚ç¼º)\n");
     // Other kinds of fabao can be added too.. if there is somefile
     // we can use as a default object.
-    write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+    write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 
     seteuid(getuid());
     input_to( (: get_fabao_type, ob, smelter :) );
@@ -513,13 +513,13 @@ void get_fabao_type(object ob, object smelter, string arg)
     
     if ((arg != "w" || count_fabao(ob, "weapon") >= MAX_WEAPON)
     &&  (arg != "a" || count_fabao(ob, "armor") >= MAX_ARMOR)) {
-        write("ÄúÒªÁ¶ÔìÄÄÀà·¨±¦£º\n");
+        write("æ‚¨è¦ç‚¼é€ å“ªç±»æ³•å®ï¼š\n");
         if (count_fabao(ob, "weapon") < MAX_WEAPON)
-            write("w. ÎäÆ÷\n");
+            write("w. æ­¦å™¨\n");
         if (count_fabao(ob, "armor") < MAX_ARMOR)
-            write("a. ·À¾ß\n");
-        write("o. ÆäËû(ÔİÈ±)\n");
-        write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+            write("a. é˜²å…·\n");
+        write("o. å…¶ä»–(æš‚ç¼º)\n");
+        write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
         input_to( (: get_fabao_type, ob, smelter :) );
         return;
     }
@@ -527,16 +527,16 @@ void get_fabao_type(object ob, object smelter, string arg)
     if (arg == "w") {
         fabao_type = "weapon";
         write("\n");
-        write("¿ÉÑ¡ÔñÎäÆ÷ÖÖÀà£º\n");
+        write("å¯é€‰æ‹©æ­¦å™¨ç§ç±»ï¼š\n");
         write(show_subtypes("weapon"));
-        write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+        write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
     }
     else if (arg == "a") {
         fabao_type = "armor";
         write("\n");
-        write("¿ÉÑ¡Ôñ·À¾ßÖÖÀà£º\n");
+        write("å¯é€‰æ‹©é˜²å…·ç§ç±»ï¼š\n");
         write(show_subtypes("armor"));
-        write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+        write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
     }
     ob->set_temp("fabao_type", fabao_type);
     ob->set_temp("fabao_new", fabao_type + (count_fabao(ob, fabao_type) + 1));
@@ -557,16 +557,16 @@ void get_fabao_subtype(object ob, object smelter, string arg)
         if (arg == "w")    {
             fabao_type = "weapon";
             write("\n");
-            write("¿ÉÑ¡ÔñÎäÆ÷ÖÖÀà£º\n");
+            write("å¯é€‰æ‹©æ­¦å™¨ç§ç±»ï¼š\n");
             write(show_subtypes("weapon"));
-            write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+            write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
         }
         else if (arg == "a")   {
             fabao_type = "armor";   
             write("\n");
-            write("¿ÉÑ¡Ôñ·À¾ßÖÖÀà£º\n");
+            write("å¯é€‰æ‹©é˜²å…·ç§ç±»ï¼š\n");
             write(show_subtypes("armor"));
-            write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+            write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
         }
         ob->set_temp("fabao_type", fabao_type);
         input_to( (: get_fabao_subtype, ob, smelter :) );
@@ -576,7 +576,7 @@ void get_fabao_subtype(object ob, object smelter, string arg)
     ob->set_temp("fabao_subtype", order);
     
     write("\n");
-    write("ÇëÉè¶¨Ó¢ÎÄ id £º");
+    write("è¯·è®¾å®šè‹±æ–‡ id ï¼š");
     input_to( (: get_fabao_id, ob, smelter :) );
 }
 
@@ -584,7 +584,7 @@ void get_fabao_id(object ob, object smelter, string arg)
 {
     arg = lower_case(arg);
     if (!LOGIN_D->check_legal_id(arg)) {
-        write("ÇëÉè¶¨Ó¢ÎÄ id £º");
+        write("è¯·è®¾å®šè‹±æ–‡ id ï¼š");
         input_to( (: get_fabao_id, ob, smelter :) ); 
         return;
     }
@@ -593,7 +593,7 @@ void get_fabao_id(object ob, object smelter, string arg)
     ob->set_temp("fabao_id", arg);
     
     write("\n");
-    write("ÇëÉè¶¨ÖĞÎÄÃû£º(¿É¼ÓÑÕÉ«)");
+    write("è¯·è®¾å®šä¸­æ–‡åï¼š(å¯åŠ é¢œè‰²)");
     input_to( (: get_fabao_name, ob, smelter :) );
 }
 
@@ -621,7 +621,7 @@ void get_fabao_name(object ob, object smelter, string arg)
     arg = replace_string(arg, "$NOR$", "");
     
     if (!LOGIN_D->check_legal_name(arg, 12)) {
-        write("ÇëÉè¶¨ÖĞÎÄÃû£º(¿É¼ÓÑÕÉ«)");
+        write("è¯·è®¾å®šä¸­æ–‡åï¼š(å¯åŠ é¢œè‰²)");
         input_to( (: get_fabao_name, ob, smelter :) );
         return;
     }
@@ -648,7 +648,7 @@ void get_fabao_name(object ob, object smelter, string arg)
     ob->set_temp("fabao_name", arg);
     
     write("\n");
-    write("ÇëÃèÊö·¨±¦£º");
+    write("è¯·æè¿°æ³•å®ï¼š");
     input_to( (: get_fabao_desc, ob, smelter :) );
 }
 
@@ -657,7 +657,7 @@ void get_fabao_desc(object ob, object smelter, string arg)
     ob->set_temp("fabao_desc", arg);
     
     write("\n");
-    write("·¨±¦ÓÃÁ¿´Ê£º(Return for default)");
+    write("æ³•å®ç”¨é‡è¯ï¼š(Return for default)");
     input_to( (: get_fabao_unit, ob, smelter :) );
 }
 
@@ -668,7 +668,7 @@ void get_fabao_unit(object ob, object smelter, string arg)
     if (arg == "")
         fabao_unit = "";
     else if (!LOGIN_D->check_legal_name(arg, 2)) {
-        write("·¨±¦ÓÃÁ¿´Ê£º(Return for defult)");
+        write("æ³•å®ç”¨é‡è¯ï¼š(Return for defult)");
         input_to( (: get_fabao_unit, ob, smelter :) );
         return;
     }
@@ -677,7 +677,7 @@ void get_fabao_unit(object ob, object smelter, string arg)
 
     ob->set_temp("fabao_unit", fabao_unit);
     
-    write("ĞÅÏ¢È·ÈÏÍê±Ï£¬¿ªÊ¼Á¶ÖÆ·¨±¦¡£\n\n\n");
+    write("ä¿¡æ¯ç¡®è®¤å®Œæ¯•ï¼Œå¼€å§‹ç‚¼åˆ¶æ³•å®ã€‚\n\n\n");
     smelter->complete_make_fabao(ob);
 }
 
@@ -742,7 +742,7 @@ void build_weapon(object ob)
     setup_prop(ob, "weapon");
 
     if (ob->query("seal")) {
-        ob->set("short", ob->name() + "(" + capitalize(ob->query("id")) + ")" + CYN + "¡º·âÓ¡ÖĞ¡»" + NOR);
+        ob->set("short", ob->name() + "(" + capitalize(ob->query("id")) + ")" + CYN + "ã€å°å°ä¸­ã€" + NOR);
         ob->set("weapon_prop/damage", 1);
     }
     else {

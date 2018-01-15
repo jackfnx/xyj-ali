@@ -1,11 +1,11 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tonsillit.c
 
 inherit FORCE;
 
-string name() { return "ÉãÆø¾÷"; }
+string name() { return "æ‘„æ°”è¯€"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 
@@ -14,10 +14,10 @@ int valid_learn(object me)
 //remove shaqi require.2/15
 /*
         if( (int)me->query("bellicosity") < (int)me->query_skill("tonsillit") * 40 )
-                return notify_fail("ÄãµÄÉ±Æø²»¹»£¬ÎÞ·¨ÁìÎò¸ü¸ßÉîµÄÉãÆø¾÷¡£\n");
+                return notify_fail("ä½ çš„æ€æ°”ä¸å¤Ÿï¼Œæ— æ³•é¢†æ‚Ÿæ›´é«˜æ·±çš„æ‘„æ°”è¯€ã€‚\n");
 */
     if ((int)me->query_skill("tonsillit", 1) >= 250)
-        return notify_fail("ÄãµÄÆøÁ¿ÓÐÏÞ£¬¶ÔÉãÆø¾÷ÒÑÁìÎòµ½ÁË¼«ÏÞ¡£\n");
+        return notify_fail("ä½ çš„æ°”é‡æœ‰é™ï¼Œå¯¹æ‘„æ°”è¯€å·²é¢†æ‚Ÿåˆ°äº†æžé™ã€‚\n");
     return 1;
 }
 

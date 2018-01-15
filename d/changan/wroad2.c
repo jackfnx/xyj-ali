@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/wroad2.c
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ʯ·");
+  set ("short", "青石路");
   set ("long", @LONG
 
-����·�൱���ߡ������Ѿ��������������ˡ�·�ϳ������٣�
-����һ�ӶӵĹٱ�Ѻ��һ���������ͨ����
+这条路相当好走。这里已经靠近西部边陲了。路上车马不少，
+更有一队队的官兵押着一车车的辎重通过。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

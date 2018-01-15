@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "��С��");
+   set ("short", "西小廊");
    set ("long", @LONG
 
-���Ǵ�������һ�����ȣ���������Ժ��С������ľ���̵أ�
-��ɨ�ļ�Ϊ�ɾ����������淢��֨֨�����������������ľ����
-����һЩɽˮ���������һ��С��ͨ����ƫ�ꡣ
+这是大殿西厢的一条长廊，向北连到后院。小廊上是木板铺地，
+打扫的极为干净，走在上面发出吱吱的响声。走廊两面的木格内
+雕着一些山水人物。东面有一道小门通向西偏店。
 LONG);
 
    set("exits", 
@@ -27,7 +27,7 @@ LONG);
      //__DIR__"npc/qingfeng" : 1,
      //__DIR__"npc/mingyue" : 1,
    ]));
-create_door("east", "��ľ��", "west", DOOR_CLOSED);
+create_door("east", "雕花木门", "west", DOOR_CLOSED);
 
 
 //   set("outdoors", "wuzhuang");

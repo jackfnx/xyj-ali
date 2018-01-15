@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,11 +8,11 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("���׶�����", ({"uncle samui","samui"}));
+  set_name("萨米儿大叔", ({"uncle samui","samui"}));
 
-  set("gender", "����" );
+  set("gender", "男性" );
   set("age", 65);
-  set("long", "һλ��ͷС���ӣ��Ʒ����۾������ˣ��ܷ�Ȥ�����ӡ�\n");
+  set("long", "一位光头小胡子，黄发蓝眼睛的老人，很风趣的样子。\n");
   set("combat_exp", 1000);
   set("max_kee", 300);
   set("max_sen", 300);
@@ -45,15 +45,15 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) { 
                 case 0:
-                say( name()+"Ц�����˵������λ" +
+                say( name()+"笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "������ЪЪ�ţ������ҿ������⣡\n");
+                                + "，进来歇歇脚，尝尝我烤的羊肉！\n");
                         break;
      case 1:
-     say( name()+"�����˵��Զ���Ŀ��ˣ�����������\n");
+     say( name()+"热情的说：远方的客人，请进，请进！\n");
      break;
      case 2:
-     say( name()+"˵�����������½��Ŀ����⣬��������⣡\n");
+     say( name()+"说：来来来，新疆的烤羊肉，喷香的羊肉！\n");
      break;
         }
 }

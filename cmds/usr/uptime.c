@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // uptime.c
@@ -18,14 +18,14 @@ int report()
    h = t % 24;     t /= 24;
    d = t;
 
-   if(d) time = chinese_number(d) + "Ìì";
+   if(d) time = chinese_number(d) + "å¤©";
    else time = "";
 
-   if(h) time += chinese_number(h) + "Ğ¡Ê±";
-   if(m) time += chinese_number(m) + "·Ö";
-   time += chinese_number(s) + "Ãë¡£\n";
+   if(h) time += chinese_number(h) + "å°æ—¶";
+   if(m) time += chinese_number(m) + "åˆ†";
+   time += chinese_number(s) + "ç§’ã€‚\n";
 
-   write("Î÷ÓÎ¼ÇÒÑ¾­ÔËĞĞÁË" + time + "\n");
+   write("è¥¿æ¸¸è®°å·²ç»è¿è¡Œäº†" + time + "\n");
    return 1;
 }
 
@@ -39,9 +39,9 @@ int main()
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½ : uptime
+æŒ‡ä»¤æ ¼å¼ : uptime
  
-Õâ¸öÖ¸Áî¸æËßÄãÎ÷ÓÎ¼ÇÒÑ¾­ÔËĞĞÁË¶à¾Ã¡£
+è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰ä½ è¥¿æ¸¸è®°å·²ç»è¿è¡Œäº†å¤šä¹…ã€‚
  
 HELP
     );

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/eastseashore.c
@@ -17,15 +17,15 @@ void reset();
 
 void create()
 {
-    set("short", "¶«º£Ö®±õ");
+    set("short", "ä¸œæµ·ä¹‹æ»¨");
     set("long", @LONG
 
-ÕâÀïËÆºõ±ãÊÇÂ·µÄ¾¡Í·£¬ÃæÇ°µÄ´óº£¶ÔÒ»¸ö·²ÈËÀ´ËµÊÇ²»¿ÉÓâÔ½µÄ¡£
-Àë°¶²»Ô¶´¦Æ¯×ÅÒ»Ö»Ä¾·¤(mufa)¡£
+è¿™é‡Œä¼¼ä¹ä¾¿æ˜¯è·¯çš„å°½å¤´ï¼Œé¢å‰çš„å¤§æµ·å¯¹ä¸€ä¸ªå‡¡äººæ¥è¯´æ˜¯ä¸å¯é€¾è¶Šçš„ã€‚
+ç¦»å²¸ä¸è¿œå¤„æ¼‚ç€ä¸€åªæœ¨ç­(mufa)ã€‚
 LONG);
 
     set("item_desc", ([ /* sizeof() == 1 */
-        "mufa" : "Ò»Ö»Ä¾·¤£¬ÒÔ¼¸¸ù´óÔ²Ä¾À¦³É¡£Äã²»½ûÏë×ø(zuo)ÉÏÈ¥ÊÔÒ»ÊÔ¡£",
+        "mufa" : "ä¸€åªæœ¨ç­ï¼Œä»¥å‡ æ ¹å¤§åœ†æœ¨æ†æˆã€‚ä½ ä¸ç¦æƒ³å(zuo)ä¸Šå»è¯•ä¸€è¯•ã€‚",
     ]));
     set("exits", ([ /* sizeof() == 1 */
         "north" : __DIR__"seashore3",
@@ -54,19 +54,19 @@ void check_trigger()
                 room->set("zuo_trigger", 1);
                 set("exits/enter", __DIR__"mufa");
                 room->set("exits/out", __FILE__);
-                message("vision", "Ò»Ö»Ä¾·¤´Óº£ÉÏÆ¯ÁË¹ıÀ´¡£\n", this_object() );
-                message("vision", "Ä¾·¤Ò»Õğ£¬ÏÔÈ»ÊÇ¸éÇ³ÁË¡£\n", room);
+                message("vision", "ä¸€åªæœ¨ç­ä»æµ·ä¸Šæ¼‚äº†è¿‡æ¥ã€‚\n", this_object() );
+                message("vision", "æœ¨ç­ä¸€éœ‡ï¼Œæ˜¾ç„¶æ˜¯ææµ…äº†ã€‚\n", room);
                 remove_call_out("on_board");
                 call_out("on_board", 15);
             }
             else
-                message("vision", "Ä¾·¤ÕıÆ¯Ïò°¶±ß£¬¿´Ñù×Ó»¹µÃÄÍĞÄµØµÈµÈ¡£\n",this_object() );
+                message("vision", "æœ¨ç­æ­£æ¼‚å‘å²¸è¾¹ï¼Œçœ‹æ ·å­è¿˜å¾—è€å¿ƒåœ°ç­‰ç­‰ã€‚\n",this_object() );
         }
         else
             message("vision", "ERROR: mufa not found\n", this_object() );
     }
     else 
-        message("vision", "Ä¾·¤ÒÑ¾­¿¿°¶ÁË£¬ËæÊ±¶¼¿ÉÉÏÈ¥¡£\n",
+        message("vision", "æœ¨ç­å·²ç»é å²¸äº†ï¼Œéšæ—¶éƒ½å¯ä¸Šå»ã€‚\n",
             this_object() );
 }
 
@@ -77,13 +77,13 @@ void on_board()
 
     if( !query("exits/enter") ) return;
 
-    message("vision", "Ò»¸öÀËÍ·´òÀ´£¬Ä¾·¤Ïòº£ÉÏÆ¯È¥¡£\n",
+    message("vision", "ä¸€ä¸ªæµªå¤´æ‰“æ¥ï¼Œæœ¨ç­å‘æµ·ä¸Šæ¼‚å»ã€‚\n",
         this_object() );
 
     if( room = find_object(__DIR__"mufa") )
     {
         room->delete("exits/out");
-        message("vision", "ÖÜÎ§ÊÇ°×Ã£Ã£µÄÒ»Æ¬ÍôÑó£¬ÒÑ¾­¿´²»µ½ÈÎºÎÂ½µØµÄ¼£ÏóÁË...\n", room );
+        message("vision", "å‘¨å›´æ˜¯ç™½èŒ«èŒ«çš„ä¸€ç‰‡æ±ªæ´‹ï¼Œå·²ç»çœ‹ä¸åˆ°ä»»ä½•é™†åœ°çš„è¿¹è±¡äº†...\n", room );
     }
     delete("exits/enter");
 
@@ -97,7 +97,7 @@ void arrive()
     if( room = find_object(__DIR__"mufa") )
     {
         room->set("exits/out", __DIR__"aolaiws");
-        message("vision", "Ä¾·¤Ò»Õğ£¬¸éÇ³ÁË¡£ÏÔÈ»ÊÇµ½Â½µØÁË£¬¸Ï½ôÉÏÈ¥°É¡£\n",room );
+        message("vision", "æœ¨ç­ä¸€éœ‡ï¼Œææµ…äº†ã€‚æ˜¾ç„¶æ˜¯åˆ°é™†åœ°äº†ï¼Œèµ¶ç´§ä¸Šå»å§ã€‚\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 20);
@@ -108,7 +108,7 @@ void close_passage()
     object room;
     if( room = find_object(__DIR__"mufa") ) {
         room->delete("exits/out");
-        message("vision","Ò»¸öÀËÍ·´òÀ´£¬Ä¾·¤Ïòº£ÉÏÆ¯È¥¡£\n", room);
+        message("vision","ä¸€ä¸ªæµªå¤´æ‰“æ¥ï¼Œæœ¨ç­å‘æµ·ä¸Šæ¼‚å»ã€‚\n", room);
 room->set("zuo_trigger", 0);
     }
 }
@@ -117,12 +117,12 @@ int do_zuo(string arg)
 {
     string dir;
 
-    if( (arg=="mufa") || (arg=="Ä¾·¤")){ 
-        message_vision("$NÊÔ×ÅÏë×øÉÏÄ¾·¤¡£\n", this_player());
+    if( (arg=="mufa") || (arg=="æœ¨ç­")){ 
+        message_vision("$Nè¯•ç€æƒ³åä¸Šæœ¨ç­ã€‚\n", this_player());
         check_trigger();
         return 1;
     }
-    else return notify_fail("ÄãÒª×øÉÏÊ²Ã´£¿\n");
+    else return notify_fail("ä½ è¦åä¸Šä»€ä¹ˆï¼Ÿ\n");
 }
 
 int do_dive()
@@ -132,17 +132,17 @@ int do_dive()
 
 
        if(( !(zhou=present("bishui zhou", me))
-     ||(string)zhou->query("unit")!="ÕÅ")
-     && (string)me->query("family/family_name")!="Áú¹¬"
-     && (string)me->query("family/family_name")!="¶«º£Áú¹¬")
+     ||(string)zhou->query("unit")!="å¼ ")
+     && (string)me->query("family/family_name")!="é¾™å®«"
+     && (string)me->query("family/family_name")!="ä¸œæµ·é¾™å®«")
 
-     return notify_fail("ÄãÒ»¸öÃÍ×ÓÔúµ½Ë®Àï£®£®£®\n"+
-       "\nµ«Ã»¶à»á¶ù¾Í±»±ïµÃ°ëËÀ£¬Ö»ºÃ¸Ï½ôÅÀÉÏ°¶À´¡£\n");
+     return notify_fail("ä½ ä¸€ä¸ªçŒ›å­æ‰åˆ°æ°´é‡Œï¼ï¼ï¼\n"+
+       "\nä½†æ²¡å¤šä¼šå„¿å°±è¢«æ†‹å¾—åŠæ­»ï¼Œåªå¥½èµ¶ç´§çˆ¬ä¸Šå²¸æ¥ã€‚\n");
 
 
-                message_vision(HIY "$NÒ»¸öÃÍ×ÓÔúµ½Ë®ÖĞ£¬È»ºó²»¼ûÁË£®\n" NOR, me);
+                message_vision(HIY "$Nä¸€ä¸ªçŒ›å­æ‰åˆ°æ°´ä¸­ï¼Œç„¶åä¸è§äº†ï¼\n" NOR, me);
                 me->move("/d/sea/under1");
-     message_vision("$NÇ±ÁË¹ıÀ´¡£\n",me);
+     message_vision("$Næ½œäº†è¿‡æ¥ã€‚\n",me);
                 return 1;
 }
 

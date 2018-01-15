@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4.12.1997
@@ -9,8 +9,8 @@ int move_player();
 
 void create()
 {
-  set_name("¹Å¹Öµó×ê", ({"guguai diaozuan", "diaozuan", "zuan"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å¤æ€ªåˆé’»", ({"guguai diaozuan", "diaozuan", "zuan"}));
+  set("gender", "ç”·æ€§");
   set("age", 20);
   set("attitude", "friendly");
   set("combat_exp", 150000);
@@ -29,11 +29,11 @@ void create()
   setup();
 
   set("inquiry", ([
-       "here": "Õâ¶ùÊÇ±ªÍ·É½£¬ÉÏÃæÊÇ»¢¿Ú¶´Ò²¡£\n",
-       "±ªÍ·É½": "±ªÍ·É½£¬ÉÏÃæ±ãÊÇ»¢¿Ú¶´¡£\n",
-       "»¢¿Ú¶´": (: move_player :),
+       "here": "è¿™å„¿æ˜¯è±¹å¤´å±±ï¼Œä¸Šé¢æ˜¯è™å£æ´ä¹Ÿã€‚\n",
+       "è±¹å¤´å±±": "è±¹å¤´å±±ï¼Œä¸Šé¢ä¾¿æ˜¯è™å£æ´ã€‚\n",
+       "è™å£æ´": (: move_player :),
        "dong": (: move_player :),
-       "name": "¹Å¹Öµó×ê¡£\n",
+       "name": "å¤æ€ªåˆé’»ã€‚\n",
       ]));
   carry_object("/d/qujing/baotou/obj/cloth1")->wear();
   carry_object("/d/qujing/baotou/obj/weapon1")->wield();
@@ -45,24 +45,24 @@ int move_player()
   object me = this_object();
   object who = this_player();
 
-  message_vision ("$N¿´ÁË$nÒ»ÑÛ¡£\n",me,who);
+  message_vision ("$Nçœ‹äº†$nä¸€çœ¼ã€‚\n",me,who);
   if (who->query("combat_exp") < 10000)
   {
-    message_vision ("$NÒ¡Ò¡Í·£ºµÀĞĞ²»¹»£¬È¥²»µÃÈ¥²»µÃ¡£\n",me);
+    message_vision ("$Næ‘‡æ‘‡å¤´ï¼šé“è¡Œä¸å¤Ÿï¼Œå»ä¸å¾—å»ä¸å¾—ã€‚\n",me);
     return 1;
   }
 
   if (! who->query_temp("apply/name") ||
-      who->query_temp("apply/name")[0] != "µó×ê¹Å¹Ö")
+      who->query_temp("apply/name")[0] != "åˆé’»å¤æ€ª")
   {
-    message_vision ("$NÒ¡Ò¡Í·£º²»ÈÏµÃÄã£¬²»ÈÏµÃÄã¡£\n",me);
+    message_vision ("$Næ‘‡æ‘‡å¤´ï¼šä¸è®¤å¾—ä½ ï¼Œä¸è®¤å¾—ä½ ã€‚\n",me);
     return 1;
   }
  
-  message_vision ("$NËµ£º$n½ñÌìºıÍ¿ÁËÒ²£¬ĞÖµÜÎÒÒ»½Å¾Í°ÑÄãÌß½ø¶´Àï¡£\n",me,who);
-  message_vision ("Ëµ×Å$N·ÉÆğÒ»½Å£¬$nË³ÊÆÍùÉÏÒ»Ô¾¡£\n",me,who);
+  message_vision ("$Nè¯´ï¼š$nä»Šå¤©ç³Šæ¶‚äº†ä¹Ÿï¼Œå…„å¼Ÿæˆ‘ä¸€è„šå°±æŠŠä½ è¸¢è¿›æ´é‡Œã€‚\n",me,who);
+  message_vision ("è¯´ç€$Né£èµ·ä¸€è„šï¼Œ$né¡ºåŠ¿å¾€ä¸Šä¸€è·ƒã€‚\n",me,who);
   who->move("/d/qujing/baotou/dongwai");
-  message_vision ("¶´¿ÚÒ»ÕóĞÈ·ç´µÀ´£¬$N¸Ğµ½Ò»ÕóÍ»ÈçÆäÀ´µÄÍ·ÔÎ¡£\n",who);
+  message_vision ("æ´å£ä¸€é˜µè…¥é£å¹æ¥ï¼Œ$Næ„Ÿåˆ°ä¸€é˜µçªå¦‚å…¶æ¥çš„å¤´æ™•ã€‚\n",who);
   who->set("mana",0);
   return 1;
 }

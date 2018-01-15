@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat.c 4/4/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×ÓÄ¸ºÓÎ÷°¶");
+  set ("short", "å­æ¯æ²³è¥¿å²¸");
   set ("long", @LONG
 
-ºÓ±ßÁøÒñ´¹±Ì£¬Ë®ÃæºÜ¿íºÜÇ³£¬±±ÃæÓĞÒ»×ùĞ¡Ã©Îİ¡£·ç´µ¹ı
-ºó£¬Ò»¸öĞ¡ÕĞÅÆÇáÇáµØ»ÎÀ´»ÎÈ¥¡£ºÓ°¶²ÈµÃºÜÌ¤Êµ£¬ÓĞ²»ÉÙ
-ÈË´ÓÕâÀïÍ½²½ÉæË®¹ıºÓ¡£
+æ²³è¾¹æŸ³è«å‚ç¢§ï¼Œæ°´é¢å¾ˆå®½å¾ˆæµ…ï¼ŒåŒ—é¢æœ‰ä¸€åº§å°èŒ…å±‹ã€‚é£å¹è¿‡
+åï¼Œä¸€ä¸ªå°æ‹›ç‰Œè½»è½»åœ°æ™ƒæ¥æ™ƒå»ã€‚æ²³å²¸è¸©å¾—å¾ˆè¸å®ï¼Œæœ‰ä¸å°‘
+äººä»è¿™é‡Œå¾’æ­¥æ¶‰æ°´è¿‡æ²³ã€‚
 
 LONG);
 
@@ -44,7 +44,7 @@ void walk_in()
     room = load_object(__DIR__"river");
   if (room = find_object(__DIR__"river"))
   {
-    message_vision ("$NõÚÆğ½Å£¬Ğ¡ĞÄµØ×ß½øË®Àï¡­¡­\n",me);
+    message_vision ("$Nè¸®èµ·è„šï¼Œå°å¿ƒåœ°èµ°è¿›æ°´é‡Œâ€¦â€¦\n",me);
     in_river(me, room);
   }
 }
@@ -52,21 +52,21 @@ void walk_in()
 void in_river(object me, object room)
 {
   me->move(room);
-  tell_object(me,"\n×ß½øºÓÀïÄã²Å·¢ÏÖºÓÃæµÄÈ·ºÜ¿í¡£\n");
+  tell_object(me,"\nèµ°è¿›æ²³é‡Œä½ æ‰å‘ç°æ²³é¢çš„ç¡®å¾ˆå®½ã€‚\n");
   call_out("in_danger", 15, me);
 }
 
 void in_danger(object me, object room)
 {
   me->move(room);
-  tell_object(me,"\nÒ»¸öÀË´ò¹ıÀ´Äã²îÒ»µãµø½øË®Àï£¡\n");
+  tell_object(me,"\nä¸€ä¸ªæµªæ‰“è¿‡æ¥ä½ å·®ä¸€ç‚¹è·Œè¿›æ°´é‡Œï¼\n");
   call_out("arrive", 5, me);
 }
 
 void arrive(object me)
 {
   me->move(__DIR__"eastriver3");
-  message_vision ("$NÁÜÀìÀìµØÅÀÉÏÁË°¶¡£\n",me);
+  message_vision ("$Næ·‹æ¼“æ¼“åœ°çˆ¬ä¸Šäº†å²¸ã€‚\n",me);
 }
 
 int do_cross(string arg)

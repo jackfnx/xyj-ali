@@ -1,16 +1,16 @@
-¡õ VENDOR -- ±ê×¼··ÂôÎï¼ş
+â–¡ VENDOR -- æ ‡å‡†è´©å–ç‰©ä»¶
 
 int buy_object(object me, string what)
-(ÎªÍê)
+(ä¸ºå®Œ)
 
 void complete_trade(object me, string what)
-Íê³É½»Ò×, ½«Îï¼ş½»¸øÂòÖ÷²¢´«³öÏà¹ØÑ¶Ï¢.
+å®Œæˆäº¤æ˜“, å°†ç‰©ä»¶äº¤ç»™ä¹°ä¸»å¹¶ä¼ å‡ºç›¸å…³è®¯æ¯.
 
 string price_string(int v)
-ÒÔ¶ÔµÈµÄ±ÒÖµÁĞ³öÎï¼şµÄ¼ÛÖµ.
+ä»¥å¯¹ç­‰çš„å¸å€¼åˆ—å‡ºç‰©ä»¶çš„ä»·å€¼.
 
 int do_vendor_list(string arg)
-ÁĞ³öËù³öÊÛµÄÎïÆ·¼°¼ÛÇ®.
+åˆ—å‡ºæ‰€å‡ºå”®çš„ç‰©å“åŠä»·é’±.
 
 Elon@ES2
 drafted: 07-13-95

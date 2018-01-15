@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /4world/flowerfruit
@@ -6,14 +6,14 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "»¨¹ûÉ½");
+  set ("short", "èŠ±æžœå±±");
   set ("long", @LONG
 
-´ËÉ½ÄËÊ®ÖÞÖ®×æÂö£¬ÈýµºÖ®À´Áú£¬×Ô¿ªÇå×Ç¶øÁ¢£¬ºèÃÉÅÐºó
-¶ø³É¡£Õæ¸öºÃÉ½£¡ÓÐ´Ê¸³ÎªÖ¤¡£¸³Ô»£º
+æ­¤å±±ä¹ƒåæ´²ä¹‹ç¥–è„‰ï¼Œä¸‰å²›ä¹‹æ¥é¾™ï¼Œè‡ªå¼€æ¸…æµŠè€Œç«‹ï¼Œé¸¿è’™åˆ¤åŽ
+è€Œæˆã€‚çœŸä¸ªå¥½å±±ï¼æœ‰è¯èµ‹ä¸ºè¯ã€‚èµ‹æ›°ï¼š
 
-¡¡¡¡¡¡¡¡ÊÆÕòÍôÑó£¬³±Ó¿ÒøÉ½ÓãÈëÑ¨£»
-¡¡¡¡¡¡¡¡ÍþÄþÑþº££¬²¨·­Ñ©ÀËò×ÀëÔ¨¡£
+ã€€ã€€ã€€ã€€åŠ¿é•‡æ±ªæ´‹ï¼Œæ½®æ¶Œé“¶å±±é±¼å…¥ç©´ï¼›
+ã€€ã€€ã€€ã€€å¨å®ç‘¶æµ·ï¼Œæ³¢ç¿»é›ªæµªèœƒç¦»æ¸Šã€‚
 
 LONG);
 

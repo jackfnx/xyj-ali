@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-    set_name("·çÁé·û", ({"feng ling fu","fu"}));
-    set("unit", "ÕÅ");
+    set_name("é£Žçµç¬¦", ({"feng ling fu","fu"}));
+    set("unit", "å¼ ");
     set_weight(10);
-    set("long", "Ò»ÕÅ·çÆÅ¸øµÄµÄÁé·û£¬ÐèÒªÆð·çÊ±£¬²»·ÁÊÔÊÔ¿´¼À(ji)Ëü¡£\n");
-    set("no_give", "ÕâÖÖÍæÒÕÔõÄÜËæ±ã¸øÈË£¿\n");
-    set("no_sell", "ÕÆ¹ñµÄÒ¡Ò¡Í·Ëµ£ºÕâ±¦±´Ð¡µê²»¸ÒÊÕ¡£\n");
+    set("long", "ä¸€å¼ é£Žå©†ç»™çš„çš„çµç¬¦ï¼Œéœ€è¦èµ·é£Žæ—¶ï¼Œä¸å¦¨è¯•è¯•çœ‹ç¥­(ji)å®ƒã€‚\n");
+    set("no_give", "è¿™ç§çŽ©è‰ºæ€Žèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_sell", "æŽŒæŸœçš„æ‘‡æ‘‡å¤´è¯´ï¼šè¿™å®è´å°åº—ä¸æ•¢æ”¶ã€‚\n");
     setup();
 }
 
@@ -23,15 +23,15 @@ int do_ji(string arg)
     object me = this_player();
     object env;
     
-    if (!arg || !id(arg)) return notify_fail("ÄãÏë¼ÀÊ²Ã´£¿\n");
+    if (!arg || !id(arg)) return notify_fail("ä½ æƒ³ç¥­ä»€ä¹ˆï¼Ÿ\n");
 
     if (me->query("mana") + random(500) < 1000) {
-        message_vision("$NÄÃ³ö·çÁé·û£¬´óºÈÒ»Éù£º¡°·çÀ´£¡¡±\n", me);
-        message_vision("µ«Ê²Ã´Ò²Ã»ÓÐ·¢Éú¡£¡±\n", me);
+        message_vision("$Næ‹¿å‡ºé£Žçµç¬¦ï¼Œå¤§å–ä¸€å£°ï¼šâ€œé£Žæ¥ï¼â€\n", me);
+        message_vision("ä½†ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚â€\n", me);
     } else {
-        message_vision("$NÄÃ³ö·çÁé·û£¬´óºÈÒ»Éù£º¡°·çÀ´£¡¡±\n", me);
-        message_vision("¶ÙÊ±¿ñ·ç´ó×÷£¬·ÉÉ³×ßÊ¯£¡\n", me);
-        message_vision("ÍÛ£¡ºÃÒ»³¡´ó·ç£¡\n", me);
+        message_vision("$Næ‹¿å‡ºé£Žçµç¬¦ï¼Œå¤§å–ä¸€å£°ï¼šâ€œé£Žæ¥ï¼â€\n", me);
+        message_vision("é¡¿æ—¶ç‹‚é£Žå¤§ä½œï¼Œé£žæ²™èµ°çŸ³ï¼\n", me);
+        message_vision("å“‡ï¼å¥½ä¸€åœºå¤§é£Žï¼\n", me);
         env = environment(me);
         env->weather_effect("wind");
         foreach (object ob in all_inventory(env)) {

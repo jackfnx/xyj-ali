@@ -1,11 +1,11 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 
 void create()
 {
-        set_name("»Æ½ğÏ»×Ó", ({ "xiazi" }) );
+        set_name("é»„é‡‘åŒ£å­", ({ "xiazi" }) );
         set_weight(2000);
         set_max_encumbrance(1200);
         if( clonep() ) {
@@ -27,11 +27,11 @@ else if(i>=1) {
 */
               set_default_object(__FILE__);
         } else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
      set("no_sell", 1);
      set("no_put", 1);
      set("no_give", 1);
-                set("long", "Ò»¸ö½ğ¹â²ÓÈ»µÄ»Æ½ğÏ»×Ó¡£\n");
+                set("long", "ä¸€ä¸ªé‡‘å…‰ç¿ç„¶çš„é»„é‡‘åŒ£å­ã€‚\n");
                 set("value",0);
         }
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÄàÍŞÍŞ", ({"mud baby", "baby"}));
-       set("long", "Ò»¸öÈı³ß¶à¸ßµÄĞ¡ÍŞÍŞ£¬È«ÉíÉÏÏÂÏóÊÇÄàÌ¥Ò»°ã¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("æ³¥å¨ƒå¨ƒ", ({"mud baby", "baby"}));
+       set("long", "ä¸€ä¸ªä¸‰å°ºå¤šé«˜çš„å°å¨ƒå¨ƒï¼Œå…¨èº«ä¸Šä¸‹è±¡æ˜¯æ³¥èƒä¸€èˆ¬ã€‚\n");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 100);
    set("per", 20);
        set("age", 6);
@@ -28,15 +28,15 @@ int accept_fight(object me)
    if((int)this_player()->query("combat_exp") < 15000) {
    this_object()->set("combat_exp", (int)this_player()->query("combat_exp")+300);
    }
-   command("say Îû£¬ºÃ°¡£¡\n");
+   command("say å˜»ï¼Œå¥½å•Šï¼\n");
         return 1;
 }
 
 void die()
 {
         if( environment() ) {
-                message("sound", "\n\nÄàÍŞÍŞÒ»àÙ×ì£¬º°µÀ£º²»¸úÄãÍæÁË£¡\n
-ÑÛÇ°ÉÁºõÒ»ÏÂÄàÍŞÍŞÒÑ²»¼ûÁË£¬µØÏÂÖ»ÁôÏÂÒ»¶ÑÄàË®¡£\n", environment());
+                message("sound", "\n\næ³¥å¨ƒå¨ƒä¸€å™˜å˜´ï¼Œå–Šé“ï¼šä¸è·Ÿä½ ç©äº†ï¼\n
+çœ¼å‰é—ªä¹ä¸€ä¸‹æ³¥å¨ƒå¨ƒå·²ä¸è§äº†ï¼Œåœ°ä¸‹åªç•™ä¸‹ä¸€å †æ³¥æ°´ã€‚\n", environment());
         }
 
         destruct(this_object());

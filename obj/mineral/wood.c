@@ -4,13 +4,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("ÇàÄ¾·ç»ê", ({ "qingmu fenghun", "wood" }));
+    set_name("é’æœ¨é£é­‚", ({ "qingmu fenghun", "wood" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "ÇàÄ¾¾«»ªÓëÇå·çÖ®»ê½áºÏµÄ²úÎï¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "é’æœ¨ç²¾åä¸æ¸…é£ä¹‹é­‚ç»“åˆçš„äº§ç‰©ã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
         set("elements/wood", 100);

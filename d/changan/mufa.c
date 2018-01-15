@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/mufa.c
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���й·�");
+  set ("short", "海中孤筏");
   set ("long", @LONG
 
-�·��ں���Ư���������ǰ�ãã��һƬ����
+孤筏在海中漂流，四周是白茫茫的一片汪洋。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

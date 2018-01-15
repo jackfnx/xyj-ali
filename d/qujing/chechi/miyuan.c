@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/21/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��Ժ");
+  set ("short", "秘院");
   set ("long", @LONG
 
-������һ�����ܵ��ķ�ͥԺ�������Ǹ�ǽ��Ժ������ϰϰ���
-��ʢ�����ϱ��ǲؾ�¥�ĺ�ǽ��ǽ����һ��ͨ����
+这里是一座秘密的四方庭院，四周是高墙。院内阴气习习，罂
+粟盛开。南边是藏经楼的后墙，墙下有一暗通道。
 
 LONG);
 

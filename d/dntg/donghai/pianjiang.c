@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-    set_name("Æ«½«",({"pian jiang","jiang"}));
-    set("gender", "ÄÐÐÔ");
-    set("title", "°ÁÀ´¹ú");
+    set_name("åå°†",({"pian jiang","jiang"}));
+    set("gender", "ç”·æ€§");
+    set("title", "å‚²æ¥å›½");
     set("age", 25);
-    set("long", "Ò»Ãû°ÁÀ´¹úµÄÆ«½«£¬ÕýÔÚÈÏÕæµÄÕ¾¸Ú¡£\n");
+    set("long", "ä¸€åå‚²æ¥å›½çš„åå°†ï¼Œæ­£åœ¨è®¤çœŸçš„ç«™å²—ã€‚\n");
 
     set("attitude", "heroism");
     set("combat_exp", 25000);
@@ -41,8 +41,8 @@ void unconcious()
     object me = this_object();
     object where = environment(me);
 
-    message_vision("\n$Nº°µ½£º£¢¿ìÀ´ÈËÄÄ£¡ÓÐÈË½Ù±øÆ÷¿âÀ²£¡£¢Ëµ°ÕÈöÍÈÅÜÁË³öÈ¥¡£\n", me);
-    message_vision("\nÁíÒ»¸ö$N¼±¼±Ã¦Ã¦µÄ¸ÏÀ´¡£\n", me);
+    message_vision("\n$Nå–Šåˆ°ï¼šï¼‚å¿«æ¥äººå“ªï¼æœ‰äººåŠ«å…µå™¨åº“å•¦ï¼ï¼‚è¯´ç½¢æ’’è…¿è·‘äº†å‡ºåŽ»ã€‚\n", me);
+    message_vision("\nå¦ä¸€ä¸ª$Næ€¥æ€¥å¿™å¿™çš„èµ¶æ¥ã€‚\n", me);
     ob = new(__FILE__);
     ob->move(where);
     destruct(me);

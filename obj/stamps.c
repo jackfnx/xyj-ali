@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // stamps.c
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-   set_name("µ±Æ±", ({"pawn stamp", "stamp"}));
+   set_name("å½“ç¥¨", ({"pawn stamp", "stamp"}));
    set_weight(10);
    if (clonep())
      set_default_object(__FILE__);
     else  {
-      set("unit", "ÕÅ");
-      set("long", "Ò»ÕÅÕ¸ĞÂµÄ¿Õ°×µ±Æ±£¬²»ÖªµÀÄÜ²»ÄÜÓÃ¡£\n");
+      set("unit", "å¼ ");
+      set("long", "ä¸€å¼ å´­æ–°çš„ç©ºç™½å½“ç¥¨ï¼Œä¸çŸ¥é“èƒ½ä¸èƒ½ç”¨ã€‚\n");
       set("value", 0);
       set("no_sell", 1);
    }
@@ -27,7 +27,7 @@ string long()
    if(!query_temp("long_1") || !query_temp("long_2"))
      return query("long");
 
-   msg = "×ÈÊÕµ½\n";
+   msg = "å…¹æ”¶åˆ°\n";
    msg += "   "+query_temp("long_1")+"\n";
    msg += "   "+query_temp("long_2")+"\n";
 

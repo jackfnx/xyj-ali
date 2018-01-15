@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat.c 4/4/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×ÓÄ¸ºÓ¶«°¶");
+  set ("short", "å­æ¯æ²³ä¸œå²¸");
   set ("long", @LONG
 
-ÕâÀïºÓÃæºÜ¿íºÜÇ³£¬ºÓ¶Ô°¶ÓĞÁøÒñ´¹±Ì£¬Î¢Â¶³öÃ©Îİ¼¸éÜ¡£
-ºÓ°¶Õâ±ßµØ²ÈµÃºÜÌ¤Êµ£¬ºÃÏñÔø¾­ÓĞ²»ÉÙÈËÔÚÕâÀï×ß¹ı¡£ºÓ
-ÃæºÜ¿íºÜÇ³£¬¿´Ñù×ÓÍ½²½ÉæË®Ò²¿ÉÒÔ×ß¹ıÈ¥¡£
+è¿™é‡Œæ²³é¢å¾ˆå®½å¾ˆæµ…ï¼Œæ²³å¯¹å²¸æœ‰æŸ³è«å‚ç¢§ï¼Œå¾®éœ²å‡ºèŒ…å±‹å‡ æªã€‚
+æ²³å²¸è¿™è¾¹åœ°è¸©å¾—å¾ˆè¸å®ï¼Œå¥½åƒæ›¾ç»æœ‰ä¸å°‘äººåœ¨è¿™é‡Œèµ°è¿‡ã€‚æ²³
+é¢å¾ˆå®½å¾ˆæµ…ï¼Œçœ‹æ ·å­å¾’æ­¥æ¶‰æ°´ä¹Ÿå¯ä»¥èµ°è¿‡å»ã€‚
 
 LONG);
 
@@ -43,7 +43,7 @@ void walk_in()
     room = load_object(__DIR__"river");
   if (room = find_object(__DIR__"river"))
   {
-    message_vision ("$NõÚÆğ½Å£¬Ğ¡ĞÄµØ×ß½øË®Àï¡­¡­\n",me);
+    message_vision ("$Nè¸®èµ·è„šï¼Œå°å¿ƒåœ°èµ°è¿›æ°´é‡Œâ€¦â€¦\n",me);
     in_river(me, room);
   }
 }
@@ -51,7 +51,7 @@ void walk_in()
 void in_river(object me, object room)
 {
   me->move(room);
-  tell_object(me,"\n×ß½øºÓÀïÄã²Å·¢ÏÖºÓÃæµÄÈ·ºÜ¿í¡£\n");
+  tell_object(me,"\nèµ°è¿›æ²³é‡Œä½ æ‰å‘ç°æ²³é¢çš„ç¡®å¾ˆå®½ã€‚\n");
   call_out("in_danger", 15, me);
 }
 
@@ -63,8 +63,8 @@ void in_danger(object me, object room)
   if (me->query("combat_exp")<2000)
   {
     me->move(__DIR__"eastriver3");
-    message_vision ("Ë®Í»È»¼±ÁË£¬$NÆ´ÃüµØÕõÔú£¬½á¹û»¹ÊÇ¸ø³å»ØÁË°¶£¡\n",me);
-    tell_object(me,"\n´ó¸ÅÄãµÄµÀĞĞ²»¹»³ÉÊì¡£\n");
+    message_vision ("æ°´çªç„¶æ€¥äº†ï¼Œ$Næ‹¼å‘½åœ°æŒ£æ‰ï¼Œç»“æœè¿˜æ˜¯ç»™å†²å›äº†å²¸ï¼\n",me);
+    tell_object(me,"\nå¤§æ¦‚ä½ çš„é“è¡Œä¸å¤Ÿæˆç†Ÿã€‚\n");
     return;
   }
 
@@ -72,15 +72,15 @@ void in_danger(object me, object room)
       me->query("obstacle/nuerguo")==0 &&
       me->query("water") < me->max_food_capacity())
   {
-    message_vision ("$N½ÅÏÂÒ»»¬£¬Ë¤½øºÓÀï£¬ÇºÁËÂú¶Ç×ÓµÄºÓË®£¡\n",me);
+    message_vision ("$Nè„šä¸‹ä¸€æ»‘ï¼Œæ‘”è¿›æ²³é‡Œï¼Œå‘›äº†æ»¡è‚šå­çš„æ²³æ°´ï¼\n",me);
     me->set("obstacle/nuerguo","stomachache");
     me->set("water", me->max_water_capacity()+50);
-    tell_object(me,"\nÔãÁË£¬ºÈÁËºÓË®Òª»³ÔĞµÄ£¡\n");
+    tell_object(me,"\nç³Ÿäº†ï¼Œå–äº†æ²³æ°´è¦æ€€å­•çš„ï¼\n");
     call_out("stomach_pain",1,me);
   }
   else if (random(2)==0)
   {
-    message_vision ("$NÒ»½ÅÃ»²ÈÎÈ£¬Ë¤½øºÓÀï£¬ÇºÁË¼¸¿ÚË®£¡\n",me);
+    message_vision ("$Nä¸€è„šæ²¡è¸©ç¨³ï¼Œæ‘”è¿›æ²³é‡Œï¼Œå‘›äº†å‡ å£æ°´ï¼\n",me);
     me->set("water", me->max_water_capacity()+50);
   }
   call_out("arrive", 5, me);
@@ -100,7 +100,7 @@ void stomach_pain(object me)
       me->set("eff_kee", m);
     if (n > m)
       me->set("kee", m);
-    message_vision ("$NÎæ×Å¶Ç×ÓÉëÒ÷ÁË¼¸Éù¡£\n",me);
+    message_vision ("$Næ‚ç€è‚šå­å‘»åŸäº†å‡ å£°ã€‚\n",me);
     call_out("stomach_pain", 30, me);
   }
 }
@@ -108,7 +108,7 @@ void stomach_pain(object me)
 void arrive(object me)
 {
   me->move(__DIR__"westriver");
-  message_vision ("$NÁÜÀìÀìµØÅÀÉÏÁË°¶¡£\n",me);
+  message_vision ("$Næ·‹æ¼“æ¼“åœ°çˆ¬ä¸Šäº†å²¸ã€‚\n",me);
 }
 
 int do_cross(string arg)

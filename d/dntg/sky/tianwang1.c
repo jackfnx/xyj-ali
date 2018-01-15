@@ -7,14 +7,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ä§Àñº£", ({ "moli hai", "duowen tianwang", "hai", "tianwang" }));
-    set("gender", "ÄÐÐÔ");
+    set_name("é­”ç¤¼æµ·", ({ "moli hai", "duowen tianwang", "hai", "tianwang" }));
+    set("gender", "ç”·æ€§");
     set("long",
-        "Ä§¼ÒËÄ½«Ö®Ò»£¬Ê¹Ò»¸ùÅÌÁú¹÷£¬±³ÉÏÒ»ÃæÅýÅÃ£¬ÉÏÓÐËÄÌõÏÒ£»Ò²°´\n"
-                "µØ¡¢Ë®¡¢»ð¡¢·ç£¬²¦¶¯ÏÒÉù£¬·ç»ðÆëÖÁ£¬ÈçÇàÔÆ½£Ò»°ã¡£\n"
+        "é­”å®¶å››å°†ä¹‹ä¸€ï¼Œä½¿ä¸€æ ¹ç›˜é¾™æ£ï¼ŒèƒŒä¸Šä¸€é¢çµç¶ï¼Œä¸Šæœ‰å››æ¡å¼¦ï¼›ä¹ŸæŒ‰\n"
+                "åœ°ã€æ°´ã€ç«ã€é£Žï¼Œæ‹¨åŠ¨å¼¦å£°ï¼Œé£Žç«é½è‡³ï¼Œå¦‚é’äº‘å‰‘ä¸€èˆ¬ã€‚\n"
     );
     set("age", 50);
-    set("title", "¶àÎÅÌìÍõ");
+    set("title", "å¤šé—»å¤©çŽ‹");
     set("attitude", "heroism");
     set("str", 40);
     set("int", 30);
@@ -47,8 +47,8 @@ void create()
     map_skill("spear", "bawang-qiang");
     map_skill("unarmed", "raptor-talon");
     set("inquiry", ([
-        "name" : "ÔÚÏÂ¶àÎÅÌìÍõÄ§Àñº££¬·îÊ¥ÚÍ°ÑÊØÎ÷ÌìÃÅ¡£",
-        "here" : "ÕâÀï¾ÍÊÇÎ÷ÌìÃÅ, ÈëÄÚ¾ÍÊÇÌì½çÁË¡£",
+        "name" : "åœ¨ä¸‹å¤šé—»å¤©çŽ‹é­”ç¤¼æµ·ï¼Œå¥‰åœ£è°•æŠŠå®ˆè¥¿å¤©é—¨ã€‚",
+        "here" : "è¿™é‡Œå°±æ˜¯è¥¿å¤©é—¨, å…¥å†…å°±æ˜¯å¤©ç•Œäº†ã€‚",
     ]));
 
     setup();
@@ -68,14 +68,14 @@ void hurting(object me, object ob)
       call_out("hurting", 9+random(6),me,ob);
       return;
    }
-   message_vision(HIB"$NÌÍ³ö±ÌÓñÅýÅÃ£¬¾¹ÔÚÕ½³¡ÉÏÓÆÈ»×ÔµÃµÄµ¯ÁËÆðÀ´£¡\n"NOR,me);
+   message_vision(HIB"$NæŽå‡ºç¢§çŽ‰çµç¶ï¼Œç«Ÿåœ¨æˆ˜åœºä¸Šæ‚ ç„¶è‡ªå¾—çš„å¼¹äº†èµ·æ¥ï¼\n"NOR,me);
    if (!random(1+n)) {
-      message_vision(HIB"½á¹û$N±»ÃÔµÄÉñ»êµßµ¹£¬È«Éí¶¯µ¯²»µÃ£¡\n"NOR,ob);
+      message_vision(HIB"ç»“æžœ$Nè¢«è¿·çš„ç¥žé­‚é¢ å€’ï¼Œå…¨èº«åŠ¨å¼¹ä¸å¾—ï¼\n"NOR,ob);
       ob->start_busy(2 + 60/ (ob->query_kar()+1));
       me->start_busy(60/ (me->query_kar()+1));
    }
    else{
-      message_vision("$N³ä¶ú²»ÎÅ£¬²»ÎªËù¶¯£®\n",ob);
+      message_vision("$Nå……è€³ä¸é—»ï¼Œä¸ä¸ºæ‰€åŠ¨ï¼Ž\n",ob);
    me->start_busy(2);
    }
    call_out("hurting", 9+random(6),me,ob);

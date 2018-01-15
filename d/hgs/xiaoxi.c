@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ğ¡Ïª");
+    set("short", "å°æºª");
     set("long", @LONG
 
-Ò»ÌõÇå³º¼ûµ×µÄĞ¡Ïª£¬Ë®Á÷äıäı£¬ÔÚÕâÍæ¹»ÁË¾ÍÓÎ(swim)
-»ØÈ¥°É¡£
+ä¸€æ¡æ¸…æ¾ˆè§åº•çš„å°æºªï¼Œæ°´æµæ½ºæ½ºï¼Œåœ¨è¿™ç©å¤Ÿäº†å°±æ¸¸(swim)
+å›å»å§ã€‚
 LONG );
 
     set("exits", ([
@@ -29,9 +29,9 @@ int do_swim()
 {
     object me = this_player();
 
-    message_vision("$NÓÎµ½°¶±ß¡£\n", me);
+    message_vision("$Næ¸¸åˆ°å²¸è¾¹ã€‚\n", me);
     me->move(__DIR__"xiaoxiqian");
-    message_vision("$N·Ö¿ªË®Ãæ£¬ÅÀÉÏ°¶À´¡£\n", me);
+    message_vision("$Nåˆ†å¼€æ°´é¢ï¼Œçˆ¬ä¸Šå²¸æ¥ã€‚\n", me);
     return 1;
 }
 

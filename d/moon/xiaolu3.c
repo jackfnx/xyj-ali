@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/xiaolu3.c
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���С·");
+  set ("short", "崎岖小路");
   set ("long", @LONG
 
-С·�쳣���С�ʱ�����ϸ�ɽ��ʱ�������ȡ�һ·������
-ϡ�٣�ֻ��һЩ���㾪��ķ������ޡ�
+小路异常难行。时而盘上高山，时而跨过深谷。一路上人烟
+稀少，只有一些被你惊起的飞禽走兽。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

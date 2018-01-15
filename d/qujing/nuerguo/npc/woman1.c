@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/4/1997 by snowcat
@@ -12,18 +12,18 @@ void create()
     case 0:
     case 1:
     {
-      set_name("ÉÙ¸¾", ({"woman"}));
+      set_name("å°‘å¦‡", ({"woman"}));
       set("age", 27);
       break;
     }
     case 2:
     {
-      set_name("ÖĞÄê¸¾Å®", ({"woman"}));
+      set_name("ä¸­å¹´å¦‡å¥³", ({"woman"}));
       set("age", 38);
       break;
     }
   }
-  set("gender", "Å®ĞÔ");
+  set("gender", "å¥³æ€§");
   set("combat_exp", 5000);
   set_skill("unarmed", 10);
   set_skill("dodge", 10);
@@ -57,26 +57,26 @@ void classified_greeting(object me)
 
   if (me->query("obstacle/nuerguo") == "marriage")
   {
-    message_vision (name+"¶Ô$NËµ£º´ó¼Ò¶¼ÔÚÒéÂÛÄãµÄ»éÊÂÁ¨£¬¿ìÈ¥¼û¹«Ö÷¡£\n",me);
+    message_vision (name+"å¯¹$Nè¯´ï¼šå¤§å®¶éƒ½åœ¨è®®è®ºä½ çš„å©šäº‹å“©ï¼Œå¿«å»è§å…¬ä¸»ã€‚\n",me);
       return;
   }  
 
   if (me->query("obstacle/nuerguo") == "company")
   {
-    message_vision (name+"ÈÏ³öÁË$N£¬ËµµÀ£ºÓ´£¬¹«Ö÷»¹ÔÚµÈÄã×÷°éÄØ¡£\n",me);
+    message_vision (name+"è®¤å‡ºäº†$Nï¼Œè¯´é“ï¼šå“Ÿï¼Œå…¬ä¸»è¿˜åœ¨ç­‰ä½ ä½œä¼´å‘¢ã€‚\n",me);
       return;
   }  
 
   if (me->query("obstacle/nuerguo") == "stomachache")
   {
-    message_vision (name+"¿´×Å$N£¬ÈÌ²»×¡ËµµÀ£ºÇÆÇÆ£¬¶Ç×ÓÓĞµã´ó¡£\n",me);
+    message_vision (name+"çœ‹ç€$Nï¼Œå¿ä¸ä½è¯´é“ï¼šç§ç§ï¼Œè‚šå­æœ‰ç‚¹å¤§ã€‚\n",me);
       return;
   }
   
-  if (me->query("gender") == "Å®ĞÔ")
-    message_vision (name+"¿´ÁË$NÒ»ÑÛ£¬³Ô³ÔµØĞ¦ÁËÆğÀ´¡£\n",me);
+  if (me->query("gender") == "å¥³æ€§")
+    message_vision (name+"çœ‹äº†$Nä¸€çœ¼ï¼Œåƒåƒåœ°ç¬‘äº†èµ·æ¥ã€‚\n",me);
   else
-    message_vision (name+"Ö¸×Å$NĞ¦ÁËÆğÀ´£ºÓÖÊÇÒ»¸öËÀ»îÒªÈ¥¼û¹«Ö÷µÄ¡£\n",me);
+    message_vision (name+"æŒ‡ç€$Nç¬‘äº†èµ·æ¥ï¼šåˆæ˜¯ä¸€ä¸ªæ­»æ´»è¦å»è§å…¬ä¸»çš„ã€‚\n",me);
 }
 
 void greeting(object ob)

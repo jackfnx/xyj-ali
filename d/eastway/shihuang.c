@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 4/20/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-    set ("short", "ʼ����");
+    set ("short", "始皇陵");
     set ("long", @LONG
 
-���������ڹٵ��Զ���һ�������꣬�ʸ����͡�վ������
-�ϼ�ĿԶ���������Ŀ��������Ա���һ���ߴ��ʯ����
-����ʼ���ꡱ��
+这是座落在官道以东的一个大丘陵，呈覆斗型。站在丘陵
+上极目远眺，不禁心旷神怡。旁边有一座高大的石碑：
+“秦始皇陵”。
 
 LONG);
 

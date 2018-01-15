@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 22 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¼àÕ¶¹Ù", ({"jianzhan guan", "guan"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("ç›‘æ–©å®˜", ({"jianzhan guan", "guan"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 200000);
   set("age", 30);
   set("per", 25);
@@ -46,7 +46,7 @@ int check_valid_player (object who)
     return 0;
   if (! where)
     return 0;
-  if (where->query("short") != "Ì³³¡")
+  if (where->query("short") != "å›åœº")
     return 0;  
 
   yangli = present("yangli daxian",where);  
@@ -78,10 +78,10 @@ void greet_player (object who)
       ! who->query_temp("obstacle/chechi_greeted2"))
   {
     who->set_temp("obstacle/chechi_greeted2",1);
-    message_vision ("¼¸Î»ÄÚ¹ÙÌ§×ÅÒ»Ğ©¶«Î÷×ßÀ´£¬½«Öìºì¹ñ×Ó²¼ÖÃÒ»·¬¡£\n",me);
-    message_vision ("ÄÚ¹ÙÏò±±ÀëÈ¥¡£\n\n",me);
+    message_vision ("å‡ ä½å†…å®˜æŠ¬ç€ä¸€äº›ä¸œè¥¿èµ°æ¥ï¼Œå°†æœ±çº¢æŸœå­å¸ƒç½®ä¸€ç•ªã€‚\n",me);
+    message_vision ("å†…å®˜å‘åŒ—ç¦»å»ã€‚\n\n",me);
     me->command_function("hi "+who->query("id"));
-    message_vision ("$N¶Ô$nËµµÀ£º¡°¸ô°å²ÂÃ¶£¬ÇëµÀ³öÖìºì¹ñ×ÓÀïÎªºÎÎï¡£¡±\n",
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šâ€œéš”æ¿çŒœæšï¼Œè¯·é“å‡ºæœ±çº¢æŸœå­é‡Œä¸ºä½•ç‰©ã€‚â€\n",
                     me,who);
   }
 }
@@ -94,7 +94,7 @@ void display_guess (object me, object who, object guizi,
   if (! who)
     return;
 
-  message_vision ("$NÖ¸×Å¹ñ×ÓËµ£¬ÕâÀïÃæÊÇ"+arg+"°É¡£\n",who);
+  message_vision ("$NæŒ‡ç€æŸœå­è¯´ï¼Œè¿™é‡Œé¢æ˜¯"+arg+"å§ã€‚\n",who);
 }
  
 void failing_guess (object me,object who, object where,
@@ -113,26 +113,26 @@ void failing (object me, object who, object where,
     return;
   if (! who)
     return;
-  if (arg == "¹¬ÒÂ")
+  if (arg == "å®«è¡£")
   {
     if (random(2))
-      str = "ÌÒ×Ó";
+      str = "æ¡ƒå­";
     else
-      str = "µÀÍ¯";
+      str = "é“ç«¥";
   }
-  else if (arg == "ÌÒ×Ó")
+  else if (arg == "æ¡ƒå­")
   {
     if (random(2))
-      str = "¹¬ÒÂ";
+      str = "å®«è¡£";
     else
-      str = "µÀÍ¯";
+      str = "é“ç«¥";
   }
-  else if (arg == "µÀÍ¯")
+  else if (arg == "é“ç«¥")
   {
     if (random(2))
-      str = "ÌÒ×Ó";
+      str = "æ¡ƒå­";
     else
-      str = "ÏÉÒÂ";
+      str = "ä»™è¡£";
   }
   else
   {
@@ -140,17 +140,17 @@ void failing (object me, object who, object where,
     {
       case 0:
       {
-        str = "¹¬ÒÂ";
+        str = "å®«è¡£";
         break;
       }
       case 1:
       {
-        str = "ÌÒ×Ó";
+        str = "æ¡ƒå­";
         break;
       }
       case 2:
       {
-        str = "µÀÍ¯";
+        str = "é“ç«¥";
         break;
       }
     }
@@ -160,17 +160,17 @@ void failing (object me, object who, object where,
   call_out ("get_player_out",120,me,who,guizi);
   if (luli)
   {
-    message_vision ("Ö»¼û$N¿àË¼Ú¤Ïë£¬ËµµÀ£º¡°ÊÇ"+str+"¡±¡£\n\n",luli);
-    message_vision ("»°ÒôÎ´Âä£¬$N´ò¿ªÖìºì¹ñ×Ó£¬È´¹ûÈ»ÊÇ"+str+"¡£\n\n",me);
+    message_vision ("åªè§$Nè‹¦æ€å†¥æƒ³ï¼Œè¯´é“ï¼šâ€œæ˜¯"+str+"â€ã€‚\n\n",luli);
+    message_vision ("è¯éŸ³æœªè½ï¼Œ$Næ‰“å¼€æœ±çº¢æŸœå­ï¼Œå´æœç„¶æ˜¯"+str+"ã€‚\n\n",me);
   }
   else   
-    message_vision ("$NºßµØÒ»Éù´ò¿ªÖìºì¹ñ×Ó£¬ÀïÃæÊÇ"+str+"¡£\n\n",me);
+    message_vision ("$Nå“¼åœ°ä¸€å£°æ‰“å¼€æœ±çº¢æŸœå­ï¼Œé‡Œé¢æ˜¯"+str+"ã€‚\n\n",me);
 }
 
 void put_player_in (object me, object who, object guizi)
 {
-  message_vision ("$N¶Ô$nÒ»ÉùÀäĞ¦£¬º°µÀ£º¡°À´ÈË£¡¡±\n",me,who);
-  message_vision ("´Ó¹¬ÀïÔçÒÑ×ß³öÁ½¸öÄÚ¹Ù£¬½«$N×óÓÒ¼ĞÆğÍù¹ñ×ÓÀïÒ»ÈÓ¡£\n",who);
+  message_vision ("$Nå¯¹$nä¸€å£°å†·ç¬‘ï¼Œå–Šé“ï¼šâ€œæ¥äººï¼â€\n",me,who);
+  message_vision ("ä»å®«é‡Œæ—©å·²èµ°å‡ºä¸¤ä¸ªå†…å®˜ï¼Œå°†$Nå·¦å³å¤¹èµ·å¾€æŸœå­é‡Œä¸€æ‰”ã€‚\n",who);
   me->set_temp("obstacle/chechi","player_in");
   who->move(guizi);
 }
@@ -179,9 +179,9 @@ void get_player_out (object me, object who, object guizi)
 {
   me->set_temp("obstacle/chechi",0);
   who->move(environment(guizi));
-  message_vision ("¹¬Àï×ß³öÁ½¸öÄÚ¹Ù£¬½«$N´Ó¹ñ×ÓÀïÈíÃàÃàµØÍÏÁË³öÀ´¡£\n\n",who);
-  message_vision ("ÄÚ¹ÙÖØĞÂ½«Öìºì¹ñ×Ó²¼ÖÃÒ»·¬£¬Ïò±±Àë¿ª¡£\n",me);
-  message_vision ("$N¶Ô$nËµµÀ£º¡°Ë¡ÄãÒ»»Ø£¬ËÙ²Â£¡¡±\n",me,who);
+  message_vision ("å®«é‡Œèµ°å‡ºä¸¤ä¸ªå†…å®˜ï¼Œå°†$Nä»æŸœå­é‡Œè½¯ç»µç»µåœ°æ‹–äº†å‡ºæ¥ã€‚\n\n",who);
+  message_vision ("å†…å®˜é‡æ–°å°†æœ±çº¢æŸœå­å¸ƒç½®ä¸€ç•ªï¼Œå‘åŒ—ç¦»å¼€ã€‚\n",me);
+  message_vision ("$Nå¯¹$nè¯´é“ï¼šâ€œæ•ä½ ä¸€å›ï¼Œé€ŸçŒœï¼â€\n",me,who);
 }
 
 void success_guess (object me,object who, object where,
@@ -199,12 +199,12 @@ void success (object me,object who, object where, string arg, object luli)
   if (! who)
     return;
 
-  message_vision ("$NËµµÀ£º¡°¿ª¹ñ£¡¡±\n\n",me);
-  message_vision ("Öìºì¹ñ×Ó´ò¿ª£¬¹ûÈ»ÊÇ"+arg+"£¡\n\n",me);
+  message_vision ("$Nè¯´é“ï¼šâ€œå¼€æŸœï¼â€\n\n",me);
+  message_vision ("æœ±çº¢æŸœå­æ‰“å¼€ï¼Œæœç„¶æ˜¯"+arg+"ï¼\n\n",me);
   who->set("obstacle/chechi","guizi");
   who->save();
   me->set_temp("obstacle/chechi",0);
-  message_vision ("$NÃæÂ¶Ï²É«£¬Á¬ÉùÏò$n°İµÀ£º¡°Çë£¡¡±\n",me,who);
+  message_vision ("$Né¢éœ²å–œè‰²ï¼Œè¿å£°å‘$næ‹œé“ï¼šâ€œè¯·ï¼â€\n",me,who);
 }
 
 int do_guess (string arg)
@@ -233,14 +233,14 @@ int do_guess (string arg)
     luli = 0;
   if (me->query_temp("obstacle/chechi")=="busy")
   {
-    message_vision ("$NÃ°Ã°Ê§Ê§µØº°ÁËÒ»Éù£¬ÕâÀïÃæÊÇ"+arg+"£¡\n",who);
-    message_vision ("$N½ĞµÀ£º¡°×¡¿Ú£¬Õâ²»Õı²Â×ÅÂğ£¿¡±\n",me);
+    message_vision ("$Nå†’å†’å¤±å¤±åœ°å–Šäº†ä¸€å£°ï¼Œè¿™é‡Œé¢æ˜¯"+arg+"ï¼\n",who);
+    message_vision ("$Nå«é“ï¼šâ€œä½å£ï¼Œè¿™ä¸æ­£çŒœç€å—ï¼Ÿâ€\n",me);
     return 1;
   }
   if (me->query_temp("obstacle/chechi")=="player_in")
   {
-    message_vision ("$Nñ²ñ²µØº°ÁËÒ»Éù£¬ÕâÀïÃæÊÇ"+arg+"£¡\n",who);
-    message_vision ("$NËµµÀ£º¡°×¡¿Ú£¬ÕâÀïÃæ²»»¹¹Ø×ÅÈËÂğ£¿¡±\n",me);
+    message_vision ("$Nç™«ç™«åœ°å–Šäº†ä¸€å£°ï¼Œè¿™é‡Œé¢æ˜¯"+arg+"ï¼\n",who);
+    message_vision ("$Nè¯´é“ï¼šâ€œä½å£ï¼Œè¿™é‡Œé¢ä¸è¿˜å…³ç€äººå—ï¼Ÿâ€\n",me);
     return 1;
   }
   me->set_temp("obstacle/chechi","busy");
@@ -255,7 +255,7 @@ int do_guess (string arg)
   }
   else if (random(3))
     failing_guess(me,who,where,guizi,arg,luli);    
-  else if (arg != "¹¬ÒÂ" && arg != "ÌÒ×Ó" && arg != "µÀÍ¯")
+  else if (arg != "å®«è¡£" && arg != "æ¡ƒå­" && arg != "é“ç«¥")
     failing_guess(me,who,where,guizi,arg,luli);    
   else
     success_guess(me,who,where,guizi,arg,luli);

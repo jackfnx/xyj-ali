@@ -7,10 +7,10 @@ int do_yes(string arg);
 
 void create()
 {
-    set_name("·çÆÅ",({"feng po","feng shen","po"}));
-    set("gender", "Å®ĞÔ");
+    set_name("é£å©†",({"feng po","feng shen","po"}));
+    set("gender", "å¥³æ€§");
     set("age", 35);
-    set("long", "    \nÌì¹¬ÖĞ¸ºÔğÆğ·çµÄÌìÉñ£¬ÏëÒª¹Î·çÏÂÓêÊ±£¬Ã»ÓĞËı\nµÄ°ïÖúÊÇ²»ĞĞµÄ¡£\n");
+    set("long", "    \nå¤©å®«ä¸­è´Ÿè´£èµ·é£çš„å¤©ç¥ï¼Œæƒ³è¦åˆ®é£ä¸‹é›¨æ—¶ï¼Œæ²¡æœ‰å¥¹\nçš„å¸®åŠ©æ˜¯ä¸è¡Œçš„ã€‚\n");
 
     set("attitude", "heroism");
     set("class", "xian");
@@ -38,13 +38,13 @@ void create()
     map_skill("dodge", "cloud-steps");
     map_skill("unarmed", "puti-zhi");
     set("inquiry", ([
-        "ÏÂÓê"   : "ÏëÇóÓê£¬¹âÎÒÒ»¸öÈË¿É²»¹»¡£",
-        "rain"   : "ÏëÇóÓê£¬¹âÎÒÒ»¸öÈË¿É²»¹»¡£",
-        "Æğ·ç"   : (: give_fu :),
-        "¹Î·ç"   : (: give_fu :),
+        "ä¸‹é›¨"   : "æƒ³æ±‚é›¨ï¼Œå…‰æˆ‘ä¸€ä¸ªäººå¯ä¸å¤Ÿã€‚",
+        "rain"   : "æƒ³æ±‚é›¨ï¼Œå…‰æˆ‘ä¸€ä¸ªäººå¯ä¸å¤Ÿã€‚",
+        "èµ·é£"   : (: give_fu :),
+        "åˆ®é£"   : (: give_fu :),
         "wind"   : (: give_fu :),
-        "name"   : "ÎÒ¾ÍÊÇ¸ºÔğÆğ·çµÄ·çÉñ¡£",
-        "here"   : "Õâ¾ÍÊÇÌì¹¬Ñ½¡£",
+        "name"   : "æˆ‘å°±æ˜¯è´Ÿè´£èµ·é£çš„é£ç¥ã€‚",
+        "here"   : "è¿™å°±æ˜¯å¤©å®«å‘€ã€‚",
     ]));
 
     setup();
@@ -64,10 +64,10 @@ string give_fu()
 {
     object who = this_player();
     if ((who->query("combat_exp")<10000) || (who->query("mana") < 500)) {
-        return "¿´À´Äã»¹²»¶®ÔõÃ´ºô·ç»½Óê£¬ÔÙºÃºÃĞŞÁ¶ĞŞÁ¶°É¡£\n";
+        return "çœ‹æ¥ä½ è¿˜ä¸æ‡‚æ€ä¹ˆå‘¼é£å”¤é›¨ï¼Œå†å¥½å¥½ä¿®ç‚¼ä¿®ç‚¼å§ã€‚\n";
     } else {
         who->set_temp("need_fengfu", 1);
-        return "ÎÒÓĞÕÅÁé·û£¬ÓÃËü¿ÉÒÔÆğ·ç£¬ÄãÏëÒªÂğ(yao)£¿\n";
+        return "æˆ‘æœ‰å¼ çµç¬¦ï¼Œç”¨å®ƒå¯ä»¥èµ·é£ï¼Œä½ æƒ³è¦å—(yao)ï¼Ÿ\n";
     }
 }
 
@@ -77,15 +77,15 @@ int do_yao(string arg)
     object who = this_player();
     object fu;
     if (who->query_temp("need_fengfu")) {
-        message_vision("$N´ğµÀ£ºÏëÒª£¡\n", who);
+        message_vision("$Nç­”é“ï¼šæƒ³è¦ï¼\n", who);
         if (query("have_fu")) {
-            message_vision("·çÆÅËµµÀ£ººÃ°É£¡ÄãÀ´ÊÔÊÔ¿´ÕâÍæÒâÁé²»Áé¡£\n", who);
+            message_vision("é£å©†è¯´é“ï¼šå¥½å§ï¼ä½ æ¥è¯•è¯•çœ‹è¿™ç©æ„çµä¸çµã€‚\n", who);
             fu = new("/d/sky/obj/fenglingfu");
             fu->move(who);
-            message_vision("$N½»¸ø$nÒ»ÕÅ·çÁé·û¡£\n", me, who);
+            message_vision("$Näº¤ç»™$nä¸€å¼ é£çµç¬¦ã€‚\n", me, who);
             set("have_fu", 0);
         } else {
-            message_vision("·çÆÅËµµÀ£º°¥Ñ½£¬ÊµÔÚ²»ºÃÒâË¼£¬ÎÒ¸Õ°ÑËü¸ø±ğÈËÁË£¬ÄãµÈ»á¶ùÔÚÀ´Òª°É¡£\n", who);
+            message_vision("é£å©†è¯´é“ï¼šå“å‘€ï¼Œå®åœ¨ä¸å¥½æ„æ€ï¼Œæˆ‘åˆšæŠŠå®ƒç»™åˆ«äººäº†ï¼Œä½ ç­‰ä¼šå„¿åœ¨æ¥è¦å§ã€‚\n", who);
         }
         return 1;
     }

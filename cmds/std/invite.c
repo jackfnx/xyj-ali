@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // invite.c
@@ -14,19 +14,19 @@ int main(object me, string arg)
    string *killer, callname, id, *host;
 
    if( !arg )
-     return notify_fail("ÄãÏëÑûÇëË­£¿\n");
+     return notify_fail("ä½ æƒ³é‚€è¯·è°ï¼Ÿ\n");
 
    if(!objectp(obj = present(arg, environment(me))))
-     return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+     return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
    if( !obj->is_character() || obj->is_corpse() )
-     return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+     return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
    if(obj==me)
-     return notify_fail("ÄãÏëÑûÇëË­£¿\n");
+     return notify_fail("ä½ æƒ³é‚€è¯·è°ï¼Ÿ\n");
 
-   message_vision("$N¶Ô$nËµµÀ£º»¶Ó­"+RANK_D->query_respect(obj)
-               +"ÓĞ¿Õ¶ùµ½ÎÒ¼ÒÀ´Íæ¶ù£¡ \n", me, obj);
+   message_vision("$Nå¯¹$nè¯´é“ï¼šæ¬¢è¿"+RANK_D->query_respect(obj)
+               +"æœ‰ç©ºå„¿åˆ°æˆ‘å®¶æ¥ç©å„¿ï¼ \n", me, obj);
         host=obj->query_temp("invited");
         id=me->query("id");
         if(host) {
@@ -42,9 +42,9 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : invite|yaoqing <ÈËÎï>
+æŒ‡ä»¤æ ¼å¼ : invite|yaoqing <äººç‰©>
  
-ÑûÇë±ğÈËµ½Äã¼ÒÀï×÷¿Í¡£
+é‚€è¯·åˆ«äººåˆ°ä½ å®¶é‡Œä½œå®¢ã€‚
 
  
 HELP

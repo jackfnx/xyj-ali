@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/stable_room.c  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Âí²Û");
+  set ("short", "é©¬æ§½");
   set ("long", @LONG
 
-´Ë¼äµÄÂí¶¼ÊÇÌ«×Ó¾«ÐÄÌôÑ¡µÄ´óÍð±¦Âí¡£ÆäÖÐÒÔÄÇÆ¥ÃûÎª£¢¾ø³¾£¢
-µÄÂí×îÎªÃû¹ó¡£
+æ­¤é—´çš„é©¬éƒ½æ˜¯å¤ªå­ç²¾å¿ƒæŒ‘é€‰çš„å¤§å®›å®é©¬ã€‚å…¶ä¸­ä»¥é‚£åŒ¹åä¸ºï¼‚ç»å°˜ï¼‚
+çš„é©¬æœ€ä¸ºåè´µã€‚
 
 LONG);
 

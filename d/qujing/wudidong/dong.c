@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -9,16 +9,16 @@ void reset();
 
 void create ()
 {
-  set ("short", "ɽ��");
+  set ("short", "山顶");
   set ("long", @LONG
 
-ɽ����ͺͺ�ģ�һ�û���Ҳ�ޣ�ֻ��һ��ƽ̹�ľ�ʯ���߽�һ������
-ʯ������һ���׿ڴ�С�Ķ�(dong)���ѱ�ĥ�ù⻬�ޱȡ�
+山顶光秃秃的，一棵花草也无，只有一块平坦的巨石。走近一看，大
+石正中是一个缸口大小的洞(dong)，已被磨得光滑无比。
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
   "dong" : "
-������޵׶��ˣ���չ�ȥһ������ֱ��������ס�
+这就是无底洞了，你凑过去一看，简直就是深不见底。
 ",
 ]));
   set("exits", ([ /* sizeof() == 1 */
@@ -39,8 +39,8 @@ int do_dive(string arg)
   object me;
   me=this_player();
   if ( !arg || ((arg !="dong") ))
-    return notify_fail("��Ҫ���Ķ����� \n");
-  message_vision("$Nһ���������붴�У����²��������������������ǧ�㡣\n", me);
+    return notify_fail("你要往哪儿跳？ \n");
+  message_vision("$N一纵身，跳入洞中，足下彩云生万道，身边瑞气护千层。\n", me);
   me->move(__DIR__"dong1");
   return 1;
 }

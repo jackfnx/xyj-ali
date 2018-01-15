@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //standroom.c used by weiqi...others may hate this format:D
@@ -8,13 +8,13 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "´²ÉÏ");
+   set ("short", "åºŠä¸Š");
    set ("long", @LONG
 
-´²ÉÏ£¬Ë¯¾õµÄµØ·½¡£
+åºŠä¸Šï¼Œç¡è§‰çš„åœ°æ–¹ã€‚
 LONG);
 
-   //set("item_desc", (["bed" : "Ò»ÕÅ¾«ÖÂµÄ´²ÆÌ(gosleep, gobed, bed)¡£\n", ]));
+   //set("item_desc", (["bed" : "ä¸€å¼ ç²¾è‡´çš„åºŠé“º(gosleep, gobed, bed)ã€‚\n", ]));
    //for look something.
 
    set("exits", 

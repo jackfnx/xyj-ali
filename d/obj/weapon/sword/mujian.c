@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,17 +8,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Ä¾½£", ({"mu jian", "jian", "sword"}));
+        set_name("æœ¨å‰‘", ({"mu jian", "jian", "sword"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 100);
                 set("material", "wood");
-                set("long", "ÕâÊÇÒ»Ä¾ÖÆµÄ³¤½££¬ÊÇÁ·ÎäÊ±ÓÃµÄ£®\n");
-                set("wield_msg", "$N³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑüºó£®\n");
+                set("long", "è¿™æ˜¯ä¸€æœ¨åˆ¶çš„é•¿å‰‘ï¼Œæ˜¯ç»ƒæ­¦æ—¶ç”¨çš„ï¼\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°åï¼\n");
         }
         init_sword(15);
         setup();

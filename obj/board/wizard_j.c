@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // wizard_j.c
@@ -7,10 +7,10 @@ inherit "/std/jboard";
 
 void create()
 {
-   set_name("Î×Ê¦¹¤×÷½ø¶È±¨¸æ", ({ "job board", "board" }) );
+   set_name("å·«å¸ˆå·¥ä½œè¿›åº¦æŠ¥å‘Š", ({ "job board", "board" }) );
    set("location", "/d/wiz/jobroom");
    set("board_id", "wizard_j");
-   set("long",   "ÕâÊÇÒ»¸öÌØÊâµÄÁôÑÔ°å¹©Î×Ê¦±¨¸æ×Ô¼ºµÄ¹¤×÷½ø¶È¡£\n" );
+   set("long",   "è¿™æ˜¯ä¸€ä¸ªç‰¹æ®Šçš„ç•™è¨€æ¿ä¾›å·«å¸ˆæŠ¥å‘Šè‡ªå·±çš„å·¥ä½œè¿›åº¦ã€‚\n" );
    setup();
    replace_program("/std/jboard");
 }

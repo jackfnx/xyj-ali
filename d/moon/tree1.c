@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "¹ğÊ÷Ò¶¼ä");
+    set("short", "æ¡‚æ ‘å¶é—´");
     set("long", @LONG
-ËÄÖÜ»¨ÏãÃÖÂş£¬Ö¦Ò¶·±Ã¯£¬È´ÒÑ¿´²»¼ûµØ¡£
+å››å‘¨èŠ±é¦™å¼¥æ¼«ï¼Œæå¶ç¹èŒ‚ï¼Œå´å·²çœ‹ä¸è§åœ°ã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */
@@ -26,7 +26,7 @@ void init()
     add_action("do_climb", "climb");
     add_action("do_kan", "kan");
     
-    if ((ob->query("family/family_name") == "ÔÂ¹¬"
+    if ((ob->query("family/family_name") == "æœˆå®«"
         &&  ob->query("family/master_id") == "yue nu")
     ||  (ob->query_skill("dodge", 1) <= 120
         && ob->query_skill("moondance", 1) <= 120)) {
@@ -44,7 +44,7 @@ void rabbit_welcome(object who)
     if (!(ob = present("yu tu", this_object()))) {
         ob = new(__DIR__"npc/rabbit");
         ob->move(this_object());
-        tell_room(this_object(), "Ò»Ö»Ğ¡°×ÍÃ£¬±Ä±ÄÌøÌøµÄÅÜÁË¹ıÀ´¡£\n");
+        tell_room(this_object(), "ä¸€åªå°ç™½å…”ï¼Œè¹¦è¹¦è·³è·³çš„è·‘äº†è¿‡æ¥ã€‚\n");
     }
     ob->welcome(who);
     ob->start_call_out((: call_other, ob, "disappearing" :), 120);
@@ -55,29 +55,29 @@ int do_climb(string arg)
     object me = this_player();
 
     if (!arg || (arg != "up" && arg != "down"))
-        return notify_fail("ÄãÒªÍùÄÄ¸ö·½ÏòÅÀ£¿\n");
+        return notify_fail("ä½ è¦å¾€å“ªä¸ªæ–¹å‘çˆ¬ï¼Ÿ\n");
     if (arg == "down") {
-        message_vision("$NË³×ÅÊ÷¸É³öÁïÁËÏÂÈ¥¡£\n", me);
+        message_vision("$Né¡ºç€æ ‘å¹²å‡ºæºœäº†ä¸‹å»ã€‚\n", me);
         me->move(__DIR__"ontop2.c");
-        message_vision("$N´Ó¹ğÊ÷ÉÏ³öÁïÁËÏÂÀ´¡£\n", me);
+        message_vision("$Nä»æ¡‚æ ‘ä¸Šå‡ºæºœäº†ä¸‹æ¥ã€‚\n", me);
         return 1;
     }
 
     if (me->query("kee") < (int)(me->query("max_kee") / 3)) {
         me->receive_damage("kee", (int)me->query("max_kee")*20/100);
-        return notify_fail("ÄãÉí×Ó·¢Ğé£¬Ò»Í·ÔÔÁËÏÂÀ´£¬°¥Ñ½£¡\n");
+        return notify_fail("ä½ èº«å­å‘è™šï¼Œä¸€å¤´æ ½äº†ä¸‹æ¥ï¼Œå“å‘€ï¼\n");
     }
     
     if ((int)me->query_skill("dodge", 1) < 60 && (int)me->query_skill("moondance", 1) < 80) {
-        message_vision("$NĞ¡ĞÄÒíÒíµÄÍùÉÏÅÀÁËÒ»µã£¬¾õµÃÍ·ÔÎÑÛ»¨£¬¾Í¸Ï½ôÅÀÁËÏÂÀ´£®\n", me);
-        tell_object(me, "Äã¸Ğ¾õËÆºõ¿ÉÒÔ´ÓÖĞÁìÎòÒ»Ğ©»ù±¾Çá¹¦·½ÃæµÄÇÏÃÅ£¬¿ÉÏ§ÒòÎªÌ«¹ı½ôÕÅ£¬ÄãÎŞ·¨×¥×¡ÄÇ×ªË²¼´ÊÅµÄÁìÎò¡£\n");
+        message_vision("$Nå°å¿ƒç¿¼ç¿¼çš„å¾€ä¸Šçˆ¬äº†ä¸€ç‚¹ï¼Œè§‰å¾—å¤´æ™•çœ¼èŠ±ï¼Œå°±èµ¶ç´§çˆ¬äº†ä¸‹æ¥ï¼\n", me);
+        tell_object(me, "ä½ æ„Ÿè§‰ä¼¼ä¹å¯ä»¥ä»ä¸­é¢†æ‚Ÿä¸€äº›åŸºæœ¬è½»åŠŸæ–¹é¢çš„çªé—¨ï¼Œå¯æƒœå› ä¸ºå¤ªè¿‡ç´§å¼ ï¼Œä½ æ— æ³•æŠ“ä½é‚£è½¬ç¬å³é€çš„é¢†æ‚Ÿã€‚\n");
         me->receive_damage("sen", (int)me->query("max_sen")*10/100);
     } else if ((int)me->query_skill("dodge", 1) < 100 && (int)me->query_skill("moondance", 1) < 80) {
-        message_vision("$NĞ¡ĞÄÒíÒíµÄÍùÉÏÅÀÁËÒ»µã£¬¾õµÃÍ·ÔÎÑÛ»¨£¬¾Í¸Ï½ôÅÀÁËÏÂÀ´£®\n", me);
+        message_vision("$Nå°å¿ƒç¿¼ç¿¼çš„å¾€ä¸Šçˆ¬äº†ä¸€ç‚¹ï¼Œè§‰å¾—å¤´æ™•çœ¼èŠ±ï¼Œå°±èµ¶ç´§çˆ¬äº†ä¸‹æ¥ï¼\n", me);
         me->improve_skill("dodge", 40 - me->query("str"));
-        tell_object(me, "ÄãÁìÎò³öÒ»Ğ©»ù±¾Çá¹¦·½ÃæµÄÇÏÃÅ¡£\n");
+        tell_object(me, "ä½ é¢†æ‚Ÿå‡ºä¸€äº›åŸºæœ¬è½»åŠŸæ–¹é¢çš„çªé—¨ã€‚\n");
     } else {
-        message_vision("$N×İÉíÍùÉÏÒ»Ìø£¬½Ó×ÅÅÀÈëÊ÷´ÔÖĞ²»¼ûÁË¡£\n", me);
+        message_vision("$Nçºµèº«å¾€ä¸Šä¸€è·³ï¼Œæ¥ç€çˆ¬å…¥æ ‘ä¸›ä¸­ä¸è§äº†ã€‚\n", me);
         me->move(__DIR__"tree2.c");
     }
     me->receive_damage("kee", (int)me->query("max_kee")*10/100);
@@ -86,7 +86,7 @@ int do_climb(string arg)
 
 int do_kan(string arg)
 {
-    if (!arg || !(arg != "tree" && arg != "¹ğÊ÷"))
-        return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
-    return notify_fail("ÄãÏÖÔÚ¾ÍÔÚÊ÷ÉÏ°¡£¡¿³Ê÷£¿²»ÅÂ×Ô¼ºµôÏÂÈ¥£¿");
+    if (!arg || !(arg != "tree" && arg != "æ¡‚æ ‘"))
+        return notify_fail("ä½ è¦ç ä»€ä¹ˆï¼Ÿ\n");
+    return notify_fail("ä½ ç°åœ¨å°±åœ¨æ ‘ä¸Šå•Šï¼ç æ ‘ï¼Ÿä¸æ€•è‡ªå·±æ‰ä¸‹å»ï¼Ÿ");
 }

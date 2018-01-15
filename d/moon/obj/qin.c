@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
@@ -10,10 +10,10 @@ inherit ITEM;
 
 void create()
 {
-  set_name(HIB "������" NOR, ({ "wuxian qin"})); 
+  set_name(HIB "五弦琴" NOR, ({ "wuxian qin"})); 
   set_weight(100000);
-  set("long","һ�ܹ�ɫ����������١�\n");
-  set("unit", "��");
+  set("long","一架古色古香的五弦琴。\n");
+  set("unit", "架");
   setup();
 }
 
@@ -27,18 +27,18 @@ int do_play (string arg)
   object me = this_player();
   object qin = this_object();
   string *msgs = ({
-    "$N�����ָ�������Ღ��һ�£��������������ˡ�\n",
-    "$N�Ღ��һ�����ң���ɫ糺졣\n",
-    "$N������˼��������һ������Ĭ��������\n",
-    "$N�������٣�����ס�������¡�\n",
-    "$N����ص����٣���ɫ�����\n",
-    "$NС�ĵص������ң��͵͵س���������\n",
-    "$N�߳��ߵ���һ���������ĳ���\n",
+    "$N伸出纤指在琴上轻拨了一下，不禁想起梦中人。\n",
+    "$N轻拨了一下琴弦，脸色绯红。\n",
+    "$N若有所思地在弦上一拨，沉默几许……\n",
+    "$N伏身抚琴，禁不住泪如雨下。\n",
+    "$N轻轻地弹着琴，面色婉尔。\n",
+    "$N小心地弹着琴弦，低低地唱了起来。\n",
+    "$N边唱边弹，一曲凄歌断人心肠。\n",
   });
 
   if (arg != "wuxian qin")
   {
-    tell_object (me,"�뵯ʲô�أ�\n");
+    tell_object (me,"想弹什么呢？\n");
     return 1;
   }
 

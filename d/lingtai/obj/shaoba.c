@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,15 +7,15 @@ inherit STICK;
 
 void create()
 {
-        set_name("ÖñÉ¨Öã", ({"broom"}));
+        set_name("ç«¹æ‰«å¸š", ({"broom"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 50);
                 set("material", "wood");
-                set("wield_msg", "$N°Ñ$nÎÕÔÚÊÖÖĞ£®\n");
+                set("wield_msg", "$NæŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼\n");
         }
         init_stick(10);
         setup();

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit BOOTS;
 
 void create()
 {
-  set_name( "Â¹Æ¤Ğ¬", ({ "pi xie", "pixue", "xie" }) );
+  set_name( "é¹¿çš®é‹", ({ "pi xie", "pixue", "xie" }) );
   set_weight(1000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ë«");
-    set("long", "Ò»Ë«ÈíÉíÓ²µ×µÄÂ¹Æ¤Ğ¬¡£\n");
+    set("unit", "åŒ");
+    set("long", "ä¸€åŒè½¯èº«ç¡¬åº•çš„é¹¿çš®é‹ã€‚\n");
     set("value", 140);
     set("material", "boots");
     set("armor_prop/dodge", 3);

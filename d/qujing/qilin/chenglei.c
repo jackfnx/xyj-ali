@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "³ÐÀ×Ê¯");
+  set ("short", "æ‰¿é›·çŸ³");
   set ("long", @LONG
 
-É½»·Â·µÍÍÝ³öËÊÁ¢Ò»×ù¸ß´óµÄÊ¯ÑÂ£¬ÈçÊ¯±®Ò»°ã¡£ÑÂ¶¥Ôø±»É½À×Åü
-¿ª£¬È±¿Ú´¦³¤ÁËÒ»¿Ã°«ËÉ£¬ÔÆÔÚÑÂ¶¥»º»ºÆ®¹ý¡£ÕâÀïËÆºõ¿ÉÒÔÌý¼û
-Ô¶Ô¶µÄÇÝÑÊÊÞºðÖ®Éù´ÓÁÖÌÎÖÐ´«À´¡£
+å±±çŽ¯è·¯ä½Žæ´¼å‡ºè€¸ç«‹ä¸€åº§é«˜å¤§çš„çŸ³å´–ï¼Œå¦‚çŸ³ç¢‘ä¸€èˆ¬ã€‚å´–é¡¶æ›¾è¢«å±±é›·åŠˆ
+å¼€ï¼Œç¼ºå£å¤„é•¿äº†ä¸€æ£µçŸ®æ¾ï¼Œäº‘åœ¨å´–é¡¶ç¼“ç¼“é£˜è¿‡ã€‚è¿™é‡Œä¼¼ä¹Žå¯ä»¥å¬è§
+è¿œè¿œçš„ç¦½å’½å…½å¼ä¹‹å£°ä»Žæž—æ¶›ä¸­ä¼ æ¥ã€‚
 
 LONG);
 
@@ -33,8 +33,8 @@ int do_climb (string arg)
 {
   object who = this_player();
 
-  message_vision ("$N·ÜÁ¦ÏòÉÏÅÀÈ¥¡£\n",who);
-  message_vision ("$NÊÖÒ»ËÉÁ¬ÈË´øÊ¯»©À²Ò»Éù»¬ÁËÏÂÀ´¡£\n",who);
+  message_vision ("$Nå¥‹åŠ›å‘ä¸Šçˆ¬åŽ»ã€‚\n",who);
+  message_vision ("$Næ‰‹ä¸€æ¾è¿žäººå¸¦çŸ³å“—å•¦ä¸€å£°æ»‘äº†ä¸‹æ¥ã€‚\n",who);
   who->unconcious();
   return 1;
 }
@@ -43,8 +43,8 @@ int do_jump (string arg)
 {
   object who = this_player();
 
-  message_vision ("$N¹Ä×ãÓÂÆøÍùÏÂÌøÈ¥¡£\n",who);
-  message_vision ("$NÅéµØÖØÖØË¤ÔÚÌ¨ÏÂ¡£\n",who);
+  message_vision ("$Né¼“è¶³å‹‡æ°”å¾€ä¸‹è·³åŽ»ã€‚\n",who);
+  message_vision ("$Nç °åœ°é‡é‡æ‘”åœ¨å°ä¸‹ã€‚\n",who);
   who->unconcious();
   return 1;
 }

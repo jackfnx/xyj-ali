@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("¶ÎÖ¾ÏÍ", ({ "duan zhixian", "duan", "zhixian", "da chen" }));
-  set("title", "´ó³¼");
-  set("gender", "ÄÐÐÔ");
+  set_name("æ®µå¿—è´¤", ({ "duan zhixian", "duan", "zhixian", "da chen" }));
+  set("title", "å¤§è‡£");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
   set("combat_exp", 300000);
@@ -53,14 +53,14 @@ void reward (object who)
     points = 140+random(10);
   }
 
-  message_vision ("$N¶Ô$nÒ»°Ý£º±ÝÏÂÓÐÖ¼£¬´Í"+RANK_D->query_respect(who)+
-                  chinese_number(points)+"µãÇ±ÄÜ£¡\n",me,who);
+  message_vision ("$Nå¯¹$nä¸€æ‹œï¼šé™›ä¸‹æœ‰æ—¨ï¼Œèµ"+RANK_D->query_respect(who)+
+                  chinese_number(points)+"ç‚¹æ½œèƒ½ï¼\n",me,who);
 /*
-  command (channel+" "+who->query("name")+who->query("quest/reason")+"±ÝÏÂÓÐÖ¼£¬´Í"+
-           chinese_number(points)+"µãÇ±ÄÜ£¡");
+  command (channel+" "+who->query("name")+who->query("quest/reason")+"é™›ä¸‹æœ‰æ—¨ï¼Œèµ"+
+           chinese_number(points)+"ç‚¹æ½œèƒ½ï¼");
 */                  
   who->add("quest/gain/potential",points);
-  reporting (who, who->query("quest/reason"), points, "µãÇ±ÄÜ");
+  reporting (who, who->query("quest/reason"), points, "ç‚¹æ½œèƒ½");
   who->add("potential",points);
 }
 

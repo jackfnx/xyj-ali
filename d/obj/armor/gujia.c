@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // lightarmor.c
@@ -8,13 +8,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("ÊŞ¹Ç¼×", ({"shougu jia","shougujia","jia","armor"}));
+        set_name("å…½éª¨ç”²", ({"shougu jia","shougujia","jia","armor"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-       set("long", "Ò»¼şÊŞ¹Ç¼×¡£\n");
+                set("unit", "ä»¶");
+       set("long", "ä¸€ä»¶å…½éª¨ç”²ã€‚\n");
                 set("value", 2500);
                 set("material", "bone");
                 set("armor_prop/armor", 35);

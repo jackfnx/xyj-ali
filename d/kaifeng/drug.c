@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -7,16 +7,16 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ҩ��");
+  set ("short", "御药库");
   set ("long", @LONG
 
-��ҩ������һ������̨�����и�������ҩ��ҩ��ҩ�ۣ�����
-��������������ʦ��ȡ���˵�ҩ���ʦ�ɴ�̨����(take)ҩ
-�ַ����μӴ������֡�̨���Ϸ��У�
-  ��ҩ��          jinchuang
-  ��Ԫ����          hunyuan
-  ��ת���굤��      dan
-  ��������          huanyang
+御药库里有一汉白玉案台，上有各类名贵药丸药丹药粉，比武
+的人来这里向巫师领取治伤的药物。巫师可从台上拿(take)药
+分发给参加大会的赛手。台子上放有：
+  金创药：          jinchuang
+  混元丹：          hunyuan
+  九转还魂丹：      dan
+  还阳丹：          huanyang
 
 LONG);
 
@@ -39,10 +39,10 @@ int do_take (string arg)
   object ob;
 
   if (! wizardp(who))
-    return notify_fail ("�Բ���������ʦ�������ö�����\n");
+    return notify_fail ("对不起，请让巫师替您来拿东西。\n");
 
   if (! arg)
-    return notify_fail ("��Ҫ��ʲô��\n");
+    return notify_fail ("您要拿什么？\n");
   if (arg == "jinchuang")
     ob = new ("/d/obj/drug/jinchuang");    
   else if (arg == "hunyuan")
@@ -52,8 +52,8 @@ int do_take (string arg)
   else if (arg == "huanyang")
     ob = new ("/d/obj/drug/huanyang");    
   else
-    return notify_fail ("��Ҫ��ʲô��\n");
-  message_vision ("$N��̨������$n��\n",who,ob);
+    return notify_fail ("您要拿什么？\n");
+  message_vision ("$N从台上拿起$n。\n",who,ob);
   ob->move(who);
   return 1;
 }

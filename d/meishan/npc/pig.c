@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,18 +6,18 @@ inherit NPC;
 
 void create()
 {
-        set_name("´óÅÖ¹·ĞÜĞÜ", ({ "fat bear", "bear" }) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "´ÆĞÔ");
+        set_name("å¤§èƒ–ç‹—ç†Šç†Š", ({ "fat bear", "bear" }) );
+        set("race", "é‡å…½");
+        set("gender", "é›Œæ€§");
         set("age", 10);
-        set("long", "Ò»Ö»·ÊÅÖµÄ´óÅÖ¹·ĞÜĞÜ£¬Æ¨¹ÉÉÏ²»Öª±»Ë­ÓÃºÚÌ¿ÍáÍáÅ¤Å¤µÄĞ´ÁË¡°ºØÀñ¡±Á½×Ö¡£\n");
+        set("long", "ä¸€åªè‚¥èƒ–çš„å¤§èƒ–ç‹—ç†Šç†Šï¼Œå±è‚¡ä¸Šä¸çŸ¥è¢«è°ç”¨é»‘ç‚­æ­ªæ­ªæ‰­æ‰­çš„å†™äº†â€œè´ºç¤¼â€ä¸¤å­—ã€‚\n");
         set("attitude", "friendly");
-   set("looking", "·Ê·ÊÅÖÅÖ£¬Ğ¡±ÇĞ¡ÑÛ¡£");
+   set("looking", "è‚¥è‚¥èƒ–èƒ–ï¼Œå°é¼»å°çœ¼ã€‚");
         set("str", 20);
         set("con", 40);
    set("kee", 300);
    set("sen", 300);
-        set("limbs", ({ "Í·²¿", "ÉíÌå" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“" }) );
         set("verbs", ({ "bite"}) );
    set("combat_exp", 2000);
         set_skill("dodge", 20);
@@ -38,7 +38,7 @@ int heal_up()
 void leave()
 {
         message("vision",
-               name() + "ºßºßß´ß´µØ½ĞÁË¼¸Éù£¬Å¤×ÅÆ¨¹ÉÅÜÁË¡£\n", environment(),
+               name() + "å“¼å“¼å½å½åœ°å«äº†å‡ å£°ï¼Œæ‰­ç€å±è‚¡è·‘äº†ã€‚\n", environment(),
                 this_object() );
         destruct(this_object());
 }

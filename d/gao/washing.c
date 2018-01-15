@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // washing.c
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "Ï´ÒÂ·¿");
+  set ("short", "æ´—è¡£æˆ¿");
   set ("long", @LONG
 
-µØÏÂµ½´¦Á÷×ÅÔàË®£¬Ò»¸öÀÏÂè×ÓÕýÏ´×ÅÒ»¶ÑÒÂ·þ£®
+åœ°ä¸‹åˆ°å¤„æµç€è„æ°´ï¼Œä¸€ä¸ªè€å¦ˆå­æ­£æ´—ç€ä¸€å †è¡£æœï¼Ž
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "west" :__DIR__"houyuan",

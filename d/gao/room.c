@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // room.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "¾ÛÒåÌü");
+  set ("short", "èšä¹‰åŽ…");
   set ("long", @LONG
 
-ÕâÀï±ãÊÇÇå·çÕ¯µÄ´óÌÃ£­£­£­¾ÛÒåÌü¡£ÌüÖÐÒ»Ê®ÁùÕÅ»¢Æ¤ÈíÒÎ·Ö
-ÁÐÁ½ÅÔ£¬ÕýÃæÒ»ÕÅÏãÌ¨£¬¹©×Å¹Ø¹«´óµÛ¡£É½Õ¯ÀïµÄÍ·ÁìÒª¿ª»áµÄ
-»°£¬¶à°ë»áÑ¡ÔÚÕâÀï¾ÙÐÐ¡£ÁíÍâÒ²ÊÇ·ÖÔßÑç»áµÄµØ·½¡£
+è¿™é‡Œä¾¿æ˜¯æ¸…é£Žå¯¨çš„å¤§å ‚ï¼ï¼ï¼èšä¹‰åŽ…ã€‚åŽ…ä¸­ä¸€åå…­å¼ è™Žçš®è½¯æ¤…åˆ†
+åˆ—ä¸¤æ—ï¼Œæ­£é¢ä¸€å¼ é¦™å°ï¼Œä¾›ç€å…³å…¬å¤§å¸ã€‚å±±å¯¨é‡Œçš„å¤´é¢†è¦å¼€ä¼šçš„
+è¯ï¼Œå¤šåŠä¼šé€‰åœ¨è¿™é‡Œä¸¾è¡Œã€‚å¦å¤–ä¹Ÿæ˜¯åˆ†èµƒå®´ä¼šçš„åœ°æ–¹ã€‚
 LONG);
 
 
@@ -25,7 +25,7 @@ set("exits", ([ /* sizeof() == 4 */
 "/d/gao/npc/head" : 1,
 
 ]));
-create_door("east", "Ê¯ÃÅ", "west", DOOR_CLOSED);
+create_door("east", "çŸ³é—¨", "west", DOOR_CLOSED);
         set("no_clean_up", 0);
         setup();
 }
@@ -37,7 +37,7 @@ int valid_leave(object me, string dir)
     if ( dir == "east" ) {
         if(objectp(present("xia pengzhan", environment(me))))
             return
-notify_fail("ÏÄÅôÕ¹Ò»¸ö¼ý²½ÉÁµ½ÄãÇ°Ãæ£¬ÄüÐ¦µÀ£º\nÇå·çÕ¯¿ÉÊÇÄãÏëÀ´±ãÀ´£¬Ïë×ß±ãÁïµÄµÄµØ·½£¡\n");
+notify_fail("å¤é¹å±•ä¸€ä¸ªç®­æ­¥é—ªåˆ°ä½ å‰é¢ï¼Œç‹žç¬‘é“ï¼š\næ¸…é£Žå¯¨å¯æ˜¯ä½ æƒ³æ¥ä¾¿æ¥ï¼Œæƒ³èµ°ä¾¿æºœçš„çš„åœ°æ–¹ï¼\n");
     }
     return ::valid_leave(me, dir);
 }

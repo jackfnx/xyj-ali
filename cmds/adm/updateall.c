@@ -21,7 +21,7 @@ int main(object me, string arg)
     if (!dir) {
         dir = me->query("cwd");
         if (!dir)
-            return notify_fail("ÄãÒªÖØĞÂ±àÒëÄÇ¸öÂ·¾¶ÏÂµµ°¸£¿\n");
+            return notify_fail("ä½ è¦é‡æ–°ç¼–è¯‘é‚£ä¸ªè·¯å¾„ä¸‹æ¡£æ¡ˆï¼Ÿ\n");
     } else {
         dir = resolve_path(me->query("cwd"), dir);
     }
@@ -29,19 +29,19 @@ int main(object me, string arg)
         dir += "/";
 
     if (file_size(dir) != -2)
-        return notify_fail("Ã»ÓĞ" + dir + "Õâ¸öÂ·¾¶¡£\n");
+        return notify_fail("æ²¡æœ‰" + dir + "è¿™ä¸ªè·¯å¾„ã€‚\n");
 
     me->set("cwd", dir);
 
-    write("ÕûÀíÅúÁ¿µµ°¸ÖĞ£¬ÇëÉÔºò...");
+    write("æ•´ç†æ‰¹é‡æ¡£æ¡ˆä¸­ï¼Œè¯·ç¨å€™...");
     if (!update_dir(me, dir, continueable, total)) {
-        write("±àÒëÓöµ½´íÎóÖĞÖ¹¡£\n");
+        write("ç¼–è¯‘é‡åˆ°é”™è¯¯ä¸­æ­¢ã€‚\n");
     }
 
     if (total[0] > 0)
-        write("×Ü¹²ÓĞ" + total[0] + "¸öµµ°¸±»³É¹¦±àÒë£¡\n");
+        write("æ€»å…±æœ‰" + total[0] + "ä¸ªæ¡£æ¡ˆè¢«æˆåŠŸç¼–è¯‘ï¼\n");
     else
-        write("Ã»ÓĞ±àÒëÈÎºÎµµ°¸¡£\n");
+        write("æ²¡æœ‰ç¼–è¯‘ä»»ä½•æ¡£æ¡ˆã€‚\n");
 
     return 1;
 }
@@ -57,13 +57,13 @@ int update_dir(object me, string dir, int continueable, int *total)
     file = get_dir(dir, -1);
     if (!sizeof(file)) {
         if (file_size(dir) == -2)
-            write(dir + "Õâ¸öÄ¿Â¼ÊÇ¿ÕµÄ¡£\n");
+            write(dir + "è¿™ä¸ªç›®å½•æ˜¯ç©ºçš„ã€‚\n");
         else
-            write("Ã»ÓĞ" + dir + "Õâ¸öÄ¿Â¼¡£\n");
+            write("æ²¡æœ‰" + dir + "è¿™ä¸ªç›®å½•ã€‚\n");
         return 1;
     }
 
-    write ("¿ªÊ¼±àÒëÄ¿Â¼" + dir + "ÏÂÃæµÄËùÓĞÎÄ¼ş¡£\n");
+    write ("å¼€å§‹ç¼–è¯‘ç›®å½•" + dir + "ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶ã€‚\n");
     i = sizeof(file);
     compcount = 0;
     filecount = 0;
@@ -88,8 +88,8 @@ int update_dir(object me, string dir, int continueable, int *total)
 
         // continue to compile next file
     }
-    write("\nÕûÀíÁËÄ¿Â¼" + dir + "ÏÂµÄ" + filecount +
-          "¸öÎÄ¼ş£¬±àÒëÁËÆäÖĞ" + compcount + "¸öµµ°¸¡£\n");
+    write("\næ•´ç†äº†ç›®å½•" + dir + "ä¸‹çš„" + filecount +
+          "ä¸ªæ–‡ä»¶ï¼Œç¼–è¯‘äº†å…¶ä¸­" + compcount + "ä¸ªæ¡£æ¡ˆã€‚\n");
 
     i = sizeof(file);
     while (i--) {
@@ -120,7 +120,7 @@ int update_file(object me, string file)
     if (obj = find_object(file)) {
         if (obj == environment(me)) {
             if (file_name(obj) == VOID_OB)
-                return notify_fail("\nÄã²»ÄÜÔÚ VOID_OB ÀïÖØĞÂ±àÒë VOID_OB¡£\n");
+                return notify_fail("\nä½ ä¸èƒ½åœ¨ VOID_OB é‡Œé‡æ–°ç¼–è¯‘ VOID_OBã€‚\n");
 
             inv = all_inventory(obj);
             i = sizeof(inv);
@@ -132,11 +132,11 @@ int update_file(object me, string file)
         destruct(obj);
     }
 
-    if (obj) return notify_fail("\nÎŞ·¨Çå³ı¾É³ÌÊ½Âë¡£\n");
+    if (obj) return notify_fail("\næ— æ³•æ¸…é™¤æ—§ç¨‹å¼ç ã€‚\n");
 
     err = catch( call_other(file, "???") );
     if (err) {
-        printf("\n·¢Éú´íÎó£º\n%s\n", err);
+        printf("\nå‘ç”Ÿé”™è¯¯ï¼š\n%s\n", err);
         return 0;
     } else {
         if ((i = sizeof(inv)) && (obj = find_object(file))) {
@@ -151,10 +151,10 @@ int update_file(object me, string file)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : updateall <Â·¾¶Ãû> [1]
+æŒ‡ä»¤æ ¼å¼ : updateall <è·¯å¾„å> [1]
  
-Õâ¸öÖ¸Áî¿ÉÒÔ¸üĞÂÄ³¸öÂ·¾¶ÏÂµÄÈ«²¿µµ°¸, ²¢½«ĞÂµµµÄÄÚÈİÔØÈë¼Ç
-ÒäÌåÄÚ. Èç¹ûºóÃæÎ²Ëæ±êÖ¾1£¬ Ôò±àÒëÓöµ½´íÎóÊ±½«²»»áÖĞÖ¹¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ›´æ–°æŸä¸ªè·¯å¾„ä¸‹çš„å…¨éƒ¨æ¡£æ¡ˆ, å¹¶å°†æ–°æ¡£çš„å†…å®¹è½½å…¥è®°
+å¿†ä½“å†…. å¦‚æœåé¢å°¾éšæ ‡å¿—1ï¼Œ åˆ™ç¼–è¯‘é‡åˆ°é”™è¯¯æ—¶å°†ä¸ä¼šä¸­æ­¢ã€‚
 HELP
     );
     return 1;

@@ -1,8 +1,8 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 5/6/1997
-// tian4.c ÌìÉñ
+// tian4.c å¤©ç¥
 #include "tian.h"
 
 inherit NPC;
@@ -17,8 +17,8 @@ void create()
 {
   set_name(get_honor_str(), ({ "tian shen", "shen", "tian" }) );
   set("title", get_respect_str());
-  set("gender", "ÄĞĞÔ" );
-  set("long",get_respect_str()+"¡£\n");
+  set("gender", "ç”·æ€§" );
+  set("long",get_respect_str()+"ã€‚\n");
   set("current_player","none of us");
 
   setup();

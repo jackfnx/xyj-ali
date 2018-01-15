@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/ourhome/xiaoting.c
@@ -15,21 +15,21 @@ int do_out(object ob);
 
 void create()
 {
-        set("short", "¾Û¼ûÍ¤");
+        set("short", "èšè§äº­");
 
    set("long", @LONG
 
---¾Û ¼û Í¤-- 
+--èš è§ äº­-- 
 
-Çï·çÇå£¬Çï·çÃ÷
-ÂäÒ¶¾Û»¹É¢
-º®Ñ»ÆÜ¸´¾ª 
-ÏàË¼Ïà¼ûÖªºÎÈÕ
-´ËÊ±´ËÒ¹ÄÑÎªÇé
+ç§‹é£æ¸…ï¼Œç§‹é£æ˜
+è½å¶èšè¿˜æ•£
+å¯’é¸¦æ –å¤æƒŠ 
+ç›¸æ€ç›¸è§çŸ¥ä½•æ—¥
+æ­¤æ—¶æ­¤å¤œéš¾ä¸ºæƒ…
 
-ÓÉ´ËÍù±±¿É¿´µ½Ò»Ìõ»Ä½¼Ğ¡Â·¡£¶øÍùÆäËü·½ÏòÔòÊÇ
-ëüëüëÊëÊµÄÊ²Ã´Ò²¿´²»Çå¡£ÄãÒşÒşÔ¼Ô¼µØ¾õµÃÖ»Òª
-¿ç³öÀ¸¸ËÍùÍâÒ»×ß(out)Ò²Ğí¾ÍÓÀÔ¶»Ø²»À´ÁË¡£
+ç”±æ­¤å¾€åŒ—å¯çœ‹åˆ°ä¸€æ¡è’éƒŠå°è·¯ã€‚è€Œå¾€å…¶å®ƒæ–¹å‘åˆ™æ˜¯
+æœ¦æœ¦èƒ§èƒ§çš„ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€‚ä½ éšéšçº¦çº¦åœ°è§‰å¾—åªè¦
+è·¨å‡ºæ æ†å¾€å¤–ä¸€èµ°(out)ä¹Ÿè®¸å°±æ°¸è¿œå›ä¸æ¥äº†ã€‚
 LONG
    );
 
@@ -62,16 +62,16 @@ int do_sit(string arg)
       me=this_player();
 
    if ( !arg || ((arg != "seat")&&(arg != "table") ))
-     return notify_fail("ÄãÒª×øÔÚÊ²Ã´ÉÏÃæ£¿\n");   
+     return notify_fail("ä½ è¦ååœ¨ä»€ä¹ˆä¸Šé¢ï¼Ÿ\n");   
    
    if (this_player()->query_temp("marks/sit"))
-     return notify_fail("ÄãÒÑ¾­×øÏÂÁË¡£\n");   
+     return notify_fail("ä½ å·²ç»åä¸‹äº†ã€‚\n");   
       
       if ( arg != "seat")   
-         return notify_fail("×ø×À×ÓÉÏ£¿Ì«²»ÑÅ¹ÛÁË°É¡£\n");
+         return notify_fail("åæ¡Œå­ä¸Šï¼Ÿå¤ªä¸é›…è§‚äº†å§ã€‚\n");
            
    this_player()->set_temp("marks/sit", 1);
-   message_vision("$NÊæÊæ·ş·şµØÔÚÊ¯µÊÉÏ×øÏÂÀ´£¬ÇÌÆğÁË¶şÀÉÍÈ¡£\n",me);
+   message_vision("$Nèˆ’èˆ’æœæœåœ°åœ¨çŸ³å‡³ä¸Šåä¸‹æ¥ï¼Œç¿˜èµ·äº†äºŒéƒè…¿ã€‚\n",me);
       return 1;   
 }
 
@@ -82,23 +82,23 @@ int do_stand(string arg)
       me=this_player();
 
       if (!this_player()->query_temp("marks/sit"))
-          return notify_fail("Äã±¾À´¾ÍÕ¾×Å¡£\n");
+          return notify_fail("ä½ æœ¬æ¥å°±ç«™ç€ã€‚\n");
 
       this_player()->set_temp("marks/sit", 0);
-      message_vision("$NÉìÁË¸öÀÁÑü£¬Õ¾ÁËÆğÀ´¡£\n", me);
+      message_vision("$Nä¼¸äº†ä¸ªæ‡’è…°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
       return 1;
 }
 
 int do_out(object ob)
 {
         ob = this_player();
-        write(HIB "Äã¿ç³öÀ¸¸ËÍùÍâÒ»Âõ£¬Ò»ÕóÅ¨ÎíÏòÄã¾íÀ´...\n" NOR);
+        write(HIB "ä½ è·¨å‡ºæ æ†å¾€å¤–ä¸€è¿ˆï¼Œä¸€é˜µæµ“é›¾å‘ä½ å·æ¥...\n" NOR);
 
-        message("vision", sprintf(HIB+"%s¿ç³öÀ¸¸ËÍùÍâÒ»Âõ£¬Ò»ÕóÅ¨Îí¾íÀ´...\nÒ»Õ£ÑÛµÄ¹¦·ò%s¾Í²»¼ûÁË¡£\n"+NOR, ob->name(), ob->name()), environment(ob),({ ob }));
-        write(RED "ÄãÑÛÇ°Ò»ÕóºÚ...\n\n\n" NOR);
+        message("vision", sprintf(HIB+"%sè·¨å‡ºæ æ†å¾€å¤–ä¸€è¿ˆï¼Œä¸€é˜µæµ“é›¾å·æ¥...\nä¸€çœ¨çœ¼çš„åŠŸå¤«%så°±ä¸è§äº†ã€‚\n"+NOR, ob->name(), ob->name()), environment(ob),({ ob }));
+        write(RED "ä½ çœ¼å‰ä¸€é˜µé»‘...\n\n\n" NOR);
         ob->move("/d/4world/entrance");
-        write(HIY "\n½ô½Ó×ÅÏ¼¹âÒ»ÉÁ£¬Äã·¢ÏÖ×Ô¼º³öÏÖÔÚÒ»¸öÄ°ÉúµÄµØ·½¡£\n\n" NOR);
-        message("vision", HIY "Ö»Ìı¾ªÌÓÚ¯µØµÄÒ»Éù¾ŞÏì£¬½ô½Ó×ÅÏ¼¹âÍòµÀ£¬ÏÉÊ¯±ÀÁÑ---\n"+"¾ÓÈ»´ÓÀïÃæ±Ä³öÒ»¸öÈËÀ´£¡\n" NOR, environment(ob),  ({ ob }) );
+        write(HIY "\nç´§æ¥ç€éœå…‰ä¸€é—ªï¼Œä½ å‘ç°è‡ªå·±å‡ºç°åœ¨ä¸€ä¸ªé™Œç”Ÿçš„åœ°æ–¹ã€‚\n\n" NOR);
+        message("vision", HIY "åªå¬æƒŠé€ƒè¯åœ°çš„ä¸€å£°å·¨å“ï¼Œç´§æ¥ç€éœå…‰ä¸‡é“ï¼Œä»™çŸ³å´©è£‚---\n"+"å±…ç„¶ä»é‡Œé¢è¹¦å‡ºä¸€ä¸ªäººæ¥ï¼\n" NOR, environment(ob),  ({ ob }) );
         return 1;
 }
 
@@ -108,7 +108,7 @@ int valid_leave(object me, string dir)
    object mbox;
 
    if( mbox = me->query_temp("mbox_ob") ) {
-     tell_object(me, "Äã½«ĞÅÏä½»»Ø¸øÓÊ²î¡£\n");
+     tell_object(me, "ä½ å°†ä¿¡ç®±äº¤å›ç»™é‚®å·®ã€‚\n");
      destruct(mbox);
    }
    return 1;

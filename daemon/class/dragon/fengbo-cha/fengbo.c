@@ -14,23 +14,23 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-    return notify_fail("ÄãÒªÒÔË­Ê©Õ¹ÕâÒ»ÕÐ¡¸ÎÞ¾¡·ç²¨¡¹?\n");
+    return notify_fail("ä½ è¦ä»¥è°æ–½å±•è¿™ä¸€æ‹›ã€Œæ— å°½é£Žæ³¢ã€?\n");
 
     if (!(me->is_fighting()))
-        return notify_fail(HIW"¡¸ÎÞ¾¡·ç²¨¡¹"NOR+"Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail(HIW"ã€Œæ— å°½é£Žæ³¢ã€"NOR+"åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if (!objectp(weapon = me->query_temp("weapon"))
     ||  (string)weapon->query("skill_type") != "fork")
-        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
     skill = me->query_skill("fengbo-cha",1);
     if (skill < 100)
-        return notify_fail("ÄãµÄ·ç²¨Ê®¶þ²æµÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸ÎÞ¾¡·ç²¨¡¹£¡\n");
+        return notify_fail("ä½ çš„é£Žæ³¢åäºŒå‰ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œæ— å°½é£Žæ³¢ã€ï¼\n");
 
     if (me->query("force") < 1000)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸ÎÞ¾¡·ç²¨¡¹£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œæ— å°½é£Žæ³¢ã€ï¼\n");
 
-    msg = HIC "$NÄýÉñ±ÕÏ¢,½«ÊÖÖÐ"+weapon->name()+HIC"ÈÆÁË¼¸È¦,ÃÍµØÏò$nµÄ±øÈÐ¾íÈ¥¡£\n";
+    msg = HIC "$Nå‡ç¥žé—­æ¯,å°†æ‰‹ä¸­"+weapon->name()+HIC"ç»•äº†å‡ åœˆ,çŒ›åœ°å‘$nçš„å…µåˆƒå·åŽ»ã€‚\n";
     message_vision(msg, me, target);
 
     damage = 10 + random(skill / 2);
@@ -45,14 +45,14 @@ int perform(object me, object target)
         // if(userp(me))
         me->add("force",-50);
         if (objectp(weapon2 = target->query_temp("weapon"))) {
-            msg = "$n¶ÙÊ±¾õµÃÊÖ±ÛÒ»Âé£¬ÊÖÖÐ"+weapon2->name()+"ÍÑÊÖ¶ø³ö£¡\n" NOR;
+            msg = "$né¡¿æ—¶è§‰å¾—æ‰‹è‡‚ä¸€éº»ï¼Œæ‰‹ä¸­"+weapon2->name()+"è„±æ‰‹è€Œå‡ºï¼\n" NOR;
             message_vision(msg, me, target);
             weapon2->move(environment(me));
             return 1;
         }
         target->receive_damage("kee", damage);
         target->start_busy(4+random(skill)/20);
-        msg = "Ë­Öª$nÊÖÖÐ¸ù±¾¾ÍÃ»ÓÐÎäÆ÷£¬$N¶ÙÊ±ÆÆÕÀ°Ù³ö£¡\n";
+        msg = "è°çŸ¥$næ‰‹ä¸­æ ¹æœ¬å°±æ²¡æœ‰æ­¦å™¨ï¼Œ$Né¡¿æ—¶ç ´ç»½ç™¾å‡ºï¼\n";
         message_vision(msg, me, target);
         me->start_busy(1);
         return 1;
@@ -60,13 +60,13 @@ int perform(object me, object target)
     else {
         me->add("force",-30);
         if (objectp(weapon2 = target->query_temp("weapon"))){
-            msg = "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬Á¢¿Ì½«ÊÖÖÐ" + weapon2->name()
-                + "ÎèµÃ·çÓê²»Í¸£¬Ê¹$NµÄ¡¸ÎÞ¾¡·ç²¨¡¹Ã»ÓÐÆðµ½×÷ÓÃ¡£\n"NOR;
+            msg = "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œç«‹åˆ»å°†æ‰‹ä¸­" + weapon2->name()
+                + "èˆžå¾—é£Žé›¨ä¸é€ï¼Œä½¿$Nçš„ã€Œæ— å°½é£Žæ³¢ã€æ²¡æœ‰èµ·åˆ°ä½œç”¨ã€‚\n"NOR;
             message_vision(msg, me, target);
             me->start_busy(2);
             return 1;
         }
-        msg = "Ë­Öª$nÊÖÖÐ¸ù±¾¾ÍÃ»ÓÐÎäÆ÷£¬$N¶ÙÊ±ÆÆÕÀ°Ù³ö£¡\n";
+        msg = "è°çŸ¥$næ‰‹ä¸­æ ¹æœ¬å°±æ²¡æœ‰æ­¦å™¨ï¼Œ$Né¡¿æ—¶ç ´ç»½ç™¾å‡ºï¼\n";
         message_vision(msg, me, target);
         me->start_busy(2);
         return 1;

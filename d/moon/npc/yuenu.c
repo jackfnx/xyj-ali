@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //change.c
@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-       set_name("��ū", ({"yue nu", "yuenu", "yue","master"}));
+       set_name("月奴", ({"yue nu", "yuenu", "yue","master"}));
        set("long",
-"�����ǹ��������֮�������ɣ�����϶�Ϊʦ��\n");
-       set("title", "����");
-       set("gender", "Ů��");
+"她乃是桂树采天地之精华化成，后拜嫦娥为师．\n");
+       set("title", "桂花仙");
+       set("gender", "女性");
        set("age", 20);
        set("class", "xian");
        set("attitude", "friendly");
-       set("rank_info/respect", "�ɹ�");
+       set("rank_info/respect", "仙姑");
        set("per", 30);
    set("int", 30);
        set("max_kee", 500);
@@ -50,7 +50,7 @@ void create()
         map_skill("parry", "snowsword");
         map_skill("dodge", "moondance");
 
-create_family("�¹�", 3, "����");
+create_family("月宫", 3, "弟子");
 setup();
 
         carry_object("/d/moon/obj/luoyi")->wear();
@@ -59,16 +59,16 @@ setup();
 
 void attempt_apprentice(object ob)
 {
-        if ( !((string)ob->query("gender")=="Ů��")){
+        if ( !((string)ob->query("gender")=="女性")){
            command("shake");
-           command("say �����¹�ֻ��Ůͽ����λ" +
-RANK_D->query_respect(ob) + "��������߾Ͱɡ�\n");
+           command("say 我们月宫只收女徒，这位" +
+RANK_D->query_respect(ob) + "还是另请高就吧。\n");
            return;
         }
 
         command("pat "+ob->query("id"));
-        command("say �ã�ϣ��" + RANK_D->query_respect(ob) +
-"���Ŭ�����������¹�������\n");
+        command("say 好，希望" + RANK_D->query_respect(ob) +
+"多加努力，把我们月宫发扬光大。\n");
         command("recruit " + ob->query("id") );
         return;
 }

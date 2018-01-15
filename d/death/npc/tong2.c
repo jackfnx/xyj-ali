@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("»ÆÒÂÍ¯×Ó", ({"tongzi"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("é»„è¡£ç«¥å­", ({"tongzi"}));
+       set("gender", "ç”·æ€§");
        set("age", 15);
        set("attitude", "peaceful");
        set("shen_type", 1);

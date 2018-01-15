@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // changqiang.c
@@ -9,17 +9,17 @@ inherit SPEAR;
 
 void create()
 {
-   set_name("³¤Ç¹", ({ "chang qiang","qiang","changqiang" }) );
+   set_name("é•¿æª", ({ "chang qiang","qiang","changqiang" }) );
    set_weight(5000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¸Ë");
+     set("unit", "æ†");
      set("value", 1000);
      set("material", "wood");
-     set("long", "Ò»¸Ë³¤Ç¹¡£\n");
-     set("wield_msg", "$N³­ÆğÒ»¸Ë$n£¬Ë³ÊÖ¶¶ÁË¸öÇ¹»¨¡£\n");
-   //   set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+     set("long", "ä¸€æ†é•¿æªã€‚\n");
+     set("wield_msg", "$NæŠ„èµ·ä¸€æ†$nï¼Œé¡ºæ‰‹æŠ–äº†ä¸ªæªèŠ±ã€‚\n");
+   //   set("unwield_msg", "$Nå“¼äº†ä¸€å£°ï¼Œå°†$næ’å›åè…°ã€‚\n");
    }
    init_spear(30);
    setup();

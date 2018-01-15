@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name("¹ÒÌº", ({"gua tan", "guatan", "rug"}));
+  set_name("æŒ‚æ¯¯", ({"gua tan", "guatan", "rug"}));
   set_weight(8000);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»¼ş¹ÒÌº¡£\n");
+    set("long", "ä¸€ä»¶æŒ‚æ¯¯ã€‚\n");
     set("material", "cloth");
-    set("unit", "¼ş");
+    set("unit", "ä»¶");
     set("value", 700);
   }
   setup();

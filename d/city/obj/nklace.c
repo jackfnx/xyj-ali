@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// nklace.c ½ğÏîÁ´
+// nklace.c é‡‘é¡¹é“¾
 
 #include <armor.h>
 
@@ -9,15 +9,15 @@ inherit NECK;
 
 void create()
 {
-   set_name("¡°½ğ¡±ÏîÁ´", ({ "xiang lian", "necklace" }));
+   set_name("â€œé‡‘â€é¡¹é“¾", ({ "xiang lian", "necklace" }));
 
    set("weight", 500);
-   set("long", "Ò»´®½ğ²Ó²ÓµÄÏîÁ´£¬ÊÇ³¤°²³ÇµÄÉÙÅ®Ï²°®µÄÊÎÎï¡£\n"
-     "µ«×ĞÏ¸¿´¿´×Ü¾õµÃÕâ¸ö½ğÉ«ÓĞµã²»¶Ô¾¢¡£\n");
+   set("long", "ä¸€ä¸²é‡‘ç¿ç¿çš„é¡¹é“¾ï¼Œæ˜¯é•¿å®‰åŸçš„å°‘å¥³å–œçˆ±çš„é¥°ç‰©ã€‚\n"
+     "ä½†ä»”ç»†çœ‹çœ‹æ€»è§‰å¾—è¿™ä¸ªé‡‘è‰²æœ‰ç‚¹ä¸å¯¹åŠ²ã€‚\n");
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("unit", "´®");
+     set("unit", "ä¸²");
      set("value", 500);
      set("material", "gold");
      set("armor_prop/armor", 1);

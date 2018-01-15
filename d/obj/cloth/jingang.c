@@ -7,12 +7,12 @@ inherit WRISTS;
 
 void create()
 {
-    set_name(HIR "½ğ¸ÕÈ­Ì×" NOR, ({ "wrists" }));
+    set_name(HIR "é‡‘åˆšæ‹³å¥—" NOR, ({ "wrists" }));
     set_weight(800);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "Ö»");
+        set("unit", "åª");
         set("material", "copper");
         set("value", 100);
         set("armor_prop/armor", 2);

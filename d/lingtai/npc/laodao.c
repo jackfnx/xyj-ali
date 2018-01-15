@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // worker.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏµÀÊ¿", ({"laodao"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("è€é“å£«", ({"laodao"}));
+        set("gender", "ç”·æ€§" );
         set("age", 73);
-        set("long", "Ò»Î»ÀÏµÀÊ¿£¬Ã¼Ã«ºÍºú×Ó¶¼°×ÁË£®\n");
+        set("long", "ä¸€ä½è€é“å£«ï¼Œçœ‰æ¯›å’Œèƒ¡å­éƒ½ç™½äº†ï¼\n");
         set("combat_exp", 20000);
         set("attitude", "peaceful");
         set_skill("unarmed", 30);
@@ -40,8 +40,8 @@ int accept_object(object me,object ob)
         who=this_player();
 
         if (ob->query("id")=="songguo"
-   && who->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
-write("ÀÏµÀÊ¿¸ßĞËµÄºú×Ó¶¼ÇÌÆğÀ´ÁË£¬Ëµ£ºÕâ¿ÉÊÇºÃ¶«Î÷Ñ½£¡\n");
+   && who->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
+write("è€é“å£«é«˜å…´çš„èƒ¡å­éƒ½ç¿˜èµ·æ¥äº†ï¼Œè¯´ï¼šè¿™å¯æ˜¯å¥½ä¸œè¥¿å‘€ï¼\n");
                 command("give piece to " + who->query("id"));
                 call_out("destroy", 1, ob);
      return 1;

@@ -1,20 +1,20 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // uphill3.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "��ʯϪ");
+  set ("short", "白石溪");
   set ("long", @LONG
 
-����������һ�Σ�ɽ·������ô�����ˡ�·�Ի�������һ��
-СϪ��СϪ���Ϫˮ�峹���ס�Ϫ�е�С��������ȥ������
-���Ӳ��д����������ɵĽ�����ż����ֻС��ɹ�����������
-��Ȫ�����������֡�
+又往上走了一段，山路好象不那么陡峭了。路旁还出现了一条
+小溪。小溪不深，溪水清彻见底。溪中的小鱼游来游去，岸边
+的杂草中传来青蛙呱呱的叫声。偶尔几只小鸟飞过，鸟啼配着
+清泉叮当宛如仙乐。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "northeast" : __DIR__"uphill4",
@@ -30,7 +30,7 @@ set("exits", ([ /* sizeof() == 4 */
 int valid_leave (object me, string dir)
 {
         if (dir == "northwest"){
-                message_vision ("$N������ȣ�������СϪ�С�\n",me);
+                message_vision ("$N挽起裤腿，跳到了小溪中。\n",me);
         }
   return 1;
 }

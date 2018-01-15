@@ -5,17 +5,17 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "±ùÑÂµ×");
+   set ("short", "å†°å´–åº•");
    set ("long", @LONG
 
-ÕâÀïÊÇ±ùÑÂµ×ÏÂ¡£±ù¹ÈÖĞ±ğµÄµØ·½»ù±¾ÉÏ´ç²İ²»Éú¡£ÕâÀïÈ´´Ó±ù
-·ìÖĞ×ê³ö¼¸ÖêĞ¡²İ(xiaocao)£¬ÕâÖÖ²İÒ¶¼âÔ²Èó£¬É«ÔóÓÄÀ¶£¬¿´Æğ
-À´²»ÏóÄÜÔÚÕâ¾øµØ¿áº®ÖĞÉú³¤µÄÑù×Ó¡£ÔÙÍù¶«È¥¿ÉÒÔ¼ûµ½Ò»×ù²»
-´óµÄĞ¡Ä¾·¿¡£±±ÃæÔò¼û±ù¹¬ÔÚ±ùÑ©Ó³ÕÕÏÂŞÈŞÈÉú¹â¡£
+è¿™é‡Œæ˜¯å†°å´–åº•ä¸‹ã€‚å†°è°·ä¸­åˆ«çš„åœ°æ–¹åŸºæœ¬ä¸Šå¯¸è‰ä¸ç”Ÿã€‚è¿™é‡Œå´ä»å†°
+ç¼ä¸­é’»å‡ºå‡ æ ªå°è‰(xiaocao)ï¼Œè¿™ç§è‰å¶å°–åœ†æ¶¦ï¼Œè‰²æ³½å¹½è“ï¼Œçœ‹èµ·
+æ¥ä¸è±¡èƒ½åœ¨è¿™ç»åœ°é…·å¯’ä¸­ç”Ÿé•¿çš„æ ·å­ã€‚å†å¾€ä¸œå»å¯ä»¥è§åˆ°ä¸€åº§ä¸
+å¤§çš„å°æœ¨æˆ¿ã€‚åŒ—é¢åˆ™è§å†°å®«åœ¨å†°é›ªæ˜ ç…§ä¸‹å¥•å¥•ç”Ÿå…‰ã€‚
 LONG);
 
    set("item_desc", ([
-        "xiaocao" : "ÕâÖÖ²İÒ¶¼âÔ²Èó£¬É«ÔóÓÄÀ¶£¬µÄÈ·ºÃ¿´¡£ \n",
+        "xiaocao" : "è¿™ç§è‰å¶å°–åœ†æ¶¦ï¼Œè‰²æ³½å¹½è“ï¼Œçš„ç¡®å¥½çœ‹ã€‚ \n",
    ]));
 
    set("exits", ([ //sizeof() == 4
@@ -46,18 +46,18 @@ int do_dig(string arg)
    
    me=this_player();
 
-   if( (!arg) || (arg != "xiao cao" && arg != "xiaocao" && arg != "cao" && arg !="Ğ¡²İ") )
-     return notify_fail("ÄãÒªÍÚÊ²Ã´£¿\n");
+   if( (!arg) || (arg != "xiao cao" && arg != "xiaocao" && arg != "cao" && arg !="å°è‰") )
+     return notify_fail("ä½ è¦æŒ–ä»€ä¹ˆï¼Ÿ\n");
 
    if( !(ob = me->query_temp("weapon")) || ( (string)ob->query("skill_type")!="axe" && (string)ob->query("skill_type")!="blade" && (string)ob->query("skill_type")!="sword" ) ) 
-     return notify_fail("µÃÕÒ¸öºÃ¹¤¾ß°É¡£\n");
+     return notify_fail("å¾—æ‰¾ä¸ªå¥½å·¥å…·å§ã€‚\n");
 
    if (query("no_xiaocao"))
-     return notify_fail("Ã»¼¸¿ÃÁË£¬ÔÙÍÚ¿×È¸¹«Ö÷·ÇÔ×ÁËÄã²»¿É¡£\n");
+     return notify_fail("æ²¡å‡ æ£µäº†ï¼Œå†æŒ–å­”é›€å…¬ä¸»éå®°äº†ä½ ä¸å¯ã€‚\n");
 
    ob=new(__DIR__"obj/xiaocao");
            ob->move(me);
-   message_vision("$NÍÚ³öÒ»¿ÅÀ¶É«Ğ¡²İ£¬Ğ¡ĞÄÒíÒíµØ²Øµ½ÁË»³Àï¡£\n", me);
+   message_vision("$NæŒ–å‡ºä¸€é¢—è“è‰²å°è‰ï¼Œå°å¿ƒç¿¼ç¿¼åœ°è—åˆ°äº†æ€€é‡Œã€‚\n", me);
    set("no_xiaocao", 1);
    call_out("regenerate", 300);
    return 1;

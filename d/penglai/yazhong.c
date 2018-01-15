@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÇàÊ¯Ì¨");
+  set ("short", "é’çŸ³å°");
   set ("long", @LONG
 
-ÅîÀ³µºÉÏ·ç¹âĞãÀö£¬µ±ÕæÊÇºÃÈ¥´¦£¡¸ßÑÂÉÏÊÓÒ°¿ªÀ«£¬ÖÜÎ§¾°É«
-¿´µÄÇåÇå³ş³ş¡£Ê¯ÑÂ²»Öª»¹ÓĞ¶à¸ß£¬ÒşÔÚÔÆÖĞ²»¼û¶ËÄß£¬ÏÂÃæÔÆ
-ÎíÈÆÈÆ£¬Ò²²»ÖªÓĞ¶à¸ßÁË¡£
+è“¬è±å²›ä¸Šé£å…‰ç§€ä¸½ï¼Œå½“çœŸæ˜¯å¥½å»å¤„ï¼é«˜å´–ä¸Šè§†é‡å¼€é˜”ï¼Œå‘¨å›´æ™¯è‰²
+çœ‹çš„æ¸…æ¸…æ¥šæ¥šã€‚çŸ³å´–ä¸çŸ¥è¿˜æœ‰å¤šé«˜ï¼Œéšåœ¨äº‘ä¸­ä¸è§ç«¯å€ªï¼Œä¸‹é¢äº‘
+é›¾ç»•ç»•ï¼Œä¹Ÿä¸çŸ¥æœ‰å¤šé«˜äº†ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 3 */
 //  "south" : __DIR__"road1",
@@ -30,12 +30,12 @@ int do_climb(string arg)
 {
    object me=this_player();
    
-   if( !arg || (arg!="¸ßÑÂ" && arg!="ĞüÑÂ" && arg!="cliff") )
-     return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+   if( !arg || (arg!="é«˜å´–" && arg!="æ‚¬å´–" && arg!="cliff") )
+     return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
    if( me->is_busy())
-     return notify_fail("ÄãÏÖÔÚºÜÃ¦£¬ÅÀÊ²Ã´Ñ½£¡\n");
+     return notify_fail("ä½ ç°åœ¨å¾ˆå¿™ï¼Œçˆ¬ä»€ä¹ˆå‘€ï¼\n");
    
-   message_vision("$N´êÁË´êÊÖ£¬°Ç×ÅÊ¯Í·µÄ·ìÏ¶ÏòÑÂÉÏÅÀÈ¥¡£¡£¡£\n", me);
+   message_vision("$Næ“äº†æ“æ‰‹ï¼Œæ‰’ç€çŸ³å¤´çš„ç¼éš™å‘å´–ä¸Šçˆ¬å»ã€‚ã€‚ã€‚\n", me);
    me->start_busy(3);
 
    if( (int)me->query("kee") < 500 || (int)me->query("sen") < 500) {
@@ -58,17 +58,17 @@ int do_climb(string arg)
 }
 int success(object me)
 {
-   message_vision("$NÔ½ÅÀÔ½¸ß£¬½¥½¥ÒşÈëÁËÔÆÖĞ¡£¡£¡£\n", me);
+   message_vision("$Nè¶Šçˆ¬è¶Šé«˜ï¼Œæ¸æ¸éšå…¥äº†äº‘ä¸­ã€‚ã€‚ã€‚\n", me);
    me->move("/d/penglai/yashang");
    me->receive_damage("kee", 400);
    me->receive_damage("sen", 400);
-   message_vision("$NÂıÂıµÄÅÀÁËÉÏÀ´¡£\n", me);
+   message_vision("$Næ…¢æ…¢çš„çˆ¬äº†ä¸Šæ¥ã€‚\n", me);
    return 1;
 }
 int faila(object me)
 {
-   tell_object(me, "ÄãÊÖÉÏÒ»¸ö²»ÎÈ£¬´ÓÑÂÉÏµôÁËÏÂÀ´¡£¡£¡£\n");
-   tell_room(environment(me), me->name()+"»ÎÓÆÓÆµÄ´ÓÑÂÉÏµôÁËÏÂÀ´¡£\n", ({me, me}));
+   tell_object(me, "ä½ æ‰‹ä¸Šä¸€ä¸ªä¸ç¨³ï¼Œä»å´–ä¸Šæ‰äº†ä¸‹æ¥ã€‚ã€‚ã€‚\n");
+   tell_room(environment(me), me->name()+"æ™ƒæ‚ æ‚ çš„ä»å´–ä¸Šæ‰äº†ä¸‹æ¥ã€‚\n", ({me, me}));
    me->unconcious();
    
    return 1;

@@ -12,11 +12,11 @@ int cast(object me, object target)
     object guard;
 
     if (!target || !target->query("is_skeleton"))
-        return notify_fail("ÄãÒªÇı¶¯ÄÄÒ»¾ß÷¼÷Ã£¿\n");
+        return notify_fail("ä½ è¦é©±åŠ¨å“ªä¸€å…·éª·é«…ï¼Ÿ\n");
     if ((int)me->query("mana") < 200)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query_skill("necromancy", 1) < 20)
-        return notify_fail("ÄãµÄ¹´»êÊõµÈ¼¶»¹²»¹»¡£\n");
+        return notify_fail("ä½ çš„å‹¾é­‚æœ¯ç­‰çº§è¿˜ä¸å¤Ÿã€‚\n");
 
     me->add("mana", -50);
 
@@ -34,14 +34,14 @@ int add_skeleton(object me, object target)
 {
     object guard;
 
-    message_vision("$N¶Ô×ÅµØÏÂµÄ$nÄîÁË¼¸¾äÖäÓï¡£\n", me, target);
+    message_vision("$Nå¯¹ç€åœ°ä¸‹çš„$nå¿µäº†å‡ å¥å’’è¯­ã€‚\n", me, target);
 
     seteuid(getuid());
     guard = new("/obj/npc/skeleton");
     guard->move(environment(me));
     guard->invocation(me);
 
-    message_vision("$N¾¹Ò¡Ò¡»Î»ÎµØÕ¾ÁËÆğÀ´¡£\n", target);
+    message_vision("$Nç«Ÿæ‘‡æ‘‡æ™ƒæ™ƒåœ°ç«™äº†èµ·æ¥ã€‚\n", target);
 
     me->set_temp("necromancy", guard);
     destruct(target);
@@ -59,7 +59,7 @@ int check_skeleton(object me, object target, object guard)
         add_status(me, guard, target, n);
         return 1;
     }
-    tell_object(me, "ÄãµÄ¹´»êÊõµÈ¼¶²»¹»£¬Ã»·¨¿ØÖÆ¸ü¶àµÄ÷¼÷Ã±ø¡£\n");
+    tell_object(me, "ä½ çš„å‹¾é­‚æœ¯ç­‰çº§ä¸å¤Ÿï¼Œæ²¡æ³•æ§åˆ¶æ›´å¤šçš„éª·é«…å…µã€‚\n");
     return 1;
 }
 
@@ -76,7 +76,7 @@ int add_status(object me, object guard, object target, int n)
     guard->add("eff_sen", 200);
     guard->add("kee", 200);
 
-    message_vision("$N¾¹Ò¡Ò¡»Î»ÎµØÕ¾ÁËÆğÀ´¡£\n", target);
+    message_vision("$Nç«Ÿæ‘‡æ‘‡æ™ƒæ™ƒåœ°ç«™äº†èµ·æ¥ã€‚\n", target);
 
     guard->reset_status();
     destruct(target);

@@ -1,15 +1,15 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create()
 {
-  set ("short", "ũ��");
+  set ("short", "农舍");
   set ("long", @LONG
 
-һ�������ũ�ᣬ��ɨ�ĸɸɾ������������������ȵ���λ������
-���м�����������ˮ����ǽ�Ƕ��Ÿ��ֹϹ��߲ˣ�����ֱ����ˮ��
+一间宽敞的农舍，打扫的干干净净。屋里正中是祖先的牌位，供案
+上有几乎盘蜡做的水果。墙角堆着各种瓜果蔬菜，让你直流口水。
 LONG);
 
 set("exits", ([ /* sizeof() == 4 */

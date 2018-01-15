@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat jan 21 1998
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÈýÐÄ¹¬");
+  set ("short", "ä¸‰å¿ƒå®«");
   set ("long", @LONG
 
-ÈýÐÄ¹¬ÀïÃæ¹©×ÅÒ»¸öÇàÓñ´ó°¸£¬ÉÏÃæÓÐÇàÍ­ÏãÂ¯£¬ÀïÃæ²å×ÅÏãÕýÃ°×Å
-ôÁôÁµÄÇàÑÌ¡£¹¬µÄ¶«Î÷Á½±ß¶¼»æ×Å¸÷ÖÖÉñÏñ£¬±±±ßÍ¨ÏòÈý¸ö²»Í¬µÄ¹¬
-µî£¬ÄÏ±ßÊÇ³ö¿Ú¡£
+ä¸‰å¿ƒå®«é‡Œé¢ä¾›ç€ä¸€ä¸ªé’çŽ‰å¤§æ¡ˆï¼Œä¸Šé¢æœ‰é’é“œé¦™ç‚‰ï¼Œé‡Œé¢æ’ç€é¦™æ­£å†’ç€
+è¢…è¢…çš„é’çƒŸã€‚å®«çš„ä¸œè¥¿ä¸¤è¾¹éƒ½ç»˜ç€å„ç§ç¥žåƒï¼ŒåŒ—è¾¹é€šå‘ä¸‰ä¸ªä¸åŒçš„å®«
+æ®¿ï¼Œå—è¾¹æ˜¯å‡ºå£ã€‚
 
 LONG);
 
@@ -49,6 +49,6 @@ void init ()
 void feeling (object who)
 {
   who->interrupt_me();
-  message_vision ("$N×ß½øÈýÐÄ¹¬£¬ºô³öÒ»¿ÚÆø£¬¶ÙÊ±ÐÄ¾³Ã÷ÀÊÈç¾µ¡£\n",who);
+  message_vision ("$Nèµ°è¿›ä¸‰å¿ƒå®«ï¼Œå‘¼å‡ºä¸€å£æ°”ï¼Œé¡¿æ—¶å¿ƒå¢ƒæ˜Žæœ—å¦‚é•œã€‚\n",who);
 }
 

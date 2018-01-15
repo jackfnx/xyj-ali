@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit BLADE;
 
 void create()
 {
-        set_name("½ğµ¶", ({"jin dao", "dao"}));
+        set_name("é‡‘åˆ€", ({"jin dao", "dao"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ½ğ¹âÉÁÉÁµÄÔ²Í·³¤µ¶£¬µ¶°ÑÉÏÏâÇ¶ÓĞ°×Óñ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠé‡‘å…‰é—ªé—ªçš„åœ†å¤´é•¿åˆ€ï¼Œåˆ€æŠŠä¸Šé•¶åµŒæœ‰ç™½ç‰ã€‚\n");
                 set("value", 2500);
                 set("material", "gold");
-                set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬½ğ¹âÉÁÉÁ£¡\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈë½ğÉ«µ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œé‡‘å…‰é—ªé—ªï¼\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥é‡‘è‰²åˆ€é˜ã€‚\n");
         set("weapon_prop/courage", 15);
 
         }

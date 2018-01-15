@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("ÑÌÀï»ğ±È¼×", ({"smoky armor","jia","armor"}));
+        set_name("çƒŸé‡Œç«æ¯”ç”²", ({"smoky armor","jia","armor"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-            set("long", "Ò»¼şÅ®×Ó´©µÄºìÉ«Èí¼×¡£\n");
+                set("unit", "ä»¶");
+            set("long", "ä¸€ä»¶å¥³å­ç©¿çš„çº¢è‰²è½¯ç”²ã€‚\n");
                 set("value", 8000);
                 set("material", "wood");
                 set("armor_prop/armor", 25);

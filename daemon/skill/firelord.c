@@ -2,21 +2,21 @@
 
 inherit FORCE;
 
-string name() { return "»ğÄ§ĞÄ·¨"; }
+string name() { return "ç«é­”å¿ƒæ³•"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 
 int valid_learn(object me) 
 { 
     if ((int)me->query("bellicosity") < (int)me->query_skill("firelord", 1) * 2)
-        return notify_fail("ÄãµÄÉ±ÆøÌ«µÍ£¬Áì»á²»µ½¸üÉî²ãµÄ»ğÄ§ĞÄ·¨¡£\n");
+        return notify_fail("ä½ çš„æ€æ°”å¤ªä½ï¼Œé¢†ä¼šä¸åˆ°æ›´æ·±å±‚çš„ç«é­”å¿ƒæ³•ã€‚\n");
 
     return 1;
 }
 
 int practice_skill(object me)
 {
-    return notify_fail("»ğÄ§ĞÄ·¨Ö»ÄÜÓÃÑ§µÄ£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+    return notify_fail("ç«é­”å¿ƒæ³•åªèƒ½ç”¨å­¦çš„ï¼Œæˆ–æ˜¯ä»è¿ç”¨(exert)ä¸­å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

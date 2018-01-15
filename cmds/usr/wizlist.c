@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // wlist.c
@@ -9,7 +9,7 @@ int main(object me, string arg)
 {
    string *list;
 
-   write(MUD_NAME + "Ŀǰ����ʦ(��������ʦ���������)�У�\n");
+   write(MUD_NAME + "目前的巫师(含客座巫师及荣誉玩家)有：\n");
    list = sort_array(SECURITY_D->query_wizlist(), 1);
    for(int i=0; i<sizeof(list); i++)
      printf("%-15s%c", list[i],  (i%5==4) ? '\n' : ' ');
@@ -20,9 +20,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : wlist
+指令格式 : wlist
 
-��; : �г�Ŀǰ���е���ʦ����(��������ʦ)��
+用途 : 列出目前所有的巫师名单(含客座巫师)。
 HELP
      );
      return 1;

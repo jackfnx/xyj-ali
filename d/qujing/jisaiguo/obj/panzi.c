@@ -1,11 +1,11 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 
 void create()
 {
-        set_name("²£Á§ÅÌ×Ó", ({ "panzi" }) );
+        set_name("ç»ç’ƒç›˜å­", ({ "panzi" }) );
         set_weight(500);
         set_max_encumbrance(500);
         set_max_items(2);
@@ -28,8 +28,8 @@ void create()
      } 
                 set_default_object(__FILE__);
       }  else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¿Ú²£Á§ÅÌ×Ó¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€å£ç»ç’ƒç›˜å­ã€‚\n");
      set("value", 0);
         }
 }

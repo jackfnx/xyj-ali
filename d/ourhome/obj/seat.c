@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -10,13 +10,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ê¯µÊ", ({ "seat" }));
+        set_name("çŸ³å‡³", ({ "seat" }));
         set_weight(20000);
-   set("long", "ÕâÊÇÕÅ´óÀíÊ¯ÖÆµÄµÊ×Ó¡£\n" );
+   set("long", "è¿™æ˜¯å¼ å¤§ç†çŸ³åˆ¶çš„å‡³å­ã€‚\n" );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
                 set("material", "stone");
      set("value", 2000);
                 set("no_get", 1);

@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// xingzhe.c ÓÎ·½ÐÐÕß
+// xingzhe.c æ¸¸æ–¹è¡Œè€…
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-    set_name("ÓÎ·½ÐÐÕß", ({ "xingzhe" }));
-    set("gender", "ÄÐÐÔ");
+    set_name("æ¸¸æ–¹è¡Œè€…", ({ "xingzhe" }));
+    set("gender", "ç”·æ€§");
     set("age", 40);
     set("attitude", "peaceful");
     set("class", "bonze");
@@ -50,7 +50,7 @@ void create()
 //     (: cast_spell, "thunder" :),
 //   }) );
 
-    create_family("ÄÏº£ÆÕÍÓÉ½", 3, "µÜ×Ó");
+    create_family("å—æµ·æ™®é™€å±±", 3, "å¼Ÿå­");
 
     setup();
     carry_object("/obj/money/gold");
@@ -61,7 +61,7 @@ void create()
 void attempt_apprentice(object ob)
 {
     command("smile");
-    command("say ºÜºÃ£¬Æ¶É®¾ÍÊÕÏÂÄã£¬Ï£ÍûÄã¶à¼ÓÅ¬Á¦£¬Ôç³ÉÕý¹û¡£\n");
+    command("say å¾ˆå¥½ï¼Œè´«åƒ§å°±æ”¶ä¸‹ä½ ï¼Œå¸Œæœ›ä½ å¤šåŠ åŠªåŠ›ï¼Œæ—©æˆæ­£æžœã€‚\n");
 
     command("recruit " + ob->query("id") );
     return;

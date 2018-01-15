@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "柏林");
   set ("long", @LONG
 
-����֮�йŰ�ɭɭ����ȥ��ľ���а���֮�䣬ֱͦ�޳�����Ƥ��
-�з�˪ż�֣�֦Ҷ�ϵ������ܡ���ľ���������ܵ����ϣ���֮��
-������һ����
+柏林之中古柏森森，望去树木皆有百年之龄，挺直修长。树皮上
+有风霜偶现，枝叶上淡挂绿萝。树木紧列如密密的屏障，林之深
+处不可一见。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

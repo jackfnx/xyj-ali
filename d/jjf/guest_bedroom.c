@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/guest_bedroom.c
@@ -8,20 +8,20 @@
 inherit ROOM;
 void create ()
 {
-  set ("short", "¿Í·¿");
+  set ("short", "å®¢æˆ¿");
   set ("long", @LONG
 
-½«¾ü¸®°ÑËûÃÇµÄÀ´¿ÍÕĞ´ıµÄÖÜµ½ÎŞ±È£¬°Ñ¿î´ı¿ÍÈËµÄ·¿¼ä²¼ÖÃµÄ·Ç³£
-ÊæÊÊ¡£ºìÄ¾×ÀÉÏÆãÁËÒ»ºøºÃ²è£¬°Ú×Å¼¸ÅÌµãĞÄ¡£Îİ½ÇÏãÂ¯Àï´«À´Ò»
-ÕóÕóÇåÏã¡£Ò»ÕÅ¿í´óÈáÈíµÄ´²ÉÏÆÌ×Å±»Èì£¬ÈÃÈË²»¾õ»è»èÓûË¯¡£
+å°†å†›åºœæŠŠä»–ä»¬çš„æ¥å®¢æ‹›å¾…çš„å‘¨åˆ°æ— æ¯”ï¼ŒæŠŠæ¬¾å¾…å®¢äººçš„æˆ¿é—´å¸ƒç½®çš„éå¸¸
+èˆ’é€‚ã€‚çº¢æœ¨æ¡Œä¸Šæ²äº†ä¸€å£¶å¥½èŒ¶ï¼Œæ‘†ç€å‡ ç›˜ç‚¹å¿ƒã€‚å±‹è§’é¦™ç‚‰é‡Œä¼ æ¥ä¸€
+é˜µé˜µæ¸…é¦™ã€‚ä¸€å¼ å®½å¤§æŸ”è½¯çš„åºŠä¸Šé“ºç€è¢«è¤¥ï¼Œè®©äººä¸è§‰æ˜æ˜æ¬²ç¡ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 1 */
-  "ºìÄ¾×À" : "
-×À×ÓÉÏ°Ú×Å·áÊ¢µÄ²ËëÈºÍ±ÌÂÌµÄ²èË®¡£Äã²»ÓÉµÃÏë×øÏÂÈ¥³Ô(chi)Ò»¶Ù¡£
+  "çº¢æœ¨æ¡Œ" : "
+æ¡Œå­ä¸Šæ‘†ç€ä¸°ç››çš„èœè‚´å’Œç¢§ç»¿çš„èŒ¶æ°´ã€‚ä½ ä¸ç”±å¾—æƒ³åä¸‹å»åƒ(chi)ä¸€é¡¿ã€‚
 ",
   "table" : "
-×À×ÓÉÏ°Ú×Å·áÊ¢µÄ²ËëÈºÍ±ÌÂÌµÄ²èË®¡£Äã²»ÓÉµÃÏë×øÏÂÈ¥³Ô(chi)Ò»¶Ù¡£
+æ¡Œå­ä¸Šæ‘†ç€ä¸°ç››çš„èœè‚´å’Œç¢§ç»¿çš„èŒ¶æ°´ã€‚ä½ ä¸ç”±å¾—æƒ³åä¸‹å»åƒ(chi)ä¸€é¡¿ã€‚
 ",
 ]));
   set("resource", ([
@@ -55,7 +55,7 @@ int do_get(string arg)
     object ob;
     string thing, person;
 
-    if(!arg) return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+    if(!arg) return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
     sscanf(arg, "%s from %s", thing, person);
     if (!person) person=arg;
     if( present("xiao tong", this_object())
@@ -63,7 +63,7 @@ int do_get(string arg)
     {
    if(userp(ob))
    {
-       message_vision(CYN"Ğ¡Í¯¶Ô$NºÈµÀ£º²»µÃÎŞÀí£¡$nÄË±¾¸®¹ó¿Í£¡\n"NOR, this_player(), ob);
+       message_vision(CYN"å°ç«¥å¯¹$Nå–é“ï¼šä¸å¾—æ— ç†ï¼$nä¹ƒæœ¬åºœè´µå®¢ï¼\n"NOR, this_player(), ob);
        return 1;
    }
     }
@@ -76,10 +76,10 @@ int do_sleep(string arg)
   int mypot, mylearned;
   int pot;
 
-  if (me->query("family/family_name") != "½«¾ü¸®"
+  if (me->query("family/family_name") != "å°†å†›åºœ"
   &&  present("xiao tong", this_object()))
   {
-   tell_object(me, CYN"Ğ¡Í¯ºÈµÀ£ºÄãÊÇÕâÀïµÄ¿ÍÈËÂï£¿\n"NOR);
+   tell_object(me, CYN"å°ç«¥å–é“ï¼šä½ æ˜¯è¿™é‡Œçš„å®¢äººå˜›ï¼Ÿ\n"NOR);
    return 1;
   }
   if (me->query("family/master_id") == "cheng yaojin"
@@ -90,8 +90,8 @@ int do_sleep(string arg)
     pot=mypot-mylearned;
     if (random(pot+me->query_kar()) > 50)
     {
-   tell_object(me, "ÄãÍù±»ÖĞÒ»×ê£¬¿ªÊ¼Ë¯¾õ¡£\n");
-        tell_object(me, "»Ğã±µØ£¬ÄãËÆºõ¾õµÃ×Ô¼ºµ½ÁËÁíÒ»¸öµØ·½¡£\n");
+   tell_object(me, "ä½ å¾€è¢«ä¸­ä¸€é’»ï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+        tell_object(me, "ææƒšåœ°ï¼Œä½ ä¼¼ä¹è§‰å¾—è‡ªå·±åˆ°äº†å¦ä¸€ä¸ªåœ°æ–¹ã€‚\n");
    me->set("kee", me->query("eff_kee"));
    me->set("sen", me->query("eff_sen"));
    me->set("force", me->query("max_force"));
@@ -107,10 +107,10 @@ int do_chi(string arg)
   object me=this_player(), ob;
   int kar=me->query_kar(me);
 
-  if(me->query("family/family_name") != "½«¾ü¸®"
+  if(me->query("family/family_name") != "å°†å†›åºœ"
   && present("xiao tong", this_object()))
-   return notify_fail(CYN"Ğ¡Í¯ºÈµÀ£ºÄãÊÇ½«¾ü¸®µÄ¿ÍÈËÂï£¿\n"NOR);
-  message_vision( "$N×øÁËÏÂÀ´£¬Ò»¿Ú²ËÒ»¿Ú²è£¬Ã»¶à»á¶ù¾Í³ÔµÃĞÄÂúÒâ×ãÁË¡£\n", me);
+   return notify_fail(CYN"å°ç«¥å–é“ï¼šä½ æ˜¯å°†å†›åºœçš„å®¢äººå˜›ï¼Ÿ\n"NOR);
+  message_vision( "$Nåäº†ä¸‹æ¥ï¼Œä¸€å£èœä¸€å£èŒ¶ï¼Œæ²¡å¤šä¼šå„¿å°±åƒå¾—å¿ƒæ»¡æ„è¶³äº†ã€‚\n", me);
   me->set("water", me->max_water_capacity());
   me->set("food", me->max_food_capacity());
   me->start_busy(random(31-kar));

@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// dingshen.c ¶¨Éí·¨
+// dingshen.c å®šèº«æ³•
 #include <ansi.h>
 
 inherit F_SSERVER;
@@ -16,29 +16,29 @@ int cast(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if((int)me->query_skill("spells") < 100)
-                return notify_fail("Äã»¹Ã»Ñ§»áÑ©Îè·çÁé¡£\n");
+                return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šé›ªèˆé£çµã€‚\n");
 
         if( !target
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÏë°ÑË­¶¨×¡£¿\n");
+                return notify_fail("ä½ æƒ³æŠŠè°å®šä½ï¼Ÿ\n");
 
         if(target->query_temp("no_move"))
-                return notify_fail(target->query("name")+"ÒÑ¾­¶¯µ¯²»µÃÁË£¡\n");
+                return notify_fail(target->query("name")+"å·²ç»åŠ¨å¼¹ä¸å¾—äº†ï¼\n");
 
         if((int)me->query("mana") < 500 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("sen") < 10 )
-                return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦£¡\n");
+                return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
         me->add("mana", -500);
         me->receive_damage("sen", 10);
 
         msg = HIC
-"$NÔÚÊÖÖĞ»®ÁË¸öÖä£¬ÍûÌìÒ»Ö¸£¬Ö»¼û¶ÙÊ±ÌìÉÏÑ©Îè·ç¹Î£¬
-´ó´óĞ¡Ğ¡µÄÑ©Æ¬±ù±¢Ïò$nÆ®ÁË¹ıÈ¥¡£\n\n"NOR;
+"$Nåœ¨æ‰‹ä¸­åˆ’äº†ä¸ªå’’ï¼Œæœ›å¤©ä¸€æŒ‡ï¼Œåªè§é¡¿æ—¶å¤©ä¸Šé›ªèˆé£åˆ®ï¼Œ
+å¤§å¤§å°å°çš„é›ªç‰‡å†°é›¹å‘$né£˜äº†è¿‡å»ã€‚\n\n"NOR;
 
         success = 1;
         ap = me->query_skill("spells");
@@ -61,7 +61,7 @@ int cast(object me, object target)
 
         howlong = 0;        
         if(success == 1 ){
-                msg +=  HIR "½á¹û$nÊÖ×ã±»¶³µÄ½©Ó²£¬¶¯µ¯²»µÃ¡£\n" NOR;
+                msg +=  HIR "ç»“æœ$næ‰‹è¶³è¢«å†»çš„åƒµç¡¬ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n" NOR;
                 target->set_temp("no_move", 1);
 
                 howlong = 20 + random(15);
@@ -69,7 +69,7 @@ int cast(object me, object target)
 //a typical level is 100+100 ->enabled 150, so will "ding" about 1 minute in the best case.
         }           
         else {
-                msg +=  HIR "$n»ØÊÖÒ»»Ó£¬ÂşÌì·ÉÑ©¶ÙÊ±µ­È¥ÁË¡£\n" NOR;
+                msg +=  HIR "$nå›æ‰‹ä¸€æŒ¥ï¼Œæ¼«å¤©é£é›ªé¡¿æ—¶æ·¡å»äº†ã€‚\n" NOR;
         } 
 
         message_vision(msg, me, target);

@@ -1,14 +1,14 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 void create()
 {
-        set_name("ɽ��", ({"shan yao", "yao"}));
-        set("long", "һ�������ɷ���ɽ����\n");
+        set_name("山妖", ({"shan yao", "yao"}));
+        set("long", "一个凶神恶煞般的山妖。\n");
         set("age", 30);
         set("attitude", "herosim");
-        set("gender", "����");
+        set("gender", "男性");
    set("class", "yaomo");
         set("str", 30);
         set("int", 20);
@@ -58,7 +58,7 @@ void greeting(object ob)
         if( !ob || !present(ob, environment(this_object())) ) return;
    
    command("look " + ob->query("id") );
-   command("say �ְ����֣��պ��������¾ƣ�");
+   command("say 又白又胖，刚好让老子下酒！");
    command("chan " + ob->query("id") );
    kill_ob(ob);
    ob->fight_ob(this_object());

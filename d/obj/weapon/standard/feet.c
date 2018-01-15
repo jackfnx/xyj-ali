@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,14 +6,14 @@ inherit BOOTS;
 
 void create()
 {
-        set_name("Õ½Ñ¥", ({ "zhan xue","xue", "feet", "zhanxue", "boots" }) );
+        set_name("æˆ˜é´", ({ "zhan xue","xue", "feet", "zhanxue", "boots" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "åŒ");
      set("long",
-"Ò»Ë«Æ¤Ñ¥£¬ÉÏµÈÅ£Æ¤ÖÆ³É¡£Ñ¥×ÓËäºÜ½áÊµ£¬µ«ÆÄÇáÕ½ÕùÊ±´©·Ç³£·½±ãÊÊÓÃ¡£\n");
+"ä¸€åŒçš®é´ï¼Œä¸Šç­‰ç‰›çš®åˆ¶æˆã€‚é´å­è™½å¾ˆç»“å®ï¼Œä½†é¢‡è½»æˆ˜äº‰æ—¶ç©¿éå¸¸æ–¹ä¾¿é€‚ç”¨ã€‚\n");
                 set("value", 800);
                 set("material", "leather");
                 set("armor_prop/armor", 5);

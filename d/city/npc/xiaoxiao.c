@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,12 +6,12 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("ÏôÏô", ({"xiao xiao", "xiao"}));
-        set("title", "¶ñÄï×Ó");
-        set("gender", "Å®ĞÔ");
+        set_name("è§è§", ({"xiao xiao", "xiao"}));
+        set("title", "æ¶å¨˜å­");
+        set("gender", "å¥³æ€§");
         set("age", 25);
-        set("long", "ÀÏÓ¢ĞÛÏôÕñÔ¶µÄĞ¡Å®¶ù£¬±øÆ÷ÆÌÅ®ÀÏ°å¡£
-ÓÉÓÚĞ×Âùºİ¶¾£¬½­ºşÈË³Æ£¢¶ñÄï×Ó£¢¡£\n");
+        set("long", "è€è‹±é›„è§æŒ¯è¿œçš„å°å¥³å„¿ï¼Œå…µå™¨é“ºå¥³è€æ¿ã€‚
+ç”±äºå‡¶è›®ç‹ æ¯’ï¼Œæ±Ÿæ¹–äººç§°ï¼‚æ¶å¨˜å­ï¼‚ã€‚\n");
 
         set("combat_exp", 70000);
    set_skill("xiaofeng-sword", 30);
@@ -59,13 +59,13 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {
                 case 0:
-                        say( name()+"î©ÁËÒ»ÑÛ£¬ÓÖÀÁÑóÑóµÄÏ÷ÆğÖ¸¼×À´¡£\n");
+                        say( name()+"çŸäº†ä¸€çœ¼ï¼Œåˆæ‡’æ´‹æ´‹çš„å‰Šèµ·æŒ‡ç”²æ¥ã€‚\n");
                         break;
         }
 }
 int accept_fight(object me)
 {
-        command("say ºß£¬ÀÏÄïµØÅÌÉÏÒ²¸ÒÈöÒ°£¡\n");
+        command("say å“¼ï¼Œè€å¨˜åœ°ç›˜ä¸Šä¹Ÿæ•¢æ’’é‡ï¼\n");
         return 1;
 }
 

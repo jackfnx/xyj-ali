@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // pao.c
@@ -7,12 +7,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÔíÂŞÅÛ", ({"purple cloth", "cloth"}));
+        set_name("çš‚ç½—è¢", ({"purple cloth", "cloth"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 4000);
                 set("material", "cloth");
                 set("armor_prop/armor", 15);

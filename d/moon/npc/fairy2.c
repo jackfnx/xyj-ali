@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //change.c
@@ -6,16 +6,16 @@ inherit NPC;
 
 void create()
 {
-       set_name("����",({"ming yan","fairy", "girl"}));
+       set_name("茗烟",({"ming yan","fairy", "girl"}));
        set("long",
-"�����֮�Ի��⣬�����ơ���û�����⣬������ϲ���ǻ������⣬
-���������ü�Ц�⣬���Զ�δ�����է���⣬��ֹ�����С�\n");
-       set("title", "�¹���Ů");
-       set("gender", "Ů��");
+"其珠翠之辉辉兮，满额鹅黄。出没花间兮，宜嗔宜喜；徘徊池上兮，
+若飞若扬。蛾眉颦笑兮，将言而未语；莲步乍移兮，欲止而欲行。\n");
+       set("title", "月宫伺女");
+       set("gender", "女性");
        set("age", 18);
        set("class", "xian");
        set("attitude", "friendly");
-       set("rank_info/respect", "�ɹ�");
+       set("rank_info/respect", "仙姑");
        set("per", 30);
    set("int", 30);
        set("max_kee", 800);
@@ -36,7 +36,7 @@ void create()
        set_skill("sword", 80);
        set_skill("spells", 80);
 
-create_family("�¹�", 3, "����");
+create_family("月宫", 3, "弟子");
 setup();
 
         carry_object("/d/obj/cloth/luoyi")->wear();

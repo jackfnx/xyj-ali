@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// ±©·çÖèÓê
+// æš´é£éª¤é›¨
 // dream 7/17/97
 #include <ansi.h>
 
@@ -18,29 +18,29 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹¡¸±©·çÖèÓê¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•ã€Œæš´é£éª¤é›¨ã€ï¼Ÿ\n");
 
         if((int)me->query("force") < 25+(int)me->query("force_factor") )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("kee") < 100 )
-                return notify_fail("ÄãµÄÆøÑª²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+                return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
    if((int)me->query_skill("jienan-zhi", 1) <100)
-     return notify_fail("ÄãµÄ½ÙÄÑÖ¸¼¶±ğ»¹²»¹»£¡\n");
+     return notify_fail("ä½ çš„åŠ«éš¾æŒ‡çº§åˆ«è¿˜ä¸å¤Ÿï¼\n");
 
 
         me->add("force", -25-(int)me->query("force_factor"));
         me->receive_damage("kee", 100);
 
         if( random(me->query("max_force")) < 50 ) {
-                write("Ôã¸â£¬Ã»³É¹¦£¡\n");
+                write("ç³Ÿç³•ï¼Œæ²¡æˆåŠŸï¼\n");
                 return 1;
         }
 
    msg = HIC
-"\n$N¿ÚÖĞ´óºÈÁËÒ»Éù£¬Ê©Õ¹³ö¡¸±©·çÖèÓê¡¹£¬Ë«ÊÖÊ®Ö¸ÉÏÏÂ·­·É£¬ÉíĞÎÇ°ºó×óÓÒÒÆ¶¯£¬\n"
-"$nÖ»¾õµÃµ½´¦ÊÇ$NµÄÓ°×Ó£¬¸ù±¾²»ÖªÈçºÎÕĞ¼Ü£¬¸ü²»ÓÃËµ¶ãÉÁÁË£¡\n\n" NOR;
+"\n$Nå£ä¸­å¤§å–äº†ä¸€å£°ï¼Œæ–½å±•å‡ºã€Œæš´é£éª¤é›¨ã€ï¼ŒåŒæ‰‹åæŒ‡ä¸Šä¸‹ç¿»é£ï¼Œèº«å½¢å‰åå·¦å³ç§»åŠ¨ï¼Œ\n"
+"$nåªè§‰å¾—åˆ°å¤„æ˜¯$Nçš„å½±å­ï¼Œæ ¹æœ¬ä¸çŸ¥å¦‚ä½•æ‹›æ¶ï¼Œæ›´ä¸ç”¨è¯´èº²é—ªäº†ï¼\n\n" NOR;
 
         ap = me->query_skill("jienan-zhi", 1);
 // + me->query_skill("parry");
@@ -57,7 +57,7 @@ int perform(object me, object target)
      damage+=(int)me->query("force_factor")-random((int)target->query("force_factor"));
 //here we can see if 2 players are at same status, the attacker has higher chance.
                 if( damage > 0 ) {
-     msg += HIC "½á¹ûÊ®Ö¸½á½áÊµÊµÈ«²¿»÷ÖĞÁË$n£¬²îµãÃ»°Ñ$n´ÁÁË¸öÍ¸ĞÄÁ¹£¡\n" NOR;
+     msg += HIC "ç»“æœåæŒ‡ç»“ç»“å®å®å…¨éƒ¨å‡»ä¸­äº†$nï¼Œå·®ç‚¹æ²¡æŠŠ$næˆ³äº†ä¸ªé€å¿ƒå‡‰ï¼\n" NOR;
 //finally damage also depends on enabled unarmed level.
      damage +=random((damage*(int)me->query_skill("unarmed"))/80);
                         target->receive_damage("sen", damage, me);
@@ -69,7 +69,7 @@ int perform(object me, object target)
        else {
 //here, cast failed and the target's force_factor will be added to the previous 
 //damage to hurt yourself:(...note damage<0.
-     msg += HIC "½á¹û±»$nÒÔÄÚÁ¦·´¼¤£¬$N·´¶ø×ÔÊÜÆä¿à£¬Ë«ÊÖÊÜÉË²»Çá£¡\n" NOR;
+     msg += HIC "ç»“æœè¢«$nä»¥å†…åŠ›åæ¿€ï¼Œ$Nåè€Œè‡ªå—å…¶è‹¦ï¼ŒåŒæ‰‹å—ä¼¤ä¸è½»ï¼\n" NOR;
      damage -= (int)target->query("force_factor");
      damage -=random((-damage*(int)target->query_skill("unarmed"))/100);
                         me->receive_damage("sen", -damage, target);
@@ -80,12 +80,12 @@ int perform(object me, object target)
        }
              } 
    else
-                msg += "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n";
+                msg += "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n";
 
         message_vision(msg, me, target);
         if( damage > 0 ) COMBAT_D->report_status(target);
         else if( damage < 0 ) COMBAT_D->report_status(me);
-//damage=0 corresponding to "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n"--no report.   
+//damage=0 corresponding to "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n"--no report.   
 
         if( !target->is_fighting(me) ) {
                 if( living(target) ) {

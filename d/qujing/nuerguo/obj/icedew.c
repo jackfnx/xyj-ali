@@ -1,11 +1,11 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
 #include <ansi.h>
 #include <dbase.h>
 #include <armor.h>
-#define NAME "±ùÂ¶ÖéÏîÁ´"
+#define NAME "å†°éœ²ç é¡¹é“¾"
 
 inherit NECK;
 
@@ -17,14 +17,14 @@ void create()
     set_default_object(__FILE__);
   else
   {
-    set("long","Ò»´®Í¸Ã÷µÄ±ùÂ¶ÖéÏîÁ´£¬ÎªÎ÷Áº¹úµÄÕä±¦¡£\n");
-    set("unit", "´®");
+    set("long","ä¸€ä¸²é€æ˜çš„å†°éœ²ç é¡¹é“¾ï¼Œä¸ºè¥¿æ¢å›½çš„çå®ã€‚\n");
+    set("unit", "ä¸²");
     set("material", "icedew");
     set("armor_prop/armor", 1);
   }
-  set("no_drop", "ÕâÊÇ¸ö¼ÛÖµÁ¬³ÇµÄÖé±¦£¬ÄÄÄÜËæ±ã¶ªÆúÄØ¡£\n");
-  set("no_give", "ÕâÊÇ¸ö¼ÛÖµÁ¬³ÇµÄÖé±¦£¬ÄÄÄÜËæ±ã¶ªÆúÄØ¡£\n");
-  set("no_sell", "ÕâÊÇ¸ö¼ÛÖµÁ¬³ÇµÄÖé±¦£¬ÄÄÄÜËæ±ã¶ªÆúÄØ¡£\n");
+  set("no_drop", "è¿™æ˜¯ä¸ªä»·å€¼è¿åŸçš„ç å®ï¼Œå“ªèƒ½éšä¾¿ä¸¢å¼ƒå‘¢ã€‚\n");
+  set("no_give", "è¿™æ˜¯ä¸ªä»·å€¼è¿åŸçš„ç å®ï¼Œå“ªèƒ½éšä¾¿ä¸¢å¼ƒå‘¢ã€‚\n");
+  set("no_sell", "è¿™æ˜¯ä¸ªä»·å€¼è¿åŸçš„ç å®ï¼Œå“ªèƒ½éšä¾¿ä¸¢å¼ƒå‘¢ã€‚\n");
   set("is_monitored",1);
   setup();
   call_out ("autodestruct",60);
@@ -43,7 +43,7 @@ void autodestruct ()
     where = environment (lace);
 
   if(where)   //mon 8/14/97
-    message_vision ("Ö»¼û"+NAME+"ÈÚ»¯ÎªÒ»´®ÁÁ¾§¾§µÄË®Öé²»¼ûÁË¡£\n",where);
+    message_vision ("åªè§"+NAME+"èåŒ–ä¸ºä¸€ä¸²äº®æ™¶æ™¶çš„æ°´ç ä¸è§äº†ã€‚\n",where);
   destruct (lace);
 }
 
@@ -58,9 +58,9 @@ void disappear_fail (object me)
   if (!lace)
     return;
   
-  message_vision ("Ö»¼û"+NAME+"ÔÚ$NÊÖÖĞÈÚ»¯ÎªÒ»´®ÁÁ¾§¾§µÄË®Öé£¬"+
-                  "µÎÔÚµØÉÏ²»¼ûÁË¡£\n",me);
-  tell_object (me,"Õæ¿ÉÏ§£¡\n");
+  message_vision ("åªè§"+NAME+"åœ¨$Næ‰‹ä¸­èåŒ–ä¸ºä¸€ä¸²äº®æ™¶æ™¶çš„æ°´ç ï¼Œ"+
+                  "æ»´åœ¨åœ°ä¸Šä¸è§äº†ã€‚\n",me);
+  tell_object (me,"çœŸå¯æƒœï¼\n");
   
   destruct (lace);
 }
@@ -78,16 +78,16 @@ void disappear_success (object me)
   if (!lace)
     return;
 
-  message_vision ("$N´÷ÉÏÒ»´®"+NAME+"¡£\n"+
-                  "Ö»¼û"+NAME+"±ä³ÉÒ»µÀÒøÉ«µÄÎí¹â£¬Î§×Å$N·ÉÎèÁË¼¸È¦"+
-                  "Ö±ÏòÎ÷¿ÕĞ±·É¶øÈ¥£¡\n",me);
+  message_vision ("$Næˆ´ä¸Šä¸€ä¸²"+NAME+"ã€‚\n"+
+                  "åªè§"+NAME+"å˜æˆä¸€é“é“¶è‰²çš„é›¾å…‰ï¼Œå›´ç€$Né£èˆäº†å‡ åœˆ"+
+                  "ç›´å‘è¥¿ç©ºæ–œé£è€Œå»ï¼\n",me);
 /*
   dir = __DIR__;
   dir[strlen(dir)-4] = 0;
 */
   dir = "/d/qujing/nuerguo/";
   queen = new (dir+"npc/queen");
-  queen->announce_success (me,"ÕÒµ½ÁË"+NAME);
+  queen->announce_success (me,"æ‰¾åˆ°äº†"+NAME);
   destruct (queen);
   destruct (lace);
 }

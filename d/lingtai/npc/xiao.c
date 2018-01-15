@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // worker.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡µÀÊ¿", ({"xiao dao", "dao"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°é“å£«", ({"xiao dao", "dao"}));
+        set("gender", "ç”·æ€§" );
         set("age", 13);
-        set("long", "Ò»¸öĞ¡µÀÊ¿£¬Õı¸ú×ÅÊ¦¸¸Á·Îä£®\n");
+        set("long", "ä¸€ä¸ªå°é“å£«ï¼Œæ­£è·Ÿç€å¸ˆçˆ¶ç»ƒæ­¦ï¼\n");
         set("combat_exp", 30);
         set("attitude", "peaceful");
         setup();

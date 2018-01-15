@@ -22,18 +22,18 @@ mapping global_alias = ([
     "u":   "go up",
     "d":   "go down",
     "i":   "inventory",
-    "bai":   "apprentice", // °İ
-    "shou":   "recruit", // ÊÕ
-    "zhu":   "expell", // Öğ
-    "xue":   "learn", // Ñ§
-    "fangqi":   "abandon", // ·ÅÆú
-    "jineng":   "skills", // ¼¼ÄÜ
-    "jifa":   "enable", // ¼¼·¨
-    "jiali":   "enforce", // ¼ÓÁ¦
-    "lianxi":   "practice", // Á·Ï°
-    "dazuo":   "exercise", // ´ò×ø
-    "mingsi":   "meditate", // Ú¤Ë¼
-    "tuna" :   "respirate", // ÍÂÄÉ
+    "bai":   "apprentice", // æ‹œ
+    "shou":   "recruit", // æ”¶
+    "zhu":   "expell", // é€
+    "xue":   "learn", // å­¦
+    "fangqi":   "abandon", // æ”¾å¼ƒ
+    "jineng":   "skills", // æŠ€èƒ½
+    "jifa":   "enable", // æŠ€æ³•
+    "jiali":   "enforce", // åŠ åŠ›
+    "lianxi":   "practice", // ç»ƒä¹ 
+    "dazuo":   "exercise", // æ‰“å
+    "mingsi":   "meditate", // å†¥æ€
+    "tuna" :   "respirate", // åçº³
 ]);
 
 string process_global_alias(string arg)

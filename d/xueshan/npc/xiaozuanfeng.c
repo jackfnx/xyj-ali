@@ -5,16 +5,16 @@ inherit F_VENDOR;
 
 void create()
 {
-    set_name("Ğ¡×ê·ç", ({"xiao yao", "xiaoyao", "yao"}));
-    set("gender", "ÄĞĞÔ" );
+    set_name("å°é’»é£", ({"xiao yao", "xiaoyao", "yao"}));
+    set("gender", "ç”·æ€§" );
     set("age", 16);
-    set("long", "Ğ¡×ê·çÔ­ÊÇÊ¨ÍÕÉ½µÄÑ²É½Ğ¡Ñı¡£\n"
-        "¸ú×ÅÇàÊ¨ÀÏÄ§µ½´óÑ©É½ºó¸Äµ±³øÊ¦ÁË¡£\n"
-        "²»¹ıËûºÃ¸ö³ÔºÈ£¬ÔÚÕâÀï½üË®Â¥Ì¨ÏÈµÃÔÂ£¬µ¹Ò²åĞÒ£¿ì»î¡£\n");
+    set("long", "å°é’»é£åŸæ˜¯ç‹®é©¼å±±çš„å·¡å±±å°å¦–ã€‚\n"
+        "è·Ÿç€é’ç‹®è€é­”åˆ°å¤§é›ªå±±åæ”¹å½“å¨å¸ˆäº†ã€‚\n"
+        "ä¸è¿‡ä»–å¥½ä¸ªåƒå–ï¼Œåœ¨è¿™é‡Œè¿‘æ°´æ¥¼å°å…ˆå¾—æœˆï¼Œå€’ä¹Ÿé€é¥å¿«æ´»ã€‚\n");
     set("class", "yaomo");
     set("combat_exp", 5000);
     set("attitude", "peaceful");
-    set("title", "Ğ¡Ñı");
+    set("title", "å°å¦–");
     set_skill("unarmed", 20);
     set_skill("dodge", 20);
     set_skill("parry", 10);

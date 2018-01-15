@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// bishu.c ±ÌÊó¾«
+// bishu.c ç¢§é¼ ç²¾
 // 9-2-97 pickle
 
 #include <ansi.h>
@@ -20,17 +20,17 @@ void bishu_leave(object me);
 
 void create()
 {
-  set_name("±ÌÊó¾«", ({"bi shu", "bi", "shu", "bishu", "monster"}));
-  set("gender", "Å®ĞÔ");
+  set_name("ç¢§é¼ ç²¾", ({"bi shu", "bi", "shu", "bishu", "monster"}));
+  set("gender", "å¥³æ€§");
   set("age", 19);
   set("long",
-"ËäÈ»Ëı¿´ÆğÀ´Èõ²»½û·ç£¬µ«ÌıËµËıÌì¸³¼°¼Ñ£¬ÊÇ¿éĞŞÏÉµÄºÃÁÏ×Ó¡£\n"
-"×Ô´ÓÈëÎŞµ×¶´ÒÔÀ´£¬ËıµÄÎä¹¦½ø²½¼°¿ì£¬ÆÄÓĞ¸Ï¹ıÓñÊóµÄ¼ÜÊ½¡£\n");
-  set("title", "ÎŞµ×¶´´óµÜ×Ó");
-  set("nickname", HIR "¾ÅËÀÒ»Éú" NOR);
+"è™½ç„¶å¥¹çœ‹èµ·æ¥å¼±ä¸ç¦é£ï¼Œä½†å¬è¯´å¥¹å¤©èµ‹åŠä½³ï¼Œæ˜¯å—ä¿®ä»™çš„å¥½æ–™å­ã€‚\n"
+"è‡ªä»å…¥æ— åº•æ´ä»¥æ¥ï¼Œå¥¹çš„æ­¦åŠŸè¿›æ­¥åŠå¿«ï¼Œé¢‡æœ‰èµ¶è¿‡ç‰é¼ çš„æ¶å¼ã€‚\n");
+  set("title", "æ— åº•æ´å¤§å¼Ÿå­");
+  set("nickname", HIR "ä¹æ­»ä¸€ç”Ÿ" NOR);
   set("combat_exp", 800000);
   set("attitude", "heroic");
-  create_family("Ïİ¿ÕÉ½ÎŞµ×¶´", 2, "µÜ×Ó");
+  create_family("é™·ç©ºå±±æ— åº•æ´", 2, "å¼Ÿå­");
   set_skill("unarmed", 100);
   set_skill("dodge", 100);
   set_skill("parry", 100);
@@ -65,10 +65,10 @@ void create()
   set("max_mana", 600);
   set("mana_factor", 25);
   set("inquiry", ([
-                   "name": "±¾¹ÃÄï¾ÍÊÇµØÓ¿·òÈËµÄ¿ªÉ½´óµÜ×Ó£¡",
-                   "here": "ÄãÏ¹ÁËÑÛÀ²£¿ÕâÀï¾ÍÊÇ¶¦¶¦´óÃûµÄÏİ¿ÕÉ½ÎŞµ×¶´£¡",
-        "rumors": "²»ÖªµÀ£¡ÕÒ±ğÈËÎÊÈ¥¡£",
-        "ÈËÈâ°ü×Ó": "ÄãÏ¹ÁËÑÛÀ²£¿±¾¹ÃÄïÓÖ²»ÊÇ³ø×Ó£¡",
+                   "name": "æœ¬å§‘å¨˜å°±æ˜¯åœ°æ¶Œå¤«äººçš„å¼€å±±å¤§å¼Ÿå­ï¼",
+                   "here": "ä½ çäº†çœ¼å•¦ï¼Ÿè¿™é‡Œå°±æ˜¯é¼é¼å¤§åçš„é™·ç©ºå±±æ— åº•æ´ï¼",
+        "rumors": "ä¸çŸ¥é“ï¼æ‰¾åˆ«äººé—®å»ã€‚",
+        "äººè‚‰åŒ…å­": "ä½ çäº†çœ¼å•¦ï¼Ÿæœ¬å§‘å¨˜åˆä¸æ˜¯å¨å­ï¼",
                  ]) );  
 
   setup();
@@ -83,17 +83,17 @@ int attempt_apprentice(object me)
   command("consider");
   if (me->query("combat_exp")<100000)
   {
-    command("say "+myname+"ÓĞÊ²Ã´ÓÃ£¿¾ÍÕâÃ´µã±¾ÊÂ»¹²»¹»¸ø±¾¹ÃÄïÌáĞ¬£¡");
+    command("say "+myname+"æœ‰ä»€ä¹ˆç”¨ï¼Ÿå°±è¿™ä¹ˆç‚¹æœ¬äº‹è¿˜ä¸å¤Ÿç»™æœ¬å§‘å¨˜æé‹ï¼");
     return 1;
   }
   if (me->query("wudidong/sell_reward") < 5000)
   {
-    command("say "+myname+"¶à¾ÃÃ»¸ø³ø·¿½ø»õÁË£¿£¡±¾¹ÃÄïµÈÈËÈâ°ü×Ó¶¼µÈ·³ÁË£¡");
-    command("say ÏÈÈ¥¸ø³ø·¿ËÍµãĞÂÏÊÈËÈâ£¡ÄÇÊ±ºò±¾¹ÃÄïÒ»¸ßĞË£¬Ëµ²»¶¨¾ÍÊÕÏÂÄãÁË¡£");
+    command("say "+myname+"å¤šä¹…æ²¡ç»™å¨æˆ¿è¿›è´§äº†ï¼Ÿï¼æœ¬å§‘å¨˜ç­‰äººè‚‰åŒ…å­éƒ½ç­‰çƒ¦äº†ï¼");
+    command("say å…ˆå»ç»™å¨æˆ¿é€ç‚¹æ–°é²œäººè‚‰ï¼é‚£æ—¶å€™æœ¬å§‘å¨˜ä¸€é«˜å…´ï¼Œè¯´ä¸å®šå°±æ”¶ä¸‹ä½ äº†ã€‚");
     return 1;
   }
   command("grin");
-  command("say ±¾¹ÃÄï×î°®³ÔÈËÈâ°ü×ÓÁË¡£"+myname+"±ğÍüÁË¶à¸ø³ø·¿ÅªµãÔ­ÁÏ£¡");
+  command("say æœ¬å§‘å¨˜æœ€çˆ±åƒäººè‚‰åŒ…å­äº†ã€‚"+myname+"åˆ«å¿˜äº†å¤šç»™å¨æˆ¿å¼„ç‚¹åŸæ–™ï¼");
   command("recruit "+myid);
   return 1;
 }
@@ -103,7 +103,7 @@ int prevent_learn(object me, string skill)
 
   if(skill == "kugu-blade")
   { 
-    message_vision(CYN"±ÌÊó¾«Å­µÀ£ºÃ»ÃÅ¶ù£¡²»½Ì£¡\n", me);
+    message_vision(CYN"ç¢§é¼ ç²¾æ€’é“ï¼šæ²¡é—¨å„¿ï¼ä¸æ•™ï¼\n", me);
     return 1;
   }
   return 0;
@@ -119,18 +119,18 @@ int recruit_apprentice(object ob)
 
 int accept_object(object me, object ob)
 {
-    if (ob->query("name_recognized") != "°×¹ÇÁî")
-   return notify_fail(CYN"±ÌÊóÅ­µÀ£º»ìÕÊ£¬ÎÒÓÖ²»ÊÇÊÕÆÆÀÃµÄ£¡\n"NOR);
+    if (ob->query("name_recognized") != "ç™½éª¨ä»¤")
+   return notify_fail(CYN"ç¢§é¼ æ€’é“ï¼šæ··å¸ï¼Œæˆ‘åˆä¸æ˜¯æ”¶ç ´çƒ‚çš„ï¼\n"NOR);
     remove_call_out("bishu_leave");
     call_out("bishu_leave", 1, me);
     return 1;
 }
 void bishu_leave(object me)
 {
-    command("say Õâ¡¢Õâ¡¢Õâ£¬Õâ¿ÉÔõÃ´°ìÊÇºÃ£¿");
+    command("say è¿™ã€è¿™ã€è¿™ï¼Œè¿™å¯æ€ä¹ˆåŠæ˜¯å¥½ï¼Ÿ");
     command("sigh");
-    command("say ¼ÈÈ»·òÈËÓĞÁîÔÚ´Ë£¬ÎÒ»¹ÊÇ¸Ï½ô»ØÈ¥Ò»ÌË°É£¡");
-    message_vision("±ÌÊó¾«×¥ÁËÒ»°ÑÍÁ£¬Ïò¿ÕÖĞÒ»Å×£¬ºÈÉù£º×ß£¡½èÍÁ¶İÈ¥ÁË¡£\n", me);
+    command("say æ—¢ç„¶å¤«äººæœ‰ä»¤åœ¨æ­¤ï¼Œæˆ‘è¿˜æ˜¯èµ¶ç´§å›å»ä¸€è¶Ÿå§ï¼");
+    message_vision("ç¢§é¼ ç²¾æŠ“äº†ä¸€æŠŠåœŸï¼Œå‘ç©ºä¸­ä¸€æŠ›ï¼Œå–å£°ï¼šèµ°ï¼å€ŸåœŸéå»äº†ã€‚\n", me);
     destruct(this_object());
     return;
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // emoted.c
@@ -78,7 +78,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
      if(!channel_emote)  return 0;
      if(verb[0] < 0x80)  return 0;
      if(rumor_emote)
-        user_emote = "Ä³ÈË" + verb + "\n";
+        user_emote = "æŸäºº" + verb + "\n";
                 else {
                   if(!channel_emote || ! intermud)
           user_emote = me->name() + "$E_CLR$" + verb + "\n";
@@ -100,7 +100,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
      }
      
      if( !target->is_character() || !me->visible(target) )
-        return notify_fail("ÄãÒª¶ÔË­×öÕâ¸ö¶¯×÷£¿\n"); 
+        return notify_fail("ä½ è¦å¯¹è°åšè¿™ä¸ªåŠ¨ä½œï¼Ÿ\n"); 
 
      target_gender = target->query("gender");
      if( target==me ) {
@@ -120,7 +120,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
    if( stringp(str = emote[verb]["myself" + msg_postfix]) ) {
      if_execute = " ";
      if(rumor_emote)
-        str = replace_string(str, "$N", "Ä³ÈË");
+        str = replace_string(str, "$N", "æŸäºº");
         else
         str = replace_string(str, "$N", me->name() + "$E_CLR$");
      str = replace_string(str, "$P", gender_self(my_gender));
@@ -140,7 +140,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
    if( objectp(target) && stringp(str = emote[verb]["target"]) ) {
      if_execute = " ";
      if(rumor_emote)
-        str = replace_string(str, "$N", "Ä³ÈË");
+        str = replace_string(str, "$N", "æŸäºº");
         else
         str = replace_string(str, "$N", me->name() + "$E_CLR$");
      str = replace_string(str, "$P", gender_pronoun(my_gender));
@@ -159,7 +159,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
    if( stringp(str = emote[verb]["others"+msg_postfix]) ) {
      if_execute = " ";
      if(rumor_emote)
-        str = replace_string(str, "$N", "Ä³ÈË");
+        str = replace_string(str, "$N", "æŸäºº");
         else if(!channel_emote || !intermud)
         str = replace_string(str, "$N", me->name() + "$E_CLR$");
      str = replace_string(str, "$P", gender_pronoun(my_gender));

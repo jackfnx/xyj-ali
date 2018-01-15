@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 11/21/1997
@@ -6,33 +6,33 @@
 inherit ROOM;
 
 string *msgs = ({
-  "���ߣ���Ե���ա�",
-  "�����ߣ���Կա�",
-  "�������У�売��ڲ���֮�ڡ�",
-  "���ĬĬ����ң�ڼ���֮�С�",
-  "����ն��ٶ��Σ���������ǧ���",
-  "���˼��֪�����뵱ʶ�ġ�",
-  "�ľ���������գ��Ĵ����򾳽��塣",
-  "������Ƿ�����࣬��ǰ�ɼ���",
-  "�����������л����������",
-  "�й���������Ϊ�붨֮ԭ��",
-  "����ʩ������������֮����",
-  "������׾����֪������Ϊ��",
-  "�ƼƷǳ����ͷͷ���¡�",
-  "��ʹһ�Ĳ�����������ȫ��",
-  "���Ʋ�����������Ϊ����������٣�ʵ����ʡ�",
-  "ֻҪ����Ե����������ɫ�Կա�",
-  "���ش����Ѱ�������Ȼ���������",
+  "求经者，万缘都罢。",
+  "了性者，诸法皆空。",
+  "大智闲闲，澹泊在不生之内。",
+  "真机默默，消遥于寂灭之中。",
+  "三界空而百端治，六根净而千种穷。",
+  "若乃坚诚知觉，须当识心。",
+  "心净则孤明独照，心存则万境皆清。",
+  "真容无欠亦无余，生前可见。",
+  "幻相有形终有坏，分外何求。",
+  "行功打坐，乃为入定之原。",
+  "布惠施恩，诚是修行之本。",
+  "大巧若拙，还知事事无为。",
+  "善计非筹，必须头头放下。",
+  "但使一心不动，万行自全。",
+  "若云采阴补阳，诚为谬语，服饵长寿，实乃虚词。",
+  "只要尘尘缘总弃，物物色皆空。",
+  "素素纯纯寡爱欲，自然享寿永无穷。",
 });
 
 void create ()
 {
-  set ("short", "�����");
+  set ("short", "佛道场");
   set ("long", @LONG
 
-�����Ϊһ�����ã���ʮ��������ľ���ӳ���������ͨ����
-���ϱ����裬����һ�����������ţ���һЩ��ҵ�������һ
-�𽲷��۵���������һ��ͨ���֡�
+佛道场为一大厅堂，由十二根黄杨木柱子撑起。两面有通光明
+窗南北向开设，地上一排排铺着蒲团，有一些佛家道客坐在一
+起讲佛论道。东边有一门通向大街。
 
 LONG);
 
@@ -55,12 +55,12 @@ int do_zuochan ()
   int j;
 
   if (who->is_busy())
-    return notify_fail ("����æ���أ�\n");
+    return notify_fail ("你正忙着呢！\n");
 
-  message_vision ("$N��ϥ���������Ʊ�Ŀ��\n",who);
+  message_vision ("$N盘膝而坐，合掌闭目。\n",who);
   if (i >= size)
   {
-    message_vision ("\n$N��˼���꣬���������ƺ��Ѿ���\n",who); 
+    message_vision ("\n$N沉思少顷，觉得禅意似乎已尽。\n",who); 
   }  
   else
   {
@@ -74,8 +74,8 @@ int do_zuochan ()
 
 void start_zhuochan (object who, int i)
 {
-  message_vision ("\n$N�����"+msgs[i]+"\n",who); 
-  message_vision ("\nƬ�̣�$N��ʼ����������\n",who); 
+  message_vision ("\n$N念道："+msgs[i]+"\n",who); 
+  message_vision ("\n片刻，$N开始低首坐禅。\n",who); 
   who->set_temp("obstacle/biqiu_zuochan",i+1);
 }
 
@@ -84,12 +84,12 @@ void finish_zhuochan (object who)
   object where = environment(who);
 
   who->interrupt_me ();
-  message_vision ("\n$N������ϣ�������\n",who); 
+  message_vision ("\n$N坐禅完毕，起身。\n",who); 
   // much slower than normal speed, just a symbolic reward
   where->add("times",1);
   if (where->query("times") < 200)
   {
     who->add("potential",random(3)+1);
-    tell_object(who,"���Ǳ���������ˣ�\n");
+    tell_object(who,"你的潜能又增长了！\n");
   }
 }

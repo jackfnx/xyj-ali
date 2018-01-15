@@ -7,15 +7,15 @@ int back_she();
 
 void create()
 {
-    set("short", "Ñ©Áë");
+    set("short", "é›ªå²­");
     set("long", @LONG
 
-Ñ©ÁëµÄ¾¡Í·ÓÐÒ»¸öÐ¡Ð¡µÄ¶´(cave)£¬¾ÝËµÀïÃæÓÐÒ»Ö»³àÁ·Ð¡Éß£¬³Ô
-ÁËºó¿ÉÒÔ´ó²¹£¬µ«ÔõÃ´°ÑËü´Ó¶´ÀïÒý³öÀ´£¬¿É¾ÍÃ»¼¸¸öÈËÖªµÀÁË¡£
+é›ªå²­çš„å°½å¤´æœ‰ä¸€ä¸ªå°å°çš„æ´ž(cave)ï¼Œæ®è¯´é‡Œé¢æœ‰ä¸€åªèµ¤ç»ƒå°è›‡ï¼Œåƒ
+äº†åŽå¯ä»¥å¤§è¡¥ï¼Œä½†æ€Žä¹ˆæŠŠå®ƒä»Žæ´žé‡Œå¼•å‡ºæ¥ï¼Œå¯å°±æ²¡å‡ ä¸ªäººçŸ¥é“äº†ã€‚
 LONG);
 
     set("item_desc", ([
-        "cave" : "Ò»¸öÐ¡¶´£¬ÀïÃæºÚºÚµÄ£¬Ê²Ã´¶¼¿´²»¼û¡£\n", 
+        "cave" : "ä¸€ä¸ªå°æ´žï¼Œé‡Œé¢é»‘é»‘çš„ï¼Œä»€ä¹ˆéƒ½çœ‹ä¸è§ã€‚\n", 
     ]));
 
     set("exits", ([ //sizeof() == 1
@@ -60,7 +60,7 @@ int come_she()
     int stay_time = where->query("she_time")*2;
 
     if (douzi && douzi->query("value") == 20000) {
-        tell_room(where, "Ò»Ö»Ð¡Éß´Ó¶´ÀïÅÀÁË³öÀ´£¬½«"+ douzi->name() +"µðÔÚ×ìÀï¡£\n");
+        tell_room(where, "ä¸€åªå°è›‡ä»Žæ´žé‡Œçˆ¬äº†å‡ºæ¥ï¼Œå°†"+ douzi->name() +"å¼åœ¨å˜´é‡Œã€‚\n");
         she = new(__DIR__"npc/she");
         she->move(where);
         destruct(douzi);
@@ -75,7 +75,7 @@ int back_she()
     object she = present("chilian xiaoshe", where);
 
     if (she) {
-        tell_room(where, she->name() + "½«¶¹×ÓÒ»¿ÚÍÌÁËÏÂÈ¥£¬È»ºó»ú¾¯µÄÅÀ»Ø¶´Àï¡£\n");
+        tell_room(where, she->name() + "å°†è±†å­ä¸€å£åžäº†ä¸‹åŽ»ï¼Œç„¶åŽæœºè­¦çš„çˆ¬å›žæ´žé‡Œã€‚\n");
         destruct(she);
         where->add("she_time", 1);
     }

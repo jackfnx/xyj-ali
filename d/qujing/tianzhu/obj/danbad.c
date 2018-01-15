@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/2/1997
@@ -9,16 +9,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "·¢Ã¹µÄÑøÉíµ¤" , ({"yangshen dan", "dan"}));
+  set_name( "å‘éœ‰çš„å…»èº«ä¸¹" , ({"yangshen dan", "dan"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿Å³¤Ã¹µÄÑøÉíµ¤£¬ÉÏÃæÈ«ÊÇÂÌÃ«¡£\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—é•¿éœ‰çš„å…»èº«ä¸¹ï¼Œä¸Šé¢å…¨æ˜¯ç»¿æ¯›ã€‚\n");
     set("value", 0);
     set("no_sell", 1);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   setup();
 }
@@ -34,7 +34,7 @@ int do_eat(string arg)
   if (arg!="yangshen dan" && arg!="dan") 
     return 0;
   
-  tell_object(me, "»µÒ©»¹ÄÜ³ÔÂğ£¿\n");
+  tell_object(me, "åè¯è¿˜èƒ½åƒå—ï¼Ÿ\n");
   return 1;
 }
 

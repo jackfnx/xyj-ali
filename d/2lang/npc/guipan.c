@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by mon
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹íÅĞ", ({"gui pan","gui","guard"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("é¬¼åˆ¤", ({"gui pan","gui","guard"}));
+  set("gender", "ç”·æ€§");
   set("age", 10);
-  set("long","¿´ÃÅµÄ¹íÅĞ£¬Õı¶ñºİºİµØ¶¢×ÅÄã¡£\n");
+  set("long","çœ‹é—¨çš„é¬¼åˆ¤ï¼Œæ­£æ¶ç‹ ç‹ åœ°ç›¯ç€ä½ ã€‚\n");
   set("combat_exp", 2500);
   set("per", 15);
   set_skill("dodge", 10);

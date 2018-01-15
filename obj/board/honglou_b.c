@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // honglou_b.c by none on 96/10/25
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("ÓñÊ¯", ({ "jade" }) );
+        set_name("ç‰çŸ³", ({ "jade" }) );
         set("location", "/d/ourhome/honglou/main.c");
         set("board_id", "honglou_b");
-        set("long",     "Ò»¿éÓñÊ¯£¬¿ÉÒÔĞ´ºìÂ¥¹ÊÊÂ¡£:)\n" );
+        set("long",     "ä¸€å—ç‰çŸ³ï¼Œå¯ä»¥å†™çº¢æ¥¼æ•…äº‹ã€‚:)\n" );
         setup();
         set("capacity", 30);
         replace_program(BULLETIN_BOARD);

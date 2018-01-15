@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 4/11/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����̶");
+  set ("short", "红岩潭");
   set ("long", @LONG
 
-һ������±ڽ�һ��̶ˮ���ƣ�������һ������ͨ��ɽ�⡣����
-�����ɽ���Ѿ���һ�ξ����ˣ�������̶ˮ�ߣ����˾����ر���졣
-�����ס����һ�������Ŀ�������
+一面大大的崖壁将一泓潭水环绕，北面有一个出口通向山外。这里
+离火焰山顶已经有一段距离了，又是在潭水边，令人精神特别愉快。
+你禁不住深吸一口气，心旷神怡。
 
 LONG);
 
@@ -32,8 +32,8 @@ int valid_leave (object me, string dir)
   if (dir=="northwest" && 
       me->query("obstacle/firemount") != "done")
   {
-    tell_object(me,"��̧��ţ�ȴ��ôҲ���������ӡ���\n");
-    return notify_fail("����ɽ��һ��û�й������������������ȥ��\n");
+    tell_object(me,"你抬起脚，却怎么也迈不开步子……\n");
+    return notify_fail("火焰山这一关没有过，看样子溜是溜过不去。\n");
   }
 */
   return 1;

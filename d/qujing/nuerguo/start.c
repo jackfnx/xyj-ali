@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 4/4/1997
@@ -9,11 +9,11 @@ inherit ROOM;
 void create ()
 {
   string dir;
-  set ("short", "ɽ·");
+  set ("short", "山路");
   set ("long", @LONG
 
-Ұ���̹⵭��ɳ����ɫ�֡�һ·������ɫ�������������о�
-����ĸ���ˡ����˺Ӿ�������Ů���ؽ硣
+野润烟光淡，沙暄日色曛。一路行来景色秀丽。再往西行就
+到子母河了。过了河就是西梁女国地界。
 
 LONG);
 

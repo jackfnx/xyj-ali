@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÊŞÆ¤", ({"shou pi", "pi"}));
+  set_name("å…½çš®", ({"shou pi", "pi"}));
   set_weight(7000);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»¼şÏõºÃµÄ»¨ÊŞÆ¤¡£\n");
+    set("long", "ä¸€ä»¶ç¡å¥½çš„èŠ±å…½çš®ã€‚\n");
     set("material", "cloth");
-    set("unit", "¼ş");
+    set("unit", "ä»¶");
     set("value", 600);
   }
   setup();

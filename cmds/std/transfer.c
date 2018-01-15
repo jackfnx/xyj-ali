@@ -13,16 +13,16 @@ int main(object me)
 	exp = exp+pot * 2;
 	me->set("combat_exp",exp );
 	me->set("potential", tpot - pot);	
-	write("ＯＫ\n");
+	write("锛极\n");
 	return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-指令格式 : transfer
+鎸囦护鏍煎紡 : transfer
  
-这个指令可以让你将潜能转为经验（１：２）.
+杩欎釜鎸囦护鍙互璁╀綘灏嗘綔鑳借浆涓虹粡楠岋紙锛戯細锛掞級.
  
 HELP
     );

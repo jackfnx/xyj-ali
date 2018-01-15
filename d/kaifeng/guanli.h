@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -43,10 +43,10 @@ int do_look (string arg)
   if (! room)
     return 1;
 
-  write ("\n        £­£­£­£­£­£­£­¡¼Èü³¡ÄÚ¡½£­£­£­£­£­£­£­\n");
+  write ("\n        ï¼ï¼ï¼ï¼ï¼ï¼ï¼ã€–èµ›åœºå†…ã€—ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n");
   write (room->query("long"));    
   write_objects(room, who);
-  write ("\n        £­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n");
+  write ("\n        ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n");
   return 1;    
 }
 
@@ -58,16 +58,16 @@ int can_enter (object who)
   mapping teams;
 
   if (! ground)
-    return notify_fail ("¶Ô²»Æð£¬Äú²»ÄÜ½øÈë±ÈÈü³¡µØ¡£\n");
+    return notify_fail ("å¯¹ä¸èµ·ï¼Œæ‚¨ä¸èƒ½è¿›å…¥æ¯”èµ›åœºåœ°ã€‚\n");
   
   step = ground->query("match/step");
   mode = ground->query("match/mode");
   teams = ground->query("match/teams");
 
   if (step == STEP_PREPARE)
-    return notify_fail ("¶Ô²»Æð£¬±ÈÈüÉÐÎ´¿ªÊ¼£¬Äú²»ÄÜ½øÈë³¡µØ¡£\n");
+    return notify_fail ("å¯¹ä¸èµ·ï¼Œæ¯”èµ›å°šæœªå¼€å§‹ï¼Œæ‚¨ä¸èƒ½è¿›å…¥åœºåœ°ã€‚\n");
   if (step == STEP_FINISH)
-    return notify_fail ("¶Ô²»Æð£¬±ÈÈüÒÑ¾­½áÊø£¬Äú²»ÄÜ½øÈë³¡µØ¡£\n");
+    return notify_fail ("å¯¹ä¸èµ·ï¼Œæ¯”èµ›å·²ç»ç»“æŸï¼Œæ‚¨ä¸èƒ½è¿›å…¥åœºåœ°ã€‚\n");
 
   if (mode == MODE_SINGLE_SD)
   {
@@ -82,15 +82,15 @@ int can_enter (object who)
         j++;
     }
     if (j >= 2)
-      return notify_fail ("¶Ô²»Æð£¬³¡ÉÏÒÑ¾­ÓÐÑ¡ÊÖ±ÈÈü£¬Äú²»ÄÜ½øÈ¥¡£\n");
+      return notify_fail ("å¯¹ä¸èµ·ï¼Œåœºä¸Šå·²ç»æœ‰é€‰æ‰‹æ¯”èµ›ï¼Œæ‚¨ä¸èƒ½è¿›åŽ»ã€‚\n");
   }
   else
   {
     if (! teams)
-      return notify_fail ("¶Ô²»Æð£¬³¡ÉÏÒÑÉÐÎ´×é¶Ó£¬Äú²»ÄÜ½øÈ¥¡£\n");
+      return notify_fail ("å¯¹ä¸èµ·ï¼Œåœºä¸Šå·²å°šæœªç»„é˜Ÿï¼Œæ‚¨ä¸èƒ½è¿›åŽ»ã€‚\n");
     if (teams["current_player0_id"] != who->query("id") &&
         teams["current_player1_id"] != who->query("id")) 
-      return notify_fail ("¶Ô²»Æð£¬Äú²»ÊÇÑ¡ÊÖ£¬²»ÄÜ½øÈë³¡µØ¡£\n");
+      return notify_fail ("å¯¹ä¸èµ·ï¼Œæ‚¨ä¸æ˜¯é€‰æ‰‹ï¼Œä¸èƒ½è¿›å…¥åœºåœ°ã€‚\n");
  }
   return 1;
 }

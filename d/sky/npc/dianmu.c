@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("µçÄ¸",({"dian mu","dian shen","mu"}));
-    set("gender", "Å®ĞÔ");
+    set_name("ç”µæ¯",({"dian mu","dian shen","mu"}));
+    set("gender", "å¥³æ€§");
     set("age", 45);
-    set("long", "    \nÒ»¶Ë×¯ĞãÑÅµÄÌìÉñ£¬ÔÚÌì¹¬ÖĞ¸ºÔğÉÁµç¡£\n");
+    set("long", "    \nä¸€ç«¯åº„ç§€é›…çš„å¤©ç¥ï¼Œåœ¨å¤©å®«ä¸­è´Ÿè´£é—ªç”µã€‚\n");
 
     set("attitude", "heroism");
     set("class", "xian");
@@ -36,9 +36,9 @@ void create()
     map_skill("dodge", "cloud-steps");
     map_skill("unarmed", "puti-zhi");
     set("inquiry", ([
-        "ÉÁµç"   : "Ã»µ½Ê±ºò¡£",
-        "name"   : "ÎÒÊÇµçÉñ¡£",
-        "here"   : "ÕâÀï¾ÍÊÇÌì¹¬¡£",
+        "é—ªç”µ"   : "æ²¡åˆ°æ—¶å€™ã€‚",
+        "name"   : "æˆ‘æ˜¯ç”µç¥ã€‚",
+        "here"   : "è¿™é‡Œå°±æ˜¯å¤©å®«ã€‚",
     ]));
 
     setup();

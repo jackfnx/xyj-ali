@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/road.c  snowcat moved to /d/qujing/wuji
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ·");
+  set ("short", "山路");
   set ("long", @LONG
 
-ɽ���϶�Ħ���������ҷ·�����������̶��ʱ�ŵùȿ���Գ���Ҵ���
-�У�ÿ�����ɼ��ড�
+山顶嵯峨摩斗柄，树梢仿佛接云霄。青烟堆里，时闻得谷口啼猿；乱翠荫
+中，每听得松间鹤唳。
 LONG);
 
   set("outdoors", __DIR__"");

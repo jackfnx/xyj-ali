@@ -2,9 +2,9 @@ inherit __DIR__"difushiwang.c";
 
 void create()
 {
-    set_name("Øõ¹ÙÍõ", ({"chuguan wang", "wang", "chuguan"}));
-    set("title", "Òõ¼äÊ®ÍõÖ®");
-    set("gender", "ÄĞĞÔ");
+    set_name("ä»µå®˜ç‹", ({"chuguan wang", "wang", "chuguan"}));
+    set("title", "é˜´é—´åç‹ä¹‹");
+    set("gender", "ç”·æ€§");
     set("age", 60);
     set("class", "ghost");
     set("attitude", "peaceful");
@@ -35,7 +35,7 @@ void create()
     map_skill("force", "tonsillit");
     map_skill("spells", "necromancy");
     
-    create_family("ÑÖÂŞµØ¸®", 2, "ÄãºÃ");
+    create_family("é˜ç½—åœ°åºœ", 2, "ä½ å¥½");
     setup();
     carry_object("/d/obj/cloth/mangpao")->wear();
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/tang-gate.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "µîÃÅ");
+  set ("short", "æ®¿é—¨");
   set ("long", @LONG
 
-ÒÑµ½ÁËµîÃÅ¿Ú£¬ÒÀÏ¡¿ÉÒÔÌıµ½ÀïÃæÈËÉùĞú»©£¬±­Õµ¶£µ±¡£Ö»ÊÇÊØÃÅµÄ
-ÕâÁ½¸öĞ¡Ñı¿´À´²»ºÃ¶Ô¸¶¡£µîÀï¶¨ÊÇÕâÎŞµ×¶´µÄ¶´Ö÷ÁË£¬½üÔÚåë³ß£¬
-ÄÑµÀÒªÔµã¥Ò»Ãæ£¿Äã²»½ûĞÄÑ÷ÄÑÉ¦¡£
+å·²åˆ°äº†æ®¿é—¨å£ï¼Œä¾ç¨€å¯ä»¥å¬åˆ°é‡Œé¢äººå£°å–§å“—ï¼Œæ¯ç›å®å½“ã€‚åªæ˜¯å®ˆé—¨çš„
+è¿™ä¸¤ä¸ªå°å¦–çœ‹æ¥ä¸å¥½å¯¹ä»˜ã€‚æ®¿é‡Œå®šæ˜¯è¿™æ— åº•æ´çš„æ´ä¸»äº†ï¼Œè¿‘åœ¨å’«å°ºï¼Œ
+éš¾é“è¦ç¼˜æ‚­ä¸€é¢ï¼Ÿä½ ä¸ç¦å¿ƒç—’éš¾æ”ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -30,10 +30,10 @@ int valid_leave(object me, string dir)
   if (dir == "north" && 
       member_array("tian shu",me->parse_command_id_list())==-1 &&
       member_array("yu shu",me->parse_command_id_list())==-1 &&
-      me->query("family/family_name") != "Ïİ¿ÕÉ½ÎŞµ×¶´" &&
+      me->query("family/family_name") != "é™·ç©ºå±±æ— åº•æ´" &&
       objectp(present("hudian yao", environment(me))))
     {
-      message_vision(CYN"»¤µîÑıºÈµÀ£ºß¾£¡ºÎ·½ÑıÈË£¬µ¨¸ÒÉÃ´³½ûµØ£¡\n"NOR, me);
+      message_vision(CYN"æŠ¤æ®¿å¦–å–é“ï¼šå‘”ï¼ä½•æ–¹å¦–äººï¼Œèƒ†æ•¢æ“…é—¯ç¦åœ°ï¼\n"NOR, me);
       return notify_fail("");
     }
   return ::valid_leave(me, dir);

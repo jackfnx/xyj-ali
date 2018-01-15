@@ -1,17 +1,17 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// muren.c ľ��
+// muren.c 木人
 
 inherit NPC;
 inherit F_CLEAN_UP;
 
 void create()
 {
-   set_name("ľ��", ({ "mu ren", "mu", "wood man", "wood" }) );
-   set("gender", "����" );
+   set_name("木人", ({ "mu ren", "mu", "wood man", "wood" }) );
+   set("gender", "男性" );
    set("age", 30);
-   set("long", "һ�������õı���ľ�ˣ��������ɣ���ͬ����һ�㡣\n");
+   set("long", "一个练功用的比武木人，制作精巧，如同真人一般。\n");
    set("attitude", "heroism");
 
    set("str", 25);
@@ -49,15 +49,15 @@ int accept_fight(object ob)
    if (is_fighting()) return 0;
 
    if (me->query("damaged"))
-     return notify_fail("���ľ���Ѿ������ˣ�\n");   
+     return notify_fail("这个木人已经被打坏了！\n");   
 
    if (random(me->query("fight_times")) >= 10) {
      me->set("damaged", 1);
-     return notify_fail("���ľ���Ѿ������ˣ�\n");   
+     return notify_fail("这个木人已经被打坏了！\n");   
    }
 
    if (me->query("last_fighter") == ob->query("id"))
-     return notify_fail("��ո����ľ����������\n");     
+     return notify_fail("你刚跟这个木人练过功！\n");     
 
    me->set("last_fighter", ob->query("id"));
    me->add("fight_times", 1);

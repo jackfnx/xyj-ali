@@ -1,9 +1,9 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
-string *first_name = ({ "Çà", "»Æ", "°×", "×Ï", "Òø", "½ğ"});
-string *name_words = ({ "±´¹¬Å®"});
+string *first_name = ({ "é’", "é»„", "ç™½", "ç´«", "é“¶", "é‡‘"});
+string *name_words = ({ "è´å®«å¥³"});
 
 void create()
 {
@@ -12,9 +12,9 @@ void create()
    name += name_words[random(sizeof(name_words))];
 
        set_name(name, ({"gong nu", "nu"}));
-       set("gender", "Å®ĞÔ");
+       set("gender", "å¥³æ€§");
        set("age", 20+random(5));
-   set("long", "Ò»¸öÉíºó±³ÓĞ²Ê±´µÄ¹¬Å®¡£\n");
+   set("long", "ä¸€ä¸ªèº«åèƒŒæœ‰å½©è´çš„å®«å¥³ã€‚\n");
    set("per", 30);
    set("str", 20);
        set("attitude", "heroism");

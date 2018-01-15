@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /4world/houshan4
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÌÒÊ÷ÁÖ");
+  set ("short", "æ¡ƒæ ‘æž—");
   set ("long", @LONG
 
-ÌÒÊ÷ÁÖÖÐ¡£»Æ³Î³ÎµÄâ¨ºïÌÒÏÔÈ»ÒÑ¾­ÊìÍ¸£¬ÒÑ¾­ÓÐÒ»Ð©´ÓÊ÷ÉÏ
-µôÁËÏÂÀ´¡£Ò»Õó¹ûÏãÆ®À´£¬Äã¿ÚË®¶¼Á÷ÁË³öÀ´¡£
+æ¡ƒæ ‘æž—ä¸­ã€‚é»„æ¾„æ¾„çš„çŒ•çŒ´æ¡ƒæ˜¾ç„¶å·²ç»ç†Ÿé€ï¼Œå·²ç»æœ‰ä¸€äº›ä»Žæ ‘ä¸Š
+æŽ‰äº†ä¸‹æ¥ã€‚ä¸€é˜µæžœé¦™é£˜æ¥ï¼Œä½ å£æ°´éƒ½æµäº†å‡ºæ¥ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

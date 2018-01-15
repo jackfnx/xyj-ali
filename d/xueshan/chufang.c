@@ -6,19 +6,19 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "³ø·¿");
+    set("short", "å¨æˆ¿");
     set("long", @LONG
 
-ÕâÀïÊÇ³ø·¿¡£Ñ©É½µÜ×ÓĞÔ¸ñĞ×²ĞÕß¼«¶à£¬³£½«Ëù»ñÖ®ÎïÉúÍÌ»î°ş¡£
-ËùÒÔÕâÀï¾­³£²»¿ªÔî£¬Îİ×Ó½ÇÂä´¦°Ú×ÅÒ»¿Ú´óÌú¹ø(guo)£¬ÊÇÑ©É½
-µÜ×Ó×÷ÌÀÓÃµÄ£¬ÅÔ±ß»¹ÓĞÒ»¸ö°×´ÉÅè(pen)¡£ÓĞ¸ö¹ÖÍ·¹ÖÄÔµÄĞ¡Ñı
-ÕıÔÚÀïÃæÀÁÑóÑóµÄÌÉ×Å¡£ËûÑüÉÏ¹Ò×ÅÒ»¿éÅÆ×Ó£¬ÉÏÃæÍáÍá¹Õ¹ÕµØ
-Ğ´×Å£º¡ºĞ¡×ê·ç¡»¡£
+è¿™é‡Œæ˜¯å¨æˆ¿ã€‚é›ªå±±å¼Ÿå­æ€§æ ¼å‡¶æ®‹è€…æå¤šï¼Œå¸¸å°†æ‰€è·ä¹‹ç‰©ç”Ÿåæ´»å‰¥ã€‚
+æ‰€ä»¥è¿™é‡Œç»å¸¸ä¸å¼€ç¶ï¼Œå±‹å­è§’è½å¤„æ‘†ç€ä¸€å£å¤§é“é”…(guo)ï¼Œæ˜¯é›ªå±±
+å¼Ÿå­ä½œæ±¤ç”¨çš„ï¼Œæ—è¾¹è¿˜æœ‰ä¸€ä¸ªç™½ç“·ç›†(pen)ã€‚æœ‰ä¸ªæ€ªå¤´æ€ªè„‘çš„å°å¦–
+æ­£åœ¨é‡Œé¢æ‡’æ´‹æ´‹çš„èººç€ã€‚ä»–è…°ä¸ŠæŒ‚ç€ä¸€å—ç‰Œå­ï¼Œä¸Šé¢æ­ªæ­ªæ‹æ‹åœ°
+å†™ç€ï¼šã€å°é’»é£ã€ã€‚
 LONG);
 
     set("item_desc", ([
-        "guo" : " Ò»¿Ú´óÌú¹ø£¬ÍùÀïÃæ¼Ó¶«Î÷ÓÃ(add)£¬¼åÒ©ÓÃ(jian yao)¡£\n", 
-        "pen" : "Ò»Ö»°×´ÉÅè£¬ÅèÖĞÊ¢ÂúÁËÇåË®£¬ÒªÏëÖÆ±ù(make_ice)ÓÃËü¾Í¿ÉÒÔÁË¡£\n", 
+        "guo" : " ä¸€å£å¤§é“é”…ï¼Œå¾€é‡Œé¢åŠ ä¸œè¥¿ç”¨(add)ï¼Œç…è¯ç”¨(jian yao)ã€‚\n", 
+        "pen" : "ä¸€åªç™½ç“·ç›†ï¼Œç›†ä¸­ç››æ»¡äº†æ¸…æ°´ï¼Œè¦æƒ³åˆ¶å†°(make_ice)ç”¨å®ƒå°±å¯ä»¥äº†ã€‚\n", 
     ]));
 
     set("exits", ([ //sizeof() == 1
@@ -35,7 +35,7 @@ LONG);
         "water" : 1,
     ]));
 
-    create_door("west", "³ø·¿ÃÅ", "east", DOOR_CLOSED);
+    create_door("west", "å¨æˆ¿é—¨", "east", DOOR_CLOSED);
     set("no_clean_up", 0);
 
     set("cook/allow",0);
@@ -64,24 +64,24 @@ int do_add(string arg)
     object me = this_object();
     object item;
 
-    if (!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷¼Ó½ø¹øÀï£¿\n");
+    if (!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿åŠ è¿›é”…é‡Œï¼Ÿ\n");
     if (sscanf(arg, "%s in guo", item_name) != 1)
-        return notify_fail("ÓÃ·¨£ºadd <sth> in guo¡£\n");
+        return notify_fail("ç”¨æ³•ï¼šadd <sth> in guoã€‚\n");
 
     if (item_name == "water") {
-        message_vision("$NÍù¹øÀïÒ¨ÁËÒ»É×Ë®¡£\n", who);
+        message_vision("$Nå¾€é”…é‡Œèˆ€äº†ä¸€å‹ºæ°´ã€‚\n", who);
         me->set("cook/allow", 1);
         me->set("cook/shui", 1);
         return 1;
     }
 
-    if (!(item = present(item_name, who))) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¶«Î÷¡£\n");
+    if (!(item = present(item_name, who))) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
     if (item->query("cook/allow") != 1) 
-        return notify_fail("Õâ¹øÊÇÓÃÀ´¼åÒ©µÄ£¬±ğÊ²Ã´¶«Î÷¶¼ÍùÀïÈÓ¡£\n");
+        return notify_fail("è¿™é”…æ˜¯ç”¨æ¥ç…è¯çš„ï¼Œåˆ«ä»€ä¹ˆä¸œè¥¿éƒ½å¾€é‡Œæ‰”ã€‚\n");
     if (item->query("cook/type") == "shui") me->set("cook/allow", 1);
-    message_vision("$N½«Ò»"+item->query("unit")+item->query("name")+"ÈÓ½ø¹øÀï¡£\n",who);
-    set("item_desc/guo" , " Ò»¿Ú´óÌú¹ø(add)£¬¼åÒ©ÓÃ(jian yao)£¬"
-         +"ÀïÃæÂÒÆß°ËÔãµÄ²»Öª·ÅÁËĞ©Ê²Ã´¡£\n");
+    message_vision("$Nå°†ä¸€"+item->query("unit")+item->query("name")+"æ‰”è¿›é”…é‡Œã€‚\n",who);
+    set("item_desc/guo" , " ä¸€å£å¤§é“é”…(add)ï¼Œç…è¯ç”¨(jian yao)ï¼Œ"
+         +"é‡Œé¢ä¹±ä¸ƒå…«ç³Ÿçš„ä¸çŸ¥æ”¾äº†äº›ä»€ä¹ˆã€‚\n");
 
     if (me->query("cook/"+item->query("cook/type")) < item->query("cook/value"))
         me->set("cook/"+item->query("cook/type"),item->query("cook/value"));
@@ -96,8 +96,8 @@ int do_jian(string arg)
     object tang;
     int prices;
  
-    if (!arg || arg != "yao") return notify_fail("¼åÉ¶£¿\n");
-    if (!me->query("cook/allow")) return notify_fail("¹øÀïÁ¬Ë®¶¼Ã»ÓĞ£¬ÔõÃ´¼å£¿\n");
+    if (!arg || arg != "yao") return notify_fail("ç…å•¥ï¼Ÿ\n");
+    if (!me->query("cook/allow")) return notify_fail("é”…é‡Œè¿æ°´éƒ½æ²¡æœ‰ï¼Œæ€ä¹ˆç…ï¼Ÿ\n");
 
     prices = me->query("cook/shui")*me->query("cook/she")*me->query("cook/xie")
             *me->query("cook/hama")*me->query("cook/zhizhu")*me->query("cook/wugong");
@@ -105,7 +105,7 @@ int do_jian(string arg)
     tang=new(__DIR__"obj/tang");
     tang->set("prices", prices);
     tang->setup();
-    message_vision("$NÔÚ¹øÀïºúÂÒ½ÁÁË½Á£¬ÀÌÉÏÀ´Ò»Íë"+tang->query("name")+"¡£\n",who);
+    message_vision("$Nåœ¨é”…é‡Œèƒ¡ä¹±æ…äº†æ…ï¼Œæä¸Šæ¥ä¸€ç¢—"+tang->query("name")+"ã€‚\n",who);
     tang->move(environment(who));
 
     me->set("cook/allow", 0);
@@ -116,7 +116,7 @@ int do_jian(string arg)
     me->set("cook/hama", 0);
     me->set("cook/xie", 0);
 
-    set("item_desc/guo" , " Ò»¿Ú´óÌú¹ø(add)£¬¼åÒ©ÓÃ(jian yao)¡£\n");
+    set("item_desc/guo" , " ä¸€å£å¤§é“é”…(add)ï¼Œç…è¯ç”¨(jian yao)ã€‚\n");
 
     return 1;
 }
@@ -128,12 +128,12 @@ int do_make_ice(string arg)
     object who = this_player();
 
     if (who->query_skill_mapped("force") != "iceblood-force")
-        return notify_fail("Ö»ÓĞÓÃ±ù¹ÈÄıÑª¹¦²ÅÄÜÖÆË®³É±ù¡£\n");
+        return notify_fail("åªæœ‰ç”¨å†°è°·å‡è¡€åŠŸæ‰èƒ½åˆ¶æ°´æˆå†°ã€‚\n");
     if (who->query("force") < 100)
-        return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ĞÄÓĞÓà¶øÁ¦²»×ã¡£\n");
+        return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ã€‚\n");
 
     who->set_temp("temperature", 0);
-    message_vision("$NÉì³öÓÒÊÖÊ³Ö¸£¬²åÈë´ÉÅè¡£\n",who);
+    message_vision("$Nä¼¸å‡ºå³æ‰‹é£ŸæŒ‡ï¼Œæ’å…¥ç“·ç›†ã€‚\n",who);
     who->start_busy(10);
     call_out("freezing", 10, who);
     me->add("force", -100);
@@ -145,18 +145,18 @@ void freezing(object who)
 {
     object bing;
     string *msg = ({
-        "Ë®Ãæ±ã¸¡ÆğÒ»Ë¿Ë¿°×Æø¡£\n",
-        "´ÉÅèÍâÃæÃ°³ö¹É¹Éº®Æø¡£\n",
-        "´ÉÅè±ßÉÏÆğÁËÒ»²ã°×Ëª¡£\n",
-        "Ë®Ãæ½á³ÉÒ»Æ¬Æ¬±¡±ù¡£\n",
-        "±ùÔ½½áÔ½ºñ¡£\n",
+        "æ°´é¢ä¾¿æµ®èµ·ä¸€ä¸ä¸ç™½æ°”ã€‚\n",
+        "ç“·ç›†å¤–é¢å†’å‡ºè‚¡è‚¡å¯’æ°”ã€‚\n",
+        "ç“·ç›†è¾¹ä¸Šèµ·äº†ä¸€å±‚ç™½éœœã€‚\n",
+        "æ°´é¢ç»“æˆä¸€ç‰‡ç‰‡è–„å†°ã€‚\n",
+        "å†°è¶Šç»“è¶Šåšã€‚\n",
     });
     int temperature;
 
     temperature = who->add_temp("temperature", 10);
     if (temperature<200) {
         if (who->query("force")<100) {
-            message_vision("$N´óº¹ÁÜÀì£¬ÅèÖĞµÄË®È´»¹Ã»½á³É±ù£¬$NÄÑ¹ıµÄÕ¾ÁËÆğÀ´¡£\n", who);
+            message_vision("$Nå¤§æ±—æ·‹æ¼“ï¼Œç›†ä¸­çš„æ°´å´è¿˜æ²¡ç»“æˆå†°ï¼Œ$Néš¾è¿‡çš„ç«™äº†èµ·æ¥ã€‚\n", who);
             who->delete_temp("temperature");
         } else {
             message_vision(msg[random(sizeof(msg))],who);
@@ -165,7 +165,7 @@ void freezing(object who)
             call_out ("freezing", 10, who);
         }
     } else {
-        message_vision("Ò»Õµ²èÊ±·Ö£¬Ò»´ÉÅèÇåË®¶¼»¯³ÉÁËÒ»¿é½á½áÊµÊµµÄĞş±ù¡£\n", who);
+        message_vision("ä¸€ç›èŒ¶æ—¶åˆ†ï¼Œä¸€ç“·ç›†æ¸…æ°´éƒ½åŒ–æˆäº†ä¸€å—ç»“ç»“å®å®çš„ç„å†°ã€‚\n", who);
         bing = new(__DIR__"obj/xuanbing");
         bing->move(environment(who));
         who->delete_temp("temperature");

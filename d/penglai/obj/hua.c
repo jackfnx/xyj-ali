@@ -8,9 +8,9 @@ inherit NECK;
 
 void create()
 {
-    set_name("ÏÉ»¨", ({ "flower"}));
+    set_name("ä»™èŠ±", ({ "flower"}));
     set_weight(100);
-    set("unit", "¶ä");
+    set("unit", "æœµ");
     set("armor_prop/armor", 1);
     set("armor_prop/personality", 2);
     setup();
@@ -27,13 +27,13 @@ int do_eat(string arg)
     int qn = 0;
     int score = query("score");
     if (!arg || !id(arg)) return 0;
-    message_vision(HIC"$N³ÔÏÂÒ»¶ä"+query("name")+HIC"£¬Ö»¾õµÃÏãÆøÆË±Ç£¬³Ý¼Õ·Ò·¼¡£\n"NOR, me);
+    message_vision(HIC"$Nåƒä¸‹ä¸€æœµ"+query("name")+HIC"ï¼Œåªè§‰å¾—é¦™æ°”æ‰‘é¼»ï¼Œé½¿é¢ŠèŠ¬èŠ³ã€‚\n"NOR, me);
     if (query("target")==me && score>0) {
         me->add("combat_exp", score);
         qn = score*(20+random(10))/100;
         if (me->query("potential")-me->query("learned_points") < 1000)
             me->add("potential", qn);
-        tell_object(me, HIC"ÄãµÃµ½ÁË"+COMBAT_D->chinese_daoxing(score)+"µÀÐÐ£¬"+qn+"µãÇ±ÄÜ¡£\n"NOR);
+        tell_object(me, HIC"ä½ å¾—åˆ°äº†"+COMBAT_D->chinese_daoxing(score)+"é“è¡Œï¼Œ"+qn+"ç‚¹æ½œèƒ½ã€‚\n"NOR);
         MONITOR_D->report_system_object_msg(me, " got "+score+" exp "+qn+" pots from baihua-gu.\n" );
         log_file("baihuagu", me->query("id")+" got "+score+" exp "+qn+" pots on "+ctime(time())+".\n");
     }

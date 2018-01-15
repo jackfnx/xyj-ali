@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ïÎ¿ÕÄ¾×À", ({"zhuo zi", "zhuozi", "table"}));
+  set_name("é•‚ç©ºæœ¨æ¡Œ", ({"zhuo zi", "zhuozi", "table"}));
   set_weight(9000);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»ÕÅïÎ¿ÕÄ¾×À¡£\n");
+    set("long", "ä¸€å¼ é•‚ç©ºæœ¨æ¡Œã€‚\n");
     set("material", "wood");
-    set("unit", "ÕÅ");
+    set("unit", "å¼ ");
     set("value", 1200);
   }
   setup();

@@ -1,15 +1,15 @@
 
         all_inventory(3)        LP MudOSv21c7             (7 Jul 1996)
 
-        º¯ÊıÃû³Æ:
-                all_inventory() - ´«»ØÒ»¸öÎï¼şµÄÄÚÈİÎïÆ·.
-        º¯ÊıÓï·¨:
+        å‡½æ•°åç§°:
+                all_inventory() - ä¼ å›ä¸€ä¸ªç‰©ä»¶çš„å†…å®¹ç‰©å“.
+        å‡½æ•°è¯­æ³•:
                 object *all_inventory( object ob );
 
-                Îï¼ş *all_inventory( Îï¼ş ob );
-        º¯ÊıÓÃ·¨:
-                ´«»ØÒ»¸öÕóÁĞ, ´ËÕóÁĞÎªÎï¼ş ob µÄÄÚÈİÎïÆ·.
-        ²Î¿¼º¯Êı:
+                ç‰©ä»¶ *all_inventory( ç‰©ä»¶ ob );
+        å‡½æ•°ç”¨æ³•:
+                ä¼ å›ä¸€ä¸ªé˜µåˆ—, æ­¤é˜µåˆ—ä¸ºç‰©ä»¶ ob çš„å†…å®¹ç‰©å“.
+        å‚è€ƒå‡½æ•°:
                 first_inventory(3), next_inventory(3), deep_inventory(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Œç¿»è¯‘:
                 Phoebus@ZH      1997.Aug.12.            (Writen 5/23/97)

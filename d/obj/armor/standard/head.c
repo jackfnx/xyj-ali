@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // shoupi.c
@@ -9,13 +9,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name("Í·¿ø", ({"head"}));
+        set_name("å¤´ç›”", ({"head"}));
    set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "iron");
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
      set("armor_prop/armor", 1);
         }
         setup();

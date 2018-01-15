@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // backup.c
@@ -15,11 +15,11 @@ int main(object me, string arg)
    seteuid(getuid());
 
    if( !objectp(link_ob = me->query_temp("link_ob")) )
-     return notify_fail("Äã²»ÊÇ¾­ÓÉÕı³£Á¬Ïß½øÈë£¬²»ÄÜ´¢´æ¡£\n");
+     return notify_fail("ä½ ä¸æ˜¯ç»ç”±æ­£å¸¸è¿çº¿è¿›å…¥ï¼Œä¸èƒ½å‚¨å­˜ã€‚\n");
      
     cur_time = time();
     if( (cur_time-me->query("last_backup")) < 600 )     
-     return notify_fail("Äã³Ùµã²Å¿ÉÒÔ´¢´æ¡£\n");
+     return notify_fail("ä½ è¿Ÿç‚¹æ‰å¯ä»¥å‚¨å­˜ã€‚\n");
    
     me->set("last_backup", cur_time);
     
@@ -32,19 +32,19 @@ int main(object me, string arg)
         inv[i]->query("series_no") )   {
            inv[i]->unequip();
            if( !(int)inv[i]->backup() )   {
-                write("´¢´æÊ§°Ü¡£\n");
-                   write("±¸·İÊ§°Ü¡£\n");
+                write("å‚¨å­˜å¤±è´¥ã€‚\n");
+                   write("å¤‡ä»½å¤±è´¥ã€‚\n");
                 return 0;
            }
         }
      }
 
-        write("µµ°¸´¢´æÍê±Ï¡£\n");
-        write("±¸·İÍê±Ï¡£\n");
+        write("æ¡£æ¡ˆå‚¨å­˜å®Œæ¯•ã€‚\n");
+        write("å¤‡ä»½å®Œæ¯•ã€‚\n");
      return 1;
    } else {
-     write("´¢´æÊ§°Ü¡£\n");
-        write("±¸·İÊ§°Ü¡£\n");
+     write("å‚¨å­˜å¤±è´¥ã€‚\n");
+        write("å¤‡ä»½å¤±è´¥ã€‚\n");
      return 0;
    }
 }
@@ -52,9 +52,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£ºbackup
+æŒ‡ä»¤æ ¼å¼ï¼šbackup
 
-±¸·İµµ°¸¡£ÔÚÄãµÄµµ°¸ÔâÊÜÄªÃûÆäÃîµÄÉËº¦ºó£¬¿ÉÒªÇóÎ×Ê¦»Ö¸´¡£
+å¤‡ä»½æ¡£æ¡ˆã€‚åœ¨ä½ çš„æ¡£æ¡ˆé­å—è«åå…¶å¦™çš„ä¼¤å®³åï¼Œå¯è¦æ±‚å·«å¸ˆæ¢å¤ã€‚
 HELP
    );
    return 1;

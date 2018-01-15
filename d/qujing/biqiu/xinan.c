@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 11/21/1997
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ϫ��");
+  set ("short", "溪南");
   set ("long", @LONG
 
-�ϰ���һƬ�����֣���Ϫ�������������ţ���ʱ�ɼ�Ϫ��Ʈ��
-����֦���黨�ꡣ�紵��������Ҷ�������졣
+南岸是一片杨树林，清溪在林外徐徐流着，不时可见溪上飘着
+青树枝和碎花瓣。风吹过，杨树叶哗啦作响。
 
 LONG);
 
@@ -26,6 +26,6 @@ LONG);
 int valid_leave (object who, string dir)
 {
   if (dir == "north")
-    message_vision ("$Nһ��̤��Ϫ�����������˹�ȥ��\n",who);
+    message_vision ("$N一脚踏进溪流，慢慢走了过去。\n",who);
   return 1;
 }

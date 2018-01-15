@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 5/3/1997
@@ -8,22 +8,22 @@
 inherit ITEM;
 
 mapping chinese_dirs = ([
-  "north":        "±±",
-  "south":        "ÄÏ",
-  "east":         "¶«",
-  "west":         "Î÷",
-  "northup":      "±±±ß",
-  "southup":      "ÄÏ±ß",
-  "eastup":       "¶«±ß",  
-  "westup":       "Î÷±ß",
-  "northdown":    "±±±ß",
-  "southdown":    "ÄÏ±ß",
-  "eastdown":     "¶«±ß",
-  "westdown":     "Î÷±ß",
-  "northeast":    "¶«±±",
-  "northwest":    "Î÷±±",
-  "southeast":    "¶«ÄÏ",
-  "southwest":    "Î÷ÄÏ",
+  "north":        "åŒ—",
+  "south":        "å—",
+  "east":         "ä¸œ",
+  "west":         "è¥¿",
+  "northup":      "åŒ—è¾¹",
+  "southup":      "å—è¾¹",
+  "eastup":       "ä¸œè¾¹",  
+  "westup":       "è¥¿è¾¹",
+  "northdown":    "åŒ—è¾¹",
+  "southdown":    "å—è¾¹",
+  "eastdown":     "ä¸œè¾¹",
+  "westdown":     "è¥¿è¾¹",
+  "northeast":    "ä¸œåŒ—",
+  "northwest":    "è¥¿åŒ—",
+  "southeast":    "ä¸œå—",
+  "southwest":    "è¥¿å—",
   ]);
 
 mapping left_dirs = ([
@@ -86,7 +86,7 @@ string *makes = ({
 
 void create()
 {
-  string name = makes[random(sizeof(makes))]+" ½Î³µ";
+  string name = makes[random(sizeof(makes))]+" è½¿è½¦";
 
   set_name(name, ({"car", "che"}));
   set_weight(300000);
@@ -95,8 +95,8 @@ void create()
     set_default_object(__FILE__);
   else {
     set("short", name+"(Car)");
-    set("long", "ÕâÊÇÒ»Á¾"+name+"¡£\n");
-    set("unit", "Á¾");
+    set("long", "è¿™æ˜¯ä¸€è¾†"+name+"ã€‚\n");
+    set("unit", "è¾†");
     set("material", "metal");
     set("value", 1000000);
     set("dir", "north");
@@ -132,7 +132,7 @@ int test_busy ()
 
   if (me->query_temp("is_busy"))
   {
-    tell_object (who,"¶¯×÷±ğÌ«ÃÍ£¬³µ×Ó»á¸ã»µµÄ£¡\n");    
+    tell_object (who,"åŠ¨ä½œåˆ«å¤ªçŒ›ï¼Œè½¦å­ä¼šæåçš„ï¼\n");    
     return 1;
   }
   me->set_temp("is_busy",1);
@@ -160,7 +160,7 @@ int is_driver ()
 
   if (me->query("driver") != who)
   {
-    tell_object (who,"±ğÂÒ¶¯£¬ÄãÓÖ²»ÊÇË¾»ú£¡\n");  
+    tell_object (who,"åˆ«ä¹±åŠ¨ï¼Œä½ åˆä¸æ˜¯å¸æœºï¼\n");  
     return 0;
   }
   return 1;
@@ -177,7 +177,7 @@ int report_outside_objects ()
   if (sizeof(inv) <= 1)
     return 1;
 
-  tell_object (who,"ÍâÃæÓĞ£º");  
+  tell_object (who,"å¤–é¢æœ‰ï¼š");  
   for (i=0; i < sizeof(inv); i++)
   {
     if (inv[i] != me)
@@ -197,7 +197,7 @@ int report_inside_objects ()
   if (sizeof(inv) == 0)
     return 1;
 
-  tell_object (who,"³µÀïÓĞ£º");  
+  tell_object (who,"è½¦é‡Œæœ‰ï¼š");  
   for (i=0; i < sizeof(inv); i++)
   {
     tell_object (who,inv[i]->query("name")+"("+inv[i]->query("id")+") ");    
@@ -220,12 +220,12 @@ int report_dir ()
 
   dirs = keys(exits);
 
-  tell_object (who,"ËÄÃæµÄ³ö¿ÚÊÇ£º");  
+  tell_object (who,"å››é¢çš„å‡ºå£æ˜¯ï¼š");  
   for (i=0; i < sizeof(dirs); i++)
   {
     tell_object (who,chinese_dirs[dirs[i]]+"("+dirs[i]+")");    
   }
-  tell_object (who," [³µÍ·³¯Ïò£º"+chinese_dirs[me->query("dir")]+
+  tell_object (who," [è½¦å¤´æœå‘ï¼š"+chinese_dirs[me->query("dir")]+
                    "("+me->query("dir")+")]\n");  
   return 1;
 }
@@ -236,13 +236,13 @@ int report_view ()
   object who = this_player();
   object where = environment(me);
 
-  tell_object (who,"¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô\n");  
-  tell_object (who,"´Ó³µ´°Àï¿ÉÒÔ¿´µ½£º");  
+  tell_object (who,"â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡\n");  
+  tell_object (who,"ä»è½¦çª—é‡Œå¯ä»¥çœ‹åˆ°ï¼š");  
   tell_object (who,where->query("short")+"\n");  
   tell_object (who,where->query("long")+"\n");  
   report_outside_objects();
   report_dir();
-  tell_object (who,"¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô\n");  
+  tell_object (who,"â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡\n");  
   return 1;
 }
 
@@ -253,9 +253,9 @@ int report_short ()
   string strspeed, strfuel, strmiles;
   int i, len = 15;
 
-  strspeed = "ËÙ¶È£º"+sprintf("%d",me->query("speed"));
-  strfuel  = "ÆûÓÍ£º"+sprintf("%d",me->query("fuel")) ;
-  strmiles = "Àï³Ì£º"+sprintf("%d",me->query("miles"));
+  strspeed = "é€Ÿåº¦ï¼š"+sprintf("%d",me->query("speed"));
+  strfuel  = "æ±½æ²¹ï¼š"+sprintf("%d",me->query("fuel")) ;
+  strmiles = "é‡Œç¨‹ï¼š"+sprintf("%d",me->query("miles"));
   for (i = sizeof(strspeed); i < len; i++)
     strspeed = strspeed + " ";
   for (i = sizeof(strfuel); i < len; i++)
@@ -263,17 +263,17 @@ int report_short ()
   for (i = sizeof(strmiles); i < len; i++)
     strmiles = strmiles + " ";
   tell_object (who,"\n");  
-  tell_object (who,"  ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ\n");  
-  tell_object (who,"  ¡õ"+ strspeed + " 7[ÊÖµ¼] 8[¼ÓËÙ] 9[×Ôµ¼] ¡õ\n");  
-  tell_object (who,"  ¡õ"+ strfuel  + " 4[×ó×ª] 5[É²³µ] 6[ÓÒ×ª] ¡õ\n");  
-  tell_object (who,"  ¡õ"+ strmiles + "         2[¼õËÙ]         ¡õ\n");  
-  tell_object (who,"  ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ\n");  
+  tell_object (who,"  â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");  
+  tell_object (who,"  â–¡"+ strspeed + " 7[æ‰‹å¯¼] 8[åŠ é€Ÿ] 9[è‡ªå¯¼] â–¡\n");  
+  tell_object (who,"  â–¡"+ strfuel  + " 4[å·¦è½¬] 5[åˆ¹è½¦] 6[å³è½¬] â–¡\n");  
+  tell_object (who,"  â–¡"+ strmiles + "         2[å‡é€Ÿ]         â–¡\n");  
+  tell_object (who,"  â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");  
   if (me->query("autodrive") > 0)
-    tell_object (who,"  ·½Ïò¿ØÖÆ£ºÈ«×Ô¶¯");  
+    tell_object (who,"  æ–¹å‘æ§åˆ¶ï¼šå…¨è‡ªåŠ¨");  
   else
-    tell_object (who,"  ·½Ïò¿ØÖÆ£ºÊÖ¶¯");  
+    tell_object (who,"  æ–¹å‘æ§åˆ¶ï¼šæ‰‹åŠ¨");  
   if (me->query("driver"))
-    tell_object (who,"  Ë¾»ú£º"+me->query("driver")->query("name"));  
+    tell_object (who,"  å¸æœºï¼š"+me->query("driver")->query("name"));  
   tell_object (who,"\n");  
   report_inside_objects();
   return 1;
@@ -292,20 +292,20 @@ int do_enter (string arg)
 
   if (me->query("speed") > 0)
   {
-    tell_object (who,"Ìø½øÕıÔÚĞĞÊ»µÄ³µ×Ó»áÓĞÉúÃüÎ£ÏÕ£¡\n");  
+    tell_object (who,"è·³è¿›æ­£åœ¨è¡Œé©¶çš„è½¦å­ä¼šæœ‰ç”Ÿå‘½å±é™©ï¼\n");  
     return 1;
   }
 
-  message_vision ("$NÒ»ÍäÑü£¬×ø½ø³µ¡£\n",who);
+  message_vision ("$Nä¸€å¼¯è…°ï¼Œåè¿›è½¦ã€‚\n",who);
   who->move(me);
   if (! me->query("driver") ||
       environment(me->query("driver")) != me)
   {
     me->set("driver",who);
-    message_vision ("$N×øÔÚË¾»ú×ùÎ»ÉÏ¡£\n",who);
+    message_vision ("$Nååœ¨å¸æœºåº§ä½ä¸Šã€‚\n",who);
   }
   else
-    message_vision ("$N×øÔÚ¿Í×ùÉÏ¡£\n",who);
+    message_vision ("$Nååœ¨å®¢åº§ä¸Šã€‚\n",who);
   return 1;
 }
 
@@ -319,7 +319,7 @@ int do_out (string arg)
 
   if (me->query("speed") > 0)
   {
-    tell_object (who,"Ìø³öÕıÔÚĞĞÊ»µÄ³µ×Ó»áÓĞÉúÃüÎ£ÏÕ£¡\n");  
+    tell_object (who,"è·³å‡ºæ­£åœ¨è¡Œé©¶çš„è½¦å­ä¼šæœ‰ç”Ÿå‘½å±é™©ï¼\n");  
     return 1;
   }
 
@@ -328,9 +328,9 @@ int do_out (string arg)
     me->set("driver",0);
   }
 
-  message_vision ("$NÒ»´ò¿ª³µÃÅÌøÏÂ³µ¡£\n",who);
+  message_vision ("$Nä¸€æ‰“å¼€è½¦é—¨è·³ä¸‹è½¦ã€‚\n",who);
   who->move(environment(me));
-  message_vision ("$NÌø³ö³µ£¬½«³µÃÅ¹ØÉÏ¡£\n",who);
+  message_vision ("$Nè·³å‡ºè½¦ï¼Œå°†è½¦é—¨å…³ä¸Šã€‚\n",who);
   return 1;
 }
 
@@ -343,8 +343,8 @@ int do_look (string arg)
   {
     if (arg == "car")
     {
-      tell_object (who,"ÕâÊÇÒ»"+me->query("unit")+me->query("name")+
-                   "(enter)¡£\n");
+      tell_object (who,"è¿™æ˜¯ä¸€"+me->query("unit")+me->query("name")+
+                   "(enter)ã€‚\n");
       return 1;
     }
     return 0;
@@ -371,14 +371,14 @@ int do_left (string arg)
 
   if (me->query("speed") == 0)
   {
-    tell_object (who,"ÏÈ½«³µ×Ó·¢¶¯ÆğÀ´ÔÙ×ªÍä¡£\n");
+    tell_object (who,"å…ˆå°†è½¦å­å‘åŠ¨èµ·æ¥å†è½¬å¼¯ã€‚\n");
     return 1;  
   }
 
   dir = left_dirs[dir];
-  tell_object (who,"Äã½«·½ÏòÅÌÏò×óÒ»×ª¡£\n");  
-  message_vision (me->query("name")+"³µÍ·³¯"+chinese_dirs[dir]+
-                  "Ò»¹Õ¡­¡­\n",me);
+  tell_object (who,"ä½ å°†æ–¹å‘ç›˜å‘å·¦ä¸€è½¬ã€‚\n");  
+  message_vision (me->query("name")+"è½¦å¤´æœ"+chinese_dirs[dir]+
+                  "ä¸€æ‹â€¦â€¦\n",me);
   me->set("dir",dir);
   return 1;
 }
@@ -400,14 +400,14 @@ int do_right (string arg)
 
   if (me->query("speed") == 0)
   {
-    tell_object (who,"ÏÈ½«³µ×Ó·¢¶¯ÆğÀ´ÔÙ×ªÍä¡£\n");
+    tell_object (who,"å…ˆå°†è½¦å­å‘åŠ¨èµ·æ¥å†è½¬å¼¯ã€‚\n");
     return 1;  
   }
 
   dir = right_dirs[dir];
-  tell_object (who,"Äã½«·½ÏòÅÌÏòÓÒÒ»×ª¡£\n");  
-  message_vision (me->query("name")+"³µÍ·³¯"+chinese_dirs[dir]+
-                  "Ò»¹Õ¡­¡­\n",me);
+  tell_object (who,"ä½ å°†æ–¹å‘ç›˜å‘å³ä¸€è½¬ã€‚\n");  
+  message_vision (me->query("name")+"è½¦å¤´æœ"+chinese_dirs[dir]+
+                  "ä¸€æ‹â€¦â€¦\n",me);
   me->set("dir",dir);
   return 1;
 }
@@ -430,26 +430,26 @@ int do_speedup (string arg)
   if (s == 0)
   {
     s += 2+random(4);
-    tell_object (who,"Äãµã»ğ·¢¶¯³µ×Ó¡£\n");  
-    message_vision (me->query("name")+"ÇáºğÁËÒ»Éù£¬ÅÅÆø¹ÜÍÂ³öÒ»¹ÉÇàÑÌ\n",me);
+    tell_object (who,"ä½ ç‚¹ç«å‘åŠ¨è½¦å­ã€‚\n");  
+    message_vision (me->query("name")+"è½»å¼äº†ä¸€å£°ï¼Œæ’æ°”ç®¡åå‡ºä¸€è‚¡é’çƒŸ\n",me);
   }
   else if (s < 45)
   {
     s += 4+random(8);
-    tell_object (who,"Äã²ÈÁËÒ»²ÈÓÍÃÅ¡£\n");  
-    message_vision (me->query("name")+"ÇáÇáµØ¼ÓËÙ¡£\n",me);
+    tell_object (who,"ä½ è¸©äº†ä¸€è¸©æ²¹é—¨ã€‚\n");  
+    message_vision (me->query("name")+"è½»è½»åœ°åŠ é€Ÿã€‚\n",me);
   }
   else if (s < 90)
   {
     s += 8+random(16);
-    tell_object (who,"ÄãÓÃÁ¦²ÈÁËÒ»²ÈÓÍÃÅ¡£\n");  
-    message_vision (me->query("name")+"à²µØÒ»Éù¼Ó¿ìÁËÊ±ËÙ£¡\n",me);
+    tell_object (who,"ä½ ç”¨åŠ›è¸©äº†ä¸€è¸©æ²¹é—¨ã€‚\n");  
+    message_vision (me->query("name")+"å—–åœ°ä¸€å£°åŠ å¿«äº†æ—¶é€Ÿï¼\n",me);
   }
   else 
   {
     s += 16+random(32);
-    tell_object (who,"ÄãÊ¹¾¢µØÁË²ÈÁËÒ»²ÈÓÍÃÅ¡£\n");  
-    message_vision (me->query("name")+"·¢·èËÆµØ¼ÓËÙ£¡\n",me);
+    tell_object (who,"ä½ ä½¿åŠ²åœ°äº†è¸©äº†ä¸€è¸©æ²¹é—¨ã€‚\n");  
+    message_vision (me->query("name")+"å‘ç–¯ä¼¼åœ°åŠ é€Ÿï¼\n",me);
   }
   if (s > 320)
     s = 320;
@@ -474,25 +474,25 @@ int do_slowdown (string arg)
 
   if (s == 0)
   {
-    tell_object (who,"³µ×ÓÒÑ¾­Í£ÁË¡£\n");  
+    tell_object (who,"è½¦å­å·²ç»åœäº†ã€‚\n");  
   }
   else if (s < 45)
   {
     s -= 4+random(8);
-    tell_object (who,"ÄãÇáÇáµØ²ÈÁË²ÈÕ¢¡£\n");  
-    message_vision (me->query("name")+"ÂıÂı¼õËÙ¡£\n",me);
+    tell_object (who,"ä½ è½»è½»åœ°è¸©äº†è¸©é—¸ã€‚\n");  
+    message_vision (me->query("name")+"æ…¢æ…¢å‡é€Ÿã€‚\n",me);
   }
   else if (s < 90)
   {
     s -= 8+random(16);
-    tell_object (who,"Äã²ÈÁË²ÈÕ¢¡£\n");  
-    message_vision (me->query("name")+"Ã÷ÏÔµØÂıÁËÏÂÀ´¡£\n",me);
+    tell_object (who,"ä½ è¸©äº†è¸©é—¸ã€‚\n");  
+    message_vision (me->query("name")+"æ˜æ˜¾åœ°æ…¢äº†ä¸‹æ¥ã€‚\n",me);
   }
   else 
   {
     s -= 16+random(32);
-    tell_object (who,"ÄãÊ¹¾¢µØ²ÈÁËÒ»²ÈÕ¢¡£\n");  
-    message_vision (me->query("name")+"ÔÚ·É³ÚÖĞ¼õËÙ¡£\n",me);
+    tell_object (who,"ä½ ä½¿åŠ²åœ°è¸©äº†ä¸€è¸©é—¸ã€‚\n");  
+    message_vision (me->query("name")+"åœ¨é£å¼›ä¸­å‡é€Ÿã€‚\n",me);
   }
   if (s < 0)
     s = 0;
@@ -517,37 +517,37 @@ int do_stop (string arg)
 
   if (s == 0)
   {
-    tell_object (who,"³µ×ÓÒÑ¾­Í£ÁË¡£\n");  
+    tell_object (who,"è½¦å­å·²ç»åœäº†ã€‚\n");  
   }
   else if (s < 20)
   {
     s = 0;
-    tell_object (who,"ÄãÃÍµØÒ»É²³µ¡£\n");  
-    message_vision (me->query("name")+"ÇáÇáÒ»µß£¬Í£ÁË¡£\n",me);
+    tell_object (who,"ä½ çŒ›åœ°ä¸€åˆ¹è½¦ã€‚\n");  
+    message_vision (me->query("name")+"è½»è½»ä¸€é¢ ï¼Œåœäº†ã€‚\n",me);
   }
   else if (s < 45)
   {
     s = 0;
-    tell_object (who,"ÄãÒ»¸ö¼±É²³µ£¡\n");  
-    message_vision (me->query("name")+"Í»È»¼±¾çµØ¼õËÙ£¡\n",me);
-    message_vision (me->query("name")+"·¢³öÒ»Éù³¤³¤µÄ¼â½Ğ£¬Ö¨Ò»ÉùÍ£ÁË£¡\n",me);
-    tell_object (who,"ÄãÃÍµØõÄÁËÒ»ÏÂ£¡\n");  
+    tell_object (who,"ä½ ä¸€ä¸ªæ€¥åˆ¹è½¦ï¼\n");  
+    message_vision (me->query("name")+"çªç„¶æ€¥å‰§åœ°å‡é€Ÿï¼\n",me);
+    message_vision (me->query("name")+"å‘å‡ºä¸€å£°é•¿é•¿çš„å°–å«ï¼Œå±ä¸€å£°åœäº†ï¼\n",me);
+    tell_object (who,"ä½ çŒ›åœ°è·„äº†ä¸€ä¸‹ï¼\n");  
   }
   else if (s < 100)
   {
     s -= 40+random(40);
-    tell_object (who,"Äã·è¿ñµØ²ÈÕ¢¼±É²³µ£¡\n");  
-    message_vision (me->query("name")+"Í»È»¼±¾çµØ¼õËÙ£¡\n",me);
-    message_vision (me->query("name")+"¾çÁÒµØÕğ¶¯×Å£¡\n",me);
-    tell_object (who,"ÄãÒ»ÕóÍ·ÔÎ£¬²îÒ»µãÍÂÁË³öÀ´£¡\n");  
+    tell_object (who,"ä½ ç–¯ç‹‚åœ°è¸©é—¸æ€¥åˆ¹è½¦ï¼\n");  
+    message_vision (me->query("name")+"çªç„¶æ€¥å‰§åœ°å‡é€Ÿï¼\n",me);
+    message_vision (me->query("name")+"å‰§çƒˆåœ°éœ‡åŠ¨ç€ï¼\n",me);
+    tell_object (who,"ä½ ä¸€é˜µå¤´æ™•ï¼Œå·®ä¸€ç‚¹åäº†å‡ºæ¥ï¼\n");  
   }
   else 
   {
     s -= 60+random(60);
-    tell_object (who,"Äã²»¹ËÒ»ÇĞµØµØ²ÈÕ¢¼±É²³µ£¡\n");  
-    message_vision (me->query("name")+"Í»È»¼±¾çµØ¼õËÙ£¡\n",me);
-    message_vision (me->query("name")+"¿ÉÅÂµØÕğ¶¯×Å£¬µØÉÏ»®³öÁ½µÀºÚÓ¡£¡\n",me);
-    tell_object (who,"Ç¿ÁÒµÄÕğ¶¯ÖĞÄãÒ»Õó¾çÁÒÍ·Í´£¡\n");  
+    tell_object (who,"ä½ ä¸é¡¾ä¸€åˆ‡åœ°åœ°è¸©é—¸æ€¥åˆ¹è½¦ï¼\n");  
+    message_vision (me->query("name")+"çªç„¶æ€¥å‰§åœ°å‡é€Ÿï¼\n",me);
+    message_vision (me->query("name")+"å¯æ€•åœ°éœ‡åŠ¨ç€ï¼Œåœ°ä¸Šåˆ’å‡ºä¸¤é“é»‘å°ï¼\n",me);
+    tell_object (who,"å¼ºçƒˆçš„éœ‡åŠ¨ä¸­ä½ ä¸€é˜µå‰§çƒˆå¤´ç—›ï¼\n");  
     //who->unconcious();
   }
   if (s < 0)
@@ -572,7 +572,7 @@ int do_handdrive (string arg)
     return 1;
 
   me->set("autodrive",0);
-  tell_object (who,"ÏÖÔÚÊÖ¶¯¿ØÖÆĞĞ³µ·½Ïò¡£\n");  
+  tell_object (who,"ç°åœ¨æ‰‹åŠ¨æ§åˆ¶è¡Œè½¦æ–¹å‘ã€‚\n");  
   return 1;
 }
 
@@ -592,7 +592,7 @@ int do_autodrive (string arg)
     return 1;
 
   me->set("autodrive",1);
-  tell_object (who,"ÏÖÔÚÈ«×Ô¶¯¿ØÖÆĞĞ³µ·½Ïò¡£\n");  
+  tell_object (who,"ç°åœ¨å…¨è‡ªåŠ¨æ§åˆ¶è¡Œè½¦æ–¹å‘ã€‚\n");  
   return 1;
 }
 
@@ -602,53 +602,53 @@ void collision ()
   object who = me->query("driver");
   int s = me->query("speed");
   string *hits = ({
-    "³å³öÁËÂ·",
-    "»¬½øÂ·±ßµÄ²İ´ÔÖĞ",
-    "×²½øÒ»¸ö´óÍÁ¶Ñ",
-    "»¬½øÒ»Ì²ÀÃÄà",
-    "´³½øÒ»¸öĞ¡Ä¾Åï",
-    "³åÏòÒ»´ó´Ô¹àÄ¾´Ô",
-    "×²ÏòÒ»Æ¬Ğ¡Ê÷",
+    "å†²å‡ºäº†è·¯",
+    "æ»‘è¿›è·¯è¾¹çš„è‰ä¸›ä¸­",
+    "æ’è¿›ä¸€ä¸ªå¤§åœŸå †",
+    "æ»‘è¿›ä¸€æ»©çƒ‚æ³¥",
+    "é—¯è¿›ä¸€ä¸ªå°æœ¨æ£š",
+    "å†²å‘ä¸€å¤§ä¸›çŒæœ¨ä¸›",
+    "æ’å‘ä¸€ç‰‡å°æ ‘",
   });
   string how;
 
   if (s == 0)
-    how = "¼«ÇáµØ";
+    how = "æè½»åœ°";
   else if (s < 20)
-    how = "ßÛµ±Ò»Éù";
+    how = "å’£å½“ä¸€å£°";
   else if (s < 40)
-    how = "»©À²Ò»Éù";
+    how = "å“—å•¦ä¸€å£°";
   else if (s < 60)
-    how = "ÅéµØÒ»Éù";
+    how = "ç °åœ°ä¸€å£°";
   else if (s < 80)
-    how = "ºäµØÒ»Éù";
+    how = "è½°åœ°ä¸€å£°";
   else if (s < 100)
-    how = "ÏóÍÑçÖÒ°ÂíÒ»ÑùµØ";
+    how = "è±¡è„±ç¼°é‡é©¬ä¸€æ ·åœ°";
   else if (s < 150)
-    how = "¼«·è¿ñµØ";
+    how = "æç–¯ç‹‚åœ°";
   else 
-    how = "ÌìËúµØÁÑ°ãµØ";
+    how = "å¤©å¡Œåœ°è£‚èˆ¬åœ°";
 
   if (s < 50)
   {
     message_vision (me->query("name")+how+hits[random(sizeof(hits))]+
-                    "¡£\n",me);
-    message_vision (me->query("name")+"Í£ÁËÏÂÀ´¡£\n",me);
+                    "ã€‚\n",me);
+    message_vision (me->query("name")+"åœäº†ä¸‹æ¥ã€‚\n",me);
   }
   else if (s < 100)
   {
     message_vision (me->query("name")+how+hits[random(sizeof(hits))]+
-                    "£¡\n",me);
-    message_vision (me->query("name")+"ÔÚÒ»ÕóÇ¿ÁÒµÄÕğ¶¯ÖĞÍ£ÁËÏÂÀ´£¡\n",me);
-    tell_object (who,"ÄãÒ»ÕóÄ¿Ñ££¡\n");  
+                    "ï¼\n",me);
+    message_vision (me->query("name")+"åœ¨ä¸€é˜µå¼ºçƒˆçš„éœ‡åŠ¨ä¸­åœäº†ä¸‹æ¥ï¼\n",me);
+    tell_object (who,"ä½ ä¸€é˜µç›®çœ©ï¼\n");  
   }
   else
   {
     message_vision (me->query("name")+how+hits[random(sizeof(hits))]+
-                    "£¡\n",me);
-    message_vision (me->query("name")+"ÔÚÒ»Õó¼«¿ÉÅÂµÄÕğ¶¯ÖĞ·¢³ö¾ŞÏì£¡\n",me);
-    message_vision ("Ò»ÇĞÓÖÍ»È»°²¾²ÁËÏÂÀ´Í£ÁËÏÂÀ´¡£\n",me);
-    tell_object (who,"ÄãÒ»É²ÄÇ¾õµÃ´°ÍâµÄËùÓĞ¶«Î÷ÏòÄãÃÍµØÆËÀ´ÓÖÍ»È»Í£Ö¹£¡\n");  
+                    "ï¼\n",me);
+    message_vision (me->query("name")+"åœ¨ä¸€é˜µæå¯æ€•çš„éœ‡åŠ¨ä¸­å‘å‡ºå·¨å“ï¼\n",me);
+    message_vision ("ä¸€åˆ‡åˆçªç„¶å®‰é™äº†ä¸‹æ¥åœäº†ä¸‹æ¥ã€‚\n",me);
+    tell_object (who,"ä½ ä¸€åˆ¹é‚£è§‰å¾—çª—å¤–çš„æ‰€æœ‰ä¸œè¥¿å‘ä½ çŒ›åœ°æ‰‘æ¥åˆçªç„¶åœæ­¢ï¼\n");  
     //who->unconcious();
   }
   me->set("speed",0);
@@ -663,27 +663,27 @@ void display_me ()
 
   if (s == 0)
   {
-    set("short", "Í£ÔÚÂ·ÉÏµÄ"+name+"(Car)");    
+    set("short", "åœåœ¨è·¯ä¸Šçš„"+name+"(Car)");    
   }
   else if (s < 30)
   {
-    set("short", "ÂıÂıĞĞÊ»µÄ"+name+"(Car)");
-    msg = name+"ÂıÂıµØÊ»×Å¡£\n";
+    set("short", "æ…¢æ…¢è¡Œé©¶çš„"+name+"(Car)");
+    msg = name+"æ…¢æ…¢åœ°é©¶ç€ã€‚\n";
   }
   else if (s < 50)
   {
-    set("short", "ĞĞÊ»ÖĞµÄ"+name+"(Car)");
-    msg = name+"ÕıÔÚĞĞÊ»×Å¡£\n";
+    set("short", "è¡Œé©¶ä¸­çš„"+name+"(Car)");
+    msg = name+"æ­£åœ¨è¡Œé©¶ç€ã€‚\n";
   }
   else if (s < 110)
   {
-    set("short", "·ÉÊ»µÄ"+name+"(Car)");
-    msg = name+"·É¿ìµØĞĞÊ»×Å¡£\n";
+    set("short", "é£é©¶çš„"+name+"(Car)");
+    msg = name+"é£å¿«åœ°è¡Œé©¶ç€ã€‚\n";
   }
   else 
   {
-    set("short", "¿ñÊ»ÖĞµÄ"+name+"(Car)");
-    msg = name+"·¢·èËÆµØ¿ñÊ»×Å¡£\n";
+    set("short", "ç‹‚é©¶ä¸­çš„"+name+"(Car)");
+    msg = name+"å‘ç–¯ä¼¼åœ°ç‹‚é©¶ç€ã€‚\n";
   }
   if (msg && 
       random(10) == 0)
@@ -698,8 +698,8 @@ void check_speed ()
       me->query("fuel") <= 0)
   {
     me->set("speed",0);
-    message_vision (me->query("name")+"Ææ¹ÖµØÃ°³öÒ»¹ÉÇàÑÌ£¬Ã»ÓĞÈ¼ÓÍÁË¡£\n",me);
-    message_vision (me->query("name")+"ÓĞÆøÎŞÁ¦µØÍ£ÁË¡£\n",me);
+    message_vision (me->query("name")+"å¥‡æ€ªåœ°å†’å‡ºä¸€è‚¡é’çƒŸï¼Œæ²¡æœ‰ç‡ƒæ²¹äº†ã€‚\n",me);
+    message_vision (me->query("name")+"æœ‰æ°”æ— åŠ›åœ°åœäº†ã€‚\n",me);
   }
 
   if (me->query("speed") > 0 &&
@@ -707,8 +707,8 @@ void check_speed ()
         environment(me->query("driver")) != me))
   {
     me->set("speed",0);
-    message_vision (me->query("name")+"Ã»ÓĞË¾»úÁË¡£\n",me);
-    message_vision (me->query("name")+"Ö¨µØÒ»ÉùÍáÍáĞ±Ğ±µØÍ£ÁË¡£\n",me);
+    message_vision (me->query("name")+"æ²¡æœ‰å¸æœºäº†ã€‚\n",me);
+    message_vision (me->query("name")+"å±åœ°ä¸€å£°æ­ªæ­ªæ–œæ–œåœ°åœäº†ã€‚\n",me);
   }
 }
 
@@ -760,7 +760,7 @@ object find_exit ()
 
   if (!mapp(dirs = where->query("exits")))
   {
-    tell_object (who,"ÕâÀïºÃÏóÃ»ÓĞÊ²Ã´Â·¿ÉĞĞÁË¡£\n");
+    tell_object (who,"è¿™é‡Œå¥½è±¡æ²¡æœ‰ä»€ä¹ˆè·¯å¯è¡Œäº†ã€‚\n");
     return 0;  
   }
 
@@ -794,8 +794,8 @@ object find_exit ()
       else
       {
         if (random(3) == 0)
-          tell_object (who,"Ç°·½("+chinese_dirs[dir]+
-                           ")Ã»ÓĞÊ²Ã´Â·¿ÉĞĞÁË¡£\n");
+          tell_object (who,"å‰æ–¹("+chinese_dirs[dir]+
+                           ")æ²¡æœ‰ä»€ä¹ˆè·¯å¯è¡Œäº†ã€‚\n");
         return 0;
       }  
     }
@@ -813,8 +813,8 @@ object find_exit ()
       else
       {
         if (random(3) == 0)
-          tell_object (who,"Ç°·½("+chinese_dirs[dir]+
-                           ")²»ÊÇÆû³µ¿ÉĞĞµÄÂ·¡£\n");
+          tell_object (who,"å‰æ–¹("+chinese_dirs[dir]+
+                           ")ä¸æ˜¯æ±½è½¦å¯è¡Œçš„è·¯ã€‚\n");
         return 0;
       }  
     }
@@ -827,7 +827,7 @@ object find_exit ()
   if (me->query("autodrive"))
   {
     if (random(3) == 0)
-      tell_object (who,"Æû³µÏÖÔÚÏò"+chinese_dirs[dir]+"ĞĞÊ»¡£\n");
+      tell_object (who,"æ±½è½¦ç°åœ¨å‘"+chinese_dirs[dir]+"è¡Œé©¶ã€‚\n");
     me->set("dir",dir);
   }
   return obj;
@@ -856,9 +856,9 @@ void check_move ()
   else
   {
     me->set("car_from/"+exit->query("short"),where->query("short"));
-    message_vision (me->query("name")+"¿ª³ö"+where->query("short")+"¡£\n",me);
+    message_vision (me->query("name")+"å¼€å‡º"+where->query("short")+"ã€‚\n",me);
     me->move(exit);
-    message_vision (me->query("name")+"¿ª½ø"+exit->query("short")+"¡£\n",me);
+    message_vision (me->query("name")+"å¼€è¿›"+exit->query("short")+"ã€‚\n",me);
   }
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("Å£Ä§Íõ", ({ "niumo wang", "niumo", "wang" }));
-  set("title", "´óÁ¦Íõ");   
-  set("long", "Ò»Î»Éí²Ä¿ıÎ°Á¦´óÎŞ±ÈµÄÄ§Íõ£¬Ò»Ë«Å£µ°ÑÛÕıÉ·ÉñÒ»°ãµÉ×ÅÄã¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("ç‰›é­”ç‹", ({ "niumo wang", "niumo", "wang" }));
+  set("title", "å¤§åŠ›ç‹");   
+  set("long", "ä¸€ä½èº«æé­ä¼ŸåŠ›å¤§æ— æ¯”çš„é­”ç‹ï¼Œä¸€åŒç‰›è›‹çœ¼æ­£ç…ç¥ä¸€èˆ¬çªç€ä½ ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 70);
   set("attitude", "heroism");
   set("per", 30);
@@ -68,33 +68,33 @@ int check_heads (object me, object ob)
   weapon = ob->query_temp("weapon");
 
   if (! weapon)
-    message_vision ("\n$N´óºÈÒ»ÉùÆËÏò$n£¬ÒÔÅÅÉ½µ¹º£Ö®ÊÆ½«$nµÄÅ£Í·°âÁËÏÂÀ´¡£\n",ob,me);
+    message_vision ("\n$Nå¤§å–ä¸€å£°æ‰‘å‘$nï¼Œä»¥æ’å±±å€’æµ·ä¹‹åŠ¿å°†$nçš„ç‰›å¤´æ‰³äº†ä¸‹æ¥ã€‚\n",ob,me);
   else if (weapon->query("skill_type") == "axe")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·ÅüÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´åŠˆäº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "blade")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·¿³ÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´ç äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "sword")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·Ï÷ÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´å‰Šäº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "dagger")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·¸îÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´å‰²äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "fork")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·²æÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´å‰äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "hammer")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·ÔÒÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´ç ¸äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "spear")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·ÌôÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´æŒ‘äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "staff")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·É¨ÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´æ‰«äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "stick")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·É¨ÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´æ‰«äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "throwing")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·ÉäÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´å°„äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "whip")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·³éÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´æŠ½äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else if (weapon->query("skill_type") == "mace")
-    message_vision ("\n$N¸ß¸ß¾ÙÆğ$n£¬ÅÅÉ½µ¹º£µØ´óºÈÒ»Éù£¬½«Å£Í·³éÁËÏÂÀ´¡£\n",ob,weapon);
+    message_vision ("\n$Né«˜é«˜ä¸¾èµ·$nï¼Œæ’å±±å€’æµ·åœ°å¤§å–ä¸€å£°ï¼Œå°†ç‰›å¤´æŠ½äº†ä¸‹æ¥ã€‚\n",ob,weapon);
   else
-    message_vision ("\n$N´óºÈÒ»ÉùÆËÏò$n£¬ÒÔÅÅÉ½µ¹º£Ö®ÊÆ½«$nµÄÅ£Í·°âÁËÏÂÀ´¡£\n",ob,me);
+    message_vision ("\n$Nå¤§å–ä¸€å£°æ‰‘å‘$nï¼Œä»¥æ’å±±å€’æµ·ä¹‹åŠ¿å°†$nçš„ç‰›å¤´æ‰³äº†ä¸‹æ¥ã€‚\n",ob,me);
   
   head = new ("/d/qujing/jilei/obj/head");
   head->move(environment(me));
@@ -116,9 +116,9 @@ void die ()
     set("eff_sen", 1700);
     set("force", 1700);
     set("mana", 1700);
-    message_vision ("\nÖ»¼ûÅ£Ç»ÀïÒ¡Ò¡»Î»ÎÓÖ×ê³öÒ»¸öÅ£Í·À´£¡\n",me);
+    message_vision ("\nåªè§ç‰›è…”é‡Œæ‘‡æ‘‡æ™ƒæ™ƒåˆé’»å‡ºä¸€ä¸ªç‰›å¤´æ¥ï¼\n",me);
     if (ob)
-      message_vision ("\n$N¾«Éñ¶¶ËÓµØÓÖÏò$n·¢Æğ¹¥»÷£¡\n",me,ob);
+      message_vision ("\n$Nç²¾ç¥æŠ–æ“åœ°åˆå‘$nå‘èµ·æ”»å‡»ï¼\n",me,ob);
     return;
   }
 
@@ -127,9 +127,9 @@ void die ()
     ob->set_temp("obstacle/jilei_niumo_killed",1);
     call_out ("li_appearing",1,ob);
   }
-  message_vision ("\nÌìÉÏÍĞËşÀîÌìÍõ´óºğÒ»Éù£ºÅ£Ä§¹é·ğÒ²£¡\n",me);
-  message_vision ("\n$NÎÅÉùÈíÁËÏÂÀ´£¬»¹Ô­³ÉÒ»Ö»´ó°×Å££¬´­×ÅÈÈÆø¡£\n",me);
-  message_vision ("ÀîÌìÍõ×ß¹ıÀ´£¬ÓÃ½ğÁ´Ë©ÔÚÅ£±Ç×ÓÉÏ£¬½«$NÇ£×ßÁË¡£\n",me);
+  message_vision ("\nå¤©ä¸Šæ‰˜å¡”æå¤©ç‹å¤§å¼ä¸€å£°ï¼šç‰›é­”å½’ä½›ä¹Ÿï¼\n",me);
+  message_vision ("\n$Né—»å£°è½¯äº†ä¸‹æ¥ï¼Œè¿˜åŸæˆä¸€åªå¤§ç™½ç‰›ï¼Œå–˜ç€çƒ­æ°”ã€‚\n",me);
+  message_vision ("æå¤©ç‹èµ°è¿‡æ¥ï¼Œç”¨é‡‘é“¾æ‹´åœ¨ç‰›é¼»å­ä¸Šï¼Œå°†$Nç‰µèµ°äº†ã€‚\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);
@@ -169,9 +169,9 @@ int test_player (object who)
 
   name = names[0];
 
-  if (name == "ÌúÉÈ¹«Ö÷")
+  if (name == "é“æ‰‡å…¬ä¸»")
     return 1;
-//  if (name == "ÓñÃæ¹«Ö÷")
+//  if (name == "ç‰é¢å…¬ä¸»")
 //    return 1;
   return 0;
 }
@@ -184,15 +184,15 @@ void kill_ob (object ob)
 
   if (! test_player (ob))
   {
-    message_vision ("$NÒ»Ë«Å£µ°ÑÛµÉ×ÅÄã£¬´óºğÒ»Éù£ºÄã£¡Äã£¡¹ö£¡\n",me);
-    message_vision ("$NÏÖÁË´ó°×Å£µÄÔ­ĞÎÏò$nÆËÀ´£¬·è¿ñµØµÍÍ·Ò»¶¥£¡\n",me,ob);
-    message_vision ("$NÒ»¸ö´ëÊÖ²»¼°£¬Áè¿Õ·ÉÆğ£¡\n",ob);
+    message_vision ("$Nä¸€åŒç‰›è›‹çœ¼çªç€ä½ ï¼Œå¤§å¼ä¸€å£°ï¼šä½ ï¼ä½ ï¼æ»šï¼\n",me);
+    message_vision ("$Nç°äº†å¤§ç™½ç‰›çš„åŸå½¢å‘$næ‰‘æ¥ï¼Œç–¯ç‹‚åœ°ä½å¤´ä¸€é¡¶ï¼\n",me,ob);
+    message_vision ("$Nä¸€ä¸ªæªæ‰‹ä¸åŠï¼Œå‡Œç©ºé£èµ·ï¼\n",ob);
     ob->move("/d/qujing/jilei/shidong");
-    message_vision ("¡°ºä¡±µØ$NË¤½«ÏÂÀ´£¡\n",ob);
+    message_vision ("â€œè½°â€åœ°$Næ‘”å°†ä¸‹æ¥ï¼\n",ob);
     ob->unconcious();
     return;
   }
-  message_vision ("\n$N´óÅ­£ºÄÄ¸öÆÃÔô×ÓÃ°³ä°³»ë¼Ò£¡\n",me);
+  message_vision ("\n$Nå¤§æ€’ï¼šå“ªä¸ªæ³¼è´¼å­å†’å……ä¿ºæµ‘å®¶ï¼\n",me);
 
   set_temp("my_killer",ob);
   call_out ("checking",1,me,ob);  

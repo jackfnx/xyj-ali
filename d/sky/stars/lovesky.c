@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("°®Ìì",({"star lovesky","lovesky","star"}));
-  set("gender", "ÄÐÐÔ");
-  set("title", "éôË®ÐÇ¹Ù");
+  set_name("çˆ±å¤©",({"star lovesky","lovesky","star"}));
+  set("gender", "ç”·æ€§");
+  set("title", "è½¸æ°´æ˜Ÿå®˜");
   set("age", 51);
-  set("long", "    \n´ËÈýÌì,ÄËÈ¡×Ô×ÓÔ»:ÈýÈËÐÐ±ØÓÐÎÒÊ¦Ö®Òâ.\n");
+  set("long", "    \næ­¤ä¸‰å¤©,ä¹ƒå–è‡ªå­æ›°:ä¸‰äººè¡Œå¿…æœ‰æˆ‘å¸ˆä¹‹æ„.\n");
 
   set("attitude", "heroism");
   set("class", "yaomo");
@@ -40,8 +40,8 @@ void init()
   string armor1_id="armor";
   ::init();
   if (my_weapon=present(weapon_id, me))
-       my_weapon->set("name",HIY"ÍÀÁúµ¶"NOR);
+       my_weapon->set("name",HIY"å± é¾™åˆ€"NOR);
   if (my_armor1=present(armor1_id, me))
-       my_armor1->set("name",HIY"ÍÀÁú¼×"NOR);
+       my_armor1->set("name",HIY"å± é¾™ç”²"NOR);
 }
 

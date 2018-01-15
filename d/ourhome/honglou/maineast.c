@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/maineast
@@ -8,10 +8,10 @@ int do_serve();
 
 void create ()
 {
-  set ("short", "×º½õ¸ó");
+  set ("short", "ç¼€é”¦é˜");
   set ("long", @LONG
 
-¡¡¡¡´ó¹ÛÂ¥¶«Ãæ·ÉÂ¥¡£
+ã€€ã€€å¤§è§‚æ¥¼ä¸œé¢é£žæ¥¼ã€‚
 
 LONG);
 
@@ -41,7 +41,7 @@ int do_serve()
 
         obn = new("/d/ourhome/obj/jitui");
         obn->move(room);
-        message_vision("Ê³ÎïºÍË®³öÏÖÔÚ$NÑÛÇ°¡£\n", who);
+        message_vision("é£Ÿç‰©å’Œæ°´å‡ºçŽ°åœ¨$Nçœ¼å‰ã€‚\n", who);
 
         return 1;
 }

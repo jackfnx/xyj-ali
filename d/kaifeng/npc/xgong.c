@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 
@@ -12,9 +12,9 @@ int test_player();
 
 void create()
 {
-  set_name("Ïà¹«", ({"xiang gong", "xiang", "gong"}));
-  set("gender", "ÄĞĞÔ");
-  set("title", "Óù´Í");
+  set_name("ç›¸å…¬", ({"xiang gong", "xiang", "gong"}));
+  set("gender", "ç”·æ€§");
+  set("title", "å¾¡èµ");
   set("age", 80);
   set("per", 25);
   set("attitude", "peaceful");
@@ -31,23 +31,23 @@ void create()
   set("force_factor",10);
   set("chat_chance",10);
   set("chat_msg",({
-    "Ïà¹«Ï²ĞÎÓÚÉ«µØËµ£º½üÀ´¸÷ÀàÎäÆ÷Õ÷¼¯ÁË²»ÉÙ£¬ÕÒ¸öÊ±¼äÅÉÈËËÍµ½¾©³Ç¡£\n",
-    "Ïà¹«×ÔÑÔ×ÔÓïµÀ£ºÎäÆ÷¾«Æ·½«²»ÆÚ½ø¹±¸ø»Ê¹¬¡£\n",
-    "Ïà¹«ÄÅÄÅµØËµµÀ£º¾ü»ú´ó³¼ÅÉÈË´ßÎÊ¿É·ñÅªµÃÎäÆ÷¼ÑÆ·¡£\n",
-    "Ïà¹«Ëµ£ºÊ²Ã´±øÆ÷¶¼Òª£¬¿ÉÒÔ¸ÄÁ¼»ò·ÂÖÆÒ²¡£\n",
-    "Ïà¹«µÍÉùËµµÀ£ºÊÕ¼¯µÄÎäÆ÷¸Ã·ÖÀà´¦ÖÃ¡£\n",
-    "Ïà¹«×ÔÑÔµÀ£ººÃ£¬¸÷Â·Ó¢ĞÛºÀ½Ü¶¼·×·×Ç°À´Ï×±¦¡£\n",
+    "ç›¸å…¬å–œå½¢äºè‰²åœ°è¯´ï¼šè¿‘æ¥å„ç±»æ­¦å™¨å¾é›†äº†ä¸å°‘ï¼Œæ‰¾ä¸ªæ—¶é—´æ´¾äººé€åˆ°äº¬åŸã€‚\n",
+    "ç›¸å…¬è‡ªè¨€è‡ªè¯­é“ï¼šæ­¦å™¨ç²¾å“å°†ä¸æœŸè¿›è´¡ç»™çš‡å®«ã€‚\n",
+    "ç›¸å…¬å‘å‘åœ°è¯´é“ï¼šå†›æœºå¤§è‡£æ´¾äººå‚¬é—®å¯å¦å¼„å¾—æ­¦å™¨ä½³å“ã€‚\n",
+    "ç›¸å…¬è¯´ï¼šä»€ä¹ˆå…µå™¨éƒ½è¦ï¼Œå¯ä»¥æ”¹è‰¯æˆ–ä»¿åˆ¶ä¹Ÿã€‚\n",
+    "ç›¸å…¬ä½å£°è¯´é“ï¼šæ”¶é›†çš„æ­¦å™¨è¯¥åˆ†ç±»å¤„ç½®ã€‚\n",
+    "ç›¸å…¬è‡ªè¨€é“ï¼šå¥½ï¼Œå„è·¯è‹±é›„è±ªæ°éƒ½çº·çº·å‰æ¥çŒ®å®ã€‚\n",
   }));
   set("inquiry", ([
-        "here":   "´ËÄËÓù´ÍÏà¸®Ò²£¬ÀÏ·ò±»Óù×¼ÔÚ´ËÊÕ¼¯ÎäÆ÷¡£\n",
-        "name":   "ĞÕÏàÃûÁ¼Ò²¡£\n",
+        "here":   "æ­¤ä¹ƒå¾¡èµç›¸åºœä¹Ÿï¼Œè€å¤«è¢«å¾¡å‡†åœ¨æ­¤æ”¶é›†æ­¦å™¨ã€‚\n",
+        "name":   "å§“ç›¸åè‰¯ä¹Ÿã€‚\n",
         "weapon":   (: test_player() :),
-        "ÎäÆ÷":   (: test_player() :),
-        "±øÆ÷":   (: test_player() :),
-        "·¨±¦":   (: test_player() :),
-        "ÊÕ¼¯":   (: test_player() :),
-        "Õ÷¼¯":   (: test_player() :),
-        "±¦":   (: test_player() :),
+        "æ­¦å™¨":   (: test_player() :),
+        "å…µå™¨":   (: test_player() :),
+        "æ³•å®":   (: test_player() :),
+        "æ”¶é›†":   (: test_player() :),
+        "å¾é›†":   (: test_player() :),
+        "å®":   (: test_player() :),
       ]));
   setup();
   carry_object("/d/obj/cloth/choupao")->wear();
@@ -63,12 +63,12 @@ void init ()
 int test_player()
 {
   string *strs = ({
-    "$NÂÔÓĞËùË¼£¬È»ºó¶Ô$nËµµÀ£ºÀÏ·òÕıÏëÇëÈËÈ¥ÕÒ",
-    "$NÏëÁËÒ»ÏÂ£¬¶Ô$nËµµÀ£ºÀÏ·òÌıËµ¾üÎñ´¦ÏëÒª",
-    "$N¶Ô$nËµµÀ£º¾ü»ú´ó³¼ÒÑÍĞÈË´«»°£¬ËµÊÇ½üÀ´ĞèÒªÊ²Ã´",
-    "$N¶Ô$nËµµÀ£ºÀÏ·ò¼´½«Ç²ÈËËÍ±øÆ÷È¥¾©³Ç£¬ÉĞÈ±",
-    "$N¶Ô$nÒ»µãÍ·ËµµÀ£ºÀÏ·òÇåµãÁËÒ»ÏÂ±øÆ÷¿â£¬·¢ÏÖ»¹ÉÙ",
-    "$NÏëÏë¶Ô$nËµµÀ£º×î½üÓĞĞ©±øÆ÷À´»õ²»×ã£¬ÓÈÆäÊÇÉÙÁË",
+    "$Nç•¥æœ‰æ‰€æ€ï¼Œç„¶åå¯¹$nè¯´é“ï¼šè€å¤«æ­£æƒ³è¯·äººå»æ‰¾",
+    "$Næƒ³äº†ä¸€ä¸‹ï¼Œå¯¹$nè¯´é“ï¼šè€å¤«å¬è¯´å†›åŠ¡å¤„æƒ³è¦",
+    "$Nå¯¹$nè¯´é“ï¼šå†›æœºå¤§è‡£å·²æ‰˜äººä¼ è¯ï¼Œè¯´æ˜¯è¿‘æ¥éœ€è¦ä»€ä¹ˆ",
+    "$Nå¯¹$nè¯´é“ï¼šè€å¤«å³å°†é£äººé€å…µå™¨å»äº¬åŸï¼Œå°šç¼º",
+    "$Nå¯¹$nä¸€ç‚¹å¤´è¯´é“ï¼šè€å¤«æ¸…ç‚¹äº†ä¸€ä¸‹å…µå™¨åº“ï¼Œå‘ç°è¿˜å°‘",
+    "$Næƒ³æƒ³å¯¹$nè¯´é“ï¼šæœ€è¿‘æœ‰äº›å…µå™¨æ¥è´§ä¸è¶³ï¼Œå°¤å…¶æ˜¯å°‘äº†",
   });  
   string str;
   object me = this_object();
@@ -80,15 +80,15 @@ int test_player()
 
   if (who->query("quest/reward") > 0)
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬ÀÏ·ò¼ûÄãÉíÉÏÏéÔÆ»·ÈÆ£¬ºÎ²»È¥´ÓËÙ¸°³¤°²½ø¹¬ÇëÉÍ£¿\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œè€å¤«è§ä½ èº«ä¸Šç¥¥äº‘ç¯ç»•ï¼Œä½•ä¸å»ä»é€Ÿèµ´é•¿å®‰è¿›å®«è¯·èµï¼Ÿ\n",me,who);
     return 1;
   }
 
   if (who->query("quest/pending/weapon"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬ÀÏ·ò»¹ÅÎ×ÅÄúµÄ"+who->query("quest/pending/weapon/name")+"ÄØ£¡\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œè€å¤«è¿˜ç›¼ç€æ‚¨çš„"+who->query("quest/pending/weapon/name")+"å‘¢ï¼\n",me,who);
     return 1;
   }
 
@@ -102,8 +102,8 @@ int test_player()
   i = quest_random_index (quest_keys, i, who, "quest/cache/weapon");
   if (i == -1)
   {
-    message_vision ("$N¶Ô$nÌ¾ÆøËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "¸Ã×öµÄÊÂ×öÁË²»ÉÙ£¬ÀÏ·ò¿´Äú»¹ÊÇÒÔºóÔÙÀ´°É¡£\n",me,who);
+    message_vision ("$Nå¯¹$nå¹æ°”è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "è¯¥åšçš„äº‹åšäº†ä¸å°‘ï¼Œè€å¤«çœ‹æ‚¨è¿˜æ˜¯ä»¥åå†æ¥å§ã€‚\n",me,who);
     return 1;
   }
   delay = MAXDELAY * i / sizeof(quest_keys) + DELAY_CONST + uptime();
@@ -114,8 +114,8 @@ int test_player()
   who->set("quest/pending/weapon/id", quest[IDX_ID]);
   who->set("quest/pending/weapon/time", delay);
   str = strs[random(sizeof(strs))]+quest[IDX_NAME]+
-        "£¬\nÕâÎ»"+RANK_D->query_respect(who)+
-        "ÄÜ·ñ°ïÀÏ·ò¸öÃ¦£¿\n";
+        "ï¼Œ\nè¿™ä½"+RANK_D->query_respect(who)+
+        "èƒ½å¦å¸®è€å¤«ä¸ªå¿™ï¼Ÿ\n";
   message_vision (str,me,who);
   informing (me,who,str);
   return 1;
@@ -134,8 +134,8 @@ void check_player (object who)
 
   if (who->query("quest/reward") > 0)
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "ÉíÉÏÏéÔÆ»·ÈÆ£¬ÇëËÙ¸°³¤°²½ø¹¬ÇëÉÍ£¡\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "èº«ä¸Šç¥¥äº‘ç¯ç»•ï¼Œè¯·é€Ÿèµ´é•¿å®‰è¿›å®«è¯·èµï¼\n",me,who);
     return;
   }
 
@@ -149,7 +149,7 @@ void check_player (object who)
   if (who->query("quest/pending/weapon/name") != ob->query("name"))
     return;
 
-  message_vision ("$N¼û$nÊÖÉÏÄÃ×Å"+ob->query("name")+"£¬¼±Ã¦Ë«ÊÖ½Ó¹ıÈ¥¡£\n",me,who);
+  message_vision ("$Nè§$næ‰‹ä¸Šæ‹¿ç€"+ob->query("name")+"ï¼Œæ€¥å¿™åŒæ‰‹æ¥è¿‡å»ã€‚\n",me,who);
   rewarding (who, ob);
   destruct (ob);
 }
@@ -161,14 +161,14 @@ int accept_object(object who, object ob)
 
   if (who->query("quest/reward") > 0)
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬ÀÏ·ò¼ûÄãÉíÉÏÏéÔÆ»·ÈÆ£¬ºÎ²»È¥´ÓËÙ¸°³¤°²½ø¹¬ÇëÉÍ£¿\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œè€å¤«è§ä½ èº«ä¸Šç¥¥äº‘ç¯ç»•ï¼Œä½•ä¸å»ä»é€Ÿèµ´é•¿å®‰è¿›å®«è¯·èµï¼Ÿ\n",me,who);
     return 0;
   }
 
   if (! who->query("quest/pending/weapon"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÀÏ·ò²»ĞèÒªÕâ¸ö¡£\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè€å¤«ä¸éœ€è¦è¿™ä¸ªã€‚\n",me,who);
     return 0;
   }
 
@@ -176,19 +176,19 @@ int accept_object(object who, object ob)
   
   if (who->query("quest/pending/weapon/name") != ob->query("name"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬ÀÏ·òÅÎ×ÅÄúµÄ"+who->query("quest/pending/weapon/name")+
-                    "£¬Äúµ¹È´¸øÀÏ·ò"+ob->query("name")+"£¬¿È¿È¡£\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œè€å¤«ç›¼ç€æ‚¨çš„"+who->query("quest/pending/weapon/name")+
+                    "ï¼Œæ‚¨å€’å´ç»™è€å¤«"+ob->query("name")+"ï¼Œå’³å’³ã€‚\n",me,who);
     return 0;
   }
 
   if (who->query("quest/pending/weapon/id") != ob->query("id"))
   {
-    message_vision ("$N¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who)+
-                    "£¬ÀÏ·òÅÎ×ÅÄúµÄ"+who->query("quest/pending/weapon/name")+
-                    "£¬¶«Î÷µ¹Í¦Ïó£¬µ«²»ÊÇÍ¬Ò»¸ö»õ£»ÀÏ·òÒªµÄÊÇ("+
-                    who->query("quest/pending/weapon/id")+")£¬Äú¸øµÄÊÇ("+
-                    ob->query("id")+")£¡\n",me,who);
+    message_vision ("$Nå¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who)+
+                    "ï¼Œè€å¤«ç›¼ç€æ‚¨çš„"+who->query("quest/pending/weapon/name")+
+                    "ï¼Œä¸œè¥¿å€’æŒºè±¡ï¼Œä½†ä¸æ˜¯åŒä¸€ä¸ªè´§ï¼›è€å¤«è¦çš„æ˜¯("+
+                    who->query("quest/pending/weapon/id")+")ï¼Œæ‚¨ç»™çš„æ˜¯("+
+                    ob->query("id")+")ï¼\n",me,who);
     return 0;
   }
 
@@ -196,13 +196,13 @@ int accept_object(object who, object ob)
 
   if (t > uptime() && (t-MAXDELAY) <= uptime())
   {
-    message_vision ("$N¶Ô$nÒ¡Í·µÀ£ºÕâÃ´¿ì¾Í»ØÀ´ÁË£¿ÀÏ·òÅÂÊÇÓĞ¼Ù¡£\n",me,who);
-    message_vision ("$NÓÖ·Ô¸ÀµÀ£ºÄúÔÙ»¨¸ö"+chinese_number((t-uptime())/60+1)+
-                    "·ÖÖÓÈ¥Ñ°Ñ°¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡å¤´é“ï¼šè¿™ä¹ˆå¿«å°±å›æ¥äº†ï¼Ÿè€å¤«æ€•æ˜¯æœ‰å‡ã€‚\n",me,who);
+    message_vision ("$Nåˆå©å’é“ï¼šæ‚¨å†èŠ±ä¸ª"+chinese_number((t-uptime())/60+1)+
+                    "åˆ†é’Ÿå»å¯»å¯»ã€‚\n",me,who);
     if (! DEBUG)
       return 0;
     else
-      tell_object (who,"NOW DEBUG MODE: ÈÃÏà¹«ÒªÏÂ¶«Î÷¡£\n");
+      tell_object (who,"NOW DEBUG MODE: è®©ç›¸å…¬è¦ä¸‹ä¸œè¥¿ã€‚\n");
   }
   rewarding (who, ob);
   call_out ("destruct_ob",1,ob);
@@ -220,15 +220,15 @@ void rewarding (object who, object ob)
   string reason;
   int reward;
 
-  reason = "²»´ÇÀÍ¿àÑ°µÃ"+ob->query("name")+"£¬";
-  message_vision ("$N¶Ô$nËµµÀ£º¶àĞ»ÕâÎ»"+RANK_D->query_respect(who)+
-                  reason+"ÀÏ·ò¸Ğ¼¤²»¾¡£¡\n",me,who);
+  reason = "ä¸è¾åŠ³è‹¦å¯»å¾—"+ob->query("name")+"ï¼Œ";
+  message_vision ("$Nå¯¹$nè¯´é“ï¼šå¤šè°¢è¿™ä½"+RANK_D->query_respect(who)+
+                  reason+"è€å¤«æ„Ÿæ¿€ä¸å°½ï¼\n",me,who);
   reward = quest_reward(who, quests_weapon, "weapon");
   who->add("quest/reward",reward);
   who->set("quest/reason",reason);
   who->add("quest/weapon/times",1);
   who->add("quest/weapon/reward",reward);
-  reporting (who,reason, reward, "½±·Ö");
+  reporting (who,reason, reward, "å¥–åˆ†");
   who->delete("quest/pending/weapon");
   call_out ("quest_done",1,who);
 }

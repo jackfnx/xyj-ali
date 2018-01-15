@@ -1,11 +1,11 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 
 void create()
 {
-        set_name("╠ЬфВ╪э", ({ "rack" }) );
+        set_name("Е┘╣Е≥╗Ф·╤", ({ "rack" }) );
         set_weight(5000000);
         set_max_encumbrance(40001);
         if( clonep() ) {
@@ -31,9 +31,9 @@ void create()
                   c->move(this_object());
                 set_default_object(__FILE__);
         } else {
-                set("unit", "╦Ж");
+                set("unit", "Д╦╙");
                 set("long",
-"уБйгр╩©зя╟Ёё╣д╪эвсё╛©иртсцю╢╤я╥ер╩п╘тснО║ё\n");
+"Х©≥Ф≤╞Д╦─Е▐ёЕ╞╩Е╦╦Г └Ф·╤Е╜░О╪▄Е▐╞Д╩╔Г■╗Ф²╔Е═├Ф■╬Д╦─Д╨⌡Ф²┌Г┴╘Ц─┌\n");
                 set("value", 0);
         }
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // literate.c
@@ -7,12 +7,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼Èı×Ö¾­¡½", ({"book"}));
+        set_name("ã€–ä¸‰å­—ç»ã€—", ({"book"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
      set("value", 1000);
         set("material", "paper");
         set("skill", ([

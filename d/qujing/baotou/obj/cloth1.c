@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,12 +6,12 @@
 inherit CLOTH;
 
 string *names = ({
-  "»¨±ªÆ¤",
-  "°×»¢Æ¤",
-  "ºÚ»¢Æ¤",
-  "½ğÊ¨Æ¤",
-  "¾íÃ«Ê¨Æ¤",
-  "É½Ã¨Æ¤",
+  "èŠ±è±¹çš®",
+  "ç™½è™çš®",
+  "é»‘è™çš®",
+  "é‡‘ç‹®çš®",
+  "å·æ¯›ç‹®çš®",
+  "å±±çŒ«çš®",
 });
 
 string *ids = ({
@@ -31,7 +31,7 @@ void create()
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 500);
    set("material", "leather");
    set("armor_prop/armor", 15);

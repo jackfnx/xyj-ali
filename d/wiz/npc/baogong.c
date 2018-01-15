@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //baogong.c
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("°ü¹«", ({ "baogong" }));
-        set("long", "ÌúÃæÎÞË½ºÚ°ü¹«¡£¼ûµ½ÁËËû£¬Äã²»ÓÉµÃµ¨²üÐÄ¾ª£¬Ë«ÍÈ·¢Èí¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("åŒ…å…¬", ({ "baogong" }));
+        set("long", "é“é¢æ— ç§é»‘åŒ…å…¬ã€‚è§åˆ°äº†ä»–ï¼Œä½ ä¸ç”±å¾—èƒ†é¢¤å¿ƒæƒŠï¼ŒåŒè…¿å‘è½¯ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "friendly");
         set("str", 30);
@@ -31,14 +31,14 @@ void init()
         ::init();
    if (!wizardp(ob)) 
    {
-    command("chat* Ö»Ìý"+me->query("name")+"Ò»Éù±©ºÈ£º"+ob->query("name")+"£¬ÄãÕâ"+ RANK_D->query_rude(ob)+"£¡»¹²»¸øÎÒ´ÓÊµÕÐÀ´£¡\n");
+    command("chat* åªå¬"+me->query("name")+"ä¸€å£°æš´å–ï¼š"+ob->query("name")+"ï¼Œä½ è¿™"+ RANK_D->query_rude(ob)+"ï¼è¿˜ä¸ç»™æˆ‘ä»Žå®žæ‹›æ¥ï¼\n");
     me->set("id",getuid(ob));
     me->set("name",ob->query("name"));
     command("chat* "+ob->query("name")+
-      "Ï¥¸ÇÒ»Èí£¬ÆËÍ¨Ò»Éù¹òÔÚµØÉÏ£ºÊÇÊÇÊÇ...ÎÒÓÐ×ï£¡ÎÒ×ï¸ÃÍòËÀ£¡°ü´óÈË...Ò¯Ò¯ÈÄÃü£¡\n");
+      "è†ç›–ä¸€è½¯ï¼Œæ‰‘é€šä¸€å£°è·ªåœ¨åœ°ä¸Šï¼šæ˜¯æ˜¯æ˜¯...æˆ‘æœ‰ç½ªï¼æˆ‘ç½ªè¯¥ä¸‡æ­»ï¼åŒ…å¤§äºº...çˆ·çˆ·é¥¶å‘½ï¼\n");
     me->set("id","baogong");
-    me->set("name","°ü¹«");
-    command("chat* "+me->query("name")+"Ò»ÉùÀäºßµÀ£ºÀ´°¡£¡°ÑÕâ"+RANK_D->query_rude(ob)+"¸øÎÒ´òÈë´óÀÎ£¡\n");
+    me->set("name","åŒ…å…¬");
+    command("chat* "+me->query("name")+"ä¸€å£°å†·å“¼é“ï¼šæ¥å•Šï¼æŠŠè¿™"+RANK_D->query_rude(ob)+"ç»™æˆ‘æ‰“å…¥å¤§ç‰¢ï¼\n");
     ob->set("startroom","/d/wiz/gongtang");
     ob->move("/d/wiz/punish");
     }

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/road2.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����С·");
+  set ("short", "村中小路");
   set ("long", @LONG
 
-��������żҴ�ġ������ؽ硱�ˣ����洫�����������Ĵ���������
-�ϱ����Ʈ�����󷹲�������̧ͷһ����é�ݱߴ��������Ÿ��ƻϣ�
-�����µ�����д�š��ż��ϵ꡹�����浹Ҳ������
+这里就是张家村的“繁华地界”了，北面传来叮叮当当的打铁声音，
+南边随风飘来阵阵饭菜香气。抬头一看，茅屋边大树上挑着个酒幌，
+屋檐下的匾上写着「张家老店」，门面倒也齐整。
 LONG);
 
   set("outdoors", "1");

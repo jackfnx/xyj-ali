@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // npc.c
@@ -47,10 +47,10 @@ int accept_fight(object who)
 
    if( is_fighting() )   switch(att) {
      case "heroism":
-        command("say ºß£¡³öÕĞ°É£¡\n");
+        command("say å“¼ï¼å‡ºæ‹›å§ï¼\n");
         break;
      default:
-        command("say ÏëÒĞ¶àÎªÊ¤£¬Õâ²»ÊÇÆÛÈËÌ«ÉõÂğ£¡\n");
+        command("say æƒ³å€šå¤šä¸ºèƒœï¼Œè¿™ä¸æ˜¯æ¬ºäººå¤ªç”šå—ï¼\n");
         return 0;
    }
 
@@ -60,18 +60,18 @@ int accept_fight(object who)
      switch(att) {
         case "friendly":
           command("say " + RANK_D->query_self(this_object())
-             + "ÔõÃ´¿ÉÄÜÊÇ" + RANK_D->query_respect(who)
-             + "µÄ¶ÔÊÖ£¿\n");
+             + "æ€ä¹ˆå¯èƒ½æ˜¯" + RANK_D->query_respect(who)
+             + "çš„å¯¹æ‰‹ï¼Ÿ\n");
           return 0;
         case "aggressive":
         case "killer":
-          command("say ºß£¡³öÕĞ°É£¡\n");
+          command("say å“¼ï¼å‡ºæ‹›å§ï¼\n");
           break;
         default:
           if( !is_fighting() )
-             command("say ¼ÈÈ»" + RANK_D->query_respect(who)
-               + "´Í½Ì£¬" + RANK_D->query_self(this_object())
-               + "Ö»ºÃ·îÅã¡£\n");
+             command("say æ—¢ç„¶" + RANK_D->query_respect(who)
+               + "èµæ•™ï¼Œ" + RANK_D->query_self(this_object())
+               + "åªå¥½å¥‰é™ªã€‚\n");
      }
      return 1;
    } else
@@ -102,7 +102,7 @@ int return_home(object home)
       for(i=0; i<sizeof(enemy_list); ++i)  {
          if( sizeof(enemy_list[i]->query_enemy()) > MAX_OPPENENT )  {
              message("vision", "\n"+this_object()->name() +
-             "×İÉíÏòºóÒ»Ô¾£¬¹°ÊÖµÀ£º¸óÏÂÎäÒÕ²»·²£¬Åå·ş£¬Åå·ş£¡ÔÛÃÇºó»áÓĞÆÚ£¡\n\n",
+             "çºµèº«å‘åä¸€è·ƒï¼Œæ‹±æ‰‹é“ï¼šé˜ä¸‹æ­¦è‰ºä¸å‡¡ï¼Œä½©æœï¼Œä½©æœï¼å’±ä»¬åä¼šæœ‰æœŸï¼\n\n",
              environment(), this_object());
           enemy_list[i]->remove_killer( this_object() );
          remove_enemy( enemy_list[i] );
@@ -115,7 +115,7 @@ int return_home(object home)
    }
 
    // Leave for home now.
-   message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+   message("vision", this_object()->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
      environment(), this_object());
 
    if (ridee = ride())

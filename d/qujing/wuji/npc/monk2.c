@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 22 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÊØËÂÉ®", ({"shousi seng", "seng"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å®ˆå¯ºåƒ§", ({"shousi seng", "seng"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 1000+random(50000));
   set("age", 40+random(20));
   set("per", 14+random(20));

@@ -5,13 +5,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("²èºø", ({ "teapot"}) );
+	set_name("èŒ¶å£¶", ({ "teapot"}) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸ö´ó²èºø£¬´ó¸Å×°µÃ¼¸ÉıË®¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªå¤§èŒ¶å£¶ï¼Œå¤§æ¦‚è£…å¾—å‡ å‡æ°´ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 30);
 		set("max_liquid", 10);
 	}
@@ -20,7 +20,7 @@ void create()
 	// in each cloned copy.
         set("liquid", ([
                 "type": "water",
-                "name": "²èË®",
+                "name": "èŒ¶æ°´",
                 "remaining": 10,
                 "drunk_apply": 0,
         ]) );

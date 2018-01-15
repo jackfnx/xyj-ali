@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/5/1997 by snowcat
@@ -8,8 +8,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ů��", ({"nu zi", "nu", "zi"}));
-  set("gender", "Ů��");
+  set_name("女子", ({"nu zi", "nu", "zi"}));
+  set("gender", "女性");
   set("age", 18);
   set("con", 20);
   set("cor", 20);
@@ -56,7 +56,7 @@ void init()
       present("fu ren",where) ||
       present("gong gong",where))
   {
-    if (where->query("short") == "Ұ·")
+    if (where->query("short") == "野路")
     {
       load_object("/obj/empty");
       me->move("/obj/empty");
@@ -83,7 +83,7 @@ void greeting (object me, object who)
   if (! who ||
       environment(who) != environment(me))
     return;
-  message_vision ("$N��$n˵����Ӵ���ʹӺ�����\n",me,who);
+  message_vision ("$N对$n说道：哟，客从何来？\n",me,who);
 }
 
 void unconcious()
@@ -100,7 +100,7 @@ void die()
 
   if (ob)
     ob->set_temp("obstacle/baoxiang_killed_nuzi",1);
-  message_vision ("\n$Nһ���ҽУ��˷��ڵ����ˡ�\n",me);
+  message_vision ("\n$N一声惨叫，扑翻在地死了。\n",me);
   command ("drop mi fan");
   command ("drop mian jin");
   corpse = CHAR_D->make_corpse(me,ob);

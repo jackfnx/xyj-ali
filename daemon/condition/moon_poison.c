@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // moon_poison.c
@@ -11,10 +11,10 @@ int update_condition(object me, int duration)
    me->receive_damage("sen", duration);
    me->receive_damage("kee", duration);
    me->receive_wound("kee", duration);
-   me->set_temp("death_msg","¾«Á¦ºÄ¾¡¶øËÀ¡£\n");
+   me->set_temp("death_msg","ç²¾åŠ›è€—å°½è€Œæ­»ã€‚\n");
    me->apply_condition("moon_poison", duration);
    if (duration >0 )
-   tell_object(me, HIG "Äã¸Ð¾õÉíÌåÒ»µãµãÐéÈõÏÂÈ¥£¡\n" NOR );
+   tell_object(me, HIG "ä½ æ„Ÿè§‰èº«ä½“ä¸€ç‚¹ç‚¹è™šå¼±ä¸‹åŽ»ï¼\n" NOR );
    if( duration < 1 ) return 0;
    return 1;
 }

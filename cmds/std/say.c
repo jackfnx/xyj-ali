@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // say.c
@@ -12,8 +12,8 @@ int main(object me, string arg)
         if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    if (!arg) {
-     write("дЦвтятвтсО╡╩ж╙╣ютзк╣п╘й╡ц╢║ё\n");
-     tell_room(environment(me), me->name() + "втятвтсО╡╩ж╙╣ютзк╣п╘й╡ц╢║ё\n",
+     write("Д╫═Х┤╙Х╗─Х┤╙Х╞╜Д╦█Г÷╔И│⌠Е°╗Х╞╢Д╨⌡Д╩─Д╧┬Ц─┌\n");
+     tell_room(environment(me), me->name() + "Х┤╙Х╗─Х┤╙Х╞╜Д╦█Г÷╔И│⌠Е°╗Х╞╢Д╨⌡Д╩─Д╧┬Ц─┌\n",
                  me);
      return 1;
    }
@@ -21,8 +21,8 @@ int main(object me, string arg)
      arg = replace_string(arg, " ", " ... ") + " ...";
    }
 
-   write( CYN "дЦк╣╣юё╨" + arg + "\n" NOR);
-   tell_room(environment(me), CYN + me->name() + CYN "к╣╣юё╨" +  arg + "\n" NOR,
+   write( CYN "Д╫═Х╞╢И│⌠О╪ " + arg + "\n" NOR);
+   tell_room(environment(me), CYN + me->name() + CYN "Х╞╢И│⌠О╪ " +  arg + "\n" NOR,
              me);
 
    // The mudlib interface of say
@@ -34,11 +34,11 @@ int main(object me, string arg)
 int help (object me)
 {
    write(@HELP
-ж╦аН╦Яй╫: say <я╤о╒>
+Ф▄┤Д╩╓Ф═╪Е╪▐: say <Х╝╞Ф│╞>
  
-к╣╩╟ё╛кЫсп╦ЗдЦтзм╛р╩╦Ж╥©╪Д╣дхк╤╪╩АлЩ╣╫дЦк╣╣д╩╟║ё
+Х╞╢Х╞²О╪▄Ф┴─Ф°┴Х╥÷Д╫═Е°╗Е░▄Д╦─Д╦╙Ф┬©И≈╢Г └Д╨╨И┐╫Д╪ Е░╛Е┬╟Д╫═Х╞╢Г └Х╞²Ц─┌
  
-в╒: ╠╬ж╦аН©исц ' х║╢З.
+ФЁ╗: Ф°╛Ф▄┤Д╩╓Е▐╞Г■╗ ' Е▐√Д╩ё.
  
 HELP
    );

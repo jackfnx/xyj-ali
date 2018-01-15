@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/main_cabinet.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��˽��");
+  set ("short", "无私轩");
   set ("long", @LONG
-�ؽ����Ǹ�Т�ӣ����Լ���ĸ���չ˵���΢��������˽������
-������Ȼ���أ�����Ȼ���������ѹ�һ����˼��ӭ�ŵ�һ��ɽˮ��
-���ǲ��ף����������ֱʡ�
+秦将军是个孝子，对自己的母亲照顾的无微不至。无私轩里面
+布置虽然朴素，但显然处处都曾费过一番心思。迎门的一幅山水画
+更是不俗，定是名家手笔。
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */

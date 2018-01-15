@@ -1,4 +1,4 @@
-//»ğ»ê
+//ç«é­‚
 //requirement:firelord,huoyun-qiang all over 60
 
 #include <ansi.h>
@@ -11,27 +11,27 @@ void remove_effect(object me, object target, int amount);
 int perform(object me, object target)
 {
     int skill_spear, skill_force, str_amount,attack_amount;
-    if (me->query("family/family_name")!="»ğÔÆ¶´")
-        return notify_fail("¡¸»ğ»ê¡¹Ö»ÓĞ»ğÔÆ¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+    if (me->query("family/family_name")!="ç«äº‘æ´")
+        return notify_fail("ã€Œç«é­‚ã€åªæœ‰ç«äº‘æ´é—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
 
     if (!me->is_fighting())
-        return notify_fail("¡¸»ğ»ê¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€Œç«é­‚ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
     if (me->query_skill_mapped("force")!="firelord")
-        return notify_fail("¡¸»ğ»ê¡¹±ØĞëÅäºÏ»ğÄ§ĞÄ·¨²ÅÄÜÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€Œç«é­‚ã€å¿…é¡»é…åˆç«é­”å¿ƒæ³•æ‰èƒ½ä½¿ç”¨ã€‚\n");
     skill_force=me->query_skill("firelord", 1);
-    if (skill_force<60) return notify_fail("ÄãµÄ»ğÄ§ĞÄ·¨²»¹»´¿Êì¡£\n");
+    if (skill_force<60) return notify_fail("ä½ çš„ç«é­”å¿ƒæ³•ä¸å¤Ÿçº¯ç†Ÿã€‚\n");
     skill_spear=me->query_skill("huoyun-qiang",1);
     if (skill_spear<60) 
-       return notify_fail("ÄãµÄÇ¹·¨Ì«²î¾¢ÁË¡£\n"); 
+       return notify_fail("ä½ çš„æªæ³•å¤ªå·®åŠ²äº†ã€‚\n"); 
     if ((int)me->query("force") < 200)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     if ((int)me->query_temp("shenli"))
-        return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+        return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
     
     me->add("force", -100);
     message_vision(
-        HIR "$NßèµÄÒ»Éùºğ£¬Ò»Ìáµ¤ÌïÆø£¬ÔËÁ¦ÓÚ±Û£¬Ç¹ÉÏ¼ÓÁ¦¡£Ö»¼û$NËÄÖÜÁÒ»ğÖØÖØ£¬\n"
-        "»ğÑæÏñÒ»Ìõ¾ŞÁúÒ»ÑùòêÑÑÔÚÇ¹ÉÏ,Èç´ËµÄÆøÊÆÏÅµÄµĞÊÖĞÄ¾ªµ¤º®\n" NOR, me);
+        HIR "$Nå“çš„ä¸€å£°å¼ï¼Œä¸€æä¸¹ç”°æ°”ï¼Œè¿åŠ›äºè‡‚ï¼Œæªä¸ŠåŠ åŠ›ã€‚åªè§$Nå››å‘¨çƒˆç«é‡é‡ï¼Œ\n"
+        "ç«ç„°åƒä¸€æ¡å·¨é¾™ä¸€æ ·èœ¿èœ’åœ¨æªä¸Š,å¦‚æ­¤çš„æ°”åŠ¿å“çš„æ•Œæ‰‹å¿ƒæƒŠä¸¹å¯’\n" NOR, me);
 
     attack_amount=skill_spear/5;
     str_amount=(skill_spear+random(skill_force))/5;
@@ -50,7 +50,7 @@ void remove_effect(object me, int str_amount, int attack_amount)
     me->add_temp("apply/strength", -str_amount);
     me->add_temp("apply/attack", -attack_amount);
     me->delete_temp("shenli");
-    message_vision(HIR "$NÊÕ»ØÁ¦µÀ£¬Ïñ»ğÒ»ÑùµÄ¾ŞÁúÏûÊ§ÁË¡£\n" NOR,me);
+    message_vision(HIR "$Næ”¶å›åŠ›é“ï¼Œåƒç«ä¸€æ ·çš„å·¨é¾™æ¶ˆå¤±äº†ã€‚\n" NOR,me);
 }
 
 

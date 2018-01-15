@@ -1,9 +1,9 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 // qinbing.c
-//Ç×±ø, used for jjf people.
+//äº²å…µ, used for jjf people.
 
 #include <ansi.h>
 
@@ -11,8 +11,8 @@ inherit NPC;
 
 void create()
 {
-   set_name("Ç×±ø", ({ "qinbing" }) );
-   set("long", "ÕâĞ©Ç×±ø¶¼ÊÇ¾Ã¾­Õ½ÕóµÄºÃÊÖ£¬¸ú×Å½«¾üÃÇ³öÉúÈëËÀ£¬¼«µÃĞÅÈÎ¡£\n");
+   set_name("äº²å…µ", ({ "qinbing" }) );
+   set("long", "è¿™äº›äº²å…µéƒ½æ˜¯ä¹…ç»æˆ˜é˜µçš„å¥½æ‰‹ï¼Œè·Ÿç€å°†å†›ä»¬å‡ºç”Ÿå…¥æ­»ï¼Œæå¾—ä¿¡ä»»ã€‚\n");
    set("attitude", "friendly");
    set("class", "fighter");
 
@@ -44,13 +44,13 @@ void create()
 
 void leave()
 {
-   message("vision", name() + "ËÄÖÜÕÅÍûÁËÒ»ÏÂ£¬Ò»ÁïÑÌµØÅÜÁË¡£\n", environment(), this_object() );
+   message("vision", name() + "å››å‘¨å¼ æœ›äº†ä¸€ä¸‹ï¼Œä¸€æºœçƒŸåœ°è·‘äº†ã€‚\n", environment(), this_object() );
    destruct(this_object());
 }
 
 void show(object who)
 {
-   string *cname = ({"Ç×±ø¼×", "Ç×±øÒÒ", "Ç×±ø±û", "Ç×±ø¶¡"});
+   string *cname = ({"äº²å…µç”²", "äº²å…µä¹™", "äº²å…µä¸™", "äº²å…µä¸"});
    string *ename = ({"-jia", "-yi", "-bing", "-ding"});
 
    int current = 0;
@@ -64,7 +64,7 @@ void show(object who)
 
    this_object()->set_name(cname[current-1], ({ (string)who->query("id")+ename[current-1] }) );   
 
-   message_vision("Ëæ×ÅÒ»ÕóÅÜ²½Éù£¬Ò»Î»ÉíÅûîø¼×£¬ÊÖÖ´³¤Ç¹µÄ±ø¶¡³åµ½$NÃæÇ°ĞĞÁË¸öÀñ£¬´óÉùËµµÀ£ºÔÚÏÂËæÊ±Ìıµ÷£¡\n", who);
+   message_vision("éšç€ä¸€é˜µè·‘æ­¥å£°ï¼Œä¸€ä½èº«æŠ«é“ ç”²ï¼Œæ‰‹æ‰§é•¿æªçš„å…µä¸å†²åˆ°$Né¢å‰è¡Œäº†ä¸ªç¤¼ï¼Œå¤§å£°è¯´é“ï¼šåœ¨ä¸‹éšæ—¶å¬è°ƒï¼\n", who);
 
     //set the leader of this bing.
    set("owner_id", (string)who->query("id")); 
@@ -76,7 +76,7 @@ void relay_whisper(object me, string msg)
    if (query("owner_id") != me->query("id"))
    {
      message_vision((string)this_object()->query("name") 
-        + "¶Ô×Å$NÀäºßÁËÒ»Éù¡£\n", me);
+        + "å¯¹ç€$Nå†·å“¼äº†ä¸€å£°ã€‚\n", me);
      return;
    }
    
@@ -88,7 +88,7 @@ void relay_whisper(object me, string msg)
        strsrch(msg, "recruit") != -1 ) 
      return;
 
-   message_vision((string)this_object()->query("name") + "¶Ô×Å$NµãÁËµãÍ·¡£\n", me);
+   message_vision((string)this_object()->query("name") + "å¯¹ç€$Nç‚¹äº†ç‚¹å¤´ã€‚\n", me);
    if (msg)
    {
      remove_call_out ("relaying");

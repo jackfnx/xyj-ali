@@ -14,23 +14,23 @@ int main(object me, string arg)
     seteuid(getuid());
 
     if ((int)me->query_temp("no_cast"))
-        return notify_fail("ÄãÏÖÔÚ²»ÄÜÓÃÄ§·¨£¡\n");
+        return notify_fail("ä½ ç°åœ¨ä¸èƒ½ç”¨é­”æ³•ï¼\n");
 
     if (me->is_busy())
-        return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÄîÖäÎÄ¡£)\n");
+        return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½å¿µå’’æ–‡ã€‚)\n");
 
     if (!wizardp(me) && environment(me)->query("no_magic"))
-        return notify_fail("ÕâÀï²»×¼ÄîÖäÎÄ¡£\n");
+        return notify_fail("è¿™é‡Œä¸å‡†å¿µå’’æ–‡ã€‚\n");
 
-    if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºcast <·¨Êõ> [on <Ä¿±ê>]\n");
+    if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcast <æ³•æœ¯> [on <ç›®æ ‡>]\n");
     if (sscanf(arg, "%s on %s", spl, trg) == 2) {
         target = present(trg, environment(me));
         if (!target) target = present(trg, me);
-        if (!target) return notify_fail("ÕâÀïÃ»ÓĞ " + trg + "¡£\n");
+        if (!target) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + trg + "ã€‚\n");
         
         if (!"/adm/daemons/tempd"->valid_kill(me, target)) return 0;
         if (userp(me) && userp(target) && target->query_temp("netdead"))
-            return notify_fail("¶Ô·½ÕıÔÚ¶ÏÏßÖĞ£¬²»ÄÜ¶ÔÆäÊ©·¨¡£\n");
+            return notify_fail("å¯¹æ–¹æ­£åœ¨æ–­çº¿ä¸­ï¼Œä¸èƒ½å¯¹å…¶æ–½æ³•ã€‚\n");
     } else {
         spl = arg;
         target = 0;
@@ -40,7 +40,7 @@ int main(object me, string arg)
 
     if (stringp(spells = me->query_skill_mapped("spells"))) {
         int nocast;
-        notify_fail("ÄãËùÑ§µÄ·¨ÊõÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+        notify_fail("ä½ æ‰€å­¦çš„æ³•æœ¯ä¸­æ²¡æœ‰è¿™ç§åŠŸèƒ½ã€‚\n");
         nocast = (int)SKILL_D(spells)->cast_spell(me, spl, target);
         // cast_spell should return an integer as the no_cast time.
         if (!nocast) 
@@ -57,7 +57,7 @@ int main(object me, string arg)
         return 0;
     }
 
-    return notify_fail("ÄãÇëÏÈÓÃ enable Ö¸ÁîÑ¡ÔñÄãÒªÊ¹ÓÃµÄÖäÎÄÏµ¡£\n");
+    return notify_fail("ä½ è¯·å…ˆç”¨ enable æŒ‡ä»¤é€‰æ‹©ä½ è¦ä½¿ç”¨çš„å’’æ–‡ç³»ã€‚\n");
 }
 
 void destruct_flag(object me)
@@ -69,13 +69,13 @@ void destruct_flag(object me)
 int help (object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½£ºcast <ÖäÎÄÃû³Æ> [on <Ê©Öä¶ÔÏó>]
+æŒ‡ä»¤æ ¼å¼ï¼šcast <å’’æ–‡åç§°> [on <æ–½å’’å¯¹è±¡>]
 
-Ê©·¨£¬Äã±ØĞèÒªÖ¸¶¨<ÖäÎÄÃû³Æ>£¬<Ê©Öä¶ÔÏó>Ôò¿ÉÓĞ¿ÉÎŞ¡£
-ÔÚÄãÊ¹ÓÃÄ³Ò»¸öÖäÎÄÖ®Ç°£¬Äã±ØĞëÏÈÓÃ enable Ö¸ÁîÀ´Ö¸¶¨ÄãÒªÊ¹ÓÃµÄÖäÎÄÏµ¡£
+æ–½æ³•ï¼Œä½ å¿…éœ€è¦æŒ‡å®š<å’’æ–‡åç§°>ï¼Œ<æ–½å’’å¯¹è±¡>åˆ™å¯æœ‰å¯æ— ã€‚
+åœ¨ä½ ä½¿ç”¨æŸä¸€ä¸ªå’’æ–‡ä¹‹å‰ï¼Œä½ å¿…é¡»å…ˆç”¨ enable æŒ‡ä»¤æ¥æŒ‡å®šä½ è¦ä½¿ç”¨çš„å’’æ–‡ç³»ã€‚
 
-×¢£ºÈç¹ûÄã¸Ä±ä×Ô¼ºµÄÖäÎÄÏµ£¬ÄãÔ­±¾Ğî»ıµÄ·¨Á¦²¢²»ÄÜÖ±½Ó×ª»»¹ıÈ¥£¬±ØĞë
-    ´Ó 0 ¿ªÊ¼¡£
+æ³¨ï¼šå¦‚æœä½ æ”¹å˜è‡ªå·±çš„å’’æ–‡ç³»ï¼Œä½ åŸæœ¬è“„ç§¯çš„æ³•åŠ›å¹¶ä¸èƒ½ç›´æ¥è½¬æ¢è¿‡å»ï¼Œå¿…é¡»
+    ä» 0 å¼€å§‹ã€‚
 
 HELP
     );

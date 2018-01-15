@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // azoth.c
 inherit FORCE;
 
-string name() { return "ÄÚµ¤Êõ"; }
+string name() { return "å†…ä¸¹æœ¯"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/6/1997 by snowcat
@@ -8,12 +8,12 @@ inherit NPC;
 void create()
 {
   string dir;
-  set_name("½ğÊ¥¹¬", ({"jinsheng gong", "gong", "queen"}));
-  set("title", "Öì×Ï¹ú");
-  set("gender", "Å®ĞÔ");
+  set_name("é‡‘åœ£å®«", ({"jinsheng gong", "gong", "queen"}));
+  set("title", "æœ±ç´«å›½");
+  set("gender", "å¥³æ€§");
   set("age", 28);
   set("per", 26);
-  set("rank_info/respect", "ÄïÄï");
+  set("rank_info/respect", "å¨˜å¨˜");
   set("combat_exp", 100000);
   set_skill("snowsword", 30);
   set_skill("sword", 30);
@@ -64,11 +64,11 @@ void test_player (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/zhuzi","done");
   who->add("combat_exp",i+4000);
-  command("chat "+who->query("name")+"Öì×Ï¹úÊ©ÉñÁ¦ÖÎÓúÍòËê£¬½â¾È½ğÊ¥¹¬ÓÚÈıÄê¾Ã»ö£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ıÎ÷ĞĞÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(4)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀĞĞ£¡\n");
+  command("chat "+who->query("name")+"æœ±ç´«å›½æ–½ç¥åŠ›æ²»æ„ˆä¸‡å²ï¼Œè§£æ•‘é‡‘åœ£å®«äºä¸‰å¹´ä¹…ç¥¸ï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(4)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
   command ("thank");
   call_out ("leaving",2);

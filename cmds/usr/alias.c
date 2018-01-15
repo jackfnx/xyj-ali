@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // alias.c
@@ -14,10 +14,10 @@ int main(object me, string arg)
    if( !arg ) {
      alias = me->query_all_alias();
      if( !sizeof(alias) ) {
-        write("��Ŀǰ��û���趨�κ� alias��\n");
+        write("你目前并没有设定任何 alias。\n");
         return 1;
      } else  {
-        write("��Ŀǰ�趨�� alias �У�\n");
+        write("你目前设定的 alias 有：\n");
         vrbs = keys(alias);
         for(i=0; i<sizeof(vrbs); i++)
           printf("%-15s = %s\n", vrbs[i], alias[vrbs[i]]);
@@ -28,9 +28,9 @@ int main(object me, string arg)
    if( sscanf(arg, "%s %s", verb, replace)!=2 )
      me->set_alias(arg, 0);
    else if( verb=="alias" )
-     return notify_fail("�㲻�ܽ� \"alias\" ָ���趨������;��\n");
+     return notify_fail("你不能将 \"alias\" 指令设定其他用途。\n");
    else if( verb=="" )
-     return notify_fail("��Ҫ��ʲ�� alias��\n");
+     return notify_fail("你要设什麽 alias？\n");
    else
      return me->set_alias(verb, replace);
 
@@ -41,24 +41,24 @@ int main(object me, string arg)
 int help (object me)
 {
    write(@HELP
-ָ���ʽ : alias <���趨ָ֮��> <ϵͳ�ṩָ֮��>
+指令格式 : alias <欲设定之指令> <系统提供之指令>
  
-��ʱϵͳ���ṩָ֮����Ҫ����ܳ����ִ�, ��ʹ��ʱ(�����Ǿ����õ���)
-������о�������, ��ʱ��(��)�����ô�һָ���趨�����ԭ��ָ֮�
+有时系统所提供之指令需要输入很长的字串, 在使用时(尤其是经常用到的)
+或许会感觉不方便, 此时你(□)即可用此一指令设定并替代原有之指令。
  
-����:
-   'alias sc score' ���� sc ȡ�� score ָ�
-   'alias' �᲻�Ӳ������г������е����ָ�
-   'alias sc' ������ sc ������ָ� (���������Ļ�)
+□例:
+   'alias sc score' 会以 sc 取代 score 指令。
+   'alias' 後不加参数则列出你所有的替代指令。
+   'alias sc' 会消除 sc 这个替代指令。 (如果你有设的话)
  
-���п����� $1, $2, $3 .... ��ȡ����һ���ڶ������������������� $* ȡ��
-���еĲ������磺
+其中可以用 $1, $2, $3 .... 来取代第一、第二、第三个参数，或是 $* 取代
+所有的参数，如：
    'alias pb put $1 in $2'
 
-��ÿ����(��)��
+则每当你(□)打：
    pb bandage bag
 
-�ͻ�ȡ���ɣ�
+就会取代成：
    put bandage in bag
    
 HELP

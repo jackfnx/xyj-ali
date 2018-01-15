@@ -13,41 +13,41 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕÐ¡¸±©Ñ©ÌìÍþ¡¹£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œæš´é›ªå¤©å¨ã€ï¼Ÿ\n");
     if (!me->is_fighting())
-        return notify_fail("¡¸±©Ñ©ÌìÍþ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ£¡\n");
+        return notify_fail("ã€Œæš´é›ªå¤©å¨ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
     if ((int)me->query("max_force") < 500 || (int)me->query("force") < 500)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query("sen") < 500)
-        return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+        return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
     if ((int)me->query_skill("ice-blade", 1) < 100)
-        return notify_fail("ÄãµÄ±ùÆÇº®µ¶¼¶±ð»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕÐ»áÓÐÀ§ÄÑ£¡\n");
-    message_vision(HIW"\n$NÔËÆðº®Æø£¬ÉíÐÎÒ»×ª£¬ËÄÖÜ¶ÙÊ±±ù¶³Êý³ß£¬¿ÕÆøÖÐº®Æø±ÆÈË$nÖ»¶³µÄÍü¼ÇµÄµÖ¿¹£¡\n"NOR, me, target);
+        return notify_fail("ä½ çš„å†°é­„å¯’åˆ€çº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
+    message_vision(HIW"\n$Nè¿èµ·å¯’æ°”ï¼Œèº«å½¢ä¸€è½¬ï¼Œå››å‘¨é¡¿æ—¶å†°å†»æ•°å°ºï¼Œç©ºæ°”ä¸­å¯’æ°”é€¼äºº$nåªå†»çš„å¿˜è®°çš„æŠµæŠ—ï¼\n"NOR, me, target);
     me->set_temp("noauto", 1);
     target->start_busy(random(2));
     damage = random(((int)me->query_skill("blade")));
-    message_vision(HIW"\n$NºÙºÙÒ»ÉùÀäÐ¦£¬¾¹È»ÒþÈëÑ©»¨Ö®ÖÐ¡£$n´ó¼±£¬ËÄÏÂÕÒÑ°$N£¬ºöÈ»±³ºóÒ»Õóº®ÆøËæ×Å\n"NOR, me, target);
-    message_vision(HIW"\nµ¶¹â¿ñÏ®¹ýÀ´£¡£¡£¡\n"NOR, me, target);
+    message_vision(HIW"\n$Nå˜¿å˜¿ä¸€å£°å†·ç¬‘ï¼Œç«Ÿç„¶éšå…¥é›ªèŠ±ä¹‹ä¸­ã€‚$nå¤§æ€¥ï¼Œå››ä¸‹æ‰¾å¯»$Nï¼Œå¿½ç„¶èƒŒåŽä¸€é˜µå¯’æ°”éšç€\n"NOR, me, target);
+    message_vision(HIW"\nåˆ€å…‰ç‹‚è¢­è¿‡æ¥ï¼ï¼ï¼\n"NOR, me, target);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
     COMBAT_D->do_attack(me, target, me->query_temp("weapon")); 
     COMBAT_D->do_attack(me, target, me->query_temp("weapon")); 
     if (random(me->query("combat_exp"))>random(target->query("combat_exp"))/4) {
-        message_vision(HIY"\n´ò¶·ÖÐ,Ò»Ö»½ðÉ«´óÅôÄñÔ¶Ô¶·ÉÀ´£¡$NºÍ$n¶¼¿´´ôÁË£¡\n"NOR, me, target);
-        message_vision(HIY"\nÍ»È»´óÅôÄñÓÃ³á°òÒ»ÉÈ,¶ÙÊ±¿ñ·ç´ó×÷£¡\n"NOR, me, target);
+        message_vision(HIY"\næ‰“æ–—ä¸­,ä¸€åªé‡‘è‰²å¤§é¹é¸Ÿè¿œè¿œé£žæ¥ï¼$Nå’Œ$néƒ½çœ‹å‘†äº†ï¼\n"NOR, me, target);
+        message_vision(HIY"\nçªç„¶å¤§é¹é¸Ÿç”¨ç¿…è†€ä¸€æ‰‡,é¡¿æ—¶ç‹‚é£Žå¤§ä½œï¼\n"NOR, me, target);
         if (random(me->query("force_factor"))>target->query("force_factor")/4) {
-            message_vision(HIR"\n$N¼û»ú²»¿ÉÊ§,Á¬Ã¦¹¥³öÒ»ÕÐ£¡\n"NOR,me,target);
+            message_vision(HIR"\n$Nè§æœºä¸å¯å¤±,è¿žå¿™æ”»å‡ºä¸€æ‹›ï¼\n"NOR,me,target);
             target->receive_damage("kee", damage*2); 
             target->receive_damage("sen", damage*2); 
-            message_vision(HIR"\n¿ñ·ç¼ÐÔÓ×ÅËéÊ¯ÂþÌì·ÉÎè,°Ñ$nÔÒµÃ±éÌåÁÛÉË£¡\n"NOR, me, target);
+            message_vision(HIR"\nç‹‚é£Žå¤¹æ‚ç€ç¢ŽçŸ³æ¼«å¤©é£žèˆž,æŠŠ$nç ¸å¾—éä½“é³žä¼¤ï¼\n"NOR, me, target);
             target->receive_wound("kee", damage);
             target->receive_wound("sen", damage);
             COMBAT_D->report_status(target);
         } else if(random(me->query("force_factor"))>target->query("force_factor")/2) {
-            message_vision(HIR"\n¿ñ·ç¼ÐÔÓ×ÅËéÊ¯ÂþÌì·ÉÎè,°Ñ$nÔÒµÃ±éÌåÁÛÉË£¡\n"NOR, me, target);
+            message_vision(HIR"\nç‹‚é£Žå¤¹æ‚ç€ç¢ŽçŸ³æ¼«å¤©é£žèˆž,æŠŠ$nç ¸å¾—éä½“é³žä¼¤ï¼\n"NOR, me, target);
             target->receive_wound("kee", damage);
             COMBAT_D->report_status(target);
         } else {
-            message_vision(HIR"\n¿ñ·ç¼ÐÔÓ×ÅËéÊ¯ÂþÌì·ÉÎè,°Ñ$NºÍ$nÔÒµÃ±éÌåÁÛÉË£¡\n"NOR, me, target); 
+            message_vision(HIR"\nç‹‚é£Žå¤¹æ‚ç€ç¢ŽçŸ³æ¼«å¤©é£žèˆž,æŠŠ$Nå’Œ$nç ¸å¾—éä½“é³žä¼¤ï¼\n"NOR, me, target); 
             target->receive_wound("kee", damage);
             target->receive_wound("sen", damage);
             COMBAT_D->report_status(target);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -7,14 +7,14 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "´äÆÁÏ¿");
+  set ("short", "ç¿ å±å³¡");
   set ("long", @LONG
 
-Ï¿ÓĞ°Ù³¤Óà³¤£¬Á½±ßÊ¯±Ú(wall)¸ßËÊ¡£±ÚÉÏÌ¦ºÛ°ß²µ£¬ÁëÉÏÉúÓĞÌÙ
-ÂÜ£¬ÅÊÔµ¶øÏÂ£¬ÔÚÊ¯±ÚÉÏ×é³É²»ÉÙÆæ¹ÖµÄÍ¼°¸£¬ËÆÓĞĞş»ú¡£
+å³¡æœ‰ç™¾é•¿ä½™é•¿ï¼Œä¸¤è¾¹çŸ³å£(wall)é«˜è€¸ã€‚å£ä¸Šè‹”ç—•æ–‘é©³ï¼Œå²­ä¸Šç”Ÿæœ‰è—¤
+èï¼Œæ”€ç¼˜è€Œä¸‹ï¼Œåœ¨çŸ³å£ä¸Šç»„æˆä¸å°‘å¥‡æ€ªçš„å›¾æ¡ˆï¼Œä¼¼æœ‰ç„æœºã€‚
 LONG);
   set("item_desc", ([ /* sizeof() == 1 */
-  "wall" : "Í¼°¸ËÆºõÊÇ¼¸¸öÈËÔÚ±ÈÎä¡£\n",
+  "wall" : "å›¾æ¡ˆä¼¼ä¹æ˜¯å‡ ä¸ªäººåœ¨æ¯”æ­¦ã€‚\n",
 ]));
 
 
@@ -38,31 +38,31 @@ int do_study(string arg)
    int sen_cost, kee_cost, force_cost, gain;
 
    if( !arg || (arg != "wall"))
-     return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+     return notify_fail("ä½ è¦å­¦ä»€ä¹ˆï¼Ÿ\n");
    if( me->is_busy() )
-     return notify_fail("ÄãÃ¦µÄºÜ£¬ÄÄÓĞ¹¦·òÈ¥¿´Ê¯±Ú£¡\n");
+     return notify_fail("ä½ å¿™çš„å¾ˆï¼Œå“ªæœ‰åŠŸå¤«å»çœ‹çŸ³å£ï¼\n");
    if( me->is_fighting() )
-     return notify_fail("ÏÖÑ§ÏÖÂôÒÑÀ´²»¼°ÁË£¡\n");
+     return notify_fail("ç°å­¦ç°å–å·²æ¥ä¸åŠäº†ï¼\n");
    if( (int)me->query_skill("literate", 1) < 100)
-     return notify_fail("Äã¿´ÁË°ëÌìÒ²¿´²»¶®ÉÏÃæ»­µÄÊÇÊ²Ã´£¡\n");
+     return notify_fail("ä½ çœ‹äº†åŠå¤©ä¹Ÿçœ‹ä¸æ‡‚ä¸Šé¢ç”»çš„æ˜¯ä»€ä¹ˆï¼\n");
    if( (int)me->query_skill("unarmed", 1) < 100)
-     return notify_fail("Äã¿´ÁË°ëÌìºÃÏó¿´³öÁËµãÃÅµÀ£¬È´Ò»Ê±ÁìÎò²»ÁË¡£\n");
+     return notify_fail("ä½ çœ‹äº†åŠå¤©å¥½è±¡çœ‹å‡ºäº†ç‚¹é—¨é“ï¼Œå´ä¸€æ—¶é¢†æ‚Ÿä¸äº†ã€‚\n");
    if( (int)me->query_skill("unarmed", 1) >= 140)
-     return notify_fail("Äã¶¨¾¦¿´ÁË»á£¬ÄãÒÑ¾­È«²¿ÁìÎòµ½ÁË¡£\n");
+     return notify_fail("ä½ å®šç›çœ‹äº†ä¼šï¼Œä½ å·²ç»å…¨éƒ¨é¢†æ‚Ÿåˆ°äº†ã€‚\n");
    if( (int)me->query("max_force") < 1000)
-     return notify_fail("Äãµ×Æø²»×ã£¬Á·²»ÁË¡£\n");
+     return notify_fail("ä½ åº•æ°”ä¸è¶³ï¼Œç»ƒä¸äº†ã€‚\n");
 
    sen_cost = 80 - (int)me->query_int();
    if( (int)me->query("sen") < sen_cost )
-     return notify_fail("ÄãÏÖÔÚÍ·ÔÎÄÔÕÍ£¬¸ÃĞİÏ¢ĞİÏ¢ÁË¡£\n");
+     return notify_fail("ä½ ç°åœ¨å¤´æ™•è„‘èƒ€ï¼Œè¯¥ä¼‘æ¯ä¼‘æ¯äº†ã€‚\n");
 
    kee_cost = 80 - (int)me->query_con();
    if( (int)me->query("kee") < kee_cost )
-     return notify_fail("ÄãÏÖÔÚ»ëÉíÎŞÁ¦£¬¸ÃĞİÏ¢ĞİÏ¢ÁË¡£\n");
+     return notify_fail("ä½ ç°åœ¨æµ‘èº«æ— åŠ›ï¼Œè¯¥ä¼‘æ¯ä¼‘æ¯äº†ã€‚\n");
 
    force_cost = 20;
    if( (int)me->query("force") < force_cost )
-     return notify_fail("ÄãÏÖÔÚÒÑÌá²»ÆğÆøÁË£¬¸ÃĞİÏ¢ĞİÏ¢ÁË¡£\n");
+     return notify_fail("ä½ ç°åœ¨å·²æä¸èµ·æ°”äº†ï¼Œè¯¥ä¼‘æ¯ä¼‘æ¯äº†ã€‚\n");
 
    me->receive_damage("sen", sen_cost);
    me->receive_damage("kee", kee_cost);
@@ -72,9 +72,9 @@ int do_study(string arg)
 
    me->improve_skill("unarmed", gain);
 
-   write("ÄãÕÕ×ÅÊ¯±ÚÉÏµÄÍ¼°¸±È»®£¬¶Ô¡ºÆË»÷¸ñ¶·Ö®¼¼¡»ÓÖÓĞËùÁË½â¡£\n");
+   write("ä½ ç…§ç€çŸ³å£ä¸Šçš„å›¾æ¡ˆæ¯”åˆ’ï¼Œå¯¹ã€æ‰‘å‡»æ ¼æ–—ä¹‹æŠ€ã€åˆæœ‰æ‰€äº†è§£ã€‚\n");
 
-   tell_room( environment(me), me->name() + "Ë«ÊÖ»ÓÀ´»ÓÈ¥£¬²»ÖªÔÚ±È»®Ê²Ã´¡£\n", ({me}));
+   tell_room( environment(me), me->name() + "åŒæ‰‹æŒ¥æ¥æŒ¥å»ï¼Œä¸çŸ¥åœ¨æ¯”åˆ’ä»€ä¹ˆã€‚\n", ({me}));
 
    return 1;
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -10,13 +10,13 @@ inherit ITEM;
 
 void create()
 {
-   set_name(HIY "»ÆÍ­Ô¿³×" NOR, ({"huangtong key", "key"}));
+   set_name(HIY "é»„é“œé’¥åŒ™" NOR, ({"huangtong key", "key"}));
    set_weight(100);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
-     set("long", "Ò»°Ñ»ÆÍ­Ô¿³×¡£\n");
+     set("unit", "æŠŠ");
+     set("long", "ä¸€æŠŠé»„é“œé’¥åŒ™ã€‚\n");
    }
   
    set("is_monitored",1);

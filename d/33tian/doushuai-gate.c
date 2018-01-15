@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/33tian/doushuai-gate
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "殿门");
   set ("long", @LONG
 
-�߽�������ԭ�����������ʮ�ֺ�ΰ�������Ϻ��һ����(bian)��
-������һ������ (duilian)�����澲���ĵģ�Ҳ��֪��û���ˡ�����
-��������ԼԼ���Կ���һƬ���֣�����Ǹ����޵ĺõط���
+走近看来，原来这座宫殿并不十分宏伟。殿门上横挂一块匾(bian)，
+两边有一付对联 (duilian)。里面静悄悄的，也不知有没有人。正殿
+后面隐隐约约可以看到一片松林，想必是个清修的好地方。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -19,7 +19,7 @@ LONG);
 ]));
   set("light_up", 1);
   set("item_desc", ([ /* sizeof() == 1 */
-  "bian" : "�����ʹ���
+  "bian" : "「兜率宫」
 ",
 ]));
 

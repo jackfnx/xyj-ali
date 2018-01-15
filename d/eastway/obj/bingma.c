@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 7/18/1997
@@ -8,16 +8,16 @@ inherit ITEM;
 void create ()
 {
   if (random(4))
-    set_name("±øÙ¸", ({ "bingma yong", "yong" }) );
+    set_name("å…µä¿‘", ({ "bingma yong", "yong" }) );
   else
-    set_name("ÂíÙ¸", ({ "bingma yong", "yong" }) );
+    set_name("é©¬ä¿‘", ({ "bingma yong", "yong" }) );
   set_weight(900000);
   if (clonep())
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»×ğèòèòÈçÉúµÄ±øÂíÙ¸¡£\n");
-    set("unit","×ğ");
+    set("long", "ä¸€å°Šæ ©æ ©å¦‚ç”Ÿçš„å…µé©¬ä¿‘ã€‚\n");
+    set("unit","å°Š");
   }
   setup();
 }
@@ -31,17 +31,17 @@ int init ()
 int do_act (string arg)
 {
   string *msgs = ({
-    "$N°´ÕÕ±øÂíÙ¸µÄ×ËÌ¬±È»®ÁËÒ»ÏÂ¡£\n",
-    "$NÑ§×Å±øÂíÙ¸µÄĞÎÌ¬ÓÃÁ¦±È»®ÁËÒ»ÏÂ¡£\n",
-    "$N¶Ô×Å±øÂíÙ¸£¬È«Éñ¹á×¢µØ±È»®ÁËÒ»ÏÂ¡£\n",
-    "$NÒ»±ß¿´×Å±øÂíÙ¸£¬Ò»±ßÊÔ×Å±È»®ÁËÒ»ÏÂ¡£\n",
+    "$NæŒ‰ç…§å…µé©¬ä¿‘çš„å§¿æ€æ¯”åˆ’äº†ä¸€ä¸‹ã€‚\n",
+    "$Nå­¦ç€å…µé©¬ä¿‘çš„å½¢æ€ç”¨åŠ›æ¯”åˆ’äº†ä¸€ä¸‹ã€‚\n",
+    "$Nå¯¹ç€å…µé©¬ä¿‘ï¼Œå…¨ç¥è´¯æ³¨åœ°æ¯”åˆ’äº†ä¸€ä¸‹ã€‚\n",
+    "$Nä¸€è¾¹çœ‹ç€å…µé©¬ä¿‘ï¼Œä¸€è¾¹è¯•ç€æ¯”åˆ’äº†ä¸€ä¸‹ã€‚\n",
   });
   string *actions = ({
-    "Äã¸Ğ¾õµ½×Ô¼ºµÄ¸ñ¶·ÄÜÁ¦ÓĞÁË½ø²½¡£\n",
-    "ÄãµÄÆË»÷¼¼ÇÉÓĞÒ»µãÌá¸ß¡£\n",
-    "ÄãµÄÆË»÷¸ñ¶·ÄÜÁ¦ÓĞÁËĞÂµÄÌá¸ß¡£\n",
-    "Äã¸Ğµ½ÄãµÄÆË»÷¸ñ¶·Ö®¼¼ÓĞÁË½ø²½¡£\n",
-    "ÄãµÄÆË»÷¸ñ¶·Ö®¼¼Ìá¸ßÁË¡£\n",
+    "ä½ æ„Ÿè§‰åˆ°è‡ªå·±çš„æ ¼æ–—èƒ½åŠ›æœ‰äº†è¿›æ­¥ã€‚\n",
+    "ä½ çš„æ‰‘å‡»æŠ€å·§æœ‰ä¸€ç‚¹æé«˜ã€‚\n",
+    "ä½ çš„æ‰‘å‡»æ ¼æ–—èƒ½åŠ›æœ‰äº†æ–°çš„æé«˜ã€‚\n",
+    "ä½ æ„Ÿåˆ°ä½ çš„æ‰‘å‡»æ ¼æ–—ä¹‹æŠ€æœ‰äº†è¿›æ­¥ã€‚\n",
+    "ä½ çš„æ‰‘å‡»æ ¼æ–—ä¹‹æŠ€æé«˜äº†ã€‚\n",
   });
   object me = this_player();
   object yong = this_object();
@@ -49,25 +49,25 @@ int do_act (string arg)
   if (arg != "yong" &&
       arg != "bingma yong")
   {
-    tell_object(me,"ÄãÏëÔõÑù±È»®ÄØ£¿\n");
+    tell_object(me,"ä½ æƒ³æ€æ ·æ¯”åˆ’å‘¢ï¼Ÿ\n");
     return 1;
   }
   if (me->query("kee")<10 ||
       me->query("sen")<10)
   {
-    tell_object (me,"ÄãÒÑ¾­Ì«Æ£ÀÍÁË£¡\n");
+    tell_object (me,"ä½ å·²ç»å¤ªç–²åŠ³äº†ï¼\n");
     me->unconcious();
     return 1;
   }
   if (me->is_busy())
   {
-    tell_object (me,"ÄãÕıÔÚÃ¦×ÅÄØ£¡\n");
+    tell_object (me,"ä½ æ­£åœ¨å¿™ç€å‘¢ï¼\n");
     return 1;
   }
   if (me->query_temp("weapon") ||
       me->query_temp("secondary_weapon"))
   {
-    tell_object (me,"ÄãÄÃ×ÅÎäÆ÷ÎŞ·¨±È»®¡£\n");
+    tell_object (me,"ä½ æ‹¿ç€æ­¦å™¨æ— æ³•æ¯”åˆ’ã€‚\n");
     return 1;
   }
   yong->add("times",1);
@@ -79,7 +79,7 @@ int do_act (string arg)
   me->start_busy(1,1);
   if (yong->query("times")>100)
   {
-    message_vision ("Ö»¼û$NÒ¡Ò¡»Î»Î£¬ºäµØÒ»ÏÂµ¹ÔÚµØÉÏËéÁË¡£\n",yong);
+    message_vision ("åªè§$Næ‘‡æ‘‡æ™ƒæ™ƒï¼Œè½°åœ°ä¸€ä¸‹å€’åœ¨åœ°ä¸Šç¢äº†ã€‚\n",yong);
     destruct (yong);
   }
   return 1;

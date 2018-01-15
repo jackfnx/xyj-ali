@@ -230,7 +230,7 @@ int convert_identity(object me, object ob)
     else if (who->query("family/family_name"))
     {
         who->set("title",
-            sprintf("%sµÚ%s´ú%s",
+            sprintf("%sç¬¬%sä»£%s",
             who->query("family/family_name"),
             chinese_number(who->query("family/generation")),
             who->query("family/title")));
@@ -453,12 +453,12 @@ int do_bandage(string arg)
     if (!arg || me != present(arg, environment(me)))
         return 0;
 
-    message_vision("$N±ğÓĞÓÃĞÄµØÒª¸ø$n°üÔúÉË¿Ú¡£\n", who, me);
+    message_vision("$Nåˆ«æœ‰ç”¨å¿ƒåœ°è¦ç»™$nåŒ…æ‰ä¼¤å£ã€‚\n", who, me);
     call_out("no_bandage", 2, who, me);
     return 1;
 }
 
 void no_bandage(object who, object me)
 {
-    message_vision("$NÏò$nÒ¡ÁËÒ¡Í·¡£\n", me, who);
+    message_vision("$Nå‘$næ‘‡äº†æ‘‡å¤´ã€‚\n", me, who);
 }

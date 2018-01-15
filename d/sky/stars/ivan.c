@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÇàÇà",({"star ivan","ivan","star"}));
-  set("gender", "Å®ÐÔ");
-  set("title", "Í¨·ç´óÊ¥");
+  set_name("é’é’",({"star ivan","ivan","star"}));
+  set("gender", "å¥³æ€§");
+  set("title", "é€šé£Žå¤§åœ£");
   set("age", 43);
-  set("long", "    \n°®,ÈÏÕæ¾ÍºÃ\n±ð¼±×ÅÊµÏÖÄÇÐ©±ðÈËËµµÄ\nÌì»ÄµØÀÏ\n");
+  set("long", "    \nçˆ±,è®¤çœŸå°±å¥½\nåˆ«æ€¥ç€å®žçŽ°é‚£äº›åˆ«äººè¯´çš„\nå¤©è’åœ°è€\n");
 
   set("attitude", "heroism");
   set("class", "xian");
@@ -43,10 +43,10 @@ void init()
   string armor1_id="waist",armor2_id="pifeng";
   ::init();
   if (my_weapon=present(weapon_id, me))
-       my_weapon->set("name",HIY"ÇàÅ®½£"NOR);
+       my_weapon->set("name",HIY"é’å¥³å‰‘"NOR);
   if (my_armor1=present(armor1_id, me))
-       my_armor1->set("name",HIY"´µóÕÃ÷ÔÂ´ø"NOR);
+       my_armor1->set("name",HIY"å¹ç¬³æ˜Žæœˆå¸¦"NOR);
   if (my_armor2=present(armor2_id, me))
-       my_armor2->set("name",HIY"ÒÐ½£°×ÔÆÒÂ"NOR);
+       my_armor2->set("name",HIY"å€šå‰‘ç™½äº‘è¡£"NOR);
 }
 

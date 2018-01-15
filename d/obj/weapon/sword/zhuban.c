@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // zhuban.c
@@ -9,17 +9,17 @@ inherit SWORD;
 
 void create()
 {
-   set_name("Öñ°å", ({ "zhu ban","ban" }) );
+   set_name("ç«¹æ¿", ({ "zhu ban","ban" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¸±");
+     set("unit", "å‰¯");
      set("value", 200);
      set("material", "bamboo");
-     set("long", "Ò»¸±Ëµ³ªÒÕÈËÓÃµÄÖñ°å¡£\n");
-     set("wield_msg", "$NÄÃ³öÒ»·ùÖñ°å£¬ÅÄÁË¼¸ÏÂ£¬½Ú×à¸ĞÊ®×ã¡£\n");
-     set("unwield_msg", "$N½«$nÊÕÁËÆğÀ´¡£\n");
+     set("long", "ä¸€å‰¯è¯´å”±è‰ºäººç”¨çš„ç«¹æ¿ã€‚\n");
+     set("wield_msg", "$Næ‹¿å‡ºä¸€å¹…ç«¹æ¿ï¼Œæ‹äº†å‡ ä¸‹ï¼ŒèŠ‚å¥æ„Ÿåè¶³ã€‚\n");
+     set("unwield_msg", "$Nå°†$næ”¶äº†èµ·æ¥ã€‚\n");
    }
    init_sword(10);
    setup();

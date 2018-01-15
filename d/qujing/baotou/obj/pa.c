@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rake.c
@@ -10,21 +10,21 @@ inherit RAKE;
 
 void create()
 {
-  set_name("Ğ¡¾Å³İîÙ", ({ "xiao jiuchi pa", "jiuchipa", "pa","rake" }) );
+  set_name("å°ä¹é½¿é’¯", ({ "xiao jiuchi pa", "jiuchipa", "pa","rake" }) );
   set_weight(10000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±ú");
+    set("unit", "æŸ„");
     set("value", 2000);
     set("material", "iron");
     set("no_sell", 1);
     set("no_drop", 1);
     set("is_monitored", 1);
     set("replace_file", "/d/obj/weapon/rake/gangpa");
-    set("long", "Ò»±ú¾Å³İîÙ£¬ÅåÓĞÒøÎÆ³¤°Ñ¡£\n");
-    set("wield_msg", "$N³­ÆğÒ»±ú$n£¬Íù¿ÕÖĞË³ÊÖÒ»Öş¡£\n");
-    set("unwield_msg", "$N·ÅÏÂ$n£¬ÍùÉíºóÒ»ÍÏ¡£\n");
+    set("long", "ä¸€æŸ„ä¹é½¿é’¯ï¼Œä½©æœ‰é“¶çº¹é•¿æŠŠã€‚\n");
+    set("wield_msg", "$NæŠ„èµ·ä¸€æŸ„$nï¼Œå¾€ç©ºä¸­é¡ºæ‰‹ä¸€ç­‘ã€‚\n");
+    set("unwield_msg", "$Næ”¾ä¸‹$nï¼Œå¾€èº«åä¸€æ‹–ã€‚\n");
   }
   init_rake(65);
   setup();
@@ -32,7 +32,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("Ò»µÀ×ÏÆøÉÁ¹ı£¬$n±»Í»ÈçÆäÀ´µÄÏ¼¹âÊÕ×ßÁË£¡\n",where,me);
+  message_vision("ä¸€é“ç´«æ°”é—ªè¿‡ï¼Œ$nè¢«çªå¦‚å…¶æ¥çš„éœå…‰æ”¶èµ°äº†ï¼\n",where,me);
   destruct (me);
 }
 

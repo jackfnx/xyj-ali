@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/25/1997 by snowcat
@@ -10,8 +10,8 @@ void create()
 {
   string dir;
 
-  set_name("Ë®òÎ¾«", ({"shuizhi jing", "jing"}));
-  set("gender", "Å®ÐÔ");
+  set_name("æ°´è›­ç²¾", ({"shuizhi jing", "jing"}));
+  set("gender", "å¥³æ€§");
   set("age", 24);
   set("con", 20);
   set("cor", 20);
@@ -77,7 +77,7 @@ void kill_ob (object me)
     //ob3 = new(str);
     //ob3->setup();
     //ob3->move(environment(ob));
-    message_vision ("àáµØÒ»Éù´Ó$NÉíºóË®ÁÜÁÜµØ×ê³ö¼¸¸ö$n£¡\n",me,ob);
+    message_vision ("å™Œåœ°ä¸€å£°ä»Ž$Nèº«åŽæ°´æ·‹æ·‹åœ°é’»å‡ºå‡ ä¸ª$nï¼\n",me,ob);
     ob->set("kee",ob->query("max_kee")/10*12);
     ob->set("triplicate",1);
     ob1->set("triplicate",1);

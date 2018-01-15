@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hammer.c
@@ -9,18 +9,18 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Í­´¸", ({"hammer"}));
+        set_name("é“œé”¤", ({"hammer"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÉòÖØµÄÍ­´¸£¬´òÔìµÄÏàµ±¼áÊµ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæ²ˆé‡çš„é“œé”¤ï¼Œæ‰“é€ çš„ç›¸å½“åšå®ã€‚\n");
                 set("value", 500);
                 set("material", "iron");
                 set("wield_msg",
-"$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+"$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(25);

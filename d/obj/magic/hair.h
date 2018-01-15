@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -9,25 +9,25 @@ string new_unit();
 
 int display_info (object who)
 {
-  tell_object (who,"ÇëÊ¹ÓÃ£ºtransform <new-english-name> <ÖĞÎÄÃû³Æ>¡£\n");  
+  tell_object (who,"è¯·ä½¿ç”¨ï¼štransform <new-english-name> <ä¸­æ–‡åç§°>ã€‚\n");  
   return 1;
 }
 
 int change_success (object me, object ob)
 {
-  message_vision ("»°ÒôÎ´Âä£¬Ö»¼û$NÊÖÖĞÍ»È»¶à³öÒ»"+ob->query("unit")+
-                  "$n£¡\n",me,ob);
+  message_vision ("è¯éŸ³æœªè½ï¼Œåªè§$Næ‰‹ä¸­çªç„¶å¤šå‡ºä¸€"+ob->query("unit")+
+                  "$nï¼\n",me,ob);
   return 1;
 }
 
 int do_transform (string arg)
 {
   string *msgs = ({
-    "$N×¥ÆğÒ»°Ñ$nÒ»½ÀÅç½«³öÈ¥£¬¿ÚÖĞÄîÄîÓĞ´Ê¡£\n",
-    "$N°Ñ$n¶ªÔÚ¿ÚÖĞ½ÀÁ½ÏÂÍû¿ÕÒ»Åç£¬´óºÈÒ»Éù¡£\n",
-    "$N½«$nÍù×ìÀïÒ»½À£¬ÅçÔÚ¿ÕÖĞºÈµÀ£º¡°±ä¡±£¡\n",
-    "$NÄÃÆğ$nÍù×ìÀïÒ»ÈÓ£¬ºß¹ş¼¸Éù½À½«³öÈ¥£¡\n",
-    "$N½«$nÍù¿ÚÖĞÒ»ÈûßÇàê½À½«ÆğÀ´£¬ÄîÄîÓĞ´ÊÏò¿ÕÒ»Åç¡£\n",
+    "$NæŠ“èµ·ä¸€æŠŠ$nä¸€åš¼å–·å°†å‡ºå»ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ã€‚\n",
+    "$NæŠŠ$nä¸¢åœ¨å£ä¸­åš¼ä¸¤ä¸‹æœ›ç©ºä¸€å–·ï¼Œå¤§å–ä¸€å£°ã€‚\n",
+    "$Nå°†$nå¾€å˜´é‡Œä¸€åš¼ï¼Œå–·åœ¨ç©ºä¸­å–é“ï¼šâ€œå˜â€ï¼\n",
+    "$Næ‹¿èµ·$nå¾€å˜´é‡Œä¸€æ‰”ï¼Œå“¼å“ˆå‡ å£°åš¼å°†å‡ºå»ï¼\n",
+    "$Nå°†$nå¾€å£ä¸­ä¸€å¡å’”åš“åš¼å°†èµ·æ¥ï¼Œå¿µå¿µæœ‰è¯å‘ç©ºä¸€å–·ã€‚\n",
   });
   object me = this_player();
   object ob = this_object();
@@ -41,7 +41,7 @@ int do_transform (string arg)
 
   if (me->query_skill("spells")<10)
   {
-    tell_object (me,"ÄãµÄ·¨Êõ²»¹»¡£\n");
+    tell_object (me,"ä½ çš„æ³•æœ¯ä¸å¤Ÿã€‚\n");
     return 1;
   }
 
@@ -53,7 +53,7 @@ int do_transform (string arg)
   ob->set_temp("apply/id",({"my "+id}));
   ob->set("short",name+"("+capitalize("my "+id)+")");
   ob->set("unit",new_unit());
-  ob->set("long","Ò»"+this_object()->query("unit")+name+"¡£\n");
+  ob->set("long","ä¸€"+this_object()->query("unit")+name+"ã€‚\n");
   ob->set("has_transformed",1);
 
   call_out ("change_success",1,me,ob);

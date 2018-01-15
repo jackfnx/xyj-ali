@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 6/21/1997
@@ -24,9 +24,9 @@ mixed main(object me, string arg, int remote)
      }   
      write ("  ");
      write (who->query("name")+"("+who->query("id")+")");
-     write (ridee->query("ride/msg")+"ÔÚ");
+     write (ridee->query("ride/msg")+"åœ¨");
      write (ridee->query("name")+"("+ridee->query("id")+")");
-     write ("ÉÏ¡£\n");
+     write ("ä¸Šã€‚\n");
    }
    return 1;
 }
@@ -34,9 +34,9 @@ mixed main(object me, string arg, int remote)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : whoride 
+æŒ‡ä»¤æ ¼å¼ : whoride 
  
-¿ÉÁĞ³öÄ¿Ç°ÆïÓĞ×øÆïµÄÍæ¼Ò¡£
+å¯åˆ—å‡ºç›®å‰éª‘æœ‰åéª‘çš„ç©å®¶ã€‚
  
  
 HELP

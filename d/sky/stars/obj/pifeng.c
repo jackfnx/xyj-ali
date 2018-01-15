@@ -5,15 +5,15 @@ inherit SURCOAT;
 
 void create()
 {
-  set_name("Åû·ç", ({"pifeng"}));
+  set_name("æŠ«é£Ž", ({"pifeng"}));
   set_weight(4500);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»¼þÅû·ç¡£\n");
+    set("long", "ä¸€ä»¶æŠ«é£Žã€‚\n");
     set("material", "leather");
-    set("unit", "¼þ");
+    set("unit", "ä»¶");
     set("value", 700);
     set("armor_prop/armor", 35);
   }

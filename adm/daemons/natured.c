@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // natured.c
@@ -15,11 +15,11 @@ mapping *query_day_phase() { return day_phase; }
 int query_current_day_phase() { return current_day_phase; }
 
 string *weather_msg = ({
-   "Ìì¿ÕÖĞÍòÀïÎŞÔÆ",
-   "¼¸¶äµ­µ­µÄÔÆ²Ê×±µã×ÅÇåÀÊµÄÌì¿Õ",
-   "°×ÔÆÔÚÌì¿ÕÖĞÆ®À´Æ®È¥",
-   "ºñºñµÄÔÆ²ã¶Ñ»ıÔÚÌì±ß",
-   "Ìì¿ÕÖĞÎÚÔÆÃÜ²¼",
+   "å¤©ç©ºä¸­ä¸‡é‡Œæ— äº‘",
+   "å‡ æœµæ·¡æ·¡çš„äº‘å½©å¦†ç‚¹ç€æ¸…æœ—çš„å¤©ç©º",
+   "ç™½äº‘åœ¨å¤©ç©ºä¸­é£˜æ¥é£˜å»",
+   "åšåšçš„äº‘å±‚å †ç§¯åœ¨å¤©è¾¹",
+   "å¤©ç©ºä¸­ä¹Œäº‘å¯†å¸ƒ",
 });
 
 mapping *read_table(string file);
@@ -94,11 +94,11 @@ void event_noon()
      if( !environment(ob[i])->query("outdoors") ) continue;
      if( !ob[i]->query("mana") ) continue;
      if( !(skill = ob[i]->query_skill("spells", 1) )) {
-        tell_object(ob[i], "Äã¾õµÃÒ»ÕóÔÎÑ££¬ºÃÏñÓĞÒ»¹ÉÄÜÁ¿´ÓÉíÉÏ±»ÈËÎü×ßÁË¡£\n");
+        tell_object(ob[i], "ä½ è§‰å¾—ä¸€é˜µæ™•çœ©ï¼Œå¥½åƒæœ‰ä¸€è‚¡èƒ½é‡ä»èº«ä¸Šè¢«äººå¸èµ°äº†ã€‚\n");
         ob[i]->set("mana", 0);
         ob[i]->receive_damage("sen", 0);
      } else if( skill < 25 ) {
-        tell_object(ob[i], "Ëæ×ÅÌ«ÑôÉıµ½Ìì¿ÕµÄÕıÖĞÑë£¬Äã¾õµÃÄãµÄ·¨Á¦¿ªÊ¼ÏûÊ§ÁË¡£\n");
+        tell_object(ob[i], "éšç€å¤ªé˜³å‡åˆ°å¤©ç©ºçš„æ­£ä¸­å¤®ï¼Œä½ è§‰å¾—ä½ çš„æ³•åŠ›å¼€å§‹æ¶ˆå¤±äº†ã€‚\n");
         ob[i]->set("mana", (int)ob[i]->query("mana") * skill / 25 );
      }
    }
@@ -106,7 +106,7 @@ void event_noon()
 
 string outdoor_room_description()
 {
-   return HIM + "    " + day_phase[current_day_phase]["desc_msg"] + "¡£\n" + NOR;
+   return HIM + "    " + day_phase[current_day_phase]["desc_msg"] + "ã€‚\n" + NOR;
 }
 
 string game_time()

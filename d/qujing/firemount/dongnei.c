@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "洞内");
   set ("long", @LONG
 
-����һƬ��ڣ���ʲôҲ�����壬�ƺ������������۾��ںڰ��ж�
-���㡣�㻷�����ܣ�ģģ�����ֱ��һ��һ����Ӱ�ӡ�
+洞里一片漆黑，你什么也看不清，似乎觉得有许多眼睛在黑暗中盯
+着你。你环顾四周，模模糊糊分辨出一个一个的影子。
 
 LONG);
 
@@ -38,20 +38,20 @@ int do_koujian (string arg)
 
   if (arg != "princess")
   {
-    message_vision("ֻ��$N������ȥ����\n",me);
-    tell_object(me,"����ߵ��˭��\n");
+    message_vision("只见$N伏下身去……\n",me);
+    tell_object(me,"你想叩见谁？\n");
     return 1;
   }  
 
-  message_vision("ֻ��$N������ȥ������"+
+  message_vision("只见$N伏下身去喊道："+
                  RANK_D->query_self(me)+
-                 "ߵ��������\n",me);
+                 "叩见公主！\n",me);
 
   if (princess)
-    message_vision("$N����һ�ѽ�$nС���Ƶ������������ز��ء�\n",princess,me);
+    message_vision("$N伸手一把将$n小鸡似的拎起来：不必不必。\n",princess,me);
   else
   {
-    message_vision("��Ѩ�������ط���һЩ��ɫ������\n",me);
+    message_vision("洞穴里隐隐地泛出一些红色云雾。\n",me);
     call_out("princess_appear",10+random(10),me);
   }
   return 1;
@@ -69,5 +69,5 @@ void princess_appear(object me)
 
   princess = new (__DIR__"npc/princess");
   princess->move(environment(me));
-  message_vision("һ���ɫ��������һ����������$N��\n",princess);
+  message_vision("一阵红色云雾聚在一起，慢慢凝做$N。\n",princess);
 }

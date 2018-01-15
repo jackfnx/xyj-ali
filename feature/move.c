@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // move.c
@@ -48,7 +48,7 @@ nomask void add_encumbrance(int w)
 void over_encumbrance()
 {
   if( !userp(this_object()) ) return;
-  tell_object(this_object(), "��ĸ��ɹ����ˣ�\n");
+  tell_object(this_object(), "你的负荷过重了！\n");
 }
 
 nomask int query_weight() { return weight; }
@@ -97,7 +97,7 @@ varargs int _move(mixed dest, int silently)
 
   // If we are equipped, unequip first.
   if( query("equipped") && !this_object()->unequip() )
-   return notify_fail("��û�а취ȡ������������\n");
+   return notify_fail("你没有办法取下这样东西。\n");
 
   // Find the destination ob for moving.
   if( objectp(dest) )
@@ -115,14 +115,14 @@ varargs int _move(mixed dest, int silently)
   if(!(me->is_character()) &&
    sizeof(all_inventory(ob))>=ob->query_max_items()) {
     if(ob==this_player())
-   return notify_fail("������װ���¸��ණ���ˡ�\n");
+   return notify_fail("你身上装不下更多东西了。\n");
     else if(userp(ob))
-   return notify_fail(ob->name()+"����װ���¸��ණ���ˡ�\n");
+   return notify_fail(ob->name()+"身上装不下更多东西了。\n");
     else { // for rooms and container.
    string name=ob->name();
    if(!name) name=ob->query("short");
    if(!name) name=ob->short();
-   return notify_fail(name+"�Ѿ�̫ӵ���ˡ�\n");
+   return notify_fail(name+"已经太拥挤了。\n");
     }
   }
 
@@ -134,7 +134,7 @@ varargs int _move(mixed dest, int silently)
   // object in the bag and encumbrance checking is unessessary.
   env = this_object();
 
-    if(env==ob) return notify_fail("�㲻�ܰ���Ʒ��������֮�С�\n");
+    if(env==ob) return notify_fail("你不能把物品放入自身之中。\n");
   //mon 8/25/97
 
   while(env = environment(env)) if( env==ob ) break;
@@ -143,10 +143,10 @@ varargs int _move(mixed dest, int silently)
    > (int)ob->query_max_encumbrance() ) {
    if( ob==this_player() )
     return notify_fail( this_object()->name() + 
-     "�������̫���ˡ�\n");
+     "对你而言太重了。\n");
    else
     return notify_fail( this_object()->name() + 
-     "��" + ob->name() + "����̫���ˡ�\n");
+     "对" + ob->name() + "而言太重了。\n");
   }
 
   // Move the object and update encumbrance
@@ -164,8 +164,8 @@ varargs int _move(mixed dest, int silently)
   if (userp(ob) && this_object()->value() >= 1000000)
   {
       object where1, where2;
-      string place_me = "ĳ";
-      string place_ob = "ĳ";
+      string place_me = "某";
+      string place_ob = "某";
 
    where1 = environment();
       if (where1)
@@ -174,8 +174,8 @@ varargs int _move(mixed dest, int silently)
       if (where2)
        place_ob = (where2->short()?where2->short():where2->query("short"))+"["+file_name(where2)+"]";
       if (where1 != ob)
-       MONITOR_D->report_system_object_msg (ob,"����"+place_ob+"����"+
-           place_me+"���õ��˼�ֵΪ"+ this_object()->value()/10000 +"gold�ľ޿");
+       MONITOR_D->report_system_object_msg (ob,"（在"+place_ob+"）自"+
+           place_me+"处得到了价值为"+ this_object()->value()/10000 +"gold的巨款。");
   }
 
   move_object(ob);
@@ -195,9 +195,9 @@ varargs int _move(mixed dest, int silently)
     if ((this_object()->query("is_monitored") ||
     file_name(this_object())[0..2]=="/u/") 
     && userp(ob))
-      MONITOR_D->report_system_object_msg (ob,"�õ���"+
+      MONITOR_D->report_system_object_msg (ob,"得到了"+
        this_object()->query("name")
-    +"("+file_name(this_object())+")��");
+    +"("+file_name(this_object())+")。");
     
     this_object()->start_fate(ob);
   return 1;
@@ -214,7 +214,7 @@ void remove(string euid)
   if( userp(this_object()) && euid!=ROOT_UID ) {
    log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
     euid, this_object()->query("id"), ctime(time())));
-   error("��(" + euid + ")���ܴݻ�������ʹ���ߡ�\n");
+   error("你(" + euid + ")不能摧毁其他的使用者。\n");
   } else if( this_object()->query("equipped")) {
    if(  !this_object()->unequip() )
     log_file("destruct", sprintf("Failed to unequip %s when destructed.\n",file_name(this_object())));
@@ -232,7 +232,7 @@ int move_or_destruct( object dest )
 {
   if( userp(this_object()) ) {
    tell_object(this_object(), 
-    "һ��ʱ�յ�Ť�����㴫�͵���һ���ط�������\n");
+    "一阵时空的扭曲将你传送到另一个地方．．．\n");
    move(VOID_OB);
   }
 }
@@ -265,6 +265,6 @@ string ride_suffix()
     
     ridee = ride();
     if (ridee)
-        ridemsg = ridee->query("ride/msg")+"��"+ridee->name()+"��";
+        ridemsg = ridee->query("ride/msg")+"在"+ridee->name()+"上";
     return ridemsg;
 }

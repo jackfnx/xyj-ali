@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -8,22 +8,22 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("ÓÍÆ¿", ({"youping"}));
+        set_name("æ²¹ç“¶", ({"youping"}));
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-     set("long", "Ò»¸ö×°ÓÍµÄÆ¿×Ó£®\n");
-                set("unit", "¸ö");
+     set("long", "ä¸€ä¸ªè£…æ²¹çš„ç“¶å­ï¼\n");
+                set("unit", "ä¸ª");
      set("value", 30);
      set("max_liquid", 5);
-                set("wield_msg", "$N×¥ÆğÒ»¸ö$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€ä¸ª$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“æ­¦å™¨ã€‚\n");
                 set("material", "bone");
         }
 
         set("liquid", ([
                 "type": "water",
-                "name": "²ËÓÍ",
+                "name": "èœæ²¹",
                 "remaining": 5,
         ]) );
         init_hammer(1);

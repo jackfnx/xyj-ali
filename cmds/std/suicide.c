@@ -7,7 +7,7 @@ int rmhirdir(string dir);
 int main(object me, string arg)
 {
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»Íê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡å®Œæˆã€‚\n");
 
 	if( !arg ) {
 		write("You commit suicide.\n");
@@ -15,11 +15,11 @@ int main(object me, string arg)
 	}
 
 	if( arg!="-f" ) 
-		return notify_fail("×ÔÉ±ÓÐÁ½ÖÖ£¬ÄúÊÇÒªÓÀÔ¶ËÀµô»¹ÊÇÖØÐÂÍ¶Ì¥£¿\n");
+		return notify_fail("è‡ªæ€æœ‰ä¸¤ç§ï¼Œæ‚¨æ˜¯è¦æ°¸è¿œæ­»æŽ‰è¿˜æ˜¯é‡æ–°æŠ•èƒŽï¼Ÿ\n");
 
 	write(
-		"Èç¹ûÄúÑ¡ÔñÓÀÔ¶ËÀµôµÄ×ÔÉ±·½Ê½£¬ÄãµÄ×ÊÁÏ¾ÍÓÀÔ¶É¾³ýÁË£¬Ò»µ«\n"
-		"ÊäÈëÃÜÂëÔò²»¿ÉÔÙºó»ÚÁË£º");
+		"å¦‚æžœæ‚¨é€‰æ‹©æ°¸è¿œæ­»æŽ‰çš„è‡ªæ€æ–¹å¼ï¼Œä½ çš„èµ„æ–™å°±æ°¸è¿œåˆ é™¤äº†ï¼Œä¸€ä½†\n"
+		"è¾“å…¥å¯†ç åˆ™ä¸å¯å†åŽæ‚”äº†ï¼š");
 	input_to("check_password", 1, me, 1);
 	return 1;
 }
@@ -32,13 +32,13 @@ private void check_password(string passwd, object me, int forever)
 	link_ob = me->query_temp("link_ob");
 	old_pass = link_ob->query("password");
 	if( crypt(passwd, old_pass)!=old_pass ) {
-		write("ÃÜÂë´íÎó£¡\n");
+		write("å¯†ç é”™è¯¯ï¼\n");
 		return;
 	}
 
 	if (forever) {
 		tell_object( me,
-			HIR "\n\nÓÀ±ðÁË£¬Ï£ÍûÄãÔÚ·çÔÆÍæµÃ¿ªÐÄ...¡£\n\n\n" NOR);
+			HIR "\n\næ°¸åˆ«äº†ï¼Œå¸Œæœ›ä½ åœ¨é£Žäº‘çŽ©å¾—å¼€å¿ƒ...ã€‚\n\n\n" NOR);
         link_ob = me->query_temp("link_ob");
         if( !link_ob ) return 0;
 
@@ -53,7 +53,7 @@ private void check_password(string passwd, object me, int forever)
       rmhirdir(DATA_DIR + "user/" + name[0..0] + "/" + name );
 
         tell_room(environment(me), me->name() +
-                "×ÔÉ±ÁË£¬ÒÔááÄãÔÙÒ²¿´²»µ½Õâ¸öÈËÁË¡£\n", ({me}));
+                "è‡ªæ€äº†ï¼Œä»¥å¾Œä½ å†ä¹Ÿçœ‹ä¸åˆ°è¿™ä¸ªäººäº†ã€‚\n", ({me}));
         destruct(me);
         return 0;
 
@@ -79,16 +79,16 @@ return 1;
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: suicide [-f]
+æŒ‡ä»¤æ ¼å¼: suicide [-f]
  
-Èç¹ûÒòÎªÄ³ÖÖÔ­ÒòÄã²»Ïë»îÁË, Äã¿ÉÒÔÑ¡Ôñ×ÔÉ±.
-×ÔÉ±·ÖÁ½ÖÖ:
+å¦‚æžœå› ä¸ºæŸç§åŽŸå› ä½ ä¸æƒ³æ´»äº†, ä½ å¯ä»¥é€‰æ‹©è‡ªæ€.
+è‡ªæ€åˆ†ä¸¤ç§:
  
-suicide    : ÖØÐÂÍ¶Ì¥
-suicide -f : ÓÀÔ¶µÄ³ýÈ¥Íæ¼Ò×ÊÁÏ, ÏµÍ³»áÒªÇóÄã
-             ÊäÈëÃÜÂëÒÔÈ·ÈÏÉí·Ý.
+suicide    : é‡æ–°æŠ•èƒŽ
+suicide -f : æ°¸è¿œçš„é™¤åŽ»çŽ©å®¶èµ„æ–™, ç³»ç»Ÿä¼šè¦æ±‚ä½ 
+             è¾“å…¥å¯†ç ä»¥ç¡®è®¤èº«ä»½.
  
-ÇëÉ÷ÖØÑ¡Ôñ :)
+è¯·æ…Žé‡é€‰æ‹© :)
  
 HELP
 );

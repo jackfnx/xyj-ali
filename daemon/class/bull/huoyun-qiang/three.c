@@ -1,6 +1,6 @@
 
-// Àë»ğÈıÖØ
-// yangwl 1/10/2001  ¿ÉÒÔ¼ÓÉÏÃÅÅÉÏŞÖÆ
+// ç¦»ç«ä¸‰é‡
+// yangwl 1/10/2001  å¯ä»¥åŠ ä¸Šé—¨æ´¾é™åˆ¶
 
 #include <ansi.h>
 #include <combat.h>
@@ -15,34 +15,34 @@ int perform(object me, object target)
     
     if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "spear")
-        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
     if (!target) target = offensive_target(me);
     if (!target
     ||  !target->is_character()
     ||  !me->is_fighting(target))
-        return notify_fail(HIR "¡¸Àë»ğÈıÖØ¡¹" NOR "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail(HIR "ã€Œç¦»ç«ä¸‰é‡ã€" NOR "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     weapon = me->query_temp("weapon");
     if (extra < 100)
-        return notify_fail("ÄãµÄ»ğÔÆÇ¹·¨»¹²»¹»´¿Êì£¡\n");
-    if (me->query("family/family_name")!="»ğÔÆ¶´")
-       return notify_fail("¡°Àë»ğÈıÖØ¡±Ö»ÓĞ»ğÔÆ¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+        return notify_fail("ä½ çš„ç«äº‘æªæ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
+    if (me->query("family/family_name")!="ç«äº‘æ´")
+       return notify_fail("â€œç¦»ç«ä¸‰é‡â€åªæœ‰ç«äº‘æ´é—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
     if (me->query("max_force") < 500)
-        return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»£¬²»ÒªÃãÇ¿ÁË£¡\n"); 
+        return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿï¼Œä¸è¦å‹‰å¼ºäº†ï¼\n"); 
     if (me->query("force") < 1000)
-        return notify_fail("ÄãµÄÕæÆø²»¹»£¬²»ÒªÃãÇ¿ÁË£¡\n"); 
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œä¸è¦å‹‰å¼ºäº†ï¼\n"); 
 
     if (extra >= 400) extra = 400;
     
     me->add_temp("apply/attack", extra/3);
     me->add_temp("apply/damage", extra/3);
     me->add_temp("apply/strength", extra/10);
-    message_vision(HIR "$NÊÖÖĞÇ°Ö¸µÄÇ¹¼âÍ»È»Ïñ×Å»ğÒ»°ã£¬¡°Åé¡±µØÕ¨³öÒ»ÍÅ×ÏºìÉ«µÄ»ğÑæ£¬ÈÆ\"
-"×ÅÍ¨ºìÍ¸ÁÁµÄÇ¹ÉíÈ¼ÉÕÆğÀ´£¡£¡¡°Ë¢¡±µØÀ­³öÒ»µÀ»ğºìÖĞÓ³×Å×ÏÑæµÄÁ÷¹â£¬\n"
-"»©À²À²µØ¾ÍÊÇÒ»Æ¬ÕÚÌìµÄ»ğÉà£¬Íù$nµÄÍ·ÉÏ¸ÇÈ¥£¡" NOR, me, target);
+    message_vision(HIR "$Næ‰‹ä¸­å‰æŒ‡çš„æªå°–çªç„¶åƒç€ç«ä¸€èˆ¬ï¼Œâ€œç °â€åœ°ç‚¸å‡ºä¸€å›¢ç´«çº¢è‰²çš„ç«ç„°ï¼Œç»•\"
+"ç€é€šçº¢é€äº®çš„æªèº«ç‡ƒçƒ§èµ·æ¥ï¼ï¼â€œåˆ·â€åœ°æ‹‰å‡ºä¸€é“ç«çº¢ä¸­æ˜ ç€ç´«ç„°çš„æµå…‰ï¼Œ\n"
+"å“—å•¦å•¦åœ°å°±æ˜¯ä¸€ç‰‡é®å¤©çš„ç«èˆŒï¼Œå¾€$nçš„å¤´ä¸Šç›–å»ï¼" NOR, me, target);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
-    message_vision(HIR "$NÈ«ÉíÕæÆøÍâ·Å£¬ÒÂÉÀÈ½È½Æ®¶¯£¬Ë«íøÙ¿×ªÑıºì£¡£¡" NOR, me, target);
+    message_vision(HIR "$Nå…¨èº«çœŸæ°”å¤–æ”¾ï¼Œè¡£è¡«å†‰å†‰é£˜åŠ¨ï¼ŒåŒçœ¸å€è½¬å¦–çº¢ï¼ï¼" NOR, me, target);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
-    message_vision(HIR "$NÊÖÖĞ"+weapon->query("name")+ HIR "ÄÚËùÓĞÑôÆøÒÑÊÇÄÚÈ¼Á²ÊÕ£¬·Å³öÈâÑÛÄÑÒÔÖ±ÊÓµÄÇà°×¹â»ª£¡" NOR, me, target);
+    message_vision(HIR "$Næ‰‹ä¸­"+weapon->query("name")+ HIR "å†…æ‰€æœ‰é˜³æ°”å·²æ˜¯å†…ç‡ƒæ•›æ”¶ï¼Œæ”¾å‡ºè‚‰çœ¼éš¾ä»¥ç›´è§†çš„é’ç™½å…‰åï¼" NOR, me, target);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR ,msg);
     me->add_temp("apply/attack", -extra/3);
     me->add_temp("apply/damage", -extra/3);

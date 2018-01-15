@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// jia-shen.c ¼ÙÉí
+// jia-shen.c å‡èº«
 #include <ansi.h>
 
 inherit NPC;
 
 void create()
 {
-   set_name("¼ÙÉí",({"jiashen"}));
-   set("gender","ÄĞĞÔ");
+   set_name("å‡èº«",({"jiashen"}));
+   set("gender","ç”·æ€§");
    set("age",30);
    set("str",30);
    set("per",20);
@@ -121,7 +121,7 @@ void copy_status(object me,object ob)
 void die()
 {
         message("vision",
-                HIB + name() + "Éí×ÓÒ»»Î£¬±ä³ÉÒ»¹ÉÇàÑÌÉ¢È¥ÁË¡£\n" NOR,environment(),
+                HIB + name() + "èº«å­ä¸€æ™ƒï¼Œå˜æˆä¸€è‚¡é’çƒŸæ•£å»äº†ã€‚\n" NOR,environment(),
                 this_object() );
         destruct(this_object());
 }
@@ -149,7 +149,7 @@ void invocation(object who)
 
    me=this_object();
    message("vision",
-     HIB "Ö»¼û"+who->query("name")+"½«ÉíÒ»»Î£¬¶ÙÊ±ÑÛÇ°ÓÖ³öÏÖÒ»¸ö"+who->query("name")+"£¡\n" NOR,
+     HIB "åªè§"+who->query("name")+"å°†èº«ä¸€æ™ƒï¼Œé¡¿æ—¶çœ¼å‰åˆå‡ºç°ä¸€ä¸ª"+who->query("name")+"ï¼\n" NOR,
      environment(),this_object());
    copy_status(me,who);
    enemy=who->query_enemy();

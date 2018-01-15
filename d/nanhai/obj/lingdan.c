@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// lingdan.c Áéµ¤ 
+// lingdan.c çµä¸¹ 
 
 inherit ITEM;
 
@@ -10,8 +10,8 @@ void destroy();
 void init()
 {
 //   if (!wizardp(this_player())) {
-//     set("no_give", "ÕâÑù¶«Î÷²»ÄÜËæ±ã¸øÈË¡£\n");
-//     set("no_drop", "ÕâÃ´±¦¹óµÄÁéµ¤£¬ÄÄÄÜÂÒÈÓ! \n");
+//     set("no_give", "è¿™æ ·ä¸œè¥¿ä¸èƒ½éšä¾¿ç»™äººã€‚\n");
+//     set("no_drop", "è¿™ä¹ˆå®è´µçš„çµä¸¹ï¼Œå“ªèƒ½ä¹±æ‰”! \n");
 //   }
 set("no_sell",1);
    add_action("do_eat", "eat");
@@ -20,12 +20,12 @@ set("no_sell",1);
 
 void create()
 {
-   set_name("Áéµ¤", ({"lingdan", "dan"}));
+   set_name("çµä¸¹", ({"lingdan", "dan"}));
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("unit", "Á£");
-     set("long", "ÕâÊÇÒ»Á£¹óÖØµÄÁéµ¤£¬³ÔÏÂÈ¥ÄÜ¹»Ñø¾«»îÑª¡£²»¹ıÊ±¼äÒ»³¤Ò©ĞÔ¾Í»áÏûÊ§£¬Áéµ¤Ò²»áÎŞÓ°ÎŞ×ÙµÄ¡£\n");
+     set("unit", "ç²’");
+     set("long", "è¿™æ˜¯ä¸€ç²’è´µé‡çš„çµä¸¹ï¼Œåƒä¸‹å»èƒ½å¤Ÿå…»ç²¾æ´»è¡€ã€‚ä¸è¿‡æ—¶é—´ä¸€é•¿è¯æ€§å°±ä¼šæ¶ˆå¤±ï¼Œçµä¸¹ä¹Ÿä¼šæ— å½±æ— è¸ªçš„ã€‚\n");
      set("value", 5000);
    }
    setup();
@@ -34,13 +34,13 @@ void create()
 int do_eat(string arg)
 {
    if (!id(arg))
-     return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
    if ((int)this_player()->query("eff_sen") == 
        (int)this_player()->query("max_sen"))
-     return notify_fail("ÄãÏÖÔÚ¾«Ñª³ä×ã¡£\n");
+     return notify_fail("ä½ ç°åœ¨ç²¾è¡€å……è¶³ã€‚\n");
    else {
      this_player()->receive_curing("sen", 50);
-     message_vision("$NÄÃÆğÒ»Á£Áéµ¤Íù×ìÀïÒ»ÈÓ£¬½ÀÒ²Ã»½À¾ÍÍÌÁËÏÂÈ¥¡£\n", this_player());
+     message_vision("$Næ‹¿èµ·ä¸€ç²’çµä¸¹å¾€å˜´é‡Œä¸€æ‰”ï¼Œåš¼ä¹Ÿæ²¡åš¼å°±åäº†ä¸‹å»ã€‚\n", this_player());
      destruct(this_object());
      return 1;
    }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -8,18 +8,18 @@ int do_read(string arg);
 
 void create()
 {
-        set_name("°Ë°êÃ·»¨´¸", ({ "meihua hammer", "hammer" }) );
+        set_name("å…«ç“£æ¢…èŠ±é”¤", ({ "meihua hammer", "hammer" }) );
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ·Ö°Ë°ê³ÉÃ·»¨×´µÄÍ­´¸£¬ÉÏÃæ¿ÌÁËĞ©·û×­¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠåˆ†å…«ç“£æˆæ¢…èŠ±çŠ¶çš„é“œé”¤ï¼Œä¸Šé¢åˆ»äº†äº›ç¬¦ç¯†ã€‚\n");
                 set("value", 5000);
      set("no_sell", 1);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_hammer(60);
         setup();
@@ -54,22 +54,22 @@ int do_read(string arg)
    object ob=this_object();
    
    if(! ob->query("OK_to_STUDY"))
-     return notify_fail("ÄãÎŞ·¨´ÓÕâÑù¶«Î÷ÉÏÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+     return notify_fail("ä½ æ— æ³•ä»è¿™æ ·ä¸œè¥¿ä¸Šå­¦åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
    if( ob->query("transferred"))
-     return notify_fail("ÄãÎŞ·¨´ÓÕâÑù¶«Î÷ÉÏÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+     return notify_fail("ä½ æ— æ³•ä»è¿™æ ·ä¸œè¥¿ä¸Šå­¦åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
 
    if( (int)me->query_skill("hammer", 1) >= 60)
-     return notify_fail("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË¡£\n");
+     return notify_fail("ä½ ç ”è¯»äº†ä¸€ä¼šå„¿ï¼Œä½†æ˜¯å‘ç°ä¸Šé¢æ‰€è¯´çš„å¯¹ä½ è€Œè¨€éƒ½å¤ªæµ…äº†ã€‚\n");
    if( (int)me->query_skill("spells", 1) < 20)
-     return notify_fail("¿ÉÄÜÊÇÄã·¨Êõ²»¾«£¬ÎŞ·¨Áì»áÉÏÃæµÄ·ûÖä¡£\n");
+     return notify_fail("å¯èƒ½æ˜¯ä½ æ³•æœ¯ä¸ç²¾ï¼Œæ— æ³•é¢†ä¼šä¸Šé¢çš„ç¬¦å’’ã€‚\n");
 
    if( (int)me->query_skill("spells", 1) < (int)me->query_skill("hammer", 1) )
-     return notify_fail("¿ÉÄÜÊÇÄã·¨ÊõÁì»á»¹²»Éî£¬ÔİÊ±»¹ÁìÎò²»³ö¸üÉîÒ»²ãµÄ´¸·¨¡£\n");
+     return notify_fail("å¯èƒ½æ˜¯ä½ æ³•æœ¯é¢†ä¼šè¿˜ä¸æ·±ï¼Œæš‚æ—¶è¿˜é¢†æ‚Ÿä¸å‡ºæ›´æ·±ä¸€å±‚çš„é”¤æ³•ã€‚\n");
 
    if( (int)me->query("kee") < 30)
-     return notify_fail("ÄãÌ«ÀÛÁË£¬ĞªĞªÔÙÀ´°É¡£\n");
+     return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ­‡æ­‡å†æ¥å§ã€‚\n");
    if( (int)me->query("sen") < 30)
-     return notify_fail("ÄãÌ«Æ£ÀÍÁË£¬ĞªĞªÔÙÀ´°É¡£\n");
+     return notify_fail("ä½ å¤ªç–²åŠ³äº†ï¼Œæ­‡æ­‡å†æ¥å§ã€‚\n");
 
    gain= (int)me->query_skill("spells", 1)/3 + 1 + random((int)me->query_int());
 
@@ -77,8 +77,8 @@ int do_read(string arg)
    me->receive_damage("kee", 30);
    me->receive_damage("sen", 30);
 
-   write("ÄãÈÏÕæ´§Ä¦×Å°Ë°êÃ·»¨´¸ÉÏµÄÅÌÁú·ûÓ°£¬ËÆºõ¶Ô¡¸»ù±¾´¸·¨¡¹ÓÖÓĞËùÁË½â¡£\n");
-   tell_room( environment(me), me->name() +"Ë«ÑÛ¶¢×Å°Ë°êÃ·»¨´¸£¬ÊÖÀï»¹²»ÖªÔÚ±È»®Ê²Ã´¡£\n", ({me}));
+   write("ä½ è®¤çœŸæ£æ‘©ç€å…«ç“£æ¢…èŠ±é”¤ä¸Šçš„ç›˜é¾™ç¬¦å½±ï¼Œä¼¼ä¹å¯¹ã€ŒåŸºæœ¬é”¤æ³•ã€åˆæœ‰æ‰€äº†è§£ã€‚\n");
+   tell_room( environment(me), me->name() +"åŒçœ¼ç›¯ç€å…«ç“£æ¢…èŠ±é”¤ï¼Œæ‰‹é‡Œè¿˜ä¸çŸ¥åœ¨æ¯”åˆ’ä»€ä¹ˆã€‚\n", ({me}));
    return 1;
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // lingpai.c
@@ -8,30 +8,30 @@ inherit DAGGER;
 
 void create()
 {
-   set_name("ÁîÅÆ",({"ling pai", "ling", "pai", "lingpai"}));
+   set_name("ä»¤ç‰Œ",({"ling pai", "ling", "pai", "lingpai"}));
    set_weight(100);
    if (clonep())
      set_default_object(__FILE__);
    else {
      set("long",RED"
-\t\t\t°×
-\t\t\t»¢
-\t\t\tÁë
-\t\t\t°×
-\t\t\tÀÇ
-\t\t\t¶´
-\t\t\t°×
-\t\t\t¹Ç
-\t\t\t·ò
-\t\t\tÈË
-\t\t\tÁî
+\t\t\tç™½
+\t\t\tè™
+\t\t\tå²­
+\t\t\tç™½
+\t\t\tç‹¼
+\t\t\tæ´
+\t\t\tç™½
+\t\t\téª¨
+\t\t\tå¤«
+\t\t\täºº
+\t\t\tä»¤
 \n"NOR);
-     set("unit","¿é");
+     set("unit","å—");
      set("value", 0);
-     set("name_recognized", "°×¹ÇÁî");
+     set("name_recognized", "ç™½éª¨ä»¤");
      set("material","bone");
-     set("wield_msg","$NÌÍ³öÒ»¿é$n£¬¶ÔËü°İÁËÈı°İ£¬È»ºóºáÎÕÔÚÊÖÖĞ¡£\n");
-     set("unwield_msg","$NĞ¡ĞÄÒíÒíµÄ°üºÃ$nÊÕÁËÆğÀ´£¬ºÃÏñÕâ¿é$nºÜÕä¹óËÆµÄ¡£\n");
+     set("wield_msg","$Næå‡ºä¸€å—$nï¼Œå¯¹å®ƒæ‹œäº†ä¸‰æ‹œï¼Œç„¶åæ¨ªæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unwield_msg","$Nå°å¿ƒç¿¼ç¿¼çš„åŒ…å¥½$næ”¶äº†èµ·æ¥ï¼Œå¥½åƒè¿™å—$nå¾ˆçè´µä¼¼çš„ã€‚\n");
    }
    init_dagger(5);
    setup();

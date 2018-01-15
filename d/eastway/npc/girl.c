@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // created 7/17/1997 by snowcat
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("Д╫рбе╝", ({"girl"}));
-  set("gender", "е╝пт");
+  set_name("Ф╣ёХ║ёЕ╔Ё", ({"girl"}));
+  set("gender", "Е╔ЁФ─╖");
   set("age", 22);
   set("combat_exp", 1500);
   set_skill("unarmed", 5);
@@ -34,7 +34,7 @@ int wash ()
 
   remove_call_out ("wash");
   call_out ("wash",random(10)+30);
-  if (where->query("short") != "оих╙")
+  if (where->query("short") != "Д╩≥ФЁ┴")
   {
     //command ("rascal");
     return 1;
@@ -78,11 +78,11 @@ int do_look (string arg)
   if (
       arg &&
       me == present(arg,environment(me)) &&
-      who->query("gender") != "е╝пт" &&
+      who->query("gender") != "Е╔ЁФ─╖" &&
       where && 
-      where->query("short") == "оих╙")
+      where->query("short") == "Д╩≥ФЁ┴")
   {
-    message_vision ("$NЁ╞ве$nЁт╬╙╣ья╫акр╩иЫё╛а╒©л╫╚иМлЕ╡ьхКк╝жп║ё\n",me,who);
+    message_vision ("$NФ°²Г²─$nЕ░┐Ф┐┼Е°╟Е▒─Д╨├Д╦─Её╟О╪▄Г╚▀Е┬╩Е╟├Х╨╚Д╫⌠Х≈▐Е┘╔Ф╟╢Д╦╜Ц─┌\n",me,who);
     return 1;
   }
   return 0; // to invoke normal look

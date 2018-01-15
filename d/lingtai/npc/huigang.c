@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // worker.c
@@ -7,15 +7,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("»Û¸Ù", ({"hui gang"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ…§çº²", ({"hui gang"}));
+        set("gender", "ç”·æ€§" );
         set("age", 33);
-        set("long", "Ò»¸öÏàÃ²ÌÃÌÃµÄµÀÊ¿£®");
+        set("long", "ä¸€ä¸ªç›¸è²Œå ‚å ‚çš„é“å£«ï¼");
         set("combat_exp", 40000);
-   set("title", "µÀ³¤");
+   set("title", "é“é•¿");
    set("class", "taoist");
         set("attitude", "peaceful");
-        create_family("·½´çÉ½ÈıĞÇ¶´", 4, "µÜ×Ó");
+        create_family("æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´", 4, "å¼Ÿå­");
         set_skill("unarmed", 30);
         set_skill("dodge", 40);
         set_skill("parry", 40);

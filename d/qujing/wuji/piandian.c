@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/piandian.c  snowcat moved to /d/qujing/wuji
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set("short", "ǰ��");
+  set("short", "前殿");
   set("long", @LONG
 
-ֻ�����ߺ����������������һ�Խ�գ�װ�ܵ��������һ��
-������ף�һ����üԲ�ۣ������������ã��������ӳƮ�硣
+只见两边红漆栏杆里面高坐这一对金刚，装塑的威依恶丑：一个
+铁面钢髯，一个燥眉圆眼，金甲连环光灿烂，明盔绣带映飘风。
 
 LONG);
   set("no_clean_up", 0);

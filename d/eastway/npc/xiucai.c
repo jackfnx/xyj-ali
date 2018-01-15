@@ -1,26 +1,26 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ"});
+string *first_name = ({ "èµµ","é’±","å­™","æ","å‘¨","å´","éƒ‘","ç‹"});
 
 void create()
 {   string name;
    name=first_name[random(sizeof(first_name))];
-   name += "Ğã²Å";
+   name += "ç§€æ‰";
         set_name(name, ({"xiucai"}));
         set("age", 18+random(40));
-        set("gender", "ÄĞĞÔ");
-        set("long","Ò»¸ö¿´ÆğÀ´ÏóĞã²ÅËÆµÄÎÄÈË\n");
+        set("gender", "ç”·æ€§");
+        set("long","ä¸€ä¸ªçœ‹èµ·æ¥è±¡ç§€æ‰ä¼¼çš„æ–‡äºº\n");
         set("attitude", "friendly");
         set("combat_exp", 3000);
         set_skill("unarmed", 10);
         set_skill("dodge", 20);
         set("chat_chance", 10);
         set("chat_msg", ({
-     "Ğã²ÅĞ¦ÁËĞ¦¡£\n",
-     "Ğã²ÅÖåÁËÖåÃ¼Í·¡£\n",
+     "ç§€æ‰ç¬‘äº†ç¬‘ã€‚\n",
+     "ç§€æ‰çš±äº†çš±çœ‰å¤´ã€‚\n",
                 (: random_move :)
         }));
 

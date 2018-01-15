@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // /d/qujing/wudidong/mishi.c
@@ -11,20 +11,20 @@ void reset();
 
 void create()
 {
-  set ("short", "°µÊÒ");
+  set ("short", "æš—å®¤");
   set ("long", @LONG
 
-Õâ¶ùÊÇÎŞµ×¶´µÄÒ»¸öÖ§¶´£¬Ò²ÊÇÓñÊó¾«µÄÁ·¹¦·¿¡£³ıÁËÓñÊóÖ®Íâ£¬
-ºÜÉÙÓĞÆäËûÈË½ø³ö¡£·¿¼ä²¼ÖÃµÃÊ®·Ö¼òµ¥£¬µ«ÊÇÎİÖĞÑë°Ú×ÅÒ»ÕÅ
-Ê®·ÖĞÑÄ¿µÄÓñÌ¨(tai)¡£
+è¿™å„¿æ˜¯æ— åº•æ´çš„ä¸€ä¸ªæ”¯æ´ï¼Œä¹Ÿæ˜¯ç‰é¼ ç²¾çš„ç»ƒåŠŸæˆ¿ã€‚é™¤äº†ç‰é¼ ä¹‹å¤–ï¼Œ
+å¾ˆå°‘æœ‰å…¶ä»–äººè¿›å‡ºã€‚æˆ¿é—´å¸ƒç½®å¾—ååˆ†ç®€å•ï¼Œä½†æ˜¯å±‹ä¸­å¤®æ‘†ç€ä¸€å¼ 
+ååˆ†é†’ç›®çš„ç‰å°(tai)ã€‚
 LONG);
   set("item_desc",([
          "tai" : "
-ÕâÊÇÒ»ÕÅÓÃÍòÄêÄÏ¼«±ùÓñËùµñ³ÉµÄÓñÌ¨£¬ÁáççÍ¸ÌŞ¡£ÏëÀ´±ØÊÇÓñÊóÁ·
-¹¦Ö®ÓÃ¡£Ì¨ÉÏ¿Ì×Å¼¸¸öÒóºìµÄ´ó×Ö£º
+è¿™æ˜¯ä¸€å¼ ç”¨ä¸‡å¹´å—æå†°ç‰æ‰€é›•æˆçš„ç‰å°ï¼Œç²ç‘é€å‰”ã€‚æƒ³æ¥å¿…æ˜¯ç‰é¼ ç»ƒ
+åŠŸä¹‹ç”¨ã€‚å°ä¸Šåˆ»ç€å‡ ä¸ªæ®·çº¢çš„å¤§å­—ï¼š
 
-\t\t\tÌìÄ§×ù\n\n
-\t\t  ÈëÎÒÃÅÀ´£¬Íò½Ù²»¸´
+\t\t\tå¤©é­”åº§\n\n
+\t\t  å…¥æˆ‘é—¨æ¥ï¼Œä¸‡åŠ«ä¸å¤
 \n",
          ]));
   set("exits", ([ /* sizeof() == 2 */
@@ -46,26 +46,26 @@ int do_climb(string arg)
 {
   object me=this_player();
   if ( !arg || (arg !="tai" && arg != "off" && arg != "down" && arg!="xia") )
-    return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
   if (arg == "tai")
     {
-      if ((int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed"))
-   return notify_fail("ÄãÒÑ¾­×øÔÚÌ¨ÉÏÁË£¬»¹ÏëÅÀµ½ÄÄ¶ùÈ¥£¿\n");
-      message_vision("$N×İÉíÒ»Ô¾£¬ÅÀÉÏÌìÄ§Ì¨È¥ÁË¡£\n", me);
-      me->set_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed", 1);
+      if ((int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed"))
+   return notify_fail("ä½ å·²ç»ååœ¨å°ä¸Šäº†ï¼Œè¿˜æƒ³çˆ¬åˆ°å“ªå„¿å»ï¼Ÿ\n");
+      message_vision("$Nçºµèº«ä¸€è·ƒï¼Œçˆ¬ä¸Šå¤©é­”å°å»äº†ã€‚\n", me);
+      me->set_temp("mark/æ— åº•æ´å¤©é­”å°climbed", 1);
       return 1;
     }
-  if(!(int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed"))
-    return notify_fail("Äã²»ÔÚÌ¨ÉÏ¡£\n");
-  message_vision("$N´ÓÌ¨ÉÏÌøÁËÏÂÀ´¡£\n", me);
-  me->delete_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed");
+  if(!(int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed"))
+    return notify_fail("ä½ ä¸åœ¨å°ä¸Šã€‚\n");
+  message_vision("$Nä»å°ä¸Šè·³äº†ä¸‹æ¥ã€‚\n", me);
+  me->delete_temp("mark/æ— åº•æ´å¤©é­”å°climbed");
   return 1;
 }
 
 int valid_leave(object me, string dir)
 {
-  if(dir=="out" && (int)me->query_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed")==1)
-    return notify_fail("ÏÈ´ÓÌ¨ÉÏÌøÏÂÈ¥°É£¡\n");
+  if(dir=="out" && (int)me->query_temp("mark/æ— åº•æ´å¤©é­”å°climbed")==1)
+    return notify_fail("å…ˆä»å°ä¸Šè·³ä¸‹å»å§ï¼\n");
   return ::valid_leave(me, dir);
 }
 
@@ -80,8 +80,8 @@ void practice_yaofa(object me)
     if (random(100+me->query_kar()*10)<10) {
         //mon 1/23/98. old formula was <1, I changed to <10.
         //don't know exactly, but <1 seems impossible.
-        message_vision("$N»è»èµØË¯ÁË¹ıÈ¥¡£\n", me);
-        me->delete_temp("mark/ÎŞµ×¶´ÌìÄ§Ì¨climbed");
+        message_vision("$Næ˜æ˜åœ°ç¡äº†è¿‡å»ã€‚\n", me);
+        me->delete_temp("mark/æ— åº•æ´å¤©é­”å°climbed");
         me->move("/d/ourhome/honglou/main");
         if (random(40-me->query_kar())<10)
             me->set("dream_place", "/d/qujing/wudidong/mishi");

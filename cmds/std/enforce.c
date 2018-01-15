@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // enforce.c
@@ -10,16 +10,16 @@ int main(object me, string arg)
    int pts;
 
    if( !arg || (arg!="none" && !sscanf(arg, "%d", pts)) ) 
-     return notify_fail("Ö¸Áî¸ñÊ½£ºenforce <Ê¹³ö¼¸³ÉÄÚÁ¦ÉËµĞ>|none");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenforce <ä½¿å‡ºå‡ æˆå†…åŠ›ä¼¤æ•Œ>|none");
 
    if( !me->query_skill_mapped("force") )
-     return notify_fail("Äã±ØĞëÏÈ enable Ò»ÖÖÄÚ¹¦¡£\n");
+     return notify_fail("ä½ å¿…é¡»å…ˆ enable ä¸€ç§å†…åŠŸã€‚\n");
 
    if( arg=="none" )
      me->delete("force_factor");
    else {
      if( pts < 0 || pts > (int)me->query_skill("force") / 2 )
-        return notify_fail("ÄãÖ»ÄÜÓÃ none ±íÊ¾²»ÔËÄÚÁ¦£¬»òÊı×Ö±íÊ¾Ã¿Ò»»÷ÓÃ¼¸µãÄÚÁ¦¡£\n");
+        return notify_fail("ä½ åªèƒ½ç”¨ none è¡¨ç¤ºä¸è¿å†…åŠ›ï¼Œæˆ–æ•°å­—è¡¨ç¤ºæ¯ä¸€å‡»ç”¨å‡ ç‚¹å†…åŠ›ã€‚\n");
      me->set("force_factor", pts);
    }
 
@@ -30,11 +30,11 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: enforce|jiali <Ê¹³ö¼¸µãÄÚÁ¦ÉËµĞ>|none
+æŒ‡ä»¤æ ¼å¼: enforce|jiali <ä½¿å‡ºå‡ ç‚¹å†…åŠ›ä¼¤æ•Œ>|none
  
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨Ã¿´Î»÷ÖĞµĞÈËÊ±£¬Òª·¢³ö¼¸µãÄÚÁ¦ÉËµĞ¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŒ‡å®šæ¯æ¬¡å‡»ä¸­æ•Œäººæ—¶ï¼Œè¦å‘å‡ºå‡ ç‚¹å†…åŠ›ä¼¤æ•Œã€‚
 
-enforce none Ôò±íÊ¾Äã²»Ê¹ÓÃÄÚÁ¦¡£ 
+enforce none åˆ™è¡¨ç¤ºä½ ä¸ä½¿ç”¨å†…åŠ›ã€‚ 
 
 SEE ALSO : enable, enchant
 HELP

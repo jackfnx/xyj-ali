@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // dart.c
@@ -9,13 +9,13 @@ inherit THROWING;
 
 void create()
 {
-        set_name("Í­¿Û", ({"kouzi"}));
+        set_name("é“œæ‰£", ({"kouzi"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ã¶Ğ¡Í­¿Û");
-                set("unit", "Ğ©");
-                set("base_unit", "Ã¶");
+                set("long", "ä¸€æšå°é“œæ‰£");
+                set("unit", "äº›");
+                set("base_unit", "æš");
                 set("base_weight", 40);
      set("base_value", 1);
         }

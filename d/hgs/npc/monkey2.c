@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // monkey1.c
@@ -7,26 +7,26 @@ inherit NPC;
 
 void create()
 {
-   set_name("´óÂíºï", ({ "mahou","monkey","hou" }) );
-   set("race", "Ò°ÊŞ");
+   set_name("å¤§é©¬çŒ´", ({ "mahou","monkey","hou" }) );
+   set("race", "é‡å…½");
    set("age", 26);
-   set("long", "Ò»Ö»´óÂíºï¡£\n");
+   set("long", "ä¸€åªå¤§é©¬çŒ´ã€‚\n");
    
    set("str", 35);
    set("cor", 26);   
    set("combat_exp",5000);
             set_skill("dodge",40);
             set_skill("unarmed",30);
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°×¦", "ºó½Å", "Î²°Í" }) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰çˆª", "åè„š", "å°¾å·´" }) );
    set("verbs", ({ "bite", "claw" }) );
 
    set("chat_chance", 6);
    set("chat_msg", ({
      (: call_other, this_object(), "random_move" :),
-     "´óÂíºï¶ÔÄã×öÁË¸ö¹íÁ³¡£\n",
-     "Å¾µØÒ»Éù£¡´óÂíºïÈÓÀ´Ò»¿ÅÒ°¹û£¬ÕıºÃÔÒÖĞÄãµÄ±Ç×Ó¡£\n",
-     "´óÂíºï¶ÔÄãÖ¨Ö¨Ö¨µØ½ĞÁË¼¸Éù¡£\n",
-     "´óÂíºï×¥¶úÄÓÈùµØ£¬Î§×ÅÄãÌøÀ´ÌøÈ¥¡£\n" }) );
+     "å¤§é©¬çŒ´å¯¹ä½ åšäº†ä¸ªé¬¼è„¸ã€‚\n",
+     "å•ªåœ°ä¸€å£°ï¼å¤§é©¬çŒ´æ‰”æ¥ä¸€é¢—é‡æœï¼Œæ­£å¥½ç ¸ä¸­ä½ çš„é¼»å­ã€‚\n",
+     "å¤§é©¬çŒ´å¯¹ä½ å±å±å±åœ°å«äº†å‡ å£°ã€‚\n",
+     "å¤§é©¬çŒ´æŠ“è€³æŒ è…®åœ°ï¼Œå›´ç€ä½ è·³æ¥è·³å»ã€‚\n" }) );
      
 //   set_temp("apply/attack", 20);
 //   set_temp("apply/defense", 50);
@@ -39,7 +39,7 @@ int accept_object(object who, object ob)
 {
    if( ob->id("mihou tao")||ob->id("huasheng")||ob->id("jiudai")) {
      set_leader(who);
-     message("vision", name() + "¸ßĞËµÃ×¥¶úÄÓÈù£¬Ö±·­¸úÍ·¡£\n", environment());
+     message("vision", name() + "é«˜å…´å¾—æŠ“è€³æŒ è…®ï¼Œç›´ç¿»è·Ÿå¤´ã€‚\n", environment());
      return 1;
    }
 }

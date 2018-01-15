@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // mudlist.c
@@ -19,7 +19,7 @@ int main(object me, string arg)
    int show_all=0;
 
    if( !find_object(DNS_MASTER) )
-     return notify_fail("ÍøÂ·¾«Áé²¢Ã»ÓĞ±»ÔØÈë£¬ÇëÏÈ½«ÍøÂ·¾«ÁéÔØÈë¡£\n");
+     return notify_fail("ç½‘è·¯ç²¾çµå¹¶æ²¡æœ‰è¢«è½½å…¥ï¼Œè¯·å…ˆå°†ç½‘è·¯ç²¾çµè½½å…¥ã€‚\n");
 
    //   Obtain mapping containing mud data
    mud_list = (mapping)DNS_MASTER->query_muds();
@@ -28,7 +28,7 @@ int main(object me, string arg)
    mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
 
    if(!mud_list)
-     return notify_fail( MUD_NAME + "Ä¿Ç°²¢Ã»ÓĞ¸úÍøÂ·ÉÏÆäËû Mud È¡µÃÁªÏµ¡£\n");
+     return notify_fail( MUD_NAME + "ç›®å‰å¹¶æ²¡æœ‰è·Ÿç½‘è·¯ä¸Šå…¶ä»– Mud å–å¾—è”ç³»ã€‚\n");
 
    //   Get list of all mud names within name server
    muds = keys( mud_list ) - ({ "DEFAULT" });
@@ -45,17 +45,17 @@ int main(object me, string arg)
      arg = htonn(arg);
 
      if(!mapp( mud_list[arg] )) {
-        write(MUD_NAME + "²¢Ã»ÓĞºÍÕâ¸ö Mud È¡µÃÁªÏµ¡£\n");
+        write(MUD_NAME + "å¹¶æ²¡æœ‰å’Œè¿™ä¸ª Mud å–å¾—è”ç³»ã€‚\n");
         return 1;
      }
-     printf("ÓĞ¹Ø %s µÄ×ÊÑ¶£º\n%O\n", arg, mud_list[arg]);
+     printf("æœ‰å…³ %s çš„èµ„è®¯ï¼š\n%O\n", arg, mud_list[arg]);
      return 1;
            }
    }
 
    output = "\n\n"+
-"   £Í£õ£äÃû³Æ              ¹ú¼ÊÍøÂ·Î»Ö·   ²ººÅ      µ±µØÊ±¼ä     ÔÚÏßÍæ¼Ò\n"+
-"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+"   ï¼­ï½•ï½„åç§°              å›½é™…ç½‘è·¯ä½å€   åŸ å·      å½“åœ°æ—¶é—´     åœ¨çº¿ç©å®¶\n"+
+"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 
    total = 0;
    //   Loop through mud list and store one by one
@@ -73,7 +73,7 @@ int main(object me, string arg)
         mudname,
         mud_list[muds[loop]]["HOSTADDRESS"],
         mud_list[muds[loop]]["PORT"],
-//        undefinedp(mud_svc[muds[loop]]) ? "  " : "¡õ",
+//        undefinedp(mud_svc[muds[loop]]) ? "  " : "â–¡",
              undefinedp(mud_list[muds[loop]]["TIME"])?
         "                ":
         mudtime[0..15],
@@ -95,8 +95,8 @@ int main(object me, string arg)
         }
    output+=output2;
    output+=
-"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
-   output+="¹²ÓĞ " + sprintf("%d", total) + " Î»Ê¹ÓÃÕßÁ¬ÏßÖĞ¡£\n";
+"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
+   output+="å…±æœ‰ " + sprintf("%d", total) + " ä½ä½¿ç”¨è€…è¿çº¿ä¸­ã€‚\n";
 
    //   Display dumped mudlist output through user's more pager
    this_player()->start_more( output );
@@ -108,9 +108,9 @@ int help()
 {
         write(@HELP
 
-Ö¸Áî¸ñÊ½£ºmudlist               ÁĞ³öÁ¬ÏßÖĞµÄÎ÷ÓÎ¼ÇÕ¾µã
-          mudlist -a            ÁĞ³öÁ¬ÏßÖĞµÄËùÓĞ£Í£õ£ä
-          mudlist <Mud Ãû³Æ>    ÁĞ³öÖ¸¶¨£Í£õ£äµÄĞÅÏ¢
+æŒ‡ä»¤æ ¼å¼ï¼šmudlist               åˆ—å‡ºè¿çº¿ä¸­çš„è¥¿æ¸¸è®°ç«™ç‚¹
+          mudlist -a            åˆ—å‡ºè¿çº¿ä¸­çš„æ‰€æœ‰ï¼­ï½•ï½„
+          mudlist <Mud åç§°>    åˆ—å‡ºæŒ‡å®šï¼­ï½•ï½„çš„ä¿¡æ¯
 
 HELP
    );

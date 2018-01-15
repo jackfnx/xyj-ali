@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gangcha.c
@@ -8,10 +8,10 @@
 inherit FORK;
 
 string *names = ({
-  "Â¹½Ç²æ",
-  "Ñò½Ç²æ",
-  "Å£½Ç²æ",
-  "Ï¬½Ç²æ",
+  "é¹¿è§’å‰",
+  "ç¾Šè§’å‰",
+  "ç‰›è§’å‰",
+  "çŠ€è§’å‰",
 });
 
 void create()
@@ -21,11 +21,11 @@ void create()
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±ú");
+    set("unit", "æŸ„");
     set("value", 300);
     set("material", "bone");
-    set("long", "Ò»±úÒÔ¶¯Îï½ÇÖÆÔìµÄ³¤²æ¡£\n");
-    set("wield_msg", "$N³­ÆğÒ»±ú$n¾Ù¹ıÍ·¶¥¡£\n");
+    set("long", "ä¸€æŸ„ä»¥åŠ¨ç‰©è§’åˆ¶é€ çš„é•¿å‰ã€‚\n");
+    set("wield_msg", "$NæŠ„èµ·ä¸€æŸ„$nä¸¾è¿‡å¤´é¡¶ã€‚\n");
   }
   init_fork(35);
 //  set("no_sell",1);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // youke.c
@@ -7,14 +7,14 @@ inherit NPC;
 
 void create()
 {
-   set_name("ÓÎ¿Í", ({ "youke", "traveller"}));
+   set_name("æ¸¸å®¢", ({ "youke", "traveller"}));
    if(random(10)<7)
-       set("gender", "ÄĞĞÔ" );
+       set("gender", "ç”·æ€§" );
    else
-       set("gender", "Å®ĞÔ" );
+       set("gender", "å¥³æ€§" );
    set("age", 15+random(50));
    set("long",
-     "ÕâÊÇÒ»Î»À´³¤°²³ÇµÄÍâµØÓÎ¿Í£¬·ç³¾ÆÓÆÓ¡£\n");
+     "è¿™æ˜¯ä¸€ä½æ¥é•¿å®‰åŸçš„å¤–åœ°æ¸¸å®¢ï¼Œé£å°˜æœ´æœ´ã€‚\n");
    set("chat_chance", 40);
         set("chat_msg", ({
      (: random_move :)

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/school1.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¶«·½Îä¹Ý´óÃÅ");
+  set ("short", "ä¸œæ–¹æ­¦é¦†å¤§é—¨");
   set ("long", @LONG
 
-ÄãÏÖÔÚÕýÕ¾ÔÚÒ»¼ä´óÕ¬ÔºµÄÈë¿Ú£¬Á½Ö»¾Þ´óµÄÊ¯Ê¨ÕòÊØÔÚ´óÃÅµÄÁ½
-²à£¬Ò»ÕóÕóßººÈÓëµ¶½£Åö×²µÄÉùÒô´ÓÔº×ÓÖÐ´«À´£¬Í¨¹ý´óÃÅÍù¶«¿É
-ÒÔÍû¼ûÐí¶àÉí´©»ÒÒÂµÄºº×ÓÕýÔÚ²ÙÁ·¡£
+ä½ çŽ°åœ¨æ­£ç«™åœ¨ä¸€é—´å¤§å®…é™¢çš„å…¥å£ï¼Œä¸¤åªå·¨å¤§çš„çŸ³ç‹®é•‡å®ˆåœ¨å¤§é—¨çš„ä¸¤
+ä¾§ï¼Œä¸€é˜µé˜µå†å–ä¸Žåˆ€å‰‘ç¢°æ’žçš„å£°éŸ³ä»Žé™¢å­ä¸­ä¼ æ¥ï¼Œé€šè¿‡å¤§é—¨å¾€ä¸œå¯
+ä»¥æœ›è§è®¸å¤šèº«ç©¿ç°è¡£çš„æ±‰å­æ­£åœ¨æ“ç»ƒã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

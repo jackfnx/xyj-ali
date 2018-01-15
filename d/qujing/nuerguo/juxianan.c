@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat.c 4/4/1997
@@ -9,13 +9,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¾ÛÏÉâÖ");
+  set ("short", "èšä»™åºµ");
   set ("long", @LONG
 
-¾ÛÏÉâÖÒÀÉ½¶ø½¨£¬²¼ÉèÉõÊÇ¾«ÇÉ¡£ËùÎ½¡°Ð¡ÇÅÍ¨»îË®£¬Ã©Éá
-ÒÐÇàÉ½¡±£¬ÔÚ·çË®ÉÏ¿É³ÆÖ®Îª±¦µØ¡£´Ë¿ÌâÖÃÅ½ô±Õ¡£ÓÐÒ»µÀ
-Ê¿ÀÁÑóÑóµØÅÌ×øÔÚâÖÇ°ÂÌÒðÖ®ÉÏ£¬²»ÖªÊÇÔÚ´ò×øÐÞÁ¶»¹ÊÇÔÚ
-É¹Ì«Ñô¡£
+èšä»™åºµä¾å±±è€Œå»ºï¼Œå¸ƒè®¾ç”šæ˜¯ç²¾å·§ã€‚æ‰€è°“â€œå°æ¡¥é€šæ´»æ°´ï¼ŒèŒ…èˆ
+å€šé’å±±â€ï¼Œåœ¨é£Žæ°´ä¸Šå¯ç§°ä¹‹ä¸ºå®åœ°ã€‚æ­¤åˆ»åºµé—¨ç´§é—­ã€‚æœ‰ä¸€é“
+å£«æ‡’æ´‹æ´‹åœ°ç›˜ååœ¨åºµå‰ç»¿èŒµä¹‹ä¸Šï¼Œä¸çŸ¥æ˜¯åœ¨æ‰“åä¿®ç‚¼è¿˜æ˜¯åœ¨
+æ™’å¤ªé˜³ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -23,7 +23,7 @@ LONG);
   "northdown" : __DIR__"jieyang",
 ]));
 
-  create_door("enter","âÖÃÅ","out",DOOR_CLOSED); 
+  create_door("enter","åºµé—¨","out",DOOR_CLOSED); 
 
   set("objects", ([
          __DIR__"npc/daoshi" : 1,

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // added by snowcat
@@ -23,11 +23,11 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/jingjiling","done");
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"¾£¼¬Áë¶·ÖÇ¶·Îä£¬Á¦´ìÖÚÏÉ£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ıÎ÷ĞĞÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀĞĞ£¡\n");
+  command("chat "+who->query("name")+"è†æ£˜å²­æ–—æ™ºæ–—æ­¦ï¼ŒåŠ›æŒ«ä¼—ä»™ï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }
 
@@ -36,13 +36,13 @@ void player_win (object me, object who)
   object obj;
   
   who->set_temp("obstacle/jingjiling/"+me->query("id"),1);
-  message_vision("$N¶Ô$nÒ»¾Ï¹ª£º²»´í£¬²»´í£¡\n",me,who);  
+  message_vision("$Nå¯¹$nä¸€é èº¬ï¼šä¸é”™ï¼Œä¸é”™ï¼\n",me,who);  
   me->announce_success(who);
 }
 
 void player_lose (object me, object who)
 {
-  message_vision("$N¶Ô$nÒ»»ÓÊÖ£ºÈ¥°É£¬È¥°É£¡\n",me,who);
+  message_vision("$Nå¯¹$nä¸€æŒ¥æ‰‹ï¼šå»å§ï¼Œå»å§ï¼\n",me,who);
 }
 
 void check_fight (object who)

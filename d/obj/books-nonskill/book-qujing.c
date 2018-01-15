@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-    set_name("¡¶Î÷ÓÎ¼ÇÎ÷ĞĞÇóÈ¡Õæ¾­Ö¸ÄÏ¡·", ({"xyj qujing","xyj","qujing","book"}));
+    set_name("ã€Šè¥¿æ¸¸è®°è¥¿è¡Œæ±‚å–çœŸç»æŒ‡å—ã€‹", ({"xyj qujing","xyj","qujing","book"}));
     set_weight(200);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "±¾");
+        set("unit", "æœ¬");
         set("value", 100);
         set("no_sell", 1);
-        set("long", " ¡¶Î÷ÓÎ¼ÇÎ÷ĞĞÇóÈ¡Õæ¾­Ö¸ÄÏ¡· ÇëÓÃ read ÔÄ¶Á¡£\n");
+        set("long", " ã€Šè¥¿æ¸¸è®°è¥¿è¡Œæ±‚å–çœŸç»æŒ‡å—ã€‹ è¯·ç”¨ read é˜…è¯»ã€‚\n");
         set("material", "paper");
     }
 }
@@ -36,15 +36,15 @@ int do_read(string arg)
     ob->set("value", 0);
 
     if (!arg || sscanf(arg, "%d", nb) != 1) {
-        printf("Î÷ÓÎ¼ÇÏÖÓĞÈçÏÂÎ÷ÓòµØÇø£º\n");
+        printf("è¥¿æ¸¸è®°ç°æœ‰å¦‚ä¸‹è¥¿åŸŸåœ°åŒºï¼š\n");
         for (i = 0; i < size; i++)
             printf("  %s\n", chapters[i]);
-        printf("ÇëÓÃ read <number> ²ÎÔÄÓĞ¹ØµØÇø¡£\n");
+        printf("è¯·ç”¨ read <number> å‚é˜…æœ‰å…³åœ°åŒºã€‚\n");
         return 1;
     }
 
     if (nb < 1 || nb > size)
-        return notify_fail("ÄãÒª¶ÁÄÄÒ»µØÇø£¿\n");
+        return notify_fail("ä½ è¦è¯»å“ªä¸€åœ°åŒºï¼Ÿ\n");
 
     nb--;
     for (i = 0; i < size; i++) {

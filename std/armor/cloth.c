@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // cloth.c
@@ -29,15 +29,15 @@ int do_tear(string str)
    if( !id(str) ) return 0;
 
    if( (string)query("material") != "cloth" )
-     return notify_fail("ÄãÖ»ÄÜËº²¼ÁÏµÄÒÂ·ş¡£\n");
+     return notify_fail("ä½ åªèƒ½æ’•å¸ƒæ–™çš„è¡£æœã€‚\n");
 
    if( (int)query("teared_count") >= 4 )
-     return notify_fail( name() + "µÄĞä¿Ú£¬ÏÂÃæÒÑ¾­Ã»ÓĞ¶àÓàµÄ²¼¿ÉËºÁË¡£\n");
+     return notify_fail( name() + "çš„è¢–å£ï¼Œä¸‹é¢å·²ç»æ²¡æœ‰å¤šä½™çš„å¸ƒå¯æ’•äº†ã€‚\n");
 
-   message_vision("$N´Ó" + name() + "ËºÏÂÒ»Ìõ²¼Ìõ¡£\n", this_player() );
+   message_vision("$Nä»" + name() + "æ’•ä¸‹ä¸€æ¡å¸ƒæ¡ã€‚\n", this_player() );
    add("teared_count", 1);
    ob = new("/obj/bandage");
-   ob->set_name("´Ó" + name() + "ËºÏÂµÄ²¼Ìõ", ({ "cloth piece", "piece", "cloth" }) );
+   ob->set_name("ä»" + name() + "æ’•ä¸‹çš„å¸ƒæ¡", ({ "cloth piece", "piece", "cloth" }) );
    if( !ob->move(this_player()) )
      ob->move(environment(this_player()));
    return 1;

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // kanmen.c, created by mes
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("¿´ÃÅÑı", ({"kanmen yao","kanmen","kanmenyao","yao","monster"}));
-  set("long","Ò»¸ö¿´ÃÅµÄĞ¡Ñı£¬ÕÅÑÀÎè×¦µÄ£¬Í¦ÅÂÈË¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("çœ‹é—¨å¦–", ({"kanmen yao","kanmen","kanmenyao","yao","monster"}));
+  set("long","ä¸€ä¸ªçœ‹é—¨çš„å°å¦–ï¼Œå¼ ç‰™èˆçˆªçš„ï¼ŒæŒºæ€•äººã€‚\n");
+  set("gender", "ç”·æ€§");
   set("cor", 25);
   set("age", 20+random(15));
   set("attitude", "peaceful");

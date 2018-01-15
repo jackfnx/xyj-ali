@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bigaxe.c
@@ -9,17 +9,17 @@ inherit AXE;
 
 void create()
 {
-   set_name("´ó°å¸«", ({ "bigaxe", "axe" }) );
+   set_name("å¤§æ¿æ–§", ({ "bigaxe", "axe" }) );
    set_weight(6000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
+     set("unit", "æŠŠ");
      set("material", "steel");
-     set("long", "ÕâÊÇÒ»°Ñ³ÁÖØµÄ´ó°å¸«£¬¿³Æğ¶«Î÷À´·Ç³£Ë³ÊÖ¡£\n");
+     set("long", "è¿™æ˜¯ä¸€æŠŠæ²‰é‡çš„å¤§æ¿æ–§ï¼Œç èµ·ä¸œè¥¿æ¥éå¸¸é¡ºæ‰‹ã€‚\n");
      set("value", 500);
-     set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£\n");
-     set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+     set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“ä½œæ­¦å™¨ã€‚\n");
+     set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
    }
    init_axe(25, TWO_HANDED);
    setup();

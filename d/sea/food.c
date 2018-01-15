@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/sea/food.c
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�ͷ�");
+  set ("short", "餐房");
   set ("long", @LONG
 
-�����ڵ�һ��ͷ���һ��ֻ�ǹ��е���ʹ�á�������ི�֪����ʲô��
-����һ�����������ź�Щ���ӡ�
+龙宫内的一间餐房，一般只是宫中弟子使用。锅里沽嘟嘟不知煮着什么东
+西，一个大箩筐里放着好些包子。
 
 LONG);
 

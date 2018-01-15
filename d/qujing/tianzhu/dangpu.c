@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -8,12 +8,12 @@ inherit HOCKSHOP;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "当铺");
   set ("long", @LONG
 
-�ؽֵ��������ŵ������ƣ���������һ������˸ߵĹ�̨����
-̨����Ÿ��ָ����䵱�Ķ�������ǰ���ŵ��̵��ϰ壬�����
-Ц�ؽӴ��ſ��ˡ�
+沿街的铺面挑着当字招牌，当铺里有一个大半人高的柜台，柜
+台里放着各种各样典当的东西，柜前坐着当铺的老板，满面堆
+笑地接待着客人。
 
 LONG);
 

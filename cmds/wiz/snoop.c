@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snoop.c
@@ -13,21 +13,21 @@ int main(object me, string arg)
 
    if( !arg ) {
      if( objectp(ob = query_snooping(me)) )
-        write("ÄãÏÖÔÚÕýÔÚ¼àÌý" + ob->query("name") + "ËùÊÕµ½µÄÑ¶Ï¢¡£\n");
+        write("ä½ çŽ°åœ¨æ­£åœ¨ç›‘å¬" + ob->query("name") + "æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n");
      return 1;
    }
     else if( arg=="none" ) {
 //if( objectp(ob = query_snooping(me)) && wiz_level(ob) )
 if( objectp(ob = query_snooping(me)) && wizardp(ob) )
 // &&      wiz_level(ob) >= wiz_level(me) )
-        tell_object(ob, HIW + me->name(1) + "Í£Ö¹¼àÌýÄãËùÊÕµ½µÄÑ¶Ï¢¡£\n" NOR);
+        tell_object(ob, HIW + me->name(1) + "åœæ­¢ç›‘å¬ä½ æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n" NOR);
      snoop(me);
      write("Ok.\n");
      return 1;
    }
 else if(query_snooping(me)) snoop(me);
 // else if(query_snooping(me)){
-// write("ÄãÓÐ¼¸Ë«¶ú¶ä°¡£¬ÏÈÓÃ snoop none ½â³ýµ±Ç°¼àÌý¡£ \n");
+// write("ä½ æœ‰å‡ åŒè€³æœµå•Šï¼Œå…ˆç”¨ snoop none è§£é™¤å½“å‰ç›‘å¬ã€‚ \n");
 // return 1;
 // }
 
@@ -37,22 +37,22 @@ else if(query_snooping(me)) snoop(me);
    if(!ob) ob = LOGIN_D->find_body(arg);
    /* added by mon. 2/23/97 */
 
-   if(!ob || !me->visible(ob)) return notify_fail("Ã»ÓÐÕâ¸öÈË¡£\n");
+   if(!ob || !me->visible(ob)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
    if( wizhood(me) != "(admin)"
    &&   wiz_level(me) <= wiz_level(ob) )
-     return notify_fail("ÄãÃ»ÓÐ¼àÌý" + ob->name() + "ËùÊÕÌýÑ¶Ï¢µÄÈ¨Àû¡£\n");
+     return notify_fail("ä½ æ²¡æœ‰ç›‘å¬" + ob->name() + "æ‰€æ”¶å¬è®¯æ¯çš„æƒåˆ©ã€‚\n");
 
-   if( me==ob ) return notify_fail("ÇëÓÃ snoop none ½â³ý¼àÌý¡£\n");
+   if( me==ob ) return notify_fail("è¯·ç”¨ snoop none è§£é™¤ç›‘å¬ã€‚\n");
      
    snoop(me, ob);
-   write("ÄãÏÖÔÚ¿ªÊ¼ÇÔÌý" + ob->name(1) + "ËùÊÕµ½µÄÑ¶Ï¢¡£\n");
+   write("ä½ çŽ°åœ¨å¼€å§‹çªƒå¬" + ob->name(1) + "æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n");
    if( userp(ob) ) log_file("SNOOP_PLAYER",
      sprintf("%s(%s) snoops %s on %s.\n", me->name(1), geteuid(me), ob->name(1),
         ctime(time()) ) );
 // if( wizardp(ob) && wizhood(me) != "(admin)")
 if( wizardp(ob)) 
-     tell_object(ob, HIW + me->name(1) + "¿ªÊ¼¼àÌýÄãËùÊÕµ½µÄÑ¶Ï¢¡£\n" + NOR);
+     tell_object(ob, HIW + me->name(1) + "å¼€å§‹ç›‘å¬ä½ æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n" + NOR);
 
    return 1;
 }
@@ -60,9 +60,9 @@ if( wizardp(ob))
 int help()
 {
    write(@TEXT
-Ö¸Áî¸ñÊ½£ºsnoop <Ä³ÈË>|none
+æŒ‡ä»¤æ ¼å¼ï¼šsnoop <æŸäºº>|none
 
-¼àÌýÆäËûÊ¹ÓÃÕßËùÊÕÌýµÄÑ¶Ï¢£¬snoop none ÔòÈ¡Ïû¼àÌý¡£
+ç›‘å¬å…¶ä»–ä½¿ç”¨è€…æ‰€æ”¶å¬çš„è®¯æ¯ï¼Œsnoop none åˆ™å–æ¶ˆç›‘å¬ã€‚
 TEXT
    );
    return 1;

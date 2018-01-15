@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/houdong
@@ -6,17 +6,17 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºó¶´");
+  set ("short", "åæ´");
   set ("long", @LONG
 
-³öÁËğ®µÀ£¬ÄãÑÛÇ°Ò»ÁÁ¡£Ô­À´ºó¶´±ÈÇ°¶´»¹Òª´óµÃ¶à¡£·½Ô²Êı°ÙÀï¶¼
-ÖÖÂúÁËÆæ»¨Òì²İ¡£²ÔËÉÓ­¿Í£¬±ÌÁø´¹Ñü£¬ËÄ´¦ÄñÓï£¬±éµØ»¨Ïã¡£Èô·Ç
-Ç°¶´ºÍğ®µÀÀï´¦´¦Í¸³ö¹îÒì£¬ÄãÕæ»áÒÔÎªÕâÀïÊÇÏÉ¾³ÁË¡£±±ÃæÒ»×ù´ó
-µî£¬¶«±ßÊÇ×ù²ÊÂ¥¡£Î÷±±½ÇÉÏÓĞ¸öÊ¯¶´£¬¶´ÃÅÈ´ÊÇ½ôËøµÄ¡£
+å‡ºäº†ç”¬é“ï¼Œä½ çœ¼å‰ä¸€äº®ã€‚åŸæ¥åæ´æ¯”å‰æ´è¿˜è¦å¤§å¾—å¤šã€‚æ–¹åœ†æ•°ç™¾é‡Œéƒ½
+ç§æ»¡äº†å¥‡èŠ±å¼‚è‰ã€‚è‹æ¾è¿å®¢ï¼Œç¢§æŸ³å‚è…°ï¼Œå››å¤„é¸Ÿè¯­ï¼Œéåœ°èŠ±é¦™ã€‚è‹¥é
+å‰æ´å’Œç”¬é“é‡Œå¤„å¤„é€å‡ºè¯¡å¼‚ï¼Œä½ çœŸä¼šä»¥ä¸ºè¿™é‡Œæ˜¯ä»™å¢ƒäº†ã€‚åŒ—é¢ä¸€åº§å¤§
+æ®¿ï¼Œä¸œè¾¹æ˜¯åº§å½©æ¥¼ã€‚è¥¿åŒ—è§’ä¸Šæœ‰ä¸ªçŸ³æ´ï¼Œæ´é—¨å´æ˜¯ç´§é”çš„ã€‚
 LONG);
 
   set("item_desc", ([ /* sizeof() == 2 */
-  "dong" : "¶´ÃÅ¿ÚÓÃÒ»Ìõ´Ö´óµÄÌúÁ´ËøÁËÆğÀ´¡£¿´À´Ã»Ô¿³×ÊÇ½ø²»È¥ÁË¡£
+  "dong" : "æ´é—¨å£ç”¨ä¸€æ¡ç²—å¤§çš„é“é“¾é”äº†èµ·æ¥ã€‚çœ‹æ¥æ²¡é’¥åŒ™æ˜¯è¿›ä¸å»äº†ã€‚
 ",
 ]));
   set("exits", ([ /* sizeof() == 3 */
@@ -42,20 +42,20 @@ int unlock()
 
   key=present("tie yaoshi", me);
   if(!key)
-    return notify_fail("Ã»Ô¿³×ÔõÃ´¿ªËø£¿\n");
+    return notify_fail("æ²¡é’¥åŒ™æ€ä¹ˆå¼€é”ï¼Ÿ\n");
   if(here->query("lockbroken"))
-    return notify_fail("Ëø¿×ÀïÓĞ¶«Î÷£¬Ô¿³×²å²»½øÈ¥¡£\n");
+    return notify_fail("é”å­”é‡Œæœ‰ä¸œè¥¿ï¼Œé’¥åŒ™æ’ä¸è¿›å»ã€‚\n");
   if(here->query("locked_from_inside"))
-    return notify_fail("ÃÅÉÏÃ»Ëø£¬µ«ÊÇÄã¾ÍÊÇÀ­²»¿ª¡£¿´À´±»ÈË´ÓÀïÃæ·´Ëø×¡ÁË¡£\n");
+    return notify_fail("é—¨ä¸Šæ²¡é”ï¼Œä½†æ˜¯ä½ å°±æ˜¯æ‹‰ä¸å¼€ã€‚çœ‹æ¥è¢«äººä»é‡Œé¢åé”ä½äº†ã€‚\n");
   if(mystr<20)
-    return notify_fail("ÄãÓÃ¾¡ÁË³ÔÄÌµÄÁ¦Æø£¬»¹ÊÇÅ¡²»¶¯Ô¿³×¡£\n");
+    return notify_fail("ä½ ç”¨å°½äº†åƒå¥¶çš„åŠ›æ°”ï¼Œè¿˜æ˜¯æ‹§ä¸åŠ¨é’¥åŒ™ã€‚\n");
   me->add_temp("mark/wudidong_times", 1);
   if(random(31-mykar)>mykar &&
      me->query_temp("mark/wudidong_times") < 18)
     {
       destruct(key);
       call_out("break_lock", 1);
-      message_vision("$N°ÑÔ¿³×²åÈëËø¿×£¬µ«Ô¿³×±»Ğâ×¡ÁË¡£\n", me);
+      message_vision("$NæŠŠé’¥åŒ™æ’å…¥é”å­”ï¼Œä½†é’¥åŒ™è¢«é”ˆä½äº†ã€‚\n", me);
       return 1;
     }
   factor=random(mykar);
@@ -64,7 +64,7 @@ int unlock()
     {
       destruct(key);
       call_out("break_lock", 1);
-      message_vision("$N°ÑÌúÔ¿³×²å½øËøÀï£¬ÓÃÁ¦Ò»Å¡¡£Ö»ÌıÅ¾µÄÒ»Éù£¬°ë½ØÔ¿³×¶ÏÔÚËøÀïÁË¡£\n", me);
+      message_vision("$NæŠŠé“é’¥åŒ™æ’è¿›é”é‡Œï¼Œç”¨åŠ›ä¸€æ‹§ã€‚åªå¬å•ªçš„ä¸€å£°ï¼ŒåŠæˆªé’¥åŒ™æ–­åœ¨é”é‡Œäº†ã€‚\n", me);
       return 1;
     }
   if(key->query("name_recognized")!="real key" &&
@@ -72,22 +72,22 @@ int unlock()
     {
       destruct(key);
       call_out("break_lock", 1);
-      message_vision("$N°ÑÔ¿³×²åÈëËø¿×£¬µ«ËµÊ²Ã´Ò²Å¡²»¶¯¡£$NÒ»Ê¹¾¢£¬Ö»ÌıÅ¾µÄÒ»Éù£¬Ô¿³×¶ÏÁË¡£\n", me);
+      message_vision("$NæŠŠé’¥åŒ™æ’å…¥é”å­”ï¼Œä½†è¯´ä»€ä¹ˆä¹Ÿæ‹§ä¸åŠ¨ã€‚$Nä¸€ä½¿åŠ²ï¼Œåªå¬å•ªçš„ä¸€å£°ï¼Œé’¥åŒ™æ–­äº†ã€‚\n", me);
       return 1;
     }
   destruct(key);
   call_out("lock_from_inside", 1);
   me->set_temp("mark/wudidong_times", 0);
-  message_vision("$N°ÑÔ¿³×²åÔÚËø¿×ÀïÅ¡ÁË°ëÌì£¬ÖÕÓÚ°ÑËø´ò¿ªÁË¡£\n", me);
-  message_vision("$NÀ­¿ªÁËÌúÁ´£¬´ò¿ªÃÅ£¬×ßÁË½øÈ¥¡£\n", me);
+  message_vision("$NæŠŠé’¥åŒ™æ’åœ¨é”å­”é‡Œæ‹§äº†åŠå¤©ï¼Œç»ˆäºæŠŠé”æ‰“å¼€äº†ã€‚\n", me);
+  message_vision("$Næ‹‰å¼€äº†é“é“¾ï¼Œæ‰“å¼€é—¨ï¼Œèµ°äº†è¿›å»ã€‚\n", me);
   if (me->query_temp("mark/wudidong_yushu_gave_me_key"))
     {
       me->set_temp("mark/wudidong_opened_door", 1);
       me->delete_temp("mark/wudidong_yushu_gave_me_key");
     }
   me->move(__DIR__"lock");
-  message("vision", "Ö»ÌıàØµÄÒ»Éù£¬¶´ÃÅÓÖ±»¹ØÉÏÁË¡£\n", this_object());
-  message_vision("$N×ß½øÀ´£¬Ë³ÊÖ¹ØÉÏÁËÃÅ£¬ÉÏÁËËø¡£\n", me);
+  message("vision", "åªå¬å˜­çš„ä¸€å£°ï¼Œæ´é—¨åˆè¢«å…³ä¸Šäº†ã€‚\n", this_object());
+  message_vision("$Nèµ°è¿›æ¥ï¼Œé¡ºæ‰‹å…³ä¸Šäº†é—¨ï¼Œä¸Šäº†é”ã€‚\n", me);
   return 1;
 }
 void break_lock()

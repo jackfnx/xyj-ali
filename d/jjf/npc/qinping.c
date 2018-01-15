@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //qinping.c
@@ -15,9 +15,9 @@ mapping count=([]);
 
 void create()
 {
-  set_name("��ƽ", ({"qin ping", "qin", "master"}));
-  set("title", "�������ܼ�");
-  set("gender", "����");
+  set_name("秦平", ({"qin ping", "qin", "master"}));
+  set("title", "将军府管家");
+  set("gender", "男性");
   set("age", 46);
   set("str", 30);
   set("int", 25);
@@ -44,11 +44,11 @@ void create()
 
   setup();
   set("inquiry", ([
-        "����": (: try_me :),
-        "�¼�": (: try_me :)
+        "兵器": (: try_me :),
+        "衣甲": (: try_me :)
 ]) );
   
-  create_family("������", 3, "��");
+  create_family("将军府", 3, "蓝");
   carry_object("/d/obj/armor/tenjia")->wear();
   carry_object("/d/obj/weapon/spear/tieqiang")->wield();
 }
@@ -57,7 +57,7 @@ int attempt_apprentice(object me)
 {
   string myname=RANK_D->query_respect(me);
   command("pat "+me->query("id"));
-  command("say �ܺã�ʱ����������֮�ʣ�"+myname+"���Ŭ�������ձض��гɡ�");
+  command("say 很好，时下正是用人之际，"+myname+"多加努力，他日必定有成。");
   command("recruit " + me->query("id") );
   return 1;
 }
@@ -77,8 +77,8 @@ int do_yao(string arg)
 {
   object me=this_player(), npc=this_object(), obj;
   
-  if((string)me->query("family/family_name")!="������")
-    return notify_fail(CYN"��ƽ�����Բ�ס���������¼ױ���ֻ���������ӵܡ�\n"NOR);
+  if((string)me->query("family/family_name")!="将军府")
+    return notify_fail(CYN"秦平道：对不住，将军府衣甲兵器只发给本派子弟。\n"NOR);
   if( !arg ||
      (arg != "blade"
    && arg != "sword"
@@ -97,22 +97,22 @@ int do_yao(string arg)
    && arg != "head"
    && arg != "feet"
    && arg != "waist"))
-    return notify_fail(CYN"��ƽ�����Բ�ס����Ҫ�Ķ���������û�С�\n"NOR);
+    return notify_fail(CYN"秦平道：对不住，你要的东西我这里没有。\n"NOR);
     if(count[arg]>=total)
-   return notify_fail(CYN"��ƽ�����Բ�ס����Ҫ�Ķ������Ѿ������ˡ�\n"NOR); 
+   return notify_fail(CYN"秦平道：对不住，你要的东西我已经发完了。\n"NOR); 
     if (arg == "body"
      || arg == "head"
      || arg == "feet"
      || arg == "waist")
     {
    if (me->query_temp("mark/jjf_armor") >=4)
-       return notify_fail(CYN"��ƽŭ������Ҫ����ô����¼ף�����������\n"NOR);
+       return notify_fail(CYN"秦平怒道：你要了这么多件衣甲，还不够？！\n"NOR);
    me->add_temp("mark/jjf_armor", 1);
     }
     else
     {
    if (me->query_temp("mark/jjf_weapon") >= 3)
-       return notify_fail(CYN"��ƽŭ������Ҫ����ô�������������������\n"NOR);
+       return notify_fail(CYN"秦平怒道：你要了这么多件兵器，还不够？！\n"NOR);
    me->add_temp("mark/jjf_weapon", 1);
     }
     count[arg]+=1;
@@ -120,15 +120,15 @@ int do_yao(string arg)
     obj->set("no_sell", 1);
     obj->set("no_drop", 1);
     obj->set("no_give", 1);
-    command("say ��λ"+RANK_D->query_respect(me)+"��"+obj->query("name")+"Ϊ�����࣬ǧ�������ӡ�");
-    message_vision("��ƽ��$Nһ"+obj->query("unit")+obj->query("name")+ "��\n", me);
+    command("say 这位"+RANK_D->query_respect(me)+"，"+obj->query("name")+"为数不多，千万别随便扔。");
+    message_vision("秦平给$N一"+obj->query("unit")+obj->query("name")+ "。\n", me);
     obj->move(me);
     return 1;
 }
 
 string try_me()
 {
-  command("say �ؽ��������Ʒѣ�׼����һЩ�������¼ס�");
-  return ("ֻҪ�ǽ������ĵ��ӾͿ�����һ��ȥ�á�");
+  command("say 秦将军亲自破费，准备了一些兵器和衣甲。");
+  return ("只要是将军府的弟子就可以拿一套去用。");
 }
 /************************************************************/

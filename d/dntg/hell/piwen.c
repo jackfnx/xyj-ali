@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create()
 {
-    set_name("ÅúÎÄ", ({"pi wen","piwen","wen"}));
+    set_name("æ‰¹æ–‡", ({"pi wen","piwen","wen"}));
     set_weight(10);
-    set("unit", "ÕÅ");
+    set("unit", "å¼ ");
     setup();
 }
 
@@ -26,9 +26,9 @@ void wc_lootme(object me)
 
     if (wc = query("bai") || wc = query("hei")) {
         if (environment(me) == environment(wc))
-            message_vision("$NÒ»°Ñ½«$nÊÖÖÐµÄÅúÎÄ¶áÁË»ØÈ¥£¬µÀ£ºÒõË¾¹«ÎÄÆñ¿ÉÂÒÇÀ£¿\n", wc, me);
+            message_vision("$Nä¸€æŠŠå°†$næ‰‹ä¸­çš„æ‰¹æ–‡å¤ºäº†å›žåŽ»ï¼Œé“ï¼šé˜´å¸å…¬æ–‡å²‚å¯ä¹±æŠ¢ï¼Ÿ\n", wc, me);
         else
-            message_vision("$N¼±¼±Ã¦Ã¦ÅÜ¹ýÀ´£¬Ò»°Ñ½«$nÊÖÖÐµÄÅúÎÄ¶áÁË»ØÈ¥£¬µÀ£ºÒõË¾¹«ÎÄÆñ¿ÉÂÒÇÀ£¿\n", wc, me);
+            message_vision("$Næ€¥æ€¥å¿™å¿™è·‘è¿‡æ¥ï¼Œä¸€æŠŠå°†$næ‰‹ä¸­çš„æ‰¹æ–‡å¤ºäº†å›žåŽ»ï¼Œé“ï¼šé˜´å¸å…¬æ–‡å²‚å¯ä¹±æŠ¢ï¼Ÿ\n", wc, me);
         move(wc);
     }
 }
@@ -43,7 +43,7 @@ int do_look(string arg)
     write(this_object()->long());
     if (query("target") != me->query("name")) return 1;
     me->set_temp("dntg_hell/next", query("wang"));
-    message_vision(HIR "$N¿´°ÕÅúÎÄ£¬²ªÈ»´óÅ­£¬°ÑÅúÎÄËºÁË¸ö·ÛËé£¬´ó½Ð£º¡°´ýÎÒÈ¥ÕÒÕâ¸ö»èÍõÆÀÀí£¡¡±\n" NOR, me);
+    message_vision(HIR "$Nçœ‹ç½¢æ‰¹æ–‡ï¼Œå‹ƒç„¶å¤§æ€’ï¼ŒæŠŠæ‰¹æ–‡æ’•äº†ä¸ªç²‰ç¢Žï¼Œå¤§å«ï¼šâ€œå¾…æˆ‘åŽ»æ‰¾è¿™ä¸ªæ˜çŽ‹è¯„ç†ï¼â€\n" NOR, me);
     __DIR__"trouble"->install(me, helper->get_palace_rooms());
     destruct(this_object());
     return 1;
@@ -51,24 +51,24 @@ int do_look(string arg)
 
 void setup_piwen(object me, object bai, object hei)
 {
-    mapping wangs = ([ "qingguang":"ÇØ¹ãÍõ", "songdi":"ËÎµÛÍõ", "chujiang":"³þ½­Íõ",
-        "chuguan":"Øõ¹ÙÍõ", "pingdeng":"Æ½µÈÍõ", "dushi":"¶¼ÊÐÍõ", "taishan":"Ì©É½Íõ",
-        "lunzhuan":"ÂÖ×ªÍõ", "biancheng":"±å³ÇÍõ", "yanluo":"ÑÖÂÞÍõ" ]);
+    mapping wangs = ([ "qingguang":"ç§¦å¹¿çŽ‹", "songdi":"å®‹å¸çŽ‹", "chujiang":"æ¥šæ±ŸçŽ‹",
+        "chuguan":"ä»µå®˜çŽ‹", "pingdeng":"å¹³ç­‰çŽ‹", "dushi":"éƒ½å¸‚çŽ‹", "taishan":"æ³°å±±çŽ‹",
+        "lunzhuan":"è½®è½¬çŽ‹", "biancheng":"åžåŸŽçŽ‹", "yanluo":"é˜Žç½—çŽ‹" ]);
     string wang;
 
     wang = keys(wangs)[random(sizeof(wangs))];
-    set("long","    ²é" + me->query("name")
-                + "ÑôÊÙÒÑ¾¡£¬×ÅÁîºÚ°×ÎÞ³£½«Æä»êÆÇ¹´ÄÃ¹é°¸¡£\n\n"
-                + "                            "+wangs[wang]+"  ÚÍ\n\n\n");
+    set("long","    æŸ¥" + me->query("name")
+                + "é˜³å¯¿å·²å°½ï¼Œç€ä»¤é»‘ç™½æ— å¸¸å°†å…¶é­‚é­„å‹¾æ‹¿å½’æ¡ˆã€‚\n\n"
+                + "                            "+wangs[wang]+"  è°•\n\n\n");
     set("target", me->query("name"));
     set("wang", wang);
 
-    bai->set("inquiry/¹´»ê", (: call_other, __FILE__, "assail", this_object() :));
-    bai->set("inquiry/Ô©Í÷", (: call_other, __FILE__, "assail", this_object() :));
-    bai->set("inquiry/Ô©Çü", (: call_other, __FILE__, "assail", this_object() :));
-    hei->set("inquiry/¹´»ê", (: call_other, __FILE__, "assail", this_object() :));
-    hei->set("inquiry/Ô©Í÷", (: call_other, __FILE__, "assail", this_object() :));
-    hei->set("inquiry/Ô©Çü", (: call_other, __FILE__, "assail", this_object() :));
+    bai->set("inquiry/å‹¾é­‚", (: call_other, __FILE__, "assail", this_object() :));
+    bai->set("inquiry/å†¤æž‰", (: call_other, __FILE__, "assail", this_object() :));
+    bai->set("inquiry/å†¤å±ˆ", (: call_other, __FILE__, "assail", this_object() :));
+    hei->set("inquiry/å‹¾é­‚", (: call_other, __FILE__, "assail", this_object() :));
+    hei->set("inquiry/å†¤æž‰", (: call_other, __FILE__, "assail", this_object() :));
+    hei->set("inquiry/å†¤å±ˆ", (: call_other, __FILE__, "assail", this_object() :));
     set("bai", bai);
     set("hei", hei);
 }
@@ -81,5 +81,5 @@ string assail(object ob, object wc)
     if (me->query("name") != ob->query("target")) return 0;
 
     ob->move(wc);
-    return "ÎÒ°´ÅúÎÄËùÊé¹´ÈË£¬ÈôÓÐÔ©Çü£¬¿ÉÓë·¢´Ë¹«ÎÄÖ®Ú¤ÍõÉêËß(complain)¡£";
+    return "æˆ‘æŒ‰æ‰¹æ–‡æ‰€ä¹¦å‹¾äººï¼Œè‹¥æœ‰å†¤å±ˆï¼Œå¯ä¸Žå‘æ­¤å…¬æ–‡ä¹‹å†¥çŽ‹ç”³è¯‰(complain)ã€‚";
 }

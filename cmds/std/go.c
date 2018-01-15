@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // go.c
@@ -6,28 +6,28 @@
 inherit F_CLEAN_UP;
 
 mapping default_dirs = ([
-   "north":     "±±",
-   "south":     "ÄÏ",
-   "east":        "¶«",
-   "west":        "Î÷",
-   "northup":     "±±±ß",
-   "southup":     "ÄÏ±ß",
-   "eastup":     "¶«±ß",
-   "westup":     "Î÷±ß",
-   "northdown":   "±±±ß",
-   "southdown":   "ÄÏ±ß",
-   "eastdown":     "¶«±ß",
-   "westdown":     "Î÷±ß",
-   "northeast":   "¶«±±",
-   "northwest":   "Î÷±±",
-   "southeast":   "¶«ÄÏ",
-   "southwest":   "Î÷ÄÏ",
-   "up":        "ÉÏ",
-   "down":        "ÏÂ",
-   "out":        "Íâ",
-   "enter":     "Àï",
-   "left":      "×ó",
-   "right":     "ÓÒ",
+   "north":     "åŒ—",
+   "south":     "å—",
+   "east":        "ä¸œ",
+   "west":        "è¥¿",
+   "northup":     "åŒ—è¾¹",
+   "southup":     "å—è¾¹",
+   "eastup":     "ä¸œè¾¹",
+   "westup":     "è¥¿è¾¹",
+   "northdown":   "åŒ—è¾¹",
+   "southdown":   "å—è¾¹",
+   "eastdown":     "ä¸œè¾¹",
+   "westdown":     "è¥¿è¾¹",
+   "northeast":   "ä¸œåŒ—",
+   "northwest":   "è¥¿åŒ—",
+   "southeast":   "ä¸œå—",
+   "southwest":   "è¥¿å—",
+   "up":        "ä¸Š",
+   "down":        "ä¸‹",
+   "out":        "å¤–",
+   "enter":     "é‡Œ",
+   "left":      "å·¦",
+   "right":     "å³",
 ]);
 
 void create() { seteuid(getuid()); }
@@ -39,30 +39,30 @@ int main(object me, string arg, int silent)
    object env, obj, ridee;
    mapping exit;
 
-   if( !arg ) return notify_fail("ÄãÒªÍùÄÄ¸ö·½Ïò×ß£¿\n");
+   if( !arg ) return notify_fail("ä½ è¦å¾€å“ªä¸ªæ–¹å‘èµ°ï¼Ÿ\n");
 
         if(!"/adm/daemons/tempd"->valid_move(me)) return 0;
 
 /*
    if( me->over_encumbranced() )
-     return notify_fail("ÄãµÄ¸ººÉ¹ýÖØ£¬¶¯µ¯²»µÃ¡£\n");
+     return notify_fail("ä½ çš„è´Ÿè·è¿‡é‡ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n");
 
    if( me->is_busy() )
-     return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+     return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ç§»åŠ¨ã€‚\n");
 
    if( me->query_temp("no_move") )
-//     return notify_fail("Äã±»¶¨×¡ÁË£¬ÄÄÀï¶¯µÃÁË£¡\n");
+//     return notify_fail("ä½ è¢«å®šä½äº†ï¼Œå“ªé‡ŒåŠ¨å¾—äº†ï¼\n");
 // mon 8/11/97. change the fail message since not only dingshen
 // can lead to no_move.
-     return notify_fail("ÄãÏÖÔÚ²»ÄÜÒÆ¶¯£¡\n");
+     return notify_fail("ä½ çŽ°åœ¨ä¸èƒ½ç§»åŠ¨ï¼\n");
 */
 
    env = environment(me);
-   if(!env) return notify_fail("ÄãÄÄÀïÒ²È¥²»ÁË¡£\n");
+   if(!env) return notify_fail("ä½ å“ªé‡Œä¹ŸåŽ»ä¸äº†ã€‚\n");
 
    if( !mapp(exit = env->query("exits")) || undefinedp(exit[arg]) ) {
      if( query_verb()=="go")
-        return notify_fail("Õâ¸ö·½ÏòÃ»ÓÐ³öÂ·¡£\n");
+        return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
      else
         return 0;
    }
@@ -70,9 +70,9 @@ int main(object me, string arg, int silent)
    dest = exit[arg];
 
    if( !(obj = load_object(dest)) )
-           return notify_fail("ÄãÒªÈ¥µÄÇøÓò»¹Ã»ÓÐÁ¬Í¨¡£\n");
+           return notify_fail("ä½ è¦åŽ»çš„åŒºåŸŸè¿˜æ²¡æœ‰è¿žé€šã€‚\n");
    if( !(obj = find_object(dest)) )
-     return notify_fail("ÎÞ·¨ÒÆ¶¯¡£\n");
+     return notify_fail("æ— æ³•ç§»åŠ¨ã€‚\n");
 
    if( !env->valid_leave(me, arg) ) return 0;
 
@@ -83,19 +83,19 @@ int main(object me, string arg, int silent)
 
         // snowcat 12/20/97
         if (ridee = me->ride())
-          ridemsg = ridee->query("ride/msg")+"×Å"+ridee->name();
+          ridemsg = ridee->query("ride/msg")+"ç€"+ridee->name();
         else  
           ridemsg = "";
 
         if(ridee && !"/adm/daemons/tempd"->valid_move(ridee)) 
-           return notify_fail("ÄãµÄ×ùÆï×ß¶¯²»ÁË¡£\n");
+           return notify_fail("ä½ çš„åº§éª‘èµ°åŠ¨ä¸äº†ã€‚\n");
 
    if( me->is_fighting() ) {
-     mout = ridemsg + "Íù" + dir + "Âä»Ä¶øÌÓÁË¡£\n";
-     min = ridemsg + "µøµø×²×²µØÅÜÁË¹ýÀ´£¬Ä£ÑùÓÐÐ©ÀÇ±·¡£\n";
+     mout = ridemsg + "å¾€" + dir + "è½è’è€Œé€ƒäº†ã€‚\n";
+     min = ridemsg + "è·Œè·Œæ’žæ’žåœ°è·‘äº†è¿‡æ¥ï¼Œæ¨¡æ ·æœ‰äº›ç‹¼ç‹ˆã€‚\n";
    } else {
-     mout = ridemsg+ "Íù" + dir + "Àë¿ª¡£\n";
-     min = ridemsg+ "×ßÁË¹ýÀ´¡£\n";
+     mout = ridemsg+ "å¾€" + dir + "ç¦»å¼€ã€‚\n";
+     min = ridemsg+ "èµ°äº†è¿‡æ¥ã€‚\n";
    }
 
    if( !wizardp(me) || !me->query("env/invisibility") )
@@ -109,7 +109,7 @@ int main(object me, string arg, int silent)
      if (env != obj)
         all_inventory(env)->follow_me(me, arg);
      if (ridee)
-        tell_object (me,"Äã"+min);
+        tell_object (me,"ä½ "+min);
      return 1;
    }
 
@@ -126,14 +126,14 @@ void do_flee(object me)
    if( !mapp(exits) || !sizeof(exits) ) return;
    directions = keys(exits);
    if (environment(me) && environment(me)->query("no_flee")) return;
-   tell_object(me, "¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË£®£®£®\n");
+   tell_object(me, "çœ‹æ¥è¯¥æ‰¾æœºä¼šé€ƒè·‘äº†ï¼Žï¼Žï¼Ž\n");
         if( me->query_temp("no_move") ) {
-          tell_object (me, "¿ÉÄã±»¶¨×¡ÁË£¬ÌÓ²»µô£¡\n");
+          tell_object (me, "å¯ä½ è¢«å®šä½äº†ï¼Œé€ƒä¸æŽ‰ï¼\n");
           return;
         }
 
    if( random(me->query_skill("dodge")/10 + me->query("kar")) < 10 ) {
-      tell_object(me, "ÄãÌÓÅÜÊ§°Ü¡£\n");
+      tell_object(me, "ä½ é€ƒè·‘å¤±è´¥ã€‚\n");
       return;
     }
 
@@ -143,9 +143,9 @@ void do_flee(object me)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½ : go <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : go <æ–¹å‘>
  
-ÈÃÄãÍùÖ¸¶¨µÄ·½ÏòÒÆ¶¯¡£
+è®©ä½ å¾€æŒ‡å®šçš„æ–¹å‘ç§»åŠ¨ã€‚
  
 HELP
     );

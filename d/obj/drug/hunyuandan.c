@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// hunyuandan.c »ìÔªµ¤ 
+// hunyuandan.c æ··å…ƒä¸¹ 
 
 inherit ITEM;
 
@@ -15,14 +15,14 @@ void init()
 
 void create()
 {
-        set_name("»ìÔªµ¤", ({"hunyuan dan", "dan"}));
+        set_name("æ··å…ƒä¸¹", ({"hunyuan dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "Ò»¿ÅÂÔ´øÏãÆøµÄÒ©Íè£®\n");
+                set("unit", "é¢—");
+                set("long", "ä¸€é¢—ç•¥å¸¦é¦™æ°”çš„è¯ä¸¸ï¼\n");
                 set("value", 2000);
-          set("drug_type", "Á¼Ò©");
+          set("drug_type", "è‰¯è¯");
         }
         setup();
 }
@@ -30,13 +30,13 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´Ò©£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆè¯ï¼Ÿ\n");
         if ((int)this_player()->query("eff_sen") == 
             (int)this_player()->query("max_sen"))
-                return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ»ìÔªµ¤¡£\n");
+                return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨æ··å…ƒä¸¹ã€‚\n");
         else {
                 this_player()->receive_curing("sen", 40);
-                message_vision("$N³ÔÏÂÒ»¿Å»ìÔªµ¤£¬Á³É«¿´ÆğÀ´ºÃ¶àÁË£®\n",
+                message_vision("$Nåƒä¸‹ä¸€é¢—æ··å…ƒä¸¹ï¼Œè„¸è‰²çœ‹èµ·æ¥å¥½å¤šäº†ï¼\n",
 this_player());
                 destruct(this_object());
                 return 1;

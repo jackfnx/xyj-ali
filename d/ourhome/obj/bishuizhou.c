@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bishuizhou.c
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("±ÜË®Öä", ({"bishui zhou","zhou"}));
+        set_name("é¿æ°´å’’", ({"bishui zhou","zhou"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
    set("long",
-   "Ò»ÕÅĞ¡Ö½Æ¬¡£ÉÏÃæĞ´×Å¡°±ÜË®Öä¡±Èı¸ö×Ö£¬²»ÖªµÀÓĞÊ²Ã´ÓÃÃ»ÓĞ¡£\n");
+   "ä¸€å¼ å°çº¸ç‰‡ã€‚ä¸Šé¢å†™ç€â€œé¿æ°´å’’â€ä¸‰ä¸ªå­—ï¼Œä¸çŸ¥é“æœ‰ä»€ä¹ˆç”¨æ²¡æœ‰ã€‚\n");
         set("material", "paper");       
         }
 }

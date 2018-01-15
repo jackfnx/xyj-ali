@@ -2,21 +2,21 @@
 
 inherit NPC;
 
-string *names = ({"»¢¾«","±ª¾«","Ê¨¾«","ÀÇ¾«"});
+string *names = ({"è™ç²¾","è±¹ç²¾","ç‹®ç²¾","ç‹¼ç²¾"});
 string *ids = ({"hu jing","bao jing","shi jing","lang jing"});
 
 void create()
 {
     int ii = random(sizeof(names));
     set_name(names[ii], ({ids[ii], "jing", "monster"}));
-    set("race", "Ò°ÊŞ");
+    set("race", "é‡å…½");
     set("age", 33);
 
-    set("long", "Ò»Ö»ÎüÈ¡ÈÕÔÂ¾«»ª¶ø³É¾«µÄÃÍÊŞ¡£");
+    set("long", "ä¸€åªå¸å–æ—¥æœˆç²¾åè€Œæˆç²¾çš„çŒ›å…½ã€‚");
 
     set("attitude", "aggressive");
     set("combat_exp", (random(5)*10000+50000));
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
     set("verbs", ({ "bite"}));
 
     set("kee", 800);
@@ -65,20 +65,20 @@ void die()
             foreach (object ob in all_inventory(env)) {
                 if (ob == this_object()) continue;
                 if (base_name(ob) == base_name(this_object())) {
-                    message("vision", HIG "\n" + ob->name() + "ÌÓÅÜÁË£¡\n" NOR, env);
+                    message("vision", HIG "\n" + ob->name() + "é€ƒè·‘äº†ï¼\n" NOR, env);
                     destruct(ob);
                 }
             }
             if (!present("mowang", env)) {
                 mowang = new(__DIR__"mowang");
                 mowang->move(env);
-                message_vision(HIR "\nÖ»ÌıµÃÒ»Õó¡¸èîèîèî¡¹µÄĞ¦Éù£¬$N" HIR "³öÏÖÁË£¡\n\n" NOR, mowang);
+                message_vision(HIR "\nåªå¬å¾—ä¸€é˜µã€Œæ¡€æ¡€æ¡€ã€çš„ç¬‘å£°ï¼Œ$N" HIR "å‡ºç°äº†ï¼\n\n" NOR, mowang);
                 mowang->kill_ob(killer);
             }
         }
         else {
             another = new(__FILE__);
-            message("vision", HIR "\nÓÖÒ»Ö»" + another->name() + "ÅÜÁË¹ıÀ´£¡\n\n" NOR, env);
+            message("vision", HIR "\nåˆä¸€åª" + another->name() + "è·‘äº†è¿‡æ¥ï¼\n\n" NOR, env);
             another->move(env);
             another->kill_ob(killer);
             killer->add_temp("dntg/huaguo/kill_jing", 1);
@@ -101,7 +101,7 @@ int override_move(string dir)
     if (killer != this_player()) return 0;
     if (!environment()->query("exits/" + dir)) return 0;
 
-    tell_object(killer, name() + "·è¿ñµÄÏòÄãÆËÀ´£¬µ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+    tell_object(killer, name() + "ç–¯ç‹‚çš„å‘ä½ æ‰‘æ¥ï¼ŒæŒ¡ä½äº†ä½ çš„å»è·¯ã€‚\n");
     return 1;
 }
 

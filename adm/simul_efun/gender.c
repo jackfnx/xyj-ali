@@ -1,22 +1,22 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gender.c
 
 string gender_self(string sex)
 {
-     return "Äã";
+     return "ä½ ";
 }
 
 string gender_pronoun(string sex)
 {
    switch(sex) {
-     case "ÖĞĞÔÉñ":   return "Ëû";   break;
-     case "ÄĞĞÔ":   return "Ëû";   break;
-     case "Å®ĞÔ":   return "Ëı";   break;
-     case "ĞÛĞÔ":
-     case "´ÆĞÔ":   return "Ëü";   break;
-     default: return "Ëü";
+     case "ä¸­æ€§ç¥":   return "ä»–";   break;
+     case "ç”·æ€§":   return "ä»–";   break;
+     case "å¥³æ€§":   return "å¥¹";   break;
+     case "é›„æ€§":
+     case "é›Œæ€§":   return "å®ƒ";   break;
+     default: return "å®ƒ";
    }
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/8/1997         
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("·½ÕÉ", ({"fang zhang", "zhang"}));
-  set("title", "²¼½ğìøËÂ");
-  set("gender", "ÄĞĞÔ");
+  set_name("æ–¹ä¸ˆ", ({"fang zhang", "zhang"}));
+  set("title", "å¸ƒé‡‘ç¦…å¯º");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 50000);
   set("age", 70);
   set("per", 30);
@@ -26,10 +26,10 @@ void create()
   set_skill("dodge", 10+random(90));
   set_skill("parry", 10+random(90));
   set("inquiry", ([
-    "name" : "²¼½ğìøËÂ·½ÕÉÒ²¡£",
-    "here" : "²¼½ğìøËÂÒ²¡£",
-    "²¼½ğìøËÂ" : "²¼½ğìøËÂÄË²¼½ğìøËÂÒ²¡£",
-    "¹«Ö÷" : "¹«Ö÷£¿Õâ¸ö¡­¡­",
+    "name" : "å¸ƒé‡‘ç¦…å¯ºæ–¹ä¸ˆä¹Ÿã€‚",
+    "here" : "å¸ƒé‡‘ç¦…å¯ºä¹Ÿã€‚",
+    "å¸ƒé‡‘ç¦…å¯º" : "å¸ƒé‡‘ç¦…å¯ºä¹ƒå¸ƒé‡‘ç¦…å¯ºä¹Ÿã€‚",
+    "å…¬ä¸»" : "å…¬ä¸»ï¼Ÿè¿™ä¸ªâ€¦â€¦",
   ]));
   setup();
   carry_object("/d/obj/cloth/sengyi")->wear();
@@ -62,8 +62,8 @@ void check_king ()
 
   me->set("seen_king",1);
   call_out ("reset_seen_king",600); 
-  message_vision ("$N¼ûµ½$n£¬»ÅÃ¦¸©·ü½Ó°İ¡£\n",me,king);
-  message_vision ("$NËµµÀ£º·½ÕÉ´óÊ¦£¬¹«Ö÷ºÎÔÚ£¿\n",king);
+  message_vision ("$Nè§åˆ°$nï¼Œæ…Œå¿™ä¿¯ä¼æ¥æ‹œã€‚\n",me,king);
+  message_vision ("$Nè¯´é“ï¼šæ–¹ä¸ˆå¤§å¸ˆï¼Œå…¬ä¸»ä½•åœ¨ï¼Ÿ\n",king);
   call_out ("following",5,me,king); 
 }
 
@@ -74,7 +74,7 @@ void reset_seen_king ()
 
 void following (object me, object king)
 {
-  message_vision ("\n$N¹òÔÚ$nÃæÇ°Ëµ£ºÔÚìø·¿ÀïÒ²¡­¡­\n",me,king);
+  message_vision ("\n$Nè·ªåœ¨$né¢å‰è¯´ï¼šåœ¨ç¦…æˆ¿é‡Œä¹Ÿâ€¦â€¦\n",me,king);
   command ("follow "+king->query("my_saver")->query("id"));
 }
 
@@ -83,7 +83,7 @@ void check_room ()
   object me = this_object();
   object where = environment (me);
 
-  if (where->query("short") != "ºóÔº")
+  if (where->query("short") != "åé™¢")
     return;
 
   if (where->query("is_open"))
@@ -106,6 +106,6 @@ void opening (object me, object where)
               "northwest"   : "/d/qujing/tianzhu/baodian",
               "southeast"   : "/d/qujing/tianzhu/chanfang",
             ]));
-  message_vision ("$NÓÃ²ü¶¶µÄÀÏÊÖ²¦¿ªÒ»´ÔÇàÌÙ¡£\n",me);
-  message_vision ("$NĞ¡ĞÄµØ½«Ğ¡Ä¾ÃÅ´ò¿ª¡£\n",me);
+  message_vision ("$Nç”¨é¢¤æŠ–çš„è€æ‰‹æ‹¨å¼€ä¸€ä¸›é’è—¤ã€‚\n",me);
+  message_vision ("$Nå°å¿ƒåœ°å°†å°æœ¨é—¨æ‰“å¼€ã€‚\n",me);
 }

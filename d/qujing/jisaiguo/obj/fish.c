@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/1/1997 by snowcat
@@ -10,10 +10,10 @@ inherit ITEM;
 
 void create()
 {
-  set_name("Óã", ({ "fish"})); 
+  set_name("é±¼", ({ "fish"})); 
   set_weight(100);
-  set("long","Ò»Ìõ³É¾«µÄÓã¡£\n");
-  set("unit", "Ìõ");
+  set("long","ä¸€æ¡æˆç²¾çš„é±¼ã€‚\n");
+  set("unit", "æ¡");
   set("value",100);
   setup();
 }
@@ -35,7 +35,7 @@ int do_get (string arg)
       arg != "all")
     return 0;
 
-  message_vision("$NÉì³öÊÖÈ¥×½$n£¬$nÒ»°Ú´Ó$NÊÖÖĞ»¬×ßÁË¡£\n",who,fish);
+  message_vision("$Nä¼¸å‡ºæ‰‹å»æ‰$nï¼Œ$nä¸€æ‘†ä»$Næ‰‹ä¸­æ»‘èµ°äº†ã€‚\n",who,fish);
   return 1;
 }
 
@@ -43,7 +43,7 @@ int do_get (string arg)
 int start_jump ()
 {
   object fish = this_object();
-  string str = fish->query("name")+"ÌøÁËÒ»Ìø¡£\n";
+  string str = fish->query("name")+"è·³äº†ä¸€è·³ã€‚\n";
   tell_room (environment(fish),str);
   call_out("do_jump",5+random(5));
   return 1;
@@ -53,12 +53,12 @@ int do_jump ()
 {
   object fish = this_object();
   string *msgs = ({
-    "Å¾µØÒ»Éù£¬$NÌøÁËÆğÀ´¡£\n",
-    "$NÌøÁËÌø¡£\n",
-    "$NÅ¾µØÒ»Ìø¡£\n",
-    "$NÒ»Í¦£¬Ô¾ÔÚ¿ÕÖĞ¡£\n",
-    "$NÇáÇáÒ»Ô¾¡£\n",
-    "$N¶¯ÁË¶¯¡£\n",
+    "å•ªåœ°ä¸€å£°ï¼Œ$Nè·³äº†èµ·æ¥ã€‚\n",
+    "$Nè·³äº†è·³ã€‚\n",
+    "$Nå•ªåœ°ä¸€è·³ã€‚\n",
+    "$Nä¸€æŒºï¼Œè·ƒåœ¨ç©ºä¸­ã€‚\n",
+    "$Nè½»è½»ä¸€è·ƒã€‚\n",
+    "$NåŠ¨äº†åŠ¨ã€‚\n",
   });
   string str;
 
@@ -78,7 +78,7 @@ int do_jump ()
 int jump_back ()
 {
   object fish = this_object();
-  string str = fish->query("name")+"Ìø×ß²»¼ûÁË¡£\n";
+  string str = fish->query("name")+"è·³èµ°ä¸è§äº†ã€‚\n";
   tell_room (environment(fish),str);
   destruct (fish);
   return 1;

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // mind_beast.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("������", ({ "mind beast", "beast" }) );
-   set("race", "Ұ��");
+   set_name("观想兽", ({ "mind beast", "beast" }) );
+   set("race", "野兽");
    set("age", 3);
-   set("long", "����һֻ���޵��˵������˼�����Ĺ����ޣ����ס�˵Ļ��ǡ�\n");
+   set("long", "这是一只由修道人的杂念绮思所化的观想兽，会缠住人的魂魄。\n");
    
    set("str", 48);
    set("cor", 52);
@@ -20,7 +20,7 @@ void create()
    set("max_gin", 600);
    set("max_sen", 900);
 
-   set("limbs", ({ "ͷ��", "����", "ǰ��", "���", "β��" }) );
+   set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
    set("verbs", ({ "bite", "claw" }) );
 
    if( this_player() ) {
@@ -43,10 +43,10 @@ void die()
 
    if( objectp(owner_ob = find_player(owner)) ) {
      if( (object)query_temp("last_damage_from") != owner_ob ) {
-        tell_object(owner_ob, "��Ĺ����ޱ���ɱ���ˣ�\n�����һ��������ת....\n");
+        tell_object(owner_ob, "你的观想兽被人杀死了！\n你觉得一阵天旋地转....\n");
         owner_ob->unconcious();
      } else {
-        tell_object(owner_ob, "��ɱ������Ĺ����ޣ����Ҵ�������һЩ�����ĵ�����\n");
+        tell_object(owner_ob, "你杀死了你的观想兽，并且从中悟到了一些咒术的道理。\n");
         owner_ob->improve_skill("spells", random(owner_ob->query("spi"))+1);
      }
    }

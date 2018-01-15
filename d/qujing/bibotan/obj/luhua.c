@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit WHIP;
 
 void create()
 {
-        set_name("Â«»¨²İ", ({ "luhua cao", "cao" }) );
+        set_name("èŠ¦èŠ±è‰", ({ "luhua cao", "cao" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-     set("long", "Ò»¸ùÏ¸³¤µÄÂ«»¨²İ£¬Ëæ·çÆ®°Ú¡£\n");
+                set("unit", "æ ¹");
+     set("long", "ä¸€æ ¹ç»†é•¿çš„èŠ¦èŠ±è‰ï¼Œéšé£é£˜æ‘†ã€‚\n");
                 set("value", 0);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»¸ùÏ¸³¤µÄÂ«»¨²İÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹ç»†é•¿çš„èŠ¦èŠ±è‰æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_whip(1);
         setup();

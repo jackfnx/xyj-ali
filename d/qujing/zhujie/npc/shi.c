@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/20/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("¾ÅÍ·Ê¨", ({ "jiutou shi", "shi" }));
-  set("title", "¾ÅÁéÔªÊ¥");   
-  set("long", "Ò»Î»ÀÏÑı¹Ö£¬³¤×Å¾Å¸öÊ¨×ÓÍ·¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("ä¹å¤´ç‹®", ({ "jiutou shi", "shi" }));
+  set("title", "ä¹çµå…ƒåœ£");   
+  set("long", "ä¸€ä½è€å¦–æ€ªï¼Œé•¿ç€ä¹ä¸ªç‹®å­å¤´ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 70);
   set("attitude", "heroism");
   set("per", 29);
@@ -54,9 +54,9 @@ void die ()
     ob->set_temp("obstacle/yuhua_killed",1);
     call_out ("prince_appearing",1,ob);
   }
-  message_vision ("\n$NÆËµ¹ÔÚµØ£¬ÏÖÉíÎªÒ»Í·¾ÅÍ·Ê¨×ù¡£\n",me);
-  message_vision ("\n°ë¿ÕÖĞ´«À´¾È¿àÌì×ğµÄÅ­ºÈ£ºÔªÊ¥¶ù£¬»Ø¸®£¡\n",me);
-  message_vision ("¾ÅÍ·Ê¨Ëæ×ÅÒ»Õó²ÊÔÆ¶øÈ¥¡£\n",me);
+  message_vision ("\n$Næ‰‘å€’åœ¨åœ°ï¼Œç°èº«ä¸ºä¸€å¤´ä¹å¤´ç‹®åº§ã€‚\n",me);
+  message_vision ("\nåŠç©ºä¸­ä¼ æ¥æ•‘è‹¦å¤©å°Šçš„æ€’å–ï¼šå…ƒåœ£å„¿ï¼Œå›åºœï¼\n",me);
+  message_vision ("ä¹å¤´ç‹®éšç€ä¸€é˜µå½©äº‘è€Œå»ã€‚\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);
@@ -112,7 +112,7 @@ void recovering (object me, object ob)
       (me->query("kee") < (me->query("max_kee")*3/4) ||
        me->query("sen") < (me->query("max_sen")*3/4)))
   {
-    message_vision ("\n$NÒ¡»Î³öÒ»Ö»Ê¨×ÓÍ·£¬½«×Ô¼ºÉË´¦Ò»Ìò£¡\n",me);
+    message_vision ("\n$Næ‘‡æ™ƒå‡ºä¸€åªç‹®å­å¤´ï¼Œå°†è‡ªå·±ä¼¤å¤„ä¸€èˆ”ï¼\n",me);
     me->set("gin",me->query("max_gin"));
     me->set("kee",me->query("max_kee"));
     me->set("sen",me->query("max_sen"));
@@ -126,9 +126,9 @@ void recovering (object me, object ob)
 void hurting (object me, object ob)
 {
   string *msgs = ({
-    "$N½«Ò»Ö»Ê¨×ÓÍ·Éì³¤£¬Ò»¿Ú°Ñ$nº¬ÔÚ×ìÀï£¡\n",
-    "$NÉì³öÒ»Ö»Ê¨Í·£¬½«$nÁè¿ÕÏÎÆğ£¡\n",
-    "$NµÄÊ¨×ÓÍ·Ò»°Ú£¬ÕÅ¿ªÑªÅè´ó¿Ú½«$nÒ§Æğ£¡\n",
+    "$Nå°†ä¸€åªç‹®å­å¤´ä¼¸é•¿ï¼Œä¸€å£æŠŠ$nå«åœ¨å˜´é‡Œï¼\n",
+    "$Nä¼¸å‡ºä¸€åªç‹®å¤´ï¼Œå°†$nå‡Œç©ºè¡”èµ·ï¼\n",
+    "$Nçš„ç‹®å­å¤´ä¸€æ‘†ï¼Œå¼ å¼€è¡€ç›†å¤§å£å°†$nå’¬èµ·ï¼\n",
   });
   object zhudao;
   int heads = me->query("heads");
@@ -154,11 +154,11 @@ void hurting (object me, object ob)
   {
     object head = new("/d/qujing/zhujie/obj/head");
 
-    message_vision ("µ«¼û$NÊÖÆğµ¶Âä£¬"+
-                    "$n²Òº¿Ò»Éù£¬Ò»Ö»Ê¨Í·ÂäµØ£¡\n",ob,me);
+    message_vision ("ä½†è§$Næ‰‹èµ·åˆ€è½ï¼Œ"+
+                    "$næƒ¨åšä¸€å£°ï¼Œä¸€åªç‹®å¤´è½åœ°ï¼\n",ob,me);
     head->move(environment(me));
     me->add("heads",-1);
-    me->set("long", "Ò»Î»ÀÏÑı¹Ö£¬»¹Ê£ÏÂ"+chinese_number(heads-1)+"¸öÊ¨×ÓÍ·¡£");
+    me->set("long", "ä¸€ä½è€å¦–æ€ªï¼Œè¿˜å‰©ä¸‹"+chinese_number(heads-1)+"ä¸ªç‹®å­å¤´ã€‚");
   }
   remove_call_out ("hurting");  
   call_out ("hurting",random(20)+20,me,ob);  

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // close.c
@@ -13,7 +13,7 @@ int main(object me, string arg)
    string *dirs, dir;
    int i;
 
-   if( !arg ) return notify_fail("ÄãÒª¹Ø±ÕÊ²Ã´£¿\n");
+   if( !arg ) return notify_fail("ä½ è¦å…³é—­ä»€ä¹ˆï¼Ÿ\n");
 
    doors = environment(me)->query_doors();
    if( mapp(doors) ) {
@@ -24,10 +24,10 @@ int main(object me, string arg)
           dir = dirs[i];
           break;
         }
-     if( !dir ) return notify_fail("ÄãÒª¹Ø±ÕÊ²Ã´£¿\n");
+     if( !dir ) return notify_fail("ä½ è¦å…³é—­ä»€ä¹ˆï¼Ÿ\n");
    
      if( environment(me)->close_door(dir) ) {
-        message_vision("$N½«" + doors[dir]["name"] + "¹ØÉÏ¡£\n", me);
+        message_vision("$Nå°†" + doors[dir]["name"] + "å…³ä¸Šã€‚\n", me);
         return 1;
      }
    }
@@ -38,9 +38,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : close|guan <door> »ò <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : close|guan <door> æˆ– <æ–¹å‘>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¹ØÉÏÃÅ.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å…³ä¸Šé—¨.
  
 HELP
     );

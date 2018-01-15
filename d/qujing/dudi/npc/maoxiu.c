@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4.12.1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("êÄËÞÐÇ¹Ù", ({"maoxiu xingguan", "xingguan", "guan"}));
-  set("gender", "ÄÐÐÔ");
+  set_name("æ˜´å®¿æ˜Ÿå®˜", ({"maoxiu xingguan", "xingguan", "guan"}));
+  set("gender", "ç”·æ€§");
   set("age", 100);
   set("attitude", "friendly");
   set("combat_exp", 1250000);
@@ -51,10 +51,10 @@ void announce_success (object who)
   who->add("obstacle/number",1);
   who->set("obstacle/dudi","done");
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"¶¾µÐÉ½ÏÔÊ¥Ãû£¬ÅýÅÃ¶´³ýÐ«¹Ö£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ýÎ÷ÐÐÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀÐÐ£¡\n");
+  command("chat "+who->query("name")+"æ¯’æ•Œå±±æ˜¾åœ£åï¼Œçµç¶æ´žé™¤èŽæ€ªï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
 }

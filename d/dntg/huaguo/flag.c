@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-    set_name("´óÆì", ({"flag","qi"}));
-    set("unit", "Ãæ");
+    set_name("å¤§æ——", ({"flag","qi"}));
+    set("unit", "é¢");
     set_weight(500);
     set("long", @LONG
         ***********************************************
-        **      µÃ´ËÆìÕß¿ÉÎªÏÉÁé¸£µØË®Á±¶´Ö®¶´Ö÷     **
+        **      å¾—æ­¤æ——è€…å¯ä¸ºä»™çµç¦åœ°æ°´å¸˜æ´žä¹‹æ´žä¸»     **
         ***********************************************
 LONG);
     set("env/invisibility", 1);
@@ -33,12 +33,12 @@ void place_room(string room)
 {
     room->set("long", @LONG
 
-Ò»×ù¿í´óµÄÊ¯·¿£¬·¿ÄÚÓÐÊ¯ÎÑ¡¢Ê¯Ôî¡¢Ê¯Íë¡¢Ê¯Åè¡¢Ê¯´²(bed)¡¢
-Ê¯µÊ£¬¸÷ÖÖ¼Òµ±ÑùÑù¾ãÈ«¡£ºÃÒ»×ùÌìÔìµØÉèµÄ°²ÉíÖ®Ëù¡£ÕýÖÐ¼ä²å×Å
-Ò»¸Ë´óÆì(flag)¡£
+ä¸€åº§å®½å¤§çš„çŸ³æˆ¿ï¼Œæˆ¿å†…æœ‰çŸ³çªã€çŸ³ç¶ã€çŸ³ç¢—ã€çŸ³ç›†ã€çŸ³åºŠ(bed)ã€
+çŸ³å‡³ï¼Œå„ç§å®¶å½“æ ·æ ·ä¿±å…¨ã€‚å¥½ä¸€åº§å¤©é€ åœ°è®¾çš„å®‰èº«ä¹‹æ‰€ã€‚æ­£ä¸­é—´æ’ç€
+ä¸€æ†å¤§æ——(flag)ã€‚
 LONG);
     room->set("item_desc/flag",
-            "Ò»ÃæÓ­·çÕÐÕ¹µÄÈýÉ«´óÆì£¬ÔÚ¿Õ¿õÖ®´¦Ó­·ç»ÓÎè(wave)ÆðÀ´Ò»¶¨É·ÊÇºÃ¿´£¬µ«ËÆºõºÜÄÑ°Î(ba)¶¯¡£\n");
+            "ä¸€é¢è¿Žé£Žæ‹›å±•çš„ä¸‰è‰²å¤§æ——ï¼Œåœ¨ç©ºæ—·ä¹‹å¤„è¿Žé£ŽæŒ¥èˆž(wave)èµ·æ¥ä¸€å®šç…žæ˜¯å¥½çœ‹ï¼Œä½†ä¼¼ä¹Žå¾ˆéš¾æ‹”(ba)åŠ¨ã€‚\n");
     this_object()->set("home", room);
     this_object()->move(room);
 }
@@ -57,7 +57,7 @@ void init()
 
 void destruct_me(object who, object me)
 {
-    message_vision("Ò»ÕóÇå·ç´µ¹ý£¬$n»¯×÷Ò»ÍÅ»Ò½ý¡£\n", who, me);
+    message_vision("ä¸€é˜µæ¸…é£Žå¹è¿‡ï¼Œ$nåŒ–ä½œä¸€å›¢ç°çƒ¬ã€‚\n", who, me);
     destruct(me);
 }
 
@@ -68,13 +68,13 @@ int do_ba(string arg)
 
     if (file_name(env) != query("home")) return 0;
 
-    if (!arg || !id(arg)) return notify_fail("ÄãÒª°ÎÊ²Ã´£¿\n");
+    if (!arg || !id(arg)) return notify_fail("ä½ è¦æ‹”ä»€ä¹ˆï¼Ÿ\n");
 
     if (me->query("dntg/huaguo") == "done")
-        return notify_fail("ÄãÊÖÎÕ"+name()+"£¬²»½ûÏëÆð×Ô¼ºµ±ÄêÔÚ´Ë³ÆÍõµÄ¿ìÀÖÊ±¹â¡£\n");
+        return notify_fail("ä½ æ‰‹æ¡"+name()+"ï¼Œä¸ç¦æƒ³èµ·è‡ªå·±å½“å¹´åœ¨æ­¤ç§°çŽ‹çš„å¿«ä¹æ—¶å…‰ã€‚\n");
 
     if (me != query("owner"))
-        return notify_fail("ÄãÊ¹¾¡³ÔÄÌµÄÁ¦ÆøÒ²Ã»½«"+name()+"°Î³öÀ´¡£\n");
+        return notify_fail("ä½ ä½¿å°½åƒå¥¶çš„åŠ›æ°”ä¹Ÿæ²¡å°†"+name()+"æ‹”å‡ºæ¥ã€‚\n");
 
     if (me->query("kee") <= 200) {
         me->unconcious();
@@ -82,18 +82,18 @@ int do_ba(string arg)
     }
     me->receive_damage("kee", 200);
     if (random(10) < 5)
-        message_vision("$NÊ¹¾¡³ÔÄÌµÄÁ¦ÆøÒ²Ã»½«"+name()+"°Î³öÀ´¡£\n", me);
+        message_vision("$Nä½¿å°½åƒå¥¶çš„åŠ›æ°”ä¹Ÿæ²¡å°†"+name()+"æ‹”å‡ºæ¥ã€‚\n", me);
     else {
         env->set("long", @LONG
 
-Ò»×ù¿í´óµÄÊ¯·¿£¬·¿ÄÚÓÐÊ¯ÎÑ¡¢Ê¯Ôî¡¢Ê¯Íë¡¢Ê¯Åè¡¢Ê¯´²(bed)¡¢
-Ê¯µÊ£¬¸÷ÖÖ¼Òµ±ÑùÑù¾ãÈ«¡£ºÃÒ»×ùÌìÔìµØÉèµÄ°²ÉíÖ®Ëù¡£
+ä¸€åº§å®½å¤§çš„çŸ³æˆ¿ï¼Œæˆ¿å†…æœ‰çŸ³çªã€çŸ³ç¶ã€çŸ³ç¢—ã€çŸ³ç›†ã€çŸ³åºŠ(bed)ã€
+çŸ³å‡³ï¼Œå„ç§å®¶å½“æ ·æ ·ä¿±å…¨ã€‚å¥½ä¸€åº§å¤©é€ åœ°è®¾çš„å®‰èº«ä¹‹æ‰€ã€‚
 LONG);
         env->delete("item_desc/flag");
         this_object()->delete("env/invisibility");
         this_object()->delete("no_get");
         this_object()->move(me);
-        message_vision("$N´óºÈÒ»Éù£¬½«"+name()+"°ÎÁËÏÂÀ´¡£\n", me);
+        message_vision("$Nå¤§å–ä¸€å£°ï¼Œå°†"+name()+"æ‹”äº†ä¸‹æ¥ã€‚\n", me);
     }
     return 1;
 }
@@ -104,17 +104,17 @@ int do_wave(string arg)
     object hb;
 
     if (me != query("owner") || me != environment()) return 0;
-    if (!arg || !id(arg)) return notify_fail("ÄãÏë»ÓÎèÊ²Ã´£¿\n");
+    if (!arg || !id(arg)) return notify_fail("ä½ æƒ³æŒ¥èˆžä»€ä¹ˆï¼Ÿ\n");
 
     if (!(hb = me->query_temp("dntg_helper"))) {
         destruct_me(me, this_object());
         return 1;
     }
     if (!hb->check_huaguo_waveroom())
-        return notify_fail("¿´Ñù×Ó£¬Òª»ÓÎèÕâ"+name()+"»¹ÊÇÓ¦¸ÃÕÒÆ¬¿ªÀ«µØ¡£\n");
+        return notify_fail("çœ‹æ ·å­ï¼Œè¦æŒ¥èˆžè¿™"+name()+"è¿˜æ˜¯åº”è¯¥æ‰¾ç‰‡å¼€é˜”åœ°ã€‚\n");
     if (me->query("dntg/huaguo") == "done")
-        return notify_fail("Äã»ÓÆðÊÖÖÐµÄ"+name()+"£¬ÏëÆðÁËµ±ÄêÔÚ´Ë³ÆÍõµÄ¿ìÀÖÊ±¹â¡£\n");
-    message_vision("$N»ÓÎè×ÅÆðÆì×Ó£¬´óºÈÒ»Éù£º¡°´óÔì»¯£¡´óÔì»¯£¡ÏÂÃæÃ»Ë®£¡Ô­À´ÊÇÒ»×ùÌú°åÇÅ¡£ÇÅÄÇ±ßÊÇÒ»×ùÌìÔìµØÉèµÄ¼Òµ±¡£ÐÖµÜÃÇ¿ìÈ¥Ñ½£¡¡±\n", me);
+        return notify_fail("ä½ æŒ¥èµ·æ‰‹ä¸­çš„"+name()+"ï¼Œæƒ³èµ·äº†å½“å¹´åœ¨æ­¤ç§°çŽ‹çš„å¿«ä¹æ—¶å…‰ã€‚\n");
+    message_vision("$NæŒ¥èˆžç€èµ·æ——å­ï¼Œå¤§å–ä¸€å£°ï¼šâ€œå¤§é€ åŒ–ï¼å¤§é€ åŒ–ï¼ä¸‹é¢æ²¡æ°´ï¼åŽŸæ¥æ˜¯ä¸€åº§é“æ¿æ¡¥ã€‚æ¡¥é‚£è¾¹æ˜¯ä¸€åº§å¤©é€ åœ°è®¾çš„å®¶å½“ã€‚å…„å¼Ÿä»¬å¿«åŽ»å‘€ï¼â€\n", me);
     call_out("monkeys_jump", 2, environment(me));
     call_out("monkeys_follow", 1, me);
     load_object("/obj/empty");
@@ -132,7 +132,7 @@ void monkeys_jump(object where)
     if (who2) destruct(who2);
     if (who3) destruct(who3);
     if (who4) destruct(who4);
-    message("vision", "ºï×ÓÃÇÌý°ÕÕùÏÈ¿ÖºóµÄÌøÏÂÆÙ²¼¡£\n", where);
+    message("vision", "çŒ´å­ä»¬å¬ç½¢äº‰å…ˆæåŽçš„è·³ä¸‹ç€‘å¸ƒã€‚\n", where);
     set("monkeys_jumped", 1);
 }
 
@@ -153,7 +153,7 @@ void monkeys_follow(object me)
         return;
     }
     
-    message_vision("Ò»Èººï×Ó¸ú×Å$N±Ä±ÄÌøÌøµÄÅÜÁË¹ýÀ´¡£\n", me);
+    message_vision("ä¸€ç¾¤çŒ´å­è·Ÿç€$Nè¹¦è¹¦è·³è·³çš„è·‘äº†è¿‡æ¥ã€‚\n", me);
     while (!present("hou zi 4", where)) {
         houzi = new(__DIR__"hou");
         houzi->set("king", me);
@@ -169,7 +169,7 @@ void jing_appearing(object me)
     object jing;
     object where = environment(me);
     
-    message("vision", HIR "\nºÚ°µÖÐÍ»È»´Ü³öÒ»ÈºÀÇ³æ»¢±ª£¡£¡£¡\n\n" NOR, where);
+    message("vision", HIR "\né»‘æš—ä¸­çªç„¶çªœå‡ºä¸€ç¾¤ç‹¼è™«è™Žè±¹ï¼ï¼ï¼\n\n" NOR, where);
     while (!present("jing 3", where)) {
         jing = new(__DIR__"jing");
         jing->move(where);

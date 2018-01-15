@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 11/16/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÎİÄÚ");
+  set ("short", "å±‹å†…");
   set ("long", @LONG
 
-Ê¯ÎİÀïÇåÑÅÏĞ¾²£¬·ğ¹âÁıÕÖ£¬Æø·Õ¼«ÎªÏéºÍ°²Äş¡£Îİ×ÓÖĞÑëÓĞ
-Ò»·ğé½£¬×ó±ßÓĞÒ»×ÏÖñ¹©×À·Å×Å´ÉÅÌÓñÕµ£¬ÓÒ±ßÓĞÒ»ÇàÍ­¶¦£¬
-È¼×ÅçÔÈÆÏã»ğ¡£
+çŸ³å±‹é‡Œæ¸…é›…é—²é™ï¼Œä½›å…‰ç¬¼ç½©ï¼Œæ°”æ°›æä¸ºç¥¥å’Œå®‰å®ã€‚å±‹å­ä¸­å¤®æœ‰
+ä¸€ä½›æ¦»ï¼Œå·¦è¾¹æœ‰ä¸€ç´«ç«¹ä¾›æ¡Œæ”¾ç€ç“·ç›˜ç‰ç›ï¼Œå³è¾¹æœ‰ä¸€é’é“œé¼ï¼Œ
+ç‡ƒç€ç¼­ç»•é¦™ç«ã€‚
 
 LONG);
 
@@ -47,7 +47,7 @@ void daogu_appearing (object who, object where)
 
   daogu = new ("/d/qujing/pansi/npc/daogu");
   daogu->move(where);
-  message_vision ("$NÂıÂıµØÔÚÎİÀïÏÔĞÎ¡­¡­\n",daogu);
+  message_vision ("$Næ…¢æ…¢åœ°åœ¨å±‹é‡Œæ˜¾å½¢â€¦â€¦\n",daogu);
   remove_call_out("daogu_giving");
   call_out("daogu_giving",10,daogu,who,where);
 }
@@ -72,6 +72,6 @@ void daogu_giving (object daogu, object who, object where)
 
 void daogu_disappearing (object daogu)
 {
-  message_vision ("$NÂıÂıµØÔÚÎİÀïÑÌÒ»°ãÏûÊ§¡­¡­\n",daogu);
+  message_vision ("$Næ…¢æ…¢åœ°åœ¨å±‹é‡ŒçƒŸä¸€èˆ¬æ¶ˆå¤±â€¦â€¦\n",daogu);
   destruct(daogu);
 }

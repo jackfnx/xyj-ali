@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 6/8/97 pickle
@@ -9,18 +9,18 @@ inherit DAGGER;
 
 void create()
 {
-   set_name("Áî¼ı",({"ling jian", "ling", "jian", "lingjian"}));
+   set_name("ä»¤ç®­",({"ling jian", "ling", "jian", "lingjian"}));
    set_weight(100);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long","Ò»Ö¦¶Ì¶ÌµÄĞ¡¼ı£¬ÉÏĞ´Ò»¸ö¡¸Æë¡¹×Ö¡£\n");
-     set("unit","Ö¦");
-     set("name_recognized", "Æë¸®Áî¼ı");
+     set("long","ä¸€æçŸ­çŸ­çš„å°ç®­ï¼Œä¸Šå†™ä¸€ä¸ªã€Œé½ã€å­—ã€‚\n");
+     set("unit","æ");
+     set("name_recognized", "é½åºœä»¤ç®­");
      set("value", 0);
      set("material","bone");
-     set("wield_msg","$N°ÙÃ¦ÖĞÔÚ»³ÀïÒ»ÌÍ£¬ÌÍ³öÒ»Ö¦$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-     set("unwield_msg","$NĞ¡ĞÄÒíÒíµØ°Ñ$n·Å»Ø»³Àï£¬ĞÄµÀ£ºĞÒ¿÷Ã»¸øÅö»µÁË¡£\n");
+     set("wield_msg","$Nç™¾å¿™ä¸­åœ¨æ€€é‡Œä¸€æï¼Œæå‡ºä¸€æ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unwield_msg","$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠ$næ”¾å›æ€€é‡Œï¼Œå¿ƒé“ï¼šå¹¸äºæ²¡ç»™ç¢°åäº†ã€‚\n");
    }
    init_dagger(2);
    setup();

@@ -6,26 +6,26 @@ int cast(object me, object target)
     object hufa;
 
     if (!me->query("cast_xueshan_hufa"))
-        return notify_fail("Èê·Ç·ÉÄñ£¬ÈçºÎÄÜÕÐ°ÙÄñÏàÖú£¿£¡\n");
+        return notify_fail("æ±éžé£žé¸Ÿï¼Œå¦‚ä½•èƒ½æ‹›ç™¾é¸Ÿç›¸åŠ©ï¼Ÿï¼\n");
     if (!me->is_fighting())
-        return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜÕÙ»½»¤·¨¡£\n");
+        return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½å¬å”¤æŠ¤æ³•ã€‚\n");
     invocation_time = 60+(200-(int)me->query_skill("spells"));
     if (invocation_time < 30) invocation_time = 30;
     if ((time()-me->query("last_invocation")) < invocation_time)
-        return notify_fail("Äã¸Õ½Ð¹ý»¤·¨£¬ËûÃÇ¶¼±»Äã½Ð·³ÁË£¡\n");
+        return notify_fail("ä½ åˆšå«è¿‡æŠ¤æ³•ï¼Œä»–ä»¬éƒ½è¢«ä½ å«çƒ¦äº†ï¼\n");
     if ((int)me->query("mana") < 150)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if ((int)me->query("sen") < 80)
-        return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ£¡\n");
+        return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ï¼\n");
     if (me->query_skill("dengxian-dafa", 1) < 40)
-        return notify_fail("ÄãµÇÏÉ´ó·¨»¹°®´ÖÇ³£¬ÎÞ·¨ºô»½»¤·¨£¡\n");
-    message_vision("$N×ìÀïß´ß´ÔûÔûµØËµÁËÒ»Í¨ÄñÓï¡£\n");
+        return notify_fail("ä½ ç™»ä»™å¤§æ³•è¿˜çˆ±ç²—æµ…ï¼Œæ— æ³•å‘¼å”¤æŠ¤æ³•ï¼\n");
+    message_vision("$Nå˜´é‡Œå½å½å–³å–³åœ°è¯´äº†ä¸€é€šé¸Ÿè¯­ã€‚\n");
     
     me->add("mana", -150);
     me->receive_damage("sen", 80);
     
     if (random(me->query("max_mana")) < 250) {
-        message("vision", "µ«ÊÇÊ²Ã´Ò²Ã»ÓÐ·¢Éú¡£\n", environment(me));
+        message("vision", "ä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚\n", environment(me));
         return 1;
     }
     
@@ -34,7 +34,7 @@ int cast(object me, object target)
     hufa->move(environment(me));
     hufa->invocation(me);
     hufa->set_leader(me);
-    message_vision("$N¾ö¶¨¿ªÊ¼¸úËæ$nÒ»ÆðÐÐ¶¯¡£\n", hufa, me);
+    message_vision("$Nå†³å®šå¼€å§‹è·Ÿéš$nä¸€èµ·è¡ŒåŠ¨ã€‚\n", hufa, me);
     hufa->set_temp("invoker", me);
     me->set("last_invocation", time());
     me->start_busy(2 + random(2));

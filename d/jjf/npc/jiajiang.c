@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// jiading.c ¼Ò¶¡
+// jiading.c å®¶ä¸
 
 inherit NPC;
 
 void create()
 {
-  set_name("¼Ò½«", ({ "jia jiang", "jia", "jiang"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å®¶å°†", ({ "jia jiang", "jia", "jiang"}));
+  set("gender", "ç”·æ€§");
   set("age", 19+random(30));
   
   set("combat_exp", 200000+random(50000));

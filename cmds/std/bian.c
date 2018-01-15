@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // bian.c
@@ -17,15 +17,15 @@ int main(object me, string arg)
       seteuid(getuid());
 
       if( me->is_fighting() )
-        return notify_fail("������ս������Ͼ������\n");
+        return notify_fail("你正在战斗，无暇变身。\n");
       if( me->is_busy() || me->query_temp("pending/exercising"))
-   return notify_fail("����æ���أ�û���������\n");
+   return notify_fail("你正忙着呢，没工夫变身。\n");
  
       if (!arg || arg=="me" || arg==me->query("id")) 
    who=me;
       else {
    if(!objectp(who=present(arg,environment(me)))) 
-      return notify_fail("������˭��\n");
+      return notify_fail("你想变成谁？\n");
       }
 
       if(who==me) {
@@ -40,27 +40,27 @@ int main(object me, string arg)
         me->move(environment(environment(me)));
         //mon 9/25/97. to prevent being carried by another player
         //after bianed back.
-          message_vision(HIY "$N�����������һ�Σ�����������\n"
+          message_vision(HIY "$N口念咒语，身形一晃，现了真身。\n"
        NOR,me);
         } else {
-     return notify_fail("������˭��\n");
+     return notify_fail("你想变成谁？\n");
         }
       }
       else {
         spells=me->query_skill("spells");
    mana=me->query("mana");
    if (me->query("combat_exp") < 30000) 
-      return notify_fail("��ĵ��л�������\n");
+      return notify_fail("你的道行还不够。\n");
    if (spells<25)
-      return notify_fail("��ķ���������\n");
+      return notify_fail("你的法术不够。\n");
         if (mana<150)
-      return notify_fail("��ķ������㡣\n");
+      return notify_fail("你的法力不足。\n");
         if (wizardp(who) && !wizardp(me))
-      return notify_fail("��ķ��������Ա����ʦ��\n");
+      return notify_fail("你的法术不足以变成巫师。\n");
    
    dmana=15+400/(spells-20); 
    
-   message_vision(HIY "$N�����ھ�������ԣ�ҡ��һ�䣬��ú�$nһģһ����\n" NOR,me,who);
+   message_vision(HIY "$N手捻口诀，念动真言，摇身一变，变得和$n一模一样！\n" NOR,me,who);
         me->set_temp("spellslevel",spells);
    me->set_temp("apply/name",({who->name()}));
    me->set_temp("apply/id",who->parse_command_id_list());
@@ -113,7 +113,7 @@ int do_bian(object me)
                    me->move(environment(environment(me)));
       if (dmana>0) 
         message_vision(HIY
-        "ֻ��$N��ɫ�԰ף�һ�����֮�䣬�Ѿ�����ԭ�Ρ�\n" NOR,me);
+        "只见$N面色苍白，一个恍惚之间，已经现了原形。\n" NOR,me);
     }
 
     return 1;
@@ -123,12 +123,12 @@ int help(object me)
 {
    write(@HELP
 
-ָ���ʽ �� bian [<����>|<NPC>|<me>]
+指令格式 ： bian [<人物>|<NPC>|<me>]
 
-�����������ָ������仯�����������ģ�����Ƿ��ܱ䣬��Ҫȡ����
-��ķ����ͷ�����С��
+变身术，这个指令让你变化成其他人物的模样。是否能变，还要取决于
+你的法术和法力大小。
 
-�������ָ� observe��
+其他相关指令： observe。
 HELP
    );
    return 1;

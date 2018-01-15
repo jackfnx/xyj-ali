@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -13,12 +13,12 @@ int exert(object me, object target)
 
         if( target != me ) 
                 return
-notify_fail("ÄãÖ»ÄÜÓÃ¾²ÐÄ¾÷Ìá¸ß×Ô¼ºµÄ¾¯¾õ¡£\n");
+notify_fail("ä½ åªèƒ½ç”¨é™å¿ƒè¯€æé«˜è‡ªå·±çš„è­¦è§‰ã€‚\n");
 
         if( (int)me->query("force") < 200 )     
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("powerup") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("lengquan-force",1);
 
@@ -30,7 +30,7 @@ notify_fail("ÄãÖ»ÄÜÓÃ¾²ÐÄ¾÷Ìá¸ß×Ô¼ºµÄ¾¯¾õ¡£\n");
 
         message_vision(
                 HIR
-"$NÎ¢Ò»ÄýÉñ£¬ÔËÆð¾²ÐÄ¾÷£¬µÇÊ±ÐÄÆ½ÆøÎÈ£¬ÓÚÖÜÎ§Ò»ÇÐ¾¯¾õÓÐ¼Ó¡£\n"NOR, me);
+"$Nå¾®ä¸€å‡ç¥žï¼Œè¿èµ·é™å¿ƒè¯€ï¼Œç™»æ—¶å¿ƒå¹³æ°”ç¨³ï¼ŒäºŽå‘¨å›´ä¸€åˆ‡è­¦è§‰æœ‰åŠ ã€‚\n"NOR, me);
 
         me->add_temp("apply/dodge", skill/5);
         me->set_temp("powerup", 1);
@@ -48,6 +48,6 @@ void remove_effect(object me, int amount)
         me->add_temp("apply/dodge", -amount);
         me->delete_temp("powerup");
         tell_object(me,
-"ÄãµÄ¾²ÐÄ¾÷ÔËÐÐÒ»ÖÜÌìÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+"ä½ çš„é™å¿ƒè¯€è¿è¡Œä¸€å‘¨å¤©å®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ã€‚\n");
 }
 

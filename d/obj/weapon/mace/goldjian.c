@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // goldjian.c
@@ -12,17 +12,17 @@ inherit MACE;
 
 void create()
 {
-  set_name(HIY "½ğ×°ïµ" NOR, ({"gold mace", "mace", "goldmace", "jinjian"}));
+  set_name(HIY "é‡‘è£…é”" NOR, ({"gold mace", "mace", "goldmace", "jinjian"}));
   set_weight(10000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±ú");
+    set("unit", "æŸ„");
     set("value", 20000);
     set("material", "gold");
-    set("long", "ÇØ¼Ò×æ´«µÄ½ğ×°ïµ£¬ÔÚÉ³³¡ÉÏÎªÇØÇíÁ¢ÏÂÁËººÂí¹¦ÀÍ¡£\n");
-    set("wield_msg", "$N³é³öÁË$n£¬à«à«µÀ£ºïµ¶ù£¬ïµ¶ù£¬ÔÙÇëÄãÒ»»Ø£¡\n");
-    set("unwield_msg", "$NÊÕÆğÁË$n£¬³¤ÓõÁËÒ»¿ÚÆøµÀ£º±¦ïµ¹ûÈ»ÓÖÏÔĞÛ·ç£¡\n");
+    set("long", "ç§¦å®¶ç¥–ä¼ çš„é‡‘è£…é”ï¼Œåœ¨æ²™åœºä¸Šä¸ºç§¦ç¼ç«‹ä¸‹äº†æ±‰é©¬åŠŸåŠ³ã€‚\n");
+    set("wield_msg", "$NæŠ½å‡ºäº†$nï¼Œå–ƒå–ƒé“ï¼šé”å„¿ï¼Œé”å„¿ï¼Œå†è¯·ä½ ä¸€å›ï¼\n");
+    set("unwield_msg", "$Næ”¶èµ·äº†$nï¼Œé•¿åäº†ä¸€å£æ°”é“ï¼šå®é”æœç„¶åˆæ˜¾é›„é£ï¼\n");
   }
   
   init_mace(95);

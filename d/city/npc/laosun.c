@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 5/23/1997
@@ -8,11 +8,11 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("����", ({"lao sun", "sun"}));
-  set("title","Ƥ�����ϰ�");
-  set("gender", "����");
+  set_name("老孙", ({"lao sun", "sun"}));
+  set("title","皮货店老板");
+  set("gender", "男性");
   set("age", 58);
-  set("long","һλ�����ݺ��Ƶ���ͷ��\n");
+  set("long","一位长得瘦猴似的老头。\n");
   set("attitude", "peaceful");
   set("combat_exp", 15000);
   set_skill("dodge", 30);
@@ -60,7 +60,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\n��Ȼ������������Ѳ�߹ٱ�����$N��һ������ʲô����ɱ��ı��ô��\n\n",me);        
+        message_vision("\n忽然从门外冲进来个巡逻官兵，对$N大喊一声“干什么？想杀人谋财么！\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

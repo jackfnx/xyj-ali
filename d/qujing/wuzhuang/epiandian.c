@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "��ƫ��");
+   set ("short", "东偏殿");
    set ("long", @LONG
 
-��ƫ����Ҫ�Ǵ��ͷ��֮�á����ڰ��ż���̴ľ�Ρ�ľ��֮�Ϲ�
-�˼����ֻ�������һ�����飺�����������٣��ž�����������д
-��������ǳ������Ԭ���
+东偏殿主要是待客奉茶之用。殿内摆着几对檀木椅。木壁之上挂
+了几幅字画。中有一幅大书：“清虚人事少，寂静道心生”，写
+得是灵妙非常，落款袁天罡。
 LONG);
 
    set("exits", 
@@ -28,7 +28,7 @@ LONG);
      __DIR__"npc/mingyue" : 1,
    ]));
 
-create_door("east", "��ľ��", "west", DOOR_CLOSED);
+create_door("east", "雕花木门", "west", DOOR_CLOSED);
    //set("outdoors", "wuzhuang");
 
    setup();

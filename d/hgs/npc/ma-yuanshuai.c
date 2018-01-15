@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // ma-yuanshuai.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÂíÔªË§", ({"ma yuanshuai","ma","yuanshuai","hou","mahou"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("é©¬å…ƒå¸…", ({"ma yuanshuai","ma","yuanshuai","hou","mahou"}));
+        set("gender", "ç”·æ€§" );
         set("age", 50);
-        set("long", "Ò»Ö»ÉíÇ¿Ìå×³µÄ´óÂíºï¡£\n");
+        set("long", "ä¸€åªèº«å¼ºä½“å£®çš„å¤§é©¬çŒ´ã€‚\n");
         set("combat_exp", 90000);
         set("attitude", "peaceful");
         set("str",40);

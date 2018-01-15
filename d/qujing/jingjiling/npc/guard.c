@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("³àÉí¹íÊ¹", ({"guard"}));
-        set("long", "Ò»¸öÇàÃæâ²ÑÀµÄºìĞë³àÉí¹íÊ¹¡£\n");
+        set_name("èµ¤èº«é¬¼ä½¿", ({"guard"}));
+        set("long", "ä¸€ä¸ªé’é¢ç ç‰™çš„çº¢é¡»èµ¤èº«é¬¼ä½¿ã€‚\n");
         set("age", 30);
    set("attitude", "heroism");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("str", 25);
         set("int", 20);
         set("per", 10);

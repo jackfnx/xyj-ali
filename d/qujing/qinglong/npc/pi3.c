@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/20/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("�ٳ�����", ({ "pichen dawang", "dawang" }));
-  set("title", "��Ӣ��");   
-  set("long", "һλ���֣������ϳ���һ���ǡ�");
-  set("gender", "����");
+  set_name("辟尘大王", ({ "pichen dawang", "dawang" }));
+  set("title", "玄英洞");   
+  set("long", "一位妖怪，鼻子上长着一根角。");
+  set("gender", "男性");
   set("age", 50);
   set("attitude", "heroism");
   set("per", 29);
@@ -56,8 +56,8 @@ void die ()
     ob->set_temp("obstacle/jinping_pi3_killed",1);
     call_out ("fuling_appearing",1,ob);
   }
-  message_vision ("\n$N�˵��ڵأ���ԭΪһͷϬţ��\n",me);
-  message_vision ("\n�����ľ����һ����Ϭţ��һ����׽��ȥ��\n",me);
+  message_vision ("\n$N扑倒在地，还原为一头犀牛。\n",me);
+  message_vision ("\n天空四木禽星一闪，犀牛被一道光捉了去！\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

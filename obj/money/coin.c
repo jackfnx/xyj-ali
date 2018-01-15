@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // coin.c
@@ -7,15 +7,15 @@ inherit MONEY;
 
 void create()
 {
-   set_name("Ç®", ({"coin", "coins", "coin_money" }));
+   set_name("é’±", ({"coin", "coins", "coin_money" }));
    if( clonep() )
      set_default_object(__FILE__);
    else {
      set("money_id", "coin");
-     set("long", "ÕâÊÇÁ÷Í¨ÖĞµ¥Î»×îĞ¡µÄ»õ±Ò£¬Ô¼ÒªÒ»°ÙÎÄÇ®²ÅÖµµÃÒ»Á½Òø×Ó¡£\n");
-     set("unit", "Ğ©");
+     set("long", "è¿™æ˜¯æµé€šä¸­å•ä½æœ€å°çš„è´§å¸ï¼Œçº¦è¦ä¸€ç™¾æ–‡é’±æ‰å€¼å¾—ä¸€ä¸¤é“¶å­ã€‚\n");
+     set("unit", "äº›");
      set("base_value", 1);
-     set("base_unit", "ÎÄ");
+     set("base_unit", "æ–‡");
      set("base_weight", 1);
    }
    set_amount(1);

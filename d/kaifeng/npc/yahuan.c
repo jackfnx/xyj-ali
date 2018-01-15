@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // yahuan1.c
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ñ¾»·", ({"ya huan"}));
-  set("long","Ò»¸öÃÀÀöµÄÑ¾»·¡£\n");
-  set("gender", "Å®ĞÔ");
+  set_name("ä¸«ç¯", ({"ya huan"}));
+  set("long","ä¸€ä¸ªç¾ä¸½çš„ä¸«ç¯ã€‚\n");
+  set("gender", "å¥³æ€§");
   set("age", 14);
   set("attitude", "friendly");
   set("shen_type", 1);

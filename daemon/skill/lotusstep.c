@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // lotusstep.c
@@ -6,15 +6,15 @@
 
 inherit SKILL;
 
-string name() { return "Á«»ª²½·¨"; }
+string name() { return "èŽ²åŽæ­¥æ³•"; }
 
 string *dodge_msg = ({
-   "$nÇáÇáÒ»×Ý£¬Ê¹¸ö¡¸³öÓÙÄà¶ø²»È¾¡¹£¬ºÁ²»·ÑÁ¦µØ¶ã¿ªÁË$NÕâÒ»ÕÐ¡£\n",
-   "$n¼¸¸ö´í²½£¬Ê¹³ö¡¸Ó³ÈÕºÉ»¨¡¹£¬$NÖ»¾õµÃÑÛÒ»»¨£¬¶ÙÊ§$nµÄ×ÙÓ°¡£\n",
-   "$nÒ»ÕÐ¡¸ÖØÖØµþµþ¡¹£¬$NÑÛÇ°³öÏÖÁËÎÞÊý¸ö$n£¬$NÏÔÈ»ÓÐµãÓÐÁ¦ÎÞ´¦Ê¹¡£\n",
-   "$nË«×ãÒ»¶Ù£¬Ò»ÕÐ¡¸Í¤Í¤ÓñÁ¢¡¹ÉíÌåÏòÉÏ±ÊÖ±µØ°ÎÆð£¬±ÜÁË¿ªÈ¥¡£\n",
-   "µ«ÊÇ$nÊ¹Ò»ÕÐ¡¸ÓêÂ¶¹öÁ«¡¹£¬Éí×ÓÏòºóÆ®¿ªÕÉÓà£¬ÇáÇá×ÅµØ¡£\n",
-   "Ö»¼û$nÒ»Ê½¡¸ÎÞ¾¡±ÌÁ«¡¹°ÎµØ¶øÆð£¬ÔÚ°ë¿ÕÖÐ×ªÁËÊý×ª£¬$NµÄ¹¥ÊÆ¾¡¸æÂä¿Õ¡£\n",
+   "$nè½»è½»ä¸€çºµï¼Œä½¿ä¸ªã€Œå‡ºæ·¤æ³¥è€Œä¸æŸ“ã€ï¼Œæ¯«ä¸è´¹åŠ›åœ°èº²å¼€äº†$Nè¿™ä¸€æ‹›ã€‚\n",
+   "$nå‡ ä¸ªé”™æ­¥ï¼Œä½¿å‡ºã€Œæ˜ æ—¥è·èŠ±ã€ï¼Œ$Nåªè§‰å¾—çœ¼ä¸€èŠ±ï¼Œé¡¿å¤±$nçš„è¸ªå½±ã€‚\n",
+   "$nä¸€æ‹›ã€Œé‡é‡å å ã€ï¼Œ$Nçœ¼å‰å‡ºçŽ°äº†æ— æ•°ä¸ª$nï¼Œ$Næ˜¾ç„¶æœ‰ç‚¹æœ‰åŠ›æ— å¤„ä½¿ã€‚\n",
+   "$nåŒè¶³ä¸€é¡¿ï¼Œä¸€æ‹›ã€Œäº­äº­çŽ‰ç«‹ã€èº«ä½“å‘ä¸Šç¬”ç›´åœ°æ‹”èµ·ï¼Œé¿äº†å¼€åŽ»ã€‚\n",
+   "ä½†æ˜¯$nä½¿ä¸€æ‹›ã€Œé›¨éœ²æ»šèŽ²ã€ï¼Œèº«å­å‘åŽé£˜å¼€ä¸ˆä½™ï¼Œè½»è½»ç€åœ°ã€‚\n",
+   "åªè§$nä¸€å¼ã€Œæ— å°½ç¢§èŽ²ã€æ‹”åœ°è€Œèµ·ï¼Œåœ¨åŠç©ºä¸­è½¬äº†æ•°è½¬ï¼Œ$Nçš„æ”»åŠ¿å°½å‘Šè½ç©ºã€‚\n",
 });
 
 int valid_enable(string usage)
@@ -25,7 +25,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
     if ((int)me->query("max_force") < 0)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜ¹»Ñ§Ï°Á«»ª²½·¨¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½å¤Ÿå­¦ä¹ èŽ²åŽæ­¥æ³•ã€‚\n");
 
     return 1;
 }
@@ -39,7 +39,7 @@ int practice_skill(object me)
 {
     if ((int)me->query("kee") < 30
         || (int)me->query("force") < 3)
-        return notify_fail("ÄãµÄÆø»òÄÚÁ¦²»¹»£¬²»ÄÜÁ·Á«»ª²½·¨¡£\n");
+        return notify_fail("ä½ çš„æ°”æˆ–å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ç»ƒèŽ²åŽæ­¥æ³•ã€‚\n");
     me->receive_damage("kee", 30);
     me->add("force", -3);
     return 1;

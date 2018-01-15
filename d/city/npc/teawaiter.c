@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,8 +6,8 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("²è²©Ê¿", ({"cha boshi","waiter"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("èŒ¶åšå£«", ({"cha boshi","waiter"}));
+       set("gender", "ç”·æ€§");
        set("class", "scholar");
         set("combat_exp", 1000);
        set("age", 26);

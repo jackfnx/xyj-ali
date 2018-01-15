@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // xiaolu.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "С·");
+  set ("short", "小路");
   set ("long", @LONG
 
-�߼Һ�ǽ���һ��С·�������Ӽ����������������ǰ��˶�ߵ���
-�ݣ�ÿ��һ�����ᾪ������С���ӣ���ЩС���ƻ��ĵ�������ϣ�����
+高家后墙外的一条小路，看样子极少有人来．到处是半人多高的杂
+草，每走一步都会惊起许多小虫子，有些小蚂蚱还蹦到你的身上．．．
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"xiaolin",
@@ -30,11 +30,11 @@ int do_climb(string arg)
         me=this_player();
 
         if ( !arg || ((arg != "wall") ))
-                return notify_fail("��Ҫ��ʲô��\n");
+                return notify_fail("你要爬什么？\n");
         else
-                message_vision("$Nһ��ǽͷ�����˹�ȥ��\n", me);
+                message_vision("$N一扒墙头，翻了过去。\n", me);
                 me->move("/d/gao/huayuan");
-                tell_room( environment(me), "�����ˡ�һ����" + me->name() + "��ǽͷ������������\n", ({me}) );
+                tell_room( environment(me), "「咕咚」一声，" + me->name() + "从墙头上跳了下来！\n", ({me}) );
                 return 1;
 }
 

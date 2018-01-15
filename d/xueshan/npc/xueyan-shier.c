@@ -4,15 +4,15 @@
 inherit NPC;
 void create()
 {
-    set_name("Ñ©ÑãÊÌ¶ù", ({"xueyan shier", "shier", "xueyan"}));
-    set("gender", "Å®ÐÔ");
-    set("title", "Ñ¾÷ß");
+    set_name("é›ªé›ä¾å„¿", ({"xueyan shier", "shier", "xueyan"}));
+    set("gender", "å¥³æ€§");
+    set("title", "ä¸«é¬Ÿ");
     set("age", 16);
-    set("long", "¿×È¸¹«Ö÷µÄÌùÉíÑ¾÷ß£¬Óë¿×È¸¹«Ö÷¹ØÏµÇ×ÃÜ£¬Ñ©É½ÉÏÏÂ¶¼ÒªÈÃËýÈý·Ö¡£\n");
+    set("long", "å­”é›€å…¬ä¸»çš„è´´èº«ä¸«é¬Ÿï¼Œä¸Žå­”é›€å…¬ä¸»å…³ç³»äº²å¯†ï¼Œé›ªå±±ä¸Šä¸‹éƒ½è¦è®©å¥¹ä¸‰åˆ†ã€‚\n");
     set("class", "yaomo");
     set("combat_exp", 25000);
     set("attitude", "peaceful");
-    create_family("´óÑ©É½", 4, "µÜ×Ó");
+    create_family("å¤§é›ªå±±", 4, "å¼Ÿå­");
     set_skill("unarmed", 30);
     set_skill("dodge", 30);
     set_skill("parry", 30);
@@ -47,9 +47,9 @@ void init()
 
     ::init();
 
-    if ((string)ob->query("gender")=="ÄÐÐÔ"
+    if ((string)ob->query("gender")=="ç”·æ€§"
     &&  (int)me->visible(ob)
-    &&  (string)environment(me)->query("short")=="Å®µÜ×ÓÎÔ·¿") {
+    &&  (string)environment(me)->query("short")=="å¥³å¼Ÿå­å§æˆ¿") {
         remove_call_out("greeting");
         call_out("greeting", 1, ob);
     }
@@ -60,7 +60,7 @@ void greeting(object ob)
 
     switch (random(1)) {
         case 0:
-            command("chat* Ö»ÌýÑ©Ñã¸ßÉù½ÐµÀ£º" + ob->query("name") + "£¬ÄãÕâ¸ö³ôÁ÷Ã¥£¡¾ÓÈ»´³µ½Å®µÜ×ÓÎÔ·¿À´ÁË£¡\n");
+            command("chat* åªå¬é›ªé›é«˜å£°å«é“ï¼š" + ob->query("name") + "ï¼Œä½ è¿™ä¸ªè‡­æµæ°“ï¼å±…ç„¶é—¯åˆ°å¥³å¼Ÿå­å§æˆ¿æ¥äº†ï¼\n");
             command("kick " + ob->query("id"));
             break;
     }

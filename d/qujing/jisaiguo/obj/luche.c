@@ -1,17 +1,17 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
 
 void create()
 {
-        set_name("Ğ¡Â¿³µ", ({ "che" }));
+        set_name("å°é©´è½¦", ({ "che" }));
    set_weight(500000);
         set_max_encumbrance(1000000);
-   set("unit", "Á¾");
+   set("unit", "è¾†");
    set("value", 1);
         set("no_get", 1);
-        set("long", "ÔË»õµÄĞ¡Â¿³µ£¬µÈ×Å×°»õ(load)¡£\n");
+        set("long", "è¿è´§çš„å°é©´è½¦ï¼Œç­‰ç€è£…è´§(load)ã€‚\n");
 }
 
 void init()
@@ -29,17 +29,17 @@ int do_load(string arg)
 
    if( (arg!="box") && (arg!="big box"))
      return
-notify_fail("³µ°ÑÊ½¶ÔÄãËµ£ºÎÒÖ»×°»õĞĞÀïµÄ»õ¹ñ£¡\n");
+notify_fail("è½¦æŠŠå¼å¯¹ä½ è¯´ï¼šæˆ‘åªè£…è´§è¡Œé‡Œçš„è´§æŸœï¼\n");
 
         ob = present(arg, this_player());
-        if( !ob ) return notify_fail("ÄãÒª×°Ê²Ã´ÉÏĞ¡Â¿³µ£¿\n");
+        if( !ob ) return notify_fail("ä½ è¦è£…ä»€ä¹ˆä¸Šå°é©´è½¦ï¼Ÿ\n");
 
-        message_vision("$N½«$n×°ÉÏÁËĞ¡Â¿³µ¡£\n", this_player(), ob);
+        message_vision("$Nå°†$nè£…ä¸Šäº†å°é©´è½¦ã€‚\n", this_player(), ob);
         ob->move(this_object());
         this_player()->add_temp("wage_deserved", 1);
 
         if( sizeof(all_inventory()) >= 10 ) {
-                write("³µ°ÑÊ½Ğ¡±Ş×ÓÒ»Ñï£¬¸Ò×ÅĞ¡Â¿³µ×ßÁË¡£\n");
+                write("è½¦æŠŠå¼å°é­å­ä¸€æ‰¬ï¼Œæ•¢ç€å°é©´è½¦èµ°äº†ã€‚\n");
 
                 destruct(this_object());
         }
@@ -49,13 +49,13 @@ notify_fail("³µ°ÑÊ½¶ÔÄãËµ£ºÎÒÖ»×°»õĞĞÀïµÄ»õ¹ñ£¡\n");
 int put(string arg)
 {           
    if( sscanf(arg, "%s into che"))
-     return notify_fail("Ê²Ã´£¿\n");
+     return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
    return 1;
 }
 
 int get(string arg)
 {   if( sscanf(arg, "%s from che"))
-       return notify_fail("Ê²Ã´£¿\n");
+       return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
    return 1;
 }
 

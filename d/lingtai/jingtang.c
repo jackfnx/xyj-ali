@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "½²¾­ÌÃ");
+  set ("short", "è®²ç»å ‚");
   set ("long", @LONG
 
-ÕâÀïÊÇÈıĞÇ¶´µÄ½²¾­ÌÃ£¬Æ½Ê±µÀÊ¿ÃÇ±ãÔÚÕâÀï½²¾­Ëµ·¨¡£ÈôÊÇ
-ÓĞÊ²Ã´´óÊÂ£¬Ò²ÔÚÕâÀï¼¯»áÉÌÒé¡£×óÓÒÕûÕûÆëÆëµØ·Å×ÅËÄÎåÊ®
-¸öÈíµæ£¬Ò²×øÁËÒ»¶şÊ®¸öµÀÊ¿¡£
+è¿™é‡Œæ˜¯ä¸‰æ˜Ÿæ´çš„è®²ç»å ‚ï¼Œå¹³æ—¶é“å£«ä»¬ä¾¿åœ¨è¿™é‡Œè®²ç»è¯´æ³•ã€‚è‹¥æ˜¯
+æœ‰ä»€ä¹ˆå¤§äº‹ï¼Œä¹Ÿåœ¨è¿™é‡Œé›†ä¼šå•†è®®ã€‚å·¦å³æ•´æ•´é½é½åœ°æ”¾ç€å››äº”å
+ä¸ªè½¯å«ï¼Œä¹Ÿåäº†ä¸€äºŒåä¸ªé“å£«ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -26,17 +26,17 @@ int valid_leave(object me, string dir)
 {
         if (dir == "north" ) {
         if (objectp(present("master yunyang", environment(me)))) {
-   if((string)me->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+   if((string)me->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
      if((int)me->query("family/generation") < 2) {
         me->set("family/generation", 2);
-        me->set("title", "·½´çÉ½ÈıĞÇ¶´µÚ¶ş´úµÜ×Ó");
+        me->set("title", "æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´ç¬¬äºŒä»£å¼Ÿå­");
      }
    if((string)me->query("family/master_id")=="master puti") {
      me->set("pending/kick_out",1);
    }
    return ::valid_leave(me, dir);
    }
-        return notify_fail("ÔÆÑôÕæÈËËµµÀ£º×æÊ¦ÇåĞŞ£¬ÉÙ¼ûÍâÈË£¬Äú»¹ÊÇÇë»Ø°É£¡\n");
+        return notify_fail("äº‘é˜³çœŸäººè¯´é“ï¼šç¥–å¸ˆæ¸…ä¿®ï¼Œå°‘è§å¤–äººï¼Œæ‚¨è¿˜æ˜¯è¯·å›å§ï¼\n");
    }
    }
         return ::valid_leave(me, dir);

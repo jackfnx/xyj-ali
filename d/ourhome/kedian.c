@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/ourhome/kedian.c
@@ -8,12 +8,12 @@ inherit ROOM;
 void reset();
 void create()
 {
-   set("short", "�Ľ�С��");
+   set("short", "荒郊小店");
    set("long", @LONG
 
-����һ�Ҳ�֪���ĻĽ�С�꣬�ı������ưܣ���֪��Ϊʲô����
-��Ȼ�ǳ���¡��һ��ƿ��ڴ��ĵ��컨��׹����С������������
-��æ������ת���Ӵ�����ǻ�����Ŀ��ˡ�    
+这是一家不知名的荒郊小店，四壁早已破败，不知道为什么生意
+仍然非常兴隆。一帮酒客在此聊得天花乱坠。店小二更是里里外
+外忙得团团转，接待着南腔北调的客人。    
 LONG
    );
    set("objects", ([ /* sizeof() == 1 */

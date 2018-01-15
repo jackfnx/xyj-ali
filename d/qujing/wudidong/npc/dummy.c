@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // dummy.c
@@ -14,8 +14,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("²âÊÔ´óÃ×", ({"crash test dummy", "dummy"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("æµ‹è¯•å¤§ç±³", ({"crash test dummy", "dummy"}));
+  set("gender", "ç”·æ€§");
   set("age", 20+random(15));
   set("str", 5);
   set("attitude", "peaceful");

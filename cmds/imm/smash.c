@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // smash.c 2-22-95
@@ -13,21 +13,21 @@ int main(object me, string arg)
    object ob;
    string name1, name2;
 
-   if (!arg) return notify_fail("Ö¸Áî¸ñÊ½: smash <living>\n");
+   if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼: smash <living>\n");
    ob = present(arg, environment(me));
-   if (!ob) return notify_fail("ÕÒ²»µ½Õâ¸öÉúÎï.\n");
+   if (!ob) return notify_fail("æ‰¾ä¸åˆ°è¿™ä¸ªç”Ÿç‰©.\n");
     if( wiz_level(me) < wiz_level(ob) )  {
        ob = me;
     }    
    name1 = (string)me->query("name");
    name2 = (string)ob->query("name");
    tell_room(environment(me),
-   name1+"¸ß¾ÙË«ÊÖ´óºÈ È¥ËÀ°É! Ö»¼ûÌìÉÏÒ»µÀÉÁµç²»Æ«²»ÒĞµØ»÷ÖĞ"+name2+", ½«Ö®»¯ÎªÒ»¶Ñ»Ò½ı.\n", 
+   name1+"é«˜ä¸¾åŒæ‰‹å¤§å– å»æ­»å§! åªè§å¤©ä¸Šä¸€é“é—ªç”µä¸åä¸å€šåœ°å‡»ä¸­"+name2+", å°†ä¹‹åŒ–ä¸ºä¸€å †ç°çƒ¬.\n", 
    ({me, ob}));
-   tell_object(ob, name1+"¸ß¾ÙË«ÊÖ´óºÈ È¥ËÀ°É! Ö»¼ûÌìÉÏÒ»µÀÉÁµç²»Æ«²»ÒĞµØ»÷ÖĞÄã.\n");
+   tell_object(ob, name1+"é«˜ä¸¾åŒæ‰‹å¤§å– å»æ­»å§! åªè§å¤©ä¸Šä¸€é“é—ªç”µä¸åä¸å€šåœ°å‡»ä¸­ä½ .\n");
    
-   write("Äã¸ß¾ÙË«ÊÖ´óºÈ È¥ËÀ°É! ´ÓÌìÉÏ½µÏÂÒ»µÀÉÁµç½«"+name2+"»¯×÷Ò»¶Ñ»Ò½ı.\n");
-   //write("¹ş¹ş¹ş¹ş¹ş¹ş... ºÃË¬!\n");
+   write("ä½ é«˜ä¸¾åŒæ‰‹å¤§å– å»æ­»å§! ä»å¤©ä¸Šé™ä¸‹ä¸€é“é—ªç”µå°†"+name2+"åŒ–ä½œä¸€å †ç°çƒ¬.\n");
+   //write("å“ˆå“ˆå“ˆå“ˆå“ˆå“ˆ... å¥½çˆ½!\n");
    ob->set("env/immortal", 0);
    ob -> die();
    return 1;
@@ -36,7 +36,7 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½: smash <ÉúÎï>
+æŒ‡ä»¤æ ¼å¼: smash <ç”Ÿç‰©>
  
 hehehehehe...........
 

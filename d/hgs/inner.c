@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ºÚ°µÖĞ");
+    set("short", "é»‘æš—ä¸­");
     set("long", @LONG
 
-ÕâÀïÊÇÉ½¸¹ÖĞµÄÒ»´¦ÃÜ¶´£¬¶´ÄÚÒ»Æ¬ºÚ°µ£¬Ê¯·ì(gap)ÄÚÒÀÏ¡¿ÉÒÔ¿´¼û
-Ê²Ã´¶«Î÷ºÚºõºõµÄ¡£
+è¿™é‡Œæ˜¯å±±è…¹ä¸­çš„ä¸€å¤„å¯†æ´ï¼Œæ´å†…ä¸€ç‰‡é»‘æš—ï¼ŒçŸ³ç¼(gap)å†…ä¾ç¨€å¯ä»¥çœ‹è§
+ä»€ä¹ˆä¸œè¥¿é»‘ä¹ä¹çš„ã€‚
 LONG
     );
     set("item_desc", ([
-        "gap" : "Ê¯·ìËÆºõ¿ÉÒÔÀ©´ó(expand)£¬ÄÇÑù»òĞíÄÜÈ¡³öÄÇ¼ş¶«Î÷¡£\n",
+        "gap" : "çŸ³ç¼ä¼¼ä¹å¯ä»¥æ‰©å¤§(expand)ï¼Œé‚£æ ·æˆ–è®¸èƒ½å–å‡ºé‚£ä»¶ä¸œè¥¿ã€‚\n",
     ]));
     set("exits", ([]));
 
@@ -29,29 +29,29 @@ int do_expand(string arg)
     object me = this_player();
     object ob; 
 
-    if (!arg || (arg != "gap" && arg != "Ê¯·ì"))
-        return notify_fail("ÄãÒª°Ç¿ªÊ²Ã´£¿\n");
+    if (!arg || (arg != "gap" && arg != "çŸ³ç¼"))
+        return notify_fail("ä½ è¦æ‰’å¼€ä»€ä¹ˆï¼Ÿ\n");
     if (!(ob = me->query_temp("weapon")))
-        return notify_fail("Ã»ÓĞ¹¤¾ßÔõÃ´¸É»î£¿\n");
+        return notify_fail("æ²¡æœ‰å·¥å…·æ€ä¹ˆå¹²æ´»ï¼Ÿ\n");
     if (me->query_str() < 50)
-        return notify_fail("ÄãµÄÁ¦Á¿²»¹»´ó£¡\n");
+        return notify_fail("ä½ çš„åŠ›é‡ä¸å¤Ÿå¤§ï¼\n");
 
     if (me->query("kee") < 200) {
-        message_vision(HIR "\nÖ»ÌıµÃºäµÄÒ»Éù£¬Ò»´ó¿éÊ¯±ÚËúÁËÏÂÀ´£¬½«$NÔÒÔÎÁË¹ıÈ¥¡£\n\n" NOR, me);
+        message_vision(HIR "\nåªå¬å¾—è½°çš„ä¸€å£°ï¼Œä¸€å¤§å—çŸ³å£å¡Œäº†ä¸‹æ¥ï¼Œå°†$Nç ¸æ™•äº†è¿‡å»ã€‚\n\n" NOR, me);
         me->unconcious();
     } else {
         me->receive_damage("kee", 200);
-        message("vission", HIR "\nÖ»ÌıµÃºäµÄÒ»Éù£¬Ò»´ó¿éÊ¯±ÚËúÁËÏÂÀ´¡£\n\n" NOR, environment(me));
+        message("vission", HIR "\nåªå¬å¾—è½°çš„ä¸€å£°ï¼Œä¸€å¤§å—çŸ³å£å¡Œäº†ä¸‹æ¥ã€‚\n\n" NOR, environment(me));
     }
 
     if ("/d/dntg/helper"->in_mud()) {
-        message("vission", HIR "Äã¿´¼ûÊ¯¿éÖ®ÖĞ¿Õ¿ÕÈçÒ²¡£\n" NOR, me);
+        message("vission", HIR "ä½ çœ‹è§çŸ³å—ä¹‹ä¸­ç©ºç©ºå¦‚ä¹Ÿã€‚\n" NOR, me);
         return 1;
     }
 
     ob = new("/d/dntg/helper");
     ob->move(environment(me));
-    message("vission", HIR "Äã¿´¼ûÊ¯¿éÖ®ÖĞÂ¶³öÒ»°Ñ½ğ¹¿°ô¡£\n" NOR, me);
+    message("vission", HIR "ä½ çœ‹è§çŸ³å—ä¹‹ä¸­éœ²å‡ºä¸€æŠŠé‡‘ç®æ£’ã€‚\n" NOR, me);
     return 1;
 }
 
@@ -63,11 +63,11 @@ void open_door()
         if (!(room = find_object(__DIR__"entrance")))
             room = load_object(__DIR__"entrance");
         if (room = find_object(__DIR__"entrance")) {
-            message("vision", "ÏÉÊ¯ºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÉÏµÄ½×Ìİ¡£\n",
+            message("vision", "ä»™çŸ³å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸Šçš„é˜¶æ¢¯ã€‚\n",
                 this_object());
             set("exits/up", __DIR__"entrance");
             room->set("exits/down", __FILE__);
-            message("vision", "ÏÉÊ¯ºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÏÂµÄ½×Ìİ¡£\n",
+            message("vision", "ä»™çŸ³å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸‹çš„é˜¶æ¢¯ã€‚\n",
                 room);
 
             call_out((: call_other,  __DIR__"entrance", "close_passage" :), 10);

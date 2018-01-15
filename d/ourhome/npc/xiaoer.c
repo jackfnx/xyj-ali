@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // waiter.c
@@ -8,14 +8,14 @@ inherit F_VENDOR;
 
 void create()
 {
-   set_name("��С��", ({ "xiao er" , "xiao" , "waiter" }) );
-   set("gender", "����" );
+   set_name("店小二", ({ "xiao er" , "xiao" , "waiter" }) );
+   set("gender", "男性" );
    set("age", 22);
    set("long",
-     "��λ��С����Ц�����æ�ţ�����ʱ������ڲ����ϵ�Ĩ�������֡� \n");
+     "这位店小二正笑咪咪地忙着，还不时拿起挂在脖子上的抹布擦擦手。 \n");
    set("combat_exp", 5);
    set("attitude", "friendly");
-   set("rank_info/respect", "С����");
+   set("rank_info/respect", "小二哥");
    set("vendor_goods", ([
      "jiudai": "/d/ourhome/obj/hdjiudai",
      "gourou": "/d/ourhome/obj/gourou",
@@ -46,16 +46,16 @@ void greeting(object ob)
      }   
    switch( random(3) ) {
      case 0:
-        say( "��С��Ц�����˵������λ" + RANK_D->query_respect(ob)
-          + "�������ȱ��裬ЪЪ�Ȱɡ�\n");
+        say( "店小二笑咪咪地说道：这位" + RANK_D->query_respect(ob)
+          + "，进来喝杯茶，歇歇腿吧。\n");
         break;
      case 1:
-        say( "��С���ò����ϵ�ë��Ĩ��Ĩ�֣�˵������λ" + RANK_D->query_respect(ob)
-          + "����������\n");
+        say( "店小二用脖子上的毛巾抹了抹手，说道：这位" + RANK_D->query_respect(ob)
+          + "，请进请进。\n");
         break;
      case 2:
-        say( "��С��˵������λ" + RANK_D->query_respect(ob)
-          + "�������ȼ���С��Ļ���ɣ��⼸��Ŵӽ����￪���Ӵ��\n");
+        say( "店小二说道：这位" + RANK_D->query_respect(ob)
+          + "，进来喝几盅小店的花雕吧，这几天才从窖子里开封的哟。\n");
         break;
    }
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // horse.c
@@ -7,13 +7,13 @@ inherit NPC;
 
 void create()
 {
-  set_name("ÔæºìÂí", ({"zaohong ma", "ma", "horse"}));
-  set("race", "Ò°ÊŞ");
+  set_name("æ£çº¢é©¬", ({"zaohong ma", "ma", "horse"}));
+  set("race", "é‡å…½");
   set("age", 10);
   set("combat_exp", 10000);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
-  set("ride/msg", "Æï");
+  set("ride/msg", "éª‘");
   set("ride/dodge", 20);
 
   setup();

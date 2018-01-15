@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // guanjia.c
@@ -8,18 +8,18 @@ inherit NPC;
 string expell_me(object me);
 void create()
 {
-  set_name("����", ({"tian shu", "tian", "shu", "tianshu", "monster"}));
-  set("gender", "Ů��");
+  set_name("田鼠精", ({"tian shu", "tian", "shu", "tianshu", "monster"}));
+  set("gender", "女性");
   set("age", 23);
   set("long",
-"�������޵׶��Ĵ�ܼҡ��뵱����������һ�����ɳ������Σ�\n"
-"��������̫��������վ����������չ��ŵ���Ľ��飬����\n"
-"�����������ⶴ�Ĺܼҡ�\n");
-  set("title", "��ܼ�");
+"她就是无底洞的大管家。想当年她和玉鼠一齐修仙成了人形，\n"
+"但因资质太差，成正果终究是无望。照顾着当年的交情，玉鼠\n"
+"安排她做了这洞的管家。\n");
+  set("title", "大管家");
   set("cor", 25);
   set("combat_exp", 200000);
   set("attitude", "heroic");
-  create_family("�ݿ�ɽ�޵׶�", 2, "����");
+  create_family("陷空山无底洞", 2, "弟子");
   set_skill("unarmed", 55);
   set_skill("parry", 55);
   set_skill("spells", 55);  
@@ -49,12 +49,12 @@ void create()
   set("max_mana", 500);
   set("mana_factor", 25);
   set("inquiry", ([
-                   "����": (: expell_me :),
+                   "叛门": (: expell_me :),
                    "leave": (: expell_me :),
-        "name": "������������޵׶��Ĵ��ܹܣ�",
-        "here": "��Ϲ��������������Ƕ����������ݿ�ɽ�޵׶���",
-        "rumors": "��֪�����ұ�����ȥ��",
-        "�������": "��Ϲ���������������ֲ��ǳ��ӣ�",
+        "name": "本姑娘就是这无底洞的大总管！",
+        "here": "你瞎了眼啦？这里就是鼎鼎大名的陷空山无底洞！",
+        "rumors": "不知道！找别人问去。",
+        "人肉包子": "你瞎了眼啦？本姑娘又不是厨子！",
                  ]) );  
   setup();
   carry_object("/d/obj/weapon/blade/blade.c")->wield();
@@ -69,16 +69,16 @@ int attempt_apprentice(object me)
   command("consider");
   if (me->query("combat_exp")>200000)
   {
-    command("say "+myname+"����ʲô�������������λ�ӣ�\n");
+    command("say "+myname+"来干什么？想来抢老娘的位子？\n");
     return 1;
   }
   if (me->query("wudidong/sell_reward")<1000)
   {
-    command("say "+myname+"Ҫ�����޵׶������Ἰ����ͷ��Т���ң�\n");
+    command("say "+myname+"要想来无底洞，先提几颗人头来孝敬我！\n");
     return 1;
   }
   command("grin");
-  command("say ���������������ˡ�"+myname+"�����˶������Ū��ԭ�ϣ�");
+  command("say 老娘最爱吃人肉包子了。"+myname+"别忘了多给厨房弄点原料！");
   command("recruit "+myid);
   return 1;
 }
@@ -86,12 +86,12 @@ string expell_me(object me)
 {
   me=this_player();
 
-  if((string)me->query("family/family_name")=="�ݿ�ɽ�޵׶�")
+  if((string)me->query("family/family_name")=="陷空山无底洞")
   {
     me->set_temp("wudidong/betray", 1);
-    return ("ʲô����Ҫ�뿪������ͱ������ͷ���(jieshou)\n");
+    return ("什么？想要离开？那你就别怪老娘惩罚！(jieshou)\n");
   }
-  return ("�����������ģ�����\n");
+  return ("你是哪里来的！滚！\n");
 }
 void init()
 {
@@ -100,14 +100,14 @@ void init()
 int do_accept(string arg)
 {
     object me=this_player();
-    if (arg) return notify_fail("��Ҫ��ʲô��\n");
-    if (!me->query_temp("wudidong/betray")) return notify_fail("��Ҫ����ʲô��\n");
-    message_vision("$N������������Ҫ�뿪�޵׶�������ѣ�\n", me);
+    if (arg) return notify_fail("你要干什么？\n");
+    if (!me->query_temp("wudidong/betray")) return notify_fail("你要接受什么？\n");
+    message_vision("$N道：不错，我要离开无底洞这耗子窝！\n", me);
     me->add("betray/count", 1);
     me->add("betray/wudidong", 1);
     me->delete("family");
     me->delete("class");
-    me->set("title", "��ͨ����");
+    me->set("title", "普通百姓");
     if (me->query_skill("yaofa"))
     {
    me->set_skill("yaofa", me->query_skill("yaofa")/2);

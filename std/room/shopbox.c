@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // this object is put in hockshop to hold items.
@@ -10,8 +10,8 @@ inherit ITEM;
 
 void create()
 {
-     set_name("¾Û±¦ºĞ",({"treasure box", "box"}));     
-     set("short", "¾Û±¦ºĞ");
+     set_name("èšå®ç›’",({"treasure box", "box"}));     
+     set("short", "èšå®ç›’");
      set("env/invisibility",1);
      set_max_encumbrance(50000000);
      set_max_items(10000);

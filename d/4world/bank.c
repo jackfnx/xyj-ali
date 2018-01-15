@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/bank.c
@@ -6,21 +6,21 @@ inherit BANK;
 
 void create ()
 {
-  set ("short", "�ż�Ǯׯ");
+  set ("short", "张家钱庄");
   set ("long", @LONG
 
-�ż�Ǯׯ�������ǳ����׸������������﹫��Ҳ���н��顣��
-���侭Ӫ�з�����·�ֹ㣬Ǯׯ������Ҳ�ǲ��������к��һ��
-�߳߹�̨��̨ǰ�и�С����(paizi)������վ��λ��������������
+张家钱庄张万宝乃是城中首富，和许多王孙公子也很有交情。由
+于其经营有方，门路又广，钱庄的生意也是不错。正中横摆一张
+七尺柜台，台前有个小牌子(paizi)。后面站着位精明的老先生。
 LONG);
         set("item_desc", ([
                 "paizi": @TEXT
-������Ǯׯ��Ŀǰ�����ṩ�ķ����У�
+这里是钱庄，目前我们提供的服务有：
 
-account         ���ʡ�
-deposit         ��
-withdraw        ȡ�
-convert         �һ�Ǯ�ҡ�
+account         查帐。
+deposit         存款。
+withdraw        取款。
+convert         兑换钱币。
 TEXT
 
 ]));

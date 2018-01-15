@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -15,26 +15,26 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕĞ¡¸Ç¬À¤Ò»°ô¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œä¹¾å¤ä¸€æ£’ã€ï¼Ÿ\n");
 
         if(!me->is_fighting())
-                return notify_fail("¡¸Ç¬À¤Ò»°ô¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ£¡\n");
+                return notify_fail("ã€Œä¹¾å¤ä¸€æ£’ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
 
         if((int)me->query("max_force") < 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("force") < 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
 
         if((int)me->query("sen") < 500 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
    i=(int)me->query_skill("qianjun-bang",1)+(int)me->query_kar();
 
         if( i < 150)
-                return notify_fail("ÄãµÄÇ§¾û°ô¼¶±ğ»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕĞ»áÓĞÀ§ÄÑ£¡\n");
+                return notify_fail("ä½ çš„åƒé’§æ£’çº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
 
-   message_vision(HIC"\n$NÔË×ã¾«Éñ£¬Ò»¸ö¸ßÌøÔÚ¿Õ£¬Ê¹³öÁË¡¸Ç¬À¤Ò»°ô¡¹µÄ¾ø¼¼£¡\n"NOR,me);
+   message_vision(HIC"\n$Nè¿è¶³ç²¾ç¥ï¼Œä¸€ä¸ªé«˜è·³åœ¨ç©ºï¼Œä½¿å‡ºäº†ã€Œä¹¾å¤ä¸€æ£’ã€çš„ç»æŠ€ï¼\n"NOR,me);
 
    me->delete("env/brief_message");
    target->delete("env/brief_message");

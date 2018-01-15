@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/changan/duchang3
@@ -10,8 +10,8 @@ object hg_ji = 0;
 object lw_ji = 0;
 
 mapping jis = ([ 
-  "hg"  : "ºì¹Ú¼¦",
-  "lw"  : "ÂÌÎ²¼¦",
+  "hg"  : "çº¢å† é¸¡",
+  "lw"  : "ç»¿å°¾é¸¡",
  ]); 
 
 int random2 (int i)
@@ -21,19 +21,19 @@ int random2 (int i)
 
 void create()
 {
-  set ("short", "¶·¼¦·¿");
+  set ("short", "æ–—é¸¡æˆ¿");
   set ("long", @LONG
 
-¶·¼¦·¿ÀïÒ»×óÒ»ÓÒ·Å×ÅÁ½¸öÇàÖñ¼¦Áı£¬Ò»¸ö¼¦ÁıÀï¹Ø×ÅÒ»Èººì¹Ú¼¦£¬
-ÁíÒ»¸ö¼¦ÁıÀï¹Ø×ÅÒ»ÈºÂÌÎ²¼¦¡£Îİ×ÓÕıÖĞÊÇÆß³ß¼û·½µÄ¶·¼¦³¡£¬ÓÉÒ»
-È¦µÍµÍµÄÇàÓñÀ¸¸ËÎ§³É¡£Ò»Î»°×÷×¼¦ÏÉÕıÔÚÕÅÂŞ×Å¶·¼¦¡£ÔÚËûµÄºóÃæ
-Ç½ÉÏÓĞÒ»¸öÅÆ×Ó(paizi)¡£
+æ–—é¸¡æˆ¿é‡Œä¸€å·¦ä¸€å³æ”¾ç€ä¸¤ä¸ªé’ç«¹é¸¡ç¬¼ï¼Œä¸€ä¸ªé¸¡ç¬¼é‡Œå…³ç€ä¸€ç¾¤çº¢å† é¸¡ï¼Œ
+å¦ä¸€ä¸ªé¸¡ç¬¼é‡Œå…³ç€ä¸€ç¾¤ç»¿å°¾é¸¡ã€‚å±‹å­æ­£ä¸­æ˜¯ä¸ƒå°ºè§æ–¹çš„æ–—é¸¡åœºï¼Œç”±ä¸€
+åœˆä½ä½çš„é’ç‰æ æ†å›´æˆã€‚ä¸€ä½ç™½é«¯é¸¡ä»™æ­£åœ¨å¼ ç½—ç€æ–—é¸¡ã€‚åœ¨ä»–çš„åé¢
+å¢™ä¸Šæœ‰ä¸€ä¸ªç‰Œå­(paizi)ã€‚
 
 LONG);
 
   set("item_desc",([
-    "paizi" : "Ñººì¹Ú¼¦£º dou hg <amount> <money>\n"+ 
-              "ÑºÂÌÎ²¼¦£º dou lw <amount> <money>\n", 
+    "paizi" : "æŠ¼çº¢å† é¸¡ï¼š dou hg <amount> <money>\n"+ 
+              "æŠ¼ç»¿å°¾é¸¡ï¼š dou lw <amount> <money>\n", 
   ])); 
   set("objects", ([ /* sizeof() == 1 */
     __DIR__"npc/jixian" : 1,
@@ -80,30 +80,30 @@ int do_dou (string arg)
 
   if (! arg ||
       sscanf (arg,"%s %d %s",what,amount,money) != 3)
-    return notify_fail("ÇëÊ¹ÓÃ£º dou <Ñº¼¦ÖÖÀà> <ÊıÄ¿> <»õ±Ò>\n");
+    return notify_fail("è¯·ä½¿ç”¨ï¼š dou <æŠ¼é¸¡ç§ç±»> <æ•°ç›®> <è´§å¸>\n");
 
   if (what != "hg" &&
       what != "lw")
-    return notify_fail("ÄãÒªÑºÊ²Ã´ÑùµÄ¼¦£¿\n");
+    return notify_fail("ä½ è¦æŠ¼ä»€ä¹ˆæ ·çš„é¸¡ï¼Ÿ\n");
 
   ob = present (money+"_money", me);
   if (! ob)
-    return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
+    return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
   if (amount < 1)
-    return notify_fail("Çë¶àÑºÒ»Ğ©Ç®¡£\n");
+    return notify_fail("è¯·å¤šæŠ¼ä¸€äº›é’±ã€‚\n");
   if (amount > ob->query_amount())
-    return notify_fail("ÄãÉíÉÏµÄÇ®²»¹»Ñº¡£\n");
+    return notify_fail("ä½ èº«ä¸Šçš„é’±ä¸å¤ŸæŠ¼ã€‚\n");
 
   if (me->query_temp ("gamble_ji/amount") > 0)
-    return notify_fail("ÄãÒÑ¾­Ñº¹ıÁË¡£\n");
+    return notify_fail("ä½ å·²ç»æŠ¼è¿‡äº†ã€‚\n");
 
   if (room_status > 1)
-    return notify_fail("ÏÖÔÚÕıÔÚ¶·¼¦ÄØ£¬ÉÔµÈÆ¬¿Ì¡£\n");
+    return notify_fail("ç°åœ¨æ­£åœ¨æ–—é¸¡å‘¢ï¼Œç¨ç­‰ç‰‡åˆ»ã€‚\n");
 
   me->set_temp("gamble_ji/kind",what);
   me->set_temp("gamble_ji/amount",amount);
   me->set_temp("gamble_ji/money",money);
-  message_vision (sprintf("$NÄÃ³ö%s%s%sÍùÇàÓñÀ¸¸ËÉÏÒ»·Å£¬ÑºÔÚ%sÉÏ¡£\n",
+  message_vision (sprintf("$Næ‹¿å‡º%s%s%så¾€é’ç‰æ æ†ä¸Šä¸€æ”¾ï¼ŒæŠ¼åœ¨%sä¸Šã€‚\n",
                           chinese_number(amount),
                           ob->query("base_unit"),
                           ob->query("name"),
@@ -122,7 +122,7 @@ int valid_leave(object me, string dir)
   if (dir == "south")
   {
     if (me->query_temp ("gamble_ji/amount") > 0) 
-      message_vision ("$NÈÓÏÂÑº¼¦µÄÇ®²»ÒªÁË¡£\n",me);
+      message_vision ("$Næ‰”ä¸‹æŠ¼é¸¡çš„é’±ä¸è¦äº†ã€‚\n",me);
     me->delete_temp("gamble_ji");
   }
   return ::valid_leave(me,dir);
@@ -131,14 +131,14 @@ int valid_leave(object me, string dir)
 void gamble_prepare ()
 {
   object room = this_object();
-  tell_room (room,"°×÷×¼¦ÏÉ´Ó×óÓÒ¼¦ÁıÀï¸÷ÄÃ³öÒ»Ö»ºì¹Ú¼¦ºÍÒ»Ö»ÂÌÎ²¼¦¡£\n");
+  tell_room (room,"ç™½é«¯é¸¡ä»™ä»å·¦å³é¸¡ç¬¼é‡Œå„æ‹¿å‡ºä¸€åªçº¢å† é¸¡å’Œä¸€åªç»¿å°¾é¸¡ã€‚\n");
   hg_ji = new(__DIR__+"npc/douji");
-  hg_ji->set("name","ºì¹Ú¼¦");
+  hg_ji->set("name","çº¢å† é¸¡");
   hg_ji->move(room);
   lw_ji = new(__DIR__+"npc/douji");
-  lw_ji->set("name","ÂÌÎ²¼¦");
+  lw_ji->set("name","ç»¿å°¾é¸¡");
   lw_ji->move(room);
-  tell_room (room,"°×÷×¼¦ÏÉËµ£ººÃ£¬¿ÉÒÔÑºÇ®ÁË£¬Ò»Ó®¶ş¡£\n");
+  tell_room (room,"ç™½é«¯é¸¡ä»™è¯´ï¼šå¥½ï¼Œå¯ä»¥æŠ¼é’±äº†ï¼Œä¸€èµ¢äºŒã€‚\n");
   room_status = 1;
   call_out ("gamble_start",20);
 }
@@ -146,8 +146,8 @@ void gamble_prepare ()
 void gamble_start ()
 {
   object room = this_object();
-  tell_room (room,"°×÷×¼¦ÏÉËµÉù£ºÍ£Ñº£¬¶·¼¦¡£\n");
-  tell_room (room,"È»ºó½«Á½Ö»¼¦±§Æğ£¬ÄÃ³öÌú×ÄÊìÁ·µØ°²ÉÏ£¬°Ñ¼¦·Å½øÀ¸ÄÚ¡£\n");
+  tell_room (room,"ç™½é«¯é¸¡ä»™è¯´å£°ï¼šåœæŠ¼ï¼Œæ–—é¸¡ã€‚\n");
+  tell_room (room,"ç„¶åå°†ä¸¤åªé¸¡æŠ±èµ·ï¼Œæ‹¿å‡ºé“å•„ç†Ÿç»ƒåœ°å®‰ä¸Šï¼ŒæŠŠé¸¡æ”¾è¿›æ å†…ã€‚\n");
   room_status = 2;
   hg_ji->kill_ob(lw_ji);
   lw_ji->kill_ob(hg_ji);
@@ -202,7 +202,7 @@ void player_wins (object who, int total)
   int amount = who->query_temp("gamble_ji/amount");
   total = total * amount;
   money->set_amount(total);
-  message_vision (sprintf("$NÓ®ÁË%s%s%s£¡\n",
+  message_vision (sprintf("$Nèµ¢äº†%s%s%sï¼\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -214,7 +214,7 @@ void player_loses (object who, int total)
 {
   object money = new ("/obj/money/"+who->query_temp("gamble_ji/money"));
   total = who->query_temp("gamble_ji/amount");
-  message_vision (sprintf("°×÷×¼¦ÏÉ½«$NÁôÔÚÓñÀ¸ÉÏµÄ%s%s%sÊÕ×ß¡£\n",
+  message_vision (sprintf("ç™½é«¯é¸¡ä»™å°†$Nç•™åœ¨ç‰æ ä¸Šçš„%s%s%sæ”¶èµ°ã€‚\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -229,25 +229,25 @@ void clean_ji ()
   ji = present_ji (room);
   if (ji)
   {
-    tell_room (room,"°×÷×¼¦ÏÉ½«"+ji->query("name")+"µİµ½ÎİÄÚ¡£\n");
+    tell_room (room,"ç™½é«¯é¸¡ä»™å°†"+ji->query("name")+"é€’åˆ°å±‹å†…ã€‚\n");
     destruct (ji);
   }
   ji = present_ji (room);
   if (ji)
   {
-    tell_room (room,"°×÷×¼¦ÏÉ½«"+ji->query("name")+"µİµ½ÎİÄÚ¡£\n");
+    tell_room (room,"ç™½é«¯é¸¡ä»™å°†"+ji->query("name")+"é€’åˆ°å±‹å†…ã€‚\n");
     destruct (ji);
   }
   ji = present("corpse",room);
   if (ji)
   {
-    tell_room (room,"°×÷×¼¦ÏÉÁàÆğ"+ji->query("name")+"»ØÍ·Ò»ÈÓ¡£\n");
+    tell_room (room,"ç™½é«¯é¸¡ä»™æ‹èµ·"+ji->query("name")+"å›å¤´ä¸€æ‰”ã€‚\n");
     destruct (ji);
   }
   ji = present("corpse",room);
   if (ji)
   {
-    tell_room (room,"°×÷×¼¦ÏÉÁàÆğ"+ji->query("name")+"»ØÍ·Ò»ÈÓ¡£\n");
+    tell_room (room,"ç™½é«¯é¸¡ä»™æ‹èµ·"+ji->query("name")+"å›å¤´ä¸€æ‰”ã€‚\n");
     destruct (ji);
   }
 }
@@ -264,20 +264,20 @@ void gamble_finish ()
     total = 0;
     win = "none of them";
   }
-  else if (ji->query("name")=="ºì¹Ú¼¦")
+  else if (ji->query("name")=="çº¢å† é¸¡")
   {
     total = 2;
     win = "hg";
   }
-  else //if (ji->query("name")=="ÂÌÎ²¼¦")
+  else //if (ji->query("name")=="ç»¿å°¾é¸¡")
   {
     total = 2;
     win = "lw";
   }
   if (total > 0)
-    tell_room (room,"°×÷×¼¦ÏÉËµµÀ£º"+jis[win]+"»ñÊ¤£¡\n");
+    tell_room (room,"ç™½é«¯é¸¡ä»™è¯´é“ï¼š"+jis[win]+"è·èƒœï¼\n");
   else
-    tell_room (room,"°×÷×¼¦ÏÉÌ¾Ï¢µÀ£ºË«°ÜÅã±¾£¡\n");
+    tell_room (room,"ç™½é«¯é¸¡ä»™å¹æ¯é“ï¼šåŒè´¥é™ªæœ¬ï¼\n");
   i = sizeof(list);
   while (i--)
   {
@@ -306,8 +306,8 @@ int do_bian (string arg)
   ob = present(arg,room);
   if (ob == hg_ji || ob == lw_ji)
   {
-    message_vision ("$NÍ·Íù¼¦¶ÇÏÂÒ»×ê£¬Ïë±ä³É¼¦¡£\n",who);
-    message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£ºÊÇ¿´¼¦ÄØ»¹ÊÇ¿´Äã£¿\n",who);
+    message_vision ("$Nå¤´å¾€é¸¡è‚šä¸‹ä¸€é’»ï¼Œæƒ³å˜æˆé¸¡ã€‚\n",who);
+    message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šæ˜¯çœ‹é¸¡å‘¢è¿˜æ˜¯çœ‹ä½ ï¼Ÿ\n",who);
     return 1;
   }
   return 0;
@@ -325,8 +325,8 @@ int do_fight (string arg)
   ob = present(arg,room);
   if (ob == hg_ji || ob == lw_ji)
   {
-    message_vision ("$NÏò¼¦Ìá³öÌôÕ½¡£\n",who);
-    message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£ºÊÇ¿´¼¦¶·¼¦ÄØ»¹ÊÇÈË¶·¼¦£¿\n",who);
+    message_vision ("$Nå‘é¸¡æå‡ºæŒ‘æˆ˜ã€‚\n",who);
+    message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šæ˜¯çœ‹é¸¡æ–—é¸¡å‘¢è¿˜æ˜¯äººæ–—é¸¡ï¼Ÿ\n",who);
     return 1;
   }
   return 0;
@@ -337,8 +337,8 @@ int do_steal (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$NÍµÍµÃşÃşµØÉì³öÊÖ¡£\n",who);
-  message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£ºÄãÕæµÄÒªÍµ¼¦Ãş¹·²»³É£¿\n",who);
+  message_vision ("$Nå·å·æ‘¸æ‘¸åœ°ä¼¸å‡ºæ‰‹ã€‚\n",who);
+  message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šä½ çœŸçš„è¦å·é¸¡æ‘¸ç‹—ä¸æˆï¼Ÿ\n",who);
   return 1;
 }
 
@@ -354,8 +354,8 @@ int do_kill (string arg)
   ob = present(arg,room);
   if (ob == hg_ji || ob == lw_ji)
   {
-    message_vision ("$N¶ñºİºİµØÏëÉ±¼¦¡£\n",who);
-    message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£ºÏë³Ô¼¦×Ô¸öÉÏ¹İ×ÓÈ¥¡£\n",who);
+    message_vision ("$Næ¶ç‹ ç‹ åœ°æƒ³æ€é¸¡ã€‚\n",who);
+    message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šæƒ³åƒé¸¡è‡ªä¸ªä¸Šé¦†å­å»ã€‚\n",who);
     return 1;
   }
   return 0;
@@ -366,8 +366,8 @@ int do_ji (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$N¼¦Í·¼¦ÄÔµØÏëÒª¼ÀÊ²Ã´¡£\n",who);
-  message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£º¼¦ÓÖ²»ÊÇ×æ×Ú£¬¶Ô¼¦¼ÀÊ²Ã´¼À¡£\n",who);
+  message_vision ("$Né¸¡å¤´é¸¡è„‘åœ°æƒ³è¦ç¥­ä»€ä¹ˆã€‚\n",who);
+  message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šé¸¡åˆä¸æ˜¯ç¥–å®—ï¼Œå¯¹é¸¡ç¥­ä»€ä¹ˆç¥­ã€‚\n",who);
   return 1;
 }
 
@@ -376,8 +376,8 @@ int do_cast (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$N¼¦Í·¼¦ÄÔµØÄîÁË¼¸¾äÖäÓï¡£\n",who);
-  message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£ºÓĞ¼¦·Á°­ÄúÊ©·¨Äú¾Í³öÃÅÈ¥Äî°É¡£\n",who);
+  message_vision ("$Né¸¡å¤´é¸¡è„‘åœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n",who);
+  message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šæœ‰é¸¡å¦¨ç¢æ‚¨æ–½æ³•æ‚¨å°±å‡ºé—¨å»å¿µå§ã€‚\n",who);
   return 1;
 }
 
@@ -386,8 +386,8 @@ int do_exert (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$NÏëÊ©ÄÚ¹¦¡£\n",who);
-  message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£º±ğÔÚÕâÀïÁ·¹¦£¬Á·³ö¼¦ĞØÔõ°ì£¿\n",who);
+  message_vision ("$Næƒ³æ–½å†…åŠŸã€‚\n",who);
+  message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šåˆ«åœ¨è¿™é‡Œç»ƒåŠŸï¼Œç»ƒå‡ºé¸¡èƒ¸æ€åŠï¼Ÿ\n",who);
   return 1;
 }
 
@@ -396,7 +396,7 @@ int do_perform (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$NÏëÊ©Íâ¹¦¡£\n",who);
-  message_vision ("°×÷×¼¦ÏÉ¶Ô$NËµµÀ£º±ğÔÚÕâÀïÁ·¹¦£¬Á·³ö¼¦ĞØÔõ°ì£¿\n",who);
+  message_vision ("$Næƒ³æ–½å¤–åŠŸã€‚\n",who);
+  message_vision ("ç™½é«¯é¸¡ä»™å¯¹$Nè¯´é“ï¼šåˆ«åœ¨è¿™é‡Œç»ƒåŠŸï¼Œç»ƒå‡ºé¸¡èƒ¸æ€åŠï¼Ÿ\n",who);
   return 1;
 }

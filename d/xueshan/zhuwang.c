@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ö©ÖëÍøÄÚ");
+    set("short", "èœ˜è››ç½‘å†…");
     set("long", @LONG
 
-ÃÜÃÜÂéÂéµÄÖëÍøÕÚ×¡µÄÄãµÄÊÓÏß£¬ÄãÖ»ÄÜ¿´¼û¶ÔÃæÒ»Ö»
-Îå²ÊÖ©ÖëÂÕ×Å¾Ş´óµÄ°ËÖ»×¦×ÓÏòÄãÅÀÀ´¡£
+å¯†å¯†éº»éº»çš„è››ç½‘é®ä½çš„ä½ çš„è§†çº¿ï¼Œä½ åªèƒ½çœ‹è§å¯¹é¢ä¸€åª
+äº”å½©èœ˜è››æŠ¡ç€å·¨å¤§çš„å…«åªçˆªå­å‘ä½ çˆ¬æ¥ã€‚
 LONG);
 
     set("exits", ([ //sizeof() == 1
@@ -24,7 +24,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
     if (present("wucai zhizhu", environment(me)))
-        return notify_fail("Îå²ÊÖ©ÖëÅÓ´óµÄÉíÇûµ²×¡ÁËÈ¥Â·¡£\n");
+        return notify_fail("äº”å½©èœ˜è››åºå¤§çš„èº«èº¯æŒ¡ä½äº†å»è·¯ã€‚\n");
     return ::valid_leave(me,dir);
 }
 

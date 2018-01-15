@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
 
 // promote.c
@@ -14,24 +14,24 @@ int main(object me, string arg)
     if( me!=this_player(1) ) return 0;
 
     if( !arg || sscanf(arg, "%s %s", arg, new_status)!=2 )
-        return notify_fail("Ö¸Áî¸ñÊ½£ºpromote <Ê¹ÓÃÕß> <µÈ¼¶>\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špromote <ä½¿ç”¨è€…> <ç­‰çº§>\n");
 
-    if( wiz_level(new_status) < 0 ) return notify_fail("Ã»ÓĞÕâÖÖµÈ¼¶¡£\n");
+    if( wiz_level(new_status) < 0 ) return notify_fail("æ²¡æœ‰è¿™ç§ç­‰çº§ã€‚\n");
 
     if( !objectp(ob = present(arg, environment(me))) 
     ||   !userp(ob) )
-        return notify_fail("ÄãÖ»ÄÜ¸Ä±äÊ¹ÓÃÕßµÄÈ¨ÏŞ¡£\n");
+        return notify_fail("ä½ åªèƒ½æ”¹å˜ä½¿ç”¨è€…çš„æƒé™ã€‚\n");
 
     if( wiz_level(me) < wiz_level(new_status) )
-        return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+        return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 
     old_status = wizhood(ob);
 
     seteuid(getuid());
     if( !(SECURITY_D->set_status(ob, new_status)) )
-        return notify_fail("ĞŞ¸ÄÊ§°Ü¡£\n");
+        return notify_fail("ä¿®æ”¹å¤±è´¥ã€‚\n");
 
-    message_vision("$N½«$nµÄÈ¨ÏŞ´Ó " + old_status + " ¸ÄÎª " + new_status + " ¡£\n", me, ob);
+    message_vision("$Nå°†$nçš„æƒé™ä» " + old_status + " æ”¹ä¸º " + new_status + " ã€‚\n", me, ob);
     seteuid(getuid());
     ob->setup();
 
@@ -41,11 +41,11 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : promote <Ä³ÈË> (È¨ÏŞµÈ¼¶)
+æŒ‡ä»¤æ ¼å¼ : promote <æŸäºº> (æƒé™ç­‰çº§)
 
-ÓÃÀ´ÌáÉıÈ¨ÏŞµÈ¼¶, (player) (immortal) (apprentice) (wizard)
+ç”¨æ¥æå‡æƒé™ç­‰çº§, (player) (immortal) (apprentice) (wizard)
 (arch) (admin)
-Ò»¸ö admin ÄÜÌáÉıÈ¨ÏŞÖÁÈÎºÎµÈ¼¶, ¶ø arch Ö»ÄÜÌáÉıÖÁ arch¡£
+ä¸€ä¸ª admin èƒ½æå‡æƒé™è‡³ä»»ä½•ç­‰çº§, è€Œ arch åªèƒ½æå‡è‡³ archã€‚
 HELP
   );
   return 1;

@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// yinshen.c ÒşÉíÊõ
+// yinshen.c éšèº«æœ¯
 
 inherit F_SSERVER;
 #include <ansi.h>
@@ -12,20 +12,20 @@ int cast(object me)
    int howlong;
    
    if((int)me->query_skill("spells") < 100)
-     return notify_fail("Äã»¹Ã»Ñ§»áÒşÉí·¨¡£¡£¡£\n");
+     return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šéšèº«æ³•ã€‚ã€‚ã€‚\n");
 
    if( (int)me->query("mana") < 2*(int)me->query_skill("spells"))
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
    if( (int)me->query("sen") < 50 )
-     return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+     return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ï¼\n");
 
-   message_vision("$Nà«à«µØÄîÁË¼¸¾äÖäÓï¡£\n", me);
+   message_vision("$Nå–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n", me);
 
    if( random(me->query("max_mana")) < 200 ) {
      me->add("mana",-(int)me->query_skill("spells"));
      me->receive_damage("sen",10);
-     message("vision", "µ«ÊÇÊ²Ã´Ò²Ã»ÓĞ·¢Éú¡£\n", environment(me));
+     message("vision", "ä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚\n", environment(me));
      return 5+random(5);
    }
 
@@ -38,7 +38,7 @@ int cast(object me)
    me->set_temp("yinshentime", howlong+(int)me->query_temp("yinshentime"));
 
    me->set("env/invisibility", 1);
-   message_vision(HIW"\nÖ»¼ûÒ»µÀ°×¹âÉÁ¹ı£¬$N×Ù¼£½ÔÎŞ¡£\n\n"NOR, me);
+   message_vision(HIW"\nåªè§ä¸€é“ç™½å…‰é—ªè¿‡ï¼Œ$Nè¸ªè¿¹çš†æ— ã€‚\n\n"NOR, me);
    
    return 5+random(5);
 }
@@ -57,6 +57,6 @@ void free(object user, int howlong)
    user->delete_temp("yinshentime");
    user->set("env/invisibility", 0);      
    user->save();
-   message_vision(HIW"\n°×¹âÉÁ¹ıÖ®ºó£¬$NÓÖÏÖ³öÁËÉíĞÎ¡£\n\n"NOR, user);
+   message_vision(HIW"\nç™½å…‰é—ªè¿‡ä¹‹åï¼Œ$Nåˆç°å‡ºäº†èº«å½¢ã€‚\n\n"NOR, user);
    return;
 }

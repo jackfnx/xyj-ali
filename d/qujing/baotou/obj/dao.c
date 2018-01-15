@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,21 +9,21 @@ inherit BLADE;
 
 void create()
 {
-  set_name("Ì«ÒÒÖñµ¶", ({"taiyi zhu dao", "zhu dao", "dao"}) );
+  set_name("å¤ªä¹™ç«¹åˆ€", ({"taiyi zhu dao", "zhu dao", "dao"}) );
   set_weight(1000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±ú");
+    set("unit", "æŸ„");
     set("value", 2000);
     set("material", "bamboo");
     set("no_sell", 1);
     set("no_drop", 1);
     set("is_monitored", 1);
     set("replace_file", "/d/obj/weapon/blade/blade");
-    set("long", "ÕâÊÇÒ»±úÏ¸Öñµ¶£¬ÉÏÓĞ»¤µÀÉñ·û¡£\n");
-    set("wield_msg", "$N³é³öÒ»±úÏ¸Ï¸µÄ$nÎÕÔÚÊÖÖĞ£¬ÄŞ¹âÉÁË¸¡£\n");
-    set("unequip_msg", "ÄŞ¹âÒ»ÉÁ£¬$N½«ÊÖÖĞµÄ$nÊÕÆğ¡£\n");
+    set("long", "è¿™æ˜¯ä¸€æŸ„ç»†ç«¹åˆ€ï¼Œä¸Šæœ‰æŠ¤é“ç¥ç¬¦ã€‚\n");
+    set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„ç»†ç»†çš„$næ¡åœ¨æ‰‹ä¸­ï¼Œéœ“å…‰é—ªçƒã€‚\n");
+    set("unequip_msg", "éœ“å…‰ä¸€é—ªï¼Œ$Nå°†æ‰‹ä¸­çš„$næ”¶èµ·ã€‚\n");
   }
   init_blade(65);
   setup();
@@ -31,7 +31,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("Ò»µÀ×ÏÆøÉÁ¹ı£¬$n±»Í»ÈçÆäÀ´µÄÏ¼¹âÊÕ×ßÁË£¡\n",where,me);
+  message_vision("ä¸€é“ç´«æ°”é—ªè¿‡ï¼Œ$nè¢«çªå¦‚å…¶æ¥çš„éœå…‰æ”¶èµ°äº†ï¼\n",where,me);
   destruct (me);
 }
 

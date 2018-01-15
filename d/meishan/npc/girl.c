@@ -1,12 +1,12 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 inherit NPC;
 void create()
 {
-        set_name("¶þæ¤", ({"er niu", "niu"}));
-        set("gender", "Å®ÐÔ" );
+        set_name("äºŒå¦ž", ({"er niu", "niu"}));
+        set("gender", "å¥³æ€§" );
         set("age", 9);
         set("combat_exp", 300);
         set("attitude", "peaceful");
@@ -15,7 +15,7 @@ void create()
         set("max_sen", 200);
         set("force", 200);  
    set("inquiry", 
-([ "´ó»¨": "´ó»¨ÊÇÎÒÑøµÄÀÏÄ¸Öí¡£\n", 
+([ "å¤§èŠ±": "å¤§èŠ±æ˜¯æˆ‘å…»çš„è€æ¯çŒªã€‚\n", 
 ]) );
 
         setup();
@@ -36,15 +36,15 @@ void greeting(object ob)
 
         switch( random(3) ) {
                 case 0:
-     message_vision("$N¿ÞµÀ£ºµùµùÒªÂôÁË´ó»¨»¹Õ®¡£\n", this_object());
+     message_vision("$Nå“­é“ï¼šçˆ¹çˆ¹è¦å–äº†å¤§èŠ±è¿˜å€ºã€‚\n", this_object());
      command("cry girl");
                 break;
      case 1:
-     message_vision("$N¿ÞµÀ£ºÁõ²ÆÖ÷ÓÖÀ´ÒªÕ®ÁË£¡\n", this_object());
+     message_vision("$Nå“­é“ï¼šåˆ˜è´¢ä¸»åˆæ¥è¦å€ºäº†ï¼\n", this_object());
      command("slogan");
      break;
      case 2:
-     message_vision("$N¿ÞµÀ£ºµùµùËµ»¹²îÎåÊ®Á½Òø×Ó¡£\n", this_object());
+     message_vision("$Nå“­é“ï¼šçˆ¹çˆ¹è¯´è¿˜å·®äº”åä¸¤é“¶å­ã€‚\n", this_object());
      command("cry " + ob->query("id"));
      break;
         }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-  set_name("¼ÃÉñÍè", ({"jishen wan", "wan"}));
+  set_name("æµç¥ä¸¸", ({"jishen wan", "wan"}));
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿ÅÇåÁ¹ÂÔ¿àµÄÒ©Íè£®\n");
+    set("unit", "é¢—");
+    set("long", "ä¸€é¢—æ¸…å‡‰ç•¥è‹¦çš„è¯ä¸¸ï¼\n");
     set("value", 3000);
-    set("drug_type", "Á¼Ò©");
+    set("drug_type", "è‰¯è¯");
   }
   setup();
 }
@@ -33,10 +33,10 @@ int do_eat(string arg)
 
   if ((int)this_player()->query("eff_sen") == 
     (int)this_player()->query("max_sen"))
-    return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ¼ÃÉñÍè¡£\n");
+    return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨æµç¥ä¸¸ã€‚\n");
   else {
     this_player()->receive_curing("sen", 40+random(10));
-    message_vision("$NÑÊÏÂÒ»¿Å¼ÃÉñÍè£¬¾«Éñ»À·¢¡£\n",this_player());
+    message_vision("$Nå’½ä¸‹ä¸€é¢—æµç¥ä¸¸ï¼Œç²¾ç¥ç„•å‘ã€‚\n",this_player());
     destruct(this_object());
     return 1;
   }

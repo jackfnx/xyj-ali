@@ -1,22 +1,22 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //created 8-8-97 pickle
-//�޴�
+//罗春
  
 inherit NPC;
 
 void create()
 {
-  set_name("�޴�", ({"luo chun", "luo", "chun", "luochun"}));
+  set_name("罗春", ({"luo chun", "luo", "chun", "luochun"}));
   set ("long", @LONG
-�޴����޸����ĸ��ҽ����������ǵ�������˵�������յ�˽���ӣ�
-���޳ɵ��׸�硣�޴���һ�ְ���ǹʹ�ô����ޱȣ���ս��������
-����ս����
+罗春是罗府的心腹家将，办事甚是得力。传说他是罗艺的私生子，
+是罗成的亲哥哥。罗春的一手霸王枪使得纯熟无比，在战场上曾经
+颇立战功。
 LONG);
 
-  set("title", "�޸��ҽ�");
-  set("gender", "����");
+  set("title", "罗府家将");
+  set("gender", "男性");
   set("age", 40);
   set("str", 50);
   set("cor", 50);
@@ -47,7 +47,7 @@ LONG);
   set("max_force", 1500);
   set("force_factor", 20);
  
-  create_family("������", 2, "��");
+  create_family("将军府", 2, "蓝");
   setup();
  
   carry_object("/d/obj/weapon/spear/tieqiang")->wield();
@@ -56,6 +56,6 @@ LONG);
 
 int accept_fight(object me)
 {
-  command("say �������ܣ����¾�����¥�ϵĹ��ˣ�\n");
+  command("say 在这里打架，不怕惊动了楼上的贵人？\n");
   return 0;
 }

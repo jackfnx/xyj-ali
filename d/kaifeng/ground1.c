@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 2/8/1997
@@ -16,13 +16,13 @@ string report_mode()
   int j;
   string msg = "";
 
-  msg += "±ÈÈü·½Ê½£º";
+  msg += "æ¯”èµ›æ–¹å¼ï¼š";
   for (j = 0; j < i; j++)
   {
     msg += " " + write_item(modes[j],mode==j);
   }
   msg += "\n";
-  msg += "[ÉèÖÃ±ÈÈü·½Ê½£ºmode/m]\n\n";
+  msg += "[è®¾ç½®æ¯”èµ›æ–¹å¼ï¼šmode/m]\n\n";
   return msg;
 }
 
@@ -36,13 +36,13 @@ string report_teams()
 
   if (! teams)
   {
-    msg += "²ÎÈü¶ÓÎé£ºÄ¿Ç°»¹Ã»ÓĞ×éÖ¯ÈÎºÎ²ÎÈü¶ÓÎé¡£";
+    msg += "å‚èµ›é˜Ÿä¼ï¼šç›®å‰è¿˜æ²¡æœ‰ç»„ç»‡ä»»ä½•å‚èµ›é˜Ÿä¼ã€‚";
   }
   else
   {
     i = teams["number"];
 
-    msg = "¹²ÓĞ"+chinese_number(i)+"×é²ÎÈü¶ÓÎé£º\n";
+    msg = "å…±æœ‰"+chinese_number(i)+"ç»„å‚èµ›é˜Ÿä¼ï¼š\n";
     for (j = 0; j < i; j++)
     {
       mapping team = teams[j];
@@ -60,8 +60,8 @@ string report_teams()
     }
   }
   msg += "\n";
-  msg += "[ÌíÉè²ÎÈü¶ÓÎé£ºteam/t]\n";
-  msg += "[ĞŞ¸ÄÃ¿¸ö¶ÓÎé³ÉÔ±£ºteammember/tm]\n\n";
+  msg += "[æ·»è®¾å‚èµ›é˜Ÿä¼ï¼šteam/t]\n";
+  msg += "[ä¿®æ”¹æ¯ä¸ªé˜Ÿä¼æˆå‘˜ï¼šteammember/tm]\n\n";
   return msg;
 }
 
@@ -70,11 +70,11 @@ int do_report1()
   string line = "-------------------------------------------------------------------\n";
   string msg = line;
   
-  msg += "\n´ó»á³ï±¸½×¶Î£º\n";
+  msg += "\nå¤§ä¼šç­¹å¤‡é˜¶æ®µï¼š\n";
   msg += report_mode();
   msg += report_teams();
-  msg += "[ËùÓĞÉèÖÃÍê³ÉºóÕıÊ½½øÈë±ÈÈü£ºstart]\n";
-  msg += "[È¡ÏûÏÖÓĞÉèÖÃÖØĞÂ¿ªÊ¼£ºcancel]\n";
+  msg += "[æ‰€æœ‰è®¾ç½®å®Œæˆåæ­£å¼è¿›å…¥æ¯”èµ›ï¼šstart]\n";
+  msg += "[å–æ¶ˆç°æœ‰è®¾ç½®é‡æ–°å¼€å§‹ï¼šcancel]\n";
   msg += "\n";
   msg += line;
   this_player()->start_more(msg);
@@ -94,15 +94,15 @@ int do_mode (string arg)
 
   if (step > STEP_PREPARE)
   {  
-    write ("±ÈÈüÒÑ¿ªÊ¼ÁË£¬ÏÖÔÚÀ´ĞŞ¸Ä±ÈÈüÉèÖÃÎªÊ±ÒÑÍíÁË£¡\n\n");
+    write ("æ¯”èµ›å·²å¼€å§‹äº†ï¼Œç°åœ¨æ¥ä¿®æ”¹æ¯”èµ›è®¾ç½®ä¸ºæ—¶å·²æ™šäº†ï¼\n\n");
     return 1;
   }
 
-  msg = "±ÈÈü·½Ê½£º";
+  msg = "æ¯”èµ›æ–¹å¼ï¼š";
   for (j = 0; j < i; j++)
   {
     msg += "\n  " + (j) + ". " + write_item(modes[j],mode==j);
-    msg += "  " + mode_hints[j]+"¡£";
+    msg += "  " + mode_hints[j]+"ã€‚";
     choices += (j);
     if (j < i-1)
       choices += "/";
@@ -113,7 +113,7 @@ int do_mode (string arg)
       (sscanf(arg,"%d",j)!=1) ||
       (j < 0 || j >= i))
   {  
-    who->start_more(msg+"[Ê¹ÓÃ mode "+choices+" À´ĞŞ¸Ä±ÈÈü·½Ê½]\n\n");
+    who->start_more(msg+"[ä½¿ç”¨ mode "+choices+" æ¥ä¿®æ”¹æ¯”èµ›æ–¹å¼]\n\n");
     return 1;
   }
 
@@ -123,11 +123,11 @@ int do_mode (string arg)
   {
     if (teams && teams["number"] > 0)
     {
-      write ("ÄúÑ¡ÔñÁË"+modes[mode]+
-             "±ÈÈü·½Ê½£¬²»ĞèÒªÓĞ±ÈÈü¶ÓÎé£¡\n");
-      write ("ÏÖÔÚ¾¹È»ÓĞ"+chinese_number(teams["number"])+"¶Ó£¡\n\n");
-      write("[Ê¹ÓÃ mode À´¸Ä±ä±ÈÈü·½Ê½¡£]\n");
-      write("[Ê¹ÓÃ cancel À´ÖØĞÂ¿ªÊ¼ĞÂµÄÉèÖÃ¡£]\n\n");
+      write ("æ‚¨é€‰æ‹©äº†"+modes[mode]+
+             "æ¯”èµ›æ–¹å¼ï¼Œä¸éœ€è¦æœ‰æ¯”èµ›é˜Ÿä¼ï¼\n");
+      write ("ç°åœ¨ç«Ÿç„¶æœ‰"+chinese_number(teams["number"])+"é˜Ÿï¼\n\n");
+      write("[ä½¿ç”¨ mode æ¥æ”¹å˜æ¯”èµ›æ–¹å¼ã€‚]\n");
+      write("[ä½¿ç”¨ cancel æ¥é‡æ–°å¼€å§‹æ–°çš„è®¾ç½®ã€‚]\n\n");
       return 1;
     }
   }
@@ -136,27 +136,27 @@ int do_mode (string arg)
   {
     if (teams && teams["number"] > 1)
     {
-      write ("ÄúÑ¡ÔñÁË"+modes[mode]+
-             "±ÈÈü·½Ê½£¬Ö»ĞèÒªÓĞÒ»¶Ó¾Í¹»ÁË£¡\n");
-      write ("ÏÖÔÚ¾¹È»ÓĞ"+chinese_number(teams["number"])+"¶Ó£¡\n\n");
-      write("[Ê¹ÓÃ mode À´¸Ä±ä±ÈÈü·½Ê½¡£]\n");
-      write("[Ê¹ÓÃ cancel À´ÖØĞÂ¿ªÊ¼ĞÂµÄÉèÖÃ¡£]\n\n");
+      write ("æ‚¨é€‰æ‹©äº†"+modes[mode]+
+             "æ¯”èµ›æ–¹å¼ï¼Œåªéœ€è¦æœ‰ä¸€é˜Ÿå°±å¤Ÿäº†ï¼\n");
+      write ("ç°åœ¨ç«Ÿç„¶æœ‰"+chinese_number(teams["number"])+"é˜Ÿï¼\n\n");
+      write("[ä½¿ç”¨ mode æ¥æ”¹å˜æ¯”èµ›æ–¹å¼ã€‚]\n");
+      write("[ä½¿ç”¨ cancel æ¥é‡æ–°å¼€å§‹æ–°çš„è®¾ç½®ã€‚]\n\n");
       return 1;
     }
   }
 
-  msg = "±ÈÈü·½Ê½£º";
+  msg = "æ¯”èµ›æ–¹å¼ï¼š";
   for (j = 0; j < i; j++)
   {
     msg += "\n  " + (j) + ". " + write_item(modes[j],mode==j);
-    msg += " " + mode_hints[j]+"¡£";
+    msg += " " + mode_hints[j]+"ã€‚";
     choices += (j);
     if (j < i-1)
       choices += "/";
   }
   msg += "\n";
   who->start_more(msg);
-  inform (who, "±ÈÎäµÄ·½Ê½ÊÇ¡°"+modes[mode]+"¡±¡£\n");
+  inform (who, "æ¯”æ­¦çš„æ–¹å¼æ˜¯â€œ"+modes[mode]+"â€ã€‚\n");
   this_room()->set("match/mode",mode);
   return 1;
 }
@@ -304,17 +304,17 @@ int do_team(string arg)
 
   if (step > STEP_PREPARE)
   {  
-    write ("±ÈÈüÒÑ¿ªÊ¼ÁË£¬ÏÖÔÚÀ´ĞŞ¸Ä±ÈÈüÉèÖÃÎªÊ±ÒÑÍíÁË£¡\n\n");
+    write ("æ¯”èµ›å·²å¼€å§‹äº†ï¼Œç°åœ¨æ¥ä¿®æ”¹æ¯”èµ›è®¾ç½®ä¸ºæ—¶å·²æ™šäº†ï¼\n\n");
     return 1;
   }
 
   if (mode == MODE_SINGLE_SD)
   {  
-    write (modes[mode]+"²»ĞèÒª×é¶Ó£¬Ö±½ÓÇëÍæ¼ÒÉÏ³¡¼´¿É¡£\n");
-    write ("[Ê¹ÓÃ mode À´ĞŞ¸Ä±ÈÈü·½Ê½]\n\n");
+    write (modes[mode]+"ä¸éœ€è¦ç»„é˜Ÿï¼Œç›´æ¥è¯·ç©å®¶ä¸Šåœºå³å¯ã€‚\n");
+    write ("[ä½¿ç”¨ mode æ¥ä¿®æ”¹æ¯”èµ›æ–¹å¼]\n\n");
     return 1;
   }
-  msg = "ÓĞÈçÏÂÃÅÅÉ¿É¹©Ñ¡Ôñ£º";
+  msg = "æœ‰å¦‚ä¸‹é—¨æ´¾å¯ä¾›é€‰æ‹©ï¼š";
   for (j = 0; j < i; j++)
   {
     choice[0] = 'a'+j;
@@ -328,7 +328,7 @@ int do_team(string arg)
   existing_families = ([ ]);
   if (! teams)
   {
-    msg2 += "Ä¿Ç°»¹Ã»ÓĞ×éÖ¯ÈÎºÎ²ÎÈü¶ÓÎé¡£\n";
+    msg2 += "ç›®å‰è¿˜æ²¡æœ‰ç»„ç»‡ä»»ä½•å‚èµ›é˜Ÿä¼ã€‚\n";
   }
   else
   {
@@ -336,13 +336,13 @@ int do_team(string arg)
 
     if (mode == MODE_SINGLE_LT && l > 0)
     {  
-      write ("ÒÑ¾­ÓĞÒ»¶ÓÁË£¬"+modes[mode]+
-             "Ö»ĞèÒªÓĞÒ»¶Ó²ÎÈü£¬ÈÃÑ¡ÊÖ»¥ÏàÌôÕ½¼´¿É¡£\n");
-      write ("[Ê¹ÓÃ mode À´ĞŞ¸Ä±ÈÈü·½Ê½]\n\n");
+      write ("å·²ç»æœ‰ä¸€é˜Ÿäº†ï¼Œ"+modes[mode]+
+             "åªéœ€è¦æœ‰ä¸€é˜Ÿå‚èµ›ï¼Œè®©é€‰æ‰‹äº’ç›¸æŒ‘æˆ˜å³å¯ã€‚\n");
+      write ("[ä½¿ç”¨ mode æ¥ä¿®æ”¹æ¯”èµ›æ–¹å¼]\n\n");
       return 1;
     }
 
-    msg2 += "ÏÖÓĞ"+chinese_number(l)+"×é²ÎÈü¶ÓÎé£º\n";
+    msg2 += "ç°æœ‰"+chinese_number(l)+"ç»„å‚èµ›é˜Ÿä¼ï¼š\n";
     for (j = 0; j < l; j++)
     {
       mapping team = teams[j];
@@ -367,14 +367,14 @@ int do_team(string arg)
       ((j = capitalize(choice)[0]-'A') & 0) ||
       (j < 0 || j >= i))
   {  
-    who->start_more(msg+msg2+"[Ê¹ÓÃ team "+choices+" À´ÔöÉèĞÂµÄ²ÎÈü¶ÓÎé]\n\n");
+    who->start_more(msg+msg2+"[ä½¿ç”¨ team "+choices+" æ¥å¢è®¾æ–°çš„å‚èµ›é˜Ÿä¼]\n\n");
     return 1;
   }
 
   family_name = families[j];
   team_name = families[j];
   if ((j=existing_families[family_name])>0)
-    team_name += "£¨"+chinese_number(j+1)+"£©";
+    team_name += "ï¼ˆ"+chinese_number(j+1)+"ï¼‰";
   new_team_info = ([
                      "family_name" : family_name, 
                      "team_name" : team_name,
@@ -394,7 +394,7 @@ int do_team(string arg)
     teams["number"] = i;
   }
   teams += ([i-1 : new_team]);  
-  msg += "ÏÖÔÚ¹²ÓĞ"+chinese_number(i)+"×é²ÎÈü¶ÓÎé£º\n";
+  msg += "ç°åœ¨å…±æœ‰"+chinese_number(i)+"ç»„å‚èµ›é˜Ÿä¼ï¼š\n";
   for (j = 0; j < i; j++)
   {
     mapping team = teams[j];
@@ -411,7 +411,7 @@ int do_team(string arg)
     msg += "\n";
   }
   who->start_more(msg);
-  inform (who, "ÉèÖÃ¡°"+team_name+"¡±¶Ó¡£\n");
+  inform (who, "è®¾ç½®â€œ"+team_name+"â€é˜Ÿã€‚\n");
   
   this_room()->set("match/teams",teams);
   return 1;
@@ -431,21 +431,21 @@ int do_teammember(string arg)
 
   if (step > STEP_PREPARE)
   {  
-    write ("±ÈÈüÒÑ¿ªÊ¼ÁË£¬ÏÖÔÚÀ´ĞŞ¸Ä±ÈÈüÉèÖÃÎªÊ±ÒÑÍíÁË£¡\n\n");
+    write ("æ¯”èµ›å·²å¼€å§‹äº†ï¼Œç°åœ¨æ¥ä¿®æ”¹æ¯”èµ›è®¾ç½®ä¸ºæ—¶å·²æ™šäº†ï¼\n\n");
     return 1;
   }
 
   if (! teams)
   {
-    msg += "Ä¿Ç°»¹Ã»ÓĞ×éÖ¯ÈÎºÎ²ÎÈü¶ÓÎé¡£\n";
-    msg += "ÇëÏÈÉèÖÃºÃ²ÎÈü¶ÓÎéÔÙÍù¶ÓÎéÀïÔöÌí³ÉÔ±¡£\n";
+    msg += "ç›®å‰è¿˜æ²¡æœ‰ç»„ç»‡ä»»ä½•å‚èµ›é˜Ÿä¼ã€‚\n";
+    msg += "è¯·å…ˆè®¾ç½®å¥½å‚èµ›é˜Ÿä¼å†å¾€é˜Ÿä¼é‡Œå¢æ·»æˆå‘˜ã€‚\n";
     who->start_more(msg);
     return 1;
   }
   else
   {
     i = teams["number"];
-    msg += "²ÎÈü¶ÓÎé£º\n";
+    msg += "å‚èµ›é˜Ÿä¼ï¼š\n";
     for (j = 0; j < i; j++)
     {
       team = teams[j];
@@ -465,49 +465,49 @@ int do_teammember(string arg)
       (sscanf(arg,"%d %s %s",j,addsub,id)!=3) ||
       (addsub != "+" && addsub != "-"))
   {  
-    who->start_more(msg+"[Ê¹ÓÃ teammember/tm <team nb> +/- id Ôö¼õ¶ÓÔ±]\n\n");
+    who->start_more(msg+"[ä½¿ç”¨ teammember/tm <team nb> +/- id å¢å‡é˜Ÿå‘˜]\n\n");
     return 1;
   }
   
   team = teams[j];
   if (! team)
   {
-    msg += "¶ÓÎé"+(j)+"£¿Ã»ÓĞÕâ¸ö²ÎÈü¶ÓÎé¡£\n";
-    who->start_more(msg+"[Ê¹ÓÃ teammember/tm <team nb> +/- id Ôö¼õ¶ÓÔ±]\n\n");
+    msg += "é˜Ÿä¼"+(j)+"ï¼Ÿæ²¡æœ‰è¿™ä¸ªå‚èµ›é˜Ÿä¼ã€‚\n";
+    who->start_more(msg+"[ä½¿ç”¨ teammember/tm <team nb> +/- id å¢å‡é˜Ÿå‘˜]\n\n");
     return 1;
   }
 
   team_info = team["info"];
   if (addsub == "-" && !find_team_member(team,id))
   {
-    msg += team_info["team_name"]+"¶ÓÀïÕÒ²»µ½"+id+"£¬ÎŞ·¨É¾³ı´ËÈË¡£\n";
-    who->start_more(msg+"[Ê¹ÓÃ teammember/tm <team nb> +/- id Ôö¼õ¶ÓÔ±]\n\n");
+    msg += team_info["team_name"]+"é˜Ÿé‡Œæ‰¾ä¸åˆ°"+id+"ï¼Œæ— æ³•åˆ é™¤æ­¤äººã€‚\n";
+    who->start_more(msg+"[ä½¿ç”¨ teammember/tm <team nb> +/- id å¢å‡é˜Ÿå‘˜]\n\n");
     return 1;
   }
 
   ob = find_player (id);
   if (addsub == "+" && !ob)
   {
-    msg += "ÔÚÏßµÄÍæ¼ÒÀïÃ»ÓĞ"+id+"£¬ÎŞ·¨½«´ËÈË¼ÓÈë²ÎÈü¶ÓÎé¡£\n";
-    who->start_more(msg+"[Ê¹ÓÃ teammember/tm <team nb> +/- id Ôö¼õ¶ÓÔ±]\n\n");
+    msg += "åœ¨çº¿çš„ç©å®¶é‡Œæ²¡æœ‰"+id+"ï¼Œæ— æ³•å°†æ­¤äººåŠ å…¥å‚èµ›é˜Ÿä¼ã€‚\n";
+    who->start_more(msg+"[ä½¿ç”¨ teammember/tm <team nb> +/- id å¢å‡é˜Ÿå‘˜]\n\n");
     return 1;
   }
 
   team = teams[j];
   if (addsub == "+" &&
       ob->query("family/family_name")!=team_info["family_name"] &&
-      team_info["family_name"] != "»ìºÏÃÅÅÉ")
+      team_info["family_name"] != "æ··åˆé—¨æ´¾")
   {
-    msg += ob->query("name")+"µÄÃÅÅÉ²»ÊôÓÚÕâ¸ö¡°"+
-           team_info["team_name"]+"¡±¶Ó¡£\n";
-    who->start_more(msg+"[Ê¹ÓÃ teammember/tm <team nb> +/- id Ôö¼õ¶ÓÔ±]\n\n");
+    msg += ob->query("name")+"çš„é—¨æ´¾ä¸å±äºè¿™ä¸ªâ€œ"+
+           team_info["team_name"]+"â€é˜Ÿã€‚\n";
+    who->start_more(msg+"[ä½¿ç”¨ teammember/tm <team nb> +/- id å¢å‡é˜Ÿå‘˜]\n\n");
     return 1;
   }
 
   if (addsub == "-")
   {
-    msg2 = "´Ó²ÎÈü¶ÓÎé¡°"+team_info["team_name"]+
-           "¡±Àï½«"+ob->query("name")+"É¾³ıÁË¡£\n";    
+    msg2 = "ä»å‚èµ›é˜Ÿä¼â€œ"+team_info["team_name"]+
+           "â€é‡Œå°†"+ob->query("name")+"åˆ é™¤äº†ã€‚\n";    
     team = delete_team_member(team,ob);
   }
   else
@@ -518,18 +518,18 @@ int do_teammember(string arg)
       if (find_team_member(teams[j],id))
       {
         team_info = teams[j]["info"];
-        msg += team_info["team_name"]+"¶ÓÀïÒÑ¾­ÓĞ"+ob->query("name")+
-               "("+id+")ÁË¡£\n";
-        who->start_more(msg+"[Ê¹ÓÃ teammember/tm <team nb> +/- id Ôö¼õ¶ÓÔ±]\n\n");
+        msg += team_info["team_name"]+"é˜Ÿé‡Œå·²ç»æœ‰"+ob->query("name")+
+               "("+id+")äº†ã€‚\n";
+        who->start_more(msg+"[ä½¿ç”¨ teammember/tm <team nb> +/- id å¢å‡é˜Ÿå‘˜]\n\n");
         return 1;
       } 
     }
-    msg2 += "½«"+ob->query("name")+"¼ÓÈë²ÎÈü¶ÓÎé¡°"+
-            team_info["team_name"]+"¡±ÁË¡£\n";
+    msg2 += "å°†"+ob->query("name")+"åŠ å…¥å‚èµ›é˜Ÿä¼â€œ"+
+            team_info["team_name"]+"â€äº†ã€‚\n";
     team = add_team_member(team,ob,0);
   }
 
-  msg = team_info["team_name"]+"²ÎÈü¶ÓÎéÏÖÓĞ£º ";
+  msg = team_info["team_name"]+"å‚èµ›é˜Ÿä¼ç°æœ‰ï¼š ";
   for (k = 0; k < team["number"]; k++)
   {
     mapping member = team[k];
@@ -556,18 +556,18 @@ int do_start ()
 
   if (step > STEP_PREPARE)
   {  
-    write ("±ÈÈüÒÑ¿ªÊ¼ÁË£¡\n\n");
+    write ("æ¯”èµ›å·²å¼€å§‹äº†ï¼\n\n");
     return 1;
   }
   if (mode == MODE_SINGLE_SD)
   {
     if (teams && teams["number"] > 0)
     {
-      write ("ÄúÑ¡ÔñÁË"+modes[mode]+
-             "±ÈÈü·½Ê½£¬²»ĞèÒªÓĞ±ÈÈü¶ÓÎé£¡\n");
-      write ("ÏÖÔÚ¾¹È»ÓĞ"+chinese_number(teams["number"])+"¶Ó£¡\n\n");
-      write("[Ê¹ÓÃ mode À´¸Ä±ä±ÈÈü·½Ê½¡£]\n");
-      write("[Ê¹ÓÃ cancel À´ÖØĞÂ¿ªÊ¼ĞÂµÄÉèÖÃ¡£]\n\n");
+      write ("æ‚¨é€‰æ‹©äº†"+modes[mode]+
+             "æ¯”èµ›æ–¹å¼ï¼Œä¸éœ€è¦æœ‰æ¯”èµ›é˜Ÿä¼ï¼\n");
+      write ("ç°åœ¨ç«Ÿç„¶æœ‰"+chinese_number(teams["number"])+"é˜Ÿï¼\n\n");
+      write("[ä½¿ç”¨ mode æ¥æ”¹å˜æ¯”èµ›æ–¹å¼ã€‚]\n");
+      write("[ä½¿ç”¨ cancel æ¥é‡æ–°å¼€å§‹æ–°çš„è®¾ç½®ã€‚]\n\n");
       return 1;
     }
     teams = ([ "number" : 0]);
@@ -576,9 +576,9 @@ int do_start ()
   {
     if (! teams || teams["number"] == 0)
     {
-      write ("ÄúÑ¡ÔñÁË"+modes[mode]+
-             "±ÈÈü·½Ê½£¬ĞèÒªÊ×ÏÈ×é¶Ó²ÅÄÜ¿ªÊ¼±ÈÈü£¡\n\n");
-      write("[Ê¹ÓÃ ? »ò what À´²é¿´ÈçºÎ×é¶Ó¡£]\n\n");
+      write ("æ‚¨é€‰æ‹©äº†"+modes[mode]+
+             "æ¯”èµ›æ–¹å¼ï¼Œéœ€è¦é¦–å…ˆç»„é˜Ÿæ‰èƒ½å¼€å§‹æ¯”èµ›ï¼\n\n");
+      write("[ä½¿ç”¨ ? æˆ– what æ¥æŸ¥çœ‹å¦‚ä½•ç»„é˜Ÿã€‚]\n\n");
       return 1;
     }
 
@@ -586,18 +586,18 @@ int do_start ()
     {
       if (teams["number"] > 1)
       {
-        write ("ÄúÑ¡ÔñÁË"+modes[mode]+
-               "±ÈÈü·½Ê½£¬Ö»ĞèÒªÓĞÒ»¶Ó¾Í¹»ÁË£¡\n");
-        write ("ÏÖÔÚ¾¹È»ÓĞ"+chinese_number(teams["number"])+"¶Ó£¡\n\n");
-        write("[Ê¹ÓÃ mode À´¸Ä±ä±ÈÈü·½Ê½¡£]\n");
-        write("[Ê¹ÓÃ cancel À´ÖØĞÂ¿ªÊ¼ĞÂµÄÉèÖÃ¡£]\n\n");
+        write ("æ‚¨é€‰æ‹©äº†"+modes[mode]+
+               "æ¯”èµ›æ–¹å¼ï¼Œåªéœ€è¦æœ‰ä¸€é˜Ÿå°±å¤Ÿäº†ï¼\n");
+        write ("ç°åœ¨ç«Ÿç„¶æœ‰"+chinese_number(teams["number"])+"é˜Ÿï¼\n\n");
+        write("[ä½¿ç”¨ mode æ¥æ”¹å˜æ¯”èµ›æ–¹å¼ã€‚]\n");
+        write("[ä½¿ç”¨ cancel æ¥é‡æ–°å¼€å§‹æ–°çš„è®¾ç½®ã€‚]\n\n");
         return 1;
       }
       if (teams[0]["number"] < 2)
       {
-        write (teams[0]["info"]["team_name"]+"¶ÓÀïÖ»ÓĞ"+
-               chinese_number(teams[0]["number"])+"Ãû¶ÓÔ±£¬ÈçºÎ±ÈÈü£¿\n");
-        write("[Ê¹ÓÃ ? »ò what À´²é¿´ÈçºÎ×é¶Ó¡£]\n\n");
+        write (teams[0]["info"]["team_name"]+"é˜Ÿé‡Œåªæœ‰"+
+               chinese_number(teams[0]["number"])+"åé˜Ÿå‘˜ï¼Œå¦‚ä½•æ¯”èµ›ï¼Ÿ\n");
+        write("[ä½¿ç”¨ ? æˆ– what æ¥æŸ¥çœ‹å¦‚ä½•ç»„é˜Ÿã€‚]\n\n");
         return 1;
       }
     }
@@ -624,25 +624,25 @@ int do_start ()
       if (min < 1)
       {
         write (teams[team_min]["info"]["team_name"]+
-               "¶ÓÀïÃ»ÓĞ¶ÓÔ±£¬ÈçºÎ±ÈÈü£¿\n");
-        write("[Ê¹ÓÃ ? »ò what À´²é¿´ÈçºÎ×é¶Ó¡£]\n\n");
+               "é˜Ÿé‡Œæ²¡æœ‰é˜Ÿå‘˜ï¼Œå¦‚ä½•æ¯”èµ›ï¼Ÿ\n");
+        write("[ä½¿ç”¨ ? æˆ– what æ¥æŸ¥çœ‹å¦‚ä½•ç»„é˜Ÿã€‚]\n\n");
         return 1;
       }
       if (min != max)
       {
-        write (teams[team_min]["info"]["team_name"]+"¶ÓÀïÖ»ÓĞ"+
-               chinese_number(min)+"Ãû¶ÓÔ±£»\n");
-        write (teams[team_max]["info"]["team_name"]+"¶ÓÀïÈ´ÓĞ"+
-               chinese_number(max)+"Ãû¶ÓÔ±£»\n");
-        write ("ÈçºÎ±ÈÈü£¿\n");
-        write("[Ê¹ÓÃ ? »ò what À´²é¿´ÈçºÎ×é¶Ó¡£]\n\n");
+        write (teams[team_min]["info"]["team_name"]+"é˜Ÿé‡Œåªæœ‰"+
+               chinese_number(min)+"åé˜Ÿå‘˜ï¼›\n");
+        write (teams[team_max]["info"]["team_name"]+"é˜Ÿé‡Œå´æœ‰"+
+               chinese_number(max)+"åé˜Ÿå‘˜ï¼›\n");
+        write ("å¦‚ä½•æ¯”èµ›ï¼Ÿ\n");
+        write("[ä½¿ç”¨ ? æˆ– what æ¥æŸ¥çœ‹å¦‚ä½•ç»„é˜Ÿã€‚]\n\n");
         return 1;
       }
     }
   }
-  inform (who, "Ò»ÇĞ¾ÍĞ÷£¬ÄÇÏÖÔÚ¾Í¿ªÊ¼±ÈÈü°É¡£\n");
-  announce ("Ë®Â½´ó»á±ÈÎäÕıÊ½¿ªÊ¼£¡\n");
-  //announce ("±ÈÎäµÄ·½Ê½ÊÇ¡°"+modes[mode]+"¡±¡£\n");
+  inform (who, "ä¸€åˆ‡å°±ç»ªï¼Œé‚£ç°åœ¨å°±å¼€å§‹æ¯”èµ›å§ã€‚\n");
+  announce ("æ°´é™†å¤§ä¼šæ¯”æ­¦æ­£å¼å¼€å§‹ï¼\n");
+  //announce ("æ¯”æ­¦çš„æ–¹å¼æ˜¯â€œ"+modes[mode]+"â€ã€‚\n");
 
   this_room()->set("match/step",STEP_FIGHT);  
   this_room()->set("match/teams",teams);
@@ -654,12 +654,12 @@ void cancelling (string arg, object who)
 {
   if (arg == "y" || arg == "Y")
   {
-    inform (who, "È¡ÏûÈ«²¿ÉèÖÃÖØĞÂ¿ªÊ¼¡£\n");
+    inform (who, "å–æ¶ˆå…¨éƒ¨è®¾ç½®é‡æ–°å¼€å§‹ã€‚\n");
     this_room()->delete("match");
   }
   else
   {
-    write("ºÃ£¬²»È¡ÏûÏÖÓĞµÄÉèÖÃ¡£\n");
+    write("å¥½ï¼Œä¸å–æ¶ˆç°æœ‰çš„è®¾ç½®ã€‚\n");
   }
 }
 
@@ -671,17 +671,17 @@ int do_cancel ()
 /*
   if (step > STEP_PREPARE)
   {  
-    write ("±ÈÈüÒÑ¿ªÊ¼ÁË£¡\n\n");
+    write ("æ¯”èµ›å·²å¼€å§‹äº†ï¼\n\n");
     return 1;
   }
 */
   if (! this_room()->query("match"))
   {  
-    write ("ÏÖÔÚÕâÀïÊ²Ã´¶¼Ã»ÓĞÉèÖÃ¡£\n\n");
+    write ("ç°åœ¨è¿™é‡Œä»€ä¹ˆéƒ½æ²¡æœ‰è®¾ç½®ã€‚\n\n");
     return 1;
   }
-  write ("Èç¹ûÈ¡Ïû±ÈÈüÉèÖÃ£¬ÏÖÓĞµÄ±ÈÈüÊı¾İ½«È«²¿¶ªÊ§£¡\n");
-  write ("ÄúÕæµÄÒªÈ¡ÏûÉèÖÃÖØĞÂ¿ªÊ¼£¿(Y/N)\n");
+  write ("å¦‚æœå–æ¶ˆæ¯”èµ›è®¾ç½®ï¼Œç°æœ‰çš„æ¯”èµ›æ•°æ®å°†å…¨éƒ¨ä¸¢å¤±ï¼\n");
+  write ("æ‚¨çœŸçš„è¦å–æ¶ˆè®¾ç½®é‡æ–°å¼€å§‹ï¼Ÿ(Y/N)\n");
   input_to ((: cancelling :), who);
   return 1;
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gate.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "½ÖµÀ");
+  set ("short", "è¡—é“");
   set ("long", @LONG
 
-½øµ½ÕòÖÐÈËËÆºõ¶àÁËÐ©£¬Ò²ÓÐÐ©×öÐ¡ÂòÂôµÄ£®ÇàÇàµÄÊ¯°åÆÌÔÚÂ·
-ÉÏ£¬ÑÓÐøµ½ÕòµÄÁíÒ»¶Ë£®
+è¿›åˆ°é•‡ä¸­äººä¼¼ä¹Žå¤šäº†äº›ï¼Œä¹Ÿæœ‰äº›åšå°ä¹°å–çš„ï¼Žé’é’çš„çŸ³æ¿é“ºåœ¨è·¯
+ä¸Šï¼Œå»¶ç»­åˆ°é•‡çš„å¦ä¸€ç«¯ï¼Ž
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 //"north" : __DIR__"zhyuan",

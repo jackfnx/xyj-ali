@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 6/8/97 pickle
@@ -9,18 +9,18 @@ inherit STAFF;
 
 void create()
 {
-   set_name("Öù×Ó",({"zhu zi", "zhu", "zi", "zhuzi", "pillar"}));
+   set_name("æŸ±å­",({"zhu zi", "zhu", "zi", "zhuzi", "pillar"}));
    set_weight(100000);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long","×íĞÇÂ¥µÄÒ»½ØÖù×Ó£¬ÉÏÃæÓĞ²»ÉÙ¸«ÅüµÄºÛ¼£¡£\n");
-     set("unit","½Ø");
-     set("name_recognized", "×íĞÇÂ¥Öù×Ó");
+     set("long","é†‰æ˜Ÿæ¥¼çš„ä¸€æˆªæŸ±å­ï¼Œä¸Šé¢æœ‰ä¸å°‘æ–§åŠˆçš„ç—•è¿¹ã€‚\n");
+     set("unit","æˆª");
+     set("name_recognized", "é†‰æ˜Ÿæ¥¼æŸ±å­");
      set("value", 0);
      set("material","wood");
-     set("wield_msg","$NÑÛ¼ûµĞÈËÀ´ÁË£¬ÊµÔÚÌÚ²»³öÊÖÀ´£¬¸É´àÄÃ$nµ±ÎäÆ÷ÁË¡£\n");
-     set("unwield_msg","$N¡¸ßË¡¹µÄÒ»Éù°Ñ$n·ÅÏÂ£¬³¤³¤µÄÍÂÁËÒ»¿ÚÆø¡£\n");
+     set("wield_msg","$Nçœ¼è§æ•Œäººæ¥äº†ï¼Œå®åœ¨è…¾ä¸å‡ºæ‰‹æ¥ï¼Œå¹²è„†æ‹¿$nå½“æ­¦å™¨äº†ã€‚\n");
+     set("unwield_msg","$Nã€Œå’šã€çš„ä¸€å£°æŠŠ$næ”¾ä¸‹ï¼Œé•¿é•¿çš„åäº†ä¸€å£æ°”ã€‚\n");
    }
    init_staff(30, TWO_HANDED);
    setup();

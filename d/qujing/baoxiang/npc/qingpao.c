@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 11/5/1997 by snowcat
@@ -10,9 +10,9 @@ void create()
 {
   string dir;
 
-  set_name("ÇàÅÛ¹Ö", ({"qingpao guai", "guai"}));
-  set("title", "Ìì¹·ĞÇ");
-  set("gender", "ÄĞĞÔ");
+  set_name("é’è¢æ€ª", ({"qingpao guai", "guai"}));
+  set("title", "å¤©ç‹—æ˜Ÿ");
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("str", 30);
   set("cor", 30);
@@ -60,7 +60,7 @@ void appear ()
 void appearing ()
 {
   if (! this_object()->is_fighting())
-    message_vision ("ºôµØÒ»Éù£¬ÕÓÀïÃ°ÉÏÀ´³¤ÅÛ¹ÖÎï£¡\n",this_object());
+    message_vision ("å‘¼åœ°ä¸€å£°ï¼Œæ²¼é‡Œå†’ä¸Šæ¥é•¿è¢æ€ªç‰©ï¼\n",this_object());
 }
 
 void disappear()
@@ -77,7 +77,7 @@ void disappearing ()
     call_out ("disappearing",9);
     return;
   }
-  message_vision ("$NÒ»¸ö·´Éí´ó·­×ª£¬Ò»Í·×êÈëÕÓÔóÖ®ÖĞ¡£\n",this_object());
+  message_vision ("$Nä¸€ä¸ªåèº«å¤§ç¿»è½¬ï¼Œä¸€å¤´é’»å…¥æ²¼æ³½ä¹‹ä¸­ã€‚\n",this_object());
   destruct (this_object());
 }
 
@@ -89,7 +89,7 @@ int allow_split()
     return 0;
 
   me->set_temp("split",1);
-  message_vision ("$N×óÓÒ»·¹Ë£¬´óºğÒ»ÉùĞÖµÜºÎÔÚ£¡\n",me);
+  message_vision ("$Nå·¦å³ç¯é¡¾ï¼Œå¤§å¼ä¸€å£°å…„å¼Ÿä½•åœ¨ï¼\n",me);
   return 1;
 }
 
@@ -99,7 +99,7 @@ void init()
 
   ::init();
   set("inquiry", ([
-       "ĞÖµÜ": (: allow_split :),
+       "å…„å¼Ÿ": (: allow_split :),
        "brother": (: allow_split :),
        "brothers": (: allow_split :),
       ]));
@@ -152,13 +152,13 @@ int accept_fight (object me)
 
 void unconcious()
 {
-  message_vision ("\n$NºôµØÒ»Éù»¯×÷¹ÉÑÌÏòÌìÉÏ·ÉÈ¥¡£\n",this_object());
+  message_vision ("\n$Nå‘¼åœ°ä¸€å£°åŒ–ä½œè‚¡çƒŸå‘å¤©ä¸Šé£å»ã€‚\n",this_object());
   destruct(this_object());
 }
 
 void die()
 {
-  message_vision ("\n$NºôµØÒ»Éù»¯×÷¹ÉÑÌÏòÌìÉÏ·ÉÈ¥¡£\n",this_object());
+  message_vision ("\n$Nå‘¼åœ°ä¸€å£°åŒ–ä½œè‚¡çƒŸå‘å¤©ä¸Šé£å»ã€‚\n",this_object());
   destruct(this_object());
 }
 

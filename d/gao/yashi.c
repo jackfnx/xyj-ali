@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // yashi.c
@@ -8,19 +8,19 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ÑÅÊÒ");
+  set ("short", "é›…å®¤");
   set ("long", @LONG
 
-¸ßĞ¡½ãµÄÎÔ·¿±ãÊÇÕâÀï£®ÎÔ·¿Âğ£®£®µ±È»ÊÇĞİÏ¢µÄµØ·½ÁË£®£®
-¿¿ÄÚÓĞÒ»ÕÅËØ¾»µÄ´²ÆÌ(bed)£¬µ«¿Õµ´µ´µØ²»¼ûÒ»¸öÈËÓ°£®£®£®
+é«˜å°å§çš„å§æˆ¿ä¾¿æ˜¯è¿™é‡Œï¼å§æˆ¿å—ï¼ï¼å½“ç„¶æ˜¯ä¼‘æ¯çš„åœ°æ–¹äº†ï¼ï¼
+é å†…æœ‰ä¸€å¼ ç´ å‡€çš„åºŠé“º(bed)ï¼Œä½†ç©ºè¡è¡åœ°ä¸è§ä¸€ä¸ªäººå½±ï¼ï¼ï¼
 LONG);
 
-set("item_desc",(["bed":"Ë¯¾õÓÃµÄ´²ÆÌ(gosleep,gobed,bed)¡£ \n", ]));
+set("item_desc",(["bed":"ç¡è§‰ç”¨çš„åºŠé“º(gosleep,gobed,bed)ã€‚ \n", ]));
 set("exits", ([ /* sizeof() == 4 */
 "down" : __DIR__"guige",
 ]));
 
-create_door("down", "µñ»¨ÖñÃÅ", "up", DOOR_CLOSED);
+create_door("down", "é›•èŠ±ç«¹é—¨", "up", DOOR_CLOSED);
         set("no_clean_up", 0);
         setup();
 //        replace_program(ROOM);
@@ -36,8 +36,8 @@ void init()
 int do_bed()
 {       object me;
         me=this_player();
-         message_vision(HIY "$NÏÆ¿ªÉ´ÕÊ£¬×¼±¸ÉÏ´²ÁË¡£\n\n" NOR, me);
+         message_vision(HIY "$Næ€å¼€çº±å¸ï¼Œå‡†å¤‡ä¸ŠåºŠäº†ã€‚\n\n" NOR, me);
      me->move("/d/gao/bed_yashi");
-            message_vision(HIY "\nÉ³ÕÊÇáÇáÒ»¶¯£¬$N×êÁË½øÀ´¡£\n" NOR, me);
+            message_vision(HIY "\næ²™å¸è½»è½»ä¸€åŠ¨ï¼Œ$Né’»äº†è¿›æ¥ã€‚\n" NOR, me);
             return 1;
 }

@@ -4,13 +4,13 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( "Ь", ({ "shoes" }) );
+        set_name( "鞋", ({ "shoes" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "˫");
-                set("long", "һ˫�಼Ь��");
+                set("unit", "双");
+                set("long", "一双青布鞋。");
                 set("value", 100);
                 set("material", "boots");
                 set("armor_prop/dodge", 3);

@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("ĞÓÏÉ", ({"xing xian", "xian"}));
+        set_name("æä»™", ({"xing xian", "xian"}));
         set("long",
-"ËıÇà×Ë×°ôä´ä£¬µ¤Á³ÈüëÙÖ¬£¬ĞÇÑÛ¹â»¹²Ê£¬¶êÃ¼ĞãÓÖÆë¡£\n");
+"å¥¹é’å§¿è£…ç¿¡ç¿ ï¼Œä¸¹è„¸èµ›èƒ­è„‚ï¼Œæ˜Ÿçœ¼å…‰è¿˜å½©ï¼Œè›¾çœ‰ç§€åˆé½ã€‚\n");
         set("age", 20);
    set("attitude", "friendly");
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
    set("class", "yaomo");
-   set("nickname", "ÌìÌ¨æ§¼§");
+   set("nickname", "å¤©å°å¦²å§¬");
         set("str", 20);
         set("int", 20);
         set("per", 30);

@@ -1,7 +1,7 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// �ݹǵ�������Ѫ�顽3
+// 枯骨刀－－〖血书〗3
 // pickle 9/8/97
 #include <ansi.h>
 inherit F_UNIQUE;
@@ -11,18 +11,18 @@ void init();
 void dry(object book);
 void create()
 {
-        set_name("�հ��ʱ�", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
+        set_name("空白帐本", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
+                set("unit", "本");
    set("long",
-   "һ���հ׵��ʱ�����һ��͵����ûʲô������\n");
+   "一本空白的帐本，跟一般客店里的没什么两样。\n");
         set("material", "paper");
         set("value", 0);
-   set("name_recognized", "�ݹǵ�����");
-   set("��", 3);
+   set("name_recognized", "枯骨刀秘笈");
+   set("册", 3);
    set("no_drop", 1);
    set("no_put", 1);
         set("skill", ([
@@ -53,13 +53,13 @@ int do_read(string arg)
     if (!id(arg)) return 0;
     if (!book->query("stained"))
     {
-        message_vision("$N����"+book->query("name")+"�����о���һ�����\n", this_player());
-        tell_object(this_player(), "�հ׵�С������ʲô�ɿ��ģ�\n");
+        message_vision("$N拿起"+book->query("name")+"反复研究了一会儿。\n", this_player());
+        tell_object(this_player(), "空白的小册子有什么可看的？\n");
         return 1;
     }
     if (me->query_skill("kugu-blade", 1) < 130)
     {
-    tell_object(me, "��Ŀݹǵ���Ϊ�����������������ϵ��书��\n");
+    tell_object(me, "你的枯骨刀修为不够高深，难以领会书上的武功。\n");
    return 1;
     }
     return 0;
@@ -71,37 +71,37 @@ int do_cut(string arg)
     weapon=me->query_temp("apply/weapon");
     if (!weapon) weapon=me->query_temp("weapon");
     if (!weapon)
-        return notify_fail("��ʲô���\n");
+        return notify_fail("拿什么来割？\n");
     if(weapon->query("id") != "bi shou")
-        return notify_fail("����ֲ���Ҫ��ɱ��������ذ�װɡ�\n");
+        return notify_fail("干嘛？又不是要自杀！还是用匕首吧。\n");
     if (arg != "me" && arg != me->query("id"))
-        return notify_fail("�����˭��Ѫ��\n");
+        return notify_fail("你想割谁的血？\n");
     me->receive_wound("kee", random(me->query("str")*me->query("max_kee")/100));
-    message_vision("$N��������"+weapon->query("name")+"���ڸ첲�ϸ��˸�С���ӡ�\n", me);
+    message_vision("$N拿起手中"+weapon->query("name")+"，在胳膊上割了个小口子。\n", me);
     return 1;
 }
 int do_stain(string arg)
 {
     object book=this_object(),me=this_player();
     if(me->query("eff_kee")>=me->query("max_kee"))
-        return notify_fail("�������Լ���Ѫ�ȽϺá�\n");
-    if(!id(arg)) return notify_fail("��ҪȾʲô��\n");
-    message_vision("$N���˿ڵ�ѪȾ����"+book->query("name")+"��\n", me);
-    tell_object(me, book->query("name")+"�Ͻ����Գ���ͼ�κ�С�֡�\n");
+        return notify_fail("还是用自己的血比较好。\n");
+    if(!id(arg)) return notify_fail("你要染什么？\n");
+    message_vision("$N用伤口的血染红了"+book->query("name")+"。\n", me);
+    tell_object(me, book->query("name")+"上渐渐显出了图形和小字。\n");
     remove_call_out("dry");
     call_out("dry", 300, book);
     book->add("stained", 1);
-    book->set_name(RED"��Ѫ�顽"NOR, ({"xue shu", "xueshu", "blood book", "book", "shu"}));
+    book->set_name(RED"〖血书〗"NOR, ({"xue shu", "xueshu", "blood book", "book", "shu"}));
     book->set("long",
-"һ������ɫ��С���ӣ����滭�����赶�����Ρ�\n");
+"一本暗红色的小册子，上面画满了舞刀的人形。\n");
     return 1;
 }
 void dry(object book)
 {
     book->delete("stained");
-    tell_object(environment(book), book->query("name")+"�������ˣ��ֱ�����ʱ����ӡ�\n");
-    book->set_name("�հ��ʱ�", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
+    tell_object(environment(book), book->query("name")+"渐渐干了，又变回了帐本样子。\n");
+    book->set_name("空白帐本", ({"zhang ben", "zhangben", "book", "shu", "zhang",}));
     book->set("long",
-   "һ���հ׵��ʱ�����һ��͵����ûʲô������\n");
+   "一本空白的帐本，跟一般客店里的没什么两样。\n");
     return;
 }

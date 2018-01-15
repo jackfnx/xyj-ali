@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // moon_b.c
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("ÔÂ¹¬ÁôÑÔ°å", ({ "board" }) );
+        set_name("æœˆå®«ç•™è¨€æ¿", ({ "board" }) );
       set("location", "/d/moon/xiaoyuan");
         set("board_id", "moon_b");
-        set("long",     "ÔÂ¹¬ÁôÑÔ°å¡£\n" );
+        set("long",     "æœˆå®«ç•™è¨€æ¿ã€‚\n" );
 set("capacity", 80);
         setup();
         replace_program(BULLETIN_BOARD);

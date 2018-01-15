@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // drunk.c
@@ -16,16 +16,16 @@ int update_condition(object me, int duration)
      me->unconcious();
      return 0;
    } else if( !living(me) ) {
-     message("vision", me->name() + "╢Рак╦Ж╦Тё╛╡╩╧Щрюх╩юцвМхГдЮ║ё\n",
+     message("vision", me->name() + "Ф┴⌠Д╨├Д╦╙И ■О╪▄Д╦█Х©┤Д╬²Г└╤Г┐┌И├┴Е╕┌ФЁ╔Ц─┌\n",
         environment(me), me);
    } else if( duration > limit/2 ) {
-     tell_object(me, "дЦ╬У╣цдтжп╩Х╩ХЁаЁаё╛иМвсгАф╝ф╝╣ьё╛╢С╦ейгвМак║ё\n");
-     message("vision", me->name() + "р║м╥╩ндт╣ьу╬╤╪у╬╡╩нхё╛отх╩йг╨хвМак║ё\n",
+     tell_object(me, "Д╫═Х╖┴Е╬≈Х└▒Д╦╜Ф≤▐Ф≤▐Ф╡┴Ф╡┴О╪▄Х╨╚Е╜░Х╫╩Иё≤Иё≤Е°╟О╪▄Е╓╖Ф╕┌Ф≤╞И├┴Д╨├Ц─┌\n");
+     message("vision", me->name() + "Ф▒┤Е╓╢Ф≥┐Х└▒Е°╟Г╚≥И┐╫Г╚≥Д╦█Г╗ЁО╪▄Ф≤╬Г└╤Ф≤╞Е√²И├┴Д╨├Ц─┌\n",
         environment(me), me);
      me->receive_damage("sen", 10);
    } else if( duration > limit/4 ) {
-     tell_object(me, "дЦ╬У╣цр╩уС╬фрБиоЁЕё╛яшф╓спп╘Ёажьак║ё\n");
-     message("vision", me->name() + "аЁиоря╬╜бтот╬фрБак║ё\n",
+     tell_object(me, "Д╫═Х╖┴Е╬≈Д╦─И≤╣И┘▓Ф└▐Д╦┼Е├╡О╪▄Г°╪Г ╝Ф°┴Д╨⌡Ф╡┴И┤█Д╨├Ц─┌\n");
+     message("vision", me->name() + "Х└╦Д╦┼Е╥╡Г╩▐Г∙╔Ф≤╬И┘▓Ф└▐Д╨├Ц─┌\n",
         environment(me), me);
      me->receive_damage("sen", 3);
      me->receive_healing("gin", 10);

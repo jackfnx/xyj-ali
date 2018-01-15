@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/death/walk.c
@@ -6,13 +6,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ۺ������");
+  set ("short", "酆都城外");
   set ("long", @LONG
 
-��Լ�����ֳ�һ����ɫ��¥����¥����һ�����ң�������š���ڤ
-�硱�������֡���¥�³��Ž��գ��������ʲôҲ���������·��
-һ����ľ��ֱֱ��ָ�򱱷�����Χֻ����������ɫ�Ļ����������
-����˸�š�
+隐约北方现出一座黑色城楼，城楼上有一幅金匾，上面刻着“幽冥
+界”三个大字。城楼下城门紧闭，黑漆漆地什么也看不清楚。路边
+一个破木牌直直地指向北方，周围只有少许暗红色的火光若隐若现
+地闪烁着。
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */
@@ -45,7 +45,7 @@ int do_pass()
    object me=this_player();
    
    if( me->is_ghost() && !me->query_temp("time_enough") )
-     return notify_fail("��¥����Լ��������������̫ʢ��������ǣ�\n");
+     return notify_fail("城楼上隐约传来喊声：阳气太盛，不得入城！\n");
 
    if( me->is_ghost() ) {
      me->reincarnate();
@@ -53,10 +53,10 @@ int do_pass()
      me->delete_temp("time_enough");
    }
 
-   tell_object(me, "��ֱֱ���򱱶��ų�����ȥ����Ȼ���ֺ�ɫ�ĳ���ֻ�ǵ�����������\n");
-   tell_room(environment(me), me->name()+"ֱֱ���򱱶��ų�����ȥ����Ȼ�ӽ��յ����д��˹�ȥ��\n",
+   tell_object(me, "你直直地向北对着城门走去，居然发现黑色的城门只是道气帘。。。\n");
+   tell_room(environment(me), me->name()+"直直地向北对着城门走去，居然从紧闭的门中穿了过去！\n",
 ({me, me}));
    me->move("/d/death/new-walk1");
-   tell_room(environment(me), me->name()+"���˹�����\n", ({me, me}));
+   tell_room(environment(me), me->name()+"走了过来。\n", ({me, me}));
    return 1;
 }

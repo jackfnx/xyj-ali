@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // dipi.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡Æ¦×Ó", ({"xiao pizi", "pizi", "punk"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°ç—å­", ({"xiao pizi", "pizi", "punk"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 15+random(10));
-        set("long", "ÕâÊÇÒ»¸öÕûÈÕÀïÓÎÊÖºÃÏĞµÄĞ¡Æ¦×Ó¡£\n");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªæ•´æ—¥é‡Œæ¸¸æ‰‹å¥½é—²çš„å°ç—å­ã€‚\n");
 
    set("combat_exp", 1500+random(300));
    set("str", 15);

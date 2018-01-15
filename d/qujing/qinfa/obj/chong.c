@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/2/1997
@@ -9,13 +9,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "î§Ë¯³æ" , ({"keshui chong", "chong"}));
+  set_name( "çŒç¡è™«" , ({"keshui chong", "chong"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
-    set("long", "Ò»Ö»ÁéÇÉµÄî§Ë¯³æ£¬ÕıÉÁ×ÅÁ½Ö»ÑÛ¾¦Ææ¹ÖµØ¶¢×ÅÄã¡£\n");
+    set("unit", "åª");
+    set("long", "ä¸€åªçµå·§çš„çŒç¡è™«ï¼Œæ­£é—ªç€ä¸¤åªçœ¼ç›å¥‡æ€ªåœ°ç›¯ç€ä½ ã€‚\n");
     set("value", 60000);
   }
   set("is_monitored",1);
@@ -35,27 +35,27 @@ int do_apply(string arg)
   object ob;
 
   if (! arg)
-    return notify_fail ("ÄãÒªÄÃî§Ë¯³æ×öÊ²Ã´£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿çŒç¡è™«åšä»€ä¹ˆï¼Ÿ\n");
 
   ob = present (arg,where);
   if (! ob)
-    return notify_fail ("ÄãÒªÄÃî§Ë¯³æÍùË­ÉíÉÏ·Å£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿çŒç¡è™«å¾€è°èº«ä¸Šæ”¾ï¼Ÿ\n");
   
   if (! living(ob))
-    return notify_fail ("ÄãÒªÄÃî§Ë¯³æÍùË­ÉíÉÏ·Å£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿çŒç¡è™«å¾€è°èº«ä¸Šæ”¾ï¼Ÿ\n");
   
   if (me == ob)
-    return notify_fail ("ÄãÒªÄÃî§Ë¯³æÍù×Ô¼ºÉíÉÏ·Å£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿çŒç¡è™«å¾€è‡ªå·±èº«ä¸Šæ”¾ï¼Ÿ\n");
 
   // mon 4/11/98
   if(where->query("no_fight") && where->query("no_magic"))
-      return notify_fail ("ÔÚ°²È«ÇøÓÃî§Ë¯³æ¿É²»Ì«ºÃ°É£¡\n");
+      return notify_fail ("åœ¨å®‰å…¨åŒºç”¨çŒç¡è™«å¯ä¸å¤ªå¥½å§ï¼\n");
 
   if (this_object()->query("is_climbing"))
-    return notify_fail ("î§Ë¯³æÕıÔÚÅÀÄØ¡£\n");
+    return notify_fail ("çŒç¡è™«æ­£åœ¨çˆ¬å‘¢ã€‚\n");
 
-  message_vision ("$N¾²ÇÄÇÄµØÄÃ³öÒ»Ö»î§Ë¯³æ£¬Íù$nÉíÉÏÒ»·Å¡£\n",me,ob);
-  message_vision ("î§Ë¯³æÑ¸ËÙµØÅÀ½ø$NµÄ±Ç¿×Àï¡£\n",ob);
+  message_vision ("$Né™æ‚„æ‚„åœ°æ‹¿å‡ºä¸€åªçŒç¡è™«ï¼Œå¾€$nèº«ä¸Šä¸€æ”¾ã€‚\n",me,ob);
+  message_vision ("çŒç¡è™«è¿…é€Ÿåœ°çˆ¬è¿›$Nçš„é¼»å­”é‡Œã€‚\n",ob);
   this_object()->move(ob);  
   this_object()->set("is_climbing",1);
   call_out("applying",3+random(10),ob);  
@@ -67,8 +67,8 @@ void applying (object ob)
   if (! ob)
     return;
 
-//  message_vision ("$nÑ¸ËÙµØÅÀ½ø$NµÄ±Ç¿×Àï¡£\n",ob,this_object());
-  message_vision ("$NÈÌ²»×¡´òÁËÒ»¸ö¹şÇ·£¬ÂúÁ³Ë¯Òâ¡£\n",ob);
+//  message_vision ("$nè¿…é€Ÿåœ°çˆ¬è¿›$Nçš„é¼»å­”é‡Œã€‚\n",ob,this_object());
+  message_vision ("$Nå¿ä¸ä½æ‰“äº†ä¸€ä¸ªå“ˆæ¬ ï¼Œæ»¡è„¸ç¡æ„ã€‚\n",ob);
 
   if ((userp(ob) || ob->query("can_sleep")) && random (2)==0) {
     //mon 12/18/97 to allow player sleep.

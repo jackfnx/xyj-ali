@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/nbridge.c
@@ -10,11 +10,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��ˮ�ű�");
+  set ("short", "泾水桥北");
   set ("long", @LONG
 
-�����������ż�����ǣ������ˮ��������һ����ٵ���ǡ�
-˳����ˮ֮��������ȥ���ںӱ��Ų����ε�����ʵ���١�
+往北穿过城门即可入城，跨过泾水桥往南有一条大官道离城。
+顺着泾水之滨东西望去，在河边信步闲游的人着实不少。
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */

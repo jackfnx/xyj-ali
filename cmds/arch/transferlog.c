@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // bboard.c
@@ -15,7 +15,7 @@ int main(object me, string arg)
 
    status = wizhood(me);
    if( me!=this_player(1) || wiz_level(me) < wiz_level(status) )
-     return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+     return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
    
    if (!arg) return 0;
         if (sscanf(arg, "%s %s", srcstr, dststr)!=2) return 0;
@@ -26,16 +26,16 @@ int main(object me, string arg)
    user = new(LOGIN_OB);
    if( (string)user->set("id", srcstr) != srcstr ) 
      return notify_fail("Failed setting user name.\n");
-   if (! user->restore())   return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+   if (! user->restore())   return notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");
    export_uid(user);
 
    if( (string)user->set("id", dststr) != dststr ) 
      return notify_fail("Failed setting user name.\n");
-        if (!user->save()) return notify_fail("´æµµÊ§°Ü£¡\n");
+        if (!user->save()) return notify_fail("å­˜æ¡£å¤±è´¥ï¼\n");
    destruct(user);
 
         tell_object(me, 
-     "Íæ¼Ò "+srcstr+" Êı¾İ³É¹¦×ª»»ÖÁÍæ¼Ò "+dststr+" £¡\n");
+     "ç©å®¶ "+srcstr+" æ•°æ®æˆåŠŸè½¬æ¢è‡³ç©å®¶ "+dststr+" ï¼\n");
    return 1;
 }   
 
@@ -43,9 +43,9 @@ int help(object me)
 {
 write(@HELP
 
-Ö¸Áî¸ñÊ½£ºtransfer <source_id> <dest_id>
+æŒ‡ä»¤æ ¼å¼ï¼štransfer <source_id> <dest_id>
 
-½«Ò»¸öÍæ¼ÒµÄÊı¾İ(login)×ª»»ÖÁÁíÒ»¸öÍæ¼Ò¡£
+å°†ä¸€ä¸ªç©å®¶çš„æ•°æ®(login)è½¬æ¢è‡³å¦ä¸€ä¸ªç©å®¶ã€‚
 
 HELP
         );

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // golden_sword.c
@@ -9,13 +9,13 @@ inherit SWORD;
 
 void create()
 {
-   set_name("½ğ·æ½£", ({ "golden sword", "sword" }) );
+   set_name("é‡‘é”‹å‰‘", ({ "golden sword", "sword" }) );
    set_weight(20000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
-     set("long", "Ò»°ÑÉÁÉÁ·¢×Å½ğ¹âµÄ³¤½£¡£\n");
+     set("unit", "æŠŠ");
+     set("long", "ä¸€æŠŠé—ªé—ªå‘ç€é‡‘å…‰çš„é•¿å‰‘ã€‚\n");
      set("value", 3400);
      set("material", "gold");
    }
@@ -24,8 +24,8 @@ void create()
 // These properties are optional, if you don't set them, it will use the
 // default values.
 
-   set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-   set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+   set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+   set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");
 
 // The setup() is required.
 

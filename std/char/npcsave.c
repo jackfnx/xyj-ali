@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // npc.c
@@ -99,7 +99,7 @@ void setup()
 // create() is actually no use since all NPC has their own create().
 void create()
 {
-     set_name("·ÇÊ¹ÓÃÕßÎï¼ş", ({ "npc object", "npc", "object" }) );
+     set_name("éä½¿ç”¨è€…ç‰©ä»¶", ({ "npc object", "npc", "object" }) );
 }
 
 void self_destroy()

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <skill.h>
@@ -8,15 +8,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÌÓÃü·û", ({"escape seal", "seal", "paper"}));
+        set_name("é€ƒå‘½ç¬¦", ({"escape seal", "seal", "paper"}));
    set_weight(100);
    if(clonep())
          set_default_object(__FILE__);
      else {
 
-        set("long","Ò»ÕÅ»­ÉÏÁË·ûÖäµÄÌÒ·ûÖ½£¬ÖĞÑëÓĞ¸ö´ó´óµÄ¡°ÌÓ¡±×Ö¡£
-¿ÉÒÔÔÚÕ½¶·ÖĞ¼À(burn)Ö®¡£\n");
-        set("unit", "ÕÅ");
+        set("long","ä¸€å¼ ç”»ä¸Šäº†ç¬¦å’’çš„æ¡ƒç¬¦çº¸ï¼Œä¸­å¤®æœ‰ä¸ªå¤§å¤§çš„â€œé€ƒâ€å­—ã€‚
+å¯ä»¥åœ¨æˆ˜æ–—ä¸­ç¥­(burn)ä¹‹ã€‚\n");
+        set("unit", "å¼ ");
         set("value", 0);
    set("no_put",1);
    set("no_sell",1);
@@ -52,7 +52,7 @@ void destruct_me(object where, object me)
         object seal;
         if( seal=new("/obj/paper_seal"))
                 seal->move(where);
-   message_vision("$NÊÖÖĞµÄ$nÍ»·¢ºì¹â£¬·ûÖä½¥½¥µ­È¥²»¼ûÁË¡£\n",where,me);
+   message_vision("$Næ‰‹ä¸­çš„$nçªå‘çº¢å…‰ï¼Œç¬¦å’’æ¸æ¸æ·¡å»ä¸è§äº†ã€‚\n",where,me);
         destruct(me);
 }
 
@@ -64,26 +64,26 @@ int do_burn(string arg)
    if(!arg || (arg!="escape seal"
                         && arg!="seal"
                         && arg!="paper") )
-     return notify_fail("ÄãÒª¼ÀÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦ç¥­ä»€ä¹ˆï¼Ÿ\n");
 
    if( (int)me->query("mana") < 100 )
-     return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆÌÓÃü·û¡£\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æ§åˆ¶é€ƒå‘½ç¬¦ã€‚\n");
    if( (int)me->query("sen") < 100 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬ºÜÄÑ¼İÔ¦ÌÓÃü·û¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œå¾ˆéš¾é©¾é©­é€ƒå‘½ç¬¦ã€‚\n");
 
 
    tell_room(environment(me),
-me->name()+"´óº°Ò»Éù¡°×Å¡±£¬ÊÖÒ»»Ó£¬¼À³öÁËÒ»ÕÅÌÓÃü·û¡£¡£¡£\n\n");
-   tell_room(environment(me),"ÖÜÎ§ºôµÄÒ»ÏÂÉÁ³öÒ»Æ¬»ğ¹â¡£\n");
+me->name()+"å¤§å–Šä¸€å£°â€œç€â€ï¼Œæ‰‹ä¸€æŒ¥ï¼Œç¥­å‡ºäº†ä¸€å¼ é€ƒå‘½ç¬¦ã€‚ã€‚ã€‚\n\n");
+   tell_room(environment(me),"å‘¨å›´å‘¼çš„ä¸€ä¸‹é—ªå‡ºä¸€ç‰‡ç«å…‰ã€‚\n");
 
 
 
    if( random( (int)me->query_kar()+ (int)me->query_cps()) > 20 )   {
-     tell_room(environment(me),"\n"+me->name()+"³Ã×Å»ğÓ°ÌÓÅÜÁË¡£\n");
+     tell_room(environment(me),"\n"+me->name()+"è¶ç€ç«å½±é€ƒè·‘äº†ã€‚\n");
      me->move("/d/jjf/se_garden");
 
    } else {
-     tell_room(environment(me), "\nË­Öª»ğÊÆÌ«ÃÍ£¬"+me->name()+"Ã»ÅÜµô¡£\n");
+     tell_room(environment(me), "\nè°çŸ¥ç«åŠ¿å¤ªçŒ›ï¼Œ"+me->name()+"æ²¡è·‘æ‰ã€‚\n");
 
    }
    me->add("mana",-50);

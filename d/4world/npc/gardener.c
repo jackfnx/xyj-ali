@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-       set_name("»¨½³", ({"hua jiang", "jiang"}));
-       set("long", "¶«·½Îä¹İµÄ»¨½³£¬ÕıÌá×ÅË®½½»¨¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("èŠ±åŒ ", ({"hua jiang", "jiang"}));
+       set("long", "ä¸œæ–¹æ­¦é¦†çš„èŠ±åŒ ï¼Œæ­£æç€æ°´æµ‡èŠ±ã€‚\n");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 1000);
    set("per", 18);
        set("age", 26);

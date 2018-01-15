@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // guanjia.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("¸ß²Å", ({"gao cai", "gao"}));
-       set("long","Ò»¸öĞ¡»ï¼Æ£¬¸ø¹Ü¼ÒÅÜÍÈ£®\n");
-   set("title", "Ğ¡»ï¼Æ");
-       set("gender", "ÄĞĞÔ");
+       set_name("é«˜æ‰", ({"gao cai", "gao"}));
+       set("long","ä¸€ä¸ªå°ä¼™è®¡ï¼Œç»™ç®¡å®¶è·‘è…¿ï¼\n");
+   set("title", "å°ä¼™è®¡");
+       set("gender", "ç”·æ€§");
        set("age", 16);
        set("attitude", "peaceful");
        set("shen_type", 1);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit SWORD;
 
 void create()
 {
-  set_name("ïôÎ²½£", ({ "zhiwei jian", "jian", "sword" }) );
+  set_name("é›‰å°¾å‰‘", ({ "zhiwei jian", "jian", "sword" }) );
   init_sword(36);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(700);
   if( clonep() )
     set_default_object(__FILE__);
@@ -17,7 +17,7 @@ void create()
     set("value", 370);
     set("material", "metal");
   }
-  set("wield_msg","$N²ÙÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ“èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   setup();
 }
 

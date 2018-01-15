@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // inquiryd.c
@@ -14,17 +14,17 @@ int parse_inquiry(object me, object ob, string topic)
 {
    switch( topic ) {
      case "name":
-        message_vision( CYN "$NÏò$nÎÊµÀ£º¸ÒÎÊ" + RANK_D->query_respect(ob)
-          + "×ğĞÕ´óÃû£¿\n" NOR, me, ob);
+        message_vision( CYN "$Nå‘$né—®é“ï¼šæ•¢é—®" + RANK_D->query_respect(ob)
+          + "å°Šå§“å¤§åï¼Ÿ\n" NOR, me, ob);
         return 1;
      case "here":
-        message_vision(CYN "$NÏò$nÎÊµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-          + "£¬" + RANK_D->query_self(me) + "³õµ½¹ó±¦µØ£¬²»ÖªÕâÀïÓĞĞ©Ê²Ã´·çÍÁÈËÇé£¿\n" NOR,
+        message_vision(CYN "$Nå‘$né—®é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+          + "ï¼Œ" + RANK_D->query_self(me) + "åˆåˆ°è´µå®åœ°ï¼Œä¸çŸ¥è¿™é‡Œæœ‰äº›ä»€ä¹ˆé£åœŸäººæƒ…ï¼Ÿ\n" NOR,
           me, ob);
         return 1;
      case "rumors":
-        message_vision(CYN "$NÏò$nÎÊµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-          + "£¬²»Öª×î½üÓĞÃ»ÓĞÌıËµÊ²Ã´ÏûÏ¢£¿\n" NOR, me, ob);
+        message_vision(CYN "$Nå‘$né—®é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+          + "ï¼Œä¸çŸ¥æœ€è¿‘æœ‰æ²¡æœ‰å¬è¯´ä»€ä¹ˆæ¶ˆæ¯ï¼Ÿ\n" NOR, me, ob);
         return 1;
      default:
         return 0;

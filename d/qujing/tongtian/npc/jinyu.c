@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("���۹�", ({ "jinlin guai", "jinglin", "guai" }));
-  set("title", "ͨ���");   
-  set("long", "һλ���Ž�׵����֡�\n");
-  set("gender", "����");
+  set_name("金鳞怪", ({ "jinlin guai", "jinglin", "guai" }));
+  set("title", "通天河");   
+  set("long", "一位身着金甲的妖怪。\n");
+  set("gender", "男性");
   set("age", 76);
   set("attitude", "aggressive");
   set("per", 30);
@@ -58,9 +58,9 @@ void die ()
     ob->set_temp("obstacle/tongtian_killed",1);
     call_out ("chen_appearing",1,ob);
   }
-  message_vision ("\n$Nһ˦β�ͣ��ֳ������ԭ����\n",me);
-  message_vision ("\n����ŭ��һ�������㣬����������Ҳ��\n",me);
-  message_vision ("�����������ԹԵ�һ����Ť����ҡ����ͷ�����ˡ�\n",me);
+  message_vision ("\n$N一甩尾巴，现出金鱼的原身。\n",me);
+  message_vision ("\n天上怒喝一声：金鱼，归我莲花池也！\n",me);
+  message_vision ("金鱼闻声，乖乖地一纵身扭着腰摇晃着头游走了。\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);

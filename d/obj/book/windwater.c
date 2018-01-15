@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // nowords.c
@@ -11,14 +11,14 @@ void tear();
 
 void create()
 {
-        set_name("¡¼·çË®¡½", ({"book","shu"}));
+        set_name("ã€–é£æ°´ã€—", ({"book","shu"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
    set("long",
-   "Ò»±¾ÔàÙâÙâµÄĞ¡²á×Ó¡£ÉÏÃæ»®×ÅÒ»µØĞÎÖ®ÀàµÄÍ¼°¸¡£\n");
+   "ä¸€æœ¬è„å…®å…®çš„å°å†Œå­ã€‚ä¸Šé¢åˆ’ç€ä¸€åœ°å½¢ä¹‹ç±»çš„å›¾æ¡ˆã€‚\n");
         set("material", "paper");
         set("value", 100);
         set("skill", ([

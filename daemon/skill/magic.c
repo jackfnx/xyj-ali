@@ -2,7 +2,7 @@
 
 inherit SKILL;
 
-string name() { return "±¾ÃüÉñÍ¨"; }
+string name() { return "æœ¬å‘½ç¥é€š"; }
 
 string conjure_magic_file(string magic)
 {

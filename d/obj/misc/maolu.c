@@ -1,26 +1,26 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 string *names = ({
-"Ğ¡Ã«Â¿",
-"»¨Ã«Â¿",
+"å°æ¯›é©´",
+"èŠ±æ¯›é©´",
 });
 
 void create()
 {
   set_name(names[random(sizeof(names))], ({"mao lu", "lu"}));
-  set("race", "Ò°ÊŞ");
+  set("race", "é‡å…½");
   set("age", 10);
 
   set("combat_exp", 10000);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
 
   set("chat_chance", 1);
 
-  set("ride/msg", "µ¹Æï");
+  set("ride/msg", "å€’éª‘");
   set("ride/dodge", 10+random(10));
   set_temp("apply/attack", 10);
   set_temp("apply/armor", 20);

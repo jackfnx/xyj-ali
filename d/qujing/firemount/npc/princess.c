@@ -1,9 +1,9 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
 #include <ansi.h>
-#define NAME "ÌúÉÈ¹«Ö÷"
+#define NAME "é“æ‰‡å…¬ä¸»"
 inherit NPC;
 
 int test_player (object who);
@@ -12,12 +12,12 @@ void create()
 {
   string dir;
   set_name(NAME, ({"tieshan gongzhu", "gongzhu", "princess"}));
-  set("title", "»ğÑæÉ½ºìÂÚÂŞÉ²");
-  set("gender", "Å®ĞÔ");
+  set("title", "ç«ç„°å±±çº¢çº¶ç½—åˆ¹");
+  set("gender", "å¥³æ€§");
   set("age", 28);
   set("per", 18);
-  set("long", "»ğÑæÉ½ÌúÉÈ¹«Ö÷¡£\n");
-  set("rank_info/respect", "ºìÂÚ¹«Ö÷");
+  set("long", "ç«ç„°å±±é“æ‰‡å…¬ä¸»ã€‚\n");
+  set("rank_info/respect", "çº¢çº¶å…¬ä¸»");
   set("combat_exp", 400000);
   set_skill("sanqing-jian", 80);
   set_skill("sword", 80);
@@ -41,13 +41,13 @@ void create()
   set("force_factor", 40);
   set("eff_dx",80000);
   set("nkgain",140);
-  create_family("´äÔÆÉ½°Å½¶¶´",2,"µÜ×Ó");
+  create_family("ç¿ äº‘å±±èŠ­è•‰æ´",2,"å¼Ÿå­");
   set("inquiry", ([
-        "name":   "Äã×ĞÏ¸¿´¿´ÎÒÊÇË­£¡",
-        "here":   "ÄãÕÒÍÁµØÈ¥ÎÊ£¡",
-        "»ğÑæÉ½": "ºßºß£¬Ö»ÓĞÒ»Ñù·¨±¦ÄÜÕò×¡»ğÑæÉ½¡£",
-        "·¨±¦":   "ÎÒºÜÉÙ°Ñ×æ´«¼ÒÕäËæ±ãÔùÓèÍâĞÕ¡£",
-        "ÌúÉÈ":   (: test_player :),
+        "name":   "ä½ ä»”ç»†çœ‹çœ‹æˆ‘æ˜¯è°ï¼",
+        "here":   "ä½ æ‰¾åœŸåœ°å»é—®ï¼",
+        "ç«ç„°å±±": "å“¼å“¼ï¼Œåªæœ‰ä¸€æ ·æ³•å®èƒ½é•‡ä½ç«ç„°å±±ã€‚",
+        "æ³•å®":   "æˆ‘å¾ˆå°‘æŠŠç¥–ä¼ å®¶çéšä¾¿èµ äºˆå¤–å§“ã€‚",
+        "é“æ‰‡":   (: test_player :),
       ]));
 
   setup();
@@ -75,27 +75,27 @@ void announce_success(object who)
 
   if (who->query("combat_exp")<4000)
   {
-    tell_object (who,"ÄãµÄµÀĞĞ²»¹»£¬Ê²Ã´¶¼Ã»ÓĞµÃµ½£¡\n");
+    tell_object (who,"ä½ çš„é“è¡Œä¸å¤Ÿï¼Œä»€ä¹ˆéƒ½æ²¡æœ‰å¾—åˆ°ï¼\n");
     return;
   }  
 
   if (who->query("obstacle/firemount") == "done")
   {
-    tell_object (who,"ÄãÒÑ¾­¹ıÁËÕâÒ»¹Ø£¬Ê²Ã´¶¼µÃ²»µ½ÁË£¡\n");
+    tell_object (who,"ä½ å·²ç»è¿‡äº†è¿™ä¸€å…³ï¼Œä»€ä¹ˆéƒ½å¾—ä¸åˆ°äº†ï¼\n");
     return;
   }  
   i = random(600);
-  message_vision (HIY "Ò»ÍÅºìÉ«ÔÆÎíÆ®À´£¬ÏÔÏÖ³ö"+NAME+"¡£\n" NOR,who);
+  message_vision (HIY "ä¸€å›¢çº¢è‰²äº‘é›¾é£˜æ¥ï¼Œæ˜¾ç°å‡º"+NAME+"ã€‚\n" NOR,who);
   who->add("obstacle/number",1);
   who->set("obstacle/firemount","done");
   who->add("combat_exp",i+3000);
-  command("chat "+who->query("name")+"ÆËÃğÁË»ğÑæÉ½°Ë°ÙÀï´ó»ğ£¡");
-  command("chat "+who->query("name")+"Ë³Àû´³¹ıÎ÷ĞĞÓÖÒ»¹Ø£¡");
-  tell_object (who,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
-               chinese_number(i/4)+"Ìì"+
-               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀĞĞ£¡\n");
+  command("chat "+who->query("name")+"æ‰‘ç­äº†ç«ç„°å±±å…«ç™¾é‡Œå¤§ç«ï¼");
+  command("chat "+who->query("name")+"é¡ºåˆ©é—¯è¿‡è¥¿è¡Œåˆä¸€å…³ï¼");
+  tell_object (who,"ä½ èµ¢å¾—äº†"+chinese_number(3)+"å¹´"+
+               chinese_number(i/4)+"å¤©"+
+               chinese_number((i-(i/4)*4)*3)+"æ—¶è¾°çš„é“è¡Œï¼\n");
   who->save();
-  message_vision (HIY NAME+"»¯ÎªºìÉ«ÔÆÎíÉıÆğ£¬ÏòÄÏ±ßÆ®È¥¡£\n" NOR,who);
+  message_vision (HIY NAME+"åŒ–ä¸ºçº¢è‰²äº‘é›¾å‡èµ·ï¼Œå‘å—è¾¹é£˜å»ã€‚\n" NOR,who);
 }
 
 void return_object (object who, object ob)
@@ -116,12 +116,12 @@ int accept_object (object who, object ob)
 
   if (who->query("combat_exp")<4000)
   {
-    message_vision ("$N¶Ô$nÒ¡Ò¡Í·£ºÄãµÀĞĞ²»¹»£¬Õâ°Å½¶¹ÇÅÂÊÇ¼Ù»õ¡£\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡æ‘‡å¤´ï¼šä½ é“è¡Œä¸å¤Ÿï¼Œè¿™èŠ­è•‰éª¨æ€•æ˜¯å‡è´§ã€‚\n",me,who);
     call_out("return_object",1,who,ob);
     return 1;
   }  
 
-  message_vision ("$N½ÓÏÂ°Å½¶¹Ç£¬¶Ô$nÁ¬ÉùµÀĞ»¡£\n",me,who);
+  message_vision ("$Næ¥ä¸‹èŠ­è•‰éª¨ï¼Œå¯¹$nè¿å£°é“è°¢ã€‚\n",me,who);
   who->set("obstacle/firemount_bone",who->query("obstacle/firemount_bone")+1);
   if (who->query("obstacle/firemount_bone") > 9)
   {
@@ -141,7 +141,7 @@ void attempt_apprentice(object who)
 {
   if (who->query("combat_exp")<4000)
   {
-    inform_player ("$NÏò$nÒ¡ÁËÒ¡Í·£ºÄãµÀĞĞ²»¹»£¬¹«Ö÷ÅÂÊÇ½Ì²»ÁËÄã¡£\n",who);
+    inform_player ("$Nå‘$næ‘‡äº†æ‘‡å¤´ï¼šä½ é“è¡Œä¸å¤Ÿï¼Œå…¬ä¸»æ€•æ˜¯æ•™ä¸äº†ä½ ã€‚\n",who);
     return;
   }  
   return; // now disabled
@@ -155,27 +155,27 @@ void give_tieshan (object me, object who)
 
   if (tieshan)
   {
-    message_vision ("$N¿àĞ¦Ò»ÏÂ£¬"+
-                    "ºÜ²»ÇéÔ¸µØË«ÊÖÅõ³öÌúÉÈ£¬½»¸ø$n¡£\n",me,who);
+    message_vision ("$Nè‹¦ç¬‘ä¸€ä¸‹ï¼Œ"+
+                    "å¾ˆä¸æƒ…æ„¿åœ°åŒæ‰‹æ§å‡ºé“æ‰‡ï¼Œäº¤ç»™$nã€‚\n",me,who);
     tieshan->move(who);
     if (who->query("obstacle/firemount")!="done")
       who->set("obstacle/firemount","won");
   }
   else
   {
-    message_vision ("$NÎªÄÑµØËµµÀ£ºÌúÉÈÒÑ¾­ËÍÈËÁË£¬"+
-                    "¹«Ö÷ÊµÎŞËûÎïÏàÔù¡£\n",me,who);
+    message_vision ("$Nä¸ºéš¾åœ°è¯´é“ï¼šé“æ‰‡å·²ç»é€äººäº†ï¼Œ"+
+                    "å…¬ä¸»å®æ— ä»–ç‰©ç›¸èµ ã€‚\n",me,who);
   }
 }
 
 int test_player (object me)
 {
   object who = this_player();
-  string msg = "$NËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who);
+  string msg = "$Nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who);
 
   if (who->query("combat_exp")<4000)
   {
-    inform_player (msg+"µÀĞĞ²»¹»£¬¹«Ö÷ÅÂÌúÉÈÉËÁËÄãµÄ¸ù¹Ç£¡\n",who);
+    inform_player (msg+"é“è¡Œä¸å¤Ÿï¼Œå…¬ä¸»æ€•é“æ‰‡ä¼¤äº†ä½ çš„æ ¹éª¨ï¼\n",who);
     return 1;
   }  
 
@@ -187,9 +187,9 @@ int test_player (object me)
   }  
 
   if (who->query("obstacle/firemount") == "fight")
-    inform_player (msg+"ÓÖÀ´À²£¿ºÃ£¬¹«Ö÷·îÅã£¡\n",who);
+    inform_player (msg+"åˆæ¥å•¦ï¼Ÿå¥½ï¼Œå…¬ä¸»å¥‰é™ªï¼\n",who);
   else    
-    inform_player (msg+"Ïë±ØÊÇ¸öË¬¿ìÖ®ÈË£¬¹«Ö÷×îÏ²»¶ÈÈÄÖ£¡\n",who);
+    inform_player (msg+"æƒ³å¿…æ˜¯ä¸ªçˆ½å¿«ä¹‹äººï¼Œå…¬ä¸»æœ€å–œæ¬¢çƒ­é—¹ï¼\n",who);
 
   call_out ("fight_player",3,who);
   return 1;
@@ -199,7 +199,7 @@ void fight_player (object who)
 {
   object me = this_object();
 
-  message_vision ("$N¶ÔÖÚÑıÒ»ºÈ£ºÉÁ¿ª£¡\n",me,who);
+  message_vision ("$Nå¯¹ä¼—å¦–ä¸€å–ï¼šé—ªå¼€ï¼\n",me,who);
   who->set("obstacle/firemount","fight");
   command("fight "+who->query("id"));
 } 
@@ -219,14 +219,14 @@ void player_win (object me, object who)
   object tieshan = present("tie shan",me);
   string msg;
 
-  message_vision ("$N´ó¾ªÊ§É«£ººÃÎä¹¦£¡ºÃÎä¹¦£¡\n",me);
+  message_vision ("$Nå¤§æƒŠå¤±è‰²ï¼šå¥½æ­¦åŠŸï¼å¥½æ­¦åŠŸï¼\n",me);
   give_tieshan (me,who);
   call_out ("princess_disappear",2,me);
 }
 
 void player_lose (object me, object who)
 {
-  message_vision ("$NÒ»ã¶£¬»ÅÃ¦·ö×¡$n£¬Á¬ÉùËµµÀ£ºÊ§ÀñÊ§Àñ£¡\n",me,who);
+  message_vision ("$Nä¸€æ„£ï¼Œæ…Œå¿™æ‰¶ä½$nï¼Œè¿å£°è¯´é“ï¼šå¤±ç¤¼å¤±ç¤¼ï¼\n",me,who);
   call_out ("princess_disappear",2,me);
 }
 
@@ -258,7 +258,7 @@ void check_fight (object me, object who)
 
 void princess_disappear (object me)
 {
-  message_vision ("$NÂıÂıµØ»¯ÎªºìÉ«ÔÆÎíÏûÊ§ÁË¡£\n",me);
+  message_vision ("$Næ…¢æ…¢åœ°åŒ–ä¸ºçº¢è‰²äº‘é›¾æ¶ˆå¤±äº†ã€‚\n",me);
   destruct (me);
 }
 
@@ -269,7 +269,7 @@ int do_fight(string arg)
 
   if (me->is_fighting())
   {
-    message_vision ("$N¶Ô$nÒ¡Ò¡Í·£ºÒ»¸öÒ»¸öµØÀ´£¬²»ÒªÒ»Óµ¶øÉÏ£¡\n",me,who);
+    message_vision ("$Nå¯¹$næ‘‡æ‘‡å¤´ï¼šä¸€ä¸ªä¸€ä¸ªåœ°æ¥ï¼Œä¸è¦ä¸€æ‹¥è€Œä¸Šï¼\n",me,who);
     return 1;
   }
   
@@ -280,7 +280,7 @@ int do_fight(string arg)
     return 0; // can fight
   }
 
-  message_vision ("$N¶Ô$nÒ¡Ò¡Í·£ºÒª´ò¼Ü³öÈ¥´ò£¡\n",me,who);
+  message_vision ("$Nå¯¹$næ‘‡æ‘‡å¤´ï¼šè¦æ‰“æ¶å‡ºå»æ‰“ï¼\n",me,who);
   return 1;
 }
 
@@ -289,14 +289,14 @@ int do_cast(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision ("$NÎü¿ÚÆø£¬±ïºìÁËÁ³ÄîÁË¼¸ÉùÖäÓï¡£\n",who);
+  message_vision ("$Nå¸å£æ°”ï¼Œæ†‹çº¢äº†è„¸å¿µäº†å‡ å£°å’’è¯­ã€‚\n",who);
   call_out("no_cast",2,who,me);
   return 1;
 }
 
 void no_cast(object who, object me)
 {
-  message_vision ("Ğ¡Ğ¡É½¶´ÀïÏìÆğÒ»Æ¬ÔÓÂÒµÄ»ØÒô£¬$N¿´×Å$nÒ»Ğ¦¡£\n",
+  message_vision ("å°å°å±±æ´é‡Œå“èµ·ä¸€ç‰‡æ‚ä¹±çš„å›éŸ³ï¼Œ$Nçœ‹ç€$nä¸€ç¬‘ã€‚\n",
                   me,who);
 }
 
@@ -305,14 +305,14 @@ int do_steal(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision ("$N³Ã×ÅºÚ°µÉì³öÊÖ¡­¡­Ò»²»Ğ¡ĞÄÃşµ½¹«Ö÷µÄ³¤·¢¡£\n",who);
+  message_vision ("$Nè¶ç€é»‘æš—ä¼¸å‡ºæ‰‹â€¦â€¦ä¸€ä¸å°å¿ƒæ‘¸åˆ°å…¬ä¸»çš„é•¿å‘ã€‚\n",who);
   call_out("no_steal",2,who,me);
   return 1;
 }
 
 void no_steal(object who, object me)
 {
-  message_vision ("$N°´Şà×¡ĞÔ×Ó£¬¶Ô$nËµ£ºÇë×Ô×ğ×Ô°®×ÔÂÉ¡£\n",me,who);
+  message_vision ("$NæŒ‰æºä½æ€§å­ï¼Œå¯¹$nè¯´ï¼šè¯·è‡ªå°Šè‡ªçˆ±è‡ªå¾‹ã€‚\n",me,who);
 }
 
 int do_kill(string arg)
@@ -320,13 +320,13 @@ int do_kill(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision ("$NºöÈ»ÑÛÂ¶É±»ú£¬²ü¶¶µØº°ÁËÒ»Éù£ºÉ±£¡\n",who);
+  message_vision ("$Nå¿½ç„¶çœ¼éœ²æ€æœºï¼Œé¢¤æŠ–åœ°å–Šäº†ä¸€å£°ï¼šæ€ï¼\n",who);
   call_out("no_kill",2,who,me);
   return 1;
 }
 
 void no_kill(object who, object me)
 {
-  message_vision ("É²ÄÇ¼äÉ½¶´ÀïÖÚĞ¡Ñı·×·×ÉÏ´®ÏÂÌøÎ§×Å$NÂÒ×÷Ò»ÍÅ¡£\n",who);
-  message_vision ("Ö»¼û$NÀäÀäµØËµµÀ£º¾²¡­¡­Ò»ÇĞ¶¼°²¾²ÏÂÀ´ÁË¡£\n",me);
+  message_vision ("åˆ¹é‚£é—´å±±æ´é‡Œä¼—å°å¦–çº·çº·ä¸Šä¸²ä¸‹è·³å›´ç€$Nä¹±ä½œä¸€å›¢ã€‚\n",who);
+  message_vision ("åªè§$Nå†·å†·åœ°è¯´é“ï¼šé™â€¦â€¦ä¸€åˆ‡éƒ½å®‰é™ä¸‹æ¥äº†ã€‚\n",me);
 }

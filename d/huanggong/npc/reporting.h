@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,14 +6,14 @@
 
 void reporting (object who, string reason, int points, string name)
 {
-  string str = reason+"µÃµ½ÁË"+(points)+name+"¡£\n";
+  string str = reason+"å¾—åˆ°äº†"+(points)+name+"ã€‚\n";
 
   if (DEBUG)
   {
     object snowcat = find_player ("snowcat");
 
     if (snowcat && wizardp(snowcat))
-      tell_object (snowcat, " ¡Ñ "+who->query("name")+str);
+      tell_object (snowcat, " âŠ™ "+who->query("name")+str);
   }
   else
     MONITOR_D->report_system_object_msg (who, str);

@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-    set_name("Ê¯ÅÌ", ({ "shi pan" }));
+    set_name("çŸ³ç›˜", ({ "shi pan" }));
     set_weight(500);
     set_max_encumbrance(8000);
     if (clonep()) {
@@ -19,8 +19,8 @@ void create()
             mht->move(this_object());
         }
     } else {
-        set("unit", "¸ö");
-        set("long", "Ò»¸öÊ¯ÅÌ×Ó¡£\n");
+        set("unit", "ä¸ª");
+        set("long", "ä¸€ä¸ªçŸ³ç›˜å­ã€‚\n");
         set("no_give", 1);
     }
 }

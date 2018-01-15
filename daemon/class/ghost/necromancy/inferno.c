@@ -12,25 +12,25 @@ int cast(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒªÒıµØÓü»ğÈ¥ÉÕË­£¿\n");
+        return notify_fail("ä½ è¦å¼•åœ°ç‹±ç«å»çƒ§è°ï¼Ÿ\n");
     if ((int)me->query_skill("necromancy") < 30)
-        return notify_fail("ÄãµÄ¹´»êÊõµÈ¼¶»¹²»¹»¡£\n");
+        return notify_fail("ä½ çš„å‹¾é­‚æœ¯ç­‰çº§è¿˜ä¸å¤Ÿã€‚\n");
     if ((int)me->query("mana") < 25 + 2 * (int)me->query("mana_factor"))
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if ((int)me->query("sen") < 100)
-        return notify_fail("ÏÖÔÚÄãµÄ¾«Éñ²»×ã£¡\n");
+        return notify_fail("ç°åœ¨ä½ çš„ç²¾ç¥ä¸è¶³ï¼\n");
     if ((int)me->query("kee") < 100)
-        return notify_fail("ÄãµÄÆøÑª²»×ã¡£\n");
+        return notify_fail("ä½ çš„æ°”è¡€ä¸è¶³ã€‚\n");
 
     if (random(me->query("max_mana")) < 50) {
-        write("Õâ´ÎºÃÏó²»´óÁé¡£\n");
+        write("è¿™æ¬¡å¥½è±¡ä¸å¤§çµã€‚\n");
         return 1;
     }
 
     time = 2 + (int)me->query_skill("necromancy", 1) / 50;
     if (time > 5) time=5;
 
-    message_vision(HIB"$NË«ÕÆÒ»´ê£¬µÇÊ±È¼ÆğÒ»ÍÅÀ¶É«µÄ»ğÑæ£¬µãµãÁ×¹âÆ®ÏòÁË$n£¡\n"NOR, me, target);
+    message_vision(HIB"$NåŒæŒä¸€æ“ï¼Œç™»æ—¶ç‡ƒèµ·ä¸€å›¢è“è‰²çš„ç«ç„°ï¼Œç‚¹ç‚¹ç£·å…‰é£˜å‘äº†$nï¼\n"NOR, me, target);
 
     check_damage(me, target, time);
 
@@ -69,7 +69,7 @@ int check_damage(object me, object target, int time)
     || environment(me)->query("no_magic")) success = 0;
 
     if (success) {
-message_vision(HIB"\n¡¸Å¾¡¹µØÒ»ÍÅÀ¶É«»ğÑæÔÚ$N½ÅÏÂÈ¼Æğ£¬Èç¹í÷È²øÉí£¬½«$NÂ£ÔÚÖĞÑë¡£\n"NOR, target);
+message_vision(HIB"\nã€Œå•ªã€åœ°ä¸€å›¢è“è‰²ç«ç„°åœ¨$Nè„šä¸‹ç‡ƒèµ·ï¼Œå¦‚é¬¼é­…ç¼ èº«ï¼Œå°†$Næ‹¢åœ¨ä¸­å¤®ã€‚\n"NOR, target);
         target->receive_damage("kee", random(damage));
         target->receive_wound("kee", damage/3);
         COMBAT_D->report_status(target);
@@ -77,7 +77,7 @@ message_vision(HIB"\n¡¸Å¾¡¹µØÒ»ÍÅÀ¶É«»ğÑæÔÚ$N½ÅÏÂÈ¼Æğ£¬Èç¹í÷È²øÉí£¬½«$NÂ£ÔÚÖĞÑë¡
         me->add("mana", -25);
         me->start_busy(2);
     } else {
-        tell_room(environment(target), "\nËÄÖÜµãµãÁ×»ğÆ®µ´×Å¡­¡­¡­\n");
+        tell_room(environment(target), "\nå››å‘¨ç‚¹ç‚¹ç£·ç«é£˜è¡ç€â€¦â€¦â€¦\n");
     }
 
     time--;
@@ -101,10 +101,10 @@ message_vision(HIB"\n¡¸Å¾¡¹µØÒ»ÍÅÀ¶É«»ğÑæÔÚ$N½ÅÏÂÈ¼Æğ£¬Èç¹í÷È²øÉí£¬½«$NÂ£ÔÚÖĞÑë¡
 int generate_msg(object me)
 {
     string *msgs = ({
-        "\n¡¸Å¾¡¹µØÒ»µÀÀ¶É«»ğÑæÉÁ¹ı¡£\n",
-        "\nµãµãÁ×»ğÔÚ¿ÕÆøÖĞÆ®µ´×Å¡­¡­¡­\n",
-        "\nÒ»¹ÉÀ¶É«»ğÑæ´ÓµØÏÂÃ°ÁË³öÀ´¡£\n",
-        "\n»ğÇò¡¸Å¾£¬Å¾¡¹µØ±¬È¼×Å¡­¡­¡­\n",
+        "\nã€Œå•ªã€åœ°ä¸€é“è“è‰²ç«ç„°é—ªè¿‡ã€‚\n",
+        "\nç‚¹ç‚¹ç£·ç«åœ¨ç©ºæ°”ä¸­é£˜è¡ç€â€¦â€¦â€¦\n",
+        "\nä¸€è‚¡è“è‰²ç«ç„°ä»åœ°ä¸‹å†’äº†å‡ºæ¥ã€‚\n",
+        "\nç«çƒã€Œå•ªï¼Œå•ªã€åœ°çˆ†ç‡ƒç€â€¦â€¦â€¦\n",
     });
     if (!me) return 1;
     tell_room(environment(me), msgs[random(sizeof(msgs))]);

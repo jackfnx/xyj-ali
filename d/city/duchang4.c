@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/changan/duchang4
@@ -12,9 +12,9 @@ object bl_gui = 0;
 int *res = allocate(3);
 
 mapping guis = ([ 
-  "cs"  : "³¤ÊÙ¹ê",
-  "qn"  : "Ç§Äê¹ê",
-  "bl"  : "²»ÀÏ¹ê",
+  "cs"  : "é•¿å¯¿é¾Ÿ",
+  "qn"  : "åƒå¹´é¾Ÿ",
+  "bl"  : "ä¸è€é¾Ÿ",
  ]); 
 
 int random2 (int i)
@@ -24,19 +24,19 @@ int random2 (int i)
 
 void create()
 {
-  set ("short", "Èü¹ê·¿");
+  set ("short", "èµ›é¾Ÿæˆ¿");
   set ("long", @LONG
 
-Ò»ÅÅ×ÏÉ«µÄïÎ¿ÕÌ´Ïã¿¿±³ÒÎÑØ×ÅÎİ×ÓËÄÖÜ·ÅÁËÒ»È¦£¬×ø×Å¾Û¾«»áÉñµÄ
-¿ÍÈË¡£ÖĞ¼äÊÇÒ»µñ»¨Ê¯×ù£¬ÉÏÃæ·Å×ÅÒ»¸ö³¤³¤µÄ×ÏÌ´¹êÌ¨¡£Ò»Î»Ôú×Å
-Çà÷İµÄ¹êÍ¯ÕıÎ§×Å¹êÌ¨×ªÀ´×ªÈ¥¡£¹ê·¿µÄÇ½ÉÏ¹Ò×ÅÅÆ×Ó(paizi)¡£
+ä¸€æ’ç´«è‰²çš„é•‚ç©ºæª€é¦™é èƒŒæ¤…æ²¿ç€å±‹å­å››å‘¨æ”¾äº†ä¸€åœˆï¼Œåç€èšç²¾ä¼šç¥çš„
+å®¢äººã€‚ä¸­é—´æ˜¯ä¸€é›•èŠ±çŸ³åº§ï¼Œä¸Šé¢æ”¾ç€ä¸€ä¸ªé•¿é•¿çš„ç´«æª€é¾Ÿå°ã€‚ä¸€ä½æ‰ç€
+é’é¬çš„é¾Ÿç«¥æ­£å›´ç€é¾Ÿå°è½¬æ¥è½¬å»ã€‚é¾Ÿæˆ¿çš„å¢™ä¸ŠæŒ‚ç€ç‰Œå­(paizi)ã€‚
 
 LONG);
 
   set("item_desc",([
-    "paizi" : "Ñº³¤ÊÙ¹ê£º sai cs <amount> <money>\n"+ 
-              "ÑºÇ§Äê¹ê£º sai qn <amount> <money>\n"+ 
-              "Ñº²»ÀÏ¹ê£º sai bl <amount> <money>\n", 
+    "paizi" : "æŠ¼é•¿å¯¿é¾Ÿï¼š sai cs <amount> <money>\n"+ 
+              "æŠ¼åƒå¹´é¾Ÿï¼š sai qn <amount> <money>\n"+ 
+              "æŠ¼ä¸è€é¾Ÿï¼š sai bl <amount> <money>\n", 
   ])); 
   set("objects", ([ /* sizeof() == 1 */
     __DIR__"npc/guitong" : 1,
@@ -82,31 +82,31 @@ int do_sai (string arg)
 
   if (! arg ||
       sscanf (arg,"%s %d %s",what,amount,money) != 3)
-    return notify_fail("ÇëÊ¹ÓÃ£º sai <Ñº¹êÖÖÀà> <ÊıÄ¿> <»õ±Ò>\n");
+    return notify_fail("è¯·ä½¿ç”¨ï¼š sai <æŠ¼é¾Ÿç§ç±»> <æ•°ç›®> <è´§å¸>\n");
 
   if (what != "cs" &&
       what != "qn" &&
       what != "bl")
-    return notify_fail("ÄãÒªÑºÊ²Ã´ÑùµÄ¹ê£¿\n");
+    return notify_fail("ä½ è¦æŠ¼ä»€ä¹ˆæ ·çš„é¾Ÿï¼Ÿ\n");
 
   ob = present (money+"_money", me);
   if (! ob)
-    return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
+    return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
   if (amount < 1)
-    return notify_fail("Çë¶àÑºÒ»Ğ©Ç®¡£\n");
+    return notify_fail("è¯·å¤šæŠ¼ä¸€äº›é’±ã€‚\n");
   if (amount > ob->query_amount())
-    return notify_fail("ÄãÉíÉÏµÄÇ®²»¹»Ñº¡£\n");
+    return notify_fail("ä½ èº«ä¸Šçš„é’±ä¸å¤ŸæŠ¼ã€‚\n");
 
   if (me->query_temp ("gamble_gui/amount") > 0)
-    return notify_fail("ÄãÒÑ¾­Ñº¹ıÁË¡£\n");
+    return notify_fail("ä½ å·²ç»æŠ¼è¿‡äº†ã€‚\n");
 
   if (room_status > 1)
-    return notify_fail("ÏÖÔÚÕıÔÚÈü¹êÄØ£¬ÉÔµÈÆ¬¿Ì¡£\n");
+    return notify_fail("ç°åœ¨æ­£åœ¨èµ›é¾Ÿå‘¢ï¼Œç¨ç­‰ç‰‡åˆ»ã€‚\n");
 
   me->set_temp("gamble_gui/kind",what);
   me->set_temp("gamble_gui/amount",amount);
   me->set_temp("gamble_gui/money",money);
-  message_vision (sprintf("$NÄÃ³ö%s%s%s·ÅÔÚ×ÏÌ´¹êÌ¨ÉÏ£¬Ñº%s¡£\n",
+  message_vision (sprintf("$Næ‹¿å‡º%s%s%sæ”¾åœ¨ç´«æª€é¾Ÿå°ä¸Šï¼ŒæŠ¼%sã€‚\n",
                           chinese_number(amount),
                           ob->query("base_unit"),
                           ob->query("name"),
@@ -125,7 +125,7 @@ int valid_leave(object me, string dir)
   if (dir == "north")
   {
     if (me->query_temp ("gamble_gui/amount") > 0) 
-      message_vision ("$NÈÓÏÂÑº¹êµÄÇ®²»ÒªÁË¡£\n",me);
+      message_vision ("$Næ‰”ä¸‹æŠ¼é¾Ÿçš„é’±ä¸è¦äº†ã€‚\n",me);
     me->delete_temp("gamble_gui");
   }
   return ::valid_leave(me,dir);
@@ -134,26 +134,26 @@ int valid_leave(object me, string dir)
 void gamble_prepare ()
 {
   object room = this_object();
-  tell_room (room,"Çà÷İ¹êÍ¯½«ÈıÖ»¹ê·ÅÔÚ×ÏÌ´¹êÌ¨±ß¡£\n");
+  tell_room (room,"é’é¬é¾Ÿç«¥å°†ä¸‰åªé¾Ÿæ”¾åœ¨ç´«æª€é¾Ÿå°è¾¹ã€‚\n");
   if (! cs_gui)
   {
     cs_gui = new(__DIR__+"npc/saigui");
-    cs_gui->set("name","³¤ÊÙ¹ê");
+    cs_gui->set("name","é•¿å¯¿é¾Ÿ");
     cs_gui->move(room);
   }
   if (! qn_gui)
   {
     qn_gui = new(__DIR__+"npc/saigui");
-    qn_gui->set("name","Ç§Äê¹ê");
+    qn_gui->set("name","åƒå¹´é¾Ÿ");
     qn_gui->move(room);
   }
   if (! bl_gui)
   {
     bl_gui = new(__DIR__+"npc/saigui");
-    bl_gui->set("name","²»ÀÏ¹ê");
+    bl_gui->set("name","ä¸è€é¾Ÿ");
     bl_gui->move(room);
   }
-  tell_room (room,"Çà÷İ¹êÍ¯Ëµ£ºÇë¸÷Î»´óÈËÉÍÑº£¬Ò»Ó®Èı¡£\n");
+  tell_room (room,"é’é¬é¾Ÿç«¥è¯´ï¼šè¯·å„ä½å¤§äººèµæŠ¼ï¼Œä¸€èµ¢ä¸‰ã€‚\n");
   room_status = 1;
   call_out ("gamble_start",20);
 }
@@ -161,8 +161,8 @@ void gamble_prepare ()
 void gamble_start ()
 {
   object room = this_object();
-  tell_room (room,"Çà÷İ¹êÍ¯Ëµ£º¸÷Î»´óÈËÍ£Ñº¡£\n");
-  tell_room (room,"È»ºóÓÃÍÃÃ«µ§½«ÈıÖ»Èü¹êÍÆÈë¹êÌ¨ÄÚ¡£\n");
+  tell_room (room,"é’é¬é¾Ÿç«¥è¯´ï¼šå„ä½å¤§äººåœæŠ¼ã€‚\n");
+  tell_room (room,"ç„¶åç”¨å…”æ¯›æ¸å°†ä¸‰åªèµ›é¾Ÿæ¨å…¥é¾Ÿå°å†…ã€‚\n");
   room_status = 2;
   res[0] = 0;
   res[1] = 0;
@@ -172,15 +172,15 @@ void gamble_start ()
 
 void display_gui (int i, string name, object room)
 {
-  string gui1 = "£Ü£­£­£­£¯  ";
-  string gui2 = "£¨Ä³Ä³¹ê£©£¾";
-  string gui3 = "£¯£­£­£­£Ü  ";
-  string line1 = "£ü";
-  string line2 = "£ü";
-  string line3 = "£ü";
+  string gui1 = "ï¼¼ï¼ï¼ï¼ï¼  ";
+  string gui2 = "ï¼ˆæŸæŸé¾Ÿï¼‰ï¼";
+  string gui3 = "ï¼ï¼ï¼ï¼ï¼¼  ";
+  string line1 = "ï½œ";
+  string line2 = "ï½œ";
+  string line3 = "ï½œ";
   int j;
 
-  gui2 = "£¨"+name+"£©£¾";
+  gui2 = "ï¼ˆ"+name+"ï¼‰ï¼";
   for (j = 0; j < res[i]; j++)
   {
     line1 = line1 + "..";
@@ -196,9 +196,9 @@ void display_gui (int i, string name, object room)
     line2 = line2 + "  ";
     line3 = line3 + "  ";
   }
-  line1 = line1 + "£ü\n";
-  line2 = line2 + "£ü\n";
-  line3 = line3 + "£ü\n";
+  line1 = line1 + "ï½œ\n";
+  line2 = line2 + "ï½œ\n";
+  line3 = line3 + "ï½œ\n";
   tell_room (room,line1);
   tell_room (room,line2);
   tell_room (room,line3);
@@ -234,9 +234,9 @@ void gamble_perform ()
   object ji;
 
   tell_room (room,"\n\n");
-  display_gui (0,"³¤ÊÙ¹ê",room);
-  display_gui (1,"Ç§Äê¹ê",room);
-  display_gui (2,"²»ÀÏ¹ê",room);
+  display_gui (0,"é•¿å¯¿é¾Ÿ",room);
+  display_gui (1,"åƒå¹´é¾Ÿ",room);
+  display_gui (2,"ä¸è€é¾Ÿ",room);
 
   if (res[0]<30 && res[1]<30 && res[2]<30)
   {
@@ -259,7 +259,7 @@ void player_wins (object who, int total)
   int amount = who->query_temp("gamble_gui/amount");
   total = total * amount;
   money->set_amount(total);
-  message_vision (sprintf("$NÓ®ÁË%s%s%s£¡\n",
+  message_vision (sprintf("$Nèµ¢äº†%s%s%sï¼\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -271,7 +271,7 @@ void player_loses (object who, int total)
 {
   object money = new ("/obj/money/"+who->query_temp("gamble_gui/money"));
   total = who->query_temp("gamble_gui/amount");
-  message_vision (sprintf("Çà÷İ¹êÍ¯½«$N·ÅÔÚ¹êÌ¨ÉÏµÄ%s%s%sÊÕ×ß¡£\n",
+  message_vision (sprintf("é’é¬é¾Ÿç«¥å°†$Næ”¾åœ¨é¾Ÿå°ä¸Šçš„%s%s%sæ”¶èµ°ã€‚\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -289,7 +289,7 @@ void gamble_finish ()
   {
     total = 0;
     win = "none of them";
-    tell_room (room,"Çà÷İ¹êÍ¯Ì¾µÀ£ºÈı¹êÍ¬Ê¤ÎŞÓ®¼Ò£¡\n");
+    tell_room (room,"é’é¬é¾Ÿç«¥å¹é“ï¼šä¸‰é¾ŸåŒèƒœæ— èµ¢å®¶ï¼\n");
   }
   else if ((res[0]==30 && res[1]==30) ||
            (res[1]==30 && res[2]==30) ||
@@ -297,25 +297,25 @@ void gamble_finish ()
   {
     total = 0;
     win = "none of them";
-    tell_room (room,"Çà÷İ¹êÍ¯Ì¾µÀ£º¶ş¹êÍ¬Ê¤ÎŞÓ®¼Ò£¡\n");
+    tell_room (room,"é’é¬é¾Ÿç«¥å¹é“ï¼šäºŒé¾ŸåŒèƒœæ— èµ¢å®¶ï¼\n");
   }
   else if (res[0]==30)
   {
     total = 3;
     win = "cs";
-    tell_room (room,"Çà÷İ¹êÍ¯Ï²µÀ£º"+guis[win]+"»ñÊ¤£¡\n");
+    tell_room (room,"é’é¬é¾Ÿç«¥å–œé“ï¼š"+guis[win]+"è·èƒœï¼\n");
   }
   else if (res[1]==30)
   {
     total = 3;
     win = "qn";
-    tell_room (room,"Çà÷İ¹êÍ¯Ï²µÀ£º"+guis[win]+"»ñÊ¤£¡\n");
+    tell_room (room,"é’é¬é¾Ÿç«¥å–œé“ï¼š"+guis[win]+"è·èƒœï¼\n");
   }
   else //if (res[2]==30)
   {
     total = 3;
     win = "bl";
-    tell_room (room,"Çà÷İ¹êÍ¯Ï²µÀ£º"+guis[win]+"»ñÊ¤£¡\n");
+    tell_room (room,"é’é¬é¾Ÿç«¥å–œé“ï¼š"+guis[win]+"è·èƒœï¼\n");
   }
   i = sizeof(list);
   while (i--)
@@ -344,8 +344,8 @@ int do_bian (string arg)
   ob = present(arg,room);
   if (ob == cs_gui || ob == qn_gui || ob == bl_gui)
   {
-    message_vision ("$N¼·µ½¹êÖĞ¼äÏë°Ñ×Ô¼º±ä³É¹ê¡£\n",who);
-    message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈË£¬Ë×»°ËµºÃºº²»ºÍ¹êÈü¡£\n",who);
+    message_vision ("$NæŒ¤åˆ°é¾Ÿä¸­é—´æƒ³æŠŠè‡ªå·±å˜æˆé¾Ÿã€‚\n",who);
+    message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººï¼Œä¿—è¯è¯´å¥½æ±‰ä¸å’Œé¾Ÿèµ›ã€‚\n",who);
     return 1;
   }
   return 0;
@@ -363,8 +363,8 @@ int do_fight (string arg)
   ob = present(arg,room);
   if (ob == cs_gui || ob == qn_gui || ob == bl_gui)
   {
-    message_vision ("$NÒªÓë¹ê±ÈÎä¡£\n",who);
-    message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈË£¬Ë×»°ËµºÃºº²»ºÍ¹ê¶·¡£\n",who);
+    message_vision ("$Nè¦ä¸é¾Ÿæ¯”æ­¦ã€‚\n",who);
+    message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººï¼Œä¿—è¯è¯´å¥½æ±‰ä¸å’Œé¾Ÿæ–—ã€‚\n",who);
     return 1;
   }
   return 0;
@@ -375,8 +375,8 @@ int do_steal (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$NÏëÍµ¹ê¡£\n",who);
-  message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈËÇÔ¹êÒ²²»ĞßÁ³¡£\n",who);
+  message_vision ("$Næƒ³å·é¾Ÿã€‚\n",who);
+  message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººçªƒé¾Ÿä¹Ÿä¸ç¾è„¸ã€‚\n",who);
   return 1;
 }
 
@@ -392,8 +392,8 @@ int do_kill (string arg)
   ob = present(arg,room);
   if (ob == cs_gui || ob == qn_gui || ob == bl_gui)
   {
-    message_vision ("$NÏëÉ±ËÀ¹ê¡£\n",who);
-    message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈËÇĞÄªÉ±Éú¡£\n",who);
+    message_vision ("$Næƒ³æ€æ­»é¾Ÿã€‚\n",who);
+    message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººåˆ‡è«æ€ç”Ÿã€‚\n",who);
     return 1;
   }
   return 0;
@@ -404,8 +404,8 @@ int do_cast (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$N¹êÄ£¹êÑùµØÄîÁË¼¸¾äÖäÓï¡£\n",who);
-  message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈË£¬ÄªÄîÄªÄî£¬ÇĞÄªÉËÄú¹êÊÙ¡£\n",who);
+  message_vision ("$Né¾Ÿæ¨¡é¾Ÿæ ·åœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n",who);
+  message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººï¼Œè«å¿µè«å¿µï¼Œåˆ‡è«ä¼¤æ‚¨é¾Ÿå¯¿ã€‚\n",who);
   return 1;
 }
 
@@ -414,8 +414,8 @@ int do_exert (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$NÏë½è¹êÊ©¹¦¡£\n",who);
-  message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈËÔÚÕâÀïÁ·¹¦»áËğÁËÄúµÄ¹êÊÙ¡£\n",who);
+  message_vision ("$Næƒ³å€Ÿé¾Ÿæ–½åŠŸã€‚\n",who);
+  message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººåœ¨è¿™é‡Œç»ƒåŠŸä¼šæŸäº†æ‚¨çš„é¾Ÿå¯¿ã€‚\n",who);
   return 1;
 }
 
@@ -424,7 +424,7 @@ int do_perform (string arg)
   object who = this_player();
   object room = this_object();
 
-  message_vision ("$NÏë½è¹êÊ©¹¦¡£\n",who);
-  message_vision ("Çà÷İ¹êÍ¯¶Ô$NËµµÀ£º´óÈËÔÚÕâÀïÁ·¹¦»áËğÁËÄúµÄ¹êÊÙ¡£\n",who);
+  message_vision ("$Næƒ³å€Ÿé¾Ÿæ–½åŠŸã€‚\n",who);
+  message_vision ("é’é¬é¾Ÿç«¥å¯¹$Nè¯´é“ï¼šå¤§äººåœ¨è¿™é‡Œç»ƒåŠŸä¼šæŸäº†æ‚¨çš„é¾Ÿå¯¿ã€‚\n",who);
   return 1;
 }

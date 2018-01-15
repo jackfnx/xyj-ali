@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/20/1997 by snowcat
@@ -7,12 +7,12 @@ inherit NPC;
 
 void create()
 {
-  set_name("��", ({"ban"}));
-  set("title", "���");
-  set("gender", "����");
+  set_name("班", ({"ban"}));
+  set("title", "虫怪");
+  set("gender", "男性");
   set("age", 12);
   set("per", 9);
-  set("long", "һֻ��ģ���������֣����ж��������磬��Լ�˾Ž\n");
+  set("long", "一只虫模虫样的妖怪，长有二尺五六寸，重约八九斤。\n");
   set("attitude", "aggressive");
   set("max_kee", 300);
   set("max_gin", 300);
@@ -40,7 +40,7 @@ void die ()
 {
   object me = this_object();
   object ob = query_temp("my_killer");
-  message_vision ("\n$N���һֻС������ӵط����ˡ�\n",this_object());
+  message_vision ("\n$N变成一只小虫儿嘤嘤地飞走了。\n",this_object());
   if (ob && 
       ! ob->query_temp("obstacle/pansi_killed_"+me->query("name")))
   {

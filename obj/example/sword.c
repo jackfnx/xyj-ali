@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // sword.c : an example weapon
@@ -9,13 +9,13 @@ inherit SWORD;
 
 void create()
 {
-   set_name("³¤½£", ({ "sword" }) );
+   set_name("é•¿å‰‘", ({ "sword" }) );
    set_weight(7000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
-     set("long", "ÕâÊÇÒ»°Ñ¿´ÆğÏàµ±ÆÕÍ¨µÄ³¤½££¬·İÁ¿´óÔ¼ÓĞÊ®À´½ï×óÓÒ¡£\n");
+     set("unit", "æŠŠ");
+     set("long", "è¿™æ˜¯ä¸€æŠŠçœ‹èµ·ç›¸å½“æ™®é€šçš„é•¿å‰‘ï¼Œä»½é‡å¤§çº¦æœ‰åæ¥æ–¤å·¦å³ã€‚\n");
      set("value", 400);
      set("material", "steel");
    }
@@ -24,8 +24,8 @@ void create()
 // These properties are optional, if you don't set them, it will use the
 // default values.
 
-   set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-   set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+   set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+   set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");
 
 // The setup() is required.
 

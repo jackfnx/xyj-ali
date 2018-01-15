@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // dump.c (should be admin cmd?)
@@ -17,7 +17,7 @@ int main(object me,string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½ : dump
+æŒ‡ä»¤æ ¼å¼ : dump
  
 dump the stats of all objects to a file in root dir 
 named OBJ_DUMP.

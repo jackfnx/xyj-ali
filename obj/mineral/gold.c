@@ -4,13 +4,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("°×½ğÀ×ÆÇ", ({ "baijin leipo", "gold" }));
+    set_name("ç™½é‡‘é›·é­„", ({ "baijin leipo", "gold" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "°×½ğÖ®¾«ÓëÀ×µçÖ®ÆÇ½áºÏµÄ²úÎï¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "ç™½é‡‘ä¹‹ç²¾ä¸é›·ç”µä¹‹é­„ç»“åˆçš„äº§ç‰©ã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
         set("elements/gold", 100);

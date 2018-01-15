@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 12/18/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("���湫��", ({ "yumian gongzhu", "yumian", "gongzhu", "princess" }));
-  set("title", "����ɽ");   
-  set("long", "һλ������ֵ�Ů�ӣ�������Ť������֫��\n");
-  set("gender", "Ů��");
+  set_name("玉面公主", ({ "yumian gongzhu", "yumian", "gongzhu", "princess" }));
+  set("title", "积雷山");   
+  set("long", "一位娇柔万分的女子，伶俐地扭动着腰肢。\n");
+  set("gender", "女性");
   set("age", 16);
   set("attitude", "heroism");
   set("per", 32);
@@ -62,8 +62,8 @@ void die ()
     ob->set_temp("obstacle/jilei_yumian_killed",1);
     call_out ("li_appearing",1,ob);
   }
-  message_vision ("\n$N�����ڵ���������������һֻ���꾫��\n",me);
-  message_vision ("���꾫���ڵ��ϣ����ˡ�\n\n",me);
+  message_vision ("\n$N翻倒在地现了真身，竟是一只狐狸精。\n",me);
+  message_vision ("狐狸精扑在地上，死了。\n\n",me);
   corpse = CHAR_D->make_corpse(me,ob);
   corpse->move(environment(me));
   load_object("/obj/empty");

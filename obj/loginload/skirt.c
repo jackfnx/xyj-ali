@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // skirt.c
@@ -10,13 +10,13 @@ inherit CLOTH;
 
 void create()
 {
-   set_name(HIG "ÇáÉ´³¤È¹" NOR, ({ "skirt", "cloth" }) );
+   set_name(HIG "è½»çº±é•¿è£™" NOR, ({ "skirt", "cloth" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long", "Ò»ÌõëüëüëÊëÊµÄÉ´È¹£¬ÎÅÆğÀ´»¹ÓĞÒ»¹Éµ­Ïã¡£\n");
-     set("unit", "Ìõ");
+     set("long", "ä¸€æ¡æœ¦æœ¦èƒ§èƒ§çš„çº±è£™ï¼Œé—»èµ·æ¥è¿˜æœ‰ä¸€è‚¡æ·¡é¦™ã€‚\n");
+     set("unit", "æ¡");
      set("material", "cloth");
      set("armor_prop/armor", 1);
      set("armor_prop/personality", 3);

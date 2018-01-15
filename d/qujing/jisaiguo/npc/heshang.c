@@ -1,14 +1,14 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("´óºÍÉĞ", ({"heshang"}));
-        set("long", "Ò»Î»´óºÍÉĞ£¬¿´ÆğÀ´´ÈÉÆµÄºÜ£¬¿ÚÀï»¹²»Í£µÄÓ½¾­¡£\n");
+        set_name("å¤§å’Œå°š", ({"heshang"}));
+        set("long", "ä¸€ä½å¤§å’Œå°šï¼Œçœ‹èµ·æ¥æ…ˆå–„çš„å¾ˆï¼Œå£é‡Œè¿˜ä¸åœçš„å’ç»ã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("class", "bonze");
 
@@ -33,7 +33,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say ºÃ°É£¬Æö´ê¼¼ÒÕ£¬µãµ½ÎªÖ¹£¡\n");
+        command("say å¥½å§ï¼Œç Œæ“æŠ€è‰ºï¼Œç‚¹åˆ°ä¸ºæ­¢ï¼\n");
         return 1;
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/hkgroup/workroom
@@ -16,10 +16,10 @@ int do_knock2(string);
 
 void create ()
 {
-  set ("short", "ºìÂ¥¾ÉÖ·");
+  set ("short", "çº¢æ¥¼æ—§å€");
   set ("long", @LONG
 
-¡¡¡¡ÕıÃÅÖ®ÉÏÓĞÒ»ØÒ(bian)¡£ÕıÃÅÈ´²»¿ª£¬Ö»ÓĞ½ÇÃÅ(door)¹©ÈË³öÈë¡£
+ã€€ã€€æ­£é—¨ä¹‹ä¸Šæœ‰ä¸€åŒ¾(bian)ã€‚æ­£é—¨å´ä¸å¼€ï¼Œåªæœ‰è§’é—¨(door)ä¾›äººå‡ºå…¥ã€‚
 
 LONG);
 
@@ -35,7 +35,7 @@ LONG);
   set("item_desc", ([ /* sizeof() == 2 */
   "door"    :    (: look_door2, "door" :),
   "bian": "
-¡¡¡¡¡¡¡¡ºìÂ¥¾ÉÖ·
+ã€€ã€€ã€€ã€€çº¢æ¥¼æ—§å€
 
 ",
 ]));
@@ -56,10 +56,10 @@ void close_door2()
 
         if(( room = find_object(__DIR__"path1")) ) {
                 delete("exits/enter");
-                        message("vision", "¿©Ö¨Ò»Éù, ½ÇÃÅÂıÂıµØºÏÉÏÁË¡£\n",
+                        message("vision", "å’¯å±ä¸€å£°, è§’é—¨æ…¢æ…¢åœ°åˆä¸Šäº†ã€‚\n",
         this_object());
                 room->delete("exits/out");
-                message("vision", "¿©Ö¨Ò»Éù, ½ÇÃÅ´ÓÍâÃæÂıÂıµØºÏÉÏÁË¡£\n", room);
+                message("vision", "å’¯å±ä¸€å£°, è§’é—¨ä»å¤–é¢æ…¢æ…¢åœ°åˆä¸Šäº†ã€‚\n", room);
         }
         else message("vision","ERROR: door not found(close).\n", room);
 
@@ -70,21 +70,21 @@ int do_knock2(string arg)
         object mbox;
 
         if (!arg || arg!="door")
-                return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•²ä»€ä¹ˆï¼Ÿ\n");
 
         if (query("exits/enter"))
-                return notify_fail("½ÇÃÅÊÇ¿ª×ÅµÄ¡£\n");
+                return notify_fail("è§’é—¨æ˜¯å¼€ç€çš„ã€‚\n");
    else {
         if( !this_player()->query_temp("mbox_ob") )
      {
             seteuid(getuid());
            mbox = new(MAILBOX_OB);
            mbox->move(this_player());
-     message_vision("$NÇáÇáÇÃÁËÇÃÃÅ£¬Ö»ÌıßêµÄÒ»Éù£¬"
-          "Ò»¸öÆÆ¾ÉµÄĞÅÏä¹³×¡ÁË$NµÄÒÂ½Ç£¬ÏÅÁË$NÒ»Ìø¡£\n",
+     message_vision("$Nè½»è½»æ•²äº†æ•²é—¨ï¼Œåªå¬å“§çš„ä¸€å£°ï¼Œ"
+          "ä¸€ä¸ªç ´æ—§çš„ä¿¡ç®±é’©ä½äº†$Nçš„è¡£è§’ï¼Œå“äº†$Nä¸€è·³ã€‚\n",
           this_player());
      }
-   else message_vision("$NÇáÇáÇÃÁËÇÃÃÅ£¬ÃÅÉÏµÄĞÅÏä»ÎÁË¼¸»Î¡£\n",
+   else message_vision("$Nè½»è½»æ•²äº†æ•²é—¨ï¼Œé—¨ä¸Šçš„ä¿¡ç®±æ™ƒäº†å‡ æ™ƒã€‚\n",
           this_player()); 
    return 1;
    }
@@ -95,10 +95,10 @@ int do_close(string arg)
         object room;
 
         if (!query("exits/enter"))
-                return notify_fail("½ÇÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("è§’é—¨å·²ç»æ˜¯å…³ç€çš„äº†ã€‚\n");
 
         if (!arg || (arg != "door" && arg != "enter"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å…³ä»€ä¹ˆï¼Ÿ\n");
 
         remove_call_out("close_door2");
         call_out("close_door2", 2);
@@ -111,17 +111,17 @@ int do_push(string arg)
         object room, mbox;
 
         if (query("exits/enter"))
-                return notify_fail("½ÇÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("è§’é—¨å·²ç»æ˜¯å¼€ç€äº†ã€‚\n");
 
         if (!arg || arg!="door")
-                return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ¨ä»€ä¹ˆï¼Ÿ\n");
 
         if( room = find_object(__DIR__"path1") ) {
                 set("exits/enter", __DIR__"path1");
-                message_vision("$NÇáÇáµØÍÆÁËÍÆÃÅ£¬Ö»ÌıÖ¨µØÒ»Éù£¬½ÇÃÅÂıÂıµØ¿ªÁËÒ»Ìõ·ì¡£\n",
+                message_vision("$Nè½»è½»åœ°æ¨äº†æ¨é—¨ï¼Œåªå¬å±åœ°ä¸€å£°ï¼Œè§’é—¨æ…¢æ…¢åœ°å¼€äº†ä¸€æ¡ç¼ã€‚\n",
                         this_player());
                 room->set("exits/out", __FILE__);
-                message("vision", "ÍâÃæÓĞÈËÍÆÃÅ£¬Ö»ÌıÖ¨µØÒ»Éù£¬½ÇÃÅÂıÂıµØ¿ªÁËÒ»Ìõ·ì¡£\n",
+                message("vision", "å¤–é¢æœ‰äººæ¨é—¨ï¼Œåªå¬å±åœ°ä¸€å£°ï¼Œè§’é—¨æ…¢æ…¢åœ°å¼€äº†ä¸€æ¡ç¼ã€‚\n",
                         room);
                 remove_call_out("close_door2");
                 call_out("close_door2", 10);
@@ -137,7 +137,7 @@ int valid_leave(object me, string dir)
         object mbox;
 
            if( mbox = me->query_temp("mbox_ob") ) {
-                    message_vision("$N°ÑĞÅÏä¹Ò»ØÔ­´¦¡£\n", me);
+                    message_vision("$NæŠŠä¿¡ç®±æŒ‚å›åŸå¤„ã€‚\n", me);
                    destruct(mbox);
             }
       return 1;
@@ -145,6 +145,6 @@ int valid_leave(object me, string dir)
 
 string look_door2()
 {
-   return("Ò»µÀ¹©ÈË³öÈëµÄ½ÇÃÅ¡£ÃÅÉÏ¹Ò×ÅÒ»¸öÆÆ¾ÉµÄĞÅÏä¡£\n"
-     "ÄãÊÔ×ÅÇÃÁËÇÃÃÅ£¬ÓÖÇáÇáÍÆÁËÍÆ¡£\n");
+   return("ä¸€é“ä¾›äººå‡ºå…¥çš„è§’é—¨ã€‚é—¨ä¸ŠæŒ‚ç€ä¸€ä¸ªç ´æ—§çš„ä¿¡ç®±ã€‚\n"
+     "ä½ è¯•ç€æ•²äº†æ•²é—¨ï¼Œåˆè½»è½»æ¨äº†æ¨ã€‚\n");
 }

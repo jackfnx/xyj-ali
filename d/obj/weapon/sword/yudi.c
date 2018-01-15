@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // yudi.c
@@ -9,17 +9,17 @@ inherit SWORD;
 
 void create()
 {
-   set_name("±ÌÓñµÑ", ({ "biyu di","yudi","biyudi", "di" }) );
+   set_name("ç¢§ç‰ç¬›", ({ "biyu di","yudi","biyudi", "di" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¸ù");
+     set("unit", "æ ¹");
      set("value", 20000);
      set("material", "wood");
-     set("long", "Ò»¸ù±ÌÓñÖÆ¾ÍµÄµÑ×Ó£¬ÂÌÓ¨Ó¨µØÉõÊÇ¾«ÖÂ¡£\n");
-     set("wield_msg", "$NÄÃÆğÒ»¸ù$n·ÅÔÚ´½±ßÇáÇáÒ»´µ¡£\n");
-     set("unwield_msg", "$NĞ¦ÁËÒ»Ğ¦£¬½«$n²å»ØÑü¼ä¡£\n");
+     set("long", "ä¸€æ ¹ç¢§ç‰åˆ¶å°±çš„ç¬›å­ï¼Œç»¿è¹è¹åœ°ç”šæ˜¯ç²¾è‡´ã€‚\n");
+     set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$næ”¾åœ¨å”‡è¾¹è½»è½»ä¸€å¹ã€‚\n");
+     set("unwield_msg", "$Nç¬‘äº†ä¸€ç¬‘ï¼Œå°†$næ’å›è…°é—´ã€‚\n");
    }
    init_sword(15);
    setup();

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // buy.c
@@ -13,10 +13,10 @@ int main(object me, string arg)
    object* inv;
 
     if( this_player()->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
    if( !environment(me) )
-     return notify_fail("ÄãÒª¸úË­Âò¶«Î÷£¿\n");
+     return notify_fail("ä½ è¦è·Ÿè°ä¹°ä¸œè¥¿ï¼Ÿ\n");
 
    if( !arg || sscanf(arg, "%s from %s", item, targ)!=2 ) {
      inv = all_inventory(environment(me));
@@ -29,15 +29,15 @@ int main(object me, string arg)
        }
      }
      if (targ == "")
-       return notify_fail("Ö¸Áî¸ñÊ½£ºbuy <Ä³Îï> from <Ä³ÈË>\n");
+       return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbuy <æŸç‰©> from <æŸäºº>\n");
    }
 
    if( !objectp(owner = present(targ, environment(me))) )
-     return notify_fail("ÄãÒª¸úË­Âò¶«Î÷£¿\n");
+     return notify_fail("ä½ è¦è·Ÿè°ä¹°ä¸œè¥¿ï¼Ÿ\n");
 
    if( userp(owner) ) {
-     message_vision("$NÏëÏò$n¹ºÂò¡¸" + item + "¡¹¡£\n", me, owner);
-           notify_fail("¶Ô·½ºÃÏñ²»Ô¸Òâ¸úÄã½»Ò×¡£\n");
+     message_vision("$Næƒ³å‘$nè´­ä¹°ã€Œ" + item + "ã€ã€‚\n", me, owner);
+           notify_fail("å¯¹æ–¹å¥½åƒä¸æ„¿æ„è·Ÿä½ äº¤æ˜“ã€‚\n");
      return 1;
    }
 
@@ -46,7 +46,7 @@ int main(object me, string arg)
 
    if( afford = me->can_afford(price) ) {
            if( afford==2 ) 
-        return notify_fail("ÄãÃ»ÓĞ×ã¹»µÄÁãÇ®£¬¶øÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+        return notify_fail("ä½ æ²¡æœ‰è¶³å¤Ÿçš„é›¶é’±ï¼Œè€Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
 
 //     me->start_busy(1);
 //     owner->complete_trade(me, item);
@@ -58,15 +58,15 @@ int main(object me, string arg)
          return 0;
      }
    } else
-     return notify_fail("ÄãµÄÇ®²»¹»¡£\n");
+     return notify_fail("ä½ çš„é’±ä¸å¤Ÿã€‚\n");
 }
 
 int help(object me)
 {
    write( @HELP
-Ö¸Áî¸ñÊ½: buy <something> from <someone>
+æŒ‡ä»¤æ ¼å¼: buy <something> from <someone>
 
-ÕâÒ»Ö¸ÁîÈÃÄã¿ÉÒÔ´ÓÄ³Ğ©ÈËÉíÉÏÂòµ½ÎïÆ·¡£
+è¿™ä¸€æŒ‡ä»¤è®©ä½ å¯ä»¥ä»æŸäº›äººèº«ä¸Šä¹°åˆ°ç‰©å“ã€‚
 HELP
    );
    return 1;

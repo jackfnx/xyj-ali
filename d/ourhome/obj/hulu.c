@@ -1,20 +1,20 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// hulu.c  ºùÂ«
+// hulu.c  è‘«èŠ¦
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-   set_name("ÇàºùÂ«", ({"hulu"}));
+   set_name("é’è‘«èŠ¦", ({"hulu"}));
    set_weight(1000);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "Ò»¸ö×°Ë®µÄ´óºùÂ«¡£\n");
-     set("unit", "¸ö");
+     set("long", "ä¸€ä¸ªè£…æ°´çš„å¤§è‘«èŠ¦ã€‚\n");
+     set("unit", "ä¸ª");
      set("value", 10);
      set("max_liquid", 50);
    }
@@ -23,7 +23,7 @@ void create()
    // we set it to contain wine at the beginning
    set("liquid", ([
      "type": "water",
-     "name": "ÇåË®",
+     "name": "æ¸…æ°´",
      "remaining": 40,
      "drunk_apply": 20,
    ]));

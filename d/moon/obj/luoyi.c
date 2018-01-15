@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,14 +6,14 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("äËË®ÂŞÒÂ", ({"fancy skirt", "skirt"}));
+        set_name("æ¸Œæ°´ç½—è¡£", ({"fancy skirt", "skirt"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
             set("long",
-"ÕâÊÇÒ»¼ş¿´ÆğÀ´·Ç³£µäÑÅµÄ³¤È¹£¬È´²»ÖªÊÇÊ²Ã´ÖÆ³É£®\n");
+"è¿™æ˜¯ä¸€ä»¶çœ‹èµ·æ¥éå¸¸å…¸é›…çš„é•¿è£™ï¼Œå´ä¸çŸ¥æ˜¯ä»€ä¹ˆåˆ¶æˆï¼\n");
                 set("value", 2200);
                 set("material", "cloth");
                 set("armor_type", "cloth");

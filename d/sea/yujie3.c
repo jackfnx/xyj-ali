@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/rainy/sea/yujie3.c
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Óñ½×");
+  set ("short", "çŽ‰é˜¶");
   set ("long", @LONG
 
-ÓÉ´ËÏòÉÏÊÇÁú¹¬Õýµî£¬¶«º£ÁúÍõ¾Í×¡ÔÚÀïÃæ¡£Ò»¼¶¼¶µÄÌ¨½×¶¼ÊÇÓÃ¡¡¡¡¡¡
-ÓñÆö³É£¬½×ÉÏÁ½±ßÁ¢×ÅÎäÊ¿£¬Òø¿øÒø¼×£¬É·ÊÇÍþ·ç¡£
+ç”±æ­¤å‘ä¸Šæ˜¯é¾™å®«æ­£æ®¿ï¼Œä¸œæµ·é¾™çŽ‹å°±ä½åœ¨é‡Œé¢ã€‚ä¸€çº§çº§çš„å°é˜¶éƒ½æ˜¯ç”¨ã€€ã€€ã€€
+çŽ‰ç Œæˆï¼Œé˜¶ä¸Šä¸¤è¾¹ç«‹ç€æ­¦å£«ï¼Œé“¶ç›”é“¶ç”²ï¼Œç…žæ˜¯å¨é£Žã€‚
 
 LONG);
 

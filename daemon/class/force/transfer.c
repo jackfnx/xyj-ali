@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // transfer.c
@@ -13,32 +13,32 @@ int exert(object me, object target)
    int tforce, tmaxforce;
 
    if( !target || target==me || !living(target) )
-     return notify_fail("ÄãÒª½«ÕæÆø´«¸øË­£¿\n");
+     return notify_fail("ä½ è¦å°†çœŸæ°”ä¼ ç»™è°ï¼Ÿ\n");
 
         if(target->is_busy())
-           return notify_fail("¶Ô·½ÕýÔÚÃ¦×ÅÄØ¡£\n");
+           return notify_fail("å¯¹æ–¹æ­£åœ¨å¿™ç€å‘¢ã€‚\n");
 
         if(target->is_fighting())
-           return notify_fail("¶Ô·½ÕýÔÚÃ¦×ÅÄØ¡£\n");
+           return notify_fail("å¯¹æ–¹æ­£åœ¨å¿™ç€å‘¢ã€‚\n");
 
    if( (string)me->query_skill_mapped("force") != target->query_skill_mapped("force") )
-     return notify_fail(target->name() + "ËùÊ¹ÓÃµÄÄÚ¹¦ºÍÄã²»Í¬¡£\n");
+     return notify_fail(target->name() + "æ‰€ä½¿ç”¨çš„å†…åŠŸå’Œä½ ä¸åŒã€‚\n");
 
    if( (int)me->query("force") <= (int)me->query("max_force") )
-     return notify_fail("ÄãµÄÕæÆø²»×ã¡£\n");
+     return notify_fail("ä½ çš„çœŸæ°”ä¸è¶³ã€‚\n");
 
    force = me->query("force") - me->query("max_force");
 
-   if( force/2 < 1 ) return notify_fail("ÄãµÄÕæÆø²»×ã¡£\n");
+   if( force/2 < 1 ) return notify_fail("ä½ çš„çœŸæ°”ä¸è¶³ã€‚\n");
    me->add("force", - force / 2 );
-   message_vision("$N½«ÊÖÕÆÌùÔÚ$n±³ÐÄ£¬ÔËÆø½«ÌåÄÚÕæÆø´«ËÍ¹ýÈ¥¡£\n", me, target);
+   message_vision("$Nå°†æ‰‹æŽŒè´´åœ¨$nèƒŒå¿ƒï¼Œè¿æ°”å°†ä½“å†…çœŸæ°”ä¼ é€è¿‡åŽ»ã€‚\n", me, target);
    if( random(force/3) > (int)me->query_skill("force") )
-     return notify_fail("ÄãÊ§°ÜÁË¡£\n");
+     return notify_fail("ä½ å¤±è´¥äº†ã€‚\n");
 
    tforce = (int)target->query("force");
    tmaxforce = (int)target->query("max_force");
    write("Ok.\n");
-   tell_object(target, HIY "Äã¾õµÃÒ»¹ÉÈÈÆø´Ó" + me->name() + "µÄÊÖÕÆ´«ÁË¹ýÀ´¡£\n" NOR);
+   tell_object(target, HIY "ä½ è§‰å¾—ä¸€è‚¡çƒ­æ°”ä»Ž" + me->name() + "çš„æ‰‹æŽŒä¼ äº†è¿‡æ¥ã€‚\n" NOR);
    me->start_busy(2+random(4));
    target->start_busy(2+random(4));
         if( tforce < tmaxforce ) {

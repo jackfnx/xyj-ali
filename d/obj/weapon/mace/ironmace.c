@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //ironmace.c
@@ -11,17 +11,17 @@ inherit MACE;
 
 void create()
 {
-  set_name("Ìú±Ş", ({"iron mace", "mace", "ironmace"}));
+  set_name("é“é­", ({"iron mace", "mace", "ironmace"}));
   set_weight(7000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
+    set("unit", "æ ¹");
     set("value", 1000);
     set("material", "iron");
-    set("long", "Ò»±úÆÕÍ¨µÄÖñ½Ú±Ş¡£\n");
-    set("wield_msg", "$N²ÙÆğÒ»¸ù$n£¬°ÚÁË¸ö¼ÜÊ½¡£\n");
-    set("unwield_msg", "$N½«$n±ğ»ØÑü¼ä¡£\n");
+    set("long", "ä¸€æŸ„æ™®é€šçš„ç«¹èŠ‚é­ã€‚\n");
+    set("wield_msg", "$Næ“èµ·ä¸€æ ¹$nï¼Œæ‘†äº†ä¸ªæ¶å¼ã€‚\n");
+    set("unwield_msg", "$Nå°†$nåˆ«å›è…°é—´ã€‚\n");
   }
   
   init_mace(15);

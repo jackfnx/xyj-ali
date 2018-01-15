@@ -9,17 +9,17 @@ int cast(object me, object target)
 
     if (!target) target = offensive_target(me);
     if ((int)me->query_skill("necromancy", 1) < 100)
-        return notify_fail("ÄãµÄ¹´»êÊõ²»¹»¸ß£¡\n");
+        return notify_fail("ä½ çš„å‹¾é­‚æœ¯ä¸å¤Ÿé«˜ï¼\n");
     if (!target
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹»ê·ÉÆÇÉ¢£¿\n");
+        return notify_fail("ä½ è¦å¯¹è°æ–½å±•é­‚é£žé­„æ•£ï¼Ÿ\n");
     if ((int)me->query("kee") < 25)
-        return notify_fail("ÄãµÄÆøÑª²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ°”è¡€ä¸å¤Ÿï¼\n");
 
     me->receive_wound("kee", 25);
-    msg = HIC "$N¿ÚÖÐ²»¶ÏµÄÄî×ÅÖäÎÄ£¬Ö»¼ûÒõÆø²»Í£µÄÏò$nÆËÈ¥£¡\n\n" NOR;
+    msg = HIC "$Nå£ä¸­ä¸æ–­çš„å¿µç€å’’æ–‡ï¼Œåªè§é˜´æ°”ä¸åœçš„å‘$næ‰‘åŽ»ï¼\n\n" NOR;
 
     ap = me->query_skill("necromancy");
     extradam = ap/2;
@@ -27,14 +27,14 @@ int cast(object me, object target)
     dp = target->query("combat_exp");
     if (random(ap + dp) > dp) {
         damage = me->query("bellicosity") / 50;
-        msg += RED "ÒõÆøÖð½¥°üÎ§ÁË$pµÄÉíÌå!\n" NOR;
+        msg += RED "é˜´æ°”é€æ¸åŒ…å›´äº†$pçš„èº«ä½“!\n" NOR;
         message_vision(msg, me, target);
         if (damage > 1000) damage = 975 + random(50);
         target->receive_damage("kee", damage, me);
         target->receive_wound("kee", damage/3, me);
         if (damage > 0) COMBAT_D->report_status(target);
     } else {
-        msg += "µ«ÊÇ±»$n·¢ÏÖÁË£¡£¡\n";
+        msg += "ä½†æ˜¯è¢«$nå‘çŽ°äº†ï¼ï¼\n";
         message_vision(msg, me, target);
         target->kill_ob(me);
         me->kill_ob(target);

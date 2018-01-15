@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -11,13 +11,13 @@ int no_bone = 0;
 
 void create ()
 {
-  set ("short", "´äÔÆÉ½");
+  set ("short", "ç¿ äº‘å±±");
   set ("long", @LONG
 
-É½ÖĞÁÖÄ¾´Ğ´Ğ£¬Çà²İÓôÓô¡£Ò»ÅÉÄñÓï»¨ÏãµÄ¾°Ïó¡£É½ÊÆÎ¡¶ë¸ßËÊ£¬
-É½Ñü°×ÔÆôÁÈÆ£¬ÕæËÆÄÇÊÀÍâÌÒÔ´£¬º£ÉÏÅîÀ³¡£ÁÖÖĞÒşÒş´«À´¶¡¶¡¶¡
-·¥Ä¾Ö®Éù¡£Â·±ßÊÇÒ»¶ÑÒ»¶ÑÂÒÆß°ËÔãµÄÊ÷Ö¦£¬¿´ÉÏÈ¥ºÃÏóÔø±»ÈË·­
-¶¯¹ı¡£
+å±±ä¸­æ—æœ¨è‘±è‘±ï¼Œé’è‰éƒéƒã€‚ä¸€æ´¾é¸Ÿè¯­èŠ±é¦™çš„æ™¯è±¡ã€‚å±±åŠ¿å·å³¨é«˜è€¸ï¼Œ
+å±±è…°ç™½äº‘è¢…ç»•ï¼ŒçœŸä¼¼é‚£ä¸–å¤–æ¡ƒæºï¼Œæµ·ä¸Šè“¬è±ã€‚æ—ä¸­éšéšä¼ æ¥ä¸ä¸ä¸
+ä¼æœ¨ä¹‹å£°ã€‚è·¯è¾¹æ˜¯ä¸€å †ä¸€å †ä¹±ä¸ƒå…«ç³Ÿçš„æ ‘æï¼Œçœ‹ä¸Šå»å¥½è±¡æ›¾è¢«äººç¿»
+åŠ¨è¿‡ã€‚
 
 LONG);
 
@@ -44,19 +44,19 @@ int do_search (string arg)
 
   if (!arg || arg != "bone")
   {
-    message_vision ("$N¶×ÏÂÈ¥Ñ°ÕÒÊ²Ã´¡£\n",me);
+    message_vision ("$Nè¹²ä¸‹å»å¯»æ‰¾ä»€ä¹ˆã€‚\n",me);
     return 1;
   }
 
   if (!me->query_temp("know_palm_bone"))
   {
-    message_vision ("$N¶×ÏÂÈ¥ÔÚ¿İÊ÷Ö¦ÀïºúÂÒ·­ÁËÆğÀ´¡£\n",me);
+    message_vision ("$Nè¹²ä¸‹å»åœ¨æ¯æ ‘æé‡Œèƒ¡ä¹±ç¿»äº†èµ·æ¥ã€‚\n",me);
     return 1;
   }
 
   if (me->query("combat_exp")<4000)
   {
-    message_vision ("$NµÀĞĞ²»¹»£¬Ò²ÔÚ¿İÊ÷Ö¦Àï×°Ä£×÷ÑùµØ·­À´·­È¥¡£\n",me);
+    message_vision ("$Né“è¡Œä¸å¤Ÿï¼Œä¹Ÿåœ¨æ¯æ ‘æé‡Œè£…æ¨¡ä½œæ ·åœ°ç¿»æ¥ç¿»å»ã€‚\n",me);
     return 1;
   }  
 
@@ -64,7 +64,7 @@ int do_search (string arg)
   {
     remove_call_out ("reset_room_busy");
     call_out ("reset_room_busy",random(5)+5);
-    message_vision ("$NÔÚ¿İÊ÷Ö¦ÀïÏ¹Ã¦ºõ¡£\n",me);
+    message_vision ("$Nåœ¨æ¯æ ‘æé‡Œçå¿™ä¹ã€‚\n",me);
     return 1;
   }
 
@@ -72,7 +72,7 @@ int do_search (string arg)
   {
 // remove_call_out("reset_no_bone");
 // call_out("reset_no_bone",2700);
-    message_vision ("$NÕû¸ö°Ñ¿İÊ÷Ö¦·­±éÁËÒ²ÕÒ²»³öÊ²Ã´À´ÁË¡£\n",me);
+    message_vision ("$Næ•´ä¸ªæŠŠæ¯æ ‘æç¿»éäº†ä¹Ÿæ‰¾ä¸å‡ºä»€ä¹ˆæ¥äº†ã€‚\n",me);
     return 1;
   }
 
@@ -80,14 +80,14 @@ int do_search (string arg)
   {
     object bone = new (__DIR__"obj/bone");
     bone->move(me);
-    message_vision ("$NÑÛ¾¦Ò»ÁÁ£º°Å½¶¹Ç£¡\n",me);
-    message_vision ("\n$N¿´¿´ËÄÏÂÃ»ÈË×¢Òâ¸Ï½ô°Ñ°Å½¶¹Ç´§½ø»³Àï¡£\n",me);
+    message_vision ("$Nçœ¼ç›ä¸€äº®ï¼šèŠ­è•‰éª¨ï¼\n",me);
+    message_vision ("\n$Nçœ‹çœ‹å››ä¸‹æ²¡äººæ³¨æ„èµ¶ç´§æŠŠèŠ­è•‰éª¨æ£è¿›æ€€é‡Œã€‚\n",me);
     no_bone = 1;
     call_out ("reset_no_bone",3600);
     return 1;   
   }
 
-  message_vision ("$NÈÏÕæµØÔÚ¿İÊ÷Ö¦Àï·­À´·­È¥ÕÒ°Å½¶¹Ç¡£\n",me);
+  message_vision ("$Nè®¤çœŸåœ°åœ¨æ¯æ ‘æé‡Œç¿»æ¥ç¿»å»æ‰¾èŠ­è•‰éª¨ã€‚\n",me);
   room_busy = 1;
   call_out ("reset_room_busy",random(5)+5);
   return 1;

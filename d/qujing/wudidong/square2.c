@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/square2.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "��");
+   set("short", "甬道");
    set("long", @LONG
 
-���ﳱʪ���������ڹ����ֱ۴�ϸ��ţ���������������紵����
-����������ǰ�治Զ�����������ڣ���֪ͨ�����Զ����ϡ���Կ�
-�����ڵ����⡣�㲻�ɵļӿ��˽Ų���
+甬道里潮湿阴暗，两壁挂着手臂粗细的牛油蜡烛，在阵阵阴风吹动下
+忽明忽暗。前面不远处有两个洞口，不知通向哪里。远处依稀可以看
+到洞口的亮光。你不由的加快了脚步。
 LONG
    );
    set("exits", ([ /* sizeof() == 4 */

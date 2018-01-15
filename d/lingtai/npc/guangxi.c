@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // guang.c
@@ -8,11 +8,11 @@ int borrow_me(object ob);
 int borr_me(object ob);
 void create()
 {
-        set_name("¹ãôË×Ó", ({"guang xizi", "guang"}));
-        set("title", "¾­¸ó×Ü¹Ü");
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¹¿ç¾²å­", ({"guang xizi", "guang"}));
+        set("title", "ç»é˜æ€»ç®¡");
+        set("gender", "ç”·æ€§" );
         set("age", 53);
-        set("long", "Ò»¸ö¿´ÆğÀ´´ÈÃ¼ÉÆÄ¿µÄµÀÊ¿£¬ÕıÄÃ×ÅÒ»±¾¾­Êé¶Á×Å£®\n");
+        set("long", "ä¸€ä¸ªçœ‹èµ·æ¥æ…ˆçœ‰å–„ç›®çš„é“å£«ï¼Œæ­£æ‹¿ç€ä¸€æœ¬ç»ä¹¦è¯»ç€ï¼\n");
    set("class", "toaist");
         set("combat_exp", 180000);
         set("attitude", "friendly");
@@ -38,15 +38,15 @@ void create()
    map_skill("unarmed", "puti-zhi");
         set("per", 30);
    set("str", 25);
-        create_family("·½´çÉ½ÈıĞÇ¶´", 2, "µÜ×Ó");
+        create_family("æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´", 2, "å¼Ÿå­");
 
    set("inquiry", ([
-                "book": "ÕâÀï´ó¶àÊÇÎÒÃÇµÀ½Ì¾­µä£¬Ò²ÓĞĞ©Æ½³£Êé¼®¡£",
-     "Ç§×ÖÎÄ": (: borrow_me :),
-     "µÀµÂ¾­": (: borr_me :),
+                "book": "è¿™é‡Œå¤§å¤šæ˜¯æˆ‘ä»¬é“æ•™ç»å…¸ï¼Œä¹Ÿæœ‰äº›å¹³å¸¸ä¹¦ç±ã€‚",
+     "åƒå­—æ–‡": (: borrow_me :),
+     "é“å¾·ç»": (: borr_me :),
         ]) );
    set("chat_msg", ({
-     "¹ãôË×ÓĞ¦µÀ£ºÎÒÕâÈË×î°®³ÔËÉ¹ûÁË£¡\n",
+     "å¹¿ç¾²å­ç¬‘é“ï¼šæˆ‘è¿™äººæœ€çˆ±åƒæ¾æœäº†ï¼\n",
 }));
    set("chat_chance", 5);
         setup();
@@ -56,55 +56,55 @@ void create()
 int borr_me(object ob)
 {       object m;
         ob = this_player();
-        if ((string)this_player()->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+        if ((string)this_player()->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
                 if ( this_player()->query("pending/book")) {
-        message_vision("$N¶Ô$nËµ£ºÉÏ´Î½èµÄ»¹Ã»»¹£¬ÔõÃ´ºÃÔÙ½è¸øÄãÄØ£¿\n", this_object(), ob);
+        message_vision("$Nå¯¹$nè¯´ï¼šä¸Šæ¬¡å€Ÿçš„è¿˜æ²¡è¿˜ï¼Œæ€ä¹ˆå¥½å†å€Ÿç»™ä½ å‘¢ï¼Ÿ\n", this_object(), ob);
                    return 1;
      }
      if( (int)this_player()->query_skill("literate", 1) < 10 ) {
-        message_vision("$N¶Ô$nËµ£ºÄã¶ÁÊéĞ´×ÖÌ«²î£¬½è¸øÄã¿ÖÅÂÒ²¿´²»¶®°¡¡£\n", this_object(), ob);
+        message_vision("$Nå¯¹$nè¯´ï¼šä½ è¯»ä¹¦å†™å­—å¤ªå·®ï¼Œå€Ÿç»™ä½ ææ€•ä¹Ÿçœ‹ä¸æ‡‚å•Šã€‚\n", this_object(), ob);
         return 1;
      }
      if ( (int)this_object()->query("daode") ) {
-        message_vision("$NÒ»¹°ÊÖ£¬Ëµ£º¸Õ½è³öÈ¥£¬Ã÷ÌìÔÙÀ´°É£¡\n", this_object());
+        message_vision("$Nä¸€æ‹±æ‰‹ï¼Œè¯´ï¼šåˆšå€Ÿå‡ºå»ï¼Œæ˜å¤©å†æ¥å§ï¼\n", this_object());
         return 1;
      }
                 m=new("/d/obj/book/daode");
                 m->move(ob);
                 ob->set("pending/book", 1);
      this_object()->set("daode", 1);
-     message_vision("$N´Ó¼ÜÉÏÄÃÏÂ±¾ÊéÀ´µİ¸ø$n£¬Ëµ£º¼Ç×¡Òª»¹à¡£¡\n", this_object(), ob);
+     message_vision("$Nä»æ¶ä¸Šæ‹¿ä¸‹æœ¬ä¹¦æ¥é€’ç»™$nï¼Œè¯´ï¼šè®°ä½è¦è¿˜å”·ï¼\n", this_object(), ob);
                 return 1;
         }
-   message_vision("$NËµ£ºÎÒÃÇÕâÀïµÄÊé²»Íâ½è£¡\n", this_object());
+   message_vision("$Nè¯´ï¼šæˆ‘ä»¬è¿™é‡Œçš„ä¹¦ä¸å¤–å€Ÿï¼\n", this_object());
    return 1;
 }
 
 int borrow_me(object ob)
 {   object m;
    ob = this_player();
-        if ((string)this_player()->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+        if ((string)this_player()->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
                 if ( this_player()->query("pending/book")) {
-                        message_vision("$N¶Ô$nËµ£ºÉÏ´Î½èµÄ»¹Ã»»¹£¬ÔõÃ´ºÃÔÙ½è¸øÄãÄØ£¿\n", this_object(), ob);
+                        message_vision("$Nå¯¹$nè¯´ï¼šä¸Šæ¬¡å€Ÿçš„è¿˜æ²¡è¿˜ï¼Œæ€ä¹ˆå¥½å†å€Ÿç»™ä½ å‘¢ï¼Ÿ\n", this_object(), ob);
                         return 1;
                 }
      if( (int)this_player()->query_skill("literate", 1) < 10 ) {
-                        message_vision("$N¶Ô$nËµ£ºÄã¶ÁÊéĞ´×ÖÌ«²î£¬½è¸øÄã¿ÖÅÂÒ²¿´²»¶®°¡¡£\n", this_object(), ob);
+                        message_vision("$Nå¯¹$nè¯´ï¼šä½ è¯»ä¹¦å†™å­—å¤ªå·®ï¼Œå€Ÿç»™ä½ ææ€•ä¹Ÿçœ‹ä¸æ‡‚å•Šã€‚\n", this_object(), ob);
                         return 1;
                 }
 
                 if ( (int)this_object()->query("qian") ) {
-                        message_vision("$NÒ»¹°ÊÖ£¬Ëµ£º¸Õ½è³öÈ¥£¬Ã÷ÌìÔÙÀ´°É£¡\n", this_object());
+                        message_vision("$Nä¸€æ‹±æ‰‹ï¼Œè¯´ï¼šåˆšå€Ÿå‡ºå»ï¼Œæ˜å¤©å†æ¥å§ï¼\n", this_object());
                         return 1;
                 }
                 m=new("/d/obj/book/qian");
                 m->move(ob);
                 ob->set("pending/book", 1);
                 this_object()->set("qian", 1);
-                message_vision("$N´Ó¼ÜÉÏÄÃÏÂ±¾ÊéÀ´µİ¸ø$n£¬Ëµ£º¼Ç×¡Òª»¹à¡£¡\n", this_object(), ob);
+                message_vision("$Nä»æ¶ä¸Šæ‹¿ä¸‹æœ¬ä¹¦æ¥é€’ç»™$nï¼Œè¯´ï¼šè®°ä½è¦è¿˜å”·ï¼\n", this_object(), ob);
                 return 1;
         }
-        message_vision("$NËµ£ºÎÒÃÇÕâÀïµÄÊé²»Íâ½è£¡\n", this_object());
+        message_vision("$Nè¯´ï¼šæˆ‘ä»¬è¿™é‡Œçš„ä¹¦ä¸å¤–å€Ÿï¼\n", this_object());
         return 1;
 
 }
@@ -113,32 +113,32 @@ int accept_object(object who,object ob)
 {
           if (ob->query("id")=="qian") {
       if ( this_player()->query("pending/book") ){
-     say("¹ãôË×Ó¹ş¹şĞ¦ÁË¼¸Éù£¬ºÃ½èºÃ»¹£¬ÔÙ½è²»ÄÑ£¡\n");
+     say("å¹¿ç¾²å­å“ˆå“ˆç¬‘äº†å‡ å£°ï¼Œå¥½å€Ÿå¥½è¿˜ï¼Œå†å€Ÿä¸éš¾ï¼\n");
      who->set("pending/book", 0);
      this_object()->delete("qian");
             call_out("destroy", 1, ob);
            return 1;
      }
      else 
-     say("¹ãôË×ÓĞ¦µÀ£º¶àĞ»£¬¶àĞ»£¡\n");
+     say("å¹¿ç¾²å­ç¬‘é“ï¼šå¤šè°¢ï¼Œå¤šè°¢ï¼\n");
            call_out("destroy", 1, ob);
      return 1;
      }
    if (ob->query("id")=="daodejing") {
            if ( this_player()->query("pending/book") ){
-                  say("¹ãôË×Ó¹ş¹şĞ¦ÁË¼¸Éù£¬ºÃ½èºÃ»¹£¬ÔÙ½è²»ÄÑ£¡\n");
+                  say("å¹¿ç¾²å­å“ˆå“ˆç¬‘äº†å‡ å£°ï¼Œå¥½å€Ÿå¥½è¿˜ï¼Œå†å€Ÿä¸éš¾ï¼\n");
             who->set("pending/book", 0); 
      this_object()->delete("daode");
            call_out("destroy", 1, ob);
            return 1;
      }
      else
-     say("¹ãôË×ÓĞ¦µÀ£º¶àĞ»£¬¶àĞ»£¡\n");
+     say("å¹¿ç¾²å­ç¬‘é“ï¼šå¤šè°¢ï¼Œå¤šè°¢ï¼\n");
                 call_out("destroy", 1, ob);
                 return 1;
      }
    if (ob->query("id")=="songguo") {
-     say("¹ãôË×ÓĞ¦µÀ£º¶àĞ»£¬¶àĞ»£¡ÎÒ×î°®³ÔÁË£¡\n");
+     say("å¹¿ç¾²å­ç¬‘é“ï¼šå¤šè°¢ï¼Œå¤šè°¢ï¼æˆ‘æœ€çˆ±åƒäº†ï¼\n");
      who->set("pending/book", 0);
            call_out("destroy", 1, ob);
                   return 1;

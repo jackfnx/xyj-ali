@@ -1,16 +1,16 @@
 
-// longnu.c ÁúÅ®
+// longnu.c é¾™å¥³
 
 inherit NPC;
 
 void create()
 {
-    set_name("ÁúÅ®", ({ "longnu" }));
-    set("title", "ÄÏº£¹ÛÒôÊÌ´Ó");   
+    set_name("é¾™å¥³", ({ "longnu" }));
+    set("title", "å—æµ·è§‚éŸ³ä¾ä»");   
     set("long", @LONG
-ÄÏº£¹ÛÒô×ùÇ°ÁúÅ®¡£
+å—æµ·è§‚éŸ³åº§å‰é¾™å¥³ã€‚
 LONG);
-    set("gender", "Å®ĞÔ");
+    set("gender", "å¥³æ€§");
     set("age", 18);
     set("per", 25);
     set("attitude", "friendly");

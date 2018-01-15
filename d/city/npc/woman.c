@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -7,10 +7,10 @@ void wield_knife();
 
 void create()
 {
-        set_name("����", ({ "woman" }) );
-        set("gender", "Ů��" );
+        set_name("妇人", ({ "woman" }) );
+        set("gender", "女性" );
         set("age", 30);
-        set("long", "һ��Ѱ���Ĵ��︾��.");
+        set("long", "一个寻常的村里妇人.");
         set("combat_exp", 4000);
         set("attitude", "friendly");
         set_skill("dodge", 10);
@@ -20,9 +20,9 @@ void create()
 
         set("chat_chance",3);
         set("chat_msg", ({
-                "���˴򿪹�������һ��.\n",
-                "������˵��: ��ô��������? \n",
-                "������̧ͷ��������. \n",
+                "妇人打开锅盖闻了一下.\n",
+                "妇人喃喃说道: 怎么还不回来? \n",
+                "妇人又抬头望向门外. \n",
         }));
         set("chat_chance_combat",100);
         set("chat_msg_combat", ({
@@ -43,7 +43,7 @@ void wield_knife()
     if(knife->query("weapon_prop") == 0) return;
 
     knife->move(this_object());
-    say("����ץ��һ�Ѳ˵����������Ⱔǧ���ģ�\n");
+    say("妇人抓起一把菜刀喊到：你这挨千刀的！\n");
     command("wield knife");
 }
 

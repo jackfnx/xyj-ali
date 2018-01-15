@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 14 1997
@@ -9,15 +9,15 @@ void create()
 {
   if (random(2))
   {
-    set_name("±ÈÇğÉ®", ({ "biqiu seng", "biqiu", "seng" }));
-    set("gender", "ÄĞĞÔ");
+    set_name("æ¯”ä¸˜åƒ§", ({ "biqiu seng", "biqiu", "seng" }));
+    set("gender", "ç”·æ€§");
   }
   else
   {
-    set_name("±ÈÇğÄá", ({ "biqiu ni", "biqiu", "ni" }));
-    set("gender", "Å®ĞÔ");
+    set_name("æ¯”ä¸˜å°¼", ({ "biqiu ni", "biqiu", "ni" }));
+    set("gender", "å¥³æ€§");
   }
-  set("title", "ÁéÉ½");
+  set("title", "çµå±±");
   set("age", 80);
   set("attitude", "peaceful");
   set("str",40);

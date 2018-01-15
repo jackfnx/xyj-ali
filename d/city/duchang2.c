@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/changan/duchang2
@@ -15,35 +15,35 @@ int random2 (int i)
 }
 
 mapping gutous = ([ 
-  "tc" : "Í·²Ê",
-  "sd" : "Ë«¶Ô",
-  "qx" : "ÆßĞÇ",
-  "sx" : "É¢ĞÇ",
+  "tc" : "å¤´å½©",
+  "sd" : "åŒå¯¹",
+  "qx" : "ä¸ƒæ˜Ÿ",
+  "sx" : "æ•£æ˜Ÿ",
  ]); 
 
 void create()
 {
-  set ("short", "¹Ç÷»·¿");
+  set ("short", "éª¨éª°æˆ¿");
   set ("long", @LONG
 
-ÕâÀï°Ú×ÅÒ»¸ö°ËÏÉ×À£¬ÖĞ¼ä°Ú×ÅÒ»¸öÒøÅÌ¡£¶Ä¿ÍÃÇÕı¾Û¾«»áÉñµØÏÂ¶Ä¡£
-ÕıÏ¯ÊÇÒ»Î»ÅÖ×Ó£¬ÊÖÀï²»¶ÏÍæÅª×ÅÒ»¶ÔÓñ÷»£¬Ëû¾ÍÊÇÕâÀïµÄ×¯¶«¡£
+è¿™é‡Œæ‘†ç€ä¸€ä¸ªå…«ä»™æ¡Œï¼Œä¸­é—´æ‘†ç€ä¸€ä¸ªé“¶ç›˜ã€‚èµŒå®¢ä»¬æ­£èšç²¾ä¼šç¥åœ°ä¸‹èµŒã€‚
+æ­£å¸­æ˜¯ä¸€ä½èƒ–å­ï¼Œæ‰‹é‡Œä¸æ–­ç©å¼„ç€ä¸€å¯¹ç‰éª°ï¼Œä»–å°±æ˜¯è¿™é‡Œçš„åº„ä¸œã€‚
 
-Ç½ÉÏ¹ÒÓĞÒ»¸öØÒ£¬ÉÏÃæĞ´×Å£º
-    Í·²Ê£¨÷»ÊıÓÉÃ¿´Î¿ªÅÌÇ°È·¶¨£©      £ºÒ»Ó®ÈıÊ®Áù
-    Ë«¶Ô£¨Á½÷»ºÅÏàÍ¬£¬ÇÒÎªÅ¼Êı£©      £ºÒ»Ó®Ê®¶ş
-    ÆßĞÇ£¨Á½÷»Ö®ºÍÎªÆß£©              £ºÒ»Ó®Áù
-    É¢ĞÇ£¨Á½÷»Ö®ºÍÎªÈı£¬Îå£¬¾Å£¬Ê®Ò»£©£ºÒ»Ó®Èı
+å¢™ä¸ŠæŒ‚æœ‰ä¸€ä¸ªåŒ¾ï¼Œä¸Šé¢å†™ç€ï¼š
+    å¤´å½©ï¼ˆéª°æ•°ç”±æ¯æ¬¡å¼€ç›˜å‰ç¡®å®šï¼‰      ï¼šä¸€èµ¢ä¸‰åå…­
+    åŒå¯¹ï¼ˆä¸¤éª°å·ç›¸åŒï¼Œä¸”ä¸ºå¶æ•°ï¼‰      ï¼šä¸€èµ¢åäºŒ
+    ä¸ƒæ˜Ÿï¼ˆä¸¤éª°ä¹‹å’Œä¸ºä¸ƒï¼‰              ï¼šä¸€èµ¢å…­
+    æ•£æ˜Ÿï¼ˆä¸¤éª°ä¹‹å’Œä¸ºä¸‰ï¼Œäº”ï¼Œä¹ï¼Œåä¸€ï¼‰ï¼šä¸€èµ¢ä¸‰
 
-ØÒ½ÇÓĞÒ»¸öÅÆ×Ó(paizi)¡£
+åŒ¾è§’æœ‰ä¸€ä¸ªç‰Œå­(paizi)ã€‚
 
 LONG);
 
   set("item_desc",([
-    "paizi" : "ÑºÍ·²Ê÷»£º gutou tc <amount> <money>\n"+ 
-              "ÑºË«¶Ô÷»£º gutou sd <amount> <money>\n"+ 
-              "ÑºÆßĞÇ÷»£º gutou qx <amount> <money>\n"+ 
-              "ÑºÉ¢ĞÇ÷»£º gutou sx <amount> <money>\n" 
+    "paizi" : "æŠ¼å¤´å½©éª°ï¼š gutou tc <amount> <money>\n"+ 
+              "æŠ¼åŒå¯¹éª°ï¼š gutou sd <amount> <money>\n"+ 
+              "æŠ¼ä¸ƒæ˜Ÿéª°ï¼š gutou qx <amount> <money>\n"+ 
+              "æŠ¼æ•£æ˜Ÿéª°ï¼š gutou sx <amount> <money>\n" 
   ])); 
   set("objects", ([ /* sizeof() == 1 */
     __DIR__"npc/zhuangd" : 1,
@@ -83,32 +83,32 @@ int do_gutou (string arg)
 
   if (! arg ||
       sscanf (arg,"%s %d %s",what,amount,money) != 3)
-    return notify_fail("ÇëÊ¹ÓÃ£º gutou <Ñº÷»ÖÖÀà> <ÊıÄ¿> <»õ±Ò>\n");
+    return notify_fail("è¯·ä½¿ç”¨ï¼š gutou <æŠ¼éª°ç§ç±»> <æ•°ç›®> <è´§å¸>\n");
 
   if (what != "tc" &&
       what != "sd" &&
       what != "qx" &&
       what != "sx")
-    return notify_fail("ÄãÒªÑºÊ²Ã´÷»£¿\n");
+    return notify_fail("ä½ è¦æŠ¼ä»€ä¹ˆéª°ï¼Ÿ\n");
 
   ob = present (money+"_money", me);
   if (! ob)
-    return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
+    return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
   if (amount < 1)
-    return notify_fail("Çë¶àÑºÒ»Ğ©Ç®¡£\n");
+    return notify_fail("è¯·å¤šæŠ¼ä¸€äº›é’±ã€‚\n");
   if (amount > ob->query_amount())
-    return notify_fail("ÄãÉíÉÏµÄÇ®²»¹»Ñº¡£\n");
+    return notify_fail("ä½ èº«ä¸Šçš„é’±ä¸å¤ŸæŠ¼ã€‚\n");
 
   if (me->query_temp ("gamble_gutou/amount") > 0)
-    return notify_fail("ÄãÒÑ¾­Ñº¹ıÁË¡£\n");
+    return notify_fail("ä½ å·²ç»æŠ¼è¿‡äº†ã€‚\n");
 
   if (room_status > 1)
-    return notify_fail("ÏÖÔÚÕıÔÚ¶ÄÄØ£¬ÉÔµÈÆ¬¿Ì¡£\n");
+    return notify_fail("ç°åœ¨æ­£åœ¨èµŒå‘¢ï¼Œç¨ç­‰ç‰‡åˆ»ã€‚\n");
 
   me->set_temp("gamble_gutou/kind",what);
   me->set_temp("gamble_gutou/amount",amount);
   me->set_temp("gamble_gutou/money",money);
-  message_vision (sprintf("$NÄÃ³ö%s%s%s£¬ÑºÔÚ%sÉÏ¡£\n",
+  message_vision (sprintf("$Næ‹¿å‡º%s%s%sï¼ŒæŠ¼åœ¨%sä¸Šã€‚\n",
                           chinese_number(amount),
                           ob->query("base_unit"),
                           ob->query("name"),
@@ -127,7 +127,7 @@ int valid_leave(object me, string dir)
   if (dir == "west")
   {
     if (me->query_temp ("gamble_gutou/amount") > 0) 
-      message_vision ("$NÈÓÏÂÑº÷»µÄÇ®¡£\n",me);
+      message_vision ("$Næ‰”ä¸‹æŠ¼éª°çš„é’±ã€‚\n",me);
     me->delete_temp("gamble_gutou");
   }
   return ::valid_leave(me,dir);
@@ -141,62 +141,62 @@ void display_gutou (object room, int i)
     case 1:
     {
       str = 
-"©°©¤©¤©¤©´\n"+
-"©¦¡¡¡¡¡¡©¦\n"+
-"©¦¡¡¡ñ¡¡©¦\n"+
-"©¦¡¡¡¡¡¡©¦\n"+
-"©¸©¤©¤©¤©¼\n";
+"â”Œâ”€â”€â”€â”\n"+
+"â”‚ã€€ã€€ã€€â”‚\n"+
+"â”‚ã€€â—ã€€â”‚\n"+
+"â”‚ã€€ã€€ã€€â”‚\n"+
+"â””â”€â”€â”€â”˜\n";
 
       break;
     } 
     case 2:
     {
       str = 
-"©°©¤©¤©¤©´\n"+
-"©¦¡¡¡¡¡¡©¦\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¦¡¡¡¡¡¡©¦\n"+
-"©¸©¤©¤©¤©¼\n";
+"â”Œâ”€â”€â”€â”\n"+
+"â”‚ã€€ã€€ã€€â”‚\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â”‚ã€€ã€€ã€€â”‚\n"+
+"â””â”€â”€â”€â”˜\n";
       break;
     } 
     case 3:
     {
       str =
-"©°©¤©¤©¤©´\n"+
-"©¦¡ñ¡¡¡¡©¦\n"+
-"©¦¡¡¡ñ¡¡©¦\n"+
-"©¦¡¡¡¡¡ñ©¦\n"+
-"©¸©¤©¤©¤©¼\n";
+"â”Œâ”€â”€â”€â”\n"+
+"â”‚â—ã€€ã€€â”‚\n"+
+"â”‚ã€€â—ã€€â”‚\n"+
+"â”‚ã€€ã€€â—â”‚\n"+
+"â””â”€â”€â”€â”˜\n";
       break;
     } 
     case 4:
     {
       str = 
-"©°©¤©¤©¤©´\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¦¡¡¡¡¡¡©¦\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¸©¤©¤©¤©¼\n";
+"â”Œâ”€â”€â”€â”\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â”‚ã€€ã€€ã€€â”‚\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â””â”€â”€â”€â”˜\n";
       break;
     } 
     case 5:
     {
       str =
-"©°©¤©¤©¤©´\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¦¡¡¡ñ¡¡©¦\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¸©¤©¤©¤©¼\n";
+"â”Œâ”€â”€â”€â”\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â”‚ã€€â—ã€€â”‚\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â””â”€â”€â”€â”˜\n";
       break;
     } 
     case 6:
     {
       str = 
-"©°©¤©¤©¤©´\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¦¡ñ¡¡¡ñ©¦\n"+
-"©¸©¤©¤©¤©¼\n";
+"â”Œâ”€â”€â”€â”\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â”‚â—ã€€â—â”‚\n"+
+"â””â”€â”€â”€â”˜\n";
       break;
     } 
   }
@@ -211,8 +211,8 @@ int rdm()
 void gamble_prepare ()
 {
   object room = this_object();
-  tell_room (room,"×¯¶«³ªµÀ£ºĞÂ¿ªÅÌ£¡Ô¤½ĞÍ·²Ê£¡\n");
-  tell_room (room,"×¯¶«½«Á½Ã¶Óñ÷»ÍùÒøÅÌÖĞÒ»Èö¡£\n");
+  tell_room (room,"åº„ä¸œå”±é“ï¼šæ–°å¼€ç›˜ï¼é¢„å«å¤´å½©ï¼\n");
+  tell_room (room,"åº„ä¸œå°†ä¸¤æšç‰éª°å¾€é“¶ç›˜ä¸­ä¸€æ’’ã€‚\n");
   big[0] = rdm();
   big[1] = rdm();
   // keep two numbers different for a probability == 1/36
@@ -223,9 +223,9 @@ void gamble_prepare ()
   }
   display_gutou (room,big[0]);
   display_gutou (room,big[1]);
-  tell_room (room,"×¯¶«½ĞµÀ£ºÍ·²Ê÷»ºÅ"+chinese_number(big[0])+
-                  chinese_number(big[1])+"£¡\n");
-  tell_room (room,"½Ó×Å×¯¶«ÂéÀûµØË³ÊÖ½«Óñ÷»´ÓÅÌÖĞÊÕ»Ø£ºÏÖÔÚ¿ªÅÌÑºÇ®£¡\n");
+  tell_room (room,"åº„ä¸œå«é“ï¼šå¤´å½©éª°å·"+chinese_number(big[0])+
+                  chinese_number(big[1])+"ï¼\n");
+  tell_room (room,"æ¥ç€åº„ä¸œéº»åˆ©åœ°é¡ºæ‰‹å°†ç‰éª°ä»ç›˜ä¸­æ”¶å›ï¼šç°åœ¨å¼€ç›˜æŠ¼é’±ï¼\n");
   room_status = 1;
   call_out ("gamble_start",24);
 }
@@ -233,10 +233,10 @@ void gamble_prepare ()
 void gamble_start ()
 {
   object room = this_object();
-  tell_room (room,"×¯¶«º°Éù£º·âÅÌÍ£Ñº£¡\n");
-  tell_room (room,"ÓÖ²¹µÀ£º±¾ÅÌÍ·²Ê÷»ºÅÊÇ"+chinese_number(big[0])+
-                  chinese_number(big[1])+"¡£\n");
-  tell_room (room,"È»ºó½«Á½Ã¶Óñ÷»ÈÓ½øÁ½¸ö½ğÖÑ£¬Ò»ÊÖ³ÖÒ»ÖÑÒ¡½«ÆğÀ´¡£\n");
+  tell_room (room,"åº„ä¸œå–Šå£°ï¼šå°ç›˜åœæŠ¼ï¼\n");
+  tell_room (room,"åˆè¡¥é“ï¼šæœ¬ç›˜å¤´å½©éª°å·æ˜¯"+chinese_number(big[0])+
+                  chinese_number(big[1])+"ã€‚\n");
+  tell_room (room,"ç„¶åå°†ä¸¤æšç‰éª°æ‰”è¿›ä¸¤ä¸ªé‡‘ç›…ï¼Œä¸€æ‰‹æŒä¸€ç›…æ‘‡å°†èµ·æ¥ã€‚\n");
   room_status = 2;
   call_out ("gamble_perform",6,0);
   call_out ("gamble_perform",12,1);
@@ -247,7 +247,7 @@ void gamble_perform (int i)
 {
   object room = this_object();
 
-  tell_room (room,"½ğÖÑµ¹¿ÛÔÚÒøÅÌÉÏ£¬Óñ÷»¹öÁË³öÀ´¡£\n");
+  tell_room (room,"é‡‘ç›…å€’æ‰£åœ¨é“¶ç›˜ä¸Šï¼Œç‰éª°æ»šäº†å‡ºæ¥ã€‚\n");
   res[i] = rdm();
   display_gutou (room,res[i]);
 }
@@ -258,7 +258,7 @@ void player_wins (object who, int total)
   int amount = who->query_temp("gamble_gutou/amount");
   total = total * amount;
   money->set_amount(total);
-  message_vision (sprintf("$NÓ®ÁË%s%s%s£¡\n",
+  message_vision (sprintf("$Nèµ¢äº†%s%s%sï¼\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -270,7 +270,7 @@ void player_loses (object who, int total)
 {
   object money = new ("/obj/money/"+who->query_temp("gamble_gutou/money"));
   total = who->query_temp("gamble_gutou/amount");
-  message_vision (sprintf("×¯¶«½«$NÑºÔÚÒøÅÌÖĞµÄ%s%s%sÊÕ×ß¡£\n",
+  message_vision (sprintf("åº„ä¸œå°†$NæŠ¼åœ¨é“¶ç›˜ä¸­çš„%s%s%sæ”¶èµ°ã€‚\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -314,11 +314,11 @@ void gamble_finish ()
     }
   }
   if (total == 0)
-    tell_room (room,"×¯¶«½ĞµÀ£º"+chinese_number(res[0])+
-                    chinese_number(res[1])+"¡­¡­¿ÕÅÌ£¡\n");
+    tell_room (room,"åº„ä¸œå«é“ï¼š"+chinese_number(res[0])+
+                    chinese_number(res[1])+"â€¦â€¦ç©ºç›˜ï¼\n");
   else
-    tell_room (room,"×¯¶«½ĞµÀ£º"+chinese_number(res[0])+
-                    chinese_number(res[1])+"¡­¡­"+gutous[win]+"£¡\n");
+    tell_room (room,"åº„ä¸œå«é“ï¼š"+chinese_number(res[0])+
+                    chinese_number(res[1])+"â€¦â€¦"+gutous[win]+"ï¼\n");
   i = sizeof(list);
   while (i--)
   {

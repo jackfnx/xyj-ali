@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ğ¡Ã·¶ù", ({ "xmr" }));
-    set("long", HIG"Ö»¼ûËıÒ»ÕÅ¹Ï×ÓÁ³£¬ÇåÀöÎŞÂ×£¬Ò»Ë«ÎÚÁïÁïµÄ´óÑÛ¾§¹â²ÓÀÃ£¬ÉÁË¸ÈçĞÇ£¬Á÷²¨×ªÅÎ£¬\n"
-            "Áé»îÖ®¼«£¬ËÆºõµ¥ÊÇÒ»Ë«ÑÛ¾¦±ãÄÜËµ»°Ò»°ã£¬ËıÑÔĞ¦êÌêÌ£¬ÈÃÈËÒ»¼û¶ÙÉúÇ×½üÖ®Òâ¡£\n"NOR);
-    set("title", HIG"ÁÄÌìĞ­»á"NOR);
-    set("rank", HIY"Ã·»¨ÏÉ×Ó"NOR);
-    set("nickname", HIM"°®Æ¯ÁÁµÄ"NOR);
-    set("gender", "Å®ĞÔ");
+    set_name("å°æ¢…å„¿", ({ "xmr" }));
+    set("long", HIG"åªè§å¥¹ä¸€å¼ ç“œå­è„¸ï¼Œæ¸…ä¸½æ— ä¼¦ï¼Œä¸€åŒä¹Œæºœæºœçš„å¤§çœ¼æ™¶å…‰ç¿çƒ‚ï¼Œé—ªçƒå¦‚æ˜Ÿï¼Œæµæ³¢è½¬ç›¼ï¼Œ\n"
+            "çµæ´»ä¹‹æï¼Œä¼¼ä¹å•æ˜¯ä¸€åŒçœ¼ç›ä¾¿èƒ½è¯´è¯ä¸€èˆ¬ï¼Œå¥¹è¨€ç¬‘æ™æ™ï¼Œè®©äººä¸€è§é¡¿ç”Ÿäº²è¿‘ä¹‹æ„ã€‚\n"NOR);
+    set("title", HIG"èŠå¤©åä¼š"NOR);
+    set("rank", HIY"æ¢…èŠ±ä»™å­"NOR);
+    set("nickname", HIM"çˆ±æ¼‚äº®çš„"NOR);
+    set("gender", "å¥³æ€§");
     set("age", 17);
     set("attitude", "friendly");
 
@@ -63,20 +63,20 @@ void create()
 
     set("chat_chance", 10);
     set("chat_msg", ({
-        "Ğ¡Ã·¶ùĞ¦ßäßäµØËµ£ºÎÒ×îÔ¸Òâ½»ÅóÓÑÁË£¬ÄãÔ¸ÒâºÍÎÒÁÄÌìÂğ£¿\n",
-        "Ğ¡Ã·¶ù³¯ÄãÍçÆ¤µØ°çÁË¸ö¹íÁ³: ¿É±ğÍüÁË¸´Ï°¹¦¿Î£¬mud ÂıÂıÍæ²»Òª½ô£¿\n",
+        "å°æ¢…å„¿ç¬‘å’ªå’ªåœ°è¯´ï¼šæˆ‘æœ€æ„¿æ„äº¤æœ‹å‹äº†ï¼Œä½ æ„¿æ„å’Œæˆ‘èŠå¤©å—ï¼Ÿ\n",
+        "å°æ¢…å„¿æœä½ é¡½çš®åœ°æ‰®äº†ä¸ªé¬¼è„¸: å¯åˆ«å¿˜äº†å¤ä¹ åŠŸè¯¾ï¼Œmud æ…¢æ…¢ç©ä¸è¦ç´§ï¼Ÿ\n",
         (: random_move :)
     }));
 
     set("inquiry", ([
-        "rumors":  "ÎÒÖªµÀµÄÏûÏ¢ÓĞ:\n"
-                "    name, xiaoxiao, feather, Isaac, Ğ¡Ğ¡, Ğ¡Óğ\n",
-        "name":   "ÎÒ½ĞĞ¡Ã·¶ùºÇ£¬Äã²»ÖªµÀÂğ¡£\n",
-        "feather":   "Ğ¡ÓğÊÇÎÒºÍĞ¡Ğ¡µÄºÃÅóÓÑ£¬ËûÂğ£¬Ë­ÄÜ¼Ş¸øËû¿ÉÊÇ¸£ÆøÁË¡£\n",
-        "xiaoxiao":   "Ğ¡Ğ¡ÊÇ¸ö¿É°®µÄÅ®º¢Å¶£¬ËıºÜÏ²»¶ÅóÓÑµÄ£¬ÎÒ¾ÍÊÇËı×öµÄ»úÆ÷ÈË¡£\n",
-        "Isaac":   "ÌìÉñ¶¼²»ÖªµÀ£¬¸Ã´ò£¬ËûÔÚµ½´¦¹äÄØ£¬²»ºÃÕÒ!\n",
-        "Ğ¡Ğ¡":   "Ğ¡Ğ¡ÊÇ¸ö¿É°®µÄÅ®º¢Å¶£¬ËıºÜÏ²»¶ÅóÓÑµÄ£¬ÎÒ¾ÍÊÇËı×öµÄ»úÆ÷ÈË¡£\n",
-        "Ğ¡Óğ":  "Ğ¡ÓğÊÇÎÒºÍĞ¡Ğ¡µÄºÃÅóÓÑ£¬ËûÂğ£¬Ë­ÄÜ¼Ş¸øËû¿ÉÊÇ¸£ÆøÁË¡£\n",
+        "rumors":  "æˆ‘çŸ¥é“çš„æ¶ˆæ¯æœ‰:\n"
+                "    name, xiaoxiao, feather, Isaac, å°å°, å°ç¾½\n",
+        "name":   "æˆ‘å«å°æ¢…å„¿å‘µï¼Œä½ ä¸çŸ¥é“å—ã€‚\n",
+        "feather":   "å°ç¾½æ˜¯æˆ‘å’Œå°å°çš„å¥½æœ‹å‹ï¼Œä»–å—ï¼Œè°èƒ½å«ç»™ä»–å¯æ˜¯ç¦æ°”äº†ã€‚\n",
+        "xiaoxiao":   "å°å°æ˜¯ä¸ªå¯çˆ±çš„å¥³å­©å“¦ï¼Œå¥¹å¾ˆå–œæ¬¢æœ‹å‹çš„ï¼Œæˆ‘å°±æ˜¯å¥¹åšçš„æœºå™¨äººã€‚\n",
+        "Isaac":   "å¤©ç¥éƒ½ä¸çŸ¥é“ï¼Œè¯¥æ‰“ï¼Œä»–åœ¨åˆ°å¤„é€›å‘¢ï¼Œä¸å¥½æ‰¾!\n",
+        "å°å°":   "å°å°æ˜¯ä¸ªå¯çˆ±çš„å¥³å­©å“¦ï¼Œå¥¹å¾ˆå–œæ¬¢æœ‹å‹çš„ï¼Œæˆ‘å°±æ˜¯å¥¹åšçš„æœºå™¨äººã€‚\n",
+        "å°ç¾½":  "å°ç¾½æ˜¯æˆ‘å’Œå°å°çš„å¥½æœ‹å‹ï¼Œä»–å—ï¼Œè°èƒ½å«ç»™ä»–å¯æ˜¯ç¦æ°”äº†ã€‚\n",
     ]));
 
     setup();
@@ -94,22 +94,22 @@ void relay_emote(object ob, string verb)
 
     switch(verb) {
         case "kick":
-            command("chat Ğ¡Ğ¡¿ìÀ´ºÇ£¬" + ob->query("name")+ "ÆÛ¸ºÎÒ ...\n");
+            command("chat å°å°å¿«æ¥å‘µï¼Œ" + ob->query("name")+ "æ¬ºè´Ÿæˆ‘ ...\n");
             command(verb + " " + ob->query("id"));
             break;
         case "pat":
-            command("chat ÆÆ" + ob->query("name") + "±ğÅÄÀ²£¡ÔÙÅÄ¶¼¸øÅÄÉµÁË£¡\n");
+            command("chat ç ´" + ob->query("name") + "åˆ«æ‹å•¦ï¼å†æ‹éƒ½ç»™æ‹å‚»äº†ï¼\n");
             command("heng" + " " + ob->query("id"));
             break;
         case "slap":
-            command("chat ¸ÉÂï´òÎÒ£¬Í´ËÀÁË£¬" + ob->query("name")+ "ºÃ»µÅ¶£¬ÎÒ¸æËßĞ¡Ğ¡È¥£¡\n");
+            command("chat å¹²å˜›æ‰“æˆ‘ï¼Œç—›æ­»äº†ï¼Œ" + ob->query("name")+ "å¥½åå“¦ï¼Œæˆ‘å‘Šè¯‰å°å°å»ï¼\n");
             command("slap" + " " + ob->query("id"));
             break;
         case "bigsis":
             command("ybrother" + " " + ob->query("id"));
             break;
         case "kok":
-            command("chat ¸ÉÂï´òÎÒ£¬Í´ËÀÁË£¬" + ob->query("name")+ "ºÃ»µÅ¶£¬ÎÒ¸æËßĞ¡Ğ¡È¥£¡\n");
+            command("chat å¹²å˜›æ‰“æˆ‘ï¼Œç—›æ­»äº†ï¼Œ" + ob->query("name")+ "å¥½åå“¦ï¼Œæˆ‘å‘Šè¯‰å°å°å»ï¼\n");
             command("sob" + " " + ob->query("id"));
             break;
         case "kiss":
@@ -123,11 +123,11 @@ void relay_emote(object ob, string verb)
             command("puke" + " " + ob->query("id"));
             break;
         case "hit":
-            command("chat ¸ÉÂï´òÎÒ£¬Í´ËÀÁË£¬"+ ob->query("name") + "ºÃ»µÅ¶£¬ÎÒ¸æËßĞ¡Ğ¡È¥£¡\n");
+            command("chat å¹²å˜›æ‰“æˆ‘ï¼Œç—›æ­»äº†ï¼Œ"+ ob->query("name") + "å¥½åå“¦ï¼Œæˆ‘å‘Šè¯‰å°å°å»ï¼\n");
             command("hit" + " " + ob->query("id"));
             break;
         case "hammer":
-            command("chat ¸ÉÂï´òÎÒ£¬Í´ËÀÁË£¬"+ ob->query("name") + "ºÃ»µÅ¶£¬ÎÒ¸æËßĞ¡Ğ¡È¥£¡\n");
+            command("chat å¹²å˜›æ‰“æˆ‘ï¼Œç—›æ­»äº†ï¼Œ"+ ob->query("name") + "å¥½åå“¦ï¼Œæˆ‘å‘Šè¯‰å°å°å»ï¼\n");
             command("hammer" + " " + ob->query("id"));
             break;
         case "shutup":
@@ -163,7 +163,7 @@ void relay_emote(object ob, string verb)
             command("thank" + " " + ob->query("id"));
             break;
         case "club":
-            command("chat °¥Ñ½£¬Í´ËÀÁË£¬"+ ob->query("name") + "Õæºİ£¬ÕâÃ´¿É°®Æ¯ÁÁµÄÃÀÃ¼Ò²ÏÂµÃÈ¥ÊÖ£¬\nÎÒ¡£¡£¡£Òª¸æËß¡£¡£¡££¡\n");
+            command("chat å“å‘€ï¼Œç—›æ­»äº†ï¼Œ"+ ob->query("name") + "çœŸç‹ ï¼Œè¿™ä¹ˆå¯çˆ±æ¼‚äº®çš„ç¾çœ‰ä¹Ÿä¸‹å¾—å»æ‰‹ï¼Œ\næˆ‘ã€‚ã€‚ã€‚è¦å‘Šè¯‰ã€‚ã€‚ã€‚ï¼\n");
             command("faint" + " " + ob->query("id"));
             break;
         case "xixi":
@@ -227,19 +227,19 @@ void greeting(object ob)
 {
     if (!ob || !visible(ob) || environment(ob) != environment()) return;
     if (ob->query("id")=="xiaoxiao") {
-        say("Ğ¡Ã·¶ù¸ßĞËµØËµ£º"+ob->query("name")+"ÎÒºÃÏëÄãºÇ!\n");
+        say("å°æ¢…å„¿é«˜å…´åœ°è¯´ï¼š"+ob->query("name")+"æˆ‘å¥½æƒ³ä½ å‘µ!\n");
         command("jump " + ob->query("id"));
         return;
     }
     
     if (ob->query("id")=="feather" || ob->query("id")=="power") {
-        say("Ğ¡Ã·¶ù¸ßĞËµØËµ£º"+ob->query("name")+",ÎÒºÍĞ¡Ğ¡ºÃÏëÄãºÇ£¬ÕâÃ´¾Ã²ÅÀ´!\n");
+        say("å°æ¢…å„¿é«˜å…´åœ°è¯´ï¼š"+ob->query("name")+",æˆ‘å’Œå°å°å¥½æƒ³ä½ å‘µï¼Œè¿™ä¹ˆä¹…æ‰æ¥!\n");
         return;
     }
     
     switch (random(7)) {
         case 0:
-            say("Ğ¡Ã·¶ùĞ¦ßäßäµØËµ£º" + ob->query("name") + "£¬¹¦¿Î×öÍêÁËÂğ£¬ ¿É±ğÌÓ¿ÎºÇ£¿\n");
+            say("å°æ¢…å„¿ç¬‘å’ªå’ªåœ°è¯´ï¼š" + ob->query("name") + "ï¼ŒåŠŸè¯¾åšå®Œäº†å—ï¼Œ å¯åˆ«é€ƒè¯¾å‘µï¼Ÿ\n");
             break;
         case 1:
             command ("face " + ob->query("id") );
@@ -254,7 +254,7 @@ void greeting(object ob)
             command ("look " + ob->query("id") );
             break;
         case 5:
-            say("Ğ¡Ã·¶ùĞ¦ßäßäµØËµ£º" + ob->query("name")+ "¸úÎÒÁÄÌìºÃÂğ£¬ÎÒÃÇ×ö¸öÅóÓÑ°É!\n");
+            say("å°æ¢…å„¿ç¬‘å’ªå’ªåœ°è¯´ï¼š" + ob->query("name")+ "è·Ÿæˆ‘èŠå¤©å¥½å—ï¼Œæˆ‘ä»¬åšä¸ªæœ‹å‹å§!\n");
             break;
         case 6:
             command ("mud " + ob->query("id") );
@@ -282,18 +282,18 @@ int do_kill(string arg)
         switch(verb) {
             case "kill":
                 tell_object(environment(this_object()),
-        who->query("name")+"Ì¾ÁË¿ÚÆø"+
-        ob->query("name")+"ÒªÉ±ÎÒ£¬Õâ¿ÉÊÇÄã×ÔÑ°ËÀÂ·,¹Ö²»µÃÎÒ£¡\n");
+        who->query("name")+"å¹äº†å£æ°”"+
+        ob->query("name")+"è¦æ€æˆ‘ï¼Œè¿™å¯æ˜¯ä½ è‡ªå¯»æ­»è·¯,æ€ªä¸å¾—æˆ‘ï¼\n");
                 break;
             case "fight":
                 tell_object(environment(this_object()),
-        who->query("name")+"¿´ÁË"+
-        ob->query("name")+"Ò»ÑÛ£¬Ò¡ÁËÒ¡Í·£ºÄã²»ÊÇÎÒ¶ÔÊÖ£¬Å®º¢¼Ò²»´ò¼ÜµÄ£¡\n");
+        who->query("name")+"çœ‹äº†"+
+        ob->query("name")+"ä¸€çœ¼ï¼Œæ‘‡äº†æ‘‡å¤´ï¼šä½ ä¸æ˜¯æˆ‘å¯¹æ‰‹ï¼Œå¥³å­©å®¶ä¸æ‰“æ¶çš„ï¼\n");
                 break;
             case "steal":
                 tell_object(environment(this_object()),
-        who->query("name")+"´ó½ĞÆğÀ´£º"+
-        ob->query("name")+"£¬ÄãÔÙÕâÑùÎÒ¾Í²»¿ÍÆøÁË£¡\n");
+        who->query("name")+"å¤§å«èµ·æ¥ï¼š"+
+        ob->query("name")+"ï¼Œä½ å†è¿™æ ·æˆ‘å°±ä¸å®¢æ°”äº†ï¼\n");
                 break;
         }
     }
@@ -304,7 +304,7 @@ int do_kill(string arg)
 void relay_whisper(object me, string msg)
 {
     if (me->query("id") != "isaac") {
-        message_vision((string)this_object()->query("name") + "¶Ô×Å$NÀäºßÁËÒ»Éù¡£\n", me);
+        message_vision((string)this_object()->query("name") + "å¯¹ç€$Nå†·å“¼äº†ä¸€å£°ã€‚\n", me);
         return;
     }
 
@@ -316,7 +316,7 @@ void relay_whisper(object me, string msg)
         strsrch(msg, "recruit") != -1)
         return;
 
-    message_vision((string)this_object()->query("name") + "¶Ô×Å$NµãÁËµãÍ·¡£\n", me);
+    message_vision((string)this_object()->query("name") + "å¯¹ç€$Nç‚¹äº†ç‚¹å¤´ã€‚\n", me);
     if (msg) {
         remove_call_out("relaying");
         call_out("relaying", 1+random(3), msg);

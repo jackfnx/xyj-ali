@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // time.c
@@ -7,16 +7,16 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg)
 {
-   write("ÏÖÔÚÊÇ" + NATURE_D->game_time() + "¡£\n");
+   write("çŽ°åœ¨æ˜¯" + NATURE_D->game_time() + "ã€‚\n");
    return 1;
 }
 
 int help(object me)
 {
      write(@HELP
-Ö¸Áî¸ñÊ½: time
+æŒ‡ä»¤æ ¼å¼: time
 
-Õâ¸öÖ¸ÁîÈÃÄãÖªµÀÏÖÔÚµÄÊ±³½¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ çŸ¥é“çŽ°åœ¨çš„æ—¶è¾°ã€‚
 
 HELP
     );

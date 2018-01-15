@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // alias.c
@@ -25,7 +25,7 @@ string process_input(string str)
      || !living(this_object()) ) )
      return "";
 
-   notify_fail("Ê²Ã´£¿\n"); // default fail messages.
+   notify_fail("ä»€ä¹ˆï¼Ÿ\n"); // default fail messages.
                             // for both gb and big5 environment.
                             // need to be set here. otherwise big5 
                             // will not show it correctly.
@@ -41,7 +41,7 @@ string process_input(string str)
      if(curr_time-last_time<5) {
        if(cmd_cnt1==0){
          cmd_cnt2=cmd_cnt/(curr_time-last_time+1);
-         write("ÄãÒ»´ÎÊäÈëÌ«¶àÃüÁîÁË¡£\n");
+         write("ä½ ä¸€æ¬¡è¾“å…¥å¤ªå¤šå‘½ä»¤äº†ã€‚\n");
             }
             cmd_cnt1++;
        if(cmd_cnt1>30) cmd_cnt1=0;
@@ -62,11 +62,11 @@ string process_input(string str)
      repeat_cnt++;
      if( repeat_cnt > MAX_REPEAT ) {
         tell_object( this_object(),
-     "\n\nºöÌıÒ»Éù²Ò½Ğ£¬´ÓÄãÄÔÃÅÉÏÅÀÏÂÒ»Ö»º¦³æ£¬·ÉÒ²ËÆµØÌÓ×ßÁË¡£\n"+
-     "\nÒ»±ßÅÜÒ»±ßºŞºŞµØµÀ£ºÔ­À´ÊÇ¸ö»úÆ÷ÈË£¬ÑÀ¶¼¸ø±ÀµôÁË£®£®£®\n\n");
-command("rumor ºöÌıÒ»Éù²Ò½Ğ£¬´Ó"+this_player()->name()+
-        "ÄÔÃÅÉÏÅÀÏÂÒ»Ö»º¦³æ£¬·ÉÒ²ËÆµØÌÓ×ßÁË¡£ ");
-command("rumor º¦³æÒ»±ßÅÜÒ»±ßºŞºŞµØµÀ£ºÔ­À´ÊÇ¸ö»úÆ÷ÈË£¬ÑÀ¶¼¸ø±ÀµôÁË£®£®£®");
+     "\n\nå¿½å¬ä¸€å£°æƒ¨å«ï¼Œä»ä½ è„‘é—¨ä¸Šçˆ¬ä¸‹ä¸€åªå®³è™«ï¼Œé£ä¹Ÿä¼¼åœ°é€ƒèµ°äº†ã€‚\n"+
+     "\nä¸€è¾¹è·‘ä¸€è¾¹æ¨æ¨åœ°é“ï¼šåŸæ¥æ˜¯ä¸ªæœºå™¨äººï¼Œç‰™éƒ½ç»™å´©æ‰äº†ï¼ï¼ï¼\n\n");
+command("rumor å¿½å¬ä¸€å£°æƒ¨å«ï¼Œä»"+this_player()->name()+
+        "è„‘é—¨ä¸Šçˆ¬ä¸‹ä¸€åªå®³è™«ï¼Œé£ä¹Ÿä¼¼åœ°é€ƒèµ°äº†ã€‚ ");
+command("rumor å®³è™«ä¸€è¾¹è·‘ä¸€è¾¹æ¨æ¨åœ°é“ï¼šåŸæ¥æ˜¯ä¸ªæœºå™¨äººï¼Œç‰™éƒ½ç»™å´©æ‰äº†ï¼ï¼ï¼");
          this_player()->set("sen",-1);
          command("quit");
      }
@@ -115,7 +115,7 @@ int set_alias(string verb, string replace)
    } else {
      if( !mapp(alias) ) alias = ([ verb:replace ]);
      else if( sizeof(alias) > MAX_ALIASES )
-        return notify_fail("ÄúÉè¶¨µÄ alias Ì«¶àÁË£¬ÇëÏÈÉ¾µôÒ»Ğ©²»³£ÓÃµÄ¡£\n");
+        return notify_fail("æ‚¨è®¾å®šçš„ alias å¤ªå¤šäº†ï¼Œè¯·å…ˆåˆ æ‰ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");
      else alias[verb] = replace;
      return 1;
    }

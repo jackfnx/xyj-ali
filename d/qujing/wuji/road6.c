@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/road6  snowcat moved to /d/qujing/wuji
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ·");
+  set ("short", "山路");
   set ("long", @LONG
 
-ֻ����ɽ����Ρ�룬��Χ�վ����Ź������̴�ǣ��ݴ����������ᡣ
+只见此山八面巍峨，四围险峻，古怪乔松盘翠盖，枯摧老树挂藤箩。
 LONG);
 
   set("outdoors", __DIR__"");

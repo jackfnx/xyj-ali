@@ -1,5 +1,5 @@
 // feedback.c
-// ·µ±¾¹éÔª
+// è¿”æœ¬å½’å…ƒ
 
 inherit F_SSERVER;
 
@@ -8,16 +8,16 @@ int conjure(object me, object target)
     int diff, zyneed;
 
     if (target && target != me)
-        return notify_fail("ÄãÖ»ÄÜ²Ù×Ý×Ô¼º·µ±¾¹éÔª¡£\n");
+        return notify_fail("ä½ åªèƒ½æ“çºµè‡ªå·±è¿”æœ¬å½’å…ƒã€‚\n");
 
     if ((int)me->query("atman") < 20)
-        return notify_fail("ÄãµÄÕæÔª²»¹»¡£\n");
+        return notify_fail("ä½ çš„çœŸå…ƒä¸å¤Ÿã€‚\n");
     if ((int)me->query_skill("magic") < 10)
-        return notify_fail("Äã»¹Ã»ÓÐÕÆÎÕÕâÖÖ±¾ÃüÉñÍ¨¡£\n"); 
+        return notify_fail("ä½ è¿˜æ²¡æœ‰æŽŒæ¡è¿™ç§æœ¬å‘½ç¥žé€šã€‚\n"); 
     diff = me->query("eff_gin") - me->query("gin");
     zyneed = diff * 50 / (int)me->query_skill("magic");
     if (zyneed < 1)
-        return notify_fail("ÄãÏÖÔÚ¾«Ôª³ä×ã£¬Ã»±ØÒª·µ±¾¹éÔª¡£\n");
+        return notify_fail("ä½ çŽ°åœ¨ç²¾å…ƒå……è¶³ï¼Œæ²¡å¿…è¦è¿”æœ¬å½’å…ƒã€‚\n");
     
     if (zyneed > me->query("atman")) zyneed = me->query("atman");
     diff = zyneed * (int)me->query_skill("magic") / 50;
@@ -25,7 +25,7 @@ int conjure(object me, object target)
     me->receive_heal("gin", diff);
     me->add("atman", -zyneed);
 
-    message_vision("$NµÄÉíÉÏÒþÔ¼´«À´Á¦Á¿µÄ²¨¶¯£¬Á³É«¶ÙÊ±±äµÃºìÈóÆðÀ´¡£\n", me);
+    message_vision("$Nçš„èº«ä¸Šéšçº¦ä¼ æ¥åŠ›é‡çš„æ³¢åŠ¨ï¼Œè„¸è‰²é¡¿æ—¶å˜å¾—çº¢æ¶¦èµ·æ¥ã€‚\n", me);
 
     if (me->is_fighting()) me->start_busy(1);
 

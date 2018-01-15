@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // vote.c
@@ -7,7 +7,7 @@
 
 #include <ansi.h>
 #include <login.h>
-#define SYNTAX  "Ö¸Áî¸ñÊ½£ºvote < open | close > <ÆµµÀ> <ÈËÃû> \n"
+#define SYNTAX  "æŒ‡ä»¤æ ¼å¼ï¼švote < open | close > <é¢‘é“> <äººå> \n"
 
 mapping votes_casted=([]), 
    voted_players=([]);
@@ -49,13 +49,13 @@ int main(object me, string arg)
 
     // conditions for voting: exp > exp_limit and age > age_limit
     if (me->query("age") < age_limit || me->query("combat_exp") < exp_limit) {
-   if (me->query("age") < age_limit) return notify_fail("ÄãÄêÁä²»Âú"+chinese_number(age_limit)+"£¬Ã»ÓĞÍ¶Æ±È¨¡£\n");
-   if (me->query("combat_exp") < exp_limit) return notify_fail("ÄãµÀĞĞ²»µ½"+chinese_number(exp_limit/1000)+"Äê£¬Ã»ÓĞÍ¶Æ±È¨¡£\n");
+   if (me->query("age") < age_limit) return notify_fail("ä½ å¹´é¾„ä¸æ»¡"+chinese_number(age_limit)+"ï¼Œæ²¡æœ‰æŠ•ç¥¨æƒã€‚\n");
+   if (me->query("combat_exp") < exp_limit) return notify_fail("ä½ é“è¡Œä¸åˆ°"+chinese_number(exp_limit/1000)+"å¹´ï¼Œæ²¡æœ‰æŠ•ç¥¨æƒã€‚\n");
    }
 
     // sytax errors.
     if (choice != "open" && choice != "close") return notify_fail(SYNTAX);
-    choicename = (choice == "open"? "´ò¿ª":"¹Ø±Õ");
+    choicename = (choice == "open"? "æ‰“å¼€":"å…³é—­");
     // channels available: chat (made this option for future ease, if we open
     // more chat channels, such as channels for each menpai, ...)
     channels=({"chat"});
@@ -68,12 +68,12 @@ int main(object me, string arg)
         }
         continue;
     }
-    if (!chanmatch) return notify_fail("²»ÄÜ"+choicename+" "+chan+" Õâ¸öÆµµÀ¡£Çë²ÎÕÕ help¡£\n");
+    if (!chanmatch) return notify_fail("ä¸èƒ½"+choicename+" "+chan+" è¿™ä¸ªé¢‘é“ã€‚è¯·å‚ç…§ helpã€‚\n");
     if (!player = find_player(playerid) ) 
-   return notify_fail("Ä¿Ç°ÕÒ²»µ½ "+playerid+" Õâ¸öÈË¡£\n");
+   return notify_fail("ç›®å‰æ‰¾ä¸åˆ° "+playerid+" è¿™ä¸ªäººã€‚\n");
 
     if (!me->visible(player) ) 
-   return notify_fail("Ä¿Ç°ÕÒ²»µ½ "+playerid+" Õâ¸öÈË¡£\n");
+   return notify_fail("ç›®å‰æ‰¾ä¸åˆ° "+playerid+" è¿™ä¸ªäººã€‚\n");
 
 //    if (wizardp(player)) return notify_fail("Can't accuse wizard.\n");
 
@@ -85,11 +85,11 @@ int main(object me, string arg)
 
     if( choice=="close" ) {
    if (player->query("channel/chat_block")>time())
-     return notify_fail(playername+"µÄ½»Ì¸ÆµµÀÒÑ¾­±»¹Ø±ÕÁË¡£\n");
+     return notify_fail(playername+"çš„äº¤è°ˆé¢‘é“å·²ç»è¢«å…³é—­äº†ã€‚\n");
    }
     else {
    if (player->query("channel/chat_block")<time())
-     return notify_fail(playername+"µÄ½»Ì¸ÆµµÀÒÑ¾­±»´ò¿ªÁË¡£\n");
+     return notify_fail(playername+"çš„äº¤è°ˆé¢‘é“å·²ç»è¢«æ‰“å¼€äº†ã€‚\n");
    }
 
     if (!undefinedp(voted_players[myvariable]))
@@ -98,7 +98,7 @@ int main(object me, string arg)
    voted_player = ([]);
 
     if (!undefinedp(voted_player[myid])) 
-   return notify_fail("ÄãÒÑ¾­Í¶¹ıÏàÍ¬µÄÆ±ÁË¡£\n");
+   return notify_fail("ä½ å·²ç»æŠ•è¿‡ç›¸åŒçš„ç¥¨äº†ã€‚\n");
     else {
    ip=query_ip_number(me);
    if(ip && voter_site==0)
@@ -124,9 +124,9 @@ int main(object me, string arg)
 
         // announce to mu
         if (diff>0)
-       message("vote", HIW"¡¾±í¾ö¡¿"+myname+"Í¶Æ±"+choicename+playername+
-         "µÄÏĞÁÄÆµµÀ£¬ĞèÒª" + chinese_number(total_votes_required)
-         + "Æ±Í¨¹ı£¬»¹²î" + chinese_number(diff) +"Æ±£¡\n"NOR, users);
+       message("vote", HIW"ã€è¡¨å†³ã€‘"+myname+"æŠ•ç¥¨"+choicename+playername+
+         "çš„é—²èŠé¢‘é“ï¼Œéœ€è¦" + chinese_number(total_votes_required)
+         + "ç¥¨é€šè¿‡ï¼Œè¿˜å·®" + chinese_number(diff) +"ç¥¨ï¼\n"NOR, users);
         else
         {
        if (choice=="open") player->set("channel/chat_block", time());
@@ -134,8 +134,8 @@ int main(object me, string arg)
        // block for 1 day.
        map_delete(voted_players, myvariable);
        map_delete(votes_casted, myvariable);
-       message("vote", HIW"¡¾±í¾ö¡¿"+myname+"Í¶Æ±"+choicename+playername+
-         "µÄÏĞÁÄÆµµÀ£¬"+playername+"µÄ½»Ì¸ÆµµÀ±»"+choicename+"ÁË£¡\n"NOR, users);
+       message("vote", HIW"ã€è¡¨å†³ã€‘"+myname+"æŠ•ç¥¨"+choicename+playername+
+         "çš„é—²èŠé¢‘é“ï¼Œ"+playername+"çš„äº¤è°ˆé¢‘é“è¢«"+choicename+"äº†ï¼\n"NOR, users);
    }
     return 1;
 }
@@ -216,8 +216,8 @@ int determine_total()
 void nullify_vote(string myvariable, string choice, string username)
 {
     if (!undefinedp(voted_players[myvariable])) {
-        message("vote", HIW"¡¾±í¾ö¡¿ÒòÎªÃ»ÓĞ×ã¹»µÄÈËÏìÓ¦"+choice+username+
-     "µÄ½»Ì¸ÆµµÀ£¬Í¶Æ±È¡ÏûÁË£¡\n"NOR, users);
+        message("vote", HIW"ã€è¡¨å†³ã€‘å› ä¸ºæ²¡æœ‰è¶³å¤Ÿçš„äººå“åº”"+choice+username+
+     "çš„äº¤è°ˆé¢‘é“ï¼ŒæŠ•ç¥¨å–æ¶ˆäº†ï¼\n"NOR, users);
         map_delete(voted_players, myvariable);
         map_delete(votes_casted, myvariable);
     }
@@ -227,14 +227,14 @@ int help()
 {
     write(SYNTAX + @TEXT
 
-Í¶Æ±¹Ø±Õ»ò´ò¿ªÒ»¸öÈËµÄ½»Ì¸ÆµµÀ£¬Ö»¶ÔÊ®ÁùËêÒÔÉÏµÄ³ÉÈË¹«ÃñÓĞĞ§¡£
-ÇëÎğÀÄÓÃÄãµÄÈ¨Àû£¬¹ÊÒâµ·ÂÒµÄÈË»á±»´òÈëÊ®°Ë²ãµØÓü¡£
+æŠ•ç¥¨å…³é—­æˆ–æ‰“å¼€ä¸€ä¸ªäººçš„äº¤è°ˆé¢‘é“ï¼Œåªå¯¹åå…­å²ä»¥ä¸Šçš„æˆäººå…¬æ°‘æœ‰æ•ˆã€‚
+è¯·å‹¿æ»¥ç”¨ä½ çš„æƒåˆ©ï¼Œæ•…æ„æ£ä¹±çš„äººä¼šè¢«æ‰“å…¥åå…«å±‚åœ°ç‹±ã€‚
 
-¹Ø±ÕÒÔ¼°´ò¿ª¶¼ĞèÒª²»ÉÙÓÚÈıÆ±»òÕßÈı·ÖÖ®Ò»ÒÔÉÏµÄÆ±Êı¡£
+å…³é—­ä»¥åŠæ‰“å¼€éƒ½éœ€è¦ä¸å°‘äºä¸‰ç¥¨æˆ–è€…ä¸‰åˆ†ä¹‹ä¸€ä»¥ä¸Šçš„ç¥¨æ•°ã€‚
 
-Ä¿Ç°ÆµµÀ½ö°üÀ¨ chat¡£
+ç›®å‰é¢‘é“ä»…åŒ…æ‹¬ chatã€‚
 
-Àı£ºvote close chat joeschmoe
+ä¾‹ï¼švote close chat joeschmoe
 
 TEXT
     );

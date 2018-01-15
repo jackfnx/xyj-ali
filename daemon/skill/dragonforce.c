@@ -1,16 +1,16 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit FORCE;
 
-string name() { return "ÁúÉñĞÄ·¨"; }
+string name() { return "é¾™ç¥å¿ƒæ³•"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 
 int valid_learn(object me)
 {
     if (me->query("class") != "dragon")
-        return notify_fail("Äã·ÇÁú×åÔõÄÜÑ§ÁúÉñĞÄ·¨£¿\n");
+        return notify_fail("ä½ éé¾™æ—æ€èƒ½å­¦é¾™ç¥å¿ƒæ³•ï¼Ÿ\n");
     return 1;
 }
 
@@ -22,23 +22,23 @@ string exert_function_file(string func)
 int practice_skill(object me)
 {
     if (me->query("class") != "dragon")
-        return notify_fail("Äã·ÇÁú×å£¬ÔÙÁ·ÓĞº¦ÎŞÒæ¡£\n");
+        return notify_fail("ä½ éé¾™æ—ï¼Œå†ç»ƒæœ‰å®³æ— ç›Šã€‚\n");
     
     if (!environment(me)->query("dragonforce_practice"))
-        return notify_fail("ÁúÉñĞÄ·¨Ö»ÄÜÔÚÌØÊâµÄ·¨Ì¨ÉÏ²Å¿ÉÁ·¡£\n");
+        return notify_fail("é¾™ç¥å¿ƒæ³•åªèƒ½åœ¨ç‰¹æ®Šçš„æ³•å°ä¸Šæ‰å¯ç»ƒã€‚\n");
 
     if ((int)me->query_skill("dragonforce", 1) >= 200)
-        return notify_fail("ÄãµÄÁúÉñĞÄ·¨ºÜÄÑÌá¸ßÁË£¬»¹ÊÇÏòÄãÊ¦¸¸Çë½ÌÇë½Ì°É£¡\n");
+        return notify_fail("ä½ çš„é¾™ç¥å¿ƒæ³•å¾ˆéš¾æé«˜äº†ï¼Œè¿˜æ˜¯å‘ä½ å¸ˆçˆ¶è¯·æ•™è¯·æ•™å§ï¼\n");
 
     if ((int)me->query_temp("dragonforce_practice") < 1)
-        return notify_fail("ÄãÊÔ×ÅÁ·¹¦£¬¿ÉºÁÎŞ½øÕ¹£¬ĞèÒªÑ±·ş¸ü¶àµÄº£ÊŞÒÔÔö½øÁúÉñĞÄ·¨¡£\n");
+        return notify_fail("ä½ è¯•ç€ç»ƒåŠŸï¼Œå¯æ¯«æ— è¿›å±•ï¼Œéœ€è¦é©¯æœæ›´å¤šçš„æµ·å…½ä»¥å¢è¿›é¾™ç¥å¿ƒæ³•ã€‚\n");
 
     if ((int)me->query("kee") < 30)
-        return notify_fail("ÄãµÄÆø²»¹»¡£\n");
+        return notify_fail("ä½ çš„æ°”ä¸å¤Ÿã€‚\n");
     if ((int)me->query("sen") < 30)
-        return notify_fail("ÄãµÄÉñ²»¹»¡£\n");
+        return notify_fail("ä½ çš„ç¥ä¸å¤Ÿã€‚\n");
     if ((int)me->query("force") < 10)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿ");
     me->receive_damage("kee", 30);
     me->receive_damage("sen", 30);
     me->add("force", -10);
@@ -48,10 +48,10 @@ int practice_skill(object me)
 
 void skill_improved(object me)
 {
-    string *names = ({"ÇàÁú","²ÔÁú","³àÁú","»ÆÁú","ºÚÁú","½ğÁú","ÒøÁú","Ñ©Áú","»ğÁú"});
+    string *names = ({"é’é¾™","è‹é¾™","èµ¤é¾™","é»„é¾™","é»‘é¾™","é‡‘é¾™","é“¶é¾™","é›ªé¾™","ç«é¾™"});
     if ((int)me->query_skill("dragonforce", 1) >= 25 && me->query("class") != "dragon") {
-        message_vision("$NÉíÉÏºöÈ»É¢·¢³öÒ»¹É¾ªÈËµÄÆøÊÆ£¬±³ºóÒ»Ìõ" + names[random(sizeof(names))]+ "µÄĞéÓ°¸¡ÏÖ£¬ÖÜÎ§µÄÈË²»½ö¿´µÃ´ôÁË¡£\n", me);
-        tell_object(me, "¹§Ï²£¡Äã»ñµÃÁËÁú×åµÄ±¾ÖÊ£¡\n");
+        message_vision("$Nèº«ä¸Šå¿½ç„¶æ•£å‘å‡ºä¸€è‚¡æƒŠäººçš„æ°”åŠ¿ï¼ŒèƒŒåä¸€æ¡" + names[random(sizeof(names))]+ "çš„è™šå½±æµ®ç°ï¼Œå‘¨å›´çš„äººä¸ä»…çœ‹å¾—å‘†äº†ã€‚\n", me);
+        tell_object(me, "æ­å–œï¼ä½ è·å¾—äº†é¾™æ—çš„æœ¬è´¨ï¼\n");
         me->set("class", "dragon");
     }
 }

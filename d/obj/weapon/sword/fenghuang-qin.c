@@ -10,18 +10,18 @@ int do_uninstall(string);
 
 void create()
 {
-    set_name("·ï»ËÇÙ", ({"fenghuang qin","qin","sword"}));
+    set_name("å‡¤å‡°ç´", ({"fenghuang qin","qin","sword"}));
     set_weight(4000);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»°Ñµ­À¶É«µÄÏ¸½££¬½£Éí¼¸ºõÍ¸Ã÷£¬½£·æ´¦ÉÁ×Åµãµãº®¹â¡£\n"
-"½£±ú´¦ËÆºõÓĞ¸ö»ú¹ØÄÜ×° (install) Ğ©°µÆ÷½øÈ¥¡£\n");
-        set("unit", "°Ñ");
+        set("long", "ä¸€æŠŠæ·¡è“è‰²çš„ç»†å‰‘ï¼Œå‰‘èº«å‡ ä¹é€æ˜ï¼Œå‰‘é”‹å¤„é—ªç€ç‚¹ç‚¹å¯’å…‰ã€‚\n"
+"å‰‘æŸ„å¤„ä¼¼ä¹æœ‰ä¸ªæœºå…³èƒ½è£… (install) äº›æš—å™¨è¿›å»ã€‚\n");
+        set("unit", "æŠŠ");
         set("value", 3000);
         set("material", "steel");
-        set("wield_msg", "$NÀäĞ¦Ò»Éù£¬´Ó±³ºó°Î³öÁË·ï»ËÇÙ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ·ï»ËÇÙ²å»ØÇÊÖĞ£¬×ì½Ç¶àÁËÒ»Ë¿Ğ¦Òâ¡£\n");
+        set("wield_msg", "$Nå†·ç¬‘ä¸€å£°ï¼Œä»èƒŒåæ‹”å‡ºäº†å‡¤å‡°ç´ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„å‡¤å‡°ç´æ’å›é˜ä¸­ï¼Œå˜´è§’å¤šäº†ä¸€ä¸ç¬‘æ„ã€‚\n");
 
         set("anqi/allow", 1);
         set("anqi/max", 50);
@@ -45,21 +45,21 @@ int do_install(string arg)
     object aq;
     int remain;
 
-    if (!arg) return notify_fail("ÄãÏë×°Ê²Ã´£¿\n");
+    if (!arg) return notify_fail("ä½ æƒ³è£…ä»€ä¹ˆï¼Ÿ\n");
 
     aq = present(arg, who);
     if (!present(arg, who))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¶«Î÷¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
     else if (aq == me)
-        return notify_fail("×Ô¼º×°×Ô¼º£¿\n");
-    else if (aq->query("name") != "ÒøÕë" && aq->query("name") != "¶¾Õë" && aq->query("name") != "¿×È¸ôá") 
-        return notify_fail("ÕâÍæÒÕÌ«´óÁË£¬×°²»½øÈ¥¡£\n");
+        return notify_fail("è‡ªå·±è£…è‡ªå·±ï¼Ÿ\n");
+    else if (aq->query("name") != "é“¶é’ˆ" && aq->query("name") != "æ¯’é’ˆ" && aq->query("name") != "å­”é›€ç¿") 
+        return notify_fail("è¿™ç©è‰ºå¤ªå¤§äº†ï¼Œè£…ä¸è¿›å»ã€‚\n");
     else if (query("anqi/now") == query("anqi/max"))
-        return notify_fail(name()+"ÒÑ¾­×°Âú°µÆ÷ÁË¡£\n");
+        return notify_fail(name()+"å·²ç»è£…æ»¡æš—å™¨äº†ã€‚\n");
     else if (query("anqi/now") > 0 && query("anqi/type") != aq->query("name"))
-        return notify_fail(name()+"²»ÄÜ×°²»Í¬µÄ°µÆ÷¡£\n");
+        return notify_fail(name()+"ä¸èƒ½è£…ä¸åŒçš„æš—å™¨ã€‚\n");
     else {
-        message_vision("$N´ò¿ª"+name()+"µÄ»ú¹Ø£¬½«Ò»"+aq->query("unit")+aq->query("name")+"×°ÁË½øÈ¥¡£\n", who);
+        message_vision("$Næ‰“å¼€"+name()+"çš„æœºå…³ï¼Œå°†ä¸€"+aq->query("unit")+aq->query("name")+"è£…äº†è¿›å»ã€‚\n", who);
         who->start_busy(3);
         if (query("anqi/now") == 0) {
             me->set("anqi/type", aq->query("name"));
@@ -83,16 +83,16 @@ int do_uninstall(string arg)
     object me = this_object();
     object who = this_player();
     
-    if (!me->id(arg)) return notify_fail("ÄãÏë²ğÊ²Ã´£¿\n");
-    else if (query("anqi/now") == 0) return notify_fail(name()+"ÀïÃæÊ²Ã´Ò²Ã»ÓĞ¡£\n");
+    if (!me->id(arg)) return notify_fail("ä½ æƒ³æ‹†ä»€ä¹ˆï¼Ÿ\n");
+    else if (query("anqi/now") == 0) return notify_fail(name()+"é‡Œé¢ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n");
     else {
-        if (query("anqi/type") == "ÒøÕë") ob = new("/d/obj/weapon/throwing/yinzhen");
-        else if (query("anqi/type") == "¿×È¸ôá") ob = new("/d/obj/weapon/throwing/kongque-ling");
+        if (query("anqi/type") == "é“¶é’ˆ") ob = new("/d/obj/weapon/throwing/yinzhen");
+        else if (query("anqi/type") == "å­”é›€ç¿") ob = new("/d/obj/weapon/throwing/kongque-ling");
         else ob = new("/d/obj/weapon/throwing/yinzhen");
         ob->set_amount(query("anqi/now"));
         ob->move(who);
         me->set("anqi/now", 0);
-        message_vision("$N´Ó"+name()+"ÀïÃæ²ğ³öÒ»"+ob->query("unit")+ob->query("name")+"¡£\n", who);
+        message_vision("$Nä»"+name()+"é‡Œé¢æ‹†å‡ºä¸€"+ob->query("unit")+ob->query("name")+"ã€‚\n", who);
         who->add_busy(3);
         return 1;
     }
@@ -101,6 +101,6 @@ int do_uninstall(string arg)
 string extra_long()
 {
     if (!query("anqi/now")) return "";
-    else return sprintf("ÀïÃæÒÑ¾­×°ÁË%s%s%s£¬Ïë²ğµôÓÃuninstall¡£\n",
+    else return sprintf("é‡Œé¢å·²ç»è£…äº†%s%s%sï¼Œæƒ³æ‹†æ‰ç”¨uninstallã€‚\n",
                     chinese_number(query("anqi/now")), query("anqi/base_unit"), query("anqi/type"));
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // boy2.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "¹ýµÀ");
+  set ("short", "è¿‡é“");
   set ("long", @LONG
 
-Ò»Ìõ³¤³¤µÄ×ßÀÈ£¬Áª½á×ÅÇ°ºóÌü¡£¶«±ßÊÇÌ«×ÓµÄÇÞÊÒ£¬´«³ö±­³ê
-½»´íµÄÉùÒô£¬¼¸Ãû¹¬Å®¶Ë×ÅºÐ×Ó×ßÀ´×ßÈ¥¡£±±±ßÒ»¼ä´óÌü£¬ÊÇÌ«
-×ÓÁ·ÎäµÄµØ·½¡£
+ä¸€æ¡é•¿é•¿çš„èµ°å»Šï¼Œè”ç»“ç€å‰åŽåŽ…ã€‚ä¸œè¾¹æ˜¯å¤ªå­çš„å¯å®¤ï¼Œä¼ å‡ºæ¯é…¬
+äº¤é”™çš„å£°éŸ³ï¼Œå‡ åå®«å¥³ç«¯ç€ç›’å­èµ°æ¥èµ°åŽ»ã€‚åŒ—è¾¹ä¸€é—´å¤§åŽ…ï¼Œæ˜¯å¤ª
+å­ç»ƒæ­¦çš„åœ°æ–¹ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "southwest" : __DIR__"boy1",

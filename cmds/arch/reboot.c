@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // reboot.c
@@ -17,7 +17,7 @@ int main(object me, string arg)
    
    wiz_status = SECURITY_D->get_status(me);
    if( wiz_status != "(admin)" && wiz_status != "(arch)" )
-     return notify_fail("Ö»ÓĞ (arch) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÖØĞÂÆô¶¯" + MUD_NAME + "\n");
+     return notify_fail("åªæœ‰ (arch) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½é‡æ–°å¯åŠ¨" + MUD_NAME + "\n");
 
    seteuid(getuid());
 
@@ -25,7 +25,7 @@ int main(object me, string arg)
    npc->move(START_ROOM);
    npc->start_shutdown();
 
-   write("Ok¡£\n");
+   write("Okã€‚\n");
 
    return 1;
 }
@@ -33,9 +33,9 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: reboot
+æŒ‡ä»¤æ ¼å¼: reboot
  
-ÖØĞÂÆğ¶¯ÓÎÏ·, ÏµÍ³»á¿ªÊ¼µ¹Êı¼ÆÊ±, Ê®Îå·ÖÖÓºóÖØĞÂÆğ¶¯¡£
+é‡æ–°èµ·åŠ¨æ¸¸æˆ, ç³»ç»Ÿä¼šå¼€å§‹å€’æ•°è®¡æ—¶, åäº”åˆ†é’Ÿåé‡æ–°èµ·åŠ¨ã€‚
  
 HELP
 );

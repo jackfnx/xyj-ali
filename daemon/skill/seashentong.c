@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// seashentong.c ¡¾±Ìº£ÉñÍ¨¡¿
+// seashentong.c ã€ç¢§æµ·ç¥é€šã€‘
 inherit SPELLS;
 
-string name() { return "±Ìº£ÉñÍ¨"; }
+string name() { return "ç¢§æµ·ç¥é€š"; }
 
 int query_basic_limit() { return 10; }
 
@@ -13,7 +13,7 @@ int valid_enable(string usage) { return usage=="spells"; }
 int valid_learn(object me)
 {
     if (me->query("class") != "dragon")
-        return notify_fail("Äã·ÇÁú×åÔõÄÜÑ§±Ìº£ÉñÍ¨£¿\n");
+        return notify_fail("ä½ éé¾™æ—æ€èƒ½å­¦ç¢§æµ·ç¥é€šï¼Ÿ\n");
     return ::valid_learn(me);
 }
 

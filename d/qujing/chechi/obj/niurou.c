@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -8,13 +8,13 @@ inherit F_FOOD;
 
 void create()
 {
-  set_name("½´Å£Èâ", ({"jiang niurou", "jiangniurou", "niurou"}));
+  set_name("é…±ç‰›è‚‰", ({"jiang niurou", "jiangniurou", "niurou"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»´óÅÌÇĞµÃ±¡±¡µÄ½´Å£ÈâÆ¬¡£\n");
-    set("unit", "´óÅÌ");
+    set("long", "ä¸€å¤§ç›˜åˆ‡å¾—è–„è–„çš„é…±ç‰›è‚‰ç‰‡ã€‚\n");
+    set("unit", "å¤§ç›˜");
     set("value", 250);
     set("food_remaining", 6);
     set("food_supply", 50);

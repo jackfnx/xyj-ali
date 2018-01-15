@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // book.c: a file that all non-skill books will inherit
@@ -26,9 +26,9 @@ int read_book(object me,string name)
 
   if (toberead[name] == 3) 
     {
-      message_vision("Ö»¼û" + obj->query("name") + "»¯³ÉÆ¬Æ¬ËéĞ¼£¬´Ó$NµÄÊÖÖĞÆ®Âä¡£\n", me);
+      message_vision("åªè§" + obj->query("name") + "åŒ–æˆç‰‡ç‰‡ç¢å±‘ï¼Œä»$Nçš„æ‰‹ä¸­é£˜è½ã€‚\n", me);
       call_out("destroy", 1, obj);
-      tell_object(me, "ÊéÒÑ¾­±»·­ÀÃÁË£¬»»Ò»±¾ĞÂµÄ°É£¡\n");
+      tell_object(me, "ä¹¦å·²ç»è¢«ç¿»çƒ‚äº†ï¼Œæ¢ä¸€æœ¬æ–°çš„å§ï¼\n");
       return 1;
  }
 
@@ -38,10 +38,10 @@ int read_book(object me,string name)
 //     and for kar 10, only 0.1%
 
   if ((chance < 10) && (random(100)*100 < fuyuanchance))
-    {message_vision(GRN "$NÄÃÆğÒ»±¾"+ obj->query("name")+"£¬Ö»¾õÊé±¾³ÁµéµéµÄ£¬Á¬Ã¦·­¿ª¡£\n" NOR, me);
-     message_vision(GRN "ÊéÖĞÆ®³öÒ»ÕÅÖ½Ìõ£¬ÉÏĞ´£ºÊéÖĞ×ÔÓĞÇ§ïñËÚ¡£\n", me);
-     message_vision(GRN "$NµÍÍ·Ò»¿´£¬¾ÓÈ»´ÓÊéÀïÂäÏÂÒ»Ã¶µ­ÂÌÉ«µÄµ¤Ò©£¡\n", me);
-     message_vision(GRN "$NÍäÏÂÑü£¬¼ñÆğÁËµ¤Ò©£¬È´Ò»²»Ğ¡ĞÄ£¬°ÑÊéµôÔÚË®¿ÓÀïÁË¡£\n" NOR, me);
+    {message_vision(GRN "$Næ‹¿èµ·ä¸€æœ¬"+ obj->query("name")+"ï¼Œåªè§‰ä¹¦æœ¬æ²‰ç”¸ç”¸çš„ï¼Œè¿å¿™ç¿»å¼€ã€‚\n" NOR, me);
+     message_vision(GRN "ä¹¦ä¸­é£˜å‡ºä¸€å¼ çº¸æ¡ï¼Œä¸Šå†™ï¼šä¹¦ä¸­è‡ªæœ‰åƒé”ºç²Ÿã€‚\n", me);
+     message_vision(GRN "$Nä½å¤´ä¸€çœ‹ï¼Œå±…ç„¶ä»ä¹¦é‡Œè½ä¸‹ä¸€æšæ·¡ç»¿è‰²çš„ä¸¹è¯ï¼\n", me);
+     message_vision(GRN "$Nå¼¯ä¸‹è…°ï¼Œæ¡èµ·äº†ä¸¹è¯ï¼Œå´ä¸€ä¸å°å¿ƒï¼ŒæŠŠä¹¦æ‰åœ¨æ°´å‘é‡Œäº†ã€‚\n" NOR, me);
      ob = new("/d/obj/drug/guo");
      ob->move(me);
         call_out("destroy", 1, obj);
@@ -53,10 +53,10 @@ int read_book(object me,string name)
 //    if kar is 10, then only 0.1% chance again.
 
   if ((chance < 10) && (random(100)*10 < fuyuan))
-    {message_vision(YEL "$NÄÃÆğÒ»±¾"+ obj->query("name")+"£¬Ö»¾õÊé±¾³ÁµéµéµÄ£¬Á¬Ã¦·­¿ª¡£\n" NOR, me);
-     message_vision(YEL "ÊéÖĞÆ®³öÒ»ÕÅÖ½Ìõ£¬ÉÏĞ´£ºÊéÖĞ×ÔÓĞÇ§ïñËÚ¡£\n", me);
-     message_vision(YEL "$NµÍÍ·Ò»¿´£¬¾ÓÈ»´ÓÊéÀïÂäÏÂÒ»¿Åâ¨ºïÌÒ£¡\n", me);
-     message_vision(YEL "$NÍäÏÂÑü£¬¼ñÆğÁËâ¨ºïÌÒ£¬È´Ò»²»Ğ¡ĞÄ£¬°ÑÊéµôÔÚË®¿ÓÀïÁË¡£\n" NOR, me);
+    {message_vision(YEL "$Næ‹¿èµ·ä¸€æœ¬"+ obj->query("name")+"ï¼Œåªè§‰ä¹¦æœ¬æ²‰ç”¸ç”¸çš„ï¼Œè¿å¿™ç¿»å¼€ã€‚\n" NOR, me);
+     message_vision(YEL "ä¹¦ä¸­é£˜å‡ºä¸€å¼ çº¸æ¡ï¼Œä¸Šå†™ï¼šä¹¦ä¸­è‡ªæœ‰åƒé”ºç²Ÿã€‚\n", me);
+     message_vision(YEL "$Nä½å¤´ä¸€çœ‹ï¼Œå±…ç„¶ä»ä¹¦é‡Œè½ä¸‹ä¸€é¢—çŒ•çŒ´æ¡ƒï¼\n", me);
+     message_vision(YEL "$Nå¼¯ä¸‹è…°ï¼Œæ¡èµ·äº†çŒ•çŒ´æ¡ƒï¼Œå´ä¸€ä¸å°å¿ƒï¼ŒæŠŠä¹¦æ‰åœ¨æ°´å‘é‡Œäº†ã€‚\n" NOR, me);
      ob = new("/d/obj/drug/mihoutao");
      ob->move(me);
         call_out("destroy", 1, obj);
@@ -68,10 +68,10 @@ int read_book(object me,string name)
 //    kar 30 means 15%, kar 10 means 5%.
 
   if ((chance < 10) && (random(100)*5 < fuyuan))
-    {message_vision(HIY "$NÄÃÆğÒ»±¾"+ obj->query("name")+"£¬Ö»¾õÊé±¾³ÁµéµéµÄ£¬Á¬Ã¦·­¿ª¡£\n" NOR, me);
-     message_vision(HIY "ÊéÖĞÆ®³öÒ»ÕÅÖ½Ìõ£¬ÉÏĞ´£ºÊéÖĞ×ÔÓĞ»Æ½ğÎİ¡£\n", me);
-     message_vision(HIY "Ö»Ìı¡¸µ±¡¹µÄÒ»Éù£¬¾ÓÈ»´ÓÊéÀïÂäÏÂÒ»Á½»Æ½ğ£¡\n", me);
-     message_vision(HIY "$NÍäÏÂÑü£¬¼ñÆğÁË½ğ×Ó£¬È´Ò»²»Ğ¡ĞÄ£¬°ÑÊéµôÔÚË®¿ÓÀïÁË¡£\n" NOR, me);
+    {message_vision(HIY "$Næ‹¿èµ·ä¸€æœ¬"+ obj->query("name")+"ï¼Œåªè§‰ä¹¦æœ¬æ²‰ç”¸ç”¸çš„ï¼Œè¿å¿™ç¿»å¼€ã€‚\n" NOR, me);
+     message_vision(HIY "ä¹¦ä¸­é£˜å‡ºä¸€å¼ çº¸æ¡ï¼Œä¸Šå†™ï¼šä¹¦ä¸­è‡ªæœ‰é»„é‡‘å±‹ã€‚\n", me);
+     message_vision(HIY "åªå¬ã€Œå½“ã€çš„ä¸€å£°ï¼Œå±…ç„¶ä»ä¹¦é‡Œè½ä¸‹ä¸€ä¸¤é»„é‡‘ï¼\n", me);
+     message_vision(HIY "$Nå¼¯ä¸‹è…°ï¼Œæ¡èµ·äº†é‡‘å­ï¼Œå´ä¸€ä¸å°å¿ƒï¼ŒæŠŠä¹¦æ‰åœ¨æ°´å‘é‡Œäº†ã€‚\n" NOR, me);
      ob = new("/obj/money/gold");
      ob->move(me);
         call_out("destroy", 1, obj);

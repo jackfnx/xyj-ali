@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // pa_book.c
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼¸ñ¶·ÃØ¾÷¡½", ({"parry book", "book"}));
+        set_name("ã€–æ ¼æ–—ç§˜è¯€ã€—", ({"parry book", "book"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-     set("long", "Ò»¸öĞ¡²á×Ó£¬»®ÁËĞ©Ğ¡ÈË±ÈÎäµÄÕĞÊ½£®\n");
+                set("unit", "æœ¬");
+     set("long", "ä¸€ä¸ªå°å†Œå­ï¼Œåˆ’äº†äº›å°äººæ¯”æ­¦çš„æ‹›å¼ï¼\n");
         set("material", "paper");
         set("skill", ([
             "name": "parry",

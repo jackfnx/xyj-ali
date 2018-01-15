@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // fangzhang, the one in jail.
@@ -19,56 +19,56 @@ int do_subtract(string arg);
 int do_finalized(string arg);
 
 string method="
-¾ßÌåÖ¸ÁîÈçÏÂ£º
+å…·ä½“æŒ‡ä»¤å¦‚ä¸‹ï¼š
 
-½µµÍÌì¸³£ºsubtract <arg>
-Ôö¼ÓÌì¸³£ºadd <arg>
-¼ì²éÇé¿ö£ºstate
-¾ö¶¨½ÓÊÜ£ºfinalize
+é™ä½å¤©èµ‹ï¼šsubtract <arg>
+å¢åŠ å¤©èµ‹ï¼šadd <arg>
+æ£€æŸ¥æƒ…å†µï¼šstate
+å†³å®šæ¥å—ï¼šfinalize
 
-ÕâÀïµÄ <arg> ÊÇÌì¸³µÄËõĞ´£º
+è¿™é‡Œçš„ <arg> æ˜¯å¤©èµ‹çš„ç¼©å†™ï¼š
 
-ëöÁ¦£ºstr    µ¨Ê¶£ºcor    ÎòĞÔ£ºint    ÁéĞÔ£ºspi
-¶¨Á¦£ºcps    ÈİÃ²£ºper    ¸ù¹Ç£ºcon    ¸£Ôµ£ºkar
+è†‚åŠ›ï¼šstr    èƒ†è¯†ï¼šcor    æ‚Ÿæ€§ï¼šint    çµæ€§ï¼šspi
+å®šåŠ›ï¼šcps    å®¹è²Œï¼šper    æ ¹éª¨ï¼šcon    ç¦ç¼˜ï¼škar
 
 ";
 int total = 0;
 int credit = 0;
 mapping points=([]);
 mapping gift=([
-   "str"     : "ëöÁ¦",
-   "cor"     : "µ¨Ê¶",
-   "int"     : "ÎòĞÔ",
-   "spi"     : "ÁéĞÔ",
-   "cps"     : "¶¨Á¦",
-   "per"     : "ÈİÃ²",
-   "con"     : "¸ù¹Ç",
-   "kar"     : "¸£Ôµ",
+   "str"     : "è†‚åŠ›",
+   "cor"     : "èƒ†è¯†",
+   "int"     : "æ‚Ÿæ€§",
+   "spi"     : "çµæ€§",
+   "cps"     : "å®šåŠ›",
+   "per"     : "å®¹è²Œ",
+   "con"     : "æ ¹éª¨",
+   "kar"     : "ç¦ç¼˜",
 ]);
 string *gift_name=({ "kar", "con", "per", "cps", "spi", "int", "cor", "str", });
 /************************************************************/
 void create()
 {
-  set_name("Ô²Çå",({"yuan qing", "yuan", "qing", "fang zhang", "monk", "yuanqing"}));
-  set("title","·½ÕÉ");
-  set("gender", "ÄĞĞÔ");
+  set_name("åœ†æ¸…",({"yuan qing", "yuan", "qing", "fang zhang", "monk", "yuanqing"}));
+  set("title","æ–¹ä¸ˆ");
+  set("gender", "ç”·æ€§");
   set("age", 80);
-  set("long","Ò»¸öÏ÷ÊİµÄÀÏºÍÉĞ£¬ËÆºõ±»ÏÅ·èÁË¡£\n");
+  set("long","ä¸€ä¸ªå‰Šç˜¦çš„è€å’Œå°šï¼Œä¼¼ä¹è¢«å“ç–¯äº†ã€‚\n");
   set("combat_exp",5000);
   set("str",30);
   set("per",30);
   set("int",30);
   set("attitude", "peaceful");
   set("inquiry", ([
-        "name"   : "°¦£¡ÀÏÄÉ±¾ÊÇÁéÔÆËÂµÄÔ²Çå³¤ÀÏ¡£",
-        "here"   : "ÎÒÒ²²»ÖªµÀÔõÃ´»ØÊÂ¡£ÄÇÌìÍíÉÏÎÒÕıÄî·ğÄØ£¬Í»È»¾Í±»Ò»ÕóÒõ·ç¹ÎÕâÀïÀ´ÁË¡£",
-        "rumors" : "ÎÒÁ¬×Ô¼ºµÄÉúËÀ¶¼²»Öª£¬»¹ÓĞÊ²Ã´ÏĞĞÄÈ¥´òÌı±ğµÄ£¿",
-        "ÉúËÀ"   : "Ò²²»ÖªÓĞÃ»ÓĞÄÄÎ»Ó¢ĞÛ¿ÏÀ´´î¾ÈÎÒ¡£°¦£¡",
+        "name"   : "å”‰ï¼è€çº³æœ¬æ˜¯çµäº‘å¯ºçš„åœ†æ¸…é•¿è€ã€‚",
+        "here"   : "æˆ‘ä¹Ÿä¸çŸ¥é“æ€ä¹ˆå›äº‹ã€‚é‚£å¤©æ™šä¸Šæˆ‘æ­£å¿µä½›å‘¢ï¼Œçªç„¶å°±è¢«ä¸€é˜µé˜´é£åˆ®è¿™é‡Œæ¥äº†ã€‚",
+        "rumors" : "æˆ‘è¿è‡ªå·±çš„ç”Ÿæ­»éƒ½ä¸çŸ¥ï¼Œè¿˜æœ‰ä»€ä¹ˆé—²å¿ƒå»æ‰“å¬åˆ«çš„ï¼Ÿ",
+        "ç”Ÿæ­»"   : "ä¹Ÿä¸çŸ¥æœ‰æ²¡æœ‰å“ªä½è‹±é›„è‚¯æ¥æ­æ•‘æˆ‘ã€‚å”‰ï¼",
         "rescue" : (: quest_complete :),
-        "´î¾È"   : (: quest_complete :),
-        "ĞŞ¸Ä"   : (: answer :),
+        "æ­æ•‘"   : (: quest_complete :),
+        "ä¿®æ”¹"   : (: answer :),
         "xiugai" : (: answer :),
-        "Ìì¸³"   : (: check_gift :),
+        "å¤©èµ‹"   : (: check_gift :),
         "tianfu" : (: check_gift :),
         ]));
   setup();
@@ -96,36 +96,36 @@ string quest_complete()
    && served != me->query("id"))
     if (present(served, environment(monk)))
     {
-   return "¶àĞ»Ê©Ö÷ºÃÒâ£¬µ«ÒÑÓĞÈË´ğÓ¦´øÀÏñÄ³öÈ¥¡£";
+   return "å¤šè°¢æ–½ä¸»å¥½æ„ï¼Œä½†å·²æœ‰äººç­”åº”å¸¦è€è¡²å‡ºå»ã€‚";
     }
   if (me->query("obstacle/wudidong") == "done")
   {
-      tell_object (me,"ÄãÒÑ¾­¹ıÁËÕâÒ»¹Ø£¬Ê²Ã´¶¼µÃ²»µ½ÁË£¡\n");
-      return "Õâ£®£®£®";
+      tell_object (me,"ä½ å·²ç»è¿‡äº†è¿™ä¸€å…³ï¼Œä»€ä¹ˆéƒ½å¾—ä¸åˆ°äº†ï¼\n");
+      return "è¿™ï¼ï¼ï¼";
   }
   if (served==me->query("id"))
-   return "°¢ÃÖÍÓ·ğ£¬Ê©Ö÷²»ÊÇÒÑ¾­´ğÓ¦´øÀÏñÄ³öÈ¥ÁËÃ´£¿";
+   return "é˜¿å¼¥é™€ä½›ï¼Œæ–½ä¸»ä¸æ˜¯å·²ç»ç­”åº”å¸¦è€è¡²å‡ºå»äº†ä¹ˆï¼Ÿ";
   if (!wizardp(me) || !me->query("env/immortal"))
   if (!me->query_temp("mark/wudidong_opened_door")
     || me->query_temp("mark/wudidong_no_hope_of_knowing_trap"))
   {
-      command("say Äã¡¢Äã¡¢Äã£¬ÄãÊÇË­£¿Å¶£¬ÄãÊÇÀ´¾ÈÎÒµÄ£¿¿´ÄãÕâÑù×Ó²»Ïó°¡£¿");
-      command("say ÄãÒ²ÊÇ±»±ğÈË´òÔÎÁË±³½øÀ´µÄ°É£¿ÎÒÒªÊÇ¸úÄã³öÈ¥ÁË£¬»¹µÃ¸ø×¥»ØÀ´¡£");
-      return "°¢ÃÖÍÓ·ğ£¬ÎÒ·ğ´È±¯£¡Æ¶É®µÄÕâÕÅ²İÆÌ¾ÍÈÃ¸øÄã°É¡£";
+      command("say ä½ ã€ä½ ã€ä½ ï¼Œä½ æ˜¯è°ï¼Ÿå“¦ï¼Œä½ æ˜¯æ¥æ•‘æˆ‘çš„ï¼Ÿçœ‹ä½ è¿™æ ·å­ä¸è±¡å•Šï¼Ÿ");
+      command("say ä½ ä¹Ÿæ˜¯è¢«åˆ«äººæ‰“æ™•äº†èƒŒè¿›æ¥çš„å§ï¼Ÿæˆ‘è¦æ˜¯è·Ÿä½ å‡ºå»äº†ï¼Œè¿˜å¾—ç»™æŠ“å›æ¥ã€‚");
+      return "é˜¿å¼¥é™€ä½›ï¼Œæˆ‘ä½›æ…ˆæ‚²ï¼è´«åƒ§çš„è¿™å¼ è‰é“ºå°±è®©ç»™ä½ å§ã€‚";
   }
   me->set_temp("wudidong/can_ask_monk");
   set("serving", me->query("id"));
   call_out("announce_adjustment", 1, me);
-  return "ÕâÎ»Ê©Ö÷ÊÇÀ´´î¾ÈÓÚÎÒµÄ£¿";
+  return "è¿™ä½æ–½ä¸»æ˜¯æ¥æ­æ•‘äºæˆ‘çš„ï¼Ÿ";
 }
 string answer()
 {
     object me=this_player();
 
     if (!me->query_temp("wudidong/ready_to_change_gifts"))
-   return "ÎÒÒ²²»Çå³ş¡£";
+   return "æˆ‘ä¹Ÿä¸æ¸…æ¥šã€‚";
     tell_object(me, method);
-    return "Ê©Ö÷¿ÉÒªÈıË¼¶øºóĞĞ°¡£¡";
+    return "æ–½ä¸»å¯è¦ä¸‰æ€è€Œåè¡Œå•Šï¼";
 }
 string check_gift()
 {
@@ -134,17 +134,17 @@ string check_gift()
     int i=sizeof(gift_name);
 
     if (!me->query_temp("wudidong/ready_to_change_gifts"))
-   return "ÎÒÒ²²»Çå³ş¡£";
-    msg="ÄãÄ¿Ç°µÄÌì¸³ÈçÏÂ£º\n\n";
+   return "æˆ‘ä¹Ÿä¸æ¸…æ¥šã€‚";
+    msg="ä½ ç›®å‰çš„å¤©èµ‹å¦‚ä¸‹ï¼š\n\n";
     while (i--)
     {
-   msg += gift[gift_name[i]]+"£º["+me->query(gift_name[i])+"]";
+   msg += gift[gift_name[i]]+"ï¼š["+me->query(gift_name[i])+"]";
    if (i==4) msg += "\n";
    else msg += "\t";
     }
     msg += "\n";
     tell_object(me, msg);
-    return "Ê©Ö÷¿ÉÒªÈıË¼¶øºóĞĞ°¡£¡";
+    return "æ–½ä¸»å¯è¦ä¸‰æ€è€Œåè¡Œå•Šï¼";
 }
 
 int announce_adjustment(object me)
@@ -152,14 +152,14 @@ int announce_adjustment(object me)
     object monk=this_object();
     string myrespect=RANK_D->query_respect(me), msg;
 
-    command("say Õâ¡¢Õâ¡¢Õâ£¬ÀÏñÄ¿ÉÕæ²»ÖªÔõÃ´¸ĞĞ»"+myrespect+"²ÅºÃÁË£¡");
+    command("say è¿™ã€è¿™ã€è¿™ï¼Œè€è¡²å¯çœŸä¸çŸ¥æ€ä¹ˆæ„Ÿè°¢"+myrespect+"æ‰å¥½äº†ï¼");
     command("consider");
-    command("say ÏÈÊ¦Ô²¼ÅÇ°´«¸øÀÏñÄĞ©Ğí·¨Êõ£¬Ò²ĞíÄÜ¹»°ïÖú"+myrespect+"¸Ä±äÒ»Ğ©ÏÈÌìµÄÄÜÁ¦¡£\n");
-    msg=monk->name()+"´ğÓ¦°ïÖúÄã´ÓĞÂµ÷ÕûÌì¸³£¡\n";
-    msg+="ÄãÒ»¹²¿ÉÒÔ¸Ä±äÈıµãÌì¸³£¬ÏÈÓÉÄ³Ò»ÏîÉÏ¼õµô£¬ÔÙ¼Óµ½ÁíÒ»ÏîÉÏ¡£\n";
+    command("say å…ˆå¸ˆåœ†å¯‚å‰ä¼ ç»™è€è¡²äº›è®¸æ³•æœ¯ï¼Œä¹Ÿè®¸èƒ½å¤Ÿå¸®åŠ©"+myrespect+"æ”¹å˜ä¸€äº›å…ˆå¤©çš„èƒ½åŠ›ã€‚\n");
+    msg=monk->name()+"ç­”åº”å¸®åŠ©ä½ ä»æ–°è°ƒæ•´å¤©èµ‹ï¼\n";
+    msg+="ä½ ä¸€å…±å¯ä»¥æ”¹å˜ä¸‰ç‚¹å¤©èµ‹ï¼Œå…ˆç”±æŸä¸€é¡¹ä¸Šå‡æ‰ï¼Œå†åŠ åˆ°å¦ä¸€é¡¹ä¸Šã€‚\n";
     msg+=method;
     tell_object(me, msg);
-    tell_object(me, CYN+monk->name()+"¸½¶úµÀ£º"+myrespect+"ÈôÊÇ²»ÖªÔõÃ´ĞŞ¸ÄÌì¸³£¬»òÏëÖªµÀÏÖÔÚÌì¸³ÈçºÎ£¬¿ÉÒÔÎÊÎÒ¡£\n"NOR);
+    tell_object(me, CYN+monk->name()+"é™„è€³é“ï¼š"+myrespect+"è‹¥æ˜¯ä¸çŸ¥æ€ä¹ˆä¿®æ”¹å¤©èµ‹ï¼Œæˆ–æƒ³çŸ¥é“ç°åœ¨å¤©èµ‹å¦‚ä½•ï¼Œå¯ä»¥é—®æˆ‘ã€‚\n"NOR);
     me->set_temp("wudidong/ready_to_change_gifts", 1);
     return 1;
 }
@@ -170,7 +170,7 @@ int do_subtract(string arg)
    return 0;
     if (!me->query_temp("wudidong/ready_to_change_gifts"))
    return 0;
-    if (!arg) return notify_fail("ÇëÑ¡ÔñÄãÒª½µµÍµÄÌì¸³¡£ (ask monk about Ìì¸³)\n");
+    if (!arg) return notify_fail("è¯·é€‰æ‹©ä½ è¦é™ä½çš„å¤©èµ‹ã€‚ (ask monk about å¤©èµ‹)\n");
     if(arg != "str"
     && arg != "cor"
     && arg != "int"
@@ -179,17 +179,17 @@ int do_subtract(string arg)
     && arg != "per"
     && arg != "con"
     && arg != "kar")
-   return notify_fail("Õâ¸ö "+arg+" ²»ÊÇÒ»ÏîÌì¸³¡£\n"); 
+   return notify_fail("è¿™ä¸ª "+arg+" ä¸æ˜¯ä¸€é¡¹å¤©èµ‹ã€‚\n"); 
     if (credit >= 3)
-   return notify_fail("Äã×Ü¹²Ö»ÄÜ¸Ä±äÈıµãÌì¸³£¬ÇëÓÃ state ²éÄãÏÖÔÚµÄÑ¡Ôñ¡£\n");
+   return notify_fail("ä½ æ€»å…±åªèƒ½æ”¹å˜ä¸‰ç‚¹å¤©èµ‹ï¼Œè¯·ç”¨ state æŸ¥ä½ ç°åœ¨çš„é€‰æ‹©ã€‚\n");
     if (total >= 3)
-   return notify_fail("Äã×Ü¹²Ö»ÄÜ¸Ä±äÈıµãÌì¸³£¬ÇëÓÃ state ²éÄãÏÖÔÚµÄÑ¡Ôñ¡£\n");
+   return notify_fail("ä½ æ€»å…±åªèƒ½æ”¹å˜ä¸‰ç‚¹å¤©èµ‹ï¼Œè¯·ç”¨ state æŸ¥ä½ ç°åœ¨çš„é€‰æ‹©ã€‚\n");
     if (me->query(arg) <= 10)
-   return notify_fail("Äã²»ÄÜ½«Ò»ÏîÌì¸³½µµÍµ½Ê®µãÒÔÏÂ¡£(ask monk about Ìì¸³)\n");
+   return notify_fail("ä½ ä¸èƒ½å°†ä¸€é¡¹å¤©èµ‹é™ä½åˆ°åç‚¹ä»¥ä¸‹ã€‚(ask monk about å¤©èµ‹)\n");
     credit++;
     total+=1;
     points[arg]-=1;
-    tell_object(me, "Äã¾ö¶¨½µµÍÒ»µã"+gift[arg]+"£¡ÄãÏÖÔÚ»¹ÓĞ"+chinese_number(total)+"µãÇ±ÄÜ¿ÉÒÔ·ÖÅä¡£\n");
+    tell_object(me, "ä½ å†³å®šé™ä½ä¸€ç‚¹"+gift[arg]+"ï¼ä½ ç°åœ¨è¿˜æœ‰"+chinese_number(total)+"ç‚¹æ½œèƒ½å¯ä»¥åˆ†é…ã€‚\n");
     return 1;
 }
 int do_add(string arg)
@@ -200,16 +200,16 @@ int do_add(string arg)
     if (!me->query_temp("wudidong/ready_to_change_gifts"))
    return 0;
 
-    if (!arg) return notify_fail("ÇëÑ¡ÔñÄãÒªÔö¼ÓµÄÌì¸³¡£ (ask monk about Ìì¸³)\n");
+    if (!arg) return notify_fail("è¯·é€‰æ‹©ä½ è¦å¢åŠ çš„å¤©èµ‹ã€‚ (ask monk about å¤©èµ‹)\n");
     if (member_array(arg, gift_name) == -1)
-   return notify_fail("Õâ¸ö "+arg+" ²»ÊÇÒ»ÏîÌì¸³¡£\n"); 
+   return notify_fail("è¿™ä¸ª "+arg+" ä¸æ˜¯ä¸€é¡¹å¤©èµ‹ã€‚\n"); 
     if (total <= 0)
-   return notify_fail("Äã×Ü¹²Ö»ÄÜ¸Ä±äÈıµãÌì¸³£¬ÇëÓÃ state ²éÄãÏÖÔÚµÄÑ¡Ôñ¡£\n");
+   return notify_fail("ä½ æ€»å…±åªèƒ½æ”¹å˜ä¸‰ç‚¹å¤©èµ‹ï¼Œè¯·ç”¨ state æŸ¥ä½ ç°åœ¨çš„é€‰æ‹©ã€‚\n");
     if (me->query(arg) >= 30)
-   return notify_fail("Äã²»ÄÜ½«Ò»ÏîÌì¸³Ôö¼Óµ½ÈıÊ®µãÒÔÉÏ¡£(ask monk about Ìì¸³)\n");
+   return notify_fail("ä½ ä¸èƒ½å°†ä¸€é¡¹å¤©èµ‹å¢åŠ åˆ°ä¸‰åç‚¹ä»¥ä¸Šã€‚(ask monk about å¤©èµ‹)\n");
     total-=1;
     points[arg]+=1;
-    tell_object(me, "Äã¾ö¶¨Ôö¼ÓÒ»µã"+gift[arg]+"£¡ÄãÏÖÔÚ»¹ÓĞ"+chinese_number(total)+"µãÇ±ÄÜ¿ÉÒÔ·ÖÅä¡£\n");
+    tell_object(me, "ä½ å†³å®šå¢åŠ ä¸€ç‚¹"+gift[arg]+"ï¼ä½ ç°åœ¨è¿˜æœ‰"+chinese_number(total)+"ç‚¹æ½œèƒ½å¯ä»¥åˆ†é…ã€‚\n");
     return 1;
 }
 /************************************************************/
@@ -223,21 +223,21 @@ int do_state(string arg)
    return 0;
     if (!me->query_temp("wudidong/ready_to_change_gifts"))
    return 0;
-    msg="ÄãÄ¿Ç°»¹ÓĞ"+chinese_number(total)+"µãÌì¸³¿ÉÒÔ·ÖÅä¡£\n";
+    msg="ä½ ç›®å‰è¿˜æœ‰"+chinese_number(total)+"ç‚¹å¤©èµ‹å¯ä»¥åˆ†é…ã€‚\n";
     while(i--)
     {
    if((count=points[gift_name[i]]) > 0)
-       msg+="Äã×¼±¸½«"
+       msg+="ä½ å‡†å¤‡å°†"
      +gift[gift_name[i]]
-     +"Ôö¼Ó"
+     +"å¢åŠ "
      +chinese_number(count)
-     +"µã¡£\n";
+     +"ç‚¹ã€‚\n";
    else if(count < 0)
-       msg+="Äã×¼±¸½«"
+       msg+="ä½ å‡†å¤‡å°†"
      +gift[gift_name[i]]
-     +"½µµÍ"
+     +"é™ä½"
      +chinese_number(-count)
-     +"µã¡£\n";
+     +"ç‚¹ã€‚\n";
    continue;
     }
     tell_object(me, msg);
@@ -253,7 +253,7 @@ int do_finalize(string arg)
    return 0;
     if (!me->query_temp("wudidong/ready_to_change_gifts"))
    return 0;
-    msg=YEL+this_object()->name()+"¿ÚÖĞÄîÄîÓĞ´Ê£¬ÉìÊÖÏò$NÒ»Ö¸£¬ºÈÉù¡¸¼²¡¹£¡\n"NOR;
+    msg=YEL+this_object()->name()+"å£ä¸­å¿µå¿µæœ‰è¯ï¼Œä¼¸æ‰‹å‘$Nä¸€æŒ‡ï¼Œå–å£°ã€Œç–¾ã€ï¼\n"NOR;
     message_vision(msg, me);
     while(i--)
     {
@@ -262,16 +262,16 @@ int do_finalize(string arg)
    me->add("gift_adjust/"+gift_name[i], count);
    me->add(gift_name[i], count);
    if (count >= 0)
-     tell_object(me, YEL"ÄãµÄ"+gift[gift_name[i]]+"±»Ôö¼ÓÁË"+
+     tell_object(me, YEL"ä½ çš„"+gift[gift_name[i]]+"è¢«å¢åŠ äº†"+
         chinese_number(points[gift_name[i]])+
-        "µã£¡\n"NOR);
+        "ç‚¹ï¼\n"NOR);
    else
-     tell_object(me, YEL"ÄãµÄ"+gift[gift_name[i]]+"±»¼õÉÙÁË"+
+     tell_object(me, YEL"ä½ çš„"+gift[gift_name[i]]+"è¢«å‡å°‘äº†"+
         chinese_number(-points[gift_name[i]])+
-        "µã£¡\n"NOR);
+        "ç‚¹ï¼\n"NOR);
    continue;
     }
-    tell_object(me, YEL"¹§Ï²£¡ÄãµÄÌì¸³¸Ä±äÁË£¡\n"NOR);
+    tell_object(me, YEL"æ­å–œï¼ä½ çš„å¤©èµ‹æ”¹å˜äº†ï¼\n"NOR);
     call_out("award", 1, me);
     return 1;
 }
@@ -283,12 +283,12 @@ int award(object me)
   int year, day, hour, reward, mykar=me->query_kar();
 
   command("thank " + myid);
-  command("say ÀÏÄÉÕâ¾ÍÆğ³Ì»ØËÂ£¡");
+  command("say è€çº³è¿™å°±èµ·ç¨‹å›å¯ºï¼");
   command("south");
   call_out ("destroy",2, monk);   
 /*  if (me->query_temp("mark/wudidong_gift")!=1 && random(mykar)>10)
   {
-      command("say ÕâÎ»" + myrespect +"ºÍÎÒÓĞÔµ¡£ÕâÊÇ¼Ò´«Ö®±¦£¬ÔùÓÚ" + RANK_D->query_respect(me) +"£¬ÂÔ±í´çĞÄ¡£\n");
+      command("say è¿™ä½" + myrespect +"å’Œæˆ‘æœ‰ç¼˜ã€‚è¿™æ˜¯å®¶ä¼ ä¹‹å®ï¼Œèµ äº" + RANK_D->query_respect(me) +"ï¼Œç•¥è¡¨å¯¸å¿ƒã€‚\n");
       carry_object("/d/obj/magic/baguafu");
       command("give bagua to " + myid);
       me->add_temp("mark/wudidong_gift", 1);
@@ -301,8 +301,8 @@ int award(object me)
   year = reward / 1000;
   day = (reward - year * 1000) / 4;
   hour = (reward - year * 1000 - day * 4) * 3; 
-  tell_object (me,"ÄãÓ®µÃÁË"+chinese_number(year)+"Äê"+chinese_number(day)+"Ìì"+chinese_number(hour)+"Ê±³½µÄµÀĞĞ£¡\n");
-  command("rumor ÌıËµ"+myname+"¶À´³ÎŞµ×¶´£¬¾È³öÁËÓñÊó¾«×¥È¥µÄÒ»¸öÀÏºÍÉĞ£¬Ò²²»ÖªÊÇÕæÊÇ¼Ù¡£");
+  tell_object (me,"ä½ èµ¢å¾—äº†"+chinese_number(year)+"å¹´"+chinese_number(day)+"å¤©"+chinese_number(hour)+"æ—¶è¾°çš„é“è¡Œï¼\n");
+  command("rumor å¬è¯´"+myname+"ç‹¬é—¯æ— åº•æ´ï¼Œæ•‘å‡ºäº†ç‰é¼ ç²¾æŠ“å»çš„ä¸€ä¸ªè€å’Œå°šï¼Œä¹Ÿä¸çŸ¥æ˜¯çœŸæ˜¯å‡ã€‚");
   me->add("combat_exp",reward);
   me->save();
   return 1;

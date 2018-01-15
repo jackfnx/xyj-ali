@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // scribe.c
@@ -15,20 +15,20 @@ int main(object me, string arg)
    // We might need to load new objects.
    seteuid(getuid());
 
-   if( me->is_fighting() )   return notify_fail("Õ½¶·Ê±²»ÄÜ»­·û£¡\n");
+   if( me->is_fighting() )   return notify_fail("æˆ˜æ–—æ—¶ä¸èƒ½ç”»ç¬¦ï¼\n");
    if( (int)me->query("sen") < 30 )
-     return notify_fail("ÄãµÄ¾«ÉñÌ«²îÁË£¬ÎŞ·¨»­·û¡£\n");
+     return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®äº†ï¼Œæ— æ³•ç”»ç¬¦ã€‚\n");
 
    if( !arg
    ||   sscanf(arg, "%s on %s", name, ob)!= 2 )
-     return notify_fail("Ö¸Áî¸ñÊ½£ºscribe <·ûÖä> on <ÎïÆ·>\n");
+     return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šscribe <ç¬¦å’’> on <ç‰©å“>\n");
 
         if ( !(ob=present("paper seal",me)))
-                return notify_fail("ÄãÖ»ÄÜ½«·ûÖä»­ÔÚÌÒ·ûÖ½ÉÏ¡£\n");
+                return notify_fail("ä½ åªèƒ½å°†ç¬¦å’’ç”»åœ¨æ¡ƒç¬¦çº¸ä¸Šã€‚\n");
 
 
    if( stringp(spells = me->query_skill_mapped("spells")) ) {
-     notify_fail("ÄãËùÑ§µÄ·¨ÊõÃ»ÓĞÕâÖÖ·û¡£\n");
+     notify_fail("ä½ æ‰€å­¦çš„æ³•æœ¯æ²¡æœ‰è¿™ç§ç¬¦ã€‚\n");
      if( SKILL_D(spells)->scribe_spell(me, ob, name) ) {
         me->receive_wound("kee", (int)me->query("max_kee")/100);
         me->receive_damage("sen", 30);
@@ -36,7 +36,7 @@ int main(object me, string arg)
      }
      return 0;
    } else 
-     return notify_fail("ÄãÇëÏÈÓÃ enable Ö¸ÁîÑ¡ÔñÄãÒªÊ¹ÓÃµÄÖäÎÄÏµ¡£\n");
+     return notify_fail("ä½ è¯·å…ˆç”¨ enable æŒ‡ä»¤é€‰æ‹©ä½ è¦ä½¿ç”¨çš„å’’æ–‡ç³»ã€‚\n");
 
    return 1;
 }
@@ -44,12 +44,12 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºscribe <·ûÖäÃû³Æ> on <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ï¼šscribe <ç¬¦å’’åç§°> on <ç‰©å“åç§°>
 
-ÔÚ»­·ûÓÃµÄÌÒ·ûÖ½(paper seal)ÉÏ»­·û¡£ÔÚÄã»­·ûÖ®Ç°£¬Äã±ØĞë
-ÏÈÓÃ enable Ö¸ÁîÀ´Ö¸¶¨ÄãÒªÊ¹ÓÃµÄÖäÎÄÏµ¡£
+åœ¨ç”»ç¬¦ç”¨çš„æ¡ƒç¬¦çº¸(paper seal)ä¸Šç”»ç¬¦ã€‚åœ¨ä½ ç”»ç¬¦ä¹‹å‰ï¼Œä½ å¿…é¡»
+å…ˆç”¨ enable æŒ‡ä»¤æ¥æŒ‡å®šä½ è¦ä½¿ç”¨çš„å’’æ–‡ç³»ã€‚
 
-×¢£º»­·û»áÏûºÄÈô¸ÉÆø(ÒªÒ§ÆÆÊÖÖ¸ÓÃÏÊÑª»­)ÓëÉñ¡£
+æ³¨ï¼šç”»ç¬¦ä¼šæ¶ˆè€—è‹¥å¹²æ°”(è¦å’¬ç ´æ‰‹æŒ‡ç”¨é²œè¡€ç”»)ä¸ç¥ã€‚
  
 HELP
         );

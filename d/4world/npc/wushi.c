@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("°ÁÀ´¹úÎäÊ¿", ({ "wu shi", "shi", "wu", "jiang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å‚²æ¥å›½æ­¦å£«", ({ "wu shi", "shi", "wu", "jiang" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
-   set("long", "°ÁÀ´¹ú¿´ÊØ³ÇÃÅµÄÎäÊ¿£¬Íş·çÁİÁİµÄÑ²ÊÓ×ÅÖÜÎ§¡£\n");
+   set("long", "å‚²æ¥å›½çœ‹å®ˆåŸé—¨çš„æ­¦å£«ï¼Œå¨é£å‡›å‡›çš„å·¡è§†ç€å‘¨å›´ã€‚\n");
         set("combat_exp", 75000);
         set("attitude", "friendly");
 

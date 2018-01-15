@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/moon/xiaoyuan.c
@@ -12,11 +12,11 @@ int do_sit(string temp3);
 
 void create ()
 {
-  set ("short", "Àé°ÊĞ¡Ôº");
+  set ("short", "ç¯±ç¬†å°é™¢");
   set ("long", @LONG
 
-Àé°ÊÎ§³ÉµÄĞ¡Ôº¡£µØÉÏÖÖÂúÁËÆæ»¨Òì²İ¡£ÖĞ¼äÓĞÒ»ÕÅÄ¾×À¼°¼¸Ö»Ğ¡Ä¾µÊ£¬
-×ÀÉÏ°Ú×Å¸÷É«¹ûÆ·¡£¶«£¬Î÷£¬±±¸÷ÓĞÒ»¼ä¾«ÖÂµÄĞ¡Îİ¡£
+ç¯±ç¬†å›´æˆçš„å°é™¢ã€‚åœ°ä¸Šç§æ»¡äº†å¥‡èŠ±å¼‚è‰ã€‚ä¸­é—´æœ‰ä¸€å¼ æœ¨æ¡ŒåŠå‡ åªå°æœ¨å‡³ï¼Œ
+æ¡Œä¸Šæ‘†ç€å„è‰²æœå“ã€‚ä¸œï¼Œè¥¿ï¼ŒåŒ—å„æœ‰ä¸€é—´ç²¾è‡´çš„å°å±‹ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 4 */
@@ -51,16 +51,16 @@ int do_sit(string arg)
       me=this_player();
 
    if ( !arg || ((arg != "seat")&&(arg != "deng")&&(arg != "table") ))
-     return notify_fail("ÄãÒª×øÔÚÊ²Ã´ÉÏÃæ£¿\n");   
+     return notify_fail("ä½ è¦ååœ¨ä»€ä¹ˆä¸Šé¢ï¼Ÿ\n");   
    
    if (this_player()->query_temp("marks/sit"))
-     return notify_fail("ÄãÒÑ¾­×øÏÂÁË¡£\n");   
+     return notify_fail("ä½ å·²ç»åä¸‹äº†ã€‚\n");   
       
       if ( arg != "seat"&&arg != "deng")   
-         return notify_fail("×ø×À×ÓÉÏ£¿Ì«²»ÑÅ¹ÛÁË°É¡£\n");
+         return notify_fail("åæ¡Œå­ä¸Šï¼Ÿå¤ªä¸é›…è§‚äº†å§ã€‚\n");
            
    this_player()->set_temp("marks/sit", 1);
-   message_vision("$NÇáÇáÇÉÇÉµØ×øÉÏÁËĞ¡Ä¾µÊ¡£\n",me);
+   message_vision("$Nè½»è½»å·§å·§åœ°åä¸Šäº†å°æœ¨å‡³ã€‚\n",me);
       return 1;   
 }
 
@@ -71,10 +71,10 @@ int do_stand(string arg)
       me=this_player();
 
       if (!this_player()->query_temp("marks/sit"))
-          return notify_fail("Äã±¾À´¾ÍÕ¾×Å¡£\n");
+          return notify_fail("ä½ æœ¬æ¥å°±ç«™ç€ã€‚\n");
 
       this_player()->set_temp("marks/sit", 0);
-      message_vision("$NÉìÁË¸öÀÁÑü£¬Õ¾ÁËÆğÀ´¡£\n", me);
+      message_vision("$Nä¼¸äº†ä¸ªæ‡’è…°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
       return 1;
 }
 

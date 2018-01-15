@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/jjf/dining_room.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÑçÌü");
+  set ("short", "å®´åŽ…");
   set ("long", @LONG
-ÎÝ×ÓÖÐ¼äÓÐÒ»ÕÅ´ó×À×Ó£¬×ã×ã¿ÉÒÔ×øÏÂÈýÊ®À´ÈË¡£·¿×ÓµÄÒ»±ß
-Í¨ÏòÕýÌü£¬ÁíÒ»±ß¿ÉÒÔÈ¥³ø·¿¡£½«¾ü¸®¿ÍÈË¶àÊ±£¬ÍùÍùÕâÀï¶¼×ø²»
-ÏÂ£¬¸É´àÔÚÇ°Ôº¿ÕµØÉÏÂ¶ÌìÉèÑç¡£
+å±‹å­ä¸­é—´æœ‰ä¸€å¼ å¤§æ¡Œå­ï¼Œè¶³è¶³å¯ä»¥åä¸‹ä¸‰åæ¥äººã€‚æˆ¿å­çš„ä¸€è¾¹
+é€šå‘æ­£åŽ…ï¼Œå¦ä¸€è¾¹å¯ä»¥åŽ»åŽ¨æˆ¿ã€‚å°†å†›åºœå®¢äººå¤šæ—¶ï¼Œå¾€å¾€è¿™é‡Œéƒ½åä¸
+ä¸‹ï¼Œå¹²è„†åœ¨å‰é™¢ç©ºåœ°ä¸Šéœ²å¤©è®¾å®´ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

@@ -2,8 +2,8 @@
 
 // charm.c
 
-// 基本媚术
+// 鍩烘湰濯氭湳
 
 inherit SKILL;
 
-string name() { return "基本媚术"; }
+string name() { return "鍩烘湰濯氭湳"; }

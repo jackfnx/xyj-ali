@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // waiter.c
@@ -7,14 +7,14 @@ inherit NPC;
 
 void create()
 {
-   set_name("Ë¾»ú", ({ "driver", "siji" }) );
-   set("gender", "ÄÐÐÔ" );
+   set_name("å¸æœº", ({ "driver", "siji" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 32);
    set("long",
-     "Ëû½Ò¿ª¸ÇÔÚÁ³ÉÏµÄÆÆ²ÝÃ±¿´ÁËÄãÒ»ÑÛ £¬ÓÖ·ÅÏÂÀ´¼ÌÐø´òî§Ë¯¡£\n");
+     "ä»–æ­å¼€ç›–åœ¨è„¸ä¸Šçš„ç ´è‰å¸½çœ‹äº†ä½ ä¸€çœ¼ ï¼Œåˆæ”¾ä¸‹æ¥ç»§ç»­æ‰“çžŒç¡ã€‚\n");
    set("combat_exp", 100);
    set("attitude", "friendly");
-   set("rank_info/respect", "Ê¦¸µ");
+   set("rank_info/respect", "å¸ˆå‚…");
    setup();
    carry_object("/obj/cloth")->wear();
 }

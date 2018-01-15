@@ -1,9 +1,9 @@
 // ALi
 
-// foxforce.c  ¡¾ÌìºüĞÄ·¨¡¿
+// foxforce.c  ã€å¤©ç‹å¿ƒæ³•ã€‘
 inherit FORCE;
 
-string name() { return "ÌìºüĞÄ·¨"; }
+string name() { return "å¤©ç‹å¿ƒæ³•"; }
 
 int valid_enable(string usage) { return usage=="force"; }
 

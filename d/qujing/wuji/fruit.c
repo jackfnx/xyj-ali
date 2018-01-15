@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/changan/shuju  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�ļ�ˮ����");
+  set ("short", "四季水果店");
   set ("long", @LONG
 
-���ˮ���������Ȼ���󣬵���ɫ�Ϲ���ȫ������ʱ��Ϲ�ÿ����
-�����������������ʡ���ɫˮ���ʺ���̣�ʮ�����ˡ�
+这家水果店店面虽然不大，但各色瓜果齐全，而且时令瓜果每日由
+城外运来，尤其新鲜。各色水果鲜红翠绿，十分诱人。
 
 LONG);
 

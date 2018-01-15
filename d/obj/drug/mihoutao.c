@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// mihoutao.c â¨ºïÌÒ
+// mihoutao.c çŒ•çŒ´æ¡ƒ
 
 #include <ansi.h>
 
@@ -13,25 +13,25 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-//   set("no_get","ÄãÊÖÀïÒ»ËÉ"+this_object()->query("name")+"µ¤´ÓÖ¸¼ä»¬Âä£¡\n");
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+//   set("no_get","ä½ æ‰‹é‡Œä¸€æ¾"+this_object()->query("name")+"ä¸¹ä»æŒ‡é—´æ»‘è½ï¼\n");
+    set("no_give","è¿™ä¹ˆçè´µçš„è¯ï¼Œå“ªèƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+    set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªé‡ŒçŸ¥é“"+this_object()->query("name")+"çš„ä»·å€¼ï¼Ÿè¿˜æ˜¯è‡ªå·±ç•™ç€å§ã€‚\n");
   }                                    
   add_action("do_eat", "eat");
 }
 
 void create()
 {
-  set_name(YEL "â¨ºïÌÒ" NOR, ({"mihou tao","mihoutao","tao"}));
+  set_name(YEL "çŒ•çŒ´æ¡ƒ" NOR, ({"mihou tao","mihoutao","tao"}));
   set_weight(20);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "»Æ³È³ÈµÄÒ»¿Åâ¨ºïÌÒ£¬Õæ½ĞÈË´¹ÏÑÓûµÎ¡£\n");
+    set("unit", "é¢—");
+    set("long", "é»„æ©™æ©™çš„ä¸€é¢—çŒ•çŒ´æ¡ƒï¼ŒçœŸå«äººå‚æ¶æ¬²æ»´ã€‚\n");
     set("value", 5000);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   
   setup();
@@ -42,7 +42,7 @@ int do_eat(string arg)
   object me = this_player();
   
   if (!id(arg))
-    return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   
   me->set("food", (int)me->max_food_capacity());
   if((int)me->query("max_force")<10*(int)me->query_skill("force")){
@@ -51,7 +51,7 @@ int do_eat(string arg)
   if((int)me->query("max_mana")<10*(int)me->query_skill("spells")){
     me->add("max_mana",1);
   }
-  message_vision(HIG "$N³ÔÏÂÒ»¿ÅÃÖºïÌÒ£¬ÈÌ²»×¡×¥¶úÄÓÈù£¬¸ßĞËµÃÖ±Ïë·­¸úÍ·£¡ \n" NOR, me);
+  message_vision(HIG "$Nåƒä¸‹ä¸€é¢—å¼¥çŒ´æ¡ƒï¼Œå¿ä¸ä½æŠ“è€³æŒ è…®ï¼Œé«˜å…´å¾—ç›´æƒ³ç¿»è·Ÿå¤´ï¼ \n" NOR, me);
   
   destruct(this_object());
   return 1;

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/22/1997 by snowcat
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("����", ({"yao wang", "wang"}));
-  set("title", "������");
-  set("gender", "����");
+  set_name("妖王", ({"yao wang", "wang"}));
+  set("title", "连环洞");
+  set("gender", "男性");
   set("age", 40);
   set("attitude", "peaceful");
   set("combat_exp", 600000);
@@ -70,8 +70,8 @@ void die()
     tudi->move(where);
     tudi->call_out_announce_success(ob);
   }
-  message_vision ("\n$Ṉ���ڵأ�����һֻ��Ҷ��Ƥ���ӡ�\n",me);
-  me->set("name","��Ҷ��Ƥ����");
+  message_vision ("\n$N瘫痪在地，竟是一只艾叶花皮豹子。\n",me);
+  me->set("name","艾叶花皮豹子");
   ::die();
 }
 

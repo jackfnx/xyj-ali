@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
@@ -8,14 +8,14 @@ void invite_player (object who)
   string dir;
   object me = this_object();
 
-  message_vision ("$N½«ÊÖÖ¸Ò»µã£¬Ê¯ÃÅ¿ªÁË¡£$n×ßÁË½øÈ¥¡£\n", me, who);
+  message_vision ("$Nå°†æ‰‹æŒ‡ä¸€ç‚¹ï¼ŒçŸ³é—¨å¼€äº†ã€‚$nèµ°äº†è¿›åŽ»ã€‚\n", me, who);
 /*
   dir = __DIR__;
   dir[strlen(dir)-4] = 0;
 */
   dir = "/d/qujing/firemount/";
   who->move(dir+"dongnei.c");
-  message_vision ("ÃÅÍâ´«À´$NµÄÉùÒô£º±ðÍüÁËßµ¼û¹«Ö÷¡£\n", me, who);
+  message_vision ("é—¨å¤–ä¼ æ¥$Nçš„å£°éŸ³ï¼šåˆ«å¿˜äº†å©è§å…¬ä¸»ã€‚\n", me, who);
 }
 
 void inform_player (string msg, object who)
@@ -28,37 +28,37 @@ void inform_player (string msg, object who)
 int test_player (object me)
 {
   object who = this_player();
-  string msg = "$NËµµÀ£ºÕâÎ»"+RANK_D->query_respect(who);
+  string msg = "$Nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(who);
 
-  if (who->query("family/family_name")=="´äÔÆÉ½°Å½¶¶´")
+  if (who->query("family/family_name")=="ç¿ äº‘å±±èŠ­è•‰æ´ž")
   {
-    inform_player (msg+"¿ìÇë½ø£¡\n",who);
+    inform_player (msg+"å¿«è¯·è¿›ï¼\n",who);
     call_out("invite_player",1,who);
     return 1;
   }  
 
   if (who->query("obstacle/firemount") == "done")
   {
-    inform_player (msg+"Ê§ÀñÁË£¡\n",who);
+    inform_player (msg+"å¤±ç¤¼äº†ï¼\n",who);
     call_out("invite_player",1,who);
     return 1;
   }  
 
   if (present("palm bone",who))
   {
-    inform_player (msg+"ËÍ±¦À´À²£¬Çë£¡\n",who);
+    inform_player (msg+"é€å®æ¥å•¦ï¼Œè¯·ï¼\n",who);
     call_out("invite_player",1,who);
     return 1;
   }  
 
   if (who->query_temp("won_cloud_fog"))
   {
-    inform_player (msg+"¹¦·ò¹ýÈË£¬Çë£¡\n",who);
+    inform_player (msg+"åŠŸå¤«è¿‡äººï¼Œè¯·ï¼\n",who);
     call_out("invite_player",1,who);
     return 1;
   }  
 
-  inform_player (msg+"·Ç±¾ÃÅÅÉµÜ×Ó£¬ÓÖÎ´±ØÊÇÎäÁÖ¸ßÊÖ£¬²»ÄÜÇó¼û¹«Ö÷¡£\n",who);
+  inform_player (msg+"éžæœ¬é—¨æ´¾å¼Ÿå­ï¼Œåˆæœªå¿…æ˜¯æ­¦æž—é«˜æ‰‹ï¼Œä¸èƒ½æ±‚è§å…¬ä¸»ã€‚\n",who);
   return 1;
 }
 
@@ -76,7 +76,7 @@ void player_win (object me, object who)
   object tieshan = present("tie shan",me);
   string msg;
 
-  message_vision ("$N¶Ô$nËµ£º´óÊ¦¹ûÈ»ÉíÊÖ²»·²£¡\n",me,who);
+  message_vision ("$Nå¯¹$nè¯´ï¼šå¤§å¸ˆæžœç„¶èº«æ‰‹ä¸å‡¡ï¼\n",me,who);
   who->set_temp("won_cloud_fog",1);
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("¹´Ë¾ÈË", ({"gousi ren", "ren"}));
-       set("gender", "ÄĞĞÔ");
+       set_name("å‹¾å¸äºº", ({"gousi ren", "ren"}));
+       set("gender", "ç”·æ€§");
        set("age", 30);
-   set("long", "Ò»Ğ©µØ¸®ÀïµÄÔÓÎñÈËÔ±£®\n");
+   set("long", "ä¸€äº›åœ°åºœé‡Œçš„æ‚åŠ¡äººå‘˜ï¼\n");
        set("attitude", "peaceful");
        set("shen_type", 1);
        set("combat_exp", 20000+random(5000));
@@ -22,7 +22,7 @@ void create()
    set("force_factor", 5);
    set("max_kee", 450);
 set("inquiry", ([
-"here": "Õâ¾ÍÊÇÒõ²ÜµØ¸®£¡\n",
+"here": "è¿™å°±æ˜¯é˜´æ›¹åœ°åºœï¼\n",
 ]) );
 
 set("chat_chance", 8);

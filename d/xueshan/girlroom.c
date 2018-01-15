@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 //standroom.c used by weiqi...others may hate this format:D
@@ -10,13 +10,13 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "е╝╣эвснт╥©");
+   set ("short", "Е╔ЁЕ╪÷Е╜░Е█╖Ф┬©");
    set ("long", @LONG
 
-я╘и╫еи╣де╝╣эвснт╥©║ёЁбиХоЮ╣╠кь╬╩║ё©©г╫╟зве╪╦уе╢╡фл(bed)║ё
+И⌡╙Е╠╠Ф╢╬Г └Е╔ЁЕ╪÷Е╜░Е█╖Ф┬©Ц─┌И≥┬Х╝╬Г⌡╦Е╫⌠Г╢═Е┤─Ц─┌И²═Е╒≥Ф▒├Г²─Е┤═Е╪═Е╨┼И⌠╨(bed)Ц─┌
 LONG);
 
-   set("item_desc", (["bed" : "р╩уе╬╚жб╣д╢╡фл(gosleep, gobed, bed)║ё\n", ]));
+   set("item_desc", (["bed" : "Д╦─Е╪═Г╡╬Х┤╢Г └Е╨┼И⌠╨(gosleep, gobed, bed)Ц─┌\n", ]));
    //for look something.
 
    set("exits", 
@@ -53,9 +53,9 @@ int do_bed()
    object me;
    me=this_player();
 
-   message_vision(HIY "$Nоф©╙и╢уйё╛в╪╠╦ио╢╡ак║ё\n\n" NOR, me);
+   message_vision(HIY "$NФ▌─Е╪─Г╨╠Е╦░О╪▄Е┤├Е╓┤Д╦┼Е╨┼Д╨├Ц─┌\n\n" NOR, me);
    me->move(__DIR__"girlbed");
-   message_vision(HIY "\nиЁуйгАгАр╩╤╞ё╛$NвЙак╫Ью╢║ё\n" NOR, me);
+   message_vision(HIY "\nФ╡≥Е╦░Х╫╩Х╫╩Д╦─Е┼╗О╪▄$NИ▓╩Д╨├Х©⌡Ф²╔Ц─┌\n" NOR, me);
    return 1;
 }
 

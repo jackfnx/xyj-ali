@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/22/1997 by snowcat
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("����", ({"guo zhang", "zhang"}));
-  set("title", "�������");
-  set("gender", "����");
+  set_name("国丈", ({"guo zhang", "zhang"}));
+  set("title", "玉面道人");
+  set("gender", "男性");
   set("age", 60);
   set("attitude", "peaceful");
   set("combat_exp", 1230000);
@@ -67,11 +67,11 @@ void move_to_cave (object me)
   object room = load_object("/d/qujing/biqiu/dong");
 
   if (! where ||
-      where->query("short") == "�廪��")
+      where->query("short") == "清华洞")
     return;
  
-  message_vision ("\n��Ȼ�����������ذ���\n",me);
-  message_vision ("����л���������ʱ��$N��������Ӱ��\n",me);
+  message_vision ("\n忽然间狂风四起，天昏地暗！\n",me);
+  message_vision ("等你恍恍惚惚睁开眼时，$N已无踪无影！\n",me);
   me->move(room);
 }
 
@@ -85,9 +85,9 @@ void unconcious()
     ob->set_temp("obstacle/biqiu_guozhang",1);
     call_out ("king_appearing",1,ob);
   }
-  message_vision ("\n$N����ԭ�Σ�����һֻ��¹�����ϻŻ����ŵش�ȥ��\n",
+  message_vision ("\n$N现了原形，竟是一只白鹿往天上慌慌张张地蹿去。\n",
                   me);
-  message_vision ("���ϴ����ϼ����˵�ŭ�⣺����¹�����Ϸ�Ĺ���Ҳ͵��ȥ��\n\n",
+  message_vision ("天上传来南极老人的怒斥：“孽鹿！连老夫的拐杖也偷了去！\n\n",
                   me);
   load_object("/obj/empty");
   me->move("/obj/empty");

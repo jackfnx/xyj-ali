@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 //luobodi.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "�ܲ���");
+   set ("short", "萝卜地");
    set ("long", @LONG
 
-��ׯ�����µĶ࣬�Է���Ҳ���٣����Թ��ڹ��˸�����һЩũ��
-�����߲˹Ϲ����������ܲ��ء�
+五庄观做事的多，吃饭的也不少，所以观内雇了附近的一些农家
+来种蔬菜瓜果。这里是萝卜地。
 LONG);
 
    set("exits", 
@@ -25,7 +25,7 @@ LONG);
      "/d/obj/food/carrot" : 3,
    ]));
 
-   //create_door("south", "�滨��", "north", DOOR_CLOSED);
+   //create_door("south", "梨花门", "north", DOOR_CLOSED);
    set("outdoors", "wuzhuang");
 
    setup();

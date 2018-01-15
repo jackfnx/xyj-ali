@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "°×ÔÆ¶´");
+  set ("short", "ç™½äº‘æ´");
   set ("long", @LONG
 
-¶´¿ÚËäĞ¡£¬¶´ÄÚÈ´±ğÓĞÌìµØ¡£
+æ´å£è™½å°ï¼Œæ´å†…å´åˆ«æœ‰å¤©åœ°ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 3 */
   "north": __DIR__"baiyun"+sprintf("%d",random(20)),

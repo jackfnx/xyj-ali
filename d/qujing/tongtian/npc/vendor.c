@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat dec 15 1997
@@ -9,9 +9,9 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("³ÂÈıÏÊ", ({"chen sanxian","chen"}));
-  set("title", "Ë®ÏÊ··×Ó");
-  set("gender", "ÄĞĞÔ");
+  set_name("é™ˆä¸‰é²œ", ({"chen sanxian","chen"}));
+  set("title", "æ°´é²œè´©å­");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 500);
   set("age", 30);
   set("per", 34);

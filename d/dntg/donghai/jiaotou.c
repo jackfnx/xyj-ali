@@ -2,9 +2,9 @@ inherit NPC;
 
 void create()
 {
-    set_name("½û¾ü½ÌÍ·", ({"jinjun jiaotou", "jiaotou"}));
-    set("title", "°ÁÀ´¹ú");
-    set("gender", "ÄÐÐÔ");
+    set_name("ç¦å†›æ•™å¤´", ({"jinjun jiaotou", "jiaotou"}));
+    set("title", "å‚²æ¥å›½");
+    set("gender", "ç”·æ€§");
     set("age", 45);
 
     set("max_gin", 500);
@@ -50,29 +50,29 @@ int guard_dir(string dir)
     if (dir != "south") return 0;
     if (who->query("aolai_drill_allow")) return 0;
 
-    tell_object(who, "½û¾ü½ÌÍ·ºÈµÀ£ºÎÒ¹ú±øÂíÕýÔÚÀïÃæÑµÁ·£¡ÄãÀ´Õâ¸ÉÊ²Ã´(answer)£¿\n"
-                    + "(£°£®±ÈÎä¡¡£±£®¿´ÈÈÄÖ¡¡£²£®µ·ÂÒ¡¡£³£®´Ó¾ü)\n");
+    tell_object(who, "ç¦å†›æ•™å¤´å–é“ï¼šæˆ‘å›½å…µé©¬æ­£åœ¨é‡Œé¢è®­ç»ƒï¼ä½ æ¥è¿™å¹²ä»€ä¹ˆ(answer)ï¼Ÿ\n"
+                    + "(ï¼ï¼Žæ¯”æ­¦ã€€ï¼‘ï¼Žçœ‹çƒ­é—¹ã€€ï¼’ï¼Žæ£ä¹±ã€€ï¼“ï¼Žä»Žå†›)\n");
     who->set_temp("aolai_drill_wait_answer", 1);
     return 1;
 }
 
 int do_answer(string arg)
 {
-    string *ans = ({"±ÈÎä","¿´ÈÈÄÖ","µ·ÂÒ","´Ó¾ü"});
+    string *ans = ({"æ¯”æ­¦","çœ‹çƒ­é—¹","æ£ä¹±","ä»Žå†›"});
     object who = this_player();
 
     if (!who->query_temp("aolai_drill_wait_answer")) return 0;
-    if (!arg) return notify_fail("ÄãËµÊ²Ã´£¿\n");
+    if (!arg) return notify_fail("ä½ è¯´ä»€ä¹ˆï¼Ÿ\n");
     if (arg == "0" || arg == "1" || arg == "2" || arg == "3")
         arg = ans[atoi(arg)];
-    message_vision("$N´ðµÀ£º" + arg + "¡£\n", who);
-    if (arg == "¿´ÈÈÄÖ") {
+    message_vision("$Nç­”é“ï¼š" + arg + "ã€‚\n", who);
+    if (arg == "çœ‹çƒ­é—¹") {
         command("consider");
-        command("say ¿´ÈÈÄÖ¿ÉÒÔ£¬µ«²»×¼´óÉùÐú»©£¬ÈÅÂÒÑµÁ·¡£\n");
+        command("say çœ‹çƒ­é—¹å¯ä»¥ï¼Œä½†ä¸å‡†å¤§å£°å–§å“—ï¼Œæ‰°ä¹±è®­ç»ƒã€‚\n");
         who->set_temp("aolai_drill_allow", 1);
     }
     else
-        command("say ÄãºúËµÊ²Ã´£¿±ðÀ´µ·ÂÒ£¡\n");
+        command("say ä½ èƒ¡è¯´ä»€ä¹ˆï¼Ÿåˆ«æ¥æ£ä¹±ï¼\n");
     return 1;
 }
 
@@ -82,8 +82,8 @@ void unconcious()
     object me = this_object();
     object where = environment (me);
 
-    message_vision("\n$Nº°µ½£º£¢ºÃ°¡£¬Äã¸Òµ½ÕâÐÐÐ×£¡¿´ÎÒÃÇÔõÃ´ÊÕÊ°Äã£¡£¢Ëµ°Õµøµø×²×²ÃãÇ¿ÅÀ»ØÑÝÎä³¡¡£\n",me);
-    message_vision("\nÓÖÒ»¸ö$N×ßÁË¹ýÀ´¡£\n",me);
+    message_vision("\n$Nå–Šåˆ°ï¼šï¼‚å¥½å•Šï¼Œä½ æ•¢åˆ°è¿™è¡Œå‡¶ï¼çœ‹æˆ‘ä»¬æ€Žä¹ˆæ”¶æ‹¾ä½ ï¼ï¼‚è¯´ç½¢è·Œè·Œæ’žæ’žå‹‰å¼ºçˆ¬å›žæ¼”æ­¦åœºã€‚\n",me);
+    message_vision("\nåˆä¸€ä¸ª$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
     ob = new(__FILE__);
     ob->move(where);
     destruct(me);

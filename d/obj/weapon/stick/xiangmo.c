@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit STICK;
 
 void create()
 {
-        set_name("½µÄ§°ô", ({"xiangmo bang", "bang"}));
+        set_name("é™é­”æ£’", ({"xiangmo bang", "bang"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
      set("no_sell", 1);
-     set("long", "Ò»°Ñµ­ÇàÉ«µÄ¶Ì°ô£¬ÉÏÃæÓĞ°µºìÁ÷¶¯£¬ÈçÍ¬Ò»Ìõ»ğÉß°ãÈÆÔÚ°ôÉÏ¡£\n");
+     set("long", "ä¸€æŠŠæ·¡é’è‰²çš„çŸ­æ£’ï¼Œä¸Šé¢æœ‰æš—çº¢æµåŠ¨ï¼Œå¦‚åŒä¸€æ¡ç«è›‡èˆ¬ç»•åœ¨æ£’ä¸Šã€‚\n");
                 set("value", 20000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸ºô¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå‘¼ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
         }
         init_stick(60);
         setup();

@@ -1,8 +1,8 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //created 8-5-97 pickle
-//ÂŞ³É luocheng.c
+//ç½—æˆ luocheng.c
 
 inherit NPC;
 #include <ansi.h>
@@ -19,16 +19,16 @@ void do_revive(object ob);
 
 void create()
 {
-  set_name("ÂŞ³É", ({"luo cheng", "luo", "cheng", "luocheng", "master", "shifu"}));
+  set_name("ç½—æˆ", ({"luo cheng", "luo", "cheng", "luocheng", "master", "shifu"}));
   set ("long", @LONG
-ÂŞ³ÉÊÇÇØÇíµÄ±íµÜ£¬ÄËÊÇËåÌÆµÚÆßÌõºÃºº¡£´«ËµËûÔçÒÑ
-ÔÚ±£³¤°²Ê±±»ÂÒ¼ıÉäËÀÕ½ËÀ£¬µ«²»ÖªÎªºÎ»¹ÔÚÕâÀï¡£Ìı
-ËµÂŞ³ÉÄêÓ×Ê±ÔøÊÜ¹ıÒìÈË´«ÊÚ£¬Ñ§µÃÒ»ÉíÆæÒìµÄÄÚ¹¦£¬
-Òò´Ë±ÈÎä¼«ÉÙ°Ü¹ı¡£
+ç½—æˆæ˜¯ç§¦ç¼çš„è¡¨å¼Ÿï¼Œä¹ƒæ˜¯éš‹å”ç¬¬ä¸ƒæ¡å¥½æ±‰ã€‚ä¼ è¯´ä»–æ—©å·²
+åœ¨ä¿é•¿å®‰æ—¶è¢«ä¹±ç®­å°„æ­»æˆ˜æ­»ï¼Œä½†ä¸çŸ¥ä¸ºä½•è¿˜åœ¨è¿™é‡Œã€‚å¬
+è¯´ç½—æˆå¹´å¹¼æ—¶æ›¾å—è¿‡å¼‚äººä¼ æˆï¼Œå­¦å¾—ä¸€èº«å¥‡å¼‚çš„å†…åŠŸï¼Œ
+å› æ­¤æ¯”æ­¦æå°‘è´¥è¿‡ã€‚
 LONG);
 
-  set("title", "¿ª¹úÔªÑ«");
-  set("gender", "ÄĞĞÔ");
+  set("title", "å¼€å›½å…ƒå‹‹");
+  set("gender", "ç”·æ€§");
   set("age", 34);
   set("str", 50);
   set("cor", 50);
@@ -63,7 +63,7 @@ LONG);
   set("max_force", 2000);
   set("force_factor", 100);
  
-  create_family("½«¾ü¸®", 2, "À¶");
+  create_family("å°†å†›åºœ", 2, "è“");
   setup();
  
   carry_object("/d/obj/weapon/spear/jinqiang")->wield();
@@ -78,7 +78,7 @@ void init()
    {
        if (is_fighting())
        {
-     message_vision(CYN"ÂŞ³É¶Ô$NºÈµÀ£º¡°ÓÖÊÇÄã£¡¹ö³öÈ¥£¡¡±"NOR, ob);
+     message_vision(CYN"ç½—æˆå¯¹$Nå–é“ï¼šâ€œåˆæ˜¯ä½ ï¼æ»šå‡ºå»ï¼â€"NOR, ob);
      move_down(ob);
        }
        else do_revive(this_object());
@@ -101,7 +101,7 @@ int handle_kill(object me)
 {
     if(is_fighting())
     {
-        message_vision(CYN"ÂŞ³É±§È­µÀ£ºÖÚÎ»£¬¼ÈÈ»$NÏëÒªÆ´Ãü£¬»¹ÇëÉÔºòÆ¬¿Ì¡£\n"NOR, me);
+        message_vision(CYN"ç½—æˆæŠ±æ‹³é“ï¼šä¼—ä½ï¼Œæ—¢ç„¶$Næƒ³è¦æ‹¼å‘½ï¼Œè¿˜è¯·ç¨å€™ç‰‡åˆ»ã€‚\n"NOR, me);
         this_object()->remove_all_enemy();
     }
     do_revive(this_object());
@@ -117,7 +117,7 @@ int accept_fight(object me)
       call_out("check_fight", 1, this_object(), me);
       return 1;
     }
-  command("say ÄÑµÀÄãÀ´ÕâÀï¾ÍÊÇÏë´ò¼Ü£¿ÎÒ¿´»¹ÊÇËãÁË°É¡£\n");
+  command("say éš¾é“ä½ æ¥è¿™é‡Œå°±æ˜¯æƒ³æ‰“æ¶ï¼Ÿæˆ‘çœ‹è¿˜æ˜¯ç®—äº†å§ã€‚\n");
   call_out("move_down", 1, me);
   return 0;
 }
@@ -127,19 +127,19 @@ int attempt_apprentice(object me)
 
   if(me->query("mark/jjf_defeated_luocheng")) 
   {
-    command("say ²»´í£¬²»´í¡£"+myname+"¹ûÈ»ÊÇ¿É½ÌÖ®²Å£¡");
-    command("say "+myname+"ÎäÒÕ¹ıÈË¡£ÄãÎÒ²»·ÁÇĞ´èÒ»·¬¡£");
+    command("say ä¸é”™ï¼Œä¸é”™ã€‚"+myname+"æœç„¶æ˜¯å¯æ•™ä¹‹æ‰ï¼");
+    command("say "+myname+"æ­¦è‰ºè¿‡äººã€‚ä½ æˆ‘ä¸å¦¨åˆ‡ç£‹ä¸€ç•ªã€‚");
     command("recruit "+me->query("id"));
     return 1;
   }
   if (is_fighting())
   {
-    command("say ÏÖÔÚÔÚÏÂÕıÃ¦£¬"+myname+"ÇëÉÔºò¡£");
+    command("say ç°åœ¨åœ¨ä¸‹æ­£å¿™ï¼Œ"+myname+"è¯·ç¨å€™ã€‚");
     return 1;
   }
   command("consider");
-  command("say ÔÚÏÂ´Ó²»ÊÕÍ½¡£");
-  command("say µ«¸óÏÂÈôÄÜÊ¤¹ıÎÒÊÖÖĞÇ¹£¬ÄãÎÒ²»·Á»¥ÏàÇĞ´è¹¦·ò¡£");
+  command("say åœ¨ä¸‹ä»ä¸æ”¶å¾’ã€‚");
+  command("say ä½†é˜ä¸‹è‹¥èƒ½èƒœè¿‡æˆ‘æ‰‹ä¸­æªï¼Œä½ æˆ‘ä¸å¦¨äº’ç›¸åˆ‡ç£‹åŠŸå¤«ã€‚");
   me->set_temp("pending/jjf_apprentice_luocheng", 1);
   return 1;
 }
@@ -188,7 +188,7 @@ void player_win(object me)
 void player_lose(object me)
 {
     this_object()->delete_temp("last_opponent");
-    command("say "+RANK_D->query_respect(me) +"²»±ØÆøÄÙ£¬ÔÙ½ÓÔÙÀ÷£¡");
+    command("say "+RANK_D->query_respect(me) +"ä¸å¿…æ°”é¦ï¼Œå†æ¥å†å‰ï¼");
     return;
 }
 int recruit_apprentice(object me)

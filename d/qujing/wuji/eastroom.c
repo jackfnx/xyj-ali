@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/eastroom.c  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "���᷿");
+  set ("short", "东厢房");
   set ("long", @LONG
 
-���Ǳ����µ��������Թ��η�ɮ�˽���һ�ޣ����ڳ����ª����ǽ
-���м���ľ����
+这是宝林寺的禅房，以供游方僧人借宿一宿，房内陈设简陋，靠墙
+设有几张木床。
 
 LONG);
 

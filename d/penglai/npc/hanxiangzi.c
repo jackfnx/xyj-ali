@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hanxiangzi.c...weiqi, 98.02.24.
@@ -6,12 +6,12 @@
 inherit NPC;
 void create()
 {
-    set_name("º«Ïæ×Ó", ({"han xiangzi", "han", "xiangzi"}));
-    set("title", "°ËÏÉÖ®");
-    set("gender", "ÄĞĞÔ" );
+    set_name("éŸ©æ¹˜å­", ({"han xiangzi", "han", "xiangzi"}));
+    set("title", "å…«ä»™ä¹‹");
+    set("gender", "ç”·æ€§" );
     set("age", 22);
     set("per", 30);
-    set("long", "ºÃÒ»Î»¿¡ÑÅäìÈ÷µÄÏà¹«¡£\n");
+    set("long", "å¥½ä¸€ä½ä¿Šé›…æ½‡æ´’çš„ç›¸å…¬ã€‚\n");
     set("class", "xian");
     set("combat_exp", 120000);
     set("attitude", "peaceful");

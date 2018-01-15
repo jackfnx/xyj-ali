@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
@@ -6,13 +6,13 @@ inherit ROOM;
 int block_cmd(string);
 void create ()
 {
-  set ("short", "�ϳǿ�ջ");
+  set ("short", "南城客栈");
   set ("long", @LONG
 
-�ϳǿ�ջ�������������ģ���������ǳ���¡����֮��Ǯ����������
-��������ο���ŵ���ѡ��¶������߰������ӣ����̾����˵��ڴ�
-�������������ﲻ�����������õ�С�������ػ��д����ķ����͡���
-¥���������������ǿͷ���
+南城客栈紧靠长安城中心，所以生意非常兴隆。兼之价钱低廉，更是
+成了外地游客落脚的首选。露天摆了七八张桌子，三教九流人等在此
+进进出出，络绎不绝，几个跑堂的小二来来回回招待着四方来客。二
+楼上是雅厅，后面是客房。
 LONG);
 
   set("exits", ([ /* sizeof() == 4 */
@@ -55,9 +55,9 @@ int valid_leave(object me, string dir)
         object mbox;
 
         if ( !me->query_temp("rent_paid") && dir == "east" )
-        return notify_fail("��С��������Ц�ص�ס���㣺�Բ��𣬺����ǿ��˵��Է������Ǳ���Ŀ��ˣ�������š�\n");
+        return notify_fail("店小二满脸堆笑地挡住了你：对不起，后面是客人的卧房，不是本店的客人，不便打扰。\n");
         if( mbox = me->query_temp("mbox_ob") ) {
-                tell_object(me, "�㽫���佻�ظ��ʲ\n");
+                tell_object(me, "你将信箱交回给邮差。\n");
                 destruct(mbox);
         }
 

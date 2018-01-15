@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat jan 21 1998
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÇåÐÄ¹¬");
+  set ("short", "æ¸…å¿ƒå®«");
   set ("long", @LONG
 
-ÇåÐÄ¹¬Àï°Ú×Å¸÷ÖÖÆæ»¨Òì¹û£¬É¢·¢×ÅÃÔÈËµÄË®¹ûÇåÏã¡£µØÉÏÆÌ×ÅñÒºì
-É«µÄµØÌº¡£±±±ßÇ½ÉÏ¹Ò×ÅÐí¶àÐ¡Ã÷ÁÁµÄÍ­¾µ£¬Ç½µÄÕýÖÐÐ´×ÅÒ»¸ö½ðÉ«
-´ó×Ö¡°Çå¡±¡£
+æ¸…å¿ƒå®«é‡Œæ‘†ç€å„ç§å¥‡èŠ±å¼‚æžœï¼Œæ•£å‘ç€è¿·äººçš„æ°´æžœæ¸…é¦™ã€‚åœ°ä¸Šé“ºç€è¤šçº¢
+è‰²çš„åœ°æ¯¯ã€‚åŒ—è¾¹å¢™ä¸ŠæŒ‚ç€è®¸å¤šå°æ˜Žäº®çš„é“œé•œï¼Œå¢™çš„æ­£ä¸­å†™ç€ä¸€ä¸ªé‡‘è‰²
+å¤§å­—â€œæ¸…â€ã€‚
 
 LONG);
 
@@ -39,9 +39,9 @@ int do_qing ()
   if (i<15) i=15;
 
   if (who->is_busy())
-    return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜ¶¯¡£\n");
+    return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½åŠ¨ã€‚\n");
 
-  message_vision ("$N»º»ºµØµÀ³öÒ»¸ö¡°Çå¡±×Ö£¬¸©Ê×ÅÌÍÈ×øÏÂ¡£\n",who);
+  message_vision ("$Nç¼“ç¼“åœ°é“å‡ºä¸€ä¸ªâ€œæ¸…â€å­—ï¼Œä¿¯é¦–ç›˜è…¿åä¸‹ã€‚\n",who);
   who->start_busy (i,i);
 
   call_out ("finishing",i,who);
@@ -52,6 +52,6 @@ void finishing (object who)
 {
   who->interrupt_me();
   who->set_temp("kaifeng_qingxin",1);
-  message_vision ("$NÉîÉîµØÍÂ³öÒ»¿ÚÆø£¬ÐìÐìÕ¾ÁËÆðÀ´¡£\n",who);
+  message_vision ("$Næ·±æ·±åœ°åå‡ºä¸€å£æ°”ï¼Œå¾å¾ç«™äº†èµ·æ¥ã€‚\n",who);
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gao.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹úÍõ", ({"guo wang", "wang", "king"}));
-  set("long", "Í·´÷Ò»¶¥³åÌì¹Ú£¬ÑüÊøÒ»Ìõ±ÌÓñ´ø£¬Éí´©Ò»Áì·ÉÁúÎè·ïô÷»ÆÅÛ¡£\n");
-  set("title", "ÎÚ¼¦¹ú");
-  set("gender", "ÄĞĞÔ");
+  set_name("å›½ç‹", ({"guo wang", "wang", "king"}));
+  set("long", "å¤´æˆ´ä¸€é¡¶å†²å¤©å† ï¼Œè…°æŸä¸€æ¡ç¢§ç‰å¸¦ï¼Œèº«ç©¿ä¸€é¢†é£é¾™èˆå‡¤èµ­é»„è¢ã€‚\n");
+  set("title", "ä¹Œé¸¡å›½");
+  set("gender", "ç”·æ€§");
   set("age", 46);
   set("per", 30);
   set("attitude", "peaceful");
@@ -64,9 +64,9 @@ void autokill (object me)
   if (king2 == me)
     king2 = king1;
 
-  message_vision ("$N¶Ô$n´óºÈÒ»Éù£º¡°Ñı¹ÖÄ§Í·£¬¾¹¸ÒÆÛÊÀµÁÃû±ä×öëŞµÄÄ£Ñù£¡¡±\n",
+  message_vision ("$Nå¯¹$nå¤§å–ä¸€å£°ï¼šâ€œå¦–æ€ªé­”å¤´ï¼Œç«Ÿæ•¢æ¬ºä¸–ç›—åå˜åšæœ•çš„æ¨¡æ ·ï¼â€\n",
                   me,king2);
-  message_vision ("$NÓë$nÁ¢¿ÌËº´òÁËÆğÀ´£¡\n",me,king2);
+  message_vision ("$Nä¸$nç«‹åˆ»æ’•æ‰“äº†èµ·æ¥ï¼\n",me,king2);
   me->kill_ob(king2);
   king2->kill_ob(me);
 }
@@ -84,9 +84,9 @@ void die ()
   object king1 = present ("guo wang 1",where);
   object king2 = present ("guo wang 2",where);
 
-  message_vision ("$N·¢³öÒ»Éù³¤³¤µÄ°§Ãù£¬ÔÚ³¾ÍÁÀïÏÖÁËÇàÃ«Ê¨×ÓµÄÔ­Éí£¡\n",me);
-  message_vision ("\nÇàÃ«Ê¨×ÓµÉ×ÅÁğÁ§ÕµºìÑÛ£¬´­×Å´ÖÆø¡£\n",me);
-  me->set_name("ÇàÃ«Ê¨×Ó", ({"blue lion", "lion"}));
+  message_vision ("$Nå‘å‡ºä¸€å£°é•¿é•¿çš„å“€é¸£ï¼Œåœ¨å°˜åœŸé‡Œç°äº†é’æ¯›ç‹®å­çš„åŸèº«ï¼\n",me);
+  message_vision ("\né’æ¯›ç‹®å­çªç€ç‰ç’ƒç›çº¢çœ¼ï¼Œå–˜ç€ç²—æ°”ã€‚\n",me);
+  me->set_name("é’æ¯›ç‹®å­", ({"blue lion", "lion"}));
   me->delete("title");
   me->delete("long");
   if (longpao)
@@ -109,8 +109,8 @@ void die ()
 
 void destruct_me (object me)
 {
-  message_vision ("Ò»µÀ½ğ¹âÕÕ×¡$N£¬½«$Nà§µØÒ»ÉùÊÕÈ¥¡£\n",me);
-  message_vision ("ÌìÉÏÔ¶Ô¶´«À´ÎÄÊâÆĞÈøµÄĞ¦Éù¡£\n",me);
+  message_vision ("ä¸€é“é‡‘å…‰ç…§ä½$Nï¼Œå°†$Nå”°åœ°ä¸€å£°æ”¶å»ã€‚\n",me);
+  message_vision ("å¤©ä¸Šè¿œè¿œä¼ æ¥æ–‡æ®Šè©è¨çš„ç¬‘å£°ã€‚\n",me);
  
   destruct (me);   
 }

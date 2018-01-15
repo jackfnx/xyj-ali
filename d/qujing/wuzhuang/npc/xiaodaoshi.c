@@ -3,11 +3,11 @@
 inherit NPC;
 void create()
 {
-   set_name("Ğ¡µÀÊ¿", ({"xiao daoshi", "daoshi"}));
+   set_name("å°é“å£«", ({"xiao daoshi", "daoshi"}));
    //set("title", "");
-   set("gender", "ÄĞĞÔ" );
+   set("gender", "ç”·æ€§" );
    set("age", 16);
-   set("long", "Ò»¸ö²»´óµÄĞ¡µÀÊ¿¡£\n");
+   set("long", "ä¸€ä¸ªä¸å¤§çš„å°é“å£«ã€‚\n");
    set("class", "xian");
    set("combat_exp", 100);
    set("attitude", "peaceful");

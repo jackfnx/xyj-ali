@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 11/21/1997
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ïª±±");
+  set ("short", "æºªåŒ—");
   set ("long", @LONG
 
-Ê÷ÁÖÍâÒ»¹ÉÇåÏªÔÚ³¤ÆÂÏÂÐìÐìÁ÷×Å£¬ÏªÉÏÆ®×ÅÎÞÊýÇàÖ¦»¨°ê¡£
-°¶±ßÉÏÓÐÎÞÊýÁøÊ÷ÇáÊæ³¤Ö¦£¬Ëæ·ç¶øÎè¡£
+æ ‘æž—å¤–ä¸€è‚¡æ¸…æºªåœ¨é•¿å¡ä¸‹å¾å¾æµç€ï¼Œæºªä¸Šé£˜ç€æ— æ•°é’æžèŠ±ç“£ã€‚
+å²¸è¾¹ä¸Šæœ‰æ— æ•°æŸ³æ ‘è½»èˆ’é•¿æžï¼Œéšé£Žè€Œèˆžã€‚
 
 LONG);
 
@@ -26,6 +26,6 @@ LONG);
 int valid_leave (object who, string dir)
 {
   if (dir == "south")
-    message_vision ("$NÒ»½ÅÌ¤½øÏªÁ÷£¬ÂýÂý×ßÁË¹ýÈ¥¡£\n",who);
+    message_vision ("$Nä¸€è„šè¸è¿›æºªæµï¼Œæ…¢æ…¢èµ°äº†è¿‡åŽ»ã€‚\n",who);
   return 1;
 }

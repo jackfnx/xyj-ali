@@ -14,22 +14,22 @@ int main(object me, string arg)
 
     if (environment(me)->query("no_fight")
     ||  environment(me)->query("no_magic"))
-        return notify_fail("°²È«ÇøÄÚ½ûÖ¹Á·¹¦¡£\n");
+        return notify_fail("å®‰å…¨åŒºå†…ç¦æ­¢ç»ƒåŠŸã€‚\n");
     if (me->is_busy() || me->query_temp("pending/exercising"))
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜĞŞĞĞ¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ä¿®è¡Œã€‚\n");
     if (me->is_fighting())
-        return notify_fail("Õ½¶·Ò²ÊÇÒ»ÖÖĞŞĞĞ£¬µ«²»ÄÜºÍÕæÔªµÄ»ıÀÛÍ¬Ê±½øĞĞ¡£\n");
+        return notify_fail("æˆ˜æ–—ä¹Ÿæ˜¯ä¸€ç§ä¿®è¡Œï¼Œä½†ä¸èƒ½å’ŒçœŸå…ƒçš„ç§¯ç´¯åŒæ—¶è¿›è¡Œã€‚\n");
     if (!arg || !sscanf(arg, "%d", gin_cost))
-        return notify_fail("ÄãÒª×ª»¯¶àÉÙ¾«Ôª£¿\n");
-    if (gin_cost < 10) return notify_fail("Äã×îÉÙÒª»¨ 10 µã¡¸¾«¡¹²ÅÄÜÍÂÄÉ¡£\n");
+        return notify_fail("ä½ è¦è½¬åŒ–å¤šå°‘ç²¾å…ƒï¼Ÿ\n");
+    if (gin_cost < 10) return notify_fail("ä½ æœ€å°‘è¦èŠ± 10 ç‚¹ã€Œç²¾ã€æ‰èƒ½åçº³ã€‚\n");
     if ((int)me->query("gin") < gin_cost)
-        return notify_fail("ÄãµÄ¾«Ôª²»×ã£¬Èç¹ûÇ¿ĞĞ×ª»¯ÕæÔª£¬»áÒ»ÃüÎØºôµÄ£¡\n");
+        return notify_fail("ä½ çš„ç²¾å…ƒä¸è¶³ï¼Œå¦‚æœå¼ºè¡Œè½¬åŒ–çœŸå…ƒï¼Œä¼šä¸€å‘½å‘œå‘¼çš„ï¼\n");
     if ((int)me->query("kee") * 100 / (int)me->query("max_kee") < 70)
-        return notify_fail("ÄãÏÖÔÚÉíÌå×´¿öÌ«²îÁË£¬ÎŞ·¨¼¯ÖĞ¾«Éñ£¡\n");
+        return notify_fail("ä½ ç°åœ¨èº«ä½“çŠ¶å†µå¤ªå·®äº†ï¼Œæ— æ³•é›†ä¸­ç²¾ç¥ï¼\n");
     if ((int)me->query("sen") * 100 / (int)me->query("max_sen") < 70)
-        return notify_fail("ÄãÏÖÔÚ¾«Éñ×´¿öÌ«²îÁË£¬ÎŞ·¨¿ØÖÆ×Ô¼ºµÄĞÄÁé£¡\n");
+        return notify_fail("ä½ ç°åœ¨ç²¾ç¥çŠ¶å†µå¤ªå·®äº†ï¼Œæ— æ³•æ§åˆ¶è‡ªå·±çš„å¿ƒçµï¼\n");
 
-    write("Äã±ÕÉÏÑÛ¾¦£¬Æ½ĞÄ¾²Æø£¬ÊÔÍ¼½«ÌåÄÚµÄ¾«Ôª×ª»¯ÎªÕæÔª¡£\n");
+    write("ä½ é—­ä¸Šçœ¼ç›ï¼Œå¹³å¿ƒé™æ°”ï¼Œè¯•å›¾å°†ä½“å†…çš„ç²¾å…ƒè½¬åŒ–ä¸ºçœŸå…ƒã€‚\n");
     me->receive_damage("gin", gin_cost);
 
     busy_time = random(1 + gin_cost / 20) + 3;
@@ -49,19 +49,19 @@ int finish(object me, int gin_cost)
     atman_gain = atman_gain + random(atman_gain);
 
     if (atman_gain < 1) {
-        tell_object(me, "µ«ÊÇÄãÒ»²»Ğ¡ĞÄ¾¹È»Ë¯×ÅÁË¡£\n");
+        tell_object(me, "ä½†æ˜¯ä½ ä¸€ä¸å°å¿ƒç«Ÿç„¶ç¡ç€äº†ã€‚\n");
         me->start_busy(1);
         return 1;
     }
 
     me->add("atman", atman_gain);
-    tell_object(me, "ÄãÍÂÄÉÍê±Ï£¬Õö¿ªÑÛ£¬»º»ºÕ¾ÁËÆğÀ´¡£\n");
+    tell_object(me, "ä½ åçº³å®Œæ¯•ï¼Œçå¼€çœ¼ï¼Œç¼“ç¼“ç«™äº†èµ·æ¥ã€‚\n");
 
     if ((int)me->query("atman") > (int)me->query("max_atman") * 2) {
         if ((int)me->query("max_atman") >= (int)me->query_skill("magic") * 10) {
-            tell_object(me, "ÄãºöÈ»¾õµÃÒ»ÕóÆøÃÆ¶ñĞÄ£¬·Â·ğÒªÍÂ³öÀ´Ò»Ñù£¬ËÆºõÕæÔªµÄ»ıÀÛÒÑ¾­Óöµ½ÁËÆ¿¾±¡£\n");
+            tell_object(me, "ä½ å¿½ç„¶è§‰å¾—ä¸€é˜µæ°”é—·æ¶å¿ƒï¼Œä»¿ä½›è¦åå‡ºæ¥ä¸€æ ·ï¼Œä¼¼ä¹çœŸå…ƒçš„ç§¯ç´¯å·²ç»é‡åˆ°äº†ç“¶é¢ˆã€‚\n");
         } else {
-            tell_object(me, "ÄãµÄÕæÔªÌá¸ßÁË£¡\n");
+            tell_object(me, "ä½ çš„çœŸå…ƒæé«˜äº†ï¼\n");
             me->add("max_atman", 1);
         }
         me->set("atman", me->query("max_atman"));
@@ -74,12 +74,12 @@ int finish(object me, int gin_cost)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : respirate|tuna [<ºÄ·Ñ¡¸¾«¡¹µÄÁ¿£¬Ô¤ÉèÖµ 30>]
+æŒ‡ä»¤æ ¼å¼ : respirate|tuna [<è€—è´¹ã€Œç²¾ã€çš„é‡ï¼Œé¢„è®¾å€¼ 30>]
 
-ÍÂÄÉĞŞĞĞ£¬ÀûÓÃ¡¸Á¶¾«»¯Æø£¬Á¶Æø»¯Éñ£¬Á¶Éñ»¹Ğé¡¹µÄ·½·¨½«ÄãµÄ¾«Ôª
-×ª±ä³ÉÕæÔª¡£
+åçº³ä¿®è¡Œï¼Œåˆ©ç”¨ã€Œç‚¼ç²¾åŒ–æ°”ï¼Œç‚¼æ°”åŒ–ç¥ï¼Œç‚¼ç¥è¿˜è™šã€çš„æ–¹æ³•å°†ä½ çš„ç²¾å…ƒ
+è½¬å˜æˆçœŸå…ƒã€‚
 
-Çë²Î¿¼ help stats
+è¯·å‚è€ƒ help stats
 HELP
     );
     return 1;

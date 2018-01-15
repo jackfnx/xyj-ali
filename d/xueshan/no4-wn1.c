@@ -3,15 +3,15 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ñ©Áë");
+    set("short", "é›ªå²­");
     set("long", @LONG
 
-Ìì¿ÕÖĞÆ®ÎèµÄÑ©»¨ÕÚ×¡ÁËÄãµÄÊÓÏß£¬Ö»ÄÜÒşÒş¿´¼ûÇ°Ãæ¹Ò×ÅÒ»ÕÅ
-Ğ¡Ğ¡µÄÖ©ÖëÍø(net)¡£
+å¤©ç©ºä¸­é£˜èˆçš„é›ªèŠ±é®ä½äº†ä½ çš„è§†çº¿ï¼Œåªèƒ½éšéšçœ‹è§å‰é¢æŒ‚ç€ä¸€å¼ 
+å°å°çš„èœ˜è››ç½‘(net)ã€‚
 LONG);
 
     set("item_desc", ([
-        "net" : "Ò»ÕÅÖ©ÖëÍø¡£\n", 
+        "net" : "ä¸€å¼ èœ˜è››ç½‘ã€‚\n", 
     ]));
 
     set("exits", ([ //sizeof() == 2
@@ -49,8 +49,8 @@ void catch_hudie()
     object hudie;
 
     if (hudie = present("hu die", where)) {
-        message_vision("$N±»Ò»¹É¾Ş´óµÄÁ¦Á¿¾í½øÁËÖ©ÖëÍø¡£\n", hudie);
+        message_vision("$Nè¢«ä¸€è‚¡å·¨å¤§çš„åŠ›é‡å·è¿›äº†èœ˜è››ç½‘ã€‚\n", hudie);
         hudie->move(__DIR__"zhuwang");
-        message_vision("$N±»¾íÁË½øÀ´¡£\n", hudie);
+        message_vision("$Nè¢«å·äº†è¿›æ¥ã€‚\n", hudie);
     }
 }

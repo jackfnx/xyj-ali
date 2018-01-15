@@ -1,19 +1,19 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in Î÷Å£ºØÖÞ
+// Room: some place in è¥¿ç‰›è´ºæ´²
 // cave2.c
 
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "É½¶´");
+  set ("short", "å±±æ´ž");
   set ("long", @LONG
 
-ÈÌ×ÅÁìÈËÖÏÏ¢µÄÐÈÆø£¬Äã×ê½øÒ»¸ö¶´ÖÐ£®¶´¿ÚËä²»´ó£¬ÀïÃæ
-È´»¹¿í³¨£®µ«ÂúµØÀÇ¼®£¬µ½´¦ÊÇ¶¯Îï¹ÇÍ·£¬»¹ÓÐÒ»Ð©±»Ëº³É
-ËéÆ¬µÄÊ¬Ìå£®
+å¿ç€é¢†äººçª’æ¯çš„è…¥æ°”ï¼Œä½ é’»è¿›ä¸€ä¸ªæ´žä¸­ï¼Žæ´žå£è™½ä¸å¤§ï¼Œé‡Œé¢
+å´è¿˜å®½æ•žï¼Žä½†æ»¡åœ°ç‹¼ç±ï¼Œåˆ°å¤„æ˜¯åŠ¨ç‰©éª¨å¤´ï¼Œè¿˜æœ‰ä¸€äº›è¢«æ’•æˆ
+ç¢Žç‰‡çš„å°¸ä½“ï¼Ž
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

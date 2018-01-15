@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // cmd.c
@@ -38,7 +38,7 @@ int sort_user(object ob1, object ob2)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : cmd [threshold]
+指令格式 : cmd [threshold]
 
 List the average number of commands a player typed per second recently.
 If a "threshold" is given, only number>threshold will be shown.

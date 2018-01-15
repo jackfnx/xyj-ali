@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 14 1997
@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("°×ĞÛ×ğÕß", ({ "baixiong zunzhe", "baixiong", "zunzhe" }));
-  set("title", "ÁéÉ½");
-  set("gender", "ÄĞĞÔ");
+  set_name("ç™½é›„å°Šè€…", ({ "baixiong zunzhe", "baixiong", "zunzhe" }));
+  set("title", "çµå±±");
+  set("gender", "ç”·æ€§");
   set("age", 1000);
   set("attitude", "peaceful");
   set("str",40);

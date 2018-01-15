@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // user list
@@ -21,9 +21,9 @@ int main(string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : ulist
+æŒ‡ä»¤æ ¼å¼ : ulist
 
-½«ÏßÉÏËùÓĞÍæ¼ÒµÄ/obj/user number ÏÔÊ¾³öÀ´¡£
+å°†çº¿ä¸Šæ‰€æœ‰ç©å®¶çš„/obj/user number æ˜¾ç¤ºå‡ºæ¥ã€‚
 HELP
     );
     return 1;

@@ -1,7 +1,7 @@
 
 #include <ansi.h>
 
-#define NAME "ÂíÔªË§"
+#define NAME "é©¬å…ƒå¸…"
 #define ID "ma yuanshuai"
 
 inherit NPC;
@@ -9,9 +9,9 @@ inherit NPC;
 void create()
 {
     set_name(NAME, ({ ID }));
-    set("gender", "ÄÐÐÔ");
+    set("gender", "ç”·æ€§");
     set("age", 23);
-    set("long", "Ò»Ö»´óÂíºï¡£\n");
+    set("long", "ä¸€åªå¤§é©¬çŒ´ã€‚\n");
     set("combat_exp", 1000000);
 
     set_skill("dodge", 120);
@@ -34,14 +34,14 @@ void announce_success(object who)
     who->add("dntg/number",1);
     who->set("dntg/huaguo", "done");
     who->add("combat_exp", dx);
-    command("chat "+who->query("name")+"Õ¶ÁË°ÔÕ¼ÎÒÃÇË®Á±¶´µÄÄ§Í·£¬Ë³Àû´³¹ý´óÄÖÌì¹¬µÚÒ»¹Ø£¡");
-    command("chat ´Ó´ËÆßÊ®¶þ¶´¾«Áé½ÔÓ¦×ð"+who->query("name")+"ÎªÍõ£¬ËæÊ±Ìýºòµ÷Ç²£¡");
-    tell_object(who, "ÄãÓ®µÃÁË"+ COMBAT_D->chinese_daoxing(dx) +"µÄµÀÐÐ£¡\n");
+    command("chat "+who->query("name")+"æ–©äº†éœ¸å æˆ‘ä»¬æ°´å¸˜æ´žçš„é­”å¤´ï¼Œé¡ºåˆ©é—¯è¿‡å¤§é—¹å¤©å®«ç¬¬ä¸€å…³ï¼");
+    command("chat ä»Žæ­¤ä¸ƒåäºŒæ´žç²¾çµçš†åº”å°Š"+who->query("name")+"ä¸ºçŽ‹ï¼Œéšæ—¶å¬å€™è°ƒé£ï¼");
+    tell_object(who, "ä½ èµ¢å¾—äº†"+ COMBAT_D->chinese_daoxing(dx) +"çš„é“è¡Œï¼\n");
 
     panzi = new(__DIR__"shipan");
     panzi->move(who);
-    message_vision(HIY NAME+"µãÍ·¹þÑüµÄ¶Ô$NËµµ½£ºÕâÊÇÎÒÃÇÖÚÐÖµÜµÄÒ»µã¶ùÐ¡ÒâË¼£¬²»³É¾´Òâ¡£\n" NOR,who);
-    tell_object(who, "ÂíÔªË§¸øÄãÒ»¸öÊ¯Í·ÅÌ×Ó¡£\n");
+    message_vision(HIY NAME+"ç‚¹å¤´å“ˆè…°çš„å¯¹$Nè¯´åˆ°ï¼šè¿™æ˜¯æˆ‘ä»¬ä¼—å…„å¼Ÿçš„ä¸€ç‚¹å„¿å°æ„æ€ï¼Œä¸æˆæ•¬æ„ã€‚\n" NOR,who);
+    tell_object(who, "é©¬å…ƒå¸…ç»™ä½ ä¸€ä¸ªçŸ³å¤´ç›˜å­ã€‚\n");
     who->save();
     if (hb) hb->report_progress(10);
 }

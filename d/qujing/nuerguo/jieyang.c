@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat.c 4/4/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����ɽ");
+  set ("short", "解阳山");
   set ("long", @LONG
 
-����ɽ��ʵֻ��һ��С���𡣲��������Ļ��ڽ���Ұ��������
-����ȷ�ǲ�����ɽ����һ���ۣ���Ϊ�������֡���ɽ������
-��һ��С·��
+解阳山其实只是一座小土丘。不过这里幽花摆锦，野草铺蓝，
+景致确是不错。山上有一道观，称为“聚仙庵”。山的西面
+有一条小路。
 
 LONG);
 

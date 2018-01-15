@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
@@ -10,25 +10,25 @@
 inherit STICK;
 
 string *names = ({
-  "ºÉ»¨µÆ",
-  "Á«»¨µÆ",
-  "Ñ©»¨µÆ",
-  "½Û»¨µÆ",
-  "Ã·»¨µÆ",
-  "ÇàÁúµÆ",
-  "½ğ·ïµÆ",
-  "÷è÷ëµÆ",
-  "ôä´äµÆ",
-  "ÓñÍÃµÆ",
-  "À¼»¨µÆ",
-  "³¯ÑôµÆ",
-  "×ßÂíµÆ",
-  "ĞåÆÁµÆ",
-  "»­ÆÁµÆ",
-  "ÃÎ»ÃµÆ",
-  "ÔÆÎíµÆ",
-  "½ğÓãµÆ",
-  "ÏÉº×µÆ",
+  "è·èŠ±ç¯",
+  "è²èŠ±ç¯",
+  "é›ªèŠ±ç¯",
+  "æ¡”èŠ±ç¯",
+  "æ¢…èŠ±ç¯",
+  "é’é¾™ç¯",
+  "é‡‘å‡¤ç¯",
+  "éº’éºŸç¯",
+  "ç¿¡ç¿ ç¯",
+  "ç‰å…”ç¯",
+  "å…°èŠ±ç¯",
+  "æœé˜³ç¯",
+  "èµ°é©¬ç¯",
+  "ç»£å±ç¯",
+  "ç”»å±ç¯",
+  "æ¢¦å¹»ç¯",
+  "äº‘é›¾ç¯",
+  "é‡‘é±¼ç¯",
+  "ä»™é¹¤ç¯",
 });
 
 void create()
@@ -37,15 +37,15 @@ void create()
 
   set_name(names[random(sizeof(names))], ({ "deng long", "deng", "long"})); 
   set_weight(900);
-  set("long","Ò»¸Ë×ÏÖñ°Ñ¶ùµÄ"+query("name")+"¡£\n");
-  set("unit", "¸ö");
+  set("long","ä¸€æ†ç´«ç«¹æŠŠå„¿çš„"+query("name")+"ã€‚\n");
+  set("unit", "ä¸ª");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 1);
   set("armor_type", "lamp");
-  set("wear_msg", "\n$N½«µÆÁıÌô¹ıÍ·¶¥¡£\n");
-  set("wield_msg", "\n$N½«µÆÁıÌô¹ıÍ·¶¥¡£\n");
-  set("unequip_msg", "$N½«µÆÁı·ÅÏÂÀ´¡£\n");
-  set("unwield_msg", "$N½«µÆÁı·ÅÏÂÀ´¡£\n");
+  set("wear_msg", "\n$Nå°†ç¯ç¬¼æŒ‘è¿‡å¤´é¡¶ã€‚\n");
+  set("wield_msg", "\n$Nå°†ç¯ç¬¼æŒ‘è¿‡å¤´é¡¶ã€‚\n");
+  set("unequip_msg", "$Nå°†ç¯ç¬¼æ”¾ä¸‹æ¥ã€‚\n");
+  set("unwield_msg", "$Nå°†ç¯ç¬¼æ”¾ä¸‹æ¥ã€‚\n");
   set("value",100);
   setup();
   init_stick(1);
@@ -84,7 +84,7 @@ int do_wear (string arg)
       people = people + obs[i]->name();
     }
   }
-  message_vision ("$NÊÖÒ»Ñï£¬ÓÆÆğÒ»¸Ë$n£¬ÓÃ»ğµãÁÁ¡£\n",me,denglong);
+  message_vision ("$Næ‰‹ä¸€æ‰¬ï¼Œæ‚ èµ·ä¸€æ†$nï¼Œç”¨ç«ç‚¹äº®ã€‚\n",me,denglong);
   remove_call_out ("reacting");
   call_out ("reacting",1+random(3),me,people,j);
   return 0;
@@ -96,9 +96,9 @@ void reacting (object me, string people, int j)
     return;
 
   if (j == 1)
-    message_vision ("ÄãÈÌ²»×¡½ĞµÀ£ººÃµÆ£¡ºÃµÆ£¡\n",me);
+    message_vision ("ä½ å¿ä¸ä½å«é“ï¼šå¥½ç¯ï¼å¥½ç¯ï¼\n",me);
   else
-    message_vision (people+"µÈÈËÈÌ²»×¡ÆëÉù½ĞµÀ£ººÃµÆ£¡ºÃµÆ£¡\n",me);
+    message_vision (people+"ç­‰äººå¿ä¸ä½é½å£°å«é“ï¼šå¥½ç¯ï¼å¥½ç¯ï¼\n",me);
 }
 
 int do_remove (string arg)
@@ -111,7 +111,7 @@ int do_remove (string arg)
   if (present (arg,me) != denglong)
     return 0;
 
-  message_vision ("$N×ì°Í´Õ½ü$n£¬àÛµØÇáÇáÒ»´µ¡£\n",me,denglong);
+  message_vision ("$Nå˜´å·´å‡‘è¿‘$nï¼Œå™—åœ°è½»è½»ä¸€å¹ã€‚\n",me,denglong);
   return 0;
 }
 

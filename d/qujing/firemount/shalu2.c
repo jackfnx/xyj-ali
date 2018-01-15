@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɰ����");
+  set ("short", "砂砾径");
   set ("long", @LONG
 
-С��������һƬ���ޣ�����ͨ��ɽ�վ��С�����ϣ��Ѿ����Ը�
-����ɽ�ϵ�����һ�����ӿ����
+小径往东是一片绿洲，往西通向山里，站在小径边上，已经可以感
+觉到山上的热浪一阵阵地涌来。
 
 LONG);
 

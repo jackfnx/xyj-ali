@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -8,17 +8,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÆĞÌáÕÈ", ({"puti zhang", "zhang"}));
+        set_name("è©ææ–", ({"puti zhang", "zhang"}));
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
      set("no_sell", 1);
-     set("long", "Ò»°Ñµ­ÂÌÉ«µÄÓñ°ô£¬ÈëÊÖ»¬Äå£¬ÆÄÓĞĞ©·İÁ¿¡£\n");
+     set("long", "ä¸€æŠŠæ·¡ç»¿è‰²çš„ç‰æ£’ï¼Œå…¥æ‰‹æ»‘è…»ï¼Œé¢‡æœ‰äº›ä»½é‡ã€‚\n");
                 set("value", 20000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸ºô¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå‘¼ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
      set("replace_file", "/d/obj/weapon/stick/qimeigun");
         }
         init_stick(80);

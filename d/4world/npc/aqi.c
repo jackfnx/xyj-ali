@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-       set_name("°¢ÆßÆÅ", ({"aqi po", "po"}));
-       set("long", "Ò»¸ö¿´ÆğÀ´ÁùÆßÊ®Ëê£¬ÂúÁ³ÉñÉñÃØÃØµÄÀÏÌ«ÆÅ¡£\n");
-       set("gender", "Å®ĞÔ");
+       set_name("é˜¿ä¸ƒå©†", ({"aqi po", "po"}));
+       set("long", "ä¸€ä¸ªçœ‹èµ·æ¥å…­ä¸ƒåå²ï¼Œæ»¡è„¸ç¥ç¥ç§˜ç§˜çš„è€å¤ªå©†ã€‚\n");
+       set("gender", "å¥³æ€§");
         set("combat_exp", 5000);
    set("per", 18);
        set("age", 66);
@@ -37,21 +37,21 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "°¢ÆßÆÅÉñÃØµØËµµÀ£ºÕâÎ»" +
+                        say( "é˜¿ä¸ƒå©†ç¥ç§˜åœ°è¯´é“ï¼šè¿™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬×Ï¶·Ò¡¹â£¬²»ÏéÖ®Õ×ÄÅ£¡\n");
+                                + "ï¼Œç´«æ–—æ‘‡å…‰ï¼Œä¸ç¥¥ä¹‹å…†å‘ï¼\n");
                         break;
      case 1:
-                        say( "°¢ÆßÆÅ×ìÀïà½à½àìàì²»ÖªËµÁËĞ©Ê²Ã´£¡\n");
+                        say( "é˜¿ä¸ƒå©†å˜´é‡Œå˜Ÿå˜Ÿå›”å›”ä¸çŸ¥è¯´äº†äº›ä»€ä¹ˆï¼\n");
                         break;
      case 2:
-                        say( "°¢ÆßÆÅÌ§Í·¿´ÁË¿´Äã¡£\n");
+                        say( "é˜¿ä¸ƒå©†æŠ¬å¤´çœ‹äº†çœ‹ä½ ã€‚\n");
                         break;
      case 3:
-                        say( "°¢ÆßÆÅÒõĞ¦ÁË¼¸Éù¡£\n");
+                        say( "é˜¿ä¸ƒå©†é˜´ç¬‘äº†å‡ å£°ã€‚\n");
                         break;
                 case 4:
-                        say( "°¢ÆßÆÅ×ÔÑÔ×ÔÓïµÀ£ºÌìÒõ£¬Òª¶àºÈ¼¦ÌÀ¡£\n");
+                        say( "é˜¿ä¸ƒå©†è‡ªè¨€è‡ªè¯­é“ï¼šå¤©é˜´ï¼Œè¦å¤šå–é¸¡æ±¤ã€‚\n");
                         break;
 
 
@@ -65,7 +65,7 @@ int accept_object(object me,object ob)
                 command("hehe " + this_player()->query("id") );
                 m=new("/d/obj/book/windwater");
                 m->move(this_player());
-                message_vision("°¢ÆßÆÅÍµÍµÈû¸ø$NÒ»±¾Êé¡£\n", this_player());
+                message_vision("é˜¿ä¸ƒå©†å·å·å¡ç»™$Nä¸€æœ¬ä¹¦ã€‚\n", this_player());
                 call_out("destroy", 1, ob);
         return 1;
         }

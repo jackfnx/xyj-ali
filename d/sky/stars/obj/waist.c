@@ -5,12 +5,12 @@ inherit WAIST;
 
 void create()
 {
-  set_name("»¤Ñü", ({"waist"}));
+  set_name("æŠ¤è…°", ({"waist"}));
   set_weight(5000);
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼þ");
+   set("unit", "ä»¶");
    set("value", 200);
    set("material", "metal");
    set("armor_prop/armor", 14);

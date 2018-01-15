@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // mind_bug.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("¹ÛÏë¡õ", ({ "mind bug", "bug" }) );
-   set("race", "Ò°ÊÞ");
+   set_name("è§‚æƒ³â–¡", ({ "mind bug", "bug" }) );
+   set("race", "é‡Žå…½");
    set("age", 3);
-   set("long", "ÕâÊÇÒ»Ö»ÓÉÐÞµÀÈËµÄÔÓÄîç²Ë¼Ëù»¯µÄ¹ÛÏë¡õ£¬»á²ø×¡ÈËµÄ»êÆÇ¡£\n");
+   set("long", "è¿™æ˜¯ä¸€åªç”±ä¿®é“äººçš„æ‚å¿µç»®æ€æ‰€åŒ–çš„è§‚æƒ³â–¡ï¼Œä¼šç¼ ä½äººçš„é­‚é­„ã€‚\n");
    
    set("str", 24);
    set("cor", 26);
@@ -19,7 +19,7 @@ void create()
    set("max_gin", 250);
    set("max_sen", 600);
 
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åŽè„š", "å°¾å·´" }) );
    set("verbs", ({ "bite", "claw" }) );
    
    if( this_player() ) {
@@ -42,10 +42,10 @@ void die()
 
    if( objectp(owner_ob = find_player(owner)) ) {
      if( (object)query_temp("last_damage_from") != owner_ob ) {
-        tell_object(owner_ob, "ÄãµÄ¹ÛÏë¡õ±»ÈËÉ±ËÀÁË£¡\nÄã¾õµÃÒ»ÕóÌìÐýµØ×ª....\n");
+        tell_object(owner_ob, "ä½ çš„è§‚æƒ³â–¡è¢«äººæ€æ­»äº†ï¼\nä½ è§‰å¾—ä¸€é˜µå¤©æ—‹åœ°è½¬....\n");
         owner_ob->unconcious();
      } else {
-        tell_object(owner_ob, "ÄãÉ±ËÀÁËÄãµÄ¹ÛÏë¡õ£¬²¢ÇÒ´ÓÖÐÎòµ½ÁËÒ»Ð©ÖäÊõµÄµÀÀí¡£\n");
+        tell_object(owner_ob, "ä½ æ€æ­»äº†ä½ çš„è§‚æƒ³â–¡ï¼Œå¹¶ä¸”ä»Žä¸­æ‚Ÿåˆ°äº†ä¸€äº›å’’æœ¯çš„é“ç†ã€‚\n");
         owner_ob->improve_skill("spells", random((int)owner_ob->query("spi")/2)+1);
      }
    }

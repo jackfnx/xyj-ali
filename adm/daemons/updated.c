@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // updated.c
@@ -78,7 +78,7 @@ void check_user(object ob)
          {
            if (ob->query("family/family_name"))
              ob->set("title",
-                       sprintf("%sµÚ%s´ú%s",
+                       sprintf("%sç¬¬%sä»£%s",
                                ob->query("family/family_name"),
                                chinese_number(ob->query("family/generation")),
                                ob->query("family/title")));
@@ -98,7 +98,7 @@ void check_user(object ob)
        {
          /*
          ob->set("title",
-                   sprintf("%sµÚ%s´ú%s",
+                   sprintf("%sç¬¬%sä»£%s",
                            ob->query("family/family_name"),
                            chinese_number(ob->query("family/generation")),
                            ob->query("family/title")));
@@ -169,19 +169,19 @@ void check_user(object ob)
          ob->set("obstacle/wuzhuang","done");
 
    // by snowcat
-   // the following is a filter for ¶«º£Áú¹¬
+   // the following is a filter for ä¸œæµ·é¾™å®«
    {
           string tmpstr;
 
           tmpstr = ob->query("family/family_name");
-     if (tmpstr == "Áú¹¬")
-       ob->set("family/family_name","¶«º£Áú¹¬");
+     if (tmpstr == "é¾™å®«")
+       ob->set("family/family_name","ä¸œæµ·é¾™å®«");
 
           tmpstr = ob->query("title");
-     if (tmpstr == "Áú¹¬µÚ¶þ´úµÜ×Ó")
-       ob->set("title","¶«º£Áú¹¬µÚ¶þ´úµÜ×Ó");
-     if (tmpstr == "Áú¹¬µÚÈý´úµÜ×Ó")
-       ob->set("title","¶«º£Áú¹¬µÚÈý´úµÜ×Ó");
+     if (tmpstr == "é¾™å®«ç¬¬äºŒä»£å¼Ÿå­")
+       ob->set("title","ä¸œæµ·é¾™å®«ç¬¬äºŒä»£å¼Ÿå­");
+     if (tmpstr == "é¾™å®«ç¬¬ä¸‰ä»£å¼Ÿå­")
+       ob->set("title","ä¸œæµ·é¾™å®«ç¬¬ä¸‰ä»£å¼Ÿå­");
    }
 
    // by snowcat

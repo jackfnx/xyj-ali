@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-       set_name("öıÌá¶½", ({"bian tidu", "bian", "tidu"}));
-   set("long","¶«º£Áú¹¬öıÌá¶½¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("é³Šæç£", ({"bian tidu", "bian", "tidu"}));
+   set("long","ä¸œæµ·é¾™å®«é³Šæç£ã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 40);
    set("per", 15);
    set("str", 25);

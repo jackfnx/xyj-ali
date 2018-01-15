@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 4/4/1997
@@ -10,11 +10,11 @@ void leave_here(object me);
 
 void create ()
 {
-  set ("short", "���Թ�");
+  set ("short", "绿迷宫");
   set ("long", @LONG
 
-һ���������������޼��ɵĴ��Թ���ǰ�����Ҷ���һƬ��ɫ
-�������ԣ����ѱ����Ҳ�������κγ��ڡ�
+一座用无数棵绿树修剪成的大迷宫，前后左右都是一片绿色
+的密树丛，很难辨别方向，也看不到任何出口。
 
 LONG);
 
@@ -42,7 +42,7 @@ int do_quit ()
   me = this_player();
 
   me->set("startroom",base_name(environment(me)));
-  tell_object(me,"��ʱ�뿪�Թ�����\n");
+  tell_object(me,"暂时离开迷宫……\n");
   return 0; // return 0 to invoke normal quit
 }
 
@@ -51,8 +51,8 @@ int do_fly (string arg)
   object me;
   me = this_player();
 
-  message_vision("ֻ��$N����һ�ɣ����ص�ˤ��������ͷ��ճ�ż�Ƭ����Ҷ��\n", me);
-  tell_object(me,"���������Թ������ǲ���ѷɡ���\n");
+  message_vision("只见$N向上一飞，重重地摔了下来，头上粘着几片枯树叶。\n", me);
+  tell_object(me,"看样子在迷宫里真是插翅难飞……\n");
   return 1;
 }
 
@@ -97,7 +97,7 @@ void leave_here(object me)
         icedew = new(__DIR__"obj/icedew");
         icedew->move(environment(me));
       }
-      tell_object(me,"�̲ݵ�����һ���������Ķ�����\n");
+      tell_object(me,"绿草地上有一个亮闪闪的东西！\n");
 }
 
 void found_outlet(object me)

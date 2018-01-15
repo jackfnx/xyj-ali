@@ -14,26 +14,26 @@ int perform(object me, object target)
     ||  !target->is_character()
     ||  target->is_corpse()
     ||  target==me)
-        return notify_fail("��Ҫ��˭ʩչ��һ�С����ˡ�������\n");
+        return notify_fail("你要对谁施展这一招「神·人·鬼」？\n");
     if (!me->is_fighting())
-        return notify_fail("�����ˡ�����ֻ����ս����ʹ�ã�\n");
+        return notify_fail("「神·人·鬼」只能在战斗中使用！\n");
     if ((int)me->query("force") < 1000)
-        return notify_fail("�������������\n");
+        return notify_fail("你的内力不够！\n");
     if ((int)me->query("kee") < 300)
-        return notify_fail("�����Ѫ���㣬û����ʩ���⹦��\n");
+        return notify_fail("你的气血不足，没法子施用外功！\n");
     if ((int)me->query_skill("killer-sword", 1) < 50)
-        return notify_fail("���׷�꽣���𻹲�����ʹ����һ�л������ѣ�\n");
+        return notify_fail("你的追魂剑级别还不够，使用这一招会有困难！\n");
     if ((int)me->query_skill("keening-stick", 1) < 50)
-        return notify_fail("��Ŀ�ɥ�����𻹲�����ʹ����һ�л������ѣ�\n");
+        return notify_fail("你的苦丧棒级别还不够，使用这一招会有困难！\n");
     if ((int)me->query_skill("hellfire-whip", 1) < 50)
-        return notify_fail("����һ�޼��𻹲�����ʹ����һ�л������ѣ�\n");
+        return notify_fail("你的烈火鞭级别还不够，使用这一招会有困难！\n");
 
     i = me->query("env/brief_message");
     j = target->query("env/brief_message");
     me->delete("env/brief_message");
     target->delete("env/brief_message");
 
-    message_vision("\n$N˫�ֻ�һ��Բ����Ȼ������٣������������������������ˡ����ˡ��������С�\n", me);
+    message_vision("\n$N双手划一大圆，猛然托天而举，伴着天上雷鸣电闪，祭出了「神·人·鬼」三招。\n", me);
 
     if (!present(target, environment(me))) return restore_env(me, target, i, j);
     me->set("HellZhen", 7);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // find.c
@@ -45,19 +45,19 @@ int main(object me, string target)
         int mana_cost;
 
 //        if (me->is_busy() || me->is_fighting() )
-//     return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+//     return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if(env->query("no_fight") || env->query("no_magic") )
-     return notify_fail("°²È«ÇøÄÚ²»ÄÜÓÃÌìÑÛÍ¨¡£\n");
+     return notify_fail("å®‰å…¨åŒºå†…ä¸èƒ½ç”¨å¤©çœ¼é€šã€‚\n");
 
-        if( !target) return notify_fail("ÄãÏëÓÃÌìÑÛÍ¨²éË­£¿\n");
+        if( !target) return notify_fail("ä½ æƒ³ç”¨å¤©çœ¼é€šæŸ¥è°ï¼Ÿ\n");
    
    if((int)me->query("combat_exp")<5000)
-            return notify_fail("ÄãµÄµÀĞĞ²»¹»£¬ÓÃ²»ÁËÌìÑÛÍ¨¡£\n");
+            return notify_fail("ä½ çš„é“è¡Œä¸å¤Ÿï¼Œç”¨ä¸äº†å¤©çœ¼é€šã€‚\n");
 
         if((int)me->query("sen") < 100||
      (int)me->query("sen")*100/(int)me->query("max_sen")<50 )
-     return notify_fail("ÄãÏÖÔÚÍ·ÔÎÄÔÕÍ£¬¿ÖÅÂÁ¬×Ô¼ºÔÚÄÄÀï¶¼²»Çå³ş£¡\n");
+     return notify_fail("ä½ ç°åœ¨å¤´æ™•è„‘èƒ€ï¼Œææ€•è¿è‡ªå·±åœ¨å“ªé‡Œéƒ½ä¸æ¸…æ¥šï¼\n");
 
 //   mana_cost=-(100-(int)me->query_skill("spells"))/4-40;
 //   mana_cost=-100+(int)me->query_skill("spells")/10;
@@ -66,12 +66,12 @@ int main(object me, string target)
         mana_cost=-60;
 
         if((int)me->query("mana")+mana_cost <= 30 )  
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬ÓÃ²»ÁËÌìÑÛÍ¨¡£\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œç”¨ä¸äº†å¤©çœ¼é€šã€‚\n");
 
         me->add("mana", mana_cost);
    
    message_vision(HIY
-   "$N¿ÚÖĞÄîÁË¼¸¾äÖäÎÄ£¬ÑÛÖĞÍ»È»¾«¹âÒ»ÉÁ£¬´óºÈÒ»Éù¡°Ç§ÀïÑÛºÎÔÚ£¡¡±\n"
+   "$Nå£ä¸­å¿µäº†å‡ å¥å’’æ–‡ï¼Œçœ¼ä¸­çªç„¶ç²¾å…‰ä¸€é—ªï¼Œå¤§å–ä¸€å£°â€œåƒé‡Œçœ¼ä½•åœ¨ï¼â€\n"
    NOR,me);
 
    call_out("find_result",2+random(3),me,env,target);
@@ -81,7 +81,7 @@ int main(object me, string target)
 
 void fail(object me)
 {
-   tell_object(me,"Ç§ÀïÑÛ¸æËßÄã£ºÆæ¹Ö£¬ÕÒ²»µ½Õâ¸öÈË£®£®£®\n");
+   tell_object(me,"åƒé‡Œçœ¼å‘Šè¯‰ä½ ï¼šå¥‡æ€ªï¼Œæ‰¾ä¸åˆ°è¿™ä¸ªäººï¼ï¼ï¼\n");
    return;
 }
 
@@ -95,7 +95,7 @@ void find_result(object me, object env, string target)
    if(environment(me)!=env) return;
 
    message_vision(HIY
-   "Ö»ÌıºÙºÙ¼¸Éù¼éĞ¦£¬²»Öª´ÓÄÄÀï×ê³öÀ´Ò»¸ö¼â×ìºïÈùµÄ¼Ò»ï£¬ÔÚ$N¶ú±ßµÍÉùËµÁË¼¸¾ä»°¡£\n" NOR, me);
+   "åªå¬å˜¿å˜¿å‡ å£°å¥¸ç¬‘ï¼Œä¸çŸ¥ä»å“ªé‡Œé’»å‡ºæ¥ä¸€ä¸ªå°–å˜´çŒ´è…®çš„å®¶ä¼™ï¼Œåœ¨$Nè€³è¾¹ä½å£°è¯´äº†å‡ å¥è¯ã€‚\n" NOR, me);
         
    ob = find_player(target);
    if( !ob ) ob = find_living(target);
@@ -107,8 +107,8 @@ void find_result(object me, object env, string target)
 
    if(present("jingu bang", ob) ){
      tell_object(me,
-       "Ç§ÀïÑÛ¸æËßÄã£ºÈËÊÇÕÒµ½ÁË£¬µ«ÊÇËµ²»µÃ£¬²»ÄÜËµ£®£®£®\n"+
-       "ÄÇ¼Ò»ï´ø×Åºï×Ó¸øËûµÄ½ğ¹¿°ô¡£\n");
+       "åƒé‡Œçœ¼å‘Šè¯‰ä½ ï¼šäººæ˜¯æ‰¾åˆ°äº†ï¼Œä½†æ˜¯è¯´ä¸å¾—ï¼Œä¸èƒ½è¯´ï¼ï¼ï¼\n"+
+       "é‚£å®¶ä¼™å¸¦ç€çŒ´å­ç»™ä»–çš„é‡‘ç®æ£’ã€‚\n");
           return;
         }
    //added by weiqi, need better solution later...
@@ -127,31 +127,31 @@ void find_result(object me, object env, string target)
 
         if(sscanf(filename,"/d/changan/bed#%*s")==1) {
    //this need check first.
-     answer="´²ÉÏ";
+     answer="åºŠä¸Š";
         } else if(!undefinedp(maps[filename1])) {
      answer=maps[filename1];
    } else if(where->is_character()) {
-     answer=where->query("name")+"ÉíÉÏ";
+     answer=where->query("name")+"èº«ä¸Š";
         } else if(sscanf(filename,"/obj/home#%*s")==1) {
-          answer="×¡¼ÒÀï";
+          answer="ä½å®¶é‡Œ";
         } else { 
           answer=undefinedp(where->query("short"))?
        where->short():
        where->query("short");
         }
 
-   tell_object(me,"Ç§ÀïÑÛ¸æËßÄã£º"+(string)ob->name()+
+   tell_object(me,"åƒé‡Œçœ¼å‘Šè¯‰ä½ ï¼š"+(string)ob->name()+
      "("+(string)ob->query("id")+")"+
-     "ÔÚ"+answer+"¡£\n");
+     "åœ¨"+answer+"ã€‚\n");
 
-        message_vision("$N¡°°¡¡«¡«Çï¡«¡«¡±Ò»Éù´òÁË¸öÅçÌç£¬²»ÓÉÖåÁËÖåÃ¼¡£\n",
+        message_vision("$Nâ€œå•Šï½ï½ç§‹ï½ï½â€ä¸€å£°æ‰“äº†ä¸ªå–·åšï¼Œä¸ç”±çš±äº†çš±çœ‰ã€‚\n",
      ob);
-        msg="Äã¼±Ã¦ÆşÖ¸ËãÈ¥£¬";
+        msg="ä½ æ€¥å¿™ææŒ‡ç®—å»ï¼Œ";
         if(ob->query("combat_exp")>me->query("combat_exp")/3)
-     msg+="ËÆºõ"+me->name()+"("+me->query("id")+")"+
-          "ÕıÔÚÌ½ÌıÄãµÄĞĞ×Ù¡£\n";
+     msg+="ä¼¼ä¹"+me->name()+"("+me->query("id")+")"+
+          "æ­£åœ¨æ¢å¬ä½ çš„è¡Œè¸ªã€‚\n";
         else
-     msg+="ĞÄÖĞÈ´Ö»ÊÇÒ»Æ¬Ã£È»¡£\n";
+     msg+="å¿ƒä¸­å´åªæ˜¯ä¸€ç‰‡èŒ«ç„¶ã€‚\n";
         tell_object(ob, msg);
 
    return;
@@ -160,9 +160,9 @@ void find_result(object me, object env, string target)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : find <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : find <æŸäºº>
 
-ÌìÑÛÍ¨£ºÓÃÀ´·¢ÏÖ±ğÈËËùÔÚµØ¡£
+å¤©çœ¼é€šï¼šç”¨æ¥å‘ç°åˆ«äººæ‰€åœ¨åœ°ã€‚
 HELP
         );
         return 1;

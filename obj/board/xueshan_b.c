@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xueshan_b.c
@@ -7,10 +7,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("     Ñ©É½ÁôÑÔ°å", ({ "wall" }) );
+        set_name("     é›ªå±±ç•™è¨€æ¿", ({ "wall" }) );
         set("location", "/d/xueshan/restroom.c");
         set("board_id", "xueshan_b");
-        set("long",     "Ñ©É½ÁôÑÔ°å¡£\n" );
+        set("long",     "é›ªå±±ç•™è¨€æ¿ã€‚\n" );
         setup();
         set("capacity", 80);
         replace_program(BULLETIN_BOARD);

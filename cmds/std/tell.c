@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tell.c
@@ -21,23 +21,23 @@ int main(object me, string arg)
 
    if( sscanf(target, "%s@%s", target, mud)==2 ) {
      GTELL->send_gtell(mud, target, me, msg);
-     write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n");
+     write("ç½‘è·¯è®¯æ¯å·²é€å‡ºï¼Œå¯èƒ½è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›åº”ã€‚\n");
      return 1;
    }
 
         if(!"/adm/daemons/tempd"->block_tell(me)) return 1;
 
    obj = find_player(target);
-   if(!obj || !me->visible(obj)) return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+   if(!obj || !me->visible(obj)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
    if( !wizardp(me) && obj->query("env/block_tell") )
-      return notify_fail(obj->name(1) + "ÑÛÏÂ²»Ïë¸úÈÎºÎÈËËµ»°¡£\n");
+      return notify_fail(obj->name(1) + "çœ¼ä¸‹ä¸æƒ³è·Ÿä»»ä½•äººè¯´è¯ã€‚\n");
 
         if(!living(obj) || obj->query_temp("netdead")) 
-     return notify_fail(obj->name(1)+"ÏÖÔÚÌı²»¼ûÄãËµµÄ»°¡£\n");
+     return notify_fail(obj->name(1)+"ç°åœ¨å¬ä¸è§ä½ è¯´çš„è¯ã€‚\n");
      
-   write(GRN "Äã¸æËß" + obj->name(1) + "£º" + msg + "\n" NOR);
-   tell_object(obj, sprintf( GRN "%s¸æËßÄã£º%s\n" NOR,
+   write(GRN "ä½ å‘Šè¯‰" + obj->name(1) + "ï¼š" + msg + "\n" NOR);
+   tell_object(obj, sprintf( GRN "%så‘Šè¯‰ä½ ï¼š%s\n" NOR,
      me->name(1)+"("+me->query("id")+")", msg));
 
    obj->set_temp("reply", me->query("id"));
@@ -50,35 +50,35 @@ string remote_tell(string cname, string from, string mud, string to, string msg)
 
    if( ob = find_player(to) ) {
            if(wizardp(ob) && ob->query("env/invisibility"))
-       return "ÏÖÔÚÕÒ²»µ½Õâ¸öÈË¡£"; //respond no such user.
+       return "ç°åœ¨æ‰¾ä¸åˆ°è¿™ä¸ªäººã€‚"; //respond no such user.
 
            if( ob->query("env/block_tell") ) return
-       ob->query("name")+"ÏÖÔÚ²»ÏëºÍÈÎºÎÈËËµ»°¡£";
+       ob->query("name")+"ç°åœ¨ä¸æƒ³å’Œä»»ä½•äººè¯´è¯ã€‚";
 
                 if(!living(ob) || ob->query_temp("netdead")) 
-             return ob->query("name")+"ÏÖÔÚÌı²»¼ûÄãËµµÄ»°¡£\n";
+             return ob->query("name")+"ç°åœ¨å¬ä¸è§ä½ è¯´çš„è¯ã€‚\n";
 
      if( cname )
-        tell_object(ob, sprintf(HIG "%s(%s@%s)¸æËßÄã£º%s\n" NOR,
+        tell_object(ob, sprintf(HIG "%s(%s@%s)å‘Šè¯‰ä½ ï¼š%s\n" NOR,
           cname, capitalize(from), mud, msg ));
      else
-        tell_object(ob, sprintf(HIG "%s@%s ¸æËßÄã£º%s\n" NOR,
+        tell_object(ob, sprintf(HIG "%s@%s å‘Šè¯‰ä½ ï¼š%s\n" NOR,
           capitalize(from), mud, msg ));
      ob->set_temp("reply", from + "@" + mud);
-     return ob->query("name")+"ÊÕµ½ÁËÄãµÄÏûÏ¢¡£";  
+     return ob->query("name")+"æ”¶åˆ°äº†ä½ çš„æ¶ˆæ¯ã€‚";  
      // if succeed, return target's name.
    } else
-     return "ÏÖÔÚÕÒ²»µ½Õâ¸öÈË¡£";
+     return "ç°åœ¨æ‰¾ä¸åˆ°è¿™ä¸ªäººã€‚";
 }
 
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£ºtell <Ä³ÈË> <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼štell <æŸäºº> <è®¯æ¯>
 
-Äã¿ÉÒÔÓÃÕâ¸öÖ¸ÁîºÍÆäËûµØ·½µÄÊ¹ÓÃÕßËµ»°¡£
+ä½ å¯ä»¥ç”¨è¿™ä¸ªæŒ‡ä»¤å’Œå…¶ä»–åœ°æ–¹çš„ä½¿ç”¨è€…è¯´è¯ã€‚
 
-ÆäËûÏà¹ØÖ¸Áî£ºreply
+å…¶ä»–ç›¸å…³æŒ‡ä»¤ï¼šreply
 HELP
    );
    return 1;

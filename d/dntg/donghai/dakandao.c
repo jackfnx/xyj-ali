@@ -4,20 +4,20 @@ inherit BLADE;
 
 void create()
 {
-    set_name("´ó¿³µ¶", ({"da kan dao", "blade", "dao"}));
+    set_name("å¤§ç åˆ€", ({"da kan dao", "blade", "dao"}));
     set_weight(8000);
     
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "°Ñ");
-        set("long", "Ò»°Ñ´ó¿³µ¶£¬µ¶±³ÉÏ¹Ò×ÅÊ®¼¸¸ö´ó»·¡£\n");
+        set("unit", "æŠŠ");
+        set("long", "ä¸€æŠŠå¤§ç åˆ€ï¼Œåˆ€èƒŒä¸ŠæŒ‚ç€åå‡ ä¸ªå¤§ç¯ã€‚\n");
         set("value", 50000);
-        set("no_give", "ÕâÖÖ±¦±´ÔõÄÜËæ±ã¸øÈË£¿\n");
-        set("no_sell", "ÕÆ¹ñµÄÒ¡Ò¡Í·Ëµ£ºÕâ¿ÉÊÇÁú¹¬µÄ±¦±´£¬Ğ¡µê²»¸ÒÊÕ¡£\n");
+        set("no_give", "è¿™ç§å®è´æ€èƒ½éšä¾¿ç»™äººï¼Ÿ\n");
+        set("no_sell", "æŒæŸœçš„æ‘‡æ‘‡å¤´è¯´ï¼šè¿™å¯æ˜¯é¾™å®«çš„å®è´ï¼Œå°åº—ä¸æ•¢æ”¶ã€‚\n");
         set("material", "gold");
-        set("wield_msg", "$N´óºÈÒ»Éù½«$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±³ÔÚ±³ºó¡£\n");
+        set("wield_msg", "$Nå¤§å–ä¸€å£°å°†$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nèƒŒåœ¨èƒŒåã€‚\n");
         set("weapon_prop/dodge", -10);
         set("weapon_prop/blade", -10);
     }

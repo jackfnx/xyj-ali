@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����С·");
+  set ("short", "无名小路");
   set ("long", @LONG
 
-����С·�������ۣ�ǰ��ɿ���һ��С��ͺͺ��ɽ�����ܲ���һ��
-������ֻ�к�ɫ��ɰʯ��
+无名小路蜿蜒曲折，前面可看到一座小光秃秃的山丘，四周不见一点
+生机，只有红色的砂石。
 
 LONG);
 

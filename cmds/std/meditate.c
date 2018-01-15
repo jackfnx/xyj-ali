@@ -14,22 +14,22 @@ int main(object me, string arg)
 
     if (environment(me)->query("no_fight")
     ||  environment(me)->query("no_magic"))
-        return notify_fail("°²È«ÇøÄÚ½ûÖ¹Á·¹¦¡£\n");
+        return notify_fail("å®‰å…¨åŒºå†…ç¦æ­¢ç»ƒåŠŸã€‚\n");
     if (me->is_busy() || me->query_temp("pending/exercising"))
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
     if (me->is_fighting())
-        return notify_fail("Õ½¶·ÖĞÚ¤Ë¼©¤©¤ÕÒËÀÂğ£¿\n");
+        return notify_fail("æˆ˜æ–—ä¸­å†¥æ€â”€â”€æ‰¾æ­»å—ï¼Ÿ\n");
     if (!arg || !sscanf(arg, "%d", sen_cost))
-        return notify_fail("ÄãÒª»¨¶àÉÙ¾«ÉñÚ¤Ë¼£¿\n");
-    if (sen_cost < 10) return notify_fail("Äã×îÉÙÒª»¨ 10µã¡¸Éñ¡¹²ÅÄÜÚ¤Ë¼¡£\n");
+        return notify_fail("ä½ è¦èŠ±å¤šå°‘ç²¾ç¥å†¥æ€ï¼Ÿ\n");
+    if (sen_cost < 10) return notify_fail("ä½ æœ€å°‘è¦èŠ± 10ç‚¹ã€Œç¥ã€æ‰èƒ½å†¥æ€ã€‚\n");
     if ((int)me->query("sen") < sen_cost)
-        return notify_fail("ÄãÏÖÔÚ¾«ÉñÌ«²îÁË£¬½øĞĞÚ¤Ë¼½«»áÃÔÊ§£¬ÓÀÔ¶ĞÑ²»¹ıÀ´£¡\n");
+        return notify_fail("ä½ ç°åœ¨ç²¾ç¥å¤ªå·®äº†ï¼Œè¿›è¡Œå†¥æ€å°†ä¼šè¿·å¤±ï¼Œæ°¸è¿œé†’ä¸è¿‡æ¥ï¼\n");
     if ((int)me->query("kee") * 100 / (int)me->query("max_kee") < 70)
-        return notify_fail("ÄãÏÖÔÚÉíÌå×´¿öÌ«²îÁË£¬ÎŞ·¨¼¯ÖĞ¾«Éñ£¡\n");
+        return notify_fail("ä½ ç°åœ¨èº«ä½“çŠ¶å†µå¤ªå·®äº†ï¼Œæ— æ³•é›†ä¸­ç²¾ç¥ï¼\n");
     if ((int)me->query("gin") * 100 / (int)me->query("max_gin") < 1)
-        return notify_fail("ÄãÏÖÔÚÉíÌå×´¿öÌ«ĞéÈõÁË£¬ÎŞ·¨½øÈëÚ¤Ë¼µÄ×´Ì¬£¡\n");
+        return notify_fail("ä½ ç°åœ¨èº«ä½“çŠ¶å†µå¤ªè™šå¼±äº†ï¼Œæ— æ³•è¿›å…¥å†¥æ€çš„çŠ¶æ€ï¼\n");
 
-    write("ÄãÅÌÏ¥¶ø×ø£¬¾²×øÚ¤Ë¼ÁËÒ»»á¶ù¡£\n");
+    write("ä½ ç›˜è†è€Œåï¼Œé™åå†¥æ€äº†ä¸€ä¼šå„¿ã€‚\n");
     me->receive_damage("sen", sen_cost);
 
     busy_time = random(1 + sen_cost / 20) + 3;
@@ -48,20 +48,20 @@ int finish(object me, int sen_cost)
         + (int)me->query_spi()) / 30;
 
     if (mana_gain < 1) {
-        tell_object(me, "µ«ÊÇµ±ÄãÕö¿ªÑÛ¾¦£¬Ö»¾õµÃÄÔÖĞÒ»Æ¬¿Õ°×¡£\n");
+        tell_object(me, "ä½†æ˜¯å½“ä½ çå¼€çœ¼ç›ï¼Œåªè§‰å¾—è„‘ä¸­ä¸€ç‰‡ç©ºç™½ã€‚\n");
         me->start_busy(1);
         return 1;
     }
 
     me->add("mana", mana_gain);
-    tell_object(me, "ÄãÚ¤ÏëÍê±Ï£¬Õö¿ªÑÛ¾¦¶¨ÁË¶¨Éñ£¬Õ¾ÁËÆğÀ´¡£\n");
+    tell_object(me, "ä½ å†¥æƒ³å®Œæ¯•ï¼Œçå¼€çœ¼ç›å®šäº†å®šç¥ï¼Œç«™äº†èµ·æ¥ã€‚\n");
 
     if ((int)me->query("mana") > (int)me->query("max_mana") * 2) {
         if ((int)me->query("max_mana") >= (int)me->query_skill("spells") * 10) {
-            tell_object(me, "µ±ÄãµÄ·¨Á¦Ôö¼ÓµÄË²¼äÄãºöÈ»¾õµÃÄÔÖĞÒ»Æ¬»ìÂÒ£¬ËÆºõ·¨Á¦µÄÌáÉıÒÑ¾­µ½ÁËÆ¿¾±¡£\n");
+            tell_object(me, "å½“ä½ çš„æ³•åŠ›å¢åŠ çš„ç¬é—´ä½ å¿½ç„¶è§‰å¾—è„‘ä¸­ä¸€ç‰‡æ··ä¹±ï¼Œä¼¼ä¹æ³•åŠ›çš„æå‡å·²ç»åˆ°äº†ç“¶é¢ˆã€‚\n");
         }
         else {
-            tell_object(me, "ÄãµÄ·¨Á¦Ìá¸ßÁË£¡\n");
+            tell_object(me, "ä½ çš„æ³•åŠ›æé«˜äº†ï¼\n");
             me->add("max_mana", 1);
         }
         me->set("mana", me->query("max_mana"));
@@ -74,12 +74,12 @@ int finish(object me, int sen_cost)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : meditate|mingsi [<ºÄ·Ñ¡¸Éñ¡¹µÄÁ¿£¬Ô¤ÉèÖµ 30>]
+æŒ‡ä»¤æ ¼å¼ : meditate|mingsi [<è€—è´¹ã€Œç¥ã€çš„é‡ï¼Œé¢„è®¾å€¼ 30>]
 
-¾²×øÚ¤Ë¼£¬½«ÓÎÀëµÄ¾«ÉñÁ¦ÓĞĞ§µØ¼¯ÖĞÄı¾Û³ÉÄÜ¹»ÓÃÀ´Ê©Õ¹·¨ÊõµÄÄÜÁ¿
-£¬½åÒÔÔö¼Ó×Ô¼ºµÄ·¨Á¦¡£
+é™åå†¥æ€ï¼Œå°†æ¸¸ç¦»çš„ç²¾ç¥åŠ›æœ‰æ•ˆåœ°é›†ä¸­å‡èšæˆèƒ½å¤Ÿç”¨æ¥æ–½å±•æ³•æœ¯çš„èƒ½é‡
+ï¼Œè—‰ä»¥å¢åŠ è‡ªå·±çš„æ³•åŠ›ã€‚
 
-Çë²Î¿¼ help stats
+è¯·å‚è€ƒ help stats
 HELP
     );
     return 1;

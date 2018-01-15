@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // guanjia.c
@@ -7,13 +7,13 @@ inherit NPC;
 
 void create()
 {
-       set_name("¸ßÕı", ({"gao zheng", "gao"}));
-       set("long","ÀÏ¸ß¼ÒµÄ¹Ü¼Ò£¬ÕıÄÃ×ÅÕÊ²¾ËãÕÊ£®\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("é«˜æ­£", ({"gao zheng", "gao"}));
+       set("long","è€é«˜å®¶çš„ç®¡å®¶ï¼Œæ­£æ‹¿ç€å¸ç°¿ç®—å¸ï¼\n");
+       set("gender", "ç”·æ€§");
        set("age", 56);
        set("attitude", "peaceful");
        set("shen_type", 1);
-   set("title", "ÀÏ¹Ü¼Ò");
+   set("title", "è€ç®¡å®¶");
    set("combat_exp", 6500);
        set_skill("unarmed", 15);
    set_skill("dodge", 15);
@@ -24,7 +24,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say »î¶¯»î¶¯½î¹ÇÒ²ºÃ£¡\n");
+        command("say æ´»åŠ¨æ´»åŠ¨ç­‹éª¨ä¹Ÿå¥½ï¼\n");
         return 1;
 }
 

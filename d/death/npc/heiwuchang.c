@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // gargoyle.c
@@ -10,14 +10,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("���޳�", ({ "hei wuchang","wuchang", "gargoyle" }));
-        set("long","һ�����������Ƥ��ʹ�ߣ���ڵ����Ͽ������κ�ϲŭ���֡�\n");
+        set_name("黑无常", ({ "hei wuchang","wuchang", "gargoyle" }));
+        set("long","一个黑衣漆黑面皮的使者，黝黑的脸上看不出任何喜怒哀乐。\n");
         set("attitude", "peaceful");
    set("per", 10);
    set("str", 25);
    set("int", 25);
         set("age", 30);
-   set("title", "����˾��");
+   set("title", "引魄司主");
         set("combat_exp", 150000);
         set("max_gin", 1000);
         set("max_kee", 1000);
@@ -48,7 +48,7 @@ void create()
    map_skill("dodge", "ghost-steps");
    map_skill("force", "tonsillit");
    map_skill("unarmed", "dread-hand");
-create_family("���޵ظ�", 4, "���");
+create_family("阎罗地府", 4, "你好");
 
         setup();
    carry_object("/d/obj/cloth/hei")->wear();
@@ -61,8 +61,8 @@ void attempt_apprentice()
    me = this_player();
         command("grin");
 
-        command("say �ܺã�" + RANK_D->query_respect(me) +
-"���Ŭ�������ձض��гɡ�\n");
+        command("say 很好，" + RANK_D->query_respect(me) +
+"多加努力，他日必定有成。\n");
        command("recruit " + me->query("id") );
         return;
 }

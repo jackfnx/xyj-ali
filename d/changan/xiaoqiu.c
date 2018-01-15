@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /changan/xiaoqiu.c
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "С����");
+  set ("short", "小土丘");
   set ("long", @LONG
 
-��ˮ�ӱߵ�һ��С���𣬲�֪����ݳɡ�΢���ӹ������ϴ�
-��ɳɳ��������������һСͤ��ͤ�����ҡ�Ʒ��ͤ��������
-��д�������˰�Ȼ��
+泾水河边的一座小土丘，不知因何垒成。微风掠过，坡上垂
+柳沙沙而动。绿荫中有一小亭，亭上牌匾“品棋亭”三个大
+字写得是意兴盎然。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

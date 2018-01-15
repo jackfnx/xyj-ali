@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mimi/zhuziguo/northstreet.c  snowcat moved to /d/qujing/wuji
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ǬԪ��");
+  set ("short", "乾元街");
   set ("long", @LONG
 
-ǬԪ�����߶�Ϊ��լ�񷿡����߿�ֱ��ʹ���·����ʱ������Ѳ
-�ߡ�
+乾元街两边多为官宅民房。向北走可直达皇宫。路两旁时有卫兵巡
+逻。
 
 LONG);
 

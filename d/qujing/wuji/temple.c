@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // snowcat moved to /d/qujing/wuji
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "宝林寺");
   set ("long", @LONG
 
-ֻ������שǽ���ۣ��������϶��𶤣�����¥̨�����ϣ��ǳǹ���
-��ɽ�С���Ȼ��һ������Ժ�������Ϻ���̽��д�������֣�������
-�£���
+只见八字砖墙泥红粉，两边门上钉金钉，叠叠楼台藏岭畔，城城宫阙
+隐山中。果然是一座好寺院。正门上红底烫金的写着三个字：＂宝林
+寺＂。
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */
@@ -31,6 +31,6 @@ int valid_leave (object who, string dir)
 {
   object seng = present ("shousi seng", environment(who));
   if (dir == "enter" && seng && living (seng))
-    return notify_fail (seng->query("name")+"˵��������Ժˡ���ӿͣ���ء���\n");
+    return notify_fail (seng->query("name")+"说道：“寺院恕不接客，请回。”\n");
   return ::valid_leave(who, dir);
 }

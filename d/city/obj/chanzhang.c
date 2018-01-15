@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hammer.c
@@ -9,18 +9,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name("ìøÕÈ", ({"chanzhang", "zhang", "staff"}));
+        set_name("ç¦…æ–", ({"chanzhang", "zhang", "staff"}));
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑìøÕÈ£¬ÉÏÃæ¼¸¸öÌú»·¶£µ±×÷Ïì£®\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠç¦…æ–ï¼Œä¸Šé¢å‡ ä¸ªé“ç¯å®å½“ä½œå“ï¼\n");
                 set("value", 500);
                 set("material", "iron");
                 set("wield_msg",
-"$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ£®\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+"$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ï¼\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_staff(25);

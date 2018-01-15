@@ -6,12 +6,12 @@ string look_flag();
 
 void create()
 {
-    set("short", "»¨¹ûÉ½½Ì¾ü³¡");
+    set("short", "èŠ±æžœå±±æ•™å†›åœº");
     set("long", @LONG
 
-Ò»Æ¬¿ªÀ«µÄ²ÝµØ£¬±»ºï×ÓÃÇµ±×÷ËûÃÇµÄ½Ì¾ü³¡£¬Ö»¼ûÆäÖÐÒ»¸öÑÏËàµÄ
-Í¨±³Ô³Ö¸»Ó×ÅÒ»ÁÐÁÐ£¬Ò»ÅÅÅÅ×ß¹ýÀ´µÄºï×Ó±ø¡£²ÝµØµÄ±±²àÊú×ÅÒ»¸ù
-Ê®ÕÉ¶à¸ßµÄÆì¸Ë£¬ÉÏÃæ¹Ò×ÅÒ»Ãæ´óÆì(flag)£¬ÔÚ·çÖÐìªìªÆ®Îè¡£
+ä¸€ç‰‡å¼€é˜”çš„è‰åœ°ï¼Œè¢«çŒ´å­ä»¬å½“ä½œä»–ä»¬çš„æ•™å†›åœºï¼Œåªè§å…¶ä¸­ä¸€ä¸ªä¸¥è‚ƒçš„
+é€šèƒŒçŒ¿æŒ‡æŒ¥ç€ä¸€åˆ—åˆ—ï¼Œä¸€æŽ’æŽ’èµ°è¿‡æ¥çš„çŒ´å­å…µã€‚è‰åœ°çš„åŒ—ä¾§ç«–ç€ä¸€æ ¹
+åä¸ˆå¤šé«˜çš„æ——æ†ï¼Œä¸Šé¢æŒ‚ç€ä¸€é¢å¤§æ——(flag)ï¼Œåœ¨é£Žä¸­é£’é£’é£˜èˆžã€‚
 LONG
     );
 
@@ -39,11 +39,11 @@ void init()
 
 string look_flag()
 {
-    string str = "Ò»ÃæÈý³ß¼û·½µÄ´óìºÆì£¬Ó­·çÆ®Õ¹¡£\n";
+    string str = "ä¸€é¢ä¸‰å°ºè§æ–¹çš„å¤§æ—Œæ——ï¼Œè¿Žé£Žé£˜å±•ã€‚\n";
     if (query("host")) 
-        str += ("ÆìÉÏÐå×Å"+HIY+" ÆëÌì´óÊ¥ "+query("host")->query("name")+NOR+" ¼¸¸ö´ó×Ö¡£\n\n");
+        str += ("æ——ä¸Šç»£ç€"+HIY+" é½å¤©å¤§åœ£ "+query("host")->query("name")+NOR+" å‡ ä¸ªå¤§å­—ã€‚\n\n");
     else
-        str += ("·çÌ«´ó£¬¿´²»Çå³þÆìÉÏÃæÐ´×ÅÊ²Ã´¡£\n\n");
+        str += ("é£Žå¤ªå¤§ï¼Œçœ‹ä¸æ¸…æ¥šæ——ä¸Šé¢å†™ç€ä»€ä¹ˆã€‚\n\n");
     return str;
 }
 
@@ -53,18 +53,18 @@ int do_start(string arg)
     object host = query("host");
     object lijing;
 
-    if (!arg || arg!="flag") return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+    if (!arg || arg!="flag") return notify_fail("ä½ è¦åšä»€ä¹ˆï¼Ÿ\n");
     if (host)
-        return notify_fail(host->query("name")+"ÒÑÔÚ´ËÕ¼É½ÎªÍõÁË¡£\n");   
+        return notify_fail(host->query("name")+"å·²åœ¨æ­¤å å±±ä¸ºçŽ‹äº†ã€‚\n");   
     if (me->query("combat_exp") < 100000)
-        return notify_fail("Æì¸ËÌ«¸ßÁË£¬Äã¹¦·òÌ«²î£¬¹Ò²»ÉÏÈ¥¡£\n");
+        return notify_fail("æ——æ†å¤ªé«˜äº†ï¼Œä½ åŠŸå¤«å¤ªå·®ï¼ŒæŒ‚ä¸ä¸ŠåŽ»ã€‚\n");
     if (me->query("dntg/lijing") == "done")
-        return notify_fail("ÄãÉÏ´ÎÒÑ¾­¹ý×ãÆëÌì´óÊ¥ñ«ÁË£¬Õâ´ÎÁô¸ø±ðÈËÍæ°É¡£\n");
+        return notify_fail("ä½ ä¸Šæ¬¡å·²ç»è¿‡è¶³é½å¤©å¤§åœ£ç˜¾äº†ï¼Œè¿™æ¬¡ç•™ç»™åˆ«äººçŽ©å§ã€‚\n");
 
     set("host", me);
-    message_vision(HIG"$N½«¡°ÆëÌì´óÊ¥¡±µÄ´óÆì¹ÒÉÏÆì¸Ë¡£\n"NOR, me);
-    message_vision(HIG"$N¸ßÉùÐû²¼£º¡°´Ó½ñÈÕÆð£¬"
-        + RANK_D->query_self_rude(me) + "¾ÍÊÇÆëÌì´óÊ¥£¬ÓëÓñµÛÀÏ¶ùÆ½ÆðÆ½×ø£¡¡±\n"NOR, me);
+    message_vision(HIG"$Nå°†â€œé½å¤©å¤§åœ£â€çš„å¤§æ——æŒ‚ä¸Šæ——æ†ã€‚\n"NOR, me);
+    message_vision(HIG"$Né«˜å£°å®£å¸ƒï¼šâ€œä»Žä»Šæ—¥èµ·ï¼Œ"
+        + RANK_D->query_self_rude(me) + "å°±æ˜¯é½å¤©å¤§åœ£ï¼Œä¸ŽçŽ‰å¸è€å„¿å¹³èµ·å¹³åï¼â€\n"NOR, me);
 
     lijing = new("/d/dntg/lijing/lijing");
     lijing->move(this_object());

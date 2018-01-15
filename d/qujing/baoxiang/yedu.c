@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/14/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Ò°¶É");
+  set ("short", "é‡æ¸¡");
   set ("long", @LONG
 
-ÕâÀïÊÇ³ÇÍâ·ÏÆú²»ÓÃµÄÒ°¶É¿Ú£¬¶É¿Ú³¤ÂúÒ°ÉúÖ²Îï¡£±éµØÕÓÔó£¬
-ÁıÕÖ×ÅºÚÎíËÆµÄÕÎÆø¡£É¢·¢×ÅĞÈÎ¶µÄ·çÒ»ÕóÕó´µÀ´£¬Ñ¬µÃÈËÍ·ÖØ
-½ÅÇá¡£
+è¿™é‡Œæ˜¯åŸå¤–åºŸå¼ƒä¸ç”¨çš„é‡æ¸¡å£ï¼Œæ¸¡å£é•¿æ»¡é‡ç”Ÿæ¤ç‰©ã€‚éåœ°æ²¼æ³½ï¼Œ
+ç¬¼ç½©ç€é»‘é›¾ä¼¼çš„ç˜´æ°”ã€‚æ•£å‘ç€è…¥å‘³çš„é£ä¸€é˜µé˜µå¹æ¥ï¼Œç†å¾—äººå¤´é‡
+è„šè½»ã€‚
 
 LONG);
 
@@ -34,12 +34,12 @@ int valid_leave (object who, string dir)
   {
     if (! who->query_temp("fainted_yedu"))
     {
-      message_vision ("Ò»ÕóĞÈ·ç´µÀ´£¬$N¶ÙÊ±Í·ÖØ½ÅÇá¡£\n",who);
+      message_vision ("ä¸€é˜µè…¥é£å¹æ¥ï¼Œ$Né¡¿æ—¶å¤´é‡è„šè½»ã€‚\n",who);
       who->set_temp("fainted_yedu",1);
       remove_call_out ("fall_down");
       call_out ("fall_down",1,who,environment(who));
       who->start_busy(1,1);
-      return notify_fail("Äã½û²»×¡õÔõÄÁË¼¸ÏÂ£¬Á½ÍÈÍ»È»Ò»Èí¡£\n");
+      return notify_fail("ä½ ç¦ä¸ä½è¸‰è·„äº†å‡ ä¸‹ï¼Œä¸¤è…¿çªç„¶ä¸€è½¯ã€‚\n");
     }
   }
   who->set_temp("fainted_yedu",0);

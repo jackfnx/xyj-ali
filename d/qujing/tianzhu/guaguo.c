@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "�Ϲ���");
+  set ("short", "瓜果店");
   set ("long", @LONG
 
-һ�������������һ���ŵ���𣬿�������Ÿ������ʵĹ�
-���������ۡ���ʱ��·�˽���������˹Ϲ��꣬����һЩˮ��
-���ࡣ
+一个青竹棚里，摆了一排排的竹筐，筐子里放着各种新鲜的瓜
+果正待出售。不时有路人进进出出光顾瓜果店，买下一些水果
+瓜类。
 
 LONG);
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/nanhai/zhulin
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×ÏÖñÁÖ");
+  set ("short", "ç´«ç«¹æž—");
   set ("long", @LONG
 
-ÆÕÍÓºóÉ½µÄ×ÏÖñÁÖ¡£Ò²ÊÇ¹ÛÒôÆÐÈøÏÐí¬³£µ½µÄËùÔÚ¡£×ÏÖñÏ¸Êè£¬
-Çå·çÎ¢·÷¡£Âþ²½ÓÚ´Ë£¬ÊÀÊÂÖ®·×ÈÅ¶ÙÊ±ÑÌÏûÔÆÉ¢¡£Íù±±ËÆÓÐÒ»
-Ð¡³ØÌÁ¡£
+æ™®é™€åŽå±±çš„ç´«ç«¹æž—ã€‚ä¹Ÿæ˜¯è§‚éŸ³è©è¨é—²æ†©å¸¸åˆ°çš„æ‰€åœ¨ã€‚ç´«ç«¹ç»†ç–ï¼Œ
+æ¸…é£Žå¾®æ‹‚ã€‚æ¼«æ­¥äºŽæ­¤ï¼Œä¸–äº‹ä¹‹çº·æ‰°é¡¿æ—¶çƒŸæ¶ˆäº‘æ•£ã€‚å¾€åŒ—ä¼¼æœ‰ä¸€
+å°æ± å¡˜ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

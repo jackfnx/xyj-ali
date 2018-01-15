@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit DAGGER;
 
 void create()
 {
-  set_name("Å£½ÇÈĞ", ({ "niujiao ren", "ren", "dagger" }) );
+  set_name("ç‰›è§’åˆƒ", ({ "niujiao ren", "ren", "dagger" }) );
   init_dagger(15);
-  set("unit", "°Ñ");
+  set("unit", "æŠŠ");
   set_weight(200);
   if( clonep() )
      set_default_object(__FILE__);

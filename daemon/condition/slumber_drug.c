@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // drunk.c
@@ -16,8 +16,8 @@ int update_condition(object me, int duration)
      me->unconcious();
      return 0;
    } else if( duration > limit/2 ) {
-     tell_object(me, "��������л����������пյ����ģ�ֱ��������˯һ����\n");
-     message("vision", me->name() + "ҡͷ���Ե�վ��վ���ȣ���Ȼ���ɺ�ҩ��ҩ�������ˡ�\n",
+     tell_object(me, "你觉得脑中昏昏沉沉，心中空荡荡的，直想躺下来睡一觉。\n");
+     message("vision", me->name() + "摇头晃脑地站都站不稳，显然是蒙汗药的药力发作了。\n",
         environment(me), me);
    }
 

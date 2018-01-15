@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit HEAD;
 
 void create()
 {
-  set_name("·ï¹Ú", ({ "jin fengguan", "fengguan", "guan" }) );
+  set_name("å‡¤å† ", ({ "jin fengguan", "fengguan", "guan" }) );
   set_weight(700);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¶¥");
-    set("long","Ò»¶¥Ë¿ÖÊµÄ½ğÉ«Èí¹Ú£¬ÉÏÃæĞå×Å½ğ·ï¡£\n");
+    set("unit", "é¡¶");
+    set("long","ä¸€é¡¶ä¸è´¨çš„é‡‘è‰²è½¯å† ï¼Œä¸Šé¢ç»£ç€é‡‘å‡¤ã€‚\n");
     set("value", 800);
     set("material", "silk");
     set("female_only", 1);

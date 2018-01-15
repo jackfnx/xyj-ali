@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // gate.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ֵ�");
+  set ("short", "街道");
   set ("long", @LONG
 
-һ��ʯ��С·�����¹��꣬·�Ͽ����������ɾ��ģ�һЩ������
-�����Լ��ֵ��߲˵����������˲��Ǻܶ࣬ߺ����������Զ����
-������ص���
+一条石板小路，刚下过雨，路上看起来还满干净的．一些乡下人
+挑着自己种的蔬菜到镇里卖，人不是很多，吆喝声传出很远，在
+镇子里回荡．
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 //"north" : __DIR__"zhyuan",

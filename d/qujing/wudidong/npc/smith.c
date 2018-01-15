@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // waiter.c
@@ -9,14 +9,14 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("ÕÅÌú±Û", ({ "blacksmith", "smith", "zhang", "zhang tiebi", "tiebi" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("å¼ é“è‡‚", ({ "blacksmith", "smith", "zhang", "zhang tiebi", "tiebi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 42);
-        set("title", "Ìú½³");
-        set("long","ÕÅÌú½³ÕýÔÚ´òÌú£¬Â¯»ð°ÑËûµÄÁ³Ó³µÃÍ¨ºì¡£\n");
+        set("title", "é“åŒ ");
+        set("long","å¼ é“åŒ æ­£åœ¨æ‰“é“ï¼Œç‚‰ç«æŠŠä»–çš„è„¸æ˜ å¾—é€šçº¢ã€‚\n");
         set("combat_exp", 5000);
         set("attitude", "friendly");
-        set("rank_info/respect", "ÕÅ´ó¸ç");
+        set("rank_info/respect", "å¼ å¤§å“¥");
         set("per",25);
         set("vendor_goods", ([
      "zhadao"  : "/d/obj/weapon/blade/zhadao.c",
@@ -45,6 +45,6 @@ void init()
 void greeting(object ob)
 {
    if( !ob || environment(ob) != environment() ) return;
-   say("ÕÅÌú½³ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-     +"£¬ÒªµãÊ²Ã´ÌúÆ÷£¿\n");
+   say("å¼ é“åŒ è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+     +"ï¼Œè¦ç‚¹ä»€ä¹ˆé“å™¨ï¼Ÿ\n");
 }

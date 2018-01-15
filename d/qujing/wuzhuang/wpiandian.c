@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "��ƫ��");
+   set ("short", "西偏殿");
    set ("long", @LONG
 
-��ƫ����Ҫ�����ѷ�һЩ��������ĳ�����Ʒ����ľ������
-һ����ͭ����̨�����к�����ȼ���������ߵĵ�ľ�������ȣ�
-��Լ�����������еķ��������߾ͻص����
+西偏殿主要用来堆放一些布道上香的常用物品。殿北楠木桌上有
+一对青铜的烛台，上有红烛轻燃。隔着西边的雕花木门是西廊，
+隐约可听到竹林中的风声。东边就回到宝殿。
 LONG);
 
    set("exits", 
@@ -27,7 +27,7 @@ LONG);
      //__DIR__"npc/qingfeng" : 1,
    ]));
 
-create_door("west", "��ľ��", "east", DOOR_CLOSED);
+create_door("west", "雕花木门", "east", DOOR_CLOSED);
 
    //set("outdoors", "wuzhuang");
 

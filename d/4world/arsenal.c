@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "������");
+    set("short", "兵器库");
     set("long", @LONG
 
-�����ǰ������ı����⣬һ��ùζ�˱Ƕ���������ʮ����û���˽�
-�����˰ɡ�ż�����������ҵ�һ��������Ҳ���Ѿ��⼣�߰ߡ�
+这里是傲来国的兵器库，一股霉味扑鼻而来，恐怕十来年没有人进
+来过了吧。偶尔拨开尘土找到一件兵器，也早已经锈迹斑斑。
 LONG);
 
     set("exits", ([

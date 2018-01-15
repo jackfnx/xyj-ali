@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /moon/ontop.c
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºşµ×");
+  set ("short", "æ¹–åº•");
   set ("long", @LONG
 
-µ½ÁËºşµ×Äã²ÅÃ÷°×£¢Á«³öÓÙÄà¶ø²»È¾£¢µÄÕæÕıº¬Òå£®
+åˆ°äº†æ¹–åº•ä½ æ‰æ˜ç™½ï¼‚è²å‡ºæ·¤æ³¥è€Œä¸æŸ“ï¼‚çš„çœŸæ­£å«ä¹‰ï¼
 LONG);
   set("exits", ([ /* sizeof() == 3 */
   "up" : __DIR__"lotuspond",
@@ -26,7 +26,7 @@ void init()
 
 int valid_leave(object me, string dir)
 {
-       message_vision("$NÆ´ÃüÕõÔú×ÅÅÀÉÏ°¶£¬¶Ç×ÓÀï¹àÂúÁËË®£®\n", me);
+       message_vision("$Næ‹¼å‘½æŒ£æ‰ç€çˆ¬ä¸Šå²¸ï¼Œè‚šå­é‡ŒçŒæ»¡äº†æ°´ï¼\n", me);
    me->set("water", (int)me->max_water_capacity());
    return ::valid_leave(me, dir);
 }
@@ -36,13 +36,13 @@ int do_dig(string arg)
   object me=this_player();
   object m; 
   if( (!arg) || !((arg == "lotusroot") || (arg == "root") || (arg == "ou")))
-    return notify_fail("ÍÚÊ²Ã´£¿\n");
+    return notify_fail("æŒ–ä»€ä¹ˆï¼Ÿ\n");
   else
     {
-      message_vision("$NÓÃÊÖÅÙÁËÓÙÄàÁ½ÏÂ£¬Ï£ÍûÄÜÅªµãÅº³Ô£®\n", me);
+      message_vision("$Nç”¨æ‰‹åˆ¨äº†æ·¤æ³¥ä¸¤ä¸‹ï¼Œå¸Œæœ›èƒ½å¼„ç‚¹è—•åƒï¼\n", me);
       if (random(6) < 1)
         {
-             message_vision("$NÅÙ°¡ÅÙ£¬ÅÙµ½Ò»¿Ã´óÁ«Åº£®\n", me);
+             message_vision("$Nåˆ¨å•Šåˆ¨ï¼Œåˆ¨åˆ°ä¸€æ£µå¤§è²è—•ï¼\n", me);
       m = new(__DIR__"obj/ou.c");
                 m->move(this_player()); 
    }

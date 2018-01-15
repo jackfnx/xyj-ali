@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// Room: some place in ��ţ����
+// Room: some place in 西牛贺洲
 // uphill1.c
 
 inherit ROOM;
 
 void create()
 {
-  set ("short", "������");
+  set ("short", "妙音坡");
   set ("long", @LONG
 
-����ɽ��С·�������滨��ݣ��������ɡ��������ɣ����س�
-���۸��أ��滨��ݣ���ʱ��л����孡�������ЪЪ�ţ�����
-��ɫ�����Ż���Ҳ�Ǻܺõ����ܡ�
+走在山间小路，两边奇花瑞草，修竹乔松。修竹乔松，万载常
+青欺福地；奇花瑞草，四时不谢赛蓬瀛。在这里歇歇脚，看看
+景色，闻闻花香也是很好的享受。
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"uphill2",

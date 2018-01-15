@@ -2,41 +2,41 @@
 
 #include <ansi.h>
 
-string *penis_names = ({ "Èâ°ô", "Ñô¸ù", "ÈâèÆ", "·ÖÉí", "Áú¸ù", "ÒùÇ¹", "ÁúÇ¹", "ÒùÊŞ" });
-string *pussy_names = ({ "ÓñÃÅ", "Èâ°ö", "Óñ¸ò", "ÃÜµÀ", "ÈâĞ·", "»¨·¿", "»¨¾¶", "»¨Ñ¨", "ÈâÑ¨", "ÒùÑ¨", "ÃÛºø" });
-string *ass_names = ({ "¾Õ»¨", "¾ÕÑ¨", "¾Õ¸Ø", "¾ÕÀÙ" });
-string *finger_names = ({ "ÊÖÖ¸", "ÓñÖ¸", "ÏËÖ¸", "ËØÖ¸" });
-string *breast_names = ({ "Èé·¿", "ÓñÈé", "ËÖÈé", "½¿Èé", "Èé·å", "ºÀÈé", "±¬Èé", "ÈéÍ·", "ÈéµÙ" });
-string *sensitive_names_m = ({ "¶ú´¹", "ÈéÍ·" });
-string *sensitive_names_f = ({ "¶ú´¹", "´½°ê", "Óñ¾±", "Óñ±³", "ğ©Íó", "¶ÇÆê", "ÏËÑü", "ÓñÍÈ", "Ïãõ×", "Óñ×ã" });
+string *penis_names = ({ "è‚‰æ£’", "é˜³æ ¹", "è‚‰æµ", "åˆ†èº«", "é¾™æ ¹", "æ·«æª", "é¾™æª", "æ·«å…½" });
+string *pussy_names = ({ "ç‰é—¨", "è‚‰èšŒ", "ç‰è›¤", "å¯†é“", "è‚‰èŸ¹", "èŠ±æˆ¿", "èŠ±å¾„", "èŠ±ç©´", "è‚‰ç©´", "æ·«ç©´", "èœœå£¶" });
+string *ass_names = ({ "èŠèŠ±", "èŠç©´", "èŠè‚›", "èŠè•¾" });
+string *finger_names = ({ "æ‰‹æŒ‡", "ç‰æŒ‡", "çº¤æŒ‡", "ç´ æŒ‡" });
+string *breast_names = ({ "ä¹³æˆ¿", "ç‰ä¹³", "é…¥ä¹³", "å¨‡ä¹³", "ä¹³å³°", "è±ªä¹³", "çˆ†ä¹³", "ä¹³å¤´", "ä¹³è’‚" });
+string *sensitive_names_m = ({ "è€³å‚", "ä¹³å¤´" });
+string *sensitive_names_f = ({ "è€³å‚", "å”‡ç“£", "ç‰é¢ˆ", "ç‰èƒŒ", "çš“è…•", "è‚šè„", "çº¤è…°", "ç‰è…¿", "é¦™è¸", "ç‰è¶³" });
 
 string male_status_msg(int ratio)
 {
-   if (ratio == 0) return HIG "Ä¿É«ÇåÃ÷£¬ºÁÎŞÓûÍûµÄÉ«²Ê¡£" NOR;
-   if (ratio < 10) return HIG "Ä¿É«ÃÔÀë£¬ÆøÏ¢ÓĞĞ©É¢ÂÒ¡£" NOR;
-   if (ratio < 20) return HIY "ºôÎüÓĞĞ©´ÖÖØ£¬ÌåÎÂÎ¢Î¢ÓĞĞ©Éı¸ß¡£" NOR;
-   if (ratio < 40) return HIY "ÂúÁ³Í¨ºì£¬Æø´­ÈçÅ£¡£" NOR;
-   if (ratio < 60) return HIR "ÂúÉí´óº¹£¬ÈçÍ¬Ë®ÀïÀÌ³öÀ´µÄÒ»Ñù¡£" NOR;
-   if (ratio < 80) return HIR "ÒÑ¾­ÍêÈ«¶éÈëÁËÓûÍûµÄÉîÔ¨£¬ÒâÊ¶ÓĞĞ©²»ÇåÁË¡£" NOR;
-   if (ratio < 90) return RED "»ëÉíÎÂ¶È¸ßµÃÏÅÈË£¬ÉíÌåÏÂÒâÊ¶µÄÍ¦¶¯×Å£¬ºíÁüÉî´¦ÒşÒş´«³öÉùÉùÅØÏø¡£" NOR;
-   return RED "ÒÑ¾­½øÈëÎŞÒâÊ¶×´Ì¬£¬ÏÂÒâÊ¶µÄ×÷³öÓ­ºÏ¶¯×÷£¬ºôÎü¶¼¿ìÒªÍ£Ö¹ÁË¡£" NOR;
+   if (ratio == 0) return HIG "ç›®è‰²æ¸…æ˜ï¼Œæ¯«æ— æ¬²æœ›çš„è‰²å½©ã€‚" NOR;
+   if (ratio < 10) return HIG "ç›®è‰²è¿·ç¦»ï¼Œæ°”æ¯æœ‰äº›æ•£ä¹±ã€‚" NOR;
+   if (ratio < 20) return HIY "å‘¼å¸æœ‰äº›ç²—é‡ï¼Œä½“æ¸©å¾®å¾®æœ‰äº›å‡é«˜ã€‚" NOR;
+   if (ratio < 40) return HIY "æ»¡è„¸é€šçº¢ï¼Œæ°”å–˜å¦‚ç‰›ã€‚" NOR;
+   if (ratio < 60) return HIR "æ»¡èº«å¤§æ±—ï¼Œå¦‚åŒæ°´é‡Œæå‡ºæ¥çš„ä¸€æ ·ã€‚" NOR;
+   if (ratio < 80) return HIR "å·²ç»å®Œå…¨å •å…¥äº†æ¬²æœ›çš„æ·±æ¸Šï¼Œæ„è¯†æœ‰äº›ä¸æ¸…äº†ã€‚" NOR;
+   if (ratio < 90) return RED "æµ‘èº«æ¸©åº¦é«˜å¾—å“äººï¼Œèº«ä½“ä¸‹æ„è¯†çš„æŒºåŠ¨ç€ï¼Œå–‰å’™æ·±å¤„éšéšä¼ å‡ºå£°å£°å’†å“®ã€‚" NOR;
+   return RED "å·²ç»è¿›å…¥æ— æ„è¯†çŠ¶æ€ï¼Œä¸‹æ„è¯†çš„ä½œå‡ºè¿åˆåŠ¨ä½œï¼Œå‘¼å¸éƒ½å¿«è¦åœæ­¢äº†ã€‚" NOR;
 }
 
 string female_status_msg(int ratio)
 {
-   if (ratio == 0) return HIG "Ä¿É«ÇåÃ÷£¬ºÁÎŞÓûÍûµÄÉ«²Ê¡£" NOR;
-   if (ratio < 10) return HIG "Ä¿É«ÃÔÀë£¬ÆøÏ¢ÓĞĞ©É¢ÂÒ¡£" NOR;
-   if (ratio < 20) return HIY "ºôÎüÓĞĞ©´ÖÖØ£¬ÌåÎÂÎ¢Î¢ÓĞĞ©Éı¸ß¡£" NOR;
-   if (ratio < 40) return HIY "Á½¼Õç³ºì£¬ÉëÒ÷½¿´­£¬ÍÂÆøÈçÀ¼¡£" NOR;
-   if (ratio < 60) return HIR "Ïãº¹ÁÜÀì£¬ÒâÊ¶ÓĞĞ©Ä£ºı¡£" NOR;
-   if (ratio < 80) return HIR "ÒÑ¾­ÍêÈ«ÃÔÂÒÔÚÁËÓûÍûµÄÉîÔ¨£¬²»ÓÉ×ÔÖ÷µÄÍ¦¶¯×ÅÑüÖ«¡£" NOR;
-   if (ratio < 90) return RED "»ëÉíÎÂ¶È¸ßµÃÏÅÈË£¬ÉíÌåÏÂÒâÊ¶µÄÍ¦¶¯×Å£¬¿ÚÖĞºôº°×ÅÎŞÒâÒåµÄÑÔÓï¡£" NOR;
-   return RED "ÒÑ¾­½øÈëÎŞÒâÊ¶×´Ì¬£¬ÏÂÒâÊ¶µÄ×÷³öÓ­ºÏ¶¯×÷£¬Ó£´½ËäÈ»ôâ¶¯×ÅÈ´ÒÑ¾­ÎŞ·¨·¢³öÈÎºÎÉùÒô¡£" NOR;
+   if (ratio == 0) return HIG "ç›®è‰²æ¸…æ˜ï¼Œæ¯«æ— æ¬²æœ›çš„è‰²å½©ã€‚" NOR;
+   if (ratio < 10) return HIG "ç›®è‰²è¿·ç¦»ï¼Œæ°”æ¯æœ‰äº›æ•£ä¹±ã€‚" NOR;
+   if (ratio < 20) return HIY "å‘¼å¸æœ‰äº›ç²—é‡ï¼Œä½“æ¸©å¾®å¾®æœ‰äº›å‡é«˜ã€‚" NOR;
+   if (ratio < 40) return HIY "ä¸¤é¢Šç»¯çº¢ï¼Œå‘»åŸå¨‡å–˜ï¼Œåæ°”å¦‚å…°ã€‚" NOR;
+   if (ratio < 60) return HIR "é¦™æ±—æ·‹æ¼“ï¼Œæ„è¯†æœ‰äº›æ¨¡ç³Šã€‚" NOR;
+   if (ratio < 80) return HIR "å·²ç»å®Œå…¨è¿·ä¹±åœ¨äº†æ¬²æœ›çš„æ·±æ¸Šï¼Œä¸ç”±è‡ªä¸»çš„æŒºåŠ¨ç€è…°è‚¢ã€‚" NOR;
+   if (ratio < 90) return RED "æµ‘èº«æ¸©åº¦é«˜å¾—å“äººï¼Œèº«ä½“ä¸‹æ„è¯†çš„æŒºåŠ¨ç€ï¼Œå£ä¸­å‘¼å–Šç€æ— æ„ä¹‰çš„è¨€è¯­ã€‚" NOR;
+   return RED "å·²ç»è¿›å…¥æ— æ„è¯†çŠ¶æ€ï¼Œä¸‹æ„è¯†çš„ä½œå‡ºè¿åˆåŠ¨ä½œï¼Œæ¨±å”‡è™½ç„¶ç¿•åŠ¨ç€å´å·²ç»æ— æ³•å‘å‡ºä»»ä½•å£°éŸ³ã€‚" NOR;
 }
 
 void report_sex_status(object ob)
 {
-    if (ob->query("gender") == "Å®ĞÔ")
+    if (ob->query("gender") == "å¥³æ€§")
         message_vision("( $N" + female_status_msg((int)ob->query("lust")) + " )\n",
             ob);
     else
@@ -51,28 +51,28 @@ void announce(object ob, string event)
     object attacker = ob->query_temp("sex/attacker");
     switch (event) {
         case "erect":
-            message_vision(HIG "\n$NµÄ" + penis_names[random(sizeof(penis_names))] + "¾óÇ¿µÄÍ¦Á¢ÁËÆğÀ´£¡\n\n" NOR, ob);
+            message_vision(HIG "\n$Nçš„" + penis_names[random(sizeof(penis_names))] + "å€”å¼ºçš„æŒºç«‹äº†èµ·æ¥ï¼\n\n" NOR, ob);
             break;
         case "wet":
-            message_vision(HIG "\nÒ»¹ÉÃÛÖ­´Ó$NµÄ" + pussy_names[random(sizeof(pussy_names))] + "ÖĞÅçÓ¿¶ø³ö£¬$PÏÔÈ»ÒÑ¾­¶¯Çé£¡\n\n" NOR, ob);
+            message_vision(HIG "\nä¸€è‚¡èœœæ±ä»$Nçš„" + pussy_names[random(sizeof(pussy_names))] + "ä¸­å–·æ¶Œè€Œå‡ºï¼Œ$Pæ˜¾ç„¶å·²ç»åŠ¨æƒ…ï¼\n\n" NOR, ob);
             break;
         case "no_erect":
-            message_vision(HIC "\nËæ×ÅÓû»ğÖğ½¥ÏûÍË£¬$NµÄ" + penis_names[random(sizeof(penis_names))] + "Ò²Öğ½¥»Ö¸´ÁË³£Ì¬£¡\n\n" NOR, ob);
+            message_vision(HIC "\néšç€æ¬²ç«é€æ¸æ¶ˆé€€ï¼Œ$Nçš„" + penis_names[random(sizeof(penis_names))] + "ä¹Ÿé€æ¸æ¢å¤äº†å¸¸æ€ï¼\n\n" NOR, ob);
             break;
         case "no_wet":
-            message_vision(HIC "\nËæ×ÅÓû»ğÖğ½¥ÏûÍË£¬$NÒ²Öğ½¥»Ö¸´ÁË³£Ì¬£¡\n\n" NOR, ob);
+            message_vision(HIC "\néšç€æ¬²ç«é€æ¸æ¶ˆé€€ï¼Œ$Nä¹Ÿé€æ¸æ¢å¤äº†å¸¸æ€ï¼\n\n" NOR, ob);
             break;
         case "ejaculate":
             if (!objectp(sufferer)) {
-                message_vision(HIY "\n$NµÄ" + penis_names[random(sizeof(penis_names))] + "ÖĞÉä³öÁËÒ»µÀÕæÑô£¡\n\n" NOR, ob);
+                message_vision(HIY "\n$Nçš„" + penis_names[random(sizeof(penis_names))] + "ä¸­å°„å‡ºäº†ä¸€é“çœŸé˜³ï¼\n\n" NOR, ob);
             } else {
-                tell_object(sufferer, "\n" + HIY + ob->name() + "Éä¾«ÁË£¬Ç¿´óµÄ³å»÷Á¦ÃÍÁÒµÄ³å»÷×ÅÄãµÄ»¨ĞÄ£¡\n\n" NOR);
+                tell_object(sufferer, "\n" + HIY + ob->name() + "å°„ç²¾äº†ï¼Œå¼ºå¤§çš„å†²å‡»åŠ›çŒ›çƒˆçš„å†²å‡»ç€ä½ çš„èŠ±å¿ƒï¼\n\n" NOR);
             }
             break;
         case "orgasm":
-            tell_room(environment(ob), HIY "\n" + ob->name() + "µÄ»ëÉí¾çÁÒµÄ²ü¶¶£¬¿ÚÖĞ·¢³öÎŞÒâÒåµÄ¼â½Ğ£¬¼¡·ôÉÏÊ¢¿ªÆğÒ»µÀµÀç³ºìµÄ»¨°ß...\nËıÒÑ¾­´ïµ½ÁË¿ì¸ĞµÄáÛ·å£¡\n\n" NOR, ({ob}));
+            tell_room(environment(ob), HIY "\n" + ob->name() + "çš„æµ‘èº«å‰§çƒˆçš„é¢¤æŠ–ï¼Œå£ä¸­å‘å‡ºæ— æ„ä¹‰çš„å°–å«ï¼Œè‚Œè‚¤ä¸Šç››å¼€èµ·ä¸€é“é“ç»¯çº¢çš„èŠ±æ–‘...\nå¥¹å·²ç»è¾¾åˆ°äº†å¿«æ„Ÿçš„å·…å³°ï¼\n\n" NOR, ({ob}));
             if (objectp(attacker)) {
-                tell_object(attacker, HIY + "Äã¸Ğµ½" + ob->name() + "µÄ" + pussy_names[random(sizeof(pussy_names))] + "Ò»ÕóÕó¾çÁÒµÄÊÕËõ£¬Ò»¹ÉÒõ¾«´Ó»¨·¿ÖĞÅçÓ¿¶ø³ö£¬ÕıºÃÁÜÔÚÄãµÄ"+penis_names[random(sizeof(penis_names))]+"ÉÏ£¡\n\b" NOR);
+                tell_object(attacker, HIY + "ä½ æ„Ÿåˆ°" + ob->name() + "çš„" + pussy_names[random(sizeof(pussy_names))] + "ä¸€é˜µé˜µå‰§çƒˆçš„æ”¶ç¼©ï¼Œä¸€è‚¡é˜´ç²¾ä»èŠ±æˆ¿ä¸­å–·æ¶Œè€Œå‡ºï¼Œæ­£å¥½æ·‹åœ¨ä½ çš„"+penis_names[random(sizeof(penis_names))]+"ä¸Šï¼\n\b" NOR);
             }
             break;
     }
@@ -87,7 +87,7 @@ object get_attacker(object me, object ob)
             return me;
         }
     } else {
-        if (me->query("gender") == "ÄĞĞÔ") {
+        if (me->query("gender") == "ç”·æ€§") {
             return me;
         } else {
             return ob;
@@ -104,7 +104,7 @@ object get_sufferer(object me, object ob)
             return me;
         }
     } else {
-        if (me->query("gender") == "ÄĞĞÔ") {
+        if (me->query("gender") == "ç”·æ€§") {
             return ob;
         } else {
             return me;
@@ -131,7 +131,7 @@ void push_penis(object me, object ob)
     sufferer_id = get_loverid(sufferer);
     sufferer_name = sufferer->query("name");
 
-    if (attacker->query("gender") == "ÄĞĞÔ") {
+    if (attacker->query("gender") == "ç”·æ€§") {
             penis = penis_names[random(sizeof(penis_names))];;
     } else {
         penis_ob = attacker->query_temp("penis");
@@ -142,7 +142,7 @@ void push_penis(object me, object ob)
         }
     }
 
-    if (sufferer->query("gender") == "Å®ĞÔ") {
+    if (sufferer->query("gender") == "å¥³æ€§") {
         pussy = pussy_names[random(sizeof(pussy_names))];
     } else {
         pussy = ass_names[random(sizeof(ass_names))];
@@ -156,10 +156,10 @@ void push_penis(object me, object ob)
     sufferer->fuck_ob(attacker);
     attacker->add("sex/lovers/" + sufferer_id, sufferer_name);
     sufferer->add("sex/lovers/" + attacker_id, attacker_name);
-    if (sufferer->query("gender") == "Å®ĞÔ")
+    if (sufferer->query("gender") == "å¥³æ€§")
         sufferer->set("sex/hymen_broken", 1);
-    tell_object(attacker, HIM + "\n\nÄãµÄ"+penis+"ÒÑ¾­²åÈëÁË"+sufferer->name()+"µÄ"+pussy+"£¡£¡£¡\n\n" + NOR);
-    tell_object(sufferer, HIM + "\n\n" + attacker->name() +"µÄ"+penis+"ÒÑ¾­²åÈëÁËÄãµÄ"+pussy+"£¡£¡£¡\n\n" + NOR);
+    tell_object(attacker, HIM + "\n\nä½ çš„"+penis+"å·²ç»æ’å…¥äº†"+sufferer->name()+"çš„"+pussy+"ï¼ï¼ï¼\n\n" + NOR);
+    tell_object(sufferer, HIM + "\n\n" + attacker->name() +"çš„"+penis+"å·²ç»æ’å…¥äº†ä½ çš„"+pussy+"ï¼ï¼ï¼\n\n" + NOR);
 }
 
 void pull_penis(object me, object ob)
@@ -178,7 +178,7 @@ void pull_penis(object me, object ob)
     } else
         return;
 
-    if (attacker->query("gender") == "ÄĞĞÔ") {
+    if (attacker->query("gender") == "ç”·æ€§") {
         penis = penis_names[random(sizeof(penis_names))];;
     } else {
         penis_ob = attacker->query_temp("penis");
@@ -189,7 +189,7 @@ void pull_penis(object me, object ob)
         }
     }
 
-    if (sufferer->query("gender") == "Å®ĞÔ") {
+    if (sufferer->query("gender") == "å¥³æ€§") {
         pussy = pussy_names[random(sizeof(pussy_names))];
     } else {
         pussy = ass_names[random(sizeof(ass_names))];
@@ -201,8 +201,8 @@ void pull_penis(object me, object ob)
     sufferer->delete_temp("no_move");
     attacker->remove_fucker(sufferer);
     sufferer->remove_fucker(attacker);
-    tell_object(attacker, HIB + "\n\nÄã½«"+penis+"°Î³öÁË"+sufferer->name()+"µÄ"+pussy+"£¡£¡£¡\n\n" + NOR);
-    tell_object(sufferer, HIB + "\n\n" + attacker->name() +"½«"+penis+"°Î³öÁËÄãµÄ"+pussy+"£¡£¡£¡\n\n" + NOR);
+    tell_object(attacker, HIB + "\n\nä½ å°†"+penis+"æ‹”å‡ºäº†"+sufferer->name()+"çš„"+pussy+"ï¼ï¼ï¼\n\n" + NOR);
+    tell_object(sufferer, HIB + "\n\n" + attacker->name() +"å°†"+penis+"æ‹”å‡ºäº†ä½ çš„"+pussy+"ï¼ï¼ï¼\n\n" + NOR);
 }
 
 int is_fucking(object ob1, object ob2)
@@ -214,10 +214,10 @@ int is_fucking(object ob1, object ob2)
 void r_w_p_l(object winner, object victim)
 {
     winner->add("sex/win/" + get_loverid(victim), 1);
-    tell_object(winner, HIG "\n\n" + victim->query("name") + HIG "±»ÄãÔÚ´²ÉÏÕ÷·şÁË£¡£¡£¡\n\n" NOR);
+    tell_object(winner, HIG "\n\n" + victim->query("name") + HIG "è¢«ä½ åœ¨åºŠä¸Šå¾æœäº†ï¼ï¼ï¼\n\n" NOR);
 
     victim->add("sex/lose/" + get_loverid(winner), 1);
-    tell_object(victim, HIG "\n\nÄã±»" + winner->query("name") + HIG "ÔÚ´²ÉÏÕ÷·şÁË£¡£¡£¡\n\n" NOR);
+    tell_object(victim, HIG "\n\nä½ è¢«" + winner->query("name") + HIG "åœ¨åºŠä¸Šå¾æœäº†ï¼ï¼ï¼\n\n" NOR);
 }
 
 void stop_makelove(object victim)
@@ -256,7 +256,7 @@ int do_makelove(object me, object victim, int is_fucking)
         action = me->query("sex_actions");
     }
 
-    if (victim->query("gender")=="Å®ĞÔ") {
+    if (victim->query("gender")=="å¥³æ€§") {
         switch (random(4)) {
             case 0:
                 sens = pussy_names[random(sizeof(pussy_names))];
@@ -301,25 +301,25 @@ int do_makelove(object me, object victim, int is_fucking)
     hit = random(me_ap + victim_dp) > victim_dp;
     back = random(me_ap + me_dp + victim_dp) < victim_ap + victim_dp;
     if (!hit)
-        effectstr = "ÅªµÃ$n»ëÉíÒ»²ü£¬¼±Ã¦ÉîÎüÒ»¿ÚÆø£¬×ÜËãÃ»ÓĞÊ§¿Ø";
+        effectstr = "å¼„å¾—$næµ‘èº«ä¸€é¢¤ï¼Œæ€¥å¿™æ·±å¸ä¸€å£æ°”ï¼Œæ€»ç®—æ²¡æœ‰å¤±æ§";
     else {
         if (undefinedp(action["effect"]))
-            effectstr = "ÅªµÃ$n»ëÉíÒ»²ü£¬ËÆºõÒÑ¾­ÒâÂÒÇéÃÔ";
+            effectstr = "å¼„å¾—$næµ‘èº«ä¸€é¢¤ï¼Œä¼¼ä¹å·²ç»æ„ä¹±æƒ…è¿·";
         else
             effectstr = action["effect"];
     }
 
-    message_vision("\n" + actionstr + "£¡\n", me, victim);
-    message_vision("½á¹û" + effectstr + "£¡\n", me, victim);
+    message_vision("\n" + actionstr + "ï¼\n", me, victim);
+    message_vision("ç»“æœ" + effectstr + "ï¼\n", me, victim);
     if (hit) {
         report_sex_status(victim);
         victim->sex_excite("lust", action["enjoy"]);
     }
     if (back) {
         if (hit)
-            message_vision("¶ø$NÒ²¾õµÃ¾«ÉñÒ»Õğ£¬Ò»ÖÖÂú×ã¸ĞÓÍÈ»¶øÉú£¡\n", me);
+            message_vision("è€Œ$Nä¹Ÿè§‰å¾—ç²¾ç¥ä¸€éœ‡ï¼Œä¸€ç§æ»¡è¶³æ„Ÿæ²¹ç„¶è€Œç”Ÿï¼\n", me);
         else
-            message_vision("·´¶øÊÇ$N¾õµÃĞÄÖĞÒ»µ´£¬Ò»ÖÖÂú×ã¸ĞÓÍÈ»¶øÉú£¡\n", me);
+            message_vision("åè€Œæ˜¯$Nè§‰å¾—å¿ƒä¸­ä¸€è¡ï¼Œä¸€ç§æ»¡è¶³æ„Ÿæ²¹ç„¶è€Œç”Ÿï¼\n", me);
         report_sex_status(me);
         me->sex_excite("lust", action["self_enjoy"]);
     }

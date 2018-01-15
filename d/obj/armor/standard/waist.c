@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // shoupi.c
@@ -9,13 +9,13 @@ inherit WAIST;
 
 void create()
 {
-        set_name("Ñü´ø", ({"waist"}));
+        set_name("è…°å¸¦", ({"waist"}));
    set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "leather");
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
      set("armor_prop/armor", 1);
         }
         setup();

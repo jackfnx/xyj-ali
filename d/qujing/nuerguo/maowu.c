@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat.c 4/4/1997
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "é��");
+  set ("short", "茅屋");
   set ("long", @LONG
 
-����һ���ª��Сé�ݡ��ı���«�˴�ɡ�����ֻ��һЩ��
-���������þߡ�һλ���������Ŷ����������俴�����ǰڶ�
-�ϸ��˵Ľ�㡣
+这是一间简陋的小茅屋。四壁以芦杆搭成。屋内只有一些简
+单的生活用具。一位老婆婆倚门而坐。以年龄看来似是摆渡
+老妇人的姐姐。
 LONG);
 
   set("exits", ([ 

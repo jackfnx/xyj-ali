@@ -1,18 +1,18 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// head.c ���ϴ�
+// head.c 赵老大
 
 inherit NPC;
 
 void create()
 {
-       set_name("����չ", ({"xia pengzhan", "xia"}));
-       set("title", "���կǿ��ͷ��");
+       set_name("夏鹏展", ({"xia pengzhan", "xia"}));
+       set("title", "清风寨强盗头领");
        
-set("long","����չԭ�ǳ�������һ����ͷ���������Ѹģ��������ǿ����
-ʹһ·��赶�����������Ƶ������ޱȣ�\n");
-       set("gender", "����");
+set("long","夏鹏展原是长安城中一名捕头，因贼性难改，落草作了强盗．
+使一路雁歌刀法，手中雁云刀阴狠无比．\n");
+       set("gender", "男性");
        set("age", 37);
    set("str", 25);
        set("attitude", "aggressive");
@@ -53,6 +53,6 @@ void init()
 void greeting(object ob)
 {
         if( !ob || !present(ob, environment(this_object())) ) return;
-        say( "����չ�ȵ�����������" + RANK_D->query_rude(ob) +
-"���ҿ��㲻����ˣ�\n");
+        say( "夏鹏展喝道：那里来的" + RANK_D->query_rude(ob) +
+"，我看你不想活了！\n");
 }

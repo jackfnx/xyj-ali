@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // gold.c
@@ -7,15 +7,15 @@ inherit MONEY;
 
 void create()
 {
-   set_name("»Æ½ğ", ({"gold", "ingot", "gold_money"}));
+   set_name("é»„é‡‘", ({"gold", "ingot", "gold_money"}));
    if( clonep() )
      set_default_object(__FILE__);
    else {
      set("money_id", "gold");
-     set("long", "»Æ³Î³ÎµÄ½ğ×Ó£¬ÈË¼ûÈË°®µÄ½ğ×Ó£¬°¡¡«¡«½ğ×Ó£¡\n");
-     set("unit", "Ğ©");
+     set("long", "é»„æ¾„æ¾„çš„é‡‘å­ï¼Œäººè§äººçˆ±çš„é‡‘å­ï¼Œå•Šï½ï½é‡‘å­ï¼\n");
+     set("unit", "äº›");
      set("base_value", 10000 );
-     set("base_unit", "Á½");
+     set("base_unit", "ä¸¤");
      set("base_weight", 37);
    }
    set_amount(1);

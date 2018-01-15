@@ -21,26 +21,26 @@ int perform(object me)
     }
 
     if (me->query_skill_mapped("force") != "huntian-qigong")
-        return notify_fail("¡¸×·ÐÈÖðÑª¡¹±ØÐëÅäºÏ»ìÌìÆø¹¦²ÅÄÜÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€Œè¿½è…¥é€è¡€ã€å¿…é¡»é…åˆæ··å¤©æ°”åŠŸæ‰èƒ½ä½¿ç”¨ã€‚\n");
 
     skill = me->query_skill("huntian-qigong", 1);
     if (skill > 250) skill = 250;
     sword_skill = me->query_skill("sword", 1);
     qixiu_skill = me->query_skill("qixiu-sword", 1);
 
-    if (skill < 100) return notify_fail("ÄãµÄ»ìÌìÆø¹¦ÐÞÎª²»¹»¡£\n");
-    if (sword_skill < 100) return notify_fail("ÄãµÄ»ù±¾½£·¨Î´¹»´¿Êì¡£\n");
-    if (qixiu_skill < 160) return notify_fail("ÄãµÄÆßÐÞ½£Î´¹»´¿Êì¡£\n");
+    if (skill < 100) return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸä¿®ä¸ºä¸å¤Ÿã€‚\n");
+    if (sword_skill < 100) return notify_fail("ä½ çš„åŸºæœ¬å‰‘æ³•æœªå¤Ÿçº¯ç†Ÿã€‚\n");
+    if (qixiu_skill < 160) return notify_fail("ä½ çš„ä¸ƒä¿®å‰‘æœªå¤Ÿçº¯ç†Ÿã€‚\n");
 
-    if (me->query("family/family_name") != "ÏÝ¿ÕÉ½ÎÞµ×¶´")
-        return notify_fail("[×·ÐÈÖðÑª]ÊÇÏÝ¿ÕÉ½ÎÞµ×¶´²»´«Ö®ÃÜ£¡\n");
+    if (me->query("family/family_name") != "é™·ç©ºå±±æ— åº•æ´ž")
+        return notify_fail("[è¿½è…¥é€è¡€]æ˜¯é™·ç©ºå±±æ— åº•æ´žä¸ä¼ ä¹‹å¯†ï¼\n");
     if (time()-(int)me->query_temp("zxzx_end") < 10)
-        return notify_fail("ÄãÏÖÔÚÕæÆø²»´¿£¡\n");
+        return notify_fail("ä½ çŽ°åœ¨çœŸæ°”ä¸çº¯ï¼\n");
     if ((int)me->query("force") < skill)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
     me->add("force", -skill);
-    message_vision(HIR "$N°Ñ»ìÌìÆø¹¦ÔÚÌåÄÚÔËÐÐÒ»ÖÜ£¬Ö»¾õ»ëÉíÉ±ÆøÌÚÌÚ£¬¿´Ë­¶¼²»Ë³ÑÛ¡£\n" NOR, me);
+    message_vision(HIR "$NæŠŠæ··å¤©æ°”åŠŸåœ¨ä½“å†…è¿è¡Œä¸€å‘¨ï¼Œåªè§‰æµ‘èº«æ€æ°”è…¾è…¾ï¼Œçœ‹è°éƒ½ä¸é¡ºçœ¼ã€‚\n" NOR, me);
     me->set_temp("zxzx", 1);
     me->set_temp("zxzx_time", skill);
            
@@ -76,7 +76,7 @@ void remove_effect(object me)
     remove_call_out("check");
     me->delete_temp("zxzx");
     me->set_temp("zxzx_end", time());
-    tell_object(me, GRN"Äã½«»ìÌìÆø¹¦ÊÕ»Øµ¤Ìï¡£\n"NOR);
+    tell_object(me, GRN"ä½ å°†æ··å¤©æ°”åŠŸæ”¶å›žä¸¹ç”°ã€‚\n"NOR);
 }
 
 void zxzx_effect(object me, object victim)
@@ -87,11 +87,11 @@ void zxzx_effect(object me, object victim)
    if (random(2)>0) {
         ini_damage_apply = me->query_temp("apply/damage");
         me->add_temp("zxzx", 1);
-        message_vision(HIR "\n$NÒ»½£ÖÐµÐ£¬Ë«Ä¿¾«¹âËÄÐ»£¬·¢¿ñ°ãÏò$nÓÖ¹¥³öÒ»ÕÐ£¡\n" NOR, me, victim);
+        message_vision(HIR "\n$Nä¸€å‰‘ä¸­æ•Œï¼ŒåŒç›®ç²¾å…‰å››è°¢ï¼Œå‘ç‹‚èˆ¬å‘$nåˆæ”»å‡ºä¸€æ‹›ï¼\n" NOR, me, victim);
         me->add_temp("apply/damage", 15);
         damage = COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
         if (damage > 0) {
-            message_vision(HIR "\n$N¿´µ½µÐÈËÉË¿ÚÉÏµÎ×ÅµÄÑª£¬×´½ü·è¿ñ£¬¾ÓÈ»ÔÚ²»¿ÉÄÜµÄÇé¿öÏÂÓÖÔÙ¹¥³öÒ»ÕÐ£¡\n" NOR, me);
+            message_vision(HIR "\n$Nçœ‹åˆ°æ•Œäººä¼¤å£ä¸Šæ»´ç€çš„è¡€ï¼ŒçŠ¶è¿‘ç–¯ç‹‚ï¼Œå±…ç„¶åœ¨ä¸å¯èƒ½çš„æƒ…å†µä¸‹åˆå†æ”»å‡ºä¸€æ‹›ï¼\n" NOR, me);
             me->add_temp("apply/damage", 15);
             COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
             me->add_temp("zxzx", -1);

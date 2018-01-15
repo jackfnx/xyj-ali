@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-    set_name("µØÓüÖ®´²", ({"hell bed"}));
+    set_name("åœ°ç‹±ä¹‹åºŠ", ({"hell bed"}));
     set("env/invisibility", 1);
     set_weight(100);
     set("no_get", 1);
@@ -16,8 +16,8 @@ void create()
 string short()
 {
     object owner = query("owner");
-    if (!owner) return "µØÓüÖ®´²";
-    else return sprintf("µØÓüÖ®´²(owner: %s)", geteuid(owner));
+    if (!owner) return "åœ°ç‹±ä¹‹åºŠ";
+    else return sprintf("åœ°ç‹±ä¹‹åºŠ(owner: %s)", geteuid(owner));
 }
 
 void init()
@@ -41,11 +41,11 @@ int do_sleep(string arg)
     if (me->query("combat_exp") < 50000) return 0;
     if (me->query("dntg/hell") == "done") return 0;
     if (me->query_temp("dntg_hell/next")) return 0;
-    if (!is_drunk(me)) {tell_object(me, "Äã¾«ÉñÊ®×ã£¬²»ÐèÒªË¯¾õ¡£\n");return 1;}
+    if (!is_drunk(me)) {tell_object(me, "ä½ ç²¾ç¥žåè¶³ï¼Œä¸éœ€è¦ç¡è§‰ã€‚\n");return 1;}
 
-    message_vision("$NºÈµÃõ¤ôú´ó×í£¬ÒÐÔÚÔÚÌú°åÇÅ±ßËÉÒõÖ®ÏÂ£¬ö®Ê±¼äË¯×ÅÁË¡£\n", me);
+    message_vision("$Nå–å¾—é…©é…Šå¤§é†‰ï¼Œå€šåœ¨åœ¨é“æ¿æ¡¥è¾¹æ¾é˜´ä¹‹ä¸‹ï¼ŒéœŽæ—¶é—´ç¡ç€äº†ã€‚\n", me);
     me->set_temp("block_msg/all", 1);
-    me->disable_player("<Ë¯ÃÎÖÐ>");
+    me->disable_player("<ç¡æ¢¦ä¸­>");
 
     remove_call_out("go_hell");
     call_out("go_hell", 2+random(5), me);
@@ -70,9 +70,9 @@ void go_hell(object me)
     }
     me->enable_player();
     me->set_temp("block_msg/all", 0);
-    tell_object(me, HIB "\nË¯ÃÎÖÐºö¼ûÁ½ÈË×ßÁË¹ýÀ´£¬´óÉùºÈµÀ£º¡°"
-        + me->query("name") + "£¬ÈêÑôÊÙÒÑ¾¡£¬ÎáµÈ·îÚ¤ÍõÖ®Ãü£¬ÌØÀ´¹´Äã¡£¡±\n"
-        + "Ëµ°Õ²»ÈÝ·ÖËµ£¬ÄÃ¸ùÌúË÷ÍùÄã¾±ÉÏÒ»Ì×£¬À­ÁË¾Í×ß¡£\n\n" NOR);
+    tell_object(me, HIB "\nç¡æ¢¦ä¸­å¿½è§ä¸¤äººèµ°äº†è¿‡æ¥ï¼Œå¤§å£°å–é“ï¼šâ€œ"
+        + me->query("name") + "ï¼Œæ±é˜³å¯¿å·²å°½ï¼Œå¾ç­‰å¥‰å†¥çŽ‹ä¹‹å‘½ï¼Œç‰¹æ¥å‹¾ä½ ã€‚â€\n"
+        + "è¯´ç½¢ä¸å®¹åˆ†è¯´ï¼Œæ‹¿æ ¹é“ç´¢å¾€ä½ é¢ˆä¸Šä¸€å¥—ï¼Œæ‹‰äº†å°±èµ°ã€‚\n\n" NOR);
     me->command_function("look");
 
     piwen = new(__DIR__"piwen");

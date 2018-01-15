@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-       set_name("¸¾ÈË", ({"woman"}));
-       set("gender", "Å®ĞÔ");
+       set_name("å¦‡äºº", ({"woman"}));
+       set("gender", "å¥³æ€§");
         set("combat_exp", 500);
    set("per", 19);
        set("age", 36);

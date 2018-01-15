@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/nanhai/xiaoyuan
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "СԺ");
+  set ("short", "小院");
   set ("long", @LONG
 
-����һ��СԺ��Ժ�б鲼�滨��ݣ����������Ժ��������
-������ʵʵ����һ����������֮���ڡ�
+这是一间小院，院中遍布奇花异草，参天大树将院子四周遮
+得严严实实，好一个修身养性之所在。
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -25,6 +25,6 @@ __DIR__"npc/tidu" : 1,
   "east" : __DIR__"zoulang2",
 ]));
 
-create_door("south", "ʯ��", "north", DOOR_CLOSED);
+create_door("south", "石门", "north", DOOR_CLOSED);
   setup();
 }

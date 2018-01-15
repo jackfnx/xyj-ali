@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit F_CLEAN_UP;
@@ -22,13 +22,13 @@ int update_condition(object me, int duration)
    ratio = (int)me->query("eff_sen")*100 / (int)me->query("max_sen");
    if( !duration ) return 0;
        if (ratio > 80) 
-     tell_object(me, "�����ͷ�Բ������ѣ�������ƮƮ�ġ�\n");
+     tell_object(me, "你觉得头脑不大清醒，身子轻飘飘的。\n");
        else if (ratio > 60) 
-     tell_object(me, "������Դ���ʹ���ǣ������Ѳ�����ʹ���ˡ�\n");
+     tell_object(me, "你觉得脑袋又痛又涨，身子已不大听使唤了。\n");
        else if (ratio > 40) 
-     tell_object(me, "����ú������ѣ���ǰһ�ж�ģ����������\n");
+     tell_object(me, "你觉得呼吸困难，眼前一切都模糊了起来。\n");
        else 
-     tell_object(me, "������˯�����Ͼ�Ҫ���ڵ����ˡ�\n");
+     tell_object(me, "你昏昏欲睡，马上就要倒在地下了。\n");
 
     me->receive_wound("sen", 2);
     if (me->query("mana") < 0) me->set("mana", 0);

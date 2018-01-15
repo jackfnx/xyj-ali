@@ -1,19 +1,19 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
 
 void create ()
 {
-   set ("short", "����");
+   set ("short", "观门");
    set ("long", @LONG
 
-�����䵭�������ġ�����ת�ۼ��Ȼ�ֳ���һ��ɽ�š�ɽ����
-̦ʯ�ݳɣ����ٲ����п��Կ���һ��ͨ��(bei)��ɽ��֮����¥��
-���㡣
+松坡冷淡，竹径清幽。几重转折间忽然现出了一道山门。山门以
+苔石垒成，青藤缠绕中可以看到一块通碑(bei)。山门之后有楼阁
+数层。
 LONG);
 
-   set("item_desc", (["bei" : "ʯ���ϴ��飺����ɽ���أ���ׯ�۶��졣\n", ]));
+   set("item_desc", (["bei" : "石碑上大书：万寿山福地，五庄观洞天。\n", ]));
 
    set("exits", 
    ([ //sizeof() == 4

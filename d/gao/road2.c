@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // gate.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ֵ�");
+  set ("short", "街道");
   set ("long", @LONG
 
-��Χ��һЩ���̣����Ϊ�������⣬�Ѷ������ڵ��˽��ϣ���һ
-�������Ͳ�����ʯ��ռ�˴�룮�������Ҳ�ԵĽ϶࣬�����Щ
-�������ģ�������Щ�ճ���Ʒ��
+周围有一些店铺，店家为了抢生意，把东西都摆到了街上．把一
+条本来就不宽的石街占了大半．这里的人也显的较多，大多是些
+乡下来的，来买上些日常用品．
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "north" : __DIR__"budian",

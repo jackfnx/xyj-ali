@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "Ð¡Ä¾ÎÝÍâ");
+   set ("short", "å°æœ¨å±‹å¤–");
    set ("long", @LONG
 
-ºÜÄÑÏëÏóÕâÐ©Ä¾Í·ÊÇ´ÓÄÄÀïÀ´µÄ¡£µ«ÊÇÕâÀïµÄÈ·ÊÇÒ»¼äÐ¡Ä¾ÎÝ¡£
-ÖÜÎ§ÊÇÒ»µÀ±ùÖÆµÄÎ§Ç½£¬Ò²²»¹ý°ëÈËÀ´¸ß¡£
+å¾ˆéš¾æƒ³è±¡è¿™äº›æœ¨å¤´æ˜¯ä»Žå“ªé‡Œæ¥çš„ã€‚ä½†æ˜¯è¿™é‡Œçš„ç¡®æ˜¯ä¸€é—´å°æœ¨å±‹ã€‚
+å‘¨å›´æ˜¯ä¸€é“å†°åˆ¶çš„å›´å¢™ï¼Œä¹Ÿä¸è¿‡åŠäººæ¥é«˜ã€‚
 LONG);
 
    set("exits", ([ //sizeof() == 3
@@ -32,10 +32,10 @@ int valid_leave(object me, string dir)
     object shier;
     if (dir == "south") {
         if (objectp(shier = present("shi er", environment(me))) && living(shier)) {
-            if (me->query("family/family_name") == "´óÑ©É½" && (int)me->query("family/generation") <= 3)
-                message_vision("$NµÍÃ¼Ë³Ä¿Ïò$nÐÐÀñ¡£\n", shier, this_player());
+            if (me->query("family/family_name") == "å¤§é›ªå±±" && (int)me->query("family/generation") <= 3)
+                message_vision("$Nä½Žçœ‰é¡ºç›®å‘$nè¡Œç¤¼ã€‚\n", shier, this_player());
             else 
-                return notify_fail("ÊÌ¶ù°ÑÄãÒ»À¹µÀ£º¹«Ö÷ÓÐÁî£¬ÈÎºÎÈË²»µÃÈëÄÚ´ò½Á£¡\n");
+                return notify_fail("ä¾å„¿æŠŠä½ ä¸€æ‹¦é“ï¼šå…¬ä¸»æœ‰ä»¤ï¼Œä»»ä½•äººä¸å¾—å…¥å†…æ‰“æ…ï¼\n");
         }
     }
 

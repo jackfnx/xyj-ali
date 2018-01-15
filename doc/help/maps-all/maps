@@ -1,59 +1,59 @@
-¡¼Î÷ÓÎ¼Ç¡½ÏÖÔÚÓµÓĞÒÔ³¤°²³ÇÎªÖĞĞÄµÄ¹ã´óµØÇø£¬ÉÏÓĞÌì¹¬ÏÂÓĞµØÓü¶«
-ÓĞÏÉ¾³Î÷ÓĞ¸÷¹ú¹²½¨ÓĞÊıÊ®¸ö¹ú¼ÒÇøÓò£¬ÎªÖÁ½ñ×î´óµÄÖĞÎÄ£Í£Õ£Ä¡£
+ã€–è¥¿æ¸¸è®°ã€—ç°åœ¨æ‹¥æœ‰ä»¥é•¿å®‰åŸä¸ºä¸­å¿ƒçš„å¹¿å¤§åœ°åŒºï¼Œä¸Šæœ‰å¤©å®«ä¸‹æœ‰åœ°ç‹±ä¸œ
+æœ‰ä»™å¢ƒè¥¿æœ‰å„å›½å…±å»ºæœ‰æ•°åä¸ªå›½å®¶åŒºåŸŸï¼Œä¸ºè‡³ä»Šæœ€å¤§çš„ä¸­æ–‡ï¼­ï¼µï¼¤ã€‚
 
-ÒÔÏÂÊÇÏÖÔÚ¿ÉÒÔµÃµ½µÄµØÍ¼£º
+ä»¥ä¸‹æ˜¯ç°åœ¨å¯ä»¥å¾—åˆ°çš„åœ°å›¾ï¼š
 
-¡¼help map-all          ¡½      Î÷ÓÎ¼Ç×ÜÍ¼
+ã€–help map-all          ã€—      è¥¿æ¸¸è®°æ€»å›¾
 
-¡¼help map-changan      ¡½      ³¤°²³Ç
-¡¼help map-changan-south¡½      ³¤°²ÄÏ²¿
-¡¼help map-changan-east ¡½      ³¤°²¶«²¿
-¡¼help map-changan-west ¡½      ³¤°²Î÷²¿
+ã€–help map-changan      ã€—      é•¿å®‰åŸ
+ã€–help map-changan-southã€—      é•¿å®‰å—éƒ¨
+ã€–help map-changan-east ã€—      é•¿å®‰ä¸œéƒ¨
+ã€–help map-changan-west ã€—      é•¿å®‰è¥¿éƒ¨
 
-¡¼help map-pantaohui    ¡½      ó´ÌÒ»áÑş³Ø
-¡¼help map-yanwuchang   ¡½      ÑİÎä³¡
-¡¼help map-kaifeng      ¡½      ¿ª·â³Ç
-¡¼help map-aolai        ¡½      °ÁÀ´¹ú¡¢»¨¹ûÉ½
-¡¼help map-gao          ¡½      ¸ßÀÏ×¯
+ã€–help map-pantaohui    ã€—      èŸ æ¡ƒä¼šç‘¶æ± 
+ã€–help map-yanwuchang   ã€—      æ¼”æ­¦åœº
+ã€–help map-kaifeng      ã€—      å¼€å°åŸ
+ã€–help map-aolai        ã€—      å‚²æ¥å›½ã€èŠ±æœå±±
+ã€–help map-gao          ã€—      é«˜è€åº„
 
-¡¼help map-fangcun ¡½ ·½´çÉ½            ¡¼help map-putuo    ¡½ ÆÕÍÓÉ½ 
-¡¼help map-hell    ¡½ µØ¸®              ¡¼help map-moon     ¡½ ÔÂ¹¬     
-¡¼help map-sea     ¡½ Áú¹¬              ¡¼help map-xueshan  ¡½ ´óÑ©É½
+ã€–help map-fangcun ã€— æ–¹å¯¸å±±            ã€–help map-putuo    ã€— æ™®é™€å±± 
+ã€–help map-hell    ã€— åœ°åºœ              ã€–help map-moon     ã€— æœˆå®«     
+ã€–help map-sea     ã€— é¾™å®«              ã€–help map-xueshan  ã€— å¤§é›ªå±±
 
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤È¡¾­Â·©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€å–ç»è·¯â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-¡¼help map-qujing         ¡½ È¡¾­Â·×ÜÍ¼
+ã€–help map-qujing         ã€— å–ç»è·¯æ€»å›¾
 
-¡¼help map-baoxiang       ¡½ ±¦Ïó¹ú£¯Íë×ÓÉ½
-¡¼help map-pingding       ¡½ Æ½¶¥É½£¯Á«»¨¶´£¯Ñ¹ÁúÉ½£¯Ñ¹Áú¶´
-¡¼help map-wuji           ¡½ ÎÚ¼¦¹ú£¯±¦ÁÖËÂ
-¡¼help map-chechi         ¡½ ³µ³Ù¹ú£¯ÈıÇå¹Û
-¡¼help map-tongtian       ¡½ Í¨ÌìºÓ£¯³Â¼Ò×¯
-¡¼help map-jindou         ¡½ ½ğ¶µÉ½£¯½ğ¶µ¶´
-¡¼help map-nuerguo        ¡½ Å®¶ù¹ú£¯½âÑôÉ½
-¡¼help map-dudi           ¡½ ¶¾µĞÉ½£¯ÅıÅÃ¶´
-¡¼help map-firemount      ¡½ »ğÑæÉ½£¯´äÔÆÉ½
-¡¼help map-jilei          ¡½ »ıÀ×É½£¯Ä¦ÔÆ¶´
-¡¼help map-jisaiguo       ¡½ ¼ÀÈü¹ú
-£¨ÒÔ¼°¡¼help map-bibotan  ¡½ ±Ì²¨Ì¶£©
-¡¼help map-jingjiling     ¡½ ¾£¼¬Áë£¯Ä¾ÏÉâÖ
-¡¼help map-xiaoxitian     ¡½ Ğ¡Î÷Ìì£¯Ğ¡À×ÒôËÂ
-¡¼help map-zhuzi          ¡½ Öì×Ï¹ú
-£¨ÒÔ¼°¡¼help map-qilin    ¡½ ÷è÷ëÉ½£¯â³õô¶´£©
-¡¼help map-pansi          ¡½ ÅÌË¿Áë£¯ÅÌË¿¶´£¯»Æ»¨¹Û£¯×ÏÔÆÉ½
-¡¼help map-biqiu          ¡½ ±ÈÇğ¹ú£¯Çå»ª×¯
-¡¼help map-wudidong       ¡½ ÎŞµ×¶´£¯ºÚËÉÁÖ
-¡¼help map-qinfa          ¡½ ÇÕ·¨¹ú
-¡¼help map-yinwu          ¡½ ÒşÎíÉ½£¯Á¬»·¶´
-¡¼help map-fengxian       ¡½ ·ïÏÉ¿¤
-¡¼help map-yuhua          ¡½ Óñ»ªÏØ
-£¨ÒÔ¼°¡¼help map-baotou   ¡½ ±ªÍ·É½£¯»¢¿Ú¶´
-  ÒÔ¼°¡¼help map-zhujie   ¡½ Öñ½ÚÉ½£¯¾ÅÇúÅÌºã¶´£©
-¡¼help map-jinping        ¡½ ½ğÆ½¸®
-£¨ÒÔ¼°¡¼help map-qinglong ¡½ ÇàÁúÉ½£¯ĞşÓ¢¶´£©
-¡¼help map-tianzhu        ¡½ ÌìóÃ¹ú
-£¨ÒÔ¼°¡¼help map-maoying  ¡½ Ã«Ó±É½£¯ÈıÁ¬Ñ¨£©
-¡¼help map-lingshan       ¡½ ÁéÉ½£¯À×ÒôËÂ
+ã€–help map-baoxiang       ã€— å®è±¡å›½ï¼ç¢—å­å±±
+ã€–help map-pingding       ã€— å¹³é¡¶å±±ï¼è²èŠ±æ´ï¼å‹é¾™å±±ï¼å‹é¾™æ´
+ã€–help map-wuji           ã€— ä¹Œé¸¡å›½ï¼å®æ—å¯º
+ã€–help map-chechi         ã€— è½¦è¿Ÿå›½ï¼ä¸‰æ¸…è§‚
+ã€–help map-tongtian       ã€— é€šå¤©æ²³ï¼é™ˆå®¶åº„
+ã€–help map-jindou         ã€— é‡‘å…œå±±ï¼é‡‘å…œæ´
+ã€–help map-nuerguo        ã€— å¥³å„¿å›½ï¼è§£é˜³å±±
+ã€–help map-dudi           ã€— æ¯’æ•Œå±±ï¼çµç¶æ´
+ã€–help map-firemount      ã€— ç«ç„°å±±ï¼ç¿ äº‘å±±
+ã€–help map-jilei          ã€— ç§¯é›·å±±ï¼æ‘©äº‘æ´
+ã€–help map-jisaiguo       ã€— ç¥­èµ›å›½
+ï¼ˆä»¥åŠã€–help map-bibotan  ã€— ç¢§æ³¢æ½­ï¼‰
+ã€–help map-jingjiling     ã€— è†æ£˜å²­ï¼æœ¨ä»™åºµ
+ã€–help map-xiaoxitian     ã€— å°è¥¿å¤©ï¼å°é›·éŸ³å¯º
+ã€–help map-zhuzi          ã€— æœ±ç´«å›½
+ï¼ˆä»¥åŠã€–help map-qilin    ã€— éº’éºŸå±±ï¼ç¬è±¸æ´ï¼‰
+ã€–help map-pansi          ã€— ç›˜ä¸å²­ï¼ç›˜ä¸æ´ï¼é»„èŠ±è§‚ï¼ç´«äº‘å±±
+ã€–help map-biqiu          ã€— æ¯”ä¸˜å›½ï¼æ¸…ååº„
+ã€–help map-wudidong       ã€— æ— åº•æ´ï¼é»‘æ¾æ—
+ã€–help map-qinfa          ã€— é’¦æ³•å›½
+ã€–help map-yinwu          ã€— éšé›¾å±±ï¼è¿ç¯æ´
+ã€–help map-fengxian       ã€— å‡¤ä»™éƒ¡
+ã€–help map-yuhua          ã€— ç‰åå¿
+ï¼ˆä»¥åŠã€–help map-baotou   ã€— è±¹å¤´å±±ï¼è™å£æ´
+  ä»¥åŠã€–help map-zhujie   ã€— ç«¹èŠ‚å±±ï¼ä¹æ›²ç›˜æ’æ´ï¼‰
+ã€–help map-jinping        ã€— é‡‘å¹³åºœ
+ï¼ˆä»¥åŠã€–help map-qinglong ã€— é’é¾™å±±ï¼ç„è‹±æ´ï¼‰
+ã€–help map-tianzhu        ã€— å¤©ç«ºå›½
+ï¼ˆä»¥åŠã€–help map-maoying  ã€— æ¯›é¢–å±±ï¼ä¸‰è¿ç©´ï¼‰
+ã€–help map-lingshan       ã€— çµå±±ï¼é›·éŸ³å¯º
 
-¡¼Î÷ÓÎ¼Ç¡½¹¤×÷×é
+ã€–è¥¿æ¸¸è®°ã€—å·¥ä½œç»„
 

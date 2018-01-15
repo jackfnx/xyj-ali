@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/weaponry.c
@@ -10,11 +10,11 @@ inherit ROOM;
 // some global variables.
 
 mapping msg=([
-   "changjian":   "\tÈı±ú³¤½£(chang jian)\n",
-   "duanjian":   "\t¶ş±ú¶Ì½£(duan jian)\n",
-   "zhujian":   "\t¶ş±úÖñ½£(zhu jian)\n",
-   "dandao":   "\tÈı±úµ¥µ¶(dan dao)\n",
-   "mudao":   "\t¶ş±úÄ¾µ¶(mu dao)\n",
+   "changjian":   "\tä¸‰æŸ„é•¿å‰‘(chang jian)\n",
+   "duanjian":   "\täºŒæŸ„çŸ­å‰‘(duan jian)\n",
+   "zhujian":   "\täºŒæŸ„ç«¹å‰‘(zhu jian)\n",
+   "dandao":   "\tä¸‰æŸ„å•åˆ€(dan dao)\n",
+   "mudao":   "\täºŒæŸ„æœ¨åˆ€(mu dao)\n",
 ]);
 mapping amount=([
         "changjian":    3,
@@ -31,12 +31,12 @@ string look_chair();
 /************************************************************/
 void create ()
 {
-  set ("short", "±øÆ÷¿â");
+  set ("short", "å…µå™¨åº“");
   set ("long", @LONG
 
-ÄãÃşÃşË÷Ë÷µØ×ßÁË¹ıÀ´£¬È´·¢ÏÖ¶´ÄÚ±ÈÄãÏëÏóµÄÒª¿í³¨µÄ¶à¡£ËÄ±Ú¹Ò
-×ÅĞ©µ¶½£µÈ±øÆ÷£¬¼¸¸öĞ¡ÑıÕıÔÚÎè´¸Åª¸«£¬¿´ÉÏÈ¥»¹ÕæÓĞ¼¸ÊÖ¡£¶´Éî
-´¦ÓĞÒ»°Ñ¿í´óµÄÊ¯µÊ£¬¾İËµÊÇÓñÊó´Í¸ø±ÌÊóµÄ¡£
+ä½ æ‘¸æ‘¸ç´¢ç´¢åœ°èµ°äº†è¿‡æ¥ï¼Œå´å‘ç°æ´å†…æ¯”ä½ æƒ³è±¡çš„è¦å®½æ•çš„å¤šã€‚å››å£æŒ‚
+ç€äº›åˆ€å‰‘ç­‰å…µå™¨ï¼Œå‡ ä¸ªå°å¦–æ­£åœ¨èˆé”¤å¼„æ–§ï¼Œçœ‹ä¸Šå»è¿˜çœŸæœ‰å‡ æ‰‹ã€‚æ´æ·±
+å¤„æœ‰ä¸€æŠŠå®½å¤§çš„çŸ³å‡³ï¼Œæ®è¯´æ˜¯ç‰é¼ èµç»™ç¢§é¼ çš„ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -47,9 +47,9 @@ LONG);
 ]));
   set("item_desc", ([
    "wall": (: update_wall :),
-   "ËÄ±Ú": (: update_wall :), 
+   "å››å£": (: update_wall :), 
    "chair": (: look_chair :),
-   "Ê¯µÊ" : (: look_chair :),
+   "çŸ³å‡³" : (: look_chair :),
 ]));
   set("no_fight", 1);
   set("no_magic", 1);
@@ -80,56 +80,56 @@ int do_take(string arg)
     object me=this_player(), ob;
     string weapon, destination, type;
 
-    if (!arg) return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
-    if (me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+    if (!arg) return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
+    if (me->is_busy()) return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 
     if (sscanf(arg, "%s from %s", weapon, destination)!=2)
-        return notify_fail("ÓÃ take <weapon> from <wall|ËÄ±Ú> À´ÄÃÏëÓÃµÄ±øÆ÷¡£\n");
+        return notify_fail("ç”¨ take <weapon> from <wall|å››å£> æ¥æ‹¿æƒ³ç”¨çš„å…µå™¨ã€‚\n");
 
-    if (destination != "wall" && destination != "ËÄ±Ú")
-        return notify_fail("´ÓÄÄÀïÄÃ£¿\n");
+    if (destination != "wall" && destination != "å››å£")
+        return notify_fail("ä»å“ªé‡Œæ‹¿ï¼Ÿ\n");
 
-    if (weapon == "chang jian" || weapon == "changjian" || weapon == "³¤½£"
-     || weapon == "duan jian" || weapon == "duanjian" || weapon == "¶Ì½£"
-     || weapon == "zhu jian" || weapon == "zhujian" || weapon == "Öñ½£")
+    if (weapon == "chang jian" || weapon == "changjian" || weapon == "é•¿å‰‘"
+     || weapon == "duan jian" || weapon == "duanjian" || weapon == "çŸ­å‰‘"
+     || weapon == "zhu jian" || weapon == "zhujian" || weapon == "ç«¹å‰‘")
     {
    if (present("sword", me))
-       return notify_fail("±ğÕâÃ´×ÔË½£¬ÉíÉÏ²»ÊÇÓĞÒ»±ú½£ÁËÂğ£¿\n");
+       return notify_fail("åˆ«è¿™ä¹ˆè‡ªç§ï¼Œèº«ä¸Šä¸æ˜¯æœ‰ä¸€æŸ„å‰‘äº†å—ï¼Ÿ\n");
    if(present("sword", environment(me)))
-       return notify_fail("µØÉÏ²»ÊÇÓĞÂğ£¿\n");
+       return notify_fail("åœ°ä¸Šä¸æ˜¯æœ‰å—ï¼Ÿ\n");
    type = "sword";
     }
-    if (weapon == "dan dao" || weapon == "dandao" || weapon == "µ¥µ¶"
-     || weapon == "mu dao" || weapon == "mudao" || weapon == "Ä¾µ¶")
+    if (weapon == "dan dao" || weapon == "dandao" || weapon == "å•åˆ€"
+     || weapon == "mu dao" || weapon == "mudao" || weapon == "æœ¨åˆ€")
     {
    if (present("blade", me))
-       return notify_fail("±ğÕâÃ´×ÔË½£¬ÉíÉÏ²»ÊÇÓĞÒ»±úµ¶ÁËÂğ£¿\n");
+       return notify_fail("åˆ«è¿™ä¹ˆè‡ªç§ï¼Œèº«ä¸Šä¸æ˜¯æœ‰ä¸€æŸ„åˆ€äº†å—ï¼Ÿ\n");
    if(present("blade", environment(me)))
-       return notify_fail("µØÉÏ²»ÊÇÓĞÂğ£¿\n");
+       return notify_fail("åœ°ä¸Šä¸æ˜¯æœ‰å—ï¼Ÿ\n");
    type = "blade";
     }
-    if (weapon == "chang jian" || weapon == "changjian" || weapon == "³¤½£")
+    if (weapon == "chang jian" || weapon == "changjian" || weapon == "é•¿å‰‘")
     {
    weapon = "changjian";
     }
-    if (weapon == "duan jian" || weapon == "duanjian" || weapon == "¶Ì½£")
+    if (weapon == "duan jian" || weapon == "duanjian" || weapon == "çŸ­å‰‘")
     {
    weapon ="duanjian";
     }
-    if (weapon == "zhu jian" || weapon == "zhujian" || weapon == "Öñ½£")
+    if (weapon == "zhu jian" || weapon == "zhujian" || weapon == "ç«¹å‰‘")
     {
    weapon ="zhujian";
     }
-    if (weapon == "dan dao" || weapon == "dandao" || weapon == "µ¥µ¶")
+    if (weapon == "dan dao" || weapon == "dandao" || weapon == "å•åˆ€")
     {
    weapon ="dandao";
     }
-    if (weapon == "mu dao" || weapon == "mudao" || weapon == "Ä¾µ¶")
+    if (weapon == "mu dao" || weapon == "mudao" || weapon == "æœ¨åˆ€")
     {
    weapon ="mudao";
     }
     if(amount[weapon]==0)
-   return notify_fail("Ç½ÉÏÒÑ¾­Ã»ÓĞÄãÒªµÄ±øÆ÷ÁË¡£\n");
+   return notify_fail("å¢™ä¸Šå·²ç»æ²¡æœ‰ä½ è¦çš„å…µå™¨äº†ã€‚\n");
     ob=new("/d/obj/weapon/"+type+"/"+weapon);
     amount[weapon]-=1;
     if (amount[weapon] == 0)
@@ -137,7 +137,7 @@ int do_take(string arg)
     else msg[weapon]="\t"+chinese_number(amount[weapon])+ob->query("unit")+
      ob->query("name")+
      "("+ob->query("id")+")\n";
-    message_vision("$N´ÓÇ½ÉÏÈ¡ÏÂÒ»"+ob->query("unit")+ob->query("name")+"¡£\n", me);
+    message_vision("$Nä»å¢™ä¸Šå–ä¸‹ä¸€"+ob->query("unit")+ob->query("name")+"ã€‚\n", me);
     update_wall();
     ob->move(me);
     return 1;
@@ -151,7 +151,7 @@ string update_wall()
 {
     string wall;
 wall =
-"Ç½ÉÏ¹Ò×Å£º
+"å¢™ä¸ŠæŒ‚ç€ï¼š
 
 "+
 (string)msg["changjian"]+
@@ -168,27 +168,27 @@ return wall;
 string look_chair()
 {
     if (present("bi shu", this_object()))
-   return "±ÌÊó¾«ÕıÍáÍáÅ¤Å¤µØ¿¿ÔÚÊ¯µÊÉÏ£¬¿´ÆğÀ´ÏóÔÚ´òî§Ë¯¡£\n";
+   return "ç¢§é¼ ç²¾æ­£æ­ªæ­ªæ‰­æ‰­åœ°é åœ¨çŸ³å‡³ä¸Šï¼Œçœ‹èµ·æ¥è±¡åœ¨æ‰“çŒç¡ã€‚\n";
 
-    return "Ò»°Ñ¿í´ó½áÊµµÄÊ¯µÊ£¬µÊ×ÓÖĞÑë¿Ì×Å¸ö¾Ş´óµÄ÷¼÷ÃÍ·¡£\n"
-      "Õâ÷¼÷ÃÍ·¾¹ËÆ»îµÄÒ»°ã£¬Ò»¶ÔºÚ¶´¶´µÄÑÛ¾¦ËÀËÀ¶¢×ÅÄã£¡\n";
+    return "ä¸€æŠŠå®½å¤§ç»“å®çš„çŸ³å‡³ï¼Œå‡³å­ä¸­å¤®åˆ»ç€ä¸ªå·¨å¤§çš„éª·é«…å¤´ã€‚\n"
+      "è¿™éª·é«…å¤´ç«Ÿä¼¼æ´»çš„ä¸€èˆ¬ï¼Œä¸€å¯¹é»‘æ´æ´çš„çœ¼ç›æ­»æ­»ç›¯ç€ä½ ï¼\n";
 }
 /************************************************************/
 
 // these actions allow the player to go into the room that has
 // the kugu-blade books. need to pull 9 times on the skull, and
-// push once, the hint given from bishu's nickname, ¾ÅËÀÒ»Éú
+// push once, the hint given from bishu's nickname, ä¹æ­»ä¸€ç”Ÿ
 
 int do_pull(string arg)
 {
     object me=this_player();
 
-    if (arg != "kulou" && arg != "skull" && arg != "÷¼÷Ã")
-        return notify_fail("Äã¶«ÕÅÎ÷Íû¿´ÁË°ëÌì£¬Ã»ÕÒµ½Ê²Ã´¿ÉÀ­µÄ¡£\n");
+    if (arg != "kulou" && arg != "skull" && arg != "éª·é«…")
+        return notify_fail("ä½ ä¸œå¼ è¥¿æœ›çœ‹äº†åŠå¤©ï¼Œæ²¡æ‰¾åˆ°ä»€ä¹ˆå¯æ‹‰çš„ã€‚\n");
     if (present("bi shu", this_object()))
-   return notify_fail("Ã»¿´¼ûÊ¯µÊÉÏ×ø×ÅÈË£¿\n");
-    tell_object(me,"Äã½«ÊÖÖ¸ÉìÈë÷¼÷ÃµÄÑÛ¾¦ÖĞ£¬ÓÃÁ¦Ò»ÏÆ¡£\n");
-    tell_object(me, "÷¼÷ÃÍ»È»ÕÅ¿ªÁË×ì£¬Åç³öÒ»¹ÉÇàÑÌ¡£\n");
+   return notify_fail("æ²¡çœ‹è§çŸ³å‡³ä¸Šåç€äººï¼Ÿ\n");
+    tell_object(me,"ä½ å°†æ‰‹æŒ‡ä¼¸å…¥éª·é«…çš„çœ¼ç›ä¸­ï¼Œç”¨åŠ›ä¸€æ€ã€‚\n");
+    tell_object(me, "éª·é«…çªç„¶å¼ å¼€äº†å˜´ï¼Œå–·å‡ºä¸€è‚¡é’çƒŸã€‚\n");
     pull_count+=1;
     return 1;
 }
@@ -197,31 +197,31 @@ int do_push(string arg)
 {
     object me=this_player();
 
-    if (arg != "kulou" && arg != "skull" && arg != "÷¼÷Ã")
-        return notify_fail("Äã¶«ÕÅÎ÷Íû¿´ÁË°ëÌì£¬Ã»ÕÒµ½Ê²Ã´¿ÉÍÆµÄ¡£\n");
+    if (arg != "kulou" && arg != "skull" && arg != "éª·é«…")
+        return notify_fail("ä½ ä¸œå¼ è¥¿æœ›çœ‹äº†åŠå¤©ï¼Œæ²¡æ‰¾åˆ°ä»€ä¹ˆå¯æ¨çš„ã€‚\n");
     if (present("bi shu", this_object()))
-   return notify_fail("Ã»¿´¼ûÊ¯µÊÉÏ×ø×ÅÈË£¿\n");
-    tell_object(me, "Äã½«ÊÖÖ¸ÉìÈë÷¼÷ÃµÄÑÛ¾¦ÖĞ£¬ÓÃÁ¦Ò»Ñ¹¡£\n");
-    tell_object(me, "÷¼÷ÃÍ»È»ÕÅ¿ªÁË×ì£¬Åç³öÒ»¹ÉÅ¨ÑÌ¡£\n");
+   return notify_fail("æ²¡çœ‹è§çŸ³å‡³ä¸Šåç€äººï¼Ÿ\n");
+    tell_object(me, "ä½ å°†æ‰‹æŒ‡ä¼¸å…¥éª·é«…çš„çœ¼ç›ä¸­ï¼Œç”¨åŠ›ä¸€å‹ã€‚\n");
+    tell_object(me, "éª·é«…çªç„¶å¼ å¼€äº†å˜´ï¼Œå–·å‡ºä¸€è‚¡æµ“çƒŸã€‚\n");
     if(pull_count == 9)
     {
-   message_vision("Ò»¹ÉÅ¨ÑÌ¹ıºó£¬$N²»¼ûÁË¡£\n", me);
+   message_vision("ä¸€è‚¡æµ“çƒŸè¿‡åï¼Œ$Nä¸è§äº†ã€‚\n", me);
    me->move(__DIR__"book-cave1");
-   message("vision", "Ò»ÕóÀä·ç´µ¹ı£¬¶´ÖĞÍ»È»¶àÁËÒ»¸öÈË¡£\n", me);
+   message("vision", "ä¸€é˜µå†·é£å¹è¿‡ï¼Œæ´ä¸­çªç„¶å¤šäº†ä¸€ä¸ªäººã€‚\n", me);
    me->add_temp("wudidong/enter_book_cave1", 1);
         pull_count=0;
    return 1;
     }
     pull_count=0;
-    message_vision("Ò»ÕóÅ¨ÑÌÖĞÉä³öÒ»µÀ»ğÑæ£¬Ö±Ö¸$NµÄ×óÑÛ¡£\n", me);
+    message_vision("ä¸€é˜µæµ“çƒŸä¸­å°„å‡ºä¸€é“ç«ç„°ï¼Œç›´æŒ‡$Nçš„å·¦çœ¼ã€‚\n", me);
     if(random(100)<(40-me->query_kar()))
     {
-   message_vision("$NÏòÅÔ±ßÒ»ÉÁ£¬½á¹ûÃ»ÉÁ¿ª¡£\n", me);
+   message_vision("$Nå‘æ—è¾¹ä¸€é—ªï¼Œç»“æœæ²¡é—ªå¼€ã€‚\n", me);
    me->receive_wound("kee", 10);
     }
     else
     {
-   message_vision("$NÏòÅÔ±ßÒ»ÉÁ£¬ÈÃÁË¿ªÈ¥¡£\n", me);
+   message_vision("$Nå‘æ—è¾¹ä¸€é—ªï¼Œè®©äº†å¼€å»ã€‚\n", me);
     }
     return 1;
 }

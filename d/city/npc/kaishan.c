@@ -1,17 +1,17 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("��ɽ", ({ "yin kaishan", "yin", "kaishan" }));
-        set("title", "���ܹ�");
-        set("gender", "����");
+        set_name("殷开山", ({ "yin kaishan", "yin", "kaishan" }));
+        set("title", "大总管");
+        set("gender", "男性");
         set("age", 70);
         set("str", 20);
         set("dex", 20);
-        set("long", "�����ǵ������ܹ���ɽ������Ͷ��֮�䣬��ŭ������\n");
+        set("long", "他就是当朝大总管殷开山，举手投足之间，不怒自威。\n");
         set("combat_exp", 80000);
         set("attitude", "friendly");
    set("force_factor", 10);
@@ -34,9 +34,9 @@ int accept_object(object who,object ob)
    int val;
    val = ob->value();
    if( !val )
-                return notify_fail("��ɽЦ�������ǲ����յģ����û�ȥ�ɣ�\n");
+                return notify_fail("殷开山笑道：我是不会收的，你拿回去吧！\n");
    if (val < 5000) {
-   write("��ɽЦ�������Ӽ�ÿ�²�������ʮ��������\n");
+   write("殷开山笑道：国子监每月柴油需五十两白银！\n");
    return 0;
    }
         who->set("guozi/paid", 1);

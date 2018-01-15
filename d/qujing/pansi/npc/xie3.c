@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 12/5/1997 by snowcat
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("µÀÊ¿", ({"dao shi", "xie gong", "xie", "shi"}));
-  set("title", "Ë«Í·Ğ«¹«");
-  set("gender", "ÄĞĞÔ");
+  set_name("é“å£«", ({"dao shi", "xie gong", "xie", "shi"}));
+  set("title", "åŒå¤´èå…¬");
+  set("gender", "ç”·æ€§");
   set("age", 80);
   set("attitude", "aggressive");
   set("combat_exp", 3500000);
@@ -55,7 +55,7 @@ void unconcious()
   object shell = new ("/d/obj/misc/shell");
 
   shell->move(environment(this_object()));
-  message_vision ("\n$N»ëÉíÒ»ÈíÌ±ÔÚµØÉÏ£¬»¯×öÒ»¶Ñ¿Õ¿ÕµÄ³æ¿Ç¡£\n",
+  message_vision ("\n$Næµ‘èº«ä¸€è½¯ç˜«åœ¨åœ°ä¸Šï¼ŒåŒ–åšä¸€å †ç©ºç©ºçš„è™«å£³ã€‚\n",
                   this_object());
   destruct(this_object());
 }
@@ -65,7 +65,7 @@ void die()
   object shell = new ("/d/obj/misc/shell");
 
   shell->move(environment(this_object()));
-  message_vision ("\n$N»ëÉíÒ»ÈíÌ±ÔÚµØÉÏ£¬»¯×öÒ»¶Ñ¿Õ¿ÕµÄ³æ¿Ç¡£\n",
+  message_vision ("\n$Næµ‘èº«ä¸€è½¯ç˜«åœ¨åœ°ä¸Šï¼ŒåŒ–åšä¸€å †ç©ºç©ºçš„è™«å£³ã€‚\n",
                   this_object());
   destruct(this_object());
 }

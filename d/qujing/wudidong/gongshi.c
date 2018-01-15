@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -8,12 +8,12 @@ void reset();
 
 void create ()
 {
-  set ("short", "¹©ÊÒ");
+  set ("short", "ä¾›å®¤");
   set ("long", @LONG
 
-½üºó±Ú´¦ÆÌ×ÅÒ»ÕÅÁúÍÌ¿ÚÆáµñ¹©×À¡£×ÀÉÏÓĞÒ»¸ö´óÁ÷½ğÏãÂ¯£¬Â¯ÄÚÏã
-ÑÌçÔÈÆ¡£ÏãÂ¯ºóÃæ¹©×ÅÁ½¿éÅÆÎ»¡£ÓÒÃæÊé¼ÜÉÏÉ¢ÂÒµØ¶Ñ×ÅÒ»Ğ©¶«Î÷£¬
-Êé¼Ü±ßÇ½ÉÏÓĞÒ»¸öĞ¡Ä¾ÂÖ(wheel)£¬²»ÖªÓĞºÎÓÃ´¦¡£
+è¿‘åå£å¤„é“ºç€ä¸€å¼ é¾™åå£æ¼†é›•ä¾›æ¡Œã€‚æ¡Œä¸Šæœ‰ä¸€ä¸ªå¤§æµé‡‘é¦™ç‚‰ï¼Œç‚‰å†…é¦™
+çƒŸç¼­ç»•ã€‚é¦™ç‚‰åé¢ä¾›ç€ä¸¤å—ç‰Œä½ã€‚å³é¢ä¹¦æ¶ä¸Šæ•£ä¹±åœ°å †ç€ä¸€äº›ä¸œè¥¿ï¼Œ
+ä¹¦æ¶è¾¹å¢™ä¸Šæœ‰ä¸€ä¸ªå°æœ¨è½®(wheel)ï¼Œä¸çŸ¥æœ‰ä½•ç”¨å¤„ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 2 */
   "up" : __DIR__"inner-tang",
@@ -21,18 +21,18 @@ LONG);
 ]));
   set("item_desc", ([ /* sizeof() == 1 */
   "wheel" : "
-Ò»¸ö×öµÃºÜ¾«Ï¸µÄ×ªÅÌ£¬ÉÏÓĞÁãµ½¾Å¼¸¸öÊı×Ö¡£
+ä¸€ä¸ªåšå¾—å¾ˆç²¾ç»†çš„è½¬ç›˜ï¼Œä¸Šæœ‰é›¶åˆ°ä¹å‡ ä¸ªæ•°å­—ã€‚
 ",
           "paiwei":"
-\t\t×ğ\t\t\t×ğ
-\t\t¸¸\t\t\tĞÖ
-\t\tÀî\t\t\tÄÄ
-\t\tÌì\t\t\tß¸
-\t\tÍõ\t\t\tÈı
-\t\tÉú\t\t\tÌ«
-\t\tÎ»\t\t\t×Ó
-\t\t\t\t\tÉú
-\t\t\t\t\tÎ»
+\t\tå°Š\t\t\tå°Š
+\t\tçˆ¶\t\t\tå…„
+\t\tæ\t\t\tå“ª
+\t\tå¤©\t\t\tå’
+\t\tç‹\t\t\tä¸‰
+\t\tç”Ÿ\t\t\tå¤ª
+\t\tä½\t\t\tå­
+\t\t\t\t\tç”Ÿ
+\t\t\t\t\tä½
 
 ",
 ]));
@@ -50,29 +50,29 @@ int do_turn(string arg)
   int mykee, mymaxkee, num, mypot, mylp, mynewpot;
   
   if ( !arg )
-    return notify_fail("ÄãÒª×ªÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦è½¬ä»€ä¹ˆï¼Ÿ\n");
   if(arg=="wheel")
-    return notify_fail("ÇëÊäÈëÏàÓ¦µÄÃÜÂë£¡\nÆ©Èç£ºturn 1 »ò turn 1234¡£¡£¡£\n");
+    return notify_fail("è¯·è¾“å…¥ç›¸åº”çš„å¯†ç ï¼\nè­¬å¦‚ï¼šturn 1 æˆ– turn 1234ã€‚ã€‚ã€‚\n");
   mymaxkee=(int)me->query("max_kee");
   mykee=(int)me->query("kee");
   if(arg!="9657")
     {
-      message_vision(RED "Ö»¼ûÒ»µÀ»ğ¹â´ÓÂÖÖĞ´Ü³ö£¬Ö±Ïò$NÆËÀ´£¡\n" NOR, me);
+      message_vision(RED "åªè§ä¸€é“ç«å…‰ä»è½®ä¸­çªœå‡ºï¼Œç›´å‘$Næ‰‘æ¥ï¼\n" NOR, me);
       if (mykee<=200)
    {
-     me->set_temp("death_msg", "±»ÉÕ³ÉÁË·É»Ò¡£\n");
+     me->set_temp("death_msg", "è¢«çƒ§æˆäº†é£ç°ã€‚\n");
      me->die();
      me->save();
      return 1;
    }
       me->receive_damage("kee", 200);
       me->receive_wound("kee", 180);
-      message_vision(RED "$NÏÔÈ»ÉËµÃ²»Çá£¡\n" NOR, me);   
+      message_vision(RED "$Næ˜¾ç„¶ä¼¤å¾—ä¸è½»ï¼\n" NOR, me);   
       return 1;
     }                                           
   else
     {
-      message_vision("Ö»Ìı¡°¶£¡±µÄÒ»Éù£¬Ò»µÀ°µÃÅÍ»Æğ£¬$NÉí²»ÓÉ¼º±»ÍÆ½ø°µÊÒÈ¥ÁË£¡\n", me);
+      message_vision("åªå¬â€œå®â€çš„ä¸€å£°ï¼Œä¸€é“æš—é—¨çªèµ·ï¼Œ$Nèº«ä¸ç”±å·±è¢«æ¨è¿›æš—å®¤å»äº†ï¼\n", me);
       me->move(__DIR__"mishi");
       return 1;
     }

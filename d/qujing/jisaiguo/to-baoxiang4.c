@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ·");
+  set ("short", "山路");
   set ("long", @LONG
 
-Сɽ���ߣ�ɽ����ľ���࣬�Ե÷ǳ��о����������ߴߴ����
-�Ľ��ţ�ʱ��ʱ·�ߵĲݴ��дܳ�ֻҰ�ã�����ֻ��ȸ��
+小山不高，山上树木繁多，显得非常有精神。林中鸟尔叽叽喳喳
+的叫着，时不时路边的草丛中窜出只野兔，惊起几只鸟雀。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

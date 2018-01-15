@@ -1,10 +1,10 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // purge.c
 
 #include <ansi.h>
-#define SYNTAX   "Ö¸Áî¸ñÊ½£ºpurge [<Î´ÉÏÏßÌìÊı>] | <Ê¹ÓÃÕßĞÕÃû> because <Ô­Òò>\n"
+#define SYNTAX   "æŒ‡ä»¤æ ¼å¼ï¼špurge [<æœªä¸Šçº¿å¤©æ•°>] | <ä½¿ç”¨è€…å§“å> because <åŸå› >\n"
 
 inherit F_CLEAN_UP;
 
@@ -19,7 +19,7 @@ int main(object me, string arg)
    status = wizhood(me);
    if( me!=this_player(1)
    || wiz_level(me) < wiz_level(status) )
-     return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+     return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 
    if( !arg ) return notify_fail(SYNTAX);
 
@@ -28,12 +28,12 @@ int main(object me, string arg)
 
    seteuid(getuid());
    if( file_size(DATA_DIR + "playerhomes/h_" + name + __SAVE_EXTENSION__)<0 )
-     return notify_fail("Ã»ÓĞÕâÎ»Ê¹ÓÃÕß¡£\n");
+     return notify_fail("æ²¡æœ‰è¿™ä½ä½¿ç”¨è€…ã€‚\n");
    if( (string)SECURITY_D->get_status(name)!="(player)" )
-     return notify_fail("·ÇÍæ¼ÒµÄ·¿Îİµµ°¸²»ÄÜ±»É¾³ı¡£\n"); 
+     return notify_fail("éç©å®¶çš„æˆ¿å±‹æ¡£æ¡ˆä¸èƒ½è¢«åˆ é™¤ã€‚\n"); 
 
    rm(DATA_DIR + "playerhomes/h_" + name + __SAVE_EXTENSION__);
-   write( "Ê¹ÓÃÕß " + capitalize(name) + " µÄ·¿Îİµµ°¸±»É¾³ıµôÁË¡£\n");
+   write( "ä½¿ç”¨è€… " + capitalize(name) + " çš„æˆ¿å±‹æ¡£æ¡ˆè¢«åˆ é™¤æ‰äº†ã€‚\n");
    log_file("static/PURGE", sprintf("[%s] %s purged %s's house because %s.\n",
      ctime(time())[0..15], geteuid(this_player(1)), name, reason));
 
@@ -43,9 +43,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºpurgehouse <Ê¹ÓÃÕßĞÕÃû> because <Ô­Òò>
+æŒ‡ä»¤æ ¼å¼ï¼špurgehouse <ä½¿ç”¨è€…å§“å> because <åŸå› >
 
-Çå³ıÒ»¸öÊ¹ÓÃÕßµÄ·¿Îİµµ°¸¡£
+æ¸…é™¤ä¸€ä¸ªä½¿ç”¨è€…çš„æˆ¿å±‹æ¡£æ¡ˆã€‚
 HELP
    );
     return 1;

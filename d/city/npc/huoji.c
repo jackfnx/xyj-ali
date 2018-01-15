@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("»ï¼Æ", ({"huoji"}));
+        set_name("ä¼™è®¡", ({"huoji"}));
         set("age", 25);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"Ò»¸öÄÜ¸ÉµÄ»ï¼Æ¡£\n");
+"ä¸€ä¸ªèƒ½å¹²çš„ä¼™è®¡ã€‚\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 8000);

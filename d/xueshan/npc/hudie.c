@@ -2,14 +2,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("蝴蝶", ({"hu die","die","butterfly"}));
-    set("race", "野兽");
+    set_name("铦磋澏", ({"hu die","die","butterfly"}));
+    set("race", "閲庡吔");
     set("age", 10);
-    set("long", "一只小蝴蝶。\n");
+    set("long", "涓�鍙皬铦磋澏銆俓n");
 
     set_skill("dodge", 10);
     set("combat_exp", 100);
-    set("limbs", ({ "头部", "身体", "前腿","後腿", "尾巴" }));
+    set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈吙","寰岃吙", "灏惧反" }));
     set("verbs", ({ "bite" }));
 
     setup();

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -9,8 +9,8 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("ÎâÀÏ°å", ({ "wu laoban", "wu", "laoban" }) );
-  set("gender", "ÄĞĞÔ");
+  set_name("å´è€æ¿", ({ "wu laoban", "wu", "laoban" }) );
+  set("gender", "ç”·æ€§");
   set("age", 40);
   set("combat_exp", 10000+random(1000));
   set("attitude", "heroism");

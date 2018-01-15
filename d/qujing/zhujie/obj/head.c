@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 29 1997
@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("Ê¨×ÓÍ·", ({"shizi tou", "tou"}));
+  set_name("ç‹®å­å¤´", ({"shizi tou", "tou"}));
   set_weight(1000);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»Ö»±»ÆëÆë¿³¶ÏµÄÊ¨×ÓÍ·¡£\n");
-    set("unit", "Ö»");
+    set("long", "ä¸€åªè¢«é½é½ç æ–­çš„ç‹®å­å¤´ã€‚\n");
+    set("unit", "åª");
     set("material", "bone");
   }
   setup();

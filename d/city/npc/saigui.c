@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat on 7/5/1997 
@@ -11,11 +11,11 @@ int random2 (int i)
 
 void create()
 {
-  set_name("Èü¹ê", ({ "sai gui", "gui" }) );
-  set("race", "Ò°ÊŞ");
-  set("gender", "ĞÛĞÔ");
+  set_name("èµ›é¾Ÿ", ({ "sai gui", "gui" }) );
+  set("race", "é‡å…½");
+  set("gender", "é›„æ€§");
   set("age", 2);
-  set("long", "Ò»Ö»ÂıÌÚÌÚµÄÈü¹ê¡£\n");
+  set("long", "ä¸€åªæ…¢è…¾è…¾çš„èµ›é¾Ÿã€‚\n");
   set("attitude", "friendly");
   set("str", 20+random2(2));
   set("spi", 20+random2(2));
@@ -24,7 +24,7 @@ void create()
   set("cor", 20);
   set("cps", 20);
   set("per", 20);
-  set("limbs", ({ "Í·²¿", "×¦×Ó", "Î²°Í" }) );
+  set("limbs", ({ "å¤´éƒ¨", "çˆªå­", "å°¾å·´" }) );
   set("verbs", ({ "bite"}) );
 
   setup();

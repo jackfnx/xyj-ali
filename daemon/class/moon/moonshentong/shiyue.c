@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// Ê´ÔÂÖä
+// èš€æœˆå’’
 inherit F_SSERVER;
 #include <ansi.h>
 
@@ -17,30 +17,30 @@ int cast(object me, object target)
 
     if ((int)me->query_skill("spells") < 120
      || (int)me->query_skill("moonshentong",1) < 80)
-        return notify_fail("Äã»¹Ã»Ñ§»áÊ´ÔÂÖä¡£¡£¡£\n");
+        return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šèš€æœˆå’’ã€‚ã€‚ã€‚\n");
 
     if (!target
      || !target->is_character()
      || target->is_corpse()
      || target==me)
-        return notify_fail("ÄãÏë¶ÔË­Ê©Õ¹Ê´ÔÂÖä£¿\n");  
+        return notify_fail("ä½ æƒ³å¯¹è°æ–½å±•èš€æœˆå’’ï¼Ÿ\n");  
 
     if (target->query("mark/moon_poison") == 1)
-        return notify_fail(target->query("name")+"ÒÑ¾­ÖĞĞ°ÁË£¡\n");  
+        return notify_fail(target->query("name")+"å·²ç»ä¸­é‚ªäº†ï¼\n");  
 
     if ((int)me->query("mana") < 300)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
     if ((int)me->query("sen") < 10)
-        return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦£¡\n");
+        return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
     //write(dayphase+"\n");
     if (dayphase < 6)
-        return notify_fail("Ê´ÔÂÖäÖ»ÓĞÒ¹Íí²ÅÄÜÊ©Õ¹£¡\n");
+        return notify_fail("èš€æœˆå’’åªæœ‰å¤œæ™šæ‰èƒ½æ–½å±•ï¼\n");
 
     me->add("mana", -300);
     me->receive_damage("sen", 10);
 
-    msg = HIC "$NµÍÍ·Ä¬Ä¬ÄîÆğÖäÎÄ£¬ÊÖÖĞ½¥½¥¾ÛÆğÒ»ÍÅ¹âÇò£¬Ñ©°×µÄÁ³ÅÓËÆºõ·¢Éä³öÈáºÍµÄ¹âÃ¢¡£\n" NOR;
+    msg = HIC "$Nä½å¤´é»˜é»˜å¿µèµ·å’’æ–‡ï¼Œæ‰‹ä¸­æ¸æ¸èšèµ·ä¸€å›¢å…‰çƒï¼Œé›ªç™½çš„è„¸åºä¼¼ä¹å‘å°„å‡ºæŸ”å’Œçš„å…‰èŠ’ã€‚\n" NOR;
 
     success = 1;
     ap = me->query_skill("spells");
@@ -61,14 +61,14 @@ int cast(object me, object target)
     //here we compare current mana. this is important. you need recover to try again.
 
     if (success == 1){
-        msg += HIR "$n¼ûµ½$NÏéÄşÖ®Ì¬£¬½¿ÃÀ²»¿É·½Îï£¬ĞÄÖĞÒ»µ´£¬È´²»·ÀÄÇ¹âÇòÒ»ÉÁ£¬Í»È»ÉäÏò$n¡£\n" NOR;
+        msg += HIR "$nè§åˆ°$Nç¥¥å®ä¹‹æ€ï¼Œå¨‡ç¾ä¸å¯æ–¹ç‰©ï¼Œå¿ƒä¸­ä¸€è¡ï¼Œå´ä¸é˜²é‚£å…‰çƒä¸€é—ªï¼Œçªç„¶å°„å‘$nã€‚\n" NOR;
         target->set("mark/moon_ice", 1);
         target->apply_condition("moon_poison", ((int)me->query_skill("moonshentong",1)/5));
         me->start_busy(1+random(2)); 
         if (living(target)) target->kill_ob(me);
     }       
     else {
-        msg += HIR "$NÁ³É«²Ô°×£¬ËÆºõÌåÁ¦²»Ö§£¬¹âÇòÔÚÊÖÖĞ½¥½¥ÍÊÈ¥¡££¡\n" NOR;
+        msg += HIR "$Nè„¸è‰²è‹ç™½ï¼Œä¼¼ä¹ä½“åŠ›ä¸æ”¯ï¼Œå…‰çƒåœ¨æ‰‹ä¸­æ¸æ¸è¤ªå»ã€‚ï¼\n" NOR;
         if ((int)me->query("mana") > 300)
             me->add("mana", -300);
         me->apply_condition("moon_poison", ((int)me->query_skill("moonshentong")/10));

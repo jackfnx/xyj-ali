@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ROOM;
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÇàÊ¯ÑÂ");
+  set ("short", "é’çŸ³å´–");
   set ("long", @LONG
 
-ÅîÀ³µºÉÏ·ç¹âÐãÀö£¬µ±ÕæÊÇºÃÈ¥´¦£¡¸ßÑÂÉÏÊÓÒ°¿ªÀ«£¬Ô¶ÍûËÄÖÜ£¬
-°ÑÅîÀ³¾°É«¿´µÄÇåÇå³þ³þ¡£Ô¶´¦´óº£ÈçÃ÷¾µ°ãÆ½Õû¡£É½ÑÂÉÏ³¤ÓÐ
-ÎÞÊýÒì²Ý£¬Æ®×Åµ­µ­ÏãÆø¡£
+è“¬èŽ±å²›ä¸Šé£Žå…‰ç§€ä¸½ï¼Œå½“çœŸæ˜¯å¥½åŽ»å¤„ï¼é«˜å´–ä¸Šè§†é‡Žå¼€é˜”ï¼Œè¿œæœ›å››å‘¨ï¼Œ
+æŠŠè“¬èŽ±æ™¯è‰²çœ‹çš„æ¸…æ¸…æ¥šæ¥šã€‚è¿œå¤„å¤§æµ·å¦‚æ˜Žé•œèˆ¬å¹³æ•´ã€‚å±±å´–ä¸Šé•¿æœ‰
+æ— æ•°å¼‚è‰ï¼Œé£˜ç€æ·¡æ·¡é¦™æ°”ã€‚
 LONG);
   set("exits", ([ /* sizeof() == 3 */
 //  "south" : __DIR__"road1",

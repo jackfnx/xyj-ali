@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/eastway/guandao1.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "�ٵ�");
+    set("short", "官道");
     set("long", @LONG
 
-����һ�������Ĺٵ����ٵ����������У��������ϡ�����ȥ�ȶ�����
-����ݷ��������Ů�����и��Դ��˼��е�̫̫С��Ϊ�ࡣ�ϱ߿�
-������Ժ����Լһ����Ӱ�����º�
+这是一条长长的官道，官道上马车并行，人流不断。多是去慈恩寺中
+烧香拜佛的善男信女，其中更以大户人家中的太太小姐为多。南边可
+看到寺院，隐约一个塔影闪在寺后。
 LONG
     );
     set("exits", ([ /* sizeof() == 3 */

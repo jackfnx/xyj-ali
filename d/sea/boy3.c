@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // boy3.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "卧龙阁");
   set ("long", @LONG
 
-����һ�������������ϰڵĶ���Щɽ�亣ζ��̫�����ͼ�������
-�Ⱦơ���Ů�������ϲˣ�����һƬ��ζ��
+当中一个八仙桌，桌上摆的都是些山珍海味。太子正和几个朋友
+喝酒。宫女们来回上菜，屋中一片酒味。
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

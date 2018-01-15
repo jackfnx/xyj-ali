@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // /clone/board/bonze_b.c
@@ -9,10 +9,10 @@ inherit BBS_BOARD;
 
 void create()
 {
-   set_name("Î÷ÓÎ¼Ç"+HIG+"ÃÅÅÉ"+NOR+"ÌÖÂÛ°å", ({ "board" }) );
+   set_name("è¥¿æ¸¸è®°"+HIG+"é—¨æ´¾"+NOR+"è®¨è®ºæ¿", ({ "board" }) );
    set("location", "/d/wiz/menpai_room");
    set("board_id", "menpai_bbs");
-   set("long", "ÕâÊÇÒ»¸ö¹©Î×Ê¦ÃÇÌÖÂÛÃÅÅÉ·¢Õ¹½¨ÉèÓÃµÄĞÂÎÅ°å¡£\n" );
+   set("long", "è¿™æ˜¯ä¸€ä¸ªä¾›å·«å¸ˆä»¬è®¨è®ºé—¨æ´¾å‘å±•å»ºè®¾ç”¨çš„æ–°é—»æ¿ã€‚\n" );
    setup();
    set("capacity", 30);
    replace_program(BBS_BOARD);

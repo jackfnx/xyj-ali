@@ -7,32 +7,32 @@ int cast(object me, object target)
 {
     if (!target) target = offensive_target(me);
     if ((int)me->query("mana") < 50)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
     if ((int)me->query("sen") < 50)
-        return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+        return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ï¼\n");
     if ((string)me->query("class") != "ghost" )
-        return notify_fail("ÄãÊÔ×Å½«×Ô¼º»¯ÎªÆøÌå£¬¿ÉÑªÈâÖ®ÇûÈ´ÔõÃ´Ò²»¯²»¿ª£¡\n");
+        return notify_fail("ä½ è¯•ç€å°†è‡ªå·±åŒ–ä¸ºæ°”ä½“ï¼Œå¯è¡€è‚‰ä¹‹èº¯å´æ€ä¹ˆä¹ŸåŒ–ä¸å¼€ï¼\n");
 
-    message_vision("$Nà«à«µØÄîÁË¼¸¾äÖäÓï¡£\n", me);
+    message_vision("$Nå–ƒå–ƒåœ°å¿µäº†å‡ å¥å’’è¯­ã€‚\n", me);
 
     me->add("mana", -25);
     me->receive_damage("sen", 20);
 
     if (me->is_fighting()) {
         if (random((int)me->query("max_mana")) > (int)target->query("max_mana") / 2) {
-            message_vision(HIC"$N¿ÚÖĞÅç³öÒ»¹ÉºÚ·ç£¬Õû¸öÈËÒ²Ëæ×ÅºÚ·çÉ¢È¥¡£¡£¡£\n"NOR, me);
+            message_vision(HIC"$Nå£ä¸­å–·å‡ºä¸€è‚¡é»‘é£ï¼Œæ•´ä¸ªäººä¹Ÿéšç€é»‘é£æ•£å»ã€‚ã€‚ã€‚\n"NOR, me);
             me->move("/d/death/gate");
             tell_room(environment(me),
-HIC"Ò»ÕóÒõ·ç¹ıºó£¬ÒşÔ¼ÏÖ³ö"+ me->query("name") +"µÄÓ°×Ó¡£\n\n"NOR, ({me, me}));
+HIC"ä¸€é˜µé˜´é£è¿‡åï¼Œéšçº¦ç°å‡º"+ me->query("name") +"çš„å½±å­ã€‚\n\n"NOR, ({me, me}));
         } else {
-            message_vision(HIC"$N×ªÉíÏëÅÜ£¬È´±»$nÒ»¸ö¼ı²½À¹×¡¡£\n"NOR, me, target);
+            message_vision(HIC"$Nè½¬èº«æƒ³è·‘ï¼Œå´è¢«$nä¸€ä¸ªç®­æ­¥æ‹¦ä½ã€‚\n"NOR, me, target);
             me->start_busy(2);
         }
     } else {
-        message_vision(HIC"$N¿ÚÖĞÅç³öÒ»¹ÉºÚ·ç£¬Õû¸öÈËÒ²Ëæ×ÅºÚ·çÉ¢È¥¡£¡£¡£\n"NOR, me);
+        message_vision(HIC"$Nå£ä¸­å–·å‡ºä¸€è‚¡é»‘é£ï¼Œæ•´ä¸ªäººä¹Ÿéšç€é»‘é£æ•£å»ã€‚ã€‚ã€‚\n"NOR, me);
         me->move("/d/death/gate");
         tell_room(environment(me),
-HIC"Ò»ÕóÒõ·ç¹ıºó£¬ÒşÔ¼ÏÖ³ö"+me->query("name")+"µÄÓ°×Ó¡£\n\n"NOR, ({me, me}) );
+HIC"ä¸€é˜µé˜´é£è¿‡åï¼Œéšçº¦ç°å‡º"+me->query("name")+"çš„å½±å­ã€‚\n\n"NOR, ({me, me}) );
     }
 
     return 5 + random(5);

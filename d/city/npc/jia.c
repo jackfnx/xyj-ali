@@ -1,14 +1,14 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-        set_name("�ֶ�", ({"jia er", "jia"}));
+        set_name("贾二", ({"jia er", "jia"}));
         set("age", 32);
-        set("gender", "����");
-        set("long","�����̵��ϰ壬Ц���еĿ����㡣\n");
+        set("gender", "男性");
+        set("long","包子铺的老板，笑眯眯的看着你。\n");
         set("attitude", "friendly");
 
         set("combat_exp", 10000);
@@ -30,7 +30,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say ��Һ������ƣ��������ƣ�\n");
+        command("say 大家和气生财，和气生财！\n");
         return 0;
 }
 
@@ -52,9 +52,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"Ц�����˵������λ" +
+                        say( name()+"笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "�������Լ������Ӱɡ�\n");
+                                + "，进来吃几个包子吧。\n");
                         break;
         }
 }

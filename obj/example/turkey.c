@@ -4,13 +4,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("ÏãÅçÅçµÄ´ó»ğ¼¦", ({ "fried turkey", "turkey"}) );
+	set_name("é¦™å–·å–·çš„å¤§ç«é¸¡", ({ "fried turkey", "turkey"}) );
 	set_weight(350);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»¿¾µÃÏãÅçÅçµÄ´ó»ğ¼¦£¬¸Ğ¶÷½Ú¿ìÀÖ£¡£¡\n");
-		set("unit", "Ö»");
+		set("long", "ä¸€åªçƒ¤å¾—é¦™å–·å–·çš„å¤§ç«é¸¡ï¼Œæ„Ÿæ©èŠ‚å¿«ä¹ï¼ï¼\n");
+		set("unit", "åª");
 		set("food_remaining", 40);
 		set("food_supply", 100);
 	}

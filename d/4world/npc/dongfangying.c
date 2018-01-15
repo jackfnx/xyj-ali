@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,13 +6,13 @@ inherit NPC;
 void create()
 {
 
-        set_name("����Ӣ", ({ "dongfang ying", "dongfang", "ying"}) );
-        set("gender", "Ů��");
+        set_name("东方英", ({ "dongfang ying", "dongfang", "ying"}) );
+        set("gender", "女性");
         set("age", 22);
    set("per", 25);
-        set("long", "����Ӣ�ǹ����Ķ���Ů���书�ָߣ�����Ư����\n");
+        set("long", "东方英是馆主的独生女，武功又高，人又漂亮。\n");
         set("combat_exp", 18000);
-   set("title", "��ݽ�ͷ");
+   set("title", "武馆教头");
    set_skill("sword", 50);
    set_skill("parry", 50);
         set_skill("dodge", 50);
@@ -28,7 +28,7 @@ void create()
 int recognize_apprentice()
 {
         if(!this_player()->query("newbie/learn") )
-        return notify_fail("����Ӣ���ߵ�һЦ����Ҫ�ǲ�ͬ�⣬�ҿɲ��ҽ̡�\n");
+        return notify_fail("东方英害羞地一笑：爹要是不同意，我可不敢教。\n");
 
         return 1;
 }

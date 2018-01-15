@@ -1,7 +1,7 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-// ������������
+// 妖法－－速疗
 
 #include <ansi.h>
 
@@ -11,13 +11,13 @@ int cast(object me, object target)
    string msg;
 
    if(me->is_busy())
-     return notify_fail("����æ���أ������������ɣ�\n");
-   if(me->query("family/family_name") != "�ݿ�ɽ�޵׶�"
+     return notify_fail("你正忙着呢，过会儿再念咒吧！\n");
+   if(me->query("family/family_name") != "陷空山无底洞"
    || me->query_skill("yaofa", 1) < 70)
-     return notify_fail("������࣬����޷��������ơ�\n");
+     return notify_fail("你非鼠类，体格无法承受速疗。\n");
 
         if( mymana < cost*2 )
-                return notify_fail("��ķ���������\n");
+                return notify_fail("你的法力不够。\n");
 
    if (cost<mymana/2) cost=mymana/2-1;
 
@@ -30,14 +30,14 @@ int cast(object me, object target)
    if(!me->is_fighting())
    {
      cost=cost/2;
-     msg=HIY"$N˫�־�����ǰ����������״�����˼����䡣\n"NOR,
-     msg+=HIY"�漴��$N��˫����ȫ�����²���һ�飬˫�ֵ������˿ھ�Ȼ���˴�룡\n"NOR;
+     msg=HIY"$N双手举在胸前，做个火焰状，念了几句咒。\n"NOR,
+     msg+=HIY"随即，$N将双手在全身上下擦了一遍，双手到处，伤口居然好了大半！\n"NOR;
      me->start_busy(random(8-me->query_kar()/5));
    }
    else
    {
-     msg=HIY"��æ֮�У�$NͻȻԽ��սȦ����ָ���˶��䡣\n"NOR;
-     msg+=HIY"һ˲�䣬$N�沿������ʢ����������ȥʱ��$N���ϴ���˿ھ�Ȼ�Ѿ��տ��ˣ�\n"NOR;
+     msg=HIY"百忙之中，$N突然越出战圈，掐指念了段咒。\n"NOR;
+     msg+=HIY"一瞬间，$N面部黄气大盛。待黄气下去时，$N身上大半伤口居然已经收口了！\n"NOR;
      me->start_busy(1);
    }
         me->receive_curing("kee", cure);

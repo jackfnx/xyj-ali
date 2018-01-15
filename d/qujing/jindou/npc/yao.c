@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 12/9/1997
@@ -6,15 +6,15 @@
 inherit NPC;
 
 string *names = ({
-  "Ñò¹Ö",
-  "Ì¡¹Ö",
-  "Â¹¹Ö",
-  "ÍÃ¹Ö",
-  "¹·¹Ö",
-  "Öí¹Ö",
-  "ºï¹Ö",
-  "áô¹Ö",
-  "òş¹Ö",
+  "ç¾Šæ€ª",
+  "ç­æ€ª",
+  "é¹¿æ€ª",
+  "å…”æ€ª",
+  "ç‹—æ€ª",
+  "çŒªæ€ª",
+  "çŒ´æ€ª",
+  "ç‹’æ€ª",
+  "èŸ’æ€ª",
 });
 
 void create()
@@ -22,7 +22,7 @@ void create()
   int i = random(9)+1;
   string str;
   set_name(names[random(sizeof(names))], ({"yao guai", "yao", "guai"}));
-  set("gender", "ÄĞĞÔ");
+  set("gender", "ç”·æ€§");
   set("age", 30*i);
   set("attitude", "aggressive");
   set("combat_exp", 30000*i);

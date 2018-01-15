@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // version.c
@@ -13,9 +13,9 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : version
+æŒ‡ä»¤æ ¼å¼ : version
  
-Õâ¸öÖ¸Áî»áÏÔÊ¾ÓÎÏ·Ä¿Ç°ËùÓÃµÄ MudOS driver °æ±¾.
+è¿™ä¸ªæŒ‡ä»¤ä¼šæ˜¾ç¤ºæ¸¸æˆç›®å‰æ‰€ç”¨çš„ MudOS driver ç‰ˆæœ¬.
  
 HELP
     );

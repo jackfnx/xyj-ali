@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // linen.c
@@ -9,13 +9,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("É®ÒÂ", ({"sengyi", "cloth"}));
+        set_name("åƒ§è¡£", ({"sengyi", "cloth"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("armor_prop/armor", 2);
         }
         setup();

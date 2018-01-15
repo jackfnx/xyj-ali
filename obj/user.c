@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // user.c
@@ -17,13 +17,13 @@ static int last_age_set;
 void create()
 {
    ::create();
-   set_name("Ê¹ÓÃÕßÎï¼ş", ({ "user object", "user", "object" }) );
+   set_name("ä½¿ç”¨è€…ç‰©ä»¶", ({ "user object", "user", "object" }) );
 }
 
 void terminal_type(string term_type)
 {
    set_temp("terminal_type", term_type);
-   message("system", "ÖÕ¶Ë»úĞÍÌ¬Éè¶¨Îª " + term_type + "¡£\n", this_object());
+   message("system", "ç»ˆç«¯æœºå‹æ€è®¾å®šä¸º " + term_type + "ã€‚\n", this_object());
 }
 
 void reset()
@@ -78,7 +78,7 @@ void update_age()
     add("mud_age", time() - last_age_set);
     last_age_set = time();
     set("age", 14 + (int)query("age_modify")/86400 + (int)query("mud_age")/ 86400);
-    // fake_age is set as the age when player gets dao-xing:²»¶éÂÖ»Ø¡£
+    // fake_age is set as the age when player gets dao-xing:ä¸å •è½®å›ã€‚
     // so later on, he/she always looks like the age of that time:)
     // NewX move it from /cmds/std/look.c
     if (!query("always_young") && query("combat_exp") > 729000) {
@@ -98,7 +98,7 @@ void load_fabao(string type, int i)
     newob->set("owner_id", query("id"));
     newob->set("series_no", series_no);
     if (!newob->restore()) {
-        tell_object(this_object(), "²»ÄÜ restore fabao. \n");
+        tell_object(this_object(), "ä¸èƒ½ restore fabao. \n");
         destruct(newob);
         return;
     }
@@ -126,7 +126,7 @@ void setup()
 
     if (!mapp(query("fabao"))) {
         object cloth;
-        if (query("gender") == "Å®ĞÔ") {
+        if (query("gender") == "å¥³æ€§") {
             cloth = new("/obj/loginload/skirt");
             cloth->move(this_object());
             cloth->wear();
@@ -153,16 +153,16 @@ private void user_dump(int type)
 {
    switch(type) {
      case DUMP_NET_DEAD:
-        tell_room( environment(), query("name") + "¶ÏÏß³¬¹ı "
-          + NET_DEAD_TIMEOUT/60 + " ·ÖÖÓ£¬×Ô¶¯ÍË³öÕâ¸öÊÀ½ç¡£\n");
+        tell_room( environment(), query("name") + "æ–­çº¿è¶…è¿‡ "
+          + NET_DEAD_TIMEOUT/60 + " åˆ†é’Ÿï¼Œè‡ªåŠ¨é€€å‡ºè¿™ä¸ªä¸–ç•Œã€‚\n");
         command("quit");
         break;
      case DUMP_IDLE:
            if(!wizardp(this_object())){
-        tell_object( this_object(), "¶Ô²»Æğ£¬ÄúÒÑ¾­·¢´ô³¬¹ı " 
-          + IDLE_TIMEOUT/60 + " ·ÖÖÓÁË£¬ÇëÏÂ´ÎÔÙÀ´¡£\n");
-        tell_room( environment(), "Ò»Õó·ç´µÀ´£¬½«·¢´ôÖĞµÄ" + query("name")
-          + "»¯ÎªÒ»¶Ñ·É»Ò£¬ÏûÊ§ÁË¡£\n", ({this_object()}));
+        tell_object( this_object(), "å¯¹ä¸èµ·ï¼Œæ‚¨å·²ç»å‘å‘†è¶…è¿‡ " 
+          + IDLE_TIMEOUT/60 + " åˆ†é’Ÿäº†ï¼Œè¯·ä¸‹æ¬¡å†æ¥ã€‚\n");
+        tell_room( environment(), "ä¸€é˜µé£å¹æ¥ï¼Œå°†å‘å‘†ä¸­çš„" + query("name")
+          + "åŒ–ä¸ºä¸€å †é£ç°ï¼Œæ¶ˆå¤±äº†ã€‚\n", ({this_object()}));
         command("quit");
                       }
                  break;
@@ -195,8 +195,8 @@ private void net_dead()
    if( userp(this_object()) ) {
        call_out("user_dump", NET_DEAD_TIMEOUT, DUMP_NET_DEAD);
        if (!this_object()->query("env/invisibility"))
-           tell_room(environment(), query("name") + "¶ÏÏßÁË¡£\n", this_object());
-       CHANNEL_D->do_channel(this_object(), "sys", "¶ÏÏßÁË¡£");
+           tell_room(environment(), query("name") + "æ–­çº¿äº†ã€‚\n", this_object());
+       CHANNEL_D->do_channel(this_object(), "sys", "æ–­çº¿äº†ã€‚");
    } else {
      command("quit");
    }
@@ -209,6 +209,6 @@ void reconnect()
    set_temp("netdead",0);
    remove_netdead_enemy();
    remove_call_out("user_dump");
-   tell_object(this_object(), "ÖØĞÂÁ¬ÏßÍê±Ï¡£\n");
+   tell_object(this_object(), "é‡æ–°è¿çº¿å®Œæ¯•ã€‚\n");
 }
 

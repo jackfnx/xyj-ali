@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,14 +6,14 @@
 inherit BOOTS;
 void create()
 {
-        set_name( "ɮЬ", ({ "seng xie", "xie" }) );
+        set_name( "僧鞋", ({ "seng xie", "xie" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "˫");
+                set("unit", "双");
      set("no_sell", 1);
-                set("long", "һ˫Բ���಼ɮЬ����������Ь�ױ�һ��ɮЬ�������࣬����Щ���߷첹�ĺۼ���");
+                set("long", "一双圆口青布僧鞋，但看起来鞋底比一般僧鞋厚了许多，还有些针线缝补的痕迹。");
                 set("value", 100);
                 set("material", "boots");
                 set("armor_prop/armor", 3);
@@ -33,7 +33,7 @@ int do_tear(string arg){
         if( !this_object()->id(arg) ) return 0;
         ob=new("/d/penglai/obj/ditu");
         ob->move(me);
-   message_vision("$N����ɮЬʹ��һ������ž����һ����Ь�׼в��е�����СֽƬ��\n", me);
+   message_vision("$N拿起僧鞋使劲一扯，「啪」的一声从鞋底夹层中掉出张小纸片。\n", me);
         destruct(this_object());
         return 1;
 }

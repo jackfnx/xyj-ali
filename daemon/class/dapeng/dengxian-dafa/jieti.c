@@ -1,8 +1,8 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
-// jieti.c ÌìÄ§½âÌå´ó·¨¡£
+// jieti.c å¤©é­”è§£ä½“å¤§æ³•ã€‚
 
 #include <ansi.h>
 
@@ -14,7 +14,7 @@ int cast(object me, object target)
    int success, ap, dp;
 
    if( (string)me->query("class") != "yaomo" )
-     return notify_fail("Ö»ÓĞÑıÄ§²ÅÄÜÊ©Õ¹ÌìÄ§½âÌå´ó·¨¡£\n");
+     return notify_fail("åªæœ‰å¦–é­”æ‰èƒ½æ–½å±•å¤©é­”è§£ä½“å¤§æ³•ã€‚\n");
 
    if( !target ) target = offensive_target(me);
 
@@ -22,36 +22,36 @@ int cast(object me, object target)
    || !target->is_character()
    || target->is_corpse()
    || target==me)
-     return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÌìÄ§½âÌå´ó·¨£¿\n");
+     return notify_fail("ä½ è¦å¯¹è°æ–½å±•å¤©é­”è§£ä½“å¤§æ³•ï¼Ÿ\n");
 
    if((int)me->query("mana") < 100 || (int)me->query("max_mana") < 100 )
-     return notify_fail("ÄãµÄ·¨Á¦²»¹»£¬²»ÄÜÓĞĞ§Ê©Õ¹ÌìÄ§½âÌå´ó·¨£¡\n");
+     return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼Œä¸èƒ½æœ‰æ•ˆæ–½å±•å¤©é­”è§£ä½“å¤§æ³•ï¼\n");
 
    if((int)me->query("force") < 50 || (int)me->query("max_force") < 50 )
-     return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÓĞĞ§Ê©Õ¹ÌìÄ§½âÌå´ó·¨£¡\n");
+     return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½æœ‰æ•ˆæ–½å±•å¤©é­”è§£ä½“å¤§æ³•ï¼\n");
 
    if((int)me->query("sen") < 100 || (int)me->query("sen") < (int)me->query("max_sen")/2 )
-     return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦Ê©Õ¹ÌìÄ§½âÌå´ó·¨£¡\n");
+     return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›æ–½å±•å¤©é­”è§£ä½“å¤§æ³•ï¼\n");
 
    if( (int)me->query("combat_exp") < (int)target->query("combat_exp")/10  )
-     return notify_fail("¶Ô·½±ÈÄãÇ¿Ì«¶àÁË£¬»¹ÊÇ±ğËÍËÀ°É£¡\n");
+     return notify_fail("å¯¹æ–¹æ¯”ä½ å¼ºå¤ªå¤šäº†ï¼Œè¿˜æ˜¯åˆ«é€æ­»å§ï¼\n");
    //here, we do not allow that a too weak player trys this on 
    //a much stronger player. this is to prevent statistically possible 
    //but unreasonable results from happenning. 
 
    if( random(me->query("max_mana")) < 50 ) {
-     write("ÄãÊ§°ÜÁË£¡\n");
+     write("ä½ å¤±è´¥äº†ï¼\n");
      return 1;
    }
 
    msg = HIC
-"$N¿ÚÖĞÄîÁË¼¸¾äÖäÎÄ£¬Ë«ÊÖÅõ×¡ÄÔ´ü£¬ÑöÌì·¢³öÒ»Éù±¯Ë»£¡\n\nºöÈ»¼ä$N½«×Ô¼ºÉàÍ·ºİÃüÒ»Ò§£¬Ò»µÀÑªÎíÏò$nÅçÁË¹ıÈ¥£¡\n" NOR;
+"$Nå£ä¸­å¿µäº†å‡ å¥å’’æ–‡ï¼ŒåŒæ‰‹æ§ä½è„‘è¢‹ï¼Œä»°å¤©å‘å‡ºä¸€å£°æ‚²å˜¶ï¼\n\nå¿½ç„¶é—´$Nå°†è‡ªå·±èˆŒå¤´ç‹ å‘½ä¸€å’¬ï¼Œä¸€é“è¡€é›¾å‘$nå–·äº†è¿‡å»ï¼\n" NOR;
 
    success = 1;
    ap = me->query_skill("spells");
    ap = ap * ap * ap /10 ;
    ap += (int)me->query("combat_exp");
-   ap = 4*ap; //this is for Æ´Ãü so easier.
+   ap = 4*ap; //this is for æ‹¼å‘½ so easier.
    dp = target->query("combat_exp");
    if( random(ap + dp) < dp ) success = 0;
 //here we compared exp and spells level. 
@@ -65,7 +65,7 @@ int cast(object me, object target)
 //he has 50% chance to kill his target, which is reasonable.
 
    if(success == 1 ){//now both die.
-     msg +=  HIR "½á¹û$n±»ÑªÎíÕÖ×¡£¬¶ÙÊ±·¢³öÒ»Éù²Ò½Ğ£¡\n¶ø$NÒ²Éí×ÓÒ»Ì±£¬µ¹ÔÚµØÉÏ¡£\n" NOR;
+     msg +=  HIR "ç»“æœ$nè¢«è¡€é›¾ç½©ä½ï¼Œé¡¿æ—¶å‘å‡ºä¸€å£°æƒ¨å«ï¼\nè€Œ$Nä¹Ÿèº«å­ä¸€ç˜«ï¼Œå€’åœ¨åœ°ä¸Šã€‚\n" NOR;
      message_vision(msg, me, target);
 
      target->kill_ob(me);
@@ -90,7 +90,7 @@ int cast(object me, object target)
    }
        
    else {
-     msg +=  HIR "½á¹ûÑªÎí±»$n·¨Á¦·´¼¤£¬·´¶øÕÖ×¡ÁË$N£¡\n$N³¤Ì¾Ò»Éù£¬Éí×ÓÒ»Ì±£¬µ¹ÔÚµØÉÏ¡£\n" NOR;
+     msg +=  HIR "ç»“æœè¡€é›¾è¢«$næ³•åŠ›åæ¿€ï¼Œåè€Œç½©ä½äº†$Nï¼\n$Né•¿å¹ä¸€å£°ï¼Œèº«å­ä¸€ç˜«ï¼Œå€’åœ¨åœ°ä¸Šã€‚\n" NOR;
      message_vision(msg, me, target);
 
      target->kill_ob(me);

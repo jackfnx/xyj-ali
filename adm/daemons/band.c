@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -186,17 +186,17 @@ void add3(string site)
 
 void remove(string site)
 {
-   write("ÇëĞŞ¸Ä " + BANNED_SITES + " ½â½û¡£\n");
+   write("è¯·ä¿®æ”¹ " + BANNED_SITES + " è§£ç¦ã€‚\n");
 }
 
 void remove2(string site)
 {
-   write("ÇëĞŞ¸Ä " + CHAR_BANNED_SITES + " ½â½û¡£\n");
+   write("è¯·ä¿®æ”¹ " + CHAR_BANNED_SITES + " è§£ç¦ã€‚\n");
 }
 
 void remove3(string site)
 {
-        write("ÇëĞŞ¸Ä " + STRICT_BANNED_SITES + " ½â½û¡£\n");
+        write("è¯·ä¿®æ”¹ " + STRICT_BANNED_SITES + " è§£ç¦ã€‚\n");
 }
 
 //by mon 9/22/97

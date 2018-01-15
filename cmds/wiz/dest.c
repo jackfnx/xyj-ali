@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // dest.c
@@ -13,7 +13,7 @@ int main(object me, string arg)
     object obj, *body, ob, *clones;
     int i;
 
-    if (!arg) return notify_fail("Ö¸Áî¸ñÊ½ : dest <Îï¼şÖ®Ãû³Æ»òµµÃû>\n" );
+    if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : dest <ç‰©ä»¶ä¹‹åç§°æˆ–æ¡£å>\n" );
 
     if (sscanf(arg, "%s %s", option, target)!=2) target = arg;
     if (option != "-r" && option != "-p" && option != "-c") target = arg;
@@ -32,22 +32,22 @@ int main(object me, string arg)
     if (option == "-c") {
         seteuid(geteuid(me));
         clones = children(target);
-        if (!clones || !sizeof(clones)) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş¡£\n");
+        if (!clones || !sizeof(clones)) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶ã€‚\n");
         
         for (i = 0; i<sizeof(clones); i++) {
             ob = clones[i];
             if (environment(ob)) {
                 if (environment(ob) == environment(me)) {
                     if (!stringp(msg = me->query("env/msg_dest")))
-                        msg = "$NÕÙ»½³öÒ»¸öºÚ¶´£¬½«$nÍÌÃ»ÁË¡£";
+                        msg = "$Nå¬å”¤å‡ºä¸€ä¸ªé»‘æ´ï¼Œå°†$nåæ²¡äº†ã€‚";
                     message_vision(msg + "\n", me, ob);
                 } else {
-                    message_vision("Ğé¿ÕÖĞºöÈ»³öÏÖÁËÒ»¸öºÚ¶´£¬½«$NÍÌÃ»ÁË¡£\n", ob);
+                    message_vision("è™šç©ºä¸­å¿½ç„¶å‡ºç°äº†ä¸€ä¸ªé»‘æ´ï¼Œå°†$Nåæ²¡äº†ã€‚\n", ob);
                 }
             }
-            printf("´İ»ÙÎï¼ş£º%O ", ob);
+            printf("æ‘§æ¯ç‰©ä»¶ï¼š%O ", ob);
             destruct(ob);
-            if (ob) write("---> ´İ»ÙÊ§°Ü¡£\n");
+            if (ob) write("---> æ‘§æ¯å¤±è´¥ã€‚\n");
             else write("---> Ok.\n");
         }
         write("Ok.\n");
@@ -63,16 +63,16 @@ int main(object me, string arg)
     if (!obj) obj = present(target, me);
     if (!obj) obj = present(target, environment(me));
     if (!obj) obj = find_object( resolve_path(me->query("cwd"), target));
-    if (!obj) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş¡£\n");
+    if (!obj) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶ã€‚\n");
 
     if (environment(me)==environment(obj)) {
         if (!stringp(msg = me->query("env/msg_dest")))
-            msg = "$NÕÙ»½³öÒ»¸öºÚ¶´£¬½«$nÍÌÃ»ÁË¡£";
+            msg = "$Nå¬å”¤å‡ºä¸€ä¸ªé»‘æ´ï¼Œå°†$nåæ²¡äº†ã€‚";
         message_vision(msg + "\n", me, obj);
     }
-    printf("´İ»ÙÎï¼ş£º%O\n", obj);
+    printf("æ‘§æ¯ç‰©ä»¶ï¼š%O\n", obj);
     destruct(obj);
-    if (obj) write("ÄãÎŞ·¨½«Õâ¸öÎï¼ş´İ»Ù¡£\n");
+    if (obj) write("ä½ æ— æ³•å°†è¿™ä¸ªç‰©ä»¶æ‘§æ¯ã€‚\n");
     else write("Ok.\n");
 
     return 1;
@@ -81,18 +81,18 @@ int main(object me, string arg)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½ : dest [-r|-c] <Îï¼şÖ®Ãû³Æ»òµµÃû>
+æŒ‡ä»¤æ ¼å¼ : dest [-r|-c] <ç‰©ä»¶ä¹‹åç§°æˆ–æ¡£å>
            dest [-p] show damaged player objects.
 
-ÀûÓÃ´ËÒ»Ö¸Áî¿É½«Ò»¸öÎï¼ş(object)»òÎï¼ş¶¨Òå(class)´Ó¼ÇÒäÌåÖĞÇå³ı£¬ÈôÇå³ıÎï
-¼ş¶¨Òå(¼´£ºÖ¸¶¨µµÃûµÄÇé¿öÏÂ)ÔòÏÂÒ»´Î²Î¿¼µ½Õâ¸öÎï¼şµÄÊ±ºò»áÖØĞÂ½«Ëü±àÒë¡£
+åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤å¯å°†ä¸€ä¸ªç‰©ä»¶(object)æˆ–ç‰©ä»¶å®šä¹‰(class)ä»è®°å¿†ä½“ä¸­æ¸…é™¤ï¼Œè‹¥æ¸…é™¤ç‰©
+ä»¶å®šä¹‰(å³ï¼šæŒ‡å®šæ¡£åçš„æƒ…å†µä¸‹)åˆ™ä¸‹ä¸€æ¬¡å‚è€ƒåˆ°è¿™ä¸ªç‰©ä»¶çš„æ—¶å€™ä¼šé‡æ–°å°†å®ƒç¼–è¯‘ã€‚
 
-¾ßÓĞ (admin) Éí·ÖµÄÎ×Ê¦¿ÉÒÔÓÃ -r Ñ¡ÏîÒÔ ROOT_UID Éí·ÖÀ´Çå³ı±»±£»¤µÄÎï¼şÈç
-Ê¹ÓÃÕß¡£
+å…·æœ‰ (admin) èº«åˆ†çš„å·«å¸ˆå¯ä»¥ç”¨ -r é€‰é¡¹ä»¥ ROOT_UID èº«åˆ†æ¥æ¸…é™¤è¢«ä¿æŠ¤çš„ç‰©ä»¶å¦‚
+ä½¿ç”¨è€…ã€‚
 
-Ê¹ÓÃ -c Ñ¡ÏîÔò¿ÉÒÔ´İ»ÙÒ»¸öÎï¼şµÄËùÓĞclonepÎï¼ş¡£
+ä½¿ç”¨ -c é€‰é¡¹åˆ™å¯ä»¥æ‘§æ¯ä¸€ä¸ªç‰©ä»¶çš„æ‰€æœ‰clonepç‰©ä»¶ã€‚
 
-²Î¿¼×ÊÁÏ£º destruct()
+å‚è€ƒèµ„æ–™ï¼š destruct()
 HELP
     );
     return 1;

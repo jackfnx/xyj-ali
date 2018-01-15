@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -8,18 +8,18 @@ inherit F_LIQUID;
 
 void create()
 {
-  set_name("ÎıÍë", ({"xi wan", "xiwan", "wan"}));
+  set_name("é”¡ç¢—", ({"xi wan", "xiwan", "wan"}));
   set_weight(900);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "Ö»");
-    set("long", "Ò»Ö»Ïâ±ßÎıÍë£®\n"),
+    set("unit", "åª");
+    set("long", "ä¸€åªé•¶è¾¹é”¡ç¢—ï¼\n"),
     set("value", 800);
     set("max_liquid", 5);
     set("liquid", ([
    "type": "water",
-   "name": "ÇåË®",
+   "name": "æ¸…æ°´",
    "remaining": 5,
    "drunk_supply": 5,
     ]));

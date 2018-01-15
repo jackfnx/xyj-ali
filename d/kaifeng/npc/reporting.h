@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -13,18 +13,18 @@ void informing (object me, object who, string str)
   str = replace_string (str, "$N", me->query("name"));
   str = replace_string (str, "$n", who->query("name"));
   if (snowcat && wizardp(snowcat))
-    tell_object (snowcat, " ¡ó "+str);
+    tell_object (snowcat, " â—‡ "+str);
 }
 
 void reporting (object who, string reason, int points, string name)
 {
-  string str = reason+"µÃµ½ÁË"+(points)+"µã"+name+"¡£\n";
+  string str = reason+"å¾—åˆ°äº†"+(points)+"ç‚¹"+name+"ã€‚\n";
 
 // if (! DEBUG) return;
 
   object snowcat = find_player ("snowcat");
 
   if (snowcat && wizardp(snowcat))
-    tell_object (snowcat, " ¡Ñ "+who->query("name")+str);
+    tell_object (snowcat, " âŠ™ "+who->query("name")+str);
 }
 

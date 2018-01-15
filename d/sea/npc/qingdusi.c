@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-       set_name("öë¶¼Ë¾", ({"qing dusi", "qing", "dusi"}));
-        set("long","¶«º£Áú¹¬öë¶¼Ë¾¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("é²­éƒ½å¸", ({"qing dusi", "qing", "dusi"}));
+        set("long","ä¸œæµ·é¾™å®«é²­éƒ½å¸ã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 40);
         set("per", 15);
         set("str", 25);

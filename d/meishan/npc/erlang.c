@@ -1,18 +1,18 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("¶şÀÉÕæ¾ı", ({"erlang zhenjun", "erlang", "zhenjun"}));
-        set("long", "ËûÊÇ³à³ÇÕÑ»İÓ¢ÁéÊ¥£¬ÏÔ»¯ÎŞ±ßºÅ¶şÀÉ¡£
-Á¦·ü°Ë¹ÖÉùÃûÔ¶£¬Òå½áÃ·É½ÆßÊ¥ĞĞ¡£\n");
-   set("looking", "ÒÇÈİÇå¿¡Ã²ÌÃÌÃ£¬Á½¶ú´¹¼çÄ¿ÓĞ¹â¡£");
+        set_name("äºŒéƒçœŸå›", ({"erlang zhenjun", "erlang", "zhenjun"}));
+        set("long", "ä»–æ˜¯èµ¤åŸæ˜­æƒ è‹±çµåœ£ï¼Œæ˜¾åŒ–æ— è¾¹å·äºŒéƒã€‚
+åŠ›ä¼å…«æ€ªå£°åè¿œï¼Œä¹‰ç»“æ¢…å±±ä¸ƒåœ£è¡Œã€‚\n");
+   set("looking", "ä»ªå®¹æ¸…ä¿Šè²Œå ‚å ‚ï¼Œä¸¤è€³å‚è‚©ç›®æœ‰å…‰ã€‚");
         set("age", 28);
         set("attitude", "peaceful");
-        set("gender", "ÄĞĞÔ");
-        set("title", "ÕÑ»İÁéÏÔÍõ");
+        set("gender", "ç”·æ€§");
+        set("title", "æ˜­æƒ çµæ˜¾ç‹");
         set("str", 40);
         set("int", 40);
         set("per", 30);
@@ -53,8 +53,8 @@ void die()
 {
 
         if( environment() ) {
-        message("sound", "\n\n¶şÀÉÉñÅ­µÀ£ºÄãÄªÒª²ş¿ñ£¬´ıÎÒÉÏÌì¸æÓù×´È¥£¡\n\n", environment());
-        message("sound", "\n¶şÀÉÉñ´îÉÏ°×ÔÆ£¬¾¶ÍùÄÏÌìÃÅ·ÉÈ¥¡£¡£¡£\n\n", environment());
+        message("sound", "\n\näºŒéƒç¥æ€’é“ï¼šä½ è«è¦çŒ–ç‹‚ï¼Œå¾…æˆ‘ä¸Šå¤©å‘Šå¾¡çŠ¶å»ï¼\n\n", environment());
+        message("sound", "\näºŒéƒç¥æ­ä¸Šç™½äº‘ï¼Œå¾„å¾€å—å¤©é—¨é£å»ã€‚ã€‚ã€‚\n\n", environment());
         }
 
         destruct(this_object());

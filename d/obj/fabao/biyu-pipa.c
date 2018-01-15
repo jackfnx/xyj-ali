@@ -44,20 +44,20 @@ string show_status();
 
 void create()
 {
-    set_name("±ÌÓñÅýÅÃ", ({"biyu pipa", "hammer", "pipa", "fabao"}));
+    set_name("ç¢§çŽ‰çµç¶", ({"biyu pipa", "hammer", "pipa", "fabao"}));
     set_weight(8000);
     if (clonep())
         set_default_object(__FILE__);
     else 
     {
-        set("long", "Ò»°Ñ±ÌÂÌÉ«µÄÅýÅÃ£¬ÉÏÓ¡·ûÖä£¬ÖÐ·ÖËÄÏÒ£¬ÄËÊÇ¡°µØ£¬Ë®£¬»ð£¬·ç¡±¡£\n");
-        set("unit", "°Ñ");
+        set("long", "ä¸€æŠŠç¢§ç»¿è‰²çš„çµç¶ï¼Œä¸Šå°ç¬¦å’’ï¼Œä¸­åˆ†å››å¼¦ï¼Œä¹ƒæ˜¯â€œåœ°ï¼Œæ°´ï¼Œç«ï¼Œé£Žâ€ã€‚\n");
+        set("unit", "æŠŠ");
         set("value", 100000);
         set("no_put",1);
         set("no_sell",1);
         set("unique", 1);
         set("replace_file", "/obj/money/gold");
-        set("wield_msg", "$N½«±ÌÓñÅýÅÃÄÃÔÚÊÖÖÐ£¬ÇáÇá²¦ÏÒ£¬ËÆºõÓÐ·ç»ðÆëÖÁ¡£\n");
+        set("wield_msg", "$Nå°†ç¢§çŽ‰çµç¶æ‹¿åœ¨æ‰‹ä¸­ï¼Œè½»è½»æ‹¨å¼¦ï¼Œä¼¼ä¹Žæœ‰é£Žç«é½è‡³ã€‚\n");
         set("time_available", 6);
         set("spi", MIN_SPI);
     }
@@ -78,12 +78,12 @@ int do_addspi(string arg)
     object fabao = this_object();
     object me= this_player();
 
-    if (!wizardp(me)) return notify_fail("Äã²»ÄÜÊ¹ÓÃÕâ¸öÖ¸Áî¡£\n");
-    if (!this_object()->id(arg)) return notify_fail("ÄãÏëÉèÖÃÄÄ¸ö·¨±¦µÄÁéÁ¦£¿\n");
+    if (!wizardp(me)) return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
+    if (!this_object()->id(arg)) return notify_fail("ä½ æƒ³è®¾ç½®å“ªä¸ªæ³•å®çš„çµåŠ›ï¼Ÿ\n");
 
     //add 1/10 MAX_SPI each time...
     if ((int)fabao->query("spi") >= MAX_SPI)
-        return notify_fail("Õâ¼þ·¨±¦µÄÁéÁ¦ÒÑ¾­¶ÍÁ¶µ½ÁË¼«ÏÞ£¡\n");
+        return notify_fail("è¿™ä»¶æ³•å®çš„çµåŠ›å·²ç»é”»ç‚¼åˆ°äº†æžé™ï¼\n");
 
     fabao->add("spi", MAX_SPI/10);
     if ((int)query("spi") > MAX_SPI) set("spi", MAX_SPI);
@@ -100,21 +100,21 @@ int do_improve(string arg)
     if (me->is_busy()
     || me->is_fighting()
     || me->query_temp("pending/exercising"))
-        return notify_fail("ÄãÕýÃ¦×ÅÄØ£®£®£®\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Žï¼Žï¼Ž\n");
         
     if (environment(me)->query("no_fight")
     || environment(me)->query("no_magic"))
-        return notify_fail("ÕâÀï²»ÄÜ¶ÍÁ¶·¨±¦¡£\n");
+        return notify_fail("è¿™é‡Œä¸èƒ½é”»ç‚¼æ³•å®ã€‚\n");
 
-    if (!this_object()->id(arg)) return notify_fail("ÄãÏëÌá¸ßÊ²Ã´·¨±¦µÄÁéÁ¦£¿\n");;
+    if (!this_object()->id(arg)) return notify_fail("ä½ æƒ³æé«˜ä»€ä¹ˆæ³•å®çš„çµåŠ›ï¼Ÿ\n");;
 
     if ((int)me->query("mana") < cost)
-        return notify_fail("ÄãµÄ·¨Á¦Ì«µÍ£¬²»ÄÜ¶ÍÁ¶·¨±¦¡£\n");
+        return notify_fail("ä½ çš„æ³•åŠ›å¤ªä½Žï¼Œä¸èƒ½é”»ç‚¼æ³•å®ã€‚\n");
 
     if ((int)fabao->query("spi") >= MAX_SPI)
-        return notify_fail("Õâ¼þ·¨±¦µÄÁéÁ¦ÒÑ¾­¶ÍÁ¶µ½ÁË¼«ÏÞ£¡\n");
+        return notify_fail("è¿™ä»¶æ³•å®çš„çµåŠ›å·²ç»é”»ç‚¼åˆ°äº†æžé™ï¼\n");
 
-    message_vision(HIC"$NË«ÊÖ½ôÎÕ×Å$n£¬¿ÚÖÐÄîÄîÓÐ´Ê£¬½«×Ô¼ºµÄ·¨Á¦Ò»µãµãµÄËÍÁË¹ýÈ¥¡£\n"NOR, me, fabao);
+    message_vision(HIC"$NåŒæ‰‹ç´§æ¡ç€$nï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œå°†è‡ªå·±çš„æ³•åŠ›ä¸€ç‚¹ç‚¹çš„é€äº†è¿‡åŽ»ã€‚\n"NOR, me, fabao);
     
     me->add("mana", -cost);
     fabao->add("spi", cost/50); //so 100 mana can get 2 spi for the fabao
@@ -129,8 +129,8 @@ int do_improve(string arg)
 int improved(object me)
 {
     object fabao = this_object();
-    message_vision(HIC"\n$NÊÖÖÐµÄ$nÍ»È»·¢³öÒ»ÕóÇà¹â£¬ÒþÏÖ·ç»ðÖ®Òô¡£\n"NOR, me, fabao);
-    message_vision(HIC"$NÃæÂ¶Ï²É«£¬³¤ÍÂÒ»¿ÚÆøÕ¾ÁËÆðÀ´¡£\n"NOR, me);
+    message_vision(HIC"\n$Næ‰‹ä¸­çš„$nçªç„¶å‘å‡ºä¸€é˜µé’å…‰ï¼ŒéšçŽ°é£Žç«ä¹‹éŸ³ã€‚\n"NOR, me, fabao);
+    message_vision(HIC"$Né¢éœ²å–œè‰²ï¼Œé•¿åä¸€å£æ°”ç«™äº†èµ·æ¥ã€‚\n"NOR, me);
     tell_object(me, show_status());
     me->start_busy(1);
     return 1;
@@ -139,15 +139,15 @@ int improved(object me)
 string show_status()
 {
     int i, percent;
-    string status = this_object()->query("name") + "£º";
+    string status = this_object()->query("name") + "ï¼š";
 
     percent = 1 + query("spi")*25/MAX_SPI;
     if (percent > 25) percent = 25;
     
     for (i=1; i<=25; i++) //
     {
-        if (i <= percent) status = status + "¡ö";
-        else status = status + "¡õ";
+        if (i <= percent) status = status + "â– ";
+        else status = status + "â–¡";
     }
 
     status = status + "\n";
@@ -169,21 +169,21 @@ int ji_ob(object victim)
     int damage;
 
     if (me->is_busy())
-        return notify_fail("ÄãÕýÃ¦×ÅÄØ£¬ÎÞ·¨¼À³ö±ÌÓñÅýÅÃ¡£\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œæ— æ³•ç¥­å‡ºç¢§çŽ‰çµç¶ã€‚\n");
     if (!victim)
-        return notify_fail("ÄãÏë¼ÀµÄÈË²»ÔÚÕâÀï¡£\n");
+        return notify_fail("ä½ æƒ³ç¥­çš„äººä¸åœ¨è¿™é‡Œã€‚\n");
     if (where->query("no_magic"))
-        return notify_fail("ÕâÀï²»ÄÜ¼À±ÌÓñÅýÅÃ¡£\n");
+        return notify_fail("è¿™é‡Œä¸èƒ½ç¥­ç¢§çŽ‰çµç¶ã€‚\n");
     if (!me->is_fighting())
-        return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜ¼À±ÌÓñÅýÅÃ¡£\n");
+        return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½ç¥­ç¢§çŽ‰çµç¶ã€‚\n");
     if ((int)me->query("mana") < 500)
-        return notify_fail("ÄãµÄ·¨Á¦²»ÄÜ¿ØÖÆ±ÌÓñÅýÅÃ¡£\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸èƒ½æŽ§åˆ¶ç¢§çŽ‰çµç¶ã€‚\n");
     if ((int)me->query("sen") < 200)
-        return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬ºÜÄÑ¼ÝÔ¦±ÌÓñÅýÅÃ¡£\n");
+        return notify_fail("ä½ çŽ°åœ¨ç¥žæ™ºä¸æ¸…ï¼Œå¾ˆéš¾é©¾é©­ç¢§çŽ‰çµç¶ã€‚\n");
 
 
-    message_vision(HIC"\n$N´óÉù½ÐµÀ¡°ºÃ£¡ÇÒÌýÕâÒ»ÇúÈçºÎ£¡¡±£¬ÑÔ°Õ¿ÚÄîÖäÎÄ£¬Çá²¦ÏÒÉù¡£¡£¡£\n"NOR, me, fabao);
-    message_vision(HIC"Ö»¼û$n¡¸ºô¡¹µØÒ»ÏÂ·Éµ½°ë¿Õ£¬¶£¶£îõîõÖ®Éù²»¾øÓÚ¶ú£¬¾¶Ïò$N±ÆÈ¥¡£\n"NOR, victim, fabao);
+    message_vision(HIC"\n$Nå¤§å£°å«é“â€œå¥½ï¼ä¸”å¬è¿™ä¸€æ›²å¦‚ä½•ï¼â€ï¼Œè¨€ç½¢å£å¿µå’’æ–‡ï¼Œè½»æ‹¨å¼¦å£°ã€‚ã€‚ã€‚\n"NOR, me, fabao);
+    message_vision(HIC"åªè§$nã€Œå‘¼ã€åœ°ä¸€ä¸‹é£žåˆ°åŠç©ºï¼Œå®å®é“›é“›ä¹‹å£°ä¸ç»äºŽè€³ï¼Œå¾„å‘$Né€¼åŽ»ã€‚\n"NOR, victim, fabao);
 
     if (!victim->is_fighting(me))
     {
@@ -206,9 +206,9 @@ int ji_ob(object victim)
     fabao->set("spi", my_spi*3/4);
 
 
-//1st, compare dx, if victim dx enough, ¶ãÉÁ
-//2nd, compare fali, if victim fali enough, can ½ÓÊÕ
-//if no ¶ãÉÁ and ½ÓÊÕ, a successful hit happens, consider damage now, 
+//1st, compare dx, if victim dx enough, èº²é—ª
+//2nd, compare fali, if victim fali enough, can æŽ¥æ”¶
+//if no èº²é—ª and æŽ¥æ”¶, a successful hit happens, consider damage now, 
 //damage is determined by victim's enchant and current fali and fabao's spi
 //...weiqi
     vic_mana = (int)victim->query("mana");
@@ -217,13 +217,13 @@ int ji_ob(object victim)
 
     if (random(vic_dx/1000) > my_spi) // /1000 is to convert vic_dx to years
     {
-        message_vision(HIC"\n$N¹þ¹þ´óÐ¦£¬ËÆºõË¿ºÁ²»ÊÜ$nÓ°Ïì¡£\n"NOR, victim, fabao);
+        message_vision(HIC"\n$Nå“ˆå“ˆå¤§ç¬‘ï¼Œä¼¼ä¹Žä¸æ¯«ä¸å—$nå½±å“ã€‚\n"NOR, victim, fabao);
     }
     else
-    {//now ¶ãÉÁ does not happen, try ½ÓÊÕ?
+    {//now èº²é—ª does not happen, try æŽ¥æ”¶?
         if (random(vic_mana) > my_spi)
         {
-            message_vision(HIC"\n$N´óºÈÒ»Éù¡°ÊÕ£¡¡±£¬Ö»Ìý¶£îõÖ®Éù´ó×÷£¡µ«$nµÄÇÙÒôÒ»¸ßÔÙ¸ßÖ®ºóÖÕÓÚ¹Ô¹ÔµØ·Éµ½ÁË$NÊÖÖÐ¡£\n"NOR, victim, fabao);
+            message_vision(HIC"\n$Nå¤§å–ä¸€å£°â€œæ”¶ï¼â€ï¼Œåªå¬å®é“›ä¹‹å£°å¤§ä½œï¼ä½†$nçš„ç´éŸ³ä¸€é«˜å†é«˜ä¹‹åŽç»ˆäºŽä¹–ä¹–åœ°é£žåˆ°äº†$Næ‰‹ä¸­ã€‚\n"NOR, victim, fabao);
             fabao->move(victim);
         }
         else
@@ -239,7 +239,7 @@ int ji_ob(object victim)
 
             if (damage > 0)
             {
-                message_vision(HIC"\n½á¹û$N¶ãÉÁ²»¼°£¬Îæ×¡¶ú¶ä·¢³öÒ»Éù²Ò½Ð£¡\n"NOR,victim);
+                message_vision(HIC"\nç»“æžœ$Nèº²é—ªä¸åŠï¼Œæ‚ä½è€³æœµå‘å‡ºä¸€å£°æƒ¨å«ï¼\n"NOR,victim);
                 victim->receive_damage("sen", damage);
                 victim->receive_wound("sen", damage/2);
                 COMBAT_D->report_sen_status(victim);
@@ -250,7 +250,7 @@ int ji_ob(object victim)
 
     if ((int)fabao->query("time_available") < 1)
     {
-        message_vision("\nÍ»È»¼ä$N·¢³öÒ»ÕóÇàÃ¢³åÉÏÌìÈ¥¡£\n", fabao);
+        message_vision("\nçªç„¶é—´$Nå‘å‡ºä¸€é˜µé’èŠ’å†²ä¸Šå¤©åŽ»ã€‚\n", fabao);
         destruct(fabao);
     }
 
@@ -265,7 +265,7 @@ int ji(string target)
     object victim;
 
     if (!target)
-        return notify_fail("ÄãÏë¶ÔË­¼À"+name+"£¿\n");
+        return notify_fail("ä½ æƒ³å¯¹è°ç¥­"+name+"ï¼Ÿ\n");
 
     victim=present(target,environment(me));
     return fabao->ji_ob(victim);

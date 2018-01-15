@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,9 +7,9 @@ inherit STICK;
 
 void create()
 {
-  set_name("ÉÕ»ğ¹÷", ({ "shaohuo gun", "gun", "stick" }) );
+  set_name("çƒ§ç«æ£", ({ "shaohuo gun", "gun", "stick" }) );
   init_stick(15);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(500);
   if( clonep() )
      set_default_object(__FILE__);

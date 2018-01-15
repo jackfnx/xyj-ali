@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // laoyu.c
@@ -8,10 +8,10 @@ inherit F_VENDOR;
 
 void create()
 {
-       set_name("���ƹ�", ({"wang zhanggui", "wang"}));
-       set("long", "С�ƹݵ��ϰ壬�Ե����ֵģ�\n");
-       set("gender", "����");
-   set("title", "�ƹ��ϰ�");
+       set_name("王掌柜", ({"wang zhanggui", "wang"}));
+       set("long", "小酒馆的老板，吃的胖胖的．\n");
+       set("gender", "男性");
+   set("title", "酒馆老板");
    set("combat_exp", 3000);
        set("age", 46);
        set("attitude", "friendly");
@@ -47,9 +47,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say( name()+"Ц�����˵������λ" +
+                        say( name()+"笑咪咪地说道：这位" +
 RANK_D->query_respect(ob)
-                                + "�����������Ѱɡ�\n");
+                                + "，进来喝两盅吧。\n");
                         break;
    }
 }

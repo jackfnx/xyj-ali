@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -6,8 +6,8 @@ inherit F_VENDOR;
 
 void create()
 {
-  set_name("»ï¼Æ", ({"huoji"}));
-  set("gender", "ÄĞĞÔ" );
+  set_name("ä¼™è®¡", ({"huoji"}));
+  set("gender", "ç”·æ€§" );
   set("age", 18);
   set("per", 25);
   set("combat_exp", 1000);

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hill.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "»¨Ô°");
+  set ("short", "èŠ±å›­");
   set ("long", @LONG
 
-»¨Ô°Ëä²»´ó£¬»¨¶ùÈ´¼«¶à¡£ÎåÑÕÁùÉ«£¬æ±×ÏæÌºì¡£¿´Ò»¿´È´¶¼²»
-ÈÏµÄ£®¼¸Ö»²ÊÉ«µÄĞ¡ÓãÓÎÀ´ÓÎÈ¥¡£Ïò¶«ÊÇ¹«Ö÷µÄÇŞ¹¬£¬ÄÏ±ßÊÇ¹«
-Ö÷Æ½Ê±Á·ÎäµÄµØ·½¡£
+èŠ±å›­è™½ä¸å¤§ï¼ŒèŠ±å„¿å´æå¤šã€‚äº”é¢œå…­è‰²ï¼Œå§¹ç´«å«£çº¢ã€‚çœ‹ä¸€çœ‹å´éƒ½ä¸
+è®¤çš„ï¼å‡ åªå½©è‰²çš„å°é±¼æ¸¸æ¥æ¸¸å»ã€‚å‘ä¸œæ˜¯å…¬ä¸»çš„å¯å®«ï¼Œå—è¾¹æ˜¯å…¬
+ä¸»å¹³æ—¶ç»ƒæ­¦çš„åœ°æ–¹ã€‚
 LONG);
 set("exits", ([ /* sizeof() == 4 */
 "northwest" : __DIR__"girl1",
@@ -30,13 +30,13 @@ set("objects", ([
 
 int valid_leave(object me, string dir)
 {
-    if((string)me->query("family/family_name")=="Áú¹¬") return 1;
-   if((string)me->query("family/family_name")=="¶«º£Áú¹¬") return 1;
+    if((string)me->query("family/family_name")=="é¾™å®«") return 1;
+   if((string)me->query("family/family_name")=="ä¸œæµ·é¾™å®«") return 1;
 
 
     if (dir == "north" ) {
 
-        return notify_fail("ÄÇÀïÖ»ÓĞÁú¹¬µÄµÜ×Ó²ÅÄÜ½øÈ¥£®\n");
+        return notify_fail("é‚£é‡Œåªæœ‰é¾™å®«çš„å¼Ÿå­æ‰èƒ½è¿›å»ï¼\n");
     }
 
 return 1;

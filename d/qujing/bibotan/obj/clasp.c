@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -8,18 +8,18 @@ inherit HEAD;
 
 void create()
 {
-        set_name(YEL "Òøô¢" NOR, ({ "clasp" }) );
+        set_name(YEL "é“¶ç°ª" NOR, ({ "clasp" }) );
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ùÈı´ç¶à³¤µÄÒøô¢£¬ÊÇÅ®×ÓÓÃÀ´¿¨Í··¢µÄ¡£\n");
+                set("long", "ä¸€æ ¹ä¸‰å¯¸å¤šé•¿çš„é“¶ç°ªï¼Œæ˜¯å¥³å­ç”¨æ¥å¡å¤´å‘çš„ã€‚\n");
                 set("material", "silver");
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 300);
                 set("armor_prop/armor", 1 );
-     set("wear_msg", "$NÇáÇáµÄ½«$n²åÔÚÍ··¢ÉÏ¡£\n");
-     set("remove_msg", "$NÇáÇáµÄ½«$n´ÓÍ··¢ÉÏÈ¡ÁËÏÂÀ´¡£\n");
+     set("wear_msg", "$Nè½»è½»çš„å°†$næ’åœ¨å¤´å‘ä¸Šã€‚\n");
+     set("remove_msg", "$Nè½»è½»çš„å°†$nä»å¤´å‘ä¸Šå–äº†ä¸‹æ¥ã€‚\n");
      set("female_only", 1);
         }
         setup();

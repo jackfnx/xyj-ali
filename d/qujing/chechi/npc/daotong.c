@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 22 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("µÀÍ¯", ({"dao tong", "dao", "tong"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("é“ç«¥", ({"dao tong", "dao", "tong"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 10000);
   set("age", 15);
   set("per", 20);

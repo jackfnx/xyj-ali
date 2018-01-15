@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //malemace.c
@@ -13,17 +13,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-  set_name(YEL "»¢Î²±Ş" NOR, ({"tiger mace", "mace", "tigermace", "tiger"}));
+  set_name(YEL "è™å°¾é­" NOR, ({"tiger mace", "mace", "tigermace", "tiger"}));
   set_weight(10000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "±ú");
+    set("unit", "æŸ„");
     set("value", 18000);
     set("material", "steel");
-    set("long", "ÕâÊÇÒ»±ú¾«¸ÖÖı³ÉµÄ»¢Î²±Ş£¬¾İËµÊÇÒ»¶Ô´ÆĞÛË«±ŞÖĞµÄĞÛ±Ş¡£\n");
-    set("wield_msg", "$N´Ó¼çÉÏÈ¡ÏÂÒ»¸ö²¼´ü£¬½âÁË¿ªÀ´£¬´üÖĞ¾¹È»ÊÇ$n£¡\n");
-    set("unwield_msg", "$NÄÃÆğ²¼´ü²ÁÁË²Á$n£¬ÓÖ°ÑËüĞ¡ĞÄÒíÒíµØ°üÁËÆğÀ´¡£\n");
+    set("long", "è¿™æ˜¯ä¸€æŸ„ç²¾é’¢é“¸æˆçš„è™å°¾é­ï¼Œæ®è¯´æ˜¯ä¸€å¯¹é›Œé›„åŒé­ä¸­çš„é›„é­ã€‚\n");
+    set("wield_msg", "$Nä»è‚©ä¸Šå–ä¸‹ä¸€ä¸ªå¸ƒè¢‹ï¼Œè§£äº†å¼€æ¥ï¼Œè¢‹ä¸­ç«Ÿç„¶æ˜¯$nï¼\n");
+    set("unwield_msg", "$Næ‹¿èµ·å¸ƒè¢‹æ“¦äº†æ“¦$nï¼ŒåˆæŠŠå®ƒå°å¿ƒç¿¼ç¿¼åœ°åŒ…äº†èµ·æ¥ã€‚\n");
    set("replace_file", "/d/obj/weapon/mace/ironmace");
   }
   

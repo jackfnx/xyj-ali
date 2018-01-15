@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // rewritten by snowcat on 4/11/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɳĮ����");
+  set ("short", "沙漠绿洲");
   set ("long", @LONG
 
-�����ļ����ȣ�Զ������������ľ��󡣲�����Ȼˮ�ݷ��������
-�������ա����ذ��հ�����ҵ����Ҳ��Ȼ�Եá�
+这里四季常热，远不似西北边陲的景象。不想依然水草肥美，五谷
+年年照收。当地百姓安居乐业，倒也怡然自得。
 
 LONG);
 

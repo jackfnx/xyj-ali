@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "·��");
+  set ("short", "路口");
   set ("long", @LONG
 
-�������зǳ��ķ�����·�ܵ�¥̨���ʣ������ͷס�ֻ��������
-���У���ֳͨ�ƣ������˵��¹�¡�أ������񸻺�����
+祭赛国中非常的繁华，路周的楼台高耸，云雾缤纷。只见那三街
+六市，货殖通财，来往人等衣冠隆重，足显民富豪华。
 LONG);
 
   set("objects", ([ /* sizeof() == 1*/ 

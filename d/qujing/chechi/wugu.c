@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 10/21/1997
@@ -9,12 +9,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����ֻ�");
+  set ("short", "五谷轮回");
   set ("long", @LONG
 
-���������������ǽ�ڳ�ʪ�������ƺ�ʲôҲ�����塣�ſ���
-����������ð��Ũ�̣�������һС�ʣ��������һ��һ���Ĵ�
-�ڲ�ֽ��
+屋子里光线阴暗，墙壁潮湿，里面似乎什么也看不清。门口有
+几大柱粗香冒着浓烟，边上有一小凳，上面放有一叠一叠的粗
+糙草纸。
 
 LONG);
 
@@ -26,7 +26,7 @@ LONG);
         "west"         : __DIR__"dianmen",
       ]));
 
-  create_door("west", "С��", "east", DOOR_CLOSED);
+  create_door("west", "小门", "east", DOOR_CLOSED);
   setup();
 }
 

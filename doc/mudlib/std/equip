@@ -1,13 +1,13 @@
-¡õ EQUIP
+â–¡ EQUIP
 
 inherit ITEM;
 inherit F_EQUIP;
  
 void setup()
-ÔİÊ±Ã»ÓÃ.
+æš‚æ—¶æ²¡ç”¨.
  
 string query_verb()
-´«»ØÕâ¸öÎï¼şËùÊ¹ÓÃµÄ¶¯´Ê, Èç¹ûÃ»ÓĞ¶¨ÒåÔòÓÃ "hit".
+ä¼ å›è¿™ä¸ªç‰©ä»¶æ‰€ä½¿ç”¨çš„åŠ¨è¯, å¦‚æœæ²¡æœ‰å®šä¹‰åˆ™ç”¨ "hit".
 
 Elon@ES2
 07-05-95: drafted.

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xiaomaolu.c
@@ -7,14 +7,14 @@ inherit NPC;
 
 void create()
 {
-   set_name("Ğ¡Ã«Â¿", ({"xiao maolu", "maolu", "lu"}));
-   set("race", "Ò°ÊŞ");
+   set_name("å°æ¯›é©´", ({"xiao maolu", "maolu", "lu"}));
+   set("race", "é‡å…½");
    set("age", 10);
    set("combat_exp", 10000);
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åè„š", "å°¾å·´" }) );
    set("verbs", ({ "bite"}));
 
-   set("ride/msg", "µ¹Æï");
+   set("ride/msg", "å€’éª‘");
    set("ride/dodge", 20);
    set_temp("apply/attack", 10);
    set_temp("apply/armor", 20);

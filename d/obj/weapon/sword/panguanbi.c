@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,12 +9,12 @@ inherit SWORD;
 
 void create()
 {
-        set_name("ÅĞ¹Ù±Ê", ({"panguanbi", "sword"}));
+        set_name("åˆ¤å®˜ç¬”", ({"panguanbi", "sword"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "åŒ");
                 set("value", 300);
         }
         init_sword(20);

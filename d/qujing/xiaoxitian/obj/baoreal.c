@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/17/1997
@@ -11,23 +11,23 @@ inherit ITEM;
  
 void create()
 {
-  set_name("�ɰײ����",({"da bao", "bao", "fabao"}));
+  set_name("旧白布搭包",({"da bao", "bao", "fabao"}));
   set_weight(5000);
   set_max_encumbrance(100000000000);
   if(clonep())
     set_default_object(__FILE__);
   else {
-    set("unit","ֻ");
+    set("unit","只");
     set("value", 100000);
     set("material","cloth");
-    set("long","һֻ�ƾɵİײ������\n");
+    set("long","一只破旧的白布搭包。\n");
   }
   set("no_fight", 1);
   set("no_magic", 1);
   set("unique", 1);
-  set("no_sell", "�ɰײ�����˷���û�˸���Ҳ��\n");
-  //set("no_drop", "�ɰײ�����˷�����������Ҳ��\n");
-  //set("no_give", "�ɰײ�����˷�����������Ҳ��\n");
+  set("no_sell", "旧白布搭包乃法宝没人敢买也。\n");
+  //set("no_drop", "旧白布搭包乃法宝不可扔弃也。\n");
+  //set("no_give", "旧白布搭包乃法宝不可赠人也。\n");
   set("replace_file", "/d/qujing/xiaoxitian/obj/baofake.c");
   set("is_monitored",1);
   setup();
@@ -52,14 +52,14 @@ int do_out ()
   if (who->query_temp("no_move") ||
       who->is_busy())
   {
-    tell_object (who, "���ȥ����ϧ�����ڶ��������ˡ�\n");
+    tell_object (who, "想出去？可惜你现在动都动不了。\n");
     return 1;
   }
-  tell_object (who, "���ƿ��ɰײ�����ڣ��������˳�ȥ��\n");
+  tell_object (who, "你掀开旧白布搭包口，慢慢爬了出去。\n");
   if (room->is_character())
     room = environment (room);
   who->move(room);
-  message_vision ("$N�Ӿɰײ�������ﹰ�˳�����\n",who);
+  message_vision ("$N从旧白布搭包口里拱了出来。\n",who);
   return 1;
 }
 
@@ -73,54 +73,54 @@ int ji_ob (object victim)
 
   if (me->is_busy())
   {
-    tell_object (me, "���޷�æ��͵�м�"+baoname+"��\n");
-    return notify_fail("����æ���ء�\n");
+    tell_object (me, "你无法忙中偷闲祭"+baoname+"。\n");
+    return notify_fail("你正忙着呢。\n");
   }
 
   if (sizeof(all_inventory(bao))>0)
   {
-    tell_object (me, baoname+"����������޷��ټ�"+baoname+"��\n");
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    tell_object (me, baoname+"里有杂物，你无法再祭"+baoname+"。\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
 
   if (!victim)
   {
-    tell_object (me, "��������˲������\n");
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    tell_object (me, "你想祭的人不在这里。\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
 
   if (!living(victim))
   {
-    tell_object (me, victim->query("name")+"�Ѿ����޵ֿ����������ؼ��ˡ�\n");
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    tell_object (me, victim->query("name")+"已经毫无抵抗能力，不必祭了。\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
 
   if (!me->is_fighting())
   {
-    tell_object (me, "ֻ��ս���в��ܼ�"+baoname+"��\n");
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    tell_object (me, "只有战斗中才能祭"+baoname+"。\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
 
   if ((int)me->query("mana") < 500)
   {
-    tell_object (me, "��ķ������㣬������"+baoname+"��\n");
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    tell_object (me, "你的法力不足，祭不了"+baoname+"。\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
 
   if( (int)me->query("sen") < 500)
   {
-    tell_object (me, "���޷����о��������\n");
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    tell_object (me, "你无法集中精神念咒语。\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
 
-  message_vision ("\n$N�����������৵�����"+baoname+"��\n",me,victim);
+  message_vision ("\n$N口中念着咒语，唰地扔起"+baoname+"。\n",me,victim);
   if (bao->query("interactive_usage") > (me->query("kar")/2))
   {
-    message_vision ("ֻ��"+baoname+"ͻȻ�ڰ���б����Ƭ����Ůɢ����Ʈ�䡣\n",me);
+    message_vision ("只见"+baoname+"突然在半空中变成碎片如天女散花般飘落。\n",me);
     destruct (bao);
-    return notify_fail("���"+baoname+"ʧ�ܡ�\n");
+    return notify_fail("你祭"+baoname+"失败。\n");
   }
-  message_vision (baoname+"�����ڰ���У�ֻ��һ�ɰ������һ�㵹����ȥ��\n",me,victim);
+  message_vision (baoname+"腾起在半空中，只见一股白气狂风一般倒吸进去。\n",me,victim);
   me->start_busy(60/mykar);
   victimkar=victim->query("kar");
   myspells=me->query_skill("spells")/10;
@@ -132,18 +132,18 @@ int ji_ob (object victim)
   dp=(victimexp+victimspells*victimspells*victimspells/3)*victim->query("sen")/victim->query("max_sen");
   dp=dp*victimkar/1000;
   if (wizardp(me) && me->query("env/combat")=="verbose")
-    tell_object(me, GRN "������"+ap+"�����أ�"+dp+"��\n" NOR);
+    tell_object(me, GRN "进攻："+ap+"，防守："+dp+"。\n" NOR);
 
   if(random(ap+dp)>dp ||
      (!interactive(me) && 
       (!victim->query_temp("obstacle/xiaoxitian_entered") ||
-       strsrch(victim->query("nickname")+" ","��")==-1)))
+       strsrch(victim->query("nickname")+" ","禁")==-1)))
       // add " " to avoid null string being strsrch.
   {
      int ratio;
 
-     message_vision ("$n�ٸ�ͷ�ؽ��ᣬ�����ɼ���Ʈ��������\n",me,victim);
-     message_vision ("һ˲�䣬$n�ѱ�"+baoname+"װ�˽�ȥ��\n",me,victim);
+     message_vision ("$n顿感头重脚轻，身不由己地飘了起来！\n",me,victim);
+     message_vision ("一瞬间，$n已被"+baoname+"装了进去！\n",me,victim);
      victim->move(bao);
      if (!userp(me))
      {
@@ -152,11 +152,11 @@ int ji_ob (object victim)
 
        victim->move("/d/qujing/xiaoxitian/chanfang");
        room = environment(victim);
-       message_vision ("$N�����˹�����\n",victim);
+       message_vision ("$N被拖了过来。\n",victim);
        nao = present ("jin nao",room);
        if (nao)
        {
-         message_vision ("�ϵ�һ����$N���ؽ���һֻ�޴�Ľ���\n",victim,nao);
+         message_vision ("锵地一声，$N被关进了一只巨大的金铙。\n",victim,nao);
          victim->set_temp("obstacle/xiaoxitian_entered", 1);
          victim->move(nao);
        }
@@ -185,7 +185,7 @@ int ji_ob (object victim)
   }
   else
   {
-    message_vision ("$nһת���ܿ���"+baoname+"������һ�У�\n",me,victim);
+    message_vision ("$n一转身避开了"+baoname+"的致命一招！\n",me,victim);
     me->add("mana", -200);
   }
   if (victim)
@@ -230,7 +230,7 @@ void releasing (object who)
   if (environment(who) != me)
     return;
   who->move(room);
-  message_vision ("$N�Ӿɰײ�������ﹰ�˳�����\n",who);
+  message_vision ("$N从旧白布搭包口里拱了出来。\n",who);
 }
 
 int ji (string target)
@@ -241,7 +241,7 @@ int ji (string target)
   object victim;
 
   if (!target)
-    return notify_fail("�����˭��"+baoname+"��\n");
+    return notify_fail("你想对谁祭"+baoname+"？\n");
 
   victim=present(target,environment(me));
   bao->ji_ob(victim);

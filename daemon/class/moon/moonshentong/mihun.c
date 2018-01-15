@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// mihun.c ÃÔ»êÊõ
+// mihun.c è¿·é­‚æœ¯
 #include <ansi.h>
 
 inherit F_SSERVER;
@@ -16,27 +16,27 @@ int cast(object me, object target)
     if (!target) target = offensive_target(me);
 
     if ((int)me->query_skill("spells") < 100 || (int)me->query_skill("moonshentong",1) < 60)
-        return notify_fail("Äã»¹Ã»Ñ§»áÃÔ»êÊõ¡£¡£¡£\n");
+        return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šè¿·é­‚æœ¯ã€‚ã€‚ã€‚\n");
 
     if (!target
     || !target->is_character()
     || target->is_corpse()
     || target==me)
-        return notify_fail("ÄãÏëÃÔË­µÄ»ê£¿\n");  
+        return notify_fail("ä½ æƒ³è¿·è°çš„é­‚ï¼Ÿ\n");  
 
     if (target->query_temp("no_move"))
-        return notify_fail(target->query("name")+"ÒÑ¾­»ê²»ÊØÉá£¬´ôÈôÄ¾¼¦ÁË£¡\n");  
+        return notify_fail(target->query("name")+"å·²ç»é­‚ä¸å®ˆèˆï¼Œå‘†è‹¥æœ¨é¸¡äº†ï¼\n");  
 
     if ((int)me->query("mana") < 200)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
     if ((int)me->query("sen") < 10 )
-        return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦£¡\n");
+        return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
     me->add("mana", -200);
     me->receive_damage("sen", 10);
 
-    msg = HIC "$NµÍÍ·ÇáÉùÄîÁË¾äÖäÎÄ£¬ÓÖÌ§ÆğÍ·À´³¯$nåüÃÄµØÒ»Ğ¦£¡\n" NOR;
+    msg = HIC "$Nä½å¤´è½»å£°å¿µäº†å¥å’’æ–‡ï¼ŒåˆæŠ¬èµ·å¤´æ¥æœ$nå¦©åªšåœ°ä¸€ç¬‘ï¼\n" NOR;
 
     success = 1;
     ap = me->query_skill("spells");
@@ -57,7 +57,7 @@ int cast(object me, object target)
     //here we compare current mana. this is important. you need recover to try again.
 
     if (success == 1){
-        msg +=  HIR "$nÉñ²»ÊØÉáµØ¿´×Å$N£¬Á¯ÏãÏ§ÓñÖ®ĞÄÓÉÈ»¶øÆğ£¬¾¹È»ÍüÁË×Ô¼ºÔÚÕ½¶·Ö®ÖĞ¡£\n" NOR;
+        msg +=  HIR "$nç¥ä¸å®ˆèˆåœ°çœ‹ç€$Nï¼Œæ€œé¦™æƒœç‰ä¹‹å¿ƒç”±ç„¶è€Œèµ·ï¼Œç«Ÿç„¶å¿˜äº†è‡ªå·±åœ¨æˆ˜æ–—ä¹‹ä¸­ã€‚\n" NOR;
         target->set_temp("no_move", 1);
 
         howlong = random((me->query_skill("spells") -100))+1;
@@ -65,7 +65,7 @@ int cast(object me, object target)
         call_out("free", howlong, target);
     }       
     else {
-        msg +=  HIR "$n±ÉÒÄµØ¿´ÁË$NÒ»ÑÛ£¬ºÁ²»ÎªËù¶¯£¡\n" NOR;   
+        msg +=  HIR "$né„™å¤·åœ°çœ‹äº†$Nä¸€çœ¼ï¼Œæ¯«ä¸ä¸ºæ‰€åŠ¨ï¼\n" NOR;   
         me->start_busy(1+random(2));        
         if (living(target)) target->kill_ob(me);
     } 
@@ -79,7 +79,7 @@ void free(object target)
 {
     if (target) {
         target->delete_temp("no_move");
-        message_vision(HIY "$NÒ¡ÁËÒ¡Í·£¬ÑÛÉñ±äµÃÇåÃ÷£¬ËÆºõÇåĞÑÁË¹ıÀ´¡£\n" NOR, target);
+        message_vision(HIY "$Næ‘‡äº†æ‘‡å¤´ï¼Œçœ¼ç¥å˜å¾—æ¸…æ˜ï¼Œä¼¼ä¹æ¸…é†’äº†è¿‡æ¥ã€‚\n" NOR, target);
     }
 }
 

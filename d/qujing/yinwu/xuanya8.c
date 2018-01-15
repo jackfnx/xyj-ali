@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 12/2/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "悬崖");
   set ("long", @LONG
 
-��ɽ���룬���ƴ�Ρ��ֻ�����ϰ���ƮƮ����ǰ��Ӱ��������
-���ɰ�ǧǧ����ͷ���񼸸ɡ��Ĵ���ʯ���ף�ʹ���ĸв�����
-�������Ծٲ���
+苍山峻岭，峰势崔巍，只见顶上白云飘飘，崖前树影寒寒，林
+内松柏千千，峦头翠竹几干。四处怪石嶙嶙，使人心感不安，
+难以擅自举步。
 
 LONG);
 
@@ -32,11 +32,11 @@ int do_climb (string arg)
 {
   object who = this_player();
 
-  message_vision ("$N�ֽŲ��÷ܲ�������������ȥ��\n",who);
+  message_vision ("$N手脚并用奋不顾身地向上爬去。\n",who);
   if (who->query("combat_exp") < 10000 ||
       random(4))
   {
-    message_vision ("\n��������һ����$Nʧ�ֻ���������\n",who);
+    message_vision ("\n……哗哗一声，$N失手滑了下来。\n",who);
     who->unconcious();    
   }
   else

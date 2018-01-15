@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/qujing/wudidong/book_cave1
@@ -12,11 +12,11 @@ int valid_leave(object me, string dir);
 /************************************************************/
 void create ()
 {
-  set ("short", "¶´Ñ¨");
+  set ("short", "æ´ç©´");
   set ("long", @LONG
 
-ÕâÀï±éµØ¶¼ÊÇ³¾ÍÁ£¬ÏÔÈ»ºÜÉÙÓĞÈËÀ´Íù¡£¶´ÖĞÓĞĞ©Î¢ÈõµÄÖò¹â£¬¸ü¼Ó
-ÏÔµÃÒõÉ­¿Ö²À¡£½ÇÂäÀïËÆºõÓĞ¸öÈËÓ°£¬Äã²»ÓÉµÃÒ»Õó½ôÕÅ¡£
+è¿™é‡Œéåœ°éƒ½æ˜¯å°˜åœŸï¼Œæ˜¾ç„¶å¾ˆå°‘æœ‰äººæ¥å¾€ã€‚æ´ä¸­æœ‰äº›å¾®å¼±çš„çƒ›å…‰ï¼Œæ›´åŠ 
+æ˜¾å¾—é˜´æ£®ææ€–ã€‚è§’è½é‡Œä¼¼ä¹æœ‰ä¸ªäººå½±ï¼Œä½ ä¸ç”±å¾—ä¸€é˜µç´§å¼ ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -43,7 +43,7 @@ int valid_leave(object me, string dir)
     {
    if (me->query("wudidong/last_entered_book_cave") + 3600 > time())
    {
-     message_vision(CYN"÷¼÷ÃÒõÒõµØËµµÀ£ºÄãÕâ¸ö»ìÕÊ£¡½ø½ø³ö³öµÄÓĞÍêÃ»Íê£¿´ı»á¶ùÄÇ¸öÂÌÃ«ÀÏÊóÒªÊÇÖªµÀÁË£¬½ĞÄã³Ô²»ÁË¶µ×Å×ß£¡\n"NOR, me);
+     message_vision(CYN"éª·é«…é˜´é˜´åœ°è¯´é“ï¼šä½ è¿™ä¸ªæ··å¸ï¼è¿›è¿›å‡ºå‡ºçš„æœ‰å®Œæ²¡å®Œï¼Ÿå¾…ä¼šå„¿é‚£ä¸ªç»¿æ¯›è€é¼ è¦æ˜¯çŸ¥é“äº†ï¼Œå«ä½ åƒä¸äº†å…œç€èµ°ï¼\n"NOR, me);
      return notify_fail("");
    }
    inv=all_inventory(me);
@@ -64,8 +64,8 @@ int valid_leave(object me, string dir)
    }
    if (container)
    {
-       message_vision(CYN"÷¼÷ÃÒõÒõµØËµµÀ£ºÄã´ø×ÅÄÇ"+container->name()+
-           CYN"½øÈ¥¸ÉÊ²Ã´£¡£¿±»ÄÇÂÌÃ«ÀÏÊó¿´¼ûÁËÔõÃ´°ì£¡£¿\n"NOR,me);
+       message_vision(CYN"éª·é«…é˜´é˜´åœ°è¯´é“ï¼šä½ å¸¦ç€é‚£"+container->name()+
+           CYN"è¿›å»å¹²ä»€ä¹ˆï¼ï¼Ÿè¢«é‚£ç»¿æ¯›è€é¼ çœ‹è§äº†æ€ä¹ˆåŠï¼ï¼Ÿ\n"NOR,me);
        return notify_fail("");
    }
     }
@@ -74,15 +74,15 @@ int valid_leave(object me, string dir)
     {
    if (me->query_temp("wudidong/gave_bookguard_baozi"))
    {
-       message_vision(CYN"÷¼÷ÃÒõÒõµØËµµÀ£º¿ìµã³öÀ´£¬ÒªÊÇ¸øÄÇÂÌÃ«ÀÏÊó·¢ÏÖÁË¾ÍÈÈÄÖÁË£¡\n"NOR, me);
+       message_vision(CYN"éª·é«…é˜´é˜´åœ°è¯´é“ï¼šå¿«ç‚¹å‡ºæ¥ï¼Œè¦æ˜¯ç»™é‚£ç»¿æ¯›è€é¼ å‘ç°äº†å°±çƒ­é—¹äº†ï¼\n"NOR, me);
        me->set("wudidong/last_entered_book_cave", time());
        return ::valid_leave(me, dir);
    }
-   message_vision(CYN "÷¼÷ÃÒõĞ¦µÀ£ºÊ²Âï£¿ÏëÁï£¿Ã»ÃÅ£¡\n"NOR, me);
+   message_vision(CYN "éª·é«…é˜´ç¬‘é“ï¼šä»€å˜›ï¼Ÿæƒ³æºœï¼Ÿæ²¡é—¨ï¼\n"NOR, me);
    return notify_fail("");
     }
 
-    message_vision("Ç½½ÅÀïµÄÈËÓ°ÂıÂıÕ¾ÁËÆğÀ´£¬µ²×¡±±ÃæµÄ³ö¿Ú¡£\n", me);
+    message_vision("å¢™è„šé‡Œçš„äººå½±æ…¢æ…¢ç«™äº†èµ·æ¥ï¼ŒæŒ¡ä½åŒ—é¢çš„å‡ºå£ã€‚\n", me);
     guard = new(__DIR__"npc/kulou");
     guard->move(here);
     return notify_fail("");

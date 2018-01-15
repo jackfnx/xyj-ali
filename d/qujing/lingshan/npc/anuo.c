@@ -6,9 +6,9 @@ int do_tell();
 
 void create()
 {
-    set_name("°¢ÙĞ×ğÕß", ({ "anuo zunzhe", "anuo", "zunzhe" }));
-    set("title", "ÁéÉ½");
-    set("gender", "ÄĞĞÔ");
+    set_name("é˜¿å‚©å°Šè€…", ({ "anuo zunzhe", "anuo", "zunzhe" }));
+    set("title", "çµå±±");
+    set("gender", "ç”·æ€§");
     set("age", 1000);
     set("attitude", "peaceful");
     set("str",40);
@@ -42,16 +42,16 @@ void create()
     map_skill("parry", "lunhui-zhang");
     map_skill("staff", "lunhui-zhang");
     set("inquiry", ([
-        "name" : "°¢ÙĞÒ²¡£",
-        "here" : "ÁéÉ½Ò²¡£",
-        "ÁéÉ½" : "ÎÒ·ğÈçÀ´Ö®ÁéÉ½Ò²¡£",
-        "À×ÒôËÂ" : "ÎÒ·ğÈçÀ´Ö®À×ÒôËÂÒ²¡£",
-        "Î÷ĞĞ" : (: do_tell :),
-        "Î÷Ìì" : (: do_tell :),
-        "ÇóÈ¡Õæ¾­" : (: do_tell :),
-        "È¡¾­" : (: do_tell :),
-        "Õæ¾­" : (: do_tell :),
-        "¾­" : (: do_tell :),
+        "name" : "é˜¿å‚©ä¹Ÿã€‚",
+        "here" : "çµå±±ä¹Ÿã€‚",
+        "çµå±±" : "æˆ‘ä½›å¦‚æ¥ä¹‹çµå±±ä¹Ÿã€‚",
+        "é›·éŸ³å¯º" : "æˆ‘ä½›å¦‚æ¥ä¹‹é›·éŸ³å¯ºä¹Ÿã€‚",
+        "è¥¿è¡Œ" : (: do_tell :),
+        "è¥¿å¤©" : (: do_tell :),
+        "æ±‚å–çœŸç»" : (: do_tell :),
+        "å–ç»" : (: do_tell :),
+        "çœŸç»" : (: do_tell :),
+        "ç»" : (: do_tell :),
     ]));
     set("chat_chance_combat", 80);
     set("chat_msg_combat", ({
@@ -77,14 +77,14 @@ int telling(object who)
 {
     object me = this_object();
 
-    tell_object(who, me->query("name")+"¸æËßÄã£º"
+    tell_object(who, me->query("name")+"å‘Šè¯‰ä½ ï¼š"
         + OBSTACLES_D->check_obstacles_long(who, 1)
         + "\n");
     if (OBSTACLES_D->check_obstacles(who)) {
         who->set_temp("obstacle/lingshan_enter", 1);
         if (environment(me)==environment(who)
         &&  who->query("obstacle/reward") == 0)
-            message_vision("$N¶Ô$nÒ»¾Ï¹ª£ºÎÒ·ğÓĞÇë£¡\n",me,who);
+            message_vision("$Nå¯¹$nä¸€é èº¬ï¼šæˆ‘ä½›æœ‰è¯·ï¼\n",me,who);
     }
 
     return 1;

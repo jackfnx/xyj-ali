@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/death/block.c
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������"); 
+  set ("short", "死囚室"); 
   set ("long", @LONG
-����һ��ר�Źرձ��д����̻���������ߵķ��䡣����
-ǽ�ڽ��ɸ������ɣ�ֻ���ϱ߲���һ����ڴ��С���ڡ�
+这是一间专门关闭被判处死刑或终身监禁者的房间。四周
+墙壁皆由钢铁铸成，只有南边才有一个碗口大的小窗口。
 LONG);
 
   set("valid_startroom",1);

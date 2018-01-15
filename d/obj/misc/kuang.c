@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Öñ¿ğ", ({ "kuang" }) );
+        set_name("ç«¹ç­", ({ "kuang" }) );
         set_weight(1000);
         set_max_encumbrance(18000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸ö±àÖÆ¾«Ï¸µÄÖñ¿ğ£¬ÓÃÀ´×°Ò»Ğ©ÔÓÎï¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªç¼–åˆ¶ç²¾ç»†çš„ç«¹ç­ï¼Œç”¨æ¥è£…ä¸€äº›æ‚ç‰©ã€‚\n");
                 set("value", 50);
         }
 }

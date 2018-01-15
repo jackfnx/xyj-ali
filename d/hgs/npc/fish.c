@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-    set_name("鱼儿", ({"fish","yu"}));
-    set("race", "野兽");
-    set("long", "一条不起眼的鱼儿，似鲤鱼，尾巴不红；似鳜鱼，花鳞不见；\n似黑鱼，头上无星；似鲂鱼，腮上无针。\n");
+    set_name("楸煎効", ({"fish","yu"}));
+    set("race", "閲庡吔");
+    set("long", "涓�鏉′笉璧风溂鐨勯奔鍎匡紝浼奸菠楸硷紝灏惧反涓嶇孩锛涗技槌滈奔锛岃姳槌炰笉瑙侊紱\n浼奸粦楸硷紝澶翠笂鏃犳槦锛涗技椴傞奔锛岃叜涓婃棤閽堛�俓n");
     set("age", 20);
     set("combat_exp", 50000);
-    set("limbs", ({ "头部", "身体", "尾巴" }));
+    set("limbs", ({ "澶撮儴", "韬綋", "灏惧反" }));
     set("verbs", ({ "bite"}));
 
     set_skill("dodge", 20);

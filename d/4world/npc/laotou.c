@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÀÏÍ·", ({"laotou"}));
-       set("long", "Ò»¸ö´ÈÃ¼ÉÆÄ¿µÄÀÏ´óÒ¯¡£\n");
-       set("gender", "ÄĞĞÔ");
+       set_name("è€å¤´", ({"laotou"}));
+       set("long", "ä¸€ä¸ªæ…ˆçœ‰å–„ç›®çš„è€å¤§çˆ·ã€‚\n");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 3000);
    set("per", 18);
        set("age", 56);
@@ -26,19 +26,19 @@ void init()
 int do_yao(string arg)
 {
    object m,n,mm;
-   message_vision("$NÏòÀÏÍ·ÎÊµÀ£ºÀÏ´óÒ¯£¬¿ª·¹ÁËÂğ£¿\n", this_player());
+   message_vision("$Nå‘è€å¤´é—®é“ï¼šè€å¤§çˆ·ï¼Œå¼€é¥­äº†å—ï¼Ÿ\n", this_player());
 
    if((int)this_player()->query("food") >= (int)this_player()->max_food_capacity()*90/100 )
-   return notify_fail("ÀÏÍ·Ğ¦µÀ£ºµÈ¿ª·¹Ê±ÔÙÀ´°É£¡\n");
+   return notify_fail("è€å¤´ç¬‘é“ï¼šç­‰å¼€é¥­æ—¶å†æ¥å§ï¼\n");
 
    if((int)this_player()->query("water") >= (int)this_player()->max_water_capacity()*90/100 )
-        return notify_fail("ÀÏÍ·Ğ¦µÀ£ºµÈ¿ª·¹Ê±ÔÙÀ´°É£¡\n");
+        return notify_fail("è€å¤´ç¬‘é“ï¼šç­‰å¼€é¥­æ—¶å†æ¥å§ï¼\n");
             
    if((present("bao", this_player())))
-   return notify_fail("ÀÏÍ·Ğ¦µÀ£ºÄã»¹Ã»³ÔÍêÄØ£¬ÔõÃ´ÓÖÒª£¿\n");
+   return notify_fail("è€å¤´ç¬‘é“ï¼šä½ è¿˜æ²¡åƒå®Œå‘¢ï¼Œæ€ä¹ˆåˆè¦ï¼Ÿ\n");
 
         if((present("teapot", this_player())))
-        return notify_fail("ÀÏÍ·Ğ¦µÀ£ºÄã»¹Ã»³ÔÍêÄØ£¬ÔõÃ´ÓÖÒª£¿\n");
+        return notify_fail("è€å¤´ç¬‘é“ï¼šä½ è¿˜æ²¡åƒå®Œå‘¢ï¼Œæ€ä¹ˆåˆè¦ï¼Ÿ\n");
 
 
    m=new("/d/obj/food/baozi");
@@ -50,6 +50,6 @@ int do_yao(string arg)
    mm->move(this_player());
    n->move(this_player());
 
-   message_vision("ÀÏÍ·¶Ô$NĞ¦µÀ£º¶öÁË°É£¬Âıµã³Ô¡£\n", this_player());
+   message_vision("è€å¤´å¯¹$Nç¬‘é“ï¼šé¥¿äº†å§ï¼Œæ…¢ç‚¹åƒã€‚\n", this_player());
 return 1;   
 }

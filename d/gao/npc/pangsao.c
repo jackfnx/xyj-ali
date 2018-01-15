@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // laoyu.c
@@ -7,11 +7,11 @@ inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-       set_name("ежи╘", ({"pang sao", "pang", "sao"}));
+       set_name("Х┐√Е╚┌", ({"pang sao", "pang", "sao"}));
        set("long",
-"ежи╘т╜йг╡ц╥Лё╛╨СтзЁ╓╟╡╣д╤Ывс╥╒ак╡фё╛╠Цвт╪р©╙ак╡╪╣Йё╝\n");
-       set("gender", "е╝пт");
-   set("title", "юо╟ЕдО");
+"Х┐√Е╚┌Е▌÷Ф≤╞Хё│Г╪²О╪▄Е░▌Е°╗И∙©Е╝┴Г └Е└©Е╜░Е▐▒Д╨├Х╢╒О╪▄Д╬©Х┤╙Е╝╤Е╪─Д╨├Е╦┐Е╨≈О╪▌\n");
+       set("gender", "Е╔ЁФ─╖");
+   set("title", "Х─│Ф²©Е╗≤");
    set("combat_exp", 1100);
        set("age", 46);
    set("per", 12);
@@ -46,9 +46,9 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(1) ) {
                 case 0:
-                        say(name()+ "п╕цпцп╣дс╜иою╢ё╨уБн╩" +
+                        say(name()+ "Г╛▒Г°╞Г°╞Г └Х©▌Д╦┼Ф²╔О╪ Х©≥Д╫█" +
 RANK_D->query_respect(ob)
-                                + "ё╛кФ╠Ц©╢©╢ё╝\n");
+                                + "О╪▄И ▐Д╬©Г°▀Г°▀О╪▌\n");
                         break;
         }
 }

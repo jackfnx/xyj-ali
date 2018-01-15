@@ -13,32 +13,32 @@ int perform(object me, object target)
         "damage": 80,
         "dodge" : -10,
         "parry" : -10,
-        "damage_type" : "´ÌÉË",
-//        "action" :  HIW"$NÍ»È»ÇåÐ¥Ò»Éù£¬ÕÆÖÐ$w"+HIW"ÍÑÊÖ¶ø³ö£¬»¯×öÒ»µÀ³¤ºç£¬Ö±Ïò$nµÄ$l·ÉÈ¥£¡"NOR,
-        "action" :  HIW"$w"HIW"ÔÚ¿ÕÖÐ»Ã³öµÀµÀ½£¹â£¬·ÉÄñÍ¶ÁÖ°ã£¬Ïò$nµÄ$lÆËÈ¥",
+        "damage_type" : "åˆºä¼¤",
+//        "action" :  HIW"$Nçªç„¶æ¸…å•¸ä¸€å£°ï¼ŒæŽŒä¸­$w"+HIW"è„±æ‰‹è€Œå‡ºï¼ŒåŒ–åšä¸€é“é•¿è™¹ï¼Œç›´å‘$nçš„$lé£žåŽ»ï¼"NOR,
+        "action" :  HIW"$w"HIW"åœ¨ç©ºä¸­å¹»å‡ºé“é“å‰‘å…‰ï¼Œé£žé¸ŸæŠ•æž—èˆ¬ï¼Œå‘$nçš„$læ‰‘åŽ»",
         "post_action" : (: postfeijian :)
     ]);
 
     object weapon = me->query_temp("weapon");
     if (!target) target = offensive_target(me);
     if (!target || !target->is_character()||target->is_corpse()||target==me)
-        return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+        return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
     if (!target->is_fighting(me))
-        return notify_fail("ÄãÃÇÃ»ÓÐÔÚ´ò¼Ü£¡\n");
+        return notify_fail("ä½ ä»¬æ²¡æœ‰åœ¨æ‰“æž¶ï¼\n");
     if (me->query_temp("no_feijian"))
-        return notify_fail("ÄãÏÖÔÚ×´Ì¬²»¼Ñ£¬²»ÄÜÊ¹ÓÃ·É½£¡£\n");      
+        return notify_fail("ä½ çŽ°åœ¨çŠ¶æ€ä¸ä½³ï¼Œä¸èƒ½ä½¿ç”¨é£žå‰‘ã€‚\n");      
     if (me->query_skill("iceblood-force", 1) < 50)
-        return notify_fail("ÄãµÄÄÚ¹¦Ì«²î£¬½£·É³öÈ¥¿Ï¶¨·É²»»ØÀ´¡£\n");
+        return notify_fail("ä½ çš„å†…åŠŸå¤ªå·®ï¼Œå‰‘é£žå‡ºåŽ»è‚¯å®šé£žä¸å›žæ¥ã€‚\n");
     if (me->query_skill("avian-sword", 1) < 50) 
-        return notify_fail("ÄãµÄ°ÙÄñ½£·¨ÄÇÃ´ÀÃ£¬µ±ÐÄ°Ñ½£²å×Ô¼ºÉíÉÏ¡£\n");
+        return notify_fail("ä½ çš„ç™¾é¸Ÿå‰‘æ³•é‚£ä¹ˆçƒ‚ï¼Œå½“å¿ƒæŠŠå‰‘æ’è‡ªå·±èº«ä¸Šã€‚\n");
     if (me->query_skill("throwing", 1) < 50)
-        return notify_fail("ÄãµÄ°µÆ÷¹¦·òÌ«²î£¬ºúÂÒ°Ñ½£ÈÓ³öÈ¥£¬¿Ï¶¨ÕÒ²»µ½Ä¿±ê¡£\n");
+        return notify_fail("ä½ çš„æš—å™¨åŠŸå¤«å¤ªå·®ï¼Œèƒ¡ä¹±æŠŠå‰‘æ‰”å‡ºåŽ»ï¼Œè‚¯å®šæ‰¾ä¸åˆ°ç›®æ ‡ã€‚\n");
     if (me->query("force") < 100)
-        return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÄÑÒÔ¼ÝÓù·É½£¡£\n");
+        return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œéš¾ä»¥é©¾å¾¡é£žå‰‘ã€‚\n");
 
     me->add("force", -100);
     me->set("actions", feijian);
-    message_vision(HIW"$NÍ»È»ÇåÐ¥Ò»Éù£¬ÕÆÖÐ"+weapon->query("name")+HIW"ÍÑÊÖ¶ø³ö£¬»¯×öÒ»µÀ³¤ºç£¬Ö±Ïò$n·ÉÈ¥£¡"NOR, me, target);
+    message_vision(HIW"$Nçªç„¶æ¸…å•¸ä¸€å£°ï¼ŒæŽŒä¸­"+weapon->query("name")+HIW"è„±æ‰‹è€Œå‡ºï¼ŒåŒ–åšä¸€é“é•¿è™¹ï¼Œç›´å‘$né£žåŽ»ï¼"NOR, me, target);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
     me->set_temp("no_feijian", 1);
     call_out("feijian_ok", 2+random(2), me);
@@ -55,9 +55,9 @@ void feijian_ok(object me)
 void postfeijian(object me,object victim,object weapon, int damage)
 {
     if (damage > 0 || damage == RESULT_DODGE)
-        message_vision(HIW""+weapon->query("name")+HIW"ÔÚ¿ÕÖÐ´òÁË¸ö×ª£¬ÓÖ·É»Øµ½$NÊÖÖÐ¡£\n"NOR,me);
+        message_vision(HIW""+weapon->query("name")+HIW"åœ¨ç©ºä¸­æ‰“äº†ä¸ªè½¬ï¼Œåˆé£žå›žåˆ°$Næ‰‹ä¸­ã€‚\n"NOR,me);
     else {
-        message_vision(HIW""+weapon->query("name")+HIW"¸Ä±ä·½Ïò£¬¡°à§¡±µÄÒ»Éù£¬Ð±Ð±²åÔÚµØÉÏ¡£\n"NOR,me);
+        message_vision(HIW""+weapon->query("name")+HIW"æ”¹å˜æ–¹å‘ï¼Œâ€œå”°â€çš„ä¸€å£°ï¼Œæ–œæ–œæ’åœ¨åœ°ä¸Šã€‚\n"NOR,me);
         weapon->move(environment(me));
     }
 }

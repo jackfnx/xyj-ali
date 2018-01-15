@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // snowcat 12 9 1997
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹¬±ø", ({ "gong bing", "bing" }) );
-  set("gender", "ÄĞĞÔ");
+  set_name("å®«å…µ", ({ "gong bing", "bing" }) );
+  set("gender", "ç”·æ€§");
   set("age", 35);
   set("combat_exp", 60000+random(20000));
   set("attitude", "heroism");

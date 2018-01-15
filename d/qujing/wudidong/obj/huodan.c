@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -12,22 +12,22 @@ void init();
 void init()
 {
         if (!wizardp(this_player())) {
-                set("no_get", "ÄãÊÖÀïÒ»ËÉ£¬Ç±Áúµ¤´ÓÖ¸¼ä»¬Âä£¡\n");
-                set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-       set("no_give", "ÕâÃ´±¦¹óµÄµ¤Ò©£¬Äã×Ô¼ºÁô×Å°É£¡\n");
+                set("no_get", "ä½ æ‰‹é‡Œä¸€æ¾ï¼Œæ½œé¾™ä¸¹ä»æŒ‡é—´æ»‘è½ï¼\n");
+                set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+       set("no_give", "è¿™ä¹ˆå®è´µçš„ä¸¹è¯ï¼Œä½ è‡ªå·±ç•™ç€å§ï¼\n");
    }
    add_action("do_eat", "eat");
 }
 
 void create()
 {
-   set_name( HIC "Ç±Áúµ¤" NOR , ({"dan"}));
+   set_name( HIC "æ½œé¾™ä¸¹" NOR , ({"dan"}));
    set_weight(90);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("unit", "¿Å");
-     set("long", "Ò»¿ÅÑªºìÉ«µÄµ¤Íè£¬ÂÔÎ¢ÄÜÎÅµ½Ğ©ĞíÏãÆø¡£\n");
+     set("unit", "é¢—");
+     set("long", "ä¸€é¢—è¡€çº¢è‰²çš„ä¸¹ä¸¸ï¼Œç•¥å¾®èƒ½é—»åˆ°äº›è®¸é¦™æ°”ã€‚\n");
      set("value", 10000);
    }
 
@@ -47,7 +47,7 @@ int do_eat(string arg)
 
    me->set("potential", pot+random(100-dif));
 
-        message_vision(HIC "$NÇáÇáêş¿ªÒ»¿ÅÇ±Áúµ¤ËÍÈë×ìÖĞ£¬Ò»Ê±¼äÏãÆøËÄÒç¡£\n" NOR, me);
+        message_vision(HIC "$Nè½»è½»æ°å¼€ä¸€é¢—æ½œé¾™ä¸¹é€å…¥å˜´ä¸­ï¼Œä¸€æ—¶é—´é¦™æ°”å››æº¢ã€‚\n" NOR, me);
 
    destruct(this_object());
    return 1;

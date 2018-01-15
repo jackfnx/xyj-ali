@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat jan 21 1998
@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create ()
 {
-    set ("short", "��ٵ�");
+    set ("short", "大官道");
     set ("long", @LONG
 
-һ��������ֱ�Ĵ�ٵ���ƽԭ���ɶ�����ԶԶ�����ӿ�������
-��ƽ�����ݵ���ʮ�����ۡ���ٵ�������ͨ��Զ��������ԶԶ
-�ɿ�������Ǹ���
+一条宽阔笔直的大官道自平原上由东西向远远地伸延开来，官
+道平整可容得下十马并驰。大官道的西边通向远方，东边远远
+可看见开封城府。
 
 LONG);
 

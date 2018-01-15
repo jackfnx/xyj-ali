@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ʯǽ");
+  set ("short", "石墙");
   set ("long", @LONG
 
-ǽ�����棬�߸ߵ�ʯǽ�£���һ��խ��ͨ����С·һ�㣬����
-�ȵý��ʵʵ��
+墙的南面，高高的石墙下，有一狭窄的通道如小路一般，被人
+踩得结结实实。
 
 LONG);
 

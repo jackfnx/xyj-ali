@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 12/2/1997
@@ -9,19 +9,19 @@ inherit ITEM;
 
 void create()
 {
-  set_name( "Ò°²Î¹û" , ({"yeshen guo", "guo"}));
+  set_name( "é‡å‚æœ" , ({"yeshen guo", "guo"}));
   set_weight(120);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ö");
-    set("long", "Ò»¸öÉñÆæµÄÒ°²Î¹û¡£\n");
+    set("unit", "ä¸ª");
+    set("long", "ä¸€ä¸ªç¥å¥‡çš„é‡å‚æœã€‚\n");
     set("value", 1000000);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
-  set("no_give","Ò°²Î¹û²»ÄÜ¸øÈË¡£\n");
-  set("no_drop","Ò°²Î¹û²»ÄÜÂÒ¶ª¡£\n");
-  set("no_get","Ò°²Î¹û²»ÊÇÄãµÄ°É¡£\n");
+  set("no_give","é‡å‚æœä¸èƒ½ç»™äººã€‚\n");
+  set("no_drop","é‡å‚æœä¸èƒ½ä¹±ä¸¢ã€‚\n");
+  set("no_get","é‡å‚æœä¸æ˜¯ä½ çš„å§ã€‚\n");
   set("is_monitored",1);
   setup();
 }
@@ -48,8 +48,8 @@ int do_eat(string arg)
   me->set("food", (int)me->max_food_capacity());
   me->set("water", (int)me->max_water_capacity());
   me->start_busy (10);
-  message_vision(HIG "$N×¥³öÒ°²Î¹ûÍù×ì°ÍÀïÒ»Èû£¡\n\n" NOR, me);
-  tell_object(me, "Ò»¹ÉÏÉÁ¦ÂıÂı´ÓÌåÄÚÃÖÉ¢¿ªÀ´¡­¡­\n\n");
+  message_vision(HIG "$NæŠ“å‡ºé‡å‚æœå¾€å˜´å·´é‡Œä¸€å¡ï¼\n\n" NOR, me);
+  tell_object(me, "ä¸€è‚¡ä»™åŠ›æ…¢æ…¢ä»ä½“å†…å¼¥æ•£å¼€æ¥â€¦â€¦\n\n");
   destruct(this_object());
   return 1;
 }

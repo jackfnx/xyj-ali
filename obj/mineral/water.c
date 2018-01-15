@@ -4,13 +4,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-    set_name("¿²Ë®Ö®¾«", ({ "kanshui zhijing", "water" }));
+    set_name("åæ°´ä¹‹ç²¾", ({ "kanshui zhijing", "water" }));
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "±±Ú¤¿²Ë®µÄ¾«»ª£¬ÏûÈÜÒ»ÇĞµÄÖÁÒõÖÁº®Ö®Ë®¡£\n");
-        set("unit", "ÍÅ");
-        set("base_unit", "·İ");
+        set("long", "åŒ—å†¥åæ°´çš„ç²¾åï¼Œæ¶ˆæº¶ä¸€åˆ‡çš„è‡³é˜´è‡³å¯’ä¹‹æ°´ã€‚\n");
+        set("unit", "å›¢");
+        set("base_unit", "ä»½");
         set("base_weight", 1);
         set("is_mineral", 1);
         set("elements/water", 100);

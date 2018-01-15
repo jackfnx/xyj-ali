@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 11/20/1997 by snowcat
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("��ʿ", ({ "dao shi", "dao", "shi" }));
-  set("title", "�ƻ��幫");   
-  set("long", "һλ�������ɵĻƻ����幫��ʿ��");
-  set("gender", "����");
+  set_name("道士", ({ "dao shi", "dao", "shi" }));
+  set("title", "黄花五公");   
+  set("long", "一位欲神欲仙的黄花观五公道士。");
+  set("gender", "男性");
   set("age", 40);
   set("attitude", "heroism");
   set("per", 29);
@@ -60,8 +60,8 @@ void die ()
   {
     call_out ("daogu_appearing",1,ob);
   }
-  message_vision ("\n$N�˵��ڳ��������Ϊһ�߳���򼾫��\n",me);
-  message_vision ("\n��򼾫��Ϊһ�����������ɢ�ˡ�\n",me);
+  message_vision ("\n$N扑倒在尘埃里，现身为一七尺蜈蚣精。\n",me);
+  message_vision ("\n蜈蚣精化为一股青烟噌地消散了。\n",me);
   load_object("/obj/empty");
   me->move("/obj/empty");
   call_out ("destruct_me",3,me);
@@ -134,7 +134,7 @@ void recovering (object me, object ob)
        (me->query("kee") < (me->query("max_kee")*3/4) ||
         me->query("sen") < (me->query("max_sen")*3/4)))
   {
-    message_vision ("\n$N����������һ������ʱ������Ѫ���أ�\n",me);
+    message_vision ("\n$N身上万道金光一闪，顿时精神气血尽回！\n",me);
     me->set("gin",me->query("max_gin"));
     me->set("kee",me->query("max_kee"));
     me->set("sen",me->query("max_sen"));
@@ -148,14 +148,14 @@ void recovering (object me, object ob)
 void hurting (object me, object ob)
 {
   string *msgs = ({
-    "$N����һ�ƣ������������$nһ�䣡\n",
-    "$Nһ̧�֣�в��ǧֻ�۾������������$n��\n",
-    "$N����첲������ֻ�۾��ų����ֱ����$n��\n",
+    "$N将衣一掀，无数道金光向$n一射！\n",
+    "$N一抬手，胁下千只眼睛金光闪闪射向$n！\n",
+    "$N掀起胳膊下无数只眼睛迸出金光直射向$n！\n",
   });
   string *strs = ({
-    "( $Nһ�������������زҽ�һ���� )\n",
-    "( $NӦ�����£�����ǿ���������� )\n",
-    "( $Nʹ��زҺ���һ���� )\n",
+    "( $N一个趔趄不由自主地惨叫一声！ )\n",
+    "( $N应声倒下，又勉强爬将起来！ )\n",
+    "( $N痛苦地惨嚎了一声！ )\n",
   });
   object needle;
   int damage;
@@ -188,8 +188,8 @@ void hurting (object me, object ob)
   }
   else
   {
-    message_vision ("����$N�����廨��һ����"+
-                    "$n����һ����в�¼�ֻ�۾���ʱ��ȥ��\n",ob,me);
+    message_vision ("但见$N手上绣花针一闪，"+
+                    "$n嚎叫一声，胁下几只眼睛顿时灭去！\n",ob,me);
   }
   remove_call_out ("hurting");  
   call_out ("hurting",random(10)+10,me,ob);  

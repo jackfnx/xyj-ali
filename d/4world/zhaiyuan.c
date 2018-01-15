@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/4world/zhaiyuan.c
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "իԺ");
+  set ("short", "斋院");
   set ("long", @LONG
 
-һ��СС��Ժ�䣬Ժ�в���ȴ��ʰ�ظɸɾ�����Ժ��ɢ������
-ľ�������ϰ���Щ���֮�ࡣ����̨�����˸���ͷ��̨�ϰ��˿�
-����������������Ҫ�Ƕ��˵Ļ���������Ҫ(yao)�Եġ�
+一个小小的院落，院中不大，却收拾地干干净净。院中散布几张
+木桌，桌上摆了些碗筷之类。后面台上坐了个老头，台上摆了口
+大锅及几个茶壶。你要是饿了的话可以向他要(yao)吃的。
 LONG);
   set("outdoors", "/d/4world");
   set("exits", ([ /* sizeof() == 1 */
@@ -31,7 +31,7 @@ LONG);
 int valid_leave()
 {
         if((present("bao", this_player())))
-            return notify_fail("���������������Ĺ�أ�\n");
+            return notify_fail("吃完包子再走是这的规矩！\n");
     return ::valid_leave();
 }
 

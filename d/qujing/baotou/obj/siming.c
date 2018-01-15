@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,17 +8,17 @@ inherit STAFF;
 
 void create()
 {
-   set_name("ËÄÃ÷²ù", ({"siming chan", "chan", "staff"}) );
+   set_name("å››æ˜é“²", ({"siming chan", "chan", "staff"}) );
    set_weight(4000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 3500);
      set("material", "iron");
-     set("long", "ÕâÊÇÒ»±ú³¤³¤µÄËÄÃ÷²ù£¬´Ö´ÖµÄÕÈÍ·ÓĞÒ»²ù¡£\n");
-     set("wield_msg", "$N¾ÙÆğÒ»±ú³¤³¤µÄ$n£¬¶¥¶ËµÄ²ùÍ·ÉÁÉÁ·¢ÁÁ¡£\n");
-     set("unequip_msg", "$N»º»º·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+     set("long", "è¿™æ˜¯ä¸€æŸ„é•¿é•¿çš„å››æ˜é“²ï¼Œç²—ç²—çš„æ–å¤´æœ‰ä¸€é“²ã€‚\n");
+     set("wield_msg", "$Nä¸¾èµ·ä¸€æŸ„é•¿é•¿çš„$nï¼Œé¡¶ç«¯çš„é“²å¤´é—ªé—ªå‘äº®ã€‚\n");
+     set("unequip_msg", "$Nç¼“ç¼“æ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
    }
    init_staff(65);
    setup();

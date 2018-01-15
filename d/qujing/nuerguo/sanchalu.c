@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat.c 4/4/1997
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����·��");
+  set ("short", "三岔路口");
   set ("long", @LONG
 
-����������Ů���ؽ硣����������ԼԼ�ɼ�һ�����򡣶���
-�ɴ���ĸ�ӱߡ�������ȥ����һ���д��Сɽ��
+这里是西梁女国地界。西北方隐隐约约可见一座城镇。东行
+可达子母河边。往南望去则是一座葱翠的小山丘。
 LONG);
 
   set("exits", ([

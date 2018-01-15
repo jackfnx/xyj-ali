@@ -6,16 +6,16 @@ inherit ITEM;
 
 void create()
 {
-    set_name(HIM"°Ù»¨Äğ"NOR , ({"baihua niang", "wine"}));
+    set_name(HIM"ç™¾èŠ±é…¿"NOR , ({"baihua niang", "wine"}));
     set_weight(500);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "Æ¿");
-        set("long", "°Ù»¨ÏÉ×Ó²É¼¯¸÷Ê±ÏÉ»¨ÄğÖÆµÄÃÀ¾Æ¡£\n");
+        set("unit", "ç“¶");
+        set("long", "ç™¾èŠ±ä»™å­é‡‡é›†å„æ—¶ä»™èŠ±é…¿åˆ¶çš„ç¾é…’ã€‚\n");
         set("value", 800000);
         set("no_sell", 1);
-        set("drug_type", "²¹Æ·");
+        set("drug_type", "è¡¥å“");
     }
     setup();
     set("remaining",random(100)+1);
@@ -37,19 +37,19 @@ int do_drink(string arg)
     if (arg!="baihua niang" && arg!="wine") return 0;
 
     if (me->query("water")>me->max_water_capacity())
-        return notify_fail("ÄãÔÙÒ²ºÈ²»ÏÂÁË¡£\n");
-    message_vision(HIG"$N¶ËÆğ°Ù»¨ÄğºÈÁËÒ»¿Ú¡£\n"NOR, me);
+        return notify_fail("ä½ å†ä¹Ÿå–ä¸ä¸‹äº†ã€‚\n");
+    message_vision(HIG"$Nç«¯èµ·ç™¾èŠ±é…¿å–äº†ä¸€å£ã€‚\n"NOR, me);
     me->apply_condition("drunk", (int)me->query_condition("drunk")+1);
     add("remaining",-1);
     me->add("water", 30);
     if (flowers) {
         if (flowers>5) flowers=5;
-        message_vision(HIG"$N¸Ğµ½ÁéÌ¨ÇåÃ÷ÎŞ±È£¬É²ÄÇ¼ä·¨Á¦´óÕÇ¡£\n"NOR, me);
+        message_vision(HIG"$Næ„Ÿåˆ°çµå°æ¸…æ˜æ— æ¯”ï¼Œåˆ¹é‚£é—´æ³•åŠ›å¤§æ¶¨ã€‚\n"NOR, me);
         me->add("mana", flowers*(80+random(40)));
         if (me->query("mana")>max) me->set("mana", max);
     }
     if (!query("remaining")) {
-        message_vision("$N½«Ò»Ğ¡Æ¿°Ù»¨ÄğºÈµÄ¾«¹â£¬ËæÊÖ°Ñ¾ÆÆ¿ÈÓÁË¡£\n",me);
+        message_vision("$Nå°†ä¸€å°ç“¶ç™¾èŠ±é…¿å–çš„ç²¾å…‰ï¼Œéšæ‰‹æŠŠé…’ç“¶æ‰”äº†ã€‚\n",me);
         destruct(this_object());
     }
     return 1;
@@ -61,15 +61,15 @@ int do_add(string arg)
     object me = this_player();
     if (!arg) return 0;
     if (!flower = present(arg, me)) return 0;
-    if (flower->query("id") != "flower") return notify_fail("Äã²»ÄÜÍù°Ù»¨ÄğÀï¶ªÕâÑù¶«Î÷£¡\n"); 
+    if (flower->query("id") != "flower") return notify_fail("ä½ ä¸èƒ½å¾€ç™¾èŠ±é…¿é‡Œä¸¢è¿™æ ·ä¸œè¥¿ï¼\n"); 
 
     if (flower->query("baihuaniang")) {
-        message_vision(HIG"$N½«Ò»¶ä"+flower->query("name")+
-            HIG"ÈÜÈë°Ù»¨ÄğÖĞ£¬»¨Ïã¾ÆÏã»ì×÷Ò»´¦£¬ÂúÊÒ·Ò·¼£¬Ëµ²»³öµÄÌğÃÀ¡£\n"NOR, me);
+        message_vision(HIG"$Nå°†ä¸€æœµ"+flower->query("name")+
+            HIG"æº¶å…¥ç™¾èŠ±é…¿ä¸­ï¼ŒèŠ±é¦™é…’é¦™æ··ä½œä¸€å¤„ï¼Œæ»¡å®¤èŠ¬èŠ³ï¼Œè¯´ä¸å‡ºçš„ç”œç¾ã€‚\n"NOR, me);
         add("flowers",1);
     } else
-        message_vision(HIR"$N½«"+flower->query("name")+
-            HIR"ÈàËé£¬ÈÓ½ø°Ù»¨ÄğÖĞ£¬»¨°êµãµã£¬Æ¯ÔÚ¾ÆÖĞ£¬¸øÈËÒÔÂä»¨Æ®ÁãÖ®¸Ğ¡£\n"NOR, me);
+        message_vision(HIR"$Nå°†"+flower->query("name")+
+            HIR"æ‰ç¢ï¼Œæ‰”è¿›ç™¾èŠ±é…¿ä¸­ï¼ŒèŠ±ç“£ç‚¹ç‚¹ï¼Œæ¼‚åœ¨é…’ä¸­ï¼Œç»™äººä»¥è½èŠ±é£˜é›¶ä¹‹æ„Ÿã€‚\n"NOR, me);
     destruct(flower);
     return 1;
 }

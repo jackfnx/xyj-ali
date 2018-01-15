@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ÅşÉ³¹¬");
+    set("short", "æ¯—æ²™å®«");
     set("long", @LONG
 
-ç­É´ÒÂĞÇ³½²ÓÀÃ£¬±ŞÈØ¹Ú½ğÆ©»Ô»Í¡£Óñô¢ÖéÂÄ¡£×Ïç·½ğÕÂ¡£
-½ğÖÓ×²¶¯£¬Èı²ÜÉñ±í½øµ¤éØ£»Ìì¹ÄÃùÊ±£¬ÍòÊ¥³¯Íõ²ÎÓñµÛ.
+ç»›çº±è¡£æ˜Ÿè¾°ç¿çƒ‚ï¼Œé­è“‰å† é‡‘è­¬è¾‰ç…Œã€‚ç‰ç°ªç å±¥ã€‚ç´«ç»¶é‡‘ç« ã€‚
+é‡‘é’Ÿæ’åŠ¨ï¼Œä¸‰æ›¹ç¥è¡¨è¿›ä¸¹æ¨¨ï¼›å¤©é¼“é¸£æ—¶ï¼Œä¸‡åœ£æœç‹å‚ç‰å¸.
 LONG);
 
     set("exits", ([ /* sizeof() == 1 */
@@ -33,9 +33,9 @@ void init()
       zj = new(__DIR__"npc/xsjz");
       zj->move(env);
    }
-    zj->command_function("chat " + who->name() + "Õâ" + RANK_D->query_rude(who) +
-      "´òµ½ÅşÉ³¹¬ÁË£¬ËÄ´óÌìÍõ¿ìÀ´»¤¼İ£¡\n");
-    message_vision("ËÄ´óÌìÍõ·äÓµ¶øÖÁ£¬½«$N°üÎ§ÔÚµ±ÖĞ¡£\n",who);
+    zj->command_function("chat " + who->name() + "è¿™" + RANK_D->query_rude(who) +
+      "æ‰“åˆ°æ¯—æ²™å®«äº†ï¼Œå››å¤§å¤©ç‹å¿«æ¥æŠ¤é©¾ï¼\n");
+    message_vision("å››å¤§å¤©ç‹èœ‚æ‹¥è€Œè‡³ï¼Œå°†$NåŒ…å›´åœ¨å½“ä¸­ã€‚\n",who);
     if(!present("moli hong",env)){
       wang = new(__DIR__"npc/tianwang2");
       wang ->move(env);
@@ -63,8 +63,8 @@ int valid_leave(object ob, string dir)
     if( !guan ) guan = present("moli shou",this_object());
     if( !guan ) guan = present("moli hai",this_object());
     if(guan) {
-      message_vision("$n°Ñ$NÒ»µ²£ºÏë×ß£¿Ã»ÄÇÃ´ÈİÒ×£¡\n",ob,guan);
-      return notify_fail("¿´Ñù×ÓÊÇ×ß²»³ÉÁË¡£\n");
+      message_vision("$næŠŠ$Nä¸€æŒ¡ï¼šæƒ³èµ°ï¼Ÿæ²¡é‚£ä¹ˆå®¹æ˜“ï¼\n",ob,guan);
+      return notify_fail("çœ‹æ ·å­æ˜¯èµ°ä¸æˆäº†ã€‚\n");
    }
     return ::valid_leave(ob,dir);
 }

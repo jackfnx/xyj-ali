@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat 11/16/1997
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-  set_name("Í­µ¤Â¯", ({ "tong danlu", "danlu" }) );
+  set_name("é“œä¸¹ç‚‰", ({ "tong danlu", "danlu" }) );
   set_weight(300000);
   set_max_encumbrance(8000);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¶¦");
-    set("long", "ÕâÊÇÒ»¶¦µÀ¼ÒÓÃÀ´Á¶µ¤µÄ´óÍ­Â¯¡£\n");
+    set("unit", "é¼");
+    set("long", "è¿™æ˜¯ä¸€é¼é“å®¶ç”¨æ¥ç‚¼ä¸¹çš„å¤§é“œç‚‰ã€‚\n");
     set("value", 2000);
   }
 }
@@ -42,9 +42,9 @@ int do_penetrate (string arg)
   if (arg != "tong danlu" && arg != "danlu")
     return 0;
 
-  message_vision ("$NÇ±ÉíÍùµ¤Â¯ÀïÒ»Ô¾£¬ôÁôÁÇàÑÌÖĞ$NºôµØÒ»Éù²»¼ûÁË¡£\n",who);
+  message_vision ("$Næ½œèº«å¾€ä¸¹ç‚‰é‡Œä¸€è·ƒï¼Œè¢…è¢…é’çƒŸä¸­$Nå‘¼åœ°ä¸€å£°ä¸è§äº†ã€‚\n",who);
   who->move("/d/qujing/pansi/yuanwai1");
-  message_vision ("$NÏóÇàÑÌÒ»Ñù´Óµ¤Â¯ÀïÆ®ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Nè±¡é’çƒŸä¸€æ ·ä»ä¸¹ç‚‰é‡Œé£˜äº†è¿‡æ¥ã€‚\n",who);
   if (who->query("combat_exp") < 5000)
     who->unconcious();
   return 1;
@@ -56,9 +56,9 @@ int do_enter (string arg)
   if (arg != "tong danlu" && arg != "danlu")
     return 0;
 
-  message_vision ("$NÇ±ÉíÍùµ¤Â¯ÀïÒ»Ô¾£¬ôÁôÁÇàÑÌÖĞ$NºôµØÒ»Éù²»¼ûÁË¡£\n",who);
+  message_vision ("$Næ½œèº«å¾€ä¸¹ç‚‰é‡Œä¸€è·ƒï¼Œè¢…è¢…é’çƒŸä¸­$Nå‘¼åœ°ä¸€å£°ä¸è§äº†ã€‚\n",who);
   who->move("/d/qujing/pansi/yuanwai2");
-  message_vision ("$NÏóÇàÑÌÒ»Ñù´Óµ¤Â¯ÀïÆ®ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Nè±¡é’çƒŸä¸€æ ·ä»ä¸¹ç‚‰é‡Œé£˜äº†è¿‡æ¥ã€‚\n",who);
   if (who->query("combat_exp") < 5000)
     who->unconcious();
   return 1;
@@ -70,9 +70,9 @@ int do_fly (string arg)
   if (arg != "tong danlu" && arg != "danlu")
     return 0;
 
-  message_vision ("$NÇ±ÉíÍùµ¤Â¯ÀïÒ»Ô¾£¬ôÁôÁÇàÑÌÖĞ$NºôµØÒ»Éù²»¼ûÁË¡£\n",who);
+  message_vision ("$Næ½œèº«å¾€ä¸¹ç‚‰é‡Œä¸€è·ƒï¼Œè¢…è¢…é’çƒŸä¸­$Nå‘¼åœ°ä¸€å£°ä¸è§äº†ã€‚\n",who);
   who->move("/d/qujing/pansi/yuanwai3");
-  message_vision ("$NÏóÇàÑÌÒ»Ñù´Óµ¤Â¯ÀïÆ®ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Nè±¡é’çƒŸä¸€æ ·ä»ä¸¹ç‚‰é‡Œé£˜äº†è¿‡æ¥ã€‚\n",who);
   if (who->query("combat_exp") < 5000)
     who->unconcious();
   return 1;
@@ -84,9 +84,9 @@ int do_dive (string arg)
   if (arg != "tong danlu" && arg != "danlu")
     return 0;
 
-  message_vision ("$NÇ±ÉíÍùµ¤Â¯ÀïÒ»Ô¾£¬ôÁôÁÇàÑÌÖĞ$NºôµØÒ»Éù²»¼ûÁË¡£\n",who);
+  message_vision ("$Næ½œèº«å¾€ä¸¹ç‚‰é‡Œä¸€è·ƒï¼Œè¢…è¢…é’çƒŸä¸­$Nå‘¼åœ°ä¸€å£°ä¸è§äº†ã€‚\n",who);
   who->move("/d/qujing/pansi/yuanwai4");
-  message_vision ("$NÏóÇàÑÌÒ»Ñù´Óµ¤Â¯ÀïÆ®ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Nè±¡é’çƒŸä¸€æ ·ä»ä¸¹ç‚‰é‡Œé£˜äº†è¿‡æ¥ã€‚\n",who);
   if (who->query("combat_exp") < 5000)
     who->unconcious();
   return 1;
@@ -98,9 +98,9 @@ int do_teleport (string arg)
   if (arg != "tong danlu" && arg != "danlu")
     return 0;
 
-  message_vision ("$NÇ±ÉíÍùµ¤Â¯ÀïÒ»Ô¾£¬ôÁôÁÇàÑÌÖĞ$NºôµØÒ»Éù²»¼ûÁË¡£\n",who);
+  message_vision ("$Næ½œèº«å¾€ä¸¹ç‚‰é‡Œä¸€è·ƒï¼Œè¢…è¢…é’çƒŸä¸­$Nå‘¼åœ°ä¸€å£°ä¸è§äº†ã€‚\n",who);
   who->move("/d/qujing/pansi/yuanwai5");
-  message_vision ("$NÏóÇàÑÌÒ»Ñù´Óµ¤Â¯ÀïÆ®ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Nè±¡é’çƒŸä¸€æ ·ä»ä¸¹ç‚‰é‡Œé£˜äº†è¿‡æ¥ã€‚\n",who);
   if (who->query("combat_exp") < 5000)
     who->unconcious();
   return 1;
@@ -112,9 +112,9 @@ int do_jump (string arg)
   if (arg != "tong danlu" && arg != "danlu")
     return 0;
 
-  message_vision ("$NÇ±ÉíÍùµ¤Â¯ÀïÒ»Ô¾£¬ôÁôÁÇàÑÌÖĞ$NºôµØÒ»Éù²»¼ûÁË¡£\n",who);
+  message_vision ("$Næ½œèº«å¾€ä¸¹ç‚‰é‡Œä¸€è·ƒï¼Œè¢…è¢…é’çƒŸä¸­$Nå‘¼åœ°ä¸€å£°ä¸è§äº†ã€‚\n",who);
   who->move("/d/qujing/pansi/yuanwai6");
-  message_vision ("$NÏóÇàÑÌÒ»Ñù´Óµ¤Â¯ÀïÆ®ÁË¹ıÀ´¡£\n",who);
+  message_vision ("$Nè±¡é’çƒŸä¸€æ ·ä»ä¸¹ç‚‰é‡Œé£˜äº†è¿‡æ¥ã€‚\n",who);
   if (who->query("combat_exp") < 5000)
     who->unconcious();
   return 1;
@@ -123,5 +123,5 @@ int do_jump (string arg)
 void smoking (object me)
 {
   object where = environment (me);
-  tell_room (where,"Í­µ¤Â¯Ã°³öôÁôÁµÄÇàÑÌ¡£\n");
+  tell_room (where,"é“œä¸¹ç‚‰å†’å‡ºè¢…è¢…çš„é’çƒŸã€‚\n");
 }

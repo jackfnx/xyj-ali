@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -7,16 +7,16 @@ inherit WRISTS;
 
 void create()
 {
-        set_name("ÒøÊÖïí", ({ "silver wrist", "wrist" }));
+        set_name("é“¶æ‰‹é•¯", ({ "silver wrist", "wrist" }));
         set("weight", 500);
-        set("long", "Ò»¶ÔÒø¹â²Ó²ÓµÄÊÖïí¡£\n");
+        set("long", "ä¸€å¯¹é“¶å…‰ç¿ç¿çš„æ‰‹é•¯ã€‚\n");
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
+                set("unit", "å¯¹");
                 set("value", 400);
                 set("material", "gold");
-     set("wear_msg", "$N°Ñ$nÌ×µ½ÊÖÍóÉÏ¡£\n");
+     set("wear_msg", "$NæŠŠ$nå¥—åˆ°æ‰‹è…•ä¸Šã€‚\n");
                 set("armor_prop/armor", 1);
         }
         setup();

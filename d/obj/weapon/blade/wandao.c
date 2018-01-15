@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 10/15/1997
@@ -9,9 +9,9 @@
 inherit BLADE;
 
 string *names = ({
-  "³¤Íäµ¶",
-  "¶ÌÍäµ¶",
-  "ÔÂÑÀÍäµ¶",
+  "é•¿å¼¯åˆ€",
+  "çŸ­å¼¯åˆ€",
+  "æœˆç‰™å¼¯åˆ€",
 });
 
 string *ids = ({
@@ -28,8 +28,8 @@ void create()
   if( clonep() )
      set_default_object(__FILE__);
   else {
-    set("long", "Ò»°ÑÍäÍäµÄÕ½µ¶£®\n");
-    set("unit", "°Ñ");
+    set("long", "ä¸€æŠŠå¼¯å¼¯çš„æˆ˜åˆ€ï¼\n");
+    set("unit", "æŠŠ");
     set("value", 400);
     set("material","metal");
   }

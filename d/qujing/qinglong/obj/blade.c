@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -8,16 +8,16 @@ inherit BLADE;
 
 void create()
 {
-   set_name("´óµ¶", ({"da dao", "dao", "blade"}) );
+   set_name("å¤§åˆ€", ({"da dao", "dao", "blade"}) );
    set_weight(8000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "°Ñ");
+     set("unit", "æŠŠ");
      set("value", 2500);
      set("material", "iron");
-     set("long", "ÕâÊÇÒ»°Ñ³ÁÖØµÄ´óµ¶¡£\n");
-     set("wield_msg", "$NÄÃÆğÒ»°Ñ$n£¬à²µØÒ»Îè¡£\n");
+     set("long", "è¿™æ˜¯ä¸€æŠŠæ²‰é‡çš„å¤§åˆ€ã€‚\n");
+     set("wield_msg", "$Næ‹¿èµ·ä¸€æŠŠ$nï¼Œå—–åœ°ä¸€èˆã€‚\n");
    }
    init_blade(55);
    setup();

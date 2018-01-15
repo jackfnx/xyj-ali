@@ -6,17 +6,17 @@ inherit STICK;
 
 void create()
 {
-	set_name("Ìú¹÷", ({ "stick" }) );
+	set_name("é“æ£", ({ "stick" }) );
 	set_weight(10000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
+		set("unit", "æ ¹");
 		set("value", 2000);
 		set("material", "steel");
-		set("long", "Ò»¸ù³ÁµéµéºÚ÷î÷îµÄïÙÌú¹÷¡£\n");
-		set("wield_msg", "$NÄÃÆğÒ»¸ù$n£¬Ë³ÊÖÎèÁË¸ö¹÷»¨¡£\n");
-		set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+		set("long", "ä¸€æ ¹æ²‰ç”¸ç”¸é»‘é»é»çš„é•”é“æ£ã€‚\n");
+		set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$nï¼Œé¡ºæ‰‹èˆäº†ä¸ªæ£èŠ±ã€‚\n");
+		set("unwield_msg", "$Nå“¼äº†ä¸€å£°ï¼Œå°†$næ’å›åè…°ã€‚\n");
 	}
 	init_stick(35);
 	setup();

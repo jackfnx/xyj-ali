@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("À×¹«",({"lei gong", "lei shen", "gong"}));
-    set("gender", "ÄĞĞÔ");
+    set_name("é›·å…¬",({"lei gong", "lei shen", "gong"}));
+    set("gender", "ç”·æ€§");
     set("age", 45);
-    set("long", "    \nÒ»¸ö¼â×ìºïÈùµÄÌìÉñ£¬ÔÚÌì¹¬ÖĞ¸ºÔğ´òÀ×¡£\n");
+    set("long", "    \nä¸€ä¸ªå°–å˜´çŒ´è…®çš„å¤©ç¥ï¼Œåœ¨å¤©å®«ä¸­è´Ÿè´£æ‰“é›·ã€‚\n");
 
     set("attitude", "heroism");
     set("class", "xian");
@@ -36,9 +36,9 @@ void create()
     map_skill("dodge", "cloud-steps");
     map_skill("unarmed", "puti-zhi");
     set("inquiry", ([
-        "´òÀ×"   : "¼±Ê²Ã´£¿¸ÃÏÂÓêÊ±ÎÒ×ÔÈ»»áÈ¥´òÀ×¡£",
-        "name"   : "ÎÒÊÇÀ×Éñ¡£",
-        "here"   : "ÕâÀï¾ÍÊÇÌì¹¬¡£",
+        "æ‰“é›·"   : "æ€¥ä»€ä¹ˆï¼Ÿè¯¥ä¸‹é›¨æ—¶æˆ‘è‡ªç„¶ä¼šå»æ‰“é›·ã€‚",
+        "name"   : "æˆ‘æ˜¯é›·ç¥ã€‚",
+        "here"   : "è¿™é‡Œå°±æ˜¯å¤©å®«ã€‚",
     ]));
 
     setup();

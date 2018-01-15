@@ -16,31 +16,31 @@ int is_container() { return 1; }
 
 void create()
 {
-    set_name("·¨±¦Á¶ÖÆÂ¯", ({"fabao smelter", "smelter", "lzl"}));
+    set_name("æ³•å®ç‚¼åˆ¶ç‚‰", ({"fabao smelter", "smelter", "lzl"}));
     set_weight(1000);
     set_max_encumbrance(100000);
     seteuid(getuid());
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "×ù");
+        set("unit", "åº§");
         set("long", @LONG
-Ò»×ùĞ¡ÇÉµÄÈÛÂ¯£¬ÒşÒşÍ¸³öÉñÃØµÄÁ¦Á¿¡£
-ÉÏÃæ¿ÌÂúÁË×Ö£¬È«¶¼ÊÇ¹ØÓÚÁ¶ÖÆ·¨±¦µÄ·¨ÃÅ¡£
+ä¸€åº§å°å·§çš„ç†”ç‚‰ï¼Œéšéšé€å‡ºç¥ç§˜çš„åŠ›é‡ã€‚
+ä¸Šé¢åˆ»æ»¡äº†å­—ï¼Œå…¨éƒ½æ˜¯å…³äºç‚¼åˆ¶æ³•å®çš„æ³•é—¨ã€‚
 
-                  (** ·¨±¦Á¶ÖÆÖ¸ÄÏ **)
-  Á¶ÖÆĞÂ·¨±¦               make_fabao                         
-  Á¶»¯(Ïú»Ù)·¨±¦           recycle                            
-  ²é¿´·¨±¦Á¶ÖÆ/Éı¼¶·ÑÓÃ    cost                               
-  Éı¼¶                     upgrade <prop>                     
-  ÎåĞĞÇ¿»¯                 enhance                            
+                  (** æ³•å®ç‚¼åˆ¶æŒ‡å— **)
+  ç‚¼åˆ¶æ–°æ³•å®               make_fabao                         
+  ç‚¼åŒ–(é”€æ¯)æ³•å®           recycle                            
+  æŸ¥çœ‹æ³•å®ç‚¼åˆ¶/å‡çº§è´¹ç”¨    cost                               
+  å‡çº§                     upgrade <prop>                     
+  äº”è¡Œå¼ºåŒ–                 enhance                            
                                                               
-  ¸ø·¨±¦¸Ä´úºÅ             change_id <fabao_id> <new id>      
-  ¸ø·¨±¦¸ÄÃû               change_name <fabao_id> <new name>  
-  ¸ø·¨±¦¸ÄÃèÊö             change_desc <fabao_id> <new desc>  
-  ¸ø·¨±¦¸Äµ¥Î»Ãû³Æ         change_unit <fabao_id> <new unit>  
-  ·âÓ¡ÍşÄÜ£¨ÎäÆ÷×¨ÓÃ£©     seal <fabao_id>                    
-  ½â¿ª·âÓ¡£¨ÎäÆ÷×¨ÓÃ£©     unseal <fabao_id>                  
+  ç»™æ³•å®æ”¹ä»£å·             change_id <fabao_id> <new id>      
+  ç»™æ³•å®æ”¹å               change_name <fabao_id> <new name>  
+  ç»™æ³•å®æ”¹æè¿°             change_desc <fabao_id> <new desc>  
+  ç»™æ³•å®æ”¹å•ä½åç§°         change_unit <fabao_id> <new unit>  
+  å°å°å¨èƒ½ï¼ˆæ­¦å™¨ä¸“ç”¨ï¼‰     seal <fabao_id>                    
+  è§£å¼€å°å°ï¼ˆæ­¦å™¨ä¸“ç”¨ï¼‰     unseal <fabao_id>                  
 LONG);
         set("material", "bronze");
         set("value", 1000000);
@@ -54,7 +54,7 @@ void set_owner(object who)
 {
     set_temp("owner", who);
     who->set_temp("smelter", this_object());
-    set("name", "¡º" + who->name(1) + "¡»µÄ·¨±¦Á¶ÖÆÂ¯");
+    set("name", "ã€" + who->name(1) + "ã€çš„æ³•å®ç‚¼åˆ¶ç‚‰");
 }
 
 void reset()
@@ -66,7 +66,7 @@ void reset()
         return;
     }
     if (env != owner && env != environment(owner)) {
-        tell_room(env, name() + "ºöÈ»»¯×÷Ò»µÀ³¤ºç·ÉÏòÁËÔ¶·½¡£\n");
+        tell_room(env, name() + "å¿½ç„¶åŒ–ä½œä¸€é“é•¿è™¹é£å‘äº†è¿œæ–¹ã€‚\n");
         destruct(this_object());
         return;
     }
@@ -105,7 +105,7 @@ void complete_make_fabao(object ob)
     
     fabao_ob = FABAO_D->new_fabao_ob(ob);
     if (!fabao_ob) {
-        write("·¨±¦¶ÔÏó´´½¨Ê§°Ü¡£\n");
+        write("æ³•å®å¯¹è±¡åˆ›å»ºå¤±è´¥ã€‚\n");
         return;
     }
 
@@ -123,10 +123,10 @@ void complete_make_fabao(object ob)
     fabao_ob->save();
     ob->save();
     
-    tell_room(environment(ob), HIY "Ìì¿ÕÖĞºöÈ»Ó¿ÆğÒ»ÍÅÏéÔÆ£¬ÒşÔ¼ÖĞËÆÓĞÏÉÀÖ´«À´£¬×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇ"
-            + ob->name() + "Á¶ÖÆ³öÁËÒ»" + fabao_ob->query("unit") + fabao_ob->query("name") + HIY "¡£\n" NOR, ob);
-    tell_object(ob, HIY "Ìì¿ÕÖĞºöÈ»Ó¿ÆğÒ»ÍÅÏéÔÆ£¬ÒşÔ¼ÖĞËÆÓĞÏÉÀÖ´«À´£¬ÄãÁ¶ÖÆ³öÁËÒ»"
-            + fabao_ob->query("unit") + fabao_ob->query("name") + HIY "¡£\n" NOR);
+    tell_room(environment(ob), HIY "å¤©ç©ºä¸­å¿½ç„¶æ¶Œèµ·ä¸€å›¢ç¥¥äº‘ï¼Œéšçº¦ä¸­ä¼¼æœ‰ä»™ä¹ä¼ æ¥ï¼Œä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯"
+            + ob->name() + "ç‚¼åˆ¶å‡ºäº†ä¸€" + fabao_ob->query("unit") + fabao_ob->query("name") + HIY "ã€‚\n" NOR, ob);
+    tell_object(ob, HIY "å¤©ç©ºä¸­å¿½ç„¶æ¶Œèµ·ä¸€å›¢ç¥¥äº‘ï¼Œéšçº¦ä¸­ä¼¼æœ‰ä»™ä¹ä¼ æ¥ï¼Œä½ ç‚¼åˆ¶å‡ºäº†ä¸€"
+            + fabao_ob->query("unit") + fabao_ob->query("name") + HIY "ã€‚\n" NOR);
 }
 
 int do_recycle()
@@ -135,19 +135,19 @@ int do_recycle()
     object fabao_ob = first_inventory();
     
     if (!objectp(fabao_ob))
-        return notify_fail("ÇëÏÈ·ÅÈë·¨±¦£¬ÔÙÊäÈëÏú»ÙÖ¸Áî¡£\n");
+        return notify_fail("è¯·å…ˆæ”¾å…¥æ³•å®ï¼Œå†è¾“å…¥é”€æ¯æŒ‡ä»¤ã€‚\n");
     if (objectp(next_inventory(fabao_ob)))
-        return notify_fail("ÇëÖ»·ÅÈë·¨±¦£¬²»Òª·ÅÈëÆäËûÎïÆ·¡£\n");
+        return notify_fail("è¯·åªæ”¾å…¥æ³•å®ï¼Œä¸è¦æ”¾å…¥å…¶ä»–ç‰©å“ã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no"))
-        return notify_fail("Õâ²»ÊÇ·¨±¦Ò®£¡\n");
+        return notify_fail("è¿™ä¸æ˜¯æ³•å®è€¶ï¼\n");
 
     printf("%s\n%s", fabao_ob->short(), fabao_ob->long());
     printf("------------------------------------------------\n");
-    printf("%sÆäÖĞËùÔÌº¬µÄÁ¦Á¿£º%s(Èç¹ûÁ¶»¯Ëü¿ÉÒÔµÃµ½ÆäÖĞµÄ75%%)\n%s", YEL, HIR, NOR);
-    printf("%sÄÚÁ¦£º %s%d%s\t", YEL, HIG, fabao_ob->query("power/force"), NOR);
-    printf("%s·¨Á¦£º %s%d%s\t", YEL, HIG, fabao_ob->query("power/mana"), NOR);
-    printf("%sµÀĞĞ£º %s%s%s\n", YEL, HIG, COMBAT_D->chinese_daoxing(fabao_ob->query("power/exp")), NOR);
-    write("ÄãÈ·¶¨ÒªÁ¶»¯Õâ¼ş·¨±¦Âğ£¿(y/n)");
+    printf("%så…¶ä¸­æ‰€è•´å«çš„åŠ›é‡ï¼š%s(å¦‚æœç‚¼åŒ–å®ƒå¯ä»¥å¾—åˆ°å…¶ä¸­çš„75%%)\n%s", YEL, HIR, NOR);
+    printf("%så†…åŠ›ï¼š %s%d%s\t", YEL, HIG, fabao_ob->query("power/force"), NOR);
+    printf("%sæ³•åŠ›ï¼š %s%d%s\t", YEL, HIG, fabao_ob->query("power/mana"), NOR);
+    printf("%sé“è¡Œï¼š %s%s%s\n", YEL, HIG, COMBAT_D->chinese_daoxing(fabao_ob->query("power/exp")), NOR);
+    write("ä½ ç¡®å®šè¦ç‚¼åŒ–è¿™ä»¶æ³•å®å—ï¼Ÿ(y/n)");
     input_to( (: confirm_recycle, me, fabao_ob :) );
     return 1;
 }
@@ -158,7 +158,7 @@ void confirm_recycle(object ob, object fabao_ob, string arg)
     string type;
     
     if (arg != "y" && arg != "Y") {
-        write("OK, ÄÇ¾ÍËãÁË¡£\n");
+        write("OK, é‚£å°±ç®—äº†ã€‚\n");
         return;
     }
     
@@ -179,9 +179,9 @@ void confirm_recycle(object ob, object fabao_ob, string arg)
         }
     }
     ob->save();
-    tell_room(environment(ob), "ÌìÉ«Í»È»Ò»°µ£¬ÒşÔ¼ÖĞËÆºõ´«À´¹íÉñµÄ¿ŞÆü£¬Ô­À´¾¹ÊÇ"
-        + ob->name() + "Á¶»¯ÁË" + fabao_ob->name() + "£¬ÎüÊÕÁËÆäÖĞÄÜÁ¿£¬ÊµÁ¦´óÔö¡£\n", ({ ob }));
-    printf("ÄãÁ¶»¯ÁË%s£¬»ñµÃÁË%dµãÄÚÁ¦£¬%dµã·¨Á¦£¬%sµÀĞĞ¡£\n",
+    tell_room(environment(ob), "å¤©è‰²çªç„¶ä¸€æš—ï¼Œéšçº¦ä¸­ä¼¼ä¹ä¼ æ¥é¬¼ç¥çš„å“­æ³£ï¼ŒåŸæ¥ç«Ÿæ˜¯"
+        + ob->name() + "ç‚¼åŒ–äº†" + fabao_ob->name() + "ï¼Œå¸æ”¶äº†å…¶ä¸­èƒ½é‡ï¼Œå®åŠ›å¤§å¢ã€‚\n", ({ ob }));
+    printf("ä½ ç‚¼åŒ–äº†%sï¼Œè·å¾—äº†%dç‚¹å†…åŠ›ï¼Œ%dç‚¹æ³•åŠ›ï¼Œ%sé“è¡Œã€‚\n",
         fabao_ob->name(),
         fabao_ob->query("power/force"),
         fabao_ob->query("power/mana"),
@@ -196,7 +196,7 @@ int do_cost(string arg)
     foreach (object ob in all_inventory()) {
         if (ob->query("owner_id") && ob->query("series_no")) {
             if (objectp(fabao_ob))
-                return notify_fail("Äãµ½µ×Ïë²é¿´ÄÄÒ»¼ş·¨±¦µÄÉı¼¶»¨·Ñ¡£\n");
+                return notify_fail("ä½ åˆ°åº•æƒ³æŸ¥çœ‹å“ªä¸€ä»¶æ³•å®çš„å‡çº§èŠ±è´¹ã€‚\n");
             fabao_ob = ob;
         }
     }
@@ -211,7 +211,7 @@ int do_upgrade(string arg)
     int   upgraded;
     
     if (!arg || arg == "")
-        return notify_fail("Çë°Ñ·¨±¦·ÅÈëÁ¶ÖÆÂ¯ÄÚ£¬ÓÃ upgrade <ÌØĞÔ> À´Éı¼¶£¬Éı¼¶ÌØĞÔ¿ÉÓÃcost²é¿´¡£\n");
+        return notify_fail("è¯·æŠŠæ³•å®æ”¾å…¥ç‚¼åˆ¶ç‚‰å†…ï¼Œç”¨ upgrade <ç‰¹æ€§> æ¥å‡çº§ï¼Œå‡çº§ç‰¹æ€§å¯ç”¨costæŸ¥çœ‹ã€‚\n");
 
     if (!FABAO_D->varify_formula(arg, ob))
         return 0;
@@ -228,12 +228,12 @@ int do_upgrade(string arg)
         fabao_ob->add("stars/" + arg, 1);
         fabao_ob->set("upgraded/" + arg, 0);
     }
-    tell_room(environment(ob), HIY + name() + HIY "ÉÏºöÈ»ÉıÆğÁËÒ»ÂÆÂÆÇàÑÌ£¬ÆäÖĞµÄ"
-        + fabao_ob->name() + HIY "É¢·¢³öÇ¿´óµÄÆøÏ¢¡£\n" NOR, me);
-    tell_object(me, HIG "·¨±¦Á¶ÖÆÂ¯ÉÏÍ»È»´«À´ÕóÕóµÄÎüÁ¦£¬½«ÄãÌåÄÚµÄÁ¦Á¿Ç¿ĞĞ³éÈ¡ÁËÒ»²¿·Ö£¬ÈÃÄã²»½ûÕóÕóÑ£ÔÎ¡£¡£¡£\n"
-        "²»¹ıÄã²¢Ã»ÓĞ¾ª»Å£¬·´¶ø¸Ğ¾õºÜĞË·Ü¡£\n"
-        "ÒòÎªÄãÇå³şµÄ¸Ğ¾õµ½Â¯ÖĞµÄ" + fabao_ob->name() + HIG "Æä¡º"
-        + query_temp("upgraded_prop") + HIG "(" + arg +")¡»Ã÷ÏÔÔöÇ¿ÁË\n" NOR);
+    tell_room(environment(ob), HIY + name() + HIY "ä¸Šå¿½ç„¶å‡èµ·äº†ä¸€ç¼•ç¼•é’çƒŸï¼Œå…¶ä¸­çš„"
+        + fabao_ob->name() + HIY "æ•£å‘å‡ºå¼ºå¤§çš„æ°”æ¯ã€‚\n" NOR, me);
+    tell_object(me, HIG "æ³•å®ç‚¼åˆ¶ç‚‰ä¸Šçªç„¶ä¼ æ¥é˜µé˜µçš„å¸åŠ›ï¼Œå°†ä½ ä½“å†…çš„åŠ›é‡å¼ºè¡ŒæŠ½å–äº†ä¸€éƒ¨åˆ†ï¼Œè®©ä½ ä¸ç¦é˜µé˜µçœ©æ™•ã€‚ã€‚ã€‚\n"
+        "ä¸è¿‡ä½ å¹¶æ²¡æœ‰æƒŠæ…Œï¼Œåè€Œæ„Ÿè§‰å¾ˆå…´å¥‹ã€‚\n"
+        "å› ä¸ºä½ æ¸…æ¥šçš„æ„Ÿè§‰åˆ°ç‚‰ä¸­çš„" + fabao_ob->name() + HIG "å…¶ã€"
+        + query_temp("upgraded_prop") + HIG "(" + arg +")ã€æ˜æ˜¾å¢å¼ºäº†\n" NOR);
     
     fabao_ob->setup();
     fabao_ob->save();
@@ -264,10 +264,10 @@ int do_enhance()
     elem_name = query_temp("enhance/name");
     
     fabao_ob->add(fabao_type + "_prop/" + elem_type, elem_point);
-    tell_room(environment(ob), HIY + name() + HIY "ÉÏºöÈ»ÉıÆğÁËÒ»ÂÆÂÆÇàÑÌ£¬ÆäÖĞµÄ"
-        + fabao_ob->name() + HIY "É¢·¢³öÇ¿´óµÄÆøÏ¢¡£\n" NOR, me);
-    tell_object(me, HIG "·¨±¦Á¶ÖÆÂ¯ÉÏºöÈ»ÉıÆğÁËÒ»ÂÆÂÆÇàÑÌ£¬ÆäÖĞµÄ²ÄÁÏ½¥½¥ÈÚÈë" + fabao_ob->name() + HIG "ÖĞ¡£\n"
-        "ÄãÇå³şµÄ¸Ğ¾õµ½" + fabao_ob->name() + HIG "µÄ¡º" + elem_name + HIG "¡»ÊôĞÔÃ÷ÏÔÔöÇ¿ÁË¡£\n" NOR);
+    tell_room(environment(ob), HIY + name() + HIY "ä¸Šå¿½ç„¶å‡èµ·äº†ä¸€ç¼•ç¼•é’çƒŸï¼Œå…¶ä¸­çš„"
+        + fabao_ob->name() + HIY "æ•£å‘å‡ºå¼ºå¤§çš„æ°”æ¯ã€‚\n" NOR, me);
+    tell_object(me, HIG "æ³•å®ç‚¼åˆ¶ç‚‰ä¸Šå¿½ç„¶å‡èµ·äº†ä¸€ç¼•ç¼•é’çƒŸï¼Œå…¶ä¸­çš„ææ–™æ¸æ¸èå…¥" + fabao_ob->name() + HIG "ä¸­ã€‚\n"
+        "ä½ æ¸…æ¥šçš„æ„Ÿè§‰åˆ°" + fabao_ob->name() + HIG "çš„ã€" + elem_name + HIG "ã€å±æ€§æ˜æ˜¾å¢å¼ºäº†ã€‚\n" NOR);
     
     fabao_ob->setup();
     fabao_ob->save();
@@ -290,7 +290,7 @@ void pay(object me, object ob)
     
     foreach (object m in all_inventory())
         if (m != ob) {
-            message_vision(name() + "ÉıÆğÒ»ÂÆÂÆÇàÑÌ£¬ÆäÖĞµÄ" + m->name() + "ÈÚ»¯ÁË¡£\n\n", me);
+            message_vision(name() + "å‡èµ·ä¸€ç¼•ç¼•é’çƒŸï¼Œå…¶ä¸­çš„" + m->name() + "èåŒ–äº†ã€‚\n\n", me);
             destruct(m);
         }
 }
@@ -302,15 +302,15 @@ int do_change_id(string arg)
     string *id_list, *t_list;
     
     if (!arg || arg == "") 
-        return notify_fail("ÇëÓÃ change_id ·¨±¦ ĞÂÓ¢ÎÄÃû À´¸ÄÃû¡£\n");
+        return notify_fail("è¯·ç”¨ change_id æ³•å® æ–°è‹±æ–‡å æ¥æ”¹åã€‚\n");
     if (sscanf(arg, "%s %s", name, newname) != 2)
-        return notify_fail("ÇëÓÃ change_id ·¨±¦ ĞÂÓ¢ÎÄÃû À´¸ÄÃû¡£\n");
+        return notify_fail("è¯·ç”¨ change_id æ³•å® æ–°è‹±æ–‡å æ¥æ”¹åã€‚\n");
     if (!objectp(fabao_ob = present(name, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-        return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+        return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
     if (fabao_ob->query("equipped"))
-        return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+        return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
     if (!LOGIN_D->check_legal_id(newname, 20, 1)) return 1;
     
     newname = replace_string(newname, " ", "_"); 
@@ -324,7 +324,7 @@ int do_change_id(string arg)
     fabao_ob->set_name(fabao_ob->query("name"), id_list); 
     fabao_ob->save();
     
-    write("¸Ä¶¯³É¹¦¡£\n");
+    write("æ”¹åŠ¨æˆåŠŸã€‚\n");
     return 1;
 }
 
@@ -334,15 +334,15 @@ int do_change_name(string arg)
     object fabao_ob, me = this_player();
     
     if (!arg || arg == "") 
-        return notify_fail("ÇëÓÃ change_name ·¨±¦ ĞÂÖĞÎÄÃû À´¸ÄÃû¡£\n");
+        return notify_fail("è¯·ç”¨ change_name æ³•å® æ–°ä¸­æ–‡å æ¥æ”¹åã€‚\n");
     if (sscanf(arg, "%s %s", id, newname) != 2)
-        return notify_fail("ÇëÓÃ change_name ·¨±¦ ĞÂÖĞÎÄÃû À´¸ÄÃû¡£\n");
+        return notify_fail("è¯·ç”¨ change_name æ³•å® æ–°ä¸­æ–‡å æ¥æ”¹åã€‚\n");
     if (!objectp(fabao_ob = present(id, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-        return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+        return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
     if (fabao_ob->query("equipped"))
-        return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+        return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
     
     newname += "$NOR$";
     arg = newname;
@@ -388,7 +388,7 @@ int do_change_name(string arg)
     fabao_ob->set("name", arg);
     fabao_ob->save();     
     
-    write("¸Ä¶¯³É¹¦¡£\n");
+    write("æ”¹åŠ¨æˆåŠŸã€‚\n");
     return 1;
 }
 
@@ -398,20 +398,20 @@ int do_change_desc(string arg)
     object fabao_ob, me = this_player();
     
     if (!arg || arg == "") 
-        return notify_fail("ÇëÓÃ change_desc ·¨±¦ ĞÂÃèÊö À´ĞŞ¸ÄÃèÊö¡£\n");
+        return notify_fail("è¯·ç”¨ change_desc æ³•å® æ–°æè¿° æ¥ä¿®æ”¹æè¿°ã€‚\n");
     if (sscanf(arg, "%s %s", id, desc) != 2)
-        return notify_fail("ÇëÓÃ change_desc ·¨±¦ ĞÂÃèÊö À´ĞŞ¸ÄÃèÊö¡£\n");
+        return notify_fail("è¯·ç”¨ change_desc æ³•å® æ–°æè¿° æ¥ä¿®æ”¹æè¿°ã€‚\n");
     if (!objectp(fabao_ob = present(id, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-        return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+        return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
     if (fabao_ob->query("equipped"))
-        return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+        return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
     
     fabao_ob->set("long", desc);
     fabao_ob->save();
     
-    write("¸Ä¶¯³É¹¦¡£\n");
+    write("æ”¹åŠ¨æˆåŠŸã€‚\n");
 }
 
 int do_change_unit(string arg)
@@ -420,22 +420,22 @@ int do_change_unit(string arg)
     object fabao_ob, me = this_player();
     
     if (!arg || arg == "") 
-        return notify_fail("ÇëÓÃ change_unit ·¨±¦ µ¥Î» À´Ö¸¶¨·¨±¦µ¥Î»¡£\n");
+        return notify_fail("è¯·ç”¨ change_unit æ³•å® å•ä½ æ¥æŒ‡å®šæ³•å®å•ä½ã€‚\n");
     if (sscanf(arg, "%s %s", name, newname) != 2)
-        return notify_fail("ÇëÓÃ change_unit ·¨±¦ µ¥Î» À´Ö¸¶¨·¨±¦µ¥Î»¡£\n");
+        return notify_fail("è¯·ç”¨ change_unit æ³•å® å•ä½ æ¥æŒ‡å®šæ³•å®å•ä½ã€‚\n");
     if (!objectp(fabao_ob = present(name, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-        return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+        return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
     if (fabao_ob->query("equipped"))
-        return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+        return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
     
     if (!LOGIN_D->check_legal_name(newname, 2)) return 1;
     
     fabao_ob->set("unit", newname);
     fabao_ob->save();
     
-    write("¸Ä¶¯³É¹¦¡£\n");
+    write("æ”¹åŠ¨æˆåŠŸã€‚\n");
     return 1;
 }
 
@@ -445,22 +445,22 @@ int do_seal(string arg)
     object fabao_ob, me = this_player();
     
     if (!arg || arg == "") 
-        return notify_fail("ÄãÒª·âÓ¡ÄÄÒ»¼ş·¨±¦£¿\n");
+        return notify_fail("ä½ è¦å°å°å“ªä¸€ä»¶æ³•å®ï¼Ÿ\n");
     if (!objectp(fabao_ob = present(arg, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no"))
-        return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+        return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
     if (fabao_ob->query("fabao_type") != "weapon")
-        return notify_fail("Õâ¼ş·¨±¦²»ÄÜ·âÓ¡¡£\n");
+        return notify_fail("è¿™ä»¶æ³•å®ä¸èƒ½å°å°ã€‚\n");
     if (fabao_ob->query("seal"))
-        return notify_fail("Õâ¼ş·¨±¦ÒÑ¾­±»·âÓ¡ÁË¡£\n");
+        return notify_fail("è¿™ä»¶æ³•å®å·²ç»è¢«å°å°äº†ã€‚\n");
 
     if (equipped = fabao_ob->query("equipped"))
         fabao_ob->unequip();
     fabao_ob->set("seal", 1);
     FABAO_D->build_weapon(fabao_ob);
-    message_vision("$NÕÕ×Å" + name() + "ÉÏµÄÎÄ×ÖÄîÁËÒ»¶ÎÖäÓï¡£\n¶ÙÊ±£¬"
-            + fabao_ob->name() + "ÉÏ·ºÆğÁËÒ»²ãµ­µ­µÄ¹â£¬ÄÇÖÖ»ÙÃğµÄÆøÏ¢ÏûÊ§ÁË¡£\n",
+    message_vision("$Nç…§ç€" + name() + "ä¸Šçš„æ–‡å­—å¿µäº†ä¸€æ®µå’’è¯­ã€‚\né¡¿æ—¶ï¼Œ"
+            + fabao_ob->name() + "ä¸Šæ³›èµ·äº†ä¸€å±‚æ·¡æ·¡çš„å…‰ï¼Œé‚£ç§æ¯ç­çš„æ°”æ¯æ¶ˆå¤±äº†ã€‚\n",
         me);
     fabao_ob->save();
     if (equipped)
@@ -474,22 +474,22 @@ int do_unseal(string arg)
     object fabao_ob, me = this_player();
     
     if (!arg || arg == "") 
-        return notify_fail("ÄãÒª·âÓ¡ÄÄÒ»¼ş·¨±¦£¿\n");
+        return notify_fail("ä½ è¦å°å°å“ªä¸€ä»¶æ³•å®ï¼Ÿ\n");
     if (!objectp(fabao_ob = present(arg, me)))
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
     if (!fabao_ob->query("owner_id") || !fabao_ob->query("series_no"))
-        return notify_fail("Õâ¼şÎïÆ·²»ÊÇ·¨±¦¡£\n");
+        return notify_fail("è¿™ä»¶ç‰©å“ä¸æ˜¯æ³•å®ã€‚\n");
     if (fabao_ob->query("fabao_type") != "weapon")
-        return notify_fail("Õâ¼ş·¨±¦²»ÄÜ·âÓ¡¡£\n");
+        return notify_fail("è¿™ä»¶æ³•å®ä¸èƒ½å°å°ã€‚\n");
     if (!fabao_ob->query("seal"))
-        return notify_fail("Õâ¼ş·¨±¦Ã»ÓĞ±»·âÓ¡°¡¡£\n");
+        return notify_fail("è¿™ä»¶æ³•å®æ²¡æœ‰è¢«å°å°å•Šã€‚\n");
 
     if (equipped = fabao_ob->query("equipped"))
         fabao_ob->unequip();
     fabao_ob->delete("seal");
     FABAO_D->build_weapon(fabao_ob);
-    message_vision("$NÕÕ×Å" + name() + "ÉÏµÄÎÄ×ÖÄîÁËÒ»¶ÎÖäÓï¡£\n¶ÙÊ±£¬"
-            + fabao_ob->name() + "ÉÏ·ÅÉä³öÒ«ÑÛµÄ¹âÃ¢£¬Ò»¹É»ÙÃğµÄÆøÏ¢ÆËÃæ¶øÀ´¡£\n",
+    message_vision("$Nç…§ç€" + name() + "ä¸Šçš„æ–‡å­—å¿µäº†ä¸€æ®µå’’è¯­ã€‚\né¡¿æ—¶ï¼Œ"
+            + fabao_ob->name() + "ä¸Šæ”¾å°„å‡ºè€€çœ¼çš„å…‰èŠ’ï¼Œä¸€è‚¡æ¯ç­çš„æ°”æ¯æ‰‘é¢è€Œæ¥ã€‚\n",
         me);
     fabao_ob->save();
     if (equipped)

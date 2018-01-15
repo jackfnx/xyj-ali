@@ -1,19 +1,19 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// jianpu.c   ÇàÁ«½£Æ×
+// jianpu.c   é’è²å‰‘è°±
 
 inherit ITEM;
 
 void create()
 {
-   set_name("ÇàÁ«½£Æ×", ({ "jian pu", "shu", "book" }));
+   set_name("é’è²å‰‘è°±", ({ "jian pu", "shu", "book" }));
    set_weight(600);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±¾");
-     set("long", "ÕâÊÇÒ»±¾»ù±¾½£·¨µÄÍ¼½â£¬Êé½ÇÒÑ¾­ÓĞĞ©²ĞÆÆÁË¡£\n");
+     set("unit", "æœ¬");
+     set("long", "è¿™æ˜¯ä¸€æœ¬åŸºæœ¬å‰‘æ³•çš„å›¾è§£ï¼Œä¹¦è§’å·²ç»æœ‰äº›æ®‹ç ´äº†ã€‚\n");
      set("value", 1000);
      set("material", "paper");
      set("skill", ([

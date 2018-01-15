@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/6/1997
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "¶´¿Ú");
+  set ("short", "æ´å£");
   set ("long", @LONG
 
-¹ÕÍä´¦Ò»¸ö¾Ş´óµÄ¶´¿Ú£¬Èç¾ŞÊŞÒ»°ãÕÅ¿ªÑªÅè´ó¿Ú¡£¶´ÀïµÆ»ğÍ¨Ã÷
-·Ğ·ĞÑïÑï£¬¶´¿ÚìºÆìÆ®ÉÁ¡£¶´µÄÕıÉÏ·½ÓĞÒ»¾ŞÑÒÍ¹³ö£¬Ğ´×Å¡°÷è÷ë
-É½â³õô¶´¡±¼¸¸ö´ó×Ö¡£
+æ‹å¼¯å¤„ä¸€ä¸ªå·¨å¤§çš„æ´å£ï¼Œå¦‚å·¨å…½ä¸€èˆ¬å¼ å¼€è¡€ç›†å¤§å£ã€‚æ´é‡Œç¯ç«é€šæ˜
+æ²¸æ²¸æ‰¬æ‰¬ï¼Œæ´å£æ—Œæ——é£˜é—ªã€‚æ´çš„æ­£ä¸Šæ–¹æœ‰ä¸€å·¨å²©å‡¸å‡ºï¼Œå†™ç€â€œéº’éºŸ
+å±±ç¬è±¸æ´â€å‡ ä¸ªå¤§å­—ã€‚
 
 LONG);
 
@@ -38,13 +38,13 @@ int valid_leave (object who, string dir)
   {
     case 0:
     {
-      message_vision ("Í»È»¶´ÀïÅç³öºæºæ»ğ¹â£¬ÈçÇ§Ìõ»ğÁúÓ­ÃæÆËÀ´£¡\n\n",who);
-      message_vision ("$NÃãÇ¿×ßÁË¼¸²½£¬ÆËµ¹ÔÚµØ¡£\n",who);
+      message_vision ("çªç„¶æ´é‡Œå–·å‡ºçƒ˜çƒ˜ç«å…‰ï¼Œå¦‚åƒæ¡ç«é¾™è¿é¢æ‰‘æ¥ï¼\n\n",who);
+      message_vision ("$Nå‹‰å¼ºèµ°äº†å‡ æ­¥ï¼Œæ‰‘å€’åœ¨åœ°ã€‚\n",who);
       who->unconcious();
       if (to_die)
       {
         who->delete_temp("last_damage_from");
-        who->set_temp("death_msg","±»Ç§Ìõ»ğÁúÉÕËÀÁË¡£");
+        who->set_temp("death_msg","è¢«åƒæ¡ç«é¾™çƒ§æ­»äº†ã€‚");
         who->die();
         who->save();
       }
@@ -52,13 +52,13 @@ int valid_leave (object who, string dir)
     }
     case 1:
     {
-      message_vision ("Í»È»¶´ÀïÃ°³ö¹É¹ÉÎåÉ«¶ñÑÌ£¬ÆÌÌì¸ÇµØ¹ö¹ö¶øÀ´£¡\n\n",who);
-      message_vision ("$NÃãÇ¿×ßÁË¼¸²½£¬ÆËµ¹ÔÚµØ¡£\n",who);
+      message_vision ("çªç„¶æ´é‡Œå†’å‡ºè‚¡è‚¡äº”è‰²æ¶çƒŸï¼Œé“ºå¤©ç›–åœ°æ»šæ»šè€Œæ¥ï¼\n\n",who);
+      message_vision ("$Nå‹‰å¼ºèµ°äº†å‡ æ­¥ï¼Œæ‰‘å€’åœ¨åœ°ã€‚\n",who);
       who->unconcious();
       if (to_die)
       {
         who->delete_temp("last_damage_from");
-        who->set_temp("death_msg","±»ÎåÉ«¶ñÑÌÑ¬ËÀÁË¡£");
+        who->set_temp("death_msg","è¢«äº”è‰²æ¶çƒŸç†æ­»äº†ã€‚");
         who->die();
         who->save();
       }
@@ -66,13 +66,13 @@ int valid_leave (object who, string dir)
     }
     case 2:
     {
-      message_vision ("Í»È»¶´Àï±Å³öÂşÌìÉ³£¬ÈçÕÚÌì±ÎÈÕµØÆÌ½«¹ıÀ´£¡\n\n",who);
-      message_vision ("$NÃãÇ¿×ßÁË¼¸²½£¬ÆËµ¹ÔÚµØ¡£\n",who);
+      message_vision ("çªç„¶æ´é‡Œè¿¸å‡ºæ¼«å¤©æ²™ï¼Œå¦‚é®å¤©è”½æ—¥åœ°é“ºå°†è¿‡æ¥ï¼\n\n",who);
+      message_vision ("$Nå‹‰å¼ºèµ°äº†å‡ æ­¥ï¼Œæ‰‘å€’åœ¨åœ°ã€‚\n",who);
       who->unconcious();
       if (to_die)
       {
         who->delete_temp("last_damage_from");
-        who->set_temp("death_msg","±»ÂşÌìÖ®É³»îÂñÁË¡£");
+        who->set_temp("death_msg","è¢«æ¼«å¤©ä¹‹æ²™æ´»åŸ‹äº†ã€‚");
         who->die();
         who->save();
       }
@@ -81,7 +81,7 @@ int valid_leave (object who, string dir)
   }  
   if (! to_die)
     call_out ("moving",1,who);
-  //return notify_fail("ÄãÒ»ÕóÌìĞıµØ×ª¡­¡­\n");
+  //return notify_fail("ä½ ä¸€é˜µå¤©æ—‹åœ°è½¬â€¦â€¦\n");
   return 1;
 }
 

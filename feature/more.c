@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // more.c
@@ -34,7 +34,7 @@ varargs void more(string cmd, string *text, int line, int force)
             if (line >= sizeof(text) && !force) return;
             break;
     }
-    printf("== δ����� "HIY"%d%%"NOR" == ("HIG"q"NOR" �뿪��"HIG"b"NOR" ǰһҳ��"HIG"f"NOR" ��һҳ��"HIG"[������]"NOR" ����)",
+    printf("== 未完继续 "HIY"%d%%"NOR" == ("HIG"q"NOR" 离开，"HIG"b"NOR" 前一页，"HIG"f"NOR" 后一页，"HIG"[其他键]"NOR" 滚动)",
         (line*100/sizeof(text)));
     input_to("more", text, line);
 }

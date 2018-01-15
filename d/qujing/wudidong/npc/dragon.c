@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
 inherit NPC;
 void create()
 {
-  set_name("¶ñÁú", ({"dragon"}));
-  set("gender", "ÄĞĞÔ");
-  set("long", "Ò»ÌõÕÅÑÀÎè×¦µÄ¶ñÁú£¬Ñù×ÓÊ®·Ö¿ÉÅÂ¡£\n");
+  set_name("æ¶é¾™", ({"dragon"}));
+  set("gender", "ç”·æ€§");
+  set("long", "ä¸€æ¡å¼ ç‰™èˆçˆªçš„æ¶é¾™ï¼Œæ ·å­ååˆ†å¯æ€•ã€‚\n");
   set("attitude", "aggressive");
   set("combat_exp", 50000+random(1000000));
   set("age", 100);
@@ -49,7 +49,7 @@ void die()
     else
    rope = new(rp);
     if( environment() ) {
-   message("vision", "Ò»Õóºì¹âÉÁ¹ı£¬¶ñÁúÂäÔÚµØÉÏ¡£¶¨¾¦Ò»¿´£¬Ô­À´¶ñÁúÒÑ¾­¶İÈ¥£¬µØÉÏÖ»ÁôÏÂÒ»ÌõºìË÷¡£\n", environment());
+   message("vision", "ä¸€é˜µçº¢å…‰é—ªè¿‡ï¼Œæ¶é¾™è½åœ¨åœ°ä¸Šã€‚å®šç›ä¸€çœ‹ï¼ŒåŸæ¥æ¶é¾™å·²ç»éå»ï¼Œåœ°ä¸Šåªç•™ä¸‹ä¸€æ¡çº¢ç´¢ã€‚\n", environment());
     }
     rope->move(environment(this_object()));
     destruct(this_object());

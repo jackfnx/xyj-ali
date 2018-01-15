@@ -1,20 +1,20 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// turou.c ºìÉÕ¹·Èâ
+// turou.c çº¢çƒ§ç‹—è‚‰
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ºìÉÕ¹·Èâ", ({"gou rou", "gou", "gourou"}));
+        set_name("çº¢çƒ§ç‹—è‚‰", ({"gou rou", "gou", "gourou"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÍëÏãÅçÅçµÄºìÉÕ¹·Èâ\n");
-                set("unit", "Íë");
+                set("long", "ä¸€ç¢—é¦™å–·å–·çš„çº¢çƒ§ç‹—è‚‰\n");
+                set("unit", "ç¢—");
                 set("value", 100);
                 set("food_remaining", 2);
                 set("food_supply", 100);

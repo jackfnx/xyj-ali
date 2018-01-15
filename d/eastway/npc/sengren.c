@@ -1,13 +1,13 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-   set_name("É®ÈË", ({"seng ren","seng"}));
+   set_name("åƒ§äºº", ({"seng ren","seng"}));
 
-   set("gender", "ÄĞĞÔ");
+   set("gender", "ç”·æ€§");
    set("attitude", "friendly");
    set("class", "bonze");
 

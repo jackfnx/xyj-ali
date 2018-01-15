@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -22,11 +22,11 @@ int main(object me, string arg)
         {
         if ( (string)SECURITY_D->get_status(this_player(1)) != "(admin)"
          && (string)SECURITY_D->get_status(this_player(1)) !="(arch)" )
-          return notify_fail("Äã²»ÄÜÉ¾³ıÎÄµµ£¡\n");
+          return notify_fail("ä½ ä¸èƒ½åˆ é™¤æ–‡æ¡£ï¼\n");
         else argn=3;
         }
      else 
-        return notify_fail("Ö¸Áî¸ñÊ½£ºstory [<month> [<number>]] [<year>]\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šstory [<month> [<number>]] [<year>]\n");
    
    if (argn==3) { 
      option=3;
@@ -56,48 +56,48 @@ int main(object me, string arg)
    cont_num->set("file_name", dirname+"month.number");
    cont_num->restore();
    if (!objectp(cont_num) )
-     return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡\n"); 
+     return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼\n"); 
 
    if (option==1) {
      file="";
      for (i=1;i<=12;i++) 
      if (cont_num->query(mon[i-1])) {
-        file+=chinese_number(i)+"ÔÂ£º×Ü¹²"
+        file+=chinese_number(i)+"æœˆï¼šæ€»å…±"
 +chinese_number(cont_num->query(mon[i-1]))
-+"ÆªÎÄµµ£º\n--------------------------------------------------------------------------------\n";
++"ç¯‡æ–‡æ¡£ï¼š\n--------------------------------------------------------------------------------\n";
         content=new("/obj/not.c");
         content->set("file_name", dirname+"content."+mon[i-1]);
         content->restore();
         if ( !objectp(content) )
-          return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡\n");
+          return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼\n");
         file+=content->query("msg")+"\n";
         }
      me->start_more(file);
      return 1;
      }
 
-   if (month<=0 || month >=13) return notify_fail("Òª¶ÁµÄÎÄµµ²»´æÔÚ£¡\n"); 
+   if (month<=0 || month >=13) return notify_fail("è¦è¯»çš„æ–‡æ¡£ä¸å­˜åœ¨ï¼\n"); 
    nummonth=cont_num->query(mon[month-1]);
 
    if( option==2 ) {
-     if (!nummonth) return notify_fail("¸ÃÔÂÎŞÎÄµµ¡£\n");
+     if (!nummonth) return notify_fail("è¯¥æœˆæ— æ–‡æ¡£ã€‚\n");
      content=new("/obj/not.c");
      content->set("file_name", dirname+"content."+mon[month-1]);
      content->restore();
      if ( !objectp(content) )
-        return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡\n");
-     write("×Ü¹²"+chinese_number(nummonth)+"ÆªÎÄµµ£º\n--------------------------------------------------------------------------------\n");
+        return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼\n");
+     write("æ€»å…±"+chinese_number(nummonth)+"ç¯‡æ–‡æ¡£ï¼š\n--------------------------------------------------------------------------------\n");
      me->start_more(content->query("msg"));
      return 1;
      }
 
    if (!nummonth || nummonth < number)
-     return notify_fail("Òª¶ÁµÄÎÄµµ²»´æÔÚ£¡\n"); 
+     return notify_fail("è¦è¯»çš„æ–‡æ¡£ä¸å­˜åœ¨ï¼\n"); 
    document=new("/obj/not.c");
    document->set("file_name", dirname+ sprintf("%s/doc%d.%d",mon[month-1],month,number) );
    document->restore();
    if ( !objectp(document) )
-     return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡");
+     return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼");
 
    if (deloption=="-delete") {
      cont_num->set(mon[month-1], nummonth-1);
@@ -106,7 +106,7 @@ int main(object me, string arg)
      content->set("file_name", dirname+"content."+mon[month-1]);
      content->restore();
      if ( !objectp(content) )
-        return notify_fail("ÎÄµµ¶ÁÈ¡Ê§°Ü£¡\n");
+        return notify_fail("æ–‡æ¡£è¯»å–å¤±è´¥ï¼\n");
      dststr=""; srcstr=content->query("msg");
      for (i=1;i<=nummonth;i++) {
         sscanf(srcstr, "[%d]%s\n%s", j, file, srcstr);
@@ -130,7 +130,7 @@ int main(object me, string arg)
         document->set("msg", dststr);
         document->save();
         }
-     write("ÎÄµµÉ¾³ı³É¹¦£¡\n");
+     write("æ–‡æ¡£åˆ é™¤æˆåŠŸï¼\n");
      return 1;
      }
    me->start_more(document->query("msg"));
@@ -140,20 +140,20 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºstory <month> [<number> [<year>]]
+æŒ‡ä»¤æ ¼å¼ï¼šstory <month> [<number> [<year>]]
 
-Õâ¸öÖ¸ÁîÈÃÄãÔÚÏßÔÄ¶Á±£´æµÄÎÄµµ£¬»òÕßÁĞ³öËùÄÜ¶ÁÈ¡µÄÎÄµµÄ¿Â¼¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ åœ¨çº¿é˜…è¯»ä¿å­˜çš„æ–‡æ¡£ï¼Œæˆ–è€…åˆ—å‡ºæ‰€èƒ½è¯»å–çš„æ–‡æ¡£ç›®å½•ã€‚
 
 
-Example: ÔÄ¶ÁÄ³ÄêµÄÄ¿Â¼£º
+Example: é˜…è¯»æŸå¹´çš„ç›®å½•ï¼š
 story
 story 1997
 
-Example: ÔÄ¶ÁÄ³ÔÂµÄÄ¿Â¼£º
+Example: é˜…è¯»æŸæœˆçš„ç›®å½•ï¼š
 story 5
 story 5 1997
 
-Example: ÔÄ¶ÁÄ³ÆªÎÄµµ£º
+Example: é˜…è¯»æŸç¯‡æ–‡æ¡£ï¼š
 story 5 1
 story 5 1 1997
  

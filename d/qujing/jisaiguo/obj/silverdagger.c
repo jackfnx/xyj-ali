@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <weapon.h>
@@ -7,19 +7,19 @@ inherit DAGGER;
 
 void create()
 {
-        set_name("ÀÃÒøØ°Ê×", ({"silver dagger", "dagger" }) );
+        set_name("çƒ‚é“¶åŒ•é¦–", ({"silver dagger", "dagger" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÒø¹âÉÁÉÁµÄØ°Ê×£¬¿´ÆğÀ´Ïàµ±»ª¹ó¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠé“¶å…‰é—ªé—ªçš„åŒ•é¦–ï¼Œçœ‹èµ·æ¥ç›¸å½“åè´µã€‚\n");
                 set("value", 5000);
                 set("material", "steel");
         }
         init_dagger(10, SECONDARY);
-        set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");
+        set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nè—å…¥æ€€ä¸­ã€‚\n");
         setup();
 }
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /d/changan/duchang1
@@ -14,41 +14,41 @@ int random2 (int i)
 }
 
 mapping qians = ([ 
-  "dqq" : "´óÇ¬Ç©",
-  "dkq" : "´óÀ¤Ç©",
-  "xqq" : "Ğ¡Ç¬Ç©",
-  "xkq" : "Ğ¡À¤Ç©",
-  "qq"  : "Ç¬Ç©",
-  "kq"  : "À¤Ç©",
+  "dqq" : "å¤§ä¹¾ç­¾",
+  "dkq" : "å¤§å¤ç­¾",
+  "xqq" : "å°ä¹¾ç­¾",
+  "xkq" : "å°å¤ç­¾",
+  "qq"  : "ä¹¾ç­¾",
+  "kq"  : "å¤ç­¾",
  ]); 
 
 void create()
 {
-  set ("short", "ÑºÇ©·¿");
+  set ("short", "æŠ¼ç­¾æˆ¿");
   set ("long", @LONG
 
-Ò»ÈºÈËÎ§×Å×ÏÌ´Ä¾´ó×À¶ø×ø£¬Ê×Ï¯×ù×ÅÒ»Î»¾«ÊİµÄÇ©¿Í£¬ÕıÔÚÒ»±¾
-Õı¾­µØ´ÓÏâ½ğºÚºĞÀïÂıÓÆÓÆÒ»¸ùÒ»¸ùÍùÍâ³é³öÇ¬À¤Ç©£¬ÂëÔÚ×ÀÃæÉÏ¡£
+ä¸€ç¾¤äººå›´ç€ç´«æª€æœ¨å¤§æ¡Œè€Œåï¼Œé¦–å¸­åº§ç€ä¸€ä½ç²¾ç˜¦çš„ç­¾å®¢ï¼Œæ­£åœ¨ä¸€æœ¬
+æ­£ç»åœ°ä»é•¶é‡‘é»‘ç›’é‡Œæ…¢æ‚ æ‚ ä¸€æ ¹ä¸€æ ¹å¾€å¤–æŠ½å‡ºä¹¾å¤ç­¾ï¼Œç åœ¨æ¡Œé¢ä¸Šã€‚
 
-Ç½ÉÏÓĞÒ»ØÒĞ´×Å£º
-    ´óÇ¬Ç©£¨È«²¿Îå¸ù½ÔÎªÇ¬Ç©£©£ºÒ»Ó®ÈıÊ®¶ş
-    ´óÀ¤Ç©£¨È«²¿Îå¸ù½ÔÎªÀ¤Ç©£©£ºÒ»Ó®ÈıÊ®¶ş
-    Ğ¡Ç¬Ç©£¨Á¬ĞøËÄ¸ù½ÔÎªÇ¬Ç©£©£ºÒ»Ó®Ê®Áù
-    Ğ¡À¤Ç©£¨Á¬ĞøËÄ¸ù½ÔÎªÀ¤Ç©£©£ºÒ»Ó®Ê®Áù
-      Ç¬Ç©£¨ÈÎÒâÈı¸ù½ÔÎªÇ¬Ç©£©£ºÒ»Ó®¶ş
-      À¤Ç©£¨ÈÎÒâÈı¸ù½ÔÎªÀ¤Ç©£©£ºÒ»Ó®¶ş
+å¢™ä¸Šæœ‰ä¸€åŒ¾å†™ç€ï¼š
+    å¤§ä¹¾ç­¾ï¼ˆå…¨éƒ¨äº”æ ¹çš†ä¸ºä¹¾ç­¾ï¼‰ï¼šä¸€èµ¢ä¸‰åäºŒ
+    å¤§å¤ç­¾ï¼ˆå…¨éƒ¨äº”æ ¹çš†ä¸ºå¤ç­¾ï¼‰ï¼šä¸€èµ¢ä¸‰åäºŒ
+    å°ä¹¾ç­¾ï¼ˆè¿ç»­å››æ ¹çš†ä¸ºä¹¾ç­¾ï¼‰ï¼šä¸€èµ¢åå…­
+    å°å¤ç­¾ï¼ˆè¿ç»­å››æ ¹çš†ä¸ºå¤ç­¾ï¼‰ï¼šä¸€èµ¢åå…­
+      ä¹¾ç­¾ï¼ˆä»»æ„ä¸‰æ ¹çš†ä¸ºä¹¾ç­¾ï¼‰ï¼šä¸€èµ¢äºŒ
+      å¤ç­¾ï¼ˆä»»æ„ä¸‰æ ¹çš†ä¸ºå¤ç­¾ï¼‰ï¼šä¸€èµ¢äºŒ
 
-ØÒ½ÇÓĞÒ»¸öÅÆ×Ó(paizi)¡£
+åŒ¾è§’æœ‰ä¸€ä¸ªç‰Œå­(paizi)ã€‚
 
 LONG);
 
   set("item_desc",([
-    "paizi" : "Ñº´óÇ¬Ç©£º qian dqq <amount> <money>\n"+ 
-              "Ñº´óÀ¤Ç©£º qian dkq <amount> <money>\n"+ 
-              "ÑºĞ¡Ç¬Ç©£º qian xqq <amount> <money>\n"+ 
-              "ÑºĞ¡À¤Ç©£º qian xkq <amount> <money>\n"+ 
-              "ÑºÇ¬Ç©£º   qian qq <amount> <money>\n"+ 
-              "ÑºÀ¤Ç©£º   qian kq <amount> <money>\n",
+    "paizi" : "æŠ¼å¤§ä¹¾ç­¾ï¼š qian dqq <amount> <money>\n"+ 
+              "æŠ¼å¤§å¤ç­¾ï¼š qian dkq <amount> <money>\n"+ 
+              "æŠ¼å°ä¹¾ç­¾ï¼š qian xqq <amount> <money>\n"+ 
+              "æŠ¼å°å¤ç­¾ï¼š qian xkq <amount> <money>\n"+ 
+              "æŠ¼ä¹¾ç­¾ï¼š   qian qq <amount> <money>\n"+ 
+              "æŠ¼å¤ç­¾ï¼š   qian kq <amount> <money>\n",
   ])); 
   set("exits", ([ /* sizeof() == 1 */
     "east" : __DIR__"clubup",
@@ -87,7 +87,7 @@ int do_qian (string arg)
 
   if (! arg ||
       sscanf (arg,"%s %d %s",what,amount,money) != 3)
-    return notify_fail("ÇëÊ¹ÓÃ£º qian <ÑºÇ©ÖÖÀà> <ÊıÄ¿> <»õ±Ò>\n");
+    return notify_fail("è¯·ä½¿ç”¨ï¼š qian <æŠ¼ç­¾ç§ç±»> <æ•°ç›®> <è´§å¸>\n");
 
   if (what != "dqq" &&
       what != "dkq" &&
@@ -95,26 +95,26 @@ int do_qian (string arg)
       what != "xkq" &&
       what != "qq" &&
       what != "kq")
-    return notify_fail("ÄãÒªÑºÊ²Ã´Ç©£¿\n");
+    return notify_fail("ä½ è¦æŠ¼ä»€ä¹ˆç­¾ï¼Ÿ\n");
 
   ob = present (money+"_money", me);
   if (! ob)
-    return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
+    return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
   if (amount < 1)
-    return notify_fail("Çë¶àÑºÒ»Ğ©Ç®¡£\n");
+    return notify_fail("è¯·å¤šæŠ¼ä¸€äº›é’±ã€‚\n");
   if (amount > ob->query_amount())
-    return notify_fail("ÄãÉíÉÏµÄÇ®²»¹»Ñº¡£\n");
+    return notify_fail("ä½ èº«ä¸Šçš„é’±ä¸å¤ŸæŠ¼ã€‚\n");
 
   if (me->query_temp ("gamble_qian/amount") > 0)
-    return notify_fail("ÄãÒÑ¾­Ñº¹ıÁË¡£\n");
+    return notify_fail("ä½ å·²ç»æŠ¼è¿‡äº†ã€‚\n");
 
   if (room_status > 1)
-    return notify_fail("ÏÖÔÚÕıÔÚ¶ÄÄØ£¬ÉÔµÈÆ¬¿Ì¡£\n");
+    return notify_fail("ç°åœ¨æ­£åœ¨èµŒå‘¢ï¼Œç¨ç­‰ç‰‡åˆ»ã€‚\n");
 
   me->set_temp("gamble_qian/kind",what);
   me->set_temp("gamble_qian/amount",amount);
   me->set_temp("gamble_qian/money",money);
-  message_vision (sprintf("$NÄÃ³ö%s%s%s£¬ÑºÔÚ%sÉÏ¡£\n",
+  message_vision (sprintf("$Næ‹¿å‡º%s%s%sï¼ŒæŠ¼åœ¨%sä¸Šã€‚\n",
                           chinese_number(amount),
                           ob->query("base_unit"),
                           ob->query("name"),
@@ -133,7 +133,7 @@ int valid_leave(object me, string dir)
   if (dir == "east")
   {
     if (me->query_temp ("gamble_qian/amount") > 0) 
-      message_vision ("$NÈÓÏÂÑºÇ©µÄÇ®¡£\n",me);
+      message_vision ("$Næ‰”ä¸‹æŠ¼ç­¾çš„é’±ã€‚\n",me);
     me->delete_temp("gamble_qian");
   }
   return ::valid_leave(me,dir);
@@ -145,8 +145,8 @@ void gamble_prepare ()
   object *inv;
   int i;
 
-  tell_room (room,"Ç©¿Í½«Ò»´óÊøÇ©ÔÚ×ÀÉÏ»©À²À²µØÑ¸ËÙÏ´ÁËÒ»±é¡£\n");
-  tell_room (room,"Ï´Ç©Ö®ºó£¬Ç©¿ÍÅ¾µØÒ»Éù½«Ç©×°ÈëÏâ½ğºÚºĞ£¬½ĞµÀ£º¿ªÑº£¡\n");
+  tell_room (room,"ç­¾å®¢å°†ä¸€å¤§æŸç­¾åœ¨æ¡Œä¸Šå“—å•¦å•¦åœ°è¿…é€Ÿæ´—äº†ä¸€éã€‚\n");
+  tell_room (room,"æ´—ç­¾ä¹‹åï¼Œç­¾å®¢å•ªåœ°ä¸€å£°å°†ç­¾è£…å…¥é•¶é‡‘é»‘ç›’ï¼Œå«é“ï¼šå¼€æŠ¼ï¼\n");
   
   inv=all_inventory();
   i=sizeof(inv);
@@ -164,8 +164,8 @@ void gamble_prepare ()
 void gamble_start ()
 {
   object room = this_object();
-  tell_room (room,"Ç©¿Íº°Éù£ºÍ£Ñº£¡\n");
-  tell_room (room,"È»ºó±ÕÉÏÑÛ¾¦£¬½«Ïâ½ğºÚºĞ´ò¿ª´ÓÀï¿ªÊ¼ÍùÍâ³éÇ©¡£\n");
+  tell_room (room,"ç­¾å®¢å–Šå£°ï¼šåœæŠ¼ï¼\n");
+  tell_room (room,"ç„¶åé—­ä¸Šçœ¼ç›ï¼Œå°†é•¶é‡‘é»‘ç›’æ‰“å¼€ä»é‡Œå¼€å§‹å¾€å¤–æŠ½ç­¾ã€‚\n");
   room_status = 2;
   call_out ("gamble_perform",3,0);
   call_out ("gamble_perform",6,1);
@@ -183,13 +183,13 @@ void gamble_perform (int i)
   {
     case 0:
     {
-      tell_room (room,"\n¡õ¡õ  À¤  Ç©  ¡õ¡õ\n");
+      tell_room (room,"\nâ–¡â–¡  å¤  ç­¾  â–¡â–¡\n");
       res[i] = 0;
       break;
     }
     case 1:
     {
-      tell_room (room,"\n¡õ¡õ  Ç¬  Ç©  ¡õ¡õ\n");
+      tell_room (room,"\nâ–¡â–¡  ä¹¾  ç­¾  â–¡â–¡\n");
       res[i] = 1;
       break;
     }
@@ -202,7 +202,7 @@ void player_wins (object who, int total)
   int amount = who->query_temp("gamble_qian/amount");
   total = total * amount;
   money->set_amount(total);
-  message_vision (sprintf("$NÓ®ÁË%s%s%s£¡\n",
+  message_vision (sprintf("$Nèµ¢äº†%s%s%sï¼\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -214,7 +214,7 @@ void player_loses (object who, int total)
 {
   object money = new ("/obj/money/"+who->query_temp("gamble_qian/money"));
   total = who->query_temp("gamble_qian/amount");
-  message_vision (sprintf("Ç©¿Í½«$NÑºÔÚÅÌÖĞµÄ%s%s%sÊÕ×ß¡£\n",
+  message_vision (sprintf("ç­¾å®¢å°†$NæŠ¼åœ¨ç›˜ä¸­çš„%s%s%sæ”¶èµ°ã€‚\n",
                           chinese_number(total),
                           money->query("base_unit"),
                           money->query("name")),
@@ -261,7 +261,7 @@ void gamble_finish ()
     else
       win = "kq";
   }
-  tell_room (room,"\nÇ©¿ÍÕö¿ªÑÛ¾¦£¬Ñ¸ËÙ¿´Ò»ÑÛ×ÀÃæ£¬½ĞµÀ£º"+qians[win]+"£¡\n");
+  tell_room (room,"\nç­¾å®¢çå¼€çœ¼ç›ï¼Œè¿…é€Ÿçœ‹ä¸€çœ¼æ¡Œé¢ï¼Œå«é“ï¼š"+qians[win]+"ï¼\n");
   i = sizeof(list);
   while (i--)
   {

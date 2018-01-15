@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <armor.h>
@@ -6,13 +6,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name("ÈµÎ²¹Ú", ({ "quewei guan", "guan" }) );
+        set_name("é¹Šå°¾å† ", ({ "quewei guan", "guan" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-     set("long","Ò»¶¥Ä¾¹Ú£¬ÈçÈµÎ²ĞÎ¡£\n");
+                set("unit", "é¡¶");
+     set("long","ä¸€é¡¶æœ¨å† ï¼Œå¦‚é¹Šå°¾å½¢ã€‚\n");
                 set("value", 300);
                 set("material", "cloth");
                 set("armor_prop/armor", 1);

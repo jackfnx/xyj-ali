@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // finger.c
@@ -14,14 +14,14 @@ int main(object me, string arg)
 {
    if( !arg ) {
      if( (int)me->query("sen") < 50 )
-        return notify_fail("��ľ����޷����С�\n");
+        return notify_fail("你的精神无法集中。\n");
      if( !wizardp(me) )
         me->receive_damage("sen", 50);
      me->start_more( FINGER_D->finger_all() );
 //     write( FINGER_D->finger_all() );
    } else {
      if( (int)me->query("sen") < 15 )
-        return notify_fail("��ľ����޷����С�\n");
+        return notify_fail("你的精神无法集中。\n");
      if( !wizardp(me) )
         me->receive_damage("sen", 15);
      write( FINGER_D->finger_user(arg) );
@@ -32,12 +32,12 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-ָ���ʽ�� finger
-           finger [ʹ����Ӣ�Ĵ���]
-           finger [ʹ����Ӣ�Ĵ���]@Mudname
+指令格式： finger
+           finger [使用者英文代号]
+           finger [使用者英文代号]@Mudname
  
-���ָ����û��ָ��ʹ��������������ʾ�����������������
-���������ϡ���֮�������ʾ�й�ĳ����ҵ����ߣ�Ȩ�޵����ϡ�
+这个指令，如果没有指定使用者姓名，会显示出所有正在线上玩家
+的连线资料。反之，则可显示有关某个玩家的连线，权限等资料。
  
 see also : who, mudlist
 HELP

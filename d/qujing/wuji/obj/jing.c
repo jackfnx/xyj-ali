@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -7,16 +7,16 @@ inherit ITEM;
 
 void create()
 {
-  set_name("�ڼ���", ({"wuji jing", "jing"}));
+  set_name("乌鸡精", ({"wuji jing", "jing"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
     set("no_sell", 1);
     set("no_drop", 1);
-    set("unit", "Сƿ");
-    set("long", "һСƿ�ڼ�������˵����(drink)��������"+
-                "ʩ������(apply)���Ի��ꡣ\n");
+    set("unit", "小瓶");
+    set("long", "一小瓶乌鸡精，据说服用(drink)可以提神，"+
+                "施用他人(apply)可以还魂。\n");
   }
   set("is_monitored",1);
   setup();
@@ -24,7 +24,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("$n���ڵ��ϣ����ˡ�\n",where,me);
+  message_vision("$n掉在地上，碎了。\n",where,me);
   destruct (me);
 }
 
@@ -63,8 +63,8 @@ int do_drink (string arg)
   if (ob != me)
     return 0;
 
-  message_vision ("$N�����ڼ����������£�˳�ֽ���ƿһ�ӡ�\n",who);
-  message_vision ("��ʱ$Nֻ����һ�ɾ��������������̣�Ǭ�����ã�\n",who);
+  message_vision ("$N拿起乌鸡精豪饮而下，顺手将空瓶一扔。\n",who);
+  message_vision ("顿时$N只觉得一股精气入髓七窍生烟，乾坤倒置！\n",who);
 
   who->unconcious();
   destruct (me);
@@ -81,29 +81,29 @@ int do_apply (string arg)
   if (! arg ||
      ! (ob = present(arg, where)))
   {
-    return notify_fail("��Ҫ���ڼ�������ʲô���棿\n");
+    return notify_fail("你要将乌鸡精洒在什么上面？\n");
   }
   if (ob == who)
   {
-    message_vision ("$N�����ڼ������Լ�����һ����˳�ֽ���ƿһ�ӡ�\n",who);
-    message_vision ("��ʱ$Nֻ����һ�ɾ��������������̣�Ǭ�����ã�\n",who);
+    message_vision ("$N拿起乌鸡精往自己身上一洒，顺手将空瓶一扔。\n",who);
+    message_vision ("顿时$N只觉得一股精气入髓七窍生烟，乾坤倒置！\n",who);
 
     destruct (me);
     who->unconcious();
   }
-  else if (ob->query("name") != "��������" ||
+  else if (ob->query("name") != "国王遗体" ||
            who->query("obstacle/wuji") == "done")
   {
-    message_vision ("$N�����ڼ�����$n��һ����˳�ֽ���ƿһ�ӡ�\n",who,ob);
-    message_vision ("��ʱ"+ob->name()+"�ζ���һ�¡�\n",who);
+    message_vision ("$N拿起乌鸡精往$n上一洒，顺手将空瓶一扔。\n",who,ob);
+    message_vision ("顿时"+ob->name()+"晃动了一下。\n",who);
     destruct (me);
   }
   else
   {
     object king = new ("/d/qujing/wuji/npc/kingreal");
-    message_vision ("$N����$n�Ŀڴ��������ڼ���ֻ�ǹ��£�"+
-                    "һ���������ʺ���\n",who,ob);
-    message_vision ("�ڼ���������¥��ת���ã����������ʱ��������һ�¡�\n",
+    message_vision ("$N掰开$n的口唇，拿起乌鸡精只是灌下，"+
+                    "一口气吹入咽喉。\n",who,ob);
+    message_vision ("乌鸡精度下重楼，转明堂，径至丹田，顿时国王动了一下。\n",
                     who);
 
     king->move(where);
@@ -117,7 +117,7 @@ int do_apply (string arg)
 
 void king_wake (object king, object who)
 {
-  message_vision ("\n����һ������������������飬��������\n",who);  
+  message_vision ("\n呼的一声响亮，国王气聚神归，翻身坐起。\n",who);  
 }
 
 void follow_player (object king, object who, object me)
@@ -126,8 +126,8 @@ void follow_player (object king, object who, object me)
     return;
   if (environment(who) != environment(king))
     return;
-  message_vision ("\n������$N�ݵ�������ҹ������ˣ����������񣡡�\n",who);  
-  message_vision ("˵�չ�������һ�ݡ�\n",who);  
+  message_vision ("\n国王对$N拜道：“昨夜鬼魂拜谒，今朝晓返阳神！”\n",who);  
+  message_vision ("说罢国王又是一拜。\n",who);  
 
   if (who->query("obstacle/wuji") == "done")
     return;

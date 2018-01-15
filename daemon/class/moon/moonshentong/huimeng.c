@@ -1,4 +1,4 @@
-// »ØÃÎ
+// å›žæ¢¦
 // requirement: spells 180,moonshentong 120, mana 400, sen 20
 
 inherit F_SSERVER;
@@ -13,26 +13,26 @@ int cast(object me, object target)
 
     if ((int)me->query_skill("spells") < 180
      || (int)me->query_skill("moonshentong",1) < 120)
-        return notify_fail("Äã»¹Ã»Ñ§»á»ØÃÎÖä¡£¡£¡£\n");
+        return notify_fail("ä½ è¿˜æ²¡å­¦ä¼šå›žæ¢¦å’’ã€‚ã€‚ã€‚\n");
 
     if (!target
      || !target->is_character()
      || target->is_corpse()
      || target==me)
-        return notify_fail("ÄãÏëÖäË­ÈëÃÎ£¿\n");  
+        return notify_fail("ä½ æƒ³å’’è°å…¥æ¢¦ï¼Ÿ\n");  
 
     if ((int)me->query("mana") < 400)
-        return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
     if ((int)me->query("sen") < 20)
-        return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+        return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
     if (!living(target))
-        return notify_fail("ÓÐÕâ¸ö±ØÒªÂð£¿\n");
+        return notify_fail("æœ‰è¿™ä¸ªå¿…è¦å—ï¼Ÿ\n");
 
     me->add("mana", -400);
     me->receive_damage("sen", 20);
 
-    msg = HIM "$NÄýÊÓ×Å$nµÄË«ÑÛ£¬ÎÂÈáµØÇá¸§×Å$nµÄÃæÅÓ£¬ÔÚ$n¶ú±ßÇáÉùÄØà«£º¡ºË¯°É£¬Ë¯°É¡£¡£¡£¡»\n"
-            + "$n¶ÙÊ±¾õµÃÉñ¾ëÑÛÀ§£¬È«ÉíÎÞÁ¦¡£\n" NOR;
+    msg = HIM "$Nå‡è§†ç€$nçš„åŒçœ¼ï¼Œæ¸©æŸ”åœ°è½»æŠšç€$nçš„é¢åºžï¼Œåœ¨$nè€³è¾¹è½»å£°å‘¢å–ƒï¼šã€Žç¡å§ï¼Œç¡å§ã€‚ã€‚ã€‚ã€\n"
+            + "$né¡¿æ—¶è§‰å¾—ç¥žå€¦çœ¼å›°ï¼Œå…¨èº«æ— åŠ›ã€‚\n" NOR;
 
     success=1;
     ap = me->query_skill("spells");
@@ -48,19 +48,19 @@ int cast(object me, object target)
     if (random(ap + dp)<dp) success = 0;
 
     if (success == 1){
-        msg +=  HIM "$n²»Öª²»¾õµÄ¹þÇ·Á¬Á¬£¬ÑÛÆ¤³ÁÖØ£¬ÖÕÓÚÖ§³Ö²»×¡£¬ºÏÉÏÁËË«ÑÛ¡£\n" NOR;
+        msg +=  HIM "$nä¸çŸ¥ä¸è§‰çš„å“ˆæ¬ è¿žè¿žï¼Œçœ¼çš®æ²‰é‡ï¼Œç»ˆäºŽæ”¯æŒä¸ä½ï¼Œåˆä¸Šäº†åŒçœ¼ã€‚\n" NOR;
         message_vision(msg, me, target);
 
         target->set_temp("force_sleep",1);
         if (target->is_fighting())
             target->command_function("surrender");
         if (!target->command_function("sleep"))
-            message_vision(HIM"\n$N»ÎÁË»ÎÄÔ´ü£¬ËÆºõÇåÐÑÁË²»ÉÙ£¬ÓÖ°ÑÑÛ¾¦Õö¿ªÁË¡£\n"NOR, target);
+            message_vision(HIM"\n$Næ™ƒäº†æ™ƒè„‘è¢‹ï¼Œä¼¼ä¹Žæ¸…é†’äº†ä¸å°‘ï¼ŒåˆæŠŠçœ¼ç›çå¼€äº†ã€‚\n"NOR, target);
         target->delete_temp("force_sleep");
         me->start_busy(1+random(2)); 
     }
     else {
-        msg += HIM"$nºö¾õ²»Í×£¬´óºÈÒ»Éù£¬Ë«Ä¿Ò»ÕÅ£¬¾«¹âËÄÉä£¡$Nâ§²»¼°·À£¬ÏÅÁËÒ»Ìø£¡\n" NOR;	
+        msg += HIM"$nå¿½è§‰ä¸å¦¥ï¼Œå¤§å–ä¸€å£°ï¼ŒåŒç›®ä¸€å¼ ï¼Œç²¾å…‰å››å°„ï¼$NçŒä¸åŠé˜²ï¼Œå“äº†ä¸€è·³ï¼\n" NOR;	
         message_vision(msg, me, target);
         if (living(target)) target->kill_ob(me);
         me->start_busy(5+random(5));

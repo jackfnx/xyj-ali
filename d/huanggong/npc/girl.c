@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat
@@ -7,8 +7,8 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹¬åú", ({"gong fei","girl"}));
-  set("gender", "Å®ĞÔ");
+  set_name("å®«å¦ƒ", ({"gong fei","girl"}));
+  set("gender", "å¥³æ€§");
   set("combat_exp", 10000);
   set("age", 15);
   set("per", 30);

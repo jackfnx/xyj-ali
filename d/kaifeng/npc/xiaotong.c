@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-  set_name("Ğ¡Í¯", ({"xiao tong", "tong"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å°ç«¥", ({"xiao tong", "tong"}));
+  set("gender", "ç”·æ€§");
   set("age", 10);
   set("per", 25);
-  set("long", "Ò»Î»Í·ÉÏÔú÷İµÄĞ¡Í¯¡£\n");
+  set("long", "ä¸€ä½å¤´ä¸Šæ‰é¬çš„å°ç«¥ã€‚\n");
   set("attitude", "friendly");
   set("max_kee", 200);
   set("max_gin", 200);

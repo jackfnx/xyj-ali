@@ -1,15 +1,15 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("´ó¶ÇÏºÆÅ", ({"xia po", "po"}));
-        set("long", "Ò»¸öÍ¦×Å¶Ç×Ó×ßÀ´×ßÈ¥µÄÀÏÏºÆÅ¡£\n");
+        set_name("å¤§è‚šè™¾å©†", ({"xia po", "po"}));
+        set("long", "ä¸€ä¸ªæŒºç€è‚šå­èµ°æ¥èµ°å»çš„è€è™¾å©†ã€‚\n");
         set("age", 50);
         set("attitude", "peaceful");
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("str", 20);
         set("int", 20);
         set("per", 10);
@@ -32,7 +32,7 @@ void create()
    set_skill("hammer", 20);
    set("chat_chance", 10);
    set("chat_msg", ({   
-   "´ó¶ÇÏºÆÅÍ¦ÁËÍ¦¶Ç×Ó¡£\n",
+   "å¤§è‚šè™¾å©†æŒºäº†æŒºè‚šå­ã€‚\n",
    (: random_move :)
 }));
         setup();

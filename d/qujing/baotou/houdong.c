@@ -1,4 +1,4 @@
-// иЯ╩╟йю╫Г║╓нВсн╪г║╓╟Ф╠╬ё╢ё╝ё╣ё╟
+// Г╔·Х╞²Д╦√Г∙▄б╥Х╔©Ф╦╦Х╝╟б╥Г┴┬Ф°╛О╪■О╪▌О╪∙О╪░
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "╨С╤╢");
+  set ("short", "Е░▌Ф╢·");
   set ("long", @LONG
 
-╨С╤╢юОВввер╩╤яр╩╤я╣дСТ╩Пё╛╤╢╣д╤╚╠ъфЖакр╩╦Жй╞тНё╛иоспр╩
-©з╢См╜╧Ь║ёнВ╠ъспр╩дзлЭё╛лЭюОфлсп╦Вй╫йчф╓ё╛уЩжпспр╩╢С╢╡
-флвехчц╚╣Ф║ё╤╢╠зиоспр╩╣юая╨шё╛ясиЛ╣╫╤╢╤╔║ё
+Е░▌Ф╢·И┤▄И╚╞Г²─Д╦─Е═├Д╦─Е═├Г └Г╞²Г│╚О╪▄Ф╢·Г └Д╦°Х╬╧Г═▄Д╨├Д╦─Д╦╙Г÷ЁГ│╤О╪▄Д╦┼Ф°┴Д╦─
+Е▐ёЕ╓╖И⌠°И■┘Ц─┌Х╔©Х╬╧Ф°┴Д╦─Е├┘Е▌┘О╪▄Е▌┘И┤▄И⌠╨Ф°┴Е░└Е╪▐Е┘╫Г ╝О╪▄Ф╜ёД╦╜Ф°┴Д╦─Е╓╖Е╨┼
+И⌠╨Г²─Г╩▓Ф╞⌡Е·╚Ц─┌Ф╢·Её│Д╦┼Ф°┴Д╦─И│⌠Хё┌Г≈∙О╪▄Е╩╤Д╪╦Е┬╟Ф╢·И║╤Ц─┌
 
 LONG);
 
@@ -36,10 +36,10 @@ int do_climb ()
   object who = this_player ();
   string midong = __DIR__"midong1";
 
-  message_vision ("$Nейв║яр╠зё╛оРиоеюх╔║ё\n",who);  
+  message_vision ("$NФ■─Д╫▐Е╡╘Её│О╪▄Е░▒Д╦┼Г┬╛Е▌╩Ц─┌\n",who);  
   if (who->is_fighting() || present ("yao guai",this_object()))
   {
-    message_vision ("$N╢сяр╠зио╩╛акобю╢ё║\n",who);  
+    message_vision ("$NД╩▌Е╡╘Её│Д╦┼Ф╩▒Д╨├Д╦▀Ф²╔О╪│\n",who);  
     return 1;
   }
   midong[strlen(midong)-1] = '1'+random(5);
@@ -56,14 +56,14 @@ int do_climb ()
 
 void sleeping (object who)
 {
-  message_vision ("ць╤╢юОи╒╥╒вер╩╧и╢л╠г╣дпхфЬё╛$N╤ый╠╩Х╩Хх╩║ё\n\n",who);  
-  message_vision ("$NцЦг©уёакуёпйБЛ╣дяш╬╕ё╛╢Рак╦Ж╧Чг╥║ё\n",who);  
+  message_vision ("Г╖≤Ф╢·И┤▄Ф∙ёЕ▐▒Г²─Д╦─Х┌║Е┬╨И╪╩Г └Х┘╔Ф╟■О╪▄$NИ║©Ф≈╤Ф≤▐Ф≤▐Г└╤Ц─┌\n\n",who);  
+  message_vision ("$NЕ▀┴Е╪╨Г°╗Д╨├Г°╗Ф┐╨Е©╙Г └Г°╪Г²⌡О╪▄Ф┴⌠Д╨├Д╦╙Е⌠┬Ф╛═Ц─┌\n",who);  
   who->set("last_sleep",time()-270);
   who->interrupt_me();
   who->command_function("sleep"); 
 }
 void fainting (object who)
 {
-   message_vision("м╩х╩╢с╟╣©зжпеГЁЖр╩╧ивоялё╛$N╤ый╠м╥жь╫егА║ё║ё║ё\n", who);
+   message_vision("Г╙│Г└╤Д╩▌Ф ≈Е▐ёД╦╜Е√╥Е┤╨Д╦─Х┌║Г╢╚Г┐÷О╪▄$NИ║©Ф≈╤Е╓╢И┤█Х└ Х╫╩Ц─┌Ц─┌Ц─┌\n", who);
    who->unconcious();
 }

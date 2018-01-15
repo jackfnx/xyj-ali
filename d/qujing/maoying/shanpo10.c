@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // create by snowcat.c 12/8/1997
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ɽ��");
+  set ("short", "山坡");
   set ("long", @LONG
 
-ɽ���ϳ��Ź������٣�·�Ͽ�֦��Ҷ��أ��±߸߸ߵ͵ͳ���
-��ľ��ݣ�������һЩ���СС����ʯ���������������ʱ
-�ɼ�������Ѩ��
+山坡上长着古树青藤，路上枯枝落叶遍地，坡边高高低低长着
+灌木蒿草，夹杂着一些大大小小的岩石。坡下幽幽深深，不时
+可见沟渠洞穴。
 
 LONG);
 
@@ -37,7 +37,7 @@ int do_enter ()
 
   location[strlen(location)-1] = '1'+random(3);
 
-  message_vision ("$N�����ʯ���аǿ�һ���������˽�ȥ��\n",who);
+  message_vision ("$N在蒿草石缝中扒开一个洞，钻了进去。\n",who);
   who->move(location);
   return 1;
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat 11/22/1997
@@ -6,23 +6,23 @@
 inherit ITEM;
 
 string *names = ({
-  "ºùÂ«Éß",
-  "´ó·Êµñ",
-  "Ë®ÀÏÊó",
-  "¶ÌÍÈ¹·",
-  "·ÉÂìÒÏ",
-  "¶Ï±Ûºï",
+  "è‘«èŠ¦è›‡",
+  "å¤§è‚¥é›•",
+  "æ°´è€é¼ ",
+  "çŸ­è…¿ç‹—",
+  "é£èš‚èš",
+  "æ–­è‡‚çŒ´",
 });
 
 void create()
 {
-  set_name("·¨¼ò", ({"fa jian", "jian"}));
+  set_name("æ³•ç®€", ({"fa jian", "jian"}));
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
-    set("long", "Ò»Ï¸³¤µÄ·¨¼ò£¬ÉÏ¿ÌÓĞÒ»Ğ©Ó¬Í··ğÎÄ¡£\n");
+    set("unit", "æ ¹");
+    set("long", "ä¸€ç»†é•¿çš„æ³•ç®€ï¼Œä¸Šåˆ»æœ‰ä¸€äº›è‡å¤´ä½›æ–‡ã€‚\n");
   }
   set("is_monitored",1);
   setup();
@@ -30,7 +30,7 @@ void create()
 
 void destruct_me(object where, object me)
 {
-  message_vision("Ğ±·çÍ»Æğ£¬$nËæ·ç¶øÈ¥¡­¡­\n",where,me);
+  message_vision("æ–œé£çªèµ·ï¼Œ$néšé£è€Œå»â€¦â€¦\n",where,me);
   destruct (me);
 }
 
@@ -67,9 +67,9 @@ int do_apply (string arg)
 
   if (! arg ||
       ! (xiaoyao = present(arg,where)))
-    return notify_fail ("ÄãÒªÄÃ·¨¼ò¸ÉÊ²Ã´£¿\n");
+    return notify_fail ("ä½ è¦æ‹¿æ³•ç®€å¹²ä»€ä¹ˆï¼Ÿ\n");
 
-  message_vision ("$NÄÃÆğ·¨¼ò£¬¿ÚÖĞÄîÄîÓĞ´ÇµØ¶Ô$nÒ»»Î¡£\n",who,xiaoyao);
+  message_vision ("$Næ‹¿èµ·æ³•ç®€ï¼Œå£ä¸­å¿µå¿µæœ‰è¾åœ°å¯¹$nä¸€æ™ƒã€‚\n",who,xiaoyao);
   remove_call_out ("applying");    
   call_out ("applying",2,who,xiaoyao);    
   return 1;
@@ -80,15 +80,15 @@ void applying (object who, object xiaoyao)
   if (! xiaoyao ||
       xiaoyao->query("id") != "xiao yao")
   {
-    message_vision ("Ê²Ã´Ææ¼£¶¼Ã»·¢Éú¡£\n",who);
+    message_vision ("ä»€ä¹ˆå¥‡è¿¹éƒ½æ²¡å‘ç”Ÿã€‚\n",who);
     return;
   }
   if (! xiaoyao->query_temp("disabled"))
   {
-    message_vision ("$NÁ¬ÑÛÆ¤¶¼Ã»ÓĞÌ§Ò»ÏÂ¡£\n",xiaoyao);
+    message_vision ("$Nè¿çœ¼çš®éƒ½æ²¡æœ‰æŠ¬ä¸€ä¸‹ã€‚\n",xiaoyao);
     return;
   }
-  message_vision ("$N»ëÉíÒ»Èí£¬Ò»ÏÂ×ÓÏÔÁËÔ­ĞÎ¡£\n",xiaoyao);
-  if (xiaoyao->query("name") == "Ğ¡Ñı")
+  message_vision ("$Næµ‘èº«ä¸€è½¯ï¼Œä¸€ä¸‹å­æ˜¾äº†åŸå½¢ã€‚\n",xiaoyao);
+  if (xiaoyao->query("name") == "å°å¦–")
     xiaoyao->set_name(names[random(sizeof(names))],({"xiao yao","yao"}));
 }

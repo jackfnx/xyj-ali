@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 4/12/1997
@@ -8,10 +8,10 @@ inherit NPC;
 void create()
 {
   int i = random(9)+1;
-  set_name("É½Ñı", ({"shan yao","yao"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("å±±å¦–", ({"shan yao","yao"}));
+  set("gender", "ç”·æ€§");
   set("age", 20*i);
-  set("long","Ò»¸öĞ×Ïà±ÏÂ¶µÄÉ½Ñı¡£\n");
+  set("long","ä¸€ä¸ªå‡¶ç›¸æ¯•éœ²çš„å±±å¦–ã€‚\n");
   set("combat_exp", 20000*i);
   set("per", 15);
   set_skill("parry", 10*i);

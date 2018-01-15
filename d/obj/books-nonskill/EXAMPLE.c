@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // xiyouxiji.c
@@ -41,12 +41,12 @@ void create()
    // in, and with only one possible id, this avoids any
    // possible ambiguities.
 
-   set_name("¡¼Î÷ÓÎÎû¼Ç¡½", ({"xiji",}));
+   set_name("ã€–è¥¿æ¸¸å˜»è®°ã€—", ({"xiji",}));
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±¾");
+     set("unit", "æœ¬");
 
      // i am not sure how the long desc of the book
      // should look like. this is the 3rd format i've
@@ -58,15 +58,15 @@ void create()
 
 
 
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù
-¡ù"+HIY+
-"¡¡ Î÷ÓÎÎû¼Ç"+NOR+" ¡¡¡ù
-¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù
-¡ù×÷Õß: ²»Ïé¡¡¡¡¡ù
-¡ù×ªÂ¼: Ã÷¿Õ¡¡¡¡¡ù
-¡ùÊé¼Û: Ê®Á½°×Òø¡ù
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
+â€»â€»â€»â€»â€»â€»â€»â€»â€»
+â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»
+â€»"+HIY+
+"ã€€ è¥¿æ¸¸å˜»è®°"+NOR+" ã€€â€»
+â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»
+â€»ä½œè€…: ä¸ç¥¥ã€€ã€€â€»
+â€»è½¬å½•: æ˜ç©ºã€€ã€€â€»
+â€»ä¹¦ä»·: åä¸¤ç™½é“¶â€»
+â€»â€»â€»â€»â€»â€»â€»â€»â€»
 \n\n
 ");
      set("material", "paper");
@@ -95,7 +95,7 @@ int do_read(string arg)
     // not see the notify_fail message. so that is a plus.
 
     if (!this_object()->id(arg))
-      return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+      return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
 
     // this line calls the function read_book in book.c
     // please please, do not change this line.

@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <room.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "��·");
+  set ("short", "土路");
   set ("long", @LONG
 
-������ȥ��һ����ĳǳأ���ֱ����·ֱͨ����У�������ͽ��
-��·���������������ɼ�����֮������������·�򶫱��������죬
-��������һ��Сɽ֮��
+西边望去有一座大的城池，笔直的土路直通向城中，乘马和徒步
+赶路的人来往不绝，可见城中之繁华。东边土路向东北方向延伸，
+渐渐隐在一座小山之后。
 LONG);
 
 //  set("objects", ([ /* sizeof() == 1*/ 

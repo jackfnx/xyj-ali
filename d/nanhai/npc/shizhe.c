@@ -1,19 +1,19 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// shizhe.c ¾»Æ¿Ê¹Õß
+// shizhe.c å‡€ç“¶ä½¿è€…
 // By Dream Dec. 20, 1996
 
 inherit NPC;
 
 void create()
 {
-    set_name("¾»Æ¿Ê¹Õß", ({ "shizhe" }));
-    set("title", "ÄÏº£¹ÛÒôÊÌ´Ó");   
+    set_name("å‡€ç“¶ä½¿è€…", ({ "shizhe" }));
+    set("title", "å—æµ·è§‚éŸ³ä¾ä»");   
     set("long", @LONG
-ÄÏº£¹ÛÒô×ùÇ°¾»Æ¿Ê¹Õß¡£
+å—æµ·è§‚éŸ³åº§å‰å‡€ç“¶ä½¿è€…ã€‚
 LONG);
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("age", 20);
     set("attitude", "friendly");
     set("max_kee", 300);

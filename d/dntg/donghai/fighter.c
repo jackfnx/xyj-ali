@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-    set_name("Ñ²º£Ò¹²æ",({"ye cha","yecha","fighter"}));
-    set("gender", "ÄĞĞÔ");
+    set_name("å·¡æµ·å¤œå‰",({"ye cha","yecha","fighter"}));
+    set("gender", "ç”·æ€§");
     set("age", 30);
-    set("long", "    \n¶«º£Áú¹¬µÄÒ»ÃûÒ¹²æ£¬ÁúÍõµÄÌùÉí»¤ÎÀ¡£\n");
+    set("long", "    \nä¸œæµ·é¾™å®«çš„ä¸€åå¤œå‰ï¼Œé¾™ç‹çš„è´´èº«æŠ¤å«ã€‚\n");
 
     set("attitude", "peaceful");
     set("class", "dragon");
@@ -58,14 +58,14 @@ int accept_fight(object who)
     ||  (weapon_id == "mei hua chui" && who->query_temp("dntg/donghai")=="try_chui")
     ||  (weapon_id == "hua gan ji" && who->query_temp("dntg/donghai")=="try_ji")
         ) {
-        message_vision("Ñ²º£Ò¹²æĞ±ÑÛ¿´ÁË$NÒ»ÑÛ£¬Æ²×ìµÀ£ººÃ£¡¾ÍÈÃÎÒÁì½ÌÁì½Ì¸óÏÂµÄÊÖ¶Î£¡\n", who);
+        message_vision("å·¡æµ·å¤œå‰æ–œçœ¼çœ‹äº†$Nä¸€çœ¼ï¼Œæ’‡å˜´é“ï¼šå¥½ï¼å°±è®©æˆ‘é¢†æ•™é¢†æ•™é˜ä¸‹çš„æ‰‹æ®µï¼\n", who);
         me->fight_ob(who);
         who->fight_ob(me);
         remove_call_out("check_result");
         call_out("check_result", 1, me, who);
         return 1;
     } else {
-        message_vision("Ñ²º£Ò¹²æĞ±ÑÛ¿´ÁË$NÒ»ÑÛ£¬Æ²×ìµÀ£º¾ÍÆ¾Äã£¿²»Åä¸ú±¾´óÉñ¶¯ÊÖ¡£\n", who);
+        message_vision("å·¡æµ·å¤œå‰æ–œçœ¼çœ‹äº†$Nä¸€çœ¼ï¼Œæ’‡å˜´é“ï¼šå°±å‡­ä½ ï¼Ÿä¸é…è·Ÿæœ¬å¤§ç¥åŠ¨æ‰‹ã€‚\n", who);
         return 0;
     }
 }
@@ -90,8 +90,8 @@ int check_result(object me, object who)
     his_max_kee = who->query("max_kee");
 
     if (want_id != weapon_id) {
-        message_vision("$N¶Ô$nÆ²×ìÒ»Ğ¦£¬µÀ£ºÎÒ»¹ÒÔÎª¸óÏÂÊ®°Ë°ãÎäÒÕÑùÑù¾«Í¨ÄØ£¡\n", me, who);
-        message_vision("$N²»Ğ¼µÄÀäºßÒ»Éù£¬×ªÉíÀë¿ªÁË¡£\n", me);
+        message_vision("$Nå¯¹$næ’‡å˜´ä¸€ç¬‘ï¼Œé“ï¼šæˆ‘è¿˜ä»¥ä¸ºé˜ä¸‹åå…«èˆ¬æ­¦è‰ºæ ·æ ·ç²¾é€šå‘¢ï¼\n", me, who);
+        message_vision("$Nä¸å±‘çš„å†·å“¼ä¸€å£°ï¼Œè½¬èº«ç¦»å¼€äº†ã€‚\n", me);
         destruct(me);
         return 1;
     }
@@ -102,21 +102,21 @@ int check_result(object me, object who)
     }
 
     if (((int)who->query("kee")*100/his_max_kee)<=50) {
-        message_vision("$N¶Ô$nÑöÌì¿ñĞ¦£º²»¹ıÈç´ËÂï£¡\n", me, who);
-        message_vision("$N²»Ğ¼µÄÀäºßÒ»Éù£¬×ªÉíÀë¿ªÁË¡£\n", me);
+        message_vision("$Nå¯¹$nä»°å¤©ç‹‚ç¬‘ï¼šä¸è¿‡å¦‚æ­¤å˜›ï¼\n", me, who);
+        message_vision("$Nä¸å±‘çš„å†·å“¼ä¸€å£°ï¼Œè½¬èº«ç¦»å¼€äº†ã€‚\n", me);
         destruct(me);
         return 1;
     }
 
     if (((int)me->query("kee")*100/(1+my_max_kee)) <= 50) {
-        message_vision("$NËµµÀ£º¸óÏÂÎä¹¦¸ßÇ¿£¬ÔÙÊÔÊÔ±ğµÄ±øÆ÷°É£¡\n", me);
+        message_vision("$Nè¯´é“ï¼šé˜ä¸‹æ­¦åŠŸé«˜å¼ºï¼Œå†è¯•è¯•åˆ«çš„å…µå™¨å§ï¼\n", me);
         who->command_function("drop " + weapon_id);
-        message_vision("$N´óº°µÀ£ºÕâ±øÆ÷²»³ÃÊÖ£¡¿ì»»ĞÂµÄ£¡\n", who);
+        message_vision("$Nå¤§å–Šé“ï¼šè¿™å…µå™¨ä¸è¶æ‰‹ï¼å¿«æ¢æ–°çš„ï¼\n", who);
         command("sigh");
         command("get " + weapon_id);
         who->set("dntg/donghai", weapon_id);
         who->delete_temp("dntg/donghai");
-        message_vision("$NÒ»ÁïÑÌÅÜÁË¡£\n",me);
+        message_vision("$Nä¸€æºœçƒŸè·‘äº†ã€‚\n",me);
         destruct(me);
         return 1;
     }

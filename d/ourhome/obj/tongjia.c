@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // tongjia.c
@@ -7,13 +7,13 @@ inherit EQUIP;
 
 void create()
 {
-        set_name(YEL "ÊìÍ­¼×" NOR, ({"tong jia","tongjia","jia","armor"}));
+        set_name(YEL "ç†Ÿé“œç”²" NOR, ({"tong jia","tongjia","jia","armor"}));
         set_weight(50000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-       set("long", "Ò»¼ş½ğ²Ó²ÓµÄÊìÍ­¼×¡£\n");
+                set("unit", "ä»¶");
+       set("long", "ä¸€ä»¶é‡‘ç¿ç¿çš„ç†Ÿé“œç”²ã€‚\n");
                 set("value", 10000);
                 set("material", "iron");
                 set("armor_type", "cloth");

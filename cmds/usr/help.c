@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // help.c
@@ -29,13 +29,13 @@ int main(object me, string arg)
     // Else, try if a command name is specified.
     seteuid(getuid());
     if (stringp(file = me->find_command(arg))) {
-        notify_fail("ÓĞÕâ¸öÖ¸Áî´æÔÚ£¬µ«ÊÇ²¢Ã»ÓĞÏêÏ¸µÄËµÃ÷ÎÄ¼ş¡£\n");
+        notify_fail("æœ‰è¿™ä¸ªæŒ‡ä»¤å­˜åœ¨ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
         return file->help(me);
     }
     //Now see if it aliases to a command.
     //mon 10/27/97
     if (stringp(file = me->find_command(ALIAS_D->process_global_alias(arg)))) {
-        notify_fail("ÓĞÕâ¸öÖ¸Áî´æÔÚ£¬µ«ÊÇ²¢Ã»ÓĞÏêÏ¸µÄËµÃ÷ÎÄ¼ş¡£\n");
+        notify_fail("æœ‰è¿™ä¸ªæŒ‡ä»¤å­˜åœ¨ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
         return file->help(me);
     }
     // Search the individual search path first.
@@ -69,12 +69,12 @@ int main(object me, string arg)
     if (pointerp(default_search)) {
         if (search_dir(default_search, arg, me, wildcard, wizardp(me)) > 0) {
             if (wildcard)
-                write("ÕÒµ½"+chinese_number(found)+ "¸öÏà¹ØÖ÷Ìâ¡£\n");
+                write("æ‰¾åˆ°"+chinese_number(found)+ "ä¸ªç›¸å…³ä¸»é¢˜ã€‚\n");
             return 1;
         }
     }
 
-    return notify_fail("Ã»ÓĞÕë¶ÔÕâÏîÖ÷ÌâµÄËµÃ÷ÎÄ¼ş¡£\n");
+    return notify_fail("æ²¡æœ‰é’ˆå¯¹è¿™é¡¹ä¸»é¢˜çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
 }
 
 // recursively search the help dir.
@@ -132,14 +132,14 @@ int find_sub(mixed *filename)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½£ºhelp <Ö÷Ìâ>              ÀıÈç£º help cmds
-          help <º¯ÊıÃû³Æ>()        ÀıÈç£º help call_out()
+æŒ‡ä»¤æ ¼å¼ï¼šhelp <ä¸»é¢˜>              ä¾‹å¦‚ï¼š help cmds
+          help <å‡½æ•°åç§°>()        ä¾‹å¦‚ï¼š help call_out()
 
-Õâ¸öÖ¸ÁîÌá¹©ÄãÕë¶ÔÄ³Ò»Ö÷ÌâµÄÏêÏ¸ËµÃ÷ÎÄ¼ş£¬ÈôÊÇ²»Ö¸¶¨Ö÷Ìâ£¬ÔòÌá¹©ÄãÓĞ¹Ø
-Ö÷ÌâµÄÎÄ¼ş¡£
+è¿™ä¸ªæŒ‡ä»¤æä¾›ä½ é’ˆå¯¹æŸä¸€ä¸»é¢˜çš„è¯¦ç»†è¯´æ˜æ–‡ä»¶ï¼Œè‹¥æ˜¯ä¸æŒ‡å®šä¸»é¢˜ï¼Œåˆ™æä¾›ä½ æœ‰å…³
+ä¸»é¢˜çš„æ–‡ä»¶ã€‚
 
-³ıÁËÓĞ¹ØÖ¸ÁîÃû(command)µÄËµÃ÷ÒÔÍâ£¬ÔÚÖ÷ÌâÃû³ÆÖĞ Help Ö§³Ö wildcards 
-Èç '?' ºÍ '*'£¬ÀıÈç£º help map-m*¡£
+é™¤äº†æœ‰å…³æŒ‡ä»¤å(command)çš„è¯´æ˜ä»¥å¤–ï¼Œåœ¨ä¸»é¢˜åç§°ä¸­ Help æ”¯æŒ wildcards 
+å¦‚ '?' å’Œ '*'ï¼Œä¾‹å¦‚ï¼š help map-m*ã€‚
 
 HELP
    );

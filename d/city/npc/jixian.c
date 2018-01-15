@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 7/6/1997 by snowcat
@@ -10,11 +10,11 @@ object room = 0;
 
 void create()
 {
-  set_name("°×÷×¼¦ÏÉ", ({"ji xian", "xian" }));
-  set("gender", "ÄĞĞÔ");
+  set_name("ç™½é«¯é¸¡ä»™", ({"ji xian", "xian" }));
+  set("gender", "ç”·æ€§");
   set("age", 60);
   set("per", 30);
-  set("long", "Ò»Î»Áô×Å°×÷×µÄ¼¦ÏÉ¡£\n");
+  set("long", "ä¸€ä½ç•™ç€ç™½é«¯çš„é¸¡ä»™ã€‚\n");
   set("combat_exp", 5000);
   set_skill("force", 50);
   set_skill("spells", 50);
@@ -47,7 +47,7 @@ void init()
 
 void refuse_message (object me, object who)
 {
-  message_vision ("$NËµ£ºÈË¶·ÈË£¿»¹ÊÇ¿´¼¦¶·¼¦ÓĞÈ¤Ğ©°É¡£\n",me,who);
+  message_vision ("$Nè¯´ï¼šäººæ–—äººï¼Ÿè¿˜æ˜¯çœ‹é¸¡æ–—é¸¡æœ‰è¶£äº›å§ã€‚\n",me,who);
 }
 
 int do_fight(string arg)
@@ -57,7 +57,7 @@ int do_fight(string arg)
 
   if (arg && present(arg,environment(who))==me)
   {
-    message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÕÒ$n´ò¼Ü¡£\n",who,me);
+    message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œæƒ³æ‰¾$næ‰“æ¶ã€‚\n",who,me);
     refuse_message (me,who);
     return 1;
   }
@@ -71,7 +71,7 @@ int do_kill(string arg)
 
   if (arg && present(arg,environment(who))==me)
   {
-    message_vision ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÉ±$n¡£\n",who,me);
+    message_vision ("$Nçœ‹æ ·å­è¾“çº¢äº†çœ¼ï¼Œæƒ³æ€$nã€‚\n",who,me);
     refuse_message (me,who);
     return 1;
   }

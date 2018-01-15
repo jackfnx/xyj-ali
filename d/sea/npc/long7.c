@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // long7.c
@@ -10,11 +10,11 @@ inherit NPC;
 //
 void create()
 {
-  set_name("ò¼òó",({"gong fu","gong","fu","long","gongfu","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓĞËùºÃ£ºò¼òóÄËµÚÆß×Ó£¬Æ½ÉúºÃË®¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("èš£è®",({"gong fu","gong","fu","long","gongfu","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šèš£è®ä¹ƒç¬¬ä¸ƒå­ï¼Œå¹³ç”Ÿå¥½æ°´ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 41);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™ç‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "peaceful");
   set("max_kee", 1200);
@@ -62,7 +62,7 @@ void create()
 
 int accept_fight(object me)
 {
-  command("say Â½ÉÏÎÒËµ²»¶¨´ò²»¹ıÄã£¬Ë®Àï¾ÍÊÇÎÒµÄÌìÏÂÁË£¡");
+  command("say é™†ä¸Šæˆ‘è¯´ä¸å®šæ‰“ä¸è¿‡ä½ ï¼Œæ°´é‡Œå°±æ˜¯æˆ‘çš„å¤©ä¸‹äº†ï¼");
   return 1;
 }
 

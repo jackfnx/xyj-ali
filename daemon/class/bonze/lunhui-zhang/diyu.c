@@ -14,32 +14,32 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("��Ҫ����˭��\n");
+                return notify_fail("你要攻击谁？\n");
 
         if(!me->is_fighting())
-                return notify_fail("����û���ڴ�ܣ�\n");
+                return notify_fail("你们没有在打架！\n");
 
         if((int)me->query("max_force") < 800 )
-                return notify_fail("����ڹ�̫�\n");
+                return notify_fail("你的内功太差。\n");
 
         if((int)me->query("force") < 200 )
-                return notify_fail("����������㣡\n");
+                return notify_fail("你的内力不足！\n");
 //	if (!objectp(weapon = me->query_temp("weapon"))
 //        || (string)weapon->query("skill_type") != "staff")
-//                return notify_fail("����ʹ�õ��⹦��û�����ֹ��ܡ�\n");
+//                return notify_fail("你所使用的外功中没有这种功能。\n");
 
         if((int)me->query("sen") < 500 )
-                return notify_fail("��ľ����㣬û����ʩ���⹦��\n");
+                return notify_fail("你的精神不足，没法子施用外功！\n");
 	if((int)me->query_skill("buddhism", 1) < 60)
-        	return notify_fail("��Ĵ�ɷ𷨵ȼ�����������ʹ����һ�У�\n");
+        	return notify_fail("你的大成佛法等级不够，不能使用这一招！\n");
 	i=(int)me->query_skill("lunhui-zhang",1)+me->query_skill("staff",1)/2;
 	j=(int)me->query_skill("lunhui-zhang",1);
         if(i<60 || j<1)        
-                return notify_fail("����ֻ��ȼ��𻹲�����ʹ����һ�л������ѣ�\n");
+                return notify_fail("你的轮回杖级别还不够，使用这一招会有困难！\n");
 	
         me->delete("env/brief_message");
 	target->delete("env/brief_message");
-message_vision(HIY"\n$N���з�ţ���ȫ������ע������"+weapon->name()+NOR+HIY"��ʱ��ϼ�����䣬�յ�$n�������ۣ�\n\n"NOR,me,target);
+message_vision(HIY"\n$N口诵佛号，将全身功力注入手中"+weapon->name()+NOR+HIY"顿时间霞光四射，照得$n睁不开眼！\n\n"NOR,me,target);
 	damage=me->query_skill("buddhism")/2 + me->query_skill("staff")/2 + me->query_skill("lunhui-zhang") + me->query("max_force");
 	target->receive_damage("kee",damage/15);
 	me->receive_damage("sen", 100);

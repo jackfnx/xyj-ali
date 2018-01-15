@@ -2,19 +2,19 @@
         apply(3)                LP MudOSv21c7           (7 Jul 1996)
 
 
-        º¯ÊıÃû³Æ:
-                apply() - ´¦Àíº¯ÊıÖ¸±ê (function pointer).
+        å‡½æ•°åç§°:
+                apply() - å¤„ç†å‡½æ•°æŒ‡æ ‡ (function pointer).
 
-        º¯ÊıÓï·¨:
+        å‡½æ•°è¯­æ³•:
                 mixed apply( mixed f, mixed *args )
 
 
-                Èç¹û f ÊÇÒ»¸öº¯Ê½, ¾Í»áºô½Ğ f ²¢ÓÃÕóÁĞ args µ±×÷ f
-                µÄ²ÎÊı (argument).
+                å¦‚æœ f æ˜¯ä¸€ä¸ªå‡½å¼, å°±ä¼šå‘¼å« f å¹¶ç”¨é˜µåˆ— args å½“ä½œ f
+                çš„å‚æ•° (argument).
 
-                ¡õÀı:
-                        apply( f, ({ 1, 2, 3 }) ); Óë
-                        evaluate( f, 1, 2, 3 ); ÊÇÏàÍ¬µÄ.
-        ÊÖ²á·­Òë:
+                â–¡ä¾‹:
+                        apply( f, ({ 1, 2, 3 }) ); ä¸
+                        evaluate( f, 1, 2, 3 ); æ˜¯ç›¸åŒçš„.
+        æ‰‹å†Œç¿»è¯‘:
                 Phoebus@ZH   1997.Aug.14.                       (Writen 5/23/97)
 

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //puti.c
@@ -6,17 +6,17 @@ inherit NPC;
 
 void create()
 {
-    set_name("ÆĞÌá×æÊ¦", ({"master puti","puti", "master"}));
-    set("long", "´ó¾õ½ğÏÉÃ»¹¸×Ë£¬Î÷·½ÃîÏà×æÆĞÌá\n");
-    set("title", "Ğ±ÔÂÈıĞÇ");
-    set("gender", "ÄĞĞÔ");
+    set_name("è©æç¥–å¸ˆ", ({"master puti","puti", "master"}));
+    set("long", "å¤§è§‰é‡‘ä»™æ²¡å¢å§¿ï¼Œè¥¿æ–¹å¦™ç›¸ç¥–è©æ\n");
+    set("title", "æ–œæœˆä¸‰æ˜Ÿ");
+    set("gender", "ç”·æ€§");
     set("age", 100);
     set("class", "taoist");
     set("attitude", "friendly");
     set("shen_type", 1);
-    set("rank_info/respect", "ÀÏÊ¦×æ");
+    set("rank_info/respect", "è€å¸ˆç¥–");
     set("per", 26);
-    set("looking", "ÓñÃæ¶à¹âÈó£¬²Ô÷×ò¢ÏÂÆ®£¬½ğ¾¦·É»ğÑæ£¬³¤Ä¿¹ıÃ¼ÉÒ¡£");
+    set("looking", "ç‰é¢å¤šå…‰æ¶¦ï¼Œè‹é«¯é¢Œä¸‹é£˜ï¼Œé‡‘ç›é£ç«ç„°ï¼Œé•¿ç›®è¿‡çœ‰æ¢¢ã€‚");
     set("int", 30);
     set("max_kee", 5000);
     set("max_gin", 1000);
@@ -54,7 +54,7 @@ void create()
                 (: cast_spell, "thunder" :)
     }) );
 
-    create_family("·½´çÉ½ÈıĞÇ¶´", 1, "À¶");
+    create_family("æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´", 1, "è“");
     setup();
 
     carry_object("/d/lingtai/obj/pao")->wear();
@@ -65,35 +65,35 @@ void create()
 void attempt_apprentice(object ob)
 {
     ob = this_player();
-    if ((string)ob->query("family/family_name")=="·½´çÉ½ÈıĞÇ¶´") {
+    if ((string)ob->query("family/family_name")=="æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´") {
         if ((int)ob->query("combat_exp") < 300000 ) {
-            command("say ÎÒÃÇĞŞÕæÖ®Ê¿×îÖØµÄ¾ÍÊÇµÀĞĞ£¬" + RANK_D->query_respect(ob) + "»¹Ğè¶à¼ÓÅ¬Á¦²ÅÄÜÔçÎò´óµÀ¡£\n");
+            command("say æˆ‘ä»¬ä¿®çœŸä¹‹å£«æœ€é‡çš„å°±æ˜¯é“è¡Œï¼Œ" + RANK_D->query_respect(ob) + "è¿˜éœ€å¤šåŠ åŠªåŠ›æ‰èƒ½æ—©æ‚Ÿå¤§é“ã€‚\n");
             return;
         }
 /*
    if( (int)ob->query("pending/kick_out")) {
-   command("say ÕâÎ»" + RANK_D->query_respect(ob) + "·´¸´ÎŞ³££¬ÀÏ·ò²»Ô­ÔÙÊÕÄãÎªÍ½ÁË£¡\n");
+   command("say è¿™ä½" + RANK_D->query_respect(ob) + "åå¤æ— å¸¸ï¼Œè€å¤«ä¸åŸå†æ”¶ä½ ä¸ºå¾’äº†ï¼\n");
    command("sigh");
    return;
    }
 */
         if ((int)ob->query_int() < 35) {
-            command("say ÕâÎ»" + RANK_D->query_respect(ob) + "ÎòĞÔÌ«µÍ£¬¿ÖÅÂÊÕÁËÄãÒ²ÄÑÓĞ×÷Îª£¡\n");
+            command("say è¿™ä½" + RANK_D->query_respect(ob) + "æ‚Ÿæ€§å¤ªä½ï¼Œææ€•æ”¶äº†ä½ ä¹Ÿéš¾æœ‰ä½œä¸ºï¼\n");
             command("sigh");
             return;
         }
         if ((int)ob->query_skill("tao", 1) < 100) {
-            command("say ÕâÎ»" + RANK_D->query_respect(ob) + "¶ÔµÀµÄÁì»á»¹²»¹»Éî£¬ÏÖÔÚÊÕÄãÒ²ÊÇÃãÎªÆäÄÑ£¬²»Èç×÷°Õ£¡\n");
+            command("say è¿™ä½" + RANK_D->query_respect(ob) + "å¯¹é“çš„é¢†ä¼šè¿˜ä¸å¤Ÿæ·±ï¼Œç°åœ¨æ”¶ä½ ä¹Ÿæ˜¯å‹‰ä¸ºå…¶éš¾ï¼Œä¸å¦‚ä½œç½¢ï¼\n");
             command("sigh");
             return;
         }
         command("smile");
-        command("say ºÜºÃ£¬" + RANK_D->query_respect(ob) + "¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£");
+        command("say å¾ˆå¥½ï¼Œ" + RANK_D->query_respect(ob) + "å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚");
         command("recruit " + ob->query("id") );
         return;
     }
     command("shake");
-    command("say ÀÏ·ò²»ÊÕÍâÃÅµÜ×Ó£¬" + RANK_D->query_respect(ob) + "»¹ÊÇÁíÑ°ËûÈË°É£¡\n");
+    command("say è€å¤«ä¸æ”¶å¤–é—¨å¼Ÿå­ï¼Œ" + RANK_D->query_respect(ob) + "è¿˜æ˜¯å¦å¯»ä»–äººå§ï¼\n");
     return;
 }
 
@@ -106,16 +106,16 @@ int recruit_apprentice(object ob)
 int accept_fight(object me, object ob)
 {
     ob = this_player();
-    command("say " + RANK_D->query_rude(ob) + "É±ĞÄÌ«ÖØ£¬¿Ö»ö²»¾ÃÒÑ£¡\n");
+    command("say " + RANK_D->query_rude(ob) + "æ€å¿ƒå¤ªé‡ï¼Œæç¥¸ä¸ä¹…å·²ï¼\n");
     return 0;
 }
 
 void die()
 {
     if (environment()) {
-        message("sound", "\n\nÆĞÌá×æÊ¦Î¢ÖåÃ¼Í·£¬µÀ£ºÕâØË¹ûÊÇ¸öÌì³ÉµØ¾ÍµÄ£¡\n\n", environment());
+        message("sound", "\n\nè©æç¥–å¸ˆå¾®çš±çœ‰å¤´ï¼Œé“ï¼šè¿™å®æœæ˜¯ä¸ªå¤©æˆåœ°å°±çš„ï¼\n\n", environment());
         command("sigh");
-        message("sound", "\nÆĞÌá×æÊ¦ÉíĞÎÒ»×ª£¬»¯×öÇàÑÌ×ßÁË¡£¡£¡£\n\n", environment());
+        message("sound", "\nè©æç¥–å¸ˆèº«å½¢ä¸€è½¬ï¼ŒåŒ–åšé’çƒŸèµ°äº†ã€‚ã€‚ã€‚\n\n", environment());
     }
 
     destruct(this_object());

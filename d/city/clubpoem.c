@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // Room: /u/mon/poem/clubpoem by mon@xyj 7/25/97
@@ -29,12 +29,12 @@ string enscript(string arg);
 
 void create ()
 {
-  set ("short", "ÀÖ¸®Ê«Éç");
+  set ("short", "ä¹åºœè¯—ç¤¾");
   set ("long", @LONG
 
-¸ßÂ¥Ö®ÉÏ£¬Âú³Ç·±»ª¾¡ÊÕÑÛµ×¡£ÎÄÈËÉ§¿Í¶¼Ï²»¶ÔÚÕâÀïÆ·²èÒ÷Ê«£¬Ì¸
-¹ÅÂÛ½ñ£¬ÄãÇÆ£¬²»ÖªË­ÔÚ²è×ÀÉÏ¸Õ¸ÕĞ´ºÃÒ»Ê×Ê«(poem)¡£Àï±ß¹ñÌ¨ÉÏ
-ĞÂÌùÁËÕÅÆôÊÂ(qishi)£¬Äã²»ÓÉµÃ×ß¹ıÈ¥¿´ÁË¼¸ÑÛ¡£
+é«˜æ¥¼ä¹‹ä¸Šï¼Œæ»¡åŸç¹åå°½æ”¶çœ¼åº•ã€‚æ–‡äººéªšå®¢éƒ½å–œæ¬¢åœ¨è¿™é‡Œå“èŒ¶åŸè¯—ï¼Œè°ˆ
+å¤è®ºä»Šï¼Œä½ ç§ï¼Œä¸çŸ¥è°åœ¨èŒ¶æ¡Œä¸Šåˆšåˆšå†™å¥½ä¸€é¦–è¯—(poem)ã€‚é‡Œè¾¹æŸœå°ä¸Š
+æ–°è´´äº†å¼ å¯äº‹(qishi)ï¼Œä½ ä¸ç”±å¾—èµ°è¿‡å»çœ‹äº†å‡ çœ¼ã€‚
 
 LONG);
 
@@ -85,27 +85,27 @@ int do_answer(string arg)
 { 
     object me=this_player(),ob;
 
-    if(!arg) return notify_fail("»Ø´ğÊ²Ã´£¿\n");
+    if(!arg) return notify_fail("å›ç­”ä»€ä¹ˆï¼Ÿ\n");
     
     if(me->is_busy())
-      return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+      return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 
     if( living(me) ) me->receive_damage("sen",5+random(15));
 
     if(objectp(ob=present("cha boshi",this_object()))
        && living(ob)) {
     switch(random(2)) {
-     case 0: message_vision("$NËµµÀ£ºÊÇ£®£®£®"+arg+"£¿\n",me);
+     case 0: message_vision("$Nè¯´é“ï¼šæ˜¯ï¼ï¼ï¼"+arg+"ï¼Ÿ\n",me);
              break;
-     case 1: message_vision("$N´ğµÀ£º"+arg+"£¿\n",me);
+     case 1: message_vision("$Nç­”é“ï¼š"+arg+"ï¼Ÿ\n",me);
              break;
     }
     arg=replace_string(arg," ","");
     arg=replace_string(arg,",","");
-    arg=replace_string(arg,"£¬","");
+    arg=replace_string(arg,"ï¼Œ","");
     if(arg==current&&strlen(current)>2) {
       if(ans_curr==1) {
-       write("±ğÈËÒÑ¾­»Ø´ğ¹ıÕâ¾äÊ«ÁË¡£\n");
+       write("åˆ«äººå·²ç»å›ç­”è¿‡è¿™å¥è¯—äº†ã€‚\n");
        return 1;
       }
       ans_curr=1;
@@ -117,18 +117,18 @@ int do_answer(string arg)
       poem_reward(me,current_all);
     } else if(arg==last&&strlen(last)>2) {
       if(ans_last==1) {
-       write("±ğÈËÒÑ¾­»Ø´ğ¹ıÕâ¾äÊ«ÁË¡£\n");
+       write("åˆ«äººå·²ç»å›ç­”è¿‡è¿™å¥è¯—äº†ã€‚\n");
        return 1;
       }
       ans_last=1;
       poem_reward(me,last_all);
     } else {
-      message_vision("²è²©Ê¿Ò¡ÁËÒ¡Í·£ººÃÏó²»¶Ô°É£¿\n",me);
+      message_vision("èŒ¶åšå£«æ‘‡äº†æ‘‡å¤´ï¼šå¥½è±¡ä¸å¯¹å§ï¼Ÿ\n",me);
       me->add_temp("poem/wrong",1);
       if(me->query_temp("poem/wrong")>10) poem_penalty(me);
     }
     } else {
-      write("ÏÖÔÚÃ»ÓĞÈË²ÃÅĞ¶Ô´íÁË£®£®£® £º£¨\n");
+      write("ç°åœ¨æ²¡æœ‰äººè£åˆ¤å¯¹é”™äº†ï¼ï¼ï¼ ï¼šï¼ˆ\n");
     }
     return 1;
 }
@@ -144,7 +144,7 @@ void poem_penalty(object me)
 void poem_reward(object me,string arg)
 {
     me->set_temp("poem/wrong",0);
-    message_vision("²è²©Ê¿µãÍ·µÀ£º¡°"+arg+"¡±²»´í£¡²»´í£¡\n",me);
+    message_vision("èŒ¶åšå£«ç‚¹å¤´é“ï¼šâ€œ"+arg+"â€ä¸é”™ï¼ä¸é”™ï¼\n",me);
     poem_reward1(me);
 }
 
@@ -154,16 +154,16 @@ void poem_reward1(object me)
     switch(random(3)) {
      case 0: dx=4+random(6);
              me->add("combat_exp",dx);
-        write("ÄãµÄµÀĞĞÔö¼ÓÁË£¡\n");
+        write("ä½ çš„é“è¡Œå¢åŠ äº†ï¼\n");
         break;
      case 1: pot=3+random(4);
         if(me->query("potential")+pot-me->query("learned_points")<=100)
                me->add("potential",pot);
-             write("ÄãµÄÇ±ÄÜÔö¼ÓÁË£¡\n");
+             write("ä½ çš„æ½œèƒ½å¢åŠ äº†ï¼\n");
         break;
      case 2: lite=4+random(6);
              me->improve_skill("literate",lite);
-        write("ÄãµÄ¶ÁÊéÊ¶×Ö½ø²½ÁË£¡\n");
+        write("ä½ çš„è¯»ä¹¦è¯†å­—è¿›æ­¥äº†ï¼\n");
         break;
     }
     me->add("poem_answered",1);
@@ -191,9 +191,9 @@ void do_test()
      new_poem();
     } else {
       if(sscanf(poem[index],"%s  %s",first,second)==2 &&
-       !sscanf(poem[index],"%*s£Û") && 
-       !sscanf(poem[index],"%*s£¨") &&
-       !sscanf(poem[index],"%*s¡õ") ) {
+       !sscanf(poem[index],"%*sï¼»") && 
+       !sscanf(poem[index],"%*sï¼ˆ") &&
+       !sscanf(poem[index],"%*sâ–¡") ) {
          if(strlen(first)>2&&strlen(second)>2) {
       newt=1;
          } 
@@ -213,13 +213,13 @@ void do_test()
    } else {
      quest=first+second;
    }
-     current=replace_string(quest,"£¬","");  // the answer
+     current=replace_string(quest,"ï¼Œ","");  // the answer
      quest=mixup(quest);   // the question
      curr_show=quest;
      switch(random(1)) {
        case 0: 
          tell_room(this_object(),
-      "²è²©Ê¿Ìá±ÊÔÚÇ½ÉÏĞ´µÀ£º"+quest+"\n");
+      "èŒ¶åšå£«æç¬”åœ¨å¢™ä¸Šå†™é“ï¼š"+quest+"\n");
          break;
      }
    }
@@ -259,20 +259,20 @@ int do_look(string arg)
     if(!arg) return 0;
  
     if(arg=="poem") {
-     write("\n\n    "+author1+"£º"+title1+"\n");
+     write("\n\n    "+author1+"ï¼š"+title1+"\n");
      for (i=0;i<length1;i++) {
       write("    "+poem1[i]+"\n");
      }
      write("\n\n\n");
-     write("µ±Ç°ÌâÄ¿£º¡¡¡¡¡¡"+curr_show+"\n\n");
+     write("å½“å‰é¢˜ç›®ï¼šã€€ã€€ã€€"+curr_show+"\n\n");
      return 1;
     } else if(arg=="qishi") {
       write("\n"+@LONG
-           ±¾ÉçĞÂÔö²ÂÊ«ÓÎÏ·£¬ÓÉ²è²©Ê¿½«Ò»¾äÊ«´ÊµÄÈô¸É×Ö
-       µßµ¹´ÎĞò£¬Ğ´ÔÚÇ½ÉÏ¡£ÄÜ×¼È·´ğ³ö(answer)Ô­¾äÕßÎªÊ¤¡£
+           æœ¬ç¤¾æ–°å¢çŒœè¯—æ¸¸æˆï¼Œç”±èŒ¶åšå£«å°†ä¸€å¥è¯—è¯çš„è‹¥å¹²å­—
+       é¢ å€’æ¬¡åºï¼Œå†™åœ¨å¢™ä¸Šã€‚èƒ½å‡†ç¡®ç­”å‡º(answer)åŸå¥è€…ä¸ºèƒœã€‚
 
-       ÀıÈç£º²è²©Ê¿Ìá±ÊÔÚÇ½ÉÏĞ´µÀ£ºÀëÀëÔ­ÉÏ²İÒ»ÈÙÒ»¿İËê
-       ÄãÓ¦¸Ã»Ø´ğ£ºanswer ÀëÀëÔ­ÉÏ²İÒ»ËêÒ»¿İÈÙ
+       ä¾‹å¦‚ï¼šèŒ¶åšå£«æç¬”åœ¨å¢™ä¸Šå†™é“ï¼šç¦»ç¦»åŸä¸Šè‰ä¸€è£ä¸€æ¯å²
+       ä½ åº”è¯¥å›ç­”ï¼šanswer ç¦»ç¦»åŸä¸Šè‰ä¸€å²ä¸€æ¯è£
 LONG);
       write("\n\n");
      return 1;
@@ -294,10 +294,10 @@ void copy_to_old()
 
      if(objectp(ob=present("suan xiucai",this_object()))
        && random(2)==0 && living(ob)) {
-       message_vision(({ob->name()+"Ò¡Í·»ÎÄÔµØÒ÷ËĞµÀ£º",
-        ob->name()+"¸ßÉùÀÊ¶ÁµÀ£º",
-        ob->name()+"·Â·ğÔÚ×ÔÑÔ×ÔÓï£º"})[random(3)]+"\n",ob);
-       message_vision("\n    "+author1+"£º"+title1+"\n",ob);
+       message_vision(({ob->name()+"æ‘‡å¤´æ™ƒè„‘åœ°åŸè¯µé“ï¼š",
+        ob->name()+"é«˜å£°æœ—è¯»é“ï¼š",
+        ob->name()+"ä»¿ä½›åœ¨è‡ªè¨€è‡ªè¯­ï¼š"})[random(3)]+"\n",ob);
+       message_vision("\n    "+author1+"ï¼š"+title1+"\n",ob);
        for (i=0;i<length1;i++) {
          message_vision("    "+poem1[i]+"\n",ob);
        }
@@ -316,7 +316,7 @@ void new_poem()
     while((k=(1+random(POEMS)))==poem_index);
     filename="/d/ourhome/honglou/poem/poem"+k;
     buf=read_file(filename,1,1);
-    sscanf(buf,"%s£º%s",author,title);
+    sscanf(buf,"%sï¼š%s",author,title);
     i=0;
     j=0;
     poem=({});

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // blade.c
@@ -9,12 +9,12 @@ inherit STICK;
 
 void create()
 {
-        set_name("ÕĞ»êğ«", ({"zhaohun", "stick"}));
+        set_name("æ‹›é­‚çš¤", ({"zhaohun", "stick"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
+                set("unit", "æ†");
                 set("value", 300);
         }
         init_stick(15);

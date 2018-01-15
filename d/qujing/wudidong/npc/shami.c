@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // jiading.c
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("Ğ¡É³ÃÖ", ({"shami"}));
+       set_name("å°æ²™å¼¥", ({"shami"}));
 
-set("long","Ò»¸ö¿´ÔºµÄĞ¡ºÍÉĞ£¬µ½Ò²³¤µÃÃ¼ÇåÄ¿ĞãµÄ¡£\n");
-       set("gender", "ÄĞĞÔ");
+set("long","ä¸€ä¸ªçœ‹é™¢çš„å°å’Œå°šï¼Œåˆ°ä¹Ÿé•¿å¾—çœ‰æ¸…ç›®ç§€çš„ã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 10+random(15));
        set("attitude", "peaceful");
        set("shen_type", 1);
@@ -41,7 +41,7 @@ void greeting(object ob)
         switch( random(1) ) {
 
                 case 0:
-                        say(CYN  "Ğ¡É³ÃÖÒ»ºÍÕÆËµµÀ£º¡°»¶Ó­À´µ½ÎÒ»ªÑÏËÂ¡£¡±\n" NOR);
+                        say(CYN  "å°æ²™å¼¥ä¸€å’ŒæŒè¯´é“ï¼šâ€œæ¬¢è¿æ¥åˆ°æˆ‘åä¸¥å¯ºã€‚â€\n" NOR);
                         break;
         }
 }

@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 //huludi.c
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create ()
 {
-   set ("short", "Î÷¹ÏµØ");
+   set ("short", "è¥¿ç“œåœ°");
    set ("long", @LONG
 
-Îå×¯¹Û×öÊÂµÄ¶à£¬³Ô·¹µÄÒ²²»ÉÙ£¬ËùÒÔ¹ÛÄÚ¹ÍÁË¸½½üµÄÒ»Ğ©Å©¼Ò
-À´ÖÖÊß²Ë¹Ï¹û¡£ÕâÀïÊÇÎ÷¹ÏµØ¡£Íù±±ÊÇÓĞÒ»µÀ¾£¼¬½á³ÉµÄÀé°Ê£¬
-Àé°ÊÉÏ¿ªÁËÒ»µÀ¼òÂªµÄĞÓÄ¾ÃÅ£¬ÃÅÉÏ¹Ò×ÅÒ»°Ñ»ÆÍ­Ëø¡£
+äº”åº„è§‚åšäº‹çš„å¤šï¼Œåƒé¥­çš„ä¹Ÿä¸å°‘ï¼Œæ‰€ä»¥è§‚å†…é›‡äº†é™„è¿‘çš„ä¸€äº›å†œå®¶
+æ¥ç§è”¬èœç“œæœã€‚è¿™é‡Œæ˜¯è¥¿ç“œåœ°ã€‚å¾€åŒ—æ˜¯æœ‰ä¸€é“è†æ£˜ç»“æˆçš„ç¯±ç¬†ï¼Œ
+ç¯±ç¬†ä¸Šå¼€äº†ä¸€é“ç®€é™‹çš„ææœ¨é—¨ï¼Œé—¨ä¸ŠæŒ‚ç€ä¸€æŠŠé»„é“œé”ã€‚
 LONG);
 
    set("exits", 
@@ -26,7 +26,7 @@ LONG);
      "/d/obj/food/watermellon" : 3,
    ]));
 
-   //create_door("north", "ĞÓÄ¾ÃÅ", "south", DOOR_CLOSED);
+   //create_door("north", "ææœ¨é—¨", "south", DOOR_CLOSED);
    set("outdoors", "wuzhuang");
 
    setup();
@@ -44,10 +44,10 @@ int do_open(string arg)
    me = this_player();
 
    if( !arg || arg != "door" ) 
-     return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 
    if( !(key = present("huangtong key", me)) ) 
-     return notify_fail("ÄãÃ»ÓĞ¿ªÕâµÀÃÅµÄÔ¿³×¡£\n");
+     return notify_fail("ä½ æ²¡æœ‰å¼€è¿™é“é—¨çš„é’¥åŒ™ã€‚\n");
 
    //now we are ready to open...
    if( !(nroom = find_object(__DIR__"renshenguo-yuan")) )
@@ -55,7 +55,7 @@ int do_open(string arg)
 
    set("exits/north", __DIR__"renshenguo-yuan");
    nroom->set("exits/south", __FILE__);
-   message("vision", "Ö»Ìı¿¦àê£¡Ò»Éù£¬Ô¿³×¶ÏÁË¡£ºÃÔÚÃÅÒÑ¾­¿ªÁË¡£\n", this_object() );
+   message("vision", "åªå¬å–€åš“ï¼ä¸€å£°ï¼Œé’¥åŒ™æ–­äº†ã€‚å¥½åœ¨é—¨å·²ç»å¼€äº†ã€‚\n", this_object() );
 
    me->set_temp("used_huangtong_key", 1);
    destruct(key);

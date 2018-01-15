@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
@@ -8,9 +8,9 @@ void reset_balance(object me);
 
 void create()
 {
-        set_name("������", ({"tie suanpan", "tie", "zhanggui"}));
-        set("title", "Ǯׯ�ƹ�");
-        set("gender", "����");
+        set_name("铁算盘", ({"tie suanpan", "tie", "zhanggui"}));
+        set("title", "钱庄掌柜");
+        set("gender", "男性");
         set("age", 54);
         set("kee", 800); 
         set("max_kee", 800);
@@ -21,9 +21,9 @@ void create()
         set("env/wimpy", 50);
         set("chat_chance", 10);
 /*        set("chat_msg", ({
-        "�����̺ٺٺٵ�Ц�˼�������������̼�ʮ�����ɴ���û������\n",
+        "铁算盘嘿嘿嘿地笑了几声：我这把算盘几十年来可从来没错过。\n",
 
-"�����̽�����˵��������Ǯׯ���ϰ壬����˵�����˲�������������϶��������졣\n"
+"铁算盘骄傲的说道：提起本钱庄相老板，可以说是无人不晓。连当今皇上都跟他很熟。\n"
         }));
 */
         set_skill("unarmed", 60);
@@ -60,13 +60,13 @@ void reset_balance(object me)
    me->set("balance_old", me->query("balance"));
    me->set("balance", allowed);
    removed_gold = (me->query("balance_old") - me->query("balance"))/10000;
-   log_file("MONEY_RESET", ctime( time() )+"��κ�����ս���"+me->query("name")+"("+me->query("id")+")"+removed_gold+"���ƽ�\n");
-   tell_object(me, GRN+NPCNAME+"����Ķ�������˵����"+RANK_D->query_respect(me)+
-     "���⡢���治֪��ô˵�Ǻã�����\n"NOR);
-   tell_object(me, GRN+NPCNAME+"����Ķ�������˵����"+
-     "����κ��������ǰ���참���������ϵĻƽ���·������\n"NOR);
-   tell_object(me, GRN+NPCNAME+"����Ķ�������˵����"+
-     "���������°����ϱ�⣬���ϵ�Ǯ��ȫ���乫�ˣ�����\n"NOR);
+   log_file("MONEY_RESET", ctime( time() )+"：魏大人收缴了"+me->query("name")+"("+me->query("id")+")"+removed_gold+"两黄金。\n");
+   tell_object(me, GRN+NPCNAME+"在你的耳边悄声说道："+RANK_D->query_respect(me)+
+     "，这、这真不知怎么说是好．．．\n"NOR);
+   tell_object(me, GRN+NPCNAME+"在你的耳边悄声说道："+
+     "昨日魏大人派人前来察案，发觉你老的黄金来路．．．\n"NOR);
+   tell_object(me, GRN+NPCNAME+"在你的耳边悄声说道："+
+     "若不是在下帮你老辩解，你老的钱就全都充公了．．．\n"NOR);
     }
     return;
 }
@@ -83,7 +83,7 @@ void accept_kill(object me)
                 ob=new("/d/city/npc/xunluobing");
                 ob->move(environment());
         }
-        message_vision("\n��Ȼ������������Ѳ�߹ٱ�����$N��һ������ʲô����ɱ��ı��ô��\n\n",me);        
+        message_vision("\n忽然从门外冲进来个巡逻官兵，对$N大喊一声“干什么？想杀人谋财么！\n\n",me);        
 
         ob->kill_ob(me);
         ob->set_leader(me);

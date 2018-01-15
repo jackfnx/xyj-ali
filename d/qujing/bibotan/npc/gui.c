@@ -1,17 +1,17 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit NPC;
 
 void create()
 {
-        set_name("Î÷²¨¶ù¹Å", ({"xiboer gu", "gu"}));
-        set("long", "ËûÊÇÂÒÊ¯É½±Ì²¨Ì¶µÄÀÏ¹ê¾«¡£\n");
+        set_name("è¥¿æ³¢å„¿å¤", ({"xiboer gu", "gu"}));
+        set("long", "ä»–æ˜¯ä¹±çŸ³å±±ç¢§æ³¢æ½­çš„è€é¾Ÿç²¾ã€‚\n");
         set("age", 30);
-   set("title", "µîÇ°×óÊ¹");
+   set("title", "æ®¿å‰å·¦ä½¿");
         set("attitude", "heroism");
    set("class", "yaomo");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("str", 20);
         set("int", 20);
         set("per", 10);

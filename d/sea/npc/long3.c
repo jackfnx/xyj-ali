@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // long3.c
@@ -10,11 +10,11 @@ inherit NPC;
 //
 void create()
 {
-  set_name("íýíö",({"ya zi","zi","ya","long","yazi","dragon"}));
-  set("long","ÁúÉú¾Å×Ó²»³ÉÁú£¬¸÷ÓÐËùºÃ£ºíýíöÄËµÚÈý×Ó£¬Æ½ÉúºÃÉ±¡£\n");
-  set("gender", "ÄÐÐÔ");
+  set_name("çšçœ¦",({"ya zi","zi","ya","long","yazi","dragon"}));
+  set("long","é¾™ç”Ÿä¹å­ä¸æˆé¾™ï¼Œå„æœ‰æ‰€å¥½ï¼šçšçœ¦ä¹ƒç¬¬ä¸‰å­ï¼Œå¹³ç”Ÿå¥½æ€ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 39);
-  set("title", "ÁúÍõ¾Å×ÓÖ®");
+  set("title", "é¾™çŽ‹ä¹å­ä¹‹");
   set("class","dragon");
   set("attitude", "heroic");
   set("max_kee", 1200);
@@ -56,7 +56,7 @@ void create()
   set("chat_msg_combat", ({
     (: cast_spell, "hufa" :),
     (: exert_function, "shield" :),
-    "íýíöÒõÐ¦µÀ£ºÉ±£¡É±£¡É±£¡\n,"
+    "çšçœ¦é˜´ç¬‘é“ï¼šæ€ï¼æ€ï¼æ€ï¼\n,"
   }) );
 
   setup();  
@@ -70,7 +70,7 @@ int accept_fight(object me)
 {
   command("hate");
   command("grin");
-  command("say ºÃ¾ÃÃ»É±ÈËÁË£¡"+RANK_D->query_rude(me)+"ÄãÄÃÃüÀ´£¡");
+  command("say å¥½ä¹…æ²¡æ€äººäº†ï¼"+RANK_D->query_rude(me)+"ä½ æ‹¿å‘½æ¥ï¼");
   command("kill "+ me->query("id"));
   return 1;
 }

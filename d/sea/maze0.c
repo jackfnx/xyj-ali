@@ -1,4 +1,4 @@
-// �����硤���μǡ��汾��������
+// 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // under2.c
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "����");
+  set ("short", "海底");
   set ("long", @LONG
 
-����ˮɫ��Ļ�����������Χ�ѿ���������ˡ�ż�а���Ϯ������
-��������������ϲ�һƬ��ɫ���ƺ���ˮҲȾ���ˡ�
+这里水色变的浑浊起来，周围已看不大清楚了。偶有暗流袭来，卷
+起阵阵的泥流。南部一片黑色，似乎把水也染黑了。
 LONG);
 
   set("objects", ([ /* sizeof() == 2 */
@@ -37,7 +37,7 @@ void greeting(object me)
 {
         if( !me || environment(me) != this_object() ) return;
 
-   message_vision("ͻȻһ����ӿ������$N�嵽��ç�����\n", me);
+   message_vision("突然一阵暗流涌来，把$N冲到了莽林深处！\n", me);
    me->move("/d/sea/maze5");
    return;
 }

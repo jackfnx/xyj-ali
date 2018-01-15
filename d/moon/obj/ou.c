@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•ŒÂ·è¥¿æ¸¸è®°Â·ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 
@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("Á«Åº", ({"lian ou", "ou"}));
+        set_name("è²è—•", ({"lian ou", "ou"}));
    set_weight(40);
    if (clonep())
      set_default_object(__FILE__);
    else {
-                set("long", "°×ÄÛµÄÁ«Åº£¬É¢·¢×ÅÓÕÈËµÄÇåÏã¡£\n");
-                set("unit", "¿Å");
+                set("long", "ç™½å«©çš„è²è—•ï¼Œæ•£å‘ç€è¯±äººçš„æ¸…é¦™ã€‚\n");
+                set("unit", "é¢—");
      set("value", 10);
      set("food_remaining", 1);
      set("food_supply", 10);
