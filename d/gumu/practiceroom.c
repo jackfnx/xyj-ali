@@ -20,7 +20,7 @@ LONG);
     ]));
 
     set("exits", ([ /* sizeof() == 1 */
-        "west" : __DIR__"shidong3",
+        "west" : __DIR__"shidong2",
     ]));
 
     setup();
