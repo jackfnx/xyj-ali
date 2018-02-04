@@ -7,11 +7,10 @@
 
 inherit F_CLEAN_UP;
 
-string *sex_ranking = ({"初尝禁果", "初尝禁果", "床第高手", "欢场高手", "旷世淫娃", "御女无数"});
+string *sex_ranking_male = ({"初尝禁果", "欢场老手", "御女无数"});
+string *sex_ranking_female = ({"初尝禁果", "床第高手", "旷世淫娃"});
 
 string display_attr(int gift, int value);
-
-string tribar_graph(int val, int eff, int max, string bcolor, string fcolor, string dcolor);
 
 void create() { seteuid(ROOT_UID); }
 
@@ -35,15 +34,15 @@ int main(object me, string arg)
 
     my = ob->query_entire_dbase();
 
-    write(NOR YEL"≡≡≡≡≡≡≡≡≡≡"HIG"个"NOR YEL"≡≡"HIG"人"NOR YEL"≡≡"HIG"档"NOR YEL"≡≡"HIG"案"NOR YEL"≡≡≡≡≡≡≡≡≡≡\n"NOR);
-    line = sprintf(BOLD "%s" NOR "%s\n", RANK_D->query_rank(ob), ob->short(1));
-    line += NOR YEL"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
+    write(NOR YEL"\n≡≡≡≡≡≡≡≡≡≡"HIG"个"NOR YEL"≡≡"HIG"人"NOR YEL"≡≡"HIG"档"NOR YEL"≡≡"HIG"案"NOR YEL"≡≡≡≡≡≡≡≡≡≡\n"NOR);
+    line = sprintf(BOLD "%s" NOR "%s\n\n", RANK_D->query_rank(ob), ob->short(1));
 
-    line += sprintf(" 性别：%s%-4s%s  年龄：%s%-4s岁%s%-6s\n\n",
-            HIG, my["gender"], NOR,
-            HIY, my["always_young"] ? chinese_number(my["fake_age"]) : chinese_number(my["age"]), NOR,
-            my["always_young"] ? "("CYN+chinese_number(my["age"])+"岁"NOR ")" : "      ",
-            );
+    if (my["always_young"])
+        line += sprintf(" 性别："HIG"%-4s"NOR"  年龄："HIY"%-4s岁"NOR"  寿元："CYN"%-6s岁"NOR" \n\n",
+            my["gender"], chinese_number(my["fake_age"]), chinese_number(my["age"]));
+    else
+        line += sprintf(" 性别："HIG"%-4s"NOR"  年龄："HIY"%-4s岁"NOR" \n\n",
+            my["gender"], chinese_number(my["age"]));
 
     line += sprintf(
             " 力量：[%s]  | 定力：[%s]  | 胆识：[%s]  | 容貌：[%s]\n",
@@ -59,53 +58,7 @@ int main(object me, string arg)
             display_attr(my["con"], ob->query_con()),
             display_attr(my["kar"], ob->query_kar()),
             );
-/*
-    if (my["eff_gin"] < my["max_gin"]) str = HIR + "生病";
-    else if (my["gin"]*100 / my["max_gin"]>=70) str = HIG + "充盈";
-    else if (my["gin"]*100 / my["max_gin"]>=40) str = HIR + "虚耗";
-    else str = HIB + "大损";
-    line += sprintf(" 智力：[%s%3s%s]  | 〖%s精元%s〗 %s [%4s%s]\n",
-                NOR, display_attr(my["int"], ob->query_int()), NOR,
-                HIR, NOR, tribar_graph(my["gin"], my["eff_gin"], my["max_gin"], NOR, HIR, HIW),
-                str, NOR);
 
-    if (my["eff_kee"] < my["max_kee"]) str = HIR + "伤残";
-    else if (my["kee"]*100 / my["max_kee"]>=70) str = HIG + "充沛";
-    else if (my["kee"]*100 / my["max_kee"]>=40) str = HIR + "受伤";
-    else str = HIB + "重伤";
-    line += sprintf(" 根骨：[%s%3s%s]  | 〖%s气血%s〗 %s [%4s%s]\n",
-                NOR, display_attr(my["con"], ob->query_con()), NOR,
-                HIR, NOR, tribar_graph(my["kee"], my["eff_kee"], my["max_kee"], NOR, HIR, HIW),
-                str, NOR);
-
-    if (my["eff_sen"] < my["max_sen"]) str = HIR + "失魂";
-    else if (my["sen"]*100 / my["max_sen"]>=70) str = HIG + "饱满";
-    else if (my["sen"]*100 / my["max_sen"]>=40) str = HIR + "疲倦";
-    else str = HIB + "很累";
-    line += sprintf(" 灵性：[%s%3s%s]  | 〖%s精神%s〗 %s [%4s%s]\n",
-                NOR, display_attr(my["spi"], ob->query_spi()), NOR,
-                HIR, NOR, tribar_graph(my["sen"], my["eff_sen"], my["max_sen"], NOR, HIR, HIW),
-                str, NOR);
-
-    if (my["food"] * 100 / ob->max_food_capacity() >= 80) str = HIG + "吃饱";
-    else if (my["food"] * 100 / ob->max_food_capacity() >= 50) str = HIC + "正常";
-    else if (my["food"] * 100 / ob->max_food_capacity() >= 20) str = HIR + "缺食";
-    else str = HIB + "饥饿";
-    line += sprintf(" 容貌：[%s%3s%s]  | 〖%s食物%s〗 %s [%4s%s]\n",
-                NOR, display_attr(my["per"], ob->query_per()), NOR,
-                HIC, NOR, tribar_graph(my["food"], ob->max_food_capacity(), ob->max_food_capacity(), NOR, HIC, HIR),
-                str, NOR);
-
-    if (my["water"] * 100 / ob->max_water_capacity() >= 80) str = HIG + "喝足";
-    else if (my["water"] * 100 / ob->max_water_capacity() > 60) str = HIG + "正常";
-    else if (my["water"] * 100 / ob->max_water_capacity() > 30) str = HIR + "缺水";
-    else str = HIB + "饥渴";
-    line += sprintf("              | 〖%s饮水%s〗 %s [%4s%s]\n",
-                HIC, NOR, tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), NOR, HIC, HIR),
-                str, NOR);
-
-    line += "\n";
-*/
     if (mapp(my["family"]))
         line += sprintf(" 门  派：" HIC "%-6s" NOR, my["family"]["family_name"]);
     else
@@ -124,11 +77,15 @@ int main(object me, string arg)
 
     line += " 性经验：";
     if (mapp(my["sex"]) && mapp(my["sex"]["lovers"])) {
-        line += HIY + sex_ranking[sizeof(my["sex"]["lovers"])/10*2+(int)(my["gender"]=="男性")] + NOR;
-        if (my["gender"] == "男性" && !my["sex"]["first_semen_lost"])
-            line += "，但仍保持" HIB "童子之身" NOR;
-        else if (my["gender"] == "女性" && !my["sex"]["hymen_broken"])
+        if (my["gender"] == "男性") {
+            line += HIY + sex_ranking_male[sizeof(my["sex"]["lovers"])/10] + NOR;
+            if (!my["sex"]["first_semen_lost"])
+                line += "，但仍保持" HIB "童子之身" NOR;
+        } else if (my["gender"] == "女性") {
+            line += HIY + sex_ranking_female[sizeof(my["sex"]["lovers"])/10] + NOR;
+            if (!my["sex"]["hymen_broken"])
             line += "，但仍保持" HIB "处子之身" NOR;
+        }
     }
     else
         line += HIB + (my["gender"]=="男性"?"童":"处") + "子之身" NOR;
@@ -156,9 +113,7 @@ int main(object me, string arg)
         line += " 存  款：" HIW "没有任何存款" NOR "\n\n";
 
     line += RED " 西天取经" NOR "：" + OBSTACLES_D->check_obstacles_short(ob) + "\n";
-    line += RED " 大闹天宫" NOR "：" + OBSTACLES_D->check_obstacles_short(ob, "dntg") + "\n";
-
-    line += NOR YEL"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
+    line += RED " 大闹天宫" NOR "：" + OBSTACLES_D->check_obstacles_short(ob, "dntg") + "\n\n";
 
     {
         /* ap/dp calc */
@@ -192,10 +147,11 @@ int main(object me, string arg)
                 RANK_D->describe_mana(ob->query("max_mana")),
                 RANK_D->describe_force(ob->query("max_force")));
 
-    line += YEL"≡≡≡≡≡≡≡≡≡≡ "GRN"西游记" HIY "·"HIG"阿里世界"NOR YEL" ≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
-    line += sprintf(" 为了三界和平%s已经历了 %s 的岁月 \n",
+    line += sprintf("\n %s在 ["YEL"西游记"NOR"·"HIG"阿里世界"NOR"] 中已经历了 %s 的岁月 \n",
         ob == me ? "你" : ob->name(1),
         HIR + FINGER_D->age_string( (int)ob->query("mud_age")) + NOR);
+    line += NOR YEL"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n"NOR;
+
     write(line);
     return 1;
 }
@@ -206,31 +162,6 @@ string display_attr(int gift, int value)
     else if (value < gift) return sprintf( CYN "%3d" NOR, value );
     else return sprintf("%3d", value);
 }
-
-string tribar_graph(int val, int eff, int max, string bcolor, string fcolor, string dcolor)
-{
-    string ret;
-    int i, n, eff_n, max_n = 12;
-
-    if (max == 0) max = 1;
-    n = val * 100 / max / 10;
-    eff_n = eff * 100 / max / 10;
-
-    if (n < 0) n = 0;
-    if (eff_n < 0) eff_n = 0;
-    if (n > max_n) n = max_n;
-    if (eff_n > max_n) eff_n = max_n;
-
-    ret = NOR  + bcolor + fcolor ;
-    for (i = 0 ; i < max_n; i++) {
-        if (i > eff_n) ret += dcolor;
-        if (i < n)  ret += "━";
-        else ret += HIW"━"NOR;
-    }
-    ret += fcolor + NOR ;
-    return ret;
-}
-
 
 int help(object me)
 {
