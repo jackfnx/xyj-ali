@@ -71,6 +71,8 @@ void setup_piwen(object me, object bai, object hei)
     hei->set("inquiry/冤屈", (: call_other, __FILE__, "assail", this_object() :));
     set("bai", bai);
     set("hei", hei);
+    if (random(2)) move(hei);
+    else move(bai);
 }
 
 string assail(object ob, object wc)
