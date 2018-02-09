@@ -86,18 +86,14 @@ int UCS2toGBK(uint16_t ucs2, uint8_t *gbk)
     }
 }
 
-int generate_G2U(const char *fname, uint16_t from, uint16_t to)
+int generate_G2U(const char *fname, uint8_t from, uint8_t to)
 {
     int cnt = 0;
     FILE *fp = fopen(fname, "w");
-    uint8_t bf[2];
-    uint8_t bt[2];
-    WideCodeToTwoBytes(from, bf);
-    WideCodeToTwoBytes(to, bt);
     uint8_t gbk[2];
-    for (gbk[0] = bf[0]; gbk[0] <= bt[0]; gbk[0]++)
+    for (gbk[0] = from; gbk[0] <= to; gbk[0]++)
     {
-        for (gbk[1] = bf[1]; gbk[1] <= bt[1]; gbk[1]++)
+        for (gbk[1] = 0x40; gbk[1] <= 0xFE; gbk[1]++)
         {
             uint8_t ucs2[2];
             cnt -= GBKtoUCS2(gbk, ucs2);
@@ -166,36 +162,68 @@ int main(int argc, char **argv)
            UCS2_AREA_3_UBOUND - UCS2_AREA_3_LBOUND - cnt + 1,
            cnt);
 
-    const int GBK_AREA_0_LBOUND = 0x8140;
-    const int GBK_AREA_0_UBOUND = 0x8FFE;
+    const int GBK_AREA_0_LBOUND = 0x81;
+    const int GBK_AREA_0_UBOUND = 0x8F;
     cnt = generate_G2U("G2U_0.dic", GBK_AREA_0_LBOUND, GBK_AREA_0_UBOUND);
     printf("<G2U_0.dic> total: [%d], OK: [%d], ERR: [%d]\n",
-           GBK_AREA_0_UBOUND - GBK_AREA_0_LBOUND + 1,
-           GBK_AREA_0_UBOUND - GBK_AREA_0_LBOUND - cnt + 1,
+           (GBK_AREA_0_UBOUND - GBK_AREA_0_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_0_UBOUND - GBK_AREA_0_LBOUND) * (0xFE - 0x80) - cnt + 1,
            cnt);
 
-    const int GBK_AREA_1_LBOUND = 0x9040;
-    const int GBK_AREA_1_UBOUND = 0x9FFE;
+    const int GBK_AREA_1_LBOUND = 0x90;
+    const int GBK_AREA_1_UBOUND = 0x9F;
     cnt = generate_G2U("G2U_1.dic", GBK_AREA_1_LBOUND, GBK_AREA_1_UBOUND);
     printf("<G2U_1.dic> total: [%d], OK: [%d], ERR: [%d]\n",
-           GBK_AREA_1_UBOUND - GBK_AREA_1_LBOUND + 1,
-           GBK_AREA_1_UBOUND - GBK_AREA_1_LBOUND - cnt + 1,
+           (GBK_AREA_1_UBOUND - GBK_AREA_1_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_1_UBOUND - GBK_AREA_1_LBOUND) * (0xFE - 0x80) - cnt + 1,
            cnt);
 
-    const int GBK_AREA_2_LBOUND = 0xC040;
-    const int GBK_AREA_2_UBOUND = 0xDFFE;
+    const int GBK_AREA_2_LBOUND = 0xA0;
+    const int GBK_AREA_2_UBOUND = 0xAF;
     cnt = generate_G2U("G2U_2.dic", GBK_AREA_1_LBOUND, GBK_AREA_2_UBOUND);
     printf("<G2U_2.dic> total: [%d], OK: [%d], ERR: [%d]\n",
-           GBK_AREA_2_UBOUND - GBK_AREA_2_LBOUND + 1,
-           GBK_AREA_2_UBOUND - GBK_AREA_2_LBOUND - cnt + 1,
+           (GBK_AREA_2_UBOUND - GBK_AREA_2_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_2_UBOUND - GBK_AREA_2_LBOUND) * (0xFE - 0x80) - cnt + 1,
            cnt);
 
-    const int GBK_AREA_3_LBOUND = 0xE040;
-    const int GBK_AREA_3_UBOUND = 0xFEFE;
+    const int GBK_AREA_3_LBOUND = 0xB0;
+    const int GBK_AREA_3_UBOUND = 0xBF;
     cnt = generate_G2U("G2U_3.dic", GBK_AREA_3_LBOUND, GBK_AREA_3_UBOUND);
     printf("<G2U_3.dic> total: [%d], OK: [%d], ERR: [%d]\n",
-           GBK_AREA_3_UBOUND - GBK_AREA_3_LBOUND + 1,
-           GBK_AREA_3_UBOUND - GBK_AREA_3_LBOUND - cnt + 1,
+           (GBK_AREA_3_UBOUND - GBK_AREA_3_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_3_UBOUND - GBK_AREA_3_LBOUND) * (0xFE - 0x80) - cnt + 1,
+           cnt);
+    
+    const int GBK_AREA_4_LBOUND = 0xA0;
+    const int GBK_AREA_4_UBOUND = 0xAF;
+    cnt = generate_G2U("G2U_4.dic", GBK_AREA_4_LBOUND, GBK_AREA_4_UBOUND);
+    printf("<G2U_4.dic> total: [%d], OK: [%d], ERR: [%d]\n",
+           (GBK_AREA_4_UBOUND - GBK_AREA_4_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_4_UBOUND - GBK_AREA_4_LBOUND) * (0xFE - 0x80) - cnt + 1,
+           cnt);
+    
+    const int GBK_AREA_5_LBOUND = 0xB0;
+    const int GBK_AREA_5_UBOUND = 0xBF;
+    cnt = generate_G2U("G2U_5.dic", GBK_AREA_5_LBOUND, GBK_AREA_5_UBOUND);
+    printf("<G2U_5.dic> total: [%d], OK: [%d], ERR: [%d]\n",
+           (GBK_AREA_5_UBOUND - GBK_AREA_5_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_5_UBOUND - GBK_AREA_5_LBOUND) * (0xFE - 0x80) - cnt + 1,
+           cnt);
+    
+    const int GBK_AREA_6_LBOUND = 0xB0;
+    const int GBK_AREA_6_UBOUND = 0xBF;
+    cnt = generate_G2U("G2U_6.dic", GBK_AREA_6_LBOUND, GBK_AREA_6_UBOUND);
+    printf("<G2U_6.dic> total: [%d], OK: [%d], ERR: [%d]\n",
+           (GBK_AREA_6_UBOUND - GBK_AREA_6_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_6_UBOUND - GBK_AREA_6_LBOUND) * (0xFE - 0x80) - cnt + 1,
+           cnt);
+    
+    const int GBK_AREA_7_LBOUND = 0xB0;
+    const int GBK_AREA_7_UBOUND = 0xBF;
+    cnt = generate_G2U("G2U_7.dic", GBK_AREA_7_LBOUND, GBK_AREA_7_UBOUND);
+    printf("<G2U_7.dic> total: [%d], OK: [%d], ERR: [%d]\n",
+           (GBK_AREA_7_UBOUND - GBK_AREA_7_LBOUND) * (0xFE - 0x80) + 1,
+           (GBK_AREA_7_UBOUND - GBK_AREA_7_LBOUND) * (0xFE - 0x80) - cnt + 1,
            cnt);
     
     iconv_close(U2G);

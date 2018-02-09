@@ -13,7 +13,13 @@ string *U2G_DIC_DEF = ({
 
 string *G2U_DIC_DEF = ({
         "/util/G2U_0.dic",
-        "/util/G2U_1.dic"
+        "/util/G2U_1.dic",
+        "/util/G2U_2.dic",
+        "/util/G2U_3.dic",
+        "/util/G2U_4.dic",
+        "/util/G2U_5.dic",
+        "/util/G2U_6.dic",
+        "/util/G2U_7.dic"
     });
 
 string *U2G_dic = ({});
