@@ -8,6 +8,10 @@ string chinese_number(int i)
 
 int is_chinese(string str)
 {
-    if (strlen(str)>=2 && str[0] > 160 && str[0] < 255) return 1;
-    else return 0;
+    int *codes = CONVERT_D->decode_utf8(str);
+    for (int i = 0; i < sizeof(codes); i++) {
+        if (codes[i] <= 0x4E00 || codes[i] >= 0x9FFF) // hanzi qujian
+            return 0;
+    }
+    return 1;
 }

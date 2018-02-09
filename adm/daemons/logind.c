@@ -1,6 +1,6 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
- 
+
 // logind.c
 
 #include <ansi.h>
@@ -16,7 +16,7 @@ string *banned_name = ({
    "你", "我", "他", "她", "它",
 });
 
-string *default_name=({"猴子","狐狸", "老鼠", 
+string *default_name=({"猴子","狐狸", "老鼠",
         "牛", "老虎", "兔子",
         "狗","猫咪","羊","猪",
         "骆驼","乌龟","蛇","鱼儿",
@@ -38,11 +38,11 @@ varargs int check_legal_name(string name, int max_len);
 string dis_attr(int value);
 private void confirm_gift(string yn,object ob,object user);
 
-void create() 
+void create()
 {
-   seteuid(getuid());
-   set("channel_id", "连线精灵");
-        set("id", "logind");
+    seteuid(getuid());
+    set("channel_id", "连线精灵");
+    set("id", "logind");
 }
 
 // added by snowcat Mar 11 1998
@@ -50,7 +50,6 @@ int total_players()
 {
    mapping mud_list;
    mixed *muds;
-   string output;
    int loop, size, nb, total=0;
 
    if( !find_object(DNS_MASTER) )
@@ -65,7 +64,7 @@ int total_players()
                 if(mud_list[muds[loop]]["MUDLIB"]=="A Journey to the West" &&
         !undefinedp(mud_list[muds[loop]]["USERS"])) {
         sscanf (mud_list[muds[loop]]["USERS"],"%d",nb);
-        total += nb; 
+        total += nb;
      }
         }
 
@@ -74,45 +73,44 @@ int total_players()
 
 void logon(object ob)
 {
-    
     cat(BANNER);
-    write("            西游记欢迎您来访！使用国标码的玩家请键入：gb\n");
-    write("            ﹁村癘舧眤ㄓ砐ㄏノき絏產叫龄big5\n");
-    write("            Welcome to Xi You Ji! Select GB or BIG5 (gb/big5):");
+    efun::write("            西游记欢迎您来访！使用支持UTF8的客户端的玩家请键入：utf8\n");
+    efun::write(CONVERT_D->UTF8toGB2312("            西游记欢迎您来访！使用不支持UTF8的客户端的玩家请键入：gb\n"));
+    efun::write("            Welcome to Xi You Ji! Select UTF8 or GB (utf8/gb):");
     input_to( (: encoding :), ob );
 }
 
 private void encoding(string arg, object ob)
 {
-   object *usr;
-   int i, ttl_cnt, wiz_cnt, ppl_cnt, login_cnt;
-   string ip_name, ip_number;
+    object *usr;
+    int i, ttl_cnt, wiz_cnt, ppl_cnt, login_cnt;
+    string ip_name, ip_number;
     int ii;
-   int encode;
-   
-   if(!arg || arg=="") {
-       write("\nSelect 国标码 GB or き絏 BIG5 (gb/big5):");
-       input_to( (: encoding :), ob );
-       return;
-   } else if(arg[0..0]=="g" || arg[0..0]=="G")
-       encode=0;
-   else if(arg[0..0]=="b" || arg[0..0]=="B")
-       encode=1;
-   else {
-       write("\nSelect 国标码 GB or き絏 BIG5 (gb/big5):");
-       input_to( (: encoding :), ob );
-       return;
-   }
-   
-   if(encode==0)
-       write("\nUse GB encoded Chinese.\n");
-   else
-       write("\nUse BIG5 encoded Chinese.\n");
-   
-   ob->set_encoding(encode);
+    int encode;
 
-   ip_name = query_ip_name(ob);
-   ip_number = query_ip_number(ob);
+    if (!arg || arg=="") {
+        efun::write("\nSelect UTF8 or GB (utf8/gb):");
+        input_to( (: encoding :), ob );
+        return;
+    } else if (arg[0..0]=="u" || arg[0..0]=="U")
+        encode=0;
+    else if (arg[0..0]=="g" || arg[0..0]=="G")
+        encode=1;
+    else {
+        efun::write("\nSelect UTF8 or GB (utf8/gb):");
+        input_to( (: encoding :), ob );
+        return;
+    }
+
+    if (encode == 0)
+        efun::write("\nUse UTF8 encoded Chinese.\n");
+    else
+        efun::write("\nUse GB encoded Chinese.\n");
+
+    ob->set_encoding(encode);
+
+    ip_name = query_ip_name(ob);
+    ip_number = query_ip_number(ob);
 
    if(new_start==0) { //only check for once.
      new_start++;
@@ -141,7 +139,7 @@ private void encoding(string arg, object ob)
         return;
    }
 
-   
+
    // try not accept "name" as IP
 
    if (!ip_name) {
@@ -157,7 +155,7 @@ private void encoding(string arg, object ob)
         return;
      }
    }
-   
+
 /*
    if( ip_name != ip_number )  {
          destruct(ob);
@@ -180,9 +178,9 @@ private void encoding(string arg, object ob)
    }
    // snowcat Mar 11 1998
    ttl_cnt = total_players();
-   if (ttl_cnt == 0) 
+   if (ttl_cnt == 0)
      printf("目前"); // info not available
-   else 
+   else
      printf("目前共有%d位玩家在线上。本站", ttl_cnt );
    printf("共有%d位巫师、%d位玩家，以及%d位在尝试连线。\n\n",
      wiz_cnt, ppl_cnt, login_cnt );
@@ -213,7 +211,7 @@ private void get_id(string arg, object ob)
         if(!ob) return;
 
         id_count=ob->query_temp("id_count");
-// mon 7/19/97 to prevent flooding by repeating illegal id. 
+// mon 7/19/97 to prevent flooding by repeating illegal id.
         id_count++;
         ob->set_temp("id_count",id_count);
    if(id_count>6) {
@@ -248,7 +246,7 @@ private void get_id(string arg, object ob)
      destruct(ob);
      return;
    }
-   
+
    if( (string)ob->set("id", arg) != arg ) {
      write("Failed setting user name.\n");
      destruct(ob);
@@ -303,7 +301,7 @@ private void get_passwd(string pass, object ob)
    // Check if we are already playing.
    user = find_body(ob->query("id"));
    if (user) {
-       
+
      if( user->query_temp("netdead") ) {
         reconnect(ob, user);
         return;
@@ -336,7 +334,7 @@ private void confirm_relogin(string yn, object ob, object user)
      write("您要将另一个连线中的相同人物赶出去，取而代之吗？(y/n)");
      input_to("confirm_relogin", ob, user);
      return;
-   }   
+   }
 
    if( (yn[0]!='y' && yn[0]!='Y') || !user ) {
        // user may be destructed during the process.
@@ -363,7 +361,7 @@ private void confirm_relogin(string yn, object ob, object user)
      destruct(old_link);
    }
 
-   reconnect(ob, user);   
+   reconnect(ob, user);
 }
 
 private void confirm_id(string yn, object ob)
@@ -372,7 +370,7 @@ private void confirm_id(string yn, object ob)
      write("使用这个名字将会创造一个新的人物，您确定吗(y/n)？");
      input_to("confirm_id", ob);
      return;
-   }   
+   }
 
    if( yn[0]!='y' && yn[0]!='Y' ) {
      write("好吧，那么请重新输入您的英文名字：");
@@ -484,7 +482,7 @@ private void get_gender(string gender, object ob, object user)
      input_to("get_gender", ob, user);
      return;
    }
-   
+
         confirm_gift("n",ob,user);
 }
 
@@ -492,7 +490,6 @@ object make_body(object ob)
 {
    string err;
    object user;
-   int n;
 
         if(!ob->query("body")) {
      return 0;
@@ -538,14 +535,14 @@ private void confirm_gift(string yn, object ob, object user)
      query_ip_number(ob), ctime(time()) ) );
 
        return enter_world(ob, user);
-            
+
           } else if (yn[0]=='q' || yn[0]=='Q') {
             destruct(user);
             destruct(ob);
             return;
           }
         }
-        
+
         user->set("kar",0);
    while(user->query("kar")<10 || user->query("kar")>30){
    user->set("str", 10 + random(21));
@@ -560,7 +557,7 @@ private void confirm_gift(string yn, object ob, object user)
         if(n>168)
            user->set("kar",0);
            else
-           user->set("kar",168-n);   
+           user->set("kar",168-n);
         }
 
         write("\n");
@@ -589,7 +586,8 @@ string dis_attr(int value)
 
 varargs void enter_world(object ob, object user, int silent)
 {
-   object cloth, room, mbx;
+   //object cloth, room, mbx;
+	object mbx;
    string startroom="";
    int num;
 
@@ -613,7 +611,7 @@ varargs void enter_world(object ob, object user, int silent)
    write("目前权限：" + wizhood(user) + "\n");
    user->setup();
 
-   // In case of new player, we save them here right aftre setup 
+   // In case of new player, we save them here right aftre setup
    // compeleted.
    user->save();
    ob->save();
@@ -663,7 +661,7 @@ varargs void enter_world(object ob, object user, int silent)
      }
      tell_room(startroom, user->query("name") + "连线进入这个世界。\n",
         ({user}));
-     
+
      mbx=ob->query_temp("mbox_ob");
      if (!mbx) {
        mbx=new(MAILBOX_OB);
@@ -693,7 +691,7 @@ varargs void reconnect(object ob, object user, int silent)
 {
    user->set_temp("link_ob", ob);
         ob->set_temp("body_ob", user);
-  
+
    // 5/11/98 mon
    user->set_encoding(ob->query_encoding());
 
@@ -713,11 +711,11 @@ varargs int check_legal_id(string id, int max_len, int allow_space)
 {
    int i;
    string *legalid;
-   
+
    i = strlen(id);
-   
+
    if (undefinedp(max_len)) max_len = 8;
-   
+
    if( (strlen(id) < 3) || (strlen(id) > max_len ) ) {
      printf("对不起，你的英文名字必须是 3 到 %d 个英文字母。\n", max_len);
      return 0;
@@ -744,23 +742,17 @@ varargs int check_legal_name(string name, int max_len)
    int i;
 
    i = strlen(name);
-   
+
    if (undefinedp(max_len)) max_len = 12;
-   
+
    if( (strlen(name) < 2) || (strlen(name) > max_len ) ) {
      printf("对不起，你的中文名字必须是 1 到 %d 个中文字。\n", max_len / 2);
      return 0;
    }
-   while(i--) {
-     if( name[i]<=' ' ) {
-        write("对不起，你的中文名字不能用控制字元。\n");
-        return 0;
-     }
-     if( i%2==0 && !is_chinese(name[i..<0]) ) {
+	if (!is_chinese(name)) {
         write("对不起，请您用「中文」取名字。\n");
-        return 0;
-     }
-   }
+		return 0;
+	}
    if( member_array(name, banned_name)!=-1 ) {
      write("对不起，这种名字会造成其他人的困扰。\n");
      return 0;
@@ -778,7 +770,7 @@ object find_body(string name)
    body = children(USER_OB);
    for(int i=0; i<sizeof(body); i++) {
           ob=body[i];
-     if( clonep(ob) && getuid(ob) == name 
+     if( clonep(ob) && getuid(ob) == name
             && ob->query("max_gin")>0 ) return ob;
        //check max_gin to avoid damaged user object.
         }

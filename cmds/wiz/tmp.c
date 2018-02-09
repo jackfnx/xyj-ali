@@ -1,43 +1,28 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
-
-#include <net/daemons.h>
-#include <net/macros.h>
-
 int main(object me, string arg)
 {
-   mapping mud_list;
-   mapping mud_svc;
-   mixed *muds;
-   string output;
-   int loop, size, nb, total=0;
+	int *codes;
+	string buf;
+	seteuid(getuid());
 
-   if( !find_object(DNS_MASTER) )
-     return 0;
+	printf("arg=%s\n", arg);
 
-   //   Obtain mapping containing mud data
-   mud_list = (mapping)DNS_MASTER->query_muds();
+	if (!arg || !stringp(arg) || sizeof(arg) < 2)
+		return 1;
 
-   // so we recognise ourselves as a DNS mud
-   mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
+	printf("%d, %d\n", arg[0], strlen(arg));
+	printf("%x, %x\n", arg[0], arg[1]);
 
-   if(!mud_list)
-     return 0;
+	codes = decode_utf8(arg);
+	printf("%O\n", codes);
+	buf = encode_gb2312(codes);
+	printf("converted: %s\n", buf);
+	printf("%x,%x,%x,%x\n", buf[0],buf[1],buf[2],buf[3]);
+	log_file("gb2312", buf);
 
-   //   Get list of all mud names within name server
-   muds = keys( mud_list ) - ({ "DEFAULT" });
-
-   //   Loop through mud list and store one by one
-   for(loop = 0, size = sizeof(muds); loop<size; loop++) {
-                if(mud_list[muds[loop]]["MUDLIB"]=="A Journey to the West") {
-        sscanf (mud_list[muds[loop]]["USERS"],"%d",nb);
-        total += nb; 
-     }
-        }
-
-   tell_object (me,chinese_number(total));
-   return 1;
+    return 1;
 }
 
 
