@@ -288,7 +288,11 @@ string UTF8toGB2312(string arg)
         if (c <= 0x9DFF && c >= 0x4E00)
             gb_str += U2G_dic[c - 0x4E00];
         else
-            gb_str += c;
+        {
+            string buf = " ";
+            buf[0] = c;
+            gb_str += buf;
+        }
     }
     return gb_str;
 }
@@ -309,7 +313,11 @@ string GB2312toUTF8(string arg)
         if (b1 >= 0x81 && b2 <= 0xFE && b2 >= 0x40 && b2 <= 0xFE)
             utf8_str += G2U_dic[b1-0x81][b2-0x40];
         else
-            utf8_str += ("" + i);
+        {
+            string buf = " ";
+            buf[0] = c;
+            utf8_str += buf;
+        }
     }
     return utf8_str;
 }
