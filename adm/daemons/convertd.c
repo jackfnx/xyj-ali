@@ -316,7 +316,7 @@ string GB2312toUTF8(string arg)
         int c = gb_codes[i];
         int b1 = c / 0x100;
         int b2 = c % 0x100;
-        if (b1 >= 0x81 && b2 <= 0xFE && b2 >= 0x40 && b2 <= 0xFE)
+        if (b1 >= 0x81 && b1 <= 0xFE && b2 >= 0x40 && b2 <= 0xFE)
             utf8_str += G2U_dic[b1-0x81][b2-0x40];
         else
         {
