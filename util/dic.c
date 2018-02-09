@@ -167,21 +167,37 @@ int main(int argc, char **argv)
            cnt);
 
     const int GBK_AREA_0_LBOUND = 0x8140;
-    const int GBK_AREA_0_UBOUND = 0xBFFE;
+    const int GBK_AREA_0_UBOUND = 0x9FFE;
     cnt = generate_G2U("G2U_0.dic", GBK_AREA_0_LBOUND, GBK_AREA_0_UBOUND);
     printf("<G2U_0.dic> total: [%d], OK: [%d], ERR: [%d]\n",
            GBK_AREA_0_UBOUND - GBK_AREA_0_LBOUND + 1,
            GBK_AREA_0_UBOUND - GBK_AREA_0_LBOUND - cnt + 1,
            cnt);
 
-    const int GBK_AREA_1_LBOUND = 0xC040;
-    const int GBK_AREA_1_UBOUND = 0xFEFE;
+    const int GBK_AREA_1_LBOUND = 0xA040;
+    const int GBK_AREA_1_UBOUND = 0xBFFE;
     cnt = generate_G2U("G2U_1.dic", GBK_AREA_1_LBOUND, GBK_AREA_1_UBOUND);
     printf("<G2U_1.dic> total: [%d], OK: [%d], ERR: [%d]\n",
            GBK_AREA_1_UBOUND - GBK_AREA_1_LBOUND + 1,
            GBK_AREA_1_UBOUND - GBK_AREA_1_LBOUND - cnt + 1,
            cnt);
 
+    const int GBK_AREA_2_LBOUND = 0xC040;
+    const int GBK_AREA_2_UBOUND = 0xDFFE;
+    cnt = generate_G2U("G2U_2.dic", GBK_AREA_1_LBOUND, GBK_AREA_2_UBOUND);
+    printf("<G2U_2.dic> total: [%d], OK: [%d], ERR: [%d]\n",
+           GBK_AREA_2_UBOUND - GBK_AREA_2_LBOUND + 1,
+           GBK_AREA_2_UBOUND - GBK_AREA_2_LBOUND - cnt + 1,
+           cnt);
+
+    const int GBK_AREA_3_LBOUND = 0xE040;
+    const int GBK_AREA_3_UBOUND = 0xFEFE;
+    cnt = generate_G2U("G2U_3.dic", GBK_AREA_3_LBOUND, GBK_AREA_3_UBOUND);
+    printf("<G2U_3.dic> total: [%d], OK: [%d], ERR: [%d]\n",
+           GBK_AREA_3_UBOUND - GBK_AREA_3_LBOUND + 1,
+           GBK_AREA_3_UBOUND - GBK_AREA_3_LBOUND - cnt + 1,
+           cnt);
+    
     iconv_close(U2G);
     iconv_close(G2U);
 
