@@ -4,8 +4,12 @@ inherit F_DBASE;
 
 int loading;
 
+string *U2G_SPDIC_DEF = ({
+        "/util/U2G_S1.dic",
+        "/util/U2G_S2.dic",
+});
+
 string *U2G_DIC_DEF = ({
-        "/util/U2G_0.dic",
         "/util/U2G_1.dic",
         "/util/U2G_2.dic",
         "/util/U2G_3.dic"
@@ -22,6 +26,7 @@ string *G2U_DIC_DEF = ({
         "/util/G2U_7.dic"
     });
 
+mapping U2G_S_dic = ([]);
 string *U2G_dic = ({});
 mixed *G2U_dic = ({});
 
@@ -109,6 +114,31 @@ void load_dic_G2U(int step)
     else
     {
         CHANNEL_D->do_channel(this_object(), "sys", " Chinese DIC Loading... G2U compeleted.");
+        call_out("load_dic_U2G_S", 0);
+    }
+}
+
+void load_dic_U2G_S(int step)
+{
+    string *lines;
+
+    if (step < sizeof(U2G_SPDIC_DEF))
+    {
+        lines = explode(read_file(U2G_SPDIC_DEF[step]), "\n");
+        for (int i = 0; i < sizeof(lines); i++)
+        {
+            string key, value;
+            sscanf(lines[i], "%s:%s", key, value);
+            U2G_S_dic[key] = value;
+        }
+
+
+        CHANNEL_D->do_channel(this_object(), "sys", " Chinese DIC Loading... U2G_s step:" + (step + 1));
+        call_out("load_dic_U2G_S", 1, step + 1);
+    }
+    else
+    {
+        CHANNEL_D->do_channel(this_object(), "sys", " Chinese DIC Loading... U2G_s compeleted.");
         call_out("load_dic_complete", 1);
     }
 }
@@ -293,6 +323,11 @@ string UTF8toGB2312(string arg)
         int c = utf8_codes[i];
         if (c <= 0x9DFF && c >= 0x4E00)
             gb_str += U2G_dic[c - 0x4E00];
+        else if (c <= 0xFFFE && c >= 0x0100)
+        {
+            string key = sprintf("%x", c);
+            gb_str += U2G_S_dic[key];
+        }
         else
         {
             string buf = " ";
@@ -350,4 +385,9 @@ string input(string str, object me)
         return GB2312toUTF8(str);
     }
     return str;
+}
+
+string *getDic()
+{
+    return U2G_dic;
 }
