@@ -134,7 +134,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
         str = replace_string(str, "$n", target->name() + "$E_CLR$");
         str = replace_string(str, "$p", gender_pronoun(target_gender));
      }
-     if( !channel_emote ) message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR, me);
+     if( !channel_emote ) message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + "\n" + NOR, me);
    }
   
    if( objectp(target) && stringp(str = emote[verb]["target"]) ) {
@@ -153,7 +153,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
      str = replace_string(str, "$n", target->name() + "$E_CLR$");
      str = replace_string(str, "$p", gender_self(target_gender));
 
-     if( !channel_emote ) message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR, target);
+     if( !channel_emote ) message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + "\n" + NOR, target);
    }
 
    if( stringp(str = emote[verb]["others"+msg_postfix]) ) {
@@ -174,7 +174,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, in
         str = replace_string(str, "$p", gender_pronoun(target_gender));
      }
      if( !channel_emote ) {
-         message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR, environment(me), ({me, target}));
+         message("emote", E_CLR + replace_string(str, "$E_CLR$", E_CLR) + "\n" + NOR, environment(me), ({me, target}));
          if (environment(me)->query("broadcast"))
            environment(me)->broadcast(E_CLR + replace_string(str, "$E_CLR$", E_CLR) + NOR);
      } else return str;
