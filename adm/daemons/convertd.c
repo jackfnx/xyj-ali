@@ -53,6 +53,7 @@ void start_load_dic()
     loading = 1;
     U2G_dic = ({});
     G2U_dic = ({});
+    U2G_S_dic = ([]);
     CHANNEL_D->do_channel(this_object(), "sys", " Chinese DIC Loading has been started...");
 
     call_out("load_dic_U2G", 1, 0);
