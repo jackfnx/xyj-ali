@@ -74,9 +74,6 @@ int total_players()
 void logon(object ob)
 {
     cat(BANNER);
-    efun::write("            西游记欢迎您来访！使用支持UTF8的客户端的玩家请键入：utf8\n");
-    efun::write(CONVERT_D->UTF8toGB2312("            西游记欢迎您来访！使用不支持UTF8的客户端的玩家请键入：gb\n"));
-    efun::write("            Welcome to Xi You Ji! Select UTF8 or GB (utf8/gb):");
     input_to( (: encoding :), ob );
 }
 

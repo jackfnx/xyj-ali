@@ -22,8 +22,6 @@ void receive_message(string msgclass, string msg)
    msg=msg[0..8000]+"\n\n．．．\n";
    //added by mon 11/13/97 trying to prevent crash.
 
-  msg = CONVERT_D->output(msg,this_object());
-
   if( !interactive(this_object()) ) {
    this_object()->relay_message(msgclass, msg);
    return;
@@ -59,8 +57,6 @@ void write_prompt()
 {
     string msg = "[输入时暂存讯息]\n" ;
 
-  msg = CONVERT_D->output(msg,this_object());
-
   if( sizeof(msg_buffer) ) {
    receive(BOLD + msg + NOR);
    for(int i=0; i<sizeof(msg_buffer); i++)
@@ -72,8 +68,6 @@ void write_prompt()
 
 void receive_snoop(string msg)
 {
-  msg = CONVERT_D->output(msg,this_object());
-
   if ( msg && msg!="" && msg[0]!='%' )
    receive("%" + msg);
 }
