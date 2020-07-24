@@ -73,38 +73,11 @@ int total_players()
 
 void logon(object ob)
 {
-    cat(BANNER);
-    input_to( (: encoding :), ob );
-}
-
-private void encoding(string arg, object ob)
-{
     object *usr;
     int i, ttl_cnt, wiz_cnt, ppl_cnt, login_cnt;
     string ip_name, ip_number;
     int ii;
     int encode;
-
-    if (!arg || arg=="") {
-        efun::write("\nSelect UTF8 or GB (utf8/gb):");
-        input_to( (: encoding :), ob );
-        return;
-    } else if (arg[0..0]=="u" || arg[0..0]=="U")
-        encode=0;
-    else if (arg[0..0]=="g" || arg[0..0]=="G")
-        encode=1;
-    else {
-        efun::write("\nSelect UTF8 or GB (utf8/gb):");
-        input_to( (: encoding :), ob );
-        return;
-    }
-
-    if (encode == 0)
-        efun::write("\nUse UTF8 encoded Chinese.\n");
-    else
-        efun::write("\nUse GB encoded Chinese.\n");
-
-    ob->set_encoding(encode);
 
     ip_name = query_ip_name(ob);
     ip_number = query_ip_number(ob);
