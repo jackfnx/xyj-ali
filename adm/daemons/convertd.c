@@ -1,5 +1,8 @@
 inherit F_DBASE;
 
+// MacOS: BigEndian, Other(include Win/Linux): LittleEndian
+#define LITTLE_ENDIAN  1
+
 #include <ansi.h>
 
 int loading;
@@ -34,6 +37,7 @@ string encode_utf8(int *codes);
 string encode_gb2312(int *codes);
 int *decode_gb2312(string str);
 int *decode_utf8(string str);
+int A2B(int c);
 
 void create()
 {
@@ -104,6 +108,7 @@ void load_dic_G2U(int step)
                 int code = 0;
                 int offset = i * line_length + j;
                 sscanf(bytes[offset], "%x", code);
+                code = A2B(code);
                 buf[j] = encode_utf8(({ code }));
             }
             G2U_dic += ({ buf });
@@ -391,4 +396,17 @@ string input(string str, object me)
 string *getDic()
 {
     return U2G_dic;
+}
+
+int A2B(int c)
+{
+    if (LITTLE_ENDIAN)
+    {
+        int b1 = c / 0x100;
+        int b2 = c % 0x100;
+        int code = b1 + b2 * 0x100;
+        return code;
+    }
+    else
+        return c;
 }
