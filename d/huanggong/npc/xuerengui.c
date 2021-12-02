@@ -9,9 +9,9 @@ void create()
     set_name("薛仁贵", ({ "xue rengui", "xue", "rengui" }) );
     set("gender", "男性");
     set("age", 35);
-    set("long","薛仁贵是长安城九门提督，负责皇宫内外安全。\n");
+    set("long","薛仁贵是执金吾，负责皇宫内外安全。\n");
     set("combat_exp", 350000);
-    set("title", "九门提督");
+    set("title", "执金吾");
     set("nickname", "勇冠三军");
     set("attitude", "friendly");
     set("per", 25);
